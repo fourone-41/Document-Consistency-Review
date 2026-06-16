@@ -9,6 +9,7 @@ import json
 import re
 import time
 import sys
+import yaml
 from pathlib import Path
 from difflib import SequenceMatcher
 from openai import OpenAI
@@ -20,6 +21,15 @@ client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL)
 
 MERGED_PATH = Path(__file__).parent / "output" / "merged_graph.json"
 OUTPUT_DIR = Path(__file__).parent / "output"
+REGULATORY_CLAUSES_PATH = Path(__file__).parent / "regulatory_clauses.yaml"
+
+
+def load_regulatory_clauses() -> dict:
+    """加载 regulatory_clauses.yaml 中的 ISO 条款转述要点，按标准编号索引。"""
+    with open(REGULATORY_CLAUSES_PATH, encoding="utf-8") as f:
+        data = yaml.safe_load(f)
+    return data["clauses"]
+
 
 # ============================================================
 # Regulatory Knowledge Guide
@@ -526,12 +536,16 @@ def llm_batch_match(source_items, target_items, guide, src_type, tgt_type):
 
 def _llm_match_batch(src_batch, tgt_batch, source_items, target_items, guide, src_type, tgt_type):
     """Single LLM call to match a batch of source vs target items."""
+    clauses = load_regulatory_clauses()
+    clause_summary = clauses.get(guide['standard'], {}).get('summary', '').strip()
+    clause_block = f"\n法规条款要点：{clause_summary}\n" if clause_summary else ""
+
     prompt = f"""你是医疗器械文档关系分析专家。
 
 任务：根据 {guide['standard']} 的要求，找出【源列表】和【目标列表】之间存在"{guide['name']}"关系的配对。
 
 {guide['rationale']}
-
+{clause_block}
 【源列表 ({src_type})】:
 """
     for idx, (i, summary) in enumerate(src_batch):
