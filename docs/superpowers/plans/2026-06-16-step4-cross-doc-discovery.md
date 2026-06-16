@@ -1053,11 +1053,26 @@ import embedding_retrieval as er
 import graph_pattern_propagation as gpp
 ```
 
+> **注意**：`graph_pattern_propagation.py` 里原本有一个 `NODE_ID_FIELD` 映射，但在 Task 4 的代码审查中被当作"未被引用的死代码"删除了——当时 Task 6 还没实现，确实没人用它。这里需要在 `step4_cross_doc_edges.py` 里重新定义一份同样的映射（不能复用本文件里已有的 `TYPE_TO_PROP`，那个是给 Neo4j 模糊匹配用的描述性属性，例如 `"tests": "item"`，不是真正的唯一标识字段；这里需要的是 `"tests": "test_id"` 这种真正能在 Python 数据里唯一定位节点的字段）。
+
 在 `verify_candidates_open_llm`/`_verify_batch_open_llm` 之后新增：
 
 ```python
+# 节点类型 -> 唯一标识字段。用于把 Step2 的 {type, from, to} 边（只有字符串
+# 标识符，没有类型信息）反查回节点类型，供图模式传播使用。
+NODE_ID_FIELD = {
+    "requirements": "req_id",
+    "design_inputs": "di_id",
+    "risks": "risk_id",
+    "risk_controls": "control_id",
+    "tests": "test_id",
+    "plan_tasks": "name",
+    "documents": "title",
+}
+
+
 def _node_id_field_for(node_type: str) -> str:
-    return gpp.NODE_ID_FIELD.get(node_type, "name")
+    return NODE_ID_FIELD.get(node_type, "name")
 
 
 def _build_id_to_type_index(nodes: dict) -> dict:
@@ -1069,7 +1084,7 @@ def _build_id_to_type_index(nodes: dict) -> dict:
     """
     index = {}
     for node_type, items in nodes.items():
-        id_field = gpp.NODE_ID_FIELD.get(node_type)
+        id_field = NODE_ID_FIELD.get(node_type)
         if not id_field:
             continue
         for item in items:
