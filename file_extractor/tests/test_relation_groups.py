@@ -4,7 +4,7 @@ from pathlib import Path
 
 RELATION_GROUPS_PATH = Path(__file__).parent.parent.parent / "schema" / "relation_groups.yaml"
 
-# 与 step2_extract_edges.py 的 EDGE_PROMPT 中列出的19种类型保持一致
+# 与 step2_extract_edges.py 的 ALL_RELATION_TYPES 中列出的19种类型保持一致
 ALL_EDGE_TYPES = {
     "DERIVES_FROM", "CONSTRAINED_BY", "MITIGATED_BY", "VERIFIED_BY",
     "REPORTED_IN", "COVERS", "HAS_MEASUREMENT", "DEPENDS_ON", "SCHEDULES",

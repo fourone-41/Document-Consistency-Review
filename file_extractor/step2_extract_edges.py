@@ -187,10 +187,12 @@ def try_parse_json(text: str) -> list | dict:
         # LLM 有时会先写一段说明文字，再把 JSON 放进代码块里（不是严格只输出 JSON）。
         # 上面的 startswith("```") 分支只处理"整段响应就是代码块"的情况，这里兜底
         # 处理"代码块嵌在文本中间/末尾"的情况，避免整条响应被静默丢弃。
-        match = re.search(r'```(?:json)?\s*\n?(.*?)\n?```', text, re.DOTALL)
-        if match:
+        # 取最后一个代码块：LLM 有时会先复述一遍格式示例（也用代码块包裹），
+        # 真正的答案通常在后面，取最后一个能避免把示例误当成结果。
+        blocks = re.findall(r'```(?:json)?\s*\n?(.*?)\n?```', text, re.DOTALL)
+        if blocks:
             try:
-                return json.loads(match.group(1).strip())
+                return json.loads(blocks[-1].strip())
             except json.JSONDecodeError:
                 pass
     return []

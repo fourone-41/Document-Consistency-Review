@@ -52,6 +52,25 @@ def test_try_parse_json_returns_empty_list_when_truly_unparseable():
     assert result == []
 
 
+def test_try_parse_json_prefers_last_code_block_when_multiple_present():
+    # LLM 有时会先复述一遍格式示例（也用代码块包裹），再给出真正的答案。
+    # 取最后一个代码块，避免把示例格式误当成真实结果返回。
+    text = (
+        '示例格式：\n'
+        '```json\n'
+        '[{"type": "示例类型", "from": "x", "to": "y", "properties": {}}]\n'
+        '```\n\n'
+        '实际结果：\n'
+        '```json\n'
+        '[{"type": "MITIGATED_BY", "from": "R-01", "to": "CM-03", "properties": {}}]\n'
+        '```'
+    )
+
+    result = s2.try_parse_json(text)
+
+    assert result == [{"type": "MITIGATED_BY", "from": "R-01", "to": "CM-03", "properties": {}}]
+
+
 @patch("step2_extract_edges.client.chat.completions.create")
 def test_detect_relation_types_llm_parses_multiple_types(mock_create):
     mock_create.return_value = _mock_llm_response("MITIGATED_BY\nSIGNED\nHAS_DETAIL")
