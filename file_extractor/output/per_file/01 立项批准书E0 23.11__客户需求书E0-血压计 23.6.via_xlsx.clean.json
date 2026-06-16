@@ -823,58 +823,94 @@
       }
     },
     {
-      "type": "HAS_REVISION",
-      "from": "客户需求书E0-血压计 23.6",
-      "to": "seq:1-V1.0-赵一平-丛明",
-      "properties": {
-        "version": "V1.0",
-        "author": "赵一平",
-        "approver": "丛明",
-        "date": "2024.4.18"
-      }
+      "type": "HAS_DETAIL",
+      "from": "REQ-09-1",
+      "to": "REQ-09-2",
+      "properties": {}
     },
     {
-      "type": "HAS_REVISION",
-      "from": "客户需求书E0-血压计 23.6",
-      "to": "seq:1-V1.0-赵一平-侯广伟",
-      "properties": {
-        "version": "V1.0",
-        "author": "赵一平",
-        "approver": "侯广伟",
-        "date": "2024.4.18"
-      }
+      "type": "HAS_DETAIL",
+      "from": "REQ-09-1",
+      "to": "REQ-09-3",
+      "properties": {}
     },
     {
-      "type": "SIGNED",
-      "from": "赵一平",
-      "to": "seq:1-V1.0-赵一平-丛明",
-      "properties": {
-        "role": "起草人"
-      }
+      "type": "HAS_DETAIL",
+      "from": "REQ-09-1",
+      "to": "REQ-09-4",
+      "properties": {}
     },
     {
-      "type": "SIGNED",
-      "from": "丛明",
-      "to": "seq:1-V1.0-赵一平-丛明",
-      "properties": {
-        "role": "审批人"
-      }
+      "type": "HAS_DETAIL",
+      "from": "REQ-09-1",
+      "to": "REQ-09-5",
+      "properties": {}
     },
     {
-      "type": "SIGNED",
-      "from": "赵一平",
-      "to": "seq:1-V1.0-赵一平-侯广伟",
-      "properties": {
-        "role": "起草人"
-      }
+      "type": "HAS_DETAIL",
+      "from": "REQ-10-1",
+      "to": "REQ-10-2",
+      "properties": {}
     },
     {
-      "type": "SIGNED",
-      "from": "侯广伟",
-      "to": "seq:1-V1.0-赵一平-侯广伟",
-      "properties": {
-        "role": "审批人"
-      }
+      "type": "HAS_DETAIL",
+      "from": "REQ-10-1",
+      "to": "REQ-10-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-10-1",
+      "to": "REQ-10-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-03",
+      "to": "PERF-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-04",
+      "to": "PERF-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-04",
+      "to": "PERF-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-07",
+      "to": "PERF-08",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-07",
+      "to": "PERF-09",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "错误种类显示",
+      "to": "behavioral_spec:错误分类显示要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低电压双阶段检出",
+      "to": "behavioral_spec:低电压检出采用双阶段方式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-10",
+      "to": "constraint_statement:产品寿命要求为五年或10000次",
+      "properties": {}
     },
     {
       "type": "CONSTRAINED_BY",
@@ -897,9 +933,7 @@
       "type": "CONSTRAINED_BY",
       "from": "REQ-10-2",
       "to": "加州65提案",
-      "properties": {
-        "region": "美国加州"
-      }
+      "properties": {}
     },
     {
       "type": "CONSTRAINED_BY",
@@ -918,284 +952,105 @@
       }
     },
     {
-      "type": "COVERS",
-      "from": "REQ-07",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "使用方式-手持式"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-01",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "温度显示范围"
-      }
-    },
-    {
-      "type": "COVERS",
+      "type": "CONSTRAINED_BY",
       "from": "PERF-03",
-      "to": "seq:1",
+      "to": "PERF-04",
       "properties": {
-        "aspect": "测量误差"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "人体体温检测",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "人体体温检测"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "红外非接触式测量",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "红外测温方式"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "额面测量",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "额头温度测量"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "客户需求书E0-血压计 23.6",
-      "to": "scope_limitation:功能描述",
-      "properties": {
-        "fragment_type": "scope_limitation",
-        "content": "功能描述见附件1：《客户需求书－功能规格部分》V1.0"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "客户需求书E0-血压计 23.6",
-      "to": "scope_limitation:产品寿命",
-      "properties": {
-        "fragment_type": "scope_limitation",
-        "content": "产品寿命见附件3：《客户需求书－性能规格部分》V1.0"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "客户需求书E0-血压计 23.6",
-      "to": "scope_limitation:组件描述",
-      "properties": {
-        "fragment_type": "scope_limitation",
-        "content": "组件描述详见附件2：《客户需求书－组件规格部分》V1.0"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "客户需求书E0-血压计 23.6",
-      "to": "constraint_statement:商标专利",
-      "properties": {
-        "fragment_type": "constraint_statement",
-        "content": "商标和专利信息"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "客户需求书E0-血压计 23.6",
-      "to": "constraint_statement:注册完成方",
-      "properties": {
-        "fragment_type": "constraint_statement",
-        "content": "注册完成方说明"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "错误种类显示",
-      "to": "behavioral_spec:错误分类显示",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "content": "错误分类显示要求"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "低电压双阶段检出",
-      "to": "behavioral_spec:低电压检出",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "content": "低电压检出采用双阶段方式"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-10",
-      "to": "constraint_statement:产品寿命",
-      "properties": {
-        "fragment_type": "constraint_statement",
-        "content": "产品寿命要求为五年或10000次测量"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-03",
-      "to": "behavioral_spec:测量误差",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "content": "测量误差要求：在≥35℃且≤42℃范围内±0.2℃；其他±0.3℃"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-04",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "工作环境温度"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-05",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "工作环境相对湿度"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-06",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "工作环境大气压力"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-10",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "产品寿命"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "屏幕选择分类指示",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "屏幕分类显示"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "段码LCD显示",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "结果显示"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "蜂鸣提示",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "测量提示"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "物温检测",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "物温检测"
+        "note": "测量误差条件依赖工作环境温度范围"
       }
     },
     {
       "type": "CONSTRAINED_BY",
       "from": "PERF-03",
-      "to": "IEC60529",
+      "to": "PERF-01",
       "properties": {
-        "note": "测量精度符合医疗设备标准要求"
+        "note": "测量误差随温度显示范围分段约束：≥35℃且≤42℃时±0.2℃，其他范围±0.3℃"
       }
     },
     {
-      "type": "HAS_DETAIL",
+      "type": "CONSTRAINED_BY",
       "from": "REQ-07",
-      "to": "behavioral_spec:低电压检出",
+      "to": "REQ-14",
       "properties": {
-        "note": "手持式设备需低电压提示保障安全使用"
+        "note": "手持式设备使用方式约束防尘防水等级选择为IP22"
       }
     },
     {
-      "type": "HAS_DETAIL",
-      "from": "REQ-14",
-      "to": "scope_limitation:功能描述",
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-09-1",
+      "to": "REQ-09-5",
       "properties": {
-        "note": "防水防尘功能见功能规格部分"
+        "note": "包装重量限制受运输方式约束（海运、空运、陆运）"
       }
     },
     {
-      "type": "DERIVES_FROM",
-      "from": "REQ-14",
-      "to": "REQ-07",
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-09-2",
+      "to": "REQ-09-5",
       "properties": {
-        "note": "IP22要求来源于手持式设备的使用方式"
+        "note": "包装尺寸限制受运输方式约束"
       }
     },
     {
-      "type": "DERIVES_FROM",
-      "from": "PERF-01",
-      "to": "seq:1",
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-09-3",
+      "to": "REQ-09-5",
       "properties": {
-        "note": "温度显示范围来源于人体额头温度测量预期用途"
+        "note": "最大长度限制受运输方式约束"
       }
     },
     {
-      "type": "DERIVES_FROM",
-      "from": "PERF-03",
-      "to": "seq:1",
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-09-4",
+      "to": "REQ-09-5",
       "properties": {
-        "note": "测量误差来源于医用测量预期用途"
+        "note": "禁止金属钉受运输方式安全要求约束"
       }
     },
     {
-      "type": "DERIVES_FROM",
-      "from": "PERF-04",
-      "to": "REQ-07",
+      "type": "REVIEWS",
+      "from": "丛明",
+      "to": "客户需求书E0-血压计 23.6",
       "properties": {
-        "note": "工作环境温度要求来源于手持式设备使用场景"
+        "role": "approver",
+        "version": "V1.0",
+        "date": "2024.4.18"
       }
     },
     {
-      "type": "COVERS",
-      "from": "摄氏度显示",
-      "to": "seq:1",
+      "type": "REVIEWS",
+      "from": "侯广伟",
+      "to": "客户需求书E0-血压计 23.6",
       "properties": {
-        "aspect": "温度单位显示"
+        "role": "approver",
+        "version": "V1.0",
+        "date": "2024.4.18"
       }
     },
     {
-      "type": "COVERS",
-      "from": "华氏度显示",
-      "to": "seq:1",
+      "type": "HAS_REVISION",
+      "from": "客户需求书E0-血压计 23.6",
+      "to": "seq:1-version:V1.0-author:赵一平-approver:丛明",
       "properties": {
-        "aspect": "温度单位显示"
+        "seq": 1,
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "赵一平",
+        "approver": "丛明",
+        "date": "2024.4.18"
       }
     },
     {
-      "type": "COVERS",
-      "from": "自动关机",
-      "to": "seq:1",
+      "type": "HAS_REVISION",
+      "from": "客户需求书E0-血压计 23.6",
+      "to": "seq:1-version:V1.0-author:赵一平-approver:侯广伟",
       "properties": {
-        "aspect": "设备自动关机保护"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "LCD背光",
-      "to": "seq:1",
-      "properties": {
-        "aspect": "显示可读性"
+        "seq": 1,
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "赵一平",
+        "approver": "侯广伟",
+        "date": "2024.4.18"
       }
     }
   ],

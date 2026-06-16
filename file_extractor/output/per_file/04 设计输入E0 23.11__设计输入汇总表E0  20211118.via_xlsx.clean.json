@@ -620,228 +620,12 @@
       "properties": {}
     },
     {
-      "type": "DERIVES_FROM",
-      "from": "PERF-01",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "温度显示范围来源于体温计性能标准"
-      }
-    },
-    {
-      "type": "DERIVES_FROM",
-      "from": "PERF-02",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "显示分辨率来源于体温计性能标准"
-      }
-    },
-    {
-      "type": "DERIVES_FROM",
-      "from": "PERF-03",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "测量误差要求来源于体温计性能标准"
-      }
-    },
-    {
-      "type": "DERIVES_FROM",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "reason": "测量误差要求来源于美国体温计标准"
-      }
-    },
-    {
-      "type": "DERIVES_FROM",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2023",
-      "properties": {
-        "reason": "测量误差要求来源于美国体温计标准最新版"
-      }
-    },
-    {
-      "type": "DERIVES_FROM",
-      "from": "PERF-01",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "reason": "温度显示范围来源于美国体温计标准"
-      }
-    },
-    {
-      "type": "DERIVES_FROM",
-      "from": "PERF-02",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "reason": "显示分辨率来源于美国体温计标准"
-      }
-    },
-    {
-      "type": "DERIVES_FROM",
-      "from": "COMP-13",
-      "to": "GF-30-006 V1.0",
-      "properties": {
-        "reason": "包装执行规范来源于包装设计输入要求文件"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-03",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "constraint": "测量误差限值由标准规定"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-01",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "constraint": "温度显示范围由标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-02",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "constraint": "分辨率由标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "constraint": "测量误差限值受美国标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2023",
-      "properties": {
-        "constraint": "测量误差限值受美国最新标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-04",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "constraint": "工作环境温度由标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-05",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "constraint": "工作环境湿度由标准约束"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-03",
-      "to": "fragment_constraint_measurement_error",
-      "properties": {
-        "fragment_content": "测量误差要求：在≥35℃且≤42℃范围内，测量误差为±0.2℃；在其它温度范围内，测量误差为±0.3℃。"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L",
-      "to": "fragment_scope_regulation_list",
-      "properties": {
-        "fragment_content": "法规标准清单完整列表（超出20条限制部分）"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L",
-      "to": "fragment_constraint_regulation_full",
-      "properties": {
-        "fragment_content": "法规标准清单（完整，含超出20条部分）"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-13",
-      "to": "fragment_constraint_packaging",
-      "properties": {
-        "fragment_content": "彩包装内容物包括：红外体温计主机、说明书、纸浆盒、电池"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-01",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "温度显示范围覆盖产品预期测量用途"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-02",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "显示分辨率覆盖产品精度预期用途"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-03",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "测量误差覆盖产品测量准确性预期用途"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-04",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "工作环境温度覆盖产品使用环境预期用途"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-05",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "工作环境湿度覆盖产品使用环境预期用途"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-06",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "工作环境气压覆盖产品使用环境预期用途"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-10",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "产品寿命覆盖产品预期使用年限"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PERF-11",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "电池寿命覆盖产品持续使用预期"
-      }
-    },
-    {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
       "to": "ISO 80601-2-56:2017/Amd1:2018",
       "properties": {
-        "applicable": true,
-        "region": "国际"
+        "region": "国际",
+        "applicable": true
       }
     },
     {
@@ -849,8 +633,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "EN ISO 80601-2-56:2017+A1:2018",
       "properties": {
-        "applicable": false,
-        "region": "欧盟"
+        "region": "欧盟",
+        "applicable": false
       }
     },
     {
@@ -858,8 +642,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "EN 12470-3:2000+A1:2009",
       "properties": {
-        "applicable": false,
-        "region": "欧盟"
+        "region": "欧盟",
+        "applicable": false
       }
     },
     {
@@ -867,8 +651,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "EN 12470-5:2003",
       "properties": {
-        "applicable": false,
-        "region": "欧盟"
+        "region": "欧盟",
+        "applicable": false
       }
     },
     {
@@ -876,8 +660,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "ASTM E1965-98:2016",
       "properties": {
-        "applicable": true,
-        "region": "美国"
+        "region": "美国",
+        "applicable": true
       }
     },
     {
@@ -885,8 +669,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "ASTM E1965-98:2023",
       "properties": {
-        "applicable": true,
-        "region": "美国"
+        "region": "美国",
+        "applicable": true
       }
     },
     {
@@ -894,8 +678,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "GB/T 21416:2008",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
@@ -903,8 +687,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "GB 21417.1-2008",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
@@ -912,8 +696,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "JJG 1164-2019",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
@@ -921,8 +705,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "JJG 1162-2019",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
@@ -930,8 +714,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "MDR 2017/745",
       "properties": {
-        "applicable": false,
-        "region": "欧盟"
+        "region": "欧盟",
+        "applicable": false
       }
     },
     {
@@ -939,44 +723,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "MDD 93/42/EEC",
       "properties": {
-        "applicable": false,
-        "region": "欧盟"
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-1:2018",
-      "properties": {
-        "applicable": true,
-        "region": "国际"
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-5:2009",
-      "properties": {
-        "applicable": true,
-        "region": "国际"
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-10:2021",
-      "properties": {
-        "applicable": true,
-        "region": "国际"
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-23:2021",
-      "properties": {
-        "applicable": true,
-        "region": "国际"
+        "region": "欧盟",
+        "applicable": false
       }
     },
     {
@@ -984,8 +732,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "GB/T 16886.1-2022",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
@@ -993,8 +741,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "GB/T 16886.5-2017",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
@@ -1002,8 +750,8 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "GB/T 16886.10-2017",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
@@ -1011,166 +759,406 @@
       "from": "设计输入-法规标准清单（欧美）",
       "to": "GB/T 16886.23-2023",
       "properties": {
-        "applicable": false,
-        "region": "中国"
+        "region": "中国",
+        "applicable": false
       }
     },
     {
-      "type": "SIGNED",
-      "from": "硬件工程师（拟制）",
-      "to": "设计输入-法规标准清单（欧美）",
-      "properties": {
-        "role": "编写人",
-        "scope": "硬件部分"
-      }
-    },
-    {
-      "type": "SIGNED",
-      "from": "硬件主管（审核）",
-      "to": "设计输入-法规标准清单（欧美）",
-      "properties": {
-        "role": "审核人",
-        "scope": "硬件部分"
-      }
-    },
-    {
-      "type": "SIGNED",
-      "from": "结构工程师（拟制）",
-      "to": "设计输入-法规标准清单（欧美）",
-      "properties": {
-        "role": "编写人",
-        "scope": "结构部分"
-      }
-    },
-    {
-      "type": "SIGNED",
-      "from": "结构主管（审核）",
-      "to": "设计输入-法规标准清单（欧美）",
-      "properties": {
-        "role": "审核人",
-        "scope": "结构部分"
-      }
-    },
-    {
-      "type": "DESCRIBES_SOFTWARE",
+      "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "IEC 62304:2006+AMD1:2015",
-      "properties": {
-        "note": "文档列出软件相关标准IEC 62304"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PT9L",
       "to": "ISO 10993-1:2018",
       "properties": {
-        "category": "生物相容性",
+        "region": "国际",
         "applicable": true
       }
     },
     {
-      "type": "CONSTRAINED_BY",
-      "from": "PT9L",
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
       "to": "ISO 10993-5:2009",
       "properties": {
-        "category": "生物相容性",
+        "region": "国际",
         "applicable": true
       }
     },
     {
-      "type": "CONSTRAINED_BY",
-      "from": "PT9L",
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
       "to": "ISO 10993-10:2021",
       "properties": {
-        "category": "生物相容性",
+        "region": "国际",
         "applicable": true
       }
     },
     {
-      "type": "CONSTRAINED_BY",
-      "from": "PT9L",
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
       "to": "ISO 10993-23:2021",
       "properties": {
-        "category": "生物相容性",
+        "region": "国际",
         "applicable": true
       }
     },
     {
-      "type": "CONSTRAINED_BY",
-      "from": "PT9L",
-      "to": "ASTM E1965-98:2016",
+      "type": "HAS_DETAIL",
+      "from": "PERF-01",
+      "to": "温度显示范围",
       "properties": {
-        "category": "体温计性能",
-        "applicable": true,
-        "region": "美国"
+        "value": "32.0～42.9",
+        "unit": "℃"
       }
     },
     {
-      "type": "CONSTRAINED_BY",
-      "from": "PT9L",
-      "to": "ASTM E1965-98:2023",
+      "type": "HAS_DETAIL",
+      "from": "PERF-02",
+      "to": "显示分辨率",
       "properties": {
-        "category": "体温计性能",
-        "applicable": true,
-        "region": "美国"
+        "value": "0.1",
+        "unit": "℃"
       }
     },
     {
-      "type": "CONSTRAINED_BY",
-      "from": "PT9L",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "type": "HAS_DETAIL",
+      "from": "PERF-04",
+      "to": "工作环境温度",
       "properties": {
-        "category": "体温计性能",
-        "applicable": true,
-        "region": "国际"
+        "value": "10～40",
+        "unit": "℃",
+        "condition": "工作环境"
       }
     },
     {
-      "type": "DERIVES_FROM",
+      "type": "HAS_DETAIL",
+      "from": "PERF-05",
+      "to": "工作环境相对湿度",
+      "properties": {
+        "value": "15～95%RH，不结露",
+        "condition": "工作环境"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-06",
+      "to": "工作环境大气压力",
+      "properties": {
+        "value": "70～106",
+        "unit": "kPa",
+        "condition": "工作环境"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
       "from": "PERF-07",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "to": "存储环境温度",
       "properties": {
-        "reason": "存储环境温度来源于体温计标准"
+        "value": "-20.0～55.0",
+        "unit": "℃",
+        "condition": "存储环境"
       }
     },
     {
-      "type": "DERIVES_FROM",
+      "type": "HAS_DETAIL",
       "from": "PERF-08",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "to": "存储环境相对湿度",
       "properties": {
-        "reason": "存储环境湿度来源于体温计标准"
+        "value": "15～95%RH，不结露",
+        "condition": "存储环境"
       }
     },
     {
-      "type": "DERIVES_FROM",
+      "type": "HAS_DETAIL",
       "from": "PERF-09",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "to": "存储环境大气压力",
       "properties": {
-        "reason": "存储环境气压来源于体温计标准"
+        "value": "70～106",
+        "unit": "kPa",
+        "condition": "存储环境"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-10",
+      "to": "产品寿命",
+      "properties": {
+        "value": "五年或10000次"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PERF-11",
+      "to": "电池寿命（测量使用次数）",
+      "properties": {
+        "value": "不低于1000次"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-01",
+      "to": "上盖表面处理",
+      "properties": {
+        "value": "细火花纹"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-02",
+      "to": "下盖表面处理",
+      "properties": {
+        "value": "细火花纹"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-03",
+      "to": "电池盖表面处理",
+      "properties": {
+        "value": "细火花纹"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-04",
+      "to": "上盖颜色",
+      "properties": {
+        "value": "白色"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-05",
+      "to": "下盖颜色",
+      "properties": {
+        "value": "白色"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-06",
+      "to": "电池盖颜色",
+      "properties": {
+        "value": "白色"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-07",
+      "to": "按键形式",
+      "properties": {
+        "value": "注塑按键"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-08",
+      "to": "按键表面处理",
+      "properties": {
+        "value": "细火花纹"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-09",
+      "to": "透镜形式",
+      "properties": {
+        "value": "模切透镜"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-10",
+      "to": "透镜表面处理",
+      "properties": {
+        "value": "不适用"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-11",
+      "to": "整机外形尺寸",
+      "properties": {
+        "value": "130.8x34.8x38",
+        "unit": "mm",
+        "tolerance": "±0.5mm"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-12",
+      "to": "整机重量",
+      "properties": {
+        "value": "约80",
+        "unit": "g"
       }
     },
     {
       "type": "HAS_DETAIL",
       "from": "COMP-13",
+      "to": "包装执行规范",
+      "properties": {
+        "value": "按照《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》执行",
+        "source_req_id": "GF-30-006 V1.0"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COMP-14",
+      "to": "整箱重量",
+      "properties": {
+        "value": "7.1",
+        "unit": "kg",
+        "tolerance": "±5%"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-03",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {
+        "reason": "测量误差要求±0.2℃/±0.3℃源自体温计性能标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-01",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {
+        "reason": "温度显示范围32.0~42.9℃受体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-02",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {
+        "reason": "显示分辨率0.1℃受体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-03",
+      "to": "ASTM E1965-98:2016",
+      "properties": {
+        "reason": "测量误差要求受美国ASTM体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-03",
+      "to": "ASTM E1965-98:2023",
+      "properties": {
+        "reason": "测量误差要求受美国ASTM体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-01",
+      "to": "ASTM E1965-98:2016",
+      "properties": {
+        "reason": "温度显示范围受美国ASTM体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-01",
+      "to": "ASTM E1965-98:2023",
+      "properties": {
+        "reason": "温度显示范围受美国ASTM体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-02",
+      "to": "ASTM E1965-98:2016",
+      "properties": {
+        "reason": "显示分辨率受美国ASTM体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-02",
+      "to": "ASTM E1965-98:2023",
+      "properties": {
+        "reason": "显示分辨率受美国ASTM体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-04",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {
+        "reason": "工作环境温度范围受体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-05",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {
+        "reason": "工作环境相对湿度受体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PERF-06",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {
+        "reason": "工作环境大气压力受体温计标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "COMP-13",
       "to": "GF-30-006 V1.0",
       "properties": {
-        "relation": "包装规范设计输入引用文件"
+        "reason": "包装执行规范直接引用该文件作为约束"
       }
     },
     {
-      "type": "PRODUCES",
-      "from": "30000078",
-      "to": "设计输入-法规标准清单（欧美）",
+      "type": "DERIVES_FROM",
+      "from": "PERF-03",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
       "properties": {
-        "note": "项目30000078产出该设计输入文件"
+        "reason": "测量误差±0.2℃/±0.3℃的具体数值从体温计国际标准中派生"
       }
     },
     {
-      "type": "COVERS",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "PT9L",
+      "type": "DERIVES_FROM",
+      "from": "PERF-01",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
       "properties": {
-        "aspect": "设计输入文件覆盖PT9L红外体温计欧美法规标准需求"
+        "reason": "温度显示范围规格从体温计国际标准派生"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PERF-02",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {
+        "reason": "显示分辨率要求从体温计国际标准派生"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PERF-03",
+      "to": "ASTM E1965-98:2016",
+      "properties": {
+        "reason": "测量误差规格从美国ASTM体温计标准派生"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PERF-03",
+      "to": "ASTM E1965-98:2023",
+      "properties": {
+        "reason": "测量误差规格从美国ASTM体温计标准派生"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "COMP-13",
+      "to": "GF-30-006 V1.0",
+      "properties": {
+        "reason": "包装规格要求从内部包装设计输入规范文件派生"
       }
     }
   ],

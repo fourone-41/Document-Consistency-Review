@@ -125,6 +125,76 @@
       "properties": {}
     },
     {
+      "type": "LISTS_FILE",
+      "from": "PT9L-PB0M1 V1.0",
+      "to": "fragment_0",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-PB0M1 V1.0",
+      "to": "fragment_1",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-PB0M1 V1.0",
+      "to": "fragment_2",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-PB0M1 V1.0",
+      "to": "fragment_3",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-PB0M1 V1.0",
+      "to": "fragment_4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "fragment_0",
+      "properties": {
+        "detail_type": "包装BOM物料清单"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "fragment_1",
+      "properties": {
+        "detail_type": "BOM表格结构说明"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "fragment_2",
+      "properties": {
+        "detail_type": "BOM模板结构说明"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "fragment_3",
+      "properties": {
+        "detail_type": "BOM审签流程说明"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "fragment_4",
+      "properties": {
+        "detail_type": "修订记录约束说明"
+      }
+    },
+    {
       "type": "SIGNED",
       "from": "潘新凝",
       "to": "PT9L-PB0M1 V1.0",
@@ -133,75 +203,12 @@
       }
     },
     {
-      "type": "HAS_DETAIL",
-      "from": "PT9L-PB0M1 V1.0",
-      "to": "PT9L包装BOM（美版）组件清单，章节：包装类，版本V1.0",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "topic": "包装BOM物料清单"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L-PB0M1 V1.0",
-      "to": "包装BOM表格结构包含以下字段：序号、品名、物料编码、材质、规格、型号、封装形式、配比、设计名称（简要说明）、符合ROHS、重要度等级、替代型号、备注。文档设有章节、版本字段，及拟制（专业工程师）、审核（专业主管）、审核（项目负责人）、批准（产品线主管）的签署栏位。修订摘要区域包含修订内容、修订日期、备注字段，共有10行修订记录空间。当前文档（Sheet1第5、6、7页）所有数据行均为空，无实际物料数据填写。",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "topic": "表格结构与签署栏位"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L-PB0M1 V1.0",
-      "to": "包装BOM表格模板结构包含以下字段：序号、品名、物料编码、材质、规格、型号、封装形式、配比、设计名称（简要说明）、符合ROHS、重要度等级、替代型号、备注。审签流程包括：拟制（专业工程师）、审核（专业主管）、审核（项目负责人）、批准（产品线主管）。修订摘要区域包含修订内容、修订日期、备注字段。文档片段中Sheet1(4)、Sheet1(3)、Sheet1(2)均为相同结构的空白模板页，无实际填写内容。",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "topic": "模板结构与审签流程"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L-PB0M1 V1.0",
-      "to": "包装BOM表格结构包含以下字段：序号、品名、物料编码、材质、规格、型号、封装形式、配比、设计名称（简要说明）、符合ROHS、重要度等级、替代型号、备注。文档需经拟制（专业工程师）、审核（专业主管）、审核（项目负责人）、批准（产品线主管）四级签审，并记录章节、版本信息。",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "topic": "四级签审流程"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L-PB0M1 V1.0",
-      "to": "BOM表包含修订摘要区域，用于记录修订内容及修订日期，共设10行修订记录行，当前所有修订内容均为空，表明该文档尚未填写实质性物料信息及修订历史。",
-      "properties": {
-        "fragment_type": "constraint_statement",
-        "topic": "修订记录状态"
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "PT9L-PB0M1 V1.0",
-      "to": "PT9L",
-      "properties": {
-        "entry_type": "product_bom",
-        "name": "PT9L包装BOM（美版）"
-      }
-    },
-    {
       "type": "HAS_REVISION",
       "from": "PT9L-PB0M1 V1.0",
-      "to": "修订摘要区域（10行修订记录，当前为空）",
+      "to": "PT9L-PB0M1 V1.0",
       "properties": {
-        "version": "V1.0",
-        "status": "空白未填写"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "PT9L-PB0M1 V1.0",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "包装材料BOM清单",
-        "market": "美版"
+        "revision_rows": 10,
+        "current_status": "空，无实际修订记录"
       }
     }
   ],

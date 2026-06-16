@@ -304,441 +304,367 @@
       "properties": {}
     },
     {
-      "type": "HAS_MEASUREMENT",
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "scope_limitation_fragment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "behavioral_spec_fragment_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "19",
+      "to": "behavioral_spec_fragment_2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
       "from": "11",
-      "to": {
-        "machine_no": "1号",
-        "test_point": "静态电流",
-        "reading": 8.1,
-        "unit": "uA"
-      },
+      "to": "static_current_measurement_1",
       "properties": {}
     },
     {
-      "type": "HAS_MEASUREMENT",
+      "type": "HAS_DETAIL",
       "from": "12",
-      "to": {
-        "machine_no": "1号",
-        "test_point": "工作电流",
-        "reading": 12.7,
-        "unit": "mA"
-      },
+      "to": "working_current_measurement_1",
       "properties": {}
     },
     {
-      "type": "HAS_MEASUREMENT",
+      "type": "HAS_DETAIL",
       "from": "7",
-      "to": {
-        "machine_no": "1号",
-        "test_point": "显示分辨率",
-        "reading": 0.1,
-        "unit": "℃"
-      },
+      "to": "display_resolution_measurement_1",
       "properties": {}
     },
     {
-      "type": "HAS_MEASUREMENT",
+      "type": "HAS_DETAIL",
       "from": "7",
-      "to": {
-        "machine_no": "2号",
-        "test_point": "显示分辨率",
-        "reading": 0.1,
-        "unit": "℃"
-      },
+      "to": "display_resolution_measurement_2",
       "properties": {}
     },
     {
       "type": "REPORTED_IN",
       "from": "1",
       "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "2",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "3",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "6",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "7",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "8",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "9",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "10",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "11",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "12",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "13",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "14",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "15",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "16",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "17",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "18",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "19",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "20",
+      "to": "PT9L-XNTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "11",
+      "to": "静态电流_1号",
+      "properties": {
+        "reading": 8.1,
+        "unit": "uA",
+        "machine_no": "1号",
+        "condition": "DC3.0V，睡眠状态"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "12",
+      "to": "工作电流_1号",
+      "properties": {
+        "reading": 12.7,
+        "unit": "mA",
+        "machine_no": "1号",
+        "condition": "DC3.0V，按测量键测量时LCD背光点亮"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "7",
+      "to": "显示分辨率_1号",
+      "properties": {
+        "reading": 0.1,
+        "unit": "℃",
+        "machine_no": "1号"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "7",
+      "to": "显示分辨率_2号",
+      "properties": {
+        "reading": 0.1,
+        "unit": "℃",
+        "machine_no": "2号"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "1",
       "properties": {
         "item": "上电自检功能"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "2",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "2",
       "properties": {
         "item": "提示音开关"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "3",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "3",
       "properties": {
         "item": "测量单位切换"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "4",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "4",
       "properties": {
         "item": "测量模式切换"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "5",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "5",
       "properties": {
         "item": "自动关机"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "6",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "6",
       "properties": {
         "item": "温度显示范围及超温提示功能"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "7",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "7",
       "properties": {
         "item": "显示分辨率"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "8",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "8",
       "properties": {
         "item": "常温精度测试"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "9",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "9",
       "properties": {
         "item": "低电压提示功能"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "10",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "10",
       "properties": {
         "item": "背光灯"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "11",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "11",
       "properties": {
         "item": "静态电流"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "12",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "12",
       "properties": {
         "item": "工作电流"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "13",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "13",
       "properties": {
         "item": "裸机跌落测试"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "14",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "14",
       "properties": {
         "item": "带包装振动"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "15",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "15",
       "properties": {
         "item": "低温工作试验"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "16",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "16",
       "properties": {
         "item": "高温工作试验"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "17",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "17",
       "properties": {
         "item": "低温存储试验"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "18",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "18",
       "properties": {
         "item": "高温存储试验"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "19",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "19",
       "properties": {
         "item": "产品寿命"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "20",
-      "to": "PT9L-XNTB01 V1.0",
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "20",
       "properties": {
         "item": "电池寿命"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L-XNTB01 V1.0",
-      "to": "scope_limitation",
-      "properties": {
-        "fragment_type": "scope_limitation"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "8",
-      "to": "behavioral_spec_常温精度测试",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "topic": "常温精度测试"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "19",
-      "to": "behavioral_spec_产品寿命",
-      "properties": {
-        "fragment_type": "behavioral_spec",
-        "topic": "产品寿命"
-      }
-    },
-    {
-      "type": "DEPENDS_ON",
-      "from": "15",
-      "to": "8",
-      "properties": {
-        "note": "低温工作试验后按照第8项进行精度测试"
-      }
-    },
-    {
-      "type": "DEPENDS_ON",
-      "from": "16",
-      "to": "8",
-      "properties": {
-        "note": "高温工作试验后按照第8项进行精度测试"
-      }
-    },
-    {
-      "type": "DEPENDS_ON",
-      "from": "17",
-      "to": "8",
-      "properties": {
-        "note": "低温存储试验后按照第8项进行精度测试"
-      }
-    },
-    {
-      "type": "DEPENDS_ON",
-      "from": "18",
-      "to": "8",
-      "properties": {
-        "note": "高温存储试验后按照第8项进行精度测试"
-      }
-    },
-    {
-      "type": "DEPENDS_ON",
-      "from": "19",
-      "to": "8",
-      "properties": {
-        "note": "产品寿命测试前后按照第8项进行精度测试"
-      }
-    },
-    {
-      "type": "DEPENDS_ON",
-      "from": "14",
-      "to": "8",
-      "properties": {
-        "note": "带包装振动后误差须在第8项允许范围内"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "1",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "上电自检功能"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "2",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "提示音开关"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "3",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "测量单位切换"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "4",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "测量模式切换"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "5",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "自动关机"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "6",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "温度显示范围及超温提示"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "7",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "显示分辨率"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "8",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "常温精度"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "9",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "低电压提示"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "10",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "背光灯颜色指示"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "11",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "静态功耗"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "12",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "工作功耗"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "13",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "机械可靠性-跌落"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "14",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "包装振动可靠性"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "15",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "低温工作环境适应性"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "16",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "高温工作环境适应性"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "17",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "低温存储环境适应性"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "18",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "高温存储环境适应性"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "19",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "整机使用寿命"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "20",
-      "to": "PT9L",
-      "properties": {
-        "aspect": "电池续航寿命"
       }
     }
   ],

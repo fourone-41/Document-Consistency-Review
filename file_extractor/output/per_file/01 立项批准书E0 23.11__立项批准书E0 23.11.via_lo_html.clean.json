@@ -126,143 +126,28 @@
       "properties": {}
     },
     {
-      "type": "HAS_DETAIL",
-      "from": "QR-7.3-01",
-      "to": "scope_limitation",
-      "properties": {
-        "fragment_type": "scope_limitation"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "QR-7.3-01",
-      "to": "constraint_statement",
-      "properties": {
-        "fragment_type": "constraint_statement"
-      }
+      "type": "COVERS",
+      "from": "scope_limitation_fragment_1",
+      "to": "intended_use_seq_1",
+      "properties": {}
     },
     {
       "type": "COVERS",
-      "from": "QR-7.3-01",
-      "to": "intended_use_item_1",
-      "properties": {
-        "content": "测量内容：人体温度"
-      }
+      "from": "scope_limitation_fragment_1",
+      "to": "intended_use_seq_2",
+      "properties": {}
     },
     {
       "type": "COVERS",
-      "from": "QR-7.3-01",
-      "to": "intended_use_item_2",
-      "properties": {
-        "content": "测量方法：非接触式"
-      }
+      "from": "scope_limitation_fragment_1",
+      "to": "intended_use_seq_3",
+      "properties": {}
     },
     {
       "type": "COVERS",
-      "from": "QR-7.3-01",
-      "to": "intended_use_item_3",
-      "properties": {
-        "content": "使用环境和人群：家中的成年和儿童"
-      }
-    },
-    {
-      "type": "COVERS",
-      "from": "QR-7.3-01",
-      "to": "intended_use_item_4",
-      "properties": {
-        "content": "测量部位：额头3cm内"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "intended_use_item_1",
-      "to": "scope_limitation",
-      "properties": {
-        "relation": "预期用途描述"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "intended_use_item_2",
-      "to": "scope_limitation",
-      "properties": {
-        "relation": "预期用途描述"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "intended_use_item_3",
-      "to": "scope_limitation",
-      "properties": {
-        "relation": "预期用途描述"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "intended_use_item_4",
-      "to": "scope_limitation",
-      "properties": {
-        "relation": "预期用途描述"
-      }
-    },
-    {
-      "type": "SIGNED",
-      "from": "编制（项目负责人）",
-      "to": "QR-7.3-01",
-      "properties": {
-        "role": "编制人",
-        "signed": false
-      }
-    },
-    {
-      "type": "SIGNED",
-      "from": "审核（技术负责人）",
-      "to": "QR-7.3-01",
-      "properties": {
-        "role": "审核人",
-        "signed": false
-      }
-    },
-    {
-      "type": "SIGNED",
-      "from": "批准人",
-      "to": "QR-7.3-01",
-      "properties": {
-        "role": "批准人",
-        "signed": false
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "30000078",
-      "to": "constraint_statement",
-      "properties": {
-        "relation": "项目约束说明"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L",
-      "to": "scope_limitation",
-      "properties": {
-        "relation": "产品预期用途描述"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L",
-      "to": "constraint_statement",
-      "properties": {
-        "relation": "产品项目类型约束"
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "QR-7.3-01",
-      "to": "PT9L-KHXQ01 V1.0",
-      "properties": {
-        "id_type": "附件文件编号"
-      }
+      "from": "scope_limitation_fragment_1",
+      "to": "intended_use_seq_4",
+      "properties": {}
     }
   ],
   "_claims": []
