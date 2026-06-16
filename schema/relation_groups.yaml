@@ -1,0 +1,8 @@
+# schema/relation_groups.yaml
+# Step2 关系类型层级分组（用于 HCRE 思路：先粗分组再细分类型）
+relation_groups:
+  structural:    [LISTS_FILE, DESCRIBES_SOFTWARE, HAS_DETAIL]
+  traceability:  [DERIVES_FROM, CONSTRAINED_BY, IMPLEMENTED_IN]
+  verification:  [VERIFIED_BY, REPORTED_IN, COVERS, HAS_MEASUREMENT]
+  risk_control:  [MITIGATED_BY, DEPENDS_ON, SCHEDULES, RESPONSIBLE_FOR]
+  admin:         [SIGNED, REVIEWS, HAS_REVIEW_ITEM, HAS_REVISION, PRODUCES]
