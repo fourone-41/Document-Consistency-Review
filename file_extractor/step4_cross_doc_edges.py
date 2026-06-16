@@ -538,6 +538,9 @@ def _llm_match_batch(src_batch, tgt_batch, source_items, target_items, guide, sr
     """Single LLM call to match a batch of source vs target items."""
     clauses = load_regulatory_clauses()
     clause_summary = clauses.get(guide['standard'], {}).get('summary', '').strip()
+    if not clause_summary:
+        print(f"    [WARN] No clause summary found for standard '{guide['standard']}' "
+              f"(guide: {guide['name']}) — proceeding without clause injection", flush=True)
     clause_block = f"\n法规条款要点：{clause_summary}\n" if clause_summary else ""
 
     prompt = f"""你是医疗器械文档关系分析专家。
