@@ -48,6 +48,80 @@ JSON数组：
 5. 严格输出 JSON，不要加 markdown 标记
 """
 
+ALL_RELATION_TYPES = [
+    "DERIVES_FROM", "CONSTRAINED_BY", "MITIGATED_BY", "VERIFIED_BY",
+    "REPORTED_IN", "COVERS", "HAS_MEASUREMENT", "DEPENDS_ON", "SCHEDULES",
+    "HAS_REVISION", "HAS_REVIEW_ITEM", "REVIEWS", "LISTS_FILE",
+    "DESCRIBES_SOFTWARE", "SIGNED", "IMPLEMENTED_IN", "HAS_DETAIL",
+    "RESPONSIBLE_FOR", "PRODUCES",
+]
+
+RELATION_TYPE_DETECTION_PROMPT = """你是医疗器械DHF文档一致性审查的关系抽取专家。
+
+以下是从一份文档中抽取的节点信息摘要。请判断这份文档中，下面列出的19种关系类型，
+哪些有可能存在（哪怕只有一处依据也算，不确定的也列出来，我们宁可多判断）。
+
+===== 19种关系类型 =====
+1. DERIVES_FROM: DesignInput → Requirement（设计输入来源于需求）
+2. CONSTRAINED_BY: Requirement → Regulation（需求受法规约束）
+3. MITIGATED_BY: Risk → RiskControl（风险被措施控制）
+4. VERIFIED_BY: RiskControl/DesignInput → Test（被测试验证）
+5. REPORTED_IN: Test → TestReport（测试结果记录在报告中）
+6. COVERS: DesignInput/Requirement/Function → IntendedUseItem（覆盖预期用途）
+7. HAS_MEASUREMENT: Test → TestMeasurement（测试包含实测数据）
+8. DEPENDS_ON: PlanTask → PlanTask（任务前置依赖）
+9. SCHEDULES: Document → PlanTask（计划文件包含任务）
+10. HAS_REVISION: Document → RevisionRecord（文件的版本历史）
+11. HAS_REVIEW_ITEM: Document/ReviewRecord → ReviewItem（评审包含检查项）
+12. REVIEWS: ReviewItem → Requirement/DesignInput/Document（检查项评审对象）
+13. LISTS_FILE: Document → DocIndexEntry（清单包含文件条目）
+14. DESCRIBES_SOFTWARE: Document → SoftwareItem/SoftwareConfigItem
+15. SIGNED: Person → Document/ReviewRecord（人员签署文件）
+16. IMPLEMENTED_IN: Function → Document（功能在文件中实现）
+17. HAS_DETAIL: 任意节点 → SemanticFragment（结构化节点的补充文本）
+18. RESPONSIBLE_FOR: Person → PlanTask（人员负责该任务）
+19. PRODUCES: PlanTask → Document/Identifier（任务产出文件）
+
+===== 输出格式 =====
+只输出存在可能性的关系类型名称（必须是上面19个名称之一），一行一个，不要解释、不要编号。
+如果一个都不存在，输出"无"。
+"""
+
+
+def detect_relation_types_llm(data: dict) -> list[str]:
+    """Step2a: 判断文档中可能存在哪些关系类型（AutoRE 任务1，低成本过滤）。"""
+    node_summary = {}
+    for key, val in data.items():
+        if key.startswith("_"):
+            continue
+        if isinstance(val, list) and val:
+            node_summary[key] = val[:10]
+        elif isinstance(val, dict):
+            node_summary[key] = val
+
+    if not node_summary:
+        return []
+
+    user_msg = json.dumps(node_summary, ensure_ascii=False, indent=1)
+    if len(user_msg) > 8000:
+        user_msg = user_msg[:8000] + "\n...(truncated)"
+
+    try:
+        response = client.chat.completions.create(
+            model=LLM_MODEL,
+            max_tokens=300,
+            messages=[
+                {"role": "system", "content": RELATION_TYPE_DETECTION_PROMPT},
+                {"role": "user", "content": user_msg},
+            ],
+        )
+        content = response.choices[0].message.content or "无"
+        lines = [l.strip() for l in content.strip().split("\n") if l.strip()]
+        return [t for t in lines if t in ALL_RELATION_TYPES]
+    except Exception as e:
+        print(f"    detect_relation_types_llm ERROR: {e}", flush=True)
+        return []
+
 
 def try_parse_json(text: str) -> list | dict:
     text = text.strip()
