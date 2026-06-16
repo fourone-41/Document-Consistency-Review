@@ -45,10 +45,16 @@ def test_find_missing_next_hop_finds_node_without_second_hop():
 
 def test_find_missing_next_hop_ignores_low_frequency_patterns():
     edges = [
+        # 一条完整的 A->B->C 链，建立 (SCHEDULES, DEPENDS_ON) 模式，但只出现 1 次
         {"type": "SCHEDULES", "from_type": "documents", "to_type": "plan_tasks", "from_id": "D1", "to_id": "P1"},
         {"type": "DEPENDS_ON", "from_type": "plan_tasks", "to_type": "plan_tasks", "from_id": "P1", "to_id": "P2"},
+        # P3 也完成了第一跳（同样的 SCHEDULES），但缺第二跳——
+        # 如果频次过滤失效，P3 会被错误地标记为候选；
+        # 但该模式频次只有 1（不算 P3 这条，因为 P3 还没有完成第二跳，不计入模式频次），
+        # 低于 min_frequency=3，应该被过滤，不应该把 P3 标出来。
+        {"type": "SCHEDULES", "from_type": "documents", "to_type": "plan_tasks", "from_id": "D2", "to_id": "P3"},
     ]
-    nodes = {"plan_tasks": [{"name": "P1"}, {"name": "P2"}]}
+    nodes = {"plan_tasks": [{"name": "P1"}, {"name": "P2"}, {"name": "P3"}]}
 
     missing = gpp.find_missing_next_hop(nodes, edges, min_frequency=3)
 

@@ -6,16 +6,6 @@
 """
 from collections import defaultdict
 
-NODE_ID_FIELD = {
-    "requirements": "req_id",
-    "design_inputs": "di_id",
-    "risks": "risk_id",
-    "risk_controls": "control_id",
-    "tests": "test_id",
-    "plan_tasks": "name",
-    "documents": "title",
-}
-
 
 def count_two_hop_patterns(edges: list[dict]) -> dict:
     """统计二跳边类型序列出现频次：(edge1_type, edge2_type) -> count。
