@@ -12,12 +12,6 @@ from itertools import combinations
 PRODUCT_PATTERN = re.compile(r'\b[A-Z]{2,}[0-9]+[A-Z0-9]*\b')
 # 标准编号：ISO/IEC/ASTM 等 + 数字
 STANDARD_PATTERN = re.compile(r'\b(?:ISO|IEC|ASTM|GB|YY)\s?[\d\-\.]+(?:[:\-]\d+)?\b')
-# 连续中文字符片段（中文不分词，用于切出候选实体短语的候选窗口）
-HAN_RUN_PATTERN = re.compile(r'[一-鿿]+')
-
-# 中文实体短语的 n-gram 窗口长度范围（如"红外传感器"长度为5）
-CN_NGRAM_MIN = 4
-CN_NGRAM_MAX = 6
 
 NODE_TEXT_FIELDS = {
     "risks": ["hazard", "hazardous_situation"],
@@ -30,22 +24,12 @@ NODE_TEXT_FIELDS = {
 
 
 def extract_entity_mentions(text: str) -> set:
-    """从文本中提取候选桥接实体（产品型号、标准编号、中文实体短语）。"""
+    """从文本中提取候选桥接实体（产品型号、标准编号）。"""
     if not text:
         return set()
     mentions = set()
     mentions.update(PRODUCT_PATTERN.findall(text))
     mentions.update(m.strip() for m in STANDARD_PATTERN.findall(text))
-
-    # 中文没有空格分词，用连续汉字片段上的滑动窗口 n-gram 作为候选实体短语；
-    # 是否真正构成"桥接实体"由 find_bridge_entities 中要求至少两个不同来源
-    # 节点共同命中来过滤，因此这里允许召回较泛的候选片段。
-    for run in HAN_RUN_PATTERN.findall(text):
-        max_n = min(CN_NGRAM_MAX, len(run))
-        for n in range(CN_NGRAM_MIN, max_n + 1):
-            for i in range(len(run) - n + 1):
-                mentions.add(run[i:i + n])
-
     return mentions
 
 

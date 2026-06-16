@@ -24,10 +24,10 @@ def test_extract_entity_mentions_empty_text_returns_empty_set():
 def test_find_bridge_entities_pairs_nodes_sharing_entity_across_sources():
     nodes = {
         "risks": [
-            {"risk_id": "R-01", "hazard": "红外传感器漂移导致测量误差", "_source": "doc_a.md"},
+            {"risk_id": "R-01", "hazard": "PT9L 红外传感器漂移导致测量误差", "_source": "doc_a.md"},
         ],
         "tests": [
-            {"test_id": "T-12", "item": "红外传感器在高温环境下的线性度验证", "_source": "doc_b.md"},
+            {"test_id": "T-12", "item": "PT9L 在高温环境下的线性度验证", "_source": "doc_b.md"},
             {"test_id": "T-15", "item": "电池续航测试", "_source": "doc_b.md"},
         ],
     }
