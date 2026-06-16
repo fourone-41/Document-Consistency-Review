@@ -52,15 +52,15 @@
 
 ### 3.1 关系类型层级分组（新增配置）
 
-新增 `schema/relation_groups.yaml`，把现有 19 种边类型分成 5 组：
+新增 `schema/relation_groups.yaml`，把 [step2_extract_edges.py 现有的 19 种边类型](../../../file_extractor/step2_extract_edges.py#L19-L37) 分成 5 组（按实际代码中的类型名，每种类型归入唯一一组）：
 
 ```yaml
 relation_groups:
-  structural:    [PART_OF, STATED_IN, INDEXES, LISTS_FILE, HAS_DETAIL]
-  traceability:  [DERIVES_FROM, IMPLEMENTS, REFERENCES, CONSTRAINED_BY]
-  verification:  [VERIFIED_BY, COVERS, REPORTED_IN, HAS_MEASUREMENT]
-  risk_control:  [MITIGATED_BY, RESPONSIBLE_FOR, DEPENDS_ON, SCHEDULES]
-  admin:         [SIGNED, REVIEWS, HAS_REVIEW_ITEM, HAS_REVISION, PRODUCES, DESCRIBES_SOFTWARE]
+  structural:    [LISTS_FILE, DESCRIBES_SOFTWARE, HAS_DETAIL]
+  traceability:  [DERIVES_FROM, CONSTRAINED_BY, IMPLEMENTED_IN]
+  verification:  [VERIFIED_BY, REPORTED_IN, COVERS, HAS_MEASUREMENT]
+  risk_control:  [MITIGATED_BY, DEPENDS_ON, SCHEDULES, RESPONSIBLE_FOR]
+  admin:         [SIGNED, REVIEWS, HAS_REVIEW_ITEM, HAS_REVISION, PRODUCES]
 ```
 
 ### 3.2 Step2a — 关系类型检测
