@@ -171,3 +171,23 @@ def test_discover_open_candidates_merges_and_dedupes_all_layers(
     # 验证函数应收到去重后的候选：(a,b) 桥接+向量召回重复算1对，(a,c) 图模式单独1对，共2对，不是3对
     verify_call_candidates = mock_verify.call_args.args[0]
     assert len(verify_call_candidates) == 2
+
+
+@patch("step4_cross_doc_edges.verify_candidates_open_llm")
+@patch("step4_cross_doc_edges.gpp.find_missing_next_hop")
+@patch("step4_cross_doc_edges.er.find_similar_pairs")
+@patch("step4_cross_doc_edges.be.find_bridge_entities")
+def test_discover_open_candidates_propagates_verification_failure(
+    mock_bridge, mock_embedding, mock_graph_pattern, mock_verify
+):
+    # 三层候选生成都正常返回，但最后的开放式验证调用本身抛异常 ——
+    # 这种异常发生在 discover_open_candidates 内部唯一没有 try/except 包裹的地方，
+    # 应该原样向外传播，由调用方（main()）的 try/except 兜底，而不是在这里被吞掉。
+    mock_bridge.return_value = []
+    mock_embedding.return_value = []
+    mock_graph_pattern.return_value = []
+    mock_verify.side_effect = RuntimeError("LLM verification blew up")
+
+    import pytest
+    with pytest.raises(RuntimeError, match="LLM verification blew up"):
+        s4.discover_open_candidates({}, [])

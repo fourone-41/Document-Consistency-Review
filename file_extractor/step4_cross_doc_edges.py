@@ -854,8 +854,12 @@ def main():
         }
         for guide, s, t, conf in all_cross_edges
     ] + _normalize_step2_edges(existing_edges, id_to_type)
-    open_edges = discover_open_candidates(nodes, layer1_edges_for_pattern)
-    print(f"    Found {len(open_edges)} edges from open candidate discovery")
+    try:
+        open_edges = discover_open_candidates(nodes, layer1_edges_for_pattern)
+        print(f"    Found {len(open_edges)} edges from open candidate discovery")
+    except Exception as e:
+        print(f"    [WARN] Open candidate discovery failed entirely, skipping: {e}", flush=True)
+        open_edges = []
 
     # Deduplicate
     seen = set()
