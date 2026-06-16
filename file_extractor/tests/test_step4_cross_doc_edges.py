@@ -109,3 +109,65 @@ def test_verify_candidates_open_llm_parses_known_and_new_relations(mock_create):
 
 def test_verify_candidates_open_llm_empty_candidates_returns_empty():
     assert s4.verify_candidates_open_llm([]) == []
+
+
+def test_build_id_to_type_index_maps_ids_to_node_types():
+    nodes = {
+        "risk_controls": [{"control_id": "CM-01"}],
+        "tests": [{"test_id": "T-12"}],
+    }
+
+    index = s4._build_id_to_type_index(nodes)
+
+    assert index["CM-01"] == "risk_controls"
+    assert index["T-12"] == "tests"
+
+
+def test_normalize_step2_edges_resolves_types_and_skips_unresolvable():
+    id_to_type = {"CM-01": "risk_controls", "T-12": "tests"}
+    existing_edges = [
+        {"type": "VERIFIED_BY", "from": "CM-01", "to": "T-12", "properties": {}},
+        {"type": "SIGNED", "from": "某个查不到类型的标识符", "to": "也查不到", "properties": {}},
+    ]
+
+    normalized = s4._normalize_step2_edges(existing_edges, id_to_type)
+
+    assert len(normalized) == 1
+    assert normalized[0] == {
+        "type": "VERIFIED_BY",
+        "from_id": "CM-01", "from_type": "risk_controls",
+        "to_id": "T-12", "to_type": "tests",
+    }
+
+
+@patch("step4_cross_doc_edges.verify_candidates_open_llm")
+@patch("step4_cross_doc_edges.gpp.find_missing_next_hop")
+@patch("step4_cross_doc_edges.er.find_similar_pairs")
+@patch("step4_cross_doc_edges.be.find_bridge_entities")
+def test_discover_open_candidates_merges_and_dedupes_all_layers(
+    mock_bridge, mock_embedding, mock_graph_pattern, mock_verify
+):
+    node_a = {"control_id": "CM-01"}
+    node_b = {"test_id": "T-12"}
+    node_c = {"test_id": "T-15"}
+
+    mock_bridge.return_value = [(node_a, node_b)]
+    mock_embedding.return_value = [(node_a, node_b)]  # 与桥接层产出同一对，去重后应只算一次
+    mock_graph_pattern.return_value = [
+        {"from_id": "CM-01", "from_type": "risk_controls",
+         "expected_relation": ("MITIGATED_BY", "VERIFIED_BY"),
+         "candidate_targets": [node_c], "target_type": "tests"},  # 指向不同节点，应保留为独立候选
+    ]
+    mock_verify.return_value = [
+        {"from": node_a, "to": node_b, "type": "VERIFIED_BY", "discovery_layer": "bridge"},
+        {"from": node_a, "to": node_c, "type": "VERIFIED_BY", "discovery_layer": "graph_pattern"},
+    ]
+
+    result = s4.discover_open_candidates(
+        {"risk_controls": [node_a], "tests": [node_b, node_c]}, []
+    )
+
+    assert len(result) == 2
+    # 验证函数应收到去重后的候选：(a,b) 桥接+向量召回重复算1对，(a,c) 图模式单独1对，共2对，不是3对
+    verify_call_candidates = mock_verify.call_args.args[0]
+    assert len(verify_call_candidates) == 2

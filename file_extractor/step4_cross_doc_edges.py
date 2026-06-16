@@ -16,6 +16,9 @@ from openai import OpenAI
 
 sys.path.insert(0, str(Path(__file__).parent))
 from config import API_KEY, LLM_BASE_URL, LLM_MODEL, LLM_MAX_TOKENS
+import bridge_entities as be
+import embedding_retrieval as er
+import graph_pattern_propagation as gpp
 
 client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL)
 
@@ -669,6 +672,113 @@ def _verify_batch_open_llm(batch: list[tuple]) -> list[dict]:
     return results
 
 
+# 节点类型 -> 唯一标识字段。用于把 Step2 的 {type, from, to} 边（只有字符串
+# 标识符，没有类型信息）反查回节点类型，供图模式传播使用。
+NODE_ID_FIELD = {
+    "requirements": "req_id",
+    "design_inputs": "di_id",
+    "risks": "risk_id",
+    "risk_controls": "control_id",
+    "tests": "test_id",
+    "plan_tasks": "name",
+    "documents": "title",
+}
+
+
+def _node_id_field_for(node_type: str) -> str:
+    return NODE_ID_FIELD.get(node_type, "name")
+
+
+def _build_id_to_type_index(nodes: dict) -> dict:
+    """构建 id值 -> node_type 的反查表。
+
+    Step2 产出的文档内边（existing_edges）只有 {type, from, to}，没有携带
+    节点类型信息；图模式传播需要知道每条边两端是什么类型才能统计模式，
+    这里通过节点的唯一标识字段反查回类型。
+    """
+    index = {}
+    for node_type, items in nodes.items():
+        id_field = NODE_ID_FIELD.get(node_type)
+        if not id_field:
+            continue
+        for item in items:
+            id_val = str(item.get(id_field, "") or "")
+            if id_val:
+                index[id_val] = node_type
+    return index
+
+
+def _normalize_step2_edges(existing_edges: list[dict], id_to_type: dict) -> list[dict]:
+    """把 Step2 的 {type, from, to} 边转换成图模式传播需要的
+    {type, from_id, from_type, to_id, to_type} 形状。两端标识符查不到类型的边跳过
+    （查不到通常是因为 from/to 不是某个已知节点类型的唯一标识，无法参与模式统计）。
+    """
+    normalized = []
+    for e in existing_edges:
+        from_id = str(e.get("from", "") or "")
+        to_id = str(e.get("to", "") or "")
+        from_type = id_to_type.get(from_id)
+        to_type = id_to_type.get(to_id)
+        if not from_type or not to_type:
+            continue
+        normalized.append({
+            "type": e.get("type", ""),
+            "from_id": from_id, "from_type": from_type,
+            "to_id": to_id, "to_type": to_type,
+        })
+    return normalized
+
+
+def discover_open_candidates(nodes: dict, layer1_edges: list[dict]) -> list[dict]:
+    """合并层②③④候选，去重后送开放式 LLM 验证，返回最终边列表。
+
+    每一层独立失败不应中断整体流程（设计文档第6节降级策略）：
+    某层抛异常时跳过该层，记录警告，继续用其余层的候选。
+    """
+    raw_candidates = []  # (node_a, node_b, layer)
+
+    try:
+        for a, b in be.find_bridge_entities(nodes):
+            raw_candidates.append((a, b, "bridge"))
+    except Exception as e:
+        print(f"    [WARN] bridge_entities layer failed, skipping: {e}", flush=True)
+
+    try:
+        for a, b in er.find_similar_pairs(nodes):
+            raw_candidates.append((a, b, "embedding"))
+    except Exception as e:
+        print(f"    [WARN] embedding_retrieval layer failed, skipping: {e}", flush=True)
+
+    try:
+        missing_hops = gpp.find_missing_next_hop(nodes, layer1_edges, min_frequency=3)
+    except Exception as e:
+        print(f"    [WARN] graph_pattern_propagation layer failed, skipping: {e}", flush=True)
+        missing_hops = []
+
+    for m in missing_hops:
+        from_node = next(
+            (n for n in nodes.get(m["from_type"], [])
+             if str(n.get(_node_id_field_for(m["from_type"]), "")) == str(m["from_id"])),
+            None,
+        )
+        if from_node is None:
+            continue
+        for target in m["candidate_targets"]:
+            raw_candidates.append((from_node, target, "graph_pattern"))
+
+    # 去重：同一对节点（不分先后顺序）只保留一次，优先保留先出现的层标签
+    seen = set()
+    deduped = []
+    for a, b, layer in raw_candidates:
+        key = tuple(sorted([id(a), id(b)]))
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append((a, b, layer))
+
+    return verify_candidates_open_llm(deduped)
+
+
 def run_guide(guide, nodes):
     """Execute one regulatory guide's matching."""
     src_type = guide["source_type"]
@@ -731,6 +841,22 @@ def main():
         print(f"    Found: {len(edges)} (high={high}, medium={medium}, low={low}) [{elapsed:.1f}s]")
         all_cross_edges.extend(edges)
 
+    # Open-ended candidate discovery (layers ②③④)
+    print(f"\n=== Open candidate discovery (graph pattern + embedding + bridge entities) ===")
+    id_to_type = _build_id_to_type_index(nodes)
+    layer1_edges_for_pattern = [
+        {
+            "type": guide["edge_type"],
+            "from_id": get_node_id(s, guide["source_type"]),
+            "from_type": guide["source_type"],
+            "to_id": get_node_id(t, guide["target_type"]),
+            "to_type": guide["target_type"],
+        }
+        for guide, s, t, conf in all_cross_edges
+    ] + _normalize_step2_edges(existing_edges, id_to_type)
+    open_edges = discover_open_candidates(nodes, layer1_edges_for_pattern)
+    print(f"    Found {len(open_edges)} edges from open candidate discovery")
+
     # Deduplicate
     seen = set()
     unique_edges = []
@@ -765,6 +891,24 @@ def main():
             "cross_doc": True,
             "standard": guide["standard"],
             "guide_name": guide["name"],
+            "discovery_layer": "rule",
+        })
+
+    for oe in open_edges:
+        from_node, to_node = oe["from"], oe["to"]
+        output_edges.append({
+            "type": oe["type"],
+            "from_type": "",
+            "from_id": str(from_node.get("description") or from_node.get("measure") or from_node.get("item") or from_node.get("hazard") or from_node.get("name") or "")[:80],
+            "from_source": from_node.get("_source", ""),
+            "to_type": "",
+            "to_id": str(to_node.get("description") or to_node.get("measure") or to_node.get("item") or to_node.get("hazard") or to_node.get("name") or "")[:80],
+            "to_source": to_node.get("_source", ""),
+            "confidence": "medium",
+            "cross_doc": True,
+            "standard": "",
+            "guide_name": f"开放发现（{oe['discovery_layer']}）",
+            "discovery_layer": oe["discovery_layer"],
         })
 
     output_path = OUTPUT_DIR / "cross_doc_edges.json"
