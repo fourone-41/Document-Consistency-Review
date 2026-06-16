@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PT9L 文档一致性审查系统 - 技术路线说明</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #eef2f8;
+    --paper: #ffffff;
+    --ink: #16203a;
+    --muted: #687288;
+    --line: #e1e6ee;
+    --green: #0e9270;
+    --blue: #2563eb;
+    --blue-deep: #1e3a8a;
+    --amber: #b8780e;
+    --orange: #c2530f;
+    --rose: #be3a72;
+    --teal: #0891a8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 12% -8%, rgba(37,99,235,.10), transparent 60%),
+      radial-gradient(900px 420px at 100% 0%, rgba(8,145,168,.10), transparent 60%),
+      var(--bg);
+  }
+  .page { width: min(1280px, calc(100vw - 32px)); margin: 0 auto; padding: 30px 0 70px; }
+
+  /* ===== Hero header ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    padding: 34px 36px 30px;
+    background: linear-gradient(125deg, #16235c 0%, #1d4ed8 46%, #0891a8 100%);
+    color: #fff;
+    box-shadow: 0 18px 40px -12px rgba(20, 40, 110, .45);
+  }
+  .hero::after {
+    content: "";
+    position: absolute; right: -60px; top: -60px; width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(255,255,255,.16), transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-kicker {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 700; letter-spacing: .04em;
+    color: #cfe0ff; background: rgba(255,255,255,.12);
+    padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22);
+  }
+  .hero h1 {
+    margin: 16px 0 10px; font-size: 30px; line-height: 1.35; font-weight: 800;
+    max-width: 880px; position: relative; z-index: 1;
+  }
+  .hero .subtitle {
+    margin: 0; color: #dbe6ff; font-size: 14.5px; line-height: 1.7; max-width: 720px; position: relative; z-index: 1;
+  }
+
+  /* ===== panels ===== */
+  .panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 1px 2px rgba(20,30,60,.03), 0 10px 24px -16px rgba(20,30,60,.08);
+  }
+  section.panel { margin-top: 20px; padding: 26px 28px; }
+
+  .section-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+  .section-head h2 { margin: 0 0 5px; font-size: 19px; font-weight: 800; letter-spacing: -.01em; }
+  .section-head p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; max-width: 760px; }
+  .section-head .head-text { padding-top: 2px; }
+
+  .stage-badge {
+    flex: none; width: 42px; height: 42px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 19px; font-weight: 800; color: #fff;
+    background: linear-gradient(150deg, var(--badge-a), var(--badge-b));
+    box-shadow: 0 6px 14px -6px rgba(20,30,60,.35);
+  }
+  .icon-badge {
+    flex: none; width: 42px; height: 42px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+    background: #eef3ff; border: 1px solid #dde6fb;
+  }
+
+  /* ===== overall pipeline diagram ===== */
+  .pipeline-flow { display: flex; align-items: stretch; gap: 0; margin-top: 6px; overflow-x: auto; padding: 6px 2px 10px; }
+  .pipe-step {
+    flex: 1; min-width: 134px; padding: 14px 12px 13px; border: 1px solid var(--line); border-radius: 12px;
+    background: linear-gradient(180deg, #fbfcff, #f3f6fb); position: relative; text-align: center;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .pipe-step:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -14px rgba(20,30,60,.35); }
+  .pipe-step + .pipe-step { margin-left: 24px; }
+  .pipe-step::before {
+    content: "→"; position: absolute; left: -25px; top: 50%; transform: translateY(-50%);
+    color: #aab4c6; font-size: 18px; font-weight: 700;
+  }
+  .pipe-num {
+    width: 26px; height: 26px; margin: 0 auto 8px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12.5px; font-weight: 800; color: #fff;
+    background: linear-gradient(150deg, var(--blue), var(--teal));
+  }
+  .pipe-step b { display: block; font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+  .pipe-step span { display: block; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+  /* ===== per-stage content ===== */
+  .stage-body { display: grid; gap: 13px; }
+  .stage-body p { margin: 0; font-size: 13.5px; line-height: 1.9; color: #364259; }
+  .stage-body p strong { color: var(--ink); }
+  .stage-body code {
+    padding: 1.5px 7px; border: 1px solid #d7deec; border-radius: 5px; background: #f0f4fb; color: #28427a;
+    font-family: Consolas, "SF Mono", Menlo, monospace; font-size: 12px;
+  }
+
+  .kv-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 2px; }
+  .kv-card {
+    padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px;
+    background: #f8fafe; position: relative; padding-left: 18px;
+  }
+  .kv-card::before {
+    content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 3px;
+    background: linear-gradient(180deg, var(--blue), var(--teal));
+  }
+  .kv-card b { display: block; font-size: 13px; color: var(--ink); margin-bottom: 5px; }
+  .kv-card span { display: block; font-size: 12.3px; color: var(--muted); line-height: 1.7; }
+
+  .step-list { margin: 0; padding-left: 4px; list-style: none; display: grid; gap: 10px; }
+  .step-list li {
+    font-size: 13px; line-height: 1.85; color: #364259; padding: 10px 14px 10px 40px;
+    background: #f8fafe; border: 1px solid var(--line); border-radius: 10px; position: relative; counter-increment: stepnum;
+  }
+  .step-list { counter-reset: stepnum; }
+  .step-list li::before {
+    content: counter(stepnum); position: absolute; left: 10px; top: 9px;
+    width: 20px; height: 20px; border-radius: 50%; background: var(--blue); color: #fff;
+    font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ===== architecture sub-diagrams ===== */
+  .arch-box { display:grid; gap:12px; margin-top: 4px; }
+  .arch-row { display:flex; gap:12px; flex-wrap: wrap; }
+  .layer-card {
+    flex:1; min-width: 210px; border:1px solid var(--line); border-radius:12px; padding:13px 15px;
+    background: #fff; box-shadow: 0 1px 2px rgba(20,30,60,.02);
+  }
+  .layer-card b { display:flex; align-items:center; gap:7px; font-size: 13px; color: var(--ink); margin-bottom:5px; }
+  .layer-card span { display:block; font-size: 12px; color: var(--muted); line-height:1.7; }
+  .layer-card.l1 { border-left: 4px solid var(--blue); background: linear-gradient(180deg, #f5f8ff, #fff 40%); }
+  .layer-card.l2 { border-left: 4px solid var(--green); background: linear-gradient(180deg, #f3fbf7, #fff 40%); }
+  .layer-card.l3 { border-left: 4px solid var(--amber); background: linear-gradient(180deg, #fdf8ee, #fff 40%); }
+  .layer-card.l4 { border-left: 4px solid var(--rose); background: linear-gradient(180deg, #fdf3f7, #fff 40%); }
+  .layer-card.final { border-left: 4px solid var(--ink); background: linear-gradient(180deg, #f5f6f9, #fff 40%); }
+  .arch-arrow {
+    text-align:center; color: var(--muted); font-size: 12.5px; font-weight: 700; margin: 0;
+    display: flex; align-items: center; gap: 8px; justify-content: center;
+  }
+  .arch-arrow::before, .arch-arrow::after { content: ""; flex: 1; height: 1px; background: var(--line); max-width: 160px; }
+
+  .example-block {
+    margin-top: 2px; padding: 14px 16px; background: linear-gradient(135deg, #fff8ec, #fffdf8);
+    border: 1px solid #f0dfb8; border-radius: 12px;
+    font-size: 12.6px; color: #4a4029; line-height: 1.8;
+  }
+  .example-block b { color: var(--amber); }
+
+  footer.page-footer {
+    margin-top: 30px; text-align: center; color: var(--muted); font-size: 12px;
+    padding-top: 18px; border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 900px) {
+    .pipeline-flow { flex-direction: column; }
+    .pipe-step + .pipe-step { margin-left: 0; margin-top: 24px; }
+    .pipe-step::before { content: "↓"; left: 50%; top: -24px; transform: translateX(-50%); }
+    .kv-grid { grid-template-columns: 1fr; }
+    .hero { padding: 26px 22px; }
+    .hero h1 { font-size: 23px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="hero">
+    <span class="hero-kicker">⚙ 技术路线说明</span>
+    <h1>PT9L 红外体温计 DHF/DMR 文档一致性审查系统</h1>
+    <p class="subtitle">从原始文档到自动化审查输出的完整技术流程 —— 文档转换 · 结构化抽取 · 知识图谱 · 跨文档审查</p>
+  </header>
+
+  <!-- problem statement -->
+  <section class="panel" aria-label="系统目标">
+    <div class="section-head">
+      <div class="icon-badge">🎯</div>
+      <div class="head-text"><h2>要解决的问题</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>PT9L 红外体温计的设计历史文件（DHF）和设计制造记录（DMR）共约 254 份过程文档（立项批准书、风险分析、设计输入、测试报告、评审记录等），文档之间存在大量需要核对的交叉引用——例如某条需求是否真的有对应的测试验证、某个风险是否真的有控制措施、不同文档里的同一个数值指标是否前后一致。这些核对工作人工逐份翻阅耗时巨大，也容易遗漏。系统的目标是把这些文档转成结构化数据，自动发现需求-测试追溯缺失、风险-控制覆盖不全、参数数值不一致、人员签名不一致等问题。</p>
+    </div>
+  </section>
+
+  <!-- overall pipeline -->
+  <section class="panel" aria-label="整体技术路线">
+    <div class="section-head">
+      <div class="icon-badge">🗺️</div>
+      <div class="head-text">
+        <h2>整体技术路线</h2>
+        <p>系统把约 254 份医疗器械过程文档（DHF/DMR）从原始格式逐步转化为可查询、可自动审查的知识图谱，全流程分为 8 个阶段。</p>
+      </div>
+    </div>
+    <div class="pipeline-flow">
+      <div class="pipe-step"><div class="pipe-num">1</div><b>文档转换</b><span>doc/xls/pdf<br>→ Markdown</span></div>
+      <div class="pipe-step"><div class="pipe-num">2</div><b>节点抽取</b><span>LLM 结构化<br>抽取 21 种节点</span></div>
+      <div class="pipe-step"><div class="pipe-num">3</div><b>边抽取</b><span>规则+LLM<br>抽取文档内关系</span></div>
+      <div class="pipe-step"><div class="pipe-num">4</div><b>Claims生成</b><span>从节点提炼<br>事实断言</span></div>
+      <div class="pipe-step"><div class="pipe-num">5</div><b>合并</b><span>拼接所有文档<br>结果为统一图</span></div>
+      <div class="pipe-step"><div class="pipe-num">6</div><b>跨文档发现</b><span>发现跨文件<br>关系与冲突</span></div>
+      <div class="pipe-step"><div class="pipe-num">7</div><b>图数据库</b><span>导入 Neo4j</span></div>
+      <div class="pipe-step"><div class="pipe-num">8</div><b>可视化/报告</b><span>交互式图谱<br>+ 中文审查报告</span></div>
+    </div>
+  </section>
+
+  <!-- Stage 1 -->
+  <section class="panel" aria-label="阶段一：文档格式转换">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#2563eb; --badge-b:#1e3a8a;">1</div>
+      <div class="head-text"><h2>文档格式转换</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>原始过程文档以 Word（.doc/.docx）、Excel（.xls/.xlsx）、PDF 等格式存在，分散在 DHF（设计历史文件）和 DMR（设计制造记录）的各个阶段目录中。第一步把它们统一转换成结构化 Markdown，作为后续所有 LLM 抽取步骤的统一输入格式。</p>
+      <p>转换时保留三类关键信息，避免后续抽取丢失定位能力：<strong>章节/标题层级</strong>（Word 文档的编号和段落结构）、<strong>表格行列结构</strong>（Excel 的 sheet、单元格坐标，PDF 中的表格数据）、<strong>来源路径</strong>（每段内容能追溯回具体文件名和所在阶段目录）。</p>
+      <p>转换结果存放在 <code>pt9l_markdown_output/</code> 目录，按 DHF 阶段分文件夹组织（如「04 设计输入」「11 T1样机」「18 设计确认」），是后续节点抽取阶段的直接输入源。</p>
+    </div>
+  </section>
+
+  <!-- Stage 2 -->
+  <section class="panel" aria-label="阶段二：Step1 节点抽取">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#2563eb; --badge-b:#1e3a8a;">2</div>
+      <div class="head-text"><h2>Step1：节点抽取</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>对每份 Markdown 文档，LLM 按 schema 把自然语言内容抽取成结构化节点。这一步要解决的核心问题是：不同类型的文档（立项批准书、风险分析、测试报告……）关注的字段完全不同，需要先识别文档类型再用对应的抽取逻辑。</p>
+      <ol class="step-list">
+        <li><strong>文档类型识别</strong>——优先按文件名关键词判断（如"评审""检测报告""BOM"），其次按所在目录名判断，避免"软件设计方案"目录下的评审检查表被误判为软件设计文档。</li>
+        <li><strong>多级文档分块</strong>——按 <code>##</code> 二级标题切分；没有标题的文档退化为按 <code>#</code>/<code>|</code> 表格符号切分；纯表格大文件（最大见过 85798 字符）再按行强制切割，确保不超出 LLM 单次处理上限（6000 字符/块）。</li>
+        <li><strong>按文档类型套用对应 Prompt</strong>——10 种文档类型（立项批准书、开发计划、风险分析、设计输入、测试报告、BOM、评审检查表、软件设计方案、DHF清单、通用）各自有一套抽取字段定义。</li>
+        <li><strong>健壮 JSON 解析</strong>——LLM 输出的 JSON 中约 60% 存在格式问题（被 Markdown 代码块包裹、字符串内未转义换行/引号），用状态机方式逐一修复后再解析，避免因格式问题导致整份文档抽取结果丢失。</li>
+      </ol>
+      <p>最终产出 21 种结构化节点类型，包括 Requirement（需求）、DesignInput（设计输入）、Risk（风险）、RiskControl（控制措施）、Test（测试）、Person（人员）、Regulation（法规）等，每个节点保留来源文件信息。无法归入标准字段、但仍包含实质信息的长段落，统一放入 SemanticFragment 兜底，避免信息丢失。</p>
+    </div>
+  </section>
+
+  <!-- Stage 3 -->
+  <section class="panel" aria-label="阶段三：Step2 边抽取">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#2563eb; --badge-b:#1e3a8a;">3</div>
+      <div class="head-text"><h2>Step2：边抽取（文档内关系）</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>节点之间存在关系——比如某个风险被哪条控制措施管控、某份文件由谁签署。这一步在<strong>单份文档内部</strong>识别这些关系，采用规则推导和 LLM 两条轨道并行：</p>
+
+      <div class="kv-grid">
+        <div class="kv-card">
+          <b>规则推导</b>
+          <span>从节点字段结构直接推出明显的关系，例如 Person 出现在某个 PlanTask 的 owner 字段，直接生成 RESPONSIBLE_FOR 边，不需要调用 LLM。</span>
+        </div>
+        <div class="kv-card">
+          <b>LLM 两阶段抽取</b>
+          <span>对规则覆盖不到的隐式关系，用 LLM 判断。这部分采用两阶段流程，而非一次性从全部关系类型中选择。</span>
+        </div>
+      </div>
+
+      <div class="arch-box">
+        <div class="arch-row">
+          <div class="layer-card l1">
+            <b>🔎 第一阶段：关系类型检测</b>
+            <span>输入节点摘要，让 LLM 先判断"这份文档里，19 种关系类型中哪些可能存在"——例如一份纯硬件文档根本不会有"软件排期"类关系，提前排除。这一步成本低，作用是过滤候选范围。</span>
+          </div>
+          <div class="layer-card l2">
+            <b>🧩 第二阶段：分组精细配对</b>
+            <span>19 种关系类型预先分成 5 个大类（结构定位、追溯链、验证测试链、风险管控链、行政评审类）。只在第一阶段命中的大类内部做实体配对，候选范围更小，相近关系类型（如 VERIFIED_BY 与 COVERS）更不容易混淆。</span>
+          </div>
+        </div>
+      </div>
+
+      <p>最终产出 19 种边类型，如 DERIVES_FROM（设计输入来源于需求）、MITIGATED_BY（风险被措施控制）、VERIFIED_BY（被测试验证）、SIGNED（人员签署文件）等，与规则推导结果合并去重后写入每份文档的结果文件。</p>
+    </div>
+  </section>
+
+  <!-- Stage 4 -->
+  <section class="panel" aria-label="阶段四：Step3 Claims生成">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#2563eb; --badge-b:#1e3a8a;">4</div>
+      <div class="head-text"><h2>Step3：Claims 生成</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>从 Requirement、Risk、Test 等结构化节点中，进一步提炼成统一格式的事实断言（Claim），形式为「主体-谓词-客体」三元组，例如「体温测量范围 has_value 35-42℃」「T-12 passes_test 是」，并附带置信度分数。Claims 是后续一致性判断的最小可比较单元——不同文档里关于同一件事的不同表述，最终都要落到 Claims 层面去对比是否一致。</p>
+    </div>
+  </section>
+
+  <!-- Stage 5 -->
+  <section class="panel" aria-label="阶段五：合并">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#2563eb; --badge-b:#1e3a8a;">5</div>
+      <div class="head-text"><h2>合并：构建统一图</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>前面几步都是逐份文档独立处理的结果，互不知道彼此的存在。合并阶段把所有文档的节点、边、Claims 拼接成一份全局的 <code>merged_graph.json</code>——这一步本身不做语义判断，只是把分散的结构化数据汇总到同一个数据结构里，为下一步的跨文档分析提供统一视角。</p>
+    </div>
+  </section>
+
+  <!-- Stage 6 -->
+  <section class="panel" aria-label="阶段六：Step4 跨文档关系发现">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#0891a8; --badge-b:#0e9270;">6</div>
+      <div class="head-text"><h2>Step4：跨文档关系发现</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>这是系统的核心难点：很多关系横跨两份完全不同的文件——比如「设计输入文档」里的需求 R-01 和「测试报告」里的测试 T-12 之间应该有验证关系，但 Step2 只能处理单文档内部，发现不了这种关系。跨文档关系发现需要把来自不同文件的节点列表拼到一起，让模型横向比对。</p>
+      <p>直接对所有节点两两穷举配对，候选数量会爆炸；只靠人工预定义的规则，又会错过规则之外的关系。因此候选生成采用四条互补路径，各自解决不同类型的"找不到关系"问题：</p>
+
+      <div class="arch-box">
+        <div class="arch-row">
+          <div class="layer-card l1">
+            <b>📐 ① 规则匹配</b>
+            <span>基于 ISO 13485/14971/IEC 62304 等法规对文档间应有关系的规定（如"需求应追溯到设计输入"），定义期望存在的关系类型对，并在判断时注入对应法规条款内容辅助理解，而非只给一个标准编号。</span>
+          </div>
+          <div class="layer-card l2">
+            <b>🕸️ ② 图模式传播</b>
+            <span>从图中已有的边出发，沿着高频出现的二跳模式（如"风险→控制措施→验证测试"）主动推断下一跳应该存在却缺失的关系——这条路径专门用于发现"逻辑上应该有，但规则没预先想到"的关系。</span>
+          </div>
+          <div class="layer-card l3">
+            <b>🧭 ③ 向量召回</b>
+            <span>把节点描述转成语义向量，检索表达方式不同但说的是同一件事的节点对（例如"传感器漂移"和"高温环境线性度异常"），弥补规则匹配和图模式都覆盖不到的换种说法的情况。</span>
+          </div>
+          <div class="layer-card l4">
+            <b>🌉 ④ 桥接实体</b>
+            <span>寻找被两份以上文档共同提及的实体（同一人名、同一产品型号、同一标准编号），以此为桥梁连接两端节点，即使两端文字描述完全不像，也能借助共同实体建立候选关系。</span>
+          </div>
+        </div>
+        <div class="arch-arrow">四条路径产生的候选去重合并</div>
+        <div class="arch-row">
+          <div class="layer-card final">
+            <b>✅ LLM 开放式验证</b>
+            <span>对每个候选对，命中已知法规规则的注入条款内容辅助判断；未命中已知规则的候选，允许模型直接给出"存在关系，类型为……"的开放式判断，不强制套用预定义关系名称，从而能发现规则之外的新关系类型。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <b>💡 举例说明四层如何配合：</b> 图中已有「风险 Risk-01（传感器漂移）→MITIGATED_BY→ 控制措施 CM-03（校准补偿方案）」这条边。② 图模式传播发现 CM-03 还缺少下一跳的验证测试，主动把所有 Test 节点纳入候选；③ 向量召回同时发现「高温环境线性度异常」这个测试项与 Risk-01 语义相近，即使字面完全不同也被捞出来；④ 桥接实体发现 Risk-01 和某测试报告都提到了「红外传感器」这个共同实体，进一步佐证两者相关。三类候选去重合并后，LLM 验证判断 CM-03 与测试 T-12 之间存在 VERIFIED_BY 关系，补全了「风险→控制措施→验证测试」这条完整追溯链。
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage 7 -->
+  <section class="panel" aria-label="阶段七：图数据库导入">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#0891a8; --badge-b:#0e9270;">7</div>
+      <div class="head-text"><h2>导入 Neo4j 图数据库</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>把全部节点和边（文档内 + 跨文档）写入 Neo4j 图数据库，节点按类型映射成图标签（如 Requirement、Risk、Test），边按关系类型建立连接。导入时通过节点的唯一标识字段（如 req_id、test_id、控制措施编号）做精确或包含式匹配，把抽取阶段产生的字符串引用关联到图里的实际节点对象。</p>
+    </div>
+  </section>
+
+  <!-- Stage 8 -->
+  <section class="panel" aria-label="阶段八：可视化与审查输出">
+    <div class="section-head">
+      <div class="stage-badge" style="--badge-a:#0891a8; --badge-b:#0e9270;">8</div>
+      <div class="head-text"><h2>可视化与审查输出</h2></div>
+    </div>
+    <div class="stage-body">
+      <p>系统提供两类最终输出：</p>
+      <div class="kv-grid">
+        <div class="kv-card">
+          <b>交互式图谱可视化</b>
+          <span>仿 Neo4j Browser 界面的独立 HTML 文件，支持节点/关系类型筛选、类 Cypher 查询语法（如 <code>MATCH (n:Risk)-[r]->(m:RiskControl) RETURN n,r,m</code>）、点击节点查看属性详情，文档内边和跨文档边用不同线型区分。</span>
+        </div>
+        <div class="kv-card">
+          <b>中文跨文档关系分析报告</b>
+          <span>按法规依据分组列出发现的跨文档关系，附带覆盖率统计（如「需求→测试」追溯链的覆盖比例），供质量工程师和法规注册人员直接审阅，定位需要人工核实的具体条目。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- reference: schema -->
+  <section class="panel" aria-label="数据模型参考">
+    <div class="section-head">
+      <div class="icon-badge">🧬</div>
+      <div class="head-text">
+        <h2>数据模型参考</h2>
+        <p>贯穿整个流程的数据结构：节点描述「文档里有什么」，边描述「这些东西之间是什么关系」。</p>
+      </div>
+    </div>
+    <div class="kv-grid">
+      <div class="kv-card">
+        <b>21 种节点类型（举例）</b>
+        <span>Document、Requirement（需求）、DesignInput（设计输入）、Risk（风险）、RiskControl（控制措施）、Test（测试）、TestReport、Person（人员）、Regulation（法规）、PlanTask（计划任务）、Function（功能）、SoftwareItem、SemanticFragment（兜底文本片段）等</span>
+      </div>
+      <div class="kv-card">
+        <b>19 种文档内边类型（举例）</b>
+        <span><code>DERIVES_FROM</code> 设计输入来源于需求、<code>MITIGATED_BY</code> 风险被措施控制、<code>VERIFIED_BY</code> 被测试验证、<code>COVERS</code> 覆盖预期用途、<code>SIGNED</code> 人员签署文件、<code>HAS_DETAIL</code> 补充文本关联等</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    PT9L 红外体温计 DHF/DMR 文档一致性审查系统 · 技术路线说明
+  </footer>
+</main>
+</body>
+</html>
