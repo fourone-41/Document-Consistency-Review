@@ -10,6 +10,11 @@ load_dotenv(PROJECT_ROOT / ".env")
 API_KEY = os.getenv("GPT55_API_KEY", "")
 LLM_BASE_URL = os.getenv("GPT55_API_URL", "https://ai-gateway.ailab.jiuan.com/v1")
 LLM_MODEL = os.getenv("GPT55_MODEL", "claude-sonnet-4-6")
+DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY", "")
+DASHSCOPE_EMBEDDING_MODEL = os.getenv("DASHSCOPE_EMBEDDING_MODEL", "text-embedding-v3")
+DASHSCOPE_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+NEO4J_URI = "bolt://localhost:7687"
+NEO4J_AUTH = ("neo4j", "test1234")
 
 MARKDOWN_DIR = PROJECT_ROOT / "pt9l_markdown_output"
 OUTPUT_DIR = BASE_DIR / "output"
