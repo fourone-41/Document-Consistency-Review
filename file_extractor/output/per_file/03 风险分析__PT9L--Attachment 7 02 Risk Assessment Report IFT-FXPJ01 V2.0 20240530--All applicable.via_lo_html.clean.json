@@ -1,0 +1,1166 @@
+{
+  "document": {
+    "title": "Risk Assessment Report",
+    "doc_type": "Risk Assessment Report",
+    "version": "V1.0"
+  },
+  "revision_records": [
+    {
+      "seq": 1,
+      "version": "V1.0",
+      "change_description": "Originated",
+      "author": "Hou Guangwei",
+      "date": "2024.1.9"
+    }
+  ],
+  "persons": [
+    {
+      "name": "Hou Guangwei",
+      "title": "Technical Director / Group Leader"
+    },
+    {
+      "name": "Wan Long",
+      "title": "Hardware Design Director"
+    },
+    {
+      "name": "Wang Di",
+      "title": "Software Design Director"
+    },
+    {
+      "name": "Liu Zhao",
+      "title": "Mechanical Design Director"
+    },
+    {
+      "name": "Zhang Xun",
+      "title": "Process Design Personnel and Quality Management Personnel"
+    },
+    {
+      "name": "Zhao Yiping",
+      "title": "Sales Personnel"
+    },
+    {
+      "name": "Wang Yanhong",
+      "title": "Certification Personnel"
+    },
+    {
+      "name": "Gao Kejian",
+      "title": "Personnel with Medical Background"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Technical director / Group leader"
+    },
+    {
+      "name": "Wan Long",
+      "title": "Hardware design director / Member"
+    },
+    {
+      "name": "Wang Di",
+      "title": "Software design director / Member"
+    },
+    {
+      "name": "Liu Zhao",
+      "title": "Mechanical Design director / Member"
+    },
+    {
+      "name": "Zhang Xun",
+      "title": "Process design personnel and Quality management personnel / Member"
+    },
+    {
+      "name": "Zhao Yiping",
+      "title": "Sales personnel / Member"
+    },
+    {
+      "name": "Wang Yanhong",
+      "title": "Certification personnel / Member"
+    },
+    {
+      "name": "Gao Kejian",
+      "title": "Personnel with medical background / Member"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Document Number",
+      "value": "PT9L-FXPJ01 V1.0"
+    },
+    {
+      "id_type": "Risk Management Plan Reference",
+      "value": "PT9L-FXJH01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L-FXPJ01",
+      "name": "Infrared Forehead Thermometer"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "This product is a high-tech infra-red (IR) thermometer designed to take human body temperature by measuring the energy of IR emitted from the forehead. The product will help you to assess you and your family members' health conditions easily and quickly.",
+      "topic_tags": [
+        "infrared thermometer",
+        "forehead temperature",
+        "IR energy",
+        "body temperature measurement"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "Risk Assessment Report"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The risk management activity including the risk management plan was began at the time the project is approved. This risk management review is to assess the harm and make the risk analysis, evaluation, and proposed the risk control plan.",
+      "topic_tags": [
+        "risk management",
+        "risk analysis",
+        "risk evaluation",
+        "risk control plan"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "PT9L-FXJH01 V1.0"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Criteria for risk evaluation: Please find the document Risk Management Plan (PT9L-FXJH01 V1.0) for the risk acceptance criteria. Severity scale: 1 Negligible; 2 Minor; 3 Serious; 4 Critical; 5 Catastrophic. Probability scale: 1 Few; 2 Improbable; 3 Remote; 4 Occasional; 5 Probable; 6 Frequent.",
+      "topic_tags": [
+        "risk acceptance criteria",
+        "severity",
+        "probability",
+        "risk evaluation"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "PT9L-FXJH01 V1.0"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Document structure covers: Signification of Abbreviations, Overview (product introduction, risk management plan implementation, risk management group), Criteria for risk evaluation, Identify medical device characteristics that could impact on safety and intended use (bibliography, questions from Annex A of ISO/TR 24971:2020, questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2, additional questions from IEC 60601-1-2:2014+A1:2020 edition 4.1), Risk analysis/risk evaluation and PRM, Risk Management Conclusion, Signature of the risk management group.",
+      "topic_tags": [
+        "document structure",
+        "ISO/TR 24971:2020",
+        "IEC 60601-1",
+        "IEC 60601-1-2",
+        "risk management"
+      ],
+      "related_subjects": [
+        "Risk Assessment Report",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For each unacceptable Risk, we have considered risk control measures according to the principle of section3.3 'Risk Acceptance Criteria' in RMP. For each acceptable risk, we have further implemented risk control measures. So I think we have reduced the risk AFAP.",
+      "topic_tags": [
+        "risk acceptance",
+        "ALARP",
+        "AFAP",
+        "risk control",
+        "RMP"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "Risk Acceptance Criteria"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Wireless coexistence (R56): The APP provides display and storage functions. If the app cannot receive the result, the LED of IFT can display the result. When the interference disappears, the next Bluetooth transmission can upload the data lost last time. Therefore, even if the app cannot display the current results, or the app delays the display of the current results, it will not cause harm to the user, but will increase the user's inconvenience.",
+      "topic_tags": [
+        "wireless coexistence",
+        "Bluetooth",
+        "LED fallback",
+        "data recovery",
+        "app display"
+      ],
+      "related_subjects": [
+        "R56",
+        "software design",
+        "Bluetooth transmission"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk Management Conclusion: According to the risk acceptance table, the risk levels before control are distributed as follows. Probability level 6 Frequent / Severity 3 Serious: R50. Probability level 4 Occasional / Severity 2 Minor: R36. Probability level 4 Occasional / Severity 3 Serious: R9, R10, R11, R13, R15, R16, R17, R18, R20, R21, R22, R26, R27, R28, R29, R30, R33, R34, R37, R39, R40, R42, R43, R44, R46, R51, R52, R53. Probability level 3 Remote / Severity 1 Negligible: R56. Probability level 3 Remote / Severity 2 Minor: R23. Probability level 3 Remote / Severity 3 Serious: R24, R38, R54, R55, R57. Probability level 3 Remote / Severity 4 Critical: R3, R8. Probability level 2 Improbable / Severity 3 Serious: R12, R19, R25, R31, R32, R35, R41, R45, R47, R48, R49. Probability level 2 Improbable / Severity 4 Critical: R1, R2, R4, R5, R6, R7, R14. Risks in the White background area are ACC (acceptable); others require control measures. Based on the above risk analysis and assessment, the software security level is determined as B.",
+      "topic_tags": [
+        "risk acceptance",
+        "risk matrix",
+        "risk level",
+        "software security level",
+        "ACC",
+        "risk before control"
+      ],
+      "related_subjects": [
+        "Risk Analysis Report",
+        "Risk Management"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "R1",
+      "hazard": "Electromagnetic energy",
+      "hazardous_situation": "The device is interfered or interferes with other equipment; the measurement results are inaccurate",
+      "harm": "Inaccurate measurement",
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R2",
+      "hazard": "Electrostatic discharge",
+      "hazardous_situation": "The device damage, the measurement results are inaccurate",
+      "harm": "Inaccurate measurement",
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R3",
+      "hazard": "Radiated RF EM fields",
+      "hazardous_situation": "The working state of device is abnormal, the measurement results are inaccurate",
+      "harm": "The device is not working and damage; Inaccurate measurement",
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R4",
+      "hazard": "Conducted disturbances induced by RF fields",
+      "hazardous_situation": "The working state of device is abnormal, the measurement results are inaccurate",
+      "harm": "The device is not working and damage; Inaccurate measurement",
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R5",
+      "hazard": "Proximity fields from RF wireless communications",
+      "hazardous_situation": "The working state of device is abnormal, the measurement results are inaccurate",
+      "harm": "The device is not working and damage; Inaccurate measurement",
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R6",
+      "hazard": "Rated Power-frequency Magnetic Field",
+      "hazardous_situation": "The working state of device is abnormal, the measurement results are inaccurate",
+      "harm": "The device is not working and damage; Inaccurate measurement",
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R7",
+      "hazard": "Proximity magnetic fields immunity test",
+      "hazardous_situation": "The working state of device is abnormal, the measurement results are inaccurate",
+      "harm": "The device is not working and damage; Inaccurate measurement",
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R8",
+      "hazard": "Leakage current",
+      "hazardous_situation": "Users touch the device",
+      "harm": "Electric shock",
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R9",
+      "hazard": "Separation parts",
+      "hazardous_situation": "Users touch the device",
+      "harm": "Electric shock",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R10",
+      "hazard": "The parts that contact the patient",
+      "hazardous_situation": "Users touch the device",
+      "harm": "Electric shock",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R11",
+      "hazard": "Temperature of parts",
+      "hazardous_situation": "Users touch the device",
+      "harm": "Scald",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R12",
+      "hazard": "Temperature of applied parts",
+      "hazardous_situation": "Users touch the probe",
+      "harm": "Scald",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R13",
+      "hazard": "Mechanical strength",
+      "hazardous_situation": "Device broken",
+      "harm": "The device is not working or Electric shock",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R14",
+      "hazard": "Inner lead",
+      "hazardous_situation": "Wire's current is too large",
+      "harm": "Lead catches fire",
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R15",
+      "hazard": "Component fixing",
+      "hazardous_situation": "Breakage of internal wire by rubbing",
+      "harm": "The device is not working",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R16",
+      "hazard": "The protective measures components",
+      "hazardous_situation": "The device catches fire, be damaged",
+      "harm": "The device is not working or Patient injured",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R17",
+      "hazard": "Infrared radiation",
+      "hazardous_situation": "Radiation exceedance",
+      "harm": "The human body receives excessive radiation",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.1 Energy hazards"
+    },
+    {
+      "risk_id": "R18",
+      "hazard": "Allergenicity/Irritancy",
+      "hazardous_situation": "User hold the thermometer",
+      "harm": "Allergies, irritation, cytotoxicity",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.2 Biological and chemical hazards"
+    },
+    {
+      "risk_id": "R19",
+      "hazard": "Allergenicity/Irritancy",
+      "hazardous_situation": "User hold the thermometer",
+      "harm": "Infection or cross-infection",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.2 Biological and chemical hazards"
+    },
+    {
+      "risk_id": "R20",
+      "hazard": "Temperature transducer accuracy",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R21",
+      "hazard": "System leakage",
+      "hazardous_situation": "No measurement result",
+      "harm": "Users can not get measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R22",
+      "hazard": "System leakage",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R23",
+      "hazard": "Low battery",
+      "hazardous_situation": "Reported low battery inappropriate",
+      "harm": "Reduce battery life",
+      "severity": 2,
+      "probability": 3,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R24",
+      "hazard": "Low battery",
+      "hazardous_situation": "Not report low battery when the battery level is low",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 3,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R25",
+      "hazard": "Battery leakage",
+      "hazardous_situation": "The battery leakage",
+      "harm": "The device is corroded",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R26",
+      "hazard": "Clean",
+      "hazardous_situation": "Can't reach the measurement accuracy or current is on the applied part",
+      "harm": "Users can not get accurate measurement results or users get hurt",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R27",
+      "hazard": "Expected service life",
+      "hazardous_situation": "The device is not working or can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R28",
+      "hazard": "Expected service life",
+      "hazardous_situation": "Can't reach the measurement accuracy or lose performance",
+      "harm": "Users can not get accurate measurement results or Safety can not be ensured",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R29",
+      "hazard": "Environment condition",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R30",
+      "hazard": "Environment condition",
+      "hazardous_situation": "Device work, transport or storage under unreasonable conditions, or on fire when operation, the device is not working or can't reach the measurement accuracy",
+      "harm": "Device damaged; Users can not get accurate measurement results; Scald",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R31",
+      "hazard": "Environment condition",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R32",
+      "hazard": "SFC and MOP",
+      "hazardous_situation": "Electric shock",
+      "harm": "Patients injured",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R33",
+      "hazard": "SFC and MOP",
+      "hazardous_situation": "Electric shock",
+      "harm": "Patients injured",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R34",
+      "hazard": "SFC and MOP",
+      "hazardous_situation": "Electric shock",
+      "harm": "Patients injured",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R35",
+      "hazard": "Knowledge-based failure",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R36",
+      "hazard": "Shape",
+      "hazardous_situation": "User touch the sharp angle, sharp edge and rough surface",
+      "harm": "Get hurt from cut or scratch",
+      "severity": 2,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R37",
+      "hazard": "Measurement range",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R38",
+      "hazard": "Measuring site",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 3,
+      "phase": "4.3 Operational hazards"
+    },
+    {
+      "risk_id": "R39",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R40",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R41",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R42",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R43",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R44",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Can't reach the measurement accuracy",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R45",
+      "hazard": "Control keys and display",
+      "hazardous_situation": "Operate incorrectly or unclear measurement result",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R46",
+      "hazard": "Battery storehouse",
+      "hazardous_situation": "Incorrect batteries or short-cut because of reversed polarity",
+      "harm": "The device don't work or users scald",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R47",
+      "hazard": "Waste disposal",
+      "hazardous_situation": "Discard randomly",
+      "harm": "Pollute environment",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R48",
+      "hazard": "Specification of service and maintenance",
+      "hazardous_situation": "User can not get consultation",
+      "harm": "Can not get effective direction and maintenance",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R49",
+      "hazard": "Deglutible separate part",
+      "hazardous_situation": "Swallowed by children",
+      "harm": "Children hurt",
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.4 Information hazards"
+    },
+    {
+      "risk_id": "R50",
+      "hazard": "Memory times",
+      "hazardous_situation": "User can't find the memory or find wrong memory",
+      "harm": "The body temperature can not be supervised continuously by the users",
+      "severity": 3,
+      "probability": 6,
+      "phase": "4.5 Software hazards"
+    },
+    {
+      "risk_id": "R51",
+      "hazard": "Classification display",
+      "hazardous_situation": "Classification display error",
+      "harm": "Users assess their body temperature condition incorrectly",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.5 Software hazards"
+    },
+    {
+      "risk_id": "R52",
+      "hazard": "Algorithm",
+      "hazardous_situation": "Incorrect measurement result",
+      "harm": "Users can not get accurate measurement results",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.5 Software hazards"
+    },
+    {
+      "risk_id": "R53",
+      "hazard": "Software label",
+      "hazardous_situation": "The software and the hardware is not corresponding to each other",
+      "harm": "The device can not running",
+      "severity": 3,
+      "probability": 4,
+      "phase": "4.5 Software hazards"
+    },
+    {
+      "risk_id": "R54",
+      "hazard": "Improper alarm",
+      "hazardous_situation": "The false alarm single or alarm invalid",
+      "harm": "Users assess their body temperature condition incorrectly",
+      "severity": 3,
+      "probability": 3,
+      "phase": "4.5 Software hazards"
+    },
+    {
+      "risk_id": "R55",
+      "hazard": "Data transfer",
+      "hazardous_situation": "Incorrect results transportation",
+      "harm": "Users assess their body temperature condition incorrectly",
+      "severity": 3,
+      "probability": 3,
+      "phase": "4.5 Software hazards"
+    },
+    {
+      "risk_id": "R56",
+      "hazard": "Wireless coexistence",
+      "hazardous_situation": "The result data cannot be transferred to the app or results data are delayed",
+      "harm": "Increased user inconvenience; no direct harm as LED can display result and next Bluetooth transmission can upload lost data",
+      "severity": 1,
+      "probability": 3,
+      "phase": "4.5 Software hazards"
+    },
+    {
+      "risk_id": "R57",
+      "hazard": "Cybersecurity",
+      "hazardous_situation": "The data was stolen",
+      "harm": "User information disclosure",
+      "severity": 3,
+      "probability": 3,
+      "phase": "4.5 Software hazards"
+    }
+  ],
+  "risk_controls": [
+    {
+      "control_id": "RC-R1",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test per IEC60601-1-2"
+    },
+    {
+      "control_id": "RC-R2",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test per IEC60601-1-2"
+    },
+    {
+      "control_id": "RC-R3",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test per IEC60601-1-2"
+    },
+    {
+      "control_id": "RC-R4",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test per IEC60601-1-2"
+    },
+    {
+      "control_id": "RC-R5",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test per IEC60601-1-2"
+    },
+    {
+      "control_id": "RC-R6",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test per IEC60601-1-2"
+    },
+    {
+      "control_id": "RC-R7",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test per IEC60601-1-2"
+    },
+    {
+      "control_id": "RC-R8",
+      "measure": "Take protective measures: RI",
+      "type": "Protective measure",
+      "evidence_type": "Electrical safety test"
+    },
+    {
+      "control_id": "RC-R9",
+      "measure": "Take protective measures: RI",
+      "type": "Protective measure",
+      "evidence_type": "Electrical safety test"
+    },
+    {
+      "control_id": "RC-R10",
+      "measure": "The live parts can't be touched",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R11",
+      "measure": "The power control temperature",
+      "type": "Design control",
+      "evidence_type": "Temperature test"
+    },
+    {
+      "control_id": "RC-R12",
+      "measure": "Applied part don't generate heat",
+      "type": "Design control",
+      "evidence_type": "Temperature test"
+    },
+    {
+      "control_id": "RC-R13",
+      "measure": "Thick enclosure design",
+      "type": "Design control",
+      "evidence_type": "Mechanical strength test"
+    },
+    {
+      "control_id": "RC-R14",
+      "measure": "No use aluminium wire, weld correctly",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R15",
+      "measure": "Component fixing",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R16",
+      "measure": "Choose proper type of critical component",
+      "type": "Design control",
+      "evidence_type": "Component qualification"
+    },
+    {
+      "control_id": "RC-R17",
+      "measure": "Choose proper type of critical component",
+      "type": "Design control",
+      "evidence_type": "Component qualification"
+    },
+    {
+      "control_id": "RC-R18",
+      "measure": "Biocompatibility evaluation",
+      "type": "Design control",
+      "evidence_type": "Biocompatibility test report"
+    },
+    {
+      "control_id": "RC-R19",
+      "measure": "Explain in operation guide",
+      "type": "Marking warning",
+      "evidence_type": "Instructions for use"
+    },
+    {
+      "control_id": "RC-R20",
+      "measure": "Temperature measurement circuit design",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R21",
+      "measure": "Control by circuit",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R22",
+      "measure": "Control by circuit",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R23",
+      "measure": "Low-voltage check",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R24",
+      "measure": "Low-voltage check",
+      "type": "Design control",
+      "evidence_type": "Design verification"
+    },
+    {
+      "control_id": "RC-R25",
+      "measure": "Explain in operation guide",
+      "type": "Marking warning",
+      "evidence_type": "Instructions for use"
+    },
+    {
+      "control_id": "RC-R26",
+      "measure": "Material of the applied part",
+      "type": "Design control",
+      "evidence_type": "Material qualification"
+    },
+    {
+      "control_id": "RC-R27",
+      "measure": "Choose proper type of critical component",
+      "type": "Design control",
+      "evidence_type": "Component qualification"
+    },
+    {
+      "control_id": "RC-R28",
+      "measure": "Choose proper type of critical component",
+      "type": "Design control",
+      "evidence_type": "Component qualification"
+    },
+    {
+      "control_id": "RC-R29",
+      "measure": "Choose style of the components",
+      "type": "Design control",
+      "evidence_type": "Component qualification"
+    },
+    {
+      "control_id": "RC-R30",
+      "measure": "Device shall be in accordance with the requirement for environment conditions in ISO 80601-2-56:2017/Amd1:2018",
+      "type": "Design control",
+      "evidence_type": "Environmental test per ISO 80601-2-56:2017/Amd1:2018"
+    },
+    {
+      "control_id": "RC-R31",
+      "measure": "Explain storage and use environment in operation guide",
+      "type": "Marking warning",
+      "evidence_type": "Instructions for use"
+    },
+    {
+      "control_id": "RC-R32",
+      "measure": "Housing material selection",
+      "type": "Design control",
+      "evidence_type": "Material qualification"
+    },
+    {
+      "control_id": "RC-R33",
+      "measure": "Creepage distance and electrical clearance design",
+      "type": "Design control",
+      "evidence_type": "Electrical safety test"
+    },
+    {
+      "control_id": "RC-R34",
+      "measure": "Floating ground design",
+      "type": "Design control",
+      "evidence_type": "Electrical safety test"
+    },
+    {
+      "control_id": "RC-R35",
+      "measure": "Explain in operation guide",
+      "type": "Marking warning",
+      "evidence_type": "Instructions for use"
+    },
+    {
+      "control_id": "RC-R36",
+      "measure": "Usability design",
+      "type": "Design control",
+      "evidence_type": "Usability evaluation"
+    },
+    {
+      "control_id": "RC-R37",
+      "measure": "Temperature measurement circuit design; Software control",
+      "type": "Design control",
+      "evidence_type": "Design verification; Software test"
+    },
+    {
+      "control_id": "RC-R38",
+      "measure": "Explain in operation guide; Usability design",
+      "type": "Marking warning; Design control",
+      "evidence_type": "Instructions for use; Usability evaluation"
+    },
+    {
+      "control_id": "RC-R39",
+      "measure": "Usability design",
+      "type": "Design control",
+      "evidence_type": "Usability evaluation"
+    },
+    {
+      "control_id": "RC-R40",
+      "measure": "Durability design",
+      "type": "Design control",
+      "evidence_type": "Durability test"
+    },
+    {
+      "control_id": "RC-R41",
+      "measure": "Explain in operation guide",
+      "type": "Marking warning",
+      "evidence_type": "Instructions for use"
+    },
+    {
+      "control_id": "RC-R42",
+      "measure": "Usability design",
+      "type": "Design control",
+      "evidence_type": "Usability evaluation"
+    },
+    {
+      "control_id": "RC-R43",
+      "measure": "Usability design",
+      "type": "Design control",
+      "evidence_type": "Usability evaluation"
+    },
+    {
+      "control_id": "RC-R44",
+      "measure": "Usability design",
+      "type": "Design control",
+      "evidence_type": "Usability evaluation"
+    },
+    {
+      "control_id": "RC-R45",
+      "measure": "Usability design; How to judge the display device work well described in operation guide",
+      "type": "Design control; Marking",
+      "evidence_type": "Usability evaluation; Instructions for use"
+    },
+    {
+      "control_id": "RC-R46",
+      "measure": "Battery storehouse marks battery type; Anti reverse design",
+      "type": "Marking warning; Design control",
+      "evidence_type": "Instructions for use; Design verification"
+    },
+    {
+      "control_id": "RC-R47",
+      "measure": "Explain in operation guide",
+      "type": "Marking warning",
+      "evidence_type": "Instructions for use"
+    },
+    {
+      "control_id": "RC-R48",
+      "measure": "Explain in operation guide",
+      "type": "Marking warning",
+      "evidence_type": "Instructions for use"
+    },
+    {
+      "control_id": "RC-R49",
+      "measure": "Control the size of detachable components; Explain in operation guide",
+      "type": "Design control; Marking warning",
+      "evidence_type": "Design verification; Instructions for use"
+    },
+    {
+      "control_id": "RC-R50",
+      "measure": "Memory function design",
+      "type": "Design control",
+      "evidence_type": "Software test"
+    },
+    {
+      "control_id": "RC-R51",
+      "measure": "Software control",
+      "type": "Design control",
+      "evidence_type": "Software test"
+    },
+    {
+      "control_id": "RC-R52",
+      "measure": "Algorithm control",
+      "type": "Design control",
+      "evidence_type": "Software test"
+    },
+    {
+      "control_id": "RC-R53",
+      "measure": "Version labeling",
+      "type": "Marking",
+      "evidence_type": "Software configuration management"
+    },
+    {
+      "control_id": "RC-R54",
+      "measure": "Explain in operation guide; Software design",
+      "type": "Marking warning; Design control",
+      "evidence_type": "Instructions for use; Software test"
+    },
+    {
+      "control_id": "RC-R55",
+      "measure": "Software design",
+      "type": "Design control",
+      "evidence_type": "Software test"
+    },
+    {
+      "control_id": "RC-R56",
+      "measure": "Software design for wireless coexistence; LED fallback display; Bluetooth retransmission",
+      "type": "Design control",
+      "evidence_type": "Software test"
+    },
+    {
+      "control_id": "RC-R57",
+      "measure": "Cybersecurity design",
+      "type": "Design control",
+      "evidence_type": "Cybersecurity test"
+    }
+  ],
+  "_meta": {
+    "source_file": "03 风险分析/PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+    "doc_type": "risk_analysis"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "Risk Assessment Report",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "infrared thermometer",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Assessment Report",
+      "to": "infrared thermometer",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk management",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXJH01 V1.0",
+      "to": "risk management",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXJH01 V1.0",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Assessment Report",
+      "to": "document structure",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "document structure",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk acceptance",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "risk acceptance",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R56",
+      "to": "wireless coexistence",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "software design",
+      "to": "wireless coexistence",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Bluetooth transmission",
+      "to": "wireless coexistence",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Analysis Report",
+      "to": "risk acceptance",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "risk acceptance",
+      "properties": {}
+    }
+  ],
+  "_claims": []
+}

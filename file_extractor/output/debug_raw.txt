@@ -1,0 +1,266 @@
+```json
+{
+  "document": {
+    "title": "PT9L红外体温计检测报告",
+    "doc_type": "检测报告/测试报告",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "上电自检功能",
+      "condition": "室温23℃，相对湿度55%",
+      "expected_value": "产品上电后进入上电自检：白色背光灯点亮，LCD显示屏全显，显示内容正确，无乱显/多显/少显，蜂鸣器响0.5S，2S后进入待机模式",
+      "actual_result": "1号：符合要求；2号：符合要求",
+      "pass_criteria": "符合要求",
+      "environment": "室温23℃，相对湿度55%"
+    },
+    {
+      "test_id": "2",
+      "item": "提示音开关",
+      "condition": "室温23℃，相对湿度55%",
+      "expected_value": "静音键关时屏幕出现静音符号，提示音关；静音键开时静音符号消失，提示音开；测温完成后按设定蜂鸣",
+      "actual_result": "1号：符合要求；2号：符合要求",
+      "pass_criteria": "符合要求",
+      "environment": "室温23℃，相对湿度55%"
+    },
+    {
+      "test_id": "3",
+      "item": "测量单位切换",
+      "condition": "室温23℃，相对湿度55%",
+      "expected_value": "待机状态长按测量键8秒进入单位切换，短按切换℃/℉并伴短蜂鸣，长按测量键2秒确认，单位符号常亮2秒并蜂鸣，之后自动关机",
+      "actual_result": "1号：符合要求；2号：符合要求",
+      "pass_criteria": "符合要求",
+      "environment": "室温23℃，相对湿度55%"
+    },
+    {
+      "test_id": "4",
+      "item": "测量模式切换",
+      "condition": "室温23℃，相对湿度55%",
+      "expected_value": "测量状态下短按设置键进入模式切换，循环切换婴儿模式、成人模式、物温模式，LCD对应图标显示",
+      "actual_result": "1号：符合要求；2号：符合要求",
+      "pass_criteria": "符合要求",
+      "environment": "室温23℃，相对湿度55%"
+    },
+    {
+      "test_id": "5",
+      "item": "自动关机",
+      "condition": "室温23℃，相对湿度55%",
+      "expected_value": "测温后无操作15±1S自动转入待机模式",
+      "actual_result": "1号：符合要求；2号：符合要求",
+      "pass_criteria": "符合要求",
+      "environment": "室温23℃，相对湿度55%"
+    },
+    {
+      "test_id": "6",
+      "item": "温度显示范围及超温提示功能",
+      "condition": "室温23℃，相对湿度55%",
+      "expected_value": "显示范围32℃~42.9℃；32.4℃、42.5℃可正确显示，31.6℃和43.4℃显示'--.-'报错",
+      "actual_result": "1号：见测试记录一；2号：见测试记录一",
+      "pass_criteria": "合格",
+      "environment": "室温23℃，相对湿度55%"
+    },
+    {
+      "test_id": "7",
+      "item": "显示分辨率",
+      "condition": "室温23℃，相对湿度55%；黑体温度变化0.1℃~0.15℃",
+      "expected_value": "0.1℃",
+      "actual_result": "1号：0.1℃；2号：0.1℃",
+      "pass_criteria": "0.1℃",
+      "environment": "室温23℃，相对湿度55%"
+    },
+    {
+      "test_id": "8",
+      "item": "常温精度测试",
+      "condition": "室温23.0±2.0℃，相对湿度50%RH±20%RH；恒温水槽设定32℃、32.5℃、35℃、38.5℃、42℃、42.5℃、42.9℃",
+      "expected_value": "≥35℃且≤42℃：±0.2℃；其它：±0.3℃",
+      "actual_result": "1号：见测试记录二；2号：见测试记录二",
+      "pass_criteria": "合格",
+      "instrument": "恒温水槽",
+      "environment": "室温23.0±2.0℃，相对湿度50%RH±20%RH"
+    },
+    {
+      "test_id": "9",
+      "item": "低电压提示功能",
+      "condition": "可调直流稳压电源供电",
+      "expected_value": "3.0V时正常测量；低于2.7V时显示低电符号；低于2.5V时闪烁显示低电图标，15秒后自动关机",
+      "actual_result": "1号：符合要求；2号：符合要求",
+      "pass_criteria": "符合要求",
+      "instrument": "可调直流稳压电源"
+    },
+    {
+      "test_id": "10",
+      "item": "背光灯",
+      "condition": "室温24℃~26℃，相对湿度30%~70%；恒温水槽设定34℃、35.7℃、37℃",
+      "expected_value": "34℃时背光白色；35.7℃时背光橙色；37℃时背光红色",
+      "actual_result": "1号：见测试记录三；2号：见测试记录三",
+      "pass_criteria": "合格",
+      "instrument": "恒温水槽",
+      "environment": "室温24℃~26℃，相对湿度30%~70%"
+    },
+    {
+      "test_id": "11",
+      "item": "静态电流",
+      "condition": "电源电压DC3.0V，省电模式（睡眠状态）",
+      "expected_value": "≤0.02mA",
+      "actual_result": "静态电流：8.1uA",
+      "pass_criteria": "≤0.02mA",
+      "instrument": "万用表，直流稳压电源"
+    },
+    {
+      "test_id": "12",
+      "item": "工作电流",
+      "condition": "电源电压DC3.0V，LCD背光点亮测量状态",
+      "expected_value": "≤20mA（工作中任意状态）",
+      "actual_result": "工作电流：12.7mA",
+      "pass_criteria": "≤20mA",
+      "instrument": "万用表，直流稳压电源"
+    },
+    {
+      "test_id": "13",
+      "item": "裸机跌落测试",
+      "condition": "产品开机状态，跌落高度1.0米，底部/LCD面/有测量键面各跌落一次，密度700kg/M3、厚度50mm硬质木板或混凝土地面",
+      "expected_value": "产品没有开裂，PCB板元器件没有损伤，产品结构功能完好",
+      "actual_result": "1号：符合要求；2号：符合要求",
+      "pass_criteria": "符合要求"
+    },
+    {
+      "test_id": "14",
+      "item": "带包装振动",
+      "condition": "5Hz-35Hz-5Hz，振幅0.35mm，振动方向X/Y/Z，各15次",
+      "expected_value": "包装不可看到被包装物品，边角不可破裂；测试后误差须在第8项允许范围内",
+      "actual_result": "1号：见测试记录四；2号：见测试记录四",
+      "pass_criteria": "合格"
+    },
+    {
+      "test_id": "15",
+      "item": "低温工作试验",
+      "condition": "10℃恒温箱放置24h，常温恢复1h；温度10℃~40℃，相对湿度≤95%不结露，大气压力70kPa~106kPa",
+      "expected_value": "按第8项精度要求，测量结果满足设计要求",
+      "actual_result": "1号：见测试记录五；2号：见测试记录五",
+      "pass_criteria": "合格",
+      "environment": "10℃，相对湿度≤95%不结露，70kPa~106kPa"
+    },
+    {
+      "test_id": "16",
+      "item": "高温工作试验",
+      "condition": "40℃恒温箱放置24h，常温恢复1h；温度10℃~40℃，相对湿度≤95%不结露，大气压力70kPa~106kPa",
+      "expected_value": "按第8项精度要求，测量结果满足设计要求",
+      "actual_result": "1号：见测试记录六；2号：见测试记录六",
+      "pass_criteria": "合格",
+      "environment": "40℃，相对湿度≤95%不结露，70kPa~106kPa"
+    },
+    {
+      "test_id": "17",
+      "item": "低温存储试验",
+      "condition": "-20℃恒温箱放置48h，常温恢复1h；温度-20℃~55℃，相对湿度≤95%不结露，大气压力70kPa~106kPa",
+      "expected_value": "按第8项精度要求，测量结果满足设计要求",
+      "actual_result": "1号：见测试记录七；2号：见测试记录七",
+      "pass_criteria": "合格",
+      "environment": "-20℃，相对湿度≤95%不结露，70kPa~106kPa"
+    },
+    {
+      "test_id": "18",
+      "item": "高温存储试验",
+      "condition": "55℃恒温箱放置48h，常温恢复1h；温度-20℃~55℃，相对湿度≤95%不结露，大气压力70kPa~106kPa",
+      "expected_value": "按第8项精度要求，测量结果满足设计要求",
+      "actual_result": "1号：见测试记录八；2号：见测试记录八",
+      "pass_criteria": "合格",
+      "environment": "55℃，相对湿度≤95%不结露，70kPa~106kPa"
+    },
+    {
+      "test_id": "19",
+      "item": "产品寿命",
+      "condition": "5个样品实际测量1万次，测试前后按第8项进行精度和功能测试",
+      "expected_value": "五年或10000次；精度和功能均需正常",
+      "actual_result": "整机寿命测试报告",
+      "pass_criteria": "合格"
+    },
+    {
+      "test_id": "20",
+      "item": "电池寿命",
+      "condition": "模拟人体测试，通过测试不同状态功耗推算连续工作时间和待机时间",
+      "expected_value": "测量次数≥1000次，待机能力≥6个月",
+      "actual_result": "符合要求",
+      "pass_criteria": "合格"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-XNTB01 V1.0",
+      "conclusion": "全部20项测试项目结论均为合格"
+    }
+  ],
+  "test_measurements": [
+    {
+      "test_point": "静态电流（省电模式/睡眠状态）",
+      "reading": 8.1,
+      "unit": "uA",
+      "reference_value": "≤0.02mA",
+      "condition": "DC3.0V供电，睡眠状态"
+    },
+    {
+      "test_point": "工作电流（LCD背光点亮测量状态）",
+      "reading": 12.7,
+      "unit": "mA",
+      "reference_value": "≤20mA",
+      "condition": "DC3.0V供电，测量键按下LCD背光点亮"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-XNTB01 V1.0"
+    },
+    {
+      "id_type": "测试机型",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "样机编号",
+      "value": "1号"
+    },
+    {
+      "id_type": "样机编号",
+      "value": "2号"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "PT9L进行到T1阶段，此次测试对PT9L的性能进行测试，测试依据为"PT9L红外体温计产品检验标准"。测试环境：23℃，湿度55%，正常大气压；测试样机数量：2台（编号为1号和2号）。测试仪器：恒温水槽、黑体辐射源，均需符合"PT9L红外体温计产品检验标准"内的要求。测试方法见《PT9L红外体温计产品检验标准》。",
+      "topic_tags": ["测试背景", "测试阶段", "测试依据", "测试环境", "测试仪器", "样机数量"],
+      "related_subjects": ["PT9L红外体温计产品检验标准", "PT9L红外体温计"]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "常温精度测试方法：1.在断电情况下按住按键后装入电池，显示"CAL"后松开按键，产品进入黑体模式；2.对被测水槽连续测量三次；3.精度要求：≥35℃且≤42℃：±0.2℃，其它：±0.3℃；4.对测试结果不符合规定的温度计，可复测两次，两次复测合格，亦可作合格处理。",
+      "topic_tags": ["精度测试", "黑体模式", "CAL", "复测规则", "精度要求"],
+      "related_subjects": ["常温精度测试", "恒温水槽"]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "背光灯测试方法：1.体温计应处于用户模式，不要进入黑体模式；2.对被测水槽连续测量三次，不必关注屏幕显示的温度，只看背光颜色；3.要求：测试34℃水槽时背光应为白色，测试35.7℃水槽时背光应为橙色，测试37℃水槽时背光应为红色；4.对测试结果不符合规定的温度计，可复测两次，两次复测合格，亦可作合格处理。",
+      "topic_tags": ["背光灯", "用户模式", "背光颜色", "复测规则"],
+      "related_subjects": ["背光灯测试", "恒温水槽"]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "产品寿命要求：五年或10000次。产品整机寿命5年，假设平均每天使用5次，等效1万次的使用寿命，对其中可以影响到整机寿命的电子元器件以及结构组件进行测试。选取5个样品实际测量1万次，测试前和测试后都按照第8项进行测试，精度和功能均需正常，则认为产品寿命达到本项要求。",
+      "topic_tags": ["产品寿命", "整机寿命", "10000次", "5年"],
+      "related_subjects": ["产品寿命测试", "整机寿命测试报告"]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "电池寿命要求：测量次数≥1000次，待机能力≥6个月。模拟人体测试，通过测试不同状态的功耗推算出连续工作时间和待机时间，结果应满足设计要求。",
+      "topic_tags": ["电池寿命", "待机能力", "功耗", "测量次数"],
+      "related_subjects": ["电池寿命测试"]
+    }
+  ]
+}
+```

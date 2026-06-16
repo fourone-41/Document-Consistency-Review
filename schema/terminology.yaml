@@ -1,0 +1,133 @@
+# 术语归一表 —— 对齐的地基
+# 把不同文件里同义的表述，归到同一个 subject 标准词；direction 决定不退化检查的比较方向。
+# 本表由真实文件采样（立项/设计输入/客户需求书/BOM）长出，可随新采样增补。
+# direction: smaller_is_better | larger_is_better | wider_is_better | exact_match
+
+version: 0.1.0
+
+subjects:
+
+  - subject: measurement_accuracy
+    direction: smaller_is_better
+    unit: "℃"
+    aliases: [测量误差, 测量精度, 精度, 允差, 最大允许误差, accuracy, maximum permissible error]
+
+  - subject: display_range
+    direction: wider_is_better
+    unit: "℃"
+    aliases: [温度显示范围, 显示范围, 量程, 测量范围, temperature range, measuring range]
+
+  - subject: operating_temperature
+    direction: wider_is_better
+    unit: "℃"
+    aliases: [工作环境温度, 工作环境, 使用环境温度, operating temperature]
+
+  - subject: storage_temperature
+    direction: wider_is_better
+    unit: "℃"
+    aliases: [存储环境温度, 存储环境, 储存温度, storage temperature]
+
+  - subject: display_resolution
+    direction: smaller_is_better
+    unit: "℃"
+    aliases: [显示分辨率, 分辨率, resolution, 显示精度]
+
+  - subject: service_life
+    direction: larger_is_better
+    unit: "年/次"
+    aliases: [产品寿命, 使用寿命, expected service life]
+
+  - subject: battery_life
+    direction: larger_is_better
+    unit: "次"
+    aliases: [电池寿命, 测量使用次数, 使用次数, battery life]
+
+  - subject: product_dimensions
+    direction: exact_match
+    unit: "mm"
+    aliases: [整机外形尺寸, 外形尺寸, 产品尺寸, dimensions]
+
+  - subject: product_weight
+    direction: exact_match
+    unit: "g"
+    aliases: [整机重量, 产品重量, 重量, weight]
+
+  - subject: package_dimensions
+    direction: exact_match
+    unit: "mm"
+    aliases: [外箱尺寸, 包装尺寸, 整箱尺寸]
+
+  - subject: package_weight
+    direction: exact_match
+    unit: "kg"
+    aliases: [整箱重量, 外箱重量]
+
+  - subject: ip_rating
+    direction: exact_match
+    unit: ""
+    aliases: [防尘防水, 防护等级, IP等级, IP rating, ingress protection]
+
+  - subject: response_time
+    direction: smaller_is_better
+    unit: "s"
+    aliases: [响应时间, 测量时间, response time]
+
+  - subject: fever_alarm_threshold
+    direction: exact_match
+    unit: "℃"
+    aliases: [发热报警阈值, 报警阈值, fever alarm]
+
+  - subject: humidity_range
+    direction: wider_is_better
+    unit: "%RH"
+    aliases: [相对湿度, 湿度范围, relative humidity]
+
+  - subject: pressure_range
+    direction: wider_is_better
+    unit: "kPa"
+    aliases: [大气压力, 气压范围, atmospheric pressure]
+
+  - subject: auto_off_time
+    direction: exact_match
+    unit: "s"
+    aliases: [自动关机时间, 关机时间, auto off]
+
+  # 🆕 v0.2：说明书(IFU)双语采样新增
+  - subject: measuring_distance
+    direction: exact_match
+    unit: "cm"
+    aliases: [测量距离, 测量部位距离, measuring distance, 额头距离]
+
+  - subject: clinical_repeatability
+    direction: smaller_is_better
+    unit: "℃"
+    aliases: [临床再现性, 重复性, clinical repeatability, repeatability]
+
+# =====================================================================
+# 🆕 单位换算规则 —— 跨文档/双语对齐时先归一到 base_unit 再比较
+# 说明书常见 °F/°C、in/cm 双标，必须换算后才能判断一致性。
+# =====================================================================
+unit_conversions:
+  - from_unit: "°F"
+    to_unit: "℃"
+    formula: "(F - 32) * 5 / 9"
+    note: 华氏转摄氏；温度类 subject 一律归一到 ℃ 再比较
+
+  - from_unit: "℉"
+    to_unit: "℃"
+    formula: "(F - 32) * 5 / 9"
+
+  - from_unit: "in"
+    to_unit: "cm"
+    formula: "in * 2.54"
+    note: 英寸转厘米；尺寸/距离类归一到公制
+
+  - from_unit: "mmHg"
+    to_unit: "kPa"
+    formula: "mmHg * 0.133322"
+    note: 血压计压力相关
+
+aliasing_notes:
+  - 同一指标若同时给出双语双单位（如 ±0.4°F/0.2°C），抽取时优先取公制值入 Claim.value，
+    并把原文整段写入 Claim.raw_text 供溯源。
+  - 比较前统一调用 unit_conversions 归一；归一失败（单位未知）的不得直接判冲突，标为 needs_review。

@@ -1,0 +1,167 @@
+# =====================================================================
+# 抽取 Profile —— 每类文档一份「全局 schema 的子集 + 抽取重点 + 易错点」
+# =====================================================================
+# 用法：分类器(见 _convert/classify_sample.py)先把文件归到某个 label，
+#       抽取时按对应 profile 只激活 target_nodes / target_edges，
+#       并把 focus / pitfalls 注入 LLM 提示词。
+# 单一可信源仍是 schema.yaml；本表只是「视图 + 提示」，不新增字段。
+version: 0.2.0
+
+# 所有 profile 通用：几乎每份文档都应尝试抽取的「公共节点」
+common_nodes: [Document, Identifier, Person, RevisionRecord]
+common_edges: [DECLARES, SIGNED, HAS_REVISION, PART_OF, STATED_IN]
+common_pitfalls:
+  - 签字栏常为空 → Person.signed=false，不要臆造姓名。
+  - 文件名/编号/版本/日期一律进 Document + Identifier，便于跨文档对齐。
+  - 量化值带 ± 时，公差进 tolerance，不要塞进 condition/value。
+
+profiles:
+
+  立项_需求:
+    doc_types: [立项批准书, 客户需求书]
+    target_nodes: [Product, IntendedUseItem, Market, Requirement, Claim, Regulation, SemanticFragment]
+    target_edges: [COVERS, CONSTRAINED_BY, RELATES_TO]
+    focus:
+      - 预期用途逐条 → IntendedUseItem（保留序号与原文）。
+      - 量化指标(温度范围/精度/分辨率/寿命/工作&存储环境) → Claim，归一 subject，填 tolerance+condition。
+      - 目标市场与认证(CE/FDA/CFDA) → Market(region/certification/selected)。
+      - 定性意图/外观/环保要求 → SemanticFragment(scope_limitation/constraint_statement)。
+    pitfalls:
+      - 立项批准书多为定性，数值很少 → 抽不到 Claim 是正常的，别硬塞。
+      - 客户需求书分「通用/性能/功能/组件」四块，按 CategoryEnum 标 category。
+
+  设计输入:
+    doc_types: [设计输入汇总表, 设计输入评审记录, 设计评审计划表-设计输入]
+    target_nodes: [DesignInput, Claim, Regulation, ReviewItem, SemanticFragment]
+    target_edges: [DERIVES_FROM, CONSTRAINED_BY, MUST_BE_GEQ, HAS_REVIEW_ITEM]
+    focus:
+      - 设计输入条目 → DesignInput(category/value/unit/tolerance/condition)。
+      - 法规标准清单 → Regulation(std_id/region/applicable/equivalent_std)。
+      - 量化要求同时镜像一份 → Claim（对齐主干）。
+    pitfalls:
+      - 「设计输入评审记录/计划表」是评审类 → 逐条进 ReviewItem，不是 DesignInput。
+
+  设计输出_清单:
+    doc_types: [DHF清单, 设计输出清单]
+    target_nodes: [DocIndexEntry]
+    target_edges: [LISTS_FILE, INDEXES]
+    focus:
+      - 每一行登记的文件 → DocIndexEntry(file_name/file_no/form/location/stage/signed/applicable/date)。
+      - 这是「文件齐套性」检查的依据：清单声称应有的文件，后续与真实文件集求差。
+    pitfalls:
+      - 不要把清单里的文件名当成 Claim/Requirement；它只是索引。
+
+  BOM_物料:
+    doc_types: [组件清单, EBOM, ABOM, 包装BOM]
+    target_nodes: [Component, Product]
+    target_edges: []
+    focus:
+      - 每行物料 → Component(part_no/name/spec/model/ref_des/qty/criticality/rohs/board)。
+      - 规格里的电气参数(如 100μF±20%/16V) 放 Component.spec 原样保留。
+    pitfalls:
+      - 不强行把元件参数转成 Claim；BOM 的对齐靠 part_no/ref_des。
+
+  风险_FMEA:
+    doc_types: [设计FMEA, 结构类FMEA, 硬件类FMEA, 包装类FMEA, 风险管理报告]
+    target_nodes: [Risk, RiskControl, SemanticFragment]
+    target_edges: [MITIGATED_BY, VERIFIED_BY, ADDRESSED_IN]
+    focus:
+      - 失效模式/危险源/后果/严重度·频度·探测度(或 S/O/D、RPN) → Risk。
+      - 降低风险措施 → RiskControl，连 MITIGATED_BY。
+      - 用 Risk.phase 区分 pre-mitigation / post-mitigation。
+    pitfalls:
+      - 封面类文件信息少，主抽 Document + 签批。
+
+  设计验证:
+    doc_types: [设计验证报告, 设计验证计划]
+    target_nodes: [Test, TestMeasurement, Claim, DocIndexEntry, SemanticFragment]
+    target_edges: [VERIFIED_BY, REPORTED_IN, HAS_MEASUREMENT, MEASURES]
+    focus:
+      - 验证项 → Test(item/condition/expected_value/actual_result/pass_criteria/instrument/environment)。
+      - 逐行实测 → TestMeasurement；与设计输入/需求的 Claim 连 MEASURES。
+      - 「包含文件」列 → DocIndexEntry。
+    pitfalls:
+      - 封皮/封面文件主要抽 Document + 结论 + 签批。
+
+  设计确认:
+    doc_types: [设计确认报告, 软件确认报告, 设计确认评审计划表]
+    target_nodes: [ReviewItem, Statement, IntendedUseItem, Test, SemanticFragment]
+    target_edges: [HAS_REVIEW_ITEM, COVERS]
+    focus:
+      - 确认项目及结论 → ReviewItem(content/conclusion/actual_situation)。
+      - 「设计输出 ↔ 预期用途一致性」结论 → Statement / ReviewItem。
+      - 适应症/禁忌症等 → SemanticFragment(scope_limitation)。
+
+  评审检查表:
+    doc_types: [各阶段评审检查表, 评审记录, 评审表]
+    target_nodes: [ReviewRecord, ReviewItem]
+    target_edges: [HAS_REVIEW_ITEM, REVIEWS]
+    focus:
+      - 评审抬头 → ReviewRecord(stage/date/conclusion)。
+      - 逐条检查项 → ReviewItem(seq/category/content/actual_situation/conclusion/improvement)。
+      - 评审参与者 → Person + SIGNED(role=评审员)。
+    pitfalls:
+      - 这是最大类(~85 份)：务必保留「实际情况」「结论」「改进措施」三列，别压成一句话。
+
+  软件:
+    doc_types: [软件方案设计, 软件需求规格, 软件配置清单, 软件设计方案]
+    target_nodes: [SoftwareItem, SoftwareConfigItem, Claim, SemanticFragment]
+    target_edges: [DESCRIBES_SOFTWARE, RELATES_TO]
+    focus:
+      - 功能模块/设计规格/通信命令/软硬件接口 → SoftwareItem(item_type 区分)。
+      - 配置清单/生命周期记录 → SoftwareConfigItem(phase/activity/config_item/version)。
+      - 量化约束(代码量≤60Kbytes、压力≤297mmHg超1.5s) → Claim 或 SemanticFragment(constraint_statement)。
+      - 运行环境(单片机型号) → SoftwareItem.run_environment。
+
+  说明书_包装:
+    doc_types: [用户说明书/IFU, 包装设计说明书, 说明书&包装问题汇总/清单]
+    target_nodes: [Claim, SemanticFragment, IssueItem, Product, Market]
+    target_edges: [TRACKS_ISSUE, ABOUT, RELATES_TO]
+    focus:
+      - 规格参数(常双语双单位 ±0.4°F/0.2°C) → Claim：value 取公制、raw_text 留原文整段。
+      - 警告/禁忌/使用步骤/清洁消毒 → SemanticFragment(behavioral_spec/scope_limitation)。
+      - 「问题汇总/问题清单」类 → IssueItem(description/cause/action/owner/status)。
+    pitfalls:
+      - 务必区分「说明书正文」(出 Claim/Fragment) 与「问题清单」(出 IssueItem)。
+      - 双单位先按 terminology.unit_conversions 归一再比较，归一失败标 needs_review。
+
+  开发计划_策划:
+    doc_types: [设计开发计划表, 质量策划, 软件质量策划]
+    target_nodes: [PlanTask, Resource, SoftwareConfigItem, SemanticFragment]
+    target_edges: [SCHEDULES, DEPENDS_ON, USES_RESOURCE]
+    focus:
+      - 任务行 → PlanTask(wbs/name/predecessor/start_date/end_date/owner/level)。
+      - 资源行 → Resource(name/type/standard/rate)。
+      - 软件生命周期策划/确认计划 → SoftwareConfigItem。
+    pitfalls:
+      - 开发计划表常极大(20万字级) → 抽取前按章节/Sheet 分块。
+
+  图样_方案:
+    doc_types: [硬件设计方案, 结构设计方案, 软件方案, 图样评审]
+    target_nodes: [SemanticFragment, Component, SoftwareItem, Claim, ReviewItem]
+    target_edges: [RELATES_TO, HAS_REVIEW_ITEM]
+    focus:
+      - 方案内容/工作原理/设计理由 → SemanticFragment(working_principle/design_rationale)。
+      - 电路模块/主板方案 → Component 或 SoftwareItem(软硬件接口)。
+      - 关键尺寸/参数(带公差) → Claim(填 tolerance)。
+      - 评审结论 → ReviewItem。
+
+  测试_记录:
+    doc_types: [性能测试数据, 寿命测试报告, 用户测试记录, 检测报告]
+    target_nodes: [Test, TestMeasurement, Claim, SemanticFragment]
+    target_edges: [HAS_MEASUREMENT, MEASURES, REPORTED_IN]
+    focus:
+      - 测试基本信息(目的/样机/仪器/环境) → Test(instrument/environment)。
+      - 逐行实测 → TestMeasurement(machine_no/test_point/reading/unit/reference_value/condition)。
+      - 实测↔规格要求 → 连 MEASURES 到对应 Claim。
+
+  其它:
+    doc_types: [可追溯性分析, 图纸, 检查清单, 未归类]
+    target_nodes: [Document, Claim, Component, SemanticFragment, ReviewItem, DocIndexEntry]
+    target_edges: [REFERENCES, RELATES_TO]
+    focus:
+      - 先让 LLM 判 doc_type，再就近套用最接近的 profile。
+      - 图纸(下盖等) → 关键尺寸 Claim(带 tolerance) + 技术要求 SemanticFragment。
+      - 可追溯性矩阵 → 主要产出 edges(DERIVES_FROM / COVERS / VERIFIED_BY)。
+    pitfalls:
+      - 「其它」占比很大(~209 份)：上线前应回看本桶，把高频新类型补成正式 profile。

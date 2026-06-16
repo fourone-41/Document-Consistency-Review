@@ -1,0 +1,4166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>抽取对照审查 - 左原文 | 右JSON</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Consolas", "Microsoft YaHei", monospace;
+            font-size: 13px;
+            background: #1e1e2e;
+            color: #cdd6f4;
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #181825;
+            padding: 10px 20px;
+            border-bottom: 1px solid #313244;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #89b4fa;
+        }
+        .nav a {
+            color: #a6e3a1;
+            text-decoration: none;
+            padding: 4px 12px;
+            border-radius: 4px;
+            background: #313244;
+        }
+        .nav a:hover { background: #45475a; }
+        .file-block {
+            margin: 16px;
+        }
+        .file-title {
+            background: #313244;
+            color: #cba6f7;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 2px solid #cba6f7;
+        }
+        .split-view {
+            display: flex;
+            height: 80vh;
+            border: 1px solid #313244;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+        }
+        .pane {
+            flex: 1;
+            overflow: auto;
+            padding: 0;
+        }
+        .left-pane { background: #1e1e2e; }
+        .right-pane { background: #181825; }
+        .pane-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 8px 16px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .left-pane .pane-header {
+            background: #1e1e2e;
+            color: #89b4fa;
+            border-bottom: 1px solid #313244;
+        }
+        .right-pane .pane-header {
+            background: #181825;
+            color: #a6e3a1;
+            border-bottom: 1px solid #313244;
+        }
+        .divider {
+            width: 3px;
+            background: #45475a;
+            cursor: col-resize;
+        }
+        .content {
+            padding: 12px 16px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.7;
+            font-size: 13px;
+        }
+        .left-pane .content { color: #cdd6f4; }
+        .right-pane .content { color: #bac2de; }
+        .pane::-webkit-scrollbar { width: 8px; }
+        .pane::-webkit-scrollbar-track { background: transparent; }
+        .pane::-webkit-scrollbar-thumb { background: #45475a; border-radius: 4px; }
+        .pane::-webkit-scrollbar-thumb:hover { background: #585b70; }
+
+        @media print {
+            .nav { display: none; }
+            .split-view { height: auto; flex-direction: column; }
+            .pane { overflow: visible; }
+            .divider { height: 2px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <span class="nav-title">抽取对照审查</span>
+        <a href="#file-0">客户需求书</a>
+        <a href="#file-1">设计输入汇总表</a>
+        <a href="#file-2">检测报告</a>
+        <span style="color:#6c7086; margin-left:auto;">左=源文件原文 | 右=raw_extraction JSON原文 | 两边独立滚动 | 中间可拖拽</span>
+    </div>
+    
+        <div class="file-block" id="file-0">
+            <div class="file-title">客户需求书 &mdash; 客户需求书E0-血压计 23.6.via_xlsx.clean.md</div>
+            <div class="split-view">
+                <div class="pane left-pane">
+                    <div class="pane-header">原文件 (客户需求书E0-血压计 23.6.via_xlsx.clean.md)</div>
+                    <pre class="content">&lt;!-- hybrid clean-md; source = via_xlsx.md; 规整表=GFM，合并表=展开重建GFM，满行说明=段落，无 HTML 标签/无合并记号 --&gt;
+# 客户需求书E0-血压计 23.6
+
+&gt; hybrid clean-md（excel）：每个 Sheet 的表用 GFM 重建（合并格按 rowspan 向下继承、满行说明铺成段落）；保留全部文字、复选框与图片；不保留 HTML 表格标签。涉及严格行列/签字仍回查 `.via_xlsx.md`。
+
+## Sheet: 历史版本记录
+
+|  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 历史版本记录 |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  | 序号 | 修改日期 | 修改描述 | 版本 | 编制 | 批准 |
+|  | 1 | 2024.4.18 | 起草 | V1.0 | 赵一平 | 丛明 |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+
+## Sheet: 历史版本记录 (2)
+
+|  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 历史版本记录 |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  | 序号 | 修改日期 | 修改描述 | 版本 | 编制 | 批准 |
+|  | 1 | 2024.4.18 | 起草 | V1.0 | 赵一平 | 侯广伟 |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+
+## Sheet: 客户需求书
+
+客户需求书－通用要求部分
+
+Customer requirements － General part
+
+| 注：在客户需求书中标记“■”或是在“□”中划“√”都表示当前项已经被选中;标记“□”表示当前项未选中。 |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| 序号 No. | 条目 Item | 要 求 Requirements |  | 备注 Remark |
+| 1 | 客户 | 九安公司自主研发 |  |  |
+| 2 | 预计销售地区及注册要求 | □ 欧盟地区 EU 通过时间要求： 分类： 申请路径： OTC: ■ 美国 USA 通过时间要求： 分类： 申请路径： OTC: □ 中国 CHN 通过时间要求： 分类： 申请路径： OTC: □ 其他 OTHERS______________通过时间要求： 分类： 申请路径： OTC: |  |  |
+| 2 | 注册完成方 | CE注册方： □ NA □ andon □ customer CE付费方: □ NA □ andon □ customer 510k注册方：□ NA ■ andon □ customer 510k付费方:□ NA ■ andon □ customer 中国注册方：□ NA □ andon □ customer 中国注册付费方:□NA□ andon□ customer 其它注册方及付费方： |  |  |
+| 3 | 附属或辅助部分 | 无 |  |  |
+| 4 | 预期用途相关信息 | 本品主要采用红外测温方式测量人体额头温度，家用和医用。 |  |  |
+| 5 | 功能描述 | 功能描述见附件1：《客户需求书－功能规格部分》V1.0 |  |  |
+| 6 | 外形设计 | □客户提供外观设计方案 ■重新设计外观，要求如下：（可以参比已有机型） 无 □同已有外观，机型： |  |  |
+| 7 | 使用方式 | □固定式设备Fixed equipment ■手持式设备Hand-held equipment □移动式设备Mobile equipment □永久性安装设备Permanently equipment □可携带式设备Portable equipment □非移动式设备Stationary equipment □可移动式设备Transportable equipment □可穿戴式设备Body-worn equipment |  |  |
+| 8 | 产品寿命 | 见附件3：《客户需求书－性能规格部分》V1.0 |  |  |
+| 9 | 包装及运输方式 | 1.单箱不大于 20 Kg 2.长宽高之和不大于 1400 mm 3.最大长度尺寸不大于400 mm 4.□ 允许外箱使用金属钉钉合 ■ 不允许外箱使用金属钉钉合 5.运输方式：■ 海运 ■ 空运 ■ 陆运 |  |  |
+| 10 | 环保 | 要求同时满足以下环保指令或法规： □中国ROHS 2.0 ■ROHS(2011/65/EU) ■加州65提案 □REACH(1907/2006/EC) □WEEE关于报废电子电气设备指令(2012/19/EU) ■电池指令 (2013/56/EU) ■包装指令 (2005/20/EC) □其它：_______________________________。 |  |  |
+| 11 | 商标和专利 | 专利方面的信息或要求： 客户是否有授权我们公司使用的专利： □有 描述： ■无 客户是否有此产品侵权方面的文献或资料： □有 描述： ■无 □外观专利方面： □发明专利方面： □需规避专利方面： 商标方面的信息或要求： □有 描述： ■无 |  |  |
+| 12 | 客户特殊要求 | ■ 无 □ 单独跌落试验 □ 特殊标签 □ 非强制性标准的引用或即将强制标准的引用 □ 验货抽样标准 □ 外部测试要求 □ 其他要求： |  |  |
+| 13 | 组件要求 | 组件描述详见附件2：《客户需求书－组件规格部分》V1.0 |  |  |
+| 14 | 防尘防水 | ■应符合IEC60529的IP22类测试（属于手持式、可穿戴式或运输中可操作设备） □应符合IEC60529的IP21类测试 □应符合IEC60529的IP20类测试（属于可携带式设备） □无要求 □其他： |  |  |
+
+## Sheet: 性能规格部分
+
+客户需求书－性能规格部分
+
+Customer requirements － Performance part
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| 序号 No. | 条目 Item | 要 求 Requirements | 备注 Remark |
+| 1 | 温度显示范围 | 32.0℃～42.9℃ |  |
+| 2 | 显示分辨率 | 0.1℃ |  |
+| 3 | 测量误差 | ≥35℃且≤42℃：±0.2℃，其它：±0.3℃ |  |
+| 4 | 工作环境 | 温度：10℃～40℃ 相对湿度：不窄于15-95%RH，不结露 大气压力：70kPa～106kPa |  |
+| 5 | 存储环境 | 温度：-20.0℃―55.0℃ 相对湿度：不窄于15-95%RH，不结露 大气压力：70kPa～106kPa |  |
+| 6 | 产品寿命 | 五年或10000次 |  |
+| 7 | 电池寿命 | 测量使用次数不低于1000次 |  |
+| 8 | 其它要求 | 无 |  |
+
+## Sheet: 功能规格部分
+
+客户需求书－功能规格部分
+
+Customer requirements － Function part
+
+|  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 序号 No. | 条目 Item | 要 求 Requirements |  |  |  | 备注 Remark |
+| 1 | 测量原理 | ■红外非接触式 | □接触式 | □其他: |  |  |
+| 2 | 测量位置 | ■额面 | □腋下 | □其他: |  |  |
+| 3 | 检测项目 | ■人体体温 | ■物温 | □其他： |  |  |
+| 4 | 分类指示方式 | ■屏幕选择 | □彩色丝印 | □4组LED灯 | □3组LED灯 |  |
+| 4 | 分类指示方式 | □其他: |  |  |  |  |
+| 5 | 按键描述 | ■开机测量键 | ■设置键 | ■静音键 |  |  |
+| 6 | LCD型式 | ■段码式 | □点阵式 | □其他 |  |  |
+| 6 | LCD型式 | ■有背光 |  |  |  |  |
+| 7 | 壳体变色 | ■No | □Yes 描述： |  |  |  |
+| 8 | 位置检测 | ■No | □Yes 描述： |  |  |  |
+| 9 | PC Link | ■No | □Yes 描述： |  |  |  |
+| 10 | 低电压检出 | □单阶段 | ■双阶段 | □其他: |  |  |
+| 11 | 错误分类显示 | □No | ■错误种类：2种 （1、超出工作环境温度 2、超过量程 ） |  |  |  |
+| 12 | 自动关机时间 | 描述：常规为15秒 |  |  |  |  |
+| 13 | 温度显示单位 | ■℃ | ■℉ |  |  |  |
+| 14 | 提示功能 | ■蜂鸣 | □震动 |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+
+## Sheet: 组件规格部分
+
+| 客户需求书－组件规格部分 Customer requirements － Subassembly part |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| 序号 No. | 条目 Item |  | 要 求 Requirements | 备注 Remark |
+| 1 | 表面处理 | 上盖要求 | □亮面 □火花纹 ■细火花纹 □镜面火花纹 □电镀 □喷漆 □其他： |  |
+| 2 | 表面处理 | 下盖要求 | □亮面 □火花纹 ■细火花纹 □镜面火花纹 □电镀 □喷漆 □其他： |  |
+| 3 | 表面处理 | 电池盖要求 | □亮面 □火花纹 ■细火花纹 □镜面火花纹 □电镀 □喷漆 □其他： |  |
+| 4 | 颜色要求 | 上盖要求 | ■白色 □黑色 □喷漆颜色： □其他： |  |
+| 5 | 颜色要求 | 下盖要求 | ■白色 □黑色 □喷漆颜色： □其他： |  |
+| 6 | 颜色要求 | 电池盖要求 | ■白色 □黑色 □喷漆颜色： □其他： |  |
+| 7 | 按键 | 按键形式 | □无 ■注塑按键 □硅胶按键 □触摸按键 □与主机一体按键 □其他： |  |
+| 8 | 按键 | 表面处理 | □不适用 □亮面 □火花纹 ■细火花纹 □镜面 □喷漆 □其他： |  |
+| 9 | 透镜 | 透镜形式 | □无 □注塑透镜 ■模切透镜 □其他： |  |
+| 10 | 透镜 | 表面处理 | ■不适用 □镜面抛光 □电镀 □其他： |  |
+| 11 | 其它要求 | 无 | 无 |  |
+</pre>
+                </div>
+                <div class="divider"></div>
+                <div class="pane right-pane">
+                    <div class="pane-header">抽取结果 (客户需求书E0-血压计 23.6.via_xlsx.clean.json)</div>
+                    <pre class="content">{
+  &quot;requirements&quot;: [
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;通用&quot;,
+      &quot;description&quot;: &quot;九安公司自主研发&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row1&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;预计销售地区及注册要求：美国 USA，OTC路径&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row2&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;510k注册方：andon&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row2&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;510k付费方：andon&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row2&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;通用&quot;,
+      &quot;description&quot;: &quot;附属或辅助部分：无&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row3&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;本品主要采用红外测温方式测量人体额头温度，家用和医用。&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row4&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;功能描述见附件1：《客户需求书－功能规格部分》V1.0&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;通用&quot;,
+      &quot;description&quot;: &quot;重新设计外观，要求如下：无&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row6&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;通用&quot;,
+      &quot;description&quot;: &quot;使用方式：手持式设备 Hand-held equipment&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row7&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;产品寿命见附件3：《客户需求书－性能规格部分》V1.0&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row8&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;单箱不大于 20 Kg&quot;,
+      &quot;value&quot;: &quot;20&quot;,
+      &quot;unit&quot;: &quot;Kg&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row9&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;长宽高之和不大于 1400 mm&quot;,
+      &quot;value&quot;: &quot;1400&quot;,
+      &quot;unit&quot;: &quot;mm&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row9&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;最大长度尺寸不大于400 mm&quot;,
+      &quot;value&quot;: &quot;400&quot;,
+      &quot;unit&quot;: &quot;mm&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row9&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;不允许外箱使用金属钉钉合&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row9&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;运输方式：海运、空运、陆运&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row9&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;要求同时满足以下环保指令或法规：ROHS(2011/65/EU)&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row10&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;要求同时满足以下环保指令或法规：加州65提案&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row10&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;要求同时满足以下环保指令或法规：电池指令 (2013/56/EU)&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row10&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;要求同时满足以下环保指令或法规：包装指令 (2005/20/EC)&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row10&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;通用&quot;,
+      &quot;description&quot;: &quot;客户特殊要求：无&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row12&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;组件描述详见附件2：《客户需求书－组件规格部分》V1.0&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row13&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;安全&quot;,
+      &quot;description&quot;: &quot;防尘防水：应符合IEC60529的IP22类测试（属于手持式、可穿戴式或运输中可操作设备）&quot;,
+      &quot;value&quot;: &quot;IP22&quot;,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: &quot;测试&quot;,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row14&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;温度显示范围：32.0℃～42.9℃&quot;,
+      &quot;value&quot;: &quot;32.0-42.9&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row1&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;显示分辨率：0.1℃&quot;,
+      &quot;value&quot;: &quot;0.1&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row2&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;测量误差：≥35℃且≤42℃时，±0.2℃&quot;,
+      &quot;value&quot;: &quot;±0.2&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: &quot;≥35℃且≤42℃&quot;,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row3&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;测量误差：其它温度范围，±0.3℃&quot;,
+      &quot;value&quot;: &quot;±0.3&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: &quot;＜35℃或＞42℃&quot;,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row3&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;工作环境温度：10℃～40℃&quot;,
+      &quot;value&quot;: &quot;10-40&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row4&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;工作环境相对湿度：不窄于15-95%RH，不结露&quot;,
+      &quot;value&quot;: &quot;15-95&quot;,
+      &quot;unit&quot;: &quot;%RH&quot;,
+      &quot;condition&quot;: &quot;不结露&quot;,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row4&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;工作环境大气压力：70kPa～106kPa&quot;,
+      &quot;value&quot;: &quot;70-106&quot;,
+      &quot;unit&quot;: &quot;kPa&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row4&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;存储环境温度：-20.0℃～55.0℃&quot;,
+      &quot;value&quot;: &quot;-20.0-55.0&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;存储环境相对湿度：不窄于15-95%RH，不结露&quot;,
+      &quot;value&quot;: &quot;15-95&quot;,
+      &quot;unit&quot;: &quot;%RH&quot;,
+      &quot;condition&quot;: &quot;不结露&quot;,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;存储环境大气压力：70kPa～106kPa&quot;,
+      &quot;value&quot;: &quot;70-106&quot;,
+      &quot;unit&quot;: &quot;kPa&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;产品寿命：五年&quot;,
+      &quot;value&quot;: &quot;5&quot;,
+      &quot;unit&quot;: &quot;年&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row6&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;产品寿命：10000次&quot;,
+      &quot;value&quot;: &quot;10000&quot;,
+      &quot;unit&quot;: &quot;次&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row6&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;电池寿命：测量使用次数不低于1000次&quot;,
+      &quot;value&quot;: &quot;1000&quot;,
+      &quot;unit&quot;: &quot;次&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 性能规格部分 &gt; Row7&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;测量原理：红外非接触式&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row1&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;测量位置：额面&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row2&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;检测项目：人体体温&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row3&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;检测项目：物温&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row3&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;分类指示方式：屏幕选择&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row4&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;按键描述：开机测量键&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;按键描述：设置键&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;按键描述：静音键&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;LCD型式：段码式&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row6&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;LCD型式：有背光&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row6&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;壳体变色：No&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row7&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;位置检测：No&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row8&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;PC Link：No&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row9&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;低电压检出：双阶段&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row10&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;错误分类显示：错误种类2种（1、超出工作环境温度 2、超过量程）&quot;,
+      &quot;value&quot;: &quot;2&quot;,
+      &quot;unit&quot;: &quot;种&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row11&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;自动关机时间：常规为15秒&quot;,
+      &quot;value&quot;: &quot;15&quot;,
+      &quot;unit&quot;: &quot;秒&quot;,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row12&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;温度显示单位：℃&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row13&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;温度显示单位：℉&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row13&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;提示功能：蜂鸣&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 功能规格部分 &gt; Row14&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;表面处理：上盖要求细火花纹&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row1&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;表面处理：下盖要求细火花纹&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row2&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;表面处理：电池盖要求细火花纹&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row3&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;颜色要求：上盖要求白色&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row4&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;颜色要求：下盖要求白色&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row5&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;颜色要求：电池盖要求白色&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row6&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;按键形式：注塑按键&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row7&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;按键表面处理：细火花纹&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row8&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;透镜形式：模切透镜&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row9&quot;
+    },
+    {
+      &quot;req_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;透镜表面处理：不适用&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;verification_method&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 组件规格部分 &gt; Row10&quot;
+    }
+  ],
+  &quot;regulations&quot;: [
+    {
+      &quot;std_id&quot;: &quot;ROHS(2011/65/EU)&quot;,
+      &quot;version&quot;: &quot;2011/65/EU&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: &quot;ROHS指令要求&quot;,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;加州65提案&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: &quot;加州65提案要求&quot;,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;电池指令 (2013/56/EU)&quot;,
+      &quot;version&quot;: &quot;2013/56/EU&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: &quot;电池指令要求&quot;,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;包装指令 (2005/20/EC)&quot;,
+      &quot;version&quot;: &quot;2005/20/EC&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: &quot;包装指令要求&quot;,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC60529&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: &quot;IP22&quot;,
+      &quot;requirement_text&quot;: &quot;防尘防水IP22类测试（属于手持式、可穿戴式或运输中可操作设备）&quot;,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    }
+  ],
+  &quot;components&quot;: [
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;上盖&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;细火花纹表面处理，白色&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;下盖&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;细火花纹表面处理，白色&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;电池盖&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;细火花纹表面处理，白色&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;按键&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;注塑按键，细火花纹表面处理&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;透镜&quot;,
+      &quot;component_type&quot;: &quot;optical&quot;,
+      &quot;spec&quot;: &quot;模切透镜&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;LCD显示屏&quot;,
+      &quot;component_type&quot;: &quot;display&quot;,
+      &quot;spec&quot;: &quot;段码式，有背光&quot;
+    }
+  ],
+  &quot;functions&quot;: [
+    {
+      &quot;name&quot;: &quot;红外测温&quot;,
+      &quot;description&quot;: &quot;主要采用红外测温方式测量人体额头温度&quot;
+    },
+    {
+      &quot;name&quot;: &quot;红外非接触式测温&quot;,
+      &quot;description&quot;: &quot;采用红外非接触式测量原理，测量额面&quot;
+    },
+    {
+      &quot;name&quot;: &quot;人体体温测量&quot;,
+      &quot;description&quot;: &quot;检测人体体温&quot;
+    },
+    {
+      &quot;name&quot;: &quot;物温测量&quot;,
+      &quot;description&quot;: &quot;检测物体温度&quot;
+    },
+    {
+      &quot;name&quot;: &quot;分类指示&quot;,
+      &quot;description&quot;: &quot;通过屏幕选择分类指示方式&quot;
+    },
+    {
+      &quot;name&quot;: &quot;按键操作&quot;,
+      &quot;description&quot;: &quot;包含开机测量键、设置键、静音键&quot;
+    },
+    {
+      &quot;name&quot;: &quot;低电压检出&quot;,
+      &quot;description&quot;: &quot;双阶段低电压检出&quot;
+    },
+    {
+      &quot;name&quot;: &quot;错误分类显示&quot;,
+      &quot;description&quot;: &quot;显示2种错误：超出工作环境温度、超过量程&quot;
+    },
+    {
+      &quot;name&quot;: &quot;自动关机&quot;,
+      &quot;description&quot;: &quot;常规为15秒自动关机&quot;
+    },
+    {
+      &quot;name&quot;: &quot;温度单位切换&quot;,
+      &quot;description&quot;: &quot;支持℃和℉两种温度显示单位&quot;
+    },
+    {
+      &quot;name&quot;: &quot;蜂鸣提示&quot;,
+      &quot;description&quot;: &quot;蜂鸣提示功能&quot;
+    }
+  ],
+  &quot;identifiers&quot;: [
+    {
+      &quot;id_type&quot;: &quot;版本号&quot;,
+      &quot;value&quot;: &quot;V1.0&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;文件编号&quot;,
+      &quot;value&quot;: &quot;客户需求书E0-血压计 23.6&quot;
+    }
+  ],
+  &quot;persons&quot;: [
+    {
+      &quot;name&quot;: &quot;赵一平&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;编制&quot;
+    },
+    {
+      &quot;name&quot;: &quot;丛明&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;批准&quot;
+    },
+    {
+      &quot;name&quot;: &quot;侯广伟&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;批准&quot;
+    }
+  ],
+  &quot;products&quot;: [
+    {
+      &quot;product_id&quot;: &quot;E0&quot;,
+      &quot;model&quot;: null,
+      &quot;name&quot;: &quot;血压计&quot;,
+      &quot;region&quot;: &quot;美国&quot;
+    },
+    {
+      &quot;product_id&quot;: &quot;E0&quot;,
+      &quot;model&quot;: null,
+      &quot;name&quot;: &quot;血压计&quot;,
+      &quot;region&quot;: null
+    }
+  ],
+  &quot;fragments&quot;: [
+    {
+      &quot;fragment_type&quot;: &quot;scope_limitation&quot;,
+      &quot;content&quot;: &quot;注：在客户需求书中标记\&quot;■\&quot;或是在\&quot;□\&quot;中划\&quot;√\&quot;都表示当前项已经被选中;标记\&quot;□\&quot;表示当前项未选中。&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;标记规则&quot;,
+        &quot;客户需求书&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;文档约定&quot;
+      ],
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; 表头注释&quot;
+    },
+    {
+      &quot;fragment_type&quot;: &quot;working_principle&quot;,
+      &quot;content&quot;: &quot;本品主要采用红外测温方式测量人体额头温度，家用和医用。&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;预期用途&quot;,
+        &quot;红外测温&quot;,
+        &quot;家用医用&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;预期用途&quot;,
+        &quot;工作原理&quot;
+      ],
+      &quot;source_section&quot;: &quot;Sheet: 客户需求书 &gt; Row4&quot;
+    }
+  ],
+  &quot;relationships&quot;: [
+    {
+      &quot;source_type&quot;: &quot;Requirement&quot;,
+      &quot;source_id&quot;: &quot;要求同时满足以下环保指令或法规：ROHS(2011/65/EU)&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ROHS(2011/65/EU)&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Requirement&quot;,
+      &quot;source_id&quot;: &quot;要求同时满足以下环保指令或法规：加州65提案&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;加州65提案&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Requirement&quot;,
+      &quot;source_id&quot;: &quot;要求同时满足以下环保指令或法规：电池指令 (2013/56/EU)&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;电池指令 (2013/56/EU)&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Requirement&quot;,
+      &quot;source_id&quot;: &quot;要求同时满足以下环保指令或法规：包装指令 (2005/20/EC)&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;包装指令 (2005/20/EC)&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Requirement&quot;,
+      &quot;source_id&quot;: &quot;防尘防水：应符合IEC60529的IP22类测试（属于手持式、可穿戴式或运输中可操作设备）&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;IEC60529&quot;
+    }
+  ],
+  &quot;source_file&quot;: &quot;客户需求书E0-血压计 23.6.via_xlsx.clean.md&quot;,
+  &quot;source_path&quot;: &quot;D:\\项目文档一致性审查\\pt9l_markdown_output\\01 立项批准书E0 23.11\\客户需求书E0-血压计 23.6.via_xlsx.clean.md&quot;,
+  &quot;doc_type&quot;: &quot;customer_requirement&quot;
+}</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="file-block" id="file-1">
+            <div class="file-title">设计输入汇总表 &mdash; 设计输入汇总表E0  20211118.via_xlsx.clean.md</div>
+            <div class="split-view">
+                <div class="pane left-pane">
+                    <div class="pane-header">原文件 (设计输入汇总表E0  20211118.via_xlsx.clean.md)</div>
+                    <pre class="content">&lt;!-- hybrid clean-md; source = via_xlsx.md; 规整表=GFM，合并表=展开重建GFM，满行说明=段落，无 HTML 标签/无合并记号 --&gt;
+# 设计输入汇总表E0  20211118
+
+&gt; hybrid clean-md（excel）：每个 Sheet 的表用 GFM 重建（合并格按 rowspan 向下继承、满行说明铺成段落）；保留全部文字、复选框与图片；不保留 HTML 表格标签。涉及严格行列/签字仍回查 `.via_xlsx.md`。
+
+## Sheet: 设计输入 通用
+
+设计输入-通用要求部分
+
+Design Input - General part
+
+拟制(项目负责人): 年 月 日
+
+审核(软件主管): 年 月 日 审核（硬件主管）： 年 月 日审核（结构主管）： 年 月 日
+
+产品型号：PT9L 项目编号：30000078 产品/项目名称：红外体温计
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| 序号 No. | 条目 Item | 要求 Requirements | 备注 |
+| 1 | 产品型号 Model | PT9L |  |
+| 2 | 销售地区及认证 Intended markets and certification | 要求符合如下认证体系要求： □ CE 对应地区： 欧洲 ■ FDA 对应地区：美国 □ CFDA 对应地区：中国 □ 其他 |  |
+| 3 | 外形和重量要求 Size and weight | 详见《设计输入-组件规格部分》中的相关要求 |  |
+| 4 | 包装要求 Packaging | 详见《设计输入-组件规格部分》中的相关要求 |  |
+| 5 | 包装列表 Package list | 详见《设计输入-组件规格部分》中的相关要求 |  |
+| 6 | 产品寿命 Service life | 详见《设计输入-性能规格部分》中的相关要求 |  |
+| 7 | 风险管理 Rish management | 具体参见风险管理计划最新版本 整个过程按照《设计输入-法规标准清单》的相关标准进行风险管理 |  |
+| 8 | 电气安全 Safety requirements for electrical equipment | 详见《设计输入-法规标准清单》中的相关标准 |  |
+| 9 | 环保 Environment protection | 要求同时满足以下环保指令或法规： □ROHS(2011/65/EU)（2015/863/EU） □REACH(1907/2006/EC) □WEEE关于报废电子电气设备指令(2012/19/EU) □电池指令 (2013/56/EU) □包装指令 (2005/20/EC) □中国ROHS 2.0 POPs □电池指令 (2013/56/EU) □包装物和包装废弃物指令 94/62/EC, 2005/20/EC, (EU) 2018/852 □2006/66/EC □美国有毒物质控制法案TSCA CPSC，CPSIA ■加州RoHS □加州65提案 □美国包装法案 TPCH □美国电池指令（含汞电池和可充电池管理法） □其它：_______________________________。 |  |
+| 10 | 消毒要求 Sterility requirements | 按照风险分析的结论添加消毒方面的要求： 说明书中按照风险分析的结论添加消毒方面的要求 |  |
+| 11 | 易用性 Usability | 详见《设计输入-法规标准清单》中的相关标准 |  |
+| 12 | 专利 Patent | 需要规避的专利技术： 无 |  |
+| 13 | 测量和监视设备 Measurement and monitoring instruments | 是否有与新增测量监视设备配合的要求： ■ 无 □ 有： |  |
+| 14 | 生产过程要求 Manufacture procedure | ■ 工装要求 ■ 机芯检测： 1、能正确检测LCD端口连接线的通断。 2、能正确检测按键端口连接线的通断。 3、能正确检测低电压检测端口连接线的通断。 4、能查看待机态和工作态电流。 ■ 机芯调试： 1、能对测温模块进行检测。 2、能实现对机芯的自检查看。 |  |
+| 14 | 生产过程要求 Manufacture procedure | ■工厂态要求 ■机芯检测态要求： 1.能够检验LCD与PCB的连接。 2.能够检验按键与PCB的连接。 3.能够检验待机态和工作态电流。 ■机芯调试态要求： 1.能够显示测温模块测量值。 2.能够设定蜂鸣提示音开关。 3.能够设定测量单位。 |  |
+| 14 | 生产过程要求 Manufacture procedure | □ 其他工艺要求 ：应能对代码中分配给通讯加密字节区域是否为”空”（0x00或0xFF）进行检验（注：本项主要针对iHealth产品，其他产品视情况考虑选择） |  |
+| 15 | 防误用注意信息 Information to deter foreseeable misuse | 用户说明书上必须指明本产品： ■ 禁忌症 其他： . |  |
+| 16 | 客户特殊要求 Customer's special requirements | ■ 无 □ 单独跌落试验 □ 特殊标签 □ 非强制性标准的引用 □ 验货抽样标准 □ 外部测试要求 □ 其他要求： |  |
+| 17 | 电磁兼容性 Electromagnetic compatibility | 详见《设计输入-法规标准清单》中的相关标准 |  |
+| 18 | 生物相容性 Toxicity and biocompatibility requirement | 详见《设计输入-法规标准清单》中的相关标准 |  |
+| 19 | 防尘防水 requirements for ingress of water or particulate matter | ■应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备） □应符合IEC60529的IP21类测试 □应符合IEC60529的IP20类测试 □无要求 □其他： |  |
+| 20 | 电池 battery | □可充电电池：在充满电后，电池电量至少能进行 次测量，并且电池性能参数不变。 □电池：需要符合WERC认证 ■无要求 |  |
+
+## Sheet: 红外体温计功能规格部分
+
+|  | 设计输入-功能规格部分 |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  | 拟制(软件工程师): 年 月 日 审核(软件主管): 年 月 日 |
+
+产品型号：PT9L 项目编号：30000078 产品/项目名称：红外体温计
+
+|  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 序号 No. | 条目 Item | 要 求 Requirements |  |  |  | 备注 Remark |
+| 1 | 测量原理 | ■红外非接触式 | □接触式 | □其他: |  |  |
+| 2 | 测量位置 | ■额面 | □腋下 | □其他: |  |  |
+| 3 | 检测项目 | ■人体体温 | ■物温 | □其他： |  |  |
+| 4 | 分类指示方式 | ■屏幕选择 | □彩色丝印 | □4组LED灯 | □3组LED灯 |  |
+| 4 | 分类指示方式 | □其他: |  |  |  |  |
+| 5 | 按键描述 | 3个按键：■开机测量键 | ■设置键 | ■静音键 |  |  |
+| 6 | LCD型式 | ■段码式 | □点阵式 | □其他 |  |  |
+| 6 | LCD型式 | ■有背光：白橙红 |  |  |  |  |
+| 7 | 壳体变色 | ■No | □Yes 描述： |  |  |  |
+| 8 | 位置检测 | ■No | □Yes 描述： |  |  |  |
+| 9 | PC Link | ■No | □Yes 描述： |  |  |  |
+| 10 | 低电压检出 | □单阶段 | ■双阶段 | □其他: |  |  |
+| 11 | 错误分类显示 | □No | ■错误种类：2种 （1、超出工作环境温度 2、超过量程 ） |  |  |  |
+| 12 | 自动关机时间 | 描述：常规为15秒 |  |  |  |  |
+| 13 | 温度显示单位 | ■℃ | ■℉ |  |  |  |
+| 14 | 提示功能 | ■蜂鸣 | □震动 |  |  |  |
+
+## Sheet: 红外体温计性能规格部分
+
+|  | 设计输入-性能规格部分 |  |  |
+| --- | --- | --- | --- |
+|  |  |  | 拟制(硬件工程师): 年 月 日 审核(硬件主管): 年 月 日 |
+
+产品型号：PT9L 项目编号：30000078 产品/项目名称：红外体温计
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| 序号 No. | 条目 Item | 要 求 Requirements | 备注 Remark |
+| 1 | 温度显示范围 | 32.0℃～42.9℃ |  |
+| 2 | 显示分辨率 | 0.1℃ |  |
+| 3 | 测量误差 | ≥35℃且≤42℃：±0.2℃，其它：±0.3℃ |  |
+| 4 | 工作环境 | 温度：10℃～40℃ 相对湿度：不窄于15-95%RH，不结露 大气压力：70kPa～106kPa |  |
+| 5 | 存储环境 | 温度：-20.0℃―55.0℃ 相对湿度：不窄于15-95%RH，不结露 大气压力：70kPa～106kPa |  |
+| 6 | 产品寿命 | 五年或10000次 |  |
+| 7 | 电池寿命 | 测量使用次数不低于1000次 |  |
+| 8 | 其它要求 | 无 |  |
+
+## Sheet: 红外体温计组件规格部分
+
+设计输入-组件规格部分
+
+拟制(结构工程师): 年 月 日 审核(结构主管): 年 月 日
+
+产品型号：PT9L 项目编号：30000078 产品/项目名称：红外体温计
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| 序号 No. | 条目 Item |  | 要 求 Requirements | 备注 Remark |
+| 1 | 表面处理 | 上盖要求 | □亮面 □火花纹 ■细火花纹 □镜面火花纹 □电镀 □喷漆 □其他： |  |
+| 2 | 表面处理 | 下盖要求 | □亮面 □火花纹 ■细火花纹 □镜面火花纹 □电镀 □喷漆 □其他： |  |
+| 3 | 表面处理 | 电池盖要求 | □亮面 □火花纹 ■细火花纹 □镜面火花纹 □电镀 □喷漆 □其他： |  |
+| 4 | 颜色要求 | 上盖要求 | ■白色 □黑色 □喷漆颜色： □其他： |  |
+| 5 | 颜色要求 | 下盖要求 | ■白色 □黑色 □喷漆颜色： □其他： |  |
+| 6 | 颜色要求 | 电池盖要求 | ■白色 □黑色 □喷漆颜色： □其他： |  |
+| 7 | 按键 | 按键形式 | □无 ■注塑按键 □硅胶按键 □触摸按键 □与主机一体按键 □其他： |  |
+| 8 | 按键 | 表面处理 | □不适用 □亮面 □火花纹 ■细火花纹 □镜面 □喷漆 □其他： |  |
+| 9 | 透镜 | 透镜形式 | □无 □注塑透镜 ■模切透镜 □其他： |  |
+| 10 | 透镜 | 表面处理 | ■不适用 □镜面抛光 □电镀 □其他： |  |
+| 11 | 外形和重 量要求 | 整机外形尺寸 | 外形尺寸：130.8x34.8x38mm（公差±0.5mm） |  |
+| 12 | 外形和重 量要求 | 整机重量 | 重量：约80g |  |
+| 13 | 包装要求 | 执行规范 | 按照《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》执行 |  |
+| 14 | 包装要求 | 整箱重量 | 重量：7.1kg± 5％ |  |
+| 15 | 包装要求 | 外箱尺寸 | 322.5x231x352mm（±10%） |  |
+| 16 | 包装要求 | 外箱表面 | □允许外箱使用金属钉钉合 ■不允许外箱使用金属钉钉合 |  |
+| 17 | 包装列表 | 彩包装内容物 | ■红外体温计主机 ■说明书 尺寸：150x50mm（±1mm） ■纸浆盒 ■电池 （要求：2 X AAA Size） |  |
+
+## Sheet: 法规标准清单-美国
+
+|  | 设计输入-法规标准清单 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  | 拟制（项目负责人）: 年 月 日 |
+|  |  |  |  |  | 审核(软件主管)： 年 月 日 审核（硬件主管）： 年 月 日 审核（结构主管）： 年 月 日 |
+
+产品型号：PT9L 项目编号：30000078 产品/项目名称：红外体温计
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| 类别 | 标准名称及版本号 | 等同国际标准 | 适用地区 | 是否适用 | 备注 |
+| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 |  | 国际 | ■是 □否 |  |
+| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | ISO 80601-2-56:2017/Amd1:2018 | 欧盟 | □是 ■否 |  |
+| 行业标准 | EN 12470-3:2000+A1:2009 |  | 欧盟 | □是 ■否 |  |
+| 行业标准 | EN 12470-5:2003 |  | 欧盟 | □是 ■否 |  |
+| 行业标准 | ASTM E1965-98：2016 |  | 美国 | ■是 □否 |  |
+| 行业标准 | ASTM E1965-98：2023 |  | 美国 | ■是 □否 |  |
+| 行业标准 | GB/T 21416:2008 |  | 中国 | □是 ■否 |  |
+| 行业标准 | GB 21417.1-2008 |  | 中国 | □是 ■否 |  |
+| 行业标准 | JJG 1164-2019 |  | 中国 | □是 ■否 |  |
+| 行业标准 | JJG 1162-2019 |  | 中国 | □是 ■否 |  |
+| 欧盟指令 | MDR 2017/745 |  | 欧盟 | □是 ■否 |  |
+| 欧盟指令 | MDD 93/42/EEC |  | 欧盟 | □是 ■否 |  |
+| 生物相容性 | GB/T 16886.1-2022 | ISO 10993-1:2018 | 中国 | □是 ■否 |  |
+| 生物相容性 | GB/T 16886.5-2017 | ISO 10993-5:2009 | 中国 | □是 ■否 |  |
+| 生物相容性 | GB/T 16886.10-2017 | ISO 10993-10:2010 | 中国 | □是 ■否 |  |
+| 生物相容性 | GB/T 16886.23-2023 | ISO 10993-23:2021 | 中国 | □是 ■否 |  |
+| 生物相容性 | ISO 10993-1:2018 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | ISO 10993-5: 2009 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | ISO 10993-10:2021 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | ISO 10993-23:2021 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | AAMI ANSI ISO 10993-1：2018 |  | 美国 | ■是 □否 |  |
+| 生物相容性 | AAMI ANSI ISO 10993-5:2009/(R)2022 |  | 美国 | ■是 □否 |  |
+| 生物相容性 | AAMI/ ANSI/ISO 10993-10:2010/(R)2014 |  | 美国 | ■是 □否 |  |
+| 生物相容性 | EN ISO 10993-1:2020 | ISO 10993-1:2018 | 欧盟 | □是 ■否 |  |
+| 生物相容性 | EN ISO 10993-5:2009 | ISO 10993-5: 2009 | 欧盟 | □是 ■否 |  |
+| 生物相容性 | EN ISO 10993-10:2021 | ISO 10993-10:2021 | 欧盟 | □是 ■否 |  |
+| 生物相容性 | EN ISO 10993-23:2021 | ISO 10993-23:2021 | 欧盟 | □是 ■否 |  |
+| 电气安全 | IEC 60601-1:2005+AMD1:2012 |  | 美国 | ■是 □否 |  |
+| 电气安全 | IEC 60601-1:2005+AMD1:2012+AMD2:2020 |  | 美国 | ■是 □否 |  |
+| 电气安全 | EN 60601-1:2006/A2:2021 | IEC 60601-1:2005+AMD1:2012+AMD2:2020 | 欧盟 | □是 ■否 |  |
+| 电气安全 | ANSI/AAMI ES60601-1:2005/A2:2021 |  | 美国 | ■是 □否 |  |
+| 电气安全 | IEC 60601-1-11：2015+AMD1：2020 |  | 美国 | ■是 □否 |  |
+| 电气安全 | EN 60601-1-11:2015+A1:2021 | IEC 60601-1-11：2015+AMD1：2020 | 欧盟 | □是 ■否 |  |
+| 电气安全 | GB 9706.1-2020 |  | 中国 | □是 ■否 |  |
+| 电气安全 | YY 9706.111-2021 |  | 中国 | □是 ■否 |  |
+| 风险 | YY/T 0316-2016 |  | 中国 | □是 ■否 |  |
+| 风险 | YY/T 1437-2023 |  | 中国 | □是 ■否 |  |
+| 风险 | YY/T 1473-2023 |  | 中国 | □是 ■否 |  |
+| 风险 | EN ISO 14971:2019 |  | 欧盟 | □是 ■否 |  |
+| 风险 | ISO 14971:2019 |  | 国际 | ■是 □否 |  |
+| 标识 | GB/T 191-2008 |  | 中国 | □是 ■否 |  |
+| 标识 | YY/T 0466.1-2016 |  | 中国 | □是 ■否 |  |
+| 标识 | YY/T 0466.1-2023 |  | 中国 | □是 ■否 |  |
+| 标识 | YY/T 0466.2-2015 |  | 中国 | □是 ■否 |  |
+| 标识 | EN 1041:2013 | EN ISO 20417:2021 | 欧盟 | □是 ■否 |  |
+| 标识 | EN ISO 20417:2021 | ISO 20417:2021 | 欧盟 | □是 ■否 |  |
+| 标识 | ISO 20417:2021 | EN ISO 20417:2021 | 国际 | ■是 □否 |  |
+| 标识 | 21CFR 801 Labeling |  | FDA地区 | ■是 □否 |  |
+| 标识 | EN ISO 15223-1:2021 | ISO 15223-1:2021 | 欧盟 | □是 ■否 |  |
+| 标识 | ISO 15223-1:2021 |  | 国际 | ■是 □否 |  |
+| 易用性 | IEC 60601-1-6：2010+AMD1：2013+AMD2：2020 |  | 国际 | ■是 □否 |  |
+| 易用性 | EN 60601-1-6:2010/A1:2015 | EN 60601-1-6:2010+A2:2021 | 欧盟 | □是 ■否 |  |
+| 易用性 | EN 60601-1-6:2010+A2:2021 | IEC 60601-1-6：2010+AMD1：2013+AMD2：2020 | 欧盟 | □是 ■否 |  |
+| 易用性 | IEC 62366-1：2015 |  | 国际 | ■是 □否 |  |
+| 易用性 | IEC 62366-1：2015+AMD1：2020 |  | 国际 | ■是 □否 |  |
+| 易用性 | EN 62366-1:2021 | IEC 62366-1：2015+AMD1：2020 | 欧盟 | □是 ■否 |  |
+| 包装运输 | GB/T 6543-2008 |  | 中国 | □是 ■否 |  |
+| 包装运输 | ISTA 2A:2011 |  | 国际 | ■是 □否 |  |
+| 包装运输 | Directive 94/62/EC |  | 欧盟 | □是 ■否 |  |
+| 包装运输 | Model Legislation |  | 美国 | ■是 □否 |  |
+| 电磁兼容 | EN 60601-1-2:2015/A1:2021 | IEC 60601-1-2:2014+AMD1：2020 | 欧盟 | □是 ■否 |  |
+| 电磁兼容 | IEC 60601-1-2:2014+AMD1：2020 |  | 国际 | ■是 □否 |  |
+| 电磁兼容 | FCC Part15 |  | 美国 | ■是 □否 |  |
+| 电磁兼容 | YY 9706.102-2021 |  | 中国 | □是 ■否 |  |
+| 软件相关 | YY/T 0664-2020 | IEC 62304:2015 | 中国 | □是 ■否 |  |
+| 软件相关 | GB/T 25000.51-2016 |  | 中国 | □是 ■否 |  |
+| 软件相关 | EN 62304:2006/A1:2015 | IEC 62304：2006+AMD1：2015 | 欧盟 | □是 ■否 |  |
+| 软件相关 | IEC 62304：2006+AMD1：2015 |  | 国际 | ■是 □否 |  |
+| 蓝牙 | 蓝牙组织BQB认证 |  | 国际 | □是 ■否 |  |
+| 蓝牙 | 苹果公司内部协议 |  | 美国 | □是 ■否 |  |
+| 蓝牙 | SRRC认证 |  | 中国 | □是 ■否 |  |
+| 蓝牙 | FCC认证 |  | 美国 | □是 ■否 |  |
+| 锂电池 | GB 31241-2022 |  | 中国 | □是 ■否 |  |
+| 锂电池 | IEC 62133-1:2017 |  | 美国 | □是 ■否 |  |
+| 锂电池 | IEC 62133-2:2017+AMD1:2021 |  | 美国 | □是 ■否 |  |
+| 其他非强制标准 | 验货标准 |  | 企业间 | □是 ■否 |  |
+| 其他非强制标准 | 客户单独要求 |  | 企业间 | □是 ■否 |  |
+
+## Sheet: 法规标准清单 -欧美
+
+|  | 设计输入-法规标准清单 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  | 拟制（项目负责人）: 年 月 日 |
+|  |  |  |  |  | 审核(软件主管)： 年 月 日 审核（硬件主管）： 年 月 日 审核（结构主管）： 年 月 日 |
+
+产品型号：PT9L 项目编号：30000078 产品/项目名称：红外体温计
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| 类别 | 标准名称及版本号 | 等同国际标准 | 适用地区 | 是否适用 | 备注 |
+| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 |  | 国际 | ■是 □否 |  |
+| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 |  | 欧盟 | □是 ■否 |  |
+| 行业标准 | EN 12470-3:2000+A1:2009 |  | 欧盟 | □是 ■否 |  |
+| 行业标准 | EN 12470-5:2003 |  | 欧盟 | □是 ■否 |  |
+| 行业标准 | ASTM E1965-98：2016 |  | 美国 | ■是 □否 |  |
+| 行业标准 | ASTM E1965-98：2023 |  | 美国 | ■是 □否 |  |
+| 行业标准 | GB/T 21416:2008 |  | 中国 | □是 ■否 |  |
+| 行业标准 | GB 21417.1-2008 |  | 中国 | □是 ■否 |  |
+| 行业标准 | JJG 1164-2019 |  | 中国 | □是 ■否 |  |
+| 行业标准 | JJG 1162-2019 |  | 中国 | □是 ■否 |  |
+| 欧盟指令 | MDR 2017/745 |  | 欧盟 | □是 ■否 |  |
+| 欧盟指令 | MDD 93/42/EEC |  | 欧盟 | □是 ■否 |  |
+| 生物相容性 | GB/T 16886.1-2022 | ISO 10993-1:2018 | 中国 | ■是 □否 |  |
+| 生物相容性 | GB/T 16886.5-2017 | ISO 10993-5:2009 | 中国 | ■是 □否 |  |
+| 生物相容性 | GB/T 16886.10-2017 | ISO 10993-10:2010 | 中国 | ■是 □否 |  |
+| 生物相容性 | GB/T 16886.23-2023 | ISO 10993-23:2021 | 中国 | ■是 □否 |  |
+| 生物相容性 | ISO 10993-1:2018 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | ISO 10993-5: 2009 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | ISO 10993-10:2021 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | ISO 10993-23:2021 |  | 国际 | ■是 □否 |  |
+| 生物相容性 | AAMI ANSI ISO 10993-1：2018 |  | 美国 | ■是 □否 |  |
+| 生物相容性 | AAMI ANSI ISO 10993-5:2009/(R)2022 |  | 美国 | ■是 □否 |  |
+| 生物相容性 | AAMI/ ANSI/ISO 10993-10:2010/(R)2014 |  | 美国 | ■是 □否 |  |
+| 生物相容性 | EN ISO 10993-1:2020 |  | 欧盟 | ■是 □否 |  |
+| 生物相容性 | EN ISO 10993-5:2009 |  | 欧盟 | ■是 □否 |  |
+| 生物相容性 | EN ISO 10993-10:2021 |  | 欧盟 | ■是 □否 |  |
+| 生物相容性 | EN ISO 10993-23:2021 |  | 欧盟 | ■是 □否 |  |
+| 电气安全 | IEC 60601-1:2005+AMD1:2012 |  | 美国 | ■是 □否 |  |
+| 电气安全 | IEC 60601-1:2005+AMD1:2012+AMD2:2020 |  | 美国 | ■是 □否 |  |
+| 电气安全 | EN 60601-1:2006/A2:2021 |  | 欧盟 | ■是 □否 |  |
+| 电气安全 | ANSI/AAMI ES60601-1:2005/A2:2021 |  | 美国 | ■是 □否 |  |
+| 电气安全 | IEC 60601-1-11：2015+AMD1：2020 |  | 美国 | ■是 □否 |  |
+| 电气安全 | EN 60601-1-11:2015+A1:2021 |  | 欧盟 | ■是 □否 |  |
+| 电气安全 | GB 9706.1-2020 |  | 中国 | ■是 □否 |  |
+| 电气安全 | YY 9706.111-2021 |  | 中国 | ■是 □否 |  |
+| 风险 | YY/T 0316-2016 |  | 中国 | ■是 □否 |  |
+| 风险 | YY/T 1437-2023 |  | 中国 | ■是 □否 |  |
+| 风险 | YY/T 1473-2023 |  | 中国 | ■是 □否 |  |
+| 风险 | EN ISO 14971:2012 | ISO 14971:2007 | 欧盟 | ■是 □否 |  |
+| 风险 | ISO 14971:2019 |  | 美国 | ■是 □否 |  |
+| 标识 | GB/T 191-2008 |  | 中国 | ■是 □否 |  |
+| 标识 | YY/T 0466.1-2016 |  | 中国 | ■是 □否 |  |
+| 标识 | YY/T 0466.1-2023 |  | 中国 | □是 ■否 |  |
+| 标识 | YY/T 0466.2-2015 |  | 中国 | ■是 □否 |  |
+| 标识 | EN 1041:2013 |  | 欧盟 | ■是 □否 |  |
+| 标识 | EN ISO 20417:2021 |  | 欧盟 | ■是 □否 |  |
+| 标识 | 21CFR 801 Labeling |  | FDA地区 | ■是 □否 |  |
+| 标识 | EN ISO 15223-1:2021 |  | 欧盟 | ■是 □否 |  |
+| 标识 | ISO 15223-1:2021 |  | 美国 | ■是 □否 |  |
+| 易用性 | IEC 60601-1-6：2010+AMD1：2013+AMD2：2020 |  | 美国 | ■是 □否 |  |
+| 易用性 | EN 60601-1-6:2010/A1:2015 |  | 欧盟 | ■是 □否 |  |
+| 易用性 | EN 60601-1-6:2010+A2:2021 |  | 欧盟 | ■是 □否 |  |
+| 易用性 | IEC 62366-1：2015 |  | 美国 | ■是 □否 |  |
+| 易用性 | IEC 62366-1：2015+AMD1：2020 |  | 美国 | ■是 □否 |  |
+| 易用性 | EN 62366-1:2021 |  | 欧盟 | ■是 □否 |  |
+| 包装运输 | GB/T 6543-2008 |  | 中国 | ■是 □否 |  |
+| 包装运输 | ISTA 2A:2011 |  | 国际 | ■是 □否 |  |
+| 包装运输 | Directive 94/62/EC |  | 欧盟 | ■是 □否 |  |
+| 包装运输 | Model Legislation |  | 美国 | ■是 □否 |  |
+| 电磁兼容 | EN 60601-1-2:2015/A1:2021 |  | 欧盟 | ■是 □否 |  |
+| 电磁兼容 | IEC 60601-1-2:2014+AMD1：2020 |  | 美国 | ■是 □否 |  |
+| 电磁兼容 | FCC Part15 |  | 美国 | ■是 □否 |  |
+| 电磁兼容 | YY 9706.102-2021 |  | 中国 | ■是 □否 |  |
+| 软件相关 | YY/T 0664-2020 | IEC 62304:2015 | 中国 | ■是 □否 |  |
+| 软件相关 | GB/T 25000.51-2016 |  | 中国 | □是 ■否 |  |
+| 软件相关 | EN 62304:2006/A1:2015 |  | 欧盟 | ■是 □否 |  |
+| 软件相关 | IEC 62304：2006+AMD1：2015 |  | 美国 | ■是 □否 |  |
+| 蓝牙 | 蓝牙组织BQB认证 |  | 国际 | □是 ■否 |  |
+| 蓝牙 | 苹果公司内部协议 |  | 美国 | □是 ■否 |  |
+| 蓝牙 | SRRC认证 |  | 中国 | □是 ■否 |  |
+| 蓝牙 | FCC认证 |  | 美国 | □是 ■否 |  |
+| 锂电池 | GB 31241-2022 |  | 中国 | □是 ■否 |  |
+| 锂电池 | IEC 62133-1:2017 |  | 美国 | □是 ■否 |  |
+| 锂电池 | IEC 62133-2:2017+AMD1:2021 |  | 美国 | □是 ■否 |  |
+| 其他非强制标准 | 验货标准 |  | 企业间 | □是 ■否 |  |
+| 其他非强制标准 | 客户单独要求 |  | 企业间 | □是 ■否 |  |
+</pre>
+                </div>
+                <div class="divider"></div>
+                <div class="pane right-pane">
+                    <div class="pane-header">抽取结果 (设计输入汇总表E0  20211118.via_xlsx.clean.json)</div>
+                    <pre class="content">{
+  &quot;design_inputs&quot;: [
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;通用&quot;,
+      &quot;description&quot;: &quot;产品型号 Model: PT9L&quot;,
+      &quot;value&quot;: &quot;PT9L&quot;,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 1&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;销售地区及认证 Intended markets and certification - 要求符合FDA认证体系要求，对应地区：美国&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;FDA 对应地区：美国&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 2&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;外形和重量要求 Size and weight - 详见《设计输入-组件规格部分》中的相关要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 3&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;包装要求 Packaging - 详见《设计输入-组件规格部分》中的相关要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 4&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;包装列表 Package list - 详见《设计输入-组件规格部分》中的相关要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 5&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;产品寿命 Service life - 详见《设计输入-性能规格部分》中的相关要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 6&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;安全&quot;,
+      &quot;description&quot;: &quot;风险管理 Risk management - 具体参见风险管理计划最新版本，整个过程按照《设计输入-法规标准清单》的相关标准进行风险管理&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 7&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;安全&quot;,
+      &quot;description&quot;: &quot;电气安全 Safety requirements for electrical equipment - 详见《设计输入-法规标准清单》中的相关标准&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 8&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;环保 Environment protection - 要求满足加州RoHS环保法规&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;加州RoHS&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 9&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;安全&quot;,
+      &quot;description&quot;: &quot;消毒要求 Sterility requirements - 按照风险分析的结论添加消毒方面的要求：说明书中按照风险分析的结论添加消毒方面的要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 10&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;易用性 Usability - 详见《设计输入-法规标准清单》中的相关标准&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 11&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;专利 Patent - 需要规避的专利技术：无&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 12&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;测量和监视设备 Measurement and monitoring instruments - 是否有与新增测量监视设备配合的要求：无&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 13&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;生产过程要求 Manufacture procedure - 工装要求 机芯检测：1、能正确检测LCD端口连接线的通断。2、能正确检测按键端口连接线的通断。3、能正确检测低电压检测端口连接线的通断。4、能查看待机态和工作态电流。机芯调试：1、能对测温模块进行检测。2、能实现对机芯的自检查看。&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 14 (第1部分)&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;生产过程要求 Manufacture procedure - 工厂态要求 机芯检测态要求：1.能够检验LCD与PCB的连接。2.能够检验按键与PCB的连接。3.能够检验待机态和工作态电流。机芯调试态要求：1.能够显示测温模块测量值。2.能够设定蜂鸣提示音开关。3.能够设定测量单位。&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 14 (第2部分)&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;生产过程要求 Manufacture procedure - 其他工艺要求：应能对代码中分配给通讯加密字节区域是否为空（0x00或0xFF）进行检验（注：本项主要针对iHealth产品，其他产品视情况考虑选择）&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;本项主要针对iHealth产品，其他产品视情况考虑选择&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 14 (第3部分)&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;安全&quot;,
+      &quot;description&quot;: &quot;防误用注意信息 Information to deter foreseeable misuse - 用户说明书上必须指明本产品：禁忌症&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 15&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;其他&quot;,
+      &quot;description&quot;: &quot;客户特殊要求 Customer special requirements - 无&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 16&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;电磁兼容性 Electromagnetic compatibility - 详见《设计输入-法规标准清单》中的相关标准&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 17&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;安全&quot;,
+      &quot;description&quot;: &quot;生物相容性 Toxicity and biocompatibility requirement - 详见《设计输入-法规标准清单》中的相关标准&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 18&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;安全&quot;,
+      &quot;description&quot;: &quot;防尘防水 requirements for ingress of water or particulate matter - 应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备）&quot;,
+      &quot;value&quot;: &quot;IP22&quot;,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;属于手持式、佩戴式或运输中可操作设备&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 19&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;电池 battery - 无要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:设计输入 通用 &gt; Row 20&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;测量原理 - 红外非接触式&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 1&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;测量位置 - 额面&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 2&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;检测项目 - 人体体温、物温&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 3&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;分类指示方式 - 屏幕选择&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 4&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;按键描述 - 3个按键：开机测量键、设置键、静音键&quot;,
+      &quot;value&quot;: &quot;3&quot;,
+      &quot;unit&quot;: &quot;个&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 5&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;LCD型式 - 段码式，有背光：白橙红&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 6&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;壳体变色 - No&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 7&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;位置检测 - No&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet:红外体温计功能规格部分 &gt; Row 8&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;PC Link&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 9&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;低电压检出&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;双阶段&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 10&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;错误分类显示&quot;,
+      &quot;value&quot;: &quot;2&quot;,
+      &quot;unit&quot;: &quot;种&quot;,
+      &quot;condition&quot;: &quot;1、超出工作环境温度 2、超过量程&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 11&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;自动关机时间&quot;,
+      &quot;value&quot;: &quot;15&quot;,
+      &quot;unit&quot;: &quot;秒&quot;,
+      &quot;condition&quot;: &quot;常规&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 12&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;温度显示单位&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;℃和℉&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 13&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;功能&quot;,
+      &quot;description&quot;: &quot;提示功能&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;蜂鸣&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 14&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;温度显示范围&quot;,
+      &quot;value&quot;: &quot;32.0～42.9&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 1&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;显示分辨率&quot;,
+      &quot;value&quot;: &quot;0.1&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 2&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;测量误差&quot;,
+      &quot;value&quot;: &quot;±0.2&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: &quot;≥35℃且≤42℃&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 3&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;测量误差&quot;,
+      &quot;value&quot;: &quot;±0.3&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: &quot;其它（&lt;35℃或&gt;42℃）&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 3&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;工作环境温度&quot;,
+      &quot;value&quot;: &quot;10～40&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 4&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;工作环境相对湿度&quot;,
+      &quot;value&quot;: &quot;15-95&quot;,
+      &quot;unit&quot;: &quot;%RH&quot;,
+      &quot;condition&quot;: &quot;不结露&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 4&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;工作环境大气压力&quot;,
+      &quot;value&quot;: &quot;70～106&quot;,
+      &quot;unit&quot;: &quot;kPa&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 4&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;存储环境温度&quot;,
+      &quot;value&quot;: &quot;-20.0～55.0&quot;,
+      &quot;unit&quot;: &quot;℃&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 5&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;存储环境相对湿度&quot;,
+      &quot;value&quot;: &quot;15-95&quot;,
+      &quot;unit&quot;: &quot;%RH&quot;,
+      &quot;condition&quot;: &quot;不结露&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 5&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;存储环境大气压力&quot;,
+      &quot;value&quot;: &quot;70～106&quot;,
+      &quot;unit&quot;: &quot;kPa&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 5&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;产品寿命&quot;,
+      &quot;value&quot;: &quot;5&quot;,
+      &quot;unit&quot;: &quot;年&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 6&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;产品寿命&quot;,
+      &quot;value&quot;: &quot;10000&quot;,
+      &quot;unit&quot;: &quot;次&quot;,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 6&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;性能&quot;,
+      &quot;description&quot;: &quot;电池寿命&quot;,
+      &quot;value&quot;: &quot;1000&quot;,
+      &quot;unit&quot;: &quot;次&quot;,
+      &quot;condition&quot;: &quot;测量使用次数不低于&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计性能规格部分 &gt; Row 7&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;上盖表面处理&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;细火花纹&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 1&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;下盖表面处理&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;细火花纹&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 2&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;电池盖表面处理&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;细火花纹&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 3&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;上盖颜色要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;白色&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 4&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;下盖颜色要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;白色&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 5&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;电池盖颜色要求&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;白色&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 6&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;按键形式&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;注塑按键&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 7&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;按键表面处理&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;细火花纹&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 8&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;透镜形式&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;模切透镜&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 9&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;透镜表面处理&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;不适用&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 10&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;整机外形尺寸&quot;,
+      &quot;value&quot;: &quot;130.8x34.8x38&quot;,
+      &quot;unit&quot;: &quot;mm&quot;,
+      &quot;condition&quot;: &quot;公差±0.5mm&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 11&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;整机重量&quot;,
+      &quot;value&quot;: &quot;80&quot;,
+      &quot;unit&quot;: &quot;g&quot;,
+      &quot;condition&quot;: &quot;约&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 12&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;包装执行规范&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;按照《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》执行&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 13&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;整箱重量&quot;,
+      &quot;value&quot;: &quot;7.1&quot;,
+      &quot;unit&quot;: &quot;kg&quot;,
+      &quot;condition&quot;: &quot;±5％&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 14&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;外箱尺寸&quot;,
+      &quot;value&quot;: &quot;322.5x231x352&quot;,
+      &quot;unit&quot;: &quot;mm&quot;,
+      &quot;condition&quot;: &quot;±10%&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 15&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;外箱表面&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;不允许外箱使用金属钉钉合&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 16&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;组件&quot;,
+      &quot;description&quot;: &quot;彩包装内容物&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: &quot;红外体温计主机、说明书（尺寸：150x50mm±1mm）、纸浆盒、电池（要求：2 X AAA Size）&quot;,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 红外体温计组件规格部分 &gt; Row 17&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;ISO 80601-2-56:2017/Amd1:2018&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 法规标准清单 -欧美 &gt; Row: 行业标准&quot;
+    },
+    {
+      &quot;di_id&quot;: null,
+      &quot;category&quot;: &quot;法规&quot;,
+      &quot;description&quot;: &quot;EN ISO 80601-2-56:2017+A1:2018&quot;,
+      &quot;value&quot;: null,
+      &quot;unit&quot;: null,
+      &quot;condition&quot;: null,
+      &quot;source_req_id&quot;: null,
+      &quot;source_section&quot;: &quot;Sheet: 法规标准清单 -欧美 &gt; Row: 行业标准&quot;
+    }
+  ],
+  &quot;regulations&quot;: [
+    {
+      &quot;std_id&quot;: &quot;IEC60529&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: &quot;IP22&quot;,
+      &quot;requirement_text&quot;: &quot;应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备）&quot;,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;FDA&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: &quot;要求符合FDA认证体系要求&quot;,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;加州RoHS&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: &quot;要求满足加州RoHS环保法规&quot;,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 80601-2-56:2017/Amd1:2018&quot;,
+      &quot;version&quot;: &quot;2017/Amd1:2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 80601-2-56:2017+A1:2018&quot;,
+      &quot;version&quot;: &quot;2017+A1:2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 12470-3:2000+A1:2009&quot;,
+      &quot;version&quot;: &quot;2000+A1:2009&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 12470-5:2003&quot;,
+      &quot;version&quot;: &quot;2003&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ASTM E1965-98:2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ASTM E1965-98:2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 21416:2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB 21417.1-2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;JJG 1164-2019&quot;,
+      &quot;version&quot;: &quot;2019&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;JJG 1162-2019&quot;,
+      &quot;version&quot;: &quot;2019&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;MDR 2017/745&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;MDD 93/42/EEC&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.1-2022&quot;,
+      &quot;version&quot;: &quot;2022&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.5-2017&quot;,
+      &quot;version&quot;: &quot;2017&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.10-2017&quot;,
+      &quot;version&quot;: &quot;2017&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.23-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-1:2018&quot;,
+      &quot;version&quot;: &quot;2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-5:2009&quot;,
+      &quot;version&quot;: &quot;2009&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-10:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-23:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;AAMI ANSI ISO 10993-1:2018&quot;,
+      &quot;version&quot;: &quot;2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;AAMI ANSI ISO 10993-5:2009/(R)2022&quot;,
+      &quot;version&quot;: &quot;2009/(R)2022&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;AAMI/ANSI/ISO 10993-10:2010/(R)2014&quot;,
+      &quot;version&quot;: &quot;2010/(R)2014&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-1:2020&quot;,
+      &quot;version&quot;: &quot;2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-5:2009&quot;,
+      &quot;version&quot;: &quot;2009&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-10:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-23:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1:2005+AMD1:2012&quot;,
+      &quot;version&quot;: &quot;2005+AMD1:2012&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1:2005+AMD1:2012+AMD2:2020&quot;,
+      &quot;version&quot;: &quot;2005+AMD1:2012+AMD2:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1:2006/A2:2021&quot;,
+      &quot;version&quot;: &quot;2006/A2:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ANSI/AAMI ES60601-1:2005/A2:2021&quot;,
+      &quot;version&quot;: &quot;2005/A2:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1-11:2015+AMD1:2020&quot;,
+      &quot;version&quot;: &quot;2015+AMD1:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-11:2015+A1:2021&quot;,
+      &quot;version&quot;: &quot;2015+A1:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB 9706.1-2020&quot;,
+      &quot;version&quot;: &quot;2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY 9706.111-2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0316-2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 1437-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 1473-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 14971:2019&quot;,
+      &quot;version&quot;: &quot;2019&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 14971:2019&quot;,
+      &quot;version&quot;: &quot;2019&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 191-2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0466.1-2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0466.1-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0466.2-2015&quot;,
+      &quot;version&quot;: &quot;2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 1041:2013&quot;,
+      &quot;version&quot;: &quot;2013&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 20417:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 20417:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;21CFR 801 Labeling&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 15223-1:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 15223-1:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1-6:2010+AMD1:2013+AMD2:2020&quot;,
+      &quot;version&quot;: &quot;2010+AMD1:2013+AMD2:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-6:2010/A1:2015&quot;,
+      &quot;version&quot;: &quot;2010/A1:2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-6:2010+A2:2021&quot;,
+      &quot;version&quot;: &quot;2010+A2:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62366-1:2015&quot;,
+      &quot;version&quot;: &quot;2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62366-1:2015+AMD1:2020&quot;,
+      &quot;version&quot;: &quot;2015+AMD1:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 62366-1:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 6543-2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISTA 2A:2011&quot;,
+      &quot;version&quot;: &quot;2011&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;Directive 94/62/EC&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;Model Legislation&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-2:2015/A1:2021&quot;,
+      &quot;version&quot;: &quot;2015/A1:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1-2:2014+AMD1:2020&quot;,
+      &quot;version&quot;: &quot;2014+AMD1:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;FCC Part15&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY 9706.102-2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0664-2020&quot;,
+      &quot;version&quot;: &quot;2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 25000.51-2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 62304:2006/A1:2015&quot;,
+      &quot;version&quot;: &quot;2006/A1:2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62304:2006+AMD1:2015&quot;,
+      &quot;version&quot;: &quot;2006+AMD1:2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;蓝牙组织BQB认证&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;苹果公司内部协议&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;SRRC认证&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;FCC认证&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB 31241-2022&quot;,
+      &quot;version&quot;: &quot;2022&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62133-1:2017&quot;,
+      &quot;version&quot;: &quot;2017&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62133-2:2017+AMD1:2021&quot;,
+      &quot;version&quot;: &quot;2017+AMD1:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;验货标准&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;客户单独要求&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 80601-2-56:2017/Amd1:2018&quot;,
+      &quot;version&quot;: &quot;2017/Amd1:2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 80601-2-56:2017+A1:2018&quot;,
+      &quot;version&quot;: &quot;2017+A1:2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;参考依据&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 12470-3:2000+A1:2009&quot;,
+      &quot;version&quot;: &quot;2000+A1:2009&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 12470-5:2003&quot;,
+      &quot;version&quot;: &quot;2003&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ASTM E1965-98：2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ASTM E1965-98：2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 21416:2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB 21417.1-2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;JJG 1164-2019&quot;,
+      &quot;version&quot;: &quot;2019&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;JJG 1162-2019&quot;,
+      &quot;version&quot;: &quot;2019&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;MDR 2017/745&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;MDD 93/42/EEC&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.1-2022&quot;,
+      &quot;version&quot;: &quot;2022&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-1:2018&quot;,
+      &quot;version&quot;: &quot;2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.5-2017&quot;,
+      &quot;version&quot;: &quot;2017&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-5:2009&quot;,
+      &quot;version&quot;: &quot;2009&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.10-2017&quot;,
+      &quot;version&quot;: &quot;2017&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-10:2010&quot;,
+      &quot;version&quot;: &quot;2010&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 16886.23-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-23:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-5:2009&quot;,
+      &quot;version&quot;: &quot;2009&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-10:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 10993-23:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;AAMI ANSI ISO 10993-1：2018&quot;,
+      &quot;version&quot;: &quot;2018&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;AAMI ANSI ISO 10993-5:2009/(R)2022&quot;,
+      &quot;version&quot;: &quot;2009/(R)2022&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;AAMI/ ANSI/ISO 10993-10:2010/(R)2014&quot;,
+      &quot;version&quot;: &quot;2010/(R)2014&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-1:2020&quot;,
+      &quot;version&quot;: &quot;2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-5:2009&quot;,
+      &quot;version&quot;: &quot;2009&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-10:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 10993-23:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1:2005+AMD1:2012&quot;,
+      &quot;version&quot;: &quot;2005+AMD1:2012&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1:2005+AMD1:2012+AMD2:2020&quot;,
+      &quot;version&quot;: &quot;2005+AMD1:2012+AMD2:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1:2006/A2:2021&quot;,
+      &quot;version&quot;: &quot;2006/A2:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ANSI/AAMI ES60601-1:2005/A2:2021&quot;,
+      &quot;version&quot;: &quot;2005/A2:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1-11：2015+AMD1：2020&quot;,
+      &quot;version&quot;: &quot;2015+AMD1:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-11:2015+A1:2021&quot;,
+      &quot;version&quot;: &quot;2015+A1:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB 9706.1-2020&quot;,
+      &quot;version&quot;: &quot;2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY 9706.111-2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0316-2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 1437-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 1473-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 14971:2012&quot;,
+      &quot;version&quot;: &quot;2012&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 14971:2007&quot;,
+      &quot;version&quot;: &quot;2007&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 14971:2019&quot;,
+      &quot;version&quot;: &quot;2019&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 191-2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0466.1-2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0466.1-2023&quot;,
+      &quot;version&quot;: &quot;2023&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0466.2-2015&quot;,
+      &quot;version&quot;: &quot;2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 1041:2013&quot;,
+      &quot;version&quot;: &quot;2013&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 20417:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;21CFR 801 Labeling&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN ISO 15223-1:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISO 15223-1:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1-6：2010+AMD1：2013+AMD2：2020&quot;,
+      &quot;version&quot;: &quot;2010+AMD1:2013+AMD2:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-6:2010/A1:2015&quot;,
+      &quot;version&quot;: &quot;2010/A1:2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-6:2010+A2:2021&quot;,
+      &quot;version&quot;: &quot;2010+A2:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62366-1：2015&quot;,
+      &quot;version&quot;: &quot;2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62366-1：2015+AMD1：2020&quot;,
+      &quot;version&quot;: &quot;2015+AMD1:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 62366-1:2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 6543-2008&quot;,
+      &quot;version&quot;: &quot;2008&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;ISTA 2A:2011&quot;,
+      &quot;version&quot;: &quot;2011&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;Directive 94/62/EC&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;Model Legislation&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 60601-1-2:2015/A1:2021&quot;,
+      &quot;version&quot;: &quot;2015/A1:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 60601-1-2:2014+AMD1：2020&quot;,
+      &quot;version&quot;: &quot;2014+AMD1:2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;FCC Part15&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;合规要求&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY 9706.102-2021&quot;,
+      &quot;version&quot;: &quot;2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;YY/T 0664-2020&quot;,
+      &quot;version&quot;: &quot;2020&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62304:2015&quot;,
+      &quot;version&quot;: &quot;2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB/T 25000.51-2016&quot;,
+      &quot;version&quot;: &quot;2016&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;EN 62304:2006/A1:2015&quot;,
+      &quot;version&quot;: &quot;2006/A1:2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62304：2006+AMD1：2015&quot;,
+      &quot;version&quot;: &quot;2006+AMD1:2015&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;GB 31241-2022&quot;,
+      &quot;version&quot;: &quot;2022&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62133-1:2017&quot;,
+      &quot;version&quot;: &quot;2017&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    },
+    {
+      &quot;std_id&quot;: &quot;IEC 62133-2:2017+AMD1:2021&quot;,
+      &quot;version&quot;: &quot;2017+AMD1:2021&quot;,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: null,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    }
+  ],
+  &quot;components&quot;: [
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;LCD显示屏&quot;,
+      &quot;component_type&quot;: &quot;display&quot;,
+      &quot;spec&quot;: &quot;段码式，有背光：白橙红&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;PCB&quot;,
+      &quot;component_type&quot;: &quot;pcb&quot;,
+      &quot;spec&quot;: null
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;按键&quot;,
+      &quot;component_type&quot;: &quot;other&quot;,
+      &quot;spec&quot;: &quot;3个按键：开机测量键、设置键、静音键&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;壳体&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;不变色&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;上盖&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;细火花纹表面处理，白色&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;下盖&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;细火花纹表面处理，白色&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;电池盖&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;细火花纹表面处理，白色&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;按键&quot;,
+      &quot;component_type&quot;: &quot;structure&quot;,
+      &quot;spec&quot;: &quot;注塑按键，细火花纹表面处理&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;透镜&quot;,
+      &quot;component_type&quot;: &quot;optical&quot;,
+      &quot;spec&quot;: &quot;模切透镜&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;红外体温计主机&quot;,
+      &quot;component_type&quot;: &quot;other&quot;,
+      &quot;spec&quot;: null
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;说明书&quot;,
+      &quot;component_type&quot;: &quot;other&quot;,
+      &quot;spec&quot;: &quot;尺寸：150x50mm（±1mm）&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;纸浆盒&quot;,
+      &quot;component_type&quot;: &quot;packaging&quot;,
+      &quot;spec&quot;: null
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;电池&quot;,
+      &quot;component_type&quot;: &quot;battery&quot;,
+      &quot;spec&quot;: &quot;2 X AAA Size&quot;
+    },
+    {
+      &quot;part_no&quot;: null,
+      &quot;name&quot;: &quot;锂电池&quot;,
+      &quot;component_type&quot;: &quot;battery&quot;,
+      &quot;spec&quot;: null
+    }
+  ],
+  &quot;functions&quot;: [
+    {
+      &quot;name&quot;: &quot;红外非接触式测温&quot;,
+      &quot;description&quot;: &quot;测量原理为红外非接触式&quot;
+    },
+    {
+      &quot;name&quot;: &quot;额面测温&quot;,
+      &quot;description&quot;: &quot;测量位置为额面&quot;
+    },
+    {
+      &quot;name&quot;: &quot;人体体温测量&quot;,
+      &quot;description&quot;: &quot;检测人体体温&quot;
+    },
+    {
+      &quot;name&quot;: &quot;物温测量&quot;,
+      &quot;description&quot;: &quot;检测物体温度&quot;
+    },
+    {
+      &quot;name&quot;: &quot;屏幕分类指示&quot;,
+      &quot;description&quot;: &quot;通过屏幕选择进行分类指示&quot;
+    },
+    {
+      &quot;name&quot;: &quot;按键操作&quot;,
+      &quot;description&quot;: &quot;3个按键：开机测量键、设置键、静音键&quot;
+    },
+    {
+      &quot;name&quot;: &quot;PC Link&quot;,
+      &quot;description&quot;: &quot;PC连接功能&quot;
+    },
+    {
+      &quot;name&quot;: &quot;低电压检出&quot;,
+      &quot;description&quot;: &quot;双阶段低电压检测&quot;
+    },
+    {
+      &quot;name&quot;: &quot;错误分类显示&quot;,
+      &quot;description&quot;: &quot;2种错误分类：超出工作环境温度、超过量程&quot;
+    },
+    {
+      &quot;name&quot;: &quot;自动关机&quot;,
+      &quot;description&quot;: &quot;常规为15秒自动关机&quot;
+    },
+    {
+      &quot;name&quot;: &quot;温度显示单位切换&quot;,
+      &quot;description&quot;: &quot;支持℃和℉显示&quot;
+    },
+    {
+      &quot;name&quot;: &quot;提示功能&quot;,
+      &quot;description&quot;: &quot;蜂鸣提示&quot;
+    }
+  ],
+  &quot;identifiers&quot;: [
+    {
+      &quot;id_type&quot;: &quot;产品编号&quot;,
+      &quot;value&quot;: &quot;PT9L&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;项目号&quot;,
+      &quot;value&quot;: &quot;30000078&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;产品编号&quot;,
+      &quot;value&quot;: &quot;PT9L&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;项目号&quot;,
+      &quot;value&quot;: &quot;30000078&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;文件编号&quot;,
+      &quot;value&quot;: &quot;GF-30-006 V1.0&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;产品编号&quot;,
+      &quot;value&quot;: &quot;PT9L&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;项目号&quot;,
+      &quot;value&quot;: &quot;30000078&quot;
+    }
+  ],
+  &quot;persons&quot;: [
+    {
+      &quot;name&quot;: &quot;硬件工程师&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;拟制&quot;
+    },
+    {
+      &quot;name&quot;: &quot;硬件主管&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;审核&quot;
+    },
+    {
+      &quot;name&quot;: &quot;结构工程师&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;拟制&quot;
+    },
+    {
+      &quot;name&quot;: &quot;结构主管&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;审核&quot;
+    },
+    {
+      &quot;name&quot;: &quot;项目负责人&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;拟制&quot;
+    },
+    {
+      &quot;name&quot;: &quot;软件主管&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;审核&quot;
+    },
+    {
+      &quot;name&quot;: &quot;硬件主管&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;审核&quot;
+    },
+    {
+      &quot;name&quot;: &quot;结构主管&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: null,
+      &quot;role&quot;: &quot;审核&quot;
+    }
+  ],
+  &quot;products&quot;: [
+    {
+      &quot;product_id&quot;: &quot;PT9L&quot;,
+      &quot;model&quot;: &quot;PT9L&quot;,
+      &quot;name&quot;: &quot;红外体温计&quot;,
+      &quot;region&quot;: null
+    },
+    {
+      &quot;product_id&quot;: &quot;PT9L&quot;,
+      &quot;model&quot;: null,
+      &quot;name&quot;: &quot;红外体温计&quot;,
+      &quot;region&quot;: null
+    },
+    {
+      &quot;product_id&quot;: &quot;PT9L&quot;,
+      &quot;model&quot;: null,
+      &quot;name&quot;: &quot;红外体温计&quot;,
+      &quot;region&quot;: null
+    }
+  ],
+  &quot;fragments&quot;: [
+    {
+      &quot;fragment_type&quot;: &quot;scope_limitation&quot;,
+      &quot;content&quot;: &quot;Sheet: 法规标准清单 -欧美&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;法规标准清单&quot;,
+        &quot;欧美&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;法规标准&quot;,
+        &quot;适用标准&quot;
+      ],
+      &quot;source_section&quot;: &quot;Sheet: 法规标准清单 -欧美&quot;
+    },
+    {
+      &quot;fragment_type&quot;: &quot;scope_limitation&quot;,
+      &quot;content&quot;: &quot;其他非强制标准：验货标准，客户单独要求&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;非强制标准&quot;,
+        &quot;验货标准&quot;,
+        &quot;客户要求&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;标准&quot;,
+        &quot;客户要求&quot;
+      ],
+      &quot;source_section&quot;: &quot;Sheet: 法规标准清单 -欧美&quot;
+    },
+    {
+      &quot;fragment_type&quot;: &quot;constraint_statement&quot;,
+      &quot;content&quot;: &quot;锂电池适用标准：GB 31241-2022（中国）、IEC 62133-1:2017（美国）、IEC 62133-2:2017+AMD1:2021（美国）&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;锂电池&quot;,
+        &quot;标准&quot;,
+        &quot;法规&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;锂电池&quot;,
+        &quot;标准&quot;
+      ],
+      &quot;source_section&quot;: &quot;Sheet: 法规标准清单 -欧美&quot;
+    }
+  ],
+  &quot;relationships&quot;: [
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;防尘防水 requirements for ingress of water or particulate matter - 应符合IEC60529的IP22类测试&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;IEC60529&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;销售地区及认证 Intended markets and certification - 要求符合FDA认证体系要求，对应地区：美国&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;FDA&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;环保 Environment protection - 要求满足加州RoHS环保法规&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;加州RoHS&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;温度显示范围 32.0℃～42.9℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ASTM E1965-98:2016&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;温度显示范围 32.0℃～42.9℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ASTM E1965-98:2023&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;测量误差 ≥35℃且≤42℃：±0.2℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ASTM E1965-98:2016&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;测量误差 ≥35℃且≤42℃：±0.2℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ASTM E1965-98:2023&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;测量误差 其它：±0.3℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ASTM E1965-98:2016&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;测量误差 其它：±0.3℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ASTM E1965-98:2023&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;工作环境 温度：10℃～40℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ISO 80601-2-56:2017/Amd1:2018&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;存储环境 温度：-20.0℃―55.0℃&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;ISO 80601-2-56:2017/Amd1:2018&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;DesignInput&quot;,
+      &quot;source_id&quot;: &quot;包装执行规范 按照《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》执行&quot;,
+      &quot;relation&quot;: &quot;CONSTRAINED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;GF-30-006 V1.0&quot;
+    }
+  ],
+  &quot;source_file&quot;: &quot;设计输入汇总表E0  20211118.via_xlsx.clean.md&quot;,
+  &quot;source_path&quot;: &quot;D:\\项目文档一致性审查\\pt9l_markdown_output\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md&quot;,
+  &quot;doc_type&quot;: &quot;design_input&quot;
+}</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="file-block" id="file-2">
+            <div class="file-title">检测报告 &mdash; PT9L红外体温计检测报告 V1.0.via_lo_html.clean.md</div>
+            <div class="split-view">
+                <div class="pane left-pane">
+                    <div class="pane-header">原文件 (PT9L红外体温计检测报告 V1.0.via_lo_html.clean.md)</div>
+                    <pre class="content">&lt;!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 --&gt;
+# PT9L红外体温计检测报告 V1.0
+
+&gt; hybrid clean-md：规整签字/数据表用 GFM 表格；多段大格子铺成普通段落；保留全部文字与复选框；不保留 HTML 标签。
+
+文件编号： PT9L-XNTB01 V1.0 红外体温计检测报告
+
+**PT9L 红外体温计**
+
+**检测报告**
+
+**V 1 .0**
+
+**拟制** *（项目工程师）：* 年 月 日
+
+**审核** *（硬件主管）：* 年 月 日
+
+**批准** *(* *技术负责人* *)* *：* 年 月 日
+
+**测试机型： PT9L**
+
+| **测试目的： PT9L 性能测试** | **测试时间：** |
+| --- | --- |
+| **测试人员：** | **审核：** |
+
+**一、测试背景及内容：**
+
+PT9L进行到T1阶段，此次测试对PT9L的性能进行测试，测试依据为“PT9L红外体温计产品检验标准”。
+
+**二、测试仪器：**
+
+恒温水槽、黑体辐射源。其中恒温水槽、黑体辐射源都需要符合“PT9L红外体温计产品检验标准”内的要求。
+
+**三、实际测试：**
+
+测试环境：23℃，湿度55%，正常大气压；
+
+测试样机数量：2台（编号为1号和2号）
+
+测试方法：见《PT9L红外体温计产品检验标准》
+
+**四、测试项目及结果：**
+
+**试验项目**
+
+| **序号** | **检测项目** | **标准要求** | **检测结果** |  | **本项**&lt;br&gt;**结论** | **备注** |
+| --- | --- | --- | --- | --- | --- | --- |
+| **序号** | **检测项目** | **标准要求** | **测试机 1 号** | **测试机 2 号** | **本项**&lt;br&gt;**结论** | **备注** |
+
+**常温检验（** 室温：23℃ ，相对湿度：55% **）**
+
+| 1 | **上电自检功能** | 产品上电后会进入上电自检：白色背光灯点亮，LCD显示屏全显，此时检查显示内容是否正确，是否有乱显，多显，少显现象，同时蜂鸣器响0.5S，2S后进入待机模式（若自检故障，屏幕全亮且闪烁）。 | 符合要求 | 符合要求 | 合格 |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2 | **提示音开关** | 通过机器侧面静音键控制提示音，当静音键置于关时，屏幕出现静音符号，此时提示音关；当静音键置于开时，屏幕上静音符号消失，此时提示音开。&lt;br&gt;测试方法：机器每次测温时，完成温度测量后显示测量结果，如果目标温度正常，按设定蜂鸣；若测量错误，显示三条杠和温度单位，按设定蜂鸣。 | 符合要求 | 符合要求 | 合格 |  |
+| 3 | **测量单位切换** | 1.待机状态下长按测量键8秒，进入单位切换状态；&lt;br&gt;2.短按测量键切换℃或℉单位，对应的单位符号闪烁，并伴有短蜂鸣一声；&lt;br&gt;3.长按测量键2秒以确认所选单位，对应的单位符号将常亮2秒并伴有短蜂鸣一声。之后体温计将自动关机。 | 符合要求 | 符合要求 | 合格 |  |
+| 4 | **测量模式切换** | 测量状态下短按设置按键进入模式切换状态，短按设置键循环切换婴儿模式，成人模式和物温模式，LCD屏上对应图标显示。 | 符合要求 | 符合要求 | 合格 |  |
+| 5 | **自动关机** | 测温后无操作 15±1S 自动转入待机模式。 | 符合要求 | 符合要求 | 合格 |  |
+| 6 | **温度显示范围及超温提示功能** | 要求：32℃~42.9℃；&lt;br&gt;按照第8项的测试方法分别测量31.6℃、32.4℃、42.5℃和43.4℃恒温水槽，32.4℃、42.5℃可正确显示温度，31.6℃和43.4℃无法显示温度，屏显“--.-”报错。 | 见测试记录一 | 见测试记录一 | 合格 |  |
+| 7 | **显示分辨率** | 要求：0.1℃；&lt;br&gt;实验室环境中，黑体温度变化在0.1℃--0.15℃，显示数值应随之发生改变。 | 0.1℃ | 0.1℃ | 合格 |  |
+| 8 | **常温精度测试** | 环境要求：室温：23.0±2.0℃ 相对湿度：50%RH±20%RH&lt;br&gt;将恒温水槽分别设定在32℃、32.5℃、35℃、38.5℃、42℃、42.5℃、42.9℃，待恒温水槽温度稳定后，使用体温计进行测量：&lt;br&gt;1. 在断电情况下按住按键后装入电池，显示“CAL”后松开按键，产品进入黑体模式；&lt;br&gt;2. 对被测水槽连续测量三次；&lt;br&gt;3. 精度要求：≥35℃且≤42℃：±0.2℃，其它：±0.3℃。&lt;br&gt;4. 对测试结果不符合规定的温度计，可复测两次，两次复测合格，亦可作合格处理。 | 见测试记录二 | 见测试记录二 | 合格 |  |
+| 9 | **低电压提示功能** | 1、使用可调直流稳压电源供电，调整输出电压为3.0V给设备供电，开机后启动测量，此时应能正常测量；&lt;br&gt;2、调整直流电源输出电压低于2.7V，此时仍可进行测量但低电符号“ ![图片 5](PT9L红外体温计检测报告 V1.0.via_lo_html_assets/PT9L红外体温计检测报告 V1.0_html_b4679e1d.png) ”将随测量结果显示；&lt;br&gt;2、调整直流电源输出电压低于2.5V，此时屏幕上单独闪烁显示“ ![图片 6](PT9L红外体温计检测报告 V1.0.via_lo_html_assets/PT9L红外体温计检测报告 V1.0_html_b4679e1d.png) ”图标，15秒后将自动关机。 | 符合要求 | 符合要求 | 合格 |  |
+| 10 | **背光灯** | 环境要求：室温：24℃-26℃ 相对湿度：30%-70%&lt;br&gt;将恒温水槽分别设定在34℃、35.7℃、37℃，待恒温水槽温度稳定后，使用体温计进行测量：&lt;br&gt;1. 体温计应处于用户模式，不要进入黑体模式；&lt;br&gt;2. 对被测水槽连续测量三次，不必关注屏幕显示的温度，只看背光颜色；&lt;br&gt;3. 要求：测试34℃水槽时背光应为白色，测试35.7℃水槽时背光应为橙色、测试37℃水槽时背光应为红色。&lt;br&gt;4. 对测试结果不符合规定的温度计，可复测两次，两次复测合格，亦可作合格处理。 | 见测试记录三 | 见测试记录三 | 合格 |  |
+| 11 | **静态电流** | 检测在省电模式下的静态电流&lt;br&gt;1. 将电源电压调至DC3.0V&lt;br&gt;2. 将万用表调到mA档，然后将万用表串在直流电源上，并由主机连接，看万用表电流；&lt;br&gt;3. 待机器进入睡眠状态时，观测静态电流值；&lt;br&gt;4. 标准：≤0.02mA。 | 静态电流：&lt;br&gt;8.1uA |  | 合格 |  |
+| 12 | **工作电流** | 检测在工作中任意状态下的工作电流。&lt;br&gt;1. 将电源电压调于DC3.0V；&lt;br&gt;2. 将万用表调到mA档，将万用表串在直流电源上，并由主机连接，看万用表电流；&lt;br&gt;3. 按测量键测量时，LCD背光点亮观测最大工作电流值；&lt;br&gt;4. 标准：工作电流在≤20mA(工作中任意状态)。 | 工作电流：&lt;br&gt;12.7mA |  | 合格 |  |
+| 13 | **裸机跌落测试** | 产品在开机状态下，跌落高度 1.0 米，跌落正下方用平整硬木板作基垫，以垂直于地面自由落下。&lt;br&gt;1. 跌落高度为 1M，跌 3 次，依次顺序底部、LCD 面、有测量键 面朝下方跌落各一次，探头部位不可跌落。&lt;br&gt;2.应跌落于密度为 700kg/M3，厚度为 50mm 的硬质木板或混凝 土地面，若未完成跌落次数就已经解体或严重损伤时，应立即 停止后续动作。并分析。&lt;br&gt;3.以产品自身的重量自由下落，不可有外力加持，下落过程中 产品不可在空中翻转，否则无效。&lt;br&gt;跌落后产品没有开裂，PCB板 元器件没有损伤，产品结构功能完好。 | 符合要求 | 符合要求 | 合格 |  |
+| 14 | **带包装振动** | 方法：将1箱成品以不同方向放置在测试机上固定好，进行模拟测试&lt;br&gt;振动条件：&lt;br&gt;（1）5Hz-35Hz-5Hz&lt;br&gt;（2）振幅：0.35mm&lt;br&gt;（3）振动方向：X，Y，Z&lt;br&gt;（4）振动次数：各15次&lt;br&gt;（Z方向（上下）振动时外箱处于自由状态）&lt;br&gt;判定基准：&lt;br&gt;1）不可看到被包装物品，边角不可破裂；&lt;br&gt;2）测试后在标准状态下测试，误差须在第8项项允许范围内。 | 见测试记录四 | 见测试记录四 | 合格 |  |
+| 15 | **低温工作试验** | 要求：温度10℃~40℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；&lt;br&gt;在10℃恒温箱中放置24h之后，常温下恢复1h，按照第8项进行测试，测量结果应满足设计要求。 | 见测试记录五 | 见测试记录五 | 合格 |  |
+| 16 | **高温工作试验** | 要求：温度10℃~40℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；&lt;br&gt;在40℃恒温箱中放置24h之后，常温下恢复1h，按照第8项进行测试，测量结果应满足设计要求。 | 见测试记录六 | 见测试记录六 | 合格 |  |
+| 17 | **低温存储试验** | 要求：温度-20℃~55℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；&lt;br&gt;在-20℃恒温箱中放置48h之后，常温下恢复1h，按照第8项进行测试，测量结果应满足设计要求。 | 见测试记录七 | 见测试记录七 | 合格 |  |
+| 18 | **高温存储试验** | 要求：温度-20℃~55℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；&lt;br&gt;在55℃恒温箱中放置48h之后，常温下恢复1h，按照第8项进行测试，测量结果应满足设计要求。 | 见测试记录八 | 见测试记录八 | 合格 |  |
+| 19 | **产品寿命** | 要求：五年或10000次；&lt;br&gt;产品整机寿命5年，假设平均每天使用5次，等效1万次的使用寿命，对其中可以影响到整机寿命的电子元器件以及结构组件进行测试。选取5个样品实际测量1万次，测试前和测试后都按照第8项进行测试，精度和功能均需正常，则认为产品寿命达到本项要求 | 整机寿命测试报告 |  | 合格 |  |
+| 20 | **电池寿命** | 要求：测量次数≥1000次，待机能力≥6个月；&lt;br&gt;模拟人体测试，通过测试不同状态的功耗推算出连续工作时间和待机时间，结果应满足设计要求。 | 符合要求 |  | 合格 |  |
+</pre>
+                </div>
+                <div class="divider"></div>
+                <div class="pane right-pane">
+                    <div class="pane-header">抽取结果 (PT9L红外体温计检测报告 V1.0.via_lo_html.clean.json)</div>
+                    <pre class="content">{
+  &quot;test_report&quot;: {
+    &quot;report_id&quot;: &quot;PT9L-XNTB01 V1.0&quot;,
+    &quot;report_title&quot;: &quot;PT9L红外体温计检测报告 V1.0&quot;,
+    &quot;conclusion&quot;: &quot;PASS&quot;,
+    &quot;test_date&quot;: null,
+    &quot;equipment&quot;: &quot;恒温水槽、黑体辐射源&quot;
+  },
+  &quot;tests&quot;: [
+    {
+      &quot;test_id&quot;: &quot;1&quot;,
+      &quot;item&quot;: &quot;上电自检功能&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号1&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;2&quot;,
+      &quot;item&quot;: &quot;提示音开关&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号2&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;3&quot;,
+      &quot;item&quot;: &quot;测量单位切换&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号3&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;4&quot;,
+      &quot;item&quot;: &quot;测量模式切换&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号4&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;5&quot;,
+      &quot;item&quot;: &quot;自动关机&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: &quot;15±1&quot;,
+      &quot;expected_unit&quot;: &quot;S&quot;,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号5&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;6&quot;,
+      &quot;item&quot;: &quot;温度显示范围及超温提示功能&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: &quot;32℃~42.9℃&quot;,
+      &quot;expected_unit&quot;: &quot;℃&quot;,
+      &quot;actual_result&quot;: &quot;见测试记录一&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号6&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;7&quot;,
+      &quot;item&quot;: &quot;显示分辨率&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: &quot;0.1&quot;,
+      &quot;expected_unit&quot;: &quot;℃&quot;,
+      &quot;actual_result&quot;: &quot;0.1&quot;,
+      &quot;actual_unit&quot;: &quot;℃&quot;,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号7&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;8&quot;,
+      &quot;item&quot;: &quot;常温精度测试&quot;,
+      &quot;condition&quot;: &quot;室温：23.0±2.0℃，相对湿度：50%RH±20%RH&quot;,
+      &quot;expected_value&quot;: &quot;≥35℃且≤42℃：±0.2，其它：±0.3&quot;,
+      &quot;expected_unit&quot;: &quot;℃&quot;,
+      &quot;actual_result&quot;: &quot;见测试记录二&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号8&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;9&quot;,
+      &quot;item&quot;: &quot;低电压提示功能&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号9&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;10&quot;,
+      &quot;item&quot;: &quot;背光灯&quot;,
+      &quot;condition&quot;: &quot;室温：24℃-26℃，相对湿度：30%-70%&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;见测试记录三&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号10&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;11&quot;,
+      &quot;item&quot;: &quot;静态电流&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: &quot;0.02&quot;,
+      &quot;expected_unit&quot;: &quot;mA&quot;,
+      &quot;actual_result&quot;: &quot;8.1&quot;,
+      &quot;actual_unit&quot;: &quot;uA&quot;,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号11&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;12&quot;,
+      &quot;item&quot;: &quot;工作电流&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: &quot;20&quot;,
+      &quot;expected_unit&quot;: &quot;mA&quot;,
+      &quot;actual_result&quot;: &quot;12.7&quot;,
+      &quot;actual_unit&quot;: &quot;mA&quot;,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号12&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;13&quot;,
+      &quot;item&quot;: &quot;裸机跌落测试&quot;,
+      &quot;condition&quot;: &quot;室温：23℃，相对湿度：55%&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;常温检验-序号13&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;14&quot;,
+      &quot;item&quot;: &quot;带包装振动&quot;,
+      &quot;condition&quot;: &quot;5Hz-35Hz-5Hz；振幅：0.35mm；振动方向：X，Y，Z；振动次数：各15次；Z方向（上下）振动时外箱处于自由状态&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: null,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;表格第14行-带包装振动&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;15&quot;,
+      &quot;item&quot;: &quot;低温工作试验&quot;,
+      &quot;condition&quot;: &quot;温度10℃~40℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；在10℃恒温箱中放置24h之后，常温下恢复1h&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: null,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;表格第15行-低温工作试验&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;16&quot;,
+      &quot;item&quot;: &quot;高温工作试验&quot;,
+      &quot;condition&quot;: &quot;温度10℃~40℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；在40℃恒温箱中放置24h之后，常温下恢复1h&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: null,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;表格第16行-高温工作试验&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;17&quot;,
+      &quot;item&quot;: &quot;低温存储试验&quot;,
+      &quot;condition&quot;: &quot;温度-20℃~55℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；在-20℃恒温箱中放置48h之后，常温下恢复1h&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: null,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;表格第17行-低温存储试验&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;18&quot;,
+      &quot;item&quot;: &quot;高温存储试验&quot;,
+      &quot;condition&quot;: &quot;温度-20℃~55℃，相对湿度：≤95%不结露，大气压力：70kPa～106kPa；在55℃恒温箱中放置48h之后，常温下恢复1h&quot;,
+      &quot;expected_value&quot;: null,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: null,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;表格第18行-高温存储试验&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;19&quot;,
+      &quot;item&quot;: &quot;产品寿命&quot;,
+      &quot;condition&quot;: null,
+      &quot;expected_value&quot;: &quot;五年或10000次&quot;,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: null,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;表格第19行-产品寿命&quot;
+    },
+    {
+      &quot;test_id&quot;: &quot;20&quot;,
+      &quot;item&quot;: &quot;电池寿命&quot;,
+      &quot;condition&quot;: null,
+      &quot;expected_value&quot;: &quot;≥1000次，≥6个月&quot;,
+      &quot;expected_unit&quot;: null,
+      &quot;actual_result&quot;: &quot;符合要求&quot;,
+      &quot;actual_unit&quot;: null,
+      &quot;pass_fail&quot;: &quot;PASS&quot;,
+      &quot;source_section&quot;: &quot;表格第20行-电池寿命&quot;
+    }
+  ],
+  &quot;regulations&quot;: [
+    {
+      &quot;std_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;,
+      &quot;version&quot;: null,
+      &quot;clause&quot;: null,
+      &quot;requirement_text&quot;: &quot;PT9L进行到T1阶段，此次测试对PT9L的性能进行测试，测试依据为PT9L红外体温计产品检验标准&quot;,
+      &quot;relevance&quot;: &quot;适用标准&quot;
+    }
+  ],
+  &quot;components&quot;: [],
+  &quot;identifiers&quot;: [
+    {
+      &quot;id_type&quot;: &quot;文件编号&quot;,
+      &quot;value&quot;: &quot;PT9L-XNTB01 V1.0&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;产品编号&quot;,
+      &quot;value&quot;: &quot;PT9L&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;版本号&quot;,
+      &quot;value&quot;: &quot;V1.0&quot;
+    },
+    {
+      &quot;id_type&quot;: &quot;文件编号&quot;,
+      &quot;value&quot;: &quot;PT9L红外体温计检测报告 V1.0&quot;
+    }
+  ],
+  &quot;persons&quot;: [
+    {
+      &quot;name&quot;: &quot;项目工程师&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: &quot;项目工程师&quot;,
+      &quot;role&quot;: &quot;拟制&quot;
+    },
+    {
+      &quot;name&quot;: &quot;硬件主管&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: &quot;硬件主管&quot;,
+      &quot;role&quot;: &quot;审核&quot;
+    },
+    {
+      &quot;name&quot;: &quot;技术负责人&quot;,
+      &quot;dept&quot;: null,
+      &quot;title&quot;: &quot;技术负责人&quot;,
+      &quot;role&quot;: &quot;批准&quot;
+    }
+  ],
+  &quot;products&quot;: [
+    {
+      &quot;product_id&quot;: &quot;PT9L&quot;,
+      &quot;model&quot;: &quot;PT9L&quot;,
+      &quot;name&quot;: &quot;红外体温计&quot;,
+      &quot;region&quot;: null
+    },
+    {
+      &quot;product_id&quot;: &quot;PT9L&quot;,
+      &quot;model&quot;: null,
+      &quot;name&quot;: &quot;红外体温计&quot;,
+      &quot;region&quot;: null
+    }
+  ],
+  &quot;fragments&quot;: [
+    {
+      &quot;fragment_type&quot;: &quot;scope_limitation&quot;,
+      &quot;content&quot;: &quot;PT9L进行到T1阶段，此次测试对PT9L的性能进行测试，测试依据为'PT9L红外体温计产品检验标准'。&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;测试阶段&quot;,
+        &quot;T1阶段&quot;,
+        &quot;性能测试&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;测试目的&quot;,
+        &quot;测试依据&quot;
+      ],
+      &quot;source_section&quot;: &quot;一、测试背景及内容&quot;
+    },
+    {
+      &quot;fragment_type&quot;: &quot;constraint_statement&quot;,
+      &quot;content&quot;: &quot;恒温水槽、黑体辐射源都需要符合'PT9L红外体温计产品检验标准'内的要求。&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;测试仪器&quot;,
+        &quot;设备要求&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;测试设备&quot;,
+        &quot;校准要求&quot;
+      ],
+      &quot;source_section&quot;: &quot;二、测试仪器&quot;
+    },
+    {
+      &quot;fragment_type&quot;: &quot;constraint_statement&quot;,
+      &quot;content&quot;: &quot;测试环境：23℃，湿度55%，正常大气压；测试样机数量：2台（编号为1号和2号）；测试方法：见《PT9L红外体温计产品检验标准》&quot;,
+      &quot;topic_tags&quot;: [
+        &quot;测试环境&quot;,
+        &quot;样机数量&quot;,
+        &quot;测试方法&quot;
+      ],
+      &quot;related_subjects&quot;: [
+        &quot;环境条件&quot;,
+        &quot;样本量&quot;
+      ],
+      &quot;source_section&quot;: &quot;三、实际测试&quot;
+    }
+  ],
+  &quot;relationships&quot;: [
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;常温精度测试&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;上电自检功能&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;提示音开关&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;测量单位切换&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;测量模式切换&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;自动关机&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;温度显示范围及超温提示功能&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;显示分辨率&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;低电压提示功能&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;背光灯&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;静态电流&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;工作电流&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    },
+    {
+      &quot;source_type&quot;: &quot;Test&quot;,
+      &quot;source_id&quot;: &quot;裸机跌落测试&quot;,
+      &quot;relation&quot;: &quot;VERIFIED_BY&quot;,
+      &quot;target_type&quot;: &quot;Regulation&quot;,
+      &quot;target_id&quot;: &quot;PT9L红外体温计产品检验标准&quot;
+    }
+  ],
+  &quot;source_file&quot;: &quot;PT9L红外体温计检测报告 V1.0.via_lo_html.clean.md&quot;,
+  &quot;source_path&quot;: &quot;D:\\项目文档一致性审查\\pt9l_markdown_output\\11 T1样机\\PT9L红外体温计检测报告 V1.0.via_lo_html.clean.md&quot;,
+  &quot;doc_type&quot;: &quot;test_report&quot;
+}</pre>
+                </div>
+            </div>
+        </div>
+        
+    <script>
+        document.querySelectorAll('.divider').forEach(divider => {
+            let isResizing = false;
+            divider.addEventListener('mousedown', e => {
+                isResizing = true;
+                document.body.style.cursor = 'col-resize';
+                document.body.style.userSelect = 'none';
+            });
+            document.addEventListener('mousemove', e => {
+                if (!isResizing) return;
+                const container = divider.parentElement;
+                const rect = container.getBoundingClientRect();
+                const offset = e.clientX - rect.left;
+                const pct = (offset / rect.width) * 100;
+                if (pct > 20 && pct < 80) {
+                    container.querySelector('.left-pane').style.flex = `0 0 ${pct}%`;
+                    container.querySelector('.right-pane').style.flex = `0 0 ${100 - pct}%`;
+                }
+            });
+            document.addEventListener('mouseup', () => {
+                isResizing = false;
+                document.body.style.cursor = '';
+                document.body.style.userSelect = '';
+            });
+        });
+    </script>
+</body>
+</html>

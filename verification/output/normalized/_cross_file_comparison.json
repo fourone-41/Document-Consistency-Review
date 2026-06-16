@@ -1,0 +1,472 @@
+{
+  "atmospheric_pressure": {
+    "direction": "wider_is_better",
+    "files_count": 2,
+    "claims_count": 2,
+    "entries": [
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "range",
+        "value": "70-106",
+        "unit": "kPa",
+        "condition": null,
+        "raw_text": "存储环境大气压力：70kPa～106kPa",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "70～106",
+        "unit": "kPa",
+        "condition": null,
+        "raw_text": "存储环境 - 大气压力",
+        "test_role": null
+      }
+    ]
+  },
+  "auto_shutdown_time": {
+    "direction": "exact_match",
+    "files_count": 3,
+    "claims_count": 4,
+    "entries": [
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "criterion",
+        "value": "15±1",
+        "unit": "S",
+        "condition": "室温：23℃，相对湿度：55%",
+        "raw_text": "自动关机: 要求 15±1S",
+        "test_role": "expected"
+      },
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "actual",
+        "value": "符合要求",
+        "unit": null,
+        "condition": "室温：23℃，相对湿度：55%",
+        "raw_text": "自动关机: 实测 符合要求None",
+        "test_role": "actual"
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "value",
+        "value": "15",
+        "unit": "秒",
+        "condition": null,
+        "raw_text": "自动关机时间：常规为15秒",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "15",
+        "unit": "秒",
+        "condition": null,
+        "raw_text": "自动关机时间 - 常规为15秒",
+        "test_role": null
+      }
+    ]
+  },
+  "battery_life": {
+    "direction": "larger_is_better",
+    "files_count": 3,
+    "claims_count": 3,
+    "entries": [
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "criterion",
+        "value": "1000",
+        "unit": "次",
+        "condition": "模拟人体测试，通过测试不同状态的功耗推算出连续工作时间和待机时间",
+        "raw_text": "电池寿命: 要求 1000次",
+        "test_role": "expected"
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "value",
+        "value": "1000",
+        "unit": "次",
+        "condition": null,
+        "raw_text": "电池寿命：测量使用次数不低于1000次",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "1000",
+        "unit": "次",
+        "condition": null,
+        "raw_text": "电池寿命 - 测量使用次数不低于1000次",
+        "test_role": null
+      }
+    ]
+  },
+  "display_resolution": {
+    "direction": "smaller_is_better",
+    "files_count": 3,
+    "claims_count": 4,
+    "entries": [
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "criterion",
+        "value": "0.1",
+        "unit": "℃",
+        "condition": "室温：23℃，相对湿度：55%",
+        "raw_text": "显示分辨率: 要求 0.1℃",
+        "test_role": "expected"
+      },
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "actual",
+        "value": "0.1",
+        "unit": "℃",
+        "condition": "室温：23℃，相对湿度：55%",
+        "raw_text": "显示分辨率: 实测 0.1℃",
+        "test_role": "actual"
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "value",
+        "value": "0.1",
+        "unit": "℃",
+        "condition": null,
+        "raw_text": "显示分辨率：0.1℃",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "0.1",
+        "unit": "℃",
+        "condition": null,
+        "raw_text": "显示分辨率",
+        "test_role": null
+      }
+    ]
+  },
+  "humidity_range": {
+    "direction": "wider_is_better",
+    "files_count": 2,
+    "claims_count": 2,
+    "entries": [
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "range",
+        "value": "15-95",
+        "unit": "%RH",
+        "condition": "不结露",
+        "raw_text": "存储环境相对湿度：不窄于15-95%RH，不结露",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "range",
+        "value": "15-95",
+        "unit": "%RH",
+        "condition": "不结露",
+        "raw_text": "存储环境 - 相对湿度",
+        "test_role": null
+      }
+    ]
+  },
+  "ip_rating": {
+    "direction": "exact_match",
+    "files_count": 2,
+    "claims_count": 2,
+    "entries": [
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "value",
+        "value": "IP22",
+        "unit": null,
+        "condition": null,
+        "raw_text": "防尘防水：应符合IEC60529的IP22类测试（属于手持式、可穿戴式或运输中可操作设备）",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "IP22",
+        "unit": null,
+        "condition": "属于手持式、佩戴式或运输中可操作设备",
+        "raw_text": "防尘防水：应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备）",
+        "test_role": null
+      }
+    ]
+  },
+  "measurement_accuracy": {
+    "direction": "smaller_is_better",
+    "files_count": 3,
+    "claims_count": 6,
+    "entries": [
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "criterion",
+        "value": "≥35℃且≤42℃：±0.2，其它：±0.3",
+        "unit": "℃",
+        "condition": "室温：23.0±2.0℃ 相对湿度：50%RH±20%RH",
+        "raw_text": "常温精度测试: 要求 ≥35℃且≤42℃：±0.2，其它：±0.3℃",
+        "test_role": "expected"
+      },
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "actual",
+        "value": "见测试记录二",
+        "unit": null,
+        "condition": "室温：23.0±2.0℃ 相对湿度：50%RH±20%RH",
+        "raw_text": "常温精度测试: 实测 见测试记录二None",
+        "test_role": "actual"
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "tolerance",
+        "value": "±0.2",
+        "unit": "℃",
+        "condition": "≥35℃且≤42℃",
+        "raw_text": "测量误差：≥35℃且≤42℃时，±0.2℃",
+        "test_role": null
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "tolerance",
+        "value": "±0.3",
+        "unit": "℃",
+        "condition": "＜35℃或＞42℃",
+        "raw_text": "测量误差：其它温度范围，±0.3℃",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "tolerance",
+        "value": "±0.2",
+        "unit": "℃",
+        "condition": "≥35℃且≤42℃",
+        "raw_text": "测量误差",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "tolerance",
+        "value": "±0.3",
+        "unit": "℃",
+        "condition": "其它（<35℃或>42℃）",
+        "raw_text": "测量误差",
+        "test_role": null
+      }
+    ]
+  },
+  "measurement_range": {
+    "direction": "wider_is_better",
+    "files_count": 3,
+    "claims_count": 4,
+    "entries": [
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "criterion",
+        "value": "32℃~42.9℃",
+        "unit": null,
+        "condition": "室温：23℃，相对湿度：55%",
+        "raw_text": "温度显示范围及超温提示功能: 要求 32℃~42.9℃None",
+        "test_role": "expected"
+      },
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "actual",
+        "value": "见测试记录一",
+        "unit": null,
+        "condition": "室温：23℃，相对湿度：55%",
+        "raw_text": "温度显示范围及超温提示功能: 实测 见测试记录一None",
+        "test_role": "actual"
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "range",
+        "value": "32.0-42.9",
+        "unit": "℃",
+        "condition": null,
+        "raw_text": "温度显示范围：32.0℃～42.9℃",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "32.0～42.9",
+        "unit": "℃",
+        "condition": null,
+        "raw_text": "温度显示范围",
+        "test_role": null
+      }
+    ]
+  },
+  "operating_temperature": {
+    "direction": "wider_is_better",
+    "files_count": 2,
+    "claims_count": 8,
+    "entries": [
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "range",
+        "value": "10-40",
+        "unit": "℃",
+        "condition": null,
+        "raw_text": "工作环境温度：10℃～40℃",
+        "test_role": null
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "range",
+        "value": "15-95",
+        "unit": "%RH",
+        "condition": "不结露",
+        "raw_text": "工作环境相对湿度：不窄于15-95%RH，不结露",
+        "test_role": null
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "range",
+        "value": "70-106",
+        "unit": "kPa",
+        "condition": null,
+        "raw_text": "工作环境大气压力：70kPa～106kPa",
+        "test_role": null
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "tolerance",
+        "value": "-20.0-55.0",
+        "unit": "℃",
+        "condition": null,
+        "raw_text": "存储环境温度：-20.0℃～55.0℃",
+        "test_role": null
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "value",
+        "value": "2",
+        "unit": "种",
+        "condition": null,
+        "raw_text": "错误分类显示：错误种类2种（1、超出工作环境温度 2、超过量程）",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "10～40",
+        "unit": "℃",
+        "condition": null,
+        "raw_text": "工作环境 - 温度",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "range",
+        "value": "15-95",
+        "unit": "%RH",
+        "condition": "不结露",
+        "raw_text": "工作环境 - 相对湿度",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "70～106",
+        "unit": "kPa",
+        "condition": null,
+        "raw_text": "工作环境 - 大气压力",
+        "test_role": null
+      }
+    ]
+  },
+  "service_life": {
+    "direction": "larger_is_better",
+    "files_count": 3,
+    "claims_count": 5,
+    "entries": [
+      {
+        "source_doc": "PT9L红外体温计检测报告 V1.0.via_lo_html.clea",
+        "source_entity_type": "Test",
+        "attribute": "criterion",
+        "value": "10000",
+        "unit": "次",
+        "condition": "五年或10000次；产品整机寿命5年，假设平均每天使用5次，等效1万次的使用寿命",
+        "raw_text": "产品寿命: 要求 10000次",
+        "test_role": "expected"
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "value",
+        "value": "5",
+        "unit": "年",
+        "condition": null,
+        "raw_text": "产品寿命：五年",
+        "test_role": null
+      },
+      {
+        "source_doc": "客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "source_entity_type": "Requirement",
+        "attribute": "value",
+        "value": "10000",
+        "unit": "次",
+        "condition": null,
+        "raw_text": "产品寿命：10000次",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "5",
+        "unit": "年",
+        "condition": null,
+        "raw_text": "产品寿命",
+        "test_role": null
+      },
+      {
+        "source_doc": "设计输入汇总表E0  20211118.via_xlsx.clean.",
+        "source_entity_type": "DesignInput",
+        "attribute": "value",
+        "value": "10000",
+        "unit": "次",
+        "condition": null,
+        "raw_text": "产品寿命",
+        "test_role": null
+      }
+    ]
+  }
+}

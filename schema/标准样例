@@ -1,0 +1,114 @@
+技术文档中的完整 Schema 定义
+分为 4 层，一共 14 种节点类型 + 13 种边类型：
+
+层1：文档结构层（定位溯源）
+节点类型	作用
+Document
+一份具体的文件（含 doc_type, dhf_stage, version 等）
+Section
+文件中的一个章节/段落/表格行（用 heading_path 精确定位）
+层2：标识与元数据层（确定性锚点）
+节点类型	作用
+Product
+产品实体（编号、型号、名称、目标市场）
+Identifier
+各类标识号（产品编号/项目号/版本号/需求编号/设计输入编号/风险编号/测试编号）
+Person
+人员（姓名、部门、职务）
+层3：领域实体层（业务语义）
+这一层是最关键的，每种文件类型有对应的专属节点类型：
+
+节点类型	来源文件类型	作用
+Requirement
+客户需求书
+一条需求条目（含编号、分类、描述、量化值、验证方法）
+DesignInput
+设计输入汇总表
+一条设计输入（含编号、分类、来源需求编号）
+Risk
+风险评估文件
+一条风险项（危险源、伤害、严重度、概率、风险等级）
+RiskControl
+风险评估文件
+一条风险控制措施
+Test
+测试方案/报告
+一次具体测试（条件、预期值、实际结果、判据）
+TestReport
+测试报告
+测试报告（结论 PASS/FAIL/CONDITIONAL）
+Regulation
+法规标准文件
+法规/标准条款（标准号、版本、条款号、要求值）
+Function
+功能规格
+产品功能项
+Component
+BOM/物料清单
+零部件（物料编号、名称、数量、规格）
+ReviewRecord
+评审记录
+评审记录（阶段、日期、结论）
+层4：对齐与裁决层（系统核心输出）
+节点类型	作用
+Claim
+归一化事实断言——整个系统的对齐主干，所有可量化参数都归一到这个结构（subject/attribute/value/unit/condition）
+Statement
+定性声明——Claim 的弱化版，处理 Q&A 式的无法量化内容
+SemanticFragment
+语义片段——完全无法结构化的描述性段落
+边（关系）类型
+抽取阶段产生的边（LLM 从文件中识别）：
+
+关系	连接	语义
+PART_OF
+Section → Document
+章节属于文件
+STATED_IN
+Claim/Risk/Requirement… → Section
+实体出现在该章节
+DECLARES
+Document → Identifier/Product/Person
+文件声称/提及该实体
+DERIVES_FROM
+DesignInput → Requirement
+设计输入来源于该需求
+MUST_BE_GEQ
+DesignInput/Claim → Requirement/Regulation
+数值不得低于
+CONSTRAINED_BY
+Requirement → Regulation
+需求受法规约束
+MITIGATED_BY
+Risk → RiskControl
+风险被该措施控制
+VERIFIED_BY
+RiskControl/DesignInput → Test
+被该测试验证
+REPORTED_IN
+Test → TestReport
+测试结果记录在该报告
+ADDRESSED_IN
+Risk → Document
+风险在该文件中被处理
+SIGNED
+Person → Document/ReviewRecord
+人员签署了该文件
+REFERENCES
+Document → Document
+文件间引用关系
+RELATES_TO
+SemanticFragment → Claim
+语义片段与 Claim 的主题关联
+POTENTIALLY_CONFLICTS
+SemanticFragment ↔ Claim/SemanticFragment
+LLM 判定的潜在逻辑矛盾
+推理阶段产生的边（对齐引擎和检查引擎计算后写入）：
+
+关系	连接	语义
+CORRESPONDS_TO
+Claim ↔ Claim
+两个 Claim 说的是同一件事（equal/geq/lt...）
+CONFLICTS_WITH
+Claim ↔ Claim / Identifier ↔ Identifier
+检出的冲突（系统最终输出）

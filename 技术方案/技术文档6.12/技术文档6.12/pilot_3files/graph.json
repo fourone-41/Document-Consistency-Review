@@ -1,0 +1,111 @@
+{
+  "_comment": "小范围全流程产物：3 份文件抽取→建图→对齐→检查的知识图谱数据。节点按 schema 分层；anchor 类同一实体已合并为单一节点（多文件连边）。",
+  "source_files": [
+    "01 立项批准书E0 23.11/立项批准书E0 23.11",
+    "01 立项批准书E0 23.11/客户需求书E0-血压计 23.6",
+    "04 设计输入E0 23.11/设计输入汇总表E0 20211118"
+  ],
+  "nodes": [
+    {"id": "D1", "label": "立项批准书E0", "type": "Document", "layer": "structure", "props": {"doc_type": "立项批准书", "dhf_stage": "01_立项", "version": "V1.0"}},
+    {"id": "D2", "label": "客户需求书E0-血压计", "type": "Document", "layer": "structure", "props": {"doc_type": "客户需求书", "dhf_stage": "01_立项", "version": "V1.0", "filename_note": "文件名写血压计，正文为体温计"}},
+    {"id": "D3", "label": "设计输入汇总表E0", "type": "Document", "layer": "structure", "props": {"doc_type": "设计输入", "dhf_stage": "04_设计输入"}},
+
+    {"id": "P_PT9L", "label": "PT9L 红外体温计", "type": "Product", "layer": "anchor", "props": {"product_id": "PT9L", "name": "红外体温计"}},
+    {"id": "ID_PROJ", "label": "项目号 30000078", "type": "Identifier", "layer": "anchor", "props": {"id_type": "项目号", "value": "30000078"}},
+    {"id": "ID_KHXQ", "label": "PT9L-KHXQ01 V1.0", "type": "Identifier", "layer": "anchor", "props": {"id_type": "文件编号", "value": "PT9L-KHXQ01 V1.0"}},
+
+    {"id": "PER_zhao", "label": "赵一平", "type": "Person", "layer": "anchor", "props": {"signed": true}},
+    {"id": "PER_cong", "label": "丛明", "type": "Person", "layer": "anchor", "props": {"signed": true}},
+    {"id": "PER_hou", "label": "侯广伟", "type": "Person", "layer": "anchor", "props": {"signed": true}},
+    {"id": "PER_d1", "label": "(立项 编制/审核/批准)", "type": "Person", "layer": "anchor", "props": {"signed": false, "note": "签字栏空缺"}},
+    {"id": "PER_d3", "label": "(设计输入 拟制/审核×3)", "type": "Person", "layer": "anchor", "props": {"signed": false, "note": "签字栏空缺"}},
+
+    {"id": "IU1", "label": "用途:人体温度", "type": "IntendedUseItem", "layer": "domain", "props": {"seq": 1}},
+    {"id": "IU2", "label": "用途:非接触式", "type": "IntendedUseItem", "layer": "domain", "props": {"seq": 2}},
+    {"id": "IU3", "label": "用途:家中成人/儿童", "type": "IntendedUseItem", "layer": "domain", "props": {"seq": 3}},
+    {"id": "IU4", "label": "用途:额头3cm内", "type": "IntendedUseItem", "layer": "domain", "props": {"seq": 4}},
+
+    {"id": "M_510k", "label": "美国/510k/andon", "type": "Market", "layer": "anchor", "props": {"region": "美国", "certification": "510k", "selected": true}},
+    {"id": "M_fda", "label": "美国/FDA", "type": "Market", "layer": "anchor", "props": {"region": "美国", "certification": "FDA", "selected": true}},
+
+    {"id": "F_ir", "label": "功能:红外非接触", "type": "Function", "layer": "domain", "props": {}},
+    {"id": "F_buzz", "label": "功能:蜂鸣提示", "type": "Function", "layer": "domain", "props": {}},
+
+    {"id": "REG_cluster", "label": "适用法规 ×约30 (美国)", "type": "Regulation", "layer": "domain", "props": {"note": "ISO/ASTM/IEC/AAMI 等"}},
+    {"id": "REG_56", "label": "ISO 80601-2-56:2017", "type": "Regulation", "layer": "domain", "props": {"region": "国际", "applicable": true}},
+    {"id": "REG_14971", "label": "ISO 14971:2019", "type": "Regulation", "layer": "domain", "props": {"region": "国际", "applicable": true}},
+
+    {"id": "C_d2_acc", "label": "需求:精度±0.2/±0.3℃", "type": "Claim", "layer": "claim", "props": {"subject": "measurement_accuracy", "value": "±0.2(35-42℃);±0.3", "source_doc": "客户需求书"}},
+    {"id": "C_d2_rng", "label": "需求:量程32-42.9℃", "type": "Claim", "layer": "claim", "props": {"subject": "display_range", "value": "32.0-42.9", "source_doc": "客户需求书"}},
+    {"id": "C_d2_opt", "label": "需求:工作10-40℃", "type": "Claim", "layer": "claim", "props": {"subject": "operating_temperature", "value": "10-40", "source_doc": "客户需求书"}},
+    {"id": "C_d2_life", "label": "需求:寿命5年/10000次", "type": "Claim", "layer": "claim", "props": {"subject": "service_life", "value": "5年/10000次", "source_doc": "客户需求书"}},
+    {"id": "C_d2_bat", "label": "需求:电池≥1000次", "type": "Claim", "layer": "claim", "props": {"subject": "battery_life", "value": "≥1000", "source_doc": "客户需求书"}},
+
+    {"id": "C_d3_acc", "label": "设计:精度±0.2/±0.3℃", "type": "Claim", "layer": "claim", "props": {"subject": "measurement_accuracy", "value": "±0.2(35-42℃);±0.3", "source_doc": "设计输入"}},
+    {"id": "C_d3_rng", "label": "设计:量程32-42.9℃", "type": "Claim", "layer": "claim", "props": {"subject": "display_range", "value": "32.0-42.9", "source_doc": "设计输入"}},
+    {"id": "C_d3_opt", "label": "设计:工作10-40℃", "type": "Claim", "layer": "claim", "props": {"subject": "operating_temperature", "value": "10-40", "source_doc": "设计输入"}},
+    {"id": "C_d3_life", "label": "设计:寿命5年/10000次", "type": "Claim", "layer": "claim", "props": {"subject": "service_life", "value": "5年/10000次", "source_doc": "设计输入"}},
+    {"id": "C_d3_bat", "label": "设计:电池≥1000次", "type": "Claim", "layer": "claim", "props": {"subject": "battery_life", "value": "≥1000", "source_doc": "设计输入"}},
+    {"id": "C_d3_sto", "label": "设计:存储-20~55℃", "type": "Claim", "layer": "claim", "props": {"subject": "storage_temperature", "value": "-20-55", "source_doc": "设计输入"}},
+    {"id": "C_d3_dim", "label": "设计:尺寸130.8x34.8x38", "type": "Claim", "layer": "claim", "props": {"subject": "product_dimensions", "value": "130.8x34.8x38", "tolerance": "±0.5mm", "source_doc": "设计输入"}},
+    {"id": "C_d3_wt", "label": "设计:重量~80g", "type": "Claim", "layer": "claim", "props": {"subject": "product_weight", "value": "~80", "source_doc": "设计输入"}}
+  ],
+  "edges": [
+    {"from": "D1", "to": "P_PT9L", "type": "DECLARES"},
+    {"from": "D1", "to": "ID_PROJ", "type": "DECLARES"},
+    {"from": "D1", "to": "ID_KHXQ", "type": "DECLARES", "props": {"role": "附件引用"}},
+    {"from": "D1", "to": "D2", "type": "REFERENCES", "props": {"ref_type": "附件"}},
+    {"from": "PER_d1", "to": "D1", "type": "SIGNED", "props": {"signed": false}},
+    {"from": "IU1", "to": "D1", "type": "STATED_IN"},
+    {"from": "IU2", "to": "D1", "type": "STATED_IN"},
+    {"from": "IU3", "to": "D1", "type": "STATED_IN"},
+    {"from": "IU4", "to": "D1", "type": "STATED_IN"},
+
+    {"from": "D2", "to": "P_PT9L", "type": "DECLARES", "props": {"name_as_stated": "红外测温(正文)"}},
+    {"from": "D2", "to": "M_510k", "type": "DECLARES"},
+    {"from": "PER_zhao", "to": "D2", "type": "SIGNED", "props": {"role": "编制"}},
+    {"from": "PER_cong", "to": "D2", "type": "SIGNED", "props": {"role": "批准(版本记录1)"}},
+    {"from": "PER_hou", "to": "D2", "type": "SIGNED", "props": {"role": "批准(版本记录2)"}},
+    {"from": "C_d2_acc", "to": "D2", "type": "STATED_IN"},
+    {"from": "C_d2_rng", "to": "D2", "type": "STATED_IN"},
+    {"from": "C_d2_opt", "to": "D2", "type": "STATED_IN"},
+    {"from": "C_d2_life", "to": "D2", "type": "STATED_IN"},
+    {"from": "C_d2_bat", "to": "D2", "type": "STATED_IN"},
+    {"from": "F_ir", "to": "D2", "type": "IMPLEMENTED_IN"},
+    {"from": "F_buzz", "to": "D2", "type": "IMPLEMENTED_IN"},
+
+    {"from": "D3", "to": "P_PT9L", "type": "DECLARES"},
+    {"from": "D3", "to": "ID_PROJ", "type": "DECLARES"},
+    {"from": "D3", "to": "M_fda", "type": "DECLARES"},
+    {"from": "PER_d3", "to": "D3", "type": "SIGNED", "props": {"signed": false}},
+    {"from": "C_d3_acc", "to": "D3", "type": "STATED_IN"},
+    {"from": "C_d3_rng", "to": "D3", "type": "STATED_IN"},
+    {"from": "C_d3_opt", "to": "D3", "type": "STATED_IN"},
+    {"from": "C_d3_life", "to": "D3", "type": "STATED_IN"},
+    {"from": "C_d3_bat", "to": "D3", "type": "STATED_IN"},
+    {"from": "C_d3_sto", "to": "D3", "type": "STATED_IN"},
+    {"from": "C_d3_dim", "to": "D3", "type": "STATED_IN"},
+    {"from": "C_d3_wt", "to": "D3", "type": "STATED_IN"},
+    {"from": "F_ir", "to": "D3", "type": "IMPLEMENTED_IN"},
+    {"from": "F_buzz", "to": "D3", "type": "IMPLEMENTED_IN"},
+    {"from": "REG_cluster", "to": "D3", "type": "STATED_IN"},
+    {"from": "REG_56", "to": "D3", "type": "STATED_IN"},
+    {"from": "REG_14971", "to": "D3", "type": "STATED_IN"},
+
+    {"from": "F_ir", "to": "IU2", "type": "COVERS"},
+    {"from": "C_d3_acc", "to": "IU1", "type": "COVERS"},
+
+    {"from": "C_d2_acc", "to": "C_d3_acc", "type": "CORRESPONDS_TO", "props": {"relation": "equal", "confidence": 0.97}},
+    {"from": "C_d2_rng", "to": "C_d3_rng", "type": "CORRESPONDS_TO", "props": {"relation": "equal", "confidence": 0.98}},
+    {"from": "C_d2_opt", "to": "C_d3_opt", "type": "CORRESPONDS_TO", "props": {"relation": "equal", "confidence": 0.98}},
+    {"from": "C_d2_life", "to": "C_d3_life", "type": "CORRESPONDS_TO", "props": {"relation": "equal", "confidence": 0.96}},
+    {"from": "C_d2_bat", "to": "C_d3_bat", "type": "CORRESPONDS_TO", "props": {"relation": "equal", "confidence": 0.96}}
+  ],
+  "findings": [
+    {"id": "F1", "severity": "HIGH", "type": "错配/串货", "msg": "客户需求书文件名为『血压计』，但正文与产品为红外体温计——模板复制未改干净", "where": ["D2 文件名", "D2 预期用途"]},
+    {"id": "F2", "severity": "MEDIUM", "type": "人员一致性", "msg": "同一需求书两处版本记录批准人不一致：丛明 vs 侯广伟", "where": ["D2 历史版本记录", "D2 历史版本记录(2)"]},
+    {"id": "F3", "severity": "LOW", "type": "完整性", "msg": "立项批准书、设计输入的编制/审核/批准签字栏空缺(signed=false)", "where": ["D1 签字区", "D3 各Sheet签字区"]},
+    {"id": "F4", "severity": "INFO", "type": "追溯覆盖", "msg": "预期用途『额头3cm内』未在设计输入中量化为可验证指标，存在覆盖缺口", "where": ["D1 IU4", "D3 性能/组件"]},
+    {"id": "F5", "severity": "PASS", "type": "不退化", "msg": "需求↔设计输入 5 项性能指标(精度/量程/工作温度/寿命/电池)完全一致，未退化", "where": ["D2 性能", "D3 性能"]}
+  ]
+}

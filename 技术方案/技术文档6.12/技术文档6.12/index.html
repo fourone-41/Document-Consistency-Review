@@ -1,0 +1,1617 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>医疗器械文档一致性审查系统 - 汇报版</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #657084;
+      --line: #d8dee8;
+      --green: #0e7a62;
+      --blue: #2563a8;
+      --amber: #9a650e;
+      --orange: #b4532a;
+      --rose: #a83f69;
+      --done: #16815f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    .page {
+      width: min(1480px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+    }
+
+    .header {
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .route-overview {
+      margin: 0 0 18px;
+      padding: 14px 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+    }
+
+    .route-overview h2 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .route-overview p {
+      margin: 0;
+      color: #40506a;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .route-overview strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .route-overview .sentence {
+      display: block;
+    }
+
+    .route-overview .sentence + .sentence {
+      margin-top: 4px;
+    }
+
+    .route-label {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .route-summary {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #edf1f6;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .route-summary strong {
+      color: var(--ink);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(360px, 0.55fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .diagram-panel {
+      padding: 12px;
+      overflow: auto;
+    }
+
+    .diagram-wrap {
+      position: relative;
+      width: 100%;
+      min-width: 980px;
+    }
+
+    .diagram-panel object,
+    .diagram-panel svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .diagram-panel object {
+      aspect-ratio: 1400 / 680;
+    }
+
+    .diagram-hotspots {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .diagram-checkmarks {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .diagram-check {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #5eb58f;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: var(--done);
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(22, 129, 95, 0.18);
+      transform: translate(-50%, -50%);
+    }
+
+    .hotspot {
+      position: absolute;
+      border: 2px solid transparent;
+      border-radius: 9px;
+      background: transparent;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .hotspot:hover,
+    .hotspot:focus-visible {
+      border-color: rgba(37, 99, 168, 0.45);
+      background: rgba(37, 99, 168, 0.06);
+      outline: none;
+    }
+
+    .detail-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(23, 32, 51, 0.38);
+    }
+
+    .detail-modal.open {
+      display: flex;
+    }
+
+    .detail-card {
+      width: min(560px, calc(100vw - 48px));
+      padding: 20px 22px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 24px 60px rgba(23, 32, 51, 0.24);
+    }
+
+    .detail-card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .detail-card p {
+      margin: 0 0 10px;
+      color: #40506a;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .detail-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .detail-card strong {
+      color: var(--ink);
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+    }
+
+    .todo-panel {
+      padding: 16px;
+      position: sticky;
+      top: 16px;
+    }
+
+    .todo-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .todo-head h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .progress {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .bar {
+      height: 8px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: #eef2f7;
+    }
+
+    .bar span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #0e7a62, #2563a8);
+      transition: width 180ms ease;
+    }
+
+    .module-list {
+      display: grid;
+      gap: 12px;
+      max-height: calc(100vh - 190px);
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid var(--line);
+    }
+
+    summary {
+      display: grid;
+      grid-template-columns: 10px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 11px 12px;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .module-count {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .task-list {
+      display: grid;
+      gap: 0;
+      padding: 4px 8px 8px;
+    }
+
+    .task {
+      display: grid;
+      grid-template-columns: 24px 1fr auto;
+      gap: 8px;
+      align-items: start;
+      min-height: 38px;
+      padding: 8px 4px;
+      border-bottom: 1px solid #edf1f6;
+    }
+
+    .task:last-child {
+      border-bottom: 0;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin: 1px 0 0;
+      accent-color: var(--done);
+    }
+
+    .task-name {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .date {
+      min-width: 88px;
+      padding-top: 1px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .task.done .task-name {
+      color: #526071;
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+
+    .task.done .date {
+      color: var(--done);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .timeline-section {
+      margin-top: 18px;
+      padding: 16px;
+    }
+
+    .next-plan-section {
+      margin-top: 18px;
+      padding: 16px;
+    }
+
+    .plan-summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0 16px;
+    }
+
+    .plan-chip {
+      min-height: 76px;
+      padding: 12px 14px;
+      border: 1px solid #e1e7f0;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .plan-chip b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue);
+      font-size: 13px;
+    }
+
+    .plan-chip span {
+      display: block;
+      color: #40506a;
+      font-size: 12.5px;
+      line-height: 1.55;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .method-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .method-card[open] summary {
+      border-bottom: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .method-card summary {
+      grid-template-columns: auto 1fr auto;
+      min-height: 58px;
+      padding: 12px 14px;
+    }
+
+    .method-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      height: 28px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .method-title {
+      min-width: 0;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .method-group {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .method-body {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+    }
+
+    .method-body p {
+      margin: 0;
+      color: #40506a;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .method-body strong {
+      color: var(--ink);
+    }
+
+    .method-body ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #40506a;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .method-body code {
+      padding: 1px 5px;
+      border: 1px solid #d4dde9;
+      border-radius: 4px;
+      background: #eef2f7;
+      color: #2b3d57;
+      font-family: "Consolas", "SF Mono", Menlo, monospace;
+      font-size: 12px;
+    }
+
+    .fishbone {
+      position: relative;
+      min-height: 300px;
+      margin: 18px 0 14px;
+      padding: 126px 0 120px;
+    }
+
+    .fishbone::before {
+      content: "";
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      top: 50%;
+      height: 2px;
+      background: #b9c2d0;
+      transform: translateY(-50%);
+    }
+
+    .week-node {
+      position: relative;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .week-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 92px;
+      height: 36px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: #526071;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(23, 32, 51, 0.06);
+    }
+
+    .week-node.active .week-label {
+      border-color: var(--blue);
+      background: #eef6ff;
+      color: var(--blue);
+    }
+
+    .week-node.done .week-label {
+      border-color: #75c6a8;
+      background: #ecfdf5;
+      color: var(--done);
+    }
+
+    .week-node:hover .week-label {
+      border-color: #8da4c2;
+    }
+
+    .week-popover {
+      position: absolute;
+      z-index: 2;
+      left: var(--popover-x);
+      top: calc(50% + 36px);
+      width: 310px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(23, 32, 51, 0.14);
+      transform: translateX(var(--popover-shift));
+    }
+
+    .week-popover::before {
+      content: "";
+      position: absolute;
+      left: var(--arrow-x);
+      top: -8px;
+      width: 14px;
+      height: 14px;
+      border-left: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      background: #fff;
+      transform: rotate(45deg);
+    }
+
+    .week-popover h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .week-popover ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #40506a;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .kg-section {
+      margin-top: 18px;
+      padding: 16px;
+    }
+
+    .kg-section-small {
+      overflow-x: auto;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .kg-frame {
+      display: block;
+      width: 100%;
+      height: 680px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .kg-frame-small {
+      min-width: 1180px;
+    }
+
+    .kg-guide {
+      margin: 0 0 12px;
+      padding: 14px 16px;
+      background: #f3f7fc;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--blue);
+      border-radius: 8px;
+    }
+
+    .kg-guide-title {
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .kg-guide-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .kg-guide-list li {
+      margin: 3px 0;
+    }
+
+    .kg-guide-tip {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    .kg-guide code {
+      padding: 1px 6px;
+      background: #e8eef6;
+      border: 1px solid #d4dde9;
+      border-radius: 4px;
+      font-family: "Consolas", "SF Mono", Menlo, monospace;
+      font-size: 12px;
+      color: #2b3d57;
+    }
+
+    button {
+      height: 34px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+      color: var(--ink);
+      font: 600 13px "Microsoft YaHei", "PingFang SC", "Segoe UI", system-ui, sans-serif;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: #aeb8c8;
+      background: #f8fafc;
+    }
+
+    @media (max-width: 1100px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .todo-panel {
+        position: static;
+      }
+
+      .module-list {
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section-head {
+        display: block;
+      }
+
+      .plan-summary,
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fishbone {
+        min-height: auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .fishbone::before,
+      .week-popover {
+        display: none;
+      }
+
+      .week-node {
+        position: static;
+        transform: none;
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div>
+        <h1>医疗器械文档一致性审查系统</h1>
+        <p class="subtitle">用结构化抽取和知识图谱，把 470 份清洗后文件转成可追溯、可对齐、可自动检查的审查系统。</p>
+      </div>
+    </header>
+
+    <section class="route-overview" aria-label="技术路线概述">
+      <h2>技术路线概述</h2>
+      <p>
+        <span class="sentence"><span class="route-label">模块一：格式转换。</span>完整流程是把 doc、xls、pdf 等原始文件转换成结构化 Markdown，并保留页码、章节、表格行列和来源路径。</span>
+        <span class="sentence"><span class="route-label">模块二：信息抽取。</span>LLM 按 schema 把文档里的需求、设计输入、风险、测试和签审信息抽成结构化事实，效果是每条信息都有类型、字段和原文来源。</span>
+        <span class="sentence"><span class="route-label">模块三：图谱构建。</span>把结构化事实导入 Neo4j，并用统一术语、编号和关系边连接不同文件，效果是形成可以查询的跨文件关系网。</span>
+        <span class="sentence"><span class="route-label">模块四：对齐引擎。</span>通过 ID、subject、本体关系和 embedding 找到“不同文件里说的是同一件事”的内容，效果是把人工难发现的跨文档对应关系自动连起来。</span>
+        <span class="sentence"><span class="route-label">模块五：一致性检查。</span>在对齐结果上执行规则和语义判断，效果是输出冲突、遗漏、退化、签审异常等问题，并能定位回具体文件位置。</span>
+      </p>
+      <div class="route-summary"><strong>一句话：</strong>先把文档变成结构化事实，再把事实连成知识图谱，最后在图谱上做自动审查。</div>
+    </section>
+
+    <section class="layout">
+      <div class="panel diagram-panel" aria-label="汇报版思维导图">
+        <div class="diagram-wrap">
+          <object class="diagram-object" type="image/svg+xml" data="medical_device_doc_review_mindmap_presentation.svg" aria-label="汇报版思维导图"></object>
+          <div class="diagram-checkmarks" id="diagramCheckmarks" aria-hidden="true"></div>
+          <div class="diagram-hotspots" id="diagramHotspots" aria-label="技术流程图步骤详情热区"></div>
+        </div>
+      </div>
+
+      <aside class="panel todo-panel">
+        <div class="todo-head">
+          <h2>模块工作清单</h2>
+          <span class="progress" id="progressText">0 / 0 完成</span>
+        </div>
+        <div class="bar" aria-hidden="true"><span id="progressBar"></span></div>
+        <div class="module-list" id="moduleList"></div>
+        <div class="actions">
+          <button type="button" id="resetButton">重置勾选</button>
+          <button type="button" id="todayButton">全部标为今日完成</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="panel timeline-section" aria-label="项目周计划时间轴">
+      <div class="section-head">
+        <h2>项目推进时间轴</h2>
+        <p>点击第 1 周节点展开本周工作；第 2-5 周尚未开始，暂不展开。</p>
+      </div>
+      <div class="fishbone" id="weekTimeline" aria-label="周工作鱼骨时间轴"></div>
+    </section>
+
+    <section class="panel next-plan-section" aria-label="下周工作计划：测试并实现关系抽取方案">
+      <div class="section-head">
+        <h2>下周工作计划：测试并实现关系抽取方案</h2>
+        <p>基于《跨文件关系抽取技术调研报告》，把 13 种候选方案转成可验证的实验任务和工程实现卡片。</p>
+      </div>
+
+      <div class="plan-summary" aria-label="下周计划摘要">
+        <div class="plan-chip">
+          <b>目标</b>
+          <span>验证跨文件关系抽取的召回率、准确率、证据可追溯性和运行成本。</span>
+        </div>
+        <div class="plan-chip">
+          <b>输入</b>
+          <span>当前 schema、edges.yaml、术语表、3 份试点图谱和一批清洗后 Markdown。</span>
+        </div>
+        <div class="plan-chip">
+          <b>产出</b>
+          <span>候选边、证据 spans、评测表、优先级结论和可并入 Step2/Step4 的实现方案。</span>
+        </div>
+        <div class="plan-chip">
+          <b>验收</b>
+          <span>每条方案至少完成小样本测试；优先落地 2-3 个对现有管线改动小、收益高的方法。</span>
+        </div>
+      </div>
+
+      <div class="method-grid" aria-label="13 个关系抽取方案">
+        <details class="method-card">
+          <summary><span class="method-code">A1</span><span class="method-title">ATLOP：局部上下文池化</span><span class="method-group">文档级 RE</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>同一个实体在判断不同关系时需要看的上下文不同，传统做法让所有实体对共用同一个 embedding，容易把无关信息混在一起。</p>
+            <p><strong>核心方法：</strong>对每个实体对单独计算注意力分布，用高权重 token 生成这对实体专属的上下文向量；再用自适应阈值判断多标签关系。</p>
+            <p><strong>下周测试：</strong>在单文件内选 Risk、Control、Test、Claim 节点对，比较“附近段落上下文”和“LLM 选择关键上下文”两种输入，观察关系分类准确率差异。</p>
+            <p><strong>实现落点：</strong>Step2 中不要只截取实体附近文本，而是先让模型返回判断该实体对所需的关键句，再用“实体字段 + 关键句”做关系判断。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">A2</span><span class="method-title">DREEAM：关系判断与证据定位合一</span><span class="method-group">文档级 RE</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>抽到关系后还要知道它依据原文哪几句话，否则审查报告无法精确回溯，错误边也难以复核。</p>
+            <p><strong>核心方法：</strong>把模型判断关系时的注意力当作证据信号，输出关系类型的同时输出支持句子，不额外训练证据分类器。</p>
+            <p><strong>下周测试：</strong>给 Step2/Step4 的 prompt 强制增加 <code>evidence_spans</code> 字段，检查证据句和关系判断是否逻辑一致。</p>
+            <p><strong>实现落点：</strong>每条候选边保存 <code>doc_id</code>、<code>section</code>、<code>text</code>、<code>char_offset</code>。如果证据与关系不匹配，把边降级为 candidate，不直接写入图。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">A3</span><span class="method-title">AutoRE：关系-头实体-尾实体分解</span><span class="method-group">文档级 RE</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>直接让 LLM 在大量关系类型和所有节点对里一步到位选择，候选爆炸且错误率高。</p>
+            <p><strong>核心方法：</strong>把抽取拆成三步：先判断文档里存在哪些关系类型，再找这些关系的 head entity，最后为每个 head 预测 tail entity。</p>
+            <p><strong>下周测试：</strong>把当前 Step2 拆成 Step2a/Step2b：Step2a 输入文档和关系白名单，输出存在的关系类型；Step2b 只在这些关系类型下找实体对。</p>
+            <p><strong>实现落点：</strong>用 Step2a 做低成本过滤器，排除文件中不可能出现的边，例如纯硬件设计方案不生成软件排期类候选。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">B1</span><span class="method-title">CodRED：桥接实体文本路径</span><span class="method-group">跨文档 RE</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>两个文件中的实体往往不是直接相连，而是通过共同出现的产品、编号、人员、部件或术语形成证据链。</p>
+            <p><strong>核心方法：</strong>构建文本路径：源节点上下文 + 桥接实体描述 + 目标节点上下文，再基于这条路径判断跨文档关系。</p>
+            <p><strong>下周测试：</strong>在 merge 结果里查找同时被两个文档引用的 <code>Product</code>、<code>Identifier</code>、<code>Person</code>、标准主题词，作为桥接实体。</p>
+            <p><strong>实现落点：</strong>Step4 不再只把两个孤立节点 description 送给 LLM，而是送“源节点-桥接实体-目标节点”的三段证据链。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">B2</span><span class="method-title">KXDocRE：外部知识引导跨文档判断</span><span class="method-group">跨文档 RE</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>Risk-01、T-12 这类编号节点原文很短，仅凭文本相似度难以判断它们是否存在验证、管控或追溯关系。</p>
+            <p><strong>核心方法：</strong>给节点注入实体类型、法规框架和条款知识，让模型知道 ISO 14971、ISO 13485、IEC 62304 等规则对关系的约束。</p>
+            <p><strong>下周测试：</strong>在 Step4 prompt 中新增“所属法规框架”和“法规知识引导”字段，对比加入法规提示前后的关系判断稳定性。</p>
+            <p><strong>实现落点：</strong>把现有法规知识引导表接进跨文件关系判断，优先约束 Risk-Control-Test、Requirement-DesignInput-Test 这两条链。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">B3</span><span class="method-title">HCRE：层级式关系分类</span><span class="method-group">跨文档 RE</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>让 LLM 一次从 30 多种边里选择，容易在 <code>VERIFIED_BY</code>、<code>COVERS</code>、<code>REPORTED_IN</code> 等近义边之间混淆。</p>
+            <p><strong>核心方法：</strong>把边类型组织成层级树，先粗分类到结构定位、追溯链、验证测试链、风险管控链，再在小类内选择具体关系。</p>
+            <p><strong>下周测试：</strong>把 edges.yaml 按业务粗类重排，写一个两轮 prompt：第一轮判大类，第二轮只在大类内部 3-5 个候选边中选择。</p>
+            <p><strong>实现落点：</strong>低置信度时增加一次验证调用，让模型明确排除相近关系，减少错边进入 Neo4j。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">B4</span><span class="method-title">MAQD：多角度查询召回候选节点</span><span class="method-group">跨文档 RE</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>同一事实在不同文档里表述差异很大，单一 description 向量检索只能命中一部分候选，导致召回不足。</p>
+            <p><strong>核心方法：</strong>为每个节点生成多个角度查询，例如问题描述、影响对象、物理机制、法规视角、解决方向；各角度检索取并集后重排。</p>
+            <p><strong>下周测试：</strong>对 Risk/Claim/Test 节点生成 5 类查询，分别取 top-k 后合并，再用 LLM 或 cross-encoder 重排候选。</p>
+            <p><strong>实现落点：</strong>Step4 候选召回从单一相似度改成“节点描述 + 术语主题词 + 节点类型属性 + 法规术语 + 数值指标”的多路召回。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">C1</span><span class="method-title">Microsoft GraphRAG：社区摘要层</span><span class="method-group">GraphRAG</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>传统 RAG 擅长找局部证据，但不擅长回答“这批文档围绕某主题整体有哪些风险、缺失和冲突”。</p>
+            <p><strong>核心方法：</strong>抽取实体关系后用 Leiden 做社区检测，再为每个社区生成摘要，形成可检索的主题层索引。</p>
+            <p><strong>下周测试：</strong>在当前 Neo4j 图上试跑 Leiden 社区检测，检查是否能把同一风险管控链、同一传感器主题、同一法规主题聚到一起。</p>
+            <p><strong>实现落点：</strong>为社区生成“业务主题摘要”，让审查报告从按文件对罗列升级为按主题组织。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">C2</span><span class="method-title">LightRAG：轻量双层检索</span><span class="method-group">GraphRAG</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>完整 GraphRAG 成本较高，频繁更新或文件规模扩大时社区摘要维护成本会变重。</p>
+            <p><strong>核心方法：</strong>用低层精确 Cypher 查询找具体实体和直接关系，用高层节点描述向量检索找语义相关主题，两层结果合并后交给 LLM。</p>
+            <p><strong>下周测试：</strong>先在 Claim 节点上建描述向量索引，验证“Cypher 精确过滤 + 向量召回”的组合是否能覆盖当前试点问题。</p>
+            <p><strong>实现落点：</strong>作为 GraphRAG 的轻量版本保留，可在文件数增加到几千份或高频增量更新时切换。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">D1</span><span class="method-title">Graph-RAG 合规检查框架</span><span class="method-group">新增技术</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>监管场景下需要判断需求、DHF 文档和法规标准之间是否一致，单纯检索片段不足以支持合规推理。</p>
+            <p><strong>核心方法：</strong>对待检查文档和法规文档共同建图，结合本地检索、全局检索、CoT/ToT 推理，判断文档内容是否违反法规条款。</p>
+            <p><strong>下周测试：</strong>选 2-3 条 ISO 14971/ISO 13485 条款，跑“法规条款-项目文档证据-合规判断”的小闭环。</p>
+            <p><strong>实现落点：</strong>先只用于高价值审查问题，例如风险控制是否验证、设计输入是否覆盖用户需求、软件需求是否有测试证据。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">D2</span><span class="method-title">远程监督闭环：自动生成训练样本</span><span class="method-group">新增技术</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>人工标注关系抽取训练数据成本高，但法规条款中已经隐含大量结构化关系规则。</p>
+            <p><strong>核心方法：</strong>用 ISO 法规中的已知关系三元组自动标注 DHF 文档中共现的实体段落，生成候选正样本，再用降噪策略过滤。</p>
+            <p><strong>下周测试：</strong>从法规知识表抽 3 类关系模板，例如风险控制措施 <code>VERIFIED_BY</code> 验证测试，自动定位文档中的候选段落。</p>
+            <p><strong>实现落点：</strong>先形成小规模人工验证集，评估自动标注质量；质量达标后再考虑 fine-tune 轻量分类模型来替代部分 LLM 调用。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">D3</span><span class="method-title">Think-on-Graph：图上主动路径搜索</span><span class="method-group">新增技术</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>穷举所有候选对成本高，而且难以主动发现追溯链中“应该存在但缺失”的边。</p>
+            <p><strong>核心方法：</strong>把 LLM 当作图上的搜索智能体，每跳先选最有价值的关系类型，再从候选尾实体中剪枝，形成低成本 beam search。</p>
+            <p><strong>下周测试：</strong>从 Risk-01 这类风险节点出发，限制 2-3 跳，测试是否能主动找到 Risk-Control-Test 的缺失路径。</p>
+            <p><strong>实现落点：</strong>全量文件处理后做定期扫描：图里已有 Risk → Control 时，主动追问 Control 是否应有 <code>VERIFIED_BY</code> 的 Test 节点。</p>
+          </div>
+        </details>
+
+        <details class="method-card">
+          <summary><span class="method-code">D4</span><span class="method-title">KG Embedding + 链接预测</span><span class="method-group">新增技术</span></summary>
+          <div class="method-body">
+            <p><strong>解决问题：</strong>图谱变大后，需要快速批量扫描全图缺失边，不能每个节点对都在线调用 LLM。</p>
+            <p><strong>核心方法：</strong>用 TransE、RotatE 或 LLM 增强的 KG Embedding 把节点和边压缩成向量，通过链接预测判断某条边是否可能存在。</p>
+            <p><strong>下周测试：</strong>当前图只有数百条边，先不训练正式 embedding；先规范节点 <code>type</code> 和边 <code>relation</code> 字段，准备高质量训练数据。</p>
+            <p><strong>实现落点：</strong>等全量处理后积累到数千条高质量边，再训练 RotatE 批量预测缺失边；它适合全图扫描，ToG 适合针对特定节点深度推理。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel kg-section kg-section-small" aria-label="小量文件知识图谱可视化">
+      <div class="section-head">
+        <h2>小量文件知识图谱可视化</h2>
+        <p>嵌入 3 份文件的试点图谱，用来展示“抽取 → 建图 → 对齐 → 检查”的最小闭环。</p>
+      </div>
+      <iframe class="kg-frame kg-frame-small" src="pilot_3files/kg_view.html" title="PT9L 小范围知识图谱"></iframe>
+    </section>
+
+    <section class="panel kg-section" aria-label="多文件 Neo4j 知识图谱可视化">
+      <div class="section-head">
+        <h2>多文件 Neo4j 知识图谱可视化</h2>
+        <p>嵌入十几份文件抽取后的 Neo4j 风格图谱，用来展示更接近真实批量文档的节点、关系和查询效果。</p>
+      </div>
+      <div class="kg-guide" aria-label="界面使用说明">
+        <p class="kg-guide-title">怎么用这个界面</p>
+        <ul class="kg-guide-list">
+          <li><b>顶部查询栏</b>：在 <code>$</code> 输入框里写类 Cypher 语句后按回车或点 <b>Run</b>；点击输入框（或按 <code>?</code>）会弹出常用查询示例，点一条即可填入，例如 <code>MATCH (n:Requirement) RETURN n</code> 看所有需求、<code>MATCH (n) WHERE n.label CONTAINS '温度' RETURN n</code> 按关键词搜索。</li>
+          <li><b>看节点</b>：节点按类型用颜色区分（文档 / 需求 / 风险 / 测试 / 风险控制等）；<b>单击节点</b>查看它的属性详情（标题、文档类型、版本、日期等）。</li>
+          <li><b>读关系</b>：节点间的连线就是关系，如 <code>TRACES_TO</code> 追溯、<code>VERIFIED_BY</code> 验证；用上面对应的示例查询可只看某一类关系。</li>
+          <li><b>调整视图</b>：滚轮缩放，拖动空白处平移画布，拖动单个节点可微调布局；右下角 <b>+ / − / ⇄</b> 三个按钮分别是放大、缩小、一键适配全图。</li>
+        </ul>
+        <p class="kg-guide-tip">提示：图谱较大时先用 <code>MATCH (n) RETURN n LIMIT 50</code> 只显示前 50 个节点，再按需查询展开，避免一次铺满看不清。</p>
+      </div>
+      <iframe class="kg-frame" src="graph_visualization(3).html" title="PT9L 多文件 Neo4j 知识图谱"></iframe>
+    </section>
+  </main>
+
+  <div class="detail-modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <div class="detail-card">
+      <h2 id="detailTitle"></h2>
+      <p id="detailPurpose"></p>
+      <p id="detailHow"></p>
+      <p id="detailEffect"></p>
+      <div class="modal-actions">
+        <button type="button" id="detailClose">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modules = [
+      {
+        id: "m1",
+        title: "模块一：格式转换",
+        color: "var(--green)",
+        tasks: [
+          "盘点原始 doc/xls/pdf 文件，按产品、阶段、文件类型归档",
+          "PDF 转 Markdown，保留页码、标题层级和表格结构",
+          "Word 转 Markdown，保留章节、段落、列表和批注信息",
+          "Excel 转 Markdown/JSON，保留 sheet、行列和单元格坐标",
+          "转换质量抽检，输出可供 LLM 抽取的结构化 Markdown 文件"
+        ]
+      },
+      {
+        id: "m2",
+        title: "模块二：信息抽取",
+        color: "var(--blue)",
+        tasks: [
+          "定义 Document / Section / Claim / SemanticFragment 等结构",
+          "建立术语归一化表和 subject 标准词",
+          "第一遍抽取节点属性",
+          "第二遍抽取关系三元组",
+          "抽取结果写入 JSON 并做 Schema 校验"
+        ]
+      },
+      {
+        id: "m3",
+        title: "模块三：图谱构建",
+        color: "var(--amber)",
+        tasks: [
+          "设计节点标签、关系类型和来源定位字段",
+          "建立唯一键、索引和重复数据处理策略",
+          "导入 Neo4j 图数据库",
+          "补充属性方向元数据",
+          "使用 DeepEval 做 Harness 验证，评测抽取与图谱质量"
+        ]
+      },
+      {
+        id: "m4",
+        title: "模块四：对齐引擎",
+        color: "var(--orange)",
+        tasks: [
+          "ID 锚点精确匹配",
+          "Subject 分组生成候选对",
+          "本体关系剪枝，减少无效候选",
+          "Embedding 兜底召回疑似遗漏",
+          "LLM Pairwise 验证并输出对齐关系和冲突关系"
+        ]
+      },
+      {
+        id: "m5",
+        title: "模块五：一致性检查",
+        color: "var(--rose)",
+        tasks: [
+          "多类结构化规则检查：数值、标识、追溯、评审",
+          "语义级规则检查：逻辑矛盾、范围冲突",
+          "SemanticFragment 漏检识别",
+          "报告条目双向定位到文件、章节、页码、行号",
+          "输出审查报告和汇报摘要"
+        ]
+      }
+    ];
+
+    const storageKey = "medical-device-review-report-todos-v2";
+    const moduleList = document.getElementById("moduleList");
+    const progressText = document.getElementById("progressText");
+    const progressBar = document.getElementById("progressBar");
+    const resetButton = document.getElementById("resetButton");
+    const todayButton = document.getElementById("todayButton");
+    const weekTimeline = document.getElementById("weekTimeline");
+    const diagramHotspots = document.getElementById("diagramHotspots");
+    const diagramCheckmarks = document.getElementById("diagramCheckmarks");
+    const detailModal = document.getElementById("detailModal");
+    const detailTitle = document.getElementById("detailTitle");
+    const detailPurpose = document.getElementById("detailPurpose");
+    const detailHow = document.getElementById("detailHow");
+    const detailEffect = document.getElementById("detailEffect");
+    const detailClose = document.getElementById("detailClose");
+
+    const stepDetails = {
+      m1: {
+        title: "模块一：格式转换",
+        purpose: "用途：把不同格式的原始文件统一转换成后续模型能稳定读取的结构化 Markdown。",
+        effect: "效果：保留文件来源、章节层级、页码、表格和单元格坐标，避免后续抽取时丢失定位信息。"
+      },
+      "m1-1": {
+        title: "文件盘点与分类",
+        purpose: "用途：先梳理原始 doc、xls、pdf 文件，按产品、DHF 阶段和文件类型建立清单。",
+        effect: "效果：让后续抽取知道每份文件属于哪个阶段、哪类证据，并减少漏处理和重复处理。"
+      },
+      "m1-2": {
+        title: "PDF 表格还原",
+        purpose: "用途：把 PDF 中的正文、页码、表格和标题层级解析出来。",
+        effect: "效果：保留检测报告、法规报告中的表格结构，使数值和指标可以被准确抽取。"
+      },
+      "m1-3": {
+        title: "Word 层级转换",
+        purpose: "用途：把 Word 文档转换成 Markdown，同时保留章节、段落、列表和批注信息。",
+        effect: "效果：需求书、设计输入、评审记录等文件可以按章节定位到具体上下文。"
+      },
+      "m1-4": {
+        title: "Excel 表格转换",
+        purpose: "用途：把 Excel 中的 sheet、行列、单元格内容转成结构化文本或 JSON。",
+        effect: "效果：设计输入汇总表、测试数据表里的指标值可以保留原始坐标，便于回溯。"
+      },
+      "m1-5": {
+        title: "转换质量抽检",
+        purpose: "用途：检查转换后的 Markdown 是否存在乱码、空段、表格错位和结构丢失。",
+        effect: "效果：在进入 LLM 抽取前过滤低质量输入，降低后续误抽和漏抽风险。"
+      },
+      m2: {
+        title: "模块二：信息抽取",
+        purpose: "用途：让 LLM 按 schema 从文档中抽取节点、字段和关系。",
+        effect: "效果：把自然语言文档变成 Document、Claim、Risk、Test 等结构化事实。"
+      },
+      "m2-1": {
+        title: "Schema 节点定义",
+        purpose: "用途：定义系统要识别哪些对象，例如 Document、Section、Claim、Risk、Test。",
+        effect: "效果：让抽取结果有统一字段和类型，不同文件可以放进同一个数据模型。"
+      },
+      "m2-2": {
+        title: "术语归一化",
+        purpose: "用途：把不同文件里不同写法的同一概念映射到统一 subject。",
+        effect: "效果：例如测量精度、accuracy、允许误差可以被识别为同一类指标。"
+      },
+      "m2-3": {
+        title: "第一遍抽取",
+        purpose: "用途：优先抽取节点本身的结构化属性，例如主体、数值、单位、条件。",
+        effect: "效果：形成可校验、可入库的结构化节点。"
+      },
+      "m2-4": {
+        title: "第二遍抽取",
+        purpose: "用途：抽取节点之间的引用、来源、覆盖、验证等关系。",
+        effect: "效果：为后续知识图谱建立边，表达文件之间的上下游关系。"
+      },
+      "m2-5": {
+        title: "JSON 校验入库",
+        purpose: "用途：把抽取结果按 schema 校验后保存成 JSON。",
+        effect: "效果：保证进入图数据库的数据字段完整、类型稳定、来源可追溯。"
+      },
+      m3: {
+        title: "模块三：图谱构建",
+        purpose: "用途：把结构化节点和关系导入 Neo4j，形成跨文件知识图谱。",
+        effect: "效果：可以用图查询追踪需求、设计输入、风险、测试证据之间的关系。"
+      },
+      "m3-1": {
+        title: "节点与关系标签",
+        purpose: "用途：定义 Neo4j 中的节点标签和边类型，例如 DECLARES、STATED_IN、VERIFIED_BY。",
+        effect: "效果：图谱语义清晰，便于后续查询和规则检查。"
+      },
+      "m3-2": {
+        title: "唯一键与索引",
+        purpose: "用途：为文件、需求、风险、测试等对象设计唯一标识和查询索引。",
+        effect: "效果：减少重复导入，并提升图查询性能。"
+      },
+      "m3-3": {
+        title: "Neo4j 批量导入",
+        purpose: "用途：把节点、边和来源定位字段批量写入图数据库。",
+        effect: "效果：形成可浏览、可查询、可扩展的知识图谱。"
+      },
+      "m3-4": {
+        title: "属性方向元数据",
+        purpose: "用途：定义数值指标的比较方向，例如越小越好、越大越好或区间匹配。",
+        effect: "效果：让系统能判断设计输入是否低于需求或法规要求。"
+      },
+      "m3-5": {
+        title: "DeepEval Harness 验证",
+        purpose: "用途：用 DeepEval 搭建自动化验证集，评测抽取结果和图谱构建质量。",
+        effect: "效果：把人工抽查变成可重复运行的评测流程，持续发现抽取错误、关系缺失和定位问题。"
+      },
+      m4: {
+        title: "模块四：对齐引擎",
+        purpose: "用途：找到不同文件中表达同一事项的节点。",
+        effect: "效果：把需求、设计输入、测试证据中的对应指标连接起来，支撑一致性检查。"
+      },
+      "m4-1": {
+        title: "通道 A：ID 锚点",
+        purpose: "用途：用需求号、风险号、测试号等明确编号进行精确匹配。",
+        effect: "效果：优先建立高置信对齐关系。"
+      },
+      "m4-2": {
+        title: "通道 B：Subject",
+        purpose: "用途：用统一 subject 生成候选对。",
+        effect: "效果：把不同表述但同一主题的内容放到同一候选池。"
+      },
+      "m4-3": {
+        title: "通道 C：本体剪枝",
+        purpose: "用途：根据文档类型、上下游关系和业务本体过滤无效候选。",
+        effect: "效果：减少不必要的比对，提高后续验证效率。"
+      },
+      "m4-4": {
+        title: "通道 D：Embedding",
+        purpose: "用途：用语义向量召回可能遗漏的相似内容。",
+        effect: "效果：作为兜底机制，提高跨语言、跨表述内容的召回率。"
+      },
+      "m4-5": {
+        title: "LLM Pairwise 验证",
+        purpose: "用途：让 LLM 判断候选对是否真正对应、是否存在冲突。",
+        effect: "效果：输出对齐关系和冲突关系，为检查引擎提供依据。"
+      },
+      m5: {
+        title: "模块五：一致性检查",
+        purpose: "用途：在图谱和对齐结果上执行自动审查规则。",
+        effect: "效果：输出冲突、遗漏、退化、签审异常等问题，并定位回原文件。"
+      },
+      "m5-1": {
+        title: "多类结构化规则",
+        purpose: "用途：检查数值、标识、追溯、评审等结构化字段。",
+        effect: "效果：快速发现版本号不一致、签审缺失、需求未验证等问题。"
+      },
+      "m5-2": {
+        title: "若干语义级规则",
+        purpose: "用途：检查需要语义理解的逻辑矛盾和表述冲突。",
+        effect: "效果：补足纯结构化规则难以发现的问题。"
+      },
+      "m5-3": {
+        title: "Fragment 漏检识别",
+        purpose: "用途：处理未能归入标准 Claim 的描述性片段。",
+        effect: "效果：降低重要信息因为格式复杂或表述模糊而被漏掉的风险。"
+      },
+      "m5-4": {
+        title: "双向定位输出",
+        purpose: "用途：为每个问题保留源文件、章节、页码、行号等定位信息。",
+        effect: "效果：审查结论可以直接回到原始证据，便于复核和整改。"
+      },
+      "m5-5": {
+        title: "审查报告汇总",
+        purpose: "用途：把发现的问题按类型、严重度、证据和建议组织成报告。",
+        effect: "效果：形成管理层可读、工程侧可执行的审查结果。"
+      }
+    };
+
+    const hotspotLayout = [
+      ["m1", 60, 104, 232, 84], ["m2", 322, 104, 232, 84], ["m3", 584, 104, 232, 84], ["m4", 846, 104, 232, 84], ["m5", 1108, 104, 232, 84],
+      ["m1-1", 60, 230, 232, 50], ["m1-2", 60, 316, 232, 50], ["m1-3", 60, 402, 232, 50], ["m1-4", 60, 488, 232, 50], ["m1-5", 60, 574, 232, 50],
+      ["m2-1", 322, 230, 232, 50], ["m2-2", 322, 316, 232, 50], ["m2-3", 322, 402, 232, 50], ["m2-4", 322, 488, 232, 50], ["m2-5", 322, 574, 232, 50],
+      ["m3-1", 584, 230, 232, 50], ["m3-2", 584, 316, 232, 50], ["m3-3", 584, 402, 232, 50], ["m3-4", 584, 488, 232, 50], ["m3-5", 584, 574, 232, 50],
+      ["m4-1", 846, 230, 232, 50], ["m4-2", 846, 316, 232, 50], ["m4-3", 846, 402, 232, 50], ["m4-4", 846, 488, 232, 50], ["m4-5", 846, 574, 232, 50],
+      ["m5-1", 1108, 230, 232, 50], ["m5-2", 1108, 316, 232, 50], ["m5-3", 1108, 402, 232, 50], ["m5-4", 1108, 488, 232, 50], ["m5-5", 1108, 574, 232, 50]
+    ];
+
+    const hotspotMap = Object.fromEntries(hotspotLayout.map(([id, x, y, width, height]) => [id, { x, y, width, height }]));
+
+    const stepExtra = {
+      m1: {
+        how: "具体做法：用不同解析器处理 PDF、Word、Excel，把它们统一落到 Markdown/JSON，并给每段内容加上来源定位。",
+      },
+      "m1-1": {
+        how: "具体做法：建立文件清单，记录文件名、类型、所属阶段、版本和路径，先确认哪些文件应该被处理。",
+      },
+      "m1-2": {
+        how: "具体做法：识别 PDF 的页码、标题、段落和表格，把表格中的指标、单位、限值尽量还原成结构化文本。",
+      },
+      "m1-3": {
+        how: "具体做法：保留 Word 文档的标题层级、编号、列表、批注和正文顺序，避免只抽出一堆没有上下文的散句。",
+      },
+      "m1-4": {
+        how: "具体做法：逐个 sheet 读取表格，保留行列号、单元格坐标、合并单元格和字段表头。",
+      },
+      "m1-5": {
+        how: "具体做法：抽样检查转换结果，重点看乱码、空表、错列、标题丢失和页码丢失。",
+      },
+      m2: {
+        how: "具体做法：让 LLM 按预定义 schema 读取文件，把自然语言里的事实抽成标准字段和关系。",
+      },
+      "m2-1": {
+        how: "具体做法：定义系统需要识别的对象、字段和约束，例如文档、章节、需求、风险、测试、人员、签审。",
+      },
+      "m2-2": {
+        how: "具体做法：把测量精度、accuracy、允许误差等不同说法归到同一个标准主题。",
+      },
+      "m2-3": {
+        how: "具体做法：先抽取节点属性，例如指标名称、数值、单位、适用条件、文件来源。",
+      },
+      "m2-4": {
+        how: "具体做法：再抽取节点之间的关系，例如需求来源于哪里、设计输入覆盖哪个需求、测试验证哪个指标。",
+      },
+      "m2-5": {
+        how: "具体做法：把抽取结果写成 JSON，按 schema 检查字段是否齐全、类型是否正确。",
+      },
+      m3: {
+        how: "具体做法：把抽取出的节点和关系写入 Neo4j，形成可以查询、可以可视化的网络。",
+      },
+      "m3-1": {
+        how: "具体做法：给节点和关系命名，例如文件、需求、风险、测试，以及引用、覆盖、验证、冲突等关系。",
+      },
+      "m3-2": {
+        how: "具体做法：给关键对象建立唯一键和索引，例如文档编号、需求编号、风险编号。",
+      },
+      "m3-3": {
+        how: "具体做法：批量导入节点、边和来源定位字段，并保留每条信息来自哪个文件。",
+      },
+      "m3-4": {
+        how: "具体做法：为指标补充比较方向，例如数值越小越好、越大越好、还是必须落在某个区间。",
+      },
+      "m3-5": {
+        how: "具体做法：设计一组代表性样例和期望结果，用 DeepEval 执行 harness，自动对比抽取字段、关系边和来源定位是否符合预期。",
+      },
+      m4: {
+        how: "具体做法：通过编号、主题、业务关系和语义相似度，找出不同文件中的对应内容。",
+      },
+      "m4-1": {
+        how: "具体做法：优先用需求号、风险号、测试号等明确编号建立对应关系。",
+      },
+      "m4-2": {
+        how: "具体做法：把相同 subject 的内容放入候选池，例如所有“测量精度”相关内容。",
+      },
+      "m4-3": {
+        how: "具体做法：根据文档类型和上下游关系过滤不该比较的候选，比如需求应和设计输入、测试证据比较。",
+      },
+      "m4-4": {
+        how: "具体做法：用语义向量找出文字不同但含义接近的内容，作为兜底候选。",
+      },
+      "m4-5": {
+        how: "具体做法：让 LLM 对候选对进行逐对判断，输出对应、冲突或不相关。",
+      },
+      m5: {
+        how: "具体做法：在图谱和对齐结果上跑规则，检查数值、追溯、签审、遗漏和语义冲突。",
+      },
+      "m5-1": {
+        how: "具体做法：用结构化字段做规则判断，例如版本是否一致、需求是否被验证、签审是否缺失。",
+      },
+      "m5-2": {
+        how: "具体做法：对需要理解语义的地方，让 LLM 判断是否存在逻辑矛盾或描述冲突。",
+      },
+      "m5-3": {
+        how: "具体做法：对没有进入标准 Claim 的文本片段做二次筛查，找出可能遗漏的重要信息。",
+      },
+      "m5-4": {
+        how: "具体做法：每个问题都带上两个方向的证据定位，例如需求在哪、冲突证据在哪。",
+      },
+      "m5-5": {
+        how: "具体做法：把问题按类型和优先级整理，附上证据、定位和整改建议。",
+      }
+    };
+
+    const weeks = [
+      {
+        id: "week1",
+        label: "第 1 周",
+        status: "当前周",
+        done: true,
+        items: [
+          "确定整体技术方案",
+          "完成 schema 定义",
+          "完成术语归一化库",
+          "安装 Neo4j",
+          "构建小批量文件知识图谱"
+        ]
+      },
+      {
+        id: "week2",
+        label: "第 2 周",
+        status: "尚未开始",
+        items: []
+      },
+      {
+        id: "week3",
+        label: "第 3 周",
+        status: "尚未开始",
+        items: []
+      },
+      {
+        id: "week4",
+        label: "第 4 周",
+        status: "尚未开始",
+        items: []
+      },
+      {
+        id: "week5",
+        label: "第 5 周",
+        status: "尚未开始",
+        items: []
+      }
+    ];
+
+    function today() {
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    function loadState() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey)) || {};
+      } catch {
+        return {};
+      }
+    }
+
+    function saveState(state) {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    let state = loadState();
+    let selectedWeekId = null;
+
+    function renderTimeline() {
+      weekTimeline.innerHTML = "";
+      weeks.forEach((week, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `week-node${week.done ? " done" : ""}${week.id === selectedWeekId ? " active" : ""}`;
+        button.dataset.weekId = week.id;
+        button.style.left = `${8 + index * 21}%`;
+        button.innerHTML = `<span class="week-label">${week.label}</span>`;
+        weekTimeline.appendChild(button);
+      });
+      renderWeekPopover();
+    }
+
+    function renderDiagramHotspots() {
+      diagramHotspots.innerHTML = "";
+      hotspotLayout.forEach(([id, x, y, width, height]) => {
+        const detail = stepDetails[id];
+        if (!detail) return;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "hotspot";
+        button.dataset.stepId = id;
+        button.setAttribute("aria-label", `${detail.title}详细介绍`);
+        button.style.left = `${(x / 1400) * 100}%`;
+        button.style.top = `${(y / 680) * 100}%`;
+        button.style.width = `${(width / 1400) * 100}%`;
+        button.style.height = `${(height / 680) * 100}%`;
+        diagramHotspots.appendChild(button);
+      });
+    }
+
+    function addDiagramCheck(cardId) {
+      const layout = hotspotMap[cardId];
+      if (!layout) return;
+      const mark = document.createElement("span");
+      mark.className = "diagram-check";
+      mark.textContent = "✓";
+      mark.style.left = `${((layout.x + layout.width - 16) / 1400) * 100}%`;
+      mark.style.top = `${((layout.y + 14) / 680) * 100}%`;
+      diagramCheckmarks.appendChild(mark);
+    }
+
+    function renderDiagramChecks() {
+      diagramCheckmarks.innerHTML = "";
+      modules.forEach((mod) => {
+        let modDone = 0;
+        mod.tasks.forEach((_, index) => {
+          const key = `${mod.id}-${index}`;
+          if (state[key]?.done) {
+            modDone += 1;
+            addDiagramCheck(`${mod.id}-${index + 1}`);
+          }
+        });
+        if (modDone === mod.tasks.length) {
+          addDiagramCheck(mod.id);
+        }
+      });
+    }
+
+    function openDetail(stepId) {
+      const detail = stepDetails[stepId];
+      if (!detail) return;
+      const extra = stepExtra[stepId] || {};
+      detailTitle.textContent = detail.title;
+      detailPurpose.innerHTML = `<strong>${detail.purpose.split("：")[0]}：</strong>${detail.purpose.split("：").slice(1).join("：")}`;
+      detailHow.innerHTML = extra.how ? `<strong>${extra.how.split("：")[0]}：</strong>${extra.how.split("：").slice(1).join("：")}` : "";
+      detailEffect.innerHTML = `<strong>${detail.effect.split("：")[0]}：</strong>${detail.effect.split("：").slice(1).join("：")}`;
+      detailModal.classList.add("open");
+      detailClose.focus();
+    }
+
+    function closeDetail() {
+      detailModal.classList.remove("open");
+    }
+
+    function renderWeekPopover() {
+      const week = weeks.find((item) => item.id === selectedWeekId);
+      if (!week || week.items.length === 0) return;
+      const weekIndex = weeks.findIndex((item) => item.id === week.id);
+      const x = 8 + weekIndex * 21;
+      const popover = document.createElement("div");
+      popover.className = "week-popover";
+      popover.style.setProperty("--popover-x", `${x}%`);
+      popover.style.setProperty("--popover-shift", weekIndex === 0 ? "0" : "-50%");
+      popover.style.setProperty("--arrow-x", weekIndex === 0 ? "36px" : "calc(50% - 7px)");
+      popover.innerHTML = `
+        <h3>${week.label}完成内容</h3>
+        <ul>
+          ${week.items.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+      `;
+      weekTimeline.appendChild(popover);
+    }
+
+    weekTimeline.addEventListener("click", (event) => {
+      const node = event.target.closest(".week-node");
+      if (!node) return;
+      const nextWeek = weeks.find((week) => week.id === node.dataset.weekId);
+      selectedWeekId = nextWeek && nextWeek.items.length > 0 && selectedWeekId !== nextWeek.id ? nextWeek.id : null;
+      renderTimeline();
+    });
+
+    diagramHotspots.addEventListener("click", (event) => {
+      const hotspot = event.target.closest(".hotspot");
+      if (!hotspot) return;
+      openDetail(hotspot.dataset.stepId);
+    });
+
+    detailClose.addEventListener("click", closeDetail);
+
+    detailModal.addEventListener("click", (event) => {
+      if (event.target === detailModal) {
+        closeDetail();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && detailModal.classList.contains("open")) {
+        closeDetail();
+      }
+    });
+
+    function render() {
+      moduleList.innerHTML = "";
+      const total = modules.reduce((sum, mod) => sum + mod.tasks.length, 0);
+      let done = 0;
+
+      modules.forEach((mod) => {
+        const details = document.createElement("details");
+        details.open = true;
+        details.style.color = mod.color;
+
+        const modDone = mod.tasks.filter((_, index) => state[`${mod.id}-${index}`]?.done).length;
+        done += modDone;
+
+        const summary = document.createElement("summary");
+        summary.innerHTML = `<span class="dot"></span><span>${mod.title}</span><span class="module-count">${modDone}/${mod.tasks.length}</span>`;
+        details.appendChild(summary);
+
+        const taskList = document.createElement("div");
+        taskList.className = "task-list";
+
+        mod.tasks.forEach((name, index) => {
+          const key = `${mod.id}-${index}`;
+          const item = state[key] || {};
+          const row = document.createElement("label");
+          row.className = `task${item.done ? " done" : ""}`;
+          row.innerHTML = `
+            <input type="checkbox" ${item.done ? "checked" : ""} data-key="${key}">
+            <span class="task-name">${name}</span>
+            <span class="date">${item.done ? item.date : "未完成"}</span>
+          `;
+          taskList.appendChild(row);
+        });
+
+        details.appendChild(taskList);
+        moduleList.appendChild(details);
+      });
+
+      const percent = total ? Math.round((done / total) * 100) : 0;
+      progressText.textContent = `${done} / ${total} 完成`;
+      progressBar.style.width = `${percent}%`;
+      renderDiagramChecks();
+    }
+
+    moduleList.addEventListener("change", (event) => {
+      if (event.target.matches('input[type="checkbox"]')) {
+        const key = event.target.dataset.key;
+        if (event.target.checked) {
+          state[key] = { done: true, date: state[key]?.date || today() };
+        } else {
+          state[key] = { done: false };
+        }
+        saveState(state);
+        render();
+      }
+    });
+
+    resetButton.addEventListener("click", () => {
+      state = {};
+      saveState(state);
+      render();
+    });
+
+    todayButton.addEventListener("click", () => {
+      const date = today();
+      modules.forEach((mod) => {
+        mod.tasks.forEach((_, index) => {
+          state[`${mod.id}-${index}`] = { done: true, date };
+        });
+      });
+      saveState(state);
+      render();
+    });
+
+    render();
+    renderTimeline();
+    renderDiagramHotspots();
+  </script>
+</body>
+</html>

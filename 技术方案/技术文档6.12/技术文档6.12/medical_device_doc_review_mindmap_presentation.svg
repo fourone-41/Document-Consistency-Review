@@ -1,0 +1,191 @@
+<svg width="100%" viewBox="0 0 1400 680" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>医疗器械文档一致性审查系统技术流程思维导图 - 汇报版</title>
+  <desc>从470份清洗后文件输入，到信息抽取、图谱构建、对齐引擎和一致性检查的五模块流程图，分叉线均连接到对应工作块。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1.5 1.5 L8.5 5 L1.5 8.5" fill="none" stroke="context-stroke" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .bg { fill: #fbfcfe; }
+      .title { font: 700 28px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; fill: #172033; }
+      .subtitle { font: 400 14px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; fill: #657084; }
+      .module-title { font: 700 16px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; }
+      .module-note { font: 400 12px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; }
+      .task-title { font: 600 12px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; }
+      .task-note { font: 400 11px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; fill: #5c6575; }
+      .line { fill: none; stroke: #a4acba; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .branch { fill: none; stroke: #c2c8d2; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .box { fill: #ffffff; stroke-width: 1.3; }
+      .metric { font: 700 18px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; fill: #172033; }
+      .metric-label { font: 400 12px "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; fill: #657084; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1400" height="900"/>
+  <text class="title" x="700" y="44" text-anchor="middle">医疗器械文档一致性审查系统技术流程</text>
+  <text class="subtitle" x="700" y="70" text-anchor="middle">从 470 份清洗后文档，到可定位审查报告的五段流水线</text>
+
+  <g transform="translate(0,0)">
+    <line class="line" x1="292" y1="146" x2="318" y2="146" marker-end="url(#arrow)"/>
+    <line class="line" x1="554" y1="146" x2="580" y2="146" marker-end="url(#arrow)"/>
+    <line class="line" x1="816" y1="146" x2="842" y2="146" marker-end="url(#arrow)"/>
+    <line class="line" x1="1078" y1="146" x2="1104" y2="146" marker-end="url(#arrow)"/>
+
+    <g>
+      <rect x="60" y="104" width="232" height="84" rx="10" fill="#e5f6ef" stroke="#0e7a62" stroke-width="1.5"/>
+      <text class="module-title" x="176" y="136" text-anchor="middle" fill="#075f4d">模块一：格式转换</text>
+      <text class="module-note" x="176" y="160" text-anchor="middle" fill="#0e7a62">doc / xls / pdf → Markdown</text>
+    </g>
+    <g>
+      <rect x="322" y="104" width="232" height="84" rx="10" fill="#e8f2ff" stroke="#2563a8" stroke-width="1.5"/>
+      <text class="module-title" x="438" y="136" text-anchor="middle" fill="#164c87">模块二：信息抽取</text>
+      <text class="module-note" x="438" y="160" text-anchor="middle" fill="#2563a8">Claim / Fragment / Relation</text>
+    </g>
+    <g>
+      <rect x="584" y="104" width="232" height="84" rx="10" fill="#fff3dc" stroke="#9a650e" stroke-width="1.5"/>
+      <text class="module-title" x="700" y="136" text-anchor="middle" fill="#7a4b05">模块三：图谱构建</text>
+      <text class="module-note" x="700" y="160" text-anchor="middle" fill="#9a650e">Neo4j / Cypher / 元数据</text>
+    </g>
+    <g>
+      <rect x="846" y="104" width="232" height="84" rx="10" fill="#fff0eb" stroke="#b4532a" stroke-width="1.5"/>
+      <text class="module-title" x="962" y="136" text-anchor="middle" fill="#8a3c1d">模块四：对齐引擎</text>
+      <text class="module-note" x="962" y="160" text-anchor="middle" fill="#b4532a">候选缩减 / Pairwise 验证</text>
+    </g>
+    <g>
+      <rect x="1108" y="104" width="232" height="84" rx="10" fill="#fbebf2" stroke="#a83f69" stroke-width="1.5"/>
+      <text class="module-title" x="1224" y="136" text-anchor="middle" fill="#7f2d4f">模块五：一致性检查</text>
+      <text class="module-note" x="1224" y="160" text-anchor="middle" fill="#a83f69">规则检查 / 报告定位</text>
+    </g>
+  </g>
+
+  <g>
+    <line class="branch" x1="176" y1="188" x2="176" y2="222"/>
+    <line class="branch" x1="176" y1="222" x2="176" y2="606"/>
+    <line class="branch" x1="176" y1="252" x2="176" y2="230" marker-end="url(#arrow)"/>
+    <line class="branch" x1="176" y1="338" x2="176" y2="316" marker-end="url(#arrow)"/>
+    <line class="branch" x1="176" y1="424" x2="176" y2="402" marker-end="url(#arrow)"/>
+    <line class="branch" x1="176" y1="510" x2="176" y2="488" marker-end="url(#arrow)"/>
+    <line class="branch" x1="176" y1="596" x2="176" y2="574" marker-end="url(#arrow)"/>
+
+    <rect class="box" x="60" y="230" width="232" height="50" rx="7" stroke="#82c7b2"/>
+    <text class="task-title" x="176" y="251" text-anchor="middle" fill="#075f4d">文件盘点与分类</text>
+    <text class="task-note" x="176" y="267" text-anchor="middle">按产品、阶段、文件类型归档</text>
+    <rect class="box" x="60" y="316" width="232" height="50" rx="7" stroke="#82c7b2"/>
+    <text class="task-title" x="176" y="337" text-anchor="middle" fill="#075f4d">PDF 表格还原</text>
+    <text class="task-note" x="176" y="353" text-anchor="middle">保留页码、标题和表格结构</text>
+    <rect class="box" x="60" y="402" width="232" height="50" rx="7" stroke="#82c7b2"/>
+    <text class="task-title" x="176" y="423" text-anchor="middle" fill="#075f4d">Word 层级转换</text>
+    <text class="task-note" x="176" y="439" text-anchor="middle">保留章节、段落和列表层级</text>
+    <rect class="box" x="60" y="488" width="232" height="50" rx="7" stroke="#82c7b2"/>
+    <text class="task-title" x="176" y="509" text-anchor="middle" fill="#075f4d">Excel 表格转换</text>
+    <text class="task-note" x="176" y="525" text-anchor="middle">保留 sheet、行列和单元格坐标</text>
+    <rect class="box" x="60" y="574" width="232" height="50" rx="7" stroke="#82c7b2"/>
+    <text class="task-title" x="176" y="595" text-anchor="middle" fill="#075f4d">转换质量抽检</text>
+    <text class="task-note" x="176" y="611" text-anchor="middle">输出结构化 Markdown 文件</text>
+  </g>
+
+  <g>
+    <line class="branch" x1="438" y1="188" x2="438" y2="222"/>
+    <line class="branch" x1="438" y1="222" x2="438" y2="606"/>
+    <line class="branch" x1="438" y1="252" x2="438" y2="230" marker-end="url(#arrow)"/>
+    <line class="branch" x1="438" y1="338" x2="438" y2="316" marker-end="url(#arrow)"/>
+    <line class="branch" x1="438" y1="424" x2="438" y2="402" marker-end="url(#arrow)"/>
+    <line class="branch" x1="438" y1="510" x2="438" y2="488" marker-end="url(#arrow)"/>
+    <line class="branch" x1="438" y1="596" x2="438" y2="574" marker-end="url(#arrow)"/>
+
+    <rect class="box" x="322" y="230" width="232" height="50" rx="7" stroke="#9bc2ee"/>
+    <text class="task-title" x="438" y="251" text-anchor="middle" fill="#164c87">Schema 节点定义</text>
+    <text class="task-note" x="438" y="267" text-anchor="middle">Document / Claim / Risk 等</text>
+    <rect class="box" x="322" y="316" width="232" height="50" rx="7" stroke="#9bc2ee"/>
+    <text class="task-title" x="438" y="337" text-anchor="middle" fill="#164c87">术语归一化</text>
+    <text class="task-note" x="438" y="353" text-anchor="middle">subject 标准词与同义表达</text>
+    <rect class="box" x="322" y="402" width="232" height="50" rx="7" stroke="#9bc2ee"/>
+    <text class="task-title" x="438" y="423" text-anchor="middle" fill="#164c87">第一遍抽取</text>
+    <text class="task-note" x="438" y="439" text-anchor="middle">Pydantic 结构化节点属性</text>
+    <rect class="box" x="322" y="488" width="232" height="50" rx="7" stroke="#9bc2ee"/>
+    <text class="task-title" x="438" y="509" text-anchor="middle" fill="#164c87">第二遍抽取</text>
+    <text class="task-note" x="438" y="525" text-anchor="middle">LlamaIndex 关系三元组</text>
+    <rect class="box" x="322" y="574" width="232" height="50" rx="7" stroke="#9bc2ee"/>
+    <text class="task-title" x="438" y="595" text-anchor="middle" fill="#164c87">JSON 校验入库</text>
+    <text class="task-note" x="438" y="611" text-anchor="middle">逐文件输出可追溯结果</text>
+  </g>
+
+  <g>
+    <line class="branch" x1="700" y1="188" x2="700" y2="222"/>
+    <line class="branch" x1="700" y1="222" x2="700" y2="606"/>
+    <line class="branch" x1="700" y1="252" x2="700" y2="230" marker-end="url(#arrow)"/>
+    <line class="branch" x1="700" y1="338" x2="700" y2="316" marker-end="url(#arrow)"/>
+    <line class="branch" x1="700" y1="424" x2="700" y2="402" marker-end="url(#arrow)"/>
+    <line class="branch" x1="700" y1="510" x2="700" y2="488" marker-end="url(#arrow)"/>
+    <line class="branch" x1="700" y1="596" x2="700" y2="574" marker-end="url(#arrow)"/>
+
+    <rect class="box" x="584" y="230" width="232" height="50" rx="7" stroke="#e4be72"/>
+    <text class="task-title" x="700" y="251" text-anchor="middle" fill="#7a4b05">节点与关系标签</text>
+    <text class="task-note" x="700" y="267" text-anchor="middle">Document / Section / Evidence</text>
+    <rect class="box" x="584" y="316" width="232" height="50" rx="7" stroke="#e4be72"/>
+    <text class="task-title" x="700" y="337" text-anchor="middle" fill="#7a4b05">唯一键与索引</text>
+    <text class="task-note" x="700" y="353" text-anchor="middle">防重复导入，支撑查询性能</text>
+    <rect class="box" x="584" y="402" width="232" height="50" rx="7" stroke="#e4be72"/>
+    <text class="task-title" x="700" y="423" text-anchor="middle" fill="#7a4b05">Neo4j 批量导入</text>
+    <text class="task-note" x="700" y="439" text-anchor="middle">节点、边、来源定位一起写入</text>
+    <rect class="box" x="584" y="488" width="232" height="50" rx="7" stroke="#e4be72"/>
+    <text class="task-title" x="700" y="509" text-anchor="middle" fill="#7a4b05">属性方向元数据</text>
+    <text class="task-note" x="700" y="525" text-anchor="middle">smaller / larger / wider is better</text>
+    <rect class="box" x="584" y="574" width="232" height="50" rx="7" stroke="#e4be72"/>
+    <text class="task-title" x="700" y="595" text-anchor="middle" fill="#7a4b05">DeepEval Harness 验证</text>
+    <text class="task-note" x="700" y="611" text-anchor="middle">自动化评测抽取与图谱质量</text>
+  </g>
+
+  <g>
+    <line class="branch" x1="962" y1="188" x2="962" y2="222"/>
+    <line class="branch" x1="962" y1="222" x2="962" y2="606"/>
+    <line class="branch" x1="962" y1="252" x2="962" y2="230" marker-end="url(#arrow)"/>
+    <line class="branch" x1="962" y1="338" x2="962" y2="316" marker-end="url(#arrow)"/>
+    <line class="branch" x1="962" y1="424" x2="962" y2="402" marker-end="url(#arrow)"/>
+    <line class="branch" x1="962" y1="510" x2="962" y2="488" marker-end="url(#arrow)"/>
+    <line class="branch" x1="962" y1="596" x2="962" y2="574" marker-end="url(#arrow)"/>
+
+    <rect class="box" x="846" y="230" width="232" height="50" rx="7" stroke="#e3a083"/>
+    <text class="task-title" x="962" y="251" text-anchor="middle" fill="#8a3c1d">通道 A：ID 锚点</text>
+    <text class="task-note" x="962" y="267" text-anchor="middle">需求号、风险号、测试号精确匹配</text>
+    <rect class="box" x="846" y="316" width="232" height="50" rx="7" stroke="#e3a083"/>
+    <text class="task-title" x="962" y="337" text-anchor="middle" fill="#8a3c1d">通道 B：Subject</text>
+    <text class="task-note" x="962" y="353" text-anchor="middle">同一标准主题生成候选对</text>
+    <rect class="box" x="846" y="402" width="232" height="50" rx="7" stroke="#e3a083"/>
+    <text class="task-title" x="962" y="423" text-anchor="middle" fill="#8a3c1d">通道 C：本体剪枝</text>
+    <text class="task-note" x="962" y="439" text-anchor="middle">按文档类型和上下游关系过滤</text>
+    <rect class="box" x="846" y="488" width="232" height="50" rx="7" stroke="#e3a083"/>
+    <text class="task-title" x="962" y="509" text-anchor="middle" fill="#8a3c1d">通道 D：Embedding</text>
+    <text class="task-note" x="962" y="525" text-anchor="middle">bge-m3 兜底召回疑似遗漏</text>
+    <rect class="box" x="846" y="574" width="232" height="50" rx="7" stroke="#e3a083"/>
+    <text class="task-title" x="962" y="595" text-anchor="middle" fill="#8a3c1d">LLM Pairwise 验证</text>
+    <text class="task-note" x="962" y="611" text-anchor="middle">大量候选 → 少量高置信候选</text>
+  </g>
+
+  <g>
+    <line class="branch" x1="1224" y1="188" x2="1224" y2="222"/>
+    <line class="branch" x1="1224" y1="222" x2="1224" y2="606"/>
+    <line class="branch" x1="1224" y1="252" x2="1224" y2="230" marker-end="url(#arrow)"/>
+    <line class="branch" x1="1224" y1="338" x2="1224" y2="316" marker-end="url(#arrow)"/>
+    <line class="branch" x1="1224" y1="424" x2="1224" y2="402" marker-end="url(#arrow)"/>
+    <line class="branch" x1="1224" y1="510" x2="1224" y2="488" marker-end="url(#arrow)"/>
+    <line class="branch" x1="1224" y1="596" x2="1224" y2="574" marker-end="url(#arrow)"/>
+
+    <rect class="box" x="1108" y="230" width="232" height="50" rx="7" stroke="#dfa3bb"/>
+    <text class="task-title" x="1224" y="251" text-anchor="middle" fill="#7f2d4f">多类结构化规则</text>
+    <text class="task-note" x="1224" y="267" text-anchor="middle">数值、标识、追溯、评审检查</text>
+    <rect class="box" x="1108" y="316" width="232" height="50" rx="7" stroke="#dfa3bb"/>
+    <text class="task-title" x="1224" y="337" text-anchor="middle" fill="#7f2d4f">若干语义级规则</text>
+    <text class="task-note" x="1224" y="353" text-anchor="middle">LLM-as-Judge 识别逻辑矛盾</text>
+    <rect class="box" x="1108" y="402" width="232" height="50" rx="7" stroke="#dfa3bb"/>
+    <text class="task-title" x="1224" y="423" text-anchor="middle" fill="#7f2d4f">Fragment 漏检识别</text>
+    <text class="task-note" x="1224" y="439" text-anchor="middle">三层漏斗定位未结构化信息</text>
+    <rect class="box" x="1108" y="488" width="232" height="50" rx="7" stroke="#dfa3bb"/>
+    <text class="task-title" x="1224" y="509" text-anchor="middle" fill="#7f2d4f">双向定位输出</text>
+    <text class="task-note" x="1224" y="525" text-anchor="middle">文件、章节、页码、行号</text>
+    <rect class="box" x="1108" y="574" width="232" height="50" rx="7" stroke="#dfa3bb"/>
+    <text class="task-title" x="1224" y="595" text-anchor="middle" fill="#7f2d4f">审查报告汇总</text>
+    <text class="task-note" x="1224" y="611" text-anchor="middle">问题分级、证据、整改建议</text>
+  </g>
+  <text class="subtitle" x="700" y="658" text-anchor="middle">勾选右侧模块工作清单后，HTML 页面会在流程图顶部联动显示完成状态。</text>
+</svg>

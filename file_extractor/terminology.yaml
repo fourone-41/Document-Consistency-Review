@@ -1,0 +1,230 @@
+# 术语归一表 —— 对齐的地基
+# 把不同文件里同义的表述，归到同一个 subject 标准词；direction 决定不退化检查的比较方向。
+# direction: smaller_is_better | larger_is_better | wider_is_better | exact_match
+#
+# 完整性来源（v0.4）：对固定的 470 份语料做了「确定性全量审计」(_convert/coverage_audit.py)，
+#   全文不截断地枚举出 7136 个候选标签，逐条定性(命中/噪声桶/纳入)，做到 0 静默丢弃。
+#   双召回(关键词 + 数字紧贴单位)交叉验证，无反复出现的产品指标漏网。
+#   => 对这 470 份，本表可视为「完整」。新增文件后须重跑审计看缺口，详见 schema/README.md。
+
+version: 0.4.0
+
+subjects:
+
+  - subject: measurement_accuracy
+    direction: smaller_is_better
+    unit: "℃"
+    aliases: [测量误差, 测量精度, 精度, 允差, 最大允许误差, accuracy, maximum permissible error,
+              precision, 精度要求]   # 🆕 v0.2 全量挖掘
+
+  - subject: display_range
+    direction: wider_is_better
+    unit: "℃"
+    aliases: [温度显示范围, 显示范围, 量程, 测量范围, temperature range, measuring range]
+
+  - subject: operating_temperature
+    direction: wider_is_better
+    unit: "℃"
+    aliases: [工作环境温度, 工作环境, 使用环境温度, operating temperature,
+              工作温度, 工作温度范围, 使用温度, operating temperature range]   # 🆕 v0.3 全量挖掘
+
+  - subject: storage_temperature
+    direction: wider_is_better
+    unit: "℃"
+    aliases: [存储环境温度, 存储环境, 储存温度, storage temperature,
+              存储温度, 存储温度范围, storage temperature range]   # 🆕 v0.3
+
+  - subject: display_resolution
+    direction: smaller_is_better
+    unit: "℃"
+    aliases: [显示分辨率, 分辨率, resolution, Resolution, 显示精度]   # 🆕 v0.2
+
+  - subject: service_life
+    direction: larger_is_better
+    unit: "年/次"
+    aliases: [产品寿命, 使用寿命, expected service life]
+
+  - subject: battery_life
+    direction: larger_is_better
+    unit: "次"
+    aliases: [电池寿命, 测量使用次数, 使用次数, battery life]
+
+  - subject: product_dimensions
+    direction: exact_match
+    unit: "mm"
+    aliases: [整机外形尺寸, 外形尺寸, 产品尺寸, dimensions]
+
+  - subject: product_weight
+    direction: exact_match
+    unit: "g"
+    aliases: [整机重量, 产品重量, 重量, weight, 净重, net weight]   # 🆕 v0.3 净重=裸机重量
+
+  - subject: package_dimensions
+    direction: exact_match
+    unit: "mm"
+    aliases: [外箱尺寸, 包装尺寸, 整箱尺寸]
+
+  - subject: package_weight
+    direction: exact_match
+    unit: "kg"
+    aliases: [整箱重量, 外箱重量, 毛重, gross weight]   # 🆕 v0.3 毛重=含包装重量
+
+  - subject: ip_rating
+    direction: exact_match
+    unit: ""
+    aliases: [防尘防水, 防护等级, IP等级, IP rating, ingress protection,
+              防水等级, 防尘等级, waterproof rating]   # 🆕 v0.3
+
+  - subject: response_time
+    direction: smaller_is_better
+    unit: "s"
+    aliases: [响应时间, 测量时间, response time]
+
+  - subject: fever_alarm_threshold
+    direction: exact_match
+    unit: "℃"
+    aliases: [发热报警阈值, 报警阈值, fever alarm]
+
+  - subject: humidity_range
+    direction: wider_is_better
+    unit: "%RH"
+    aliases: [相对湿度, 湿度范围, relative humidity]
+
+  - subject: pressure_range
+    direction: wider_is_better
+    unit: "kPa"
+    aliases: [大气压力, 气压范围, atmospheric pressure, 大气压强, 使用大气压强, 大气压]   # 🆕 v0.3/v0.4
+
+  - subject: auto_off_time
+    direction: exact_match
+    unit: "s"
+    aliases: [自动关机时间, 关机时间, auto off]
+
+  # 🆕 v0.2：说明书(IFU)双语采样新增
+  - subject: measuring_distance
+    direction: exact_match
+    unit: "cm"
+    aliases: [测量距离, 测量部位距离, measuring distance, 额头距离]
+
+  - subject: clinical_repeatability
+    direction: smaller_is_better
+    unit: "℃"
+    aliases: [临床再现性, 重复性, clinical repeatability, repeatability, reproducibility, Reproducibility]   # 🆕 v0.2
+
+  # 🆕 v0.2 全量挖掘新增 subject（无歧义、确为可量化指标）
+  - subject: standby_time
+    direction: larger_is_better
+    unit: "月"
+    aliases: [待机时间, standby time]
+
+  - subject: continuous_operating_time
+    direction: larger_is_better
+    unit: "h"
+    aliases: [连续工作时间, continuous operating time]
+
+  - subject: cuff_pressure
+    direction: exact_match
+    unit: "mmHg"
+    aliases: [袖带压力, 腕带压力, 袖带、腕带压力, cuff pressure]
+    note: 血压计袖带/腕带压力，与大气压力 pressure_range 是不同物理量，勿混。
+
+  # 🆕 v0.3 全量挖掘新增 subject（电气类，多见于设计输入/BOM/软件设计，单位明确、出现≥6份）
+  - subject: battery_voltage
+    direction: exact_match
+    unit: "V"
+    aliases: [电池电压, 电池工作电压, battery voltage]
+
+  - subject: supply_voltage
+    direction: exact_match
+    unit: "V"
+    aliases: [电源电压, 供电电压, 工作电压, supply voltage]
+    note: 与 battery_voltage 区分；裸「电压/Voltage」见 ambiguous_terms 消歧。
+
+  - subject: battery_capacity
+    direction: larger_is_better
+    unit: "mAh"
+    aliases: [电池容量, battery capacity]
+    note: 与 battery_life（按「次」计的使用次数）是不同物理量，勿混。
+
+  - subject: memory_capacity
+    direction: larger_is_better
+    unit: "Byte"
+    aliases: [存储器容量, 存储容量, memory capacity, 记忆容量, 记忆组数]   # 🆕 v0.4
+
+  - subject: sleep_current
+    direction: smaller_is_better
+    unit: "µA"
+    aliases: [休眠电流, 待机电流, sleep current, standby current,
+              静态电流, 关机态电流, quiescent current]   # 🆕 v0.4 全文审计
+
+  - subject: low_voltage_threshold
+    direction: exact_match
+    unit: "V"
+    aliases: [低电压阈值, 低电压报警阈值, low voltage threshold]
+
+  # 🆕 v0.4 全文确定性审计新增（LLM 截断漏掉的硬件电气指标，多见于硬件方案/图样/寿命测试）
+  - subject: operating_current
+    direction: smaller_is_better
+    unit: "mA"
+    aliases: [工作电流, 动态电流, 动态工作电流, operating current]
+    note: 工作（动态）态电流；各状态变体（调试态/自检态/放气时工作电流）按子串归此。
+
+  - subject: power_consumption
+    direction: smaller_is_better
+    unit: "mW"
+    aliases: [功耗, 动态功耗, 静态功耗, 功率消耗, power consumption]
+
+  - subject: leakage_current
+    direction: smaller_is_better
+    unit: "µA"
+    aliases: [漏电流, 外壳漏电流, 对地漏电流, 患者漏电流, leakage current]
+    note: IEC 60601 电气安全指标，越小越安全。
+
+# =====================================================================
+# 🆕 有歧义的高频表头：禁止直接拍平成单一 subject（会错归）
+# 这些词（多见于说明书 IFU 的"工作条件/存储条件"两栏）必须结合上下文消歧后再归一。
+# 全量挖掘时由 LLM 标出，人工判定保留为"需上下文规则"。
+# =====================================================================
+ambiguous_terms:
+  - terms: [Temperature, 温度, TEMPERATURE, 室温]
+    disambiguate_by: 上下文含「工作/使用/operating」→ operating_temperature；含「存储/储存/storage」→ storage_temperature
+  - terms: [Humidity, 湿度, 相对湿度]
+    disambiguate_by: 同上，按工作/存储语境归到对应 subject（湿度暂统一 humidity_range，必要时再拆工作/存储湿度）
+  - terms: [Pressure, 压力]
+    disambiguate_by: 「大气/气压/atmospheric」→ pressure_range；「袖带/腕带/cuff」→ cuff_pressure
+  - terms: [Weight, 重量]
+    disambiguate_by: 「整机/产品」→ product_weight；「整箱/外箱/包装」→ package_weight
+  - terms: [长, 宽, 高, 深, 长（L）, 宽（W）, 高（H）, 深（D）, Size, 尺寸,
+            长度, 宽度, 高度, 厚度, 总长, 总宽, 圆角半径]   # 🆕 v0.3 单维尺寸亦按语境归整机/外箱
+    disambiguate_by: 「整机/产品」→ product_dimensions；「外箱/箱体/包装」→ package_dimensions；「说明书」→ 单列 manual_dimensions
+  - terms: [Voltage, 电压, 电压值]   # 🆕 v0.3
+    disambiguate_by: 「电池/battery」→ battery_voltage；「电源/供电/系统供电/supply」→ supply_voltage；「低电压报警/阈值」→ low_voltage_threshold
+
+# =====================================================================
+# 🆕 单位换算规则 —— 跨文档/双语对齐时先归一到 base_unit 再比较
+# 说明书常见 °F/°C、in/cm 双标，必须换算后才能判断一致性。
+# =====================================================================
+unit_conversions:
+  - from_unit: "°F"
+    to_unit: "℃"
+    formula: "(F - 32) * 5 / 9"
+    note: 华氏转摄氏；温度类 subject 一律归一到 ℃ 再比较
+
+  - from_unit: "℉"
+    to_unit: "℃"
+    formula: "(F - 32) * 5 / 9"
+
+  - from_unit: "in"
+    to_unit: "cm"
+    formula: "in * 2.54"
+    note: 英寸转厘米；尺寸/距离类归一到公制
+
+  - from_unit: "mmHg"
+    to_unit: "kPa"
+    formula: "mmHg * 0.133322"
+    note: 血压计压力相关
+
+aliasing_notes:
+  - 同一指标若同时给出双语双单位（如 ±0.4°F/0.2°C），抽取时优先取公制值入 Claim.value，
+    并把原文整段写入 Claim.raw_text 供溯源。
+  - 比较前统一调用 unit_conversions 归一；归一失败（单位未知）的不得直接判冲突，标为 needs_review。

@@ -1,0 +1,269 @@
+{
+  "document": {
+    "title": "立项批准书",
+    "doc_type": "立项批准书",
+    "dhf_stage": "E0",
+    "version": "V1.0",
+    "date": null
+  },
+  "products": [
+    {
+      "product_id": "30000078",
+      "model": "PT9L",
+      "name": "红外体温计",
+      "region": null
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "QR-7.3-01"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "附件文件编号",
+      "value": "PT9L-KHXQ01 V1.0"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "seq": 1,
+      "content": "测量内容：人体温度"
+    },
+    {
+      "seq": 2,
+      "content": "测量方法：非接触式"
+    },
+    {
+      "seq": 3,
+      "content": "使用环境和人群：家中的成年和儿童"
+    },
+    {
+      "seq": 4,
+      "content": "测量部位：额头3cm内"
+    }
+  ],
+  "persons": [
+    {
+      "name": null,
+      "title": "编制（项目负责人）",
+      "signed": false
+    },
+    {
+      "name": null,
+      "title": "审核（技术负责人）",
+      "signed": false
+    },
+    {
+      "name": null,
+      "title": "批准人",
+      "signed": false
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "PT9L红外非接触式额头温度计适用于所有年龄段的人从额头皮肤表面间歇性测量体温。它可以由消费者在家庭环境中使用，也可以由医疗保健提供者使用。",
+      "topic_tags": [
+        "预期用途",
+        "非接触式",
+        "额头测温",
+        "体温计",
+        "家庭使用",
+        "医疗保健"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "intended_use_items"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "PT9L红外体温计是公司自主研发的新产品。项目类型：新产品开发。形成设计开发计划的时间要求：1个月内。",
+      "topic_tags": [
+        "项目类型",
+        "自主研发",
+        "新产品",
+        "设计开发计划",
+        "时间要求"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "30000078"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "01 立项批准书E0 23.11/立项批准书E0 23.11.via_lo_html.clean.md",
+    "doc_type": "project_approval"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "intended_use_items",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "项目类型",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "项目类型",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-01",
+      "to": "scope_limitation",
+      "properties": {
+        "fragment_type": "scope_limitation"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-01",
+      "to": "constraint_statement",
+      "properties": {
+        "fragment_type": "constraint_statement"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "QR-7.3-01",
+      "to": "intended_use_item_1",
+      "properties": {
+        "content": "测量内容：人体温度"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "QR-7.3-01",
+      "to": "intended_use_item_2",
+      "properties": {
+        "content": "测量方法：非接触式"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "QR-7.3-01",
+      "to": "intended_use_item_3",
+      "properties": {
+        "content": "使用环境和人群：家中的成年和儿童"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "QR-7.3-01",
+      "to": "intended_use_item_4",
+      "properties": {
+        "content": "测量部位：额头3cm内"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "intended_use_item_1",
+      "to": "scope_limitation",
+      "properties": {
+        "relation": "预期用途描述"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "intended_use_item_2",
+      "to": "scope_limitation",
+      "properties": {
+        "relation": "预期用途描述"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "intended_use_item_3",
+      "to": "scope_limitation",
+      "properties": {
+        "relation": "预期用途描述"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "intended_use_item_4",
+      "to": "scope_limitation",
+      "properties": {
+        "relation": "预期用途描述"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "编制（项目负责人）",
+      "to": "QR-7.3-01",
+      "properties": {
+        "role": "编制人",
+        "signed": false
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "审核（技术负责人）",
+      "to": "QR-7.3-01",
+      "properties": {
+        "role": "审核人",
+        "signed": false
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "批准人",
+      "to": "QR-7.3-01",
+      "properties": {
+        "role": "批准人",
+        "signed": false
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "constraint_statement",
+      "properties": {
+        "relation": "项目约束说明"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "scope_limitation",
+      "properties": {
+        "relation": "产品预期用途描述"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement",
+      "properties": {
+        "relation": "产品项目类型约束"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "QR-7.3-01",
+      "to": "PT9L-KHXQ01 V1.0",
+      "properties": {
+        "id_type": "附件文件编号"
+      }
+    }
+  ],
+  "_claims": []
+}

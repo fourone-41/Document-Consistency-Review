@@ -1,0 +1,472 @@
+id: https://andon.example/dhf/consistency-schema
+name: dhf_consistency_schema
+title: 医疗器械 DHF/DMR 文档一致性审查 — 全局 Schema
+description: >-
+  文档一致性审查系统的唯一可信源。定义所有节点类型（卡片）及其字段、枚举。
+  边（关系）见 edges.yaml；术语归一见 terminology.yaml。
+license: proprietary
+version: 0.2.0
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dhf: https://andon.example/dhf/
+default_prefix: dhf
+default_range: string
+
+imports:
+  - linkml:types
+
+# =====================================================================
+# 枚举（受控词表）
+# =====================================================================
+enums:
+
+  CategoryEnum:
+    description: 需求/设计输入的五大类别
+    permissible_values:
+      通用: {}
+      功能: {}
+      性能: {}
+      组件: {}
+      法规: {}
+
+  IdTypeEnum:
+    description: 各类标识号的类型
+    permissible_values:
+      产品编号: {}
+      项目号: {}
+      版本号: {}
+      文件编号: {}
+      需求编号: {}
+      设计输入编号: {}
+      风险编号: {}
+      测试编号: {}
+      物料编码: {}
+      表单号: {description: "🆕 质量表单号，如 QR-7.3-44"}
+      图纸号: {description: "🆕 图纸编号，Drawing NO."}
+      WBS号: {description: "🆕 计划任务分解编号"}
+
+  DirectionEnum:
+    description: 属性的"好坏方向"，决定不退化检查的比较方向
+    permissible_values:
+      smaller_is_better: {description: 越小越好（精度、响应时间）}
+      larger_is_better: {description: 越大越好（寿命、电池次数）}
+      wider_is_better: {description: 范围越宽越好（量程、工作温度）}
+      exact_match: {description: 必须完全一致（尺寸、重量、IP 等级、编号）}
+
+  SubjectEnum:
+    description: 归一化主题词（对齐主干）。来源见 terminology.yaml，可随采样增补
+    permissible_values:
+      measurement_accuracy: {description: 测量误差/精度/允差/accuracy}
+      display_range: {description: 温度显示范围/量程}
+      operating_temperature: {description: 工作环境温度}
+      storage_temperature: {description: 存储环境温度}
+      display_resolution: {description: 显示分辨率}
+      service_life: {description: 产品寿命}
+      battery_life: {description: 电池寿命/测量使用次数}
+      product_dimensions: {description: 整机外形尺寸}
+      product_weight: {description: 整机重量}
+      package_dimensions: {description: 外箱/包装尺寸}
+      package_weight: {description: 整箱重量}
+      ip_rating: {description: 防尘防水/IP 等级}
+      response_time: {description: 响应时间/测量时间}
+      fever_alarm_threshold: {description: 发热报警阈值}
+      humidity_range: {description: 相对湿度范围}
+      pressure_range: {description: 大气压力范围}
+      auto_off_time: {description: 自动关机时间}
+      measuring_distance: {description: "🆕 测量距离（额头3cm内）"}
+      clinical_repeatability: {description: "🆕 临床再现性/重复性"}
+
+  RiskLevelEnum:
+    permissible_values:
+      Acceptable: {}
+      ALARP: {}
+      Unacceptable: {}
+
+  ConclusionEnum:
+    permissible_values:
+      PASS: {}
+      FAIL: {}
+      CONDITIONAL: {}
+
+  AnswerTypeEnum:
+    permissible_values:
+      yes: {}
+      no: {}
+      descriptive: {}
+      quantitative: {}
+      n_a: {}
+
+  CriticalityEnum:
+    description: BOM 元件重要度等级
+    permissible_values:
+      A: {}
+      B: {}
+      C: {}
+
+  FragmentTypeEnum:
+    description: 语义片段的类型
+    permissible_values:
+      design_rationale: {description: 设计理由/决策}
+      working_principle: {description: 工作原理描述}
+      constraint_statement: {description: 隐含约束/范围限制}
+      behavioral_spec: {description: 行为描述}
+      open_issue: {description: 未关闭问题}
+      scope_limitation: {description: 适用范围限制}
+      assumption: {description: 前提假设}
+
+  ReviewConclusionEnum:
+    description: "🆕 评审/检查项的逐条结论"
+    permissible_values:
+      通过: {}
+      不通过: {}
+      待整改: {}
+      不适用: {}
+
+  IssueStatusEnum:
+    description: "🆕 问题项的处理状态"
+    permissible_values:
+      open: {description: 未关闭}
+      in_progress: {description: 处理中}
+      closed: {description: 已关闭}
+
+  SoftwareItemTypeEnum:
+    description: "🆕 软件条目的类型"
+    permissible_values:
+      功能模块: {}
+      设计规格: {}
+      通信命令: {}
+      软硬件接口: {}
+      运行环境: {}
+      其它: {}
+
+# =====================================================================
+# 节点类型（卡片）
+# =====================================================================
+classes:
+
+  # ---------- 层1：结构层（定位溯源） ----------
+  Document:
+    description: 一份具体的文件
+    attributes:
+      doc_id: {identifier: true, description: 唯一标识，如 DHF-01-001}
+      title: {required: true, description: 文件标题}
+      doc_type: {required: true, description: 文件类型：需求书/设计输入/风险报告/BOM/...}
+      dhf_stage: {description: DHF 阶段：01_立项/03_风险/04_设计输入/...}
+      version: {description: 版本号}
+      filename: {description: 原始文件名}
+      format: {description: 原始格式：doc/xls/pdf}
+      path: {description: 文件路径}
+      date: {description: 文件日期}
+      lang: {description: 语言 zh/en}
+      confidence: {description: 来源置信度，如 .vlm.md 低置信需标注}
+
+  Section:
+    description: 文件中的一个章节/段落/表格行/单元格
+    attributes:
+      section_id: {identifier: true}
+      doc_id: {required: true, description: 所属文件}
+      heading_path: {description: "层级路径，如 第3章>3.2性能>表3-1>Row7"}
+      page: {range: integer}
+      order: {range: integer, description: 在文件中的出现顺序}
+
+  # ---------- 层2：锚点层（确定性身份，可合并去重） ----------
+  Product:
+    description: 产品实体
+    attributes:
+      product_id: {identifier: true, description: 产品编号，如 PT9L}
+      model: {description: 型号}
+      name: {required: true, description: 产品名称}
+      region: {description: 目标市场/地区}
+
+  Identifier:
+    description: 各类标识号（独立节点以支持唯一性检查）。同一 value 合并为一个节点
+    attributes:
+      id_type: {range: IdTypeEnum, required: true}
+      value: {required: true, description: 编号值}
+
+  Person:
+    description: 人员。同一姓名（归一后）合并为一个节点，各文件的角色/部门/签字挂在边上
+    attributes:
+      name: {identifier: true}
+      dept: {description: 部门}
+      title: {description: 职务/职称}
+      signed: {range: boolean, description: "🆕 是否已签字（真实文件签字栏常为空）"}
+
+  # ---------- 层3：领域层（业务实体） ----------
+  Requirement:
+    description: 需求书中的一条需求条目
+    attributes:
+      req_id: {identifier: true, description: 需求编号，如 REQ-PERF-007}
+      category: {range: CategoryEnum}
+      description: {required: true, description: 需求描述原文}
+      value: {description: 量化值}
+      unit: {description: 单位}
+      tolerance: {description: "🆕 公差，如 ±0.5mm / ±10%"}
+      condition: {description: 适用条件}
+      verification_method: {description: 验证方法}
+
+  DesignInput:
+    description: 设计输入条目
+    attributes:
+      di_id: {identifier: true, description: 编号，如 DI-P-012}
+      category: {range: CategoryEnum}
+      description: {required: true}
+      value: {}
+      unit: {}
+      tolerance: {description: "🆕 公差"}
+      condition: {}
+      source_req_id: {description: 来源需求编号（追溯用）}
+
+  Risk:
+    description: 风险评估中的一条风险项
+    attributes:
+      risk_id: {identifier: true, description: 如 H-014}
+      hazard: {required: true, description: 危险源}
+      hazardous_situation: {description: 危险情况}
+      harm: {description: 伤害}
+      severity: {range: integer, description: 严重度 1-5}
+      probability: {description: 概率 A-E}
+      risk_level: {range: RiskLevelEnum}
+      phase: {description: pre-mitigation / post-mitigation}
+
+  RiskControl:
+    description: 风险控制措施
+    attributes:
+      control_id: {identifier: true}
+      measure: {required: true, description: 措施描述}
+      type: {description: 降低可能性/降低危害/信息安全}
+      evidence_type: {description: 证据类型：测试报告/分析/...}
+
+  Test:
+    description: 一次具体的测试
+    attributes:
+      test_id: {identifier: true}
+      item: {required: true, description: 测试项目}
+      condition: {description: 测试条件}
+      expected_value: {description: 预期结果/通过标准}
+      actual_result: {description: 实际结果}
+      pass_criteria: {description: 判据}
+      instrument: {description: "🆕 测试仪器/设备"}
+      environment: {description: "🆕 测试环境（温度/湿度/气压等）"}
+
+  TestReport:
+    description: 测试报告
+    attributes:
+      report_id: {identifier: true}
+      conclusion: {range: ConclusionEnum}
+      evidence_level: {description: 证据等级}
+
+  Regulation:
+    description: 法规/标准条款
+    attributes:
+      reg_id: {identifier: true}
+      std_id: {required: true, description: 标准号，如 IEC 80601-2-56:2017}
+      version: {description: 版本}
+      clause: {description: 条款号}
+      region: {description: "🆕 适用地区：国际/欧盟/美国/中国"}
+      applicable: {range: boolean, description: "🆕 是否适用（表格里的 是/否 勾选）"}
+      equivalent_std: {description: "🆕 等同国际标准"}
+      requirement_value: {description: 法规要求的数值}
+      requirement_text: {description: 法规要求的文字描述}
+
+  Function:
+    description: 产品功能项（用于串货/复制粘贴残留检测）
+    attributes:
+      name: {identifier: true, description: 功能名称}
+      description: {}
+      value: {description: 取值，如 红外非接触式}
+      exists: {range: boolean, ifabsent: "true", description: 是否真实存在}
+
+  Component:
+    description: BOM 零部件
+    attributes:
+      part_no: {description: 物料编码}
+      name: {required: true, description: 品名}
+      spec: {description: 规格}
+      model: {description: 型号}
+      ref_des: {description: "🆕 位号，如 U2/C1/PCB"}
+      qty: {description: 配比/数量}
+      criticality: {range: CriticalityEnum, description: "🆕 重要度等级 A/B/C"}
+      rohs: {range: boolean, description: 是否符合 ROHS}
+      board: {description: 所属板：主板/传感器板}
+
+  ReviewRecord:
+    description: 评审记录
+    attributes:
+      review_id: {identifier: true}
+      stage: {description: 所属阶段}
+      date: {}
+      conclusion: {description: 评审结论}
+
+  IntendedUseItem:
+    description: "🆕 预期用途条目（立项批准书里逐条列出的用途，用于与设计输入/验证对应）"
+    attributes:
+      item_id: {identifier: true}
+      seq: {range: integer, description: 序号}
+      content: {required: true, description: "条目内容，如 测量部位：额头3cm内"}
+
+  Market:
+    description: "🆕 目标市场与认证（销售地区 + 认证体系 + 是否选中）"
+    attributes:
+      market_id: {identifier: true}
+      region: {description: 地区：欧洲/美国/中国}
+      certification: {description: 认证：CE/FDA/CFDA/510k}
+      selected: {range: boolean, description: 是否选中}
+      registrant: {description: 注册方：andon/customer}
+      registration_path: {description: 申请路径，如 510k}
+
+  # ---------- 层4：裁决层（对齐主干，不合并） ----------
+  Claim:
+    description: 归一化事实断言——对齐主干。每条独立成节点，绝不合并
+    attributes:
+      claim_id: {identifier: true}
+      subject: {range: SubjectEnum, required: true, description: 标准化主题词}
+      attribute: {required: true, description: 该主题的具体方面（允差/范围/阈值/实测值/判据）}
+      value: {}
+      unit: {}
+      tolerance: {description: "🆕 公差，如 ±0.5mm / ±0.2℃ / ±5%（与 condition 分开，避免公差挤进条件）"}
+      condition: {description: 适用条件/前提}
+      raw_text: {required: true, description: 原文（溯源展示）}
+      source_doc: {required: true}
+      source_section: {required: true, description: 来源章节（精确到行/单元格）}
+
+  Statement:
+    description: 定性声明（Claim 的弱化版，用于无法量化的 Q&A 式内容）
+    attributes:
+      statement_id: {identifier: true}
+      standard_clause: {description: 标准条款号}
+      question_summary: {description: 问题摘要}
+      answer: {required: true, description: 回答内容}
+      answer_type: {range: AnswerTypeEnum}
+      source_doc: {required: true}
+      source_section: {required: true}
+
+  SemanticFragment:
+    description: 语义片段——装不进 Claim 但含审查相关信息的描述性段落
+    attributes:
+      fragment_id: {identifier: true}
+      fragment_type: {range: FragmentTypeEnum, required: true}
+      content: {required: true, description: 原文内容（完整保留，不压缩）}
+      topic_tags: {multivalued: true, description: 主题标签}
+      related_subjects: {multivalued: true, range: SubjectEnum, description: 关联的 Claim subject（钩子）}
+      source_doc: {required: true}
+      source_section: {required: true}
+
+  # ---------- 层3补充：流程/记录类（v0.2 数据驱动新增） ----------
+  # 由 42 份分层抽样的无约束抽取发现：以下记录类型几乎遍布所有文档类型，
+  # 但 v0.1 未建模。见 _convert/gap_report.md。
+
+  RevisionRecord:
+    description: "🆕 版本历史行（几乎每份文档都有的『更改记录』表）"
+    attributes:
+      rev_id: {identifier: true}
+      doc_id: {required: true, description: 所属文件}
+      seq: {range: integer, description: 序号}
+      version: {description: 版本号}
+      change_description: {description: 更改描述}
+      author: {description: 制定/修改人}
+      approver: {description: 批准人}
+      date: {description: 日期}
+
+  ReviewItem:
+    description: "🆕 评审/检查表里的逐条检查项（最大缺口：评审检查表占 ~85 份）"
+    attributes:
+      item_id: {identifier: true}
+      review_id: {description: 所属评审记录（可空）}
+      doc_id: {required: true, description: 所属文件}
+      seq: {range: integer, description: 序号}
+      category: {description: 分类/检查类别}
+      content: {required: true, description: 评审内容/检查项原文}
+      actual_situation: {description: 实际情况/审查意见}
+      conclusion: {range: ReviewConclusionEnum, description: 逐条结论}
+      improvement: {description: 改进措施/整改要求}
+      note: {description: 备注}
+
+  DocIndexEntry:
+    description: "🆕 DHF清单/设计输出清单里的一条文件登记项（用于文件齐套性检查）"
+    attributes:
+      entry_id: {identifier: true}
+      index_doc_id: {required: true, description: 所属清单文件}
+      seq: {range: integer, description: 序号}
+      file_name: {required: true, description: 文件名}
+      file_no: {description: 文件编号}
+      form: {description: 形式：纸质/电子}
+      location: {description: 存放位置}
+      stage: {description: 所属阶段}
+      signed: {range: boolean, description: 是否已签字}
+      applicable: {range: boolean, description: 是否选中/适用（□打√）}
+      date: {description: 日期}
+
+  TestMeasurement:
+    description: "🆕 测试报告里的逐行实测数据（Test 的明细行）"
+    attributes:
+      meas_id: {identifier: true}
+      test_id: {description: 所属测试}
+      doc_id: {required: true, description: 所属文件}
+      machine_no: {description: 机器/样机编号}
+      test_point: {description: 测试点/项目}
+      reading: {description: 实测读数}
+      unit: {description: 单位}
+      reference_value: {description: 基准/参考值}
+      condition: {description: 测试条件/环境}
+
+  SoftwareItem:
+    description: "🆕 软件方案/规格里的条目（功能模块/设计规格/通信命令/接口，软件文档占 ~31 份）"
+    attributes:
+      sw_id: {identifier: true}
+      doc_id: {required: true, description: 所属文件}
+      item_type: {range: SoftwareItemTypeEnum, required: true}
+      name: {required: true, description: 名称/命令名/模块名}
+      description: {description: 描述/实现方法}
+      value: {description: 取值/规格/参数}
+      run_environment: {description: 预期运行环境，如 单片机 N78F0485}
+
+  SoftwareConfigItem:
+    description: "🆕 软件配置清单/生命周期记录的一行"
+    attributes:
+      sci_id: {identifier: true}
+      doc_id: {required: true, description: 所属文件}
+      phase: {description: 生命周期阶段}
+      activity: {description: 活动}
+      config_item: {description: 配置项/文件名}
+      version: {description: 版本}
+
+  IssueItem:
+    description: "🆕 问题汇总/问题清单里的一条问题（说明书&包装等问题跟踪）"
+    attributes:
+      issue_id: {identifier: true}
+      doc_id: {required: true, description: 所属文件}
+      seq: {range: integer, description: 序号}
+      source: {description: 来源：说明书/包装/...}
+      description: {required: true, description: 问题描述}
+      cause: {description: 原因}
+      action: {description: 纠正措施}
+      owner: {description: 负责人}
+      status: {range: IssueStatusEnum, description: 处理状态}
+      due_date: {description: 计划完成日期}
+
+  PlanTask:
+    description: "🆕 开发计划/项目计划里的一条任务"
+    attributes:
+      task_id: {identifier: true}
+      doc_id: {required: true, description: 所属文件}
+      wbs: {description: WBS 编号}
+      name: {required: true, description: 任务名称}
+      predecessor: {description: 前置任务}
+      start_date: {description: 开始日期}
+      end_date: {description: 完成日期}
+      owner: {description: 负责人}
+      level: {range: integer, description: 层级}
+      note: {description: 备注}
+
+  Resource:
+    description: "🆕 计划中的资源行（人/设备/费用）"
+    attributes:
+      resource_id: {identifier: true}
+      doc_id: {required: true, description: 所属文件}
+      name: {required: true, description: 资源名称}
+      type: {description: 类型：人/设备/材料}
+      standard: {description: 标准/标准费率}
+      rate: {description: 费率/成本}
+      note: {description: 备注}

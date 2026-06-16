@@ -1,0 +1,205 @@
+# 边（关系）目录 —— 属性图的边类型
+# LinkML 不擅长表达带属性的图边，故单列于此。建图时按本表创建关系。
+# 字段：from（起点）→ to（终点）｜ properties（边属性）｜ phase（抽取期/推理期）｜ note
+
+version: 0.2.0
+
+# =====================================================================
+# 抽取期产生的边（由 LLM 从文件中识别）
+# =====================================================================
+extraction_edges:
+
+  - name: PART_OF
+    from: Section
+    to: Document
+    properties: []
+    note: 章节属于文件
+
+  - name: STATED_IN
+    from: [Claim, Statement, Requirement, DesignInput, Risk, Test, Component, Function, SemanticFragment, IntendedUseItem,
+           ReviewItem, TestMeasurement, SoftwareItem, SoftwareConfigItem, IssueItem, PlanTask, DocIndexEntry, RevisionRecord]
+    to: Section
+    properties: [span]
+    note: 实体出现在该章节中（溯源用）
+
+  - name: DECLARES
+    from: Document
+    to: [Identifier, Product, Person, Market]
+    properties: [role, dept, title, value, name_as_stated, selected]
+    note: 文件声称/提及该实体；各文件的差异（姓名写法/部门/取值）记在边属性上
+
+  - name: DERIVES_FROM
+    from: DesignInput
+    to: Requirement
+    properties: [source_ref]
+    note: 设计输入来源于该需求（追溯）
+
+  - name: MUST_BE_GEQ
+    from: [DesignInput, Claim, Requirement]
+    to: [Requirement, Regulation]
+    properties: [direction]
+    note: 数值约束：不得低于（方向取自 terminology）
+
+  - name: CONSTRAINED_BY
+    from: Requirement
+    to: Regulation
+    properties: []
+    note: 需求受法规约束
+
+  - name: MITIGATED_BY
+    from: Risk
+    to: RiskControl
+    properties: []
+    note: 风险被该措施控制
+
+  - name: VERIFIED_BY
+    from: [RiskControl, DesignInput]
+    to: Test
+    properties: []
+    note: 被该测试验证
+
+  - name: REPORTED_IN
+    from: Test
+    to: TestReport
+    properties: []
+    note: 测试结果记录在该报告中
+
+  - name: ADDRESSED_IN
+    from: Risk
+    to: Document
+    properties: []
+    note: 风险在该文件中被处理
+
+  - name: SIGNED
+    from: Person
+    to: [Document, ReviewRecord]
+    properties: [role]
+    note: 人员签署了该文件（role=编写人/审批人/评审员）
+
+  - name: IMPLEMENTED_IN
+    from: Function
+    to: Document
+    properties: []
+    note: 功能在该文件中被实现/描述
+
+  - name: REFERENCES
+    from: Document
+    to: Document
+    properties: [ref_type]
+    note: 文件间引用关系（引用/参考/来源）
+
+  - name: COVERS
+    from: [DesignInput, Requirement]
+    to: IntendedUseItem
+    properties: []
+    note: "🆕 设计输入/需求覆盖某条预期用途条目"
+
+  - name: RELATES_TO
+    from: SemanticFragment
+    to: Claim
+    properties: [subject_overlap]
+    note: 语义片段与结构化 Claim 的主题关联
+
+  # ---------- v0.2 新增节点的边 ----------
+  - name: HAS_REVISION
+    from: Document
+    to: RevisionRecord
+    properties: []
+    note: "🆕 文件的版本历史行"
+
+  - name: HAS_REVIEW_ITEM
+    from: [Document, ReviewRecord]
+    to: ReviewItem
+    properties: []
+    note: "🆕 评审/检查表的逐条检查项"
+
+  - name: REVIEWS
+    from: ReviewItem
+    to: [Requirement, DesignInput, Risk, Document, Claim]
+    properties: [aspect]
+    note: "🆕 某检查项指向其评审对象（可空，能对上才连）"
+
+  - name: LISTS_FILE
+    from: Document
+    to: DocIndexEntry
+    properties: []
+    note: "🆕 DHF/设计输出清单包含的文件登记项"
+
+  - name: INDEXES
+    from: DocIndexEntry
+    to: Document
+    properties: [match_confidence]
+    note: "🆕 清单条目对应到实际存在的文件（齐套性检查：缺失则无此边）"
+
+  - name: HAS_MEASUREMENT
+    from: Test
+    to: TestMeasurement
+    properties: []
+    note: "🆕 测试的逐行实测数据"
+
+  - name: MEASURES
+    from: TestMeasurement
+    to: Claim
+    properties: [subject_overlap]
+    note: "🆕 实测数据行验证某条规格 Claim（实测↔要求对齐）"
+
+  - name: DESCRIBES_SOFTWARE
+    from: Document
+    to: [SoftwareItem, SoftwareConfigItem]
+    properties: []
+    note: "🆕 软件文档描述的软件条目/配置项"
+
+  - name: TRACKS_ISSUE
+    from: Document
+    to: IssueItem
+    properties: []
+    note: "🆕 问题汇总/清单跟踪的问题项"
+
+  - name: ABOUT
+    from: IssueItem
+    to: [Component, Claim, Document, SemanticFragment]
+    properties: []
+    note: "🆕 问题项关联的对象（可空）"
+
+  - name: SCHEDULES
+    from: Document
+    to: PlanTask
+    properties: []
+    note: "🆕 计划文件包含的任务"
+
+  - name: DEPENDS_ON
+    from: PlanTask
+    to: PlanTask
+    properties: []
+    note: "🆕 任务的前置依赖"
+
+  - name: USES_RESOURCE
+    from: PlanTask
+    to: Resource
+    properties: [allocation]
+    note: "🆕 任务占用的资源"
+
+# =====================================================================
+# 推理期产生的边（由对齐引擎/检查引擎计算后写入）
+# =====================================================================
+inference_edges:
+
+  - name: CORRESPONDS_TO
+    from: Claim
+    to: Claim
+    properties: [relation, confidence, method, explanation]
+    note: >-
+      两个 Claim 说的是同一件事。relation ∈
+      equal/geq/lt/sub_allocation/condition_mismatch。两端 Claim 不合并！
+
+  - name: CONFLICTS_WITH
+    from: [Claim, Identifier]
+    to: [Claim, Identifier]
+    properties: [reason, severity, check_type]
+    note: 检出的冲突（系统最终输出）
+
+  - name: POTENTIALLY_CONFLICTS
+    from: SemanticFragment
+    to: [Claim, SemanticFragment]
+    properties: [conflict_type, explanation, severity, confidence]
+    note: LLM 判定的潜在逻辑矛盾（语义级检查输出）

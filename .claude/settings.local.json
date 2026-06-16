@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($tempDir = \"$env:TEMP\\\\superpowers-install\"; Get-ChildItem \"$tempDir\\\\hooks\" -ErrorAction SilentlyContinue | Select-Object Name; Get-Content \"$tempDir\\\\CLAUDE.md\" -TotalCount 50 -ErrorAction SilentlyContinue)"
+    ]
+  }
+}
