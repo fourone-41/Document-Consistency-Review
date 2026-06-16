@@ -3,6 +3,7 @@ Enhanced version: covers all extraction_edges types + rule-based implicit edges.
 import json
 import re
 import time
+import yaml
 from pathlib import Path
 from openai import OpenAI
 
@@ -10,43 +11,7 @@ from config import API_KEY, LLM_BASE_URL, LLM_MODEL, PER_FILE_DIR, LLM_MAX_TOKEN
 
 client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL)
 
-EDGE_PROMPT = """你是医疗器械DHF文档一致性审查的关系抽取专家。
-
-以下是从一份文档中抽取的节点信息（JSON）。请尽可能多地识别节点之间的语义关系。
-
-===== 可用关系类型（尽量多找，只要有依据就输出）=====
-
-1. DERIVES_FROM: DesignInput → Requirement（设计输入来源于需求）
-2. CONSTRAINED_BY: Requirement → Regulation（需求受法规约束）
-3. MITIGATED_BY: Risk → RiskControl（风险被措施控制）
-4. VERIFIED_BY: RiskControl/DesignInput → Test（被测试验证）
-5. REPORTED_IN: Test → TestReport（测试结果记录在报告中）
-6. COVERS: DesignInput/Requirement/Function → IntendedUseItem（覆盖预期用途）
-7. HAS_MEASUREMENT: Test → TestMeasurement（测试包含实测数据）
-8. DEPENDS_ON: PlanTask → PlanTask（任务前置依赖）
-9. SCHEDULES: Document → PlanTask（计划文件包含任务）
-10. HAS_REVISION: Document → RevisionRecord（文件的版本历史）
-11. HAS_REVIEW_ITEM: Document/ReviewRecord → ReviewItem（评审包含检查项）
-12. REVIEWS: ReviewItem → Requirement/DesignInput/Document（检查项评审对象）
-13. LISTS_FILE: Document → DocIndexEntry（清单包含文件条目）
-14. DESCRIBES_SOFTWARE: Document → SoftwareItem/SoftwareConfigItem
-15. SIGNED: Person → Document/ReviewRecord（人员签署文件，role=编写人/审批人/评审员）
-16. IMPLEMENTED_IN: Function → Document（功能在文件中实现）
-17. HAS_DETAIL: 任意节点 → SemanticFragment（结构化节点的补充文本）
-18. RESPONSIBLE_FOR: Person → PlanTask（人员负责该任务）
-19. PRODUCES: PlanTask → Document/Identifier（任务产出文件）
-
-===== 输出格式 =====
-JSON数组：
-[{"type": "关系类型", "from": "起点标识", "to": "终点标识", "properties": {}}]
-
-===== 规则 =====
-1. from/to 用节点的 id、name、seq、test_id、req_id 等唯一标识
-2. 尽量多找关系！不确定的也可以输出，我们宁可多找一些
-3. 同一对节点可以有多条不同类型的边
-4. 没有关系则输出 []
-5. 严格输出 JSON，不要加 markdown 标记
-"""
+RELATION_GROUPS_PATH = Path(__file__).parent.parent / "schema" / "relation_groups.yaml"
 
 ALL_RELATION_TYPES = [
     "DERIVES_FROM", "CONSTRAINED_BY", "MITIGATED_BY", "VERIFIED_BY",
@@ -88,17 +53,22 @@ RELATION_TYPE_DETECTION_PROMPT = """你是医疗器械DHF文档一致性审查�
 """
 
 
-def detect_relation_types_llm(data: dict) -> list[str]:
-    """Step2a: 判断文档中可能存在哪些关系类型（AutoRE 任务1，低成本过滤）。"""
+def build_node_summary(data: dict, max_items: int) -> dict:
+    """从节点数据构建摘要：跳过 _ 开头的元数据字段，列表截断到 max_items 项，字典原样保留。"""
     node_summary = {}
     for key, val in data.items():
         if key.startswith("_"):
             continue
         if isinstance(val, list) and val:
-            node_summary[key] = val[:10]
+            node_summary[key] = val[:max_items]
         elif isinstance(val, dict):
             node_summary[key] = val
+    return node_summary
 
+
+def detect_relation_types_llm(data: dict) -> list[str]:
+    """Step2a: 判断文档中可能存在哪些关系类型（AutoRE 任务1，低成本过滤）。"""
+    node_summary = build_node_summary(data, max_items=10)
     if not node_summary:
         return []
 
@@ -146,15 +116,7 @@ def match_within_group(data: dict, group_name: str, candidate_types: list[str]) 
     if not candidate_types:
         return []
 
-    node_summary = {}
-    for key, val in data.items():
-        if key.startswith("_"):
-            continue
-        if isinstance(val, list) and val:
-            node_summary[key] = val[:25]
-        elif isinstance(val, dict):
-            node_summary[key] = val
-
+    node_summary = build_node_summary(data, max_items=25)
     if not node_summary:
         return []
 
@@ -181,6 +143,31 @@ def match_within_group(data: dict, group_name: str, candidate_types: list[str]) 
     except Exception as e:
         print(f"    match_within_group ERROR ({group_name}): {e}", flush=True)
         return []
+
+
+def load_relation_groups() -> dict:
+    """加载 schema/relation_groups.yaml 中的关系类型分组定义。"""
+    with open(RELATION_GROUPS_PATH, encoding="utf-8") as f:
+        data = yaml.safe_load(f)
+    return data["relation_groups"]
+
+
+def extract_edges_llm_v2(data: dict, relation_groups: dict) -> list[dict]:
+    """两阶段关系抽取：Step2a 检测候选类型，Step2b 按组精细配对。"""
+    detected_types = detect_relation_types_llm(data)
+    if not detected_types:
+        return []
+
+    detected_set = set(detected_types)
+    all_edges = []
+    for group_name, group_types in relation_groups.items():
+        candidate_types = [t for t in group_types if t in detected_set]
+        if not candidate_types:
+            continue
+        edges = match_within_group(data, group_name, candidate_types)
+        all_edges.extend(edges)
+
+    return all_edges
 
 
 def try_parse_json(text: str) -> list | dict:
@@ -282,43 +269,6 @@ def derive_rule_based_edges(data: dict) -> list[dict]:
     return edges
 
 
-def extract_edges_llm(data: dict) -> list[dict]:
-    """Use LLM to find semantic edges that rules can't catch."""
-    node_summary = {}
-    for key, val in data.items():
-        if key.startswith("_"):
-            continue
-        if isinstance(val, list) and val:
-            node_summary[key] = val[:25]
-        elif isinstance(val, dict):
-            node_summary[key] = val
-
-    if not node_summary:
-        return []
-
-    user_msg = json.dumps(node_summary, ensure_ascii=False, indent=1)
-    if len(user_msg) > 14000:
-        user_msg = user_msg[:14000] + "\n...(truncated)"
-
-    try:
-        response = client.chat.completions.create(
-            model=LLM_MODEL,
-            max_tokens=LLM_MAX_TOKENS,
-            messages=[
-                {"role": "system", "content": EDGE_PROMPT},
-                {"role": "user", "content": user_msg},
-            ],
-        )
-        content = response.choices[0].message.content or "[]"
-        edges = try_parse_json(content)
-        if isinstance(edges, list):
-            return edges
-        return []
-    except Exception as e:
-        print(f"    LLM ERROR: {e}", flush=True)
-        return []
-
-
 def deduplicate_edges(edges: list[dict]) -> list[dict]:
     """Remove duplicate edges."""
     seen = set()
@@ -336,6 +286,7 @@ def main():
     print(f"=== Step 2: Extract Edges (Enhanced) ===", flush=True)
     print(f"Processing {len(json_files)} files\n", flush=True)
 
+    relation_groups = load_relation_groups()
     total_start = time.time()
 
     for i, fp in enumerate(json_files, 1):
@@ -348,9 +299,9 @@ def main():
         rule_edges = derive_rule_based_edges(data)
         print(f"    rule-based: {len(rule_edges)} edges", flush=True)
 
-        # LLM-based edges
+        # LLM-based edges (two-stage: AutoRE detection + HCRE grouped matching)
         print(f"    LLM extraction...", end="", flush=True)
-        llm_edges = extract_edges_llm(data)
+        llm_edges = extract_edges_llm_v2(data, relation_groups)
         elapsed = time.time() - t0
         print(f" {len(llm_edges)} edges ({elapsed:.1f}s)", flush=True)
 
