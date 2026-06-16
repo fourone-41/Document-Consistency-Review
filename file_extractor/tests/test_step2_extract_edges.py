@@ -17,6 +17,41 @@ def _mock_llm_response(content: str):
     return mock_response
 
 
+def test_try_parse_json_handles_plain_json():
+    result = s2.try_parse_json('[{"type": "SIGNED", "from": "a", "to": "b", "properties": {}}]')
+
+    assert result == [{"type": "SIGNED", "from": "a", "to": "b", "properties": {}}]
+
+
+def test_try_parse_json_handles_code_block_at_start():
+    text = '```json\n[{"type": "SIGNED", "from": "a", "to": "b", "properties": {}}]\n```'
+
+    result = s2.try_parse_json(text)
+
+    assert result == [{"type": "SIGNED", "from": "a", "to": "b", "properties": {}}]
+
+
+def test_try_parse_json_handles_prose_before_embedded_code_block():
+    # LLM 有时会先写一段分析说明，再把 JSON 放进代码块里，而不是严格只输出 JSON
+    text = (
+        '根据节点信息分析如下：\n'
+        '主要关系是 A 受 B 约束。\n\n'
+        '```json\n'
+        '[{"type": "CONSTRAINED_BY", "from": "PERF-01", "to": "ISO 80601-2-56", "properties": {}}]\n'
+        '```'
+    )
+
+    result = s2.try_parse_json(text)
+
+    assert result == [{"type": "CONSTRAINED_BY", "from": "PERF-01", "to": "ISO 80601-2-56", "properties": {}}]
+
+
+def test_try_parse_json_returns_empty_list_when_truly_unparseable():
+    result = s2.try_parse_json("这是一段完全无法解析成 JSON 的纯文本说明，没有任何代码块。")
+
+    assert result == []
+
+
 @patch("step2_extract_edges.client.chat.completions.create")
 def test_detect_relation_types_llm_parses_multiple_types(mock_create):
     mock_create.return_value = _mock_llm_response("MITIGATED_BY\nSIGNED\nHAS_DETAIL")

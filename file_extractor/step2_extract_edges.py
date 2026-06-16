@@ -184,6 +184,15 @@ def try_parse_json(text: str) -> list | dict:
                 return json.loads(text + suffix)
             except json.JSONDecodeError:
                 continue
+        # LLM 有时会先写一段说明文字，再把 JSON 放进代码块里（不是严格只输出 JSON）。
+        # 上面的 startswith("```") 分支只处理"整段响应就是代码块"的情况，这里兜底
+        # 处理"代码块嵌在文本中间/末尾"的情况，避免整条响应被静默丢弃。
+        match = re.search(r'```(?:json)?\s*\n?(.*?)\n?```', text, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group(1).strip())
+            except json.JSONDecodeError:
+                pass
     return []
 
 
