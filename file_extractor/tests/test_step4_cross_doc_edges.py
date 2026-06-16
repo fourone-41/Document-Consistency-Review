@@ -85,3 +85,27 @@ def test_llm_match_batch_no_warning_when_standard_has_clause_data(mock_create, c
 
     captured = capsys.readouterr()
     assert "No clause summary found" not in captured.out
+
+
+@patch("step4_cross_doc_edges.client.chat.completions.create")
+def test_verify_candidates_open_llm_parses_known_and_new_relations(mock_create):
+    mock_create.return_value = _mock_llm_response(
+        "1. VERIFIED_BY\n2. 无关系\n3. 新关系：COMPONENT_OF"
+    )
+    candidates = [
+        ({"control_id": "CM-01", "measure": "校准补偿"}, {"test_id": "T-12", "item": "线性度验证"}, "graph_pattern"),
+        ({"control_id": "CM-02", "measure": "无关措施"}, {"test_id": "T-15", "item": "电池续航"}, "embedding"),
+        ({"name": "下盖"}, {"name": "主机壳体"}, "bridge"),
+    ]
+
+    result = s4.verify_candidates_open_llm(candidates)
+
+    assert result[0]["type"] == "VERIFIED_BY"
+    assert result[0]["discovery_layer"] == "graph_pattern"
+    assert len(result) == 2  # 第2条"无关系"被过滤
+    assert result[1]["type"] == "COMPONENT_OF"
+    assert result[1]["discovery_layer"] == "bridge"
+
+
+def test_verify_candidates_open_llm_empty_candidates_returns_empty():
+    assert s4.verify_candidates_open_llm([]) == []

@@ -591,6 +591,84 @@ def _llm_match_batch(src_batch, tgt_batch, source_items, target_items, guide, sr
         return []
 
 
+OPEN_VERIFY_BATCH_SIZE = 20
+
+
+def verify_candidates_open_llm(candidates: list[tuple]) -> list[dict]:
+    """对层②③④产出的候选对做开放式 LLM 验证。
+
+    candidates: [(node_a, node_b, discovery_layer), ...]
+    未命中已知规则的候选，允许 LLM 直接给出"新关系：XXX"，不强制套用预定义类型。
+    返回 [{"from": node_a, "to": node_b, "type": ..., "discovery_layer": ...}, ...]
+    """
+    if not candidates:
+        return []
+
+    all_results = []
+    for i in range(0, len(candidates), OPEN_VERIFY_BATCH_SIZE):
+        batch = candidates[i:i + OPEN_VERIFY_BATCH_SIZE]
+        all_results.extend(_verify_batch_open_llm(batch))
+    return all_results
+
+
+def _verify_batch_open_llm(batch: list[tuple]) -> list[dict]:
+    prompt = """你是医疗器械文档关系分析专家。
+
+以下每一对节点是候选关系对，请判断它们之间是否存在关系：
+- 如果存在已知关系类型（如 VERIFIED_BY、MITIGATED_BY、COVERS 等），直接输出该类型
+- 如果存在关系但不属于已知类型，输出"新关系：你认为合适的类型名"
+- 如果没有关系，输出"无关系"
+
+按顺序逐条判断，格式：编号. 判断结果
+
+"""
+    for idx, (node_a, node_b, _layer) in enumerate(batch):
+        desc_a = node_a.get("description") or node_a.get("measure") or node_a.get("item") or node_a.get("hazard") or node_a.get("name") or str(node_a)[:60]
+        desc_b = node_b.get("description") or node_b.get("measure") or node_b.get("item") or node_b.get("hazard") or node_b.get("name") or str(node_b)[:60]
+        prompt += f"{idx + 1}. [{desc_a[:80]}] <-> [{desc_b[:80]}]\n"
+
+    try:
+        response = client.chat.completions.create(
+            model=LLM_MODEL,
+            max_tokens=1000,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        content = response.choices[0].message.content or ""
+    except Exception as e:
+        print(f"    verify_candidates_open_llm ERROR: {e}", flush=True)
+        return []
+
+    results = []
+    for line in content.strip().split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        m = re.match(r'(\d+)\.\s*(.+)', line)
+        if not m:
+            continue
+        idx = int(m.group(1)) - 1
+        verdict = m.group(2).strip()
+        if idx < 0 or idx >= len(batch):
+            continue
+        if "无关系" in verdict:
+            continue
+        node_a, node_b, layer = batch[idx]
+        if "新关系" in verdict:
+            rel_type = verdict.split("：", 1)[-1].split(":", 1)[-1].strip()
+        else:
+            rel_type = verdict
+        if not rel_type:
+            continue
+        results.append({
+            "from": node_a,
+            "to": node_b,
+            "type": rel_type,
+            "discovery_layer": layer,
+        })
+
+    return results
+
+
 def run_guide(guide, nodes):
     """Execute one regulatory guide's matching."""
     src_type = guide["source_type"]
