@@ -123,6 +123,66 @@ def detect_relation_types_llm(data: dict) -> list[str]:
         return []
 
 
+GROUP_MATCH_PROMPT_TEMPLATE = """你是医疗器械DHF文档一致性审查的关系抽取专家。
+
+以下是从一份文档中抽取的节点信息（JSON）。本次只需要在下面这些候选关系类型中判断：
+{candidate_types}
+
+===== 输出格式 =====
+JSON数组：
+[{{"type": "关系类型", "from": "起点标识", "to": "终点标识", "properties": {{}}}}]
+
+===== 规则 =====
+1. from/to 用节点的 id、name、seq、test_id、req_id 等唯一标识
+2. 只能输出上面列出的候选关系类型，不要输出列表外的类型
+3. 同一对节点可以有多条不同类型的边
+4. 没有关系则输出 []
+5. 严格输出 JSON，不要加 markdown 标记
+"""
+
+
+def match_within_group(data: dict, group_name: str, candidate_types: list[str]) -> list[dict]:
+    """Step2b: 在某个关系大类的候选类型范围内做实体配对（HCRE 思路：组内细分类型判断）。"""
+    if not candidate_types:
+        return []
+
+    node_summary = {}
+    for key, val in data.items():
+        if key.startswith("_"):
+            continue
+        if isinstance(val, list) and val:
+            node_summary[key] = val[:25]
+        elif isinstance(val, dict):
+            node_summary[key] = val
+
+    if not node_summary:
+        return []
+
+    user_msg = json.dumps(node_summary, ensure_ascii=False, indent=1)
+    if len(user_msg) > 14000:
+        user_msg = user_msg[:14000] + "\n...(truncated)"
+
+    prompt = GROUP_MATCH_PROMPT_TEMPLATE.format(candidate_types=", ".join(candidate_types))
+
+    try:
+        response = client.chat.completions.create(
+            model=LLM_MODEL,
+            max_tokens=LLM_MAX_TOKENS,
+            messages=[
+                {"role": "system", "content": prompt},
+                {"role": "user", "content": user_msg},
+            ],
+        )
+        content = response.choices[0].message.content or "[]"
+        edges = try_parse_json(content)
+        if not isinstance(edges, list):
+            return []
+        return [e for e in edges if e.get("type") in candidate_types]
+    except Exception as e:
+        print(f"    match_within_group ERROR ({group_name}): {e}", flush=True)
+        return []
+
+
 def try_parse_json(text: str) -> list | dict:
     text = text.strip()
     if text.startswith("```"):
