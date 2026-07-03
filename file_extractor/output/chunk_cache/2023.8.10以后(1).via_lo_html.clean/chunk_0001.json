@@ -1,0 +1,195 @@
+{
+  "document": {
+    "title": "PT9L 免于试产评估记录",
+    "date": "2023-08-10",
+    "doc_type": "免于试产评估记录"
+  },
+  "products": [
+    {
+      "name": "PT9L",
+      "type": "红外体温计",
+      "role": "待评估机型",
+      "description": "PT9L 红外体温计是一款采用红外测温传感器采集温度信息，快速测量体温的产品。"
+    },
+    {
+      "name": "T-Z1",
+      "type": "红外体温计",
+      "role": "对比机型",
+      "description": "T-Z1 红外体温计是一款采用红外测温传感器采集温度信息，快速测量体温的产品。"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "product": "PT9L",
+      "description": "采用红外测温传感器采集温度信息，快速测量体温。"
+    },
+    {
+      "product": "T-Z1",
+      "description": "采用红外测温传感器采集温度信息，快速测量体温。"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "对比评估项",
+      "items": [
+        {
+          "item": "预期用途",
+          "reference_model": "T-Z1 红外体温计是一款采用红外测温传感器采集温度信息，快速测量体温的产品。",
+          "evaluation_model": "PT9L 红外体温计是一款采用红外测温传感器采集温度信息，快速测量体温的产品。",
+          "conclusion": "相同"
+        },
+        {
+          "item": "检验标准",
+          "reference_model": "通用部分+功能部分+组件规格",
+          "evaluation_model": "通用部分+功能部分+组件规格",
+          "conclusion": "相同"
+        },
+        {
+          "item": "PCBA加工过程",
+          "reference_model": "SMT+插件焊接",
+          "evaluation_model": "SMT+插件焊接",
+          "conclusion": "相同"
+        },
+        {
+          "item": "程序写入方式",
+          "reference_model": "烧写器",
+          "evaluation_model": "烧写器",
+          "conclusion": "相同"
+        },
+        {
+          "item": "生产工装",
+          "reference_model": "机芯烧写+机芯检测",
+          "evaluation_model": "机芯烧写+机芯检测",
+          "conclusion": "相同"
+        },
+        {
+          "item": "机芯测试",
+          "reference_model": "按键+LCD+电压检测",
+          "evaluation_model": "按键+LCD+电压检测",
+          "conclusion": "相同"
+        },
+        {
+          "item": "标定",
+          "reference_model": "常温标定+低温标定",
+          "evaluation_model": "常温标定+低温标定",
+          "conclusion": "相同"
+        },
+        {
+          "item": "性能复测",
+          "reference_model": "复测3个温度点（33℃，37℃，41℃）",
+          "evaluation_model": "复测3个温度点（33℃，37℃，41℃）",
+          "conclusion": "相同"
+        },
+        {
+          "item": "标签组装方式",
+          "reference_model": "贴签",
+          "evaluation_model": "贴签",
+          "conclusion": "相同"
+        },
+        {
+          "item": "主要器件组装方式",
+          "reference_model": "焊接+螺钉",
+          "evaluation_model": "焊接+螺钉",
+          "conclusion": "相同"
+        },
+        {
+          "item": "包装过程",
+          "reference_model": "彩盒+外包装箱",
+          "evaluation_model": "彩盒+外包装箱",
+          "conclusion": "相同"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "name": "机芯测试",
+      "items": [
+        "按键",
+        "LCD",
+        "电压检测"
+      ],
+      "applicable_products": [
+        "PT9L",
+        "T-Z1"
+      ]
+    },
+    {
+      "name": "标定",
+      "items": [
+        "常温标定",
+        "低温标定"
+      ],
+      "applicable_products": [
+        "PT9L",
+        "T-Z1"
+      ]
+    },
+    {
+      "name": "性能复测",
+      "items": [
+        "33℃温度点",
+        "37℃温度点",
+        "41℃温度点"
+      ],
+      "applicable_products": [
+        "PT9L",
+        "T-Z1"
+      ]
+    }
+  ],
+  "review_items": [
+    {
+      "type": "免于试产评估",
+      "subject": "PT9L",
+      "reference": "T-Z1",
+      "overall_conclusion": "本机型与对比机型在预期用途、生产工艺、检验标准上基本一致，可以免于试产。",
+      "reviewer": "评审人（待填写）"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "依据以上对比情况，本机型与对比机型在预期用途、生产工艺、检验标准上基本一致，可以免于试产。需要进行相关DMR文件转换，但与对比机型比较，不会产生新的风险。鉴于对比机型的验证、试产、确认过程，本机型的确认过程可采用验证阶段样机，其制造过程可视为与试产过程一致。",
+      "topic_tags": [
+        "免于试产",
+        "DMR文件转换",
+        "风险评估",
+        "确认过程",
+        "验证阶段样机"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "T-Z1",
+        "免于试产评估记录"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "需要进行相关DMR文件转换，但与对比机型比较，不会产生新的风险。",
+      "topic_tags": [
+        "DMR文件转换",
+        "风险",
+        "对比机型"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "T-Z1"
+      ]
+    },
+    {
+      "fragment_type": "assumption",
+      "content": "鉴于对比机型的验证、试产、确认过程，本机型的确认过程可采用验证阶段样机，其制造过程可视为与试产过程一致。",
+      "topic_tags": [
+        "确认过程",
+        "验证阶段样机",
+        "试产",
+        "制造过程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "T-Z1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "document": {
+    "title": "软件测试报告",
+    "doc_type": "检测报告/测试报告"
+  },
+  "tests": [
+    {
+      "test_id": "io_init_P1_P1",
+      "item": "void io_init(void) - 端口1 端口寄存器P1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x70",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P1_PU1",
+      "item": "void io_init(void) - 端口1 上拉电阻选择寄存器PU1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P1_PM1",
+      "item": "void io_init(void) - 端口1 端口模式寄存器PM1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x2C",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P1_PF1",
+      "item": "void io_init(void) - 端口1 端口功能寄存器PF1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_PF2",
+      "item": "void io_init(void) - 端口2 端口功能寄存器PF2",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_P2",
+      "item": "void io_init(void) - 端口2 端口寄存器P2",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x20",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_PM2",
+      "item": "void io_init(void) - 端口2 端口模式寄存器PM2",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xF9",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_ADPC0",
+      "item": "void io_init(void) - 端口2 AD端口配置寄存器ADPC0",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x06",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P3_P3",
+      "item": "void io_init(void) - 端口3 端口寄存器P3",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x08",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P3_PU3",
+      "item": "void io_init(void) - 端口3 上拉电阻选择寄存器PU3",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P3_PM3",
+      "item": "void io_init(void) - 端口3 端口模式寄存器PM3",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xE9",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P4_P4",
+      "item": "void io_init(void) - 端口4 端口寄存器P4",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xC0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P4_PU4",
+      "item": "void io_init(void) - 端口4 上拉电阻选择寄存器PU4",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P4_PM4",
+      "item": "void io_init(void) - 端口4 端口模式寄存器PM4",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xC2",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_SCK10",
+      "item": "void io_init(void) - 其他端口 串行时钟选择寄存器10",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_SOM10",
+      "item": "void io_init(void) - 其他端口 串行操作模式寄存器10",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_PM12",
+      "item": "void io_init(void) - 其他端口 端口模式寄存器PM12",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xFE",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_PFALL",
+      "item": "void io_init(void) - 其他端口 端口功能寄存器PFALL",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x7F",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_P1",
+      "item": "void stop_io_set(void) - 端口1 端口寄存器P1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x60",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_PU1",
+      "item": "void stop_io_set(void) - 端口1 上拉电阻选择寄存器PU1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_PM1",
+      "item": "void stop_io_set(void) - 端口1 端口模式寄存器PM1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x2C",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_PF1",
+      "item": "void stop_io_set(void) - 端口1 端口功能寄存器PF1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_PF2",
+      "item": "void stop_io_set(void) - 端口2 端口功能寄存器PF2",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_P2",
+      "item": "void stop_io_set(void) - 端口2 端口寄存器P2",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x35",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_PM2",
+      "item": "void stop_io_set(void) - 端口2 端口模式寄存器PM2",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x79",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_ADPC0",
+      "item": "void stop_io_set(void) - 端口2 AD端口配置寄存器ADPC0",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x06",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P3_P3",
+      "item": "void stop_io_set(void) - 端口3 端口寄存器P3",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x11",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P3_PU3",
+      "item": "void stop_io_set(void) - 端口3 上拉电阻选择寄存器PU3",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P3_PM3",
+      "item": "void stop_io_set(void) - 端口3 端口模式寄存器PM3",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xE9",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P4_P4",
+      "item": "void stop_io_set(void) - 端口4 端口寄存器P4",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xC0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P4_PU4",
+      "item": "void stop_io_set(void) - 端口4 上拉电阻选择寄存器PU4",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P4_PM4",
+      "item": "void stop_io_set(void) - 端口4 端口模式寄存器PM4",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xC0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_SCK10",
+      "item": "void stop_io_set(void) - 其他端口 串行时钟选择寄存器10",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_SOM10",
+      "item": "void stop_io_set(void) - 其他端口 串行操作模式寄存器10",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_PM12",
+      "item": "void stop_io_set(void) - 其他端口 端口模式寄存器PM12",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xFE",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_PFALL",
+      "item": "void stop_io_set(void) - 其他端口 端口功能寄存器PFALL",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x7F",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "BufCmp_case1",
+      "item": "unsigned char BufCmp(unsigned int r0,unsigned int r1,unsigned char y) - 比较大小并返回不同的值",
+      "condition": "r0=0x03; r1=0x04; y=0x03",
+      "expected_value": "返回1",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "BufCmp_case2",
+      "item": "unsigned char BufCmp(unsigned int r0,unsigned int r1,unsigned char y) - 比较大小并返回不同的值",
+      "condition": "r0=0x05; r1=0x04; y=0x01",
+      "expected_value": "返回0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "BufCmp_case3",
+      "item": "unsigned char BufCmp(unsigned int r0,unsigned int r1,unsigned char y) - 比较大小并返回不同的值",
+      "condition": "r0=0x04; r1=0x01; y=0x02",
+      "expected_value": "返回3",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case1",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=0x00",
+      "expected_value": "2595",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case2",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=2000",
+      "expected_value": "2512",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case3",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=1000",
+      "expected_value": "1639",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case4",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=3600",
+      "expected_value": "4028",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Rising_Edge_case1",
+      "item": "unsigned char Find_Rising_Edage - 检测上升沿",
+      "condition": "Buffer[]={1002,1006,1009,1025,1018,1028,1025,1020,...}; optr=5; y=4",
+      "expected_value": "0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Rising_Edge_case2",
+      "item": "unsigned char Find_Rising_Edage - 检测上升沿",
+      "condition": "Buffer[]={1002,1016,1009,1012,1018,1028,1025,1030,...}; Optr=5; y=4",
+      "expected_value": "1",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Peak_case1",
+      "item": "unsigned char Find_Peak - 搜索每一次心跳的最大峰值点",
+      "condition": "Buffer[]={1001,...,1023,...,1005}; Optr=5; y=1; count=10; count1=9; peakp=1005",
+      "expected_value": "Count1=10; peakp=1006; 返回0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Peak_case2",
+      "item": "unsigned char Find_Peak - 搜索每一次心跳的最大峰值点",
+      "condition": "Buffer[]={1001,...,1023,...,1005}; Optr=28; y=1; count=18; count1=12; peakp=1023",
+      "expected_value": "Count1=12; peakp=1023; 返回1",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Detect_Max_Peak_case1",
+      "item": "unsigned char Detect_Max_Peak - 寻找最大的幅值点",
+      "condition": "Bpdata的心跳强度分别为02,06,09,12,18,28,25,20; bpptr=7",
+      "expected_value": "Maxvp=4",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Enoise_case1",
+      "item": "unsigned char Enoise - 数据抗干扰",
+      "condition": "Bpdata的心跳强度分别为02,06,09,12,18,25,25,20; bpptr=7",
+      "expected_value": "bpptr=7，不剔出",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Enoise_case2",
+      "item": "unsigned char Enoise - 数据抗干扰",
+      "condition": "Bpdata的心跳强度分别为02,06,09,12,18,34,25,20; bpptr=7",
+      "expected_value": "bpptr=6，剔出bpptr-1点（34）",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "i2_write3to_case1",
+      "item": "void i2_write3to - 将数据写入eeprom三个单元",
+      "condition": "a=0x55; wraddr=0x001f; BANK3_offset=16",
+      "expected_value": "能够将0x55写入0x001f、0x002f、0x003f三个单元",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "i2_read3fr_case1",
+      "item": "unsigned char i2_read3fr - 从eeprom三个单元读取数据",
+      "condition": "rdaddr=0x001f、0x002f、0x003f（都已经存储了数据0x55）",
+      "expected_value": "返回0x55",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "waitdata_case1",
+      "item": "void waitdata(void) - 加载数据到BUFDATA",
+      "condition": "执行程序前Iptr=3; optr=3",
+      "expected_value": "Iptr=4; optr=3",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "waitdata_case2",
+      "item": "void waitdata(void) - 产生20ms定时",
+      "condition": "循环执行，使用端口反转方法测试定时",
+      "expected_value": "端口20ms反转一次电平状态",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "WaitForAck_case1",
+      "item": "void WaitForAck(void) - 等待接收方回复Ack",
+      "condition": "发送加压过慢错误提示数据时等待ACK，0.5S内上位机回复ACK，用串口检测血压计发送数据",
+      "expected_value": "串口发送加压过慢数据：A0 07 00 7E A1 38 04 00 00 5B，不重发",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "WaitForAck_case2",
+      "item": "void WaitForAck(void) - 等待接收方回复Ack超时处理",
+      "condition": "发送加压过慢错误提示数据时等待ACK，上位机不回复ACK",
+      "expected_value": "用串口侦测到的数据为 A0 07 00 7E A1 38 04 00 00 5B 以0.5s重发三次；run_mode=MODE_erC",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Andon_Base_Protocol_Manager_case1",
+      "item": "void Andon_Base_Protocol_Manager(void) - 基础通讯协议公共命令分析",
+      "condition": "运行程序，连接蓝牙，上位机询问下位机功能信息：0xB0,0x0A,0x00,0x17,0xA1,0x21,0x0F,0x06,0x11,0x0E,0x02,0x0E,0x1D，通过串口检测单片机回复信息",
+      "expected_value": "下位机发送回复：0xA0,0x0F,0x00,0x18,0xA1,0x21,0x55,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x32",
+      "pass_criteria": "实测值与预期值完全符合"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "系统测试设计：控制方式为人工输入，测试各个不同的输入引起的不同的输出。测试输入参见附录二、附件三表格中\"测试输入\"一栏；测试输出参见附录二、附件三表格中\"测试输出\"一栏；测试过程参见附录二、附件三表格中\"测试方法\"一栏。",
+      "topic_tags": [
+        "系统测试",
+        "人工输入",
+        "测试设计"
+      ],
+      "related_subjects": [
+        "附录二",
+        "附件三"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评价准则：测试结果应完全符合\"预期值\"栏或\"测试输出\"中对测试结果的描述。",
+      "topic_tags": [
+        "评价准则",
+        "通过准则",
+        "预期值"
+      ],
+      "related_subjects": [
+        "所有测试项目"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "unsigned int set_maxpre(unsigned int p_pre) 函数逻辑：设定压力平台，根据函数参数确定加压的压力高度，并返回4096格式的压力平台值。返回值=p_pre+512；如果p_pre+512>=4028，则返回4028；如果p_pre+512<=1639，则返回1639。",
+      "topic_tags": [
+        "压力平台",
+        "set_maxpre",
+        "边界条件",
+        "子程序"
+      ],
+      "related_subjects": [
+        "set_maxpre测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "unsigned char Enoise(struct Pdata *bpdata, unsigned char bpptr)：将bpptr-1、bpptr-2、bpptr-3三点进行运算分析，如果满足剔出条件，将bpptr-2点剔出，且bpptr--。用于数据抗干扰处理。",
+      "topic_tags": [
+        "抗干扰",
+        "Enoise",
+        "峰值剔除",
+        "子程序"
+      ],
+      "related_subjects": [
+        "Enoise测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "void WaitForAck(void)：等待接收方回复Ack，若超时未回复，改变run_mode退出。超时时间为0.5s，最多重发三次，超时后run_mode=MODE_erC。",
+      "topic_tags": [
+        "WaitForAck",
+        "通信协议",
+        "超时处理",
+        "ACK",
+        "重发"
+      ],
+      "related_subjects": [
+        "WaitForAck测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "void i2_write3to(unsigned char a, unsigned int wraddr)：将数据a写入eeprom的wraddr、wraddr+BANK3_offset、wraddr+2*BANK3_offset三个单元，实现三备份写入。",
+      "topic_tags": [
+        "EEPROM",
+        "i2_write3to",
+        "三备份写入",
+        "子程序"
+      ],
+      "related_subjects": [
+        "i2_write3to测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "unsigned char i2_read3fr(unsigned int rdaddr)：从eeprom的rdaddr、rdaddr+BANK3_offset、rdaddr+2*BANK3_offset三个单元读取数据，并返回。实现三备份读取。",
+      "topic_tags": [
+        "EEPROM",
+        "i2_read3fr",
+        "三备份读取",
+        "子程序"
+      ],
+      "related_subjects": [
+        "i2_read3fr测试项"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "tests": [
+    {
+      "test_id": "BufCmp_01",
+      "item": "BufCmp: r0=0x01, r1=0x04, y=0x03，返回0",
+      "expected_value": "返回0",
+      "actual_result": "返回0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BufCmp_02",
+      "item": "BufCmp: r0=0x01, r1=0x04, y=0x04，返回1",
+      "expected_value": "返回1",
+      "actual_result": "返回1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BufCmp_03",
+      "item": "BufCmp: r0=0x01, r1=0x04, y=0x02，返回3",
+      "expected_value": "返回3",
+      "actual_result": "返回3",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_01",
+      "item": "set_maxpre: p_pre=0x00",
+      "expected_value": "2595",
+      "actual_result": "2595",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_02",
+      "item": "set_maxpre: p_pre=2000",
+      "expected_value": "2512",
+      "actual_result": "2512",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_03",
+      "item": "set_maxpre: p_pre=1500",
+      "expected_value": "1639",
+      "actual_result": "1639",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_04",
+      "item": "set_maxpre: p_pre=3600",
+      "expected_value": "4028",
+      "actual_result": "4028",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Rising_Edage_01",
+      "item": "Find_Rising_Edage: Buffer指定数据，Optr=5，y=4",
+      "expected_value": "0",
+      "actual_result": "0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Rising_Edage_02",
+      "item": "Find_Rising_Edage: Buffer指定数据，Optr=5，y=4（上升沿）",
+      "expected_value": "1",
+      "actual_result": "1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Peak_01",
+      "item": "Find_Peak: Buffer指定数据，Optr=5，y=1，count=10，count1=9，peakp=1005",
+      "expected_value": "Count1=10; peakp=1006; 返回0",
+      "actual_result": "Count1=10; peakp=1006; 返回0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Peak_02",
+      "item": "Find_Peak: Buffer指定数据，Optr=28，y=1，count=18，count1=12，peakp=1023",
+      "expected_value": "Count1=12; peakp=1023; 返回1",
+      "actual_result": "Count1=12; peakp=1023; 返回1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Detect_Max_Peak_01",
+      "item": "Detect_Max_Peak: Bpdata心跳强度02,06,09,12,18,28,25,20；bpptr=7",
+      "expected_value": "Maxvp=25",
+      "actual_result": "Maxvp=25",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Enoise_01",
+      "item": "Enoise: Bpdata心跳强度02,06,09,12,18,25,25,20；bpptr=7",
+      "expected_value": "bpptr=7，不剔出",
+      "actual_result": "bpptr=7，不剔出",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Enoise_02",
+      "item": "Enoise: Bpdata心跳强度02,06,09,12,18,34,25,20；bpptr=7",
+      "expected_value": "bpptr=6，剔出bpptr-1点（34）",
+      "actual_result": "bpptr=6，剔出bpptr-1点（34）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Temperature_Test_01",
+      "item": "Temperature_Test: 运行函数，读取温度值",
+      "expected_value": "能读取到温度值，且与室温相差不超过2度",
+      "actual_result": "能读取到温度值，且与室温相差不超过2度（室温23度，读取温度22度）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Temperature_Test_02",
+      "item": "Temperature_Test: 短接温度传输器的SCK和SDA，运行函数",
+      "expected_value": "运行完成后，返回-127",
+      "actual_result": "运行完成后，返回-127",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "calbuf_01",
+      "item": "calbuf: Buffer指定数据，a=7，n=8，计算平均值",
+      "expected_value": "1005",
+      "actual_result": "1005",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "adapt_pre_4096_01",
+      "item": "adapt_pre_4096: Buffer[0]=2283，optr=0，zerohl=1300，spanhl=4023，转换为4096格式",
+      "expected_value": "Buffer[0]=1001；其他数据不变",
+      "actual_result": "Buffer[0]=1001；其他数据不变",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Subabs_01",
+      "item": "BPI_Subabs: temp=200，temp1=300",
+      "expected_value": "100",
+      "actual_result": "100",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Subabs_02",
+      "item": "BPI_Subabs: temp=2000，temp1=1500",
+      "expected_value": "500",
+      "actual_result": "500",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Cal_count_01",
+      "item": "Cal_count: 心跳间隔{45,43,49,45,44,44,44,44,44,45,44,44,45,45,44,46,43,45,44,44}，xt0=20，TAVG=891，计算心率",
+      "expected_value": "67",
+      "actual_result": "67",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Search_Zero_01",
+      "item": "BPI_Search_Zero: cnt20s=1001",
+      "expected_value": "run_mode=MODE_er0",
+      "actual_result": "run_mode=MODE_er0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Search_Zero_02",
+      "item": "BPI_Search_Zero: cnt20s=25",
+      "expected_value": "run_mode=MODE_test",
+      "actual_result": "run_mode=MODE_test",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Systolic_01",
+      "item": "Find_Systolic: Bp队列起始压力及心跳强度指定数据，MAXBPP=1360，MAXBPV=42，计算高压",
+      "expected_value": "108",
+      "actual_result": "108",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Diastolic_01",
+      "item": "Find_Diastolic: Bp队列起始压力及心跳强度指定数据，MAXBPP=1360，MAXBPV=42，计算低压",
+      "expected_value": "75",
+      "actual_result": "75",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT6_DDR6",
+      "item": "端口6 端口方向选择寄存器DDR6",
+      "expected_value": "0x000F",
+      "actual_result": "0x000F",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT6_PDOR6",
+      "item": "端口6 端口输出寄存器PDOR6",
+      "expected_value": "0x0000",
+      "actual_result": "0x0000",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT8_PFR8",
+      "item": "端口8 端口功能寄存器PFR8",
+      "expected_value": "0x0000",
+      "actual_result": "0x0000",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT8_DDR8",
+      "item": "端口8 端口方向选择寄存器DDR8",
+      "expected_value": "0x0003",
+      "actual_result": "0x0003",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT8_PDOR8",
+      "item": "端口8 端口输出寄存器PDOR8",
+      "expected_value": "0x0000",
+      "actual_result": "0x0000",
+      "pass_criteria": "OK"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t BufCmp(uint16_t r0,uint16_t r1)：compare to data in buffer，比较大小并返回不同的值。",
+      "topic_tags": [
+        "BufCmp",
+        "数据比较",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "子程序测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t set_maxpre(uint16_t p_pre)：pressure preset，设定压力平台，根据函数参数，确定加压的压力高度，并返回4096格式的压力平台值。返回值=p_pre+512；如果p_pre+512>=4028，则返回4028；如果p_pre+512<=1639，则返回1639。",
+      "topic_tags": [
+        "set_maxpre",
+        "压力平台",
+        "4096格式",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "压力控制"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Find_Rising_Edage(uint16_t Buffer[], uint16_t tmp_uint, uint8_t Optr, uint8_t y)：detect rising edge，根据optr指定的位置和y确定buffer中的数据是否上升沿。",
+      "topic_tags": [
+        "Find_Rising_Edage",
+        "上升沿检测",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "信号处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Find_Peak(uint16_t buffer[], uint8_t Optr, uint8_t y, uint8_t *count, uint8_t *count1, uint16_t *peakp, volatile uint8_t *PHASE)：detect peak point，搜索每一次心跳的最大峰值点，如果找到则返回1，否则返回0。",
+      "topic_tags": [
+        "Find_Peak",
+        "峰值检测",
+        "心跳",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Detect_Max_Peak(struct Pdata *bpdata, uint8_t maxvp, uint8_t bpptr)：calculate peak value of peak point，在找到每次心跳的幅值后，寻找最大的幅值点。",
+      "topic_tags": [
+        "Detect_Max_Peak",
+        "最大峰值",
+        "心跳幅值",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Enoise(struct Pdata *bpdata, uint8_t bpptr)：data anti disturb，将bpptr-1、bpptr-2、bpptr-3三点进行运算分析，如果满足剔出条件，将bpptr-2点剔出，且bpptr--。",
+      "topic_tags": [
+        "Enoise",
+        "抗干扰",
+        "数据剔除",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "信号处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 int8_t Temperature_Test(void)：读取温度传感器测得的温度值。",
+      "topic_tags": [
+        "Temperature_Test",
+        "温度传感器",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "传感器"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t calbuf(uint8_t data1, uint8_t data2)：Handle the data of buffer，计算buffer中从data1所指向的数据向前的data2个点的平均值。测试说明：输入不同值并验证输出值与手动计算结果一致（C: input different values and verify the output values are same as values calculated manually）。",
+      "topic_tags": [
+        "calbuf",
+        "平均值计算",
+        "buffer处理",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "数据处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void adapt_pre_4096(void)：convert unit，将buffer中optr所指向的数据转为4096格式。",
+      "topic_tags": [
+        "adapt_pre_4096",
+        "单位转换",
+        "4096格式",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "压力数据处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t BPI_Subabs(uint16_t temp, uint16_t temp1)：计算两个数值的绝对值差值。",
+      "topic_tags": [
+        "BPI_Subabs",
+        "绝对值差值",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void Cal_count(void)：calculate heart rate，计算心率。",
+      "topic_tags": [
+        "Cal_count",
+        "心率计算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t BPI_Search_Zero(uint8_t cur_group)：搜索稳定的零点。",
+      "topic_tags": [
+        "BPI_Search_Zero",
+        "零点搜索",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "压力校准"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t Find_Systolic(struct Pdata *bpdata, uint8_t bpptr, uint8_t maxvp)：Calculate Systolic，高压计算。",
+      "topic_tags": [
+        "Find_Systolic",
+        "收缩压",
+        "高压计算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t Find_Diastolic(struct Pdata *bpdata, uint8_t bpptr, uint8_t maxvp)：Calculate Diastolic，计算低压。",
+      "topic_tags": [
+        "Find_Diastolic",
+        "舒张压",
+        "低压计算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Auto_Off(uint32_t time)：自动关机时间判断。测试记录为空，未记录测试项目与结果。",
+      "topic_tags": [
+        "Auto_Off",
+        "自动关机",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试"
+      ]
+    }
+  ]
+}

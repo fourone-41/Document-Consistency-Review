@@ -1,0 +1,132 @@
+{
+  "document": {
+    "title": "目标代码输出确认单",
+    "document_number": "PT9L-MBSC01 V1.0",
+    "form_number": "QR-7.3-11-01/E0",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_type": "红外体温计",
+      "applicable_model": "PT9L",
+      "mcu_model": "BH67F2762",
+      "material_code": "K011000006140590054"
+    }
+  ],
+  "software_items": [
+    {
+      "item_type": "目标代码",
+      "file_name": "PT-HT2762-V0029-1.0.0.MTP",
+      "file_size": "33,201 字节",
+      "checksum": "5133H"
+    },
+    {
+      "item_type": "源代码",
+      "file_name": "PT-HT2762-V0029-1.0.0"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "document_number",
+      "value": "PT9L-MBSC01 V1.0"
+    },
+    {
+      "type": "form_number",
+      "value": "QR-7.3-11-01/E0"
+    },
+    {
+      "type": "material_code",
+      "value": "K011000006140590054"
+    },
+    {
+      "type": "mcu_model",
+      "value": "BH67F2762"
+    },
+    {
+      "type": "software_file_version",
+      "value": "PT-HT2762-V0029-1.0.0"
+    }
+  ],
+  "persons": [
+    {
+      "role": "产品负责人",
+      "signature_required": true
+    },
+    {
+      "role": "部门主管",
+      "signature_required": true
+    },
+    {
+      "role": "接收人",
+      "signature_required": true
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/目标代码输出确认单.via_lo_html.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT9L-MBSC01 V1.0",
+      "to": "PT-HT2762-V0029-1.0.0.MTP",
+      "properties": {
+        "item_type": "目标代码",
+        "file_size": "33,201 字节",
+        "checksum": "5133H"
+      }
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT9L-MBSC01 V1.0",
+      "to": "PT-HT2762-V0029-1.0.0",
+      "properties": {
+        "item_type": "源代码"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-MBSC01 V1.0",
+      "to": "K011000006140590054",
+      "properties": {
+        "detail_type": "material_code",
+        "product_type": "红外体温计",
+        "applicable_model": "PT9L"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-MBSC01 V1.0",
+      "to": "BH67F2762",
+      "properties": {
+        "detail_type": "mcu_model"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-MBSC01 V1.0",
+      "to": "QR-7.3-11-01/E0",
+      "properties": {
+        "detail_type": "form_number"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT-HT2762-V0029-1.0.0.MTP",
+      "to": "5133H",
+      "properties": {
+        "detail_type": "checksum",
+        "file_size": "33,201 字节"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT-HT2762-V0029-1.0.0",
+      "to": "PT-HT2762-V0029-1.0.0",
+      "properties": {
+        "detail_type": "software_file_version"
+      }
+    }
+  ],
+  "_claims": []
+}

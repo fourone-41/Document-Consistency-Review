@@ -1,0 +1,36 @@
+agent_id: software
+display_name: Software Agent
+node_name: software_agent
+role: Software Agent
+goal: Check software requirements, design, tests, validation, traceability, versioning, and legacy software artifact references.
+system_prompt: Review software lifecycle consistency using only supplied evidence IDs.
+retrieval_strategy:
+  prefix: SW
+  patterns:
+    - "software requirement|software design|software test|test record|software validation|traceability|BP3L|PT9C|PT2L|version"
+  rel_contains:
+    - "07 "
+    - "11 "
+    - "18 "
+  max_hits: 140
+input_schema:
+  required_fields:
+    - project_profile
+    - mandatory_audit_matrix
+    - evidence_catalog
+    - candidate_discovery_inputs
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - findings
+  agent: Software Agent
+  summary: string
+  review_notes: []
+  findings:
+    - finding_type: snake_case
+      severity: P1/P2/P3
+      claim: reviewable conclusion
+      rationale: evidence-based reason
+      evidence_ids: []
+      challenge_questions: []

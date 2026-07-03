@@ -1,7 +1,7 @@
 {
   "document": {
-    "title": "Risk Assessment Report",
-    "doc_type": "Risk Assessment Report",
+    "title": "Risk Analysis Report",
+    "doc_type": "风险分析报告",
     "version": "V1.0"
   },
   "revision_records": [
@@ -16,35 +16,35 @@
   "persons": [
     {
       "name": "Hou Guangwei",
-      "title": "Technical Director / Group Leader"
+      "title": "Technical director / Group leader"
     },
     {
       "name": "Wan Long",
-      "title": "Hardware Design Director"
+      "title": "Hardware design director"
     },
     {
       "name": "Wang Di",
-      "title": "Software Design Director"
+      "title": "Software design director"
     },
     {
       "name": "Liu Zhao",
-      "title": "Mechanical Design Director"
+      "title": "Mechanical Design director"
     },
     {
       "name": "Zhang Xun",
-      "title": "Process Design Personnel and Quality Management Personnel"
+      "title": "Process design personnel and Quality management personnel"
     },
     {
       "name": "Zhao Yiping",
-      "title": "Sales Personnel"
+      "title": "Sales personnel"
     },
     {
       "name": "Wang Yanhong",
-      "title": "Certification Personnel"
+      "title": "Certification personnel"
     },
     {
       "name": "Gao Kejian",
-      "title": "Personnel with Medical Background"
+      "title": "Personnel with medical background"
     },
     {
       "name": "Hou Guangwei",
@@ -81,11 +81,11 @@
   ],
   "identifiers": [
     {
-      "id_type": "Document Number",
+      "id_type": "document_number",
       "value": "PT9L-FXPJ01 V1.0"
     },
     {
-      "id_type": "Risk Management Plan Reference",
+      "id_type": "related_document",
       "value": "PT9L-FXJH01 V1.0"
     }
   ],
@@ -97,17 +97,17 @@
   ],
   "semantic_fragments": [
     {
-      "fragment_type": "working_principle",
+      "fragment_type": "design_rationale",
       "content": "This product is a high-tech infra-red (IR) thermometer designed to take human body temperature by measuring the energy of IR emitted from the forehead. The product will help you to assess you and your family members' health conditions easily and quickly.",
       "topic_tags": [
         "infrared thermometer",
         "forehead temperature",
-        "IR energy",
-        "body temperature measurement"
+        "intended use",
+        "product description"
       ],
       "related_subjects": [
         "Infrared Forehead Thermometer",
-        "Risk Assessment Report"
+        "PT9L-FXPJ01"
       ]
     },
     {
@@ -115,18 +115,18 @@
       "content": "The risk management activity including the risk management plan was began at the time the project is approved. This risk management review is to assess the harm and make the risk analysis, evaluation, and proposed the risk control plan.",
       "topic_tags": [
         "risk management",
+        "risk management plan",
         "risk analysis",
-        "risk evaluation",
-        "risk control plan"
+        "risk evaluation"
       ],
       "related_subjects": [
-        "Risk Management Plan",
+        "Risk Assessment Report",
         "PT9L-FXJH01 V1.0"
       ]
     },
     {
       "fragment_type": "constraint_statement",
-      "content": "Criteria for risk evaluation: Please find the document Risk Management Plan (PT9L-FXJH01 V1.0) for the risk acceptance criteria. Severity scale: 1 Negligible; 2 Minor; 3 Serious; 4 Critical; 5 Catastrophic. Probability scale: 1 Few; 2 Improbable; 3 Remote; 4 Occasional; 5 Probable; 6 Frequent.",
+      "content": "Risk evaluation criteria: Please find the document Risk Management Plan (PT9L-FXJH01 V1.0) for the risk acceptance criteria. Severity scale: 1 Negligible; 2 Minor; 3 Serious; 4 Critical; 5 Catastrophic. Probability scale: 1 Few; 2 Improbable; 3 Remote; 4 Occasional; 5 Probable; 6 Frequent.",
       "topic_tags": [
         "risk acceptance criteria",
         "severity",
@@ -134,33 +134,638 @@
         "risk evaluation"
       ],
       "related_subjects": [
-        "Risk Management Plan",
-        "PT9L-FXJH01 V1.0"
+        "PT9L-FXJH01 V1.0",
+        "Risk Management Plan"
       ]
     },
     {
       "fragment_type": "scope_limitation",
-      "content": "Document structure covers: Signification of Abbreviations, Overview (product introduction, risk management plan implementation, risk management group), Criteria for risk evaluation, Identify medical device characteristics that could impact on safety and intended use (bibliography, questions from Annex A of ISO/TR 24971:2020, questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2, additional questions from IEC 60601-1-2:2014+A1:2020 edition 4.1), Risk analysis/risk evaluation and PRM, Risk Management Conclusion, Signature of the risk management group.",
+      "content": "Document structure covers: Signification of Abbreviations; Overview (product introduction, risk management plan implementation, risk management group); Criteria for risk evaluation; Identify medical device characteristics that could impact on safety and intended use (bibliography, questions from Annex A of ISO/TR 24971:2020, questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2, additional questions from IEC 60601-1-2:2014+A1:2020 edition 4.1); Risk analysis, risk evaluation and PRM; Risk Management Conclusion; Signature of the risk management group.",
       "topic_tags": [
         "document structure",
-        "ISO/TR 24971:2020",
+        "ISO/TR 24971",
         "IEC 60601-1",
         "IEC 60601-1-2",
         "risk management"
       ],
       "related_subjects": [
-        "Risk Assessment Report",
-        "Infrared Forehead Thermometer"
+        "Risk Assessment Report"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "A.2.1 What is the intended use and how is the medical device to be used? It is not recommended for people whose measuring part has local lesions, such as inflammation, trauma, postoperative, etc. The IFT is not intended for sustaining or supporting life, so special intervention might not be necessary in case of its failure. The occurrence of information security failure can affect data confidentiality and may lead to a decline in performance or a loss of availability. Unauthorized access, unauthorized activities, or data loss may affect the safety of the device.",
+      "topic_tags": [
+        "预期用途",
+        "禁忌症",
+        "信息安全",
+        "非生命支持"
+      ],
+      "related_subjects": [
+        "intended use",
+        "contraindications",
+        "information security"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "A.2.3 The product is intended to be in contact with the skin in short time, giving rise to conceivable hazards from chemical agents and immunological agents.",
+      "topic_tags": [
+        "皮肤接触",
+        "化学危害",
+        "免疫危害"
+      ],
+      "related_subjects": [
+        "patient contact",
+        "biocompatibility"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "A.2.4 Materials and components: Not intended for use or contact with other materials or components; not intended for contact with tissues or body fluids; safety-relevant characteristics are known; no materials of animal origin were used.",
+      "topic_tags": [
+        "材料兼容性",
+        "动物源材料",
+        "组织接触"
+      ],
+      "related_subjects": [
+        "material safety",
+        "biocompatibility"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "A.2.5 Energy delivered to or extracted from the patient: Yes, infrared energy is extracted from the patient. The type of energy transferred is electromagnetic wave. Measurement time is the relevant control parameter. Energy levels are not higher than those currently used for similar medical devices.",
+      "topic_tags": [
+        "红外能量",
+        "电磁波",
+        "能量提取"
+      ],
+      "related_subjects": [
+        "measurement principle",
+        "energy transfer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.9 The medical device is intended to be routinely cleaned and disinfected by the user; routine cleaning and sterilization of the probe is required. Conceivable hazards include biological agents, chemical agents, and immunological agents.",
+      "topic_tags": [
+        "清洁消毒",
+        "探头维护",
+        "生物危害"
+      ],
+      "related_subjects": [
+        "maintenance",
+        "probe cleaning"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.11 Measurements taken: Yes, the device measures body temperature. Conceivable hazards relate to Data and Functionality.",
+      "topic_tags": [
+        "体温测量",
+        "测量功能",
+        "数据危害"
+      ],
+      "related_subjects": [
+        "measurement function",
+        "temperature"
       ]
     },
     {
       "fragment_type": "constraint_statement",
-      "content": "For each unacceptable Risk, we have considered risk control measures according to the principle of section3.3 'Risk Acceptance Criteria' in RMP. For each acceptable risk, we have further implemented risk control measures. So I think we have reduced the risk AFAP.",
+      "content": "A.2.14 Unwanted outputs of energy: Yes, including non-ionizing radiation, electrical energy, and thermal energy. No unwanted outputs of substances. Conceivable hazards: Radiation energy, Electric energy, Thermal energy.",
       "topic_tags": [
-        "risk acceptance",
-        "ALARP",
-        "AFAP",
+        "非电离辐射",
+        "电能输出",
+        "热能输出",
+        "非预期输出"
+      ],
+      "related_subjects": [
+        "electromagnetic emission",
+        "thermal hazard"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "A.2.15 The medical device is susceptible to environmental influences including temperature, humidity, electromagnetic interference, atmospheric pressure, vibration, dust, light, and insects. Conceivable hazards: Radiation energy, Functionality.",
+      "topic_tags": [
+        "环境影响",
+        "电磁干扰",
+        "温湿度",
+        "环境敏感性"
+      ],
+      "related_subjects": [
+        "environmental conditions",
+        "EMC"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "A.2.16 The medical device impacts the environment through electromagnetic radiation, battery usage, and scrappage. Conceivable hazards: Radiation energy, Chemical agents.",
+      "topic_tags": [
+        "环境影响",
+        "电磁辐射",
+        "电池",
+        "废弃处理"
+      ],
+      "related_subjects": [
+        "environmental impact",
+        "battery disposal"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.17 The medical device requires consumables or accessories: Yes, batteries. Conceivable hazards: Functionality, Thermal energy.",
+      "topic_tags": [
+        "电池",
+        "耗材",
+        "附件"
+      ],
+      "related_subjects": [
+        "battery",
+        "accessories"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.18 Maintenance or calibration is necessary and should be performed by trained professionals.",
+      "topic_tags": [
+        "校准",
+        "维护",
+        "专业人员"
+      ],
+      "related_subjects": [
+        "calibration",
+        "maintenance"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.19 The medical device contains software. For non-connected models, no installation and verification are required. However, App connected models or Bluetooth models applied require software installation and verification. Conceivable hazard: Software hazards.",
+      "topic_tags": [
+        "软件",
+        "蓝牙",
+        "App连接",
+        "软件验证"
+      ],
+      "related_subjects": [
+        "software",
+        "Bluetooth",
+        "cybersecurity"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.20 The medical device allows access to information, but only for models with Bluetooth functionality. Conceivable hazard: Data.",
+      "topic_tags": [
+        "数据访问",
+        "蓝牙",
+        "信息安全"
+      ],
+      "related_subjects": [
+        "data access",
+        "Bluetooth",
+        "cybersecurity"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Section 3.1 Bibliography: Please find Attachment 'Harmonised Standards List' for the applicable harmonised standards referenced in this risk analysis.",
+      "topic_tags": [
+        "协调标准",
+        "参考标准",
+        "附件"
+      ],
+      "related_subjects": [
+        "harmonised standards",
+        "bibliography"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "ISO/TR 24971:2020 Annex A questions matrix summarising the characteristics of the IFT (Infrared Forehead Thermometer) that could impact safety and intended use, covering energy types, materials, environment, software, maintenance, and data security aspects. Conceivable hazard categories identified include: Electric energy, Mechanical energy, Biological agents, Chemical agents, Immunological agents, Data, Functionality, Electromagnetic wave, Radiation energy, Thermal energy, Software hazards.",
+      "topic_tags": [
+        "ISO 24971",
+        "危害识别",
+        "特性分析",
+        "红外额温计"
+      ],
+      "related_subjects": [
+        "risk analysis",
+        "hazard identification",
+        "ISO 14971"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.21: 医疗器械存储对患者护理至关重要的数据——存储体温测量值（Data）。A.2.22: 仅有使用寿命，无特定货架寿命限制（Functionality, Electric energy）。A.2.23: 存在延迟或长期使用效应——标签磨损（Functionality）。A.2.24: 不受机械力影响（N/A）。A.2.25: 使用寿命由组件老化决定（Functionality）。A.2.26: 非一次性使用器械（N/A）。A.2.27: 需要安全报废或处置，包括器械本身的适当处置和存储数据的妥善处理（Chemical agents, Data）。A.2.28: 安装或使用不需要特殊培训或技能（N/A）。A.2.29: 安全使用信息通过制造商提供的用户手册直接传达给终端用户，无需额外培训（Mechanical energy, Thermal energy, Electric energy, Radiation energy, Functionality, Chemical agents）。A.2.30: 未建立或引入新的制造工艺（N/A）。",
+      "topic_tags": [
+        "数据存储",
+        "使用寿命",
+        "标签磨损",
+        "处置",
+        "用户手册",
+        "安全信息"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "可用性",
+        "标签"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.31系列问题：用户界面相关分析。A.2.31: 器械成功应用不依赖用户界面可用性（N/A）。A.2.31.1: 用户界面设计特性不会导致使用错误（N/A）。A.2.31.2: 器械不在可能导致使用错误的紧急医疗环境中使用（N/A）。A.2.31.3: 器械无连接件或附件（N/A）。A.2.31.4: 器械无控制界面（N/A）。A.2.31.5: 器械显示测量值和警告信息（Functionality）。A.2.31.6: 器械不由菜单控制，仅有简单按钮或直接控制操作（N/A）。A.2.31.7: 器械成功使用不依赖用户的知识、技能和能力（N/A）。A.2.31.8: 器械不被有特殊需求的人员使用（N/A）。A.2.31.9: 用户界面不允许访问受限操作模式，不能发起未授权操作（N/A）。",
+      "topic_tags": [
+        "用户界面",
+        "使用错误",
+        "显示信息",
+        "按钮操作",
+        "未授权操作"
+      ],
+      "related_subjects": [
+        "可用性工程",
+        "风险分析"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "A.2.32: 器械包含技术报警系统（Functionality）。A.2.33: 可能的误用方式包括：用于非预期人群、不当环境、不当维护或连接失败（Functionality）。A.2.34: 器械为便携式设备（Mechanical energy）。A.2.35: 器械的使用依赖基本性能（Functionality）。A.2.36: 器械具有一定自主性——启动测量后自动执行测量过程，遇到问题时发出虚假警告（Functionality）。A.2.37: 器械产生的输出不用作确定临床行动的输入（N/A）。",
+      "topic_tags": [
+        "报警系统",
+        "误用",
+        "便携设备",
+        "基本性能",
+        "自主测量",
+        "虚假警告"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "基本性能",
+        "可用性"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1相关问题回答：4.3条款——器械的基本性能为临床温度计的测量精度。4.4条款——预期使用寿命为5年。4.5条款——标准要求无特定风险控制措施，不需要替代手段。4.6条款——应用部分为按键和外壳，两者均可被触碰，但按键和外壳无需满足应用部分要求。4.7条款——除13.2子条款识别的单一故障条件外，可行的单一故障条件为温度限制装置发生故障。4.8条款——所有组件均按其规定额定值和标准使用。4.9条款——无高完整性特性组件。5.1条款——不会发生同时故障的组合。",
+      "topic_tags": [
+        "基本性能",
+        "使用寿命",
+        "应用部分",
+        "单一故障",
+        "组件额定值",
+        "IEC 60601-1"
+      ],
+      "related_subjects": [
+        "风险控制",
+        "标准符合性",
+        "风险分析"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1标签与包装相关问题：7.2.2条款——考虑了标签标记的可预见误用。7.2.13条款——器械不产生生理效应。7.2.17条款——运输或储存有特殊处理说明，提前去除包装不会对产品或附件造成不可接受的风险。7.3.3条款——锂电池有警告标签，干电池无警告标签。",
+      "topic_tags": [
+        "标签",
+        "包装",
+        "生理效应",
+        "运输储存",
+        "锂电池",
+        "干电池",
+        "警告标签"
+      ],
+      "related_subjects": [
+        "标签设计",
+        "风险分析",
+        "IEC 60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC/EN 60601-1 checklist responses covering electrical, mechanical, radiation, and thermal safety considerations for the medical device. Key findings include: (7.4.2) Control devices use symbol-indicated switches. (7.5) Warning, Prohibition, and Mandatory action safety signs are used. (7.9.2.4) Low battery and battery leakage risks are addressed; battery leakage risk is acceptable with instruction manual warning to remove battery during prolonged non-use; loss of power can lead to unacceptable risk, design allows rapid pressure release on power loss. (7.9.3.2) No replaceable fuses, power supply cords, or other such parts. (8.8.4.1) Reinforced insulation case requires specific heat resistance test protocols. (8.10.1) Inner lead component is securely mounted for expected service lifetime. (9.2.1) Moving parts cannot be touched during intended function. (9.2.3.1) Controls are positioned/recessed/protected to prevent accidental actuation; no unacceptable risk created. (9.6.1) Noise and vibration levels ≤80 dBA. (10.6) Infrared probe produces infrared radiation. (11.1.3) Test corner influences ventilation near the medical device.",
+      "topic_tags": [
+        "IEC 60601-1",
+        "electrical safety",
+        "mechanical safety",
+        "radiation",
+        "thermal safety",
+        "battery",
+        "infrared probe",
+        "noise",
+        "insulation",
+        "risk control"
+      ],
+      "related_subjects": [
+        "risk_controls",
+        "risks",
+        "products"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "11.1.3 接触概率与接触时长：测量体温时必须接触按键和外壳，外壳接触时间<1分钟，按键接触时间<1分钟，温度符合IEC 60601-1表22和表23的要求。",
+      "topic_tags": [
+        "接触时间",
+        "外壳",
+        "按键",
+        "温度限值",
+        "60601-1"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "物理危害"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "11.6.5 防水防尘等级：设备防护等级为IP22。",
+      "topic_tags": [
+        "IP22",
+        "防护等级",
+        "进液",
+        "进尘"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "环境危害"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "11.6.6 多次清洁/消毒对医疗器械及其附件的影响：多次清洁/消毒后设备不损坏。",
+      "topic_tags": [
+        "清洁",
+        "消毒",
+        "耐久性"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "维护"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "11.6.7 灭菌：正常使用和可预见误用情况下无需灭菌。",
+      "topic_tags": [
+        "灭菌",
+        "正常使用",
+        "可预见误用"
+      ],
+      "related_subjects": [
+        "风险分析"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "11.6.8 接触物质：产品与皮肤接触。",
+      "topic_tags": [
+        "皮肤接触",
+        "生物相容性"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "生物危害"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "11.3 防火外壳：无此类部件。设备功耗低于15W，不存在火灾风险。",
+      "topic_tags": [
+        "防火",
+        "功耗",
+        "火灾风险"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "热危害"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "14.13 PEMS通过网络/数据耦合连接到其他设备：采用蓝牙连接。",
+      "topic_tags": [
+        "蓝牙",
+        "网络连接",
+        "PEMS",
+        "数据耦合"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "软件风险",
+        "电磁兼容"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "15.4.3.2 电池连接：Battery connection（电池连接）。",
+      "topic_tags": [
+        "电池",
+        "连接"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "电气安全"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "15.4.4 指示器说明：有开机指示。没有非发光加热器。输出电路意外和长时间运行不构成危险情况。",
+      "topic_tags": [
+        "开机指示",
+        "输出电路",
+        "加热器"
+      ],
+      "related_subjects": [
+        "风险分析"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "17 电磁兼容：被测设备已测试并符合IEC 60601-1-2标准要求。",
+      "topic_tags": [
+        "电磁兼容",
+        "IEC 60601-1-2",
+        "EMC"
+      ],
+      "related_subjects": [
+        "风险分析",
+        "测试验证"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "以下项目均无相关部件或不适用：温度控制装置（11.1.3）、富氧环境泄漏（11.2.2.1）、易燃物接触（11.5）、液体处理（11.6.3/11.6.4）、输出超安全限值（12.4.1-12.4.6）、液体逃逸（13.2.6）、控制和指示器布置（15.1）、电气/液压/气动连接端子（15.4.1）、自动复位热断路器（15.4.2.1a）、恒温器（15.4.2.1c）、管状加热元件（15.4.2.1h）、电池通气壳体（15.4.3.1）、过充保护（15.4.3.3）、预设控制（15.4.5）、医疗系统配置（16.1）、连接端子（16.9.1）。",
+      "topic_tags": [
+        "不适用项",
+        "范围限制",
+        "IEC 60601-1"
+      ],
+      "related_subjects": [
+        "风险分析"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "排除环境说明：设备不适合在活动HF外科设备附近以及磁共振成像ME系统的RF屏蔽室中使用，因为这些环境中的电磁干扰强度较高。",
+      "topic_tags": [
+        "排除环境",
+        "HF外科设备",
+        "MRI",
+        "RF屏蔽室",
+        "电磁干扰"
+      ],
+      "related_subjects": [
+        "使用环境限制",
+        "EMC",
+        "IEC 60601-1-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "免疫测试通过/失败判据（基本安全）：包括可触及部件及应用部件的爬电距离和空气间隙、介电强度、泄漏电流及患者辅助电流的测量。",
+      "topic_tags": [
+        "免疫测试",
+        "基本安全",
+        "通过/失败判据",
+        "爬电距离",
+        "空气间隙",
+        "泄漏电流"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2 第8.1条",
+        "风险管理文件"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "工作模式测试说明：发射测试时，被测设备（EUT）配置为测量其最高可能的发射电平，测试条件参照使用说明书进行调整；免疫测试时，EUT配置为对被测现象具有最高可能的敏感性，测试条件参照使用说明书进行调整。",
+      "topic_tags": [
+        "工作模式",
+        "发射测试",
+        "免疫测试",
+        "EUT",
+        "最高发射电平",
+        "最高敏感性"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2 第8.7条",
+        "风险分析"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "预期使用环境为专业医疗机构环境和家庭医疗保健环境，不会改变本附属标准IEC 60601-1-2规定的合理可预见电磁干扰水平。电磁免疫测试按照用户手册中定义的体温计进行。",
+      "topic_tags": [
+        "预期使用环境",
+        "专业医疗机构",
+        "家庭医疗保健",
+        "电磁干扰水平",
+        "免疫测试"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2 第8.9条",
+        "体温计",
+        "用户手册"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "端口测试说明：设备对特定调制频率或频率范围不敏感，按照表4-表8中列出的频率进行测试。涉及外壳端口、输入交流电源端口、输入直流电源端口、患者耦合端口及SIP/SOP端口。",
+      "topic_tags": [
+        "端口测试",
+        "外壳端口",
+        "交流电源端口",
+        "直流电源端口",
+        "患者耦合端口",
+        "SIP/SOP端口",
+        "调制频率"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2 Table 4-8",
+        "EMC测试"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "RF无线通信设备近场免疫：未遇到额外频率和通信，参见使用说明书。电磁免疫测试按照用户手册中定义的体温计进行。",
+      "topic_tags": [
+        "RF无线通信",
+        "近场免疫",
+        "IFU",
+        "体温计"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2 第8.10条"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "9 kHz至13.56 MHz频率范围内近场磁场免疫：该产品没有任何对磁场敏感的元器件或电路。",
+      "topic_tags": [
+        "磁场免疫",
+        "9kHz",
+        "13.56MHz",
+        "元器件敏感性"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2 第8.11条"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测试配置确定方法：不同系列产品将分别进行测试；如果产品属于同一系列（例如相似电路、相似功能），则选择能覆盖最全面电路和功能的产品进行测试。",
+      "topic_tags": [
+        "测试配置",
+        "产品系列",
+        "相似电路",
+        "测试覆盖"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2 第4.3.1条"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk analysis table section 4.1 Energy hazards covers: Electromagnetic energy, Electrostatic discharge, Radiated RF EM fields, Conducted disturbances induced by RF fields, Proximity fields from RF wireless communications, Rated Power-frequency Magnetic Field, Proximity magnetic fields immunity test, Leakage current, Separation parts, Parts contacting patient, Temperature of parts, Temperature of applied parts, Mechanical strength, Inner lead, Component fixing, Protective measures components, Infrared radiation. Items marked N/A include: Acoustic energy, Moving parts, Lithium battery, Suspended masses, Vibration, Stored Energy, Torsion/shear/tensile force, Moving and positioning of patient, Ultrasonic energy, Infrasound energy, High pressure fluid injection.",
+      "topic_tags": [
+        "energy hazards",
+        "EMC",
+        "electric shock",
+        "mechanical",
+        "thermal",
+        "infrared"
+      ],
+      "related_subjects": [
+        "IEC60601-1-2",
+        "risk controls",
+        "R1-R17"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk analysis table section 4.2 Biological and chemical hazards covers: Allergenicity/Irritancy (biocompatibility not qualified leading to allergies/irritation/cytotoxicity), Allergenicity/Irritancy (failure to clean applied part on time or device sharing leading to infection/cross-infection). Items marked N/A include: Bacteria, Viruses, Other agents, Exposure of airway/tissues/environment to foreign materials, Degradation products/medical gas/anesthesia products, Pyrogenicity.",
+      "topic_tags": [
+        "biological hazards",
+        "chemical hazards",
+        "biocompatibility",
+        "infection",
+        "allergenicity"
+      ],
+      "related_subjects": [
+        "R18",
+        "R19",
+        "biocompatibility evaluation",
+        "IFU"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For each unacceptable Risk, we have considered risk control measures according to the principle of section 3.3 'Risk Acceptance Criteria' in RMP. For each acceptable risk, we have further implemented risk control measures. So I think we have reduced the risk AFAP.",
+      "topic_tags": [
         "risk control",
+        "ALARP",
+        "risk acceptance",
         "RMP"
       ],
       "related_subjects": [
@@ -170,42 +775,74 @@
     },
     {
       "fragment_type": "behavioral_spec",
-      "content": "Wireless coexistence (R56): The APP provides display and storage functions. If the app cannot receive the result, the LED of IFT can display the result. When the interference disappears, the next Bluetooth transmission can upload the data lost last time. Therefore, even if the app cannot display the current results, or the app delays the display of the current results, it will not cause harm to the user, but will increase the user's inconvenience.",
+      "content": "Risk level matrix before control: Severity levels (1 Negligible to 5 Catastrophic) vs Probability levels (1 Few to 6 Frequent). R50 at Frequent/Serious; R36 at Occasional/Minor; R9,R10,R11,R13,R15,R16,R17,R18,R20,R21,R22,R26,R27,R28,R29,R30,R33,R34,R37,R39,R40,R42,R43,R44,R46,R51,R52,R53 at Occasional/Serious; R56 at Remote/Negligible; R23 at Remote/Minor; R24,R38,R54,R55,R57 at Remote/Serious; R3,R8 at Remote/Critical; R12,R19,R25,R31,R32,R35,R41,R45,R47,R48,R49 at Improbable/Serious; R1,R2,R4,R5,R6,R7,R14 at Improbable/Critical. Risks in white background area are ACC (acceptable), others need to be controlled.",
       "topic_tags": [
-        "wireless coexistence",
-        "Bluetooth",
-        "LED fallback",
-        "data recovery",
-        "app display"
+        "risk matrix",
+        "risk level",
+        "before control",
+        "risk assessment"
       ],
       "related_subjects": [
-        "R56",
-        "software design",
-        "Bluetooth transmission"
+        "Risk Management Plan",
+        "Risk Acceptance Criteria"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "According to the above risk analysis and assessment, the software security level is determined as B.",
+      "topic_tags": [
+        "software safety classification",
+        "IEC 62304",
+        "software security level B"
+      ],
+      "related_subjects": [
+        "Software Risk Analysis",
+        "Software Development Plan"
       ]
     },
     {
       "fragment_type": "behavioral_spec",
-      "content": "Risk Management Conclusion: According to the risk acceptance table, the risk levels before control are distributed as follows. Probability level 6 Frequent / Severity 3 Serious: R50. Probability level 4 Occasional / Severity 2 Minor: R36. Probability level 4 Occasional / Severity 3 Serious: R9, R10, R11, R13, R15, R16, R17, R18, R20, R21, R22, R26, R27, R28, R29, R30, R33, R34, R37, R39, R40, R42, R43, R44, R46, R51, R52, R53. Probability level 3 Remote / Severity 1 Negligible: R56. Probability level 3 Remote / Severity 2 Minor: R23. Probability level 3 Remote / Severity 3 Serious: R24, R38, R54, R55, R57. Probability level 3 Remote / Severity 4 Critical: R3, R8. Probability level 2 Improbable / Severity 3 Serious: R12, R19, R25, R31, R32, R35, R41, R45, R47, R48, R49. Probability level 2 Improbable / Severity 4 Critical: R1, R2, R4, R5, R6, R7, R14. Risks in the White background area are ACC (acceptable); others require control measures. Based on the above risk analysis and assessment, the software security level is determined as B.",
+      "content": "Wireless coexistence risk detail: The APP provides display and storage functions. If the app cannot receive the result, the LED of IFT can display the result. When the interference disappears, the next Bluetooth transmission can upload the data lost last time. Therefore, even if the app cannot display the current results, or the app delays the display of the current results, it will not cause harm to the user, but will increase the user's inconvenience.",
       "topic_tags": [
-        "risk acceptance",
-        "risk matrix",
-        "risk level",
-        "software security level",
-        "ACC",
-        "risk before control"
+        "wireless coexistence",
+        "Bluetooth",
+        "app",
+        "data transfer",
+        "interference"
       ],
       "related_subjects": [
-        "Risk Analysis Report",
-        "Risk Management"
+        "R56",
+        "Software Design",
+        "Usability"
       ]
     }
   ],
   "risks": [
     {
+      "risk_id": "R-12.1",
+      "hazard": "体温测量不准确",
+      "hazardous_situation": "控制器和仪器精度相关风险",
+      "harm": "用户获得错误结果",
+      "phase": "使用阶段"
+    },
+    {
+      "risk_id": "R-14.1",
+      "hazard": "可编程电气医疗系统风险",
+      "hazardous_situation": "测量不准确，不适当报警",
+      "harm": "测量不准确，不适当报警",
+      "phase": "使用阶段"
+    },
+    {
+      "risk_id": "R-14.6.1",
+      "hazard": "已知和可预见危害",
+      "hazardous_situation": "测量不准确，不适当报警",
+      "harm": "测量不准确，不适当报警",
+      "phase": "使用阶段"
+    },
+    {
       "risk_id": "R1",
       "hazard": "Electromagnetic energy",
-      "hazardous_situation": "The device is interfered or interferes with other equipment; the measurement results are inaccurate",
+      "hazardous_situation": "The device is interfered or interferes with other equipment",
       "harm": "Inaccurate measurement",
       "severity": 4,
       "probability": 2,
@@ -340,7 +977,7 @@
     {
       "risk_id": "R16",
       "hazard": "The protective measures components",
-      "hazardous_situation": "The device catches fire, be damaged",
+      "hazardous_situation": "The device catch fire, be damaged",
       "harm": "The device is not working or Patient injured",
       "severity": 3,
       "probability": 4,
@@ -375,689 +1012,726 @@
     },
     {
       "risk_id": "R20",
-      "hazard": "Temperature transducer accuracy",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazard": "temperature transducer accuracy",
+      "hazardous_situation": "the temperature sensor failure, large accuracy error / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R21",
       "hazard": "System leakage",
-      "hazardous_situation": "No measurement result",
+      "hazardous_situation": "system leak is too large / no measurement result",
       "harm": "Users can not get measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R22",
       "hazard": "System leakage",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "system leak is unqualified / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R23",
       "hazard": "Low battery",
-      "hazardous_situation": "Reported low battery inappropriate",
+      "hazardous_situation": "The performance of low battery is unqualified / Reported low battery inappropriate",
       "harm": "Reduce battery life",
-      "severity": 2,
-      "probability": 3,
-      "phase": "4.3 Operational hazards"
+      "severity": 3,
+      "probability": 2,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R24",
       "hazard": "Low battery",
-      "hazardous_situation": "Not report low battery when the battery level is low",
+      "hazardous_situation": "The performance of low battery is unqualified / not report low battery when the battery level is low",
       "harm": "Users can not get accurate measurement results",
       "severity": 3,
       "probability": 3,
-      "phase": "4.3 Operational hazards"
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R25",
       "hazard": "Battery leakage",
-      "hazardous_situation": "The battery leakage",
-      "harm": "The device is corroded",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.3 Operational hazards"
+      "hazardous_situation": "Not use for a long time, not remove the batteries / the battery leakage",
+      "harm": "the device is corroded",
+      "severity": 2,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R26",
       "hazard": "Clean",
-      "hazardous_situation": "Can't reach the measurement accuracy or current is on the applied part",
-      "harm": "Users can not get accurate measurement results or users get hurt",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "hazardous_situation": "Device damaged, insulation protection reduced after cleaning / Can't reach the measurement accuracy or current is on the applied part",
+      "harm": "Users can not get accurate measurement results or even users get hurt",
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R27",
       "hazard": "Expected service life",
-      "hazardous_situation": "The device is not working or can't reach the measurement accuracy",
+      "hazardous_situation": "Lifetime short than intended; still be used out of the expected service life / the device is not working or can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R28",
       "hazard": "Expected service life",
-      "hazardous_situation": "Can't reach the measurement accuracy or lose performance",
+      "hazardous_situation": "Lifetime short than intended; still be used out of the expected service life / can't reach the measurement accuracy or lose performance",
       "harm": "Users can not get accurate measurement results or Safety can not be ensured",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R29",
       "hazard": "Environment condition",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Components have large error in regulate environment condition / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R30",
       "hazard": "Environment condition",
-      "hazardous_situation": "Device work, transport or storage under unreasonable conditions, or on fire when operation, the device is not working or can't reach the measurement accuracy",
+      "hazardous_situation": "Working, transportation and storage conditions unreasonable / Device work, transport or storage under unreasonable conditions, or on fire when operation, the device is not working or can't reach the measurement accuracy",
       "harm": "Device damaged; Users can not get accurate measurement results; Scald",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R31",
       "hazard": "Environment condition",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Storage or use in unregulated environment condition / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.3 Operational hazards"
+      "severity": 2,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R32",
       "hazard": "SFC and MOP",
-      "hazardous_situation": "Electric shock",
+      "hazardous_situation": "Not enough insulation and Insulation breakdown / electric shock",
       "harm": "Patients injured",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.3 Operational hazards"
+      "severity": 2,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R33",
       "hazard": "SFC and MOP",
-      "hazardous_situation": "Electric shock",
+      "hazardous_situation": "Creepage distance and electrical clearance breakdown / electric shock",
       "harm": "Patients injured",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R34",
       "hazard": "SFC and MOP",
-      "hazardous_situation": "Electric shock",
+      "hazardous_situation": "Contact current exceeds bid / electric shock",
       "harm": "Patients injured",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R35",
       "hazard": "Knowledge-based failure",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Fail operating according to user guide / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.3 Operational hazards"
+      "severity": 2,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R36",
       "hazard": "Shape",
-      "hazardous_situation": "User touch the sharp angle, sharp edge and rough surface",
+      "hazardous_situation": "The sharp angle, sharp edge and rough surface are exposed / User touch the sharp angle, sharp edge and rough surface",
       "harm": "Get hurt from cut or scratch",
-      "severity": 2,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 2,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R37",
       "hazard": "Measurement range",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Use's body temperature out of the range / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.3 Operational hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R38",
       "hazard": "Measuring site",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Use wrong measuring site / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
       "severity": 3,
       "probability": 3,
-      "phase": "4.3 Operational hazards"
+      "phase": "4.3 Functional hazards"
     },
     {
       "risk_id": "R39",
       "hazard": "Accompanying documents, marking on the outside",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Hard to understand, user can't operate the device correctly / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
+      "severity": 4,
+      "probability": 3,
       "phase": "4.4 Information hazards"
     },
     {
       "risk_id": "R40",
       "hazard": "Accompanying documents, marking on the outside",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "The marking abrasion or not stick firmly, user can't operate the device correctly / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
+      "severity": 4,
+      "probability": 3,
       "phase": "4.4 Information hazards"
     },
     {
       "risk_id": "R41",
       "hazard": "Accompanying documents, marking on the outside",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Inadequate disclosure of Limitations, restricted user use the device, used by users who is outside the indications / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 2,
+      "severity": 2,
+      "probability": 3,
       "phase": "4.4 Information hazards"
     },
     {
       "risk_id": "R42",
       "hazard": "Accompanying documents, marking on the outside",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Inadequate specification of intended use, user can't understand and operate the device correctly / Can't reach the measurement accuracy",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
+      "severity": 4,
+      "probability": 3,
       "phase": "4.4 Information hazards"
     },
     {
       "risk_id": "R43",
       "hazard": "Accompanying documents, marking on the outside",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Inadequate description of performance characteristics, user can't understand and operate the device correctly",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.4 Information hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R44",
       "hazard": "Accompanying documents, marking on the outside",
-      "hazardous_situation": "Can't reach the measurement accuracy",
+      "hazardous_situation": "Incomplete instructions for use, user can't understand and operate the device correctly",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.4 Information hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R45",
       "hazard": "Control keys and display",
-      "hazardous_situation": "Operate incorrectly or unclear measurement result",
+      "hazardous_situation": "The indication is not clear, complete, display error; operate incorrectly or unclear measurement result",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.4 Information hazards"
+      "severity": 2,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R46",
       "hazard": "Battery storehouse",
-      "hazardous_situation": "Incorrect batteries or short-cut because of reversed polarity",
+      "hazardous_situation": "Battery model, positive and negative is not clear in the battery storehouse, battery is loaded incorrectly; incorrect batteries or short-cut because of reversed polarity",
       "harm": "The device don't work or users scald",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.4 Information hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R47",
       "hazard": "Waste disposal",
-      "hazardous_situation": "Discard randomly",
+      "hazardous_situation": "No specification about waste disposal; discard randomly",
       "harm": "Pollute environment",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.4 Information hazards"
+      "severity": 2,
+      "probability": 3,
+      "phase": "End of life"
     },
     {
       "risk_id": "R48",
       "hazard": "Specification of service and maintenance",
-      "hazardous_situation": "User can not get consultation",
+      "hazardous_situation": "No specification of service and maintenance; user can not get consultation",
       "harm": "Can not get effective direction and maintenance",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.4 Information hazards"
+      "severity": 2,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R49",
       "hazard": "Deglutible separate part",
-      "hazardous_situation": "Swallowed by children",
+      "hazardous_situation": "No warning about the deglutible separate part; swallowed by children",
       "harm": "Children hurt",
-      "severity": 3,
-      "probability": 2,
-      "phase": "4.4 Information hazards"
+      "severity": 2,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R50",
       "hazard": "Memory times",
-      "hazardous_situation": "User can't find the memory or find wrong memory",
+      "hazardous_situation": "Lack of memory or error; user can't find the memory or find wrong memory",
       "harm": "The body temperature can not be supervised continuously by the users",
-      "severity": 3,
-      "probability": 6,
-      "phase": "4.5 Software hazards"
+      "severity": 6,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R51",
       "hazard": "Classification display",
-      "hazardous_situation": "Classification display error",
+      "hazardous_situation": "Classification display is not qualified; classification display error",
       "harm": "Users assess their body temperature condition incorrectly",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.5 Software hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R52",
       "hazard": "Algorithm",
-      "hazardous_situation": "Incorrect measurement result",
+      "hazardous_situation": "Incorrect algorithm; incorrect measurement result",
       "harm": "Users can not get accurate measurement results",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.5 Software hazards"
+      "severity": 4,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R53",
       "hazard": "Software label",
-      "hazardous_situation": "The software and the hardware is not corresponding to each other",
-      "harm": "The device can not running",
-      "severity": 3,
-      "probability": 4,
-      "phase": "4.5 Software hazards"
+      "hazardous_situation": "The software version is not qualified; the software and the hardware is not corresponding to each other",
+      "harm": "The device can not run",
+      "severity": 4,
+      "probability": 3,
+      "phase": "Use"
     },
     {
       "risk_id": "R54",
       "hazard": "Improper alarm",
-      "hazardous_situation": "The false alarm single or alarm invalid",
+      "hazardous_situation": "Alarm is not qualified; the false alarm single or alarm invalid",
       "harm": "Users assess their body temperature condition incorrectly",
       "severity": 3,
       "probability": 3,
-      "phase": "4.5 Software hazards"
+      "phase": "Use"
     },
     {
       "risk_id": "R55",
       "hazard": "Data transfer",
-      "hazardous_situation": "Incorrect results transportation",
+      "hazardous_situation": "Data transfer is not qualified; incorrect results transportation",
       "harm": "Users assess their body temperature condition incorrectly",
       "severity": 3,
       "probability": 3,
-      "phase": "4.5 Software hazards"
+      "phase": "Use"
     },
     {
       "risk_id": "R56",
       "hazard": "Wireless coexistence",
-      "hazardous_situation": "The result data cannot be transferred to the app or results data are delayed",
-      "harm": "Increased user inconvenience; no direct harm as LED can display result and next Bluetooth transmission can upload lost data",
-      "severity": 1,
-      "probability": 3,
-      "phase": "4.5 Software hazards"
+      "hazardous_situation": "Other devices in the same environment send wireless interference; the result data cannot be transferred to the app or results data are delayed",
+      "harm": "App cannot display current results or delays display; will not cause harm to user but will increase user inconvenience",
+      "severity": 3,
+      "probability": 1,
+      "phase": "Use"
     },
     {
       "risk_id": "R57",
       "hazard": "Cybersecurity",
-      "hazardous_situation": "The data was stolen",
+      "hazardous_situation": "Data is stored on an insecure network; the data was stolen",
       "harm": "User information disclosure",
       "severity": 3,
       "probability": 3,
-      "phase": "4.5 Software hazards"
+      "phase": "Use"
     }
   ],
   "risk_controls": [
     {
-      "control_id": "RC-R1",
-      "measure": "EMC (IEC60601-1-2) circuit design",
-      "type": "Design control",
-      "evidence_type": "EMC test per IEC60601-1-2"
+      "control_id": "RC-14.6.2",
+      "measure": "软件验证报告",
+      "evidence_type": "软件验证报告"
     },
     {
-      "control_id": "RC-R2",
-      "measure": "EMC (IEC60601-1-2) circuit design",
-      "type": "Design control",
-      "evidence_type": "EMC test per IEC60601-1-2"
+      "control_id": "RC-14.7",
+      "measure": "温度计误差限制要求规范",
+      "evidence_type": "需求规格说明"
     },
     {
-      "control_id": "RC-R3",
-      "measure": "EMC (IEC60601-1-2) circuit design",
-      "type": "Design control",
-      "evidence_type": "EMC test per IEC60601-1-2"
+      "control_id": "RC-14.8",
+      "measure": "保护性设计架构",
+      "type": "设计控制",
+      "evidence_type": "设计文件"
     },
     {
-      "control_id": "RC-R4",
-      "measure": "EMC (IEC60601-1-2) circuit design",
-      "type": "Design control",
-      "evidence_type": "EMC test per IEC60601-1-2"
+      "control_id": "RC-14.9",
+      "measure": "设计与实施软件验证报告",
+      "evidence_type": "软件验证报告"
     },
     {
-      "control_id": "RC-R5",
-      "measure": "EMC (IEC60601-1-2) circuit design",
-      "type": "Design control",
-      "evidence_type": "EMC test per IEC60601-1-2"
+      "control_id": "RC-14.10",
+      "measure": "验证 - 软件验证报告",
+      "evidence_type": "软件验证报告"
     },
     {
-      "control_id": "RC-R6",
-      "measure": "EMC (IEC60601-1-2) circuit design",
-      "type": "Design control",
-      "evidence_type": "EMC test per IEC60601-1-2"
+      "control_id": "RC-14.11",
+      "measure": "PEMS验证 - 软件验证报告",
+      "evidence_type": "软件验证报告"
     },
     {
-      "control_id": "RC-R7",
-      "measure": "EMC (IEC60601-1-2) circuit design",
-      "type": "Design control",
-      "evidence_type": "EMC test per IEC60601-1-2"
+      "control_id": "RC-17",
+      "measure": "依据IEC 60601-1-2进行电磁兼容测试并符合标准",
+      "type": "测试验证",
+      "evidence_type": "测试报告"
     },
     {
-      "control_id": "RC-R8",
+      "control_id": "R1",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test"
+    },
+    {
+      "control_id": "R2",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test"
+    },
+    {
+      "control_id": "R3",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test"
+    },
+    {
+      "control_id": "R4",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test"
+    },
+    {
+      "control_id": "R5",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test"
+    },
+    {
+      "control_id": "R6",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test"
+    },
+    {
+      "control_id": "R7",
+      "measure": "EMC (IEC60601-1-2) circuit design",
+      "type": "Design control",
+      "evidence_type": "EMC test"
+    },
+    {
+      "control_id": "R8",
       "measure": "Take protective measures: RI",
       "type": "Protective measure",
-      "evidence_type": "Electrical safety test"
+      "evidence_type": "Leakage current test"
     },
     {
-      "control_id": "RC-R9",
+      "control_id": "R9",
       "measure": "Take protective measures: RI",
       "type": "Protective measure",
-      "evidence_type": "Electrical safety test"
+      "evidence_type": "Insulation test"
     },
     {
-      "control_id": "RC-R10",
+      "control_id": "R10",
       "measure": "The live parts can't be touched",
       "type": "Design control",
       "evidence_type": "Design verification"
     },
     {
-      "control_id": "RC-R11",
+      "control_id": "R11",
       "measure": "The power control temperature",
       "type": "Design control",
       "evidence_type": "Temperature test"
     },
     {
-      "control_id": "RC-R12",
+      "control_id": "R12",
       "measure": "Applied part don't generate heat",
       "type": "Design control",
       "evidence_type": "Temperature test"
     },
     {
-      "control_id": "RC-R13",
+      "control_id": "R13",
       "measure": "Thick enclosure design",
       "type": "Design control",
       "evidence_type": "Mechanical strength test"
     },
     {
-      "control_id": "RC-R14",
+      "control_id": "R14",
       "measure": "No use aluminium wire, weld correctly",
       "type": "Design control",
       "evidence_type": "Design verification"
     },
     {
-      "control_id": "RC-R15",
+      "control_id": "R15",
       "measure": "Component fixing",
       "type": "Design control",
       "evidence_type": "Design verification"
     },
     {
-      "control_id": "RC-R16",
+      "control_id": "R16",
       "measure": "Choose proper type of critical component",
       "type": "Design control",
       "evidence_type": "Component qualification"
     },
     {
-      "control_id": "RC-R17",
+      "control_id": "R17",
       "measure": "Choose proper type of critical component",
       "type": "Design control",
-      "evidence_type": "Component qualification"
+      "evidence_type": "Radiation test"
     },
     {
-      "control_id": "RC-R18",
+      "control_id": "R18",
       "measure": "Biocompatibility evaluation",
       "type": "Design control",
       "evidence_type": "Biocompatibility test report"
     },
     {
-      "control_id": "RC-R19",
+      "control_id": "R19",
       "measure": "Explain in operation guide",
       "type": "Marking warning",
-      "evidence_type": "Instructions for use"
+      "evidence_type": "Labeling/IFU"
     },
     {
       "control_id": "RC-R20",
-      "measure": "Temperature measurement circuit design",
-      "type": "Design control",
-      "evidence_type": "Design verification"
+      "measure": "Design control: temperature measurement circuit",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R21",
-      "measure": "Control by circuit",
-      "type": "Design control",
-      "evidence_type": "Design verification"
+      "measure": "Design control: Control by circuit",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R22",
-      "measure": "Control by circuit",
-      "type": "Design control",
-      "evidence_type": "Design verification"
+      "measure": "Design control: Control by circuit",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R23",
-      "measure": "Low-voltage check",
-      "type": "Design control",
-      "evidence_type": "Design verification"
+      "measure": "Design control: Low-voltage check",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R24",
-      "measure": "Low-voltage check",
-      "type": "Design control",
-      "evidence_type": "Design verification"
+      "measure": "Design control: Low-voltage check",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R25",
-      "measure": "Explain in operation guide",
-      "type": "Marking warning",
-      "evidence_type": "Instructions for use"
+      "measure": "Marking warning: Explain in operation guide",
+      "type": "labeling/instructions for use",
+      "evidence_type": "labeling review"
     },
     {
       "control_id": "RC-R26",
-      "measure": "Material of the applied part",
-      "type": "Design control",
-      "evidence_type": "Material qualification"
+      "measure": "Design control: Material of the applied part",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R27",
-      "measure": "Choose proper type of critical component",
-      "type": "Design control",
-      "evidence_type": "Component qualification"
+      "measure": "Design control: Choose proper type of critical component",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R28",
-      "measure": "Choose proper type of critical component",
-      "type": "Design control",
-      "evidence_type": "Component qualification"
+      "measure": "Design control: Choose proper type of critical component",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R29",
-      "measure": "Choose style of the components",
-      "type": "Design control",
-      "evidence_type": "Component qualification"
+      "measure": "Design control: Choose style of the components",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R30",
-      "measure": "Device shall be in accordance with the requirement for environment conditions in ISO 80601-2-56:2017/Amd1:2018",
-      "type": "Design control",
-      "evidence_type": "Environmental test per ISO 80601-2-56:2017/Amd1:2018"
+      "measure": "Design control: Device shall in accordance with the requirement for environment conditions in ISO 80601-2-56:2017/Amd1:2018",
+      "type": "design control",
+      "evidence_type": "standards compliance"
     },
     {
       "control_id": "RC-R31",
-      "measure": "Explain storage and use environment in operation guide",
-      "type": "Marking warning",
-      "evidence_type": "Instructions for use"
+      "measure": "Marking warning: Explain storage and use environment in operation guide",
+      "type": "labeling/instructions for use",
+      "evidence_type": "labeling review"
     },
     {
       "control_id": "RC-R32",
-      "measure": "Housing material selection",
-      "type": "Design control",
-      "evidence_type": "Material qualification"
+      "measure": "Design control: housing material",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R33",
-      "measure": "Creepage distance and electrical clearance design",
-      "type": "Design control",
-      "evidence_type": "Electrical safety test"
+      "measure": "Design control: Creepage distance and electrical clearance",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R34",
-      "measure": "Floating ground design",
-      "type": "Design control",
-      "evidence_type": "Electrical safety test"
+      "measure": "Design control: Floating ground",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R35",
-      "measure": "Explain in operation guide",
-      "type": "Marking warning",
-      "evidence_type": "Instructions for use"
+      "measure": "Marking warning: Explain in operation guide",
+      "type": "labeling/instructions for use",
+      "evidence_type": "labeling review"
     },
     {
       "control_id": "RC-R36",
-      "measure": "Usability design",
-      "type": "Design control",
-      "evidence_type": "Usability evaluation"
+      "measure": "Design control: Usability design",
+      "type": "design control",
+      "evidence_type": "usability evaluation"
     },
     {
       "control_id": "RC-R37",
-      "measure": "Temperature measurement circuit design; Software control",
-      "type": "Design control",
-      "evidence_type": "Design verification; Software test"
+      "measure": "Design control: temperature measurement circuit; Design control: Software control",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R38",
-      "measure": "Explain in operation guide; Usability design",
-      "type": "Marking warning; Design control",
-      "evidence_type": "Instructions for use; Usability evaluation"
+      "measure": "Marking warning: Explain in operation guide; Design control: Usability design",
+      "type": "labeling/instructions for use; design control",
+      "evidence_type": "labeling review; usability evaluation"
     },
     {
       "control_id": "RC-R39",
-      "measure": "Usability design",
-      "type": "Design control",
-      "evidence_type": "Usability evaluation"
+      "measure": "Design control: Usability design",
+      "type": "design control",
+      "evidence_type": "usability evaluation"
     },
     {
       "control_id": "RC-R40",
-      "measure": "Durability design",
-      "type": "Design control",
-      "evidence_type": "Durability test"
+      "measure": "Design control: durability design",
+      "type": "design control",
+      "evidence_type": "design verification"
     },
     {
       "control_id": "RC-R41",
-      "measure": "Explain in operation guide",
-      "type": "Marking warning",
-      "evidence_type": "Instructions for use"
+      "measure": "Marking warning: Explain in operation guide",
+      "type": "labeling/instructions for use",
+      "evidence_type": "labeling review"
     },
     {
       "control_id": "RC-R42",
-      "measure": "Usability design",
-      "type": "Design control",
-      "evidence_type": "Usability evaluation"
+      "measure": "Design control: Usability design",
+      "type": "design control",
+      "evidence_type": "usability evaluation"
     },
     {
       "control_id": "RC-R43",
-      "measure": "Usability design",
-      "type": "Design control",
-      "evidence_type": "Usability evaluation"
+      "measure": "Design control: Usability design",
+      "type": "design",
+      "evidence_type": "usability"
     },
     {
       "control_id": "RC-R44",
-      "measure": "Usability design",
-      "type": "Design control",
-      "evidence_type": "Usability evaluation"
+      "measure": "Design control: Usability design",
+      "type": "design",
+      "evidence_type": "usability"
     },
     {
       "control_id": "RC-R45",
-      "measure": "Usability design; How to judge the display device work well described in operation guide",
-      "type": "Design control; Marking",
-      "evidence_type": "Usability evaluation; Instructions for use"
+      "measure": "Design control: Usability design; Marking: how to judge the display device work well should be described in the operation guide",
+      "type": "design_and_marking",
+      "evidence_type": "usability/labeling"
     },
     {
       "control_id": "RC-R46",
-      "measure": "Battery storehouse marks battery type; Anti reverse design",
-      "type": "Marking warning; Design control",
-      "evidence_type": "Instructions for use; Design verification"
+      "measure": "Marking warning: Batteries storehouse mark battery type; Design control: Anti reverse design",
+      "type": "design_and_marking",
+      "evidence_type": "labeling/design"
     },
     {
       "control_id": "RC-R47",
-      "measure": "Explain in operation guide",
-      "type": "Marking warning",
-      "evidence_type": "Instructions for use"
+      "measure": "Marking warning: Explain in operation guide",
+      "type": "marking",
+      "evidence_type": "labeling"
     },
     {
       "control_id": "RC-R48",
-      "measure": "Explain in operation guide",
-      "type": "Marking warning",
-      "evidence_type": "Instructions for use"
+      "measure": "Marking warning: Explain in operation guide",
+      "type": "marking",
+      "evidence_type": "labeling"
     },
     {
       "control_id": "RC-R49",
-      "measure": "Control the size of detachable components; Explain in operation guide",
-      "type": "Design control; Marking warning",
-      "evidence_type": "Design verification; Instructions for use"
+      "measure": "Design control: Control the size of detachable components; Explain in operation guide",
+      "type": "design_and_marking",
+      "evidence_type": "design/labeling"
     },
     {
       "control_id": "RC-R50",
-      "measure": "Memory function design",
-      "type": "Design control",
-      "evidence_type": "Software test"
+      "measure": "Design control: Memory function",
+      "type": "design",
+      "evidence_type": "software"
     },
     {
       "control_id": "RC-R51",
-      "measure": "Software control",
-      "type": "Design control",
-      "evidence_type": "Software test"
+      "measure": "Design control: Software control",
+      "type": "design",
+      "evidence_type": "software"
     },
     {
       "control_id": "RC-R52",
-      "measure": "Algorithm control",
-      "type": "Design control",
-      "evidence_type": "Software test"
+      "measure": "Design control: Algorithm control",
+      "type": "design",
+      "evidence_type": "software"
     },
     {
       "control_id": "RC-R53",
-      "measure": "Version labeling",
-      "type": "Marking",
-      "evidence_type": "Software configuration management"
+      "measure": "Marking: Version labeling",
+      "type": "marking",
+      "evidence_type": "labeling"
     },
     {
       "control_id": "RC-R54",
-      "measure": "Explain in operation guide; Software design",
-      "type": "Marking warning; Design control",
-      "evidence_type": "Instructions for use; Software test"
+      "measure": "Marking warning: Explain in operation guide; Design control: Depends on software design",
+      "type": "design_and_marking",
+      "evidence_type": "software/labeling"
     },
     {
       "control_id": "RC-R55",
-      "measure": "Software design",
-      "type": "Design control",
-      "evidence_type": "Software test"
+      "measure": "Design control: Depends on software design",
+      "type": "design",
+      "evidence_type": "software"
     },
     {
       "control_id": "RC-R56",
-      "measure": "Software design for wireless coexistence; LED fallback display; Bluetooth retransmission",
-      "type": "Design control",
-      "evidence_type": "Software test"
+      "measure": "Design control: Depends on software design",
+      "type": "design",
+      "evidence_type": "software"
     },
     {
       "control_id": "RC-R57",
-      "measure": "Cybersecurity design",
-      "type": "Design control",
-      "evidence_type": "Cybersecurity test"
+      "measure": "Design control: Cybersecurity",
+      "type": "design",
+      "evidence_type": "software/cybersecurity"
     }
   ],
   "_meta": {
@@ -1067,7 +1741,7 @@
   "_edges": [
     {
       "type": "HAS_REVISION",
-      "from": "Risk Assessment Report",
+      "from": "Risk Analysis Report",
       "to": "1",
       "properties": {}
     },
@@ -1079,13 +1753,13 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "Risk Assessment Report",
+      "from": "PT9L-FXPJ01",
       "to": "infrared thermometer",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
-      "from": "Risk Management Plan",
+      "from": "Risk Assessment Report",
       "to": "risk management",
       "properties": {}
     },
@@ -1097,13 +1771,13 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "Risk Management Plan",
+      "from": "PT9L-FXJH01 V1.0",
       "to": "risk acceptance criteria",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
-      "from": "PT9L-FXJH01 V1.0",
+      "from": "Risk Management Plan",
       "to": "risk acceptance criteria",
       "properties": {}
     },
@@ -1115,20 +1789,596 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "Infrared Forehead Thermometer",
-      "to": "document structure",
+      "from": "intended use",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "contraindications",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "information security",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "patient contact",
+      "to": "皮肤接触",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "biocompatibility",
+      "to": "皮肤接触",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "material safety",
+      "to": "材料兼容性",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "biocompatibility",
+      "to": "材料兼容性",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "measurement principle",
+      "to": "红外能量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "energy transfer",
+      "to": "红外能量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "maintenance",
+      "to": "清洁消毒",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "probe cleaning",
+      "to": "清洁消毒",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "measurement function",
+      "to": "体温测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "temperature",
+      "to": "体温测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "electromagnetic emission",
+      "to": "非电离辐射",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "thermal hazard",
+      "to": "非电离辐射",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "environmental conditions",
+      "to": "环境影响",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EMC",
+      "to": "环境影响",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "environmental impact",
+      "to": "环境影响",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "battery disposal",
+      "to": "环境影响",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "battery",
+      "to": "电池",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "accessories",
+      "to": "电池",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "calibration",
+      "to": "校准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "maintenance",
+      "to": "校准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "software",
+      "to": "软件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Bluetooth",
+      "to": "软件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "cybersecurity",
+      "to": "软件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "data access",
+      "to": "数据访问",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Bluetooth",
+      "to": "数据访问",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "cybersecurity",
+      "to": "数据访问",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "harmonised standards",
+      "to": "协调标准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "bibliography",
+      "to": "协调标准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk analysis",
+      "to": "ISO 24971",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "hazard identification",
+      "to": "ISO 24971",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ISO 14971",
+      "to": "ISO 24971",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "数据存储",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "可用性",
+      "to": "数据存储",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "标签",
+      "to": "数据存储",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "可用性工程",
+      "to": "用户界面",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "用户界面",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "报警系统",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "基本性能",
+      "to": "报警系统",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "可用性",
+      "to": "报警系统",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险控制",
+      "to": "基本性能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "标准符合性",
+      "to": "基本性能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "基本性能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "标签设计",
+      "to": "标签",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "标签",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1",
+      "to": "标签",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk_controls",
+      "to": "IEC 60601-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risks",
+      "to": "IEC 60601-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "products",
+      "to": "IEC 60601-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "接触时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "物理危害",
+      "to": "接触时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "IP22",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "环境危害",
+      "to": "IP22",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "清洁",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "维护",
+      "to": "清洁",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "灭菌",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "皮肤接触",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "生物危害",
+      "to": "皮肤接触",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "防火",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "热危害",
+      "to": "防火",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "蓝牙",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件风险",
+      "to": "蓝牙",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电磁兼容",
+      "to": "蓝牙",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "电池",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电气安全",
+      "to": "电池",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "开机指示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "电磁兼容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试验证",
+      "to": "电磁兼容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "不适用项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "使用环境限制",
+      "to": "排除环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EMC",
+      "to": "排除环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2",
+      "to": "排除环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 第8.1条",
+      "to": "免疫测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险管理文件",
+      "to": "免疫测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 第8.7条",
+      "to": "工作模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "工作模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 第8.9条",
+      "to": "预期使用环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "体温计",
+      "to": "预期使用环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "用户手册",
+      "to": "预期使用环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 Table 4-8",
+      "to": "端口测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EMC测试",
+      "to": "端口测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 第8.10条",
+      "to": "RF无线通信",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 第8.11条",
+      "to": "磁场免疫",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 第4.3.1条",
+      "to": "测试配置",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC60601-1-2",
+      "to": "energy hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk controls",
+      "to": "energy hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R1-R17",
+      "to": "energy hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R18",
+      "to": "biological hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R19",
+      "to": "biological hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "biocompatibility evaluation",
+      "to": "biological hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFU",
+      "to": "biological hazards",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "Risk Management Plan",
-      "to": "risk acceptance",
+      "to": "risk control",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "Risk Acceptance Criteria",
-      "to": "risk acceptance",
+      "to": "risk control",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "risk matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Software Risk Analysis",
+      "to": "software safety classification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Software Development Plan",
+      "to": "software safety classification",
       "properties": {}
     },
     {
@@ -1139,242 +2389,411 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "software design",
+      "from": "Software Design",
       "to": "wireless coexistence",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
-      "from": "Bluetooth transmission",
+      "from": "Usability",
       "to": "wireless coexistence",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_scope_limitation_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_constraint_statement_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_scope_limitation_2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_scope_limitation_3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_design_rationale_2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_design_rationale_3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_working_principle_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_constraint_statement_2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_constraint_statement_3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_constraint_statement_4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_design_rationale_4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_working_principle_2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_8",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_9",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_10",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01",
+      "to": "fragment_behavioral_spec_12",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXFJ01 V1.0",
+      "to": "revision_seq_1",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "Risk Analysis Report",
-      "to": "risk acceptance",
+      "to": "revision_seq_1",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
-      "from": "Risk Management",
-      "to": "risk acceptance",
+      "from": "Risk Analysis Report",
+      "to": "PT9L-FXPJ01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "fragment_constraint_statement_1",
+      "to": "PT9L-FXJH01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "PT9L-FXPJ01",
+      "to": "PT9L-FXPJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "Infrared Forehead Thermometer",
+      "properties": {
+        "coverage_type": "risk_analysis"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "intended use",
+      "properties": {
+        "section": "A.2.1"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "contraindications",
+      "properties": {
+        "section": "A.2.1"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "information security",
+      "properties": {
+        "section": "A.2.1"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "biocompatibility",
+      "properties": {
+        "section": "A.2.3"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "material safety",
+      "properties": {
+        "section": "A.2.4"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "measurement principle",
+      "properties": {
+        "section": "A.2.5"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "maintenance",
+      "properties": {
+        "section": "A.2.9"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "measurement function",
+      "properties": {
+        "section": "A.2.11"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "electromagnetic emission",
+      "properties": {
+        "section": "A.2.14"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "environmental conditions",
+      "properties": {
+        "section": "A.2.15"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "environmental impact",
+      "properties": {
+        "section": "A.2.16"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "battery",
+      "properties": {
+        "section": "A.2.17"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "calibration",
+      "properties": {
+        "section": "A.2.18"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "software",
+      "properties": {
+        "section": "A.2.19"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "data access",
+      "properties": {
+        "section": "A.2.20"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "hazard identification",
+      "properties": {
+        "reference": "ISO/TR 24971:2020 Annex A"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "risk analysis",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "risk evaluation",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "risk control",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "基本性能",
+      "properties": {
+        "section": "IEC 60601-1 4.3"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "标签设计",
+      "properties": {
+        "section": "IEC 60601-1 7.2.2"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "risk acceptance criteria",
+      "to": "PT9L-FXJH01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "risk management plan",
+      "to": "PT9L-FXJH01 V1.0",
       "properties": {}
     },
     {
       "type": "VERIFIED_BY",
-      "from": "RC-R1",
+      "from": "PT9L-FXPJ01",
       "to": "PT9L-FXJH01 V1.0",
       "properties": {
-        "evidence_type": "EMC test per IEC60601-1-2"
+        "verification_type": "risk management plan implementation"
       }
     },
     {
-      "type": "VERIFIED_BY",
-      "from": "RC-R2",
-      "to": "PT9L-FXJH01 V1.0",
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-FXPJ01",
+      "to": "temperature",
       "properties": {
-        "evidence_type": "EMC test per IEC60601-1-2"
+        "measurement_type": "body temperature",
+        "section": "A.2.11"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "R1",
-      "to": "PT9L-FXPJ01 V1.0",
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-FXPJ01",
+      "to": "基本性能",
       "properties": {
-        "phase": "4.1 Energy hazards"
+        "measurement_type": "clinical thermometer accuracy",
+        "section": "IEC 60601-1 4.3"
       }
     },
     {
-      "type": "REPORTED_IN",
-      "from": "R2",
-      "to": "PT9L-FXPJ01 V1.0",
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-FXPJ01",
+      "to": "使用寿命",
       "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R3",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R4",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R5",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R6",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R7",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R8",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R9",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R10",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R11",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R12",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R13",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R14",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R15",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R16",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R17",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.1 Energy hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R18",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.2 Biological and chemical hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R19",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.2 Biological and chemical hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R20",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.3 Operational hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R21",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.3 Operational hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R22",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.3 Operational hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R23",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.3 Operational hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R24",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.3 Operational hazards"
-      }
-    },
-    {
-      "type": "REPORTED_IN",
-      "from": "R25",
-      "to": "PT9L-FXPJ01 V1.0",
-      "properties": {
-        "phase": "4.3 Operational hazards"
+        "value": "5年",
+        "section": "IEC 60601-1 4.4"
       }
     },
     {
@@ -1390,66 +2809,66 @@
     },
     {
       "type": "SIGNED",
-      "from": "Hou Guangwei",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Hou Guangwei",
       "properties": {
-        "title": "Technical Director / Group Leader"
+        "title": "Technical director / Group leader"
       }
     },
     {
       "type": "SIGNED",
-      "from": "Wan Long",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Wan Long",
       "properties": {
-        "title": "Hardware Design Director"
+        "title": "Hardware design director"
       }
     },
     {
       "type": "SIGNED",
-      "from": "Wang Di",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Wang Di",
       "properties": {
-        "title": "Software Design Director"
+        "title": "Software design director"
       }
     },
     {
       "type": "SIGNED",
-      "from": "Liu Zhao",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Liu Zhao",
       "properties": {
-        "title": "Mechanical Design Director"
+        "title": "Mechanical Design director"
       }
     },
     {
       "type": "SIGNED",
-      "from": "Zhang Xun",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Zhang Xun",
       "properties": {
-        "title": "Process Design Personnel and Quality Management Personnel"
+        "title": "Process design personnel and Quality management personnel"
       }
     },
     {
       "type": "SIGNED",
-      "from": "Zhao Yiping",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Zhao Yiping",
       "properties": {
-        "title": "Sales Personnel"
+        "title": "Sales personnel"
       }
     },
     {
       "type": "SIGNED",
-      "from": "Wang Yanhong",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Wang Yanhong",
       "properties": {
-        "title": "Certification Personnel"
+        "title": "Certification personnel"
       }
     },
     {
       "type": "SIGNED",
-      "from": "Gao Kejian",
-      "to": "PT9L-FXPJ01 V1.0",
+      "from": "Risk Analysis Report",
+      "to": "Gao Kejian",
       "properties": {
-        "title": "Personnel with Medical Background"
+        "title": "Personnel with medical background"
       }
     }
   ],

@@ -1,0 +1,449 @@
+{
+  "document": {
+    "title": "设计输出文档清单一",
+    "sheet": "硬件、软件",
+    "product_model": "PT9L",
+    "submitting_department": "智能产品部",
+    "notes": [
+      "此文档清单由专业工程师提交，专业主管主管审核签字",
+      "在文件要发放的部门前□内打√，未选项空白"
+    ]
+  },
+  "products": [
+    {
+      "name": "PT9L",
+      "model": "PT9L"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "1",
+      "name": "主板电路原理图",
+      "document_number": "PT9L-HFXS01 V1.0",
+      "version": "V1.0",
+      "layer": null
+    },
+    {
+      "id": "2",
+      "name": "主板PCB图",
+      "document_number": "PT9L-HFMP01 V1.0",
+      "version": "V1.0",
+      "layers": [
+        "Top Layer 层",
+        "Top Overlay 层",
+        "Bottom Layer 层",
+        "Bottom Overlay 层",
+        "Drill Layer 层",
+        "拼板示意图(顶层)",
+        "拼板示意图(底层)",
+        "尺寸图"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "接口板PCB图",
+      "reference_document_number": "PT9C-CNTP01 V1.0",
+      "reference_version": "V1.0",
+      "layers": [
+        "Top Layer 层",
+        "Top Overlay 层",
+        "Bottom Layer 层",
+        "Bottom Overlay 层",
+        "Drill Layer 层",
+        "拼板示意图(顶层)",
+        "拼板示意图(底层)",
+        "T-Z1-P14"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "PT9L机芯类组件清单",
+      "document_number": "PT9L-EBOM01",
+      "version": "V1.0"
+    },
+    {
+      "id": "5",
+      "name": "PT9L产品概述",
+      "document_number": "PT9L-CPGS01",
+      "version": "V1.0"
+    },
+    {
+      "id": "6",
+      "name": "PT9L工作原理说明",
+      "document_number": "PT9L-GZYL01",
+      "version": "V1.0"
+    },
+    {
+      "id": "7",
+      "name": "PT9L设计原理",
+      "document_number": "PT9L-SJYL01",
+      "version": "V1.0"
+    },
+    {
+      "id": "8",
+      "name": "PT9L工艺说明",
+      "document_number": "PT9L-GYSM01",
+      "version": "V1.0"
+    },
+    {
+      "id": "9",
+      "name": "PT9L工装操作说明",
+      "document_number": "PT9L-GZSM01",
+      "version": "V1.0"
+    },
+    {
+      "id": "10",
+      "name": "PT9L SMT加工说明",
+      "document_number": "PT9L-SMTW01",
+      "version": "V1.0"
+    },
+    {
+      "id": "11",
+      "name": "PT9L产品缺陷定义",
+      "document_number": "PT9L-QXDY01",
+      "version": "V1.0"
+    },
+    {
+      "id": "12",
+      "name": "PT9L产品维修指南",
+      "document_number": "PT9L-WXZN01",
+      "version": "V1.0"
+    },
+    {
+      "id": "13",
+      "name": "目标代码输出确认单",
+      "document_number": "PT9L-MBSC01",
+      "version": "V1.0"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-HFXS01 V1.0",
+      "type": "document_number",
+      "description": "主板电路原理图"
+    },
+    {
+      "id": "PT9L-HFMP01 V1.0",
+      "type": "document_number",
+      "description": "主板PCB图"
+    },
+    {
+      "id": "PT9C-CNTP01 V1.0",
+      "type": "reference_document_number",
+      "description": "接口板PCB图"
+    },
+    {
+      "id": "PT9L-EBOM01",
+      "type": "document_number",
+      "description": "PT9L机芯类组件清单"
+    },
+    {
+      "id": "PT9L-CPGS01",
+      "type": "document_number",
+      "description": "PT9L产品概述"
+    },
+    {
+      "id": "PT9L-GZYL01",
+      "type": "document_number",
+      "description": "PT9L工作原理说明"
+    },
+    {
+      "id": "PT9L-SJYL01",
+      "type": "document_number",
+      "description": "PT9L设计原理"
+    },
+    {
+      "id": "PT9L-GYSM01",
+      "type": "document_number",
+      "description": "PT9L工艺说明"
+    },
+    {
+      "id": "PT9L-GZSM01",
+      "type": "document_number",
+      "description": "PT9L工装操作说明"
+    },
+    {
+      "id": "PT9L-SMTW01",
+      "type": "document_number",
+      "description": "PT9L SMT加工说明"
+    },
+    {
+      "id": "PT9L-QXDY01",
+      "type": "document_number",
+      "description": "PT9L产品缺陷定义"
+    },
+    {
+      "id": "PT9L-WXZN01",
+      "type": "document_number",
+      "description": "PT9L产品维修指南"
+    },
+    {
+      "id": "PT9L-MBSC01",
+      "type": "document_number",
+      "description": "目标代码输出确认单"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文件发放部门：R智能产品部 □行政部 □人力资源部 □制造部 □国际贸易综合部 □国内业务事业部 □知识产权部 □品牌服务部 □认证检测中心 □其他。已选发放部门为智能产品部。",
+      "topic_tags": [
+        "文件发放",
+        "部门",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "智能产品部"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/设计输出清单一.via_xlsx.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "文件发放",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "智能产品部",
+      "to": "文件发放",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-HFXS01 V1.0",
+      "properties": {
+        "seq": "1",
+        "name": "主板电路原理图"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-HFMP01 V1.0",
+      "properties": {
+        "seq": "2",
+        "name": "主板PCB图"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9C-CNTP01 V1.0",
+      "properties": {
+        "seq": "3",
+        "name": "接口板PCB图"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-EBOM01",
+      "properties": {
+        "seq": "4",
+        "name": "PT9L机芯类组件清单"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-CPGS01",
+      "properties": {
+        "seq": "5",
+        "name": "PT9L产品概述"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-GZYL01",
+      "properties": {
+        "seq": "6",
+        "name": "PT9L工作原理说明"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-SJYL01",
+      "properties": {
+        "seq": "7",
+        "name": "PT9L设计原理"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-GYSM01",
+      "properties": {
+        "seq": "8",
+        "name": "PT9L工艺说明"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-GZSM01",
+      "properties": {
+        "seq": "9",
+        "name": "PT9L工装操作说明"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-SMTW01",
+      "properties": {
+        "seq": "10",
+        "name": "PT9L SMT加工说明"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-QXDY01",
+      "properties": {
+        "seq": "11",
+        "name": "PT9L产品缺陷定义"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-WXZN01",
+      "properties": {
+        "seq": "12",
+        "name": "PT9L产品维修指南"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输出文档清单一",
+      "to": "PT9L-MBSC01",
+      "properties": {
+        "seq": "13",
+        "name": "目标代码输出确认单"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PT9L-HFMP01 V1.0",
+      "properties": {
+        "layers": [
+          "Top Layer 层",
+          "Top Overlay 层",
+          "Bottom Layer 层",
+          "Bottom Overlay 层",
+          "Drill Layer 层",
+          "拼板示意图(顶层)",
+          "拼板示意图(底层)",
+          "尺寸图"
+        ]
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9C-CNTP01 V1.0",
+      "to": "PT9C-CNTP01 V1.0",
+      "properties": {
+        "layers": [
+          "Top Layer 层",
+          "Top Overlay 层",
+          "Bottom Layer 层",
+          "Bottom Overlay 层",
+          "Drill Layer 层",
+          "拼板示意图(顶层)",
+          "拼板示意图(底层)",
+          "T-Z1-P14"
+        ]
+      }
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-HFXS01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-HFMP01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9C-CNTP01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-EBOM01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-CPGS01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-GZYL01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-SJYL01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-GYSM01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-GZSM01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-SMTW01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-WXZN01",
+      "properties": {}
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-MBSC01",
+      "properties": {}
+    }
+  ],
+  "_claims": []
+}

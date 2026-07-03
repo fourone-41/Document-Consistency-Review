@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Hardware Agent",
+  "decision": "confirm",
+  "severity": "P1",
+  "error_type": "missing_biocompatibility_sample_identity_document",
+  "claim": "No biocompatibility test report and no PT5 sample-identity document are present in the recovered evidence catalog. The only recovered evidence (HW-135 through HW-138, doc F0190) covers the PT5-M02 positive-terminal spring drawing dimensions and assembly notes. The page-context hits from F0015 and F0019 (risk verification reports) returned empty text fields, providing no sample-identity or biocompatibility content. The drawing itself (line 97) explicitly flags as unresolved: 'PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件）— 推测同件复用', confirming that PT5-to-PT9L material equivalence is an open engineering assumption, not a documented and verified fact. RUN-0006's concern that tested samples may not be materially equivalent to PT9L production parts therefore remains unresolved and is substantiated by the evidence gap.",
+  "reason": "After three rounds of context recovery, the evidence set contains only the PT5-M02 spring engineering drawing (F0190) and empty-text risk-report page hits (F0015, F0019). No biocompatibility test report, no sample-identity/traceability document linking PT5 test samples to PT9L production parts, and no formal equivalence justification have been located. The drawing itself records the PT5-to-PT9L reuse as an unconfirmed assumption ('推测同件复用'). This is a confirmed DHF gap: ISO 10993 biocompatibility evaluation requires documented sample identity; the absence of such documentation means it is impossible to confirm that tested samples are materially equivalent to PT9L production parts as flagged by RUN-0006. The finding is confirmed at P1 severity."
+}
+```

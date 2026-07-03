@@ -1,0 +1,1092 @@
+{
+  "document": {
+    "title": "主板（T-Z1-P13 V1.0）2D 图读图报告",
+    "drawing_number": "T-Z1-P13",
+    "edition": "V1.0",
+    "part_name": "PCB",
+    "model_number": "T-Z1",
+    "material": "环氧树脂板（FR4）",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "source_file": "主板.pdf",
+    "report_date": "2026-06-02",
+    "page_size": "A4竖向",
+    "skill_reference": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "主板 PCB",
+      "drawing_number": "T-Z1-P13",
+      "version": "V1.0",
+      "model": "T-Z1",
+      "system": "PT9L",
+      "dimensions": "84.7 × 24.4 × 1.0 mm",
+      "material": "FR4 环氧树脂板",
+      "shape": "细长不规则外形（含多处凸凹避让结构）"
+    }
+  ],
+  "components": [
+    {
+      "name": "主板 PCB（主控板）",
+      "part_number": "T-Z1-P13",
+      "description": "主控板 FR4 PCB，84.7×24.4×1.0 mm，细长不规则外形，含多处凸凹避让",
+      "material": "FR4 环氧树脂板"
+    },
+    {
+      "name": "传感器 PCB",
+      "part_number": "T-Z1-P14",
+      "description": "与主板配对的传感器板，构成 PT9L 双 PCB 架构",
+      "reference": "传感器PCB.pdf"
+    },
+    {
+      "name": "下盖",
+      "part_number": "T-Z1-P02",
+      "description": "主板嵌入下盖内腔（电池仓+主腔），与主板外形配合"
+    },
+    {
+      "name": "按键",
+      "part_number": "T-Z1-P05",
+      "description": "通过 tact switch 与主板接触"
+    },
+    {
+      "name": "液晶",
+      "description": "通过斑马条与主板接触，LCD 16个PIN",
+      "reference": "PT9L-液晶-20240627.pdf"
+    },
+    {
+      "name": "斑马条",
+      "description": "连接主板与液晶，v2.0",
+      "reference": "PT9L-斑马条-v2.0-20240524.pdf"
+    },
+    {
+      "name": "MCU（微控制器）",
+      "description": "焊接于主板，控制全机功能"
+    },
+    {
+      "name": "LCD 段码驱动电路",
+      "description": "通过斑马条接 LCD 16个PIN"
+    },
+    {
+      "name": "按键检测电路",
+      "description": "tact switch × 2，对应开关帽+按键 P05"
+    },
+    {
+      "name": "电池电源管理电路",
+      "description": "AAA × 2 = 3V 系统"
+    },
+    {
+      "name": "蜂鸣器驱动电路",
+      "description": "可能有蜂鸣器焊盘（待确认）"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-1",
+      "description": "板厚 TH. = 1.0 ± 0.1 mm",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "DI-2",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-3",
+      "description": "主板总长 84.7 mm（Level B 公差 ±0.2 mm）",
+      "source": "外形尺寸"
+    },
+    {
+      "id": "DI-4",
+      "description": "主板总宽 24.4 mm（Level B 公差 ±0.1 mm）",
+      "source": "外形尺寸"
+    },
+    {
+      "id": "DI-5",
+      "description": "外形不规则，含多处凸凹避让结构（避让电池仓、按键开口、传感器筒、螺柱凸台等）",
+      "source": "外形特征分析"
+    },
+    {
+      "id": "DI-6",
+      "description": "与传感器 PCB（T-Z1-P14）构成双 PCB 架构，通过排线/焊接电气连接",
+      "source": "配合交叉验证"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "板厚 TH. = 1.0 ± 0.1 mm",
+      "type": "尺寸要求",
+      "source": "技术要求"
+    },
+    {
+      "id": "REQ-2",
+      "description": "产品符合 RoHS 2.0",
+      "type": "环保合规要求",
+      "source": "技术要求"
+    },
+    {
+      "id": "REQ-3",
+      "description": "公差遵循 SELECT LEVEL B",
+      "type": "公差要求",
+      "source": "标题栏"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品符合 RoHS 2.0 有害物质限制指令",
+      "applicability": "主板 PCB 材料及制造"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "T-Z1-P13",
+      "type": "图号/零件号",
+      "description": "主板 PCB 图纸编号"
+    },
+    {
+      "id": "T-Z1-P14",
+      "type": "图号/零件号",
+      "description": "传感器 PCB 图纸编号"
+    },
+    {
+      "id": "T-Z1-P02",
+      "type": "图号/零件号",
+      "description": "下盖图纸编号"
+    },
+    {
+      "id": "T-Z1-P05",
+      "type": "图号/零件号",
+      "description": "按键图纸编号"
+    },
+    {
+      "id": "T-Z1",
+      "type": "型号",
+      "description": "产品型号（PT9L 系统）"
+    }
+  ],
+  "tests": [
+    {
+      "id": "CHECK-6.0",
+      "name": "DPI 检查",
+      "result": "通过",
+      "detail": "300 DPI（A4 竖向）"
+    },
+    {
+      "id": "CHECK-6.1",
+      "name": "编号连续性检查",
+      "result": "N/A",
+      "detail": "本图无圆圈编号"
+    },
+    {
+      "id": "CHECK-6.2",
+      "name": "角度反推检查",
+      "result": "N/A",
+      "detail": "无角度，R2.4 为圆角符号"
+    },
+    {
+      "id": "CHECK-6.3",
+      "name": "前缀完整性检查",
+      "result": "通过",
+      "detail": "2-Ø0.8、2-R2.4、2-Ø1.6、2-Ø2.2、2-Ø1 多处前缀均已捕获"
+    },
+    {
+      "id": "CHECK-6.4",
+      "name": "公差形式检查",
+      "result": "通过",
+      "detail": "全对称；板厚 ±0.1（技术要求）"
+    },
+    {
+      "id": "CHECK-6.5",
+      "name": "配合交叉验证",
+      "result": "通过",
+      "detail": "与下盖 T-Z1-P02 内腔配合；与传感器 PCB（T-Z1-P14）通过排线/焊接电气连接；与按键 T-Z1-P05 通过 tact switch 接触；与液晶通过斑马条接触"
+    },
+    {
+      "id": "CHECK-6.6",
+      "name": "Ø / Φ 视觉确认",
+      "result": "通过",
+      "detail": "全部 Ø 标注均带 Ø 字符；R2.4 在圆角位置"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "各孔径阵列对应的元件功能（MCU 包封？焊接通孔元件位置？）",
+      "required_source": "PCBA Gerber + BOM + PCBA 装配图",
+      "priority": "C级"
+    },
+    {
+      "id": "C-2",
+      "description": "与传感器 PCB（T-Z1-P14）的电气连接方式（焊接？排线？）",
+      "required_source": "装配 SOP",
+      "priority": "C级"
+    },
+    {
+      "id": "C-3",
+      "description": "主板顶部 84.7 mm 长是否覆盖下盖内腔全长",
+      "required_source": "3D 装配 + 极限公差",
+      "priority": "C级"
+    },
+    {
+      "id": "C-4",
+      "description": "主板厚 1.0 mm 是否与下盖电池仓/按键开口槽宽度匹配",
+      "required_source": "3D 装配",
+      "priority": "C级"
+    },
+    {
+      "id": "C-5",
+      "description": "与液晶斑马条接触的 PCBA 焊盘位置（板上哪一行 16 焊盘？）",
+      "required_source": "PCBA Gerber",
+      "priority": "C级"
+    },
+    {
+      "id": "C-6",
+      "description": "各 2-Ø2.2 螺丝孔位置是否与下盖/支架的螺柱/凸台对位",
+      "required_source": "极限公差链",
+      "priority": "C级"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "主板 PCB 外形细长不规则（84.7×24.4 mm），含多处凸凹避让结构。顶部多段（43.4/43.2/40/34.4/27.6/20.15/14 mm）指示顶部有多个台阶状凸出/凹陷；右侧多段（21.2/18.2/16.2/9.2 mm）指示右侧有多个高度变化的避让。强烈提示主板需避让壳体内部多处结构（电池仓、按键开口、传感器筒、螺柱凸台等）。",
+      "topic_tags": [
+        "PCB外形",
+        "避让结构",
+        "装配约束",
+        "不规则外形"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "T-Z1-P02下盖",
+        "T-Z1-P05按键",
+        "传感器PCB"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "典型 PT9L 主板功能区分析：MCU（微控制器，控制全机）；LCD 段码驱动（通过斑马条接 LCD 16个PIN）；按键检测电路（tact switch × 2，对应开关帽+按键 P05）；电池电源管理（AAA × 2 = 3V 系统）；与传感器 PCB 的接口（4-Ø0.7/2-Ø0.8 焊孔可能是连接焊点）；蜂鸣器驱动（看是否有蜂鸣器焊盘）；充电/USB 可能无（PT9L AAA 电池供电）。",
+      "topic_tags": [
+        "主板功能",
+        "MCU",
+        "LCD驱动",
+        "按键检测",
+        "电源管理",
+        "蜂鸣器",
+        "传感器接口"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "PT9L系统",
+        "传感器PCB T-Z1-P14"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "主板板厚 1.0 mm 与传感器 PCB（T-Z1-P14）同厚，可能用同一规格 FR4 卷材批次加工。公差等级 SELECT LEVEL B，外形和孔径整体按 Level B 默认 ±0.1 mm 执行。无 IQC 编号尺寸。",
+      "topic_tags": [
+        "板厚",
+        "FR4",
+        "公差等级",
+        "制造约束"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "T-Z1-P14传感器PCB"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "PT9L 系统采用双 PCB 架构：主板（T-Z1-P13，84.7×24.4×1.0 mm）与传感器 PCB（T-Z1-P14）配对，两者通过排线或焊接实现电气连接。主板承担主控功能，传感器 PCB 承担传感功能，分板设计有利于传感器部分的独立安装与替换。",
+      "topic_tags": [
+        "双PCB架构",
+        "PT9L系统",
+        "主控板",
+        "传感器板",
+        "系统架构"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "T-Z1-P14",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本图为主板 PCB 外形/钻孔图，文字层仅 65 字符，含\"PCB\"、\"环氧树脂板\"、\"TH.=1.0±0.1\"。图中未包含铜箔层、丝印层、阻焊层等电气设计信息，元件功能分配需结合 PCBA Gerber + BOM + PCBA 装配图确认。本图不含圆圈编号，无角度标注。",
+      "topic_tags": [
+        "图纸范围",
+        "外形钻孔图",
+        "限制说明",
+        "待确认项"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "PCBA Gerber",
+        "BOM"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/设计输出清单二/图纸/主板.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "PCB外形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02下盖",
+      "to": "PCB外形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05按键",
+      "to": "PCB外形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器PCB",
+      "to": "PCB外形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "主板功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L系统",
+      "to": "主板功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器PCB T-Z1-P14",
+      "to": "主板功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "板厚",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14传感器PCB",
+      "to": "板厚",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "双PCB架构",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "双PCB架构",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "双PCB架构",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "图纸范围",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PCBA Gerber",
+      "to": "图纸范围",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BOM",
+      "to": "图纸范围",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CHECK-6.0",
+      "to": "DPI 检查",
+      "properties": {
+        "detail": "300 DPI（A4 竖向）",
+        "result": "通过"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CHECK-6.1",
+      "to": "编号连续性检查",
+      "properties": {
+        "detail": "本图无圆圈编号",
+        "result": "N/A"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CHECK-6.2",
+      "to": "角度反推检查",
+      "properties": {
+        "detail": "无角度，R2.4 为圆角符号",
+        "result": "N/A"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CHECK-6.3",
+      "to": "前缀完整性检查",
+      "properties": {
+        "detail": "2-Ø0.8、2-R2.4、2-Ø1.6、2-Ø2.2、2-Ø1 多处前缀均已捕获",
+        "result": "通过"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CHECK-6.4",
+      "to": "公差形式检查",
+      "properties": {
+        "detail": "全对称；板厚 ±0.1（技术要求）",
+        "result": "通过"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CHECK-6.5",
+      "to": "配合交叉验证",
+      "properties": {
+        "detail": "与下盖 T-Z1-P02 内腔配合；与传感器 PCB（T-Z1-P14）通过排线/焊接电气连接；与按键 T-Z1-P05 通过 tact switch 接触；与液晶通过斑马条接触",
+        "result": "通过"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CHECK-6.6",
+      "to": "Ø / Φ 视觉确认",
+      "properties": {
+        "detail": "全部 Ø 标注均带 Ø 字符；R2.4 在圆角位置",
+        "result": "通过"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-1",
+      "to": "REQ-1",
+      "properties": {
+        "note": "板厚 TH.=1.0±0.1 mm 设计输入对应尺寸要求"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-2",
+      "to": "REQ-2",
+      "properties": {
+        "note": "RoHS 2.0 设计输入对应环保合规要求"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "CHECK-6.5",
+      "properties": {
+        "note": "待确认项 C-1 是配合交叉验证的细节补充"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "CHECK-6.5",
+      "properties": {
+        "note": "待确认项 C-2 是配合交叉验证的细节补充"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-3",
+      "to": "DI-3",
+      "properties": {
+        "note": "C-3 是主板总长 84.7 mm 设计输入的待确认细节"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-4",
+      "to": "DI-1",
+      "properties": {
+        "note": "C-4 是板厚 1.0 mm 设计输入的待确认细节"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-5",
+      "to": "DI-6",
+      "properties": {
+        "note": "C-5 是双 PCB 架构电气连接设计输入的待确认细节"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-6",
+      "to": "DI-5",
+      "properties": {
+        "note": "C-6 是外形避让结构设计输入中螺丝孔对位的待确认细节"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "DI-3",
+      "properties": {
+        "note": "主板图号对应总长 84.7 mm 尺寸细节"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "DI-4",
+      "properties": {
+        "note": "主板图号对应总宽 24.4 mm 尺寸细节"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P13",
+      "to": "DI-5",
+      "properties": {
+        "note": "主板图号对应不规则外形避让结构细节"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-1",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-2",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-4",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P13",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P13",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P13",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-4",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-5",
+      "to": "DI-6",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-6",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P13",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P13",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P13",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P13",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "CHECK-6.4",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "CHECK-6.4",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "CHECK-6.5",
+      "to": "DI-6",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "CHECK-6.5",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "C-3",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "C-4",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "C-6",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-1",
+      "to": "CHECK-6.4",
+      "properties": {
+        "note": "板厚 TH.=1.0±0.1 mm 公差形式检查"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-3",
+      "to": "CHECK-6.4",
+      "properties": {
+        "note": "公差遵循 SELECT LEVEL B，全对称公差形式检查"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-1",
+      "to": "CHECK-6.4",
+      "properties": {
+        "note": "板厚 TH.=1.0±0.1 mm 通过公差形式检查验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-3",
+      "to": "CHECK-6.4",
+      "properties": {
+        "note": "主板总长 84.7 mm Level B 公差通过公差形式检查"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-4",
+      "to": "CHECK-6.4",
+      "properties": {
+        "note": "主板总宽 24.4 mm Level B 公差通过公差形式检查"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-5",
+      "to": "CHECK-6.5",
+      "properties": {
+        "note": "外形不规则凸凹避让结构通过配合交叉验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-6",
+      "to": "CHECK-6.5",
+      "properties": {
+        "note": "与传感器 PCB 双 PCB 架构通过配合交叉验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-3",
+      "to": "CHECK-6.3",
+      "properties": {
+        "note": "主板外形尺寸前缀完整性检查通过"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-4",
+      "to": "CHECK-6.3",
+      "properties": {
+        "note": "主板外形尺寸前缀完整性检查通过"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-1",
+      "to": "REQ-1",
+      "properties": {
+        "value": "1.0",
+        "tolerance": "±0.1",
+        "unit": "mm",
+        "dimension": "板厚"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-3",
+      "to": "DI-3",
+      "properties": {
+        "value": "84.7",
+        "tolerance": "±0.2",
+        "unit": "mm",
+        "dimension": "总长"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-4",
+      "to": "DI-4",
+      "properties": {
+        "value": "24.4",
+        "tolerance": "±0.1",
+        "unit": "mm",
+        "dimension": "总宽"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板 PCB",
+      "to": "DI-1",
+      "properties": {
+        "value": "1.0",
+        "tolerance": "±0.1",
+        "unit": "mm",
+        "dimension": "板厚"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板 PCB",
+      "to": "DI-3",
+      "properties": {
+        "value": "84.7",
+        "tolerance": "±0.2",
+        "unit": "mm",
+        "dimension": "总长"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板 PCB",
+      "to": "DI-4",
+      "properties": {
+        "value": "24.4",
+        "tolerance": "±0.1",
+        "unit": "mm",
+        "dimension": "总宽"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板 PCB（主控板）",
+      "to": "DI-1",
+      "properties": {
+        "value": "1.0",
+        "tolerance": "±0.1",
+        "unit": "mm",
+        "dimension": "板厚"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "CHECK-6.0",
+      "to": "CHECK-6.0",
+      "properties": {
+        "value": "300",
+        "unit": "DPI",
+        "dimension": "图像分辨率"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P13",
+      "to": "主板 PCB",
+      "properties": {
+        "document_title": "主板（T-Z1-P13 V1.0）2D 图读图报告",
+        "edition": "V1.0",
+        "report_date": "2026-06-02"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P13",
+      "to": "C-1",
+      "properties": {
+        "priority": "C级"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P13",
+      "to": "C-2",
+      "properties": {
+        "priority": "C级"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P13",
+      "to": "C-3",
+      "properties": {
+        "priority": "C级"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P13",
+      "to": "C-4",
+      "properties": {
+        "priority": "C级"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P13",
+      "to": "C-5",
+      "properties": {
+        "priority": "C级"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P13",
+      "to": "C-6",
+      "properties": {
+        "priority": "C级"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "板厚",
+      "attribute": "标称值",
+      "value": "1.0",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "",
+      "raw_text": "板厚 TH. = 1.0 ± 0.1 mm"
+    },
+    {
+      "subject": "环保合规",
+      "attribute": "标准版本",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "产品符合 RoHS 2.0"
+    },
+    {
+      "subject": "公差等级",
+      "attribute": "执行级别",
+      "value": "SELECT LEVEL B",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "公差遵循 SELECT LEVEL B"
+    },
+    {
+      "subject": "主板总长",
+      "attribute": "标称值",
+      "value": "84.7",
+      "unit": "mm",
+      "tolerance": "±0.2",
+      "condition": "Level B 公差",
+      "raw_text": "主板总长 84.7 mm（Level B 公差 ±0.2 mm）"
+    },
+    {
+      "subject": "主板总宽",
+      "attribute": "标称值",
+      "value": "24.4",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "Level B 公差",
+      "raw_text": "主板总宽 24.4 mm（Level B 公差 ±0.1 mm）"
+    },
+    {
+      "subject": "图纸分辨率",
+      "attribute": "DPI",
+      "value": "300",
+      "unit": "DPI",
+      "tolerance": "",
+      "condition": "A4 竖向",
+      "raw_text": "300 DPI（A4 竖向）"
+    },
+    {
+      "subject": "孔径",
+      "attribute": "数量及规格",
+      "value": "0.8",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "2处",
+      "raw_text": "2-Ø0.8"
+    },
+    {
+      "subject": "圆角",
+      "attribute": "数量及规格",
+      "value": "2.4",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "2处",
+      "raw_text": "2-R2.4"
+    },
+    {
+      "subject": "孔径",
+      "attribute": "数量及规格",
+      "value": "1.6",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "2处",
+      "raw_text": "2-Ø1.6"
+    },
+    {
+      "subject": "孔径",
+      "attribute": "数量及规格",
+      "value": "2.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "2处",
+      "raw_text": "2-Ø2.2"
+    },
+    {
+      "subject": "孔径",
+      "attribute": "数量及规格",
+      "value": "1.0",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "2处",
+      "raw_text": "2-Ø1"
+    },
+    {
+      "subject": "主板PCB",
+      "attribute": "外形尺寸",
+      "value": "84.7×24.4×1.0",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "FR4 环氧树脂板",
+      "raw_text": "主控板 FR4 PCB，84.7×24.4×1.0 mm，细长不规则外形，含多处凸凹避让"
+    },
+    {
+      "subject": "主板PCB",
+      "attribute": "材料",
+      "value": "FR4 环氧树脂板",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "主控板 FR4 PCB，84.7×24.4×1.0 mm"
+    },
+    {
+      "subject": "LCD接口",
+      "attribute": "PIN数量",
+      "value": "16",
+      "unit": "PIN",
+      "tolerance": "",
+      "condition": "通过斑马条连接",
+      "raw_text": "通过斑马条与主板接触，LCD 16个PIN"
+    },
+    {
+      "subject": "LCD段码驱动",
+      "attribute": "PIN数量",
+      "value": "16",
+      "unit": "PIN",
+      "tolerance": "",
+      "condition": "通过斑马条连接",
+      "raw_text": "通过斑马条接 LCD 16个PIN"
+    },
+    {
+      "subject": "按键检测电路",
+      "attribute": "tact switch数量",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "对应开关帽+按键P05",
+      "raw_text": "tact switch × 2，对应开关帽+按键 P05"
+    },
+    {
+      "subject": "电池电源",
+      "attribute": "电池规格及电压",
+      "value": "3",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "AAA × 2",
+      "raw_text": "AAA × 2 = 3V 系统"
+    },
+    {
+      "subject": "斑马条",
+      "attribute": "版本",
+      "value": "v2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "连接主板与液晶，v2.0"
+    }
+  ]
+}

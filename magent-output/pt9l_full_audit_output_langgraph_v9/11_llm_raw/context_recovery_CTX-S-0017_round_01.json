@@ -1,0 +1,115 @@
+```json
+{
+  "context_summary": "本轮已补充了 F0013 文件的完整文档头部局部上下文（第1–46行），明确确认：文件名含 'PT2L'，但文档内部第6行 DN 字段为 'PT9L-FXJH01 V1.0'，第14行 Product model 字段为 'PT9L'，第12行 Product name 为 'Infrared Forehead Thermometer'，Project number 为 30000078。三条已有证据（REG-003/004/005）的局部扩展行已全部获取。产品身份冲突的核心证据（文件名 PT2L vs 内部 DN/型号 PT9L）已在文档第1–22行范围内得到完整文本支撑。仍缺：①文件版本控制表/变更历史页（通常在封面后或目录后）；②同文件夹内其他 PT2L 文件的 DN 字段用于对比；③F0012（IFT 系列）的封面 DN 字段内容（page_context 中 text 字段均为空，未能读取）；④关系索引或文档清单中 F0013 的正式登记型号。",
+  "evidence_gaps": [
+    "F0013 内部是否存在版本变更记录表或修订历史页，记录该文件从 PT9L 模板复用/改写为 PT2L 的过程",
+    "同文件夹（2L风险改 - 历史文件）中其他 PT2L 文件的封面 DN 字段，用于确认 PT2L 系列的正常 DN 格式应为何值",
+    "F0012（IFT-FXJH01）封面 DN 字段及 Product model 字段的实际文本（当前 page_context 中 text 均为空）",
+    "文档管理清单或关系索引中 F0013 的正式登记产品型号与文档编号，以确认受控文件记录层面的登记值",
+    "F0013 第46行之后的风险管理活动安排表（Section 1 完整表格）中是否有产品型号字段再次出现 PT9L 或 PT2L",
+    "Section 5（Risk Control Measures Verification Criteria，第44行目录指向第7页）的完整内容，确认验证准则部分是否也沿用 PT9L 标识"
+  ],
+  "additional_search_queries": [
+    "F0013 site:03风险分析/2L风险改-历史文件 revision history OR change record OR 版本记录 OR 修订历史",
+    "03风险分析/2L风险改-历史文件 PT2L DN字段 OR 'DN ： PT2L' OR 'Document Number PT2L'",
+    "F0012 line:1-25 DN OR 'Product model' OR 'Document number'",
+    "relation_index F0013 product_model OR registered_model OR doc_number",
+    "03风险分析/2L风险改-历史文件 PT2L Risk Management Plan Section5 verification criteria",
+    "project_number 30000078 product_model OR PT2L OR PT9L"
+  ],
+  "agent_instruction": "以下上下文包已确认 F0013 存在文件名（PT2L）与内部 DN/型号字段（PT9L）的直接文本冲突，核心冲突证据完整。请在审查时重点关注：(1) recovered_context 中 lines 1–22 提供了封面完整原文，DN 行（line 6）与 Product model 行（line 14）均明确写 PT9L，与文件路径中的 PT2L 构成不可调和的产品身份冲突；(2) 仍缺版本变更历史和文档管理清单的登记值，建议在下一轮补充后再作最终合规判定；(3) F0012 的 page_context text 字段为空，需重新读取以完成同文件夹横向对比。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-004",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 48,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-005",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 121,
+        "source_text": "Control as much as possible: The risk needs to be controlled by control measures.",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line_start": 1,
+        "title": "F0012 封面区（text 未读取，需下一轮补充）",
+        "text": "[PENDING - text field empty in current round]"
+      }
+    ],
+    "recovered_context": [
+      {
+        "evidence_id": "RC-001",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line_range": [1, 46],
+        "section_heading": "文档封面及目录（Section 0）",
+        "recovery_rationale": "扩展 REG-003（line 22）的局部上下文至完整封面块，覆盖 DN 字段、Product model、Product name、Project number 及签字栏全部行",
+        "text": "1: <!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->\n2: # V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0\n3: \n4: > hybrid clean-md：规整签字/数据表用 GFM 表格；多段大格子铺成普通段落；保留全部文字与复选框；不保留 HTML 标签。\n5: \n6: DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan\n7: \n8: **Risk Management Plan**\n9: \n10: **(V 1 .0 )**\n11: \n12: Product name: Infrared Forehead Thermometer\n13: \n14: Product model： PT9L\n15: \n16: Project number： 30000078\n17: \n18: **Drafted by** *(Regulation Engineer)* Date:\n19: \n20: **Reviewed by** *(Certification Engineer)* Date:\n21: \n22: **Approved by** *(Technical Director)* Date:\n23: \n24: **Content s**\n25: \n26: 1\\. Arrangement of Risk Management Activities 2\n27: \n28: 2\\. Risk Management Group 4\n29: \n30: 3\\. Risk Acceptance Criteria 5\n31: \n32: 3.1 Severity of A Hazard 5\n33: \n34: 3.2 Probability of A Hazard 5\n35: \n36: 3.3 Risk Acceptance Criteria 5\n37: \n38: 4\\. Residual Risk Acceptance Criteria 6\n39: \n40: 4.1 For Single Residual Risk 6\n41: \n42: 4.2 For Overall Residual Risk 6\n43: \n44: 5\\. Risk Control Measures Verification Criteria 7\n45: \n46: # 1. Arrangement of Risk Management Activities",
+        "key_fields_extracted": {
+          "file_title_in_filename": "PT2L美亚-FXJH01 V1.0",
+          "internal_DN_line6": "PT9L-FXJH01 V1.0 Risk Management Plan",
+          "internal_product_model_line14": "PT9L",
+          "internal_product_name_line12": "Infrared Forehead Thermometer",
+          "internal_project_number_line16": "30000078",
+          "conflict_confirmed": true,
+          "conflict_description": "文件名标识产品为 PT2L，但文档内部 DN 字段（line 6）与 Product model 字段（line 14）均明确标识为 PT9L，两者不一致，构成受控文件产品身份冲突"
+        }
+      },
+      {
+        "evidence_id": "RC-002",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line_range": [46, 55],
+        "section_heading": "1. Arrangement of Risk Management Activities",
+        "recovery_rationale": "扩展 REG-004（line 48）的局部上下文，提供 Section 1 完整表格首行及各阶段描述，确认该节内容为通用风险管理流程描述，未再出现产品型号字段",
+        "text": "46: # 1. Arrangement of Risk Management Activities\n47: \n48: The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:\n49: \n50: | **Phase** | **Main Job Descriptions** | **Responsibilities and Authorities** | **Requirements on Risk Management Activity Review** | **Output Document** |\n51: | --- | --- | --- | --- | --- |\n52: | **Initial development** | 1. Document intended use and reasonably foreseeable misuse of the medical device; 2. Identify characteristics related to safety; 3. Identify hazards and hazardous situations; 4. Estimate the risk(s) of each hazardous situation; 5. Risk evaluation; 6. Draft the risk control measures plan. | 1. Project manager shall organize the implement of activities in this phase; 2. Members of risk management shall be in charge of the job content review. | Project manager shall draft the 'risk assessment report' and organize the review of 'risk assessment report'. | 1. Report of risk assessment |\n53: | **Prototype phase (Design verification)** | 1. Verify the implementation and effectiveness of risk control measures plan; 2. Assess the residual risk; 3. Make benefit-risk analysis; 4. Evaluate whether there is any risks arising from risk control measures; 5. Review completeness of risk control | 1. Project manager shall organize the implement of activities in this phase; 2. Members of risk management shall be in charge of job content review. | Project manager shall draft 'report of risk control measures verification and residual risk assessment', and organize review of the report; Members of risk management shall review the risk management activities in the former phase. | 1. Report of verification of risk control measure and residual risk evaluation |\n54: | **Design validation** | 1. Overall residual risk evaluation; 2. Form the risk management report. | 1. Project manager shall organize the implement of activities in this phase; 2. Members of risk management shall be in charge of job content review | Members of risk management shall review the risk management activities in former phase. | 1. Report of risk management |\n55: | **Design change** | 1. Identify hazards and hazardous situations related to design change; 2. Evaluate risk(s) in hazardous situation which result from design change; 3. Assess risk(s) in design change. | [continues] | [continues] | [continues] |",
+        "key_fields_extracted": {
+          "product_model_in_section": "未出现，Section 1 为通用流程描述",
+          "standards_cited": ["ISO 14971:2019", "EN ISO 14971:2019", "EN ISO 14971:2019/A11:2021"],
+          "output_documents_listed": ["Report of risk assessment", "Report of verification of risk control measure and residual risk evaluation", "Report of risk management"]
+        }
+      },
+      {
+        "evidence_id": "RC-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line_range": [106, 143],
+        "section_heading": "3.3 Risk Acceptance Criteria / 4. Residual Risk Acceptance Criteria",
+        "recovery_rationale": "扩展 REG-005（line 121）的局部上下文，提供风险接受准则矩阵完整行及残余风险接受准则 Section 4 开头，确认该节内容为通用准则，未出现产品型号字段",
+        "text": "106: ## 3.3 Risk Acceptance Criteria\n107: \n108: |  | 1 Negligible | 2 Minor | 3 Serious | 4 Critical | 5 Catastrophic |\n109: | --- | --- | --- | --- | --- | --- |\n110: | 6 Frequent |  |  |  |  |  |\n111: | 5 Probable |  |  |  |  |  |\n112: | 4 Occasional |  |  |  |  |  |\n113: | 3 Remote |  |  |  |  |  |\n114: | 2 Improbable |  |  |  |  |  |\n115: | 1 Few |  |  |  |  |  |\n116: \n117: [Risk matrix legend image]\n118: Acceptable | Control as much as possible | Not acceptable\n119: \n120: Not acceptable: Unacceptable risk. Risk control measures are required.\n121: \n122: Control as much as possible: The risk needs to be controlled by control measures.\n123: \n124: Acceptable: Insignificant/negligible risk. No risk control measures are required.\n125: \n126: The manufacturer shall reduce the risk as far as possible, so we use one or more of the following risk control options in the priority order listed:\n127: (a) eliminate or reduce risks as far as possible through safe design and manufacture;\n128: (b) where appropriate, take adequate protection measures, including alarms if necessary, in relation to risks that cannot be eliminated;\n129: (c) provide information for safety (warnings/precautions/contra-indications) and, where appropriate, training to users.\n130: \n131: # 4. Residual Risk Acceptance Criteria\n132: \n133: ## 4.1 For Single Residual Risk\n134: \n135: When a risk falls in the 'Not acceptable' area, the risk control measures must be taken. After taking measures, the risk became a residual risk, and if this residual risk still falls in the 'Not acceptable' area by the Criteria in '3.3 Risk Acceptance Criteria', the risk-benefit analysis must be taken. And this residual risk will be acceptable when there are reasonable reasons to support the benefits outweigh the risks.\n136: \n137: ## 4.2 For Overall Residual Risk\n138: \n139: 1. The benefits related to the intended use of the medical device are weighed against the overall residual risk. Benefits can be described by their magnitude or extent, the probability of experiencing the benefit within the intended patient populations, and the duration and frequency of the benefit.\n140: \n141: 2. Visual representations of the residual risks can be useful. Each individual residual risk can be shown in a risk matrix as shown in section 3.3. If more than 1/2 of the risks are in the h[igh zone - text truncated in source]",
+        "key_fields_extracted": {
+          "product_model_in_section": "未出现，Section 3–4 为通用准则描述",
+          "risk_matrix_dimensions": "6x5（Probability P1–P6 × Severity S1–S5）",
+          "risk_categories": ["Not acceptable", "Control as much as possible", "Acceptable"]
+        }
+      },
+      {
+        "evidence_id": "RC-004",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line_range": [1, 6],
+        "section_heading": "文档元数据 — 冲突字段精确摘录",
+        "recovery_rationale": "单独提取冲突核心字段供 Regulatory Agent 直接引用，避免在长文本中查找",
+        "text": "文件路径中的产品标识: PT2L美亚-FXJH01\n文档内部 DN 

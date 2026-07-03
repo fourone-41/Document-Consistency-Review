@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Product Identity Agent",
+  "summary": "本轮共审查6个cluster（MC-CLUSTER-0020至0023、0025至0026）。MC-CLUSTER-0020中PT9C作为PCB图号出现在PT9L正式EBOM和T1样机BOM中，属于异型号零件编号直接进入受控BOM，构成产品身份污染，予以confirm。MC-CLUSTER-0021中"血压计法规标准清单"Sheet名含旧日期标签，出现在PT9L正式设计验证报告中，属于文件身份标识混用，予以confirm。MC-CLUSTER-0022和MC-CLUSTER-0023中"血压计"均为PT9L产品本身的功能性描述用语，出现在软件测试记录和测试计划中，属于合理功能描述引用，予以dismiss。MC-CLUSTER-0025中文件标题和资产路径均以"BP3L"命名，但文件编号为PT9L-RJTY01，属于文件标题与文件编号不一致的身份混用问题，予以confirm。MC-CLUSTER-0026中"血压计"为功能描述用语，出现在软件方案设计文件中，属于合理功能描述，予以dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0020",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "cross_model_part_number_in_bom",
+      "claim": "PT9L正式BOM（EBOM和T1样机BOM）中PCB图号引用了PT9C型号编号（PT9C-CNTP01 V1.0），构成异型号零件编号污染受控BOM。",
+      "reason": "MF-0095和MF-0096均来自Stage 11正式受控BOM文件（PT9L-EBOM01 V1.0和PT9L-T1EB01 V1.0），两份文件均为primary_scope=true的正式主审范围文件。其中PCB物料的图号字段明确标注为"PT9C-CNTP01 V1.0"，即该PCB零件的设计图号归属于PT9C型号而非PT9L。这不是功能描述或历史引用，而是BOM中受控物料的正式图号字段，直接影响PT9L的零件溯源和设计控制证据链。若PT9C-CNTP01确为PT9L共用件，需有明确的共用件说明或转换记录；当前证据中无此说明，构成产品身份污染。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0021",
+      "decision": "confirm",
+      "severity": "P2",
+      "error_type": "legacy_document_identity_in_validation_report",
+      "claim": "PT9L正式设计验证报告中包含名为"血压计法规标准清单20160719"的Sheet，该Sheet名携带旧日期标签，疑为历史文件遗留，构成文件身份标识混用。",
+      "reason": "MF-0097来自Stage 11正式设计验证报告（primary_scope=true），文件路径为"设计验证报告-通用要求和法规部分E0 20210927 23.11"。其中Sheet名"血压计法规标准清单20160719"携带2016年日期标签，与报告版本（2021年）存在明显时间断层，且Sheet名以"血压计"而非"PT9L"命名，疑为从旧型号文件直接复制而未更新身份标识。法规标准清单是设计验证报告的核心组成部分，若该Sheet实质内容为旧型号适用标准而未经PT9L适用性确认，将影响PT9L的法规符合性证据链。需核查该Sheet内容是否已针对PT9L更新，当前证据不足以排除风险，但文件身份标识混用本身已构成可确认问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0022",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "functional_term_false_positive",
+      "claim": ""血压计"在软件系统测试记录中为PT9L产品本身的功能性描述用语，属于合理引用，不构成产品身份污染。",
+      "reason": "MC-CLUSTER-0022的primary_scope=false，文件为软件系统测试记录。所有命中均为描述PT9L血压计产品操作步骤、功能行为的自然语言表述（如"将血压计袖带捆绑于胳膊"、"血压计停止测量"、"血压计数据打包函数"等），这些均是对PT9L产品功能的正常描述，"血压计"在此为产品品类通称而非异型号标识符。无证据表明这些描述指向其他型号产品，不影响PT9L的产品身份证据链。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0023",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "functional_term_false_positive",
+      "claim": ""血压计"在软件测试计划中为PT9L产品本身的功能性描述用语，属于合理引用，不构成产品身份污染。",
+      "reason": "MC-CLUSTER-0023的primary_scope=false，文件为软件测试计划。所有命中均为描述PT9L血压计产品测试步骤和功能行为的自然语言表述（如"将血压计袖带捆绑于胳膊"、"血压计进入测量态"、"血压计协议解析"等），"血压计"为产品品类通称，用于描述被测对象PT9L的功能特性，属于正常技术文档用语。无证据表明这些描述指向其他型号产品，不构成产品身份污染。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0025",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "cross_model_document_title_identity_mismatch",
+      "claim": "Stage 11软件文件底稿中存在以"BP3L"命名的软件图样文件，文件标题与内部文件编号（PT9L-RJTY01）不一致，构成文件身份标识混用。",
+      "reason": "MF-0118至MF-0125均来自同一文件"BP3L 软件图样E0 23.11"，该文件位于PT9L的Stage 11软件文件底稿目录下。文件标题明确标注"BP3L"（另一型号），但文件内部编号为"PT9L-RJTY01 V1.0"，两者存在直接矛盾。这表明该文件可能是从BP3L型号文件复制后修改文件编号但未更新文件标题，或文件标题与内容归属存在混淆。软件图样是软件DHF的核心受控文件，文件标题与编号不一致将导致文件溯源和版本控制混乱，直接影响PT9L软件设计历史文件的完整性和可信度。primary_scope=false不影响该判断，因为该文件实质上已被纳入PT9L的软件文件底稿受控目录。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0026",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "functional_term_false_positive",
+      "claim": ""血压计"在软件方案设计文件中为PT9L产品本身的功能性描述用语，属于合理引用，不构成产品身份污染。",
+      "reason": "MC-CLUSTER-0026的primary_scope=false，文件为软件方案设计。所有命中均为描述PT9L血压计产品软件功能规格、设计规格和通信方案的自然语言表述（如"血压计上电后初始化"、"血压计自动关机"、"血压计通信协议"等），"血压计"为产品品类通称，用于描述PT9L产品的软件功能特性，属于正常技术文档用语。引用的《iHealth血压计通信协议V2.4》为通用协议文件引用，属于合理技术引用。无证据表明这些描述指向其他具体型号产品，不构成产品身份污染。"
+    }
+  ]
+}
+```

@@ -1,0 +1,227 @@
+{
+  "document": {
+    "report_no": "ETX2023-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "114-115 of 182"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "title": "IEC 60601-1:2005+AMD1:2012+AMD2:2020",
+      "equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "ISO14971",
+      "title": "ISO 14971 Risk Management for Medical Devices"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "7.2",
+      "description": "Risk Assessment - Verification/validation of the risk reduction measures",
+      "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+      "result": "Verification/validation of the risk reduction measures are addressed",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.3",
+      "description": "Risk Assessment - Battery polarities, Low voltage prompt requirements",
+      "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+      "result": "Battery polarities, Low voltage prompt requirements are defined",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2",
+      "table": "RM RESULTS TABLE: SAFETY SIGNS",
+      "description": "Safety sign hazard identification",
+      "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+      "result": "SAFETY SIGN has defined",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.3",
+      "table": "RM RESULTS TABLE: SAFETY SIGNS",
+      "description": "All hazards associated with SAFETY SIGN source identified",
+      "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+      "result": "All hazards associated with SAFETY SIGN source have been identified",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.4",
+      "table": "RM RESULTS TABLE: SAFETY SIGNS",
+      "description": "Risk estimation for each hazardous situation",
+      "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+      "result": "Risks of each hazardous situation are estimated",
+      "verdict": "P"
+    },
+    {
+      "clause": "6",
+      "table": "RM RESULTS TABLE: SAFETY SIGNS",
+      "description": "Risk acceptability for each hazardous situation",
+      "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+      "result": "The risk acceptability for each hazardous situation has been estimated and documented",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.2",
+      "table": "RM RESULTS TABLE: SAFETY SIGNS",
+      "description": "Risk control measures implementation and verification",
+      "document_ref": "Verification of risk control measure and Residual Risk Evaluation Report DN: PT9L-FXGB01 V1.0",
+      "result": "The risk control measures have been implemented and the verification of the effectiveness recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.9.3.2",
+      "description": "RM RESULTS TABLE: Replacement of fuses, power supply cords, other parts",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.1b",
+      "description": "RM RESULTS TABLE: Fundamental rule of protection against electric shock - accidental detachment of conductors and connectors",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3",
+      "table": "RM RESULTS TABLE: 8.1b",
+      "description": "Hazard analysis recording",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Hazard analysis recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.4.2",
+      "description": "TABLE: Working Voltage / Power Measurement",
+      "verdict": "N/A",
+      "measurements": [
+        {
+          "location": "Between opposite polarity of batteries",
+          "Vrms": "--",
+          "Vpk_or_Vdc": "3 Vdc",
+          "peak_to_peak_ripple": "--",
+          "power": "--",
+          "energy": "--"
+        }
+      ],
+      "notes": [
+        "Input supply voltage to ME EQUIPMENT was the RATED voltage or the voltage within the RATED voltage range which results in the highest measured value. See clause 8.5.4.",
+        "If the d.c peak-to-peak ripple >10%, waveform considered as a.c. See clause 8.4.2.2"
+      ]
+    },
+    {
+      "clause": "8.4.2a",
+      "description": "RM RESULTS TABLE: Accessible parts including applied parts",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.4.3",
+      "description": "TABLE: ME EQUIPMENT for connection to a power source by a plug - measurement of voltage or calculation of stored charge 1s after disconnection of plug from mains supply",
+      "verdict": "N/A",
+      "measurements": {
+        "maximum_allowable_voltage_V": "--",
+        "voltage_measured_between": {
+          "plug_pins_1_and_2": [
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--"
+          ],
+          "plug_pin_1_and_enclosure": [
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--"
+          ],
+          "plug_pin_2_and_enclosure": [
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--"
+          ]
+        },
+        "maximum_allowable_stored_charge": "45 μC (when measured voltage exceeded 60V)"
+      }
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "risk_assessment_report",
+      "doc_no": "PT9L-FXPJ01",
+      "version": "V1.0",
+      "title": "Risk Assessment Report"
+    },
+    {
+      "type": "risk_management_report",
+      "doc_no": "PT9L-FXGB01",
+      "version": "V1.0",
+      "title": "Verification of risk control measure and Residual Risk Evaluation Report / Risk Management Report"
+    },
+    {
+      "type": "test_report",
+      "doc_no": "ETX2023-07-078-02"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Working Voltage / Power Measurement at clause 8.4.2: Between opposite polarity of batteries, Vdc = 3V. Input supply voltage to ME EQUIPMENT was the RATED voltage or the voltage within the RATED voltage range which results in the highest measured value (see clause 8.5.4). If the d.c peak-to-peak ripple >10%, waveform is considered as a.c. (see clause 8.4.2.2).",
+      "topic_tags": [
+        "working voltage",
+        "battery",
+        "power measurement",
+        "ME equipment",
+        "IEC60601-1 8.4.2"
+      ],
+      "related_subjects": [
+        "ETX2023-07-078-02",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 8.4.3: ME EQUIPMENT for connection to a power source by a plug - measurement of voltage or calculation of stored charge 1 second after disconnection of plug from mains supply. Maximum allowable stored charge when measured voltage exceeded 60V: 45 μC. All measured voltage values are N/A (--) indicating this test is not applicable to this device.",
+      "topic_tags": [
+        "stored charge",
+        "plug disconnection",
+        "electric shock protection",
+        "IEC60601-1 8.4.3"
+      ],
+      "related_subjects": [
+        "ETX2023-07-078-02",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 7.9.3.2 RM RESULTS TABLE: Replacement of fuses, power supply cords, other parts is marked N/A, with all ISO 14971 sub-clauses (5.2, 5.3, 5.4, 6, 7.2, 7.3, 7.4, 7.5) having no document references or results recorded.",
+      "topic_tags": [
+        "fuse replacement",
+        "power supply cord",
+        "N/A",
+        "IEC60601-1 7.9.3.2",
+        "ISO14971"
+      ],
+      "related_subjects": [
+        "ETX2023-07-078-02",
+        "ISO14971"
+      ]
+    }
+  ]
+}

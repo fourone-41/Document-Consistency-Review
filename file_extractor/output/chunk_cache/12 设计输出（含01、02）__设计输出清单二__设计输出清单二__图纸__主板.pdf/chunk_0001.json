@@ -1,0 +1,332 @@
+{
+  "document": {
+    "title": "主板（T-Z1-P13 V1.0）2D 图读图报告",
+    "drawing_number": "T-Z1-P13",
+    "edition": "V1.0",
+    "part_name": "PCB",
+    "model_number": "T-Z1",
+    "material": "环氧树脂板（FR4）",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "source_file": "主板.pdf",
+    "report_date": "2026-06-02",
+    "page_size": "A4竖向",
+    "skill_reference": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "主板 PCB",
+      "drawing_number": "T-Z1-P13",
+      "version": "V1.0",
+      "model": "T-Z1",
+      "system": "PT9L",
+      "dimensions": "84.7 × 24.4 × 1.0 mm",
+      "material": "FR4 环氧树脂板",
+      "shape": "细长不规则外形（含多处凸凹避让结构）"
+    }
+  ],
+  "components": [
+    {
+      "name": "主板 PCB（主控板）",
+      "part_number": "T-Z1-P13",
+      "description": "主控板 FR4 PCB，84.7×24.4×1.0 mm，细长不规则外形，含多处凸凹避让",
+      "material": "FR4 环氧树脂板"
+    },
+    {
+      "name": "传感器 PCB",
+      "part_number": "T-Z1-P14",
+      "description": "与主板配对的传感器板，构成 PT9L 双 PCB 架构",
+      "reference": "传感器PCB.pdf"
+    },
+    {
+      "name": "下盖",
+      "part_number": "T-Z1-P02",
+      "description": "主板嵌入下盖内腔（电池仓+主腔），与主板外形配合"
+    },
+    {
+      "name": "按键",
+      "part_number": "T-Z1-P05",
+      "description": "通过 tact switch 与主板接触"
+    },
+    {
+      "name": "液晶",
+      "description": "通过斑马条与主板接触，LCD 16个PIN",
+      "reference": "PT9L-液晶-20240627.pdf"
+    },
+    {
+      "name": "斑马条",
+      "description": "连接主板与液晶，v2.0",
+      "reference": "PT9L-斑马条-v2.0-20240524.pdf"
+    },
+    {
+      "name": "MCU（微控制器）",
+      "description": "焊接于主板，控制全机功能"
+    },
+    {
+      "name": "LCD 段码驱动电路",
+      "description": "通过斑马条接 LCD 16个PIN"
+    },
+    {
+      "name": "按键检测电路",
+      "description": "tact switch × 2，对应开关帽+按键 P05"
+    },
+    {
+      "name": "电池电源管理电路",
+      "description": "AAA × 2 = 3V 系统"
+    },
+    {
+      "name": "蜂鸣器驱动电路",
+      "description": "可能有蜂鸣器焊盘（待确认）"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-1",
+      "description": "板厚 TH. = 1.0 ± 0.1 mm",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "DI-2",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-3",
+      "description": "主板总长 84.7 mm（Level B 公差 ±0.2 mm）",
+      "source": "外形尺寸"
+    },
+    {
+      "id": "DI-4",
+      "description": "主板总宽 24.4 mm（Level B 公差 ±0.1 mm）",
+      "source": "外形尺寸"
+    },
+    {
+      "id": "DI-5",
+      "description": "外形不规则，含多处凸凹避让结构（避让电池仓、按键开口、传感器筒、螺柱凸台等）",
+      "source": "外形特征分析"
+    },
+    {
+      "id": "DI-6",
+      "description": "与传感器 PCB（T-Z1-P14）构成双 PCB 架构，通过排线/焊接电气连接",
+      "source": "配合交叉验证"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "板厚 TH. = 1.0 ± 0.1 mm",
+      "type": "尺寸要求",
+      "source": "技术要求"
+    },
+    {
+      "id": "REQ-2",
+      "description": "产品符合 RoHS 2.0",
+      "type": "环保合规要求",
+      "source": "技术要求"
+    },
+    {
+      "id": "REQ-3",
+      "description": "公差遵循 SELECT LEVEL B",
+      "type": "公差要求",
+      "source": "标题栏"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品符合 RoHS 2.0 有害物质限制指令",
+      "applicability": "主板 PCB 材料及制造"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "T-Z1-P13",
+      "type": "图号/零件号",
+      "description": "主板 PCB 图纸编号"
+    },
+    {
+      "id": "T-Z1-P14",
+      "type": "图号/零件号",
+      "description": "传感器 PCB 图纸编号"
+    },
+    {
+      "id": "T-Z1-P02",
+      "type": "图号/零件号",
+      "description": "下盖图纸编号"
+    },
+    {
+      "id": "T-Z1-P05",
+      "type": "图号/零件号",
+      "description": "按键图纸编号"
+    },
+    {
+      "id": "T-Z1",
+      "type": "型号",
+      "description": "产品型号（PT9L 系统）"
+    }
+  ],
+  "tests": [
+    {
+      "id": "CHECK-6.0",
+      "name": "DPI 检查",
+      "result": "通过",
+      "detail": "300 DPI（A4 竖向）"
+    },
+    {
+      "id": "CHECK-6.1",
+      "name": "编号连续性检查",
+      "result": "N/A",
+      "detail": "本图无圆圈编号"
+    },
+    {
+      "id": "CHECK-6.2",
+      "name": "角度反推检查",
+      "result": "N/A",
+      "detail": "无角度，R2.4 为圆角符号"
+    },
+    {
+      "id": "CHECK-6.3",
+      "name": "前缀完整性检查",
+      "result": "通过",
+      "detail": "2-Ø0.8、2-R2.4、2-Ø1.6、2-Ø2.2、2-Ø1 多处前缀均已捕获"
+    },
+    {
+      "id": "CHECK-6.4",
+      "name": "公差形式检查",
+      "result": "通过",
+      "detail": "全对称；板厚 ±0.1（技术要求）"
+    },
+    {
+      "id": "CHECK-6.5",
+      "name": "配合交叉验证",
+      "result": "通过",
+      "detail": "与下盖 T-Z1-P02 内腔配合；与传感器 PCB（T-Z1-P14）通过排线/焊接电气连接；与按键 T-Z1-P05 通过 tact switch 接触；与液晶通过斑马条接触"
+    },
+    {
+      "id": "CHECK-6.6",
+      "name": "Ø / Φ 视觉确认",
+      "result": "通过",
+      "detail": "全部 Ø 标注均带 Ø 字符；R2.4 在圆角位置"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "各孔径阵列对应的元件功能（MCU 包封？焊接通孔元件位置？）",
+      "required_source": "PCBA Gerber + BOM + PCBA 装配图",
+      "priority": "C级"
+    },
+    {
+      "id": "C-2",
+      "description": "与传感器 PCB（T-Z1-P14）的电气连接方式（焊接？排线？）",
+      "required_source": "装配 SOP",
+      "priority": "C级"
+    },
+    {
+      "id": "C-3",
+      "description": "主板顶部 84.7 mm 长是否覆盖下盖内腔全长",
+      "required_source": "3D 装配 + 极限公差",
+      "priority": "C级"
+    },
+    {
+      "id": "C-4",
+      "description": "主板厚 1.0 mm 是否与下盖电池仓/按键开口槽宽度匹配",
+      "required_source": "3D 装配",
+      "priority": "C级"
+    },
+    {
+      "id": "C-5",
+      "description": "与液晶斑马条接触的 PCBA 焊盘位置（板上哪一行 16 焊盘？）",
+      "required_source": "PCBA Gerber",
+      "priority": "C级"
+    },
+    {
+      "id": "C-6",
+      "description": "各 2-Ø2.2 螺丝孔位置是否与下盖/支架的螺柱/凸台对位",
+      "required_source": "极限公差链",
+      "priority": "C级"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "主板 PCB 外形细长不规则（84.7×24.4 mm），含多处凸凹避让结构。顶部多段（43.4/43.2/40/34.4/27.6/20.15/14 mm）指示顶部有多个台阶状凸出/凹陷；右侧多段（21.2/18.2/16.2/9.2 mm）指示右侧有多个高度变化的避让。强烈提示主板需避让壳体内部多处结构（电池仓、按键开口、传感器筒、螺柱凸台等）。",
+      "topic_tags": [
+        "PCB外形",
+        "避让结构",
+        "装配约束",
+        "不规则外形"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "T-Z1-P02下盖",
+        "T-Z1-P05按键",
+        "传感器PCB"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "典型 PT9L 主板功能区分析：MCU（微控制器，控制全机）；LCD 段码驱动（通过斑马条接 LCD 16个PIN）；按键检测电路（tact switch × 2，对应开关帽+按键 P05）；电池电源管理（AAA × 2 = 3V 系统）；与传感器 PCB 的接口（4-Ø0.7/2-Ø0.8 焊孔可能是连接焊点）；蜂鸣器驱动（看是否有蜂鸣器焊盘）；充电/USB 可能无（PT9L AAA 电池供电）。",
+      "topic_tags": [
+        "主板功能",
+        "MCU",
+        "LCD驱动",
+        "按键检测",
+        "电源管理",
+        "蜂鸣器",
+        "传感器接口"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "PT9L系统",
+        "传感器PCB T-Z1-P14"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "主板板厚 1.0 mm 与传感器 PCB（T-Z1-P14）同厚，可能用同一规格 FR4 卷材批次加工。公差等级 SELECT LEVEL B，外形和孔径整体按 Level B 默认 ±0.1 mm 执行。无 IQC 编号尺寸。",
+      "topic_tags": [
+        "板厚",
+        "FR4",
+        "公差等级",
+        "制造约束"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "T-Z1-P14传感器PCB"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "PT9L 系统采用双 PCB 架构：主板（T-Z1-P13，84.7×24.4×1.0 mm）与传感器 PCB（T-Z1-P14）配对，两者通过排线或焊接实现电气连接。主板承担主控功能，传感器 PCB 承担传感功能，分板设计有利于传感器部分的独立安装与替换。",
+      "topic_tags": [
+        "双PCB架构",
+        "PT9L系统",
+        "主控板",
+        "传感器板",
+        "系统架构"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "T-Z1-P14",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本图为主板 PCB 外形/钻孔图，文字层仅 65 字符，含\"PCB\"、\"环氧树脂板\"、\"TH.=1.0±0.1\"。图中未包含铜箔层、丝印层、阻焊层等电气设计信息，元件功能分配需结合 PCBA Gerber + BOM + PCBA 装配图确认。本图不含圆圈编号，无角度标注。",
+      "topic_tags": [
+        "图纸范围",
+        "外形钻孔图",
+        "限制说明",
+        "待确认项"
+      ],
+      "related_subjects": [
+        "T-Z1-P13",
+        "PCBA Gerber",
+        "BOM"
+      ]
+    }
+  ]
+}

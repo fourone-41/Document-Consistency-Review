@@ -1,0 +1,224 @@
+```json
+{
+  "context_summary": "本轮已成功扩展了两份核心文件（F0164 外箱图纸、F0177 外观图）的完整标题栏及技术要求上下文。两份文件均在 Drawing NO. 字段填写 PT9L-F01，但 Part name 分别为"外箱"与"外观图"，物料性质完全不同（包装件 vs. 整机颜色规格图）。当前上下文已能确认冲突存在，但仍缺少：①设计输出清单（BOM/图纸目录）中对 PT9L-F01 的登记行，以判断官方清单是否已区分或合并这两个编号；②版本控制/ECO 记录，以判断是否存在后续修订将其中一个改号；③DHF 清单（F0006）中对这两份文件的具体登记内容，以确认文件控制范围。",
+  "evidence_gaps": [
+    "设计输出清单二（图纸目录/BOM 汇总表）中 PT9L-F01 的登记行——需确认清单是否将外箱与外观图分配了相同编号，或是否存在备注区分",
+    "F0006（PT9L-DHF清单）第 96 行附近的完整内容——该行可能登记了 F0164/F0177 的图号，是文件控制范围的直接证据",
+    "ECO / 变更记录文件——确认 PT9L-F01 是否曾被修订为不同编号（如 PT9L-F01A、PT9L-P01 等），以排除版本迭代导致的表面冲突",
+    "外箱图纸文件名中的内部料号 K04010001435 在 BOM 或物料清单中的对应条目——用于交叉验证外箱的唯一物料编码与图号的绑定关系",
+    "外观图（F0177）在设计输出清单中的完整登记行，包括其文件编号、版本、适用范围字段"
+  ],
+  "additional_search_queries": [
+    "PT9L-F01 设计输出清单 图纸目录",
+    "F0006 PT9L-DHF清单 图号 PT9L-F01",
+    "PT9L 外观图 图号 ECO 变更 修订",
+    "K04010001435 BOM 物料清单 图号",
+    "设计输出清单二 图纸 编号 汇总表"
+  ],
+  "agent_instruction": "请重点检索以下内容并补充至 context_package：\n1. 打开 F0006（02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md）第 90–110 行，提取包含"F01"或"外箱"或"外观图"的完整表格行；\n2. 在"12 设计输出（含01、02）\\设计输出清单二"目录下搜索任何图纸目录/汇总清单文件，提取所有含"PT9L-F01"的行及其前后各 3 行；\n3. 搜索全库关键词"PT9L-F01"，返回除 F0164、F0177 之外的所有命中文件及行号；\n4. 搜索"K04010001435"在 BOM 或物料清单中的对应条目；\n5. 搜索是否存在 ECO、变更通知或版本说明文件中提及"PT9L-F01"改号或区分说明。\n以上结果请以 recovered_context 条目形式返回，每条注明 doc_id、rel_path、line_no、content。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "DMR-068",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 20,
+        "actual_text": "| **Drawing NO.** | PT9L-F01 |",
+        "expanded_context": {
+          "section_heading": "## 0. 标题栏（A 级）",
+          "full_table": [
+            "| 字段 | 值 |",
+            "| --- | --- |",
+            "| **Drawing NO.** | PT9L-F01 |",
+            "| **Part name** | 外箱 |",
+            "| **Edition** | V1.0 |",
+            "| **Model NO.** | PT9L |",
+            "| **Pro material** | （未填，由技术要求第 3 条详写） |",
+            "| **Surf dispose** | （未填） |",
+            "| **Scale** | 1:1 |",
+            "| **Units** | mm |",
+            "| **Tolerance** | .X / .XX / .X°（默认公差表） |",
+            "| 图号 | K04010001435 |"
+          ],
+          "document_metadata": {
+            "doc_id": "F0164",
+            "source_pdf": "K040100014357620814-图纸-PT9L-F01+V1.0.pdf",
+            "directory": "12 设计输出（含01、02）\\设计输出清单二\\包装",
+            "report_generated": "2026-05-11",
+            "pdf_size": "6052×4211 pt（A0+ 大尺寸）",
+            "text_layer": "0 字符（全部转曲，视觉读图）",
+            "internal_part_no": "K04010001435",
+            "part_name": "外箱",
+            "drawing_no": "PT9L-F01",
+            "edition": "V1.0",
+            "box_type": "0201（GB/T 6543-2008，上下摇盖）",
+            "material": "190g牛皮面纸 + 170g(A)楞 + 80g芯纸 + 130g(B)楞 + 200g牛皮里纸",
+            "outer_dimensions_mm": "322.5 × 231 × 352（外径，公差±5mm）",
+            "print_color": "黑色",
+            "rohs_required": true
+          }
+        },
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-138",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 14,
+        "actual_text": "| **Drawing NO.** | **PT9L-F01**（⚠️ 与外箱 PT9L-F01 同号但不同件） |",
+        "expanded_context": {
+          "section_heading": "## 0. 标题栏（A 级）",
+          "full_table": [
+            "| 字段 | 内容 |",
+            "| --- | --- |",
+            "| **Drawing NO.** | **PT9L-F01**（⚠️ 与外箱 PT9L-F01 同号但不同件） |",
+            "| **Part name** | **外观图** |",
+            "| **Edition** | **V1.0** |",
+            "| **Model NO.** | PT9L |",
+            "| **Pro material** | ABS（主体） |",
+            "| Surf dispose | （由颜色表逐件指定，见 §2） |",
+            "| Scale | **1:1** |",
+            "| Units | mm |",
+            "| Tolerance Level | （颜色图，不强调几何公差） |"
+          ],
+          "color_spec_table_partial": [
+            "| # | 零件 | 材质 | 颜色 / PANTONE |",
+            "| --- | --- | --- | --- |",
+            "| 1 | **上盖** | ABS 白色 YH121 | — |",
+            "| 2 | **下盖（外壳）** | ABS+TPU 白色 V0121 / TPE | **PANTONE Cool Gray 6U** |"
+          ],
+          "document_metadata": {
+            "doc_id": "F0177",
+            "source_pdf": "PT9L-外观图-v1.0-20240627.pdf",
+            "directory": "12 设计输出（含01、02）\\设计输出清单二\\图纸",
+            "original_path_in_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT9L-外观图-v1.0-20240627.pdf",
+            "report_generated": "2026-06-02",
+            "dpi": "overview 150 / blocks 300（2×2）",
+            "drawing_no": "PT9L-F01",
+            "part_name": "外观图",
+            "edition": "V1.0",
+            "date_on_filename": "20240627",
+            "purpose": "整机颜色+表面处理规格图，供应商配色/印刷主权威依据",
+            "main_material": "ABS（主体）",
+            "andon_logo": true
+          }
+        },
+        "verified": true,
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter": "Drawing NO.",
+        "value_in_F0164": "PT9L-F01",
+        "value_in_F0177": "PT9L-F01",
+        "conflict": true,
+        "note": "两份文件图号字段完全相同，但 Part name 分别为"外箱"（包装件）与"外观图"（整机颜色规格），物料类型不同，内部料号仅 F0164 有记录（K04010001435），F0177 无内部料号字段"
+      },
+      {
+        "parameter": "Part name",
+        "value_in_F0164": "外箱",
+        "value_in_F0177": "外观图",
+        "conflict": true
+      },
+      {
+        "parameter": "Edition",
+        "value_in_F0164": "V1.0",
+        "value_in_F0177": "V1.0",
+        "conflict": false,
+        "note": "版本相同，无法通过版本号区分"
+      },
+      {
+        "parameter": "Model NO.",
+        "value_in_F0164": "PT9L",
+        "value_in_F0177": "PT9L",
+        "conflict": false
+      },
+      {
+        "parameter": "内部料号 / 图号",
+        "value_in_F0164": "K04010001435",
+        "value_in_F0177": "（未记录）",
+        "conflict": "partial",
+        "note": "F0164 有内部料号 K04010001435 可作为唯一标识，F0177 无对应字段，是区分两件的潜在依据，但图纸标题栏 Drawing NO. 均为 PT9L-F01"
+      }
+    ],
+    "page_context": [
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 96,
+        "title": "PT9L-DHF清单（第96行附近）",
+        "text": "【待补充】需检索第 90–110 行，确认 F0164/F0177 在 DHF 清单中的图号登记方式",
+        "retrieval_status": "pending",
+        "priority": "high"
+      },
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 54,
+        "title": "PT9L 开发计划（第54行附近）",
+        "text": "【待补充】需确认是否含图号分配计划或编号规则说明",
+        "retrieval_status": "pending",
+        "priority": "medium"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "conflict_summary",
+        "doc_ids": ["F0164", "F0177"],
+        "description": "PT9L-F01 图号冲突核心事实汇总",
+        "content": {
+          "conflict_type": "duplicate_drawing_number_different_parts",
+          "drawing_no": "PT9L-F01",
+          "item_A": {
+            "doc_id": "F0164",
+            "part_name": "外箱",
+            "part_category": "包装件",
+            "internal_no": "K04010001435",
+            "edition": "V1.0",
+            "directory": "设计输出清单二\\包装",
+            "date": "（文件名无日期，报告生成 2026-05-11）"
+          },
+          "item_B": {
+            "doc_id": "F0177",
+            "part_name": "外观图",
+            "part_category": "整机颜色/表面处理规格图",
+            "internal_no": "（无）",
+            "edition": "V1.0",
+            "directory": "设计输出清单二\\图纸",
+            "date": "20240627（文件名）"
+          },
+          "distinguishing_fields_available": ["Part name", "内部料号（仅F0164有）", "文件目录路径", "文件名"],
+          "distinguishing_fields_unavailable_in_title_block": ["Drawing NO.（两者相同）", "Edition（两者相同）", "Model NO.（两者相同）"],
+          "regulatory_risk": "ISO 13485 / 21 CFR 820 设计输出文件控制要求图号唯一标识，同号不同件将导致供应商、生产、质检无法通过图号单一引用确定正确文件，属于文件控制不符合项"
+        }
+      },
+      {
+        "context_id": "RC-002",
+        "type": "pending_retrieval",
+        "description": "以下证据尚未检索，为下一轮优先任务",
+        "pending_items": [
+          {
+            "target": "F0006 第90–110行",
+            "purpose": "确认 DHF 清单对 PT9L-F01 的登记方式，判断是否已在清单层面区分两件"
+          },
+          {
+            "target": "设计输出清单二 图纸目录/汇总表",
+            "purpose": "确认官方图纸目录中 PT9L-F01 出现次数及备注"
+          },
+          {
+            "target": "全库 PT9L-F01 检索（排除F0164/F0177）",
+            "purpose": "发现是否有第三处引用或 ECO 变更记录"
+          },
+          {
+            "target": "K04010001435 在 BOM/物料清单中的条目",
+            "purpose": "通过内部料号交叉验证外箱唯一标识"
+          }
+        ]
+      }
+    ]
+  }
+}
+```

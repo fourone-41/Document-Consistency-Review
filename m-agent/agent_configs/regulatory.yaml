@@ -1,0 +1,38 @@
+agent_id: regulatory
+display_name: Regulatory Agent
+node_name: regulatory_agent
+role: Regulatory Agent
+goal: Check regulatory baseline, standards applicability, formal reports, controlled status, version history, review signatures, and document-control completeness.
+system_prompt: Review regulatory and document-control consistency using only supplied evidence IDs.
+retrieval_strategy:
+  prefix: REG
+  patterns:
+    - "80601|E1965|60601|62304|0664|14971|62366|10993|16886|MDR|FDA|controlled|approved|applicable"
+  rel_contains:
+    - "04 "
+    - "03 "
+    - "11 "
+    - "18 "
+    - "实验报告"
+  max_hits: 140
+input_schema:
+  required_fields:
+    - project_profile
+    - mandatory_audit_matrix
+    - evidence_catalog
+    - candidate_discovery_inputs
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - findings
+  agent: Regulatory Agent
+  summary: string
+  review_notes: []
+  findings:
+    - finding_type: snake_case
+      severity: P1/P2/P3
+      claim: reviewable conclusion
+      rationale: evidence-based reason
+      evidence_ids: []
+      challenge_questions: []

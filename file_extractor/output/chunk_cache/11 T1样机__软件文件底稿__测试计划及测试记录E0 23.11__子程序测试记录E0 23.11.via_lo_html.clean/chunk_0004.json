@@ -1,0 +1,171 @@
+{
+  "tests": [
+    {
+      "test_id": "POST_SYSTEM_CONFIG",
+      "item": "Cmd为POST_SYSTEM_CONFIG，系统配置内容二进制串为08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D，运行函数，查看串口输出",
+      "expected_value": "串口输出C0 00 19 00 00 A1 82 02 08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D C1",
+      "actual_result": "串口输出C0 00 19 00 00 A1 82 02 08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D C1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "POST_DEVICE_SHUTDOWN_NOTIFY",
+      "item": "Cmd为POST_DEVICE_SHUTDOWN_NOTIFY，运行函数，查看串口输出",
+      "expected_value": "串口输出C0 00 06 00 00 A1 82 10 00 33",
+      "actual_result": "串口输出C0 00 06 00 00 A1 82 10 00 33",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Sound_Sentence_SYSTOLIC",
+      "item": "Sound_Sentence: sen_num=SENTENCE_SYSTOLIC，num=120",
+      "expected_value": "血压计播报高压120mmHg",
+      "actual_result": "血压计播报高压120mmHg",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Sound_Sentence_DIASTOLIC",
+      "item": "Sound_Sentence: sen_num=SENTENCE_DIASTOLIC，num=80",
+      "expected_value": "血压计播报低压80mmHg",
+      "actual_result": "血压计播报高压80mmHg",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PWC_IRQ_20ms_20pct",
+      "item": "PWC_IRQ: 输入周期为20ms，占空比为20%方波，查看采样值是否符合预期值要求",
+      "expected_value": "2000±3",
+      "actual_result": "2001",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PWC_IRQ_20ms_50pct",
+      "item": "PWC_IRQ: 输入周期为20ms，占空比为50%方波，查看采样值是否符合预期值要求",
+      "expected_value": "5000±3",
+      "actual_result": "5001",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1_down",
+      "item": "BPI_ScanKey: S1按键按下",
+      "expected_value": "key_stata.keydown=S1",
+      "actual_result": "key_stata.keydown=S1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1_up",
+      "item": "BPI_ScanKey: S1按键抬起",
+      "expected_value": "key_stata.keyup=S1",
+      "actual_result": "key_stata.keyup=S1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1_long",
+      "item": "BPI_ScanKey: S1按键长按2s",
+      "expected_value": "key_stata.keylong=S1",
+      "actual_result": "key_stata.keylong=S1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S2_down",
+      "item": "BPI_ScanKey: S2按键按下",
+      "expected_value": "key_stata.keydown=S2",
+      "actual_result": "key_stata.keydown=S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S2_up",
+      "item": "BPI_ScanKey: S2按键抬起",
+      "expected_value": "key_stata.keyup=S2",
+      "actual_result": "key_stata.keyup=S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S2_long",
+      "item": "BPI_ScanKey: S2按键长按2s",
+      "expected_value": "key_stata.keylong=S2",
+      "actual_result": "key_stata.keylong=S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1S2_long",
+      "item": "BPI_ScanKey: S1和S2按键同时长按2s",
+      "expected_value": "key_stata.keylong=S1+S2",
+      "actual_result": "key_stata.keylong=S1+S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BATDECT_low_voltage",
+      "item": "BATDECT: 将供电电压调整至3.2V，运行8次函数，查看函数运行结果",
+      "condition": "供电电压3.2V",
+      "expected_value": "运行完毕后返回1（检测到低电压）",
+      "actual_result": "运行完毕后返回1（检测到低电压）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BATDECT_normal_voltage",
+      "item": "BATDECT: 上述测试完毕后，将供电电压调整至3.5V，运行8次函数，查看函数运行结果",
+      "condition": "供电电压3.5V",
+      "expected_value": "运行完毕后返回1（未检测到低电压）",
+      "actual_result": "运行完毕后返回1（未检测到低电压）",
+      "pass_criteria": "OK"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：uint8_t Sound_Sentence(uint16_t sen_num, uint16_t num)；功能描述：announce a sentence，播放一段语音。",
+      "topic_tags": [
+        "语音播报",
+        "Sound_Sentence",
+        "子程序"
+      ],
+      "related_subjects": [
+        "Sound_Sentence_SYSTOLIC",
+        "Sound_Sentence_DIASTOLIC"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：void PWC_IRQ(uint16_t pwc_data)；功能描述：获取压力值采样结果。测试方法类别：--change input(s) of hardware and verify the action of software（改变硬件输入，验证软件动作）。",
+      "topic_tags": [
+        "压力采样",
+        "PWC_IRQ",
+        "硬件输入验证",
+        "子程序"
+      ],
+      "related_subjects": [
+        "PWC_IRQ_20ms_20pct",
+        "PWC_IRQ_20ms_50pct"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：void BPI_ScanKey(void)；功能描述：按键扫描函数，监测按键的动作。",
+      "topic_tags": [
+        "按键扫描",
+        "BPI_ScanKey",
+        "子程序"
+      ],
+      "related_subjects": [
+        "BPI_ScanKey_S1_down",
+        "BPI_ScanKey_S1_up",
+        "BPI_ScanKey_S1_long",
+        "BPI_ScanKey_S2_down",
+        "BPI_ScanKey_S2_up",
+        "BPI_ScanKey_S2_long",
+        "BPI_ScanKey_S1S2_long"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：uint16_t BATDECT(void)；功能描述：检测并判断低电压。",
+      "topic_tags": [
+        "低电压检测",
+        "BATDECT",
+        "子程序"
+      ],
+      "related_subjects": [
+        "BATDECT_low_voltage",
+        "BATDECT_normal_voltage"
+      ]
+    }
+  ]
+}

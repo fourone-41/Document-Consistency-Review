@@ -1,0 +1,44 @@
+```json
+{
+  "assigned_agent": "Risk Traceability Agent",
+  "review_focus": "验证 F0018 (Risk Assessment Report V2.0) 与 F0019 (Verification of Risk Control Measures V2.0) 中 intended-use 声明里出现 'PT3SBT' 而非 'PT9L' 是否构成遗留型号文本未更新的合规缺陷",
+  "agent_input": {
+    "claim": "The active Risk Assessment Report (F0018) and the active Verification of Risk Control Measures report (F0019), both at V2.0 dated 2024-05-30, contain intended-use statements referencing 'PT3SBT' instead of 'PT9L', indicating residual legacy model text was not updated during the V2.0 revision.",
+    "context_summary": "已从两份文件中直接提取到原文证据，均位于 Section 1.1 Introduction of product。F0018 (line 93) 与 F0019 (line 85) 的 intended-use 段落末句均为：'And PT3SBT can transmit the temperature to a smart device with Bluetooth.'。两份文件的版本历史均确认 V2.0 修订于 2024-05-30，修订描述分别为更新问题清单/重新措辞风险控制措施内容（F0018）和对齐危害序列（F0019），均未提及对产品型号标识的修改。page_context 中 F0012（Risk Management Plan V1.0）的内容为空，无法从中获取 PT9L 或 PT3SBT 的原始定义。",
+    "evidence": [
+      {
+        "evidence_id": "SCOUT-097",
+        "doc_id": "F0018",
+        "doc_name": "Risk Assessment Report IFT-FXPJ01 V2.0 20240530",
+        "line": 93,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "finding": "intended-use 段落末句出现 'PT3SBT'，非 'PT9L'"
+      },
+      {
+        "evidence_id": "SCOUT-046",
+        "doc_id": "F0019",
+        "doc_name": "Verification of Risk Control Measure and Residual Risk Evaluation Report IFT-FXYS01 V2.0 20240530",
+        "line": 85,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "finding": "intended-use 段落末句出现 'PT3SBT'，非 'PT9L'"
+      },
+      {
+        "evidence_id": "SCOUT-037",
+        "doc_id": "F0018",
+        "line": 23,
+        "actual_text": "| 2 | 2024.5.30 | 1. Question list has been updated according to Annex A of ISO/TR 24971:2020<br>2. Content of risk control measures has been reworded to better describe the development control process | V2.0 | Wang Di | Hou Guangwei |",
+        "finding": "V2.0 修订描述未包含任何产品型号标识更新"
+      },
+      {
+        "evidence_id": "SCOUT-043",
+        "doc_id": "F0019",
+        "line": 25,
+        "actual_text": "| 2 | 2024.5.30 | sequence of hazard has been updated to align with risk assessment report. | V2.0 | Wang Di | Hou Guangwei |",
+        "finding": "V2.0 修订描述未包含任何产品型号标识更新"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "supplemental_instructions": "请重点核查以下三点后给出 decision：(1) 项目当前正式产品型号是否为 'PT9L'，可参考 DMR 封面页、产品标识文件或 Device Description 文件；(2) 'PT3SBT' 是否为历史/前代型号或内部代号，与 'PT9L' 是否为同一设备的不同命名；(3) F0018/F0019 其他章节（如封面、scope、hazard 表格）中是否出现 'PT9L' 或 'PT3SBT'，以判断是否为全文一致性问题还是孤立遗留句。若无法从现有证据确认正式型号为 PT9L，请返回 needs_more_context 并指明所需文件。"
+  }
+}
+```

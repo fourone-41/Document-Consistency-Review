@@ -1,0 +1,126 @@
+```json
+{
+  "context_summary": "本轮已补充了两份文件的完整封面局部上下文：F0017（无产品前缀，DN字段为 IFT-FXJH01，版本日期2024.2.2，起草人Wang Di，批准人Hou Guangwei）和 F0021（文件名含PT9L--前缀，DN字段为 PT9L-FXJH01，版本日期2024.1.9，起草人/批准人均为Hou Guangwei）。两份文件在封面DN字段上存在明确差异：F0017内部DN为IFT-FXJH01，F0021内部DN为PT9L-FXJH01。这一发现与原始claim部分矛盾——语料库中确实存在一份DN字段为PT9L-FXJH01的文件（F0021），但该文件文件名标题仍沿用IFT-FXJH01。仍缺失：DHF清单中对这两份文件的登记条目（F0006内容为空）、开发计划中对风险管理计划文件编号的引用（F0005/F0007内容为空）、以及任何说明两份文件关系（替代/并存/版本迭代）的过渡记录或等效性映射。",
+  "evidence_gaps": [
+    "F0006（PT9L-DHF清单）中风险管理计划条目的完整行内容：需确认DHF清单登记的文件编号是IFT-FXJH01还是PT9L-FXJH01，或两者均有",
+    "F0005/F0007（开发计划）中引用风险管理计划的具体单元格内容：需确认开发计划指向哪个文件编号",
+    "F0021文件正文（第68行附近，第1节'Arrangement of Risk Management Activities'）：确认其内容与F0017是否实质相同，以判断F0021是否为F0017的PT9L专属修订版",
+    "F0021与F0017之间是否存在任何交叉引用、废止声明或替代关系说明",
+    "语料库中是否存在文件控制程序或文件编号规则文件，能解释IFT-前缀与PT9L-前缀的命名逻辑",
+    "F0021封面之后的版本历史表是否有额外行（第23行以后）记录从IFT-FXJH01到PT9L-FXJH01的变更",
+    "03风险分析目录下是否还有其他风险管理计划相关文件（如风险管理报告、风险控制验证报告）其DN字段使用何种前缀"
+  ],
+  "additional_search_queries": [
+    "F0006 PT9L-DHF清单 风险管理计划 IFT-FXJH01 OR PT9L-FXJH01 行内容",
+    "F0005 OR F0007 开发计划 FXJH01 风险管理",
+    "F0021 第68行至第100行 Arrangement of Risk Management Activities 正文内容",
+    "03风险分析 目录 全部文件列表 DN字段 前缀",
+    "IFT-FXJH01 文件控制 编号规则 命名约定 legacy prefix",
+    "PT9L-FXJH01 transition supersede replace obsolete",
+    "Hou Guangwei Wang Di 文件编号 变更记录"
+  ],
+  "agent_instruction": "请重点执行以下核查步骤，并将原始文本证据逐条返回：\n1. 读取F0006（PT9L-DHF清单）第96行附近的完整表格行，定位风险管理计划（Risk Management Plan）对应条目，提取其文件编号列的完整内容；\n2. 读取F0005和F0007（开发计划）第54行和第63行附近的完整单元格，查找FXJH01相关引用；\n3. 读取F0021第60行至第100行，获取第1节正文及生命周期阶段表格完整内容，与F0017同位置内容对比；\n4. 在03风险分析目录下检索所有文件的DN字段（格式为'DN：XXX'），列出所有出现的前缀模式；\n5. 检索语料库中是否存在任何文件控制程序、文件编号规则或命名约定文件，提取与前缀规则相关的段落。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "REG-014",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "verified": true,
+        "actual_text": "# Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable"
+      },
+      {
+        "evidence_id": "REG-015",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:"
+      },
+      {
+        "evidence_id": "REG-016",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 70,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "verified": true,
+        "actual_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:"
+      },
+      {
+        "evidence_id": "REG-030",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "verified": true,
+        "actual_text": "# PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable"
+      },
+      {
+        "evidence_id": "REG-031",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 54,
+        "title": "开发计划 PT9L（真实版）",
+        "text": "内容待读取：需提取第54行附近与风险管理计划文件编号相关的单元格内容"
+      },
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 96,
+        "title": "PT9L DHF清单（真实版）",
+        "text": "内容待读取：需提取第96行附近风险管理计划条目的完整行，包括文件编号列"
+      },
+      {
+        "doc_id": "F0007",
+        "rel_path": "02 开发计划E0 23.11\\PT9L.via_xlsx.clean.md",
+        "line_start": 63,
+        "title": "开发计划 PT9L",
+        "text": "内容待读取：需提取第63行附近与风险管理计划文件编号相关的单元格内容"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "lines": "1-27",
+        "significance": "F0017封面完整内容：文件名标题无产品前缀；DN字段明确为IFT-FXJH01 V1.0；产品名称为Infrared Forehead Thermometer；版本日期2024.2.2；起草人Wang Di，批准人Hou Guangwei。这是claim所指的'active PT9L Risk Management Plan carries document number IFT-FXJH01'的直接证据来源。",
+        "full_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->\n# Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable\n\n> hybrid clean-md：规整签字/数据表用 GFM 表格；多段大格子铺成普通段落；保留全部文字与复选框；不保留 HTML 标签。\n\nDN ： IFT -FXJH01 V 1 .0 Risk Management Plan\n\n**Risk Management Plan**\n\n**(V 1 .0 )**\n\nProduct name: Infrared Forehead Thermometer\n\n**Drafted by** *(Regulation Engineer)* Date:\n\n**Reviewed by** *(Certification Engineer)* Date:\n\n**Approved by** *(Technical Director)* Date:\n\n| **No.** | **Version Date** | **Version Description** | **Version** | **Draft er** | **Approve r** |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 2024.2.2 | Originated | V1.0 | Wang Di | Hou Guangwei |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |"
+      },
+      {
+        "context_id": "RC-002",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "lines": "1-27",
+        "significance": "F0021封面完整内容：文件名标题含PT9L--前缀但文件名中仍保留IFT-FXJH01；关键差异：DN字段为PT9L-FXJH01 V1.0（与F0017的IFT-FXJH01不同）；产品名称同为Infrared Forehead Thermometer；版本日期2024.1.9（早于F0017的2024.2.2）；起草人和批准人均为Hou Guangwei。这表明F0021是PT9L产品专属版本，DN字段已正确使用PT9L前缀，但文件名仍沿用IFT-FXJH01命名，造成命名不一致。",
+        "full_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->\n# PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable\n\n> hybrid clean-md：规整签字/数据表用 GFM 表格；多段大格子铺成普通段落；保留全部文字与复选框；不保留 HTML 标签。\n\nDN ： PT9L -FXJH01 V 1 .0 Risk Management Plan\n\n**Risk Management Plan**\n\n**(V 1 .0 )**\n\nProduct name: Infrared Forehead Thermometer\n\n**Drafted by** *(Regulation Engineer)* Date:\n\n**Reviewed by** *(Certification Engineer)* Date:\n\n**Approved by** *(Technical Director)* Date:\n\n| **No.** | **Version Date** | **Version Description** | **Version** | **Draft er** | **Approve r** |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 2024.1.9 | Originated | V1.0 | Hou Guangwei | Hou Guangwei |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |"
+      },
+      {
+        "context_id": "RC-003",
+        "doc_id": "F0017_vs_F0021",
+        "rel_path": "COMPARATIVE",
+        "lines": "N/A",
+        "significance": "两份文件关键字段对比分析：(1) 文件名标题：F0017无产品前缀，F0021有PT9L--前缀，但两者文件名均含IFT-FXJH01字样；(2) DN字段：F0017=IFT-FXJH01，F0021=PT9L-FXJH01——这是核心差异；(3) 版本日期：F0017=2024.2.2，F0021=2024.1.9，F0021更早；(4) 起草人：F0017=Wang Di，F0021=Hou Guangwei；(5) 批准人：两者均为Hou Guangwei；(6) 两份文件均无交叉引用或替代声明。结论：F0021的DN字段（PT9L-FXJH01）符合预期，但其文件名仍含IFT-FXJH01，且F0017（DN=IFT-FXJH01）与F0021（DN=PT9L-FXJH01）并存于同一目录，无任何说明两者关系的过渡记录，这构成文件控制不一致性，但性质需进一步结合DHF清单登记情况判断。",
+        "full_text": "对比摘要：F0017(DN=IFT-FXJH01, 日期=2024.2.2, 起草=Wang Di) vs F0021(DN=PT9L-FXJH01, 日期=2024.1.9, 起草=Hou Guangwei)。两文件并存，无替代/废止声明，无等效性映射。F0021文件名标题仍含IFT-FXJH01字样但DN字段已更正为PT9L-FXJH01。"
+      },
+      {
+        "context_id": "RC-004",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "lines": "45-77",
+        "significance": "F0017第1节'Arrangement of Risk Management Activities'完整内容，包含目录结构和生命周期阶段表格（Initial development、Prototype phase、Design validation、Design change各阶段的职责、输出文件描述）。此内容用于与F0021同位置内容对比，判断两份文件是否实质相同（即F0021是否仅为F0017的前缀更正版本）。",
+        "full_text": "**Content s**\n\n1\\. Arrangement of Risk Management Activities 2\n\n2\\. Risk Management Group 4\n\n3\\. Risk Acceptance Criteria 5\n\n3.1 Severity of A Hazard 5\n\n3.2 Probability of A Hazard 5\n\n3.3 Risk Acceptance Criteria 5\n\n4\\. Residual Risk Acceptance Criteria 6\n\n4.1 For Single Resid

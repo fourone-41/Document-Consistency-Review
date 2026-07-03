@@ -1,0 +1,1588 @@
+{
+  "document": {
+    "title": "工艺说明-PT9L",
+    "doc_id": "PT9L工艺说明",
+    "product": "PT9L"
+  },
+  "identifiers": [
+    {
+      "id": "PT9L-SMTW01",
+      "description": "PT9L SMT加工说明"
+    },
+    {
+      "id": "PT9L-EBOM01",
+      "description": "PT9L机芯类组件清单"
+    },
+    {
+      "id": "PT9L-SHAOXIE",
+      "description": "PT9L烧写工装"
+    },
+    {
+      "id": "PT9L-CESHI",
+      "description": "PT9L检测工装"
+    },
+    {
+      "id": "PT9L-GZSM01",
+      "description": "PT9L工装操作说明"
+    },
+    {
+      "id": "PT9L-ZPSM01",
+      "description": "PT9L装配说明"
+    },
+    {
+      "id": "PT9L-JYBZ01",
+      "description": "PT9L产品检验标准"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L",
+      "type": "医疗器械（体温计/红外测温仪）"
+    }
+  ],
+  "plan_tasks": [
+    {
+      "task_name": "探头组装",
+      "process_group": "组装探头板",
+      "priority": "关键工序",
+      "purpose": "压合传感器",
+      "equipment": [
+        "传感器冲压模具",
+        "气动压力机"
+      ],
+      "steps": [
+        "左手持1PCS温度传感器，右手使用偏口钳将传感器凸点减掉",
+        "将温度传感器装入散热金属套",
+        "将散热金属套装入压块",
+        "将安装好的探头装入传感器压合工装内",
+        "盖上传感器压合工装上盖",
+        "将压合工装放置气动压合工装指定位置",
+        "双手同时压下气动压合工装上的两个按钮",
+        "取出压合完成的传感器"
+      ]
+    },
+    {
+      "task_name": "涂抹硅脂",
+      "process_group": "组装探头板",
+      "priority": "关键工序",
+      "purpose": "使传感器导热均匀",
+      "equipment": [
+        "自动涂硅脂机"
+      ],
+      "steps": [
+        "把组装好的探头放入自动涂硅脂机，由机器自动涂抹硅脂"
+      ]
+    },
+    {
+      "task_name": "焊探头到PCB",
+      "process_group": "组装探头板",
+      "priority": "关键工序",
+      "purpose": "焊温度传感器板",
+      "equipment": [
+        "焊锡（无铅，符合ROHS）",
+        "恒温电烙铁"
+      ],
+      "steps": [
+        "把涂抹好硅脂的传感器探头插入传感器板，探头金脚插入传感器板的4脚位置",
+        "焊探头脚到PCB上",
+        "剪脚"
+      ]
+    },
+    {
+      "task_name": "导线焊到探头板上",
+      "process_group": "探头板焊线",
+      "priority": "重要",
+      "purpose": "导线焊到探头板上",
+      "equipment": [
+        "焊锡（无铅，符合ROHS）",
+        "恒温电烙铁"
+      ],
+      "steps": [
+        "依次将红、白、黑线焊接到相应标识位置上"
+      ]
+    },
+    {
+      "task_name": "探头支架组装",
+      "process_group": "组装探头支架",
+      "priority": "重要",
+      "purpose": "组装探头支架",
+      "equipment": [
+        "电动螺丝起子（扭力要求：1.8±0.2kgf.cm）"
+      ],
+      "steps": [
+        "将焊接完成的探头装入支架内",
+        "将装有探头的支架放置在工装治具内",
+        "将螺钉打入PCB螺钉定位孔内"
+      ]
+    },
+    {
+      "task_name": "探头涂三防漆",
+      "process_group": "涂三防漆",
+      "priority": "重要",
+      "purpose": "探头涂三防漆",
+      "equipment": [
+        "毛刷",
+        "三防漆"
+      ],
+      "steps": [
+        "使用毛刷将传感器板表面涂抹三防漆"
+      ]
+    },
+    {
+      "task_name": "贴片",
+      "process_group": "SMT",
+      "priority": "关键工序",
+      "purpose": "贴片元器件",
+      "steps": [
+        "主板SMT加工参考PT9L-SMTW01（按照最新版本执行）",
+        "元件使用参考PT9L-EBOM01（按照最新版本执行）"
+      ]
+    },
+    {
+      "task_name": "主板程序烧写",
+      "process_group": "烧写",
+      "priority": "关键工序",
+      "purpose": "主板程序烧写",
+      "equipment": [
+        "PT9L烧写工装PT9L-SHAOXIE",
+        "合泰Gang-Writer8-8烧写器",
+        "静电手腕带"
+      ],
+      "steps": [
+        "参考PT9L工装操作说明PT9L-GZSM01（按照最新版本执行）"
+      ]
+    },
+    {
+      "task_name": "主板贴片检测",
+      "process_group": "检测",
+      "priority": "关键工序",
+      "purpose": "检测贴片的元件功能、性能、虚焊、连焊",
+      "equipment": [
+        "PT9L检测工装PT9L-CESHI",
+        "电源（输出电压3±0.1V，最大输出电流500mA，电流指示精度0.01mA）",
+        "静电手腕带"
+      ],
+      "steps": [
+        "上电后两个LED灯D1和D2全亮，屏幕显示CB1，然后显示软件版本号，2s后进入休眠，两个LED灯熄灭，显示黑屏，操作人员查看休眠电流",
+        "按下按键S1唤醒，两个LED点亮，LCD全显",
+        "若自检全部通过，LCD显示PAS，按下按键S1保存，CB1完成",
+        "若自检未通过，屏幕显示Er1"
+      ]
+    },
+    {
+      "task_name": "在主板上焊接蜂鸣器",
+      "process_group": "焊接",
+      "priority": "重要",
+      "purpose": "往主板上焊接蜂鸣器",
+      "equipment": [
+        "焊锡（无铅，符合ROHS）",
+        "恒温电烙铁"
+      ],
+      "steps": [
+        "将蜂鸣器放置在工装制具内",
+        "将PCB放置工装内，使蜂鸣器两个管脚穿过PCB BUZZER位置的两个过孔",
+        "将蜂鸣器与PCB焊接在一起"
+      ]
+    },
+    {
+      "task_name": "在主板上焊接电池正负极弹簧",
+      "process_group": "焊接",
+      "priority": "重要",
+      "purpose": "在主板上焊接电池正负极弹簧",
+      "equipment": [
+        "焊锡（无铅，符合ROHS）",
+        "恒温电烙铁"
+      ],
+      "steps": [
+        "将正负极簧放置在工装制具内",
+        "将PCB放置工装内，使正负极簧两个管脚分别穿过PCB +、- 位置的过孔",
+        "将正负极簧与PCB焊接在一起"
+      ]
+    },
+    {
+      "task_name": "连接主板和传感器探头组件",
+      "process_group": "焊接",
+      "priority": "重要",
+      "purpose": "连接主板和传感器探头组件",
+      "equipment": [
+        "焊锡（无铅，符合ROHS）",
+        "恒温电烙铁"
+      ],
+      "steps": [
+        "焊接在主板PCB上SENSOR位置",
+        "焊接温度不超过380℃，时间不超过3秒",
+        "SENSOR的1、2、3焊盘分别对应红、白、黑色导线"
+      ]
+    },
+    {
+      "task_name": "进入装配工序",
+      "process_group": "装配",
+      "priority": "重要",
+      "reference": "PT9L装配说明 PT9L-ZPSM01（按照最新版本执行）"
+    },
+    {
+      "task_name": "整机检验",
+      "process_group": "整机检验",
+      "priority": "重要",
+      "reference": "PT9L装配说明 PT9L-ZPSM01（按照最新版本执行）"
+    },
+    {
+      "task_name": "进入包装工序",
+      "process_group": "包装",
+      "priority": "重要",
+      "reference": "PT9L装配说明 PT9L-ZPSM01（按照最新版本执行）"
+    },
+    {
+      "task_name": "出货检验",
+      "process_group": "出货检验",
+      "priority": "重要",
+      "reference": "PT9L产品检验标准 PT9L-JYBZ01（按照最新版本执行）"
+    }
+  ],
+  "requirements": [
+    {
+      "req_id": "REQ-探头组装-01",
+      "source_process": "探头组装",
+      "description": "不得用手触摸传感器镜片"
+    },
+    {
+      "req_id": "REQ-探头组装-02",
+      "source_process": "探头组装",
+      "description": "剪点到位"
+    },
+    {
+      "req_id": "REQ-探头组装-03",
+      "source_process": "探头组装",
+      "description": "外观无破损、脏污等不良"
+    },
+    {
+      "req_id": "REQ-探头组装-04",
+      "source_process": "探头组装",
+      "description": "压合后高度：14.1±0.1mm"
+    },
+    {
+      "req_id": "REQ-探头组装-05",
+      "source_process": "探头组装",
+      "description": "传感器、散热套无松动现象"
+    },
+    {
+      "req_id": "REQ-探头组装-06",
+      "source_process": "探头组装",
+      "description": "设备压力调节0.6±0.05MPa，时间调节在3±1秒"
+    },
+    {
+      "req_id": "REQ-涂硅脂-01",
+      "source_process": "涂抹硅脂",
+      "description": "涂抹均匀，不得涂抹到传感器脚"
+    },
+    {
+      "req_id": "REQ-焊探头PCB-01",
+      "source_process": "焊探头到PCB",
+      "description": "插装到位；焊点饱满圆润，无漏焊、虚焊、脱焊、立碑、桥接、拉尖等不良缺陷"
+    },
+    {
+      "req_id": "REQ-焊线-01",
+      "source_process": "导线焊到探头板上",
+      "description": "红线焊在PCB丝印1位置；白线焊在PCB丝印2位置；黑线焊在PCB丝印3位置"
+    },
+    {
+      "req_id": "REQ-探头支架-01",
+      "source_process": "探头支架组装",
+      "description": "检验探头焊点，无虚焊、漏焊、连焊现象；探头放置平稳无虚位、晃动现象；螺钉安装到位"
+    },
+    {
+      "req_id": "REQ-三防漆-01",
+      "source_process": "探头涂三防漆",
+      "description": "三防漆涂抹均匀，不得粘连到其他部件；三防漆涂抹必须完全覆盖传感器的四个焊点"
+    },
+    {
+      "req_id": "REQ-SMT-01",
+      "source_process": "贴片",
+      "description": "焊接元器件正确，PCB板上相应贴片元件需与BOM中元器件名称规格一一对应，带极性元器件焊接方向正确"
+    },
+    {
+      "req_id": "REQ-SMT-02",
+      "source_process": "贴片",
+      "description": "元器件不能有缺口、破裂和烫伤，元器件焊接高度不影响装配，PCB板不能有破损、变形、翘曲，表面清洁、无焊料小圆球"
+    },
+    {
+      "req_id": "REQ-SMT-03",
+      "source_process": "贴片",
+      "description": "焊点要表面润湿、完整、连续和圆滑，焊料量适中，焊点位置准确，无漏焊、虚焊、脱焊、立碑、桥接、拉尖等不良缺陷"
+    },
+    {
+      "req_id": "REQ-检测-01",
+      "source_process": "主板贴片检测",
+      "description": "休眠电流应小于30uA"
+    },
+    {
+      "req_id": "REQ-检测-02",
+      "source_process": "主板贴片检测",
+      "description": "电池电压在2.7V到3.3V之间"
+    },
+    {
+      "req_id": "REQ-检测-03",
+      "source_process": "主板贴片检测",
+      "description": "外部NTC温度在23℃到27℃之间（此处为10K的标准电阻）"
+    },
+    {
+      "req_id": "REQ-检测-04",
+      "source_process": "主板贴片检测",
+      "description": "红外传感器测温应在10℃到40℃之间"
+    },
+    {
+      "req_id": "REQ-蜂鸣器焊接-01",
+      "source_process": "在主板上焊接蜂鸣器",
+      "description": "放置平稳；蜂鸣器本体紧贴PCB；焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊"
+    },
+    {
+      "req_id": "REQ-电池弹簧-01",
+      "source_process": "在主板上焊接电池正负极弹簧",
+      "description": "放置平稳；正负极簧本体紧贴PCB；焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊"
+    },
+    {
+      "req_id": "REQ-SENSOR连接-01",
+      "source_process": "连接主板和传感器探头组件",
+      "description": "焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊，高度不超过3.0mm"
+    },
+    {
+      "req_id": "REQ-SENSOR连接-02",
+      "source_process": "连接主板和传感器探头组件",
+      "description": "焊点强度垂直拉力要求在100N以上"
+    },
+    {
+      "req_id": "REQ-SENSOR连接-03",
+      "source_process": "连接主板和传感器探头组件",
+      "description": "焊接温度不超过380℃，时间不超过3秒"
+    }
+  ],
+  "components": [
+    {
+      "name": "温度传感器",
+      "description": "红外温度传感器，探头金脚插入传感器板4脚位置"
+    },
+    {
+      "name": "散热金属套",
+      "description": "用于包裹温度传感器，辅助导热"
+    },
+    {
+      "name": "压块",
+      "description": "探头组装压合用部件"
+    },
+    {
+      "name": "传感器板（PCB）",
+      "description": "探头电路板，含1/2/3丝印焊接位"
+    },
+    {
+      "name": "导线（红/白/黑）",
+      "description": "连接探头板与主板的导线，分别对应1、2、3焊盘"
+    },
+    {
+      "name": "探头支架",
+      "description": "装载探头的机械支架，通过螺钉固定"
+    },
+    {
+      "name": "三防漆",
+      "description": "涂覆在传感器板表面，保护焊点"
+    },
+    {
+      "name": "主板PCB",
+      "description": "主控电路板，含SENSOR、BUZZER、+/-焊接位"
+    },
+    {
+      "name": "蜂鸣器",
+      "description": "焊接在主板PCB的BUZZER位置"
+    },
+    {
+      "name": "电池正负极弹簧",
+      "description": "焊接在主板PCB的+、-位置，用于电池接触"
+    },
+    {
+      "name": "LCD",
+      "description": "显示屏，用于显示测量结果和错误代码"
+    },
+    {
+      "name": "LED（D1、D2）",
+      "description": "主板上两个LED指示灯"
+    },
+    {
+      "name": "按键S1",
+      "description": "主板唤醒/操作按键"
+    }
+  ],
+  "tests": [
+    {
+      "test_name": "主板贴片自检",
+      "process": "检测",
+      "test_items": [
+        {
+          "item": "电池电压检测",
+          "spec": "2.7V ～ 3.3V"
+        },
+        {
+          "item": "外部NTC温度检测",
+          "spec": "23℃ ～ 27℃（10K标准电阻）"
+        },
+        {
+          "item": "红外传感器测温",
+          "spec": "10℃ ～ 40℃"
+        },
+        {
+          "item": "休眠电流",
+          "spec": "< 30uA"
+        }
+      ],
+      "pass_indicator": "LCD显示PAS",
+      "fail_indicator": "LCD显示ER1"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "ROHS",
+      "description": "有害物质限制指令，焊锡要求无铅、符合ROHS"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "上电后两个LED灯D1和D2全亮，屏幕显示CB1，然后显示软件版本号，2s后进入休眠，两个LED灯熄灭，显示黑屏，操作人员查看休眠电流，应小于30uA；按下按键S1唤醒，两个LED点亮，LCD全显；若自检全部通过，LCD显示PAS，按下按键S1保存，CB1完成；若自检未通过，屏幕显示Er1。程序自动检测电池电压、外部NTC、红外传感器的贴片情况：电池电压在2.7V到3.3V之间；外部NTC温度在23℃到27℃之间（10K标准电阻）；红外传感器测温应在10℃到40℃之间；否则LCD会显示ER1错误提示，此时按下按键会循环显示上面三个测量结果供查找问题。",
+      "topic_tags": [
+        "开机自检",
+        "休眠电流",
+        "LED",
+        "LCD",
+        "ER1",
+        "PAS",
+        "NTC",
+        "红外传感器",
+        "电池电压"
+      ],
+      "related_subjects": [
+        "主板贴片检测",
+        "PT9L-CESHI",
+        "主板PCB"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "探头组装时：不得用手触摸传感器镜片；拿取传感器时，不得抓取传感器腿，以免造成传感器腿粘连、弯曲影响传感器板装配；探头放置平稳；压合后高度：14.1±0.1mm；传感器、散热套无松动现象；设备压力调节0.6±0.05MPa，时间调节在3±1秒。",
+      "topic_tags": [
+        "探头组装",
+        "传感器保护",
+        "压合高度",
+        "设备参数",
+        "关键工序"
+      ],
+      "related_subjects": [
+        "探头组装",
+        "传感器冲压模具",
+        "气动压力机"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "连接主板和传感器探头组件时：焊接在主板PCB上SENSOR位置；焊接温度不超过380℃，时间不超过3秒；SENSOR的1、2、3焊盘分别对应红、白、黑色导线；焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊，高度不超过3.0mm；焊点强度垂直拉力要求在100N以上。",
+      "topic_tags": [
+        "SENSOR焊接",
+        "焊接温度",
+        "焊点强度",
+        "导线颜色对应",
+        "垂直拉力"
+      ],
+      "related_subjects": [
+        "连接主板和传感器探头组件",
+        "主板PCB",
+        "导线"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/工艺说明-PT9L.via_xlsx.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板贴片检测",
+      "to": "开机自检",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CESHI",
+      "to": "开机自检",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板PCB",
+      "to": "开机自检",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头组装",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器冲压模具",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "气动压力机",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "连接主板和传感器探头组件",
+      "to": "SENSOR焊接",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板PCB",
+      "to": "SENSOR焊接",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导线",
+      "to": "SENSOR焊接",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L工艺说明",
+      "to": "PT9L-SMTW01",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L工艺说明",
+      "to": "PT9L-EBOM01",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L工艺说明",
+      "to": "PT9L-SHAOXIE",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L工艺说明",
+      "to": "PT9L-CESHI",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L工艺说明",
+      "to": "PT9L-GZSM01",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L工艺说明",
+      "to": "PT9L-ZPSM01",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L工艺说明",
+      "to": "PT9L-JYBZ01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头组装",
+      "to": "REQ-探头组装-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头组装",
+      "to": "REQ-探头组装-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头组装",
+      "to": "REQ-探头组装-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头组装",
+      "to": "REQ-探头组装-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头组装",
+      "to": "REQ-探头组装-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头组装",
+      "to": "REQ-探头组装-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "涂抹硅脂",
+      "to": "REQ-涂硅脂-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "焊探头到PCB",
+      "to": "REQ-焊探头PCB-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导线焊到探头板上",
+      "to": "REQ-焊线-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头支架组装",
+      "to": "REQ-探头支架-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头涂三防漆",
+      "to": "REQ-三防漆-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "贴片",
+      "to": "REQ-SMT-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "贴片",
+      "to": "REQ-SMT-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "贴片",
+      "to": "REQ-SMT-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "在主板上焊接蜂鸣器",
+      "to": "REQ-蜂鸣器焊接-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "在主板上焊接电池正负极弹簧",
+      "to": "REQ-电池弹簧-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "连接主板和传感器探头组件",
+      "to": "REQ-SENSOR连接-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "连接主板和传感器探头组件",
+      "to": "REQ-SENSOR连接-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "连接主板和传感器探头组件",
+      "to": "REQ-SENSOR连接-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头组装",
+      "to": "REQ-探头组装-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头组装",
+      "to": "REQ-探头组装-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头组装",
+      "to": "REQ-探头组装-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头组装",
+      "to": "REQ-探头组装-04",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头组装",
+      "to": "REQ-探头组装-05",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头组装",
+      "to": "REQ-探头组装-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "涂抹硅脂",
+      "to": "REQ-涂硅脂-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "焊探头到PCB",
+      "to": "REQ-焊探头PCB-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "导线焊到探头板上",
+      "to": "REQ-焊线-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头支架组装",
+      "to": "REQ-探头支架-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头涂三防漆",
+      "to": "REQ-三防漆-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "贴片",
+      "to": "REQ-SMT-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "贴片",
+      "to": "REQ-SMT-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "贴片",
+      "to": "REQ-SMT-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "贴片",
+      "to": "PT9L-SMTW01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "贴片",
+      "to": "PT9L-EBOM01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "主板程序烧写",
+      "to": "PT9L-SHAOXIE",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "主板程序烧写",
+      "to": "PT9L-GZSM01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-04",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "主板贴片检测",
+      "to": "PT9L-CESHI",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "在主板上焊接蜂鸣器",
+      "to": "REQ-蜂鸣器焊接-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "在主板上焊接电池正负极弹簧",
+      "to": "REQ-电池弹簧-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "连接主板和传感器探头组件",
+      "to": "REQ-SENSOR连接-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "连接主板和传感器探头组件",
+      "to": "REQ-SENSOR连接-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "连接主板和传感器探头组件",
+      "to": "REQ-SENSOR连接-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "进入装配工序",
+      "to": "PT9L-ZPSM01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "整机检验",
+      "to": "PT9L-ZPSM01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "进入包装工序",
+      "to": "PT9L-ZPSM01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "出货检验",
+      "to": "PT9L-JYBZ01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "焊探头到PCB",
+      "to": "ROHS",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "导线焊到探头板上",
+      "to": "ROHS",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "在主板上焊接蜂鸣器",
+      "to": "ROHS",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "在主板上焊接电池正负极弹簧",
+      "to": "ROHS",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "连接主板和传感器探头组件",
+      "to": "ROHS",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-检测-01",
+      "to": "主板贴片自检",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-检测-02",
+      "to": "主板贴片自检",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-检测-03",
+      "to": "主板贴片自检",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-检测-04",
+      "to": "主板贴片自检",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-探头组装-04",
+      "to": "REQ-探头组装-04",
+      "properties": {
+        "measurement": "压合后高度",
+        "value": "14.1±0.1mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-探头组装-06",
+      "to": "REQ-探头组装-06",
+      "properties": {
+        "measurement": "设备压力",
+        "value": "0.6±0.05MPa",
+        "measurement2": "时间",
+        "value2": "3±1秒"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-检测-01",
+      "to": "REQ-检测-01",
+      "properties": {
+        "measurement": "休眠电流",
+        "value": "<30uA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-检测-02",
+      "to": "REQ-检测-02",
+      "properties": {
+        "measurement": "电池电压",
+        "value": "2.7V～3.3V"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-检测-03",
+      "to": "REQ-检测-03",
+      "properties": {
+        "measurement": "外部NTC温度",
+        "value": "23℃～27℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-检测-04",
+      "to": "REQ-检测-04",
+      "properties": {
+        "measurement": "红外传感器测温",
+        "value": "10℃～40℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-SENSOR连接-01",
+      "to": "REQ-SENSOR连接-01",
+      "properties": {
+        "measurement": "焊点高度",
+        "value": "不超过3.0mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-SENSOR连接-02",
+      "to": "REQ-SENSOR连接-02",
+      "properties": {
+        "measurement": "焊点强度垂直拉力",
+        "value": "≥100N"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-SENSOR连接-03",
+      "to": "REQ-SENSOR连接-03",
+      "properties": {
+        "measurement": "焊接温度",
+        "value": "不超过380℃",
+        "measurement2": "焊接时间",
+        "value2": "不超过3秒"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-01",
+      "properties": {
+        "measurement": "休眠电流",
+        "value": "<30uA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-02",
+      "properties": {
+        "measurement": "电池电压",
+        "value": "2.7V～3.3V"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-03",
+      "properties": {
+        "measurement": "外部NTC温度",
+        "value": "23℃～27℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "主板贴片检测",
+      "to": "REQ-检测-04",
+      "properties": {
+        "measurement": "红外传感器测温",
+        "value": "10℃～40℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "探头支架组装",
+      "to": "REQ-探头支架-01",
+      "properties": {
+        "measurement": "扭力",
+        "value": "1.8±0.2kgf.cm"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "贴片",
+      "to": "PT9L-SMTW01",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "贴片",
+      "to": "PT9L-EBOM01",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "主板程序烧写",
+      "to": "PT9L-SHAOXIE",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "主板程序烧写",
+      "to": "PT9L-GZSM01",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "主板贴片检测",
+      "to": "PT9L-CESHI",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "进入装配工序",
+      "to": "PT9L-ZPSM01",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "整机检验",
+      "to": "PT9L-ZPSM01",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "进入包装工序",
+      "to": "PT9L-ZPSM01",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "出货检验",
+      "to": "PT9L-JYBZ01",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "焊探头到PCB",
+      "to": "涂抹硅脂",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "涂抹硅脂",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "导线焊到探头板上",
+      "to": "焊探头到PCB",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "探头支架组装",
+      "to": "导线焊到探头板上",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "探头涂三防漆",
+      "to": "探头支架组装",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "连接主板和传感器探头组件",
+      "to": "探头涂三防漆",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "连接主板和传感器探头组件",
+      "to": "在主板上焊接蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "连接主板和传感器探头组件",
+      "to": "在主板上焊接电池正负极弹簧",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "在主板上焊接蜂鸣器",
+      "to": "主板贴片检测",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "在主板上焊接电池正负极弹簧",
+      "to": "主板贴片检测",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "主板贴片检测",
+      "to": "贴片",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "主板程序烧写",
+      "to": "贴片",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "进入装配工序",
+      "to": "连接主板和传感器探头组件",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-探头组装-01",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-探头组装-04",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-探头组装-05",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-探头组装-06",
+      "to": "探头组装",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-涂硅脂-01",
+      "to": "涂抹硅脂",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-焊探头PCB-01",
+      "to": "焊探头到PCB",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-焊线-01",
+      "to": "导线焊到探头板上",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-探头支架-01",
+      "to": "探头支架组装",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-三防漆-01",
+      "to": "探头涂三防漆",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-SMT-01",
+      "to": "贴片",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-SMT-02",
+      "to": "贴片",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-SMT-03",
+      "to": "贴片",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-检测-01",
+      "to": "主板贴片检测",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-检测-02",
+      "to": "主板贴片检测",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-检测-03",
+      "to": "主板贴片检测",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-检测-04",
+      "to": "主板贴片检测",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-蜂鸣器焊接-01",
+      "to": "在主板上焊接蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-电池弹簧-01",
+      "to": "在主板上焊接电池正负极弹簧",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-SENSOR连接-01",
+      "to": "连接主板和传感器探头组件",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-SENSOR连接-02",
+      "to": "连接主板和传感器探头组件",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "REQ-SENSOR连接-03",
+      "to": "连接主板和传感器探头组件",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PT9L-SMTW01",
+      "to": "贴片",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PT9L-EBOM01",
+      "to": "贴片",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PT9L-GZSM01",
+      "to": "主板程序烧写",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PT9L-ZPSM01",
+      "to": "进入装配工序",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PT9L-ZPSM01",
+      "to": "整机检验",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PT9L-ZPSM01",
+      "to": "进入包装工序",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PT9L-JYBZ01",
+      "to": "出货检验",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "压合高度",
+      "attribute": "规格值",
+      "value": "14.1",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "探头组装压合后",
+      "raw_text": "压合后高度：14.1±0.1mm"
+    },
+    {
+      "subject": "设备压力",
+      "attribute": "调节值",
+      "value": "0.6",
+      "unit": "MPa",
+      "tolerance": "±0.05MPa",
+      "condition": "探头组装压合设备",
+      "raw_text": "设备压力调节0.6±0.05MPa，时间调节在3±1秒"
+    },
+    {
+      "subject": "压合时间",
+      "attribute": "调节值",
+      "value": "3",
+      "unit": "s",
+      "tolerance": "±1s",
+      "condition": "探头组装压合设备",
+      "raw_text": "设备压力调节0.6±0.05MPa，时间调节在3±1秒"
+    },
+    {
+      "subject": "休眠电流",
+      "attribute": "上限阈值",
+      "value": "30",
+      "unit": "uA",
+      "tolerance": "",
+      "condition": "主板贴片检测",
+      "raw_text": "休眠电流应小于30uA"
+    },
+    {
+      "subject": "电池电压",
+      "attribute": "范围",
+      "value": "2.7～3.3",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "主板贴片检测",
+      "raw_text": "电池电压在2.7V到3.3V之间"
+    },
+    {
+      "subject": "外部NTC温度",
+      "attribute": "范围",
+      "value": "23～27",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "主板贴片检测，使用10K标准电阻",
+      "raw_text": "外部NTC温度在23℃到27℃之间（此处为10K的标准电阻）"
+    },
+    {
+      "subject": "红外传感器测温",
+      "attribute": "范围",
+      "value": "10～40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "主板贴片检测",
+      "raw_text": "红外传感器测温应在10℃到40℃之间"
+    },
+    {
+      "subject": "焊点高度",
+      "attribute": "上限阈值",
+      "value": "3.0",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "连接主板和传感器探头组件",
+      "raw_text": "焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊，高度不超过3.0mm"
+    },
+    {
+      "subject": "焊点垂直拉力",
+      "attribute": "下限阈值",
+      "value": "100",
+      "unit": "N",
+      "tolerance": "",
+      "condition": "连接主板和传感器探头组件",
+      "raw_text": "焊点强度垂直拉力要求在100N以上"
+    },
+    {
+      "subject": "焊接温度",
+      "attribute": "上限阈值",
+      "value": "380",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "连接主板和传感器探头组件",
+      "raw_text": "焊接温度不超过380℃，时间不超过3秒"
+    },
+    {
+      "subject": "焊接时间",
+      "attribute": "上限阈值",
+      "value": "3",
+      "unit": "s",
+      "tolerance": "",
+      "condition": "连接主板和传感器探头组件",
+      "raw_text": "焊接温度不超过380℃，时间不超过3秒"
+    },
+    {
+      "subject": "电池电压",
+      "attribute": "范围",
+      "value": "2.7～3.3",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "主板贴片自检测试项",
+      "raw_text": "电池电压检测，spec: 2.7V ～ 3.3V"
+    },
+    {
+      "subject": "外部NTC温度",
+      "attribute": "范围",
+      "value": "23～27",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "主板贴片自检，使用10K标准电阻",
+      "raw_text": "外部NTC温度检测，spec: 23℃ ～ 27℃（10K标准电阻）"
+    },
+    {
+      "subject": "红外传感器测温",
+      "attribute": "范围",
+      "value": "10～40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "主板贴片自检测试项",
+      "raw_text": "红外传感器测温，spec: 10℃ ～ 40℃"
+    },
+    {
+      "subject": "休眠电流",
+      "attribute": "上限阈值",
+      "value": "30",
+      "unit": "uA",
+      "tolerance": "",
+      "condition": "主板贴片自检测试项",
+      "raw_text": "休眠电流，spec: < 30uA"
+    },
+    {
+      "subject": "温度传感器",
+      "attribute": "测量原理",
+      "value": "红外非接触式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "探头组件",
+      "raw_text": "红外温度传感器，探头金脚插入传感器板4脚位置"
+    },
+    {
+      "subject": "传感器插脚数",
+      "attribute": "数量",
+      "value": "4",
+      "unit": "脚",
+      "tolerance": "",
+      "condition": "探头金脚插入传感器板",
+      "raw_text": "探头金脚插入传感器板4脚位置"
+    },
+    {
+      "subject": "三防漆覆盖焊点",
+      "attribute": "数量",
+      "value": "4",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "探头涂三防漆",
+      "raw_text": "三防漆涂抹必须完全覆盖传感器的四个焊点"
+    },
+    {
+      "subject": "导线颜色与焊盘",
+      "attribute": "对应关系数量",
+      "value": "3",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "导线焊到探头板上",
+      "raw_text": "红线焊在PCB丝印1位置；白线焊在PCB丝印2位置；黑线焊在PCB丝印3位置"
+    }
+  ]
+}

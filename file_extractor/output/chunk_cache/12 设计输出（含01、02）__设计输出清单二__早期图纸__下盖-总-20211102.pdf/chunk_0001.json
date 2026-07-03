@@ -1,0 +1,192 @@
+{
+  "document": {
+    "title": "【早期版】下盖-总 2D图读图",
+    "drawing_no": "T-Z1-P11",
+    "version": "V1.0",
+    "date": "2021-11-02",
+    "edition_date": "2021-07-16",
+    "scale": "1:1",
+    "tolerance_level": "LEVEL B",
+    "source_file": "早期图纸/下盖-总-20211102.pdf",
+    "format": "A4竖向",
+    "text_chars": 123,
+    "status": "早期版历史归档",
+    "archived_date": "2026-06-02"
+  },
+  "products": [
+    {
+      "name": "下盖",
+      "drawing_no": "T-Z1-P11",
+      "version": "V1.0",
+      "material": "ABS（白色）",
+      "surface_treatment": "PANTONE Cool Gray 8U + 拉伸版",
+      "status": "疑似废弃/图号被废弃或并入P02"
+    },
+    {
+      "name": "下盖",
+      "drawing_no": "T-Z1-P02",
+      "version": "V1.0",
+      "date": "2021-07-16",
+      "source_file": "下盖20210727.pdf",
+      "status": "早期版平行图纸"
+    },
+    {
+      "name": "下盖",
+      "drawing_no": "T-Z1-P02",
+      "version": "V2.0",
+      "source_file": "../图纸/T-Z1-下盖-v2.0-20240627.pdf.md",
+      "status": "现版"
+    },
+    {
+      "name": "下盖",
+      "drawing_no": "T-Z1-P02",
+      "version": "V1.0",
+      "source_file": "../设计输出清单二/图纸/T-Z1-下盖-v1.0-20241104.pdf.md",
+      "status": "现版"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "①",
+      "view": "主视图水平向",
+      "dimension": "34.1",
+      "tolerance": "±0.05",
+      "note": "整件外形宽",
+      "category": "关键尺寸（IQC测量）"
+    },
+    {
+      "id": "②",
+      "view": "SECTION A-A",
+      "dimension": "1.4",
+      "tolerance": "±0.05",
+      "note": "A-A关键厚度",
+      "category": "关键尺寸（IQC测量）"
+    },
+    {
+      "id": "总长",
+      "dimension": "Ø130.1",
+      "tolerance": "±0.1",
+      "note": "与P02 V1.0相同"
+    },
+    {
+      "id": "端孔",
+      "dimension": "Ø10",
+      "tolerance": "±0.05",
+      "note": "与P02 V1.0相同"
+    },
+    {
+      "id": "DETAIL D",
+      "view": "DETAIL D SCALE 5:1",
+      "dimension": "1.25",
+      "tolerance": "±0.03",
+      "note": "与P02同精度"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "content": "带编号为重要尺寸，需要IQC测量",
+      "category": "检验要求"
+    },
+    {
+      "id": "REQ-2",
+      "content": "材质为ABS（白色）；外观良好",
+      "category": "材料与外观要求"
+    },
+    {
+      "id": "REQ-3",
+      "content": "须试装产品，未标注尺寸以样板为准",
+      "category": "装配验证要求"
+    },
+    {
+      "id": "REQ-4",
+      "content": "产品符合RoHS 2.0",
+      "category": "法规合规要求"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "applicability": "下盖零件材料合规"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号（早期版）",
+      "value": "T-Z1-P11",
+      "note": "疑似过渡图号或平行方案，后可能被废弃并入T-Z1-P02"
+    },
+    {
+      "type": "图号（现版/并行版）",
+      "value": "T-Z1-P02"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "priority": "C级",
+      "content": "T-Z1-P11与T-Z1-P02关系：是平行方案？设计变更前后？图号重命名？",
+      "status": "待工程师确认"
+    },
+    {
+      "id": "C-2",
+      "priority": "C级",
+      "content": "P11是否曾用过（IQC检验过？模具开过？）",
+      "status": "待工程师确认"
+    },
+    {
+      "id": "C-3",
+      "priority": "C级",
+      "content": "是否需要从DHF中标识\"P11已废弃，并入P02\"",
+      "status": "待工程师确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "本图Drawing NO. T-Z1-P11（不是P02）。与同目录下盖20210727.pdf（T-Z1-P02 V1.0）几何高度相似，但图号不同——可能是设计中途的\"过渡图号\"，或与P02是平行的两个设计方案（一个被废弃）。",
+      "topic_tags": [
+        "图号差异",
+        "平行方案",
+        "过渡图号",
+        "设计变更",
+        "废弃图号"
+      ],
+      "related_subjects": [
+        "T-Z1-P11",
+        "T-Z1-P02",
+        "下盖"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "P11早期版（2021-11-02）与P02早期版（2021-07-16）几何基本一致，包括Ø130.1±0.1总长、Ø10±0.05端孔、内腔结构相同、DETAIL D SCALE 5:1尺寸1.25±0.03。两者图号不同，但几何实质相同，P11图号状态为\"图号被废弃/改为P02？\"",
+      "topic_tags": [
+        "版本比对",
+        "几何一致性",
+        "图号废弃",
+        "设计历史"
+      ],
+      "related_subjects": [
+        "T-Z1-P11",
+        "T-Z1-P02 V1.0",
+        "下盖"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文档为早期版历史归档，精简版读图记录，源PDF文字层仅123字符，信息完整性受限。现版P02详见../图纸/T-Z1-下盖-v2.0-20240627.pdf.md及../设计输出清单二/图纸/T-Z1-下盖-v1.0-20241104.pdf.md。",
+      "topic_tags": [
+        "历史归档",
+        "早期版",
+        "信息完整性",
+        "版本溯源"
+      ],
+      "related_subjects": [
+        "T-Z1-P11",
+        "T-Z1-P02 V2.0",
+        "T-Z1-P02 V1.0（现版）"
+      ]
+    }
+  ]
+}

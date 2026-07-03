@@ -1,0 +1,273 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-03R1",
+    "total_pages": 21,
+    "current_pages": "9-11"
+  },
+  "requirements": [
+    {
+      "id": "201.12",
+      "description": "ACCURACY OF CONTROLS AND INSTRUMENTS AND PROTECTION AGAINST HAZARDOUS OUTPUTS",
+      "status": "P"
+    },
+    {
+      "id": "201.12.1",
+      "description": "Accuracy of controls and instruments",
+      "status": "P"
+    },
+    {
+      "id": "201.12.1.101",
+      "description": "Additional requirements for accuracy of controls and instruments",
+      "status": "P"
+    },
+    {
+      "id": "201.12.2",
+      "description": "USABILITY",
+      "status": "P"
+    },
+    {
+      "id": "201.12.2.101",
+      "description": "Additional requirements for USABILITY",
+      "status": "P"
+    },
+    {
+      "id": "201.13",
+      "description": "HAZARDOUS SITUATIONS and fault conditions; IEC 60601-1:2005+A1:2012, Clause 13 applies.",
+      "status": "P"
+    },
+    {
+      "id": "201.14",
+      "description": "PROGRAMMABLE ELECTRICAL MEDICAL SYSTEMS (PEMS); IEC 60601-1:2005+A1:2012, Clause 14 applies.",
+      "status": "P"
+    },
+    {
+      "id": "201.15",
+      "description": "Construction of ME EQUIPMENT; IEC 60601-1:2005+A1:2012, Clause 15 applies.",
+      "status": "P"
+    },
+    {
+      "id": "201.16",
+      "description": "ME SYSTEMS; IEC 60601-1:2005+A1:2012, Clause 16 applies.",
+      "result": "Not ME systems",
+      "status": "N/A"
+    },
+    {
+      "id": "201.17",
+      "description": "Electromagnetic compatibility of ME EQUIPMENT and ME SYSTEMS; IEC 60601-1:2005, Clause 17 applies.",
+      "result": "Not evaluate in this report",
+      "status": "N/E"
+    },
+    {
+      "id": "201.101",
+      "description": "LABORATORY PERFORMANCE REQUIREMENTS"
+    },
+    {
+      "id": "201.101.1",
+      "description": "General test requirements - Laboratory performance is assessed in DIRECT MODE or in TEST MODE under the same conditions",
+      "result": "In test mode",
+      "status": "P"
+    },
+    {
+      "id": "201.101.2",
+      "description": "LABORATORY ACCURACY - within RATED OUTPUT RANGE in NORMAL USE shall be within ±0.3°C",
+      "result": "0.3°C",
+      "status": "P"
+    },
+    {
+      "id": "201.101.3",
+      "description": "Time response for a continuous CLINICAL THERMOMETER",
+      "result": "Not a DIRECT MODE CLINICAL THERMOMETER",
+      "status": "P"
+    },
+    {
+      "id": "201.102",
+      "description": "CLINICAL ACCURACY VALIDATION",
+      "status": "N/E"
+    },
+    {
+      "id": "201.102.1",
+      "description": "Method - ADJUSTED MODE CLINICAL THERMOMETER are VALIDATED for CLINICAL ACCURACY in each ADJUSTED MODE in accordance with ISO 14155-1:2003 and ISO 14155-2:2003.",
+      "status": "N/E"
+    },
+    {
+      "id": "201.102.2",
+      "description": "Human subject population requirements",
+      "status": "N/E"
+    },
+    {
+      "id": "201.102.3",
+      "description": "Calculated CLINICAL BIAS for the OPERATING MODE being evaluated (Δcb)",
+      "status": "N/E"
+    },
+    {
+      "id": "201.102.4",
+      "description": "Calculated LIMITS OF AGREEMENT (LA)",
+      "status": "N/E"
+    },
+    {
+      "id": "201.102.5",
+      "description": "Calculated CLINICAL REPEATABILITY for particular OPERATING MODE (σr)",
+      "status": "N/E"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "201.101.2",
+      "test_name": "LABORATORY ACCURACY",
+      "method": "Appended Table 201.101.2",
+      "acceptance_criteria": "±0.3°C within RATED OUTPUT RANGE; ±0.4°C within RATED EXTENDED OUTPUT RANGE",
+      "actual_result": "0.3°C",
+      "status": "P"
+    },
+    {
+      "test_id": "201.101.1",
+      "test_name": "General test requirements",
+      "method": "TEST MODE",
+      "actual_result": "In test mode",
+      "status": "P"
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC 60601-1:2005+A1:2012",
+      "clauses": [
+        "Clause 13",
+        "Clause 14",
+        "Clause 15",
+        "Clause 16"
+      ]
+    },
+    {
+      "standard": "IEC 60601-1:2005",
+      "clauses": [
+        "Clause 17"
+      ]
+    },
+    {
+      "standard": "ISO 14155-1:2003",
+      "context": "CLINICAL ACCURACY VALIDATION"
+    },
+    {
+      "standard": "ISO 14155-2:2003",
+      "context": "CLINICAL ACCURACY VALIDATION"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "If the CLINICAL THERMOMETER cannot indicate a temperature within the LABORATORY ACCURACY, it either provides a TECHNICAL ALARM CONDITION, or it does not provide an OUTPUT TEMPERATURE. Minimum RATED OUTPUT RANGE of the CLINICAL THERMOMETER is from 34°C to 42°C. Actual rated output range: 32.0°C to 42.9°C.",
+      "topic_tags": [
+        "clinical thermometer",
+        "laboratory accuracy",
+        "alarm condition",
+        "rated output range",
+        "temperature indication"
+      ],
+      "related_subjects": [
+        "201.12.1.101",
+        "201.101.2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "CLINICAL THERMOMETERS intended for home healthcare use require the display of OUTPUT TEMPERATURE of at least 4mm or the value is optically magnified to this height. This is indicated in USABILITY ENGINEERING PROCESS. Actual display height: 10mm. CLINICAL THERMOMETERS with a segmented indication display perform a functional test of all segments after activation (N/A for this device).",
+      "topic_tags": [
+        "home healthcare",
+        "display size",
+        "usability",
+        "output temperature",
+        "segment display"
+      ],
+      "related_subjects": [
+        "201.12.2.101"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "LABORATORY ACCURACY requirements: Within the RATED OUTPUT RANGE in NORMAL USE shall be within ±0.3°C. Within the RATED EXTENDED OUTPUT RANGE in NORMAL USE shall be within ±0.4°C unless CLINICAL THERMOMETER indicates that the measured temperature is outside of the RATED OUTPUT RANGE. Actual result: 0.3°C for both ranges. If the PROBE is separable from the CLINICAL THERMOMETER, they may be tested separately (N/A). Calculated equation for CLINICAL THERMOMETER: See Appended Table 201.101.2.",
+      "topic_tags": [
+        "laboratory accuracy",
+        "rated output range",
+        "rated extended output range",
+        "normal use",
+        "probe",
+        "measurement error"
+      ],
+      "related_subjects": [
+        "201.101.2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Time response for continuous CLINICAL THERMOMETER: The transient response for a DIRECT MODE CLINICAL THERMOMETER that is not an ADJUSTED MODE CLINICAL THERMOMETER shall be characterized and disclosed in the instructions for use. Result: Not a DIRECT MODE CLINICAL THERMOMETER. Transient time lower than recommended minimum measuring time indicated in ACCOMPANYING DOCUMENT (N/A).",
+      "topic_tags": [
+        "transient response",
+        "direct mode",
+        "adjusted mode",
+        "measuring time",
+        "instructions for use"
+      ],
+      "related_subjects": [
+        "201.101.3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "CLINICAL ACCURACY VALIDATION (201.102, N/E): ADJUSTED MODE CLINICAL THERMOMETERS are VALIDATED for CLINICAL ACCURACY in each ADJUSTED MODE in accordance with ISO 14155-1:2003 and ISO 14155-2:2003. Results disclosed in ACCOMPANYING DOCUMENT. New PROBE COVER used for each OUTPUT TEMPERATURE measurement if intended for use with PROBE COVER. Human subject population: total febrile subjects 30%-50% of all subjects. Validation carried out on all age groups indicated in instructions for use. Minimum subjects: overall 105, per age group 35, minimum 15 in A1 or A2 if subgroup A is not excluded. Age groups: A1 (0-3 months), A2 (3-12 months), B (>1 and <5 years), C (>5 years).",
+      "topic_tags": [
+        "clinical accuracy",
+        "validation",
+        "adjusted mode",
+        "age groups",
+        "febrile subjects",
+        "probe cover",
+        "ISO 14155"
+      ],
+      "related_subjects": [
+        "201.102.1",
+        "201.102.2",
+        "201.102.3",
+        "201.102.4",
+        "201.102.5"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Electromagnetic compatibility (201.17): IEC 60601-1:2005 Clause 17 applies. Not evaluated in this report (N/E).",
+      "topic_tags": [
+        "electromagnetic compatibility",
+        "EMC",
+        "ME equipment",
+        "ME systems"
+      ],
+      "related_subjects": [
+        "201.17",
+        "IEC 60601-1:2005"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "ME SYSTEMS (201.16): IEC 60601-1:2005+A1:2012 Clause 16 applies. Result: Not ME systems (N/A).",
+      "topic_tags": [
+        "ME systems",
+        "not applicable"
+      ],
+      "related_subjects": [
+        "201.16",
+        "IEC 60601-1:2005+A1:2012"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Substances carcinogenic, mutagenic or toxic to reproduction: Check compliance by inspection of the instructions for use and inspection of the information provided by the MANUFACTURER for identification of the presence of such substances and justification for their use. Status: N/E.",
+      "topic_tags": [
+        "carcinogenic",
+        "mutagenic",
+        "toxic to reproduction",
+        "substances",
+        "manufacturer information"
+      ],
+      "related_subjects": []
+    }
+  ]
+}

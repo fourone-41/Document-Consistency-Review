@@ -1,0 +1,97 @@
+orchestrator_policy:
+  policy_name: dynamic_dhf_dmr_dispatch_policy
+  policy_version: v1
+  intent: >
+    This file is a policy package for the Orchestrator LLM. Python must not
+    execute these rules as a deterministic router. The Orchestrator reads this
+    policy, reviews current blackboard state, and returns a route_plan.
+  decision_values:
+    - continue
+    - stop
+    - human_review
+  hard_rules:
+    - Orchestrator assigns work only; it must not confirm or dismiss findings.
+    - Evidence tools locate context only; they must not become findings directly.
+    - Only agents assigned by the Orchestrator are called.
+    - Every assigned agent call must invoke the LLM and must not read old agent-output cache.
+    - If route planning cannot safely continue, return human_review with a reason.
+  mandatory_coverage:
+    instruction: >
+      The Orchestrator should ensure these stage-axis and dimension-axis checks
+      are either assigned, explicitly covered by previous agent_runs, or placed
+      into human_review with a reason.
+    audit_matrix:
+      - matrix_id: MATRIX-001
+        stage_axis: design_input_to_output
+        dimension_axis: parameter_consistency
+        suggested_agent: Hardware Agent
+        check_goal: "Verify that key {target_model} design-input parameters are carried into design outputs and validation conditions consistently."
+      - matrix_id: MATRIX-002
+        stage_axis: risk_to_verification
+        dimension_axis: risk_traceability
+        suggested_agent: Risk Traceability Agent
+        check_goal: Verify that risk items, risk controls, and verification activities form a closed traceability chain.
+      - matrix_id: MATRIX-003
+        stage_axis: software_lifecycle
+        dimension_axis: software_traceability
+        suggested_agent: Software Agent
+        check_goal: Verify that software requirements, design, test records, validation, and traceability records are consistent.
+      - matrix_id: MATRIX-004
+        stage_axis: dmr_chain
+        dimension_axis: dmr_sop_consistency
+        suggested_agent: DMR/SOP Agent
+        check_goal: Verify consistency across BOM, process, inspection, packaging, labels, drawings, and transfer records.
+      - matrix_id: MATRIX-005
+        stage_axis: all_stages
+        dimension_axis: document_control
+        suggested_agent: Regulatory Agent
+        check_goal: Verify controlled status, version history, review signatures, and document-control completeness across all stages.
+  candidate_routing_guidance:
+    review_questions:
+      - Does the candidate describe a real consistency issue in the controlled PT9L scope?
+      - Is there counter-evidence such as shared parts, historical reference, template residue, or a change record?
+      - What evidence is still required before the domain agent can decide?
+    suggested_agents:
+      product_identity_inconsistency:
+        - Hardware Agent
+        - DMR/SOP Agent
+      bom_dmr_inconsistency:
+        - Hardware Agent
+        - DMR/SOP Agent
+      risk_reference_inconsistency:
+        - Risk Traceability Agent
+        - V&V Agent
+      verification_reference_gap:
+        - Risk Traceability Agent
+        - V&V Agent
+      document_control_gap:
+        - Regulatory Agent
+      version_control_inconsistency:
+        - Regulatory Agent
+  context_recovery_guidance:
+    fallback_agent: Regulatory Agent
+    suggested_agents:
+      parameter_semantics: Hardware Agent
+      traceability_context: Software Agent
+      risk_control_verification_context: Risk Traceability Agent
+      product_identity_context: DMR/SOP Agent
+      document_control_context: Regulatory Agent
+  route_plan_schema:
+    required_fields:
+      - decision
+      - reason
+      - assignments
+    decision: continue/stop/human_review
+    reason: string
+    assignments:
+      - assignment_id: ASG-0001
+        target_agent: one available agent display name
+        task_type: candidate_discovery/domain_review/context_recheck
+        review_focus: string
+        input_refs: []
+        evidence_strategy:
+          use_page_index: true
+          use_relation_index: true
+          use_full_text: true
+          read_files: []
+    human_review_items: []

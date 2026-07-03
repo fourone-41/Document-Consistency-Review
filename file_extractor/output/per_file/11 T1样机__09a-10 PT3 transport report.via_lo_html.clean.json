@@ -1,0 +1,241 @@
+{
+  "document": {
+    "title": "PT3 Transport Report",
+    "doc_type": "Transport Report / Test Report",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "4.1",
+      "item": "Transport Test",
+      "condition": "Temperature: 19℃~20℃, Humidity: 30%RH~35%RH, Frequency: 5Hz, Duration: 48 min",
+      "expected_value": "No torn or peeled packaging; slight deformation or product shift is acceptable",
+      "actual_result": "Some slight tear on the samples in the box",
+      "pass_criteria": "Packaging is unqualified if torn or peeled; qualified if slightly deformed or product slightly shifted"
+    },
+    {
+      "test_id": "4.2",
+      "item": "Drop Test",
+      "condition": "Drop height: 970 mm; test sites: Corner, Edge 1, Edge 2, Edge 3, Side 1, Side 2, Side 3, Side 4, Side 5, Side 6",
+      "expected_value": "No torn or peeled packaging",
+      "actual_result": "No breakages on the samples",
+      "pass_criteria": "Packaging is unqualified if torn or peeled; qualified if slightly deformed or product slightly shifted"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-YSBG01",
+      "conclusion": "No torn or peeled on the package. Slight tear on the box is considered acceptable. No breakages on the samples after drop test. Transport test and drop test results meet the standards."
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Serial Number",
+      "value": "PT9L-YSBG01"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "Infrared Forehead Thermometer (include Infrared No-Touch Forehead Thermometer and Infrared Digital No-Touch Thermometer)"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "The transport test results meet the standards under the following criteria: a. The packaging is considered as unqualified once it is torn or peeled. b. The package is considered as qualified if it is slightly deformed or the product is slightly shifted.",
+      "topic_tags": [
+        "pass criteria",
+        "packaging qualification",
+        "transport test"
+      ],
+      "related_subjects": [
+        "Transport Test",
+        "Drop Test"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "All tests are performed in the laboratory of ANDON HEALTH CO., LTD.",
+      "topic_tags": [
+        "test facility",
+        "laboratory",
+        "ANDON HEALTH"
+      ],
+      "related_subjects": [
+        "Transport Test",
+        "Drop Test"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/09a-10 PT3 transport report.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "Transport Test",
+      "to": "pass criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Drop Test",
+      "to": "pass criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Transport Test",
+      "to": "test facility",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Drop Test",
+      "to": "test facility",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4.1",
+      "to": "PT9L-YSBG01",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4.2",
+      "to": "PT9L-YSBG01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.1",
+      "to": "PT9L-YSBG01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.2",
+      "to": "PT9L-YSBG01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.1",
+      "to": "constraint_statement",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.2",
+      "to": "constraint_statement",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.1",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.2",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT9L-YSBG01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-YSBG01",
+      "to": "constraint_statement",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-YSBG01",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "4.1",
+      "to": "PT9L-YSBG01",
+      "properties": {
+        "condition": "Temperature: 19℃~20℃, Humidity: 30%RH~35%RH, Frequency: 5Hz, Duration: 48 min",
+        "actual_result": "Some slight tear on the samples in the box"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "4.2",
+      "to": "PT9L-YSBG01",
+      "properties": {
+        "condition": "Drop height: 970 mm; test sites: Corner, Edge 1, Edge 2, Edge 3, Side 1, Side 2, Side 3, Side 4, Side 5, Side 6",
+        "actual_result": "No breakages on the samples"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "运输测试温度",
+      "attribute": "范围",
+      "value": "19~20",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "Transport Test",
+      "raw_text": "Temperature: 19℃~20℃"
+    },
+    {
+      "subject": "运输测试湿度",
+      "attribute": "范围",
+      "value": "30~35",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "Transport Test",
+      "raw_text": "Humidity: 30%RH~35%RH"
+    },
+    {
+      "subject": "运输测试振动频率",
+      "attribute": "值",
+      "value": "5",
+      "unit": "Hz",
+      "tolerance": "",
+      "condition": "Transport Test",
+      "raw_text": "Frequency: 5Hz"
+    },
+    {
+      "subject": "运输测试持续时间",
+      "attribute": "值",
+      "value": "48",
+      "unit": "min",
+      "tolerance": "",
+      "condition": "Transport Test",
+      "raw_text": "Duration: 48 min"
+    },
+    {
+      "subject": "跌落测试高度",
+      "attribute": "值",
+      "value": "970",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "Drop Test",
+      "raw_text": "Drop height: 970 mm"
+    },
+    {
+      "subject": "跌落测试部位数量",
+      "attribute": "数量",
+      "value": "10",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "Drop Test，测试部位包括Corner、Edge 1-3、Side 1-6",
+      "raw_text": "test sites: Corner, Edge 1, Edge 2, Edge 3, Side 1, Side 2, Side 3, Side 4, Side 5, Side 6"
+    }
+  ]
+}

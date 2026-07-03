@@ -1,0 +1,200 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Report",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "29-30",
+    "total_pages": 181
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "eu_equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "subject": "Medical electrical equipment - General requirements for basic safety and essential performance"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.2.2",
+      "title": "Connection to an external d.c. power source",
+      "verdict": "N/A",
+      "items": [
+        {
+          "requirement": "No HAZARDOUS SITUATION developed when connection with wrong polarity made for ME EQUIPMENT from external d.c. source",
+          "result": "No connection to external d.c. source.",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "ME EQUIPMENT connected with correct polarity maintained BASIC SAFETY and ESSENTIAL PERFORMANCE",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Protective devices that can be reset by anyone without a TOOL returns to NORMAL CONDITION on reset",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.3",
+      "title": "Classification of APPLIED PARTS",
+      "verdict": "P",
+      "items": [
+        {
+          "sub": "a",
+          "requirement": "APPLIED PART specified in ACCOMPANYING DOCUMENTS as suitable for DIRECT CARDIAC APPLICATION is TYPE CF",
+          "result": "Not suitable for direct cardiac application",
+          "verdict": "N/A"
+        },
+        {
+          "sub": "b",
+          "requirement": "APPLIED PART provided with a PATIENT CONNECTION intended to deliver electrical energy or an electrophysiological signal to or from PATIENT is TYPE BF or CF APPLIED PART",
+          "result": "Type BF applied part",
+          "verdict": "P"
+        },
+        {
+          "sub": "c",
+          "requirement": "APPLIED PART not covered by a) or b) is a TYPE B, BF, or CF",
+          "result": "Type BF applied part",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.4",
+      "title": "Limitation of voltage, current or energy",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.4.1",
+      "title": "PATIENT CONNECTIONS intended to deliver Current",
+      "verdict": "N/A",
+      "items": [
+        {
+          "requirement": "Limits in 8.4.2 not applied to currents intended to flow through body of PATIENT to produce a physiological effect during NORMAL USE",
+          "result": "No such patient connection",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.4.2",
+      "title": "ACCESSIBLE PARTS and APPLIED PARTS",
+      "verdict": "P",
+      "items": [
+        {
+          "sub": "a",
+          "requirement": "Currents from, to, or between PATIENT CONNECTIONS did not exceed limits for PATIENT LEAKAGE CURRENT and PATIENT AUXILIARY CURRENT per Tables 3 and 4 when measured according to Clause 8.7.4",
+          "result": "See appended Table 8.7",
+          "verdict": "P"
+        },
+        {
+          "sub": "b",
+          "requirement": "LEAKAGE CURRENTS from, to, or between ACCESSIBLE PARTS did not exceed limits for TOUCH CURRENT in Cl. 8.7.3 c) when measured per Clause 8.7.4",
+          "result": "See appended Table 8.7",
+          "verdict": "P"
+        },
+        {
+          "sub": "c",
+          "requirement": "Limits specified in b) not applied to parts when probability of connection to PATIENT is negligible in NORMAL USE and OPERATOR is appropriately instructed",
+          "verdict": "N/A",
+          "sub_items": [
+            {
+              "item": "accessible contacts of connectors",
+              "result": "No such connector",
+              "verdict": "N/A"
+            },
+            {
+              "item": "contacts of fuseholders accessible during replacement of fuse",
+              "result": "No fuse holder used",
+              "verdict": "N/A"
+            },
+            {
+              "item": "contacts of lampholders accessible after removal of lamp",
+              "result": "No lamp holder used",
+              "verdict": "N/A"
+            },
+            {
+              "item": "parts inside an ACCESS COVER that can be opened without a TOOL",
+              "verdict": "N/A"
+            }
+          ]
+        },
+        {
+          "requirement": "Voltage to earth or to other ACCESSIBLE PARTS did not exceed 42.4 V peak a.c. or 60 V d.c. for above parts in NORMAL or single fault condition",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Limit of 60 V d.c. applied with no more than 10% peak-to-peak ripple; when ripple larger than specified value, 42.4 V peak limit applied",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Energy did not exceed 240 VA for longer than 60 s or stored energy available did not exceed 20 J at a potential of 2 V or more",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "LEAKAGE CURRENT limits referred to in 8.4.2 b) applied when voltages higher than limits in 8.4.2 c) were present",
+          "result": "Not higher than limits in 8.4.2 c).",
+          "verdict": "N/A"
+        },
+        {
+          "sub": "d",
+          "requirement": "Voltage and energy limits specified in c) also applied to internal parts touchable by test pin (Fig 8) and internal parts touchable by 4mm/100mm metal test rod",
+          "verdict": "N/A",
+          "sub_items": [
+            {
+              "item": "internal parts touchable by test pin in Fig 8 inserted through opening in ENCLOSURE",
+              "result": "No such internal parts",
+              "verdict": "N/A"
+            },
+            {
+              "item": "internal parts touchable by metal test rod (diameter 4mm, length 100mm) inserted through any opening on top of ENCLOSURE or adjustment openings",
+              "result": "No such internal parts",
+              "verdict": "N/A"
+            },
+            {
+              "item": "Test pin or test rod inserted through relevant openings with minimal force of no more than 1 N",
+              "verdict": "N/A"
+            },
+            {
+              "item": "Test rod inserted through openings for pre-set control adjustment with a force of 10 N",
+              "verdict": "N/A"
+            },
+            {
+              "item": "Test repeated with a TOOL specified in instructions for use",
+              "verdict": "N/A"
+            },
+            {
+              "item": "Test rod freely and vertically suspended through openings on top of ENCLOSURE",
+              "verdict": "N/A"
+            }
+          ]
+        },
+        {
+          "sub": "e",
+          "requirement": "Devices used to de-energize parts when ACCESS COVER opened without a TOOL comply with 8.11.1 for mains isolating switches and remain effective in SINGLE FAULT CONDITION",
+          "result": "No such part",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The device under test has Type BF applied part. It is not suitable for direct cardiac application. There is no connection to external d.c. source. No fuse holder is used. No lamp holder is used. No accessible connector contacts exist. There are no internal parts touchable by the specified test pins or test rods through enclosure openings.",
+      "topic_tags": [
+        "applied part",
+        "BF type",
+        "direct cardiac application",
+        "fuse holder",
+        "enclosure",
+        "test pin"
+      ],
+      "related_subjects": [
+        "8.3",
+        "8.4.2",
+        "8.2.2"
+      ]
+    }
+  ]
+}

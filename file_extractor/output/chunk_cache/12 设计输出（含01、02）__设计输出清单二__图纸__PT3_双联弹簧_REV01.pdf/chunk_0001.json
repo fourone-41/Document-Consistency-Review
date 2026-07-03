@@ -1,0 +1,273 @@
+{
+  "document": {
+    "title": "PT3 双联弹簧 REV01 (V1.0) 2D 图读图报告",
+    "drawing_number": "PT3-P10",
+    "part_name": "双联弹簧",
+    "edition": "V1.0",
+    "revision": "REV01",
+    "model_number": "PT3",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "B",
+    "page_count": 1,
+    "page_format": "A3横向",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf",
+    "generated_date": "2026-06-02",
+    "material": "弹簧钢",
+    "surface_treatment": null,
+    "logo": "andon"
+  },
+  "products": [
+    {
+      "name": "双联弹簧",
+      "part_number": "PT3-P10",
+      "model": "PT3",
+      "material": "弹簧钢",
+      "description": "一片弹片 + 两个弹簧（弹片连接，分别接正负极），PT3项目原件，被PT9L DHF借用归档",
+      "type": "外购件/设计参照"
+    },
+    {
+      "name": "正极弹簧",
+      "part_number": "PT5-M02",
+      "description": "PT9L实际装配使用的正极弹簧，与PT3-P10双联弹簧功能等价"
+    },
+    {
+      "name": "负极弹簧",
+      "part_number": "PT5-M03",
+      "description": "PT9L实际装配使用的负极弹簧，与PT3-P10双联弹簧功能等价"
+    }
+  ],
+  "components": [
+    {
+      "name": "双联弹簧",
+      "part_number": "PT3-P10",
+      "material": "弹簧钢",
+      "sub_components": [
+        "弹片",
+        "弹簧（正极端）",
+        "弹簧（负极端）"
+      ]
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "材质符合RoHS要求",
+      "category": "材料合规性"
+    },
+    {
+      "id": "DI-02",
+      "description": "通过GB2423.17-2008盐雾测试：温度35°、盐水浓度5%、24H后无生锈",
+      "category": "环境适应性"
+    },
+    {
+      "id": "DI-03",
+      "description": "两处结构尺寸与左、右极弹簧一样",
+      "category": "装配兼容性"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "产品外观良好，无毛刺、利角，包装良好",
+      "category": "外观质量"
+    },
+    {
+      "id": "REQ-02",
+      "description": "带编号尺寸为重点检测尺寸",
+      "category": "检验要求"
+    },
+    {
+      "id": "REQ-03",
+      "description": "未标注尺寸请以样板为准；未注公差按图纸公差为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "category": "尺寸检验基准"
+    },
+    {
+      "id": "REQ-04",
+      "description": "材质符合RoHS",
+      "category": "材料合规"
+    },
+    {
+      "id": "REQ-05",
+      "description": "通过通用GB2423.17-2008盐雾测试报告（温度35°、盐水浓度5%、24H后无生锈）",
+      "category": "盐雾测试"
+    },
+    {
+      "id": "REQ-06",
+      "description": "弹簧外径（上件/下件）：Ø6.5 (+0/-0.3)",
+      "category": "关键尺寸",
+      "dimension_id": "①②"
+    },
+    {
+      "id": "REQ-07",
+      "description": "自由长（整体长度）：17.8 (+0/-0.15)",
+      "category": "关键尺寸",
+      "dimension_id": "③"
+    },
+    {
+      "id": "REQ-08",
+      "description": "弹片厚：0.5（默认公差）",
+      "category": "关键尺寸",
+      "dimension_id": "④"
+    },
+    {
+      "id": "REQ-09",
+      "description": "弹片宽：1.2 (+0/-0.2)",
+      "category": "关键尺寸",
+      "dimension_id": "⑤"
+    },
+    {
+      "id": "REQ-10",
+      "description": "第二圈小于Ø5.2（弹簧第二圈外径上限）：5.2 (+0/-0.3)",
+      "category": "关键尺寸",
+      "dimension_id": "⑥"
+    }
+  ],
+  "tests": [
+    {
+      "name": "盐雾测试",
+      "standard": "GB2423.17-2008",
+      "parameters": "温度35°、盐水浓度5%、持续时间24H",
+      "acceptance_criteria": "24H后无生锈",
+      "category": "环境测试"
+    },
+    {
+      "name": "IQC重点尺寸检验",
+      "description": "带编号尺寸①②③④⑤⑥为重点检测尺寸，需按单边负公差检验",
+      "category": "来料检验"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图纸编号",
+      "value": "PT3-P10"
+    },
+    {
+      "type": "版本",
+      "value": "V1.0 / REV01"
+    },
+    {
+      "type": "公差等级",
+      "value": "B"
+    },
+    {
+      "type": "标准",
+      "value": "GB2423.17-2008"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "材质符合RoHS要求",
+      "applicable_to": "弹簧钢材质"
+    },
+    {
+      "name": "GB2423.17-2008",
+      "description": "盐雾测试标准",
+      "applicable_to": "表面防腐测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "带编号IQC重点尺寸详细说明：①弹簧外径（下件）Ø6.5 (+0/-0.3)，位于右视图俯视；②弹簧外径（上件）Ø6.5 (+0/-0.3)，位于右视图俯视；③自由长（整体长度）17.8 (+0/-0.15)，位于主视图侧视；④弹片厚0.5（默认公差），位于主视图侧视；⑤弹片宽1.2 (+0/-0.2)，位于左视图端面；⑥第二圈小于Ø5.2（弹簧第二圈外径上限）5.2 (+0/-0.3)，位于左视图端面。所有单边负公差不得简化为±形式。",
+      "topic_tags": [
+        "IQC",
+        "重点尺寸",
+        "单边负公差",
+        "弹簧外径",
+        "自由长",
+        "弹片厚",
+        "弹片宽"
+      ],
+      "related_subjects": [
+        "PT3-P10",
+        "双联弹簧",
+        "IQC检验"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "未编号尺寸（默认公差按B级）：主视图侧视弹片中部内宽（双联弹片间距）5.8 ±0.1；主视图侧视底宽9.9 (+0/-0.2)；左视图弹簧高度7（默认公差）；左视图弹簧外径（弹片处中心2处）Ø3.0（默认公差）。",
+      "topic_tags": [
+        "未编号尺寸",
+        "B级公差",
+        "弹片间距",
+        "底宽",
+        "弹簧高度"
+      ],
+      "related_subjects": [
+        "PT3-P10",
+        "双联弹簧"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "装配关系说明：双联弹簧 = 一片弹片 + 两个弹簧（弹片连接，分别接正负极）。与正极PT5-M02 / 负极PT5-M03功能等价，但合二为一（PT3项目使用，PT9L借用归档）。PT9L实际装配以分离的PT5-M02 + PT5-M03为准（详见wiki主页§2.4），PT3-P10双联弹簧不一定进入PT9L量产BOM。",
+      "topic_tags": [
+        "装配关系",
+        "双联弹簧",
+        "PT9L",
+        "PT3",
+        "BOM",
+        "正极",
+        "负极"
+      ],
+      "related_subjects": [
+        "PT3-P10",
+        "PT5-M02",
+        "PT5-M03",
+        "PT9L DHF"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "必查工程师确认清单：1. PT9L量产BOM是否使用PT3-P10双联弹簧？还是分离的PT5-M02 + M03？（默认推测：分离件PT5系列）。2. '第二圈小于Ø5.2'⑥编号含义释义（是否指第二圈外径必须≤Ø5.2？）待工程师确认。3. 弹片0.5厚×1.2宽（Level A精度量级）的冲压公差能力待评估。4. 单边负公差(+0/-0.3等)的设计考量（推测：避免过盈装配，保证装配间隙）。",
+      "topic_tags": [
+        "待确认",
+        "BOM",
+        "第二圈外径",
+        "冲压公差",
+        "单边负公差",
+        "装配间隙"
+      ],
+      "related_subjects": [
+        "PT3-P10",
+        "PT5-M02",
+        "PT5-M03",
+        "PT9L量产"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文件归档说明：PT3-P10双联弹簧为PT3项目原件，被PT9L DHF借用归档。该图纸来源于02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/目录，属于共用件，实际为外购件/设计参照性质。PT9L项目实际使用分离弹簧方案。",
+      "topic_tags": [
+        "归档说明",
+        "共用件",
+        "外购件",
+        "PT3项目",
+        "PT9L借用"
+      ],
+      "related_subjects": [
+        "PT3-P10",
+        "PT9L DHF",
+        "PT3项目"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "几何对称性约束：两件弹簧（双联）尺寸完全相同（①=②），图纸注明'此两处结构尺寸与左、右极弹簧一样'（弹片说明）。公差形式约束：(+0/-0.3)、(+0/-0.15)、(+0/-0.2)等单边负公差必须保留，不能简化为±形式。",
+      "topic_tags": [
+        "几何对称",
+        "单边负公差",
+        "尺寸一致性",
+        "左右极弹簧"
+      ],
+      "related_subjects": [
+        "PT3-P10",
+        "双联弹簧",
+        "公差要求"
+      ]
+    }
+  ]
+}

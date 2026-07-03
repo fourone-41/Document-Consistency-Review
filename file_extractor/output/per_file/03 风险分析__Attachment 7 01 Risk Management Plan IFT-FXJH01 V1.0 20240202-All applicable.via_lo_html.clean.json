@@ -1,0 +1,871 @@
+{
+  "document": {
+    "title": "Risk Management Plan",
+    "doc_type": "风险管理计划",
+    "version": "V1.0"
+  },
+  "persons": [
+    {
+      "name": "Wang Di",
+      "title": "Drafter"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Approver"
+    },
+    {
+      "title": "Chief engineer"
+    },
+    {
+      "title": "Product manager"
+    },
+    {
+      "title": "Project manager"
+    },
+    {
+      "title": "Hardware design director"
+    },
+    {
+      "title": "Software design director"
+    },
+    {
+      "title": "Mechanical design director"
+    },
+    {
+      "title": "Hardware design personnel"
+    },
+    {
+      "title": "Software design personnel"
+    },
+    {
+      "title": "Mechanical design personnel"
+    },
+    {
+      "title": "Process design personnel"
+    },
+    {
+      "title": "Quality management personnel"
+    },
+    {
+      "title": "Sales personnel"
+    },
+    {
+      "title": "Certification personnel"
+    },
+    {
+      "title": "Personnel with medical background"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Document Number",
+      "value": "IFT-FXJH01"
+    },
+    {
+      "id_type": "doc_number",
+      "value": "IFT-FXJH01"
+    }
+  ],
+  "products": [
+    {
+      "name": "Infrared Forehead Thermometer"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": 1,
+      "version": "V1.0",
+      "change_description": "Originated",
+      "author": "Wang Di",
+      "date": "2024-02-02"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan covers the whole life-cycle of the medical device across the following phases: (1) Initial development: document intended use and reasonably foreseeable misuse, identify safety-related characteristics, identify hazards and hazardous situations, estimate risks, evaluate risks, draft risk control measures plan. Output: Report of risk assessment. (2) Prototype phase (Design verification): verify implementation and effectiveness of risk control measures, assess residual risk, make benefit-risk analysis, evaluate risks arising from risk controls, review completeness of risk control. Output: Report of verification of risk control measure and residual risk evaluation. (3) Design validation: overall residual risk evaluation, form the risk management report. Output: Report of risk management. (4) Design change: identify hazards related to design change, evaluate and assess risks, draft and verify risk control measures plan, assess residual risk and benefit-risk analysis, overall residual risk evaluation after design change. Output: Record of risk evaluation / Report of verification of risk control measure and residual risk evaluation in design change / Report of Risk Management in design change. (5) Production and post-production activities: collect production and post-production information, assess unidentified hazards, assess if risks have become unacceptable, analyze and assess risks, draft risk control plan and actions, track implementation of risk control measures. Output: Report of Post-market Risk Management. Reference: Risk Management Control Regulation (QI-7.3-22), section 4.11.1.",
+      "topic_tags": [
+        "risk management lifecycle",
+        "ISO 14971:2019",
+        "EN ISO 14971:2019",
+        "design phases",
+        "risk control",
+        "residual risk",
+        "post-market surveillance"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "Infrared Forehead Thermometer",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk Management Group: The specific personnel may vary from different projects, but the risk assessment team generally includes members with relevant specialties. The table of members and their specialties is present in the document but the specific entries are not filled in this fragment.",
+      "topic_tags": [
+        "risk management group",
+        "team composition",
+        "responsibilities"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The document references the following additional sections not fully captured in this fragment: Section 3 (Risk Acceptance Criteria) covering 3.1 Severity of A Hazard, 3.2 Probability of A Hazard, 3.3 Risk Acceptance Criteria; Section 4 (Residual Risk Acceptance Criteria) covering 4.1 For Single Residual Risk and 4.2 For Overall Residual Risk; Section 5 (Risk Control Measures Verification Criteria). These sections are listed in the Table of Contents but their detailed content is not present in this document fragment.",
+      "topic_tags": [
+        "risk acceptance criteria",
+        "severity",
+        "probability",
+        "residual risk",
+        "verification criteria"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Personnel qualification requirements: Chief engineer - Mechano-electronic related specialities, more than three years work experience. Product manager - Mechano-electronic related specialities, more than three years design experience. Project manager - Mechano-electronic related specialities, more than one year design experience. Hardware design director - Mechano-electronic related specialities, more than one year design experience. Software design director - Mechano-electronic related specialities, more than one year design experience. Mechanical design director - Mechano-electronic related specialities, more than one year design experience. Hardware design personnel - Mechano-electronic related specialities, more than one year design experience. Software design personnel - Mechano-electronic related specialities, more than one year design experience. Mechanical design personnel - Mechano-electronic related specialities, more than one year design experience. Process design personnel - Electrics or mechanics or other related engineering specialities, more than one year design experience. Quality management personnel - Electrics or mechanics or other related engineering specialities, more than one year design experience. Sales personnel - No special requirement, familiar with handling of customer complaints process. Certification personnel - Biomedicine or mechano-electronic or other related specialities, more than two years work experience. Personnel with medical background - Biology or clinical medicine or other medical related specialities, more than three years clinical experience.",
+      "topic_tags": [
+        "人员资质",
+        "岗位要求",
+        "风险管理团队"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Severity Classification (S): Catastrophic (S=5) - Result in patient death; Critical (S=4) - Result in permanent impairment or life-threatening injury; Serious (S=3) - Result in injury or impairment requiring professional medical intervention; Minor (S=2) - Result in temporary injury or impairment not requiring professional medical intervention; Negligible (S=1) - Inconvenience or temporary discomfort.",
+      "topic_tags": [
+        "严重度分级",
+        "风险可接受准则",
+        "危害后果"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Risk Management Plan"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Semiquantitative Probability Classification (P): Frequent (P=6) - ≥10⁻³; Probable (P=5) - <10⁻³ ≥10⁻⁴; Occasional (P=4) - <10⁻⁴ ≥10⁻⁵; Remote (P=3) - <10⁻⁵ ≥10⁻⁶; Improbable (P=2) - <10⁻⁶ ≥10⁻⁸; Few (P=1) - <10⁻⁸.",
+      "topic_tags": [
+        "概率分级",
+        "风险可接受准则",
+        "发生概率"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Risk Management Plan"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Risk Acceptance Criteria: Not acceptable - Unacceptable risk, risk control measures are required. Acceptable - Insignificant/negligible risk, no risk control measures are required. The manufacturer shall reduce the risk as far as possible, using one or more of the following risk control options in priority order: (a) eliminate or reduce risks as far as possible through safe design and manufacture; (b) where appropriate, take adequate protection measures, including alarms if necessary, in relation to risks that cannot be eliminated; (c) provide information for safety (warnings/precautions/contra-indications) and, where appropriate, training to users.",
+      "topic_tags": [
+        "风险可接受准则",
+        "风险控制措施",
+        "ALARP",
+        "设计控制",
+        "警报",
+        "使用信息"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Risk Management Plan",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Residual Risk Acceptance Criteria for Single Residual Risk: When a risk falls in the 'Not acceptable' area, risk control measures must be taken. After taking measures, the risk becomes a residual risk. If this residual risk still falls in the 'Not acceptable' area by the Criteria in '3.3 Risk Acceptance Criteria', a risk-benefit analysis must be taken. This residual risk will be acceptable when there are reasonable reasons to support that the benefits outweigh the risks.",
+      "topic_tags": [
+        "残余风险",
+        "风险收益分析",
+        "可接受准则",
+        "风险控制"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Risk Management Plan",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "The benefits related to the intended use of the medical device are weighed against the overall residual risk. Benefits can be described by their magnitude or extent, the probability of experiencing the benefit within the intended patient populations, and the duration and frequency of the benefit. The evaluation may take into account knowledge of the intended medical indication, the generally acknowledged state of the art in technology and medicine, and the availability of alternative medical devices or treatments.",
+      "topic_tags": [
+        "overall residual risk",
+        "benefit-risk analysis",
+        "intended use",
+        "patient population"
+      ],
+      "related_subjects": [
+        "Risk Analysis Report",
+        "Risk Management"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Visual representations of the residual risks can be useful. Each individual residual risk can be shown in a risk matrix as shown in section 3.3. If more than 1/2 of the risks are in the higher severity regions or in the higher probability regions of the risk matrix, or clusters of risks are borderline, then the distribution of the risks can indicate that the overall residual risk might not be acceptable, even if each individual risk has been judged acceptable.",
+      "topic_tags": [
+        "residual risk",
+        "risk matrix",
+        "severity",
+        "probability",
+        "overall residual risk acceptability"
+      ],
+      "related_subjects": [
+        "Risk Matrix",
+        "Risk Analysis Report"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Overall risk-benefit analysis: when the benefits outweigh the overall residual risks, the overall residual risks are acceptable. If the overall residual risks are acceptable after evaluation, then the significant residual risks shall be notified to the users and involve the information in the accompanying documents. If the overall residual risks are not acceptable after evaluation, then additional risk control measures shall be taken, or the modification to the medical devices may be required.",
+      "topic_tags": [
+        "overall risk-benefit analysis",
+        "residual risk acceptability",
+        "user notification",
+        "accompanying documents",
+        "additional risk controls"
+      ],
+      "related_subjects": [
+        "Risk Analysis Report",
+        "Risk Control Measures",
+        "Accompanying Documents"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "We verify the risk control measures of the initial risks and the residual risks in accordance with the document Verification in Design and Development Control Procedure.",
+      "topic_tags": [
+        "risk control measures",
+        "verification",
+        "initial risks",
+        "residual risks",
+        "Design and Development Control Procedure"
+      ],
+      "related_subjects": [
+        "Risk Control Measures",
+        "Design and Development Control Procedure",
+        "Verification"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "03 风险分析/Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+    "doc_type": "risk_analysis"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "Risk Management Plan",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk management group",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "risk management group",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "人员资质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "人员资质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "严重度分级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "严重度分级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "概率分级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "概率分级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "风险可接受准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "风险可接受准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "风险可接受准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "残余风险",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "残余风险",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "残余风险",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Analysis Report",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Matrix",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Analysis Report",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Analysis Report",
+      "to": "overall risk-benefit analysis",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Control Measures",
+      "to": "overall risk-benefit analysis",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accompanying Documents",
+      "to": "overall risk-benefit analysis",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Control Measures",
+      "to": "risk control measures",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Design and Development Control Procedure",
+      "to": "risk control measures",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Verification",
+      "to": "risk control measures",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "revision_record_seq_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "behavioral_spec_risk_management_lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "behavioral_spec_risk_management_group",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "scope_limitation_sections",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "constraint_personnel_qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "constraint_severity_classification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "constraint_probability_classification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "constraint_risk_acceptance_criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "constraint_residual_risk_single",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "constraint_overall_residual_risk_benefit",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "behavioral_spec_residual_risk_visual",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "constraint_overall_risk_benefit_analysis",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "behavioral_spec_risk_control_verification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_severity_classification",
+      "to": "constraint_risk_acceptance_criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_probability_classification",
+      "to": "constraint_risk_acceptance_criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_risk_acceptance_criteria",
+      "to": "constraint_residual_risk_single",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_residual_risk_single",
+      "to": "constraint_overall_residual_risk_benefit",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "behavioral_spec_risk_management_lifecycle",
+      "to": "behavioral_spec_risk_management_group",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_overall_residual_risk_benefit",
+      "to": "constraint_overall_risk_benefit_analysis",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "behavioral_spec_residual_risk_visual",
+      "to": "constraint_overall_risk_benefit_analysis",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IFT-FXJH01",
+      "to": "ISO 14971:2019",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IFT-FXJH01",
+      "to": "EN ISO 14971:2019",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IFT-FXJH01",
+      "to": "EN ISO 14971:2019/A11:2021",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Chief engineer",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than three years work experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Product manager",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than three years design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Project manager",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Hardware design director",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Software design director",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Mechanical design director",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Hardware design personnel",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Software design personnel",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Mechanical design personnel",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Mechano-electronic related specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Process design personnel",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Electrics or mechanics or other related engineering specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Quality management personnel",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Electrics or mechanics or other related engineering specialities, more than one year design experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Sales personnel",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "No special requirement, familiar with handling of customer complaints process"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Certification personnel",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Biomedicine or mechano-electronic or other related specialities, more than two years work experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Personnel with medical background",
+      "to": "Personnel qualification requirements",
+      "properties": {
+        "detail": "Biology or clinical medicine or other medical related specialities, more than three years clinical experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Acceptance Criteria",
+      "to": "Severity Classification",
+      "properties": {
+        "detail": "Severity levels S1-S5 used in risk acceptance determination"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Acceptance Criteria",
+      "to": "Semiquantitative Probability Classification",
+      "properties": {
+        "detail": "Probability levels P1-P6 used in risk acceptance determination"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Residual Risk Acceptance Criteria",
+      "to": "Risk Acceptance Criteria",
+      "properties": {
+        "detail": "Single residual risk acceptability evaluated against criteria in section 3.3"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Overall residual risk",
+      "to": "Benefit-risk analysis",
+      "properties": {
+        "detail": "Overall residual risk acceptability determined by whether benefits outweigh overall residual risks"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk control measures verification",
+      "to": "Verification in Design and Development Control Procedure",
+      "properties": {
+        "detail": "Verification of risk control measures conducted in accordance with Design and Development Control Procedure"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IFT-FXJH01",
+      "to": "Risk Management Control Regulation (QI-7.3-22)",
+      "properties": {
+        "detail": "Section 4.11.1 referenced for risk management lifecycle"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Chief engineer",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Product manager",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Project manager",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Hardware design director",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Software design director",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Mechanical design director",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Hardware design personnel",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Software design personnel",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Mechanical design personnel",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Process design personnel",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Quality management personnel",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Sales personnel",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Certification personnel",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Personnel with medical background",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "Infrared Forehead Thermometer",
+      "to": "Risk Management Plan",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "Wang Di",
+      "to": "IFT-FXJH01",
+      "properties": {
+        "role": "Drafter"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Hou Guangwei",
+      "to": "IFT-FXJH01",
+      "properties": {
+        "role": "Approver"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "IFT-FXJH01",
+      "to": "1",
+      "properties": {
+        "version": "V1.0",
+        "date": "2024-02-02",
+        "author": "Wang Di",
+        "change_description": "Originated"
+      }
+    },
+    {
+      "type": "PRODUCES",
+      "from": "IFT-FXJH01",
+      "to": "Infrared Forehead Thermometer",
+      "properties": {}
+    }
+  ],
+  "_claims": []
+}

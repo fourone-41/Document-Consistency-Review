@@ -1,0 +1,151 @@
+```json
+{
+  "context_summary": "本轮已补充了设计输入汇总表（通用部分）的完整表格内容及设计验证报告法规标准清单中 ISO 80601-2-56:2017/Amd1:2018 和 ASTM E1965-98 的相关行。现有证据确认了适用标准及验证记录编号（ETX202303-07-078-03/ETX202303-07-078-04），但仍未找到：①软件测试计划中明确将 ±0.2 °C 精度容差扩展至 30 °C 和 45 °C（体温范围 ≥35 °C–≤42 °C 之外）的具体条款；②上述验证记录（ETX202303-07-078-03/04）的实际内容，无法确认其是否覆盖了体温范围外的物体温度模式精度验证；③设计输入性能规格部分中关于物体温度模式精度指标的原始定义及适用温度范围。",
+
+  "evidence_gaps": [
+    "软件测试计划（STP）中关于物体温度模式（object-temperature mode）精度 ±0.2 °C 在 30 °C 和 45 °C 测试点的具体条款原文——尚未在证据库中定位到对应文件",
+    "验证记录 ETX202303-07-078-03 的实际内容：测试方法、测试温度点列表、实测数据及合格判定依据",
+    "验证记录 ETX202303-07-078-04 的实际内容：同上",
+    "设计输入-性能规格部分（《设计输入-组件规格部分》或独立性能规格文件）中物体温度模式精度指标的原始定义，包括适用温度范围（是否仅限 ≥35 °C–≤42 °C，或另有扩展范围说明）",
+    "ISO 80601-2-56:2017/Amd1:2018 及 ASTM E1965-98:2016/2023 对物体温度模式精度要求的具体条款（标准正文），以确认 30 °C 和 45 °C 测试点是否来源于标准要求",
+    "实验报告 F0462（Analysis and Evaluation Report, PT9L）的正文内容——page_context 中三条记录均为空文本，需要获取其实际内容",
+    "软件验证与确认（V&V）闭合记录或软件测试报告中针对物体温度模式的测试用例及结果",
+    "设计输入汇总表中"设计输入-性能规格部分"Sheet 的完整内容（当前仅获取了"设计输入 通用"Sheet）"
+  ],
+
+  "additional_search_queries": [
+    "ETX202303-07-078-03 测试报告 物体温度 object temperature 精度 accuracy",
+    "ETX202303-07-078-04 测试报告 物体温度 30°C 45°C ±0.2",
+    "设计输入 性能规格 PT9L 物体温度模式 accuracy tolerance object temperature mode",
+    "软件测试计划 PT9L STP object temperature ±0.2 °C 30 45",
+    "软件验证报告 PT9L 物体温度 测试用例 temperature range",
+    "Analysis Evaluation Report PT9L object temperature accuracy 30 45",
+    "PT9L-YZBZ01 验证依据 物体温度 精度 accuracy specification",
+    "设计输入汇总表 性能规格 Sheet PT9L 测量精度 体温 物体温度",
+    "ISO 80601-2-56 object surface temperature accuracy test point 30 45",
+    "ASTM E1965 accuracy test temperature range object mode"
+  ],
+
+  "agent_instruction": "请重点执行以下检索与核查任务，目标是确认或否定 ±0.2 °C 精度容差在 30 °C 和 45 °C 的适用性是否有设计输入依据和 V&V 闭合证据：\n\n1. 【最高优先级】读取验证记录 ETX202303-07-078-03 和 ETX202303-07-078-04 的完整文件内容，重点提取：测试温度点列表、物体温度模式（object-temperature mode）的精度判定准则、实测数据及合格结论。\n\n2. 【高优先级】读取实验报告 F0462（Analysis and Evaluation Report, PT9L）的完整正文，当前 page_context 返回为空，需重新获取第 1 行至文档末尾的全部内容，重点关注 object temperature、accuracy、30 °C、45 °C 相关章节。\n\n3. 【高优先级】在设计输入汇总表中定位"设计输入-性能规格部分"Sheet（或独立性能规格文件），提取物体温度模式精度指标的完整定义，包括：指标数值、适用温度范围、测试条件。\n\n4. 【中优先级】检索软件测试计划（STP）文件，关键词：PT9L、软件测试计划、object temperature、±0.2、30°C、45°C，提取相关测试用例条款原文。\n\n5. 【中优先级】检索软件 V&V 报告或软件验证报告，确认物体温度模式的测试用例是否已执行并闭合，记录测试温度点是否包含 30 °C 和 45 °C。\n\n6. 对所有检索结果，明确标注：该证据是否支持将 ±0.2 °C 扩展至体温范围（≥35 °C–≤42 °C）之外；若支持，引用具体条款；若不支持或证据缺失，明确标记为 gap。",
+
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "VV-005",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 10,
+        "actual_text": "Design Input - General part",
+        "note": "通用设计输入 Sheet 标题行，已确认文件为 PT9L 项目（项目编号 30000078），但本 Sheet 不含性能精度指标，性能规格在独立 Sheet 中"
+      },
+      {
+        "evidence_id": "VV-010",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 136,
+        "actual_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "note": "确认 ISO 80601-2-56:2017/Amd1:2018 适用，验证记录为 ETX202303-07-078-03 和 ETX202303-07-078-04，结论合格；但记录正文内容尚未获取，无法确认是否覆盖 30 °C 和 45 °C 测试点"
+      },
+      {
+        "evidence_id": "VV-010-neighbor-137",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 137,
+        "actual_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | □是 ■否 | -- | -- | -- | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "note": "EN ISO 版本标记为不适用（■否），欧盟版本不在验证范围内"
+      },
+      {
+        "evidence_id": "VV-010-neighbor-140",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 140,
+        "actual_text": "| 行业标准 | ASTM E1965-98：2016 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "note": "ASTM E1965-98:2016 适用，同一验证记录，合格；ASTM E1965 对物体温度模式精度测试点的规定需查阅标准正文"
+      },
+      {
+        "evidence_id": "VV-010-neighbor-141",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 141,
+        "actual_text": "| 行业标准 | ASTM E1965-98：2023 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "note": "ASTM E1965-98:2023 版本同样适用，同一验证记录"
+      },
+      {
+        "evidence_id": "VV-010-section-header",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 127,
+        "actual_text": "## Sheet: 血压计法规标准清单20160719",
+        "note": "【注意】本 Sheet 标题为"血压计法规标准清单"，但内容实为 PT9L 红外体温计的法规标准清单（见第 132 行产品型号 PT9L），Sheet 命名存在历史遗留问题，不影响内容有效性，但审查时需注意"
+      },
+      {
+        "evidence_id": "VV-010-table-header",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 133,
+        "actual_text": "| 阶段：设计确认 验证依据：PT9L-YZBZ01 V1.0 |",
+        "note": "验证依据文件为 PT9L-YZBZ01 V1.0（产品验证标准或规范），该文件尚未在证据库中检索，可能包含物体温度模式精度的具体测试要求"
+      },
+      {
+        "evidence_id": "VV-028",
+        "doc_id": "F0319",
+        "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 10,
+        "actual_text": "Design Input - General part",
+        "note": "历史草稿版本，内容与 F0031 基本一致，均为通用要求部分，不含精度指标"
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter": "物体温度模式精度容差",
+        "claimed_value": "±0.2 °C",
+        "claimed_test_points": "30 °C 和 45 °C",
+        "design_input_specified_range": "≥35 °C 至 ≤42 °C（体温范围）",
+        "gap_description": "现有证据库中未找到任何设计输入文件或 V&V 记录明确授权将 ±0.2 °C 精度容差扩展至 30 °C 和 45 °C；验证记录 ETX202303-07-078-03/04 的正文内容尚未获取，无法排除其中包含相关授权",
+        "source": "claim from LLM-0055, unverified"
+      },
+      {
+        "parameter": "验证依据文件",
+        "value": "PT9L-YZBZ01 V1.0",
+        "source_line": "F0114 line 133",
+        "status": "文件内容未检索，为高优先级缺口"
+      }
+    ],
+    "page_context": [
+      {
+        "doc_id": "F0462",
+        "rel_path": "实验报告\\最终报告\\Analysis and Evaluation Report o...Touch Forehead Thermometer（PT9L） (1).via_lo_html.clean.md",
+        "status": "page_context 返回内容为空，需重新全文检索",
+        "priority": "高优先级",
+        "note": "该实验报告可能包含物体温度模式在 30 °C 和 45 °C 的实测数据，是解决 gap 的关键文件之一"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "table_section_expansion",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "lines_recovered": "127-155",
+        "description": "法规标准清单完整表格（行 127–155），包含 ISO 80601-2-56、ASTM E1965-98（2016 和 2023 版）、生物相容性标准等全部行，验证阶段均为设计确认，验证记录统一引用 ETX202303-07-078-03/ETX202303-07-078-04",
+        "key_finding": "所有适用行业标准的验证记录均指向同一对文件（ETX202303-07-078-03/04），该文件是解决本 gap 的核心证据，必须获取其正文内容"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "document_metadata",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "description": "设计输入汇总表为多 Sheet Excel 文件，当前仅获取了"设计输入 通用"Sheet（通用要求，不含精度指标）。文件中明确提及"详见《设计输入-性能规格部分》中的相关要求"（多处引用），说明精度指标定义在独立的性能规格 Sheet 或文件中，该部分尚未检索",
+        "key_finding": "需要检索设计输入汇总表中的"性能规格"Sheet 或独立性能规格文件，以获取物体温度模式精度的原始设计输入定义"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "naming_anomaly_flag",
+        "doc_id": "F0114",
+        "description": "设计验证报告法规标准清单所在 Sheet 命名为"血压计法规标准清单20160719"，但内容为 PT9L 红外体温计（产品型号 PT9L，项目编号 30000078）。此命名异常可能是模板复用遗留问题，审查时应在 V&V 报告中标注，但不影响内容有效性判断",
+        "severity": "低风险，建议在 V&V 报告中注明"
+      }
+    ]
+  }
+}
+```

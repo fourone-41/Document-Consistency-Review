@@ -1,0 +1,148 @@
+{
+  "document": {
+    "title": "潜在设计失效模式及后果分析（设计FMEA）",
+    "doc_type": "设计FMEA",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_id": "30000078",
+      "name": "红外体温计 PT9L"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "万龙",
+      "date": "2024.2.23"
+    }
+  ],
+  "persons": [
+    {
+      "name": "万龙",
+      "title": "编制"
+    },
+    {
+      "name": "侯广伟",
+      "title": "批准"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "附件编号",
+      "value": "PT9L-EDFM01 V1.0"
+    },
+    {
+      "id_type": "附件编号",
+      "value": "PT9L-ADFM01 V1.0"
+    },
+    {
+      "id_type": "附件编号",
+      "value": "PT9L-PDFM01 V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本设计FMEA包含以下附件：\n1. 潜在失效模式及后果分析-机芯类 PT9L-EDFM01 V1.0\n2. 潜在失效模式及后果分析-总装类 PT9L-ADFM01 V1.0\n3. 潜在失效模式及后果分析-包装类 PT9L-PDFM01 V1.0",
+      "topic_tags": [
+        "FMEA",
+        "机芯",
+        "总装",
+        "包装",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "30000078"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/05 DFMEA E0 23.11/潜在设计失效模式及后果分析（设计FMEA）封面E0 20220620.doc.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "潜在设计失效模式及后果分析（设计FMEA）",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT9L-EDFM01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT9L-ADFM01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT9L-PDFM01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "PT9L-EDFM01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "PT9L-ADFM01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "PT9L-PDFM01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "万龙",
+      "to": "潜在设计失效模式及后果分析（设计FMEA）",
+      "properties": {
+        "role": "编制"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "潜在设计失效模式及后果分析（设计FMEA）",
+      "properties": {
+        "role": "批准"
+      }
+    }
+  ],
+  "_claims": []
+}

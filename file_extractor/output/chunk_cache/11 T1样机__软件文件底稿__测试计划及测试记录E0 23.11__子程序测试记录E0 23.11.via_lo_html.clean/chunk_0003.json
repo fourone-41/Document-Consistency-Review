@@ -1,0 +1,395 @@
+{
+  "tests": [
+    {
+      "test_id": "record_save_1",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组1，*p={0,1,2,3,4,..,299}，运行函数",
+      "expected_value": "在组1中第11条记录位置写入*p指向数据",
+      "actual_result": "在组1中第11条记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_save_2",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组2，*p={0,1,2,3,4,..,299}，运行函数",
+      "expected_value": "在组2中第1条记录位置写入*p指向数据",
+      "actual_result": "在组2中第1条记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_save_3",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为10，组1存储9条记录，组2存储0条记录，grp=组1，*p={0,1,2,3,4,..,299}，运行两遍函数",
+      "expected_value": "在组1中第1条、第2条记录位置写入*p指向数据",
+      "actual_result": "在组1中第1条、第2条记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_save_4",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为10，组1存储9条记录，组2存储0条记录，grp=组1，*p={0,1,2,3,4,..,299}，运行30遍函数",
+      "expected_value": "在组1中所有记录位置写入*p指向数据",
+      "actual_result": "在组1中所有记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_read_1",
+      "item": "result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p) - 从指定的组中读取指定记录号的记录并存储到*p中",
+      "condition": "组容量设置为20，组1存储10条记录，记录1中存储{0,1,2,…,299}...记录10中存储{9,2,3,…,308}，组2存储0条记录，grp=组1，num=10，运行函数",
+      "expected_value": "程序运行完毕后，*p中数据为{9,2,3,…,308}",
+      "actual_result": "程序运行完毕后，*p中数据为{9,2,3,…,308}",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_read_2",
+      "item": "result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p) - 从指定的组中读取指定记录号的记录并存储到*p中",
+      "condition": "组容量设置为20，组1存储10条记录，记录1中存储{0,1,2,…,299}...记录10中存储{9,2,3,…,308}，组2存储0条记录，grp=组2，num=10，运行函数",
+      "expected_value": "程序运行后返回0（查找记录异常）",
+      "actual_result": "程序运行后返回0（查找记录异常）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_read_3",
+      "item": "result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p) - 从指定的组中读取指定记录号的记录并存储到*p中",
+      "condition": "组容量设置为20，组1存储10条记录，记录1中存储{0,1,2,…,299}...记录10中存储{9,2,3,…,308}，组2存储0条记录，grp=组1，num=5，运行函数",
+      "expected_value": "程序运行完毕后，*p中数据为{4,2,3,…,303}",
+      "actual_result": "程序运行完毕后，*p中数据为{4,2,3,…,303}",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_sum_1",
+      "item": "result_def record_sum(uint8_t grp, int16_t* sum) - 统计指定组中存储的记录数",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组1，运行函数",
+      "expected_value": "程序运行完毕后，*sum = 10",
+      "actual_result": "程序运行完毕后，*sum = 10",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_sum_2",
+      "item": "result_def record_sum(uint8_t grp, int16_t* sum) - 统计指定组中存储的记录数",
+      "condition": "组容量设置为20，组1存储22条记录，组2存储0条记录，grp=组1，运行函数",
+      "expected_value": "程序运行完毕后，*sum = 20",
+      "actual_result": "程序运行完毕后，*sum = 20",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_sum_3",
+      "item": "result_def record_sum(uint8_t grp, int16_t* sum) - 统计指定组中存储的记录数",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组2，运行函数",
+      "expected_value": "程序运行完毕后，*sum = 0",
+      "actual_result": "程序运行完毕后，*sum = 0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_clear_from_1",
+      "item": "result_def record_clear_from(uint8_t grp, int16_t start) - 删除指定组中指定记录之前的记忆值",
+      "condition": "组1存储10条记录，组2存储0条记录，grp=组1，start=5，运行函数后再次运行record_sum",
+      "expected_value": "record_sum运行完毕后，*sum = 5",
+      "actual_result": "record_sum运行完毕后，*sum = 5",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_clear_from_2",
+      "item": "result_def record_clear_from(uint8_t grp, int16_t start) - 删除指定组中指定记录之前的记忆值",
+      "condition": "组1存储10条记录，组2存储0条记录，grp=组2，start=5，运行函数",
+      "expected_value": "程序运行后返回0（删除记录异常）",
+      "actual_result": "程序运行后返回0（删除记录异常）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Cuff_PlugIn_Detect_1",
+      "item": "void Cuff_PlugIn_Decete(void) - 检测袖带插入状态",
+      "condition": "插入袖带，运行三次函数",
+      "expected_value": "运行完毕后返回1（袖带插入）",
+      "actual_result": "运行完毕后返回1（袖带插入）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Cuff_PlugIn_Detect_2",
+      "item": "void Cuff_PlugIn_Decete(void) - 检测袖带插入状态",
+      "condition": "上述测试完毕后，拔出袖带，运行三次函数",
+      "expected_value": "运行完毕后返回0（袖带未插入）",
+      "actual_result": "运行完毕后返回0（袖带未插入）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_1",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，正常操作",
+      "expected_value": "成功设置Wifi",
+      "actual_result": "成功设置Wifi",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_2",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，Wifi模块rst一直为低",
+      "expected_value": "返回上电异常",
+      "actual_result": "返回上电异常",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_3",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，不设置Wifi",
+      "expected_value": "返回连接路由器超时",
+      "actual_result": "返回连接路由器超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_4",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，路由器设置为不支持DHCP",
+      "expected_value": "返回未获取到IP",
+      "actual_result": "返回未获取到IP",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_5",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，路由器未连接到网络",
+      "expected_value": "返回连接云端超时",
+      "actual_result": "返回连接云端超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_6",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，密码输入错误",
+      "expected_value": "返回密码错误",
+      "actual_result": "返回密码错误",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_7",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，正常操作",
+      "expected_value": "成功连接到网络",
+      "actual_result": "成功连接到网络",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_8",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，Wifi模块rst一直为低",
+      "expected_value": "返回上电异常",
+      "actual_result": "返回上电异常",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_9",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，关闭之前设置的路由器",
+      "expected_value": "返回连接路由器超时",
+      "actual_result": "返回连接路由器超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_10",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，路由器设置为不支持DHCP",
+      "expected_value": "返回未获取到IP",
+      "actual_result": "返回未获取到IP",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_11",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，路由器未连接到网络",
+      "expected_value": "返回连接云端超时",
+      "actual_result": "返回连接云端超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_12",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，修改路由器密码",
+      "expected_value": "返回密码错误",
+      "actual_result": "返回密码错误",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_All_1",
+      "item": "void User_Dis_All(uint16_t color) - 屏幕显示纯色",
+      "condition": "color = 0x07E0",
+      "expected_value": "屏幕显示绿色",
+      "actual_result": "屏幕显示绿色",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_All_2",
+      "item": "void User_Dis_All(uint16_t color) - 屏幕显示纯色",
+      "condition": "color = 0x001F",
+      "expected_value": "屏幕显示蓝色",
+      "actual_result": "屏幕显示蓝色",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_All_3",
+      "item": "void User_Dis_All(uint16_t color) - 屏幕显示纯色",
+      "condition": "color = 0xF800",
+      "expected_value": "屏幕显示红色",
+      "actual_result": "屏幕显示红色",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_Bp_Result_1",
+      "item": "void User_Dis_Bp_Result(Dis_Result_Str_t result) - 显示测量结果",
+      "condition": "result.sys=120，result.dia=80，result.pul=80，result.bp_level=2，dis_unit=0",
+      "expected_value": "显示高压120、低压80、心率80，正常血压，显示单位为mmHg",
+      "actual_result": "显示高压120、低压80、心率80，正常血压，显示单位为mmHg",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_Bp_Result_2",
+      "item": "void User_Dis_Bp_Result(Dis_Result_Str_t result) - 显示测量结果",
+      "condition": "result.sys=120，result.dia=80，result.pul=80，result.bp_level=2，dis_unit=1",
+      "expected_value": "显示高压16.0、低压10.7、心率80，正常血压，显示单位为kPa",
+      "actual_result": "显示高压16.0、低压10.7、心率80，正常血压，显示单位为kPa",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_Andon_Base_DeCode_1",
+      "item": "void Wifi_Andon_Base_DeCode(void) - 协议解码函数",
+      "condition": "将Wifi模块复位，向Wifi连接的串口中发送D0 00 19 00 00 A1 83 01 08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D C1，检查串口输出及系统配置内容的二进制串",
+      "expected_value": "串口输出C0 00 05 00 00 A1 83 01 25，同时系统配置内容二进制串为08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D",
+      "actual_result": "串口输出C0 00 05 00 00 A1 83 01 25，同时系统配置内容二进制串为08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_Andon_Base_DeCode_2",
+      "item": "void Wifi_Andon_Base_DeCode(void) - 协议解码函数",
+      "condition": "将Wifi模块复位，向Wifi连接的串口中发送D0 00 10 00 00 FF 10 01 01 01 00 06 00 00 00 00 14 F7 A5 C8，检查串口输出及存储的Wifi_Fwver及DID",
+      "expected_value": "串口输出C0 00 1F 00 00 FF 10 33 04 01 00 00 00 04 01 00 00 00 00 0F 68 65 61 6C 74 68 2E 62 70 2E 62 70 6D 31 6F，同时Wifi_Fwver=0x010006，DID=0x0014F7A5",
+      "actual_result": "串口输出C0 00 1F 00 00 FF 10 33 04 01 00 00 00 04 01 00 00 00 00 0F 68 65 61 6C 74 68 2E 62 70 2E 62 70 6D 31 6F，同时Wifi_Fwver=0x010006，DID=0x0014F7A5",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "MiBpm_SendDataToCloud_Pack_1",
+      "item": "void MiBpm_SendDataToCloud_Pack(uint16_t cmd) - 血压计数据打包函数",
+      "condition": "（无测试用例记录）",
+      "expected_value": null,
+      "actual_result": null,
+      "pass_criteria": null
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_save(uint8_t grp, UNION_RCD_DATA_T* p)：保存记录内容到指定组中。当组容量已满时，新记录循环覆盖最旧记录（环形缓冲区行为）。当目标组为空时从第1条位置开始写入。",
+      "topic_tags": [
+        "record_save",
+        "环形缓冲区",
+        "记录存储",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_sum",
+        "record_read",
+        "record_clear_from"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p)：从指定的组中读取指定记录号的记录并存储到*p中。当目标组不存在记录时返回0（查找记录异常）。",
+      "topic_tags": [
+        "record_read",
+        "记录读取",
+        "异常处理",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_save",
+        "record_sum"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_sum(uint8_t grp, int16_t* sum)：统计指定组中存储的记录数。当实际存储记录数超过组容量时，返回值不超过组容量上限（如组容量20，存储22条，返回20）。",
+      "topic_tags": [
+        "record_sum",
+        "记录统计",
+        "组容量",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_save",
+        "record_clear_from"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_clear_from(uint8_t grp, int16_t start)：删除指定组中指定记录之前的记忆值。当目标组不存在记录时返回0（删除记录异常）。",
+      "topic_tags": [
+        "record_clear_from",
+        "记录删除",
+        "异常处理",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_sum",
+        "record_save"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode)：Wifi模块工作模式控制及连接状态检测。支持WIFI_SMART_LINk（智能配网模式，9min超时）和WIFI_AUTO_LINK（自动连接模式，90s超时）两种模式。异常状态包括：上电异常（rst持续低电平）、连接路由器超时、未获取到IP（DHCP不支持）、连接云端超时、密码错误。测试方式为执行软件单元并观察硬件动作（execute the software unit and observe the action of hardware）。",
+      "topic_tags": [
+        "Wifi_AutoConnect",
+        "Wifi配网",
+        "小米智能家庭App",
+        "连接状态",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "Wifi_Andon_Base_DeCode",
+        "MiBpm_SendDataToCloud_Pack"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void User_Dis_Bp_Result(Dis_Result_Str_t result)：显示测量结果，支持mmHg（dis_unit=0）和kPa（dis_unit=1）两种单位显示。测试验证了120/80 mmHg正常血压等级的显示正确性，及mmHg与kPa的换算关系（120mmHg≈16.0kPa，80mmHg≈10.7kPa）。",
+      "topic_tags": [
+        "User_Dis_Bp_Result",
+        "血压显示",
+        "mmHg",
+        "kPa",
+        "单位换算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "User_Dis_All"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void Wifi_Andon_Base_DeCode(void)：协议解码函数，负责解析Wifi模块串口输入的二进制协议帧，并向串口输出应答帧，同时将解码后的内容写入系统配置区域（如Wifi_Fwver固件版本号和DID设备ID）。测试通过向串口发送特定十六进制数据帧，验证输出应答及解码存储结果。",
+      "topic_tags": [
+        "Wifi_Andon_Base_DeCode",
+        "协议解码",
+        "串口通信",
+        "DID",
+        "固件版本",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "Wifi_AutoConnect",
+        "MiBpm_SendDataToCloud_Pack"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void MiBpm_SendDataToCloud_Pack(uint16_t cmd)：血压计数据打包函数。该子程序在本文档片段中无测试用例记录，测试记录表格为空。",
+      "topic_tags": [
+        "MiBpm_SendDataToCloud_Pack",
+        "数据打包",
+        "云端上传",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "Wifi_AutoConnect",
+        "Wifi_Andon_Base_DeCode"
+      ]
+    }
+  ]
+}

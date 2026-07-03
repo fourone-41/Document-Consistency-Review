@@ -1,0 +1,69 @@
+```json
+{
+  "assigned_agent": "Hardware Agent",
+  "review_focus": "判断PT9L总装BOM（F0094）中双联弹簧图号'PT3-P10'是否构成图号管理不一致风险：需综合评估①PT9L图号编码规范是否存在且被违反；②PT3与PT9L之间是否存在零件共用/平台化继承关系使该引用合规；③BOM中多种图号体系并存是否为系统性跨平台引用模式；④在规范文件缺失情况下P3定级是否成立。",
+  "agent_input": {
+    "claim": "总装BOM（F0094）中双联弹簧的图号引用为'PT3-P10'，属于旧型号PT3系列图号，未更新为PT9L专用图号，存在图号管理不一致风险。",
+    "context_summary": "F0094（PT9L-ABOM01 V1.0）第15行双联弹簧（料号T030100000482550143，材料0.5mm弹簧钢）的图号记录为'PT3-P10'，所属系列列填写为'PT3'，与BOM文件所属产品PT9L存在显性系列不一致。同一BOM中电池盖（第4行）使用'T-Z1-P04'/'T-Z1'系列图号，说明该BOM中至少存在PT3、T-Z1、PT9L三种图号体系并存，提示可能为系统性跨平台引用策略而非孤立遗漏。当前上下文中缺失以下关键证据：①PT9L图号编码规范或命名规则文件；②PT3-P10原始图纸内容及零件规格；③PT3→PT9L设计转移/ECO/平台化设计说明文件；④双联弹簧料号T030100000482550143在PT3 BOM中的对应记录；⑤PT9L DHF中是否存在PT9L专属双联弹簧图号的证据。F0075（PT3运输报告）和F0082（PT3SBT标签审核表）文本内容为空，未能提供有效参考。",
+    "evidence": [
+      {
+        "evidence_id": "HW-091",
+        "doc_id": "F0094",
+        "rel_path": "11 T1样机\\总装类组件清单PT9L-ABOM01 V1.0.via_xlsx.clean.md",
+        "line": 28,
+        "source_text": "| 15 | 双联弹簧 | T030100000482550143 | 0.5mm弹簧钢 | PT3-P10 | PT3 |  | 1 |  | √ | C |  |  |",
+        "evidence_note": "PT9L总装BOM中双联弹簧图号记录为PT3-P10，所属系列列为PT3，与BOM文件所属产品PT9L存在系列不一致",
+        "verified": true
+      },
+      {
+        "evidence_id": "HW-090",
+        "doc_id": "F0094",
+        "rel_path": "11 T1样机\\总装类组件清单PT9L-ABOM01 V1.0.via_xlsx.clean.md",
+        "line": 17,
+        "source_text": "| 4 | 电池盖 | K030200021205120485 | ABS | T-Z1-P04 | T-Z1 |  | 1 |  | √ | B |  |  |",
+        "evidence_note": "同一BOM中电池盖使用T-Z1系列图号，说明BOM中存在多种图号体系并存，需判断是否为系统性跨平台引用",
+        "verified": true
+      },
+      {
+        "evidence_id": "RC-001",
+        "context_type": "structural_observation",
+        "description": "F0094 BOM文件名为'PT9L-ABOM01 V1.0'，明确标识为PT9L产品总装BOM，但第15行双联弹簧的'所属系列'列填写为'PT3'，图号为'PT3-P10'。BOM表头或文件命名与零件所属系列字段之间存在显性不一致。",
+        "relevance": "直接支持claim中图号不一致的事实描述，但不能单独判定其为错误——需结合设计继承规则判断"
+      },
+      {
+        "evidence_id": "RC-002",
+        "context_type": "multi_series_coexistence_observation",
+        "description": "同一BOM（F0094）中已发现至少两种非PT9L系列图号：PT3-P10（PT3系列）和T-Z1-P04（T-Z1系列）。这表明该BOM可能采用了跨平台零件引用策略，而非单一PT9L专属图号体系。",
+        "relevance": "削弱'PT3-P10为孤立遗漏更新'的假设，支持'系统性跨平台引用'的替代解释，是复审Agent需重点权衡的反向证据"
+      },
+      {
+        "evidence_id": "RC-003",
+        "context_type": "missing_normative_reference",
+        "description": "当前上下文中未找到PT9L图号编码规范文件、零件图号管理程序或PT3→PT9L设计转移/ECO文件。在缺乏规范性文件的情况下，无法客观判断PT3-P10在PT9L BOM中的引用是否构成'管理不一致'。",
+        "relevance": "核心证据缺口，直接影响claim的成立与否判断，是下一轮检索的最高优先级目标"
+      },
+      {
+        "evidence_id": "RC-004",
+        "context_type": "part_number_cross_reference",
+        "description": "双联弹簧料号T030100000482550143为企业内部物料编码，该料号是否在PT3产品BOM中也以相同料号出现，是判断其为共用件的关键。若料号相同则支持共用件假设；若PT9L中为新增料号则支持图号应更新的假设。",
+        "relevance": "需在PT3 BOM文件中检索该料号以建立跨产品对比证据"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": {
+      "dimension_1_compliance": "PT9L是否存在明文图号编码规范？若存在且'PT3-P10'违反该规范，则confirm；若规范文件缺失，则不得仅凭图号前缀不一致定性为风险，应维持needs_more_context。",
+      "dimension_2_design_inheritance": "PT9L与PT3之间是否存在零件共用/平台化设计关系？若双联弹簧为两代产品共用件且有设计转移文件支撑，PT3-P10图号引用可能合规，应dismiss或降级。",
+      "dimension_3_spec_conformance": "PT3-P10图纸所定义的双联弹簧规格（已知材料0.5mm弹簧钢）是否满足PT9L设计输入要求？规格符合性比图号前缀具有更实质的安全意义。",
+      "dimension_4_systemic_vs_isolated": "BOM中已发现T-Z1系列图号并存，需判断PT3-P10是否为系统性跨平台引用模式的一部分。若为系统性模式，孤立升级该条目风险定级不合适。",
+      "dimension_5_severity_assessment": "在当前证据缺口（无PT9L图号规范、无继承说明、无PT3-P10图纸内容）条件下，P3定级依据不充分。建议：若无法获取上述规范文件，维持needs_more_context；若获取后确认违规，可confirm P3；若确认为合规共用件引用，则dismiss。",
+      "priority_search_targets": [
+        "PT9L 图号编码规则/命名规范文件",
+        "PT3-P10 双联弹簧原始图纸",
+        "PT3→PT9L 设计转移/ECO/平台化设计说明",
+        "T030100000482550143 在PT3 BOM中的对应记录",
+        "PT9L DHF中弹簧类零件图号分布"
+      ]
+    }
+  }
+}
+```

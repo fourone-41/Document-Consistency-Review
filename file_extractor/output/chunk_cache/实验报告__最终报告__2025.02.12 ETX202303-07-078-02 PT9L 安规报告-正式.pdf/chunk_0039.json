@@ -1,0 +1,265 @@
+{
+  "document": {
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "81-82",
+    "total_pages": 181,
+    "doc_type": "compliance_checklist"
+  },
+  "tests": [
+    {
+      "clause": "15.3.1",
+      "name": "Mould stress relief, push, impact, drop, and rough handling tests",
+      "description": "Mould stress relief, push, impact, drop, and rough handling tests did not result in loss of BASIC SAFETY or ESSENTIAL PERFORMANCE",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.3.2",
+      "name": "Push test",
+      "description": "Push test conducted by subjecting external parts of ENCLOSURE to a steady force of 250 N ± 10 N for 5 s applied to a circular (30mm) plane surface, except bottom of ENCLOSURE of an ME EQUIPMENT >18 kg, using a suitable test tool",
+      "result_remark": "See Appended Table 15.3",
+      "verdict": "P",
+      "sub_results": [
+        {
+          "description": "No damage resulting in an unacceptable RISK sustained",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "15.3.3",
+      "name": "Impact test",
+      "description": "Impact test conducted by subjecting a complete ENCLOSURE or its largest non-reinforced area, except for HAND-HELD ME EQUIPMENT and parts, to a free falling 500 g ±25 g solid smooth steel ball, approx. 50 mm in diameter from a height of 1.3 m",
+      "verdict": "N/A",
+      "sub_results": [
+        {
+          "description": "No damage resulting in an unacceptable RISK sustained",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "15.3.4",
+      "name": "Drop test",
+      "verdict": "P"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "14.12",
+      "description": "Continued validity of previous design documentation assessed under a documented modification/change PROCEDURE",
+      "verdict": "N/A",
+      "sub_requirements": [
+        {
+          "description": "Software Classification for Software changes applied in accordance with Clause 4.3 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Software Process for Software changes applied according to Clause 5 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "RISK MANAGEMENT for Software changes applied according to Clause 7 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Configuration management of software changes applied per Clause 8 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Problem resolution for Software changes applied according to Clause 9 of IEC 62304",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "14.13",
+      "description": "For PEMS incorporated into an IT-NETWORK not VALIDATED by the PEMS MANUFACTURER, instructions made available for implementing",
+      "result_remark": "Not be incorporated into an IT-NETWORK",
+      "verdict": "N/A",
+      "sub_requirements": [
+        {
+          "description": "a) Purpose of the PEMS connection to an IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "description": "b) required characteristics of the IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "description": "c) required configuration of the IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "description": "d) technical specifications of the network connection, including security specifications",
+          "verdict": "N/A"
+        },
+        {
+          "description": "e) intended information flow between the PEMS, the IT-NETWORK and other devices on the IT-NETWORK, and the intended routing through the IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "description": "f) a list of HAZARDOUS SITUATIONS resulting from failure of the IT-NETWORK to provide the required service",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ACCOMPANYING DOCUMENTS for the RESPONSIBLE ORGANIZATION: statement that connection to IT-NETWORKS including other equipment could result in previously unidentified RISKS TO PATIENTS, OPERATORS or third parties",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ACCOMPANYING DOCUMENTS for the RESPONSIBLE ORGANIZATION: Notification that the RESPONSIBLE ORGANIZATION should identify, analyse, evaluate and control these RISKS",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ACCOMPANYING DOCUMENTS for the RESPONSIBLE ORGANIZATION: Notification that changes to the IT-NETWORK could introduce new RISKS that require additional analysis",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Changes to the IT-NETWORK include: changes in network configuration, connection of additional items, disconnection of items, update of equipment, upgrade of equipment",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "15",
+      "description": "CONSTRUCTION OF ME EQUIPMENT",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.1",
+      "description": "RISKS associated with arrangement of controls and indicators of ME EQUIPMENT addressed through the application of a USABILITY ENGINEERING PROCESS in accordance with IEC 60601-1-6, when applicable",
+      "result_remark": "See Appended RM Results",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.2",
+      "description": "Parts of ME EQUIPMENT subject to mechanical wear, electrical, environmental degradation or ageing resulting in unacceptable RISK when unchecked for a long period, are accessible for inspection, replacement, and maintenance",
+      "result_remark": "No such parts.",
+      "verdict": "N/A",
+      "sub_requirements": [
+        {
+          "description": "Inspection, servicing, replacement, and adjustment of parts of ME EQUIPMENT can easily be done without damage to or interference with adjacent parts or wiring",
+          "result_remark": "Only a qualified personnel service is available to implement.",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "15.3",
+      "description": "Mechanical strength",
+      "verdict": "P"
+    }
+  ],
+  "review_items": [
+    {
+      "description": "Methods used for PEMS VALIDATION documented",
+      "verdict": "P"
+    },
+    {
+      "description": "The person with overall responsibility for PEMS VALIDATION is independent of design team, and no member of a design team is responsible for PEMS VALIDATION of their own design",
+      "verdict": "P"
+    },
+    {
+      "description": "All professional relationships of members of PEMS VALIDATION team with members of design team documented in RISK MANAGEMENT FILE",
+      "verdict": "P"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "type": "international_standard"
+    },
+    {
+      "id": "EN60601-1",
+      "full_reference": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "type": "european_standard"
+    },
+    {
+      "id": "IEC 62304",
+      "full_reference": "IEC 62304",
+      "type": "international_standard",
+      "referenced_clauses": [
+        "4.3",
+        "5",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "id": "IEC 60601-1-6",
+      "full_reference": "IEC 60601-1-6",
+      "type": "international_standard",
+      "context": "USABILITY ENGINEERING PROCESS"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For clause 14.13 regarding PEMS incorporated into IT-NETWORK: The device is not incorporated into an IT-NETWORK, therefore all sub-requirements under clause 14.13 are marked N/A. Requirements include providing instructions for: purpose of connection, required IT-NETWORK characteristics, required configuration, technical and security specifications, intended information flow and routing, list of hazardous situations from IT-NETWORK failure. Accompanying documents for RESPONSIBLE ORGANIZATION must include statements about risks from IT-NETWORK connections and notifications about additional analysis requirements for network changes.",
+      "topic_tags": [
+        "IT-NETWORK",
+        "PEMS",
+        "network integration",
+        "hazardous situations",
+        "risk management",
+        "N/A"
+      ],
+      "related_subjects": [
+        "14.13",
+        "PEMS MANUFACTURER",
+        "RESPONSIBLE ORGANIZATION"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 15.2: Parts of ME EQUIPMENT subject to mechanical wear, electrical, environmental degradation or ageing are marked N/A with remark 'No such parts.' Inspection, servicing, replacement, and adjustment of parts is also N/A with remark 'Only a qualified personnel service is available to implement.'",
+      "topic_tags": [
+        "mechanical wear",
+        "maintenance",
+        "inspection",
+        "qualified personnel",
+        "ME EQUIPMENT construction"
+      ],
+      "related_subjects": [
+        "15.2",
+        "ENCLOSURE",
+        "mechanical strength"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 15.3.2 Push test specification: External parts of ENCLOSURE subjected to steady force of 250 N ± 10 N for 5 seconds applied to a circular (30mm) plane surface, except bottom of ENCLOSURE of ME EQUIPMENT weighing more than 18 kg, using a suitable test tool. Result: See Appended Table 15.3. Verdict: Pass. No damage resulting in unacceptable RISK sustained.",
+      "topic_tags": [
+        "push test",
+        "mechanical strength",
+        "250N",
+        "ENCLOSURE",
+        "force test"
+      ],
+      "related_subjects": [
+        "15.3.2",
+        "Table 15.3",
+        "BASIC SAFETY",
+        "ESSENTIAL PERFORMANCE"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 15.3.3 Impact test specification: Complete ENCLOSURE or its largest non-reinforced area subjected to a free falling 500 g ±25 g solid smooth steel ball approximately 50 mm in diameter dropped from a height of 1.3 m. Exception: HAND-HELD ME EQUIPMENT and parts. Verdict: N/A.",
+      "topic_tags": [
+        "impact test",
+        "mechanical strength",
+        "steel ball",
+        "drop height",
+        "ENCLOSURE",
+        "HAND-HELD"
+      ],
+      "related_subjects": [
+        "15.3.3",
+        "BASIC SAFETY",
+        "ESSENTIAL PERFORMANCE"
+      ]
+    }
+  ]
+}

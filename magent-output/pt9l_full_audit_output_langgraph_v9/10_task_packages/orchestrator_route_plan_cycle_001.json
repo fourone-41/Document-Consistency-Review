@@ -1,0 +1,189 @@
+{
+  "cycle": 1,
+  "decision": "continue",
+  "reason": "Cycle 1 — no agent runs have been executed yet. All five mandatory audit matrix checks (MATRIX-001 through MATRIX-005) are unassigned and uncovered. In addition, no candidate discovery has been performed. This cycle launches the full first-pass sweep: one Candidate Discovery Agent run to surface cross-model and document-control anomalies, plus all five domain agents executing their mandatory matrix checks in parallel. This maximises coverage and allows subsequent cycles to focus on confirmed candidates.",
+  "assignments": [
+    {
+      "assignment_id": "ASG-0001",
+      "target_agent": "Candidate Discovery Agent",
+      "task_type": "candidate_discovery",
+      "review_focus": "Identify all candidate consistency issues across the PT9L DHF/DMR corpus. Priority signals: (1) documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical or draft folders; (2) PT9C appearing as a PCB sub-component number vs. standalone product in clinical/user-test documents; (3) PT3SBT references in design output lists or label review documents filed under T1 sample folder; (4) BP3L software diagrams appearing in the main software design folder or T1 sample subfolder; (5) PT2L risk document F0013 carrying a PT9L document number internally despite residing in a '历史文件' subfolder; (6) version, revision, and approval-signature gaps across all document ID patterns (PT9L-KHXQ01, PT9L-KXPS01, PT9L-FXJH01, PT9L-FXGB01, PT9L-EBOM01, PT9L-T1EB01, PT9L-SJSC01, PT9C-CNTP01); (7) regulatory-standard applicability inconsistencies between draft and final design inputs (EN ISO 80601-2-56, MDR 2017/745, CE registration status).",
+      "input_refs": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01",
+        "2L风险改 - 历史文件 folder",
+        "T1 sample folder"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-KHXQ01",
+          "PT9L-KXPS01",
+          "PT9L-FXJH01",
+          "PT9L-FXGB01",
+          "PT9L-EBOM01",
+          "PT9L-T1EB01",
+          "PT9L-SJSC01",
+          "PT9C-CNTP01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    {
+      "assignment_id": "ASG-0002",
+      "target_agent": "Hardware Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-001 — Design input to output parameter consistency for PT9L. Verify that key design-input parameters (measurement range, accuracy, response time, environmental conditions, Bluetooth specification, intended-use population, forehead measurement site) stated in the design input document (PT9L-KHXQ01 or equivalent) are carried forward without alteration or omission into design output documents (drawings, specifications, verification/validation test conditions). Flag any parameter value, unit, or scope discrepancy between design input and output layers. Also check whether PT9C PCB sub-component parameters are correctly scoped to PT9L system-level requirements rather than being inherited verbatim from a PT9C standalone specification.",
+      "input_refs": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-KHXQ01",
+          "PT9L-KXPS01",
+          "PT9L-FXJH01",
+          "PT9L-FXGB01",
+          "PT9L-EBOM01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    {
+      "assignment_id": "ASG-0003",
+      "target_agent": "Risk Traceability Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-002 — Risk-to-verification traceability chain for PT9L. Verify that every risk item identified in the Risk Management Report (which references Bluetooth transmission per project profile) has: (a) an assigned risk control measure, (b) a corresponding verification or validation activity, and (c) a closed-loop record confirming the control was implemented and effective. Specifically check: whether PT2L risk document F0013 (which carries a PT9L document number internally) introduces any risk items or controls that are not re-evaluated under PT9L-specific conditions; whether Bluetooth-related hazards are fully traced to verification tests; and whether any risk items reference PT9C, PT3SBT, or BP3L without a documented rationale for applicability to PT9L.",
+      "input_refs": [
+        "PT9L-KHXQ01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "2L风险改 - 历史文件 folder",
+        "PT9L-T1EB01"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-FXJH01",
+          "PT9L-FXGB01",
+          "PT9L-T1EB01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    {
+      "assignment_id": "ASG-0004",
+      "target_agent": "Software Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-003 — Software lifecycle traceability for PT9L. Verify that software requirements, architecture/design documents, unit and integration test records, software validation records, and the software traceability matrix are mutually consistent and all scoped to PT9L. Specifically investigate: (1) BP3L software diagrams appearing in the main PT9L software design folder and/or the T1 sample subfolder — determine whether these are shared-component references with documented rationale or erroneous inclusions; (2) whether the software version identifier in test records matches the version in the design document and the released BOM; (3) whether Bluetooth software requirements are traced to test cases and validation evidence; (4) whether any software document header, footer, or internal reference cites PT9C, PT3SBT, or BP3L as the primary product model without justification.",
+      "input_refs": [
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-T1EB01",
+        "T1 sample folder"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-KXPS01",
+          "PT9L-FXJH01",
+          "PT9L-T1EB01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    {
+      "assignment_id": "ASG-0005",
+      "target_agent": "DMR/SOP Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-004 — DMR chain consistency for PT9L. Verify consistency across: (a) Engineering BOM (PT9L-EBOM01) vs. manufacturing BOM and any released BOM revision; (b) process SOPs and work instructions vs. BOM line items; (c) incoming inspection and in-process inspection criteria vs. design output specifications; (d) packaging and labelling documents vs. approved label artwork and regulatory marking requirements; (e) design transfer records confirming DHF-to-DMR handoff completeness. Flag any BOM line item referencing PT9C, PT3SBT, or BP3L part numbers that lack a documented shared-component or sub-assembly justification. Also check whether PT3SBT references in the design output list and label review document filed under the T1 sample folder are reconciled with the released PT9L DMR.",
+      "input_refs": [
+        "PT9L-EBOM01",
+        "PT9L-SJSC01",
+        "PT9L-T1EB01",
+        "PT9L-FXGB01",
+        "T1 sample folder"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-EBOM01",
+          "PT9L-SJSC01",
+          "PT9L-T1EB01",
+          "PT9L-FXGB01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    {
+      "assignment_id": "ASG-0006",
+      "target_agent": "Regulatory Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-005 — Document control and regulatory completeness across all PT9L DHF/DMR stages. Verify: (1) controlled status, current revision level, and approval signatures for all documents matching PT9L document ID patterns (PT9L-KHXQ01, PT9L-KXPS01, PT9L-FXJH01, PT9L-FXGB01, PT9L-EBOM01, PT9L-T1EB01, PT9L-SJSC01) and PT9C-CNTP01; (2) whether the regulatory standard list is consistent between the draft design input and the final design input — specifically the applicability status of EN ISO 80601-2-56:2017+A1:2018, MDR 2017/745, and CE registration; (3) whether ASTM E1965-98:2016 and ASTM E1965-98:2023 are both cited and whether the transition between versions is documented; (4) whether the 510(k) registration responsibility assignment to 'andon' is documented in the DHF with a formal agreement or design transfer record; (5) whether PT9C-CNTP01 is a controlled PT9L DHF document or a standalone PT9C document incorrectly included, and whether its document-control record reflects the correct product scope.",
+      "input_refs": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-KHXQ01",
+          "PT9L-KXPS01",
+          "PT9L-FXJH01",
+          "PT9L-FXGB01",
+          "PT9L-EBOM01",
+          "PT9L-T1EB01",
+          "PT9L-SJSC01",
+          "PT9C-CNTP01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    }
+  ],
+  "stop_conditions_checked": [
+    "No prior agent runs exist — stop condition (all matrix items covered) is not met.",
+    "No unresolvable ambiguity identified at this stage — human_review escalation not required for cycle 1.",
+    "All five mandatory matrix items are unassigned — continue is the correct decision."
+  ],
+  "human_review_items": []
+}

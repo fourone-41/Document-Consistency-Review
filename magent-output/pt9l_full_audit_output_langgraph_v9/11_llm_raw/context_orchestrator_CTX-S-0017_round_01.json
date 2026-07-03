@@ -1,0 +1,63 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "F0013文件存在文件名标注PT2L产品、但内部文件编号（DN）及产品型号字段均显示PT9L系列的产品身份冲突，需核实受控文件记录的一致性与合规性",
+  "agent_input": {
+    "claim": "Document F0013，归档于'2L风险改 - 历史文件'文件夹，文件名标题为PT2L风险管理计划（V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0），但文件内部第6行明确载有文件编号'DN：PT9L-FXJH01 V1.0 Risk Management Plan'，第14行产品型号字段亦为'Product model：PT9L'，与文件名及归档路径所指示的PT2L产品身份形成不可调和的产品身份冲突，构成受控文件记录中的严重一致性问题。",
+    "context_summary": "从F0013文件（路径：03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md）中已提取的直接证据如下：\n1. 文件名及归档路径：明确标注为PT2L产品（PT2L美亚-FXJH01），归档于'2L风险改 - 历史文件'文件夹。\n2. 文件内部第2行标题：'# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0'（与文件名一致，指向PT2L）。\n3. 文件内部第6行DN字段：'DN：PT9L-FXJH01 V1.0 Risk Management Plan'（指向PT9L系列）。\n4. 文件内部第14行产品型号字段：'Product model：PT9L'（指向PT9L系列）。\n5. 文件内部第16行项目编号：'Project number：30000078'。\n6. 文件正文内容（ISO 14971风险管理流程、风险接受准则等）为通用风险管理计划框架内容，无法单独区分产品归属。\n7. 同目录下存在F0012（V1.0-1 Risk Management Plan IFT-FXJH01 V1.0），page_context内容为空，无法提供交叉比对信息。\n冲突核心：同一受控文件内，文件名/归档路径指向PT2L，而内部DN编号与产品型号字段均指向PT9L，属于文件身份标识的根本性矛盾。上一轮context_recovery因LLM输出JSON解析失败（JSONDecodeError），未能完成分析，本轮基于已有原始证据直接提交审查。",
+    "evidence": [
+      {
+        "evidence_id": "REG-E01",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "field": "文件标题（Markdown H1）",
+        "actual_text": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+        "product_indicated": "PT2L",
+        "conflict_role": "与DN字段及产品型号字段冲突的一方（PT2L侧）"
+      },
+      {
+        "evidence_id": "REG-E02",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "field": "文件编号（DN字段）",
+        "actual_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "product_indicated": "PT9L",
+        "conflict_role": "与文件名及标题冲突的一方（PT9L侧）"
+      },
+      {
+        "evidence_id": "REG-E03",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 14,
+        "field": "产品型号（Product model字段）",
+        "actual_text": "Product model： PT9L",
+        "product_indicated": "PT9L",
+        "conflict_role": "与文件名及标题冲突的一方（PT9L侧），与DN字段一致"
+      },
+      {
+        "evidence_id": "REG-E04",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 16,
+        "field": "项目编号（Project number字段）",
+        "actual_text": "Project number： 30000078",
+        "product_indicated": "未知（需交叉核查项目编号归属）",
+        "conflict_role": "辅助身份核查字段"
+      },
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "field": "审批签字栏",
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "product_indicated": "N/A",
+        "conflict_role": "文件审批状态参考"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

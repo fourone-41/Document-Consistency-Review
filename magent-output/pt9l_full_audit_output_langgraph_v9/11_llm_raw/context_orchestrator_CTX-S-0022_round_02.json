@@ -1,0 +1,137 @@
+```json
+{
+  "assigned_agent": "Risk Traceability Agent",
+  "review_focus": "确认语料库中是否存在任何 Bluetooth/蓝牙/wireless 相关内容；若产品本身无 Bluetooth 功能则原始声明前提不成立，应降级或驳回；若存在则提取完整验证链",
+  "agent_input": {
+    "claim": "No verification record exists in the supplied corpus that closes a Bluetooth-related risk control measure, meaning the verification-to-residual-risk traceability chain for Bluetooth is entirely absent, not merely incomplete. (原始声明 LLM-0068，P0级别)",
+    "context_summary": "两轮检索已确认：语料库核心产品为 PT2L 红外额温枪（Infrared Forehead Thermometer），项目编号 2020-002-WX02。验证报告 F0015（V1.0-3）已确认存在，目录结构完整（Section 3 第5-17页含风险控制措施验证表，Section 4 第17页含剩余风险结论），但正文第5-17页具体风险条目内容尚未读取。关键发现：红外额温枪通常不含 Bluetooth 功能，若产品本身无蓝牙模块，则原始声明的前提（存在 Bluetooth 风险控制措施）不成立，声明应被驳回而非维持 P0。当前最大不确定性：①语料库全文中是否出现 Bluetooth/蓝牙/wireless 关键词；②F0015 正文风险条目是否涉及 Bluetooth；③是否存在带蓝牙功能的变体型号（PT2L-BT 等）或独立蓝牙专项文件。",
+    "evidence": [
+      {
+        "evidence_id": "RISK-024",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 12,
+        "source_text": "Product name: Infrared Forehead Thermometer",
+        "significance": "产品为红外额温枪，非蓝牙设备——对 Bluetooth 声明前提构成根本性质疑"
+      },
+      {
+        "evidence_id": "RISK-025",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 14,
+        "source_text": "Product model： PT2L",
+        "significance": "产品型号 PT2L，跨文档检索锚点"
+      },
+      {
+        "evidence_id": "RISK-026",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 16,
+        "source_text": "Project number： 2020-002-WX02",
+        "significance": "项目编号，可用于定位同项目所有文件"
+      },
+      {
+        "evidence_id": "RISK-027",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 38,
+        "source_text": "3\\. Validation of risk control measures and residual risk assessment 5",
+        "significance": "Section 3 正文（第5-17页）含完整风险条目表，尚未读取"
+      },
+      {
+        "evidence_id": "RISK-028",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 40,
+        "source_text": "4\\. Residual risk evaluation and conclusion 17",
+        "significance": "Section 4 剩余风险结论（第17页），尚未读取"
+      },
+      {
+        "evidence_id": "RISK-029",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 46,
+        "source_text": "| **RE** | Risk Evaluation | **S** | Severity | **P** | The probability of a harm occurring | **R** | Risk NO. | **ACC** | Acceptable | **NACC** | Unacceptable | **PRM** | Plan of Risk control measure(s) | **NH** | New hazard generated | **AFAP** | As far as possible without adversely affecting the benefit-risk ratio |",
+        "significance": "文件使用 ISO 14971 标准风险评估框架，缩略语表确认文件结构完整"
+      },
+      {
+        "evidence_id": "PAGE-F0440",
+        "doc_id": "F0440",
+        "rel_path": "历史记录\\给实验室\\可用性\\Infrared forehead thermometer 09a-2 Checklist of IEC 62366-1 2021.via_lo_html.clean.md",
+        "line_start": 1,
+        "significance": "IEC 62366-1 可用性检查清单，正文未读取，需检索是否涉及 Bluetooth 可用性风险"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "retrieval_instructions": {
+      "priority_P0": [
+        {
+          "action": "corpus_wide_keyword_search",
+          "keywords": ["Bluetooth", "蓝牙", "wireless", "无线", "BT module", "RF", "BTLE", "BLE"],
+          "scope": "全语料库所有文件",
+          "purpose": "确认语料库中是否存在任何 Bluetooth 相关内容；若完全不存在则原始声明前提不成立，应 dismiss"
+        },
+        {
+          "action": "read_document_section",
+          "doc_id": "F0015",
+          "target_pages": "5-17",
+          "target_section": "Section 3: Validation of risk control measures and residual risk assessment",
+          "extract": "所有风险条目表格行，重点标记含 Bluetooth/蓝牙/wireless/EMI/RF 的行",
+          "purpose": "获取完整风险控制措施验证表，确认是否存在或明确排除 Bluetooth 条目"
+        }
+      ],
+      "priority_P1": [
+        {
+          "action": "read_document_section",
+          "doc_id": "F0015",
+          "target_pages": "17-18",
+          "target_section": "Section 4: Residual risk evaluation and conclusion",
+          "purpose": "获取剩余风险总体结论"
+        },
+        {
+          "action": "search_risk_analysis_files",
+          "keywords": ["Bluetooth", "蓝牙", "wireless", "RF"],
+          "scope": "所有 FMEA、Hazard Analysis、Risk Assessment 文件正文",
+          "purpose": "确认原始风险分析中是否列有 Bluetooth 风险条目"
+        },
+        {
+          "action": "search_product_specification",
+          "keywords": ["Bluetooth", "蓝牙", "wireless", "功能规格"],
+          "scope": "产品规格书、设计输入、技术文件",
+          "purpose": "确认产品是否声明 Bluetooth 功能"
+        },
+        {
+          "action": "read_document_body",
+          "doc_id": "F0440",
+          "keywords": ["Bluetooth", "蓝牙", "wireless"],
+          "purpose": "检查 IEC 62366-1 可用性检查清单是否涉及 Bluetooth 可用性风险"
+        }
+      ],
+      "priority_P2": [
+        {
+          "action": "search_file_names",
+          "keywords": ["Bluetooth", "BT", "wireless", "RF", "蓝牙"],
+          "scope": "语料库所有文件名/路径",
+          "purpose": "确认是否存在独立 Bluetooth 专项文件"
+        },
+        {
+          "action": "search_variant_models",
+          "keywords": ["PT2L-BT", "PT2L蓝牙", "PT2L Bluetooth", "2020-002-WX02"],
+          "purpose": "确认是否存在带蓝牙功能的变体型号或同项目其他文件"
+        },
+        {
+          "action": "search_EMC_documents",
+          "keywords": ["IEC 60601-1-2", "Bluetooth", "wireless", "electromagnetic"],
+          "purpose": "检索 EMC 相关文件中的 Bluetooth/wireless 条目"
+        }
+      ],
+      "decision_logic": {
+        "if_no_bluetooth_anywhere_in_corpus": "dismiss — 产品无 Bluetooth 功能，原始声明 LLM-0068 前提不成立，风险等级降级至 N/A",
+        "if_bluetooth_exists_but_no_verification": "confirm — 维持 P0，Bluetooth 验证链缺失属实",
+        "if_bluetooth_exists_and_verification_found": "dismiss — 声明不成立，提供验证记录作为反驳证据",
+        "if_still_ambiguous_after_retrieval": "needs_more_context — 说明具体剩余缺口"
+      }
+    }
+  }
+}
+```

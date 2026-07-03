@@ -1,0 +1,592 @@
+{
+  "document": {
+    "title": "Risk Management Plan",
+    "doc_type": "风险管理计划",
+    "version": "V1.0"
+  },
+  "persons": [
+    {
+      "name": "Hou Guangwei",
+      "title": "Drafter/Approver"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "document_number",
+      "value": "PT9L-FXJH01 V1.0"
+    },
+    {
+      "id_type": "reference_standard",
+      "value": "ISO 14971:2019"
+    },
+    {
+      "id_type": "reference_standard",
+      "value": "EN ISO 14971:2019"
+    },
+    {
+      "id_type": "reference_standard",
+      "value": "EN ISO 14971:2019/A11:2021"
+    },
+    {
+      "id_type": "reference_regulation",
+      "value": "QI-7.3-22"
+    }
+  ],
+  "products": [
+    {
+      "name": "Infrared Forehead Thermometer"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": 1,
+      "version": "V1.0",
+      "change_description": "Originated",
+      "author": "Hou Guangwei",
+      "date": "2024.1.9"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk management process lifecycle phases and activities:\n1. Initial development: Document intended use and reasonably foreseeable misuse; identify characteristics related to safety; identify hazards and hazardous situations; estimate risks; risk evaluation; draft risk control measures plan. Output: Report of risk assessment.\n2. Prototype phase (Design verification): Verify implementation and effectiveness of risk control measures; assess residual risk; benefit-risk analysis; evaluate risks arising from risk control measures; review completeness of risk control. Output: Report of verification of risk control measure and residual risk evaluation.\n3. Design validation: Overall residual risk evaluation; form risk management report. Output: Report of risk management.\n4. Design change: Identify hazards related to design change; evaluate risks from design change; assess risks; draft risk control measures plan; verify implementation; assess residual risk, benefit-risk analysis and new risks; overall residual risk evaluation after design change. Output: Record of risk evaluation / Report of verification of risk control measure and residual risk evaluation in design change / Report of Risk Management in design change.\n5. Production and post-production activities: Collect production and post-production information; assess unidentified hazards and unacceptable risks; analyze and assess risks and make control plans; track implementation of risk control measures. Output: Report of Post-market Risk Management.",
+      "topic_tags": [
+        "risk management lifecycle",
+        "design phases",
+        "risk control",
+        "post-market surveillance"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "ISO 14971:2019",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The risk management plan covers the whole life-cycle of the medical device, conducted in accordance with ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. For production and post-production activities, refer to section 4.11.1 'Collection of production and post-production activities' in Risk Management Control Regulation (QI-7.3-22).",
+      "topic_tags": [
+        "scope",
+        "lifecycle",
+        "regulatory compliance",
+        "risk management"
+      ],
+      "related_subjects": [
+        "ISO 14971:2019",
+        "EN ISO 14971:2019",
+        "QI-7.3-22"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk Management Group: The specific personnel may vary from different projects, but the risk assessment team generally includes members with various specialties. Table header exists (Member / Specialty) but no specific members listed in this fragment.",
+      "topic_tags": [
+        "risk management team",
+        "personnel",
+        "responsibilities"
+      ],
+      "related_subjects": [
+        "Risk Management Plan"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Document structure includes the following planned sections: 1. Arrangement of Risk Management Activities; 2. Risk Management Group; 3. Risk Acceptance Criteria (3.1 Severity of A Hazard, 3.2 Probability of A Hazard, 3.3 Risk Acceptance Criteria); 4. Residual Risk Acceptance Criteria (4.1 For Single Residual Risk, 4.2 For Overall Residual Risk); 5. Risk Control Measures Verification Criteria.",
+      "topic_tags": [
+        "risk acceptance criteria",
+        "severity",
+        "probability",
+        "residual risk"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "risk acceptance criteria"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Personnel qualification requirements: Chief engineer - Mechano-electronic related specialities, more than three years work experience. Product manager - Mechano-electronic related specialities, more than three years design experience. Project manager - Mechano-electronic related specialities, more than one year design experience. Hardware design director - Mechano-electronic related specialities, more than one year design experience. Software design director - Mechano-electronic related specialities, more than one year design experience. Mechanical design director - Mechano-electronic related specialities, more than one year design experience. Hardware design personnel - Mechano-electronic related specialities, more than one year design experience. Software design personnel - Mechano-electronic related specialities, more than one year design experience. Mechanical design personnel - Mechano-electronic related specialities, more than one year design experience. Process design personnel - Electrics or mechanics or other related engineering specialities, more than one year design experience. Quality management personnel - Electrics or mechanics or other related engineering specialities, more than one year design experience. Sales personnel - No special requirement, familiar with handling of customer complaints process. Certification personnel - Biomedicine or mechano-electronic or other related specialities, more than two years work experience. Personnel with medical background - Biology or clinical medicine or other medical related specialities, more than three years clinical experience.",
+      "topic_tags": [
+        "personnel qualification",
+        "competency requirements",
+        "role requirements"
+      ],
+      "related_subjects": [
+        "Risk Management Team",
+        "Design Team"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Severity Classification: Catastrophic (S=5) - Result in patient death; Critical (S=4) - Result in permanent impairment or life-threatening injury; Serious (S=3) - Result in injury or impairment requiring professional medical intervention; Minor (S=2) - Result in temporary injury or impairment not requiring professional medical intervention; Negligible (S=1) - Inconvenience or temporary discomfort.",
+      "topic_tags": [
+        "severity",
+        "risk classification",
+        "harm classification",
+        "S class"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Risk Matrix"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Semiquantitative Probability Classification: Frequent (P=6) - ≥10⁻³; Probable (P=5) - <10⁻³ ≥10⁻⁴; Occasional (P=4) - <10⁻⁴ ≥10⁻⁵; Remote (P=3) - <10⁻⁵ ≥10⁻⁶; Improbable (P=2) - <10⁻⁶ ≥10⁻⁸; Few (P=1) - <10⁻⁸.",
+      "topic_tags": [
+        "probability",
+        "risk classification",
+        "P class",
+        "semiquantitative"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Risk Matrix"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Risk Acceptance Criteria: A risk matrix is defined with Severity (1-5) on one axis and Probability (1-6) on the other. Two zones are defined: 'Not acceptable' - Unacceptable risk, risk control measures are required; 'Acceptable' - Insignificant/negligible risk, no risk control measures are required. The manufacturer shall reduce the risk as far as possible using risk control options in priority order: (a) eliminate or reduce risks as far as possible through safe design and manufacture; (b) where appropriate, take adequate protection measures, including alarms if necessary, in relation to risks that cannot be eliminated; (c) provide information for safety (warnings/precautions/contra-indications) and, where appropriate, training to users.",
+      "topic_tags": [
+        "risk acceptance criteria",
+        "risk matrix",
+        "ALARP",
+        "risk control priority"
+      ],
+      "related_subjects": [
+        "Risk Control",
+        "Residual Risk",
+        "Risk Matrix"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Residual Risk Acceptance Criteria for Single Residual Risk: When a risk falls in the 'Not acceptable' area, risk control measures must be taken. After taking measures, the risk becomes a residual risk. If this residual risk still falls in the 'Not acceptable' area by the Criteria in section 3.3, a risk-benefit analysis must be taken. This residual risk will be acceptable when there are reasonable reasons to support that the benefits outweigh the risks.",
+      "topic_tags": [
+        "residual risk",
+        "risk-benefit analysis",
+        "risk acceptance",
+        "residual risk criteria"
+      ],
+      "related_subjects": [
+        "Risk Control",
+        "Risk Acceptance Criteria",
+        "Benefit-Risk Analysis"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For Overall Residual Risk:\n1. The benefits related to the intended use of the medical device are weighed against the overall residual risk. Benefits can be described by their magnitude or extent, the probability of experiencing the benefit within the intended patient populations, and the duration and frequency of the benefit. The evaluation may take into account knowledge of the intended medical indication, the generally acknowledged state of the art in technology and medicine, and the availability of alternative medical devices or treatments.\n2. Visual representations of the residual risks can be useful. Each individual residual risk can be shown in a risk matrix as shown in section 3.3. If more than 1/2 of the risks are in the higher severity regions or in the higher probability regions of the risk matrix, or clusters of risks are borderline, then the distribution of the risks can indicate that the overall residual risk might not be acceptable, even if each individual risk has been judged acceptable.\n3. Overall risk-benefit analysis: when the benefits outweigh the overall residual risks, the overall residual risks are acceptable.\n4. If the overall residual risks are acceptable after evaluation, then the significant residual risks shall be notified to the users and involve the information in the accompanying documents. If the overall residual risks are not acceptable after evaluation, then additional risk control measures shall be taken, or the modification to the medical devices may be required.",
+      "topic_tags": [
+        "overall residual risk",
+        "risk-benefit analysis",
+        "risk matrix",
+        "risk acceptability",
+        "residual risk notification"
+      ],
+      "related_subjects": [
+        "risk analysis report",
+        "risk matrix",
+        "residual risk evaluation"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk Control Measures Verification Criteria: We verify the risk control measures of the initial risks and the residual risks in accordance with the document Verification in Design and Development Control Procedure.",
+      "topic_tags": [
+        "risk control verification",
+        "design and development control",
+        "verification criteria",
+        "residual risk"
+      ],
+      "related_subjects": [
+        "Design and Development Control Procedure",
+        "risk control measures"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "03 风险分析/PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+    "doc_type": "risk_analysis"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "Risk Management Plan",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ISO 14971:2019",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ISO 14971:2019",
+      "to": "scope",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EN ISO 14971:2019",
+      "to": "scope",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QI-7.3-22",
+      "to": "scope",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk management team",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk acceptance criteria",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Team",
+      "to": "personnel qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Design Team",
+      "to": "personnel qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "severity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Matrix",
+      "to": "severity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "probability",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Matrix",
+      "to": "probability",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Control",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Residual Risk",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Matrix",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Control",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Benefit-Risk Analysis",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk analysis report",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk matrix",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "residual risk evaluation",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Design and Development Control Procedure",
+      "to": "risk control verification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk control measures",
+      "to": "risk control verification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXJH01 V1.0",
+      "to": "revision_record_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_risk_management_lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "scope_limitation_lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_risk_management_group",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_document_structure",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_personnel_qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_severity_classification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_probability_classification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_risk_acceptance_criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_residual_risk_single",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_overall_residual_risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_risk_control_verification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_severity_classification",
+      "to": "constraint_risk_acceptance_criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_probability_classification",
+      "to": "constraint_risk_acceptance_criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_risk_acceptance_criteria",
+      "to": "constraint_residual_risk_single",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_residual_risk_single",
+      "to": "behavioral_spec_overall_residual_risk",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "ISO 14971:2019",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "EN ISO 14971:2019",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "EN ISO 14971:2019/A11:2021",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "QI-7.3-22",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "scope_limitation",
+      "to": "ISO 14971:2019",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "scope_limitation",
+      "to": "EN ISO 14971:2019",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "scope_limitation",
+      "to": "EN ISO 14971:2019/A11:2021",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "scope_limitation",
+      "to": "QI-7.3-22",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Team",
+      "to": "Personnel qualification requirements",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Acceptance Criteria",
+      "to": "Severity Classification",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Acceptance Criteria",
+      "to": "Semiquantitative Probability Classification",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Residual Risk Acceptance Criteria",
+      "to": "Risk Acceptance Criteria",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Overall Residual Risk Evaluation",
+      "to": "Risk Acceptance Criteria",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Control Measures Verification Criteria",
+      "to": "Design and Development Control Procedure",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "risk management lifecycle",
+      "to": "ISO 14971:2019",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "Hou Guangwei",
+      "to": "PT9L-FXJH01 V1.0",
+      "properties": {
+        "role": "Drafter/Approver",
+        "date": "2024.1.9"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-FXJH01 V1.0",
+      "to": 1,
+      "properties": {
+        "version": "V1.0",
+        "change_description": "Originated",
+        "author": "Hou Guangwei",
+        "date": "2024.1.9"
+      }
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L-FXJH01 V1.0",
+      "to": "Infrared Forehead Thermometer",
+      "properties": {
+        "doc_type": "风险管理计划",
+        "version": "V1.0"
+      }
+    }
+  ],
+  "_claims": []
+}

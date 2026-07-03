@@ -1,0 +1,229 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Report",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "35-36 of 181"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "type": "international_standard"
+    },
+    {
+      "id": "IEC60364-7-710",
+      "full_reference": "IEC 60364-7-710",
+      "type": "international_standard",
+      "context": "Referenced for higher EARTH LEAKAGE CURRENT values for permanently installed ME equipment"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.5.4",
+      "name": "WORKING VOLTAGE",
+      "verdict": "P",
+      "sub_tests": [
+        {
+          "description": "Input supply voltage to ME EQUIPMENT was RATED voltage or voltage within RATED range resulting in highest measured value",
+          "result": "DC 3V",
+          "verdict": "P"
+        },
+        {
+          "description": "WORKING VOLTAGE for d.c. voltages with superimposed ripple",
+          "result": null,
+          "verdict": "N/A"
+        },
+        {
+          "description": "WORKING VOLTAGE for each MEANS OF PROTECTION forming DOUBLE INSULATION",
+          "result": null,
+          "verdict": "P"
+        },
+        {
+          "description": "Intentional or accidental earthing of PATIENT regarded as NORMAL CONDITION for WORKING VOLTAGE involving a PATIENT CONNECTION not connected to earth",
+          "result": null,
+          "verdict": "P"
+        },
+        {
+          "description": "WORKING VOLTAGE between PATIENT CONNECTIONS of an F-TYPE APPLIED PART and ENCLOSURE was highest voltage appearing across insulation in NORMAL USE including earthing of any part of APPLIED PART",
+          "result": null,
+          "verdict": "P"
+        },
+        {
+          "description": "WORKING VOLTAGE for DEFIBRILLATION-PROOF APPLIED PARTS determined disregarding possible presence of defibrillation voltages",
+          "result": "No defibrillation-proof applied parts",
+          "verdict": "N/A"
+        },
+        {
+          "description": "WORKING VOLTAGE equal to resonance voltage in case of motors provided with capacitors",
+          "result": "No such motor",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.5.5",
+      "name": "DEFIBRILLATION-PROOF APPLIED PARTS",
+      "result": "No defibrillation-proof applied parts",
+      "verdict": "N/A",
+      "sub_tests": [
+        {
+          "clause": "8.5.5.1",
+          "description": "Classification DEFIBRILLATION-PROOF APPLIED PART applied to one APPLIED PART in its entirety, but not separate functions of same APPLIED PART",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "8.5.5.1a",
+          "description": "No hazardous electrical energies appear during a discharge of cardiac defibrillator",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "8.5.5.1b",
+          "description": "ME EQUIPMENT complied with relevant requirements providing BASIC SAFETY and ESSENTIAL PERFORMANCE following exposure to defibrillation voltage, and recovery time stated in ACCOMPANYING DOCUMENTS",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "8.5.5.2",
+          "description": "Means provided to limit energy delivered to a 100 Ω load to at least 90% of energy delivered to this load with ME EQUIPMENT disconnected",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.7",
+      "name": "LEAKAGE CURRENTS and PATIENT AUXILIARY CURRENTS",
+      "verdict": "P",
+      "sub_tests": [
+        {
+          "clause": "8.7.1a",
+          "description": "Electrical isolation providing protection against electric shock limits currents to values in 8.7.3",
+          "result": "See appended Tables 8.7",
+          "verdict": "P"
+        },
+        {
+          "clause": "8.7.1b",
+          "description": "Specified values of EARTH LEAKAGE, TOUCH, PATIENT LEAKAGE, and PATIENT AUXILIARY CURRENTS applied in combination of conditions in appended Table 8.7",
+          "result": "See appended Tables 8.7",
+          "verdict": "P"
+        },
+        {
+          "clause": "8.7.2",
+          "description": "Allowable values specified in 8.7.3 applied under SINGLE FAULT CONDITIONS of 8.1 b)",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "8.7.2",
+          "description": "Insulation short circuited only under conditions in 8.6.4 b) — where insulation used in conjunction with a PROTECTIVE EARTH CONNECTION",
+          "result": "No earth connection",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "8.7.2",
+          "description": "The only SINGLE FAULT CONDITION for EARTH LEAKAGE CURRENT was interruption of one supply conductor at a time",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "8.7.2",
+          "description": "LEAKAGE CURRENTS and PATIENT AUXILIARY CURRENT not measured in SINGLE FAULT CONDITION of short circuiting of one constituent part of DOUBLE INSULATION",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "8.7.2",
+          "description": "SINGLE FAULT CONDITIONS not applied at same time as special test conditions of MAXIMUM MAINS VOLTAGE on APPLIED PARTS and non-PROTECTIVELY EARTHED parts of ENCLOSURE",
+          "verdict": "P"
+        },
+        {
+          "clause": "8.7.3",
+          "name": "Allowable Values",
+          "verdict": "P",
+          "sub_tests": [
+            {
+              "clause": "8.7.3a",
+              "description": "Allowable values measured based on currents in Fig 12 a) or by device measuring frequency contents as in Fig 12 b",
+              "result": "See appended Table 8.7",
+              "verdict": "P"
+            },
+            {
+              "clause": "8.7.3b",
+              "description": "Allowable values of PATIENT LEAKAGE and AUXILIARY CURRENTS according to Tables 3 & 4, values of a.c. relative to currents having frequency not less than 0.1 Hz",
+              "result": "See appended Table 8.7",
+              "verdict": "P"
+            },
+            {
+              "clause": "8.7.3c",
+              "description": "TOUCH CURRENT did not exceed 100 μA in NORMAL CONDITION and 500 μA in SINGLE FAULT CONDITION (I TNC, I TSFC)",
+              "result": "See appended Table 8.7",
+              "verdict": "P"
+            },
+            {
+              "clause": "8.7.3d",
+              "description": "EARTH LEAKAGE CURRENT did not exceed 5 mA in NORMAL CONDITION and 10 mA in SINGLE FAULT CONDITION (I ENC, I ESFC)",
+              "result": null,
+              "verdict": "N/A"
+            },
+            {
+              "clause": "8.7.3d",
+              "description": "Higher values of EARTH LEAKAGE CURRENT permitted for PERMANENTLY INSTALLED ME EQUIPMENT connected to a supply circuit supplying only this ME EQUIPMENT according to local regulations or IEC 60364-7-710",
+              "result": "Not permanently installed ME equipment",
+              "verdict": "N/A"
+            },
+            {
+              "clause": "8.7.3e",
+              "description": "LEAKAGE CURRENTS, regardless of waveform and frequency, did not exceed 10 mA r.m.s. in NORMAL or in SINGLE FAULT CONDITION (measured with non-frequency-weighted device)",
+              "result": "See appended Table 8.7",
+              "verdict": "P"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "WORKING VOLTAGE for d.c. voltages with superimposed ripple was average value when peak-to-peak ripple less than 10% of average value, or peak voltage when peak-to-peak ripple exceeding 10% of average value. Applicable to clause 8.5.4 of IEC60601-1.",
+      "topic_tags": [
+        "WORKING VOLTAGE",
+        "DC",
+        "ripple",
+        "IEC60601-1",
+        "8.5.4"
+      ],
+      "related_subjects": [
+        "8.5.4",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "WORKING VOLTAGE between PATIENT CONNECTIONS of an F-TYPE APPLIED PART and ENCLOSURE was highest voltage appearing across insulation in NORMAL USE including earthing of any part of APPLIED PART. Clause 8.5.4 of IEC60601-1.",
+      "topic_tags": [
+        "WORKING VOLTAGE",
+        "F-TYPE APPLIED PART",
+        "PATIENT CONNECTIONS",
+        "ENCLOSURE",
+        "insulation"
+      ],
+      "related_subjects": [
+        "8.5.4",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Under clause 8.7.3, TOUCH CURRENT limits: 100 μA in NORMAL CONDITION and 500 μA in SINGLE FAULT CONDITION. EARTH LEAKAGE CURRENT limits: 5 mA in NORMAL CONDITION and 10 mA in SINGLE FAULT CONDITION. LEAKAGE CURRENTS regardless of waveform and frequency shall not exceed 10 mA r.m.s. in NORMAL or SINGLE FAULT CONDITION.",
+      "topic_tags": [
+        "TOUCH CURRENT",
+        "EARTH LEAKAGE CURRENT",
+        "leakage current limits",
+        "SINGLE FAULT CONDITION",
+        "NORMAL CONDITION",
+        "IEC60601-1",
+        "8.7.3"
+      ],
+      "related_subjects": [
+        "8.7.3",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

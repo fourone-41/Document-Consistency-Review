@@ -1,0 +1,57 @@
+```json
+{
+  "assigned_agent": "Regulatory Agent",
+  "review_focus": [
+    "F0013 文件封面所载 DN 字段（第6行）显示 'PT9L-FXJH01 V1.0'，而文件标题及产品名称字段（第2行、第12行、第14行）分别标注 'PT2L' 与 'PT9L'，需确认产品身份不一致是否构成独立不符合项",
+    "文件编号分配错误（PT9L 系列编号被用于 PT2L 产品文件）是否与产品身份不匹配共享同一根本原因，但需要分别开具 CAPA",
+    "该文件路径位于 '2L风险改 - 历史文件' 目录下，需判断其是否仍属于受控现行版本，或已被后续版本取代"
+  ],
+  "agent_input": {
+    "claim": "F0013（PT2L 风险管理计划）内部携带 PT9L 系列文件编号，代表两项独立不符合项——产品身份不匹配与文件编号分配错误——二者共享单一根本原因，但需要分别采取纠正措施。",
+    "context_summary": "从 F0013 文件（路径：03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md）中已检索到以下关键文本证据：\n1. 文件标题（第2行）：'V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0'，表明该文件名义上属于 PT2L 产品。\n2. DN 字段（第6行）：'DN：PT9L-FXJH01 V1.0 Risk Management Plan'，文件编号明确指向 PT9L 系列。\n3. 产品型号字段（第14行）：'Product model：PT9L'，与文件标题中的 PT2L 矛盾。\n4. 产品名称（第12行）：'Infrared Forehead Thermometer'，未能区分两款产品。\n5. 文件存放于 '2L风险改 - 历史文件' 子目录，版本状态待确认。\n6. 文件内容（风险管理流程、接受准则等）本身符合 ISO 14971:2019 要求，无实质性内容缺陷被发现。\n本轮 context_recovery 因 LLM 输出解析失败（JSONDecodeError）未能生成结构化摘要，但原始证据文本已完整保留。",
+    "evidence": [
+      {
+        "evidence_id": "REG-E01",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "text": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+        "relevance": "文件标题标注 PT2L，与内部 DN 及产品型号字段矛盾，是产品身份不匹配的直接证据"
+      },
+      {
+        "evidence_id": "REG-E02",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "relevance": "DN 字段明确为 PT9L 系列编号，用于 PT2L 文件，是文件编号分配错误的直接证据"
+      },
+      {
+        "evidence_id": "REG-E03",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 14,
+        "text": "Product model： PT9L",
+        "relevance": "产品型号字段填写 PT9L，与文件标题 PT2L 直接冲突，强化产品身份不匹配的不符合项"
+      },
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "text": "**Approved by** *(Technical Director)* Date:",
+        "relevance": "审批栏日期为空，文件受控状态存疑，需结合 Document Control Agent 确认版本有效性"
+      },
+      {
+        "evidence_id": "REG-004",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 48,
+        "text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021.",
+        "relevance": "文件内容本身引用正确标准，表明实质性风险管理内容无明显缺陷，不符合项集中于身份与编号字段"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

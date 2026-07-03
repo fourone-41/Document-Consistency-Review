@@ -1,0 +1,208 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-04",
+    "total_pages": 22,
+    "current_pages": "11-12"
+  },
+  "tests": [
+    {
+      "id": "6.2.1",
+      "name": "Clinical Accuracy Tests - Purpose",
+      "description": "Clinical accuracy tests are intended for evaluation of accuracy of built-in instrumentational or combined site offsets, or both, and performance of an IR thermometer in assessing internal body temperatures from actual subjects.",
+      "result": "N/E"
+    },
+    {
+      "id": "6.2.2",
+      "name": "Clinical Accuracy Tests - Reference Sites",
+      "description": "Tests shall be performed on groups of subjects by using an internal body site (e.g., pulmonary artery or sublingual cavity) for reference measurements. IR thermometer shall be set in the corresponding mode.",
+      "result": "N/E"
+    },
+    {
+      "id": "6.3",
+      "name": "Shock Test",
+      "result": "P"
+    },
+    {
+      "id": "6.3.1",
+      "name": "Shock Test - Drop Procedure",
+      "description": "IR thermometer subjected to a fall from a height of 1 m (39 in.) onto a 50 mm (2 in.) thick hardwood board (density > 700 kg/m3) lying flat on a rigid base (concrete block). Performed with controlled orientation once for each of two axes (Axis A: optical axis of probe; Axis B: through center of gravity and point where probe window crosses Axis A), with IR thermometer probe facing down.",
+      "result": "P"
+    },
+    {
+      "id": "6.3.2",
+      "name": "Shock Test - Post-Drop Measurement",
+      "description": "IR thermometer operation tested by measuring temperature of a blackbody set within ±0.5°C (±1°F) from 37°C (98.6°F), at ambient temperature 20-26°C (68-79°F) and relative humidity 40-70%. At least five measurements performed using a new disposable probe cover (if applicable) for every measurement. IR thermometer set in unadjusted mode as specified in 5.8.2.2.",
+      "result": "P"
+    },
+    {
+      "id": "6.3.3",
+      "name": "Shock Test - Error Evaluation",
+      "description": "Unadjusted temperature value subtracted from blackbody setting. Absolute value of largest error shall be no greater than error limit in 5.3 (or 5.4, whichever applicable) for blackbody temperature range 36-39°C (96.8-102.2°F).",
+      "result": "P"
+    },
+    {
+      "id": "6.4",
+      "name": "Electromagnetic Susceptibility Test",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.1",
+      "name": "EMC - Radiofrequency Field Exposure",
+      "description": "Instrument exposed to modulated electromagnetic radiofrequency field in accordance with IEC601-1-2 and IEC 1000-4-3.",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.1.1",
+      "name": "EMC - Field Strength",
+      "description": "3 V/m",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.1.2",
+      "name": "EMC - Carrier Frequency Range",
+      "description": "26 MHz to 1 GHz",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.1.3",
+      "name": "EMC - Frequency Sweep Interval",
+      "description": "1 MHz/s minimum",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.1.4",
+      "name": "EMC - Frequency Interval Dwell Time",
+      "description": "The greater of either 1 s or the measurement response time of the instrument under test.",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.1.5",
+      "name": "EMC - AM Modulation",
+      "description": "AM modulation, 80% index with a sine wave or 100% with a square wave having 50% duty cycle. Modulation frequency within each significant signal-processing passband of instrument. For devices without defined passband, modulation shall be 1 Hz, 10 Hz, and 1 kHz.",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.2",
+      "name": "EMC - Specific Test Conditions",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.2.1",
+      "name": "EMC - Probe Cover Requirement",
+      "description": "No change of probe covers required while performing the electromagnetic compatibility test.",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.2.2",
+      "name": "EMC - Target Requirement",
+      "description": "IR thermometer probe shall be aimed at a target whose surface temperature is within the display range of the IR thermometer. Target does not have to be a blackbody.",
+      "result": "N/A"
+    },
+    {
+      "id": "6.4.2.3",
+      "name": "EMC - Continuous Reading Comparison",
+      "description": "IR thermometers capable of producing continuous temperature readings shall have their readings taken successively and compared to one another during the frequency sweep interval.",
+      "result": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "ASTM E1965-98",
+      "name": "Standard Specification for Infrared Thermometers for Intermittent Determination of Patient Temperature",
+      "clauses": [
+        "5.3",
+        "5.4",
+        "5.6.3",
+        "5.8.2.2",
+        "6.2.1",
+        "6.2.2",
+        "6.3",
+        "6.4"
+      ]
+    },
+    {
+      "id": "IEC 601-1-2",
+      "name": "Medical Electrical Equipment - Electromagnetic Compatibility",
+      "context": "Referenced for electromagnetic susceptibility test conditions"
+    },
+    {
+      "id": "IEC 1000-4-3",
+      "name": "Electromagnetic Compatibility - Radiated Immunity Test",
+      "context": "Referenced for electromagnetic susceptibility test conditions"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L红外体温计",
+      "type": "IR Thermometer",
+      "context": "Device under test in report ETX202303-07-078-04"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clinical accuracy tests are intended for evaluation of accuracy of built-in instrumentational or combined site offsets, or both, and performance of an IR thermometer in assessing internal body temperatures from actual subjects. While this specification does not set limits for clinical accuracy, it is the responsibility of a manufacturer to determine values characterizing clinical accuracy and disclose them upon request.",
+      "topic_tags": [
+        "clinical accuracy",
+        "IR thermometer",
+        "body temperature",
+        "manufacturer responsibility"
+      ],
+      "related_subjects": [
+        "6.2.1",
+        "ASTM E1965-98"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Shock Test drop procedure: IR thermometer subjected to a fall from 1 m onto a 50 mm thick hardwood board (density > 700 kg/m3) on a rigid base. Two axes tested with probe facing down. Axis A is the optical axis of the probe. Axis B passes through the IR thermometer center of gravity and the point where the window of the probe crosses axis A.",
+      "topic_tags": [
+        "shock test",
+        "drop test",
+        "mechanical durability",
+        "hardwood board",
+        "test axes"
+      ],
+      "related_subjects": [
+        "6.3.1",
+        "5.6.3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Post-shock accuracy verification: Blackbody set within ±0.5°C from 37°C; ambient 20-26°C; RH 40-70%; minimum 5 measurements with new disposable probe cover per measurement; unadjusted mode per 5.8.2.2. Largest absolute error must not exceed limit in 5.3 or 5.4 for 36-39°C blackbody temperature range.",
+      "topic_tags": [
+        "shock test",
+        "accuracy verification",
+        "blackbody",
+        "error limit",
+        "unadjusted mode"
+      ],
+      "related_subjects": [
+        "6.3.2",
+        "6.3.3",
+        "5.3",
+        "5.4",
+        "5.8.2.2"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Electromagnetic Susceptibility Test (6.4) and all sub-clauses (6.4.1 through 6.4.2.3) are marked N/A for this product. The test requires exposure to modulated radiofrequency field (3 V/m, 26 MHz to 1 GHz, per IEC601-1-2 and IEC 1000-4-3) with specific conditions including no probe cover change, aiming at in-range target, and successive reading comparison during frequency sweep.",
+      "topic_tags": [
+        "electromagnetic susceptibility",
+        "EMC",
+        "N/A",
+        "IEC601-1-2",
+        "IEC1000-4-3",
+        "radiofrequency"
+      ],
+      "related_subjects": [
+        "6.4",
+        "6.4.1",
+        "6.4.2",
+        "ETX202303-07-078-04"
+      ]
+    }
+  ]
+}

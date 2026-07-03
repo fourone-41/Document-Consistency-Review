@@ -1,0 +1,237 @@
+{
+  "document": {
+    "title": "IEC 60601-1 / IEC 60601-1-11 Test Report",
+    "doc_id": "ETX202303-07-078-02",
+    "product_ref": "PT9L",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "34-35",
+    "total_pages": 182
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 Medical electrical equipment - General requirements for basic safety and essential performance",
+      "version": "2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 Medical electrical equipment - General requirements for basic safety and essential performance",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.5.2.3",
+      "name": "Patient lead/cable connector requirements",
+      "description": "Connector on a PATIENT lead or PATIENT cable located at the end of the lead or cable remote from PATIENT, with conductive part not separated from all PATIENT CONNECTIONS by one MEANS OF PATIENT PROTECTION for a WORKING VOLTAGE equal to MAXIMUM MAINS VOLTAGE",
+      "result": "No patient leads.",
+      "verdict": "N/A",
+      "sub_tests": [
+        {
+          "description": "Cannot be connected to earth or hazardous voltage while the PATIENT CONNECTIONS are in contact with PATIENT",
+          "result": "No patient leads.",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Conductive part of connector not separated from all PATIENT CONNECTIONS did not come into contact with a flat conductive plate of not less than 100 mm diameter",
+          "verdict": "N/A"
+        },
+        {
+          "description": "CLEARANCE between connector pins and a flat surface is at least 0.5 mm",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Conductive part pluggable into a mains socket protected from making contact with parts at MAINS VOLTAGE by insulation with a CREEPAGE DISTANCE of at least 1.0 mm, a 1500 V dielectric strength and complying with 8.8.4.1",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Required test finger did not make electrical contact with conductive part when applied against access openings with a force of 10 N, except when RISK MANAGEMENT PROCESS indicated no unacceptable RISK existed from contact with objects other than a mains socket or a flat surface",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.5.3",
+      "name": "MAXIMUM MAINS VOLTAGE determination",
+      "verdict": "P",
+      "sub_tests": [
+        {
+          "description": "MAXIMUM MAINS VOLTAGE determined to be the highest RATED supply voltage for single-phase or d.c. SUPPLY MAINS powered ME EQUIPMENT, as well as INTERNALLY POWERED ME EQUIPMENT with a means of connection to a SUPPLY MAINS",
+          "verdict": "N/A"
+        },
+        {
+          "description": "When less than 100 V, MAXIMUM MAINS VOLTAGE was 240 V",
+          "verdict": "N/A"
+        },
+        {
+          "description": "MAXIMUM MAINS VOLTAGE was the highest RATED phase to neutral supply voltage for poly-phase ME EQUIPMENT",
+          "verdict": "N/A"
+        },
+        {
+          "description": "For other INTERNALLY POWERED ME EQUIPMENT, maximum mains voltage was 240 V",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "8.5.4",
+      "name": "WORKING VOLTAGE determination",
+      "verdict": "P",
+      "sub_tests": [
+        {
+          "description": "Input supply voltage to ME EQUIPMENT was RATED voltage or voltage within RATED range resulting in highest measured value",
+          "result": "DC 3V",
+          "verdict": "P"
+        },
+        {
+          "description": "WORKING VOLTAGE for d.c. voltages with superimposed ripple was average value when peak-to-peak ripple less than 10% of average value or peak voltage when peak-to-peak ripple exceeding 10% of average value",
+          "verdict": "N/A"
+        },
+        {
+          "description": "WORKING VOLTAGE for each MEANS OF PROTECTION forming DOUBLE INSULATION was voltage DOUBLE INSULATION, as a whole, subjected to",
+          "verdict": "P"
+        },
+        {
+          "description": "Intentional or accidental earthing of PATIENT regarded as a NORMAL CONDITION for WORKING VOLTAGE involving a PATIENT CONNECTION not connected to earth",
+          "verdict": "P"
+        },
+        {
+          "description": "WORKING VOLTAGE between PATIENT CONNECTIONS of an F-TYPE APPLIED PART and ENCLOSURE was highest voltage appearing across insulation in NORMAL USE including earthing of any part of APPLIED PART",
+          "verdict": "P"
+        },
+        {
+          "description": "WORKING VOLTAGE for DEFIBRILLATION-PROOF APPLIED PARTS determined disregarding possible presence of defibrillation voltages",
+          "result": "No defibrillation-proof applied parts",
+          "verdict": "N/A"
+        },
+        {
+          "description": "WORKING VOLTAGE was equal to resonance voltage in case of motors provided with capacitors between the point where a winding and a capacitor are connected together and a terminal for external conductors",
+          "result": "No such motor",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.5.5",
+      "name": "DEFIBRILLATION-PROOF APPLIED PARTS",
+      "result": "No defibrillation-proof applied parts",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5.5.1",
+      "name": "Classification DEFIBRILLATION-PROOF APPLIED PART",
+      "description": "Classification applied to one APPLIED PART in its entirety, but not separate functions of same APPLIED PART",
+      "verdict": "N/A",
+      "sub_tests": [
+        {
+          "description": "Isolation of PATIENT CONNECTIONS of a DEFIBRILLATION-PROOF APPLIED PART from other parts of ME EQUIPMENT: No hazardous electrical energies appear during a discharge of cardiac defibrillator",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ME EQUIPMENT complied with relevant requirements of this standard, providing BASIC SAFETY and ESSENTIAL PERFORMANCE following exposure to defibrillation voltage, and recovery time stated in ACCOMPANYING DOCUMENTS",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.5.5.2",
+      "name": "Energy limitation for DEFIBRILLATION-PROOF APPLIED PARTS",
+      "description": "Means provided to limit energy delivered to a 100 Ω load to at least 90% of energy delivered to this load with ME EQUIPMENT disconnected",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.7.4",
+      "name": "LEAKAGE CURRENT tests",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.3",
+      "name": "Dielectric strength test",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.9",
+      "name": "CREEPAGE and CLEARANCES measurement",
+      "description": "Relevant CREEPAGE and CLEARANCES measured per 8.9 and Tables 11 to 16 as applicable",
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 8.5.2.3: A connector on a PATIENT lead or PATIENT cable located at the end of the lead or cable remote from PATIENT, with conductive part not separated from all PATIENT CONNECTIONS by one MEANS OF PATIENT PROTECTION for a WORKING VOLTAGE equal to MAXIMUM MAINS VOLTAGE — cannot be connected to earth or hazardous voltage while the PATIENT CONNECTIONS are in contact with PATIENT. Result: No patient leads. All sub-clauses marked N/A.",
+      "topic_tags": [
+        "patient lead",
+        "patient cable",
+        "connector",
+        "means of patient protection",
+        "working voltage",
+        "maximum mains voltage"
+      ],
+      "related_subjects": [
+        "8.5.2.3",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 8.5.3: MAXIMUM MAINS VOLTAGE for the device (PT9L) determined as 240 V for INTERNALLY POWERED ME EQUIPMENT. Single-phase and poly-phase sub-clauses are N/A. Overall verdict: Pass.",
+      "topic_tags": [
+        "maximum mains voltage",
+        "internally powered",
+        "240V"
+      ],
+      "related_subjects": [
+        "8.5.3",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 8.5.4: WORKING VOLTAGE determined with input supply voltage DC 3V. Device is internally powered with no defibrillation-proof applied parts and no capacitor-motor. F-TYPE APPLIED PART working voltage and DOUBLE INSULATION working voltage both passed. Verdict: Pass.",
+      "topic_tags": [
+        "working voltage",
+        "DC 3V",
+        "double insulation",
+        "F-type applied part",
+        "internally powered"
+      ],
+      "related_subjects": [
+        "8.5.4",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Clauses 8.5.5, 8.5.5.1, 8.5.5.2 regarding DEFIBRILLATION-PROOF APPLIED PARTS are all marked N/A because the device (PT9L) has no defibrillation-proof applied parts.",
+      "topic_tags": [
+        "defibrillation-proof",
+        "applied part",
+        "N/A"
+      ],
+      "related_subjects": [
+        "8.5.5",
+        "8.5.5.1",
+        "8.5.5.2",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Risk management file was reviewed (marked T) in the context of metal accessible part contact risk assessment. LEAKAGE CURRENT tests per 8.7.4, dielectric strength test per 8.8.3, and CREEPAGE/CLEARANCES per 8.9 and Tables 11-16 are all listed as N/A for this section.",
+      "topic_tags": [
+        "risk management file",
+        "leakage current",
+        "dielectric strength",
+        "creepage",
+        "clearance"
+      ],
+      "related_subjects": [
+        "8.7.4",
+        "8.8.3",
+        "8.9",
+        "PT9L"
+      ]
+    }
+  ]
+}

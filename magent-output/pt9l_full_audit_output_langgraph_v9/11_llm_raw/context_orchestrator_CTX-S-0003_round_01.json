@@ -1,0 +1,53 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "PT9C 与 PT9L 的产品身份关系：判断 PT9C 是否为 PT9L 的前身型号、变体型号，或二者身份是否在 DHF 文件中存在混用/未分离的情况",
+  "agent_input": {
+    "claim": "多份处于活跃状态的 PT9L DHF 文件以暗示 PT9C 可能是前身型号或变体型号的方式引用了 PT9C，包括：临床评价报告（型号规格字段写为 PT9CL、正文多处描述 PT9C 型红外体温计）、用户现场测试计划（标题为 PT9C V1.0 但文件编号与正文产品型号均为 PT9L）。PT9C 与 PT9L 的产品身份尚未在 DHF 文件层面得到明确区分。",
+    "context_summary": "补充证据来自两份文件：\n\n1. F0255「18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md」\n   - 文件标题含 PT9L，但封面型号规格字段（第12行）填写为「PT9CL」。\n   - 正文概述（第34行）描述「PT9C 型红外体温计」，全文以 PT9C 为申报产品名称进行临床等同性论证。\n   - 第82行：PT9C 与 PT3（津械注准20192070046）被认定为实质性等同同类产品。\n   - 第135行结论：「拟注册的 PT9C 红外体温计产品……与柯顿（天津）……PT3 基本相同」。\n   - 该文件位于「废案与备份」子目录，标注「中国版本不适用」，但 excluded_from_primary_scope = false。\n\n2. F0260「18 设计确认\\用户测试\\用户现场测试计划 PT9C V1.0.via_lo_html.clean.md」\n   - 文件标题（第2行）为「用户现场测试计划 PT9C V1.0」。\n   - 但文件编号（第6行）为「PT9L - RYCJ01 V1.0」，正文产品型号（第12行）为「PT9L」，项目编号为 30000078。\n   - 标题与正文产品型号存在直接矛盾：标题用 PT9C，内容用 PT9L。\n\n关键观察：\n- PT9CL 可能是 PT9C 的某一子型号或组合命名（PT9C + L 后缀），与 PT9L 命名存在视觉混淆风险。\n- 临床评价报告文件虽在「废案与备份」目录，但未被排除在主范围之外（excluded_from_primary_scope = false），仍属活跃 DHF 范围。\n- 用户测试计划标题与正文型号不一致，属于文件内部身份矛盾。",
+    "evidence": [
+      {
+        "evidence_id": "SCOUT-145",
+        "doc_id": "F0255",
+        "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+        "line": 12,
+        "actual_text": "型号规格：PT9CL",
+        "significance": "PT9L DHF 临床评价报告封面型号规格字段填写为 PT9CL，而非 PT9L，存在型号身份错误"
+      },
+      {
+        "evidence_id": "SCOUT-146",
+        "doc_id": "F0255",
+        "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+        "line": 34,
+        "actual_text": "我公司天津九安医疗电子股份有限公司研制开发的PT9C型红外体温计是一款通过接收人体额头部位散发的红外能量，来测量人体温度的红外体温计。",
+        "significance": "临床评价报告正文概述将申报产品描述为 PT9C 型，与文件所属 PT9L DHF 不符"
+      },
+      {
+        "evidence_id": "SCOUT-147",
+        "doc_id": "F0255",
+        "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+        "line": 82,
+        "actual_text": "PT9C与本公司注册生产的红外体温计 PT3（注册证号：津械注准20192070046）为实质性等同的同类产品……",
+        "significance": "PT9C 被作为申报产品与 PT3 进行等同性对比，说明该报告原本是为 PT9C 注册申报准备的文件，被纳入 PT9L DHF 存在身份混用问题"
+      },
+      {
+        "evidence_id": "SCOUT-148",
+        "doc_id": "F0255",
+        "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+        "line": 135,
+        "actual_text": "通过《申报产品与目录中已获准境内注册医疗器械对比表》中对比表明，拟注册的PT9C红外体温计产品……与柯顿（天津）电子医疗器械有限公司注册生产的红外体温计PT3基本相同……",
+        "significance": "结论部分明确以 PT9C 为拟注册产品，进一步确认该文件为 PT9C 注册文件，与 PT9L DHF 归属不符"
+      },
+      {
+        "evidence_id": "SCOUT-149",
+        "doc_id": "F0260",
+        "rel_path": "18 设计确认\\用户测试\\用户现场测试计划 PT9C V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "actual_text": "# 用户现场测试计划 PT9C V1.0",
+        "significance": "文件标题使用 PT9C，但文件编号（PT9L-RYCJ01 V1.0）和正文产品型号（PT9L）均指向 PT9L，文件内部存在型号身份矛盾"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

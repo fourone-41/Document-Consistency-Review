@@ -1,0 +1,210 @@
+{
+  "document": {
+    "title": "冷热循环 Test Report",
+    "doc_type": "检测报告/测试报告",
+    "version": null
+  },
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "冷热循环测试",
+      "condition": "将测试产品放于恒温恒湿箱内，温度56℃，湿度85%RH，保持48小时；然后温度为-30℃，保持24小时；最后在常温下（温度25±5℃，湿度50-85%）恢复4H，取出检查产品。",
+      "expected_value": "测试后产品无开胶、无脱粘、无开裂、无变形以及功能测试正常",
+      "actual_result": "外观检查及功能测试：测试后产品无开裂、无脱粘等，测试结果判定为合格",
+      "pass_criteria": "测试后产品无开胶、无脱粘、无开裂、无变形以及功能测试正常",
+      "environment": "恒温恒湿箱"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "2017060821",
+      "conclusion": "测试结果判定为合格"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Report No",
+      "value": "2017060821"
+    },
+    {
+      "id_type": "客户编号/项目",
+      "value": "A1939"
+    }
+  ],
+  "products": [
+    {
+      "product_id": null,
+      "name": "NA（送样数量2PCS，客户编号A1939）"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "以上测试样品及样品资料由客户提供并确认，本公司未验证其真实性。",
+      "topic_tags": [
+        "免责声明",
+        "样品来源",
+        "客户提供"
+      ],
+      "related_subjects": [
+        "Test Report 2017060821",
+        "上海锦盈印刷有限公司营业部"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "送样公司名称：上海锦盈印刷有限公司营业部；送样公司地址：上海市闵行区华漕镇金平路329号锦盈工业园；样品接收日期：2017.06.05；测试周期：2017.06.05-2017.06.08。",
+      "topic_tags": [
+        "送样信息",
+        "测试周期",
+        "样品接收"
+      ],
+      "related_subjects": [
+        "Test Report 2017060821"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/运输/冷热循环.pdf.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "Test Report 2017060821",
+      "to": "免责声明",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "上海锦盈印刷有限公司营业部",
+      "to": "免责声明",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Test Report 2017060821",
+      "to": "送样信息",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "1",
+      "to": "2017060821",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "2017060821",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "2017060821",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "2017060821",
+      "to": "behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "1",
+      "to": "2017060821",
+      "properties": {
+        "actual_result": "测试后产品无开裂、无脱粘等，测试结果判定为合格",
+        "conclusion": "测试结果判定为合格"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "冷热循环测试",
+      "attribute": "高温条件",
+      "value": "56",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "冷热循环测试高温阶段",
+      "raw_text": "温度56℃，湿度85%RH，保持48小时"
+    },
+    {
+      "subject": "冷热循环测试",
+      "attribute": "高温湿度",
+      "value": "85",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "冷热循环测试高温阶段",
+      "raw_text": "温度56℃，湿度85%RH，保持48小时"
+    },
+    {
+      "subject": "冷热循环测试",
+      "attribute": "高温持续时间",
+      "value": "48",
+      "unit": "小时",
+      "tolerance": "",
+      "condition": "冷热循环测试高温阶段",
+      "raw_text": "温度56℃，湿度85%RH，保持48小时"
+    },
+    {
+      "subject": "冷热循环测试",
+      "attribute": "低温条件",
+      "value": "-30",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "冷热循环测试低温阶段",
+      "raw_text": "温度为-30℃，保持24小时"
+    },
+    {
+      "subject": "冷热循环测试",
+      "attribute": "低温持续时间",
+      "value": "24",
+      "unit": "小时",
+      "tolerance": "",
+      "condition": "冷热循环测试低温阶段",
+      "raw_text": "温度为-30℃，保持24小时"
+    },
+    {
+      "subject": "冷热循环测试",
+      "attribute": "常温恢复温度",
+      "value": "25",
+      "unit": "℃",
+      "tolerance": "±5",
+      "condition": "冷热循环测试常温恢复阶段",
+      "raw_text": "常温下（温度25±5℃，湿度50-85%）恢复4H"
+    },
+    {
+      "subject": "冷热循环测试",
+      "attribute": "常温恢复湿度",
+      "value": "50~85",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "冷热循环测试常温恢复阶段",
+      "raw_text": "常温下（温度25±5℃，湿度50-85%）恢复4H"
+    },
+    {
+      "subject": "冷热循环测试",
+      "attribute": "常温恢复时间",
+      "value": "4",
+      "unit": "小时",
+      "tolerance": "",
+      "condition": "冷热循环测试常温恢复阶段",
+      "raw_text": "在常温下（温度25±5℃，湿度50-85%）恢复4H"
+    }
+  ]
+}

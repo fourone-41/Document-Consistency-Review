@@ -1,0 +1,981 @@
+{
+  "document": {
+    "title": "支架（T-Z1-P07 V1.0）2D 图读图报告",
+    "document_number": "T-Z1-P07",
+    "version": "V1.0",
+    "date": "2026-06-02",
+    "source_file": "支架.pdf",
+    "format": "PDF 842×595 pt = A4 横向",
+    "scale": "2:1",
+    "units": "mm",
+    "projection": "第一角法",
+    "skill_reference": "SKILL_2D_Drawing_Reading.md",
+    "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/支架.pdf"
+  },
+  "products": [
+    {
+      "name": "支架",
+      "part_number": "T-Z1-P07",
+      "version": "V1.0",
+      "model_number": "T-Z1",
+      "material": "ABS（白色）",
+      "surface_treatment": "无（ABS 白色素材）",
+      "manufacturing_method": "注塑件",
+      "tolerance_level": "SELECT LEVEL B"
+    }
+  ],
+  "components": [
+    {
+      "name": "支架",
+      "part_number": "T-Z1-P07",
+      "material": "ABS 白色",
+      "description": "ABS 注塑件，含圆形端面（仰视圆视）+ 斜锥面（SECTION A-A 倾斜结构），疑为光学传感器载体"
+    },
+    {
+      "name": "中心圆孔",
+      "description": "Ø12.2，内孔可能套传感器筒",
+      "diameter": 12.2,
+      "tolerance": "±0.05"
+    },
+    {
+      "name": "外圆环",
+      "description": "Ø21.3，支架外缘",
+      "diameter": 21.3,
+      "tolerance": "±0.05"
+    },
+    {
+      "name": "4处装配孔",
+      "description": "4-Ø1.7±0.05，4处规则分布螺丝/定位孔，用于把支架固定到主壳体或PCB上",
+      "count": 4,
+      "diameter": 1.7,
+      "tolerance": "±0.05"
+    },
+    {
+      "name": "小圆孔",
+      "description": "右视图 Ø9.5±0.05",
+      "diameter": 9.5,
+      "tolerance": "±0.05"
+    },
+    {
+      "name": "极薄壁特征",
+      "description": "SECTION A-A 0.17 极薄壁，很可能是某弹性变形/卡扣特征",
+      "thickness": 0.17
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "材质为 ABS（白色）",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-02",
+      "description": "产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-03",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "DI-04",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "DI-05",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "source": "技术要求第1条"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "category": "质量/检验"
+    },
+    {
+      "id": "REQ-02",
+      "description": "材质为 ABS（白色）；产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象",
+      "category": "材料/外观"
+    },
+    {
+      "id": "REQ-03",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "category": "装配/配合"
+    },
+    {
+      "id": "REQ-04",
+      "description": "产品符合 RoHS 2.0",
+      "category": "法规合规"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 有害物质限制指令",
+      "applicability": "支架 T-Z1-P07"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号/Drawing NO.",
+      "value": "T-Z1-P07"
+    },
+    {
+      "type": "型号/Model NO.",
+      "value": "T-Z1"
+    },
+    {
+      "type": "版本/Edition",
+      "value": "V1.0"
+    }
+  ],
+  "tests": [
+    {
+      "name": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "description": "主视图水平向主尺寸（与 20.8 配套表达分段长），IQC 必检",
+      "measurement_point": "①",
+      "nominal_value": "29.8 mm",
+      "tolerance": "±0.05 mm"
+    },
+    {
+      "name": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "description": "右侧斜向主尺寸（可能是斜面/锥面方向的长度），IQC 必检",
+      "measurement_point": "②",
+      "nominal_value": "25.2 mm",
+      "tolerance": "±0.05 mm"
+    },
+    {
+      "name": "试装测试",
+      "description": "须试装产品，并能顺利装入产品；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "category": "装配验证"
+    },
+    {
+      "name": "RoHS 合规检测",
+      "description": "产品符合 RoHS 2.0",
+      "category": "法规合规"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "支架在 PT9L 整机中承载哪个传感器（PIR? LED? 距离感应?）",
+      "source_required": "3D 装配 + BOM",
+      "priority": "C级"
+    },
+    {
+      "id": "C-2",
+      "description": "4-Ø1.7 安装方式（自攻螺丝？热熔？卡扣？）",
+      "source_required": "工程师 / 装配 SOP",
+      "priority": "C级"
+    },
+    {
+      "id": "C-3",
+      "description": "0.17±0.03 薄壁是卡扣还是密封筋",
+      "source_required": "3D 剖面",
+      "priority": "C级"
+    },
+    {
+      "id": "C-4",
+      "description": "② 25.2±0.05 斜向尺寸所对应的实际几何（斜面长？锥面斜高？）",
+      "source_required": "3D 模型",
+      "priority": "C级"
+    },
+    {
+      "id": "C-5",
+      "description": "与 导光板.pdf / 透镜.pdf / 保护盖.pdf 的装配链确认",
+      "source_required": "3D 装配 + 各件图",
+      "priority": "C级"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "GENERAL TOLERANCE 表（Level B 采用）：尺寸范围 ＜5 → ±0.1；5–15 → ±0.1；15–50 → ±0.1；50–100 → ±0.2；＞100 → ±0.2%；ANGULAR → ±0.5°。Level A 分别为 ±0.03 / ±0.05 / ±0.05 / ±0.08 / ±0.1% / ±0.1°；Level C 分别为 ±0.15 / ±0.15 / ±0.2 / ±0.3 / ±0.3% / ±0.5°。本图采用 Level B。",
+      "topic_tags": [
+        "通用公差",
+        "Level B",
+        "尺寸公差",
+        "角度公差"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "支架"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "完整尺寸表（无编号尺寸，按 Level B 默认公差，部分已显式标注 ±0.05）：主视图上方 20.8 (Level B)；SECTION A-A 左侧 0.17 (±0.03或±0.05)；SECTION A-A 内部宽 12.6 (Level B)；SECTION A-A 外部宽 12.9 (Level B)；SECTION A-A 左侧高度 3 (Level B)；SECTION A-A 底部 1.5 (±0.05)；仰视图顶部厚度 1 (±0.05)；仰视图中心圆孔 Ø12.2 (±0.05)；仰视图外圆环外径 Ø21.3 (±0.05)；仰视图4处装配孔 4-Ø1.7 (±0.05)；右视图宽 16.1 (Level B)；右视图高 14.1 (Level B)；右视图分段高 9.1 (Level B)；右视图小宽 3.2 (±0.05)；右视图小圆孔径 Ø9.5 (±0.05)；右视图底部 2.2 (Level B)；右视图底部 2.4 (Level B)。",
+      "topic_tags": [
+        "尺寸表",
+        "公差",
+        "仰视图",
+        "截面",
+        "右视图"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "支架",
+        "SECTION A-A"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "装配/约束推断（B级）：零件类型为 ABS 注塑件，含圆形端面（仰视圆视）+ 斜锥面（SECTION A-A 倾斜结构）。结构上类似某传感器/PCB 支架，仰视图圆环 Ø21.3 + 中心孔 Ø12.2 + 4 处 Ø1.7 安装孔的形态强烈提示为光学传感器载体。4-Ø1.7 安装孔：4 处规则分布螺丝/定位孔，用于把支架固定到主壳体或 PCB 上。中心 Ø12.2 + 外圆 Ø21.3：内孔可能套传感器筒，外圆为支架外缘。0.17 极薄壁：很可能是某弹性变形/卡扣特征。技术要求第3条声明与主壳体（推测下盖 T-Z1-P02 内部）配合的装配关系。",
+      "topic_tags": [
+        "装配推断",
+        "传感器载体",
+        "卡扣",
+        "配合关系",
+        "安装孔"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "T-Z1-P02",
+        "导光板",
+        "透镜",
+        "保护盖"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "自动检查结果：编号①②共2个，未见③+，连续无跳号；无角度标注；4-Ø1.7±0.05前缀已保留；全部公差为对称±a形式；技要第3条声明与产品配合，配合方为主壳体内部（推测装在下盖T-Z1-P02上）；①29.8引出线水平横向且无圆视图背景确认非Φ；Ø12.2/Ø21.3/Ø1.7/Ø9.5在仰视图圆形视图上带Ø字符确认为圆尺寸。",
+      "topic_tags": [
+        "自动检查",
+        "编号连续性",
+        "公差形式",
+        "配合验证"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "T-Z1-P02"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "视觉分块描述：r0c0=主视图左上+SECTION A-A上半（0.17/12.6/12.9）；r0c1=主视图（20.8/①29.8±0.05）+立体图左半；r0c2=立体图右半+右视图上半（16.1/14.1/9.1）；r1c0=SECTION A-A完整+仰视图左半；r1c1=仰视图（4-Ø1.7/Ø21.3/Ø12.2/Ø1.7±0.05标注）+②25.2±0.05+底视图+技要4条；r1c2=右视图（Ø9.5±0.05/3.2±0.05/2.2/2.4）+标题栏。渲染：概览150DPI+3×2块300DPI。",
+      "topic_tags": [
+        "视图分块",
+        "视图布局",
+        "渲染分辨率"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "SECTION A-A"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/支架.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "通用公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "通用公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "尺寸表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "尺寸表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SECTION A-A",
+      "to": "尺寸表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "自动检查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "自动检查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "视图分块",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SECTION A-A",
+      "to": "视图分块",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "DI-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "DI-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "DI-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "DI-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "DI-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "中心圆孔",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "外圆环",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "4处装配孔",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "小圆孔",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "极薄壁特征",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "DI-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-02",
+      "to": "DI-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-02",
+      "to": "DI-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-03",
+      "to": "DI-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-04",
+      "to": "DI-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-04",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "T-Z1-P07",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "4处装配孔",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-3",
+      "to": "极薄壁特征",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-4",
+      "to": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "试装测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "RoHS 合规检测",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-01",
+      "to": "DI-05",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-02",
+      "to": "DI-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-02",
+      "to": "DI-02",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-03",
+      "to": "DI-03",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-04",
+      "to": "DI-04",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支架",
+      "to": "REQ-02",
+      "properties": {
+        "constraint": "材质ABS白色，外观无缺陷"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支架",
+      "to": "REQ-03",
+      "properties": {
+        "constraint": "须试装，能顺利装入产品"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支架",
+      "to": "REQ-04",
+      "properties": {
+        "constraint": "符合RoHS 2.0"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "中心圆孔",
+      "to": "REQ-01",
+      "properties": {
+        "constraint": "Ø12.2±0.05为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "外圆环",
+      "to": "REQ-01",
+      "properties": {
+        "constraint": "Ø21.3±0.05为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "4处装配孔",
+      "to": "REQ-01",
+      "properties": {
+        "constraint": "4-Ø1.7±0.05为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "小圆孔",
+      "to": "REQ-01",
+      "properties": {
+        "constraint": "Ø9.5±0.05为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "极薄壁特征",
+      "to": "REQ-01",
+      "properties": {
+        "constraint": "0.17±0.03为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支架",
+      "to": "RoHS 2.0",
+      "properties": {
+        "constraint": "产品须符合RoHS 2.0有害物质限制指令"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "试装测试",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "RoHS 合规检测",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "to": "REQ-01",
+      "properties": {
+        "constraint": "带编号重要尺寸需IQC测量，公差±0.05mm"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "to": "REQ-01",
+      "properties": {
+        "constraint": "带编号重要尺寸需IQC测量，公差±0.05mm"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "试装测试",
+      "to": "REQ-03",
+      "properties": {
+        "constraint": "须能顺利装入产品，以结构签板和组装实配为准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "RoHS 合规检测",
+      "to": "RoHS 2.0",
+      "properties": {
+        "constraint": "产品须符合RoHS 2.0"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支架",
+      "to": "DI-01",
+      "properties": {
+        "constraint": "材质限定为ABS白色"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支架",
+      "to": "DI-04",
+      "properties": {
+        "constraint": "符合RoHS 2.0合规要求"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "properties": {
+        "note": "带编号重要尺寸①由IQC必检测量验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "properties": {
+        "note": "带编号重要尺寸②由IQC必检测量验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-03",
+      "to": "试装测试",
+      "properties": {
+        "note": "装配/配合要求由试装测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-04",
+      "to": "RoHS 合规检测",
+      "properties": {
+        "note": "RoHS 2.0合规要求由合规检测验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-03",
+      "to": "试装测试",
+      "properties": {
+        "note": "试装要求由试装测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-04",
+      "to": "RoHS 合规检测",
+      "properties": {
+        "note": "RoHS 2.0要求由合规检测验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-05",
+      "to": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "properties": {
+        "note": "重要尺寸IQC测量要求由①测量验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-05",
+      "to": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "properties": {
+        "note": "重要尺寸IQC测量要求由②测量验证"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "中心圆孔",
+      "to": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "properties": {
+        "diameter": 12.2,
+        "tolerance": "±0.05",
+        "note": "中心圆孔Ø12.2属于IQC测量范围内组件"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "外圆环",
+      "to": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "properties": {
+        "diameter": 21.3,
+        "tolerance": "±0.05",
+        "note": "外圆环Ø21.3属于IQC测量范围内组件"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "4处装配孔",
+      "to": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "properties": {
+        "diameter": 1.7,
+        "count": 4,
+        "tolerance": "±0.05"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "小圆孔",
+      "to": "IQC 重点尺寸测量 - ② 25.2±0.05",
+      "properties": {
+        "diameter": 9.5,
+        "tolerance": "±0.05"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "极薄壁特征",
+      "to": "IQC 重点尺寸测量 - ① 29.8±0.05",
+      "properties": {
+        "thickness": 0.17,
+        "note": "极薄壁0.17属于截面A-A测量项目"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P07",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P07",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P07",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P07",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P07",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-1",
+      "to": "T-Z1-P07",
+      "properties": {
+        "priority": "C级",
+        "source_required": "3D 装配 + BOM"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-2",
+      "to": "T-Z1-P07",
+      "properties": {
+        "priority": "C级",
+        "source_required": "工程师 / 装配 SOP"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-3",
+      "to": "T-Z1-P07",
+      "properties": {
+        "priority": "C级",
+        "source_required": "3D 剖面"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-4",
+      "to": "T-Z1-P07",
+      "properties": {
+        "priority": "C级",
+        "source_required": "3D 模型"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-5",
+      "to": "T-Z1-P07",
+      "properties": {
+        "priority": "C级",
+        "source_required": "3D 装配 + 各件图"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "重要尺寸①",
+      "attribute": "标称值",
+      "value": "29.8",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "IQC 必检",
+      "raw_text": "IQC 重点尺寸测量 - ① 29.8±0.05，主视图水平向主尺寸，IQC 必检"
+    },
+    {
+      "subject": "重要尺寸②",
+      "attribute": "标称值",
+      "value": "25.2",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "IQC 必检",
+      "raw_text": "IQC 重点尺寸测量 - ② 25.2±0.05，右侧斜向主尺寸，IQC 必检"
+    },
+    {
+      "subject": "中心圆孔直径",
+      "attribute": "内孔直径",
+      "value": "12.2",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "支架 T-Z1-P07 中心孔，可能套传感器筒",
+      "raw_text": "Ø12.2，内孔可能套传感器筒，tolerance ±0.05"
+    },
+    {
+      "subject": "外圆环直径",
+      "attribute": "外缘直径",
+      "value": "21.3",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "支架 T-Z1-P07 外缘",
+      "raw_text": "Ø21.3，支架外缘，tolerance ±0.05"
+    },
+    {
+      "subject": "装配孔直径",
+      "attribute": "孔径",
+      "value": "1.7",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "4处规则分布，用于固定支架到主壳体或PCB",
+      "raw_text": "4-Ø1.7±0.05，4处规则分布螺丝/定位孔"
+    },
+    {
+      "subject": "装配孔数量",
+      "attribute": "数量",
+      "value": "4",
+      "unit": "处",
+      "tolerance": "",
+      "condition": "支架 T-Z1-P07 固定孔",
+      "raw_text": "4-Ø1.7±0.05，4处规则分布螺丝/定位孔"
+    },
+    {
+      "subject": "小圆孔直径",
+      "attribute": "孔径",
+      "value": "9.5",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "右视图特征",
+      "raw_text": "右视图 Ø9.5±0.05"
+    },
+    {
+      "subject": "极薄壁厚度",
+      "attribute": "壁厚",
+      "value": "0.17",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "SECTION A-A 截面，疑为弹性变形/卡扣特征",
+      "raw_text": "SECTION A-A 0.17 极薄壁，很可能是某弹性变形/卡扣特征"
+    },
+    {
+      "subject": "零件材质",
+      "attribute": "材料牌号",
+      "value": "ABS（白色）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "支架 T-Z1-P07",
+      "raw_text": "材质为 ABS（白色）"
+    },
+    {
+      "subject": "法规合规",
+      "attribute": "符合标准",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "产品整体",
+      "raw_text": "产品符合 RoHS 2.0"
+    }
+  ]
+}

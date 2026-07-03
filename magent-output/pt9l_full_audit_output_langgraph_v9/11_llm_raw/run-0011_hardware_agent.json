@@ -1,0 +1,92 @@
+```json
+{
+  "agent": "Hardware Agent",
+  "summary": "Hardware audit context-recheck (ASG-0011) finds no biocompatibility report or PT5 sample-identity evidence in the supplied evidence catalog, confirms the PT3-P10 / PT5-M02+M03 spring BOM conflict and T-Z1-P10 dual-PCB part-number anomaly from RUN-0002 remain unresolved, and identifies a blood-pressure residue phrase in the battery design-verification plan that persists across two separate documents.",
+  "review_notes": [
+    "The evidence catalog supplied for this run contains no biocompatibility test report document, no PT5 sample description, and no material equivalence bridging rationale document. The Regulatory Agent (RUN-0006) finding that biocompatibility was conducted on PT5 samples cannot be confirmed or dismissed from hardware evidence alone; a dedicated biocompatibility report document is required.",
+    "PT5-M02 (positive spring) drawing is present as HW-135/HW-136/HW-137/HW-138 (F0190) and confirms PT5 is a sub-assembly spring part number within the PT9L product family, not a predecessor product model. This is relevant context for the biocompatibility sample identity question but does not resolve whether the tested samples are materially equivalent to PT9L production parts.",
+    "PCB part number PT9L-HFMP01 V1.0 is consistently referenced across EBOM (HW-040, HW-042, HW-077), SMT instructions (HW-062), and design output list (HW-079 through HW-084), indicating good internal consistency for the main PCB.",
+    "PCB part number PT9C-CNTP01 V1.0 appears in both the T1 EBOM (HW-041, HW-043) and the design-output EBOM (HW-078), indicating the sensor PCB carries a PT9C-prefixed document number in the active PT9L BOM without documented cross-product justification in the supplied evidence.",
+    "Measurement accuracy specification ±0.2 °C for ≥35 °C and ≤42 °C, and ±0.3 °C outside that range, is consistently stated across design input (HW-003), product inspection standard (HW-035), detection report (HW-037), design verification plan (HW-056), design verification report (HW-051), product overview (HW-063), and defect definition (HW-064). No accuracy inconsistency exists for body-temperature mode.",
+    "Measurement range 32 °C–42.9 °C stated in the label review (HW-024, HW-025) and operation guide (HW-034) is consistent across those documents.",
+    "Low-battery detection function BATDECT is referenced in software test plan (HW-059) and low-battery symbol is referenced in operation guide (HW-033); software requirement for low-battery state is noted (HW-060). No hardware-level low-voltage threshold value is specified in the supplied evidence catalog, so a quantitative low-voltage threshold consistency check cannot be performed.",
+    "PCB design review checklist items (HW-004 through HW-009) all show pass verdicts, indicating the E0 hardware design review was completed.",
+    "T1 sample review checklists (HW-014 through HW-022) show blank pass/fail fields for PCB-related assembly checks, consistent with the RUN-0002 finding of missing verdicts; this is not re-raised as a new finding but is noted as an unresolved prior finding."
+  ],
+  "findings": [
+    {
+      "finding_type": "missing_biocompatibility_sample_identity_evidence",
+      "severity": "P1",
+      "claim": "No biocompatibility test report or PT5 sample-identity document is present in the supplied evidence catalog, making it impossible to confirm or dismiss whether the tested samples are materially equivalent to PT9L production parts as flagged by RUN-0006.",
+      "rationale": "The assignment (ASG-0011) requires retrieval of biocompatibility report(s) identifying sample part numbers and cross-referencing them against PT9L-EBOM01. The entire evidence catalog (HW-001 through HW-140) contains no biocompatibility test report document. PT5-M02 is confirmed as a PT9L sub-assembly spring part (HW-135, HW-136, HW-137, HW-138, F0190), establishing that 'PT5' is a sub-assembly designation within the PT9L family rather than a predecessor product model, but this does not resolve whether biocompatibility samples were drawn from PT9L production-equivalent parts. No material equivalence justification or sample bridging rationale document is present in the supplied evidence. The gap cannot be closed without the biocompatibility report document.",
+      "evidence_ids": ["HW-135", "HW-136", "HW-137", "HW-138"],
+      "challenge_questions": [
+        "Can the biocompatibility test report(s) for PT9L be provided, specifically the section describing test sample identity, part numbers, and product model?",
+        "Is there a material equivalence or sample bridging rationale document that justifies using PT5-designated samples to cover PT9L production parts?",
+        "Which specific PT5 part numbers were submitted for biocompatibility testing, and do those part numbers appear in PT9L-EBOM01 V1.0?",
+        "If PT5 refers to a sub-assembly spring (PT5-M02/PT5-M03), were the biocompatibility samples limited to those spring parts, or did they cover all patient-contact materials in the PT9L assembly?"
+      ]
+    },
+    {
+      "finding_type": "pt9c_prefixed_sensor_pcb_in_pt9l_active_bom",
+      "severity": "P2",
+      "claim": "The sensor PCB listed in the active PT9L design-output EBOM (PT9L-EBOM01 V1.0) carries document number PT9C-CNTP01 V1.0, a PT9C-prefixed identifier, with no cross-product justification or shared-component rationale present in the supplied evidence.",
+      "rationale": "HW-078 (F0157, design-output EBOM) and HW-041/HW-043 (F0096/F0097, T1 EBOM) all list the sensor PCB as PT9C-CNTP01 V1.0 with part number K0118000084609A1106. The project profile states that PT9C appears as a sub-component PCB document number but also as a standalone product, and that documents referencing PT9C outside clearly marked historical/draft folders require justification. No justification document is present in the supplied evidence catalog. The main PCB PT9L-HFMP01 V1.0 carries a PT9L-prefixed number (HW-077, HW-040, HW-042) and is consistently documented, but the sensor PCB cross-product designation is undocumented.",
+      "evidence_ids": ["HW-041", "HW-043", "HW-077", "HW-078"],
+      "challenge_questions": [
+        "Is PT9C-CNTP01 V1.0 a shared component used in both PT9C and PT9L products, and if so, where is the shared-component or cross-product use justification document?",
+        "Does the PT9C-CNTP01 V1.0 sensor PCB drawing specify the same electrical and mechanical interface as required by the PT9L hardware design?",
+        "Has a design verification activity been performed specifically on PT9C-CNTP01 V1.0 in the context of PT9L assembly, or is verification coverage assumed from PT9C qualification?"
+      ]
+    },
+    {
+      "finding_type": "blood_pressure_residue_in_battery_verification_plan",
+      "severity": "P2",
+      "claim": "The design verification plan (F0121) and one section of the design verification report (F0114) contain the phrase '次血压测量' (blood pressure measurements) in the battery item, which is a blood-pressure-specific residue phrase that is inconsistent with PT9L being an infrared thermometer.",
+      "rationale": "HW-058 (F0121, design verification plan, battery item 20) states '在充满电后，电池电量至少能进行 次血压测量' and HW-055 (F0114, design verification report, battery item 20 in the second section) repeats the same phrase. By contrast, HW-053 (F0114, battery item 20 in the first section) and HW-002 (F0031, design input) use the generic phrase '次测量' without 'blood pressure'. The residue phrase in the verification plan and one report section indicates a copy-paste error from a blood-pressure product template that was not fully corrected, creating a document-control inconsistency in the active DHF. This was identified in RUN-0002 and remains unresolved.",
+      "evidence_ids": ["HW-055", "HW-058", "HW-053", "HW-002"],
+      "challenge_questions": [
+        "Has a document correction or errata been issued for F0121 and the affected section of F0114 to remove the blood-pressure residue phrase?",
+        "Was the battery life test actually conducted against a thermometer-specific measurement count criterion, and if so, what was the criterion and where is it documented?",
+        "Does the battery life test report referenced in HW-053 specify the number of thermometer measurements performed per charge cycle?"
+      ]
+    },
+    {
+      "finding_type": "bom_spring_part_number_conflict_unresolved",
+      "severity": "P2",
+      "claim": "The PT9L total-assembly drawing (F0178) lists PT3-P10 dual-spring as item 20, while the drawing's own annotation states PT9L actual assembly uses separate PT5-M02 and PT5-M03 springs, and the ABOM (F0094) also lists PT3-P10; no authoritative resolution document is present in the supplied evidence.",
+      "rationale": "HW-092 (F0178) shows PT3-P10 dual-spring as BOM item 20 in the total-assembly drawing. HW-089 and HW-090 (F0176, PT3-P10 drawing) state that PT9L actual assembly uses PT5-M02 + PT5-M03 and that PT3-P10 'does not necessarily enter PT9L mass-production BOM'. HW-039 (F0094, ABOM) lists PT3-P10. HW-135 through HW-138 (F0190) confirm PT5-M02 positive spring exists as a separate drawing. The conflict between the assembly drawing BOM, the ABOM, and the annotation on the PT3-P10 drawing has not been resolved by any authoritative ECO or BOM revision in the supplied evidence. This was identified in RUN-0002 and remains unresolved.",
+      "evidence_ids": ["HW-039", "HW-088", "HW-089", "HW-090", "HW-092", "HW-135"],
+      "challenge_questions": [
+        "Has an engineering change order (ECO) been issued to update the total-assembly drawing and ABOM to replace PT3-P10 with PT5-M02 and PT5-M03?",
+        "Which spring configuration—PT3-P10 or PT5-M02+M03—is used in the T1 sample units that underwent design verification testing?",
+        "If PT5-M02 and PT5-M03 are the production-intent parts, are their drawings and part numbers included in the current PT9L-EBOM01 and ABOM?"
+      ]
+    },
+    {
+      "finding_type": "assembly_drawing_part_number_collision_t_z1_p10",
+      "severity": "P2",
+      "claim": "In the PT9L total-assembly drawing (F0178), part number T-Z1-P10 is assigned to the sensor PCB (item 11), while a separate unnamed PCB appears as item 08, and the drawing annotation flags that T-Z1-P10 simultaneously designates both a bare board and a PCB, creating an ambiguous part-number assignment that is not resolved in the supplied evidence.",
+      "rationale": "HW-091 (F0178) flags 'BOM中T-Z1-P10同时指导光板和PCB（一图号两零件）'. HW-093 shows item 11 as T-Z1-P10 labeled PCB. HW-094 shows item 08 as an unnamed PCB. HW-095 and HW-096 describe the PCB group and sensor group separately. The active EBOM (HW-077, HW-078) uses PT9L-HFMP01 V1.0 and PT9C-CNTP01 V1.0 as the two PCB part numbers, which do not match T-Z1-P10, indicating the assembly drawing uses a different numbering scheme from the EBOM without a cross-reference table. This was identified in RUN-0002 and remains unresolved.",
+      "evidence_ids": ["HW-091", "HW-092", "HW-093", "HW-094", "HW-095", "HW-096", "HW-077", "HW-078"],
+      "challenge_questions": [
+        "What is the correct part number for the sensor PCB in the PT9L assembly—T-Z1-P10 or PT9C-CNTP01 V1.0—and is there a cross-reference table reconciling the assembly drawing numbering scheme with the EBOM?",
+        "Does T-Z1-P10 refer to a bare PCB substrate (光板) or a populated PCBA, and is this distinction captured in the drawing title block?",
+        "Has the total-assembly drawing been updated to use the same part numbers as PT9L-EBOM01 V1.0, or is a separate drawing-to-BOM mapping document maintained?"
+      ]
+    },
+    {
+      "finding_type": "object_temperature_accuracy_tolerance_applied_outside_specified_range",
+      "severity": "P3",
+      "claim": "Software test plans and test records apply ±0.2 °C accuracy tolerance to object-temperature mode measurements at 30 °C and 45 °C, which are outside the design-input accuracy specification range of ≥35 °C and ≤42 °C where ±0.2 °C applies; no documented justification for this tighter-than-required tolerance outside the specified range exists in the supplied evidence.",
+      "rationale": "HW-003 (F0031, design input) and HW-035 (F0090, inspection standard) specify ±0.2 °C for ≥35 °C and ≤42 °C, and ±0.3 °C for all other temperatures. HW-045 and HW-046 (F0101, software test plan) specify ±0.2 °C at 30 °C and 45 °C for object-temperature mode. HW-048 and HW-049 (F0102, software test record) repeat the same criteria. At 30 °C and 45 °C the design input permits ±0.3 °C, so applying ±0.2 °C is a tighter criterion; however, if the device fails at ±0.2 °C but passes at ±0.3 °C, the test record would show a failure that is not actually a non-conformance against the design input. Conversely, if the tighter criterion is intentional product policy, it should be documented. This was identified in RUN-0002 and remains unresolved.",
+      "evidence_ids": ["HW-003", "HW-035", "HW-045", "HW-046", "HW-048", "HW-049"],
+      "challenge_questions": [
+        "Is the ±0.2 °C criterion at 30 °C and 45 °C in the object-temperature software test plan an intentional product design decision, and if so, where is this documented as a design requirement?",
+        "If the ±0.2 °C criterion at 30 °C and 45 °C is a test-plan error, has a corrected test plan and re-test record been issued?",
+        "Do the actual test results at 30 °C and 45 °C in the software test records show pass or fail against the ±0.2 °C criterion, and would those results change if evaluated against the design-input ±0.3 °C criterion?"
+      ]
+    }
+  ]
+}
+```

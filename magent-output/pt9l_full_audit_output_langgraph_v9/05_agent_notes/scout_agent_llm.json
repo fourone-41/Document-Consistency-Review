@@ -1,0 +1,240 @@
+{
+  "agent": "Project Scout Agent",
+  "summary": "PT9L is confirmed as an infrared non-contact forehead thermometer targeting US 510(k) and CE markets, with a well-established regulatory baseline; however, the DHF corpus contains multiple suspicious legacy model references (PT2L, PT3SBT, PT9C, BP3L) in active design documents that are not clearly scoped as historical-only.",
+  "project_profile": {
+    "target_model": "PT9L",
+    "product_family": [
+      "PT9L",
+      "PT9C",
+      "PT2L",
+      "PT3SBT",
+      "BP3L"
+    ],
+    "document_id_patterns": [
+      "PT9L-KHXQ01",
+      "PT9L-KXPS01",
+      "PT9L-FXJH01",
+      "PT9L-FXGB01",
+      "PT9L-EBOM01",
+      "PT9L-T1EB01",
+      "PT9L-SJSC01",
+      "PT9C-CNTP01"
+    ],
+    "primary_scope_rules": [
+      "PT9L is the target product model for this DHF",
+      "Documents in '2L风险改 - 历史文件' folder are explicitly historical",
+      "Documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical/draft folders require justification"
+    ],
+    "key_entities": {
+      "customer": "九安 (iHealth / Jiuan Medical)",
+      "customer_representative": "赵一平",
+      "product_description": "红外非接触式额头温度计 (Infrared No-Touch Forehead Thermometer)",
+      "intended_use": "Intermittent measurement of body temperature from forehead skin surface on people of all ages; consumer home use and healthcare provider use",
+      "bluetooth": "PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)"
+    },
+    "regulatory_baseline": [
+      "ISO 80601-2-56:2017/Amd1:2018 (international, applicable)",
+      "EN ISO 80601-2-56:2017+A1:2018 (EU, applicability differs between draft and final design input)",
+      "ASTM E1965-98:2016 (US, applicable)",
+      "ASTM E1965-98:2023 (US, applicable)",
+      "MDR 2017/745 (EU, applicability differs between draft and final design input)",
+      "ISO 14971:2019 / EN ISO 14971:2019 / EN ISO 14971:2019/A11:2021 (risk management)",
+      "ISO/TR 24971:2020 (risk assessment methodology)",
+      "EN 60601-1-6:2010+A1:2015+A2:2021 (usability)",
+      "GB/T 16886.1-2022 / ISO 10993-1:2018 (biocompatibility, China)",
+      "510(k) registration: andon responsible and paying",
+      "CE registration: applicability not yet determined per final design input"
+    ],
+    "candidate_discovery_hints": [
+      "PT9C appears as a sub-component PCB document number and as a standalone product in clinical evaluation and user test documents",
+      "PT3SBT appears in design output list two and a label review document filed under T1 sample folder",
+      "BP3L software diagrams appear in both the main software design folder and T1 sample subfolder",
+      "PT2L risk documents are in a '历史文件' subfolder but one (F0013) carries a PT9L document number internally"
+    ]
+  },
+  "review_notes": [
+    "The project initiation approval (F0004) and customer requirements (F0001, F0002) consistently identify PT9L as an infrared forehead thermometer, confirming product identity.",
+    "The 510(k) registration responsibility is clearly assigned to 'andon' (both registrant and payer) per SCOUT-006.",
+    "CE registration responsibility is marked as not yet determined (all boxes unchecked) in the final design input (F0031, SCOUT-065) but is marked applicable in the draft (F0319, SCOUT-071); this discrepancy should be tracked but may reflect a deliberate scope decision.",
+    "ISO 14971:2019 and its EN harmonized version with A11:2021 are explicitly cited as the risk management standard in F0017 (SCOUT-034), providing a clear regulatory baseline.",
+    "The '2L风险改 - 历史文件' folder label suggests PT2L documents (F0013–F0016) are intentionally archived as historical reference, which partially mitigates their presence.",
+    "The Risk Management Report (F0020, SCOUT-051) explicitly states 'PT9L can transmit the temperature to a smart device with Bluetooth,' confirming Bluetooth is an intended feature of PT9L.",
+    "Test reports (F0459, F0468) confirm ASTM E1965-98 testing was performed on PT9L hardware, supporting the regulatory baseline."
+  ],
+  "findings": [
+    {
+      "finding_type": "legacy_model_contamination_in_active_risk_document",
+      "severity": "P1",
+      "claim": "A risk management plan file named 'PT2L美亚-FXJH01 V1.0' (F0013) carries the PT9L document number 'PT9L-FXJH01 V1.0' internally and lists 'Product model: PT9L', creating an identity conflict between the filename (PT2L) and the document content (PT9L).",
+      "rationale": "SCOUT-077 shows the file title is 'V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0'. SCOUT-024 shows the internal document number is 'PT9L-FXJH01 V1.0'. SCOUT-025 shows 'Product model: PT9L'. This means a document bearing a PT2L filename has been assigned a PT9L document number and product model, which could cause traceability confusion and suggests the document may have been copied from a PT9L template without proper renaming, or vice versa.",
+      "evidence_ids": [
+        "SCOUT-077",
+        "SCOUT-024",
+        "SCOUT-025"
+      ],
+      "challenge_questions": [
+        "Is F0013 intended to be a PT2L risk management plan or a PT9L risk management plan? Which is authoritative?",
+        "Was this document created by copying the PT9L risk plan template and forgetting to update the filename, or was the PT9L document number assigned in error?",
+        "Is F0013 superseded by F0021 (the PT9L-prefixed version of the same risk plan)? If so, has F0013 been formally obsoleted?"
+      ]
+    },
+    {
+      "finding_type": "legacy_model_reference_in_active_risk_assessment",
+      "severity": "P1",
+      "claim": "The active Risk Assessment Report (F0018) and the active Verification of Risk Control Measures report (F0019), both at V2.0 dated 2024-05-30, contain intended-use statements referencing 'PT3SBT' instead of 'PT9L', indicating residual legacy model text was not updated during the V2.0 revision.",
+      "rationale": "SCOUT-097 (F0018, line 93) and SCOUT-046/SCOUT-098 (F0019, lines 85) both state 'And PT3SBT can transmit the temperature to a smart device with Bluetooth.' The corresponding statement in the Risk Management Report (F0020, SCOUT-051) correctly reads 'PT9L'. These are active, non-historical documents filed under '03 风险分析\\Attachment 7', not in the historical subfolder. The V2.0 revision history (SCOUT-037, SCOUT-043) does not mention correcting the product model reference.",
+      "evidence_ids": [
+        "SCOUT-046",
+        "SCOUT-097",
+        "SCOUT-098",
+        "SCOUT-037",
+        "SCOUT-043"
+      ],
+      "challenge_questions": [
+        "Were F0018 and F0019 derived from PT3SBT risk documents? If so, has a formal change control record been created to document the adaptation?",
+        "Why does the Risk Management Report (F0020) correctly say PT9L while the Risk Assessment Report (F0018) and Verification Report (F0019) say PT3SBT?",
+        "Has a corrective revision (V2.1 or V3.0) been initiated to replace 'PT3SBT' with 'PT9L' in F0018 and F0019?"
+      ]
+    },
+    {
+      "finding_type": "wrong_model_document_number_in_design_confirmation_file",
+      "severity": "P1",
+      "claim": "A usability checklist filed under the PT9L design confirmation folder (F0245/F0246) carries the document number 'PT2L（美亚）-UETR01 V1.0' in both its title and internal content, indicating a PT2L usability document has been placed in the PT9L DHF without apparent re-identification.",
+      "rationale": "SCOUT-139 and SCOUT-144 show the file title is 'PT9L Checklist of (EN 60601-1-6...) PT2L（美亚）-UETR01 V1.0'. SCOUT-142 confirms the source PDF path includes 'PT9L DHF-历史文件/设计确认/' and the document number is 'PT2L（美亚）-UETR01 V1.0'. The filename prefix 'PT9L' appears to be a folder/filing label rather than the document's own identifier. This document is a PT2L artifact filed as PT9L design confirmation evidence.",
+      "evidence_ids": [
+        "SCOUT-139",
+        "SCOUT-140",
+        "SCOUT-141",
+        "SCOUT-142",
+        "SCOUT-143"
+      ],
+      "challenge_questions": [
+        "Is this PT2L usability checklist being used as a predicate/reference document for PT9L, or is it intended to serve as the actual PT9L usability confirmation record?",
+        "Has a PT9L-specific usability evaluation report (e.g., PT9L-UETR01) been created? If so, where is it in the DHF?",
+        "If this PT2L document is used as supporting evidence, has a formal similarity/equivalence justification been documented?"
+      ]
+    },
+    {
+      "finding_type": "bp3l_software_diagrams_in_pt9l_dhf",
+      "severity": "P2",
+      "claim": "Software diagram files titled 'BP3L 软件图样E0 23.11' appear in two locations within the PT9L DHF: the main software design folder (F0052) and the T1 sample subfolder (F0131), with no visible PT9L identifier in the document content.",
+      "rationale": "SCOUT-099 and SCOUT-113 both show the document title as 'BP3L 软件图样E0 23.11'. SCOUT-100–104 and SCOUT-114–118 show only BP3L-labeled image assets. These files are located at '07 软件设计方案E0 23.11\\软件图样E0 23.11\\' and '11 T1样机\\软件文件底稿\\软件图样E0 23.11\\' respectively, both of which are active PT9L DHF folders. No PT9L model identifier appears in the extracted content.",
+      "evidence_ids": [
+        "SCOUT-099",
+        "SCOUT-100",
+        "SCOUT-101",
+        "SCOUT-102",
+        "SCOUT-103"
+      ],
+      "challenge_questions": [
+        "Is BP3L a sub-component, platform, or predecessor model whose software is reused in PT9L? If so, is there a documented software reuse/adaptation justification?",
+        "Should these files be titled 'PT9L 软件图样' or is 'BP3L' the correct internal component designation?",
+        "Are there PT9L-specific software diagrams that should replace or supplement these BP3L diagrams in the DHF?"
+      ]
+    },
+    {
+      "finding_type": "pt3sbt_design_output_list_in_pt9l_dhf",
+      "severity": "P2",
+      "claim": "Design Output List Two (F0235 and F0236), filed in the PT9L DHF under '12 设计输出', contains a substantial section with product model 'PT3SBT' including PT3SBT-prefixed BOM entries, assembly instructions, and packaging components, with no PT9L identifier visible in the PT3SBT section.",
+      "rationale": "SCOUT-126–131 (F0236) and SCOUT-132–137 (F0235) show entries such as 'PT3SBT-PBOM01', 'PT3SBT-ABOM01', 'PT3SBT-P01', 'PT3SBT（国内）-ZPSM01', and a header stating '产品型号:PT3SBT 提交部门:智能产品部'. These appear in the active design output list, not in a historical subfolder.",
+      "evidence_ids": [
+        "SCOUT-126",
+        "SCOUT-127",
+        "SCOUT-128",
+        "SCOUT-129",
+        "SCOUT-130"
+      ],
+      "challenge_questions": [
+        "Is PT3SBT a variant or sub-model of PT9L that shares the same DHF, or is this a separate product whose design outputs have been incorrectly included?",
+        "If PT3SBT is a variant, has a formal variant/family device justification been documented in the DHF?",
+        "Should Design Output List Two be split into PT9L-specific and PT3SBT-specific sections, or does the current combined structure reflect an intentional product family approach?"
+      ]
+    },
+    {
+      "finding_type": "pt3sbt_label_review_in_t1_sample_folder",
+      "severity": "P2",
+      "claim": "A label review document titled 'PT3SBT标签审核表（海外更新）' (F0082) is filed in the PT9L DHF T1 sample folder and internally references product model PT2L with PT2L-prefixed document numbers, creating a dual legacy model contamination (PT3SBT in title, PT2L in content).",
+      "rationale": "SCOUT-105 shows the file title is 'PT3SBT标签审核表（海外更新）'. SCOUT-106 shows the internal header reads 'PT2L(美亚)标签检查报告'. SCOUT-107 shows '产品型号：PT2L 项目编号：2020-DEV01'. SCOUT-108–110 show PT2L-prefixed document numbers (PT2L-SMSP09, PT2L-CBZP07, PT2L-F96). This document is filed at '11 T1样机\\' which is an active PT9L DHF folder.",
+      "evidence_ids": [
+        "SCOUT-105",
+        "SCOUT-106",
+        "SCOUT-107",
+        "SCOUT-108",
+        "SCOUT-109"
+      ],
+      "challenge_questions": [
+        "Why is a PT2L label review document filed in the PT9L T1 sample folder under a PT3SBT filename?",
+        "Is this document intended as a reference/predicate for PT9L labeling, or was it filed here in error?",
+        "Has a PT9L-specific label review been completed? If so, where is it in the DHF?"
+      ]
+    },
+    {
+      "finding_type": "pt9c_references_in_active_pt9l_documents",
+      "severity": "P2",
+      "claim": "Multiple active PT9L DHF documents reference model PT9C in ways that suggest PT9C may be a predecessor or variant whose identity has not been fully separated from PT9L, including a design confirmation DHF index entry, a clinical evaluation report, a user test plan, and a draft operation guide.",
+      "rationale": "SCOUT-150 (F0268, DHF index) shows design output list entry with 'PT9C' in the remarks column. SCOUT-145–148 (F0255) show a clinical evaluation report filed under PT9L design confirmation that internally identifies the product as 'PT9CL' and 'PT9C'. SCOUT-149 (F0260) shows a user field test plan titled 'PT9C V1.0'. SCOUT-151–156 (F0281, F0283) show draft operation guides with concatenated model strings 'PT9CPT9L' throughout, suggesting a find-replace was performed incompletely.",
+      "evidence_ids": [
+        "SCOUT-145",
+        "SCOUT-146",
+        "SCOUT-147",
+        "SCOUT-148",
+        "SCOUT-149"
+      ],
+      "challenge_questions": [
+        "What is the relationship between PT9C and PT9L? Is PT9C a predecessor, a variant, or a sub-component platform?",
+        "The draft operation guide (F0281, F0283) contains 'PT9CPT9L' as a concatenated string throughout — was a find-and-replace operation performed incompletely? Has a corrected final version been issued?",
+        "The clinical evaluation report (F0255) is filed in a '废案与备份' (废案 = rejected/void) subfolder — has it been formally voided and replaced with a PT9L-specific clinical evaluation?",
+        "The DHF index (F0268) notes 'PT9C' against the design output list — does this mean the design output list was originally created for PT9C and adapted for PT9L without re-identification?"
+      ]
+    },
+    {
+      "finding_type": "mdr_applicability_inconsistency_between_draft_and_final_design_input",
+      "severity": "P2",
+      "claim": "The applicability of MDR 2017/745 is marked differently between the draft design input (F0319, marked applicable '■是') and the final design input (F0031, marked not applicable '■否'), with no documented rationale for the change visible in the evidence.",
+      "rationale": "SCOUT-071 (F0319, draft) shows MDR 2017/745 marked '■是 □否' (applicable). SCOUT-065 (F0031, final) shows MDR 2017/745 marked '□是 ■否' (not applicable). Similarly, EN ISO 80601-2-56 applicability changed from '■是' in the draft (SCOUT-068) to '□是 ■否' in the final (SCOUT-062). These are substantive regulatory scope changes that should be supported by documented justification.",
+      "evidence_ids": [
+        "SCOUT-065",
+        "SCOUT-071",
+        "SCOUT-062",
+        "SCOUT-068"
+      ],
+      "challenge_questions": [
+        "What is the documented rationale for removing MDR 2017/745 applicability between the draft and final design input?",
+        "If CE registration is not currently planned (consistent with the CE registration checkbox being unchecked in SCOUT-006), has this been formally communicated to the customer and recorded in a design change or scope decision document?",
+        "Does the removal of EN ISO 80601-2-56 applicability align with the CE registration status decision?"
+      ]
+    },
+    {
+      "finding_type": "pt9c_pcb_document_number_in_pt9l_bom",
+      "severity": "P3",
+      "claim": "The PT9L engineering BOM and T1 sample BOM both reference a PCB with document number 'PT9C-CNTP01 V1.0', and the design output list one also lists this PT9C-prefixed PCB drawing across multiple layers, indicating a PT9C-numbered component is embedded in the PT9L design outputs.",
+      "rationale": "SCOUT-111 (F0096), SCOUT-112 (F0097), and SCOUT-119 (F0157) all show the PCB entry 'PT9C-CNTP01 V1.0' in PT9L BOM documents. SCOUT-120–125 (F0160) show the same PT9C-CNTP01 V1.0 document number listed across five PCB layer drawings in the PT9L design output list one.",
+      "evidence_ids": [
+        "SCOUT-111",
+        "SCOUT-112",
+        "SCOUT-119",
+        "SCOUT-120",
+        "SCOUT-121"
+      ],
+      "challenge_questions": [
+        "Is PT9C-CNTP01 a shared/common PCB used across both PT9C and PT9L products, or should it have been re-numbered as PT9L-CNTP01 for the PT9L DHF?",
+        "If the PCB is shared between PT9C and PT9L, has a formal component reuse or platform sharing justification been documented?",
+        "Does the PT9C-CNTP01 PCB drawing reflect the actual hardware used in PT9L, or has the hardware been modified without a corresponding document number update?"
+      ]
+    },
+    {
+      "finding_type": "pt9c_design_confirmation_document_in_pt9l_dhf",
+      "severity": "P3",
+      "claim": "A design confirmation document titled 'PT9C设计确认E0 23.11' (F0242) is filed in the PT9L DHF design confirmation folder ('18 设计确认'), with no PT9L identifier in the document title.",
+      "rationale": "SCOUT-138 shows the document title is 'PT9C设计确认E0 23.11' filed at '18 设计确认\\PT9C设计确认E0 23.11.via_xlsx.clean.md'. This is an active PT9L DHF folder, and the document title identifies it as a PT9C design confirmation rather than PT9L.",
+      "evidence_ids": [
+        "SCOUT-138"
+      ],
+      "challenge_questions": [
+        "Is this PT9C design confirmation document intended to serve as the PT9L design confirmation, or is it a reference/predicate document?",
+        "Has a PT9L-specific design confirmation document been created? If so, where is it in the DHF?",
+        "If PT9C and PT9L share design confirmation activities, has this been formally justified in the DHF?"
+      ]
+    }
+  ]
+}

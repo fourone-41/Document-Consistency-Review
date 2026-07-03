@@ -1,0 +1,209 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "total_pages": 182,
+    "current_pages": "148-149",
+    "standard_references": [
+      "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    ]
+  },
+  "tests": [
+    {
+      "clause": "13.1.2",
+      "description": "Measurement of power or energy dissipation in parts & components to waive SINGLE FAULT CONDITIONS in 4.7, 8.1 b), 8.7.2, and 13.2.2 relative to emission of flames, molten metal, or ignitable substances",
+      "result": "N/A",
+      "parameters": {
+        "power_dissipated_threshold_W": 15,
+        "energy_dissipated_threshold_J": 900
+      }
+    },
+    {
+      "clause": "13.2.2",
+      "description": "Electrical SINGLE FAULT CONDITIONS per Clause 8.1 - Battery reversal",
+      "result": "No HAZARDOUS SITUATION"
+    },
+    {
+      "clause": "13.2.3",
+      "description": "Overheating of transformers per Clause 15.5",
+      "result": "N/A"
+    },
+    {
+      "clause": "13.2.4",
+      "description": "Failure of THERMOSTATS according to 13.2.13 & 15.4.2, overloading - THERMOSTATS short circuited or interrupted, the less favourable of the two",
+      "result": "N/A"
+    },
+    {
+      "clause": "13.2.5",
+      "description": "Failure of temperature limiting devices according to 13.2.13 & 15.4.2, overloading, THERMOSTATS short circuited or interrupted, the less favourable of the two",
+      "result": "No HAZARDOUS SITUATION (two items)"
+    },
+    {
+      "clause": "13.2.6",
+      "description": "Leakage of liquid - RISK MANAGEMENT FILE examined to determine the appropriate test conditions (sealed rechargeable batteries exempted)",
+      "result": "N/A"
+    },
+    {
+      "clause": "13.2.7",
+      "description": "Impairment of cooling that could result in a HAZARD using test method of 11.1",
+      "sub_tests": [
+        {
+          "description": "Single ventilation fans locked consecutively",
+          "result": "N/A"
+        },
+        {
+          "description": "Ventilation openings on top and sides impaired by covering openings on top of ENCLOSURE or positioning of ME EQUIPMENT against walls",
+          "result": "N/A"
+        },
+        {
+          "description": "Simulated blocking of filters",
+          "result": "N/A"
+        },
+        {
+          "description": "Flow of a cooling agent interrupted",
+          "result": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "13.2.8",
+      "description": "Locking of moving parts – Only one part locked at a time",
+      "sub_tests": [
+        {
+          "description": "The pump or valve part is stuck",
+          "result": "The equipment stop working",
+          "hazardous_situation": "No"
+        }
+      ]
+    },
+    {
+      "clause": "13.2.9",
+      "description": "Interruption and short circuiting of motor capacitors – Motor capacitors short & open circuited",
+      "result": "N/A"
+    },
+    {
+      "clause": "13.2.10",
+      "description": "Additional test criteria for motor operated ME EQUIPMENT in 13.2.8 & 13.2.9",
+      "sub_tests": [
+        {
+          "description": "Motor-operated EQUIPMENT started from COLD CONDITION at RATED voltage for specified time",
+          "result": "N/A"
+        },
+        {
+          "description": "Temperatures of windings determined at end of specified test periods or at the instant of operation of fuses, THERMAL CUT-OUTS, motor protective devices",
+          "result": "N/A"
+        },
+        {
+          "description": "Temperatures measured as specified in 11.1.3 d)",
+          "result": "N/A"
+        },
+        {
+          "description": "Temperatures did not exceed limits of Table 26",
+          "result": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "13.2.11",
+      "description": "Failures of components in ME EQUIPMENT used in conjunction with OXYGEN RICH ENVIRONMENTS",
+      "result": "N/A"
+    },
+    {
+      "clause": "13.2.12",
+      "description": "Failure of parts that might result in a MECHANICAL HAZARD (See 9 & 15.3)",
+      "sub_tests": [
+        {
+          "description": "Refer 15.3",
+          "hazardous_situation": "No"
+        }
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC60601-1",
+      "version": "2005+AMD1:2012+AMD2:2020",
+      "clauses_referenced": [
+        "4.7",
+        "8.1",
+        "8.7.2",
+        "11.1",
+        "11.1.3",
+        "13.2.2",
+        "13.2.3",
+        "13.2.4",
+        "13.2.5",
+        "13.2.6",
+        "13.2.7",
+        "13.2.8",
+        "13.2.9",
+        "13.2.10",
+        "13.2.11",
+        "13.2.12",
+        "13.2.13",
+        "15.3",
+        "15.4.2",
+        "15.5"
+      ]
+    },
+    {
+      "standard": "EN60601-1",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Single Fault Condition test 13.2.8: When the pump or valve part is stuck (locking of moving parts), the equipment stops working. This condition does not result in a HAZARDOUS SITUATION (No).",
+      "topic_tags": [
+        "single fault condition",
+        "pump",
+        "valve",
+        "locking of moving parts",
+        "13.2.8"
+      ],
+      "related_subjects": [
+        "13.2.8",
+        "13.2.10",
+        "ETX2023-07-078-02"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Per clause 13.1.2, SINGLE FAULT CONDITIONS related to emission of flames, molten metal, or ignitable substances may be waived if power dissipated is less than 15 W and energy dissipated is less than 900 J.",
+      "topic_tags": [
+        "single fault condition waiver",
+        "power dissipation",
+        "energy dissipation",
+        "13.1.2",
+        "flames",
+        "molten metal"
+      ],
+      "related_subjects": [
+        "13.1.2",
+        "4.7",
+        "8.1",
+        "8.7.2",
+        "13.2.2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Per clause 13.2.10, for every test in SINGLE FAULT CONDITION of 13.2.8 and 13.2.9, motor-operated EQUIPMENT is started from COLD CONDITION at RATED voltage or upper limit of RATED voltage range for specified time. Temperatures of windings are determined at end of specified test periods or at the instant of operation of fuses, THERMAL CUT-OUTS, or motor protective devices. Temperatures measured as specified in 11.1.3 d) and must not exceed limits of Table 26. All results: N/A.",
+      "topic_tags": [
+        "motor operated equipment",
+        "single fault condition",
+        "thermal limits",
+        "13.2.10",
+        "Table 26",
+        "cold condition"
+      ],
+      "related_subjects": [
+        "13.2.8",
+        "13.2.9",
+        "13.2.10",
+        "11.1.3"
+      ]
+    }
+  ]
+}

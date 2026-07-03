@@ -1,0 +1,664 @@
+{
+  "document": {
+    "title": "软件设计方案",
+    "doc_type": "软件设计方案",
+    "version": "V1.0"
+  },
+  "software_items": [
+    {
+      "item_type": "软件运行环境",
+      "name": "单片机系统",
+      "description": "软件的预期运行环境",
+      "value": "simBH67F2762",
+      "run_environment": "单片机系统 simBH67F2762"
+    }
+  ],
+  "functions": [
+    {
+      "name": "初始化功能",
+      "description": "首次上电或被唤醒后，初始化全局变量、IO、时钟，LCD；MCU系统功能初始化，配置相关模块和功能设置，读取EEPROM存储信息"
+    },
+    {
+      "name": "关机功能",
+      "description": "当完成测量后，启动定时器计时，当达15秒后关闭外设，同时单片机进入低功耗状态；期间如果有测量动作则重新计时。模式设置界面，设置完成后，没有按键按下，机器会在3秒后自动关机"
+    },
+    {
+      "name": "LCD显示功能",
+      "description": "首次上电后，LCD全屏显示3秒；测量完成后，LCD显示测量温度结果、单位、电量等信息；结合测试结果给出发烧提示，用背光颜色区分"
+    },
+    {
+      "name": "蜂鸣器提示功能",
+      "description": "在首次上电时，蜂鸣器长鸣；LCD显示测量结果时，成功长鸣，发烧连续四次短鸣；模式设置界面，选择时短鸣，确认后长鸣"
+    },
+    {
+      "name": "低电压检测功能",
+      "description": "如果电源电压2.5V–2.7V时，LCD能提示低电压并保存低电状态，直至下次重新上电后再检测；如果电源电压小于2.5V时，LCD提示超低电压后关机，一直保存此状态，直至下次重新上电后再检测"
+    },
+    {
+      "name": "测量模式设置功能",
+      "description": "在开机状态下，短按设置按键，切换测量模式；按下测量按键，保存当前模式，并完成一次测量；选择完成后，15s没有操作，进入关机状态"
+    },
+    {
+      "name": "单位切换功能",
+      "description": "长按测量按键8秒后，出现单位图标闪烁，短按测量按键切换单位，选好后长按2秒，图标停止闪烁，3秒后关机；如果进入设置后无按键操作，15秒关机"
+    },
+    {
+      "name": "测量功能",
+      "description": "单片机检测到按键按下后，单片机读取ADC采集数据；在深度测量模式下，单片机连续读取ADC采集数据，直到测量时间结束，通过计算得出温度值，在屏幕显示结果，并且蜂鸣器提示"
+    },
+    {
+      "name": "错误显示功能",
+      "description": "当环境温度超出10~40℃，LCD闪烁显示\"Err\"；测温大于42.9℃，或小于32℃提示\"---℃\"，不显示结果"
+    },
+    {
+      "name": "记忆功能",
+      "description": "每次测量成功，把数据保存到EEPROM，同时也保存测量模式等信息；长按设置按键3秒进入记忆查看模式，且只能查看之前测量模式下对应的记忆数据，如果想查看其他模式记忆，需要退出记忆后切换测量模式再查看；关机状态下，同时长按测量键和设置键8秒，可清空记忆"
+    }
+  ],
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "编制（软件工程师）"
+    },
+    {
+      "name": "侯广伟",
+      "title": "批准（技术负责人）"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RJFA01"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-SJSR01 V1.0"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-RJCH01 V1.0"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-RJXQ01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "01",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": "2024.2.2"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "用户测量流程：单片机ADC采集外部NTC、红外传感器的环境温度和物体温度，当环境温度在允许测量范围以内，采集红外传感器的温度值并优化，通过环境温度值和物体温度值计算出人体实际的温度值。",
+      "topic_tags": [
+        "用户测量流程",
+        "ADC采集",
+        "NTC",
+        "红外传感器",
+        "体温计算"
+      ],
+      "related_subjects": [
+        "测量功能",
+        "红外传感器接口",
+        "NTC采样"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "黑体测试流程：单片机ADC采集红外传感器的环境温度和物体温度，并通过补偿算法得出黑体的温度（不转化为人体体温）并进行显示。本模式用于检查机器能否测得正确的物体温度。",
+      "topic_tags": [
+        "黑体测试",
+        "补偿算法",
+        "ADC采集",
+        "红外传感器"
+      ],
+      "related_subjects": [
+        "测量功能",
+        "红外传感器接口"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "UE模式：UE模式下对传感器的值进行实时读取与显示，包括电池电压、内部NTC的温度值、阻值、红外传感器电压、AD值，按下按键，切换采集的参数。",
+      "topic_tags": [
+        "UE模式",
+        "传感器实时读取",
+        "NTC",
+        "红外传感器",
+        "电池电压"
+      ],
+      "related_subjects": [
+        "NTC采样",
+        "电池电量采集",
+        "红外传感器接口"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "UE2模式：UE2模式下，单片机读取EEPROM中保存的标定和校准参数，以及软件版本信息和硬件版本信息，并进行显示。按下按键，切换显示的参数。",
+      "topic_tags": [
+        "UE2模式",
+        "EEPROM",
+        "标定参数",
+        "校准参数",
+        "版本信息"
+      ],
+      "related_subjects": [
+        "初始化功能",
+        "记忆功能"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "邦定检测：为工厂对机芯进行检测的状态，在该状态下能够对单片机的IO邦定、电路板元器件的焊接进行检测，在检测完成后，相应标志位进行设置并保存入EEPROM。",
+      "topic_tags": [
+        "邦定检测",
+        "工厂检测",
+        "IO检测",
+        "焊接检测",
+        "EEPROM"
+      ],
+      "related_subjects": [
+        "初始化功能"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "软、硬件接口方案：按键 Pin45、Pin40；蜂鸣器 Pin38；LCD显示 Pin8~Pin25；红外传感器接口 Pin3、Pin4；LCD背光驱动接口 Pin35、Pin36、Pin39；NTC采样 Pin42；电池电量采集 Pin41；静音开关接口 Pin44。",
+      "topic_tags": [
+        "硬件接口",
+        "引脚配置",
+        "按键",
+        "蜂鸣器",
+        "LCD",
+        "红外传感器",
+        "NTC",
+        "电池"
+      ],
+      "related_subjects": [
+        "测量功能",
+        "LCD显示功能",
+        "蜂鸣器提示功能",
+        "低电压检测功能"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "降低风险的措施方案：1）显示信息不明确——危害处境：患者、操作者将显示的信息理解错误——措施方案：软件对显示功能做测试，说明书解释显示的信息；2）不正确的算法——危害处境：患者、操作者使用了算法不正确的设备——措施方案：软件发布前进行算法验证；3）不正确的测试结果存储（包括结果分组和时间的对应）——危害处境：患者、操作者查询错误的记忆值——措施方案：软件对记忆功能做测试。",
+      "topic_tags": [
+        "风险措施",
+        "危害分析",
+        "显示功能",
+        "算法验证",
+        "记忆功能"
+      ],
+      "related_subjects": [
+        "LCD显示功能",
+        "测量功能",
+        "记忆功能",
+        "错误显示功能"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "07 软件设计方案E0 23.11/软件方案E0 23.11/3-1 软件方案设计E0  23.11.md",
+    "doc_type": "software_design"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "软件设计方案",
+      "to": "01",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "单片机系统",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "用户测量流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外传感器接口",
+      "to": "用户测量流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "NTC采样",
+      "to": "用户测量流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "黑体测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外传感器接口",
+      "to": "黑体测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "NTC采样",
+      "to": "UE模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池电量采集",
+      "to": "UE模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外传感器接口",
+      "to": "UE模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "初始化功能",
+      "to": "UE2模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "记忆功能",
+      "to": "UE2模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "初始化功能",
+      "to": "邦定检测",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "硬件接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "硬件接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "蜂鸣器提示功能",
+      "to": "硬件接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低电压检测功能",
+      "to": "硬件接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "风险措施",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "风险措施",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "记忆功能",
+      "to": "风险措施",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "错误显示功能",
+      "to": "风险措施",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "初始化功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "关机功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "LCD显示功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "蜂鸣器提示功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "低电压检测功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "测量模式设置功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "单位切换功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "测量功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "错误显示功能",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件设计方案",
+      "to": "记忆功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "黑体测试流程",
+      "properties": {
+        "fragment_type": "working_principle"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "UE模式",
+      "properties": {
+        "fragment_type": "working_principle"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "软、硬件接口方案",
+      "properties": {
+        "fragment_type": "design_rationale"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "软、硬件接口方案",
+      "properties": {
+        "fragment_type": "design_rationale"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "蜂鸣器提示功能",
+      "to": "软、硬件接口方案",
+      "properties": {
+        "fragment_type": "design_rationale"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低电压检测功能",
+      "to": "软、硬件接口方案",
+      "properties": {
+        "fragment_type": "design_rationale"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "降低风险的措施方案",
+      "properties": {
+        "fragment_type": "constraint_statement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "降低风险的措施方案",
+      "properties": {
+        "fragment_type": "constraint_statement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "记忆功能",
+      "to": "降低风险的措施方案",
+      "properties": {
+        "fragment_type": "constraint_statement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "错误显示功能",
+      "to": "降低风险的措施方案",
+      "properties": {
+        "fragment_type": "constraint_statement"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RJFA01",
+      "properties": {
+        "role": "编制（软件工程师）"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RJFA01",
+      "properties": {
+        "role": "批准（技术负责人）"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RJFA01",
+      "to": "01",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "王迪",
+        "date": "2024.2.2"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "自动关机",
+      "attribute": "计时时长（测量完成后）",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "完成测量后启动计时，期间无测量动作",
+      "raw_text": "当完成测量后，启动定时器计时，当达15秒后关闭外设，同时单片机进入低功耗状态"
+    },
+    {
+      "subject": "自动关机",
+      "attribute": "计时时长（模式设置界面）",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "模式设置界面，设置完成后无按键按下",
+      "raw_text": "模式设置界面，设置完成后，没有按键按下，机器会在3秒后自动关机"
+    },
+    {
+      "subject": "LCD全屏显示",
+      "attribute": "持续时长（首次上电）",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "首次上电后",
+      "raw_text": "首次上电后，LCD全屏显示3秒"
+    },
+    {
+      "subject": "发烧蜂鸣提示",
+      "attribute": "短鸣次数",
+      "value": "4",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "LCD显示测量结果且判定为发烧时",
+      "raw_text": "发烧连续四次短鸣"
+    },
+    {
+      "subject": "低电压检测",
+      "attribute": "低电压阈值范围",
+      "value": "2.5~2.7",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "电源电压在此范围内时LCD提示低电压",
+      "raw_text": "如果电源电压2.5V–2.7V时，LCD能提示低电压并保存低电状态"
+    },
+    {
+      "subject": "低电压检测",
+      "attribute": "超低电压关机阈值",
+      "value": "2.5",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "电源电压小于此值时LCD提示超低电压后关机",
+      "raw_text": "如果电源电压小于2.5V时，LCD提示超低电压后关机"
+    },
+    {
+      "subject": "测量模式设置",
+      "attribute": "无操作自动关机时长",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "开机状态下进入测量模式选择后无操作",
+      "raw_text": "选择完成后，15s没有操作，进入关机状态"
+    },
+    {
+      "subject": "单位切换",
+      "attribute": "长按触发时长",
+      "value": "8",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "开机状态下长按测量按键",
+      "raw_text": "长按测量按键8秒后，出现单位图标闪烁"
+    },
+    {
+      "subject": "单位切换",
+      "attribute": "长按确认时长",
+      "value": "2",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "选好单位后长按测量按键确认",
+      "raw_text": "选好后长按2秒，图标停止闪烁"
+    },
+    {
+      "subject": "单位切换",
+      "attribute": "确认后自动关机时长",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "单位确认完成后",
+      "raw_text": "图标停止闪烁，3秒后关机"
+    },
+    {
+      "subject": "单位切换",
+      "attribute": "无操作自动关机时长",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "进入单位设置后无按键操作",
+      "raw_text": "如果进入设置后无按键操作，15秒关机"
+    },
+    {
+      "subject": "环境温度错误提示",
+      "attribute": "有效环境温度范围",
+      "value": "10~40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "超出此范围时LCD闪烁显示Err",
+      "raw_text": "当环境温度超出10~40℃，LCD闪烁显示\"Err\""
+    },
+    {
+      "subject": "体温测量上限",
+      "attribute": "超量程提示阈值",
+      "value": "42.9",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "测温大于此值时提示\"---℃\"不显示结果",
+      "raw_text": "测温大于42.9℃，或小于32℃提示\"---℃\"，不显示结果"
+    },
+    {
+      "subject": "体温测量下限",
+      "attribute": "超量程提示阈值",
+      "value": "32",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "测温小于此值时提示\"---℃\"不显示结果",
+      "raw_text": "测温大于42.9℃，或小于32℃提示\"---℃\"，不显示结果"
+    },
+    {
+      "subject": "记忆清空",
+      "attribute": "长按触发时长",
+      "value": "8",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "关机状态下同时长按测量键和设置键",
+      "raw_text": "关机状态下，同时长按测量键和设置键8秒，可清空记忆"
+    },
+    {
+      "subject": "记忆查看",
+      "attribute": "长按进入时长",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "长按设置按键进入记忆查看模式",
+      "raw_text": "长按设置按键3秒进入记忆查看模式"
+    }
+  ]
+}

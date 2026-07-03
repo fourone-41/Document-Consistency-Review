@@ -1,0 +1,104 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_info": "Page 156 of 182"
+  },
+  "tests": [
+    {
+      "test_id": "15.5.1.2",
+      "test_name": "Transformer short circuit test",
+      "result": "N/A",
+      "parameters": [
+        "Primary voltage (most adverse value from 90% to 110% of RATED voltage)",
+        "RATED input frequency (Hz)",
+        "Winding tested",
+        "Class of insulation (A, B, E, F, or H)",
+        "Type of protective device (fuse, circuit breaker) / Ratings",
+        "Protective device operated Yes/No",
+        "Time to THERMAL STABILITY (when protective device did not operate)(Min)",
+        "Maximum allowed temp from Table 31 (°C)",
+        "Maximum winding temp measured (°C)",
+        "Ambient (°C)"
+      ],
+      "supplementary_info": "Short-circuit applied at end of windings or at the first point that could be short circuited under SINGLE FAULT CONDITION. Loads on other windings between no load and their NORMAL USE load."
+    },
+    {
+      "test_id": "15.5.1.3",
+      "test_name": "Transformer overload test",
+      "result": "N/A",
+      "condition": "Conducted only when protective device under short-circuit test operated",
+      "parameters": [
+        "Primary voltage, most adverse value between 90% to 110% of RATED voltage (V)",
+        "RATED input frequency (Hz)",
+        "Test current just below minimum current that would activate protective device & achieve THERMAL STABILITY under method a) (A)",
+        "Test current based on Table 32 when protective device that operated under method a) is external to transformer, and it was shunted (A)",
+        "Winding tested",
+        "Class of insulation (A, B, E, F, H)",
+        "Type of protective device used (fuse, circuit breaker) / Ratings",
+        "Maximum allowed temp from Table 31 (°C)",
+        "Maximum winding temp measured (°C)",
+        "Ambient (°C)"
+      ],
+      "supplementary_info": "Loads on other windings between no load and their NORMAL USE load. Time durations: IEC 60127-1 fuse: 30 min at current from Table 32. Non IEC 60127-1 fuse: 30 min at the current based on characteristics supplied by fuse manufacturer, specifically, 30 min clearing-time current. When no 30 min clearing-time current data available, test current from Table 32 used until THERMAL STABILITY achieved. Other types of protective devices: until THERMAL STABILITY achieved at a current just below minimum current operating the protective device in a). This portion concluded at specified time or when a second protective device opened."
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC60601-1",
+      "version": "2005+AMD1:2012+AMD2:2020",
+      "equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "standard": "IEC 60127-1",
+      "context": "Fuse type classification for transformer overload test time duration criteria"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Gripping diameter (d) is the maximum width of a control knob regardless of its shape (e.g. control knob with pointer).",
+      "topic_tags": [
+        "control knob",
+        "gripping diameter",
+        "mechanical design"
+      ],
+      "related_subjects": [
+        "15.5.1.2",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Transformer overload test time duration rules: IEC 60127-1 fuse: 30 min at current from Table 32. Non IEC 60127-1 fuse: 30 min at the current based on characteristics supplied by fuse manufacturer, specifically, 30 min clearing-time current. When no 30 min clearing-time current data available, test current from Table 32 used until THERMAL STABILITY achieved. Other types of protective devices: until THERMAL STABILITY achieved at a current just below minimum current operating the protective device in method a). This portion concluded at specified time or when a second protective device opened.",
+      "topic_tags": [
+        "transformer overload",
+        "thermal stability",
+        "protective device",
+        "fuse",
+        "IEC 60127-1",
+        "test duration"
+      ],
+      "related_subjects": [
+        "15.5.1.3",
+        "Table 32",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Transformer short circuit test: Short-circuit applied at end of windings or at the first point that could be short circuited under SINGLE FAULT CONDITION. Loads on other windings between no load and their NORMAL USE load.",
+      "topic_tags": [
+        "transformer",
+        "short circuit",
+        "single fault condition",
+        "NORMAL USE",
+        "winding"
+      ],
+      "related_subjects": [
+        "15.5.1.2",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

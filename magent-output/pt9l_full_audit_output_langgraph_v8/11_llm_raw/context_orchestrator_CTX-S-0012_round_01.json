@@ -1,0 +1,113 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "判断F0076（PT9L-T1样机评审检查表E0 23.11）与F0078（T1样机评审检查表E0 23.11）是否构成不合规的重复文件问题，重点核查：①两份文件封面/表头元数据（第1-10行）以确认适用产品型号与范围；②全量行级差异比对以量化相似度；③DHF文件清单或文件控制程序中两份文件的注册状态与分工定义；④PT9L前缀的产品命名规则含义；⑤同目录下是否存在版本说明或评审分工说明文件。",
+  "agent_input": {
+    "claim": "T1样机阶段存在两份内容高度相似的样机评审检查表（F0076与F0078），软件和功能检查条目完全相同，文件重复性及适用范围不明确。",
+    "context_summary": "F0076（PT9L-T1样机评审检查表E0 23.11）与F0078（T1样机评审检查表E0 23.11）均位于'11 T1样机/10 评审E1 23.11/'目录下，版本号（E0）与日期（23.11）完全一致。已确认第62行（程序版本文件名与程序自检号一致性检查）、第90行（通信协议版本）、第91行（APP/云端版本记录）在两份文件中内容完全相同。F0076文件名含前缀'PT9L-'，可能代表特定产品型号，但尚未获取两文件封面/表头（第1-10行）元数据、全量行对比数据、DHF文件清单注册信息及PT9L产品命名规则，无法判断两者是否合理共存或构成重复文件缺陷。",
+    "evidence": [
+      {
+        "evidence_id": "SW-075",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机/10 评审E1 23.11/PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 76,
+        "source_text": "| 62 | 软 件 和 功 能 检 查 | 程序版本文件名与程序自检号一致性检查 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "note": "F0076第62条软件检查项，与F0078第76行完全相同"
+      },
+      {
+        "evidence_id": "SW-076",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机/10 评审E1 23.11/PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 104,
+        "source_text": "| 90 | 软 件 和 功 能 检 查 | 通信协议版本 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "note": "F0076第90条软件检查项，与F0078第104行完全相同"
+      },
+      {
+        "evidence_id": "SW-077",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机/10 评审E1 23.11/PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 105,
+        "source_text": "| 91 |  | APP/云端版本记录 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "note": "F0076第91条，类别列为空（延续上行软件检查分类）"
+      },
+      {
+        "evidence_id": "SW-078",
+        "doc_id": "F0078",
+        "rel_path": "11 T1样机/10 评审E1 23.11/T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 76,
+        "source_text": "| 62 | 软 件 和 功 能 检 查 | 程序版本文件名与程序自检号一致性检查 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "note": "F0078第62条软件检查项，与F0076第76行完全相同，确认重复"
+      },
+      {
+        "evidence_id": "SW-079",
+        "doc_id": "F0078",
+        "rel_path": "11 T1样机/10 评审E1 23.11/T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 104,
+        "source_text": "| 90 | 软 件 和 功 能 检 查 | 通信协议版本 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "note": "F0078第90条软件检查项，与F0076第104行完全相同，确认重复"
+      },
+      {
+        "evidence_id": "REC-001",
+        "type": "filename_analysis",
+        "description": "文件命名差异分析",
+        "content": "F0076文件名含前缀'PT9L-'，F0078无产品前缀。PT9L可能是产品型号代码，暗示F0076专用于PT9L型号，F0078为通用版本。需检索PT9L产品定义文件确认。",
+        "confidence": "medium",
+        "requires_verification": true
+      },
+      {
+        "evidence_id": "REC-002",
+        "type": "version_analysis",
+        "description": "版本号一致性分析",
+        "content": "两份文件均标注版本'E0'和日期'23.11'，版本号与日期完全相同，均为2023年11月初版，在同一时间节点创建。",
+        "confidence": "high",
+        "requires_verification": false
+      },
+      {
+        "evidence_id": "REC-003",
+        "type": "directory_analysis",
+        "description": "目录结构分析",
+        "content": "两份文件均位于'11 T1样机/10 评审E1 23.11/'目录下，属于同一评审活动（E1评审，2023年11月）。需确认是否存在评审说明文件解释两者分工。",
+        "confidence": "high",
+        "requires_verification": true
+      },
+      {
+        "evidence_id": "REC-004",
+        "type": "gap_identification",
+        "description": "关键缺失证据清单",
+        "content": "缺少：①两文件第1-10行封面/表头内容；②全量行对比数据；③文件控制程序或DHF文件清单中对两文件的定义；④PT9L产品型号定义文件；⑤同目录下其他文件列表。",
+        "confidence": "high",
+        "requires_verification": false
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": {
+      "priority_1": "检索F0076与F0078第1-10行（封面/表头），提取产品型号、适用范围、版本号、编制人、审核人、批准人、日期等元数据，判断两者是否针对不同产品或不同评审场景",
+      "priority_2": "对两份文件进行全量行级差异比对，统计相同条目数量与差异条目数量，给出相似度量化结论（如：共N行，相同M行，相似度M/N%）",
+      "priority_3": "检索DHF文件清单或文件控制程序，确认F0076与F0078的注册状态、模板来源及分工定义；检索同目录下完整文件列表，确认是否存在版本说明或评审分工说明文件",
+      "priority_4": "检索PT9L产品命名规则文件，确认PT9L前缀是否代表特定产品型号或子系统，以判断F0076是否为F0078的产品差异化版本",
+      "priority_5": "检查两份文件的填写状态（是否已填写检查结果、是否有签名），判断是否均已实际使用",
+      "decision_criteria": {
+        "confirm_P2": "若两份文件内容完全相同（相似度≥95%）且适用范围重叠（均针对同一产品或无明确产品区分），则判定为P2级文件管理缺陷（重复文件，适用范围不明确）",
+        "dismiss_or_downgrade": "若PT9L前缀经确认代表特定产品型号，且两份文件在封面/表头中明确标注不同适用产品，则可降级为观察项（合理的产品差异化文件，但建议在差异条目上进一步区分）",
+        "needs_more_context": "若封面/表头信息仍无法获取，或PT9L产品定义文件不存在，则维持needs_more_context状态并上报证据缺口"
+      },
+      "search_queries": [
+        "F0076 line:1 line:2 line:3 line:4 line:5 表头 产品型号 版本 编制",
+        "F0078 line:1 line:2 line:3 line:4 line:5 表头 产品型号 版本 编制",
+        "PT9L 产品命名 型号定义 产品代码",
+        "11 T1样机 10 评审E1 23.11 目录文件列表",
+        "DHF 文件清单 F0076 F0078 注册",
+        "文件控制程序 检查表 模板 适用范围 命名规则",
+        "T1样机评审检查表 变更记录 版本说明 编制说明",
+        "PT9L-T1样机评审检查表 与 T1样机评审检查表 差异 全量对比",
+        "样机评审 检查表 SOP 模板管理程序"
+      ]
+    }
+  }
+}
+```

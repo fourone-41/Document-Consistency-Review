@@ -1,0 +1,242 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-01",
+    "title": "型式试验报告（英文草稿）",
+    "total_pages": 30,
+    "current_pages": "14-15"
+  },
+  "tests": [
+    {
+      "test_name": "Electrostatic Discharge (ESD) Immunity - Air Discharge",
+      "test_standard": "IEC 60601-1-2:2014+A1:2020 / IEC 61000-4-2",
+      "test_levels_kv": [
+        2,
+        4,
+        8,
+        15
+      ],
+      "test_points": [
+        {
+          "id": "A1",
+          "result": "A",
+          "interval_s": 1,
+          "description": "Insulated enclosure/seams"
+        },
+        {
+          "id": "A2",
+          "result": "A",
+          "interval_s": 1
+        },
+        {
+          "id": "A3",
+          "result": "A",
+          "interval_s": 1
+        },
+        {
+          "id": "A4",
+          "result": "A",
+          "interval_s": 1
+        },
+        {
+          "id": "A5",
+          "result": "A",
+          "interval_s": 1
+        },
+        {
+          "id": "A6",
+          "result": "Non-test"
+        }
+      ],
+      "overall_result": "Pass"
+    },
+    {
+      "test_name": "Electrostatic Discharge (ESD) Immunity - Contact Discharge",
+      "test_standard": "IEC 60601-1-2:2014+A1:2020 / IEC 61000-4-2",
+      "test_levels_kv": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "test_points": [
+        {
+          "id": "C1",
+          "result": "Non-test"
+        },
+        {
+          "id": "C2",
+          "result": "Non-test"
+        },
+        {
+          "id": "C3",
+          "result": "Non-test"
+        }
+      ],
+      "description": "Applied to all accessible metal parts of the enclosure, e.g. metallic part of the cuff"
+    },
+    {
+      "test_name": "Electrostatic Discharge (ESD) Immunity - Indirect Application (HCP/VCP)",
+      "test_standard": "IEC 60601-1-2:2014+A1:2020 / IEC 61000-4-2",
+      "test_levels_kv": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "interval_s": 1,
+      "test_points": [
+        {
+          "id": "HCP-Front",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        },
+        {
+          "id": "HCP-Left",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        },
+        {
+          "id": "HCP-Rear",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        },
+        {
+          "id": "HCP-Right",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        },
+        {
+          "id": "VCP-Front",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        },
+        {
+          "id": "VCP-Left",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        },
+        {
+          "id": "VCP-Rear",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        },
+        {
+          "id": "VCP-Right",
+          "level_kv": 8,
+          "polarities": [
+            "+",
+            "-"
+          ],
+          "result": "Pass"
+        }
+      ],
+      "overall_result": "Pass"
+    },
+    {
+      "test_name": "Radiated Immunity",
+      "test_standard": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-3",
+      "test_date": "2024-07-09/10/24-26",
+      "temperature_humidity": "25-31℃, 32%-50%",
+      "power_supply": "DC 3V",
+      "frequency_range": "80 MHz to 2.7 GHz",
+      "antenna_polarization": "Horizontal / Vertical",
+      "test_level": "10 V/m",
+      "modulation": "80%, 1KHz Amplitude Modulation"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Medical electrical equipment - Electromagnetic disturbances"
+    },
+    {
+      "id": "IEC 61000-4-2",
+      "description": "ESD immunity test"
+    },
+    {
+      "id": "IEC 61000-4-3",
+      "description": "Radiated, radio-frequency, electromagnetic field immunity test"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ESD Test Setup Procedure: Contact discharge was applied only to conductive surfaces of the EUT. Air discharge was applied only to non-conducted surfaces of the EUT. The EUT was put on a 0.8m high wooden table for table-top equipment or 0.1m high for floor standing equipment standing on the ground reference plane (GRP). A horizontal coupling plane (HCP) 1.6m by 0.8m in size was placed on the table, and the EUT with its cables were isolated from the HCP by an insulating support thicker than 0.5mm. The VCP 0.5m by 0.5m in size while HCP were constructed from the same material type and thickness as that of the GRP, and connected to the GRP via a 470kΩ resistor at each end. The distance between EUT and any of the other metallic surfaces except the GRP, HCP and VCP was greater than 1m. During the contact discharges, the tip of the discharge electrode touched the EUT before the discharge switch is operated. During the air discharges, the round discharge tip of the discharge electrode was approached as fast as possible to touch the EUT. After each discharge, the ESD generator was removed from the EUT, the generator is then retriggered for a new single discharge. For ungrounded product, a discharge cable with two resistances was used after each discharge to remove remnant electrostatic voltage. 10 times of each polarity single discharge were applied to HCP and VCP.",
+      "topic_tags": [
+        "ESD",
+        "test setup",
+        "HCP",
+        "VCP",
+        "GRP",
+        "contact discharge",
+        "air discharge"
+      ],
+      "related_subjects": [
+        "ESD Immunity Test",
+        "IEC 61000-4-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ESD Test Remark A: During and after test, The EUT is tested in UE1 mode, the collection point of the temperature sensor is aligned with the blackbody, which is set at 37℃. The temperature is continuously measured and compared with the blackbody temperature. The accuracy of the display temperature of the EUT does not exceed ±0.2℃. During and after test, the EUT could operate as intended and no disturbance of function. The EUT could meet the requirements of clause 6.1.",
+      "topic_tags": [
+        "ESD",
+        "performance criterion",
+        "temperature accuracy",
+        "blackbody",
+        "UE1 mode",
+        "±0.2℃"
+      ],
+      "related_subjects": [
+        "ESD Immunity Test",
+        "temperature sensor",
+        "IEC 60601-1-2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "ESD Test Point Definitions: Test Point 1 covers all insulated enclosure/seams, e.g.: Key-press, nonmetallic enclosure of adaptor and main unit, LCD display, seams around enclosure and cables (Refer to the A started arrow in the test setup photo). Test Point 2 covers all accessible metal parts of the enclosure, e.g.: metallic part of the cuff (Refer to the C started arrow in the test setup photo). Test mode: Mode 1, Mode 2.",
+      "topic_tags": [
+        "ESD",
+        "test points",
+        "insulated enclosure",
+        "metallic cuff",
+        "LCD display"
+      ],
+      "related_subjects": [
+        "ESD Immunity Test",
+        "cuff",
+        "LCD display"
+      ]
+    }
+  ]
+}

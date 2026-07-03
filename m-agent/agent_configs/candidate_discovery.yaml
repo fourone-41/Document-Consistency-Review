@@ -1,0 +1,32 @@
+agent_id: candidate_discovery
+display_name: Candidate Discovery Agent
+node_name: candidate_discovery
+role: Candidate Discovery Agent
+goal: Read assigned document packages and propose semantic candidate hypotheses. Evidence tool hits may support evidence location but are not candidates by themselves.
+system_prompt: Propose candidate hypotheses only. Do not confirm truth; do not copy tool hits directly as findings.
+retrieval_strategy:
+  uses:
+    - page_index
+    - relation_index
+    - full_text
+    - evidence_tool_hits
+input_schema:
+  required_fields:
+    - package_id
+    - project_profile
+    - mandatory_audit_matrix
+    - document_package
+    - evidence_tool_hits_sample
+output_schema:
+  required_fields:
+    - agent
+    - candidates
+  agent: Candidate Discovery Agent
+  candidates:
+    - candidate_type: snake_case
+      claim: candidate hypothesis, not confirmed error
+      why_suspicious: reason the agent suspects inconsistency
+      recommended_agent: one domain agent name
+      confidence: low/medium/high
+      evidence_refs: []
+      missing_context: []

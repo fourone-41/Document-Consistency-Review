@@ -1,0 +1,189 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Record",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "70-71 of 182"
+  },
+  "tests": [
+    {
+      "clause": "11.4",
+      "title": "ME EQUIPMENT and ME SYSTEMS intended for use with flammable anaesthetics",
+      "requirement": "ME EQUIPMENT, ME SYSTEMS and parts described in ACCOMPANYING DOCUMENTS for use with flammable anaesthetics (CATEGORY AP) or anaesthetics with oxidants (CATEGORY APG) comply with Annex G",
+      "result": "Not use with flammable anaesthetics.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.5",
+      "title": "ME EQUIPMENT and ME SYSTEMS intended for use in conjunction with flammable agents",
+      "requirement": "MANUFACTURER'S RISK MANAGEMENT PROCESS addresses possibility of fire and associated mitigations as confirmed by examination of RISK MANAGEMENT FILE",
+      "result": "Not use with flammable anaesthetics.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.6",
+      "title": "Overflow, spillage, leakage, ingress of water or particulate matter, cleaning, disinfection, sterilization and compatibility with substances used with the ME EQUIPMENT",
+      "verdict": "P"
+    },
+    {
+      "clause": "11.6.1",
+      "title": "Sufficient degree of protection against overflow, spillage, leakage, ingress of water or particulate matter, cleaning, disinfection and sterilization",
+      "requirement": "Sufficient degree of protection provided against overflow, spillage, leakage, ingress of water or particulate matter, cleaning, disinfection and sterilization, and compatibility with substances used with ME EQUIPMENT",
+      "result": "See Appended Table 11.6.1",
+      "verdict": "P"
+    },
+    {
+      "clause": "11.6.2",
+      "title": "Overflow in ME EQUIPMENT",
+      "requirement": "ME EQUIPMENT incorporates a reservoir or liquid storage that is liable to be overfilled or to overflow in NORMAL USE; liquid overflowing did not wet any MEANS OF PROTECTION or result in loss of BASIC SAFETY or ESSENTIAL PERFORMANCE",
+      "result": "No liquid reservoir",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.6.3",
+      "title": "Spillage on ME EQUIPMENT and ME SYSTEM",
+      "requirement": "ME EQUIPMENT and ME SYSTEMS handling liquids in NORMAL USE positioned as in 5.4 a) and liquid poured steadily on a point on top of ME EQUIPMENT",
+      "result": "Not handling liquids in NORMAL USE",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.6.4",
+      "title": "Leakage",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.6.5",
+      "title": "Ingress of water or particulate matter into ME EQUIPMENT and ME SYSTEMS",
+      "requirement": "ME EQUIPMENT with IP Code placed in least favourable position of NORMAL USE and subjected to tests of IEC 60529 (IP Code); ME EQUIPMENT met dielectric strength and LEAKAGE CURRENT tests with no bridging of insulation or electrical components",
+      "result": "IP 22.",
+      "verdict": "P"
+    },
+    {
+      "clause": "11.6.6",
+      "title": "Cleaning and disinfection of ME EQUIPMENT and ME SYSTEMS",
+      "requirement": "ME EQUIPMENT/ME SYSTEM and their parts and ACCESSORIES cleaned or disinfected once using methods specified in instructions for use including any cooling or drying period; ME EQUIPMENT met dielectric strength and LEAKAGE CURRENT tests, with no deterioration resulting in unacceptable RISK; Effects of multiple cleanings/disinfections during EXPECTED SERVICE LIFE evaluated by MANUFACTURER",
+      "result": "See Appended Table 11.6.1; See appended Tables 8.7 8.8.3; See RM Results Table 11.6.6",
+      "verdict": "P"
+    },
+    {
+      "clause": "11.6.7",
+      "title": "Sterilization of ME EQUIPMENT and ME SYSTEMS",
+      "verdict": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment - General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European version of IEC60601-1 medical electrical equipment standard"
+    },
+    {
+      "id": "IEC 60529",
+      "description": "Degrees of protection provided by enclosures (IP Code)"
+    },
+    {
+      "id": "IEC 60695-11-10",
+      "description": "Flammability classification standard for non-metallic materials"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "ENCLOSURE, baffles, and flame barriers have adequate rigidity and are made of appropriate metal or of non-metallic materials, except constructions based on Table 25 and a mesh; FV-2 or better for TRANSPORTABLE ME EQUIPMENT, FV-1 or better for fixed EQUIPMENT, or STATIONARY EQUIPMENT per IEC 60695-11-10, determined by ENCLOSURE examination or flammability classification based on 11.3a). Verdict: N/A",
+      "topic_tags": [
+        "flammability",
+        "enclosure",
+        "flame barrier",
+        "FV-2",
+        "FV-1",
+        "transportable",
+        "stationary"
+      ],
+      "related_subjects": [
+        "IEC 60695-11-10",
+        "IEC60601-1 clause 11.3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Maximum fill level is indicated by marking on the ME EQUIPMENT and a warning or safety notice is given, no HAZARDOUS SITUATION (as specified in 13.1) or unacceptable RISK due to overflow developed when the reservoir or liquid storage chamber is filled to its maximum capacity and the TRANSPORTABLE ME EQUIPMENT is tilted through an angle of 10°, or for MOBILE ME EQUIPMENT exceeding 45 kg, is moved over a threshold as described in 9.4.2.4.3. Verdict: N/A (No liquid reservoir)",
+      "topic_tags": [
+        "overflow",
+        "reservoir",
+        "maximum fill level",
+        "tilt test",
+        "mobile equipment",
+        "hazardous situation"
+      ],
+      "related_subjects": [
+        "IEC60601-1 clause 11.6.2",
+        "IEC60601-1 clause 9.4.2.4.3",
+        "IEC60601-1 clause 13.1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "No warning or safety notice provided regarding the maximum fill level, no HAZARDOUS SITUATION (as specified in 13.1) or unacceptable RISK due to overflow developed when the reservoir or liquid storage chamber was filled to 15% above the maximum capacity and the TRANSPORTABLE ME EQUIPMENT was tilted through an angle of 10°, or in MOBILE ME EQUIPMENT exceeding 45 kg, was moved over a threshold as described in 9.4.2.4.3. Verdict: N/A",
+      "topic_tags": [
+        "overflow",
+        "15% overfill",
+        "tilt test",
+        "transportable",
+        "mobile equipment"
+      ],
+      "related_subjects": [
+        "IEC60601-1 clause 11.6.2",
+        "IEC60601-1 clause 9.4.2.4.3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 11.6.3 Spillage: ME EQUIPMENT met dielectric strength and LEAKAGE CURRENT tests and un-insulated electrical parts or electrical insulation of parts that could result in the loss of BASIC SAFETY or ESSENTIAL PERFORMANCE in NORMAL CONDITION or in combination with a SINGLE FAULT CONDITION were not wet. Result: Not handling liquids in NORMAL USE. Verdict: N/A",
+      "topic_tags": [
+        "spillage",
+        "dielectric strength",
+        "leakage current",
+        "basic safety",
+        "essential performance",
+        "single fault condition"
+      ],
+      "related_subjects": [
+        "IEC60601-1 clause 11.6.3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 11.6.5 Ingress: ME EQUIPMENT met dielectric strength and LEAKAGE CURRENT tests and there were no bridging of insulation or electrical components that could result in the loss of BASIC SAFETY or ESSENTIAL PERFORMANCE in NORMAL CONDITION or in combination with a SINGLE FAULT CONDITION. Device has IP 22 rating. Verdict: P",
+      "topic_tags": [
+        "IP22",
+        "ingress protection",
+        "dielectric strength",
+        "leakage current",
+        "IEC 60529"
+      ],
+      "related_subjects": [
+        "IEC60601-1 clause 11.6.5",
+        "IEC 60529"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 11.6.6 Cleaning and disinfection: Effects of multiple cleanings/disinfections during EXPECTED SERVICE LIFE of EQUIPMENT evaluated by MANUFACTURER and assurance that the processes did not cause a loss of BASIC SAFETY or ESSENTIAL PERFORMANCE. Results referenced in RM Results Table 11.6.6. Verdict: P",
+      "topic_tags": [
+        "cleaning",
+        "disinfection",
+        "service life",
+        "risk management",
+        "basic safety",
+        "essential performance"
+      ],
+      "related_subjects": [
+        "IEC60601-1 clause 11.6.6",
+        "RM Results Table 11.6.6",
+        "Appended Table 11.6.1"
+      ]
+    }
+  ]
+}

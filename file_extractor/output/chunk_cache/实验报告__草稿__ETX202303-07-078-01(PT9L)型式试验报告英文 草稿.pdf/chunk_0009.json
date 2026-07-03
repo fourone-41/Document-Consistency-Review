@@ -1,0 +1,141 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-01",
+    "title": "型式试验报告（Type Test Report）",
+    "product_code": "PT9L",
+    "total_pages": 30,
+    "current_pages": "23-24",
+    "standard": "IEC 60601-1-2:2014+A1:2020 / EN 60601-1-2:2015+A1:2021"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "full_name": "IEC 60601-1-2:2014+A1:2020 / EN 60601-1-2:2015+A1:2021",
+      "description": "Medical electrical equipment - Electromagnetic disturbances collateral standard"
+    }
+  ],
+  "tests": [
+    {
+      "id": "6.9.2",
+      "name": "Power Frequency Magnetic Field Immunity Test",
+      "clause": "6.9.2",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "table_reference": "Table 4 Remark d",
+      "result": "Exempt",
+      "verdict": "N/A",
+      "remarks": "EUT does not contain magnetic sensing components or circuits (see Annex statement). Exempt from this test per IEC 60601-1-2:2014+A1:2020/EN 60601-1-2:2015+A1:2021 Table 4 Remark d - Applies only to ME EQUIPMENT and ME SYSTEMS with magnetically sensitive components or circuitry.",
+      "setup_description": "EUT placed on GRP insulated by 0.1m insulating support; GRP on 0.8m wooden table for table-top equipment; floor-standing on 0.1m wooden support. Induction coil 1m×1m, immersion method, rotated 90° for orthogonal directions."
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "4.1",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Risks resulting from reasonably foreseeable electromagnetic disturbances taken into account in the risk management process.",
+      "result": "RMF Reference Document: PT9L-FXPJ01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Non-ME equipment used in an ME system - compliance with IEC and ISO EMC standards",
+      "result": "EUT does not contain non-ME equipment.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.3.1",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "ME equipment and ME systems tested in representative configurations, consistent with intended use, most likely to result in unacceptable risk as determined by the manufacturer.",
+      "result": "See Chapter 5.3 and RMF Reference Document: PT9L-FXPJ01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3.3",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Power input and frequencies",
+      "result": "See Chapter 5.2 for reference",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.1",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Additional requirements for marking on the outside of ME equipment and ME systems specified for use only in a shielded location special environment",
+      "result": "The EUT does not specified for use only in a shielded location special environment",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.1.1 a)",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Instructions for use: A statement of the environments for which the ME equipment or ME system is suitable. Relevant exclusions determined by risk analysis are listed.",
+      "result": "Reference Document: PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.1.1 b)",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Instructions for use: The essential performance of ME equipment and a description of what the operator can expect if the essential performance is lost or degraded due to EM disturbances.",
+      "result": "Reference Document: PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.1.1 c)",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Instructions for use: A warning regarding stacking and location close to other equipment.",
+      "result": "Reference Document: PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-FXPJ01 V1.0",
+      "type": "Risk Management File",
+      "description": "Risk Management File referenced for EMC risk analysis"
+    },
+    {
+      "id": "PT9L-SMSY01 V1.0",
+      "type": "Instructions for Use / Accompanying Document",
+      "description": "Accompanying documents / Instructions for use for PT9L"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L",
+      "type": "ME Equipment",
+      "equipment_class": "Table-top equipment",
+      "notes": "Does not contain non-ME equipment; does not contain magnetic sensing components or circuits; not specified for use only in shielded location"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test setup for power frequency magnetic field immunity: The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The EUT was configured and connected to satisfy its functional requirements. The power supply, input and output circuits was connected to the sources of power supply, control and signal. The cables supplied or recommended by the equipment manufacturer were used. In absence of any recommendation, unshielded cables were adopted, of a type appropriate for the signals involved. All cables were exposed to the magnetic field for 1m of their length. The EUT was subjected to the test magnetic field by using the induction coil of standard dimensions (1m×1m) by the immersion method. The induction coil was then be rotated by 90° in order to expose the EUT to the test field with different orientations. For floor-standing equipment the test was repeated by moving and shifting the induction coils, in order to test the whole volume of the EUT for each orthogonal direction.",
+      "topic_tags": [
+        "磁场抗扰度",
+        "测试配置",
+        "感应线圈",
+        "接地参考平面",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "6.9.2",
+        "PT9L",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "IEC 60601-1-2:2014+A1:2020/EN 60601-1-2:2015+A1:2021 Table 4 Remark d Applies only to ME EQUIPMENT and ME SYSTEMS with magnetically sensitive components or circuitry. The EUT does not contain magnetic sensing components or circuits (see Annex statement) and exempt from this test.",
+      "topic_tags": [
+        "磁敏感元件",
+        "豁免",
+        "Table 4 Remark d",
+        "工频磁场"
+      ],
+      "related_subjects": [
+        "6.9.2",
+        "PT9L",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    }
+  ]
+}

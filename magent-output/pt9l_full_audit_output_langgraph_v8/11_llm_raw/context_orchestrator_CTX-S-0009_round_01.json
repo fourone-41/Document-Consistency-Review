@@ -1,0 +1,121 @@
+```json
+{
+  "assigned_agent": "Hardware Agent",
+  "review_focus": "复审F0076、F0078、F0080三份样机评审检查表中装配检查项结果栏未勾选的指控，重点核查：①xlsx转md格式转换可靠性（复选框符号是否丢失）；②F0076签名/审批/结论区及PCB尺寸检查项原文；③F0078装配检查项逐行原文；④F0080全文；⑤关联评审记录间接佐证",
+  "agent_input": {
+    "claim": "T1样机评审检查表（F0076、F0078）及手版样机评审检查表（F0080）中，电池盖配合、电池弹簧固定、PCB固定、PCB元件干涉检查、PCB尺寸检查等所有装配检查项的结果栏均未勾选，无法确认评审实际完成。",
+    "context_summary": "第1轮上下文恢复已确认：F0076中至少5个装配检查项（电池盖配合line16、电池弹簧固定line29、PCB固定line34、PCB元件与结构干涉检查line35、电池不能和袖带相邻存放line38）结果栏均呈现为空白复选框"□通过 □不通过 □不适用"，未见任何勾选标记。但以下关键证据仍缺失：①F0076签名区/审批区/评审结论汇总行（line96附近）原文为空，无法判断文件整体完成状态；②F0076中PCB尺寸检查项是否存在及其结果栏状态未确认；③F0078装配检查项逐行原文完全缺失（文件头部及尾部text均为空）；④F0080（手版样机评审检查表）全文完全缺失；⑤三份文件均为xlsx转md格式（文件名含via_xlsx），xlsx复选框控件在转换为纯文本时存在已勾选状态丢失风险，空白□不能直接等同于未填写；⑥同模板族已完成评审的检查表样本缺失，无法对比正常勾选格式；⑦2023年11月T1样机评审会议记录/评审报告等关联文件未检索。当前证据不足以对F0078和F0080作出确定性裁决，对F0076的裁决需保留格式转换风险注记。",
+    "evidence": [
+      {
+        "evidence_id": "HW-020",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 16,
+        "source_text": "| 2 | 装 配 检 查 | 电池盖配合 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "actual_text": "| 2 | 装 配 检 查 | 电池盖配合 |  | □通过 □不通过 □不适用 |",
+        "annotation": "结果栏为空白复选框，未勾选任何选项；需排除xlsx转md格式丢失可能"
+      },
+      {
+        "evidence_id": "HW-021",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 29,
+        "source_text": "| 15 | 装 配 检 查 | 电池弹簧固定 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "actual_text": "| 15 | 装 配 检 查 | 电池弹簧固定 |  | □通过 □不通过 □不适用 |",
+        "annotation": "结果栏为空白复选框，未勾选任何选项"
+      },
+      {
+        "evidence_id": "HW-022",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 34,
+        "source_text": "| 20 | 装 配 检 查 | PCB固定 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "actual_text": "| 20 | 装 配 检 查 | PCB固定 |  | □通过 □不通过 □不适用 |",
+        "annotation": "结果栏为空白复选框，未勾选任何选项"
+      },
+      {
+        "evidence_id": "HW-023",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 35,
+        "source_text": "| 21 | 装 配 检 查 | PCB元件与结构干涉检查 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "actual_text": "| 21 | 装 配 检 查 | PCB元件与结构干涉检查 |  | □通过 □不通过 □不适用 |",
+        "annotation": "结果栏为空白复选框，未勾选任何选项"
+      },
+      {
+        "evidence_id": "HW-024",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 38,
+        "source_text": "| 24 | 装 配 检 查 | 电池不能和袖带相邻存放 |  | □通过 □不通过 □不适用 |",
+        "verified": true,
+        "actual_text": "| 24 | 装 配 检 查 | 电池不能和袖带相邻存放 |  | □通过 □不通过 □不适用 |",
+        "annotation": "结果栏为空白复选框，未勾选任何选项"
+      },
+      {
+        "evidence_id": "PAGE-F0076-HEAD",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "文件头部（版本/标题行）",
+        "text": "[待补充：当前text为空，需重新提取]",
+        "annotation": "文件头部内容未提取，无法确认文件版本号和标题"
+      },
+      {
+        "evidence_id": "PAGE-F0076-TAIL",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line_start": 96,
+        "title": "文件尾部（签名/审批/结论区）",
+        "text": "[待补充：当前text为空，需重新提取]",
+        "annotation": "签名区和评审结论汇总行内容未提取，是判断评审完成状态的关键证据"
+      },
+      {
+        "evidence_id": "PAGE-F0078-HEAD",
+        "doc_id": "F0078",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "文件头部（版本/标题行）",
+        "text": "[待补充：当前text为空，需重新提取]",
+        "annotation": "F0078文件头部内容未提取"
+      },
+      {
+        "evidence_id": "PAGE-F0078-TAIL",
+        "doc_id": "F0078",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line_start": 96,
+        "title": "文件尾部（签名/审批/结论区）",
+        "text": "[待补充：当前text为空，需重新提取]",
+        "annotation": "F0078签名区和评审结论汇总行内容未提取"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "retrieval_instructions": {
+      "priority_queries": [
+        {
+          "query_id": "RQ-01",
+          "target_doc": "F0076",
+          "query": "F0076 签名 审批 评审人 日期 结论",
+          "purpose": "提取F0076签名区/审批区/评审结论汇总行原文，判断文件整体完成状态",
+          "target_lines": "line 90-110附近"
+        },
+        {
+          "query_id": "RQ-02",
+          "target_doc": "F0076",
+          "query": "F0076 PCB尺寸检查",
+          "purpose": "确认F0076中PCB尺寸检查项是否存在及其结果栏状态",
+          "target_lines": "全文检索含'PCB尺寸'的行"
+        },
+        {
+          "query_id": "RQ-03",
+          "target_doc": "F0078",
+          "query": "F0078 装配检查 电池盖 PCB固定 PCB元件 PCB尺寸 通过 不通过",
+          "purpose": "补充F0078装配检查项逐行原文，对应F0076的line 16、29、34、35、38附近行号",
+          "target_lines": "line 16, 29, 34, 35, 38附近"
+        },
+        {
+          "query_id": "RQ-04

@@ -1,0 +1,258 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Report",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "36-37 of 182"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "parallel_reference": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "IEC60364-7-710",
+      "context": "Higher values of EARTH LEAKAGE CURRENT permitted for PERMANENTLY INSTALLED ME EQUIPMENT"
+    },
+    {
+      "id": "IEC60950-1",
+      "context": "Insulation forming MEANS OF OPERATOR PROTECTION complying with IEC 60950-1 for INSULATION CO-ORDINATION"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.7",
+      "title": "LEAKAGE CURRENTS and PATIENT AUXILIARY CURRENTS",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.7.1a",
+      "title": "Electrical isolation providing protection against electric shock limits currents to values in 8.7.3",
+      "result_remark": "See appended Tables 8.7",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.7.1b",
+      "title": "Specified values of EARTH LEAKAGE, TOUCH, PATIENT LEAKAGE, and PATIENT AUXILIARY CURRENTS applied in combination of conditions",
+      "result_remark": "See appended Tables 8.7",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.7.2",
+      "title": "Allowable values specified in 8.7.3 applied under SINGLE FAULT CONDITIONS of 8.1b",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.7.2 - insulation with PROTECTIVE EARTH CONNECTION",
+      "title": "Insulation used in conjunction with PROTECTIVE EARTH CONNECTION, insulation short circuited only under conditions in 8.6.4b",
+      "result_remark": "No earth connection",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.7.2 - EARTH LEAKAGE CURRENT SFC",
+      "title": "Only SINGLE FAULT CONDITION for EARTH LEAKAGE CURRENT was interruption of one supply conductor at a time",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.7.2 - LEAKAGE not measured in DOUBLE INSULATION SFC",
+      "title": "LEAKAGE CURRENTS and PATIENT AUXILIARY CURRENT not measured in SINGLE FAULT CONDITION of short circuiting of one constituent part of DOUBLE INSULATION",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.7.2 - SINGLE FAULT CONDITIONS not applied with special test conditions",
+      "title": "SINGLE FAULT CONDITIONS not applied at same time as special test conditions of MAXIMUM MAINS VOLTAGE on APPLIED PARTS and non-PROTECTIVELY EARTHED parts of ENCLOSURE",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.7.3",
+      "title": "Allowable Values",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.7.3a",
+      "title": "Allowable values measured based on currents in Fig 12a or by frequency content measuring device as in Fig 12b",
+      "result_remark": "See appended Table 8.7",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.7.3b",
+      "title": "Allowable values of PATIENT LEAKAGE and AUXILIARY CURRENTS according to Tables 3 & 4; a.c. values relative to currents with frequency not less than 0.1Hz",
+      "result_remark": "See appended Table 8.7",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.7.3c",
+      "title": "TOUCH CURRENT did not exceed 100 μA in NORMAL CONDITION and 500 μA in SINGLE FAULT CONDITION (I_TNC, I_TSFC)",
+      "result_remark": "See appended Table 8.7",
+      "verdict": "P",
+      "limits": [
+        {
+          "condition": "NORMAL CONDITION",
+          "parameter": "TOUCH CURRENT",
+          "limit": "100 μA"
+        },
+        {
+          "condition": "SINGLE FAULT CONDITION",
+          "parameter": "TOUCH CURRENT",
+          "limit": "500 μA"
+        }
+      ]
+    },
+    {
+      "clause": "8.7.3d",
+      "title": "EARTH LEAKAGE CURRENT did not exceed 5 mA in NORMAL CONDITION and 10 mA in SINGLE FAULT CONDITION (I_ENC, I_ESFC)",
+      "verdict": "N/A",
+      "limits": [
+        {
+          "condition": "NORMAL CONDITION",
+          "parameter": "EARTH LEAKAGE CURRENT",
+          "limit": "5 mA"
+        },
+        {
+          "condition": "SINGLE FAULT CONDITION",
+          "parameter": "EARTH LEAKAGE CURRENT",
+          "limit": "10 mA"
+        }
+      ]
+    },
+    {
+      "clause": "8.7.3d - PERMANENTLY INSTALLED",
+      "title": "Higher values of EARTH LEAKAGE CURRENT permitted for PERMANENTLY INSTALLED ME EQUIPMENT connected to dedicated supply circuit",
+      "result_remark": "Not permanently installed ME equipment",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.7.3e",
+      "title": "LEAKAGE CURRENTS, regardless of waveform and frequency, did not exceed 10 mA r.m.s. in NORMAL or SINGLE FAULT CONDITION (measured with non-frequency-weighted device)",
+      "result_remark": "See appended Table 8.7",
+      "verdict": "P",
+      "limits": [
+        {
+          "condition": "NORMAL CONDITION or SINGLE FAULT CONDITION",
+          "parameter": "LEAKAGE CURRENT (non-frequency-weighted)",
+          "limit": "10 mA r.m.s."
+        }
+      ]
+    },
+    {
+      "clause": "8.7.3f",
+      "title": "LEAKAGE CURRENTS in FUNCTIONAL EARTH CONDUCTOR in non-PERMANENTLY INSTALLED ME EQUIPMENT: 5 mA in NORMAL CONDITION and 10 mA in SINGLE FAULT CONDITION",
+      "verdict": "N/A",
+      "limits": [
+        {
+          "condition": "NORMAL CONDITION",
+          "parameter": "LEAKAGE CURRENT in FUNCTIONAL EARTH CONDUCTOR",
+          "limit": "5 mA"
+        },
+        {
+          "condition": "SINGLE FAULT CONDITION",
+          "parameter": "LEAKAGE CURRENT in FUNCTIONAL EARTH CONDUCTOR",
+          "limit": "10 mA"
+        }
+      ]
+    },
+    {
+      "clause": "8.7.4",
+      "title": "LEAKAGE and PATIENT AUXILIARY CURRENTS measurements",
+      "result_remark": "See appended Table 8.7",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.8",
+      "title": "Insulation",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.8.1",
+      "title": "Insulation relied on as MEANS OF PROTECTION, including REINFORCED INSULATION subjected to testing",
+      "result_remark": "Refer to insulation diagram",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.8.1 - exempted insulation",
+      "title": "Insulation exempted from test (complies with clause 4.8)",
+      "result_remark": "No such components identified",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.1 - IEC60950-1 insulation",
+      "title": "Insulation forming MEANS OF OPERATOR PROTECTION complying with IEC 60950-1 not tested as in 8.8",
+      "result_remark": "No such insulation",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.2",
+      "title": "Distance through solid insulation or use of thin sheet material",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.2a",
+      "title": "Solid SUPPLEMENTARY or REINFORCED INSULATION for PEAK WORKING VOLTAGE > 71V: 0.4 mm min distance through insulation",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.2b",
+      "title": "Does not form part of ENCLOSURE, not subject to handling or abrasion during NORMAL USE: at least two layers each passing dielectric strength test, or three layers for which all combinations of two layers pass",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.2 - wound components",
+      "title": "BASIC, SUPPLEMENTARY, and REINFORCED INSULATION between windings of wound components separated by interleaved insulation",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.2c",
+      "title": "Wire with solid insulation (other than solvent based enamel) complying with 8.8.2a",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.8.2d",
+      "title": "Wire with multi-layer extruded or spirally wrapped insulation complying with 8.8.2b and Annex L",
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Higher values of EARTH LEAKAGE CURRENT are permitted for PERMANENTLY INSTALLED ME EQUIPMENT connected to a supply circuit supplying only this ME EQUIPMENT according to local regulations or IEC 60364-7-710. This clause was marked N/A because the device under test is not permanently installed ME equipment.",
+      "topic_tags": [
+        "EARTH LEAKAGE CURRENT",
+        "PERMANENTLY INSTALLED",
+        "IEC60364-7-710"
+      ],
+      "related_subjects": [
+        "8.7.3d",
+        "IEC60364-7-710"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "SINGLE FAULT CONDITIONS not applied at same time as special test conditions of MAXIMUM MAINS VOLTAGE on APPLIED PARTS and non-PROTECTIVELY EARTHED parts of ENCLOSURE. This combination condition was tested with verdict PASS.",
+      "topic_tags": [
+        "SINGLE FAULT CONDITION",
+        "MAXIMUM MAINS VOLTAGE",
+        "APPLIED PARTS",
+        "ENCLOSURE"
+      ],
+      "related_subjects": [
+        "8.7.2",
+        "8.7.3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For insulation at clause 8.8.2: Solid insulation forming SUPPLEMENTARY or REINFORCED INSULATION for a PEAK WORKING VOLTAGE greater than 71 V shall be provided with either: a) 0.4 mm minimum distance through insulation, or b) does not form part of an ENCLOSURE and not subject to handling or abrasion during NORMAL USE, and comprised of at least two layers each passing the appropriate dielectric strength test, or three layers for which all combinations of two layers together passed the appropriate dielectric strength test. Dielectric strength test for one or two layers was same as for one MEANS OF PROTECTION for SUPPLEMENTARY INSULATION, and same as for two MEANS OF PROTECTION for REINFORCED INSULATION.",
+      "topic_tags": [
+        "insulation",
+        "SUPPLEMENTARY INSULATION",
+        "REINFORCED INSULATION",
+        "PEAK WORKING VOLTAGE",
+        "dielectric strength"
+      ],
+      "related_subjects": [
+        "8.8.2",
+        "8.8.1"
+      ]
+    }
+  ]
+}

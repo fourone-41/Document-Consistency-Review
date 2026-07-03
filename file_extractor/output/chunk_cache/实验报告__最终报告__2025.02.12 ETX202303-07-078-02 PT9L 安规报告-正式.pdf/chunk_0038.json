@@ -1,0 +1,287 @@
+{
+  "document": {
+    "title": "IEC60601-1 PEMS Development Life-Cycle Compliance Checklist",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "79-80",
+    "total_pages": 182
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "title": "IEC60601-1 Medical Electrical Equipment - General Requirements for Basic Safety and Essential Performance",
+      "clauses": [
+        "14.5",
+        "14.6",
+        "14.6.1",
+        "14.6.2",
+        "14.7",
+        "14.8",
+        "14.9",
+        "14.10",
+        "14.11"
+      ]
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "title": "EN60601-1 European Standard for Medical Electrical Equipment"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "14.5",
+      "description": "A documented system for problem resolution within and between all phases and activities of PEMS DEVELOPMENT LIFE-CYCLE has been developed and maintained where appropriate",
+      "verdict": "P",
+      "reference_document": "Software Quality Plan DN: PT9L-RJCH01 V1.0",
+      "sub_requirements": [
+        {
+          "description": "Problem resolution system is documented as a part of PEMS DEVELOPMENT LIFE-CYCLE",
+          "verdict": "P",
+          "reference_document": "Software Quality Plan DN: PT9L-RJCH01 V1.0"
+        },
+        {
+          "description": "Allows reporting of potential or existing problems affecting BASIC SAFETY or ESSENTIAL PERFORMANCE",
+          "verdict": "P",
+          "reference_document": "Software Quality Plan DN: PT9L-RJCH01 V1.0"
+        },
+        {
+          "description": "Includes an assessment of each problem for associated RISKS",
+          "verdict": "P",
+          "reference_document": "Software Quality Plan DN: PT9L-RJCH01 V1.0"
+        },
+        {
+          "description": "Identifies criteria that must be met for the issue to be closed",
+          "verdict": "P",
+          "reference_document": "Software Quality Plan DN: PT9L-RJCH01 V1.0"
+        },
+        {
+          "description": "Identifies the action to be taken to resolve each problem",
+          "verdict": "P",
+          "reference_document": "Software Quality Plan DN: PT9L-RJCH01 V1.0"
+        }
+      ]
+    },
+    {
+      "clause": "14.6",
+      "description": "RISK MANAGEMENT PROCESS",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.6.1",
+      "description": "MANUFACTURER considered HAZARDS associated with software and hardware aspects of PEMS including those associated with the incorporating PEMS into an IT-NETWORK, components of third-party origin, legacy subsystems when compiling list of known or foreseeable HAZARDS",
+      "verdict": "P",
+      "reference_document": "Risk Assessment Report: Questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2-14.1 R50-R54"
+    },
+    {
+      "clause": "14.6.2",
+      "description": "Suitably validated tools and PROCEDURES assuring each RISK CONTROL measure reduces identified RISK(S) satisfactorily provided in addition to PEMS requirements in Clause 4.2.2",
+      "verdict": "P",
+      "reference_document": "Risk Assessment Report: Identify medical device characteristics that could impact on safety and intended use-14.6.2 R50-R54"
+    },
+    {
+      "clause": "14.7",
+      "description": "A documented requirement specification for PEMS and each of its subsystems (e.g. for a PESS) which includes ESSENTIAL PERFORMANCE and RISK CONTROL measures implemented by that system or subsystem",
+      "verdict": "P",
+      "reference_document": "PT9L-Subroutine Test Record E0-DN:PT9L-RZCL01 V1.0"
+    },
+    {
+      "clause": "14.8",
+      "description": "An architecture satisfying the requirement is specified for PEMS and each of subsystems",
+      "verdict": "P",
+      "reference_document": "Software Quality Plan DN: PT9L-RJCH01 V1.0",
+      "sub_requirements": [
+        {
+          "item": "a) COMPONENTS WITH HIGH-INTEGRITY CHARACTERISTICS",
+          "verdict": "N/A"
+        },
+        {
+          "item": "b) fail-safe functions",
+          "verdict": "N/A"
+        },
+        {
+          "item": "c) redundancy",
+          "verdict": "N/A"
+        },
+        {
+          "item": "d) diversity",
+          "verdict": "N/A"
+        },
+        {
+          "item": "e) partitioning of functionality",
+          "verdict": "P"
+        },
+        {
+          "item": "f) defensive design potentially limiting hazardous effects by restricting available output power or by introducing means to limit travel of actuators",
+          "verdict": "N/A"
+        },
+        {
+          "item": "g) allocation of RISK CONTROL measures to subsystems and components of PEMS",
+          "verdict": "N/A"
+        },
+        {
+          "item": "h) failure modes of components and their effects",
+          "verdict": "P"
+        },
+        {
+          "item": "i) common cause failures",
+          "verdict": "N/A"
+        },
+        {
+          "item": "j) systematic failures",
+          "verdict": "P"
+        },
+        {
+          "item": "k) test interval duration and diagnostic coverage",
+          "verdict": "P"
+        },
+        {
+          "item": "l) maintainability",
+          "verdict": "N/A"
+        },
+        {
+          "item": "m) protection from reasonably foreseeable misuse",
+          "verdict": "P"
+        },
+        {
+          "item": "n) IT-NETWORK specification, when applicable",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "14.9",
+      "description": "Design is broken up into subsystems, each with a design and test specification where appropriate, and descriptive data on design environment documented",
+      "verdict": "P",
+      "reference_document": "PT9L-Subroutine Test Record E0-DN:PT9L-RZCL01 V1.0"
+    },
+    {
+      "clause": "14.10",
+      "description": "A VERIFICATION plan containing the specified information used to verify and document functions implementing BASIC SAFETY, ESSENTIAL PERFORMANCE, or RISK CONTROL measures",
+      "verdict": "P",
+      "reference_document": "Software Quality Planning-DN: PT9L-RJCH01 V1.0",
+      "sub_requirements": [
+        {
+          "description": "Milestone(s) when VERIFICATION is to be performed for each function",
+          "verdict": "P"
+        },
+        {
+          "description": "Selection and documentation of VERIFICATION strategies, activities, techniques, and appropriate level of independence",
+          "verdict": "P"
+        },
+        {
+          "description": "Selection and utilization of VERIFICATION tools",
+          "verdict": "P"
+        },
+        {
+          "description": "Coverage criteria for VERIFICATION",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "14.11",
+      "description": "A PEMS VALIDATION plan containing validation of BASIC SAFETY & ESSENTIAL PERFORMANCE",
+      "verdict": "P",
+      "reference_document": "Software Quality Planning-DN: PT9L-RJCH01 V1.0"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-RJFA01 V1.0",
+      "description": "Software design solutions document",
+      "type": "document_number"
+    },
+    {
+      "id": "PT9L-RJCH01 V1.0",
+      "description": "Software Quality Plan",
+      "type": "document_number"
+    },
+    {
+      "id": "PT9L-RZCL01 V1.0",
+      "description": "PT9L-Subroutine Test Record E0",
+      "type": "document_number"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Software Design Solutions",
+      "document_number": "PT9L-RJFA01 V1.0",
+      "referenced_clause": "PEMS DEVELOPMENT LIFE-CYCLE documentation requirements"
+    },
+    {
+      "name": "Software Quality Plan",
+      "document_number": "PT9L-RJCH01 V1.0",
+      "referenced_clauses": [
+        "14.5",
+        "14.8",
+        "14.10",
+        "14.11"
+      ]
+    },
+    {
+      "name": "Risk Assessment Report",
+      "referenced_clauses": [
+        "14.6.1",
+        "14.6.2"
+      ],
+      "referenced_sections": [
+        "Edition 3.2-14.1 R50-R54",
+        "14.6.2 R50-R54"
+      ]
+    },
+    {
+      "name": "PT9L-Subroutine Test Record E0",
+      "document_number": "PT9L-RZCL01 V1.0",
+      "referenced_clauses": [
+        "14.7",
+        "14.9"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The PEMS architecture specification makes use of and considers the following items to reduce RISK to an acceptable level where appropriate: (a) COMPONENTS WITH HIGH-INTEGRITY CHARACTERISTICS [N/A], (b) fail-safe functions [N/A], (c) redundancy [N/A], (d) diversity [N/A], (e) partitioning of functionality [P], (f) defensive design potentially limiting hazardous effects by restricting available output power or by introducing means to limit travel of actuators [N/A], (g) allocation of RISK CONTROL measures to subsystems and components of PEMS [N/A], (h) failure modes of components and their effects [P], (i) common cause failures [N/A], (j) systematic failures [P], (k) test interval duration and diagnostic coverage [P], (l) maintainability [N/A], (m) protection from reasonably foreseeable misuse [P], (n) IT-NETWORK specification, when applicable [N/A].",
+      "topic_tags": [
+        "PEMS architecture",
+        "risk control",
+        "IEC60601-1 clause 14.8",
+        "safety measures"
+      ],
+      "related_subjects": [
+        "Software Quality Plan PT9L-RJCH01 V1.0",
+        "Clause 14.8"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Under IEC60601-1 Clause 14.6.1, the MANUFACTURER must consider HAZARDS associated with both software and hardware aspects of PEMS, including hazards associated with incorporating PEMS into an IT-NETWORK, components of third-party origin, and legacy subsystems when compiling the list of known or foreseeable HAZARDS. Evidence provided in Risk Assessment Report, Edition 3.2-14.1 R50-R54.",
+      "topic_tags": [
+        "PEMS hazards",
+        "IT-NETWORK",
+        "third-party components",
+        "legacy subsystems",
+        "risk management"
+      ],
+      "related_subjects": [
+        "Risk Assessment Report",
+        "Clause 14.6.1",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The PEMS DEVELOPMENT LIFE-CYCLE problem resolution system documented in the Software Quality Plan (DN: PT9L-RJCH01 V1.0) meets all prescribed criteria: it is documented as part of PEMS DEVELOPMENT LIFE-CYCLE; it allows reporting of potential or existing problems affecting BASIC SAFETY or ESSENTIAL PERFORMANCE; it includes an assessment of each problem for associated RISKS; it identifies criteria that must be met for the issue to be closed; and it identifies the action to be taken to resolve each problem.",
+      "topic_tags": [
+        "problem resolution",
+        "PEMS development lifecycle",
+        "basic safety",
+        "essential performance",
+        "risk assessment"
+      ],
+      "related_subjects": [
+        "Software Quality Plan PT9L-RJCH01 V1.0",
+        "Clause 14.5"
+      ]
+    }
+  ]
+}

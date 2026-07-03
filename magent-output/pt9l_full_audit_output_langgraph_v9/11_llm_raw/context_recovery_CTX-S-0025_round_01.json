@@ -1,0 +1,187 @@
+```json
+{
+  "context_summary": "本轮已扩展了 F0190（正极弹簧PT5-M02.pdf.md）的完整本地上下文，包括：技术要求全文（材料、盐雾、弹力、焊接性）、完整尺寸表（IQC重点尺寸①②③及未编号尺寸）、自动校验表、装配关系推断、必查确认清单（含第5条"PT9L实际生产是否仍沿用PT5弹簧——推测同件复用"）、文档元数据（设计日期2019-07-15，PT5项目，PT9L沿用）。\n\n核心发现：\n1. 该文件仅为设计图纸（尺寸/公差/技术要求），不含任何生物相容性测试报告或样品身份鉴别文件（PT5 sample-identity document）。\n2. 文件第97行明确标注"PT9L实际生产是否仍沿用PT5弹簧"为"推测同件复用"，即PT5与PT9L的零件等同性尚未在证据目录中得到正式文件确认。\n3. page_context中的F0015、F0019均为风险控制措施验证报告，但其text字段为空，无法判断是否包含生物相容性或样品身份相关内容，需进一步读取。\n4. 仍未找到：①生物相容性测试报告（ISO 10993系列）；②PT5样品身份鉴别文件（批次号、物料编码、与PT9L生产件的等同性声明）；③RUN-0006所指测试样品的来源记录。",
+
+  "evidence_gaps": [
+    "缺少PT5正极弹簧的生物相容性测试报告（ISO 10993-1/-5/-10等），证据目录中无任何biocompatibility test report",
+    "缺少PT5样品身份鉴别文件（sample-identity document），无批次号、物料编码、供应商声明等可追溯信息",
+    "PT5与PT9L零件等同性未经正式文件确认，图纸第97行仅为"推测同件复用"，无ECO/变更控制记录支撑",
+    "RUN-0006所引用的测试样品来源记录（测试申请单、样品接收记录、检测委托书）在当前证据中完全缺失",
+    "F0015（V1.0-3风险控制验证报告）和F0019（V2.0风险控制验证报告）的实际文本内容为空，无法确认是否涉及生物相容性或样品身份",
+    "缺少设计输出清单二中与PT5/PT9L弹簧相关的BOM或物料清单，无法核实零件号对应关系",
+    "缺少PT9L产品的生物相容性评估报告（Biological Evaluation Report）或等同性声明文件"
+  ],
+
+  "additional_search_queries": [
+    "生物相容性 PT5 OR PT9L 测试报告 ISO 10993",
+    "biocompatibility test report PT5 PT9L spring",
+    "样品身份 sample identity PT5 弹簧 批次",
+    "RUN-0006 测试样品 来源 接收记录",
+    "PT9L PT5 零件等同性 ECO 变更控制 设计变更",
+    "F0015 风险控制验证报告 生物相容性",
+    "F0019 Verification risk control biocompatibility",
+    "设计输出清单 BOM 物料清单 PT9L 弹簧 PT5-M02",
+    "生物相容性评估 Biological Evaluation PT9L",
+    "正极弹簧 镀镍 不锈钢 生物相容性 皮肤接触",
+    "PT5-M02 物料编码 供应商 合格供应商清单",
+    "IQC 来料检验 PT5 弹簧 批次记录"
+  ],
+
+  "agent_instruction": "Hardware Agent：当前P1缺口（RUN-0006样品身份等同性）在已读证据中无法关闭。请按以下优先级执行补充核查：\n\n【优先级1 - 直接证据搜索】\n(a) 在文件目录中搜索包含"生物相容性"、"biocompatibility"、"ISO 10993"关键词的所有文档，重点检查"09 生物相容性"、"10 临床"或类似编号文件夹；\n(b) 读取F0015和F0019的完整文本内容，确认其是否包含弹簧材料（镀镍不锈钢）的生物相容性验证条目；\n(c) 搜索"PT5-M02"或"正极弹簧"在所有非图纸文档中的出现位置（BOM、检验规范、测试申请单）。\n\n【优先级2 - 等同性链条重建】\n(d) 查找PT5→PT9L的设计变更记录（ECO、设计变更通知单），确认弹簧零件是否在PT9L项目中被正式继承或重新认证；\n(e) 在"设计输出清单"或"物料清单"文件中核实PT5-M02的零件号是否直接出现在PT9L的BOM中。\n\n【优先级3 - 样品追溯】\n(f) 搜索RUN-0006相关的测试委托书、样品接收单或检测报告，确认测试样品的物料编码和批次是否与PT5-M02图纸规格一致；\n(g) 若找到生物相容性报告，核查报告中的样品描述（材料、表面处理、尺寸）是否与PT5-M02图纸技术要求（镀镍不锈钢Φ0.5、银白色/浅金色）相符。\n\n注意：不得基于"推测同件复用"（图纸第97行）直接判定等同性成立，必须找到正式文件依据。",
+
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "HW-135",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 49,
+        "source_text": "| ② | 侧视图 | （无） | **7.0** | ±0.30 | **工作段长**（弹簧紧密段） |",
+        "section": "2.1 带编号 IQC 重点尺寸（A 级）",
+        "local_context_lines": "46-65",
+        "full_table_row": "| ② | 侧视图 | （无） | **7.0** | ±0.30 | **工作段长**（弹簧紧密段） |",
+        "adjacent_rows": [
+          "| ① | 主视图 | Ø | **0.50** | ±0.03 | **线径** |",
+          "| ③ | 主视图 | Ø | **6.50** | ±0.10 | **弹簧外径** |"
+        ],
+        "relevance_to_gap": "仅为尺寸规格，不含样品身份或生物相容性信息"
+      },
+      {
+        "evidence_id": "HW-136",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 75,
+        "source_text": "| **公差形式** | `±0.03` / `±0.30` / `±0.10` 均对称 ✓ |",
+        "section": "3. 自动校验",
+        "relevance_to_gap": "自动校验表，不含样品身份或生物相容性信息"
+      },
+      {
+        "evidence_id": "HW-137",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 84,
+        "source_text": "- **正极弹簧 ↔ PCB / 电池仓盖**：技要 6\"可上锡焊接\" → 焊接固定到 PCB。",
+        "section": "4. 装配关系（B 级，从技要推断）",
+        "relevance_to_gap": "装配关系推断，不含样品身份或生物相容性信息"
+      },
+      {
+        "evidence_id": "HW-138",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 93,
+        "source_text": "| 1 | 电池槽 / PCB 焊盘的实际配合（焊点位置、焊盘大小） | 工程师释义 |",
+        "section": "5. 必查 3D / 工程师确认清单",
+        "relevance_to_gap": "确认清单第5条明确标注PT9L沿用PT5弹簧为"推测"，非正式文件确认"
+      },
+      {
+        "evidence_id": "HW-NEW-001",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 97,
+        "source_text": "| 5 | PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件） | 推测同件复用 |",
+        "section": "5. 必查 3D / 工程师确认清单",
+        "relevance_to_gap": "直接相关：明确承认PT5与PT9L零件等同性尚未正式确认，仅为推测，是RUN-0006缺口的核心证据节点"
+      },
+      {
+        "evidence_id": "HW-NEW-002",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 111,
+        "source_text": "- **设计日期**：2019-07-15（PT5 项目，PT9L 沿用）",
+        "section": "7. 元数据",
+        "relevance_to_gap": "元数据注明PT9L沿用，但无正式变更控制文件编号支撑"
+      },
+      {
+        "evidence_id": "HW-NEW-003",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 30,
+        "source_text": "2. 材料：镀镍不锈钢线 Φ0.5 / 不锈钢线 Φ0.5 mm + Ni 镀层；",
+        "section": "1. 技术要求（A 级，逐字转写）",
+        "relevance_to_gap": "材料规格（镀镍不锈钢）是生物相容性评估的关键输入，但图纸本身不包含生物相容性测试结论"
+      },
+      {
+        "evidence_id": "HW-NEW-004",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 35,
+        "source_text": "7. 符合 **GB2423.17-2008** 盐雾测试：5% 盐水 / 35° / 24H 后无生锈；",
+        "section": "1. 技术要求（A 级，逐字转写）",
+        "relevance_to_gap": "仅有盐雾测试要求（耐腐蚀），无ISO 10993生物相容性测试要求，进一步确认图纸层面缺少生物相容性规定"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "status": "text_empty_needs_full_read",
+        "note": "该文件为风险控制措施验证报告V1.0-3，text字段为空，需完整读取以确认是否包含弹簧材料生物相容性验证条目"
+      },
+      {
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "status": "text_empty_needs_full_read",
+        "note": "该文件为风险控制措施验证报告V2.0（2024年），text字段为空，需完整读取，优先级高于F0015（版本更新）"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "document_metadata",
+        "doc_id": "F0190",
+        "content": {
+          "document_title": "正极弹簧PT5-M02 设计图纸",
+          "design_date": "2019-07-15",
+          "project": "PT5（PT9L沿用）",
+          "pages": 1,
+          "format": "A4纵向",
+          "associated_wiki": "wiki/drawings/pt9l-drawings.md §2.4 弹簧章节",
+          "document_type": "设计输出图纸",
+          "contains_biocompatibility": false,
+          "contains_sample_identity": false
+        }
+      },
+      {
+        "context_id": "RC-002",
+        "type": "material_specification_extracted",
+        "doc_id": "F0190",
+        "content": {
+          "material": "镀镍不锈钢线",
+          "wire_diameter": "Φ0.5 mm",
+          "surface": "Ni镀层",
+          "color": "银白色或浅金色",
+          "corrosion_test": "GB2423.17-2008 盐雾测试 5%盐水/35°C/24H",
+          "note": "材料规格可作为生物相容性评估的输入参数，但图纸本身不构成生物相容性证据"
+        }
+      },
+      {
+        "context_id": "RC-003",
+        "type": "pt5_pt9l_equivalence_status",
+        "doc_id": "F0190",
+        "line": 97,
+        "content": {
+          "question": "PT9L实际生产是否仍沿用PT5弹簧（同图同件）",
+          "current_status": "推测同件复用",
+          "formal_document_reference": null,
+          "eco_reference": null,
+          "assessment": "等同性未经正式文件确认，是RUN-0006缺口的直接证据，Hardware Agent必须查找正式变更控制或等同性声明文件"
+        }
+      },
+      {
+        "context_id": "RC-004",
+        "type": "gap_confirmation",
+        "content": {
+          "biocompatibility_report_found": false,
+          "sample_identity_document_found": false,
+          "pt5_pt9l_equivalence_formally_confirmed": false,
+          "run_0006_sample_traceability_found": false,
+          "evidence_searched": ["F0190 正极弹簧PT5-M02.pdf.md（完整文本）"],
+          "evidence_pending": ["F0015完整文本", "F0019完整文本", "生物相容性文件夹", "BOM/物料清单", "ECO变更记录"],
+          "conclusion": "P1缺口在当前已读证据中完全未关闭，需按additional_search_queries继续检索"
+        }
+      }
+    ]
+  }
+}
+```

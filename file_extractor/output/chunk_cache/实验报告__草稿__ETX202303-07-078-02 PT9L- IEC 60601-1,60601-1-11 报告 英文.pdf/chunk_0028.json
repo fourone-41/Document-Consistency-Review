@@ -1,0 +1,185 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Record",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "58-59 of 182"
+  },
+  "products": [
+    {
+      "name": "Infrared No-Touch Forehead Thermometer"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "9.6.2.1",
+      "requirement": "PATIENT, OPERATOR, and other persons are not exposed to acoustic energy from ME EQUIPMENT in NORMAL USE, except for auditory ALARM SIGNALS",
+      "sub_tests": [
+        {
+          "description": "80 dBA for a cumulative exposure of 24 h over a 24 h period",
+          "result": "The noises of Infrared No-Touch Forehead Thermometer on the back side and upper is 51.3dBA",
+          "verdict": "P"
+        },
+        {
+          "description": "83 dBA (when halving the cumulative exposure time)",
+          "verdict": "N/A"
+        },
+        {
+          "description": "140 dBC (peak) sound pressure level for impulsive or impact acoustic energy",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "P"
+    },
+    {
+      "clause": "9.6.2.2",
+      "requirement": "RISK MANAGEMENT FILE examined for RISKS associated with infrasound or ultrasound addressed in RISK MANAGEMENT PROCESS",
+      "result": "No infrasound or ultrasound",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.6.3",
+      "requirement": "Hand-transmitted vibration: Means provided to protect PATIENT and OPERATOR when hand-transmitted frequency-weighted r.m.s. acceleration exceeds specified values",
+      "result": "No hand-transmitted vibration.",
+      "sub_tests": [
+        {
+          "description": "2.5 m/s2 for a cumulative time of 8 h during a 24 h period",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Accelerations for different times, inversely proportional to square root of time",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7",
+      "requirement": "Pressure vessels and parts subject to pneumatic and hydraulic pressure",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.1",
+      "requirement": "Requirements applied to vessels and parts of ME EQUIPMENT subject to pressure resulting in rupture and unacceptable RISK",
+      "result": "No such pressure vessels",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.2",
+      "requirement": "Pneumatic and hydraulic parts of ME EQUIPMENT or ACCESSORIES met requirements based on examination of RISK MANAGEMENT FILE",
+      "sub_tests": [
+        {
+          "description": "No unacceptable RISK resulted from loss of pressure or loss of vacuum",
+          "verdict": "N/A"
+        },
+        {
+          "description": "No unacceptable RISK resulted from a fluid jet caused by leakage or a component failure",
+          "result": "No fluid",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Elements of ME EQUIPMENT or an ACCESSORY protected against harmful external effects",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Reservoirs and similar vessels automatically depressurized when ME EQUIPMENT is isolated from its power supply",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.3",
+      "requirement": "Maximum pressure a part of ME EQUIPMENT can be subjected to in NORMAL and SINGLE FAULT CONDITIONS",
+      "sub_tests": [
+        {
+          "description": "RATED maximum supply pressure from an external source",
+          "result": "No pressure from external source",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Pressure setting of a pressure-relief device provided as part of assembly",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Max pressure that can develop by a source of pressure that is part of assembly, unless pressure limited by a pressure-relief device",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.4",
+      "requirement": "Max pressure in NORMAL and SINGLE FAULT CONDITIONS did not exceed MAXIMUM PERMISSIBLE WORKING PRESSURE for EQUIPMENT part",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.5",
+      "requirement": "A pressure vessel withstood a HYDRAULIC TEST PRESSURE when pressure was > 50 kPa, and product of pressure and volume was more than 200 kPaI",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.6",
+      "requirement": "Pressure-control device regulating pressure completed 100,000 cycles of operation under RATED load and prevented pressure from exceeding 90% of setting of pressure-relief device",
+      "result": "No pressure-control device need.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.7",
+      "requirement": "Pressure-relief device(s) used where MAXIMUM PERMISSIBLE WORKING PRESSURE could otherwise be exceeded",
+      "sub_tests": [
+        {
+          "description": "Connected as close as possible to pressure vessel or parts of system it is to protect",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Installed to be readily accessible for inspection, maintenance, and repair",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Could be adjusted or rendered inoperative without a TOOL",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "9.7.7: Pressure-relief device(s) used where MAXIMUM PERMISSIBLE WORKING PRESSURE could otherwise be exceeded met the following, as confirmed by MANUFACTURER'S data, ME EQUIPMENT, RISK MANAGEMENT FILE, and functional tests: a) Connected as close as possible to pressure vessel or parts of system it is to protect; b) Installed to be readily accessible for inspection, maintenance, and repair; c) Could be adjusted or rendered inoperative without a TOOL.",
+      "topic_tags": [
+        "pressure-relief device",
+        "MAXIMUM PERMISSIBLE WORKING PRESSURE",
+        "IEC60601-1",
+        "clause 9.7.7"
+      ],
+      "related_subjects": [
+        "9.7.4",
+        "9.7.6",
+        "RISK MANAGEMENT FILE"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "9.7.2: Elements of ME EQUIPMENT or an ACCESSORY, especially pipes and hoses leading to an unacceptable RISK protected against harmful external effects. Reservoirs and similar vessels leading to an unacceptable RISK are automatically depressurized when ME EQUIPMENT is isolated from its power supply. Means provided for isolation, or local depressurizing reservoirs and similar vessels, and pressure indication when above not possible. All elements remaining under pressure after isolation of ME EQUIPMENT or an ACCESSORY from its power supply resulting in an unacceptable RISK provided with clearly identified exhaust devices, and a warning to depressurize these elements before setting or maintenance activity.",
+      "topic_tags": [
+        "pneumatic",
+        "hydraulic",
+        "pressure",
+        "RISK MANAGEMENT FILE",
+        "IEC60601-1 clause 9.7.2"
+      ],
+      "related_subjects": [
+        "9.7.1",
+        "9.7.3",
+        "RISK MANAGEMENT FILE"
+      ]
+    }
+  ]
+}

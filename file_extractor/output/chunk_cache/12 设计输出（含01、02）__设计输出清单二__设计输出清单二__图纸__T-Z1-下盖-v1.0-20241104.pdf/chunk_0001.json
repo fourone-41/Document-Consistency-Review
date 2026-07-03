@@ -1,0 +1,355 @@
+{
+  "document": {
+    "title": "下盖（T-Z1-P02 V1.0，2024-11-04）2D 图读图报告",
+    "drawing_no": "T-Z1-P02",
+    "edition": "V1.0",
+    "date": "2024-11-04",
+    "model_no": "T-Z1",
+    "part_name": "下盖",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "material": "ABS",
+    "brand": "andon iHealth",
+    "source_file": "T-Z1-下盖-v1.0-20241104.pdf",
+    "page_size": "A4 竖向（595×842 pt）",
+    "text_characters": 111,
+    "skill_method": "SKILL_2D_Drawing_Reading.md",
+    "report_date": "2026-06-02"
+  },
+  "revision_records": [
+    {
+      "version": "1",
+      "description": "初版制作",
+      "date": null
+    },
+    {
+      "version": "2",
+      "description": "LOGO 取消",
+      "date": "2024-11-04"
+    }
+  ],
+  "products": [
+    {
+      "name": "下盖",
+      "part_no": "T-Z1-P02",
+      "model": "T-Z1",
+      "material": "ABS（白色）",
+      "edition": "V1.0",
+      "brand": "andon iHealth"
+    },
+    {
+      "name": "下盖（旧版）",
+      "part_no": "T-Z1-P02",
+      "model": "T-Z1",
+      "edition": "V2.0",
+      "date": "2024-06-27",
+      "note": "含 LOGO 版本，版本号编号早于 V1.0"
+    },
+    {
+      "name": "上盖",
+      "part_no": "T-Z1-P01（推测）",
+      "model": "T-Z1",
+      "edition": "V2.0 / V3.0",
+      "note": "与下盖 V1.0 配对发布，共用 Ø130.1×34.1 外形"
+    },
+    {
+      "name": "探头",
+      "part_no": "P03（推测）",
+      "note": "内孔 Ø9.58，与下盖端面 Ø10±0.05 配合，单边间隙 0.21 mm"
+    }
+  ],
+  "components": [
+    {
+      "name": "下盖壳体",
+      "material": "ABS 白色",
+      "drawing_no": "T-Z1-P02",
+      "features": [
+        "探头端开口 Ø10±0.05",
+        "整件总长 Ø130.1±0.1",
+        "外形宽 34.1±0.05",
+        "4处 Ø2.2 螺丝孔",
+        "4处 Ø4 孔（电池仓相关）",
+        "密封筋/卡扣（DETAIL D）",
+        "AAA×2 节电池仓"
+      ]
+    },
+    {
+      "name": "密封筋/卡扣（DETAIL D）",
+      "scale": "5:1",
+      "features": [
+        "特征A 0.88±0.03",
+        "特征B 1.25±0.03"
+      ],
+      "note": "推测为密封筋，与上盖配合密封"
+    },
+    {
+      "name": "电池仓",
+      "type": "AAA × 2 节",
+      "features": [
+        "4处 Ø4 孔",
+        "正负极方向防呆待确认"
+      ]
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "整件外形宽 34.1±0.05 mm（IQC 重要尺寸 ①）",
+      "source": "2D图纸 T-Z1-P02 V1.0"
+    },
+    {
+      "id": "DI-02",
+      "description": "A-A 截面关键厚度 1.4±0.05 mm（IQC 重要尺寸 ②）",
+      "source": "2D图纸 T-Z1-P02 V1.0"
+    },
+    {
+      "id": "DI-03",
+      "description": "探头端开口 Ø10±0.05 mm，与探头 P03 内孔 Ø9.58 配合",
+      "source": "2D图纸 T-Z1-P02 V1.0"
+    },
+    {
+      "id": "DI-04",
+      "description": "整件总长 Ø130.1±0.1 mm，与上盖 V2.0 匹配",
+      "source": "2D图纸 T-Z1-P02 V1.0"
+    },
+    {
+      "id": "DI-05",
+      "description": "材质 ABS 白色，符合 RoHS 2.0",
+      "source": "技术要求"
+    },
+    {
+      "id": "DI-06",
+      "description": "电池仓：AAA × 2 节",
+      "source": "立体图"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "带编号尺寸（①②）为重要尺寸，需要 IQC 测量",
+      "type": "质量检验要求"
+    },
+    {
+      "id": "REQ-02",
+      "description": "材质为 ABS（白色）；产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "type": "材料与外观要求"
+    },
+    {
+      "id": "REQ-03",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "type": "装配验证要求"
+    },
+    {
+      "id": "REQ-04",
+      "description": "产品符合 RoHS 2.0",
+      "type": "法规符合性要求"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-01",
+      "name": "IQC 重要尺寸测量",
+      "items": [
+        {
+          "dim_id": "①",
+          "nominal": 34.1,
+          "tolerance": "±0.05",
+          "unit": "mm",
+          "description": "整件外形宽"
+        },
+        {
+          "dim_id": "②",
+          "nominal": 1.4,
+          "tolerance": "±0.05",
+          "unit": "mm",
+          "description": "A-A 截面关键厚度"
+        }
+      ]
+    },
+    {
+      "id": "TEST-02",
+      "name": "试装验证",
+      "description": "须试装产品，能顺利装入产品；以结构签板和组装（实配）为准"
+    },
+    {
+      "id": "TEST-03",
+      "name": "配合间隙验证（C-3）",
+      "description": "探头端 Ø10±0.05 ↔ 探头 P03 Ø9.58 间隙是否合理（TPU 弹性吸收 0.21 mm 单边间隙）",
+      "status": "待工程师确认"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "T-Z1-P02"
+    },
+    {
+      "type": "产品型号",
+      "value": "T-Z1"
+    },
+    {
+      "type": "版本号",
+      "value": "V1.0"
+    },
+    {
+      "type": "日期",
+      "value": "2024-11-04"
+    },
+    {
+      "type": "旧版版本号",
+      "value": "V2.0（2024-06-27）"
+    },
+    {
+      "type": "配合探头图纸",
+      "value": "探头20210727.pdf"
+    },
+    {
+      "type": "配合上盖图纸",
+      "value": "T-Z1-上盖-v2.0-20241104.pdf"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 有害物质限制指令",
+      "applicability": "T-Z1 下盖 ABS 材质"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "V1.0 vs V2.0 版本号倒置（与上盖 V2.0 vs V3.0 是同一套修订）",
+      "required_source": "项目管理"
+    },
+    {
+      "id": "C-2",
+      "description": "当前生产版本（V1.0 还是 V2.0）",
+      "required_source": "工程师 / BOM"
+    },
+    {
+      "id": "C-3",
+      "description": "探头端 Ø10±0.05 ↔ 探头 P03 Ø9.58 间隙是否合理（TPU 弹性吸收 0.21 mm）",
+      "required_source": "3D 装配 + 试装"
+    },
+    {
+      "id": "C-4",
+      "description": "2-Ø2.2 + 另 2-Ø2.2（共 4 处螺丝孔）的实际位置（电池仓内 vs 外壳合模？）",
+      "required_source": "3D 装配"
+    },
+    {
+      "id": "C-5",
+      "description": "电池仓详细装配（AAA × 2 节，正负极方向防呆）",
+      "required_source": "3D 装配 + 实物"
+    },
+    {
+      "id": "C-6",
+      "description": "DETAIL D 0.88±0.03 / 1.25±0.03 是否为密封筋（与上盖配合密封）",
+      "required_source": "3D 剖面 + 工程师"
+    },
+    {
+      "id": "C-7",
+      "description": "A-A 0.6±0.03 极薄壁的功能（弹性变形？密封？）",
+      "required_source": "3D 剖面"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "版本号管理提示：本图 Edition V1.0，日期 2024-11-04（较新）；上一版 T-Z1-下盖-v2.0-20240627.pdf 是 V2.0，日期 2024-06-27（较旧）。日期上 V1.0 > V2.0（晚 4 个月），但版本号反向。修改记录显示\"版本 2 = LOGO 取消\"，推测为同步取消 LOGO 引起的版本回退编号；与上盖 V2.0/V3.0 配对发布。生产用哪一版需工程师确认。",
+      "topic_tags": [
+        "版本号管理",
+        "版本倒置",
+        "LOGO取消",
+        "生产版本"
+      ],
+      "related_subjects": [
+        "T-Z1-P02",
+        "上盖 V2.0",
+        "上盖 V3.0",
+        "C-1",
+        "C-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "视图结构说明：① PROJECTED B（右上端面圆视图，探头筒端面）+ ② 主视图（中部，内腔俯视含电池仓 + 探头基部）+ ③ SECTION A-A（右下，沿长度方向纵剖）+ ④ SECTION C-C（右下小图）+ ⑤ DETAIL D（SCALE 5:1，密封筋/卡扣放大）+ ⑥ 侧视图（左侧）+ ⑦ 立体图（左下，含 \"+AAA+\" 电池仓可视）。",
+      "topic_tags": [
+        "视图结构",
+        "剖视图",
+        "细节放大图",
+        "电池仓",
+        "密封筋"
+      ],
+      "related_subjects": [
+        "SECTION A-A",
+        "SECTION C-C",
+        "DETAIL D",
+        "PROJECTED B"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "配合交叉验证结果：与上盖 V2.0 / V3.0 试装（共用 Ø130.1×34.1）；端面 Ø10 ↔ 探头 P03 内孔 Ø9.58（单边间隙 0.21 mm 偏大，但因 TPU 弹性可压缩）。",
+      "topic_tags": [
+        "配合验证",
+        "间隙分析",
+        "TPU弹性",
+        "探头配合",
+        "上盖配合"
+      ],
+      "related_subjects": [
+        "探头 P03",
+        "上盖 V2.0",
+        "Ø10",
+        "Ø9.58",
+        "C-3"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "版本对比（V2.0 vs V1.0）：Drawing NO. 均为 T-Z1-P02；V2.0 日期 2024-06-27 含 LOGO，V1.0 日期 2024-11-04 LOGO 取消（与上盖 V2.0 同步）；整件外形 Ø130.1×34.1 几何相同；当前生产版需工程师确认，推测以最新日期 V1.0 为准。",
+      "topic_tags": [
+        "版本对比",
+        "LOGO取消",
+        "几何一致性",
+        "生产版本确认"
+      ],
+      "related_subjects": [
+        "T-Z1-P02 V2.0",
+        "T-Z1-P02 V1.0",
+        "上盖 V2.0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "公差精度分级说明：DETAIL D 中 0.88±0.03 / 1.25±0.03 及 SECTION A-A 中 0.6±0.03 均为 Level A 精度（高精度），需单独标注并重点控制；其余尺寸采用 SELECT LEVEL B 公差；IQC 重点尺寸为编号 ① 34.1±0.05 和 ② 1.4±0.05。",
+      "topic_tags": [
+        "公差精度",
+        "Level A",
+        "Level B",
+        "IQC重点尺寸",
+        "密封筋精度"
+      ],
+      "related_subjects": [
+        "DETAIL D",
+        "SECTION A-A",
+        "REQ-01",
+        "TEST-01"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文字层仅 111 字符，含 \"andon\"、\"下盖\"、\"产品技术要求\"、\"PROJECTED B\"、\"DETAIL D\"、\"SECTION A-A/C-C\"、修改记录等关键文字；图纸渲染采用概览 150 DPI + 3×2 块 300 DPI 方案进行读图。",
+      "topic_tags": [
+        "文字层",
+        "DPI",
+        "渲染方案",
+        "读图方法"
+      ],
+      "related_subjects": [
+        "SKILL_2D_Drawing_Reading.md"
+      ]
+    }
+  ]
+}

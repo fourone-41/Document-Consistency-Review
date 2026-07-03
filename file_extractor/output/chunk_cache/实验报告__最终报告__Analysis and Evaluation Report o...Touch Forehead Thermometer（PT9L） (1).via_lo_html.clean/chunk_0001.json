@@ -1,0 +1,224 @@
+{
+  "document": {
+    "title": "Analysis and Evaluation Report on the Expected Life of the Infrared No-Touch Forehead Thermometer",
+    "document_type": "Expected Life Analysis and Evaluation Report",
+    "product_name": "Infrared No-Touch Forehead Thermometer",
+    "model": "PT9L",
+    "completion_date": "July 12, 2024",
+    "issuing_organization": "ANDON HEALTH CO., LTD.",
+    "department": "Research and Development Department"
+  },
+  "products": [
+    {
+      "name": "Infrared No-Touch Forehead Thermometer",
+      "model": "PT9L",
+      "lot_no": "KE04",
+      "expected_life": "5 years",
+      "intended_environment": "Home indoor room temperature environment"
+    }
+  ],
+  "components": [
+    {
+      "name": "Plastic casing"
+    },
+    {
+      "name": "IR temperature sensor"
+    },
+    {
+      "name": "MCU"
+    },
+    {
+      "name": "LCD display screen"
+    },
+    {
+      "name": "Buzzer"
+    },
+    {
+      "name": "Batteries"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "description": "Measure human body temperature by receiving the infrared energy of the human body forehead",
+      "use_environment": "Home indoor environment",
+      "user_type": "Home users"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "Expected Life is 5 years",
+      "category": "Lifetime"
+    },
+    {
+      "id": "REQ-02",
+      "description": "Operating temperature: 10℃ ~ 40℃",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-03",
+      "description": "Operating relative humidity: 15%RH ~ 95%RH, non-condensing",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-04",
+      "description": "Operating atmospheric pressure: 70 kPa ~ 106 kPa",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-05",
+      "description": "Transportation and storage temperature: -20℃ ~ 55℃",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-06",
+      "description": "Transportation and storage relative humidity: 15%RH ~ 95%RH, non-condensing",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-07",
+      "description": "Transportation and storage atmospheric pressure: 70 kPa ~ 106 kPa",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-08",
+      "description": "Reliability target: 90% reliability at 90% confidence level",
+      "category": "Reliability"
+    }
+  ],
+  "tests": [
+    {
+      "test_name": "Accelerated Life Testing",
+      "test_type": "Accelerated Life Test",
+      "method_reference": "IEC 62506:2013 Methods for product accelerated testing",
+      "acceleration_model": "Arrhenius model (temperature and humidity as acceleration stress)",
+      "acceleration_factor": "AF = 16.058",
+      "acceleration_formula": "Weibull Distribution and Binomial Distribution Synthesis formula",
+      "parameters": {
+        "Ts_normal_temperature_K": 298,
+        "Tu_accelerated_temperature_K": 313,
+        "normal_temperature_C": 25,
+        "accelerated_temperature_C": 40,
+        "normal_humidity_RH": "50%",
+        "accelerated_humidity_RH": "95%",
+        "activation_energy_Ea_eV": 0.8,
+        "boltzmann_constant_k": "8.62e-5 eV/K",
+        "humidity_acceleration_constant_n": 2,
+        "weibull_beta": 1.5,
+        "sample_quantity": 1
+      },
+      "sample": {
+        "name": "Infrared No-Touch Forehead Thermometer",
+        "model": "PT9L",
+        "lot_no": "KE04",
+        "quantity": 1
+      },
+      "annual_use_time_h": 6.1,
+      "five_year_use_time_h": 30.5,
+      "report_reference": "Annex I – Accelerated life testing report"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "Operating Frequency",
+      "description": "365 working days per year, 3 times per day = 1095 times per year"
+    },
+    {
+      "category": "Service Time per Operation",
+      "description": "Each operation (startup, measurement, auto shutdown) takes 20 seconds"
+    },
+    {
+      "category": "Annual Use Time",
+      "description": "365 × 3 × 20 / 3600 ≈ 6.1 hours per year; 5-year total: 30.5 hours"
+    },
+    {
+      "category": "Verification Environment",
+      "description": "Application environment: 25℃, 50% RH; Accelerated environment: 40℃, 95% RH"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "Guiding Principles for Technical Review of the Expected Life Registration of Active Medical Devices",
+      "type": "Regulatory Guidance"
+    },
+    {
+      "name": "IEC 62506:2013",
+      "full_name": "Methods for product accelerated testing",
+      "type": "International Standard"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Product Model",
+      "value": "PT9L"
+    },
+    {
+      "type": "Lot Number",
+      "value": "KE04"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The product mainly uses the environment for the home environment, which is the high-tech Infrared No-Touch Forehead Thermometer to measure the human body temperature by receiving the infrared energy of the human body forehead. The Expected Life is 5 years. The product mainly consists of a plastic casing, IR temperature sensor, MCU, LCD display screen, buzzer and batteries. The host is a critical factor influencing the overall product expected life. The product lifespan is confirmed through accelerated life testing of the entire unit. The evaluation follows the path of direct verification on the product.",
+      "topic_tags": [
+        "evaluation path",
+        "product composition",
+        "expected life",
+        "accelerated testing",
+        "home use"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Accelerated Life Testing",
+        "Expected Life"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Cleaning and Disinfection procedure: The thermometer is designed for home use. If there are multiple users, please clean the device in between uses with the following steps: 1. Use an alcohol swab or tissue moistened with alcohol (70% Isopropyl) to clean the thermometer casing thoroughly, ideally for more than 15 seconds. 2. Allow the thermometer to dry for at least 5 minutes before taking a temperature. 3. After cleaning, if the device is not visually clean when observed with magnification and adequate lighting, please repeat the clean steps above.",
+      "topic_tags": [
+        "cleaning",
+        "disinfection",
+        "70% isopropyl alcohol",
+        "home use",
+        "multiple users"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Intended Use"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Evaluation Method Overview table: Item = Infrared No-Touch Forehead Thermometer; Influencing factors = Frequency, use time, ambient temperature and humidity; Model = PT9L; Attribute = independent research and development; Decomposition relation type = No replaceable parts; During the Expected Life / failure rate = 5 years; Evaluation methodology = Accelerated life testing report (see Annex I); Evaluation completion unit = ANDON HEALTH CO., LTD.; Whether an unacceptable risk occurs during the Expected Life = No (See Risk Analysis Report for details).",
+      "topic_tags": [
+        "evaluation method overview",
+        "no replaceable parts",
+        "risk analysis",
+        "accelerated life testing"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Risk Analysis Report",
+        "Annex I"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Acceleration factor calculation: For electronic products, activation energy Ea = 0.8 eV. Ts = normal temperature 25℃ + 273 = 298K; Tu = high temperature 40℃ + 273 = 313K; k = Boltzmann constant = 8.62×10⁻⁵ eV/K; RHs = 50% RH (normal use); RHu = 95% RH (accelerated stress); n = humidity acceleration rate constant = 2. Calculated AF = 16.058. Test time calculation uses the Weibull Distribution and Binomial Distribution Synthesis formula with β = 1.5 and sample size = 1.",
+      "topic_tags": [
+        "Arrhenius model",
+        "acceleration factor",
+        "Weibull distribution",
+        "Boltzmann constant",
+        "humidity acceleration"
+      ],
+      "related_subjects": [
+        "Accelerated Life Testing",
+        "PT9L",
+        "IEC 62506:2013"
+      ]
+    }
+  ]
+}

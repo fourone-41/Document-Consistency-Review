@@ -1,0 +1,252 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "total_pages": 182,
+    "current_pages": "116-117",
+    "standard_references": [
+      "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    ]
+  },
+  "tests": [
+    {
+      "clause": "8.4.4",
+      "title": "Internal capacitive circuits – measurement of residual voltage or calculation of the stored charge in capacitive circuits after de-energizing ME EQUIPMENT",
+      "verdict": "N/A",
+      "parameters": {
+        "maximum_allowable_residual_voltage_V": 60,
+        "maximum_allowable_stored_charge_uC": 45
+      },
+      "fields": [
+        "Description of the capacitive circuit",
+        "Measured residual voltage (V)",
+        "Calculated stored charge (μC)",
+        "Remarks"
+      ]
+    },
+    {
+      "clause": "8.4.3",
+      "title": "Capacitive discharge – calculated stored charge",
+      "measurements": [
+        {
+          "voltage_measured_between": "Plug pins 1 and 2",
+          "results": [
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--"
+          ]
+        },
+        {
+          "voltage_measured_between": "Plug pin 1 and enclosure",
+          "results": [
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--"
+          ]
+        },
+        {
+          "voltage_measured_between": "Plug pin 2 and enclosure",
+          "results": [
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--",
+            "--"
+          ]
+        }
+      ]
+    },
+    {
+      "clause": "8.5.2.2",
+      "title": "RM RESULTS TABLE: Type B applied parts",
+      "verdict": "N/A",
+      "referenced_standard": "ISO 14971",
+      "clauses_evaluated": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ],
+      "fields": [
+        "Clause of ISO 14971",
+        "Document Ref. in RMF (Document No. & paragraph)",
+        "Result - Remarks",
+        "Verdict"
+      ]
+    },
+    {
+      "clause": "8.5.2.3",
+      "title": "RM RESULTS TABLE: PATIENT Leads",
+      "verdict": "N/A",
+      "referenced_standard": "ISO 14971",
+      "clauses_evaluated": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ],
+      "fields": [
+        "Clause of ISO 14971",
+        "Document Ref. in RMF (Document No. & paragraph)",
+        "Result - Remarks",
+        "Verdict"
+      ]
+    },
+    {
+      "clause": "8.5.5.1a",
+      "title": "TABLE: defibrillation-proof applied parts – measurement of hazardous electrical energies",
+      "verdict": "N/A",
+      "fields": [
+        "Test Condition (Figs. 9 & 10)",
+        "Measurement made on accessible part",
+        "Applied part with test voltage",
+        "Test voltage polarity",
+        "Measured voltage between Y1 and Y2 (mV)",
+        "Remarks"
+      ]
+    },
+    {
+      "clause": "8.5.5.1b",
+      "title": "TABLE: defibrillation-proof applied parts – verification of recovery time",
+      "verdict": "N/A",
+      "fields": [
+        "Applied part with test voltage",
+        "Test voltage polarity",
+        "Recovery time from documents (s)",
+        "Measured recovery time (s)",
+        "Remarks"
+      ]
+    },
+    {
+      "clause": "8.5.5.2",
+      "title": "TABLE: DEFIBRILLATION-PROOF APPLIED PARTS or PATIENT CONNECTIONS – Energy reduction test – measurement of Energy delivered to a 100Ω load",
+      "verdict": "N/A",
+      "compliance_criteria": "E1 must be at least 90% of E2",
+      "definitions": {
+        "E1": "Measured energy delivered to 100Ω with ME Equipment connected",
+        "E2": "Measured energy delivered to 100Ω without ME equipment connected"
+      },
+      "test_conditions": [
+        "PATIENT CONNECTION 1 or APPLIED PART with PATIENT CONNECTIONS 2, 3, and 4 of the same APPLIED PART connected to earth",
+        "PATIENT CONNECTION 2 or APPLIED PART with PATIENT CONNECTIONS 1, 3, and 4 of the same APPLIED PART connected to earth",
+        "PATIENT CONNECTION 3 or APPLIED PART with PATIENT CONNECTIONS 1, 2, and 4 of the same APPLIED PART connected to earth",
+        "PATIENT CONNECTION 4 or APPLIED PART with PATIENT CONNECTIONS 1, 2, and 3 of the same APPLIED PART connected to earth"
+      ],
+      "fields": [
+        "Test Voltage applied to",
+        "Measured Energy E1 (mJ)",
+        "Measured Energy E2 (mJ)",
+        "Energy E1 as % of E2 (%)"
+      ]
+    },
+    {
+      "clause": "8.6.3",
+      "title": "RM RESULTS TABLE: Protective earthing of moving parts",
+      "verdict": "N/A",
+      "referenced_standard": "ISO 14971",
+      "clauses_evaluated": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ],
+      "fields": [
+        "Clause of ISO 14971",
+        "Document Ref. in RMF (Document No. & paragraph)",
+        "Result - Remarks",
+        "Verdict"
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "type": "international_standard",
+      "description": "Medical electrical equipment – General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "type": "european_standard",
+      "description": "Medical electrical equipment – General requirements for basic safety and essential performance (EN version)"
+    },
+    {
+      "id": "ISO 14971",
+      "type": "international_standard",
+      "description": "Medical devices – Application of risk management to medical devices",
+      "clauses_referenced": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 8.4.4: Maximum allowable residual voltage is 60V. Maximum allowable stored charge when residual voltage exceeds 60V is 45μC. Test covers internal capacitive circuits (accessible capacitors or circuit parts) after de-energizing ME EQUIPMENT.",
+      "topic_tags": [
+        "residual voltage",
+        "stored charge",
+        "capacitive circuits",
+        "de-energizing",
+        "IEC60601-1 clause 8.4.4"
+      ],
+      "related_subjects": [
+        "8.4.4",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 8.5.5.2 energy reduction test compliance: E1 must be at least 90% of E2, where E1 is the measured energy delivered to 100Ω load with ME Equipment connected, and E2 is the measured energy delivered to 100Ω load without ME equipment connected. Tests are performed on each of up to 4 PATIENT CONNECTIONS, with the remaining PATIENT CONNECTIONS of the same APPLIED PART connected to earth.",
+      "topic_tags": [
+        "defibrillation-proof",
+        "energy reduction test",
+        "patient connections",
+        "applied parts",
+        "IEC60601-1 clause 8.5.5.2"
+      ],
+      "related_subjects": [
+        "8.5.5.2",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk management result tables for clauses 8.5.2.2 (Type B applied parts), 8.5.2.3 (PATIENT Leads), and 8.6.3 (Protective earthing of moving parts) each reference ISO 14971 clauses 5.2, 5.3, 5.4, and 6 (where applicable), requiring document references to the Risk Management File (RMF) including document number and paragraph, along with result remarks and verdict for each clause.",
+      "topic_tags": [
+        "risk management",
+        "ISO 14971",
+        "Type B applied parts",
+        "patient leads",
+        "protective earthing",
+        "RMF"
+      ],
+      "related_subjects": [
+        "8.5.2.2",
+        "8.5.2.3",
+        "8.6.3",
+        "ISO 14971"
+      ]
+    }
+  ]
+}

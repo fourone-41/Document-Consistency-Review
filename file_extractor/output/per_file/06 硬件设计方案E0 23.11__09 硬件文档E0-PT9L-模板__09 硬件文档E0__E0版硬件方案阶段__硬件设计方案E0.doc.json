@@ -1,0 +1,1155 @@
+{
+  "document": {
+    "title": "硬件设计方案 E0",
+    "document_number": "PT9L-YJFA01 V1.0",
+    "version": "V1.0",
+    "source_file": "硬件设计方案E0.pdf",
+    "total_pages": 2,
+    "project_number": "30000078"
+  },
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "project_number": "30000078"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件编号",
+      "value": "PT9L-YJFA01 V1.0"
+    },
+    {
+      "type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "type": "PDF xref",
+      "value": "26",
+      "description": "电路图图片xref编号，尺寸1257×913 px"
+    }
+  ],
+  "components": [
+    {
+      "name": "BH67F2762",
+      "type": "MCU",
+      "supplier": "合泰",
+      "role": "主控芯片",
+      "product": "PT9L红外体温计"
+    },
+    {
+      "name": "SR1833",
+      "type": "升压芯片",
+      "role": "电源管理",
+      "product": "PT9L红外体温计"
+    },
+    {
+      "name": "自恢复保险丝",
+      "part_number": "MF-MSMF050",
+      "module": "POWER",
+      "description": "电池输入保护"
+    },
+    {
+      "name": "开关",
+      "part_number": "SS115",
+      "module": "POWER",
+      "description": "电源开关"
+    },
+    {
+      "name": "升压芯片",
+      "part_number": "SR1833",
+      "module": "POWER",
+      "description": "升压至VCC 3.3V"
+    },
+    {
+      "name": "输入滤波电容C1",
+      "part_number": "C1",
+      "module": "POWER",
+      "description": "100μF/10V"
+    },
+    {
+      "name": "输入滤波电容C0",
+      "part_number": "C0",
+      "module": "POWER",
+      "description": "22nF"
+    },
+    {
+      "name": "升压电感",
+      "module": "POWER",
+      "description": "10μH"
+    },
+    {
+      "name": "分压电阻SR1",
+      "part_number": "SR1",
+      "module": "LVD",
+      "description": "低压检测分压电路"
+    },
+    {
+      "name": "分压电阻SR2",
+      "part_number": "SR2",
+      "module": "LVD",
+      "description": "低压检测分压电路"
+    },
+    {
+      "name": "MCU主控芯片",
+      "part_number": "BH67F2762",
+      "module": "MCU",
+      "description": "合泰BH67F2762，SOP封装，低功耗"
+    },
+    {
+      "name": "去耦电容C10",
+      "part_number": "C10",
+      "module": "MCU",
+      "description": "MCU电源去耦"
+    },
+    {
+      "name": "去耦电容C12",
+      "part_number": "C12",
+      "module": "MCU",
+      "description": "MCU电源去耦"
+    },
+    {
+      "name": "去耦电容C13",
+      "part_number": "C13",
+      "module": "MCU",
+      "description": "MCU电源去耦"
+    },
+    {
+      "name": "红色LED",
+      "part_number": "LEDR",
+      "module": "LED",
+      "description": "测温状态指示，限流电阻R5=120Ω"
+    },
+    {
+      "name": "白色LED",
+      "part_number": "LEDW",
+      "module": "LED",
+      "description": "测温状态指示，限流电阻R6=39Ω"
+    },
+    {
+      "name": "黄色LED",
+      "part_number": "LEDY",
+      "module": "LED",
+      "description": "测温状态指示，限流电阻R7=120Ω"
+    },
+    {
+      "name": "限流电阻R5",
+      "part_number": "R5",
+      "module": "LED",
+      "description": "红色LED限流，120Ω"
+    },
+    {
+      "name": "限流电阻R6",
+      "part_number": "R6",
+      "module": "LED",
+      "description": "白色LED限流，39Ω"
+    },
+    {
+      "name": "限流电阻R7",
+      "part_number": "R7",
+      "module": "LED",
+      "description": "黄色LED限流，120Ω"
+    },
+    {
+      "name": "红外传感器模块",
+      "module": "SENSOR",
+      "description": "内含热电堆及NTC基准温度传感器"
+    },
+    {
+      "name": "滤波电容C14",
+      "part_number": "C14",
+      "module": "SENSOR",
+      "description": "5nF"
+    },
+    {
+      "name": "滤波电容C15",
+      "part_number": "C15",
+      "module": "SENSOR",
+      "description": "5nF"
+    },
+    {
+      "name": "滤波电容C11",
+      "part_number": "C11",
+      "module": "SENSOR",
+      "description": "0.1μF"
+    },
+    {
+      "name": "滤波电容C16",
+      "part_number": "C16",
+      "module": "SENSOR",
+      "description": "0.1μF"
+    },
+    {
+      "name": "增益电阻S1",
+      "part_number": "S1",
+      "module": "SENSOR",
+      "description": "可调增益电阻"
+    },
+    {
+      "name": "增益电阻S2",
+      "part_number": "S2",
+      "module": "SENSOR",
+      "description": "可调增益电阻"
+    },
+    {
+      "name": "增益电阻R14",
+      "part_number": "R14",
+      "module": "SENSOR",
+      "description": "约1kΩ"
+    },
+    {
+      "name": "NTC热敏电阻NTC2",
+      "part_number": "NTC2",
+      "module": "NTC",
+      "description": "环境温度补偿，上拉至VCM"
+    },
+    {
+      "name": "NTC热敏电阻NTC3",
+      "part_number": "NTC3",
+      "module": "NTC",
+      "description": "环境温度补偿，上拉至VCM"
+    },
+    {
+      "name": "滤波电容C18",
+      "part_number": "C18",
+      "module": "NTC",
+      "description": "0.1μF"
+    },
+    {
+      "name": "蜂鸣器",
+      "part_number": "BUZZER",
+      "module": "BEEP",
+      "description": "无源蜂鸣器，工作频率4kHz"
+    },
+    {
+      "name": "按键1去抖电容C5",
+      "part_number": "C5",
+      "module": "KEY",
+      "description": "0.1μF去抖电容"
+    },
+    {
+      "name": "按键1分压电阻R16",
+      "part_number": "R16",
+      "module": "KEY",
+      "description": "DE_KEY1分压"
+    },
+    {
+      "name": "按键1分压电阻R1",
+      "part_number": "R1",
+      "module": "KEY",
+      "description": "DE_KEY1分压"
+    },
+    {
+      "name": "按键2分压电阻R17",
+      "part_number": "R17",
+      "module": "KEY",
+      "description": "DE_KEY2分压"
+    },
+    {
+      "name": "按键2分压电阻R2",
+      "part_number": "R2",
+      "module": "KEY",
+      "description": "DE_KEY2分压"
+    }
+  ],
+  "design_inputs": [
+    {
+      "description": "PT9L红外体温计主板采用合泰MCU BH67F2762，电源部分采用升压芯片SR1833，无存储器。"
+    },
+    {
+      "id": "DI-POWER-01",
+      "description": "电源输入来自电池(BAT)，经自恢复保险丝MF-MSMF050和开关SS115后进入升压芯片SR1833，升压至VCC 3.3V"
+    },
+    {
+      "id": "DI-POWER-02",
+      "description": "电源控制信号DO_PCTL：低电平时3.3V OFF，高电平时3.3V ON"
+    },
+    {
+      "id": "DI-LVD-01",
+      "description": "低压检测：通过SR1、SR2分压，输出信号AI_LVD至MCU，用于检测电池欠压状态"
+    },
+    {
+      "id": "DI-SENSOR-01",
+      "description": "红外传感器模块内含热电堆及NTC基准温度传感器，输出信号AI_AND接MCU模拟输入"
+    },
+    {
+      "id": "DI-NTC-01",
+      "description": "NTC热敏电阻（NTC2/NTC3）上拉至VCM，用于环境温度补偿"
+    },
+    {
+      "id": "DI-BEEP-01",
+      "description": "无源蜂鸣器工作频率4kHz，由DO_BUZ信号驱动"
+    },
+    {
+      "id": "DI-LCD-01",
+      "description": "LCD接口：COM0–COM3（4条公共线），SEG0–SEG15（16条段选线）"
+    }
+  ],
+  "review_items": [
+    {
+      "conclusion_options": [
+        "评审未通过，重新提交文件再次评审",
+        "评审通过，需按照评审记录进行修改",
+        "评审通过，文件放行"
+      ],
+      "status": "未填写"
+    }
+  ],
+  "persons": [
+    {
+      "role": "申请（硬件工程师）",
+      "signature_date": "未填写"
+    },
+    {
+      "role": "审核（硬件主管）",
+      "signature_date": "未填写"
+    },
+    {
+      "role": "批准（技术负责人）",
+      "signature_date": "未填写"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "PT9L 红外体温计采用合泰的 MCU BH67F2762，电源部分采用升压芯片 SR1833，无存储器。硬件电路图嵌入于PDF第1页（1257×913 px，PyMuPDF xref=26），包含完整PCB硬件方案。",
+      "topic_tags": [
+        "MCU",
+        "电源方案",
+        "升压芯片",
+        "PCB",
+        "主板方案",
+        "无存储器"
+      ],
+      "related_subjects": [
+        "BH67F2762",
+        "SR1833",
+        "PT9L",
+        "硬件设计方案E0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "电路图按功能模块分为8个区域：POWER（电源）、LVD（低压检测）、MUTE KEY（静音键）、KEY（功能键）、MCU、LED、SENSOR（红外传感器）、NTC（环境温度）、BEEP（蜂鸣器）。电源模块输入来自BAT（电池），经自恢复保险丝MF-MSMF050、开关SS115，由升压芯片SR1833升压至VCC 3.3V，输入滤波电容C1=100μF/10V，C0=22nF，升压电感10μH，电源控制信号DO_PCTL（低电平：3.3V OFF；高电平：3.3V ON）。LVD模块通过SR1、SR2分压，输出信号AI_LVD接MCU，用于检测电池欠压状态。MUTE KEY模块按键信号DE_MK，接VBAT上拉，按下接GND。KEY模块按键1信号DE_KEY1（VBAT上拉，R16/R1分压），按键2信号DE_KEY2（VBAT上拉，R17/R2分压），各自带0.1μF去抖电容C5。MCU模块主控芯片为合泰BH67F2762（SOP封装，低功耗），电源3.3V VCC，去耦电容C10/C12/C13，主要IO信号包括VCM、AI_AND（传感器模拟输入）、AI_LVD、DO_PCTL、DO_BUZ（蜂鸣器）、DO_LEDR/DO_LEDW/DO_LEDY（三色LED驱动）、TX（串口发送），LCD接口COM0–COM3（4条公共线）、SEG0–SEG15（16条段选线）。LED模块红色LED（LEDR）DO_LEDR驱动限流电阻R5=120Ω，白色LED（LEDW）DO_LEDW驱动限流电阻R6=39Ω，黄色LED（LEDY）DO_LEDY驱动限流电阻R7=120Ω，用于测温状态指示。SENSOR模块传感器内含热电堆及NTC基准温度传感器，输出信号AI_AND接MCU模拟输入，滤波电容C14=5nF，C15=5nF，C11/C16各0.1μF，增益电阻S1、S2可调，R14≈1k。NTC模块NTC热敏电阻（NTC2/NTC3）上拉至VCM，滤波电容C18=0.1μF，用于环境温度补偿。BEEP模块驱动信号DO_BUZ，元件BUZZER（无源蜂鸣器），工作频率4kHz。",
+      "topic_tags": [
+        "电路图",
+        "功能模块",
+        "POWER",
+        "LVD",
+        "MCU",
+        "LED",
+        "SENSOR",
+        "NTC",
+        "BEEP",
+        "KEY",
+        "MUTE KEY"
+      ],
+      "related_subjects": [
+        "SR1833",
+        "BH67F2762",
+        "MF-MSMF050",
+        "SS115",
+        "BUZZER",
+        "AI_LVD",
+        "AI_AND",
+        "DO_PCTL",
+        "DO_BUZ",
+        "DO_LEDR",
+        "DO_LEDW",
+        "DO_LEDY",
+        "DE_KEY1",
+        "DE_KEY2",
+        "DE_MK",
+        "VCM",
+        "TX"
+      ]
+    }
+  ],
+  "software_items": [
+    {
+      "name": "DO_PCTL",
+      "type": "数字输出信号",
+      "description": "电源控制信号，低电平：3.3V OFF；高电平：3.3V ON",
+      "module": "POWER"
+    },
+    {
+      "name": "AI_LVD",
+      "type": "模拟输入信号",
+      "description": "低压检测信号，接MCU，用于检测电池欠压状态",
+      "module": "LVD"
+    },
+    {
+      "name": "DE_MK",
+      "type": "数字输入信号",
+      "description": "静音键信号，VBAT上拉，按下接GND",
+      "module": "MUTE KEY"
+    },
+    {
+      "name": "DE_KEY1",
+      "type": "数字输入信号",
+      "description": "功能键1信号，VBAT上拉，R16/R1分压",
+      "module": "KEY"
+    },
+    {
+      "name": "DE_KEY2",
+      "type": "数字输入信号",
+      "description": "功能键2信号，VBAT上拉，R17/R2分压",
+      "module": "KEY"
+    },
+    {
+      "name": "VCM",
+      "type": "模拟参考信号",
+      "description": "传感器/NTC参考电压",
+      "module": "MCU/SENSOR/NTC"
+    },
+    {
+      "name": "AI_AND",
+      "type": "模拟输入信号",
+      "description": "红外传感器输出，接MCU模拟输入",
+      "module": "SENSOR"
+    },
+    {
+      "name": "DO_BUZ",
+      "type": "数字输出信号",
+      "description": "蜂鸣器驱动信号",
+      "module": "BEEP"
+    },
+    {
+      "name": "DO_LEDR",
+      "type": "数字输出信号",
+      "description": "红色LED驱动信号",
+      "module": "LED"
+    },
+    {
+      "name": "DO_LEDW",
+      "type": "数字输出信号",
+      "description": "白色LED驱动信号",
+      "module": "LED"
+    },
+    {
+      "name": "DO_LEDY",
+      "type": "数字输出信号",
+      "description": "黄色LED驱动信号",
+      "module": "LED"
+    },
+    {
+      "name": "TX",
+      "type": "数字输出信号",
+      "description": "串口发送信号",
+      "module": "MCU"
+    },
+    {
+      "name": "COM0–COM3",
+      "type": "LCD公共线",
+      "description": "LCD接口4条公共线",
+      "module": "MCU"
+    },
+    {
+      "name": "SEG0–SEG15",
+      "type": "LCD段选线",
+      "description": "LCD接口16条段选线",
+      "module": "MCU"
+    }
+  ],
+  "functions": [
+    {
+      "name": "升压电源",
+      "description": "由SR1833将电池电压升压至3.3V VCC，为系统供电",
+      "module": "POWER"
+    },
+    {
+      "name": "低压检测（LVD）",
+      "description": "通过SR1/SR2分压电路检测电池欠压状态，输出AI_LVD信号至MCU",
+      "module": "LVD"
+    },
+    {
+      "name": "静音控制",
+      "description": "通过MUTE KEY按键（DE_MK信号）实现静音功能",
+      "module": "MUTE KEY"
+    },
+    {
+      "name": "功能键输入",
+      "description": "通过DE_KEY1和DE_KEY2两个功能键实现用户交互输入",
+      "module": "KEY"
+    },
+    {
+      "name": "主控处理",
+      "description": "合泰BH67F2762 MCU负责采集传感器数据、驱动LED/LCD/蜂鸣器、串口通信及电源管理",
+      "module": "MCU"
+    },
+    {
+      "name": "三色LED状态指示",
+      "description": "红/白/黄三色LED用于测温状态指示",
+      "module": "LED"
+    },
+    {
+      "name": "红外测温",
+      "description": "红外传感器模块（含热电堆和NTC基准温度传感器）采集红外温度信号AI_AND",
+      "module": "SENSOR"
+    },
+    {
+      "name": "环境温度补偿",
+      "description": "NTC热敏电阻（NTC2/NTC3）用于测量环境温度，对测温结果进行补偿",
+      "module": "NTC"
+    },
+    {
+      "name": "声音提示",
+      "description": "无源蜂鸣器以4kHz频率发声，由DO_BUZ驱动",
+      "module": "BEEP"
+    }
+  ],
+  "_meta": {
+    "source_file": "06 硬件设计方案E0 23.11/09 硬件文档E0-PT9L-模板/09 硬件文档E0/E0版硬件方案阶段/硬件设计方案E0.doc.md",
+    "doc_type": "general"
+  },
+  "_edges": [
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DO_PCTL",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "AI_LVD",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DE_MK",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DE_KEY1",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DE_KEY2",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "VCM",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "AI_AND",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DO_BUZ",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DO_LEDR",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DO_LEDW",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "DO_LEDY",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "TX",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "COM0–COM3",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "硬件设计方案 E0",
+      "to": "SEG0–SEG15",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BH67F2762",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SR1833",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "硬件设计方案E0",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SR1833",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BH67F2762",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MF-MSMF050",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SS115",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BUZZER",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "AI_LVD",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "AI_AND",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DO_PCTL",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DO_BUZ",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DO_LEDR",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DO_LEDW",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DO_LEDY",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DE_KEY1",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DE_KEY2",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DE_MK",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "VCM",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TX",
+      "to": "电路图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "升压电源",
+      "to": "SR1833",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "升压电源",
+      "to": "DO_PCTL",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低压检测（LVD）",
+      "to": "AI_LVD",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低压检测（LVD）",
+      "to": "分压电阻SR1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低压检测（LVD）",
+      "to": "分压电阻SR2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "静音控制",
+      "to": "DE_MK",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能键输入",
+      "to": "DE_KEY1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能键输入",
+      "to": "DE_KEY2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主控处理",
+      "to": "MCU主控芯片",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主控处理",
+      "to": "VCM",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主控处理",
+      "to": "TX",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主控处理",
+      "to": "COM0–COM3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主控处理",
+      "to": "SEG0–SEG15",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三色LED状态指示",
+      "to": "DO_LEDR",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三色LED状态指示",
+      "to": "DO_LEDW",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三色LED状态指示",
+      "to": "DO_LEDY",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三色LED状态指示",
+      "to": "红色LED",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三色LED状态指示",
+      "to": "白色LED",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三色LED状态指示",
+      "to": "黄色LED",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外测温",
+      "to": "AI_AND",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外测温",
+      "to": "红外传感器模块",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "环境温度补偿",
+      "to": "VCM",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "声音提示",
+      "to": "DO_BUZ",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "升压电源",
+      "to": "DI-POWER-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "升压电源",
+      "to": "DI-POWER-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低压检测（LVD）",
+      "to": "DI-LVD-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外测温",
+      "to": "DI-SENSOR-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "环境温度补偿",
+      "to": "DI-NTC-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "声音提示",
+      "to": "DI-BEEP-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主控处理",
+      "to": "DI-LCD-01",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "申请（硬件工程师）",
+      "to": "PT9L-YJFA01 V1.0",
+      "properties": {
+        "role": "申请",
+        "signature_date": "未填写"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "审核（硬件主管）",
+      "to": "PT9L-YJFA01 V1.0",
+      "properties": {
+        "role": "审核",
+        "signature_date": "未填写"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "批准（技术负责人）",
+      "to": "PT9L-YJFA01 V1.0",
+      "properties": {
+        "role": "批准",
+        "signature_date": "未填写"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "审核（硬件主管）",
+      "to": "PT9L-YJFA01 V1.0",
+      "properties": {
+        "review_status": "未填写"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "批准（技术负责人）",
+      "to": "PT9L-YJFA01 V1.0",
+      "properties": {
+        "review_status": "未填写"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-YJFA01 V1.0",
+      "to": "评审未通过，重新提交文件再次评审",
+      "properties": {
+        "status": "未填写"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-YJFA01 V1.0",
+      "to": "评审通过，需按照评审记录进行修改",
+      "properties": {
+        "status": "未填写"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-YJFA01 V1.0",
+      "to": "评审通过，文件放行",
+      "properties": {
+        "status": "未填写"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "系统电源电压",
+      "attribute": "输出电压",
+      "value": "3.3",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "升压芯片SR1833升压后",
+      "raw_text": "升压芯片SR1833升压至VCC 3.3V"
+    },
+    {
+      "subject": "电源控制信号",
+      "attribute": "逻辑控制",
+      "value": "低电平OFF/高电平ON",
+      "unit": "",
+      "tolerance": "",
+      "condition": "DO_PCTL信号控制3.3V电源",
+      "raw_text": "电源控制信号DO_PCTL：低电平时3.3V OFF，高电平时3.3V ON"
+    },
+    {
+      "subject": "蜂鸣器",
+      "attribute": "工作频率",
+      "value": "4",
+      "unit": "kHz",
+      "tolerance": "",
+      "condition": "DO_BUZ信号驱动，无源蜂鸣器",
+      "raw_text": "无源蜂鸣器工作频率4kHz，由DO_BUZ信号驱动"
+    },
+    {
+      "subject": "LCD接口",
+      "attribute": "公共线数量",
+      "value": "4",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "COM0–COM3",
+      "raw_text": "LCD接口：COM0–COM3（4条公共线），SEG0–SEG15（16条段选线）"
+    },
+    {
+      "subject": "LCD接口",
+      "attribute": "段选线数量",
+      "value": "16",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "SEG0–SEG15",
+      "raw_text": "LCD接口：COM0–COM3（4条公共线），SEG0–SEG15（16条段选线）"
+    },
+    {
+      "subject": "测温原理",
+      "attribute": "传感方式",
+      "value": "红外非接触式（热电堆+NTC基准温度传感器）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "红外传感器模块",
+      "raw_text": "红外传感器模块内含热电堆及NTC基准温度传感器，输出信号AI_AND接MCU模拟输入"
+    },
+    {
+      "subject": "输入滤波电容C1",
+      "attribute": "容值/耐压",
+      "value": "100",
+      "unit": "μF/10V",
+      "tolerance": "",
+      "condition": "电源模块输入滤波",
+      "raw_text": "输入滤波电容C1：100μF/10V"
+    },
+    {
+      "subject": "输入滤波电容C0",
+      "attribute": "容值",
+      "value": "22",
+      "unit": "nF",
+      "tolerance": "",
+      "condition": "电源模块输入滤波",
+      "raw_text": "输入滤波电容C0：22nF"
+    },
+    {
+      "subject": "升压电感",
+      "attribute": "感值",
+      "value": "10",
+      "unit": "μH",
+      "tolerance": "",
+      "condition": "电源升压电路",
+      "raw_text": "升压电感：10μH"
+    },
+    {
+      "subject": "红色LED限流电阻",
+      "attribute": "阻值",
+      "value": "120",
+      "unit": "Ω",
+      "tolerance": "",
+      "condition": "红色LED（LEDR）驱动电路",
+      "raw_text": "红色LED限流电阻R5=120Ω"
+    },
+    {
+      "subject": "白色LED限流电阻",
+      "attribute": "阻值",
+      "value": "39",
+      "unit": "Ω",
+      "tolerance": "",
+      "condition": "白色LED（LEDW）驱动电路",
+      "raw_text": "白色LED限流电阻R6=39Ω"
+    },
+    {
+      "subject": "黄色LED限流电阻",
+      "attribute": "阻值",
+      "value": "120",
+      "unit": "Ω",
+      "tolerance": "",
+      "condition": "黄色LED（LEDY）驱动电路",
+      "raw_text": "黄色LED限流电阻R7=120Ω"
+    },
+    {
+      "subject": "传感器滤波电容C14",
+      "attribute": "容值",
+      "value": "5",
+      "unit": "nF",
+      "tolerance": "",
+      "condition": "红外传感器模块信号滤波",
+      "raw_text": "滤波电容C14：5nF"
+    },
+    {
+      "subject": "传感器滤波电容C15",
+      "attribute": "容值",
+      "value": "5",
+      "unit": "nF",
+      "tolerance": "",
+      "condition": "红外传感器模块信号滤波",
+      "raw_text": "滤波电容C15：5nF"
+    },
+    {
+      "subject": "传感器滤波电容C11",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "μF",
+      "tolerance": "",
+      "condition": "红外传感器模块电源滤波",
+      "raw_text": "滤波电容C11：0.1μF"
+    },
+    {
+      "subject": "传感器滤波电容C16",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "μF",
+      "tolerance": "",
+      "condition": "红外传感器模块电源滤波",
+      "raw_text": "滤波电容C16：0.1μF"
+    },
+    {
+      "subject": "增益电阻R14",
+      "attribute": "阻值",
+      "value": "约1",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "传感器信号增益电路",
+      "raw_text": "增益电阻R14：约1kΩ"
+    },
+    {
+      "subject": "NTC补偿滤波电容C18",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "μF",
+      "tolerance": "",
+      "condition": "NTC环境温度补偿电路",
+      "raw_text": "滤波电容C18：0.1μF"
+    },
+    {
+      "subject": "按键去抖电容C5",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "μF",
+      "tolerance": "",
+      "condition": "按键1（DE_KEY1）去抖电路",
+      "raw_text": "按键1去抖电容C5：0.1μF去抖电容"
+    },
+    {
+      "subject": "LED状态指示",
+      "attribute": "颜色数量",
+      "value": "3",
+      "unit": "色",
+      "tolerance": "",
+      "condition": "红/白/黄三色LED",
+      "raw_text": "红/白/黄三色LED用于测温状态指示"
+    },
+    {
+      "subject": "功能键数量",
+      "attribute": "按键数量",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "DE_KEY1和DE_KEY2",
+      "raw_text": "通过DE_KEY1和DE_KEY2两个功能键实现用户交互输入"
+    }
+  ]
+}

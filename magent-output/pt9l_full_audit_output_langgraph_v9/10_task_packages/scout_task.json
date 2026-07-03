@@ -1,0 +1,1314 @@
+{
+  "role": "Project Scout Agent",
+  "goal": "Confirm PT9L project identity, product category, market and regulatory baseline, and identify suspicious legacy model/category references.",
+  "system_prompt": "Return strict JSON using only provided evidence.",
+  "retrieval_strategy": {
+    "max_hits": 240,
+    "searches": [
+      {
+        "prefix": "SCOUT",
+        "patterns": [
+          "PT9L|product model|FDA|CE|MDR|customer need"
+        ],
+        "rel_contains": [
+          "01 ",
+          "04 "
+        ],
+        "max_hits": 60
+      },
+      {
+        "prefix": "SCOUT",
+        "patterns": [
+          "80601|E1965|60601|62304|0664|14971|62366|10993|16886|MDR"
+        ],
+        "rel_contains": [
+          "04 "
+        ],
+        "max_hits": 100
+      },
+      {
+        "prefix": "SCOUT",
+        "patterns": [
+          "PT2L|PT9C|BP3L|PT3SBT"
+        ],
+        "rel_contains": [],
+        "max_hits": 80
+      }
+    ]
+  },
+  "input_schema": {
+    "required_fields": [
+      "corpus_scope",
+      "evidence_catalog"
+    ]
+  },
+  "required_schema": {
+    "required_fields": [
+      "project_profile",
+      "summary",
+      "findings"
+    ],
+    "project_profile": {
+      "target_model": "PT9L",
+      "product_family": [],
+      "document_id_patterns": [],
+      "primary_scope_rules": [],
+      "key_entities": {},
+      "regulatory_baseline": [],
+      "candidate_discovery_hints": []
+    },
+    "summary": "string",
+    "findings": []
+  },
+  "evidence_catalog": [
+    {
+      "evidence_id": "SCOUT-001",
+      "doc_id": "F0001",
+      "rel_path": "01 立项批准书E0 23.11\\QR-7.3-44客户需求书(封面)E0 23.6.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-002",
+      "doc_id": "F0001",
+      "rel_path": "01 立项批准书E0 23.11\\QR-7.3-44客户需求书(封面)E0 23.6.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "文件编号 : PT9L-KHXQ01 V1.0 客户需求书 表号 : QR-7.3-01/E0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-003",
+      "doc_id": "F0001",
+      "rel_path": "01 立项批准书E0 23.11\\QR-7.3-44客户需求书(封面)E0 23.6.via_lo_html.clean.md",
+      "line": 12,
+      "source_text": "产 品 型 号 PT9L .",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-004",
+      "doc_id": "F0002",
+      "rel_path": "01 立项批准书E0 23.11\\客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_xlsx.md; 规整表=GFM，合并表=展开重建GFM，满行说明=段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-005",
+      "doc_id": "F0002",
+      "rel_path": "01 立项批准书E0 23.11\\客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+      "line": 4,
+      "source_text": "> hybrid clean-md（excel）：每个 Sheet 的表用 GFM 重建（合并格按 rowspan 向下继承、满行说明铺成段落）；保留全部文字、复选框与图片；不保留 HTML 表格标签。涉及严格行列/签字仍回查 `.via_xlsx.md`。",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-006",
+      "doc_id": "F0002",
+      "rel_path": "01 立项批准书E0 23.11\\客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+      "line": 79,
+      "source_text": "| 2 | 注册完成方 | CE注册方： □ NA □ andon □ customer CE付费方: □ NA □ andon □ customer 510k注册方：□ NA ■ andon □ customer 510k付费方:□ NA ■ andon □ customer 中国注册方：□ NA □ andon □ customer 中国注册付费方:□NA□ andon□ customer 其它注册方及付费方： |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-007",
+      "doc_id": "F0002",
+      "rel_path": "01 立项批准书E0 23.11\\客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+      "line": 97,
+      "source_text": "Customer requirements － Performance part",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-008",
+      "doc_id": "F0003",
+      "rel_path": "01 立项批准书E0 23.11\\客户需求评审单E0 23.6.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-009",
+      "doc_id": "F0003",
+      "rel_path": "01 立项批准书E0 23.11\\客户需求评审单E0 23.6.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "文件编号： PT9L-KXPS01 V1.0 客户需求评审单",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-010",
+      "doc_id": "F0003",
+      "rel_path": "01 立项批准书E0 23.11\\客户需求评审单E0 23.6.via_lo_html.clean.md",
+      "line": 10,
+      "source_text": "**客户需求编号** ： PT9L-KHXQ01 V1.0 **客户名称** ： 九安 **客户代表** ：赵一平",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-011",
+      "doc_id": "F0004",
+      "rel_path": "01 立项批准书E0 23.11\\立项批准书E0 23.11.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-012",
+      "doc_id": "F0004",
+      "rel_path": "01 立项批准书E0 23.11\\立项批准书E0 23.11.via_lo_html.clean.md",
+      "line": 12,
+      "source_text": "产 品 型 号 PT9L .",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-013",
+      "doc_id": "F0004",
+      "rel_path": "01 立项批准书E0 23.11\\立项批准书E0 23.11.via_lo_html.clean.md",
+      "line": 22,
+      "source_text": "附件：《客户需求书》文件编号: PT9L-KHXQ01 V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-014",
+      "doc_id": "F0004",
+      "rel_path": "01 立项批准书E0 23.11\\立项批准书E0 23.11.via_lo_html.clean.md",
+      "line": 28,
+      "source_text": "PT9L红外体温计是公司自主研发的新产品。",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-015",
+      "doc_id": "F0004",
+      "rel_path": "01 立项批准书E0 23.11\\立项批准书E0 23.11.via_lo_html.clean.md",
+      "line": 32,
+      "source_text": "详见附录《PT9L 客户需求书 文件编号：PT9L-KHXQ01 V1.0》",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-016",
+      "doc_id": "F0004",
+      "rel_path": "01 立项批准书E0 23.11\\立项批准书E0 23.11.via_lo_html.clean.md",
+      "line": 38,
+      "source_text": "PT9L红外非接触式额头温度计适用于所有年龄段的人从额头皮肤表面间歇性测量体温。它可以由消费者在家庭环境中使用，也可以由医疗保健提供者使用。",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-017",
+      "doc_id": "F0012",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-018",
+      "doc_id": "F0012",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-019",
+      "doc_id": "F0012",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 16,
+      "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-020",
+      "doc_id": "F0012",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 52,
+      "source_text": "3\\. Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-021",
+      "doc_id": "F0012",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 58,
+      "source_text": "3.3 Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-022",
+      "doc_id": "F0012",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 60,
+      "source_text": "4\\. Residual Risk Acceptance Criteria 6",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-023",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-024",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-025",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 14,
+      "source_text": "Product model： PT9L",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-026",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 20,
+      "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-027",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 30,
+      "source_text": "3\\. Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-028",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 36,
+      "source_text": "3.3 Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-029",
+      "doc_id": "F0017",
+      "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-030",
+      "doc_id": "F0017",
+      "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 16,
+      "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-031",
+      "doc_id": "F0017",
+      "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 52,
+      "source_text": "3\\. Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-032",
+      "doc_id": "F0017",
+      "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 58,
+      "source_text": "3.3 Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-033",
+      "doc_id": "F0017",
+      "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 60,
+      "source_text": "4\\. Residual Risk Acceptance Criteria 6",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-034",
+      "doc_id": "F0017",
+      "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 70,
+      "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-035",
+      "doc_id": "F0018",
+      "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-036",
+      "doc_id": "F0018",
+      "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 16,
+      "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-037",
+      "doc_id": "F0018",
+      "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 23,
+      "source_text": "| 2 | 2024.5.30 | 1. Question list has been updated according to Annex A of ISO/TR 24971:2020<br>2. Content of risk control measures has been reworded to better describe the development control process | V2.0 | Wang Di | Hou Guangwei |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-038",
+      "doc_id": "F0018",
+      "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 56,
+      "source_text": "3\\. Identify medical device characteristics that could impact on safety and intended use 4",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-039",
+      "doc_id": "F0018",
+      "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 80,
+      "source_text": "| **ACC** | Acceptable |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-040",
+      "doc_id": "F0018",
+      "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 81,
+      "source_text": "| **NACC** | Unacceptable |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-041",
+      "doc_id": "F0019",
+      "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-042",
+      "doc_id": "F0019",
+      "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+      "line": 16,
+      "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-043",
+      "doc_id": "F0019",
+      "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+      "line": 25,
+      "source_text": "| 2 | 2024.5.30 | sequence of hazard has been updated to align with risk assessment report. | V2.0 | Wang Di | Hou Guangwei |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-044",
+      "doc_id": "F0019",
+      "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+      "line": 72,
+      "source_text": "| **ACC** | Acceptable |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-045",
+      "doc_id": "F0019",
+      "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+      "line": 73,
+      "source_text": "| **NACC** | Unacceptable |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-046",
+      "doc_id": "F0019",
+      "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+      "line": 85,
+      "source_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-047",
+      "doc_id": "F0020",
+      "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-048",
+      "doc_id": "F0020",
+      "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-049",
+      "doc_id": "F0020",
+      "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+      "line": 16,
+      "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-050",
+      "doc_id": "F0020",
+      "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+      "line": 64,
+      "source_text": "4.2 About Information on the acceptance of Residual risk. 3",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-051",
+      "doc_id": "F0020",
+      "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+      "line": 78,
+      "source_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT9L can transmit the temperature to a smart device with Bluetooth.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-052",
+      "doc_id": "F0020",
+      "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+      "line": 84,
+      "source_text": "The risk management plan has defined the acceptance criteria of risk, and has also arranged the risk management review activity. The risk management group is established to ensure the risk management activity of the current project will be implemented effectively according to the risk management plan.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-053",
+      "doc_id": "F0021",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-054",
+      "doc_id": "F0021",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 2,
+      "source_text": "# PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-055",
+      "doc_id": "F0021",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-056",
+      "doc_id": "F0021",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 16,
+      "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-057",
+      "doc_id": "F0021",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 52,
+      "source_text": "3\\. Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-058",
+      "doc_id": "F0021",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+      "line": 58,
+      "source_text": "3.3 Risk Acceptance Criteria 5",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-059",
+      "doc_id": "F0022",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 1,
+      "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-060",
+      "doc_id": "F0022",
+      "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 2,
+      "source_text": "# PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-061",
+      "doc_id": "F0031",
+      "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 133,
+      "source_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 |  | 国际 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-062",
+      "doc_id": "F0031",
+      "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 134,
+      "source_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | ISO 80601-2-56:2017/Amd1:2018 | 欧盟 | □是 ■否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-063",
+      "doc_id": "F0031",
+      "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 137,
+      "source_text": "| 行业标准 | ASTM E1965-98：2016 |  | 美国 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-064",
+      "doc_id": "F0031",
+      "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 138,
+      "source_text": "| 行业标准 | ASTM E1965-98：2023 |  | 美国 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-065",
+      "doc_id": "F0031",
+      "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 143,
+      "source_text": "| 欧盟指令 | MDR 2017/745 |  | 欧盟 | □是 ■否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-066",
+      "doc_id": "F0031",
+      "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 145,
+      "source_text": "| 生物相容性 | GB/T 16886.1-2022 | ISO 10993-1:2018 | 中国 | □是 ■否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-067",
+      "doc_id": "F0319",
+      "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 126,
+      "source_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 |  | 国际 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-068",
+      "doc_id": "F0319",
+      "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 127,
+      "source_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 |  | 欧盟 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-069",
+      "doc_id": "F0319",
+      "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 130,
+      "source_text": "| 行业标准 | ASTM E1965-98：2016 |  | 美国 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-070",
+      "doc_id": "F0319",
+      "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 131,
+      "source_text": "| 行业标准 | ASTM E1965-98：2023 |  | 美国 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-071",
+      "doc_id": "F0319",
+      "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 136,
+      "source_text": "| 欧盟指令 | MDR 2017/745 |  | 欧盟 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-072",
+      "doc_id": "F0319",
+      "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+      "line": 138,
+      "source_text": "| 生物相容性 | GB/T 16886.1-2022 | ISO 10993-1:2018 | 中国 | ■是 □否 |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-073",
+      "doc_id": "F0459",
+      "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf.md",
+      "line": 428,
+      "source_text": "| 7.1.1 | In order that purchasers may identify products conforming to requirements of this specification, producers and distributors may include a statement of compliance in conjunction with their name and address on product labels or associated printed materials, or both, such as invoices, sales literature, and the like. The following statement is suggested: “ This infrared thermometer meets requirements established in ASTM Standard (E1965-98). Full responsibility for the conformance of this product to the standard is assumed by (name and address of producer or distributor).” In the event one or more provisions of this standard are not met, a cautionary statement shall be included. | See User’s Manual. | P |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-074",
+      "doc_id": "F0468",
+      "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+      "line": 19,
+      "source_text": "| TEST REPORT ASTM E1965 − 98 (2023) Standard Specification for Infrared Thermometers for Intermittent Determination of Patient Temperature |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-075",
+      "doc_id": "F0468",
+      "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+      "line": 22,
+      "source_text": "| Standard......................................... : | ASTM E1965 − 98 (2023) |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-076",
+      "doc_id": "F0468",
+      "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+      "line": 458,
+      "source_text": "| 7.1.1 | In order that purchasers may identify products conforming to requirements of this specification, producers and distributors may include a statement of compliance in conjunction with their name and address on product labels or associated printed materials, or both, such as invoices, sales T literature, and the like. The following statement is F suggested: “ This infrared thermometer meets requirements A established in ASTM Standard (E1965-98). Full R responsibility for the conformance of this product to D the standard is assumed by (name and address of producer or distributor).” In the event one or more provisions of this standard are not met, a cautionary statement shall be included. | F A R D See User’s Manual. | P |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-077",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 2,
+      "source_text": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-078",
+      "doc_id": "F0013",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+      "line": 117,
+      "source_text": "![形状2](V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html_assets/V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0_html_f9d9f2af.gif) Acceptable Control as much as possible Not acceptable",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-079",
+      "doc_id": "F0014",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "D N : PT2L( 美亚 ) - SGFP 01 V1.0 Risk Assessment Report",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-080",
+      "doc_id": "F0014",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+      "line": 14,
+      "source_text": "Product model： PT2L",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-081",
+      "doc_id": "F0014",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+      "line": 81,
+      "source_text": "When the PT2L infrared thermometer project was launched, we planned risk management activities for the product and formulated a risk management plan.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-082",
+      "doc_id": "F0014",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+      "line": 83,
+      "source_text": "Currently, the PT2L infrared thermometer is in the feasibility review stage of design changes. The purpose of this risk management review is to determine whether the design changes of the PT2L infrared thermometer will generate new risks or affect the original risks, and to analyze and evaluate, and propose a risk control plan to ensure that the product risk is minimized during the design changes...",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-083",
+      "doc_id": "F0014",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+      "line": 107,
+      "source_text": "Please find the document *Risk Management P* *lan* (PT2L-FXJH01 V1.0) for the risk acceptance criteria.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-084",
+      "doc_id": "F0014",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+      "line": 124,
+      "source_text": "| **A.2.1** | What is the intended use and how is the medical device to be used?<br>□ what is the medical device’s role relative to:<br>□ what are the indications for use (e.g. patient population, user profile, use environment)?<br>□ what are the contra-indications?<br>□ does the medical device sustain or support life?<br>□ is special intervention necessary in the case of failure of the medical device?<br>□ can the performance of the medical device be impacted in the event of a security breach (performance degradation or loss of availability)?<br>□ can unauthorized access, unauthorized activities, or loss of data affect the medical device safety? | Please find section 1.1 and the operation guide for intended use.<br>□ It is not recommended for people whose measuring part has local lesions,",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-085",
+      "doc_id": "F0015",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "D N: PT2L( 美亚 ) - SGYS 01 V 1 .0 Verification of risk control measure and residual risk evaluation report",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-086",
+      "doc_id": "F0015",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+      "line": 14,
+      "source_text": "Product model： PT2L",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-087",
+      "doc_id": "F0015",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+      "line": 95,
+      "source_text": "Please find the document *Risk Management Plan* (PT2L-FXJH01 V1.0) for the risk acceptance criteria.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-088",
+      "doc_id": "F0015",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+      "line": 198,
+      "source_text": "型式试验报告：PT2L(美亚)-XNTB01 V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-089",
+      "doc_id": "F0015",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+      "line": 202,
+      "source_text": "说明书：PT2L(美亚)-SMSY02 V2.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-090",
+      "doc_id": "F0015",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+      "line": 204,
+      "source_text": "易用性报告：PT2L(美亚)-UETR01 V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-091",
+      "doc_id": "F0016",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "DN ： PT2L-FXGB01 V 4 .0 Risk Management Report",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-092",
+      "doc_id": "F0016",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+      "line": 14,
+      "source_text": "Product model： PT2L",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-093",
+      "doc_id": "F0016",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+      "line": 60,
+      "source_text": "PT2L replaced the MCU with a smaller memory in hardware to ensure that the new MCU has sufficient performance and functions while meeting cost requirements. Re-evaluated the structural design in structure to find parts that can be simplified or optimized to reduce the amount of materials used. Software code was written to adapt to the new MCU.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-094",
+      "doc_id": "F0016",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+      "line": 64,
+      "source_text": "At the same time as the PT2L infrared thermometer project was established, we planned risk management activities for the product and formulated a risk management plan.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-095",
+      "doc_id": "F0016",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+      "line": 66,
+      "source_text": "The risk management plan determined the risk acceptance criteria for the PT2L infrared thermometer and arranged the review of the product's risk management activities.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-096",
+      "doc_id": "F0016",
+      "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+      "line": 70,
+      "source_text": "In the early development and prototype stages of the PT2L infrared thermometer, the risk management team conducted a risk management review and formed relevant risk management documents.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-097",
+      "doc_id": "F0018",
+      "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+      "line": 93,
+      "source_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-098",
+      "doc_id": "F0019",
+      "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+      "line": 85,
+      "source_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-099",
+      "doc_id": "F0052",
+      "rel_path": "07 软件设计方案E0 23.11\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 2,
+      "source_text": "# BP3L 软件图样E0 23.11",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-100",
+      "doc_id": "F0052",
+      "rel_path": "07 软件设计方案E0 23.11\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 50,
+      "source_text": "![图片 13](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_d468a82f.png)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-101",
+      "doc_id": "F0052",
+      "rel_path": "07 软件设计方案E0 23.11\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 54,
+      "source_text": "![图片 23](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_cd06a829.png)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-102",
+      "doc_id": "F0052",
+      "rel_path": "07 软件设计方案E0 23.11\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 58,
+      "source_text": "![图片 24](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_7adb510b.png)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-103",
+      "doc_id": "F0052",
+      "rel_path": "07 软件设计方案E0 23.11\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 62,
+      "source_text": "![图片 25](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_e758576.png)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-104",
+      "doc_id": "F0052",
+      "rel_path": "07 软件设计方案E0 23.11\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 66,
+      "source_text": "![图片 27](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_91561bdc.png)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-105",
+      "doc_id": "F0082",
+      "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+      "line": 2,
+      "source_text": "# PT3SBT标签审核表（海外更新）",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-106",
+      "doc_id": "F0082",
+      "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+      "line": 8,
+      "source_text": "PT2L(美亚)标签检查报告",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-107",
+      "doc_id": "F0082",
+      "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+      "line": 12,
+      "source_text": "产品型号： PT2L 项目编号： 2020-DEV01 产品/项目名称：红外体温计",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-108",
+      "doc_id": "F0082",
+      "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+      "line": 16,
+      "source_text": "| ▉说明书 □彩包装 □铭牌 □外箱 □其他： |  |  |  | PT2L-SMSP09 |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-109",
+      "doc_id": "F0082",
+      "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+      "line": 17,
+      "source_text": "| □说明书 ▉彩包装 □铭牌 □外箱 □其他： |  |  |  | PT2L-CBZP07 |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-110",
+      "doc_id": "F0082",
+      "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+      "line": 18,
+      "source_text": "| □说明书 □彩包装 ▉铭牌 □外箱 □其他： |  |  |  | PT2L-F96 |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-111",
+      "doc_id": "F0096",
+      "rel_path": "11 T1样机\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+      "line": 50,
+      "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-112",
+      "doc_id": "F0097",
+      "rel_path": "11 T1样机\\机芯类组件清单PT9L-T1EB01 V1.0.via_xlsx.clean.md",
+      "line": 50,
+      "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-113",
+      "doc_id": "F0131",
+      "rel_path": "11 T1样机\\软件文件底稿\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 2,
+      "source_text": "# BP3L 软件图样E0 23.11",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-114",
+      "doc_id": "F0131",
+      "rel_path": "11 T1样机\\软件文件底稿\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 48,
+      "source_text": "![图片 4](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_d805c950.gif)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-115",
+      "doc_id": "F0131",
+      "rel_path": "11 T1样机\\软件文件底稿\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 50,
+      "source_text": "![图片 6](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_a0cd39dd.gif)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-116",
+      "doc_id": "F0131",
+      "rel_path": "11 T1样机\\软件文件底稿\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 52,
+      "source_text": "![Picture 3](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_20a262b4.gif)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-117",
+      "doc_id": "F0131",
+      "rel_path": "11 T1样机\\软件文件底稿\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 54,
+      "source_text": "![图片 8](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_e11cac5c.gif)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-118",
+      "doc_id": "F0131",
+      "rel_path": "11 T1样机\\软件文件底稿\\软件图样E0 23.11\\BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+      "line": 56,
+      "source_text": "![Picture 7](BP3L 软件图样E0 23.11.via_lo_html_assets/BP3L 软件图样E0 23.11_html_f49c074.gif)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-119",
+      "doc_id": "F0157",
+      "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+      "line": 50,
+      "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-120",
+      "doc_id": "F0160",
+      "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+      "line": 26,
+      "source_text": "| 3 | 接口板PCB图 | Top Layer 层 |  |  | PT9C-CNTP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-121",
+      "doc_id": "F0160",
+      "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+      "line": 27,
+      "source_text": "| 3 | 接口板PCB图 | Top Overlay 层 |  |  | PT9C-CNTP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-122",
+      "doc_id": "F0160",
+      "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+      "line": 28,
+      "source_text": "| 3 | 接口板PCB图 | Bottom Layer 层 |  |  | PT9C-CNTP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-123",
+      "doc_id": "F0160",
+      "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+      "line": 29,
+      "source_text": "| 3 | 接口板PCB图 | Bottom Overlay 层 |  |  | PT9C-CNTP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-124",
+      "doc_id": "F0160",
+      "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+      "line": 30,
+      "source_text": "| 3 | 接口板PCB图 | Drill Layer 层 |  |  | PT9C-CNTP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-125",
+      "doc_id": "F0160",
+      "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+      "line": 31,
+      "source_text": "| 3 | 接口板PCB图 | 拼板示意图(顶层) |  |  | PT9C-CNTP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-126",
+      "doc_id": "F0236",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 187,
+      "source_text": "| 34 | PT3包装类组件清单 | PT3SBT-PBOM01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-127",
+      "doc_id": "F0236",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 239,
+      "source_text": "产品型号:PT3SBT 提交部门:智能产品部 提交: 年 月 日 审核: 年 月 日",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-128",
+      "doc_id": "F0236",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 263,
+      "source_text": "| 14 | 收纳盒 | PT3SBT-P01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-129",
+      "doc_id": "F0236",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 264,
+      "source_text": "| 15 | 胶垫 | PT3SBT-P02 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-130",
+      "doc_id": "F0236",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 272,
+      "source_text": "| 19 | 装配说明 | PT3SBT（国内）-ZPSM01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-131",
+      "doc_id": "F0236",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 293,
+      "source_text": "| 33 | PT3总装类组件清单 | PT3SBT-ABOM01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-132",
+      "doc_id": "F0235",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 185,
+      "source_text": "| 34 | PT3包装类组件清单 | PT3SBT-PBOM01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-133",
+      "doc_id": "F0235",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 237,
+      "source_text": "产品型号:PT3SBT 提交部门:智能产品部 提交: 年 月 日 审核: 年 月 日",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-134",
+      "doc_id": "F0235",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 261,
+      "source_text": "| 14 | 收纳盒 | PT3SBT-P01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-135",
+      "doc_id": "F0235",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 262,
+      "source_text": "| 15 | 胶垫 | PT3SBT-P02 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-136",
+      "doc_id": "F0235",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 270,
+      "source_text": "| 19 | 装配说明 | PT3SBT（国内）-ZPSM01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-137",
+      "doc_id": "F0235",
+      "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\设计输出清单二\\设计输出清单二E0.via_xlsx.clean.md",
+      "line": 291,
+      "source_text": "| 33 | PT3总装类组件清单 | PT3SBT-ABOM01 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-138",
+      "doc_id": "F0242",
+      "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+      "line": 2,
+      "source_text": "# PT9C设计确认E0  23.11",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-139",
+      "doc_id": "F0245",
+      "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+      "line": 3,
+      "source_text": "# PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-140",
+      "doc_id": "F0245",
+      "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+      "line": 14,
+      "source_text": "![第 1 页原始整页图](_assets/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0/page_1.png)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-141",
+      "doc_id": "F0245",
+      "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+      "line": 88,
+      "source_text": "![第 3 页原始整页图](_assets/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0/page_3.png)",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-142",
+      "doc_id": "F0245",
+      "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+      "line": 113,
+      "source_text": "- 源 PDF：`02_RnD_DHF/PT9L DHF-历史文件/设计确认/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf`",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-143",
+      "doc_id": "F0245",
+      "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+      "line": 114,
+      "source_text": "- 证据原图（签字/盖章/照片页）：`_assets/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0/page_*.png`",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-144",
+      "doc_id": "F0246",
+      "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.via_lo_html.clean.md",
+      "line": 2,
+      "source_text": "# PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-145",
+      "doc_id": "F0255",
+      "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+      "line": 12,
+      "source_text": "型号规格：PT9CL",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-146",
+      "doc_id": "F0255",
+      "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+      "line": 34,
+      "source_text": "我公司天津九安医疗电子股份有限公司研制开发的PT9C型红外体温计是一款通过接收人体额头部位散发的红外能量，来测量人体温度的红外体温计。",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-147",
+      "doc_id": "F0255",
+      "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+      "line": 82,
+      "source_text": "PT9C与本公司注册生产的红外体温计 PT3（注册证号：津械注准20192070046）为实质性等同的同类产品，基本原理、结构组成、制造材料、性能要求、安全性评价、符合的国家/行业标准、预期用途等方面完全等同，且该同类产品上市销售无不良事故记录。依据国家食品药品监督管理局发布的《临床评价指导原则》规定，将本公司生产的红外体温计与上述公司生产的红外计进行了对比，具体对比情况说明见申报产品与同品种医疗器械对比表。",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-148",
+      "doc_id": "F0255",
+      "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+      "line": 135,
+      "source_text": "通过《申报产品与目录中已获准境内注册医疗器械对比表》中对比表明，拟注册的PT9C红外体温计产品在结构性能、材料组成、性能要求、灭菌消毒方式、适用范围、使用说明上与柯顿（天津）电子医疗器械有限公司注册生产的红外体温计PT3（注册证号：津械注准20192070046）基本相同，表明拟注册产品与已获准境内注册的产品基本等同。",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-149",
+      "doc_id": "F0260",
+      "rel_path": "18 设计确认\\用户测试\\用户现场测试计划 PT9C V1.0.via_lo_html.clean.md",
+      "line": 2,
+      "source_text": "# 用户现场测试计划 PT9C V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-150",
+      "doc_id": "F0268",
+      "rel_path": "PT9L-DHF清单-常规.via_xlsx.clean.md",
+      "line": 92,
+      "source_text": "| 设计输出 | 82 | 设计输出清单一 | PT9L-SJSC01 V1.0 |  | 2024.4.20 | PT9C | 是 |  | 时间未定 |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-151",
+      "doc_id": "F0281",
+      "rel_path": "历史记录\\6.12说明书\\PT9L-operation guide-20240607.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "PT9CPT9L-SMSY012 1 V1.0",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-152",
+      "doc_id": "F0281",
+      "rel_path": "历史记录\\6.12说明书\\PT9L-operation guide-20240607.via_lo_html.clean.md",
+      "line": 8,
+      "source_text": "iHealth PT9CPT9L",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-153",
+      "doc_id": "F0281",
+      "rel_path": "历史记录\\6.12说明书\\PT9L-operation guide-20240607.via_lo_html.clean.md",
+      "line": 20,
+      "source_text": "**Infrared No-Touch Forehead Thermometer ( PT9CPT9L )**",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-154",
+      "doc_id": "F0281",
+      "rel_path": "历史记录\\6.12说明书\\PT9L-operation guide-20240607.via_lo_html.clean.md",
+      "line": 156,
+      "source_text": "Product Model: PT9CPT9L",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-155",
+      "doc_id": "F0281",
+      "rel_path": "历史记录\\6.12说明书\\PT9L-operation guide-20240607.via_lo_html.clean.md",
+      "line": 764,
+      "source_text": "| RF emissions | CISPR 11<br>Group 1, Class B | The PT9CPT9L device must emit electromagnetic energy in<br>order to perform its intended function. Nearby electronic equipment maybe affected. |",
+      "excluded_from_primary_scope": false
+    },
+    {
+      "evidence_id": "SCOUT-156",
+      "doc_id": "F0283",
+      "rel_path": "历史记录\\8.1说明书\\PT9L-operation guide-20240801.via_lo_html.clean.md",
+      "line": 6,
+      "source_text": "PT9CPT9L-SMSY012 1 V1.0",
+      "excluded_from_primary_scope": false
+    }
+  ],
+  "corpus_scope": "full_markdown"
+}

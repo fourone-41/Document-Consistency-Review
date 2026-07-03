@@ -1,0 +1,131 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Record",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "59-60 of 181"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "title": "Medical electrical equipment - Part 1: General requirements for basic safety and essential performance",
+      "clauses": [
+        "9.7.3",
+        "9.7.4",
+        "9.7.5",
+        "9.7.6",
+        "9.7.7",
+        "9.8",
+        "9.8.1"
+      ]
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "title": "EN equivalent of IEC60601-1"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "9.7.3",
+      "requirement": "Maximum pressure a part of ME EQUIPMENT can be subjected to in NORMAL and SINGLE FAULT CONDITIONS considered to be highest of: a) RATED maximum supply pressure from external source, b) Pressure setting of a pressure-relief device, c) Max pressure that can develop by a source of pressure that is part of assembly",
+      "result": "No pressure from external source",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.4",
+      "requirement": "Max pressure in NORMAL and SINGLE FAULT CONDITIONS did not exceed MAXIMUM PERMISSIBLE WORKING PRESSURE for EQUIPMENT part, except as allowed in 9.7.7, confirmed by inspection of MANUFACTURER's data and functional tests",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.5",
+      "requirement": "A pressure vessel withstood a HYDRAULIC TEST PRESSURE when pressure was > 50 kPa, and product of pressure and volume was more than 200 kPaI",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.6",
+      "requirement": "Pressure-control device regulating pressure in ME EQUIPMENT with pressure-relief device completed 100,000 cycles of operation under RATED load and prevented pressure from exceeding 90% of setting of pressure-relief device in different conditions of NORMAL USE",
+      "result": "No pressure-control device needed",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.7.7",
+      "requirement": "Pressure-relief device(s) used where MAXIMUM PERMISSIBLE WORKING PRESSURE could otherwise be exceeded met specified requirements, confirmed by MANUFACTURER's data, ME EQUIPMENT, RISK MANAGEMENT FILE, and functional tests",
+      "sub_requirements": [
+        "a) Connected as close as possible to pressure vessel or parts of system it is to protect",
+        "b) Installed to be readily accessible for inspection, maintenance, and repair",
+        "c) Could not be adjusted or rendered inoperative without a TOOL",
+        "d) Discharge opening located and directed as to not release material towards any person",
+        "e) Discharge opening located and directed as to not deposit material on parts that could result in unacceptable RISK",
+        "f) Adequate discharge capacity to ensure pressure will not exceed MAXIMUM PERMISSIBLE WORKING PRESSURE by more than 10% when failure occurs in control of supply pressure",
+        "g) No shut-off valve provided between a pressure-relief device and parts it is to protect",
+        "h) Min number of cycles of operation 100,000, except for one-time use devices (bursting disks)"
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8",
+      "requirement": "HAZARDS associated with support systems",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.1",
+      "requirement": "ME EQUIPMENT parts designed to support loads or provide actuating forces when a mechanical fault could constitute an unacceptable RISK",
+      "result": "No such parts used",
+      "sub_requirements": [
+        "Construction of support, suspension, or actuation system complied with Table 21 and TOTAL LOAD",
+        "Means of attachment of ACCESSORIES prevent possibility of incorrect attachment that could result in an unacceptable RISK",
+        "RISK ANALYSIS of support systems included MECHANICAL HAZARDS from static, dynamic, vibration, foundation and other movements, impact and pressure loading, temperature, environmental, manufacture and service conditions",
+        "RISK ANALYSIS included effects of failures such as excessive deflection, plastic deformation, ductile/brittle fracture, fatigue fracture, instability (buckling), stress-assisted corrosion cracking, wear, material creep and deterioration, and residual stresses from manufacturing PROCESSES",
+        "Instructions on attachment of structures to floor, wall, ceiling, included in ACCOMPANYING DOCUMENTS making adequate allowances for quality of materials and listing required materials",
+        "Additional instructions provided on checking adequacy of surface of structure parts will be attached to"
+      ],
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For pressure isolation: Means provided for isolation, or local depressurizing reservoirs and similar vessels, and pressure indication when above not possible. All elements remaining under pressure after isolation of ME EQUIPMENT or an ACCESSORY from its power supply resulting in an unacceptable RISK provided with clearly identified exhaust devices, and a warning to depressurize these elements before setting or maintenance activity. Result: No such element. Verdict: N/A.",
+      "topic_tags": [
+        "pressure isolation",
+        "depressurization",
+        "safety warning",
+        "ME EQUIPMENT",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "9.7.3",
+        "9.7.7"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Pressure-relief device discharge requirements (clause 9.7.7 sub-items d-h): Discharge opening must be located and directed so as not to release material towards any person, and not to deposit material on parts that could result in unacceptable RISK. Adequate discharge capacity must ensure pressure does not exceed MAXIMUM PERMISSIBLE WORKING PRESSURE by more than 10% when failure occurs in control of supply pressure. No shut-off valve between pressure-relief device and protected parts. Minimum 100,000 cycles of operation required, except for one-time use devices (bursting disks). All sub-items: Verdict N/A.",
+      "topic_tags": [
+        "pressure relief",
+        "discharge capacity",
+        "safety",
+        "IEC60601-1 9.7.7",
+        "bursting disk"
+      ],
+      "related_subjects": [
+        "9.7.7"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 9.8.1 support system risk analysis requirements: RISK ANALYSIS of support systems must include MECHANICAL HAZARDS from static, dynamic, vibration, foundation and other movements, impact and pressure loading, temperature, environmental, manufacture and service conditions. Must also include effects of failures such as excessive deflection, plastic deformation, ductile/brittle fracture, fatigue fracture, instability (buckling), stress-assisted corrosion cracking, wear, material creep and deterioration, and residual stresses from manufacturing PROCESSES. Instructions on attachment to floor, wall, ceiling must be included in ACCOMPANYING DOCUMENTS with adequate allowances for quality of connection materials and list of required materials. Additional instructions for checking adequacy of surface of structure parts must be provided.",
+      "topic_tags": [
+        "support systems",
+        "risk analysis",
+        "mechanical hazards",
+        "fatigue",
+        "buckling",
+        "IEC60601-1 9.8.1"
+      ],
+      "related_subjects": [
+        "9.8",
+        "9.8.1"
+      ]
+    }
+  ]
+}

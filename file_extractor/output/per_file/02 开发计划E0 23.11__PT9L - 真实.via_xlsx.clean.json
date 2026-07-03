@@ -1,0 +1,906 @@
+{
+  "document": {
+    "title": "PT9L - 真实 体温计设计项目计划",
+    "doc_type": "开发计划/项目计划"
+  },
+  "plan_tasks": [
+    {
+      "wbs": "1",
+      "name": "体温计设计周期",
+      "start_date": "2024-04-10",
+      "end_date": "2025-01-06",
+      "level": 1,
+      "note": "工期193.0d"
+    },
+    {
+      "wbs": "1.1",
+      "name": "风险分析",
+      "start_date": "2024-04-18",
+      "end_date": "2024-05-09",
+      "owner": "标准（项目日历）",
+      "level": 2,
+      "note": "工期15.0d"
+    },
+    {
+      "wbs": "1.2",
+      "name": "设计输入",
+      "predecessor": "1.1",
+      "start_date": "2024-05-09",
+      "end_date": "2024-05-21",
+      "level": 2,
+      "note": "工期8.0d"
+    },
+    {
+      "wbs": "1.3",
+      "name": "结构设计",
+      "start_date": "2024-05-21",
+      "end_date": "2024-06-18",
+      "level": 2,
+      "note": "工期20.0d"
+    },
+    {
+      "wbs": "1.3.1",
+      "name": "结构方案设计及评审",
+      "predecessor": "1.2",
+      "start_date": "2024-05-21",
+      "end_date": "2024-05-24",
+      "level": 3,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.3.2",
+      "name": "ProE设计",
+      "predecessor": "1.3.1",
+      "start_date": "2024-05-24",
+      "end_date": "2024-06-04",
+      "level": 3,
+      "note": "工期7.0d"
+    },
+    {
+      "wbs": "1.3.3",
+      "name": "结构图样评审",
+      "predecessor": "1.3.2",
+      "start_date": "2024-06-04",
+      "end_date": "2024-06-18",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.4",
+      "name": "硬件设计",
+      "start_date": "2024-05-21",
+      "end_date": "2024-06-21",
+      "level": 2,
+      "note": "工期23.0d"
+    },
+    {
+      "wbs": "1.4.1",
+      "name": "硬件方案设计及评审",
+      "predecessor": "1.2",
+      "start_date": "2024-05-21",
+      "end_date": "2024-05-31",
+      "level": 3,
+      "note": "工期8.0d"
+    },
+    {
+      "wbs": "1.4.2",
+      "name": "PCB设计",
+      "predecessor": "1.4.1, 1.3.2",
+      "start_date": "2024-05-31",
+      "end_date": "2024-06-14",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.4.3",
+      "name": "硬件图样评审及修改",
+      "predecessor": "1.4.2",
+      "start_date": "2024-06-14",
+      "end_date": "2024-06-21",
+      "level": 3,
+      "note": "工期5.0d"
+    },
+    {
+      "wbs": "1.5",
+      "name": "软件设计",
+      "start_date": "2024-05-21",
+      "end_date": "2024-07-11",
+      "level": 2,
+      "note": "工期37.0d"
+    },
+    {
+      "wbs": "1.5.1",
+      "name": "软件方案设计及评审",
+      "predecessor": "1.2",
+      "start_date": "2024-05-21",
+      "end_date": "2024-06-06",
+      "level": 3,
+      "note": "工期12.0d"
+    },
+    {
+      "wbs": "1.5.2",
+      "name": "软件图样设计及评审",
+      "predecessor": "1.5.1",
+      "start_date": "2024-06-06",
+      "end_date": "2024-06-20",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.5.3",
+      "name": "程序设计",
+      "predecessor": "1.5.2",
+      "start_date": "2024-06-20",
+      "end_date": "2024-07-11",
+      "level": 3,
+      "note": "工期15.0d"
+    },
+    {
+      "wbs": "1.6",
+      "name": "T1阶段",
+      "start_date": "2024-06-18",
+      "end_date": "2024-09-12",
+      "level": 2,
+      "note": "工期62.0d"
+    },
+    {
+      "wbs": "1.6.1",
+      "name": "模具评审",
+      "predecessor": "1.3.3",
+      "start_date": "2024-06-18",
+      "end_date": "2024-06-21",
+      "owner": "模具厂",
+      "level": 3,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.6.2",
+      "name": "T1报样",
+      "predecessor": "1.6.1",
+      "start_date": "2024-06-21",
+      "end_date": "2024-06-24",
+      "level": 3,
+      "note": "工期1.0d"
+    },
+    {
+      "wbs": "1.6.3",
+      "name": "T1PCB加工",
+      "predecessor": "1.6.2",
+      "start_date": "2024-06-24",
+      "end_date": "2024-06-27",
+      "owner": "PCB厂",
+      "level": 3,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.6.4",
+      "name": "T1机芯焊接",
+      "predecessor": "1.6.3",
+      "start_date": "2024-06-27",
+      "end_date": "2024-07-02",
+      "level": 3,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.6.5",
+      "name": "T1软硬件调试",
+      "predecessor": "1.6.4",
+      "start_date": "2024-07-02",
+      "end_date": "2024-07-05",
+      "level": 3,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.6.6",
+      "name": "工装设计",
+      "start_date": "2024-07-11",
+      "end_date": "2024-07-24",
+      "level": 3,
+      "note": "工期9.0d"
+    },
+    {
+      "wbs": "1.6.6.1",
+      "name": "工装设计",
+      "predecessor": "1.5.3",
+      "start_date": "2024-07-11",
+      "end_date": "2024-07-16",
+      "level": 4,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.6.6.2",
+      "name": "工装PCB加工",
+      "predecessor": "1.6.6.1",
+      "start_date": "2024-07-16",
+      "end_date": "2024-07-19",
+      "owner": "模具厂",
+      "level": 4,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.6.6.3",
+      "name": "首套工装制作",
+      "predecessor": "1.6.6.2",
+      "start_date": "2024-07-19",
+      "end_date": "2024-07-24",
+      "level": 4,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.6.7",
+      "name": "T1样机制作",
+      "predecessor": "1.6.2, 1.6.4, 1.6.6.3",
+      "start_date": "2024-07-24",
+      "end_date": "2024-07-25",
+      "level": 3,
+      "note": "工期1.0d"
+    },
+    {
+      "wbs": "1.6.8",
+      "name": "T1样机评审",
+      "predecessor": "1.6.7",
+      "start_date": "2024-07-25",
+      "end_date": "2024-09-05",
+      "level": 3,
+      "note": "工期30.0d"
+    },
+    {
+      "wbs": "1.6.9",
+      "name": "机芯类BOM输出",
+      "predecessor": "1.6.8",
+      "start_date": "2024-09-05",
+      "end_date": "2024-09-12",
+      "level": 3,
+      "note": "工期5.0d"
+    },
+    {
+      "wbs": "1.6.10",
+      "name": "T1样机客户反馈",
+      "predecessor": "1.6.7",
+      "start_date": "2024-07-25",
+      "end_date": "2024-08-01",
+      "level": 3,
+      "note": "工期5.0d"
+    },
+    {
+      "wbs": "1.6.11",
+      "name": "T1型式试验和EMC/FCC/ICES测试",
+      "predecessor": "1.6.7",
+      "start_date": "2024-07-25",
+      "end_date": "2024-07-26",
+      "owner": "PCB厂",
+      "level": 3,
+      "note": "工期1.0d"
+    },
+    {
+      "wbs": "1.7",
+      "name": "试产",
+      "predecessor": "1.6.8",
+      "start_date": "2024-09-05",
+      "end_date": "2024-10-17",
+      "level": 2,
+      "note": "工期30.0d"
+    },
+    {
+      "wbs": "1.7.1",
+      "name": "上传文件中心",
+      "predecessor": "1.6.9",
+      "start_date": "2024-09-12",
+      "end_date": "2024-09-19",
+      "level": 3,
+      "note": "工期5.0d"
+    },
+    {
+      "wbs": "1.7.2",
+      "name": "试产技术准备会",
+      "predecessor": "1.7.1",
+      "start_date": "2024-09-19",
+      "end_date": "2024-09-24",
+      "level": 3,
+      "note": "工期3.0d"
+    },
+    {
+      "wbs": "1.7.3",
+      "name": "提交试产申请",
+      "predecessor": "1.7.2",
+      "start_date": "2024-09-24",
+      "end_date": "2024-09-25",
+      "level": 3,
+      "note": "工期1.0d"
+    },
+    {
+      "wbs": "1.7.4",
+      "name": "机芯料提前采购",
+      "predecessor": "1.4.3",
+      "start_date": "2024-09-05",
+      "end_date": "2024-09-19",
+      "owner": "模具厂",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.7.5",
+      "name": "液晶提前采购",
+      "predecessor": "1.4.3",
+      "start_date": "2024-09-05",
+      "end_date": "2024-09-19",
+      "owner": "模具厂",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.7.6",
+      "name": "PCB采购",
+      "predecessor": "1.4.3",
+      "start_date": "2024-09-05",
+      "end_date": "2024-09-19",
+      "owner": "模具厂",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.7.7",
+      "name": "结构料采购",
+      "predecessor": "1.3.3",
+      "start_date": "2024-09-05",
+      "end_date": "2024-09-19",
+      "owner": "模具厂",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.7.8",
+      "name": "DMR设计转换",
+      "predecessor": "1.7.3",
+      "start_date": "2024-09-25",
+      "end_date": "2024-09-27",
+      "level": 3,
+      "note": "工期2.0d"
+    },
+    {
+      "wbs": "1.7.9",
+      "name": "试产",
+      "predecessor": "1.7.4, 1.7.5, 1.7.6, 1.7.7, 1.7.8",
+      "start_date": "2024-09-27",
+      "end_date": "2024-09-30",
+      "level": 3,
+      "note": "工期1.0d"
+    },
+    {
+      "wbs": "1.7.10",
+      "name": "试产报告与总结会",
+      "predecessor": "1.7.9",
+      "start_date": "2024-09-30",
+      "end_date": "2024-10-14",
+      "level": 3,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.8",
+      "name": "设计确认",
+      "predecessor": "1.7.10, 1.6.11",
+      "start_date": "2024-10-14",
+      "end_date": "2024-10-28",
+      "level": 2,
+      "note": "工期10.0d"
+    },
+    {
+      "wbs": "1.9",
+      "name": "510(k)申请",
+      "predecessor": "1.8",
+      "start_date": "2024-10-28",
+      "end_date": "2024-12-09",
+      "level": 2,
+      "note": "工期30.0d"
+    }
+  ],
+  "resources": [
+    {
+      "name": "PCB厂",
+      "type": "WORK",
+      "rate": "0.0h"
+    },
+    {
+      "name": "模具厂",
+      "type": "WORK",
+      "rate": "0.0h"
+    },
+    {
+      "name": "标准（项目日历）",
+      "type": "WORK",
+      "rate": "0.0h"
+    }
+  ],
+  "products": [
+    {
+      "name": "体温计"
+    }
+  ],
+  "_meta": {
+    "source_file": "02 开发计划E0 23.11/PT9L - 真实.via_xlsx.clean.md",
+    "doc_type": "dev_plan"
+  },
+  "_edges": [
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "体温计设计周期",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "风险分析",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "结构设计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "结构方案设计及评审",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "ProE设计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "结构图样评审",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "硬件设计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "硬件方案设计及评审",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "PCB设计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "硬件图样评审及修改",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "软件设计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "软件方案设计及评审",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "软件图样设计及评审",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "程序设计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1阶段",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "模具评审",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1报样",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1PCB加工",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1机芯焊接",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1软硬件调试",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "工装设计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "工装PCB加工",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "首套工装制作",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1样机制作",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1样机评审",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "机芯类BOM输出",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1样机客户反馈",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "T1型式试验和EMC/FCC/ICES测试",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "试产",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "上传文件中心",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "试产技术准备会",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "提交试产申请",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "机芯料提前采购",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "液晶提前采购",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "PCB采购",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "结构料采购",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "DMR设计转换",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "试产报告与总结会",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "设计确认",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "PT9L - 真实 体温计设计项目计划",
+      "to": "510(k)申请",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "标准（项目日历）",
+      "to": "风险分析",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "模具评审",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PCB厂",
+      "to": "T1PCB加工",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "工装PCB加工",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PCB厂",
+      "to": "T1型式试验和EMC/FCC/ICES测试",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "机芯料提前采购",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "液晶提前采购",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "PCB采购",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "结构料采购",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.2",
+      "to": "1.1",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.3.1",
+      "to": "1.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.3.2",
+      "to": "1.3.1",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.3.3",
+      "to": "1.3.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.4.1",
+      "to": "1.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.4.2",
+      "to": "1.4.1",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.4.2",
+      "to": "1.3.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.4.3",
+      "to": "1.4.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.5.1",
+      "to": "1.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.5.2",
+      "to": "1.5.1",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.5.3",
+      "to": "1.5.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.1",
+      "to": "1.3.3",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.2",
+      "to": "1.6.1",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.3",
+      "to": "1.6.2",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.4",
+      "to": "1.6.3",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.5",
+      "to": "1.6.4",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.6.1",
+      "to": "1.5.3",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.6.2",
+      "to": "1.6.6.1",
+      "properties": {}
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "1.6.6.3",
+      "to": "1.6.6.2",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "标准（项目日历）",
+      "to": "1.1",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "1.6.1",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "PCB厂",
+      "to": "1.6.3",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "模具厂",
+      "to": "1.6.6.2",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1.1",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1.2",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1.3",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1.4",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1.5",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1.6",
+      "to": "体温计",
+      "properties": {}
+    }
+  ],
+  "_claims": []
+}

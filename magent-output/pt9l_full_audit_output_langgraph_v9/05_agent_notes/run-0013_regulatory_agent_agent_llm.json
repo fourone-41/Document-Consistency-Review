@@ -1,0 +1,163 @@
+{
+  "agent": "Regulatory Agent",
+  "summary": "PT9L DHF regulatory recheck (ASG-0013) confirms: F0013 is a PT2L-titled risk plan filed in the historical folder that internally carries an IFT-FXJH01 document number; the active Risk Management Plan (F0017) also carries IFT-FXJH01 on its document face; the IFT prefix appears on at least four active PT9L risk management documents (F0017–F0020) and four PT9L-prefixed active documents (F0021–F0024), creating a dual-prefix system with no reconciling master document list or index in the supplied evidence; and all approval fields across every risk management document remain blank.",
+  "review_notes": [
+    "F0013 rel_path confirms it is filed under '03 风险分析\\2L风险改 - 历史文件', consistent with the historical-folder designation in the primary scope rules.",
+    "F0017 (active Risk Management Plan) carries the filename 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable', making IFT-FXJH01 the document number visible on the document face (REG-014, REG-015).",
+    "F0021 (PT9L-prefixed active Risk Management Plan) carries the filename 'PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable', showing both PT9L and IFT-FXJH01 in the same filename (REG-030, REG-031).",
+    "The IFT prefix appears on all four active risk management documents: F0017 (IFT-FXJH01), F0018 (IFT-FXPJ01), F0019 (IFT-FXYS01), F0020 (IFT-FXGB01), as well as their PT9L-prefixed counterparts F0021–F0024.",
+    "No master document list, document index, or cross-reference table reconciling IFT-prefix identifiers to the PT9L DHF scope is present in the supplied evidence catalog.",
+    "The operation guide (F0083, REG-074) references MDD rather than MDR for biocompatibility compliance, consistent with the finding raised in RUN-0006.",
+    "Biocompatibility test reports (F0104–F0108) are conducted on PT5 samples per their file paths; no PT9L-specific biocompatibility report is present in the supplied evidence catalog.",
+    "The design input (F0031, REG-064) and design verification plan (F0121, REG-130) both mark MDR 2017/745 as not applicable (□是 ■否), consistent with the FDA-only market scope shown in REG-059 and REG-117."
+  ],
+  "findings": [
+    {
+      "finding_type": "product_identity_conflict_in_historical_document",
+      "severity": "P1",
+      "claim": "F0013, a document titled 'Risk Management Plan PT2L美亚-FXJH01 V1.0' and filed in the '2L风险改 - 历史文件' historical folder, internally carries the document number IFT-FXJH01 on its approval block, which is the same document number used by the active PT9L Risk Management Plan (F0017); this creates an unresolved product-identity and document-number collision between a historical PT2L document and the active PT9L risk management chain.",
+      "rationale": "REG-003 shows the approval block of F0013 at line 22 with the same 'Approved by (Technical Director) Date:' structure as F0017 (REG-015). REG-004 confirms F0013 references ISO 14971:2019 risk management scope. The file path in REG-003 and REG-004 places F0013 in '03 风险分析\\2L风险改 - 历史文件', confirming it is a PT2L historical document. REG-014 and REG-015 confirm F0017's filename and approval block both carry IFT-FXJH01. No document index or master list in the supplied evidence reconciles these two documents sharing the IFT-FXJH01 identifier across different product models.",
+      "evidence_ids": [
+        "REG-003",
+        "REG-004",
+        "REG-014",
+        "REG-015"
+      ],
+      "challenge_questions": [
+        "What is the exact internal document number printed on the face page of F0013, and does it read IFT-FXJH01 or a PT2L-specific prefix?",
+        "Was IFT-FXJH01 originally assigned to a PT2L document and later reused for the PT9L active risk plan, or was it always intended as a product-family-level identifier?",
+        "Is there a document control register or master document list that shows IFT-FXJH01 as a valid PT9L DHF document number, and if so, why does F0013 (a PT2L document) carry the same number?",
+        "Has the historical folder designation for F0013 been formally recorded in a document control action (e.g., obsolescence notice or supersession record)?"
+      ]
+    },
+    {
+      "finding_type": "dual_prefix_system_without_reconciliation",
+      "severity": "P1",
+      "claim": "The active PT9L risk management file set contains two parallel document-number prefixes — IFT-FXJH01/IFT-FXPJ01/IFT-FXYS01/IFT-FXGB01 (F0017–F0020) and PT9L-FXJH01/PT9L-FXPJ01/PT9L-FXYS01/PT9L-FXGB01 (F0021–F0024) — with no master document list, cross-reference table, or document control record in the supplied evidence explaining which set is the controlled baseline for the PT9L DHF.",
+      "rationale": "REG-014 and REG-015 confirm F0017 carries IFT-FXJH01 in both filename and approval block. REG-018 and REG-019 confirm F0018 carries IFT-FXPJ01. REG-024 confirms F0019 carries IFT-FXYS01. REG-026 and REG-027 confirm F0020 carries IFT-FXGB01. REG-030 and REG-031 confirm F0021 carries 'PT9L--' prefix combined with IFT-FXJH01 in the same filename. REG-034 and REG-035 confirm F0022 similarly. REG-040 and REG-042/REG-043 confirm F0023 and F0024 follow the same pattern. The earlier PT9L-prefixed historical documents (F0025–F0028) use PT9L-FXJH01, PT9L-FXPJ01, PT9L-FXYS01, PT9L-FXGB01 per REG-046, REG-048, REG-054, REG-056. No evidence in the catalog identifies a document index reconciling these two active sets.",
+      "evidence_ids": [
+        "REG-014",
+        "REG-015",
+        "REG-018",
+        "REG-019",
+        "REG-024"
+      ],
+      "challenge_questions": [
+        "Is IFT a recognized product-family or platform prefix in the document control system, and if so, which products does it cover?",
+        "Are F0017–F0020 (IFT-prefix) and F0021–F0024 (PT9L--IFT hybrid prefix) the same documents or different revisions, and which set is the controlled baseline submitted for regulatory review?",
+        "Does a document control register exist that lists both IFT-FXJH01 and PT9L-FXJH01 as valid identifiers for the same document, or are these treated as separate controlled documents?",
+        "Why do F0021–F0024 include 'PT9L--' as a filename prefix while retaining the IFT document number internally — is this a filing convention or a document control action?"
+      ]
+    },
+    {
+      "finding_type": "unsigned_approval_fields_across_all_risk_management_documents",
+      "severity": "P1",
+      "claim": "Every risk management document in the supplied evidence — spanning both the historical set (F0012–F0016), the active IFT-prefix set (F0017–F0020), and the active PT9L-prefix set (F0021–F0028) — shows an approval block reading 'Approved by (Technical Director) Date:' with no name, signature, or date populated, meaning no risk management document in the PT9L DHF has a confirmed controlled approval status based on available evidence.",
+      "rationale": "REG-001 (F0012 line 18), REG-003 (F0013 line 22), REG-006 (F0014 line 22), REG-012 (F0015 line 22), REG-013 (F0016 line 22), REG-015 (F0017 line 18), REG-019 (F0018 line 18), REG-024 (F0019 line 18), REG-027 (F0020 line 18), REG-031 (F0021 line 18), REG-035 (F0022 line 18), REG-040 (F0023 line 18), REG-043 (F0024 line 18), REG-046 (F0025 line 22), REG-048 (F0026 line 22), REG-054 (F0027 line 22), REG-056 (F0028 line 22) all show the identical unsigned approval block pattern. ISO 14971:2019 requires the risk management plan to be approved by a person with appropriate authority; unsigned approval blocks do not satisfy this requirement.",
+      "evidence_ids": [
+        "REG-001",
+        "REG-003",
+        "REG-006",
+        "REG-012",
+        "REG-013"
+      ],
+      "challenge_questions": [
+        "Are wet-ink or electronic signatures present on the original source files that were not captured during the markdown conversion process used to generate the evidence catalog?",
+        "If signatures exist only on paper originals, is there a document control record linking the signed originals to the document numbers in the DHF index?",
+        "Which individual holds the 'Technical Director' role for PT9L risk management approval, and is their approval authority documented in the quality management system?",
+        "For the active V2.0 risk documents (F0018–F0020, F0022–F0024), is there a change control record showing who approved the upgrade from V1.0 to V2.0?"
+      ]
+    },
+    {
+      "finding_type": "active_risk_plan_carries_ift_prefix_not_pt9l_prefix",
+      "severity": "P2",
+      "claim": "The active Risk Management Plan filed as the primary PT9L DHF attachment (F0017) carries document number IFT-FXJH01 rather than PT9L-FXJH01, and no evidence in the supplied catalog confirms that IFT-FXJH01 is a recognized PT9L DHF document number in any document control register or master document list, creating a traceability gap between the document number cited in the DHF and the PT9L product identifier.",
+      "rationale": "REG-014 shows the filename of F0017 as 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable'. REG-015 confirms the approval block is present but unsigned. REG-016 confirms the document references ISO 14971:2019. The earlier PT9L-specific risk plan (F0025, REG-046, REG-047) uses document number PT9L-FXJH01 V1.0, establishing that a PT9L-prefixed version exists. The project profile document_id_patterns list includes 'PT9L-FXJH01' but not 'IFT-FXJH01', confirming IFT-FXJH01 is not a recognized PT9L DHF identifier in the project profile. No master document list or DHF index in the supplied evidence reconciles IFT-FXJH01 to the PT9L scope.",
+      "evidence_ids": [
+        "REG-014",
+        "REG-015",
+        "REG-016",
+        "REG-046",
+        "REG-047"
+      ],
+      "challenge_questions": [
+        "Is IFT-FXJH01 the document number that will appear in the 510(k) submission's risk management plan reference, or will PT9L-FXJH01 be cited?",
+        "Does the quality management system document control procedure define IFT as a valid prefix for PT9L DHF documents, and if so, what does IFT stand for?",
+        "Is F0017 (IFT-FXJH01) a supersession of F0025 (PT9L-FXJH01 V1.0), and if so, where is the supersession or change control record?",
+        "Will the FDA reviewer be able to trace IFT-FXJH01 back to the PT9L product without a reconciling document index?"
+      ]
+    },
+    {
+      "finding_type": "biocompatibility_reports_conducted_on_pt5_samples_not_pt9l",
+      "severity": "P2",
+      "claim": "All biocompatibility test reports in the supplied evidence (F0104–F0108) are identified by their file paths as PT5 sample reports, and no PT9L-specific biocompatibility report is present in the evidence catalog; the operation guide (F0083) claims ISO 10993-5 and ISO 10993-10 compliance for PT9L contact materials, but this claim cannot be substantiated from the supplied evidence.",
+      "rationale": "REG-088 through REG-116 all originate from files under '11 T1样机\\生物相容性\\同PT5生物相容性报告\\', with filenames explicitly prefixed 'PT5-'. REG-074 (F0083 line 162) states the PT9L contact materials (ABS, TPU, PMMA, PC) have passed ISO 10993-5 and ISO 10993-10 tests. No evidence in the catalog shows a biocompatibility evaluation or bridging justification document linking PT5 test results to PT9L materials. The folder name '同PT5生物相容性报告' (same as PT5 biocompatibility report) suggests an intent to reuse PT5 data, but no formal equivalence or bridging record is present in the supplied evidence.",
+      "evidence_ids": [
+        "REG-074",
+        "REG-088",
+        "REG-089",
+        "REG-090",
+        "REG-094"
+      ],
+      "challenge_questions": [
+        "Is there a formal biocompatibility bridging justification document that establishes material equivalence between PT5 and PT9L contact components, and if so, what is its document number and approval status?",
+        "Are the ABS, TPU, PMMA, and PC materials used in PT9L sourced from the same suppliers and to the same specifications as those tested for PT5?",
+        "Has a ISO 10993-1:2018 biological evaluation plan been completed for PT9L that explicitly references the PT5 test data as supporting evidence?",
+        "Does the 510(k) submission for PT9L include a biocompatibility section, and if so, which test reports are cited — PT5 reports or PT9L-specific reports?"
+      ]
+    },
+    {
+      "finding_type": "operation_guide_references_mdd_instead_of_mdr",
+      "severity": "P2",
+      "claim": "The PT9L operation guide (F0083) references the Medical Device Directive (MDD) for biocompatibility compliance rather than the Medical Device Regulation (MDR 2017/745), which has been the applicable EU framework since May 2021; this is inconsistent with the current regulatory environment even though the design input marks EU/MDR as not applicable for the current market scope.",
+      "rationale": "REG-074 (F0083 line 162) states contact materials 'are in compliance with the Medical Device Directive (MDD) requirements.' MDD was repealed and replaced by MDR 2017/745 effective May 26, 2021. REG-064 (F0031) and REG-130 (F0121) both mark MDR 2017/745 as not applicable (□是 ■否) for the current design scope, and REG-059 and REG-117 confirm the intended market is FDA/US only. However, the operation guide is a customer-facing document that may be distributed globally, and citing a repealed directive creates a regulatory accuracy issue regardless of current market scope. REG-076 (F0083 line 466) also references the 2012/19/EU WEEE Directive for EU battery disposal, indicating the guide is intended for EU distribution contexts.",
+      "evidence_ids": [
+        "REG-074",
+        "REG-076",
+        "REG-064",
+        "REG-130"
+      ],
+      "challenge_questions": [
+        "Is the PT9L operation guide (F0083) intended for distribution in EU markets, and if so, has a CE marking or MDR conformity assessment been initiated?",
+        "Has the MDD reference in the operation guide been identified as a labeling nonconformity in any design review or label review record?",
+        "The label review document (F0082) references IEC 60601-1-11 and ISO 80601-2-56 compliance — does this label review also cover the operation guide text, and was the MDD reference reviewed?",
+        "If EU distribution is planned in the future, what is the change control process for updating the operation guide to reference MDR 2017/745?"
+      ]
+    },
+    {
+      "finding_type": "dual_astm_e1965_version_citation_without_transition_rationale",
+      "severity": "P2",
+      "claim": "Both ASTM E1965-98:2016 and ASTM E1965-98:2023 are listed as applicable standards in the design input (F0031), design verification plan (F0121), and design verification report (F0114), and both are marked as passing in the label review (F0082), but no transition rationale, gap analysis, or documented justification for maintaining dual-version compliance is present in the supplied evidence.",
+      "rationale": "REG-062 and REG-063 (F0031) list both ASTM E1965-98:2016 and ASTM E1965-98:2023 as applicable US standards. REG-128 and REG-129 (F0121) and REG-121 and REG-122 (F0114) repeat this dual citation with both marked as applicable and passing. REG-071 (F0082) shows ASTM E1965-98:2023 as passing in the label review. REG-073 (F0083) cites 'ISO 80601-2-56:2017+A1:2018 and ASTM Standard(E1965-98)' without specifying which year edition. No gap analysis, transition plan, or justification document explaining why both editions are simultaneously applicable is present in the supplied evidence catalog.",
+      "evidence_ids": [
+        "REG-062",
+        "REG-063",
+        "REG-071",
+        "REG-073",
+        "REG-121"
+      ],
+      "challenge_questions": [
+        "What are the substantive differences between ASTM E1965-98:2016 and ASTM E1965-98:2023, and has a gap analysis been performed to confirm PT9L meets both editions?",
+        "The external test reports cited in the design verification report (ETX202303-07-078-03/04) — do they test against ASTM E1965-98:2016, ASTM E1965-98:2023, or both?",
+        "Is the dual-version citation a transitional measure pending a single-version determination, and if so, what is the target date for resolution?",
+        "Does the 510(k) submission cite both ASTM editions, and has FDA provided any guidance on which edition is currently recognized?"
+      ]
+    },
+    {
+      "finding_type": "no_510k_responsibility_agreement_in_evidence_catalog",
+      "severity": "P2",
+      "claim": "The project profile states that 510(k) registration responsibility lies with 'andon' as the responsible and paying party, but no 510(k) submission agreement, regulatory responsibility assignment, or formal record of this arrangement is present in the supplied evidence catalog.",
+      "rationale": "The project profile regulatory baseline entry states '510(k) registration: andon responsible and paying.' REG-059 and REG-117 confirm the intended market is FDA/US only (■ FDA 对应地区：美国). No document in the evidence catalog — including the design input (F0031), design verification plan (F0121), or any risk management document — contains a reference to a 510(k) submission agreement, regulatory agency agreement, or formal record identifying 'andon' as the 510(k) holder. The absence of this record means the regulatory responsibility chain for the primary target market cannot be verified from the DHF.",
+      "evidence_ids": [
+        "REG-059",
+        "REG-117"
+      ],
+      "challenge_questions": [
+        "Is there a written agreement between the manufacturer and 'andon' (iHealth/Jiuan Medical) that assigns 510(k) submission responsibility, and if so, what is its document number and where is it filed in the DHF?",
+        "Who will be listed as the 510(k) submitter and device owner in the FDA submission — the manufacturer or andon?",
+        "Has the 510(k) submission been filed, and if so, what is the submission number (K-number)?",
+        "Does the quality management system require a regulatory responsibility agreement to be included in the DHF for FDA-targeted products?"
+      ]
+    }
+  ]
+}

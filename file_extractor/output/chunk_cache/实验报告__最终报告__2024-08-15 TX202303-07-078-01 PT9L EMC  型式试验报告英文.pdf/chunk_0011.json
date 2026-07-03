@@ -1,0 +1,197 @@
+{
+  "document": {
+    "title": "PT9L EMC 型式试验报告（英文）",
+    "report_number": "ETX202303-07-078-01",
+    "date": "2024-08-15",
+    "total_pages": 29,
+    "source_file": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/最终报告/2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "name": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Medical electrical equipment EMC requirements standard"
+    }
+  ],
+  "tests": [
+    {
+      "name": "Radiated Emission Test",
+      "section": "8.1",
+      "modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "description": "Radiated emission test setup with two operating modes"
+    },
+    {
+      "name": "ESD Test",
+      "section": "8.2",
+      "modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "description": "Electrostatic discharge test setup, discharge position documented"
+    },
+    {
+      "name": "Radiated Immunity Test",
+      "section": "8.3",
+      "modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "description": "Radiated immunity test setup with two operating modes"
+    },
+    {
+      "name": "Proximity Fields from RF Wireless Communications Equipment Test",
+      "section": "8.4",
+      "modes": [
+        "Battery Power 385MHz~1970MHz",
+        "Battery Power 2450MHz~5785MHz"
+      ],
+      "description": "Proximity fields from RF wireless communications equipment test setup covering frequency ranges 385MHz~1970MHz and 2450MHz~5785MHz"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "5.2.2.3",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Requirements applicable to ME equipment that intentionally receive RF electromagnetic energy: each frequency or frequency of reception, preferred frequency or frequency band if applicable, and bandwidth of the receiving section in those bands",
+      "result": "N/A - Equipment does not intentionally receive RF electromagnetic energy",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.4",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Requirements applicable to ME equipment that include RF transmitters: technical description includes frequency or frequency band of transmission, type and frequency characteristics of modulation, and effective radiated power (ERP)",
+      "result": "N/A - EUT does not include RF emission",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.5a",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Permanently Installed Large ME equipment and large ME systems: statement that an exemption has been used and that the equipment has not been tested for radiated RF immunity over the entire frequency range 80 MHz to 6 GHz",
+      "result": "N/A - The EUT is not a permanently installed large ME system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.5b",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Permanently Installed Large ME equipment WARNING: equipment tested for radiated RF immunity only at selected frequencies, use nearby of emitters at other frequencies could result in improper operation",
+      "result": "N/A - The EUT is not a permanently installed large ME system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.5c",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Permanently Installed Large ME equipment: list of frequencies and modulations used to test the immunity of the ME equipment or ME systems",
+      "result": "N/A - The EUT is not a permanently installed large ME system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.6",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Requirements applicable to ME equipment that claim compatibility with HF Surgical equipment: technical description includes a statement of HF Surgical Equipment compatibility and the conditions of intended use during HF Surgery",
+      "result": "N/A - The EUT does not claim compatibility with HF Surgical equipment",
+      "verdict": "N/A"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L",
+      "role": "EUT (Equipment Under Test)",
+      "characteristics": [
+        "Does not intentionally receive RF electromagnetic energy",
+        "Does not include RF transmitter/emission",
+        "Not a permanently installed large ME system",
+        "Does not claim compatibility with HF Surgical equipment",
+        "Battery powered"
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-01"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.3: Requirements applicable to ME equipment that intentionally receive RF electromagnetic energy include the following information: each frequency or frequency of reception, the preferred frequency or frequency band if applicable, and the bandwidth of the receiving section of the ME Equipment in those bands. Result: N/A - Equipment does not intentionally receive RF electromagnetic energy.",
+      "topic_tags": [
+        "RF reception",
+        "EMC",
+        "IEC 60601-1-2",
+        "ME equipment",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.4: Requirements applicable to ME equipment that include RF transmitters - technical description includes the frequency or frequency band of transmission, the type and frequency characteristics of the modulation and the effective radiated power (ERP). Result: N/A - EUT does not include RF emission.",
+      "topic_tags": [
+        "RF transmitter",
+        "ERP",
+        "EMC",
+        "IEC 60601-1-2",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.5: Requirements applicable to Permanently Installed Large ME equipment and large ME systems - items (a), (b), (c) all marked N/A as the EUT (PT9L) is not a permanently installed large ME system. Items include: exemption statement for radiated RF immunity not tested over 80 MHz to 6 GHz; WARNING about testing only at selected frequencies; list of frequencies and modulations used for immunity testing.",
+      "topic_tags": [
+        "permanently installed",
+        "large ME system",
+        "radiated RF immunity",
+        "80MHz-6GHz",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.6: Requirements applicable to ME equipment that claim compatibility with HF Surgical equipment - technical description includes a statement of HF Surgical Equipment compatibility and the conditions of intended use during HF Surgery. Result: N/A - The EUT does not claim compatibility with HF Surgical equipment.",
+      "topic_tags": [
+        "HF surgical equipment",
+        "compatibility",
+        "EMC",
+        "IEC 60601-1-2",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Test photographs section (Section 8) documents the following test setups for PT9L EMC testing: 8.1 Radiated Emission Test Setup (Mode 1 and Mode 2); 8.2 ESD Test Setup (Discharge position, Mode 1 and Mode 2); 8.3 Radiated Immunity Test Setup (Mode 1 and Mode 2); 8.4 Proximity Fields from RF Wireless Communications Equipment Test Setup (Battery Power 385MHz~1970MHz; Battery Power 2450MHz~5785MHz); 8.5 EUT photographs.",
+      "topic_tags": [
+        "test setup",
+        "photographs",
+        "radiated emission",
+        "ESD",
+        "radiated immunity",
+        "proximity fields",
+        "RF wireless"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    }
+  ]
+}

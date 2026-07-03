@@ -1,0 +1,185 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "total_pages": 181,
+    "current_pages": "117-118",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+  },
+  "tests": [
+    {
+      "clause": "8.5.5.1a",
+      "description": "Defibrillation-proof applied parts – test voltage measurement (Figs. 9 & 10)",
+      "verdict": "N/A",
+      "parameters": [
+        "Measured voltage between Y1 and Y2 (mV)",
+        "Test voltage polarity",
+        "Applied part with test voltage",
+        "Measurement made on accessible part"
+      ]
+    },
+    {
+      "clause": "8.5.5.1b",
+      "description": "Defibrillation-proof applied parts – verification of recovery time",
+      "verdict": "N/A",
+      "parameters": [
+        "Applied part with test voltage",
+        "Test voltage polarity",
+        "Recovery time from documents (s)",
+        "Measured recovery time (s)"
+      ]
+    },
+    {
+      "clause": "8.5.5.2",
+      "description": "DEFIBRILLATION-PROOF APPLIED PARTS or PATIENT CONNECTIONS - Energy reduction test – measurement of Energy delivered to a 100Ω load",
+      "verdict": "N/A",
+      "parameters": [
+        "Test Voltage applied to PATIENT CONNECTION",
+        "Measured Energy E1 (mJ)",
+        "Measured Energy E2 (mJ)",
+        "Energy E1 as % of E2 (%)"
+      ],
+      "compliance_criteria": "E1 must be at least 90% of E2. E1=Measured energy delivered to 100Ω with ME Equipment connected; E2=Measured energy delivered to 100Ω without ME equipment connected."
+    },
+    {
+      "clause": "8.6.3",
+      "description": "RM RESULTS TABLE: Protective earthing of moving parts",
+      "verdict": "N/A",
+      "referenced_standard": "ISO 14971",
+      "sub_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "8.6.4",
+      "description": "Impedance and current-carrying capability of PROTECTIVE EARTH CONNECTIONS",
+      "verdict": "N/A",
+      "parameters": [
+        "Type of ME EQUIPMENT & impedance measured between parts",
+        "Test current (A) / Duration (s)",
+        "Voltage drop measured between parts (V)",
+        "Maximum calculated impedance (mΩ)",
+        "Maximum allowable impedance (mΩ)"
+      ],
+      "compliance_criteria": [
+        "PERMANENTLY INSTALLED ME EQUIPMENT, impedance between PROTECTIVE EARTH TERMINAL and a PROTECTIVELY EARTHED part - Limit 100 mΩ",
+        "ME EQUIPMENT with an APPLIANCE INLET, impedance between earth pin in the APPLIANCE INLET and a PROTECTIVELY EARTHED part - Limit 100 mΩ",
+        "ME EQUIPMENT with an APPLIANCE INLET, impedance between earth pin in the protective earth pin on the DETACHABLE POWER SUPPLY CORD and a PROTECTIVELY EARTHED part - Limit 200 mΩ",
+        "ME EQUIPMENT with a non-DETACHABLE POWER SUPPLY CORD, impedance between the protective earth pin in the MAINS PLUG and a PROTECTIVELY EARTHED part - Limit 200 mΩ"
+      ]
+    },
+    {
+      "clause": "8.7",
+      "description": "Leakage current",
+      "verdict": "P",
+      "sub_tests": [
+        {
+          "test_name": "Fig. 13 - Earth Leakage (ER)",
+          "supply_voltage_V": null,
+          "supply_frequency_Hz": null,
+          "measured_max_value_uA": null,
+          "verdict": "N/A"
+        },
+        {
+          "test_name": "Fig. 14 - Touch Current (TC) - frequency weighted, NC(B): supplied by battery",
+          "supply_voltage_V": 3,
+          "supply_frequency_Hz": "DC",
+          "measured_max_value_uA": 1.46,
+          "verdict": "P"
+        },
+        {
+          "test_name": "Fig. 14 - Touch Current (TC) - frequency weighted, SFC(B): supplied by battery",
+          "supply_voltage_V": null,
+          "supply_frequency_Hz": null,
+          "measured_max_value_uA": null,
+          "verdict": "N/A"
+        },
+        {
+          "test_name": "Fig. 14 - Touch Current (TC) - frequency weighted, NC(A): supplied by battery",
+          "supply_voltage_V": 3,
+          "supply_frequency_Hz": "DC",
+          "measured_max_value_uA": 1.22,
+          "verdict": "P"
+        }
+      ],
+      "limits": {
+        "touch_current_NC_uA": 100,
+        "touch_current_SFC_uA": 500
+      }
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment - Part 1: General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European version of IEC 60601-1"
+    },
+    {
+      "id": "ISO 14971",
+      "description": "Risk management standard referenced in clause 8.6.3",
+      "clauses_referenced": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 8.5.5.2 compliance: E1 must be at least 90% of E2. E1 = Measured energy delivered to 100Ω load with ME Equipment connected; E2 = Measured energy delivered to 100Ω load without ME equipment connected. Test applies to defibrillation-proof applied parts or patient connections with different patient connections connected to earth in turn.",
+      "topic_tags": [
+        "defibrillation-proof",
+        "energy reduction",
+        "patient connection",
+        "compliance criteria"
+      ],
+      "related_subjects": [
+        "8.5.5.2",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Protective earth connection impedance limits per clause 8.6.4: (1) PERMANENTLY INSTALLED ME EQUIPMENT between PROTECTIVE EARTH TERMINAL and PROTECTIVELY EARTHED part: Limit 100 mΩ. (2) ME EQUIPMENT with APPLIANCE INLET between earth pin in APPLIANCE INLET and PROTECTIVELY EARTHED part: Limit 100 mΩ. (3) ME EQUIPMENT with APPLIANCE INLET between earth pin on DETACHABLE POWER SUPPLY CORD and PROTECTIVELY EARTHED part: Limit 200 mΩ. (4) ME EQUIPMENT with non-DETACHABLE POWER SUPPLY CORD between protective earth pin in MAINS PLUG and PROTECTIVELY EARTHED part: Limit 200 mΩ.",
+      "topic_tags": [
+        "protective earth",
+        "impedance limit",
+        "earthing",
+        "safety"
+      ],
+      "related_subjects": [
+        "8.6.4",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Touch current limits per clause 8.7 (Fig. 14): Maximum allowed values are 100 µA under Normal Conditions (NC) and 500 µA under Single Fault Conditions (SFC). Device is battery-supplied; Earth Leakage (Fig. 13) and SFC battery tests are marked N/A.",
+      "topic_tags": [
+        "leakage current",
+        "touch current",
+        "battery-supplied",
+        "safety limits"
+      ],
+      "related_subjects": [
+        "8.7",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "document": {
+    "title": "液晶（PT9L-L01 V1.0）2D图读图报告",
+    "drawing_no": "PT9L-L01",
+    "edition": "V1.0",
+    "part_name": "液晶",
+    "model_no": "PT9L",
+    "source_file": "PT9L-液晶-20240627.pdf",
+    "scale": "2:1",
+    "units": "mm",
+    "report_date": "2026-06-02",
+    "skill_version": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "LCD液晶屏",
+      "part_number": "PT9L-L01",
+      "version": "V1.0",
+      "model": "PT9L",
+      "brand": "andon iHealth",
+      "material": "ITO（铟锡氧化物镀膜玻璃）",
+      "display_type": "TN POSITIVE TRANSMISSIVE",
+      "description": "TN型正性透射式LCD段码屏，3位7段数字+24个图标段位，1/4 DUTY多路驱动"
+    }
+  ],
+  "components": [
+    {
+      "name": "LCD液晶屏主体",
+      "part_number": "PT9L-L01",
+      "material": "ITO铟锡氧化物镀膜玻璃",
+      "type": "TN POSITIVE TRANSMISSIVE LCD"
+    },
+    {
+      "name": "斑马条连接器",
+      "reference_file": "PT9L-斑马条-v2.0-20240524.pdf",
+      "connector_type": "ZEBRA",
+      "description": "连接LCD PIN与PCBA"
+    },
+    {
+      "name": "导光板",
+      "reference_file": "导光板.pdf",
+      "dimensions": "32.7×22×2.9 mm",
+      "description": "背光源，从背面提供照明"
+    },
+    {
+      "name": "上盖",
+      "reference_file": "T-Z1-上盖-v3.0-20240627.pdf",
+      "description": "LCD窗口22.2mm宽，容纳LCD玻璃22.00mm宽"
+    },
+    {
+      "name": "FRONT GLASS",
+      "description": "前玻璃，LCD叠层组成部分"
+    },
+    {
+      "name": "REAR GLASS",
+      "description": "后玻璃，LCD叠层组成部分"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-LCD-001",
+      "category": "电气规格",
+      "parameter": "DISPLAY TYPE",
+      "value": "TN POSITIVE TRANSMISSIVE",
+      "description": "TN型，正性，透射式"
+    },
+    {
+      "id": "DI-LCD-002",
+      "category": "电气规格",
+      "parameter": "FRONT POLARIZER",
+      "value": "NORMAL"
+    },
+    {
+      "id": "DI-LCD-003",
+      "category": "电气规格",
+      "parameter": "OPERATING METHOD",
+      "value": "1/4 DUTY, 1/3 BIAS"
+    },
+    {
+      "id": "DI-LCD-004",
+      "category": "电气规格",
+      "parameter": "OPERATION VOLTAGE (VOP)",
+      "value": "3.0 V"
+    },
+    {
+      "id": "DI-LCD-005",
+      "category": "光学规格",
+      "parameter": "VIEWING ANGLE",
+      "value": "6:00（最佳视角方向）"
+    },
+    {
+      "id": "DI-LCD-006",
+      "category": "环境规格",
+      "parameter": "OPERATION TEMPERATURE",
+      "value": "0°C TO 55°C"
+    },
+    {
+      "id": "DI-LCD-007",
+      "category": "环境规格",
+      "parameter": "STORAGE TEMPERATURE",
+      "value": "-20°C TO 65°C"
+    },
+    {
+      "id": "DI-LCD-008",
+      "category": "连接规格",
+      "parameter": "CONNECTOR TYPE",
+      "value": "ZEBRA"
+    },
+    {
+      "id": "DI-LCD-009",
+      "category": "尺寸规格",
+      "parameter": "玻璃外形宽度",
+      "dimension_no": "①",
+      "value": 22.0,
+      "tolerance": "±0.1（Level B默认）",
+      "unit": "mm",
+      "priority": "IQC重点"
+    },
+    {
+      "id": "DI-LCD-010",
+      "category": "尺寸规格",
+      "parameter": "玻璃外形高度（含PIN引脚区域）",
+      "dimension_no": "②",
+      "value": 31.5,
+      "tolerance": "±0.5",
+      "unit": "mm",
+      "priority": "IQC重点"
+    },
+    {
+      "id": "DI-LCD-011",
+      "category": "尺寸规格",
+      "parameter": "玻璃叠层总厚",
+      "dimension_no": "③",
+      "value": 1.7,
+      "tolerance": "MAX",
+      "unit": "mm",
+      "priority": "IQC重点"
+    },
+    {
+      "id": "DI-LCD-012",
+      "category": "尺寸规格",
+      "parameter": "视区水平宽",
+      "value": 20.0,
+      "tolerance": "MIN V.A.",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-013",
+      "category": "尺寸规格",
+      "parameter": "视区垂直高",
+      "value": 27.5,
+      "tolerance": "MIN V.A.",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-014",
+      "category": "尺寸规格",
+      "parameter": "PIN间距",
+      "value": "P=1.0 mm × 15段 = 15.00 mm",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-015",
+      "category": "尺寸规格",
+      "parameter": "PIN阵列到玻璃右边距",
+      "value": 3.5,
+      "tolerance": "±0.2",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-016",
+      "category": "尺寸规格",
+      "parameter": "PIN阵列到玻璃左边距",
+      "value": 0.5,
+      "tolerance": "MAX",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-017",
+      "category": "尺寸规格",
+      "parameter": "左侧外形高度子段",
+      "value": 14.0,
+      "tolerance": "±0.5",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-018",
+      "category": "尺寸规格",
+      "parameter": "左下边距",
+      "value": 5.0,
+      "tolerance": "MAX",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-019",
+      "category": "尺寸规格",
+      "parameter": "玻璃内部水平尺寸",
+      "value": 21.2,
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-020",
+      "category": "尺寸规格",
+      "parameter": "引脚间距/厚度",
+      "value": 0.76,
+      "tolerance": "±0.07",
+      "unit": "mm"
+    },
+    {
+      "id": "DI-LCD-021",
+      "category": "尺寸规格",
+      "parameter": "4段厚度",
+      "prefix": "4-",
+      "value": 0.4,
+      "tolerance": "±0.4",
+      "unit": "mm",
+      "confidence": "B级"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "type": "质量要求",
+      "description": "带编号为重要尺寸，需要IQC测量",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "REQ-002",
+      "type": "法规要求",
+      "description": "产品符合RoHS 2.0",
+      "source": "技术要求第2条"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品符合RoHS 2.0有害物质限制指令"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "PT9L-L01"
+    },
+    {
+      "type": "版本",
+      "value": "V1.0"
+    },
+    {
+      "type": "型号",
+      "value": "PT9L"
+    },
+    {
+      "type": "PIN数量",
+      "value": "16 PIN × 4 COM"
+    }
+  ],
+  "software_items": [
+    {
+      "name": "LCD段位映射",
+      "description": "PIN 1-4为COM公共线（COM3/COM2/COM1/COM0倒序），PIN 5-10为3位7段数字的A-G段（1A-1G/2A-2G/3A-3G），PIN 11-16为24个图标段位P1-P24",
+      "pin_mapping": {
+        "COM_pins": {
+          "PIN1": "COM3",
+          "PIN2": "COM2",
+          "PIN3": "COM1",
+          "PIN4": "COM0"
+        },
+        "segment_pins": {
+          "PIN5": {
+            "COM0": "S0/P1",
+            "COM1": "1F",
+            "COM2": "1G",
+            "COM3": "1E"
+          },
+          "PIN6": {
+            "COM0": "S1/1A",
+            "COM1": "1B",
+            "COM2": "1C",
+            "COM3": "1D"
+          },
+          "PIN7": {
+            "COM0": "S2/P2",
+            "COM1": "2F",
+            "COM2": "2G",
+            "COM3": "2E"
+          },
+          "PIN8": {
+            "COM0": "S3/2A",
+            "COM1": "2B",
+            "COM2": "2C",
+            "COM3": "2D"
+          },
+          "PIN9": {
+            "COM0": "S4/P3",
+            "COM1": "3F",
+            "COM2": "3G",
+            "COM3": "3E"
+          },
+          "PIN10": {
+            "COM0": "S5/3A",
+            "COM1": "3B",
+            "COM2": "3C",
+            "COM3": "3D"
+          },
+          "PIN11": {
+            "COM0": "S6/P4",
+            "COM1": "P5",
+            "COM2": "P6",
+            "COM3": "P7"
+          },
+          "PIN12": {
+            "COM0": "S7/P8",
+            "COM1": "P9",
+            "COM2": "P10",
+            "COM3": "P11"
+          },
+          "PIN13": {
+            "COM0": "S8/P12",
+            "COM1": "P13",
+            "COM2": "P14",
+            "COM3": "P15"
+          },
+          "PIN14": {
+            "COM0": "S9/P16",
+            "COM1": "P17",
+            "COM2": "P18",
+            "COM3": "P19"
+          },
+          "PIN15": {
+            "COM0": "S10/P20",
+            "COM1": "P21",
+            "COM2": "P22",
+            "COM3": "P23"
+          },
+          "PIN16": {
+            "COM0": "S11/P24"
+          }
+        }
+      }
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "level": "C级",
+      "description": "LCD物理段位与软件代码（P1-P24 / 1A-3G）的最终映射是否一致",
+      "required_source": "软件代码 + 硬件ER"
+    },
+    {
+      "id": "C-2",
+      "level": "C级",
+      "description": "视区≥20×≥27.5是否覆盖所有需显示信息（含小数点）",
+      "required_source": "UI设计图"
+    },
+    {
+      "id": "C-3",
+      "level": "C级",
+      "description": "玻璃厚度1.7 MAX与上盖内腔11.5±0.05整体压紧装配（含导光板2.9）的间隙",
+      "required_source": "3D装配 + 极限公差链"
+    },
+    {
+      "id": "C-4",
+      "level": "C级",
+      "description": "ZEBRA连接器对应PCBA 16个焊盘的间距/接触压力",
+      "required_source": "PCBA Gerber + 装配SOP"
+    },
+    {
+      "id": "C-5",
+      "level": "C级",
+      "description": "`4-0.40±0.4`厚度公差（B级）需高清复核",
+      "required_source": "高清PDF",
+      "confidence": "B级"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PIN映射表（16 PIN × 4 COM）：PIN 1-4是COM公共线（COM3/COM2/COM1/COM0倒序），PIN 5-10是3位7段数字的A-G段（1A-1G / 2A-2G / 3A-3G），PIN 11-16是24个图标段位P1-P24。具体映射：PIN5(COM0:S0/P1, COM1:1F, COM2:1G, COM3:1E)，PIN6(COM0:S1/1A, COM1:1B, COM2:1C, COM3:1D)，PIN7(COM0:S2/P2, COM1:2F, COM2:2G, COM3:2E)，PIN8(COM0:S3/2A, COM1:2B, COM2:2C, COM3:2D)，PIN9(COM0:S4/P3, COM1:3F, COM2:3G, COM3:3E)，PIN10(COM0:S5/3A, COM1:3B, COM2:3C, COM3:3D)，PIN11(COM0:S6/P4, COM1:P5, COM2:P6, COM3:P7)，PIN12(COM0:S7/P8, COM1:P9, COM2:P10, COM3:P11)，PIN13(COM0:S8/P12, COM1:P13, COM2:P14, COM3:P15)，PIN14(COM0:S9/P16, COM1:P17, COM2:P18, COM3:P19)，PIN15(COM0:S10/P20, COM1:P21, COM2:P22, COM3:P23)，PIN16(COM0:S11/P24)。",
+      "topic_tags": [
+        "PIN映射",
+        "COM公共线",
+        "7段数字",
+        "图标段位",
+        "LCD驱动"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "LCD液晶屏",
+        "软件代码",
+        "硬件ER"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "分段代码图段位物理位置描述：顶部P4 / ⊟ / P6 / P23 / P3 / 喇叭符 / P7 / P8 / °C / °F；中部3位数字1/2/3 + P1/P2小数点；底部⚡/⌂/°F/⊠ 4个icon + P10/P11/P12/P24 + 9个圆点P13-P22。",
+      "topic_tags": [
+        "分段代码",
+        "段位位置",
+        "图标定义",
+        "LCD显示内容"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "P1-P24段位",
+        "UI设计"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "装配约束推断：零件类型为TN正性透射式LCD段码屏，3位7段数字+24个图标段位，1/4 DUTY多路驱动。几何约束：玻璃外形22.00×31.50×≤1.7 mm，视区≥20×≥27.5 mm，PIN阵列16个（间距1.0 mm）顶部一字排开。配合关系：斑马条（PT9L-斑马条-v2.0-20240524.pdf）= ZEBRA连接器，连接LCD PIN与PCBA；导光板（导光板.pdf，32.7×22×2.9）= 背光源，从背面提供照明；上盖LCD窗口（T-Z1-上盖-v3.0-20240627.pdf，22.2×±内腔）= 容纳LCD玻璃22.00 mm宽。极限工作温度：0–55°C（操作），−20–65°C（存储）。",
+      "topic_tags": [
+        "装配约束",
+        "配合关系",
+        "几何约束",
+        "温度范围",
+        "斑马条",
+        "导光板",
+        "上盖"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "PT9L-斑马条-v2.0",
+        "导光板",
+        "T-Z1-上盖-v3.0"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "本图为LCD液晶屏SPEC图（玻璃组件+段位定义+电气SPEC），不是结构件图纸，给软件/电气工程师同时用。LCD CONTROLLER/DRIVER未指定（/），BACKLIGHT COLOR未指定（/，无内置背光，靠导光板.pdf外置背光）。HIGH TEMP./HUMIDITY STORAGE未指定（/）。",
+      "topic_tags": [
+        "文档用途",
+        "LCD SPEC",
+        "背光设计",
+        "控制器"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "导光板",
+        "软件工程师",
+        "电气工程师"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "自动检查结果汇总：编号①②③共3个连续无跳号；无角度标注；前缀完整性：P 1.0×15=15.00（Pitch前缀）、4-0.40前缀均已捕获；公差形式全对称±a或MAX/MIN；配合交叉验证：CONNECTOR TYPE=ZEBRA→与PT9L-斑马条-v2.0-20240524.pdf配合；BACKLIGHT外置→与导光板.pdf配合；安装区与T-Z1-上盖-v3.0的LCD窗口22.2 mm配合；无Φ标注；视区V.A.用MIN（≥）标注（20.00/27.50），玻璃厚度用MAX（≤）标注（1.7）。",
+      "topic_tags": [
+        "质量检查",
+        "尺寸验证",
+        "公差形式",
+        "配合验证"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "PT9L-斑马条-v2.0",
+        "导光板",
+        "T-Z1-上盖-v3.0"
+      ]
+    }
+  ]
+}

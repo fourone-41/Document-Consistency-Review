@@ -1,0 +1,114 @@
+{
+  "document": {
+    "title": "软件流程图",
+    "doc_type": "软件流程图",
+    "version": "V1.0"
+  },
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "更改人"
+    },
+    {
+      "name": "侯广伟",
+      "title": "批准人"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RJTY01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "产品型号",
+      "value": "PT9L"
+    }
+  ],
+  "products": [
+    {
+      "name": "红外体温计"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": "2024年05月29日"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文档为红外体温计（产品型号PT9L，项目编号30000078）的软件流程图文件，文件编号PT9L-RJTY01 V1.0。文档内容主要以图形（流程图）形式呈现，原始图片资源均以GIF格式嵌入，包含多张软件流程图图样，具体流程步骤信息存储于图片中，无法从文本中进一步提取。",
+      "topic_tags": [
+        "软件流程图",
+        "红外体温计",
+        "PT9L",
+        "嵌入式软件"
+      ],
+      "related_subjects": [
+        "PT9L产品",
+        "软件设计文件"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/软件文件底稿/软件图样E0 23.11/BP3L 软件图样E0 23.11.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "软件流程图",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L产品",
+      "to": "软件流程图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件设计文件",
+      "to": "软件流程图",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RJTY01 V1.0",
+      "properties": {
+        "role": "更改人",
+        "date": "2024年05月29日"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RJTY01 V1.0",
+      "properties": {
+        "role": "批准人"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RJTY01 V1.0",
+      "to": "1",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "王迪",
+        "date": "2024年05月29日"
+      }
+    }
+  ],
+  "_claims": []
+}

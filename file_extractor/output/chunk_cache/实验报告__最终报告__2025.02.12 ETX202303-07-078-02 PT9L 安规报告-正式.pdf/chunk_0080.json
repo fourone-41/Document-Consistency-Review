@@ -1,0 +1,182 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "page_range": "172-173 of 181",
+    "standard": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021"
+  },
+  "tests": [
+    {
+      "clause": "8.4",
+      "requirement": "Additional requirements for interruption of the power supply/supply mains to ME equipment and ME system",
+      "result_remark": "Not life supporting ME equipment or ME system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5",
+      "requirement": "Additional requirements for an internal electrical power source",
+      "result_remark": null,
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.1",
+      "requirement": "ME equipment provided with a means for the operator to determine state of the internal electrical power source when essential for basic safety or essential performance or to control risks associated with loss of essential performance",
+      "result_remark": "Indicate in the LCD",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.1",
+      "requirement": "State of internal electrical power source indicated by number of procedures remaining",
+      "result_remark": "No number of procedures remaining",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5.1",
+      "requirement": "State of internal electrical power source indicated by remaining operating time",
+      "result_remark": "No remaining operating time",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5.1",
+      "requirement": "State of internal electrical power source indicated by percentage of the remaining operating time or energy",
+      "result_remark": null,
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.1",
+      "requirement": "State of internal electrical power source indicated by fuel gauge",
+      "result_remark": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5.1",
+      "requirement": "Instructions described method to determine state of internal electrical power source",
+      "result_remark": "Described in chapter 'BATTERY LOADING AND AC ADAPTER LOADING' of operation guide",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.2",
+      "requirement": "Means, other than labelling, provided to prevent risk of swallowing coin/button cells",
+      "result_remark": "No use swallowing coin/button cells",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5.2",
+      "requirement": "Replacement of button cell require use of tool",
+      "result_remark": "See above",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5.3",
+      "requirement": "Additional requirements for separation of parts - two MOPP from SUPPLY MAINS for applied parts and parts likely to contact patient when simultaneous connection to patient and supply mains is possible",
+      "result_remark": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9",
+      "requirement": "ACCURACY OF CONTROLS AND INSTRUMENTS AND PROTECTION AGAINST HAZARDOUS OUTPUTS",
+      "result_remark": null,
+      "verdict": "P"
+    },
+    {
+      "clause": "9",
+      "requirement": "Risks associated with usability in the home healthcare environment for operator profiles including a lay operator - changes of controls",
+      "result_remark": "Usability was evaluated in the Usability test report",
+      "verdict": "P"
+    },
+    {
+      "clause": "9",
+      "requirement": "Risks associated with usability in the home healthcare environment - unexpected movement",
+      "result_remark": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9",
+      "requirement": "Risks associated with usability in the home healthcare environment - potential for misconnection",
+      "result_remark": null,
+      "verdict": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "IEC 60601-1-11:2015 + A1:2020",
+      "equivalent": "EN 60601-1-11:2015 + A1:2021",
+      "subject": "Requirements for ME equipment and ME systems used in home healthcare environments"
+    },
+    {
+      "name": "IEC 60529:1989",
+      "subject": "Degrees of protection provided by enclosures (IP Code)"
+    },
+    {
+      "name": "IEC 60601-1:2005 + AMD1:2012 + AMD2:2020",
+      "clause": "7.9.2.1",
+      "subject": "General requirements for basic safety and essential performance of ME equipment"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ME equipment or ME system with essential performance intended to actively keep alive or resuscitate a patient maintained its essential performance for a sufficient time or for a sufficient number of procedures when loss or failure of supply mains or near depletion internal electrical power source occurred. The time or number of procedures remaining allowed alternative life-supporting methods to be employed. Instructions for use disclose the time or number of procedures available following a loss or failure of the supply mains or near depletion of the internal electrical power source. Instructions for use describes the alternative life-supporting methods to be employed. The technical description describes methods that can be employed for longer periods. Result: Not life supporting ME equipment or ME system. Verdict: N/A.",
+      "topic_tags": [
+        "生命支持",
+        "供电中断",
+        "基本性能",
+        "内部电源",
+        "应急措施"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 clause 8.4",
+        "essential performance",
+        "internal electrical power source"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ME equipment or ME system with essential performance intended to actively keep alive or resuscitate a patient with no internal electrical power source is equipped with an alarm system that includes at least a medium priority alarm condition indicating power failure. ME equipment or ME system with essential performance intended to actively keep alive or resuscitate a patient with an internal electrical power source is equipped with: (1) automatic switchover to internal electrical power source; (2) an alarm system that includes at least a medium priority technical alarm condition indicating the internal electrical power source is nearing insufficient remaining power for operation; (3) technical alarm condition providing sufficient time or sufficient number of procedures for a lay operator to act; (4) a technical alarm condition of at least low priority remaining active until the internal electrical power source returned to a level above the alarm limit or until depleted; (5) it was not possible to inactivate the visual alarm signal of this technical alarm condition. All verdict: N/A (Not life supporting ME equipment or ME system).",
+      "topic_tags": [
+        "报警系统",
+        "电源失效",
+        "内部电源",
+        "生命支持",
+        "自动切换"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 clause 8.4",
+        "alarm condition",
+        "internal electrical power source"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For ME EQUIPMENT or ME SYSTEM with an INTERNAL ELECTRICAL POWER SOURCE, if simultaneous connection of the ME EQUIPMENT to the PATIENT and the SUPPLY MAINS is possible, then APPLIED PARTS and parts that are likely to come into contact with the PATIENT shall have two MOPP from the SUPPLY MAINS. However, parts which the PATIENT intentionally handles as the intended OPERATOR according to 7.9.2.1 of IEC 60601-1:2005 and IEC 60601-1:2005/AMD1:2012 + IEC 60601-1:2005/AMD2:2020 (e.g. touch keys, ENCLOSURE) while the ME EQUIPMENT is not being used for its intended medical function may be insulated with two MOOP from SUPPLY MAINS. Verdict: N/A.",
+      "topic_tags": [
+        "隔离要求",
+        "MOPP",
+        "MOOP",
+        "应用部分",
+        "内部电源",
+        "患者防护"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 clause 8.5.3",
+        "applied parts",
+        "supply mains isolation"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The risks associated with usability in the home healthcare environment for operator profiles including a lay operator when performing the usability engineering process include at least the following considerations: changes of controls (usability was evaluated in the Usability test report, Verdict: P); unexpected movement (Verdict: N/A); potential for misconnection (Verdict: N/A).",
+      "topic_tags": [
+        "可用性",
+        "家庭医疗环境",
+        "操作者",
+        "风险",
+        "误操作"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 clause 9",
+        "usability test report",
+        "lay operator"
+      ]
+    }
+  ]
+}

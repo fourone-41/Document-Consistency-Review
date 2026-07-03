@@ -1,0 +1,36 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "验证图号 PT9L-F01 是否被两份不同物理件的图纸（F0164 外箱图、F0177 外观图）同时使用，构成文件控制体系中的图号重复冲突，并判断该冲突是否真实存在于原始文件标题栏中",
+  "agent_input": {
+    "claim": "图号 PT9L-F01 被分配给两个不同的物理件：外箱图纸（F0164）和产品外观图（F0177），在设计输出包中造成无法解决的文件控制歧义。",
+    "context_summary": "Context Recovery 第1轮因 LLM 输出 JSON 解析失败未能产出结论，但已成功读取两份源文件并提取到以下关键证据：\n1. F0164（外箱图纸）标题栏：Drawing NO. = PT9L-F01，Part name = 外箱，Edition = V1.0，图号 K04010001435；\n2. F0177（外观图）标题栏：Drawing NO. = PT9L-F01，Part name = 外观图，Edition = V1.0，读图报告中已标注 ⚠️ 与外箱 PT9L-F01 同号但不同件；\n3. 两份文件均位于"设计输出清单二"目录下，均未被排除在主范围之外（excluded_from_primary_scope: false），均已核实（verified: true）；\n4. 读图报告中的 ⚠️ 注释系读图 Agent 自行添加，需确认原始 PDF 标题栏是否真实存在该图号，而非读图报告的标注错误。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-068",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 20,
+        "actual_text": "| **Drawing NO.** | PT9L-F01 |",
+        "part_name": "外箱",
+        "edition": "V1.0",
+        "internal_drawing_no": "K04010001435",
+        "verified": true
+      },
+      {
+        "evidence_id": "DMR-138",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 14,
+        "actual_text": "| **Drawing NO.** | **PT9L-F01**（⚠️ 与外箱 PT9L-F01 同号但不同件） |",
+        "part_name": "外观图",
+        "edition": "V1.0",
+        "note": "⚠️ 标注由读图 Agent 添加，需核实原始 PDF 标题栏内容是否确为 PT9L-F01",
+        "verified": true
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": "请重点核查以下三点：\n1. 原始 PDF（F0177）标题栏中 Drawing NO. 字段的真实值是否确为 PT9L-F01，排除读图报告标注错误的可能；\n2. F0164 与 F0177 是否存在内部图号（如 K04010001435）或版本字段可区分两者，即图号重复是否有受控的消歧机制；\n3. 设计输出清单（DHF 清单）中对这两份文件的图号登记是否一致或存在差异，以判断文件控制体系是否已识别并处理该冲突。"
+  }
+}
+```

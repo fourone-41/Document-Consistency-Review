@@ -1,0 +1,167 @@
+```json
+{
+  "context_summary": "本轮已补充了目标文件（F0245，18 设计确认\\PT9L Checklist of EN 60601-1-6…PT2L（美亚）-UETR01 V1.0.pdf.md）的完整本地上下文，包括：文件标题行（line 3）、第1页整页图像引用（line 14）、第1页正文内容（DN号、产品名称、型号、项目编号、结论字段）、第3页整页图像引用（line 88）、第3页完整合规检查表格（IEC 60601-1-6 条款4.0–5，全部结果为P）、文件来源元数据（lines 113–114）。核心矛盾已清晰呈现：文件标题前缀为"PT9L"，但文档编号字段（DN）记录为"PT9L-UETR01 V1.0"，而文件名及内部标题中同时嵌入"PT2L（美亚）-UETR01 V1.0"，且第1页正文明确记录 Model name: PT9L、Project number: 30000078。仍缺少：①PT2L（美亚）DHF中是否存在同名或同编号文件（用于判断是否为跨DHF复制）；②PT9L DHF文件清单（F0006）中该文件的登记状态；③文件第2页内容（page_2.png对应的文字层，当前上下文跳过了第2页正文）；④签字/审批页（page_3.png图像内容）中是否有PT2L相关签字人或日期信息。",
+  "evidence_gaps": [
+    "文件第2页（lines 40–79附近）的完整文字层内容尚未提取，可能包含更多产品标识字段或签字信息",
+    "PT9L DHF文件清单（F0006，02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md）中该文件的登记条目及其文档编号字段尚未读取",
+    "PT2L（美亚）DHF中是否存在编号为'PT2L（美亚）-UETR01 V1.0'的同类可用性检查表，尚无证据",
+    "page_3.png图像（签字/审批页）中的签字人、日期、公司名称等信息未经OCR提取，无法判断审批主体是否与PT9L项目一致",
+    "文件内部DN字段（line 16: DN:PT9L-UETR01 V1.0）与文件名中'PT2L（美亚）-UETR01 V1.0'的关系尚需确认：DN字段是否为后期手工修改，或文件名是否为复制PT2L文件后未更新文件名",
+    "F0246文件夹内容尚未检索，无法确认PT9L设计确认文件夹的完整范围及是否有对应的PT2L文件"
+  ],
+  "additional_search_queries": [
+    "PT2L（美亚）-UETR01 V1.0 DHF 设计确认",
+    "PT2L 美亚 UETR01 Checklist EN 60601-1-6",
+    "F0006 PT9L-DHF清单 UETR01",
+    "PT9L DHF清单 设计确认 可用性",
+    "F0246 设计确认",
+    "PT2L DHF 18 设计确认",
+    "Project number 30000078 PT2L",
+    "PT9L Checklist page_2"
+  ],
+  "agent_instruction": "以下上下文包已补充了目标文件的完整本地内容。审查要点如下：\n1. 文件标题（line 3）与文件名均含'PT9L'前缀，但同时嵌入'PT2L（美亚）-UETR01 V1.0'作为文档编号后缀，形成命名矛盾。\n2. 文件内部DN字段（line 16）记录为'PT9L-UETR01 V1.0'，与文件名中的'PT2L（美亚）-UETR01 V1.0'不一致，需判断哪个字段代表文件的真实身份。\n3. 第1页正文明确记录 Model name: PT9L，Project number: 30000078，Conclusion: Pass，表明文件内容层面指向PT9L产品。\n4. 当前证据不足以排除以下两种解释：(a) 该文件是PT2L文件的复制件，文件名未更新但内部型号字段已被修改为PT9L；(b) 该文件是PT9L原生文件，但文件命名时错误引用了PT2L的文档编号模板。\n5. 建议优先读取F0006（PT9L-DHF清单）中该文件的登记条目，以及检索PT2L DHF中是否存在同编号文件，以区分上述两种情形。\n6. 第2页文字层内容（约lines 40–87）应完整提取，确认是否含有额外的产品标识或版本控制信息。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "SCOUT-139",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 3,
+        "field": "document_title",
+        "source_text": "# PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0",
+        "note": "文件标题行：前缀PT9L，但文档编号后缀为PT2L（美亚）-UETR01 V1.0，命名存在双重产品标识"
+      },
+      {
+        "evidence_id": "SCOUT-140",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 14,
+        "field": "page_1_image_ref",
+        "source_text": "![第 1 页原始整页图](_assets/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0/page_1.png)",
+        "note": "第1页整页图像引用，图像路径与文件名一致"
+      },
+      {
+        "evidence_id": "CTX-REC-001",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 16,
+        "field": "document_number_internal",
+        "source_text": "DN:PT9L-UETR01 V1.0",
+        "note": "文件内部DN（文档编号）字段：记录为PT9L-UETR01 V1.0，与文件名中PT2L（美亚）-UETR01 V1.0不一致，是关键矛盾点"
+      },
+      {
+        "evidence_id": "CTX-REC-002",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 17,
+        "field": "standard_reference",
+        "source_text": "EN 60601-1-6:2010+A1:2015+A2:2021",
+        "note": "适用标准：EN 60601-1-6可用性附加标准"
+      },
+      {
+        "evidence_id": "CTX-REC-003",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line_range": "30-39",
+        "field": "product_identity_fields",
+        "source_text": "Product/project name：Infrared Forehead Thermometer\nModel name: PT9L\nProject number: 30000078\nConclusion(Pass/Fail):Pass",
+        "note": "第1页正文产品标识字段：产品名称为红外额温计，型号明确为PT9L，项目编号30000078，结论Pass。内容层面指向PT9L，与文件名中PT2L标识矛盾"
+      },
+      {
+        "evidence_id": "SCOUT-141",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 88,
+        "field": "page_3_image_ref",
+        "source_text": "![第 3 页原始整页图](_assets/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0/page_3.png)",
+        "note": "第3页整页图像引用（签字/审批页），图像内容未经文字提取，签字人信息未知"
+      },
+      {
+        "evidence_id": "CTX-REC-004",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line_range": "91-107",
+        "field": "compliance_table_page3",
+        "source_text": "| IEC 60601-1-6 | | | |\n| Clause | Requirement + Test | Compliance method | Result |\n| 4.0 | General requirements | | P |\n| 4.1 | Conditions for application to ME EQUIPMENT | | |\n| | The ME EQUIPMENT shall provide adequate USABLITY such that the RISks resulting from NORMAL USE, i.e. CORRECT USE and USE ERROR, are acceptable. | Compliance with 4.2 and other clauses and subclauses of this collateral standard | P |\n| 4.2 | USABILITY ENGINEERING PROCESS for ME EQUIPMENT | | |\n| | A USABILITY ENGINEERING PROCESS complying with IEC 62366-1:2015+A1:2020 shall be performed... | USABILITY ENGINEERING PROCESS has been performed, please see the inspection of the USABILITY ENGINEERING file | P |\n| 5 | ME EQUIPMENT ACCOMPANYING DOCUMENTS | | P |\n| | The instructions for use include a brief description... | Inspect the instruction for use to include information required | P |\n| | The same information shall also be included in the technical description... | Inspect the instruction for use to include information required | P |\n| | The instructions for use contain a summary of the USE SPECIFICATION as specified in IEC 62366-1:2015+A1:2020, 5.1. | Inspect the instruction for use to include use specification as specified in IEC 62366-1. | P |\nEND OF EN 60601-1-6 REPORT.\n1/1",
+        "note": "第3页完整合规检查表：IEC 60601-1-6条款4.0、4.1、4.2、5全部结果为P（Pass）。合规方法引用IEC 62366-1:2015+A1:2020。无产品型号字段，无法从表格内容区分PT9L与PT2L"
+      },
+      {
+        "evidence_id": "SCOUT-142",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 113,
+        "field": "source_pdf_path",
+        "source_text": "- 源 PDF：`02_RnD_DHF/PT9L DHF-历史文件/设计确认/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf`",
+        "note": "源PDF路径：存放于PT9L DHF-历史文件/设计确认目录下，路径中同时含PT9L（目录）和PT2L（美亚）-UETR01 V1.0（文件名）"
+      },
+      {
+        "evidence_id": "SCOUT-143",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 114,
+        "field": "evidence_image_path",
+        "source_text": "- 证据原图（签字/盖章/照片页）：`_assets/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0/page_*.png`",
+        "note": "证据图像路径，page_3.png为签字页，图像内容未提取"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 1,
+        "field": "dhf_index",
+        "note": "PT9L DHF文件清单，需读取以确认该可用性检查表的登记文档编号及版本状态。当前内容为空，需下一轮检索"
+      },
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 1,
+        "field": "development_plan",
+        "note": "PT9L开发计划，可能包含文件编号规则或PT2L关联说明。当前内容为空，需下一轮检索"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "document_structure_summary",
+        "description": "目标文件完整结构摘要",
+        "content": {
+          "total_pages": 3,
+          "page_1": {
+            "contains": "整页图像 + 文字层",
+            "key_fields": {
+              "DN": "PT9L-UETR01 V1.0",
+              "standard": "EN 60601-1-6:2010+A1:2015+A2:2021",
+              "document_type": "CHECKLIST of EN 60601-1-6:2010+A1:2015+A2:2021",
+              "product_name": "Infrared Forehead Thermometer",
+              "model_name": "PT9L",
+              "project_number": "30000078",
+              "conclusion": "Pass"
+            }
+          },
+          "page_2": {
+            "contains": "整页图像（推测为检查表主体），文字层内容未在当前上下文中完整呈现（lines 40–87为表格行，多为空单元格）",
+            "status": "需补充提取"
+          },
+          "page_3": {
+            "contains": "整页图像（签字/审批页）+ IEC 60601-1-6合规检查表",
+            "key_fields": {
+              "clauses_checked": ["4.0", "4.1", "4.2", "5"],
+              "all_results": "P (Pass)",
+              "end_marker": "END OF EN 60601-1-6 REPORT. 1/1"
+            }
+          }
+        }
+      },
+      {
+        "context_id": "RC-002",
+        "type": "naming_conflict_analysis",
+        "description": "文件命名矛盾的结构化分析",
+        "content": {
+          "file_name_prefix": "PT9L",
+          "file_name_doc_number": "PT2L（美亚）-UETR01 V1.0",
+          "internal_DN_field": "PT9L-UETR01 V1.0",
+          "internal_model_field": "PT9L",
+          "storage_path_folder": "PT9L DHF-历史文件/设计确认",
+          "conflict_summary": "文件名中同时含PT9L（前缀）和PT2L（美亚）-UETR01 V1.0（文档编号部分），内部DN字段为PT9L-UETR01 V1.0，内部型号字段为PT9L。文件名中的PT2L标识与内部所有产品标识字

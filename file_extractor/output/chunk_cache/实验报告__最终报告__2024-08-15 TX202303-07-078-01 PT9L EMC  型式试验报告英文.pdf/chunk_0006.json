@@ -1,0 +1,292 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-01",
+    "title": "PT9L EMC 型式试验报告（英文）",
+    "date": "2024-08-15",
+    "total_pages": 30
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "name": "IEC 60601-1-2:2014+A1:2020",
+      "applicable_clause": "clause 6.1"
+    },
+    {
+      "id": "IEC 61000-4-3",
+      "name": "IEC 61000-4-3",
+      "context": "Test Method for Radiated Immunity / Proximity Fields from RF Wireless Communications Equipment"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "6.3",
+      "test_name": "Radiated Immunity",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method": "IEC 61000-4-3",
+      "result": "PASS",
+      "result_detail": "The EUT does meet the Radiated Immunity requirements of the Standard.",
+      "remarks": [
+        "Front face oriented toward transmitting antenna.",
+        "EUT tested in UE1 mode; temperature sensor collection point aligned with blackbody set at 37°C; display temperature accuracy does not exceed ±0.2°C.",
+        "EUT could operate as intended and no disturbance of function during and after test.",
+        "Tests against top side and bottom side are only for adaptor."
+      ]
+    },
+    {
+      "test_id": "6.4",
+      "test_name": "Proximity Fields from RF Wireless Communications Equipment",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method": "IEC 61000-4-3",
+      "test_date": "2024-07-09/10/24-26",
+      "temperature_humidity": "25-31°C, 32%-50%",
+      "power_supply": "DC 3V",
+      "test_level_reference": "Table 9 of IEC 60601-1-2",
+      "antenna_polarization": "Horizontal / Vertical",
+      "modulation": "Pulse Modulation, 18Hz or 217Hz",
+      "result": "PASS",
+      "result_detail": "The EUT does meet the immunity requirements of Proximity Fields from RF Wireless Communications Equipment.",
+      "test_results_table": [
+        {
+          "frequency_mhz": 385,
+          "band_mhz": "380-390",
+          "level_vm": 27,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 450,
+          "band_mhz": "430-470",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 710,
+          "band_mhz": "704-787",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 745,
+          "band_mhz": "704-787",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 780,
+          "band_mhz": "704-787",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 810,
+          "band_mhz": "800-960",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 870,
+          "band_mhz": "800-960",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 930,
+          "band_mhz": "800-960",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 1720,
+          "band_mhz": "1700-1990",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 1845,
+          "band_mhz": "1700-1990",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 1970,
+          "band_mhz": "1700-1990",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 2450,
+          "band_mhz": "2400-2570",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 5240,
+          "band_mhz": "5100-5800",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 5500,
+          "band_mhz": "5100-5800",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 5785,
+          "band_mhz": "5100-5800",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        }
+      ],
+      "remarks": [
+        "EUT tested in UE1 mode; temperature sensor collection point aligned with blackbody set at 37°C; display temperature accuracy does not exceed ±0.2°C.",
+        "EUT could operate as intended and no disturbance of function during and after test.",
+        "Tests against top side and bottom side are only for adaptor."
+      ]
+    },
+    {
+      "test_id": "6.5",
+      "test_name": "Electrical Fast Transients (EFT)",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method": "N/A",
+      "test_date": "N/A",
+      "power_supply": "N/A",
+      "test_level_reference": "N/A",
+      "result": "N/A"
+    }
+  ],
+  "requirements": [
+    {
+      "req_id": "6.4-setup-1",
+      "description": "For table-top equipment, EUT placed on non-conductive table 0.8m high; for floor-standing equipment, mounted on non-conductive support 0.1m above supporting plane."
+    },
+    {
+      "req_id": "6.4-setup-2",
+      "description": "A minimum of 1m of cable exposed to electromagnetic field; excess cable bundled low-inductively in approximate center to form bundle 30–40cm in length."
+    },
+    {
+      "req_id": "6.4-setup-3",
+      "description": "EUT initially placed with one face coincident with the calibration plane; illuminated face contained within the UFA (Uniform Field Area)."
+    },
+    {
+      "req_id": "6.4-setup-4",
+      "description": "Test distances: 3m for frequencies between 1970MHz and 5785MHz; 2.5m for frequencies between 385MHz and 1970MHz."
+    },
+    {
+      "req_id": "6.4-setup-5",
+      "description": "Dwell time of amplitude modulated carrier at each frequency not less than time necessary for EUT to be exercised and respond, and not less than 1s."
+    },
+    {
+      "req_id": "6.4-setup-6",
+      "description": "Test performed with generating antenna facing each side of EUT."
+    },
+    {
+      "req_id": "6.4-setup-7",
+      "description": "Each selected side tested twice: once with antenna vertical and once with antenna horizontal."
+    },
+    {
+      "req_id": "6.4-setup-8",
+      "description": "EUT performance monitored via video camera and/or audio monitor during testing."
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L",
+      "role": "EUT (Equipment Under Test)",
+      "test_mode": "UE1 mode",
+      "power_supply": "DC 3V"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "During and after test, The EUT is tested in UE1 mode, the collection point of the temperature sensor is aligned with the blackbody, which is set at 37°C. The temperature is continuously measured and compared with the blackbody temperature. The accuracy of the display temperature of the EUT does not exceed ±0.2°C. During and after test, the EUT could operate as intended and no disturbance of function. The EUT could meet the requirements of clause 6.1.",
+      "topic_tags": [
+        "temperature accuracy",
+        "blackbody",
+        "UE1 mode",
+        "EMC immunity",
+        "±0.2°C"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Radiated Immunity",
+        "Proximity Fields RF",
+        "IEC 60601-1-2 clause 6.1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Tests against top side and bottom side are only for adaptor.",
+      "topic_tags": [
+        "adaptor",
+        "test sides",
+        "radiated immunity"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Radiated Immunity",
+        "Proximity Fields RF"
+      ]
+    }
+  ]
+}

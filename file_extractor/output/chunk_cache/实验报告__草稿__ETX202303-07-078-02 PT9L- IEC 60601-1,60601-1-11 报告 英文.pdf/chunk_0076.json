@@ -1,0 +1,348 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "page_range": "165-166 of 182",
+    "fragment_index": "76/84"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+      "description": "Requirements for ME equipment used in home healthcare environments"
+    },
+    {
+      "id": "ISO 15223-1:2012",
+      "name": "ISO 15223-1:2012",
+      "description": "Symbols to be used with medical device labels"
+    },
+    {
+      "id": "ISO 7000-0534",
+      "name": "ISO 7000-0534 (Symbol 5.3.5)",
+      "description": "Symbol for temperature range marking"
+    },
+    {
+      "id": "ISO 7000-0533",
+      "name": "ISO 7000-0533 (Symbol 5.3.6)",
+      "description": "Symbol for temperature range marking"
+    },
+    {
+      "id": "ISO 7000-0632",
+      "name": "ISO 7000-0632 (Symbol 5.3.7)",
+      "description": "Symbol for temperature range marking"
+    },
+    {
+      "id": "ISO 7000-2620",
+      "name": "ISO 7000-2620 (Symbol 5.3.8)",
+      "description": "Symbol for humidity range marking"
+    },
+    {
+      "id": "ISO 7000-2621",
+      "name": "ISO 7000-2621 (Symbol 5.3.9)",
+      "description": "Symbol for atmospheric pressure range marking"
+    },
+    {
+      "id": "IEC 60601-1",
+      "name": "IEC 60601-1",
+      "description": "General requirements for basic safety and essential performance of medical electrical equipment"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "4.2.3.1",
+      "name": "Environmental Operating Conditions Test",
+      "verdict": "P",
+      "steps": [
+        {
+          "step": "a",
+          "description": "ME equipment set up for operation according to intended use",
+          "result": null,
+          "verdict": "P"
+        },
+        {
+          "step": "b",
+          "description": "ME equipment exposed to 20°C ± 4°C for at least 6 h or reached thermal stability for at least 2 h",
+          "result": "22°C, 6h",
+          "verdict": "P"
+        },
+        {
+          "step": "c",
+          "description": "ME equipment evaluated to specifications; continued to provide basic safety and essential performance",
+          "result": "Provide BS and EP",
+          "verdict": "P"
+        },
+        {
+          "step": "d",
+          "description": "ME equipment evaluated to specifications; continued to provide BS and EP at lowest specified atmospheric pressure",
+          "result": "Provide BS and EP",
+          "verdict": "P"
+        },
+        {
+          "step": "e",
+          "description": "ME equipment evaluated to specifications; continued to provide BS and EP at highest specified atmospheric pressure",
+          "result": "Provide BS and EP",
+          "verdict": "P"
+        },
+        {
+          "step": "f",
+          "description": "Pressure in chamber relieved",
+          "result": null,
+          "verdict": "P"
+        },
+        {
+          "step": "g",
+          "description": "ME equipment cooled to lowest specified environmental operating conditions",
+          "result": "10°C, 15% RH",
+          "verdict": "P"
+        },
+        {
+          "step": "h",
+          "description": "ME equipment held at lowest specified environmental operating conditions for at least 6 h or reached thermal stability for at least 2 h",
+          "result": null,
+          "verdict": "P"
+        },
+        {
+          "step": "i",
+          "description": "ME equipment met specifications and basic safety and essential performance at lowest conditions",
+          "result": "Provide BS and EP",
+          "verdict": "P"
+        },
+        {
+          "step": "j",
+          "description": "ME equipment warmed to highest specified continuous environmental operating conditions",
+          "result": "40°C, 95% RH",
+          "verdict": "P"
+        },
+        {
+          "step": "k",
+          "description": "ME equipment held at highest conditions for at least 6 h or reached thermal stability for at least 2 h",
+          "result": "2h",
+          "verdict": "P"
+        },
+        {
+          "step": "l",
+          "description": "ME equipment met specifications and basic safety and essential performance at highest conditions",
+          "result": "Provide BS and EP",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "4.2.3.2",
+      "name": "Environmental Shock to Transit-Operable Equipment",
+      "verdict": "N/A",
+      "result_remark": "No Transit-operable ME equipment"
+    },
+    {
+      "clause": "5",
+      "name": "General Requirements for Testing ME Equipment (Accessibility)",
+      "verdict": "P",
+      "steps": [
+        {
+          "step": "accessible_parts_identification",
+          "description": "Accessible parts of ME equipment identified by inspection and, when necessary, by testing",
+          "verdict": "P"
+        },
+        {
+          "step": "small_finger_probe",
+          "description": "When in doubt, accessible part determined by test with small finger probe of Fig 1",
+          "verdict": "P"
+        },
+        {
+          "step": "all_positions_normal_use",
+          "description": "Test for all positions of ME equipment operating in normal use",
+          "verdict": "P"
+        },
+        {
+          "step": "access_covers_removal",
+          "description": "After opening access covers and removal of parts including lamps, fuses, fuse holders",
+          "result": "No such parts",
+          "verdict": "N/A"
+        },
+        {
+          "step": "access_covers_no_tool",
+          "description": "Access covers that could be opened without the use of a tool",
+          "result": "No access covers",
+          "verdict": "N/A"
+        },
+        {
+          "step": "instructions_lay_operator",
+          "description": "Instructions for use instructed a lay operator to open the relevant access cover",
+          "result": "See above",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "6",
+      "name": "Classification of ME Equipment and ME Systems",
+      "verdict": "P",
+      "steps": [
+        {
+          "step": "home_healthcare_classification",
+          "description": "ME equipment intended for home healthcare environment classified per requirements",
+          "result": "No permanently installed equipment",
+          "verdict": "P"
+        },
+        {
+          "step": "class_II_or_internally_powered",
+          "description": "Classified as class II or internally powered",
+          "result": "Class II and internally powered",
+          "verdict": "P"
+        },
+        {
+          "step": "no_functional_earth",
+          "description": "Not provided with a functional earth terminal",
+          "result": "No functional earth terminal",
+          "verdict": "P"
+        },
+        {
+          "step": "applied_parts_type",
+          "description": "When equipped with applied parts, they are type BF or CF",
+          "result": "Type BF applied part",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "7",
+      "name": "ME Equipment Identification, Marking and Documents",
+      "verdict": "P"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "4.2.3.1",
+      "description": "ME equipment shall comply with specifications when operated in normal use within temperature +5°C to +40°C, relative humidity 15% to 90% non-condensing (water vapour partial pressure ≤ 50 hPa), and atmospheric pressure 700 hPa to 1060 hPa",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "For more restricted range of environmental operating conditions: 10°C to 40°C",
+      "result": "10°C–40°C",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "Restricted range justified in the risk management file",
+      "result": "T (True)",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "Restricted range marked on equipment or described in instructions for use",
+      "result": "F – Described in 'Product A specifications' of User's Manual",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "Marked on carrying case when instructions indicate ME equipment is intended to be operated in a carrying case",
+      "result": "Not intended to be operated in a carrying case",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "Symbol 5.3.5/5.3.6/5.3.7 of ISO 15223-1:2012 used to mark temperature range",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "Symbol 5.3.8 of ISO 15223-1:2012 used to mark humidity range",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "Symbol 5.3.9 of ISO 15223-1:2012 used to mark atmospheric pressure range",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.2.3.1",
+      "description": "Where ME equipment used different markings for continuous and transient operating conditions, markings accompanied by supplementary markings",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6",
+      "description": "ME equipment intended for home healthcare environment classified as class II or internally powered, not provided with functional earth terminal, and when equipped with applied parts they are type BF or CF",
+      "verdict": "P"
+    }
+  ],
+  "products": [
+    {
+      "name": "Product A",
+      "classification": "Class II and internally powered",
+      "applied_part_type": "Type BF",
+      "operating_temperature_range": "10°C to 40°C",
+      "operating_humidity_range": "15% to 90% RH (non-condensing)",
+      "operating_pressure_range": "700 hPa to 1060 hPa",
+      "has_functional_earth_terminal": false,
+      "intended_for_home_healthcare": true,
+      "transit_operable": false
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ME equipment complied with its specifications and all requirements of the standard when operated in normal use within temperature +5°C to +40°C, relative humidity range of 15% to 90% non-condensing (not requiring a water vapour partial pressure greater than 50 hPa), and an atmospheric pressure range of 700 hPa to 1060 hPa. For a more restricted range, the operating temperature is 10°C to 40°C, justified in the risk management file and described in the 'Product A specifications' section of the User's Manual.",
+      "topic_tags": [
+        "environmental operating conditions",
+        "temperature range",
+        "humidity range",
+        "atmospheric pressure",
+        "home healthcare"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015+A1:2020",
+        "Product A",
+        "User's Manual"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ME equipment classification for home healthcare environment: classified as class II and internally powered; not provided with a functional earth terminal; equipped with Type BF applied parts. No permanently installed equipment. Classification per IEC 60601-1-11:2015+A1:2020 Clause 6 and IEC 60601-1 Sub-clause 6.2.",
+      "topic_tags": [
+        "classification",
+        "class II",
+        "internally powered",
+        "applied parts",
+        "type BF",
+        "home healthcare",
+        "functional earth"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015+A1:2020",
+        "IEC 60601-1",
+        "Product A"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Transit-operable equipment requirement (Clause 4.2.3.2): Transit-operable equipment with a stated wider range of continuous environmental operation conditions shall maintain basic safety and essential performance in the presence of condensation and thermal shock from rapid changes in environmental temperature and humidity during intended use. This clause is N/A as the product is not transit-operable ME equipment.",
+      "topic_tags": [
+        "transit-operable",
+        "environmental shock",
+        "condensation",
+        "thermal shock",
+        "N/A"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015+A1:2020",
+        "Product A"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Accessibility determination per Clause 5 (in addition to IEC 60601-1 Sub-clause 5.9.2.1): Accessible parts identified by inspection and testing as necessary. When in doubt, the small finger probe of Fig 1 is applied in a bent or straight position for all positions of the ME equipment in normal use. Opening of access covers and removal of parts (lamps, fuses, fuse holders) is N/A as no such parts and no access covers exist.",
+      "topic_tags": [
+        "accessibility",
+        "small finger probe",
+        "access covers",
+        "normal use",
+        "testing"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015+A1:2020",
+        "IEC 60601-1",
+        "Product A"
+      ]
+    }
+  ]
+}

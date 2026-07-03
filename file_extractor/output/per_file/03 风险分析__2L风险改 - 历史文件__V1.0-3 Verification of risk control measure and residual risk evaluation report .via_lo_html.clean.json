@@ -1,0 +1,1815 @@
+{
+  "document": {
+    "title": "Verification of risk control measure and residual risk evaluation report",
+    "doc_type": "风险分析报告",
+    "version": "V1.0"
+  },
+  "persons": [
+    {
+      "name": null,
+      "title": "Project Leader (Drafted by)"
+    },
+    {
+      "name": null,
+      "title": "Certification Engineer (Reviewed by)"
+    },
+    {
+      "name": null,
+      "title": "Technical Director (Approved by)"
+    },
+    {
+      "name": "Cong Ming",
+      "title": "Technical Director / Group leader"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Project Leader / Hardware design director / Software design director / Mechanical design director"
+    },
+    {
+      "name": "Wan Long",
+      "title": "Hardware design personnel"
+    },
+    {
+      "name": "Ma Jun",
+      "title": "Software design personnel"
+    },
+    {
+      "name": "Liu Zhao",
+      "title": "Mechanical design personnel"
+    },
+    {
+      "name": "Meng Zhaojun",
+      "title": "Process design personnel"
+    },
+    {
+      "name": "Zhang Xun",
+      "title": "Quality management personnel"
+    },
+    {
+      "name": "Zhao Yiping",
+      "title": "Sales personnel"
+    },
+    {
+      "name": "Wang Yanhong",
+      "title": "Certification personnel"
+    },
+    {
+      "name": "Gao Kejian",
+      "title": "People with medical background"
+    },
+    {
+      "name": "Cong Ming",
+      "title": "Technical Director / Group leader"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Project Leader / Hardware design director / Software design director / Mechanical design director"
+    },
+    {
+      "name": "Wan Long",
+      "title": "Hardware design personnel"
+    },
+    {
+      "name": "Ma Jun",
+      "title": "Software design personnel"
+    },
+    {
+      "name": "Liu Zhao",
+      "title": "Mechanical design personnel"
+    },
+    {
+      "name": "Meng Zhaojun",
+      "title": "Process design personnel"
+    },
+    {
+      "name": "Zhang Xun",
+      "title": "Quality management personnel"
+    },
+    {
+      "name": "Zhao Yiping",
+      "title": "Sales personnel"
+    },
+    {
+      "name": "Wang Yanhong",
+      "title": "Certification personnel"
+    },
+    {
+      "name": "Gao Kejian",
+      "title": "People with medical background"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT2L(美亚)-SGYS01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "2020-002-WX02"
+    },
+    {
+      "id_type": "risk_management_plan_doc_id",
+      "value": "PT2L-FXJH01 V1.0"
+    },
+    {
+      "id_type": "型式试验报告编号",
+      "value": "PT2L(美亚)-XNTB01 V1.0"
+    },
+    {
+      "id_type": "生物相容性报告编号",
+      "value": "ET-(3.5.06-2)-2016"
+    },
+    {
+      "id_type": "说明书编号",
+      "value": "PT2L(美亚)-SMSY02 V2.0"
+    },
+    {
+      "id_type": "易用性报告编号",
+      "value": "PT2L(美亚)-UETR01 V1.0"
+    },
+    {
+      "id_type": "临床评估报告编号",
+      "value": "PT2L(美亚)-RLPB01 V1.0"
+    },
+    {
+      "id_type": "软件确认报告编号",
+      "value": "PT2L(美亚)-RJQB01 V1.0"
+    },
+    {
+      "id_type": "寿命评估报告编号",
+      "value": "PT2L(美亚)-PLER01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT2L",
+      "name": "Infrared Forehead Thermometer"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.",
+      "topic_tags": [
+        "预期用途",
+        "额温计",
+        "体温测量",
+        "适用人群",
+        "使用环境"
+      ],
+      "related_subjects": [
+        "PT2L",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk management group on the basis of risk management plan feasibility stage in the product design changes to its risk (source) and risk has carries on the analysis, evaluation, and control measures are put forward. At present, the product design change validation/qualification review stage, the design change feasibility phases of risk analysis, and put forward control measures have been implemented. The purpose of this risk management activity review is to validate/confirm the control measures and residual risks proposed in the feasibility phase of the design change.",
+      "topic_tags": [
+        "风险管理计划",
+        "设计变更",
+        "风险控制措施验证",
+        "残余风险评估",
+        "可行性阶段"
+      ],
+      "related_subjects": [
+        "风险管理团队",
+        "PT2L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "缩写含义说明：RE=风险评估；S=严重性（1 可忽略；2 轻微；3 严重；4 危急；5 灾难性）；P=伤害发生概率（6 频繁；5 可能；4 偶尔；3 极少；2 不可能；1 极少数）；R=风险编号；ACC=可接受；NACC=不可接受；PRM=风险控制措施计划；NH=新产生危害；N/A=不适用；Y=是；N=否；AFAP=在不对收益-风险比产生不利影响的前提下尽可能降低。",
+      "topic_tags": [
+        "缩写说明",
+        "严重性分级",
+        "概率分级",
+        "风险可接受性",
+        "AFAP原则"
+      ],
+      "related_subjects": [
+        "风险评估准则",
+        "风险分析报告"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Risk acceptance criteria are defined in the Risk Management Plan document PT2L-FXJH01 V1.0. Please refer to that document for evaluation criteria.",
+      "topic_tags": [
+        "risk acceptance criteria",
+        "risk management plan",
+        "PT2L-FXJH01"
+      ],
+      "related_subjects": [
+        "Risk Management Plan"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Residual risk level after reduction for all assessed energy hazards (R1-R17) and biological/chemical hazards (R18-R19): probability reduced to 1 (except R19 which remains at 2), severity unchanged, NH=N (not harmful / acceptable). All residual risks are marked as acceptable after control measures.",
+      "topic_tags": [
+        "residual risk",
+        "risk reduction",
+        "post-control risk level",
+        "NH",
+        "acceptable risk"
+      ],
+      "related_subjects": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk table fragment covering Performance Hazards (section 3.3) and Information Hazards (section 3.4). Each row records: hazard source, hazardous situation, initial severity, initial probability, risk control measure, evidence type, residual severity, residual probability, acceptability (N=acceptable), and risk ID. N/A rows indicate hazard categories evaluated as not applicable to this device. Performance hazards covered include: temperature transducer accuracy, system leakage, low battery, battery leakage, clean/cleaning, expected service life, environment condition, SFC and MOP, knowledge-based failure, shape (sharp edges), measurement range, measuring site. Information hazards covered include: accompanying documents and external marking (multiple sub-scenarios), control keys and display, battery storehouse, waste disposal, service and maintenance specification, deglutible separate part. Categories evaluated as N/A include: construction of connectors, reproducibility, incorrect/inappropriate output or functionality, interruption of power supply, strangling or asphyxia, marking on port, side effects, hazards with re-use of single-use devices, connection to other equipment.",
+      "topic_tags": [
+        "performance hazards",
+        "information hazards",
+        "risk table",
+        "severity",
+        "probability",
+        "risk control",
+        "residual risk"
+      ],
+      "related_subjects": [
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39",
+        "R40",
+        "R41",
+        "R42",
+        "R43",
+        "R44",
+        "R45",
+        "R46",
+        "R47",
+        "R48",
+        "R49"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Residual risk evaluation and conclusion: After taking measures to reduce risk, the dangerous risk resulting from (source) has dropped to an acceptable level, or has to a reasonable extent, the level of risk distribution shown in the following table. Risk distribution after mitigation: Probability 2 (Improbable) / Severity 3 (Serious): R19,R25,R29,R30,R31,R34,R38,R39,R40,R41,R42,R43,R44,R47,R48,R49,R52,R53. Probability 1 (Few) / Severity 2 (Minor): R23,R36. Probability 1 (Few) / Severity 3 (Serious): R9,R10,R11,R12,R13,R15,R16,R17,R18,R20,R21,R22,R24,R26,R27,R28,R32,R33,R35,R37,R45,R46,R50,R51,R54. Probability 1 (Few) / Severity 4 (Critical): R1,R2,R3,R4,R5,R6,R7,R8,R14. After taking risk reduction measures, all risks have been reduced to an acceptable level. No new risks were identified as having been introduced as a result of risk-reduction measures.",
+      "topic_tags": [
+        "residual risk",
+        "risk evaluation",
+        "risk matrix",
+        "risk reduction",
+        "acceptable level"
+      ],
+      "related_subjects": [
+        "risk_controls",
+        "risks"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "R1",
+      "hazard": "Electromagnetic energy",
+      "hazardous_situation": "Can't conform with EMC standard, be placed near the electromagnetic equipment",
+      "probability": 2,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R2",
+      "hazard": "Electrostatic discharge",
+      "hazardous_situation": "The machine suffers from static electricity",
+      "probability": 2,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R3",
+      "hazard": "Radiated RF EM fields",
+      "hazardous_situation": "The machine is subjected to radiation interference from other equipment",
+      "probability": 3,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R4",
+      "hazard": "Conducted disturbances induced by RF fields",
+      "hazardous_situation": "The machine suffers from Conducted disturbance",
+      "probability": 2,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R5",
+      "hazard": "Proximity fields from RF wireless communications",
+      "hazardous_situation": "The machine works in Proximity fields from RF wireless communications",
+      "probability": 2,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R6",
+      "hazard": "Rated Power-frequency Magnetic Field",
+      "hazardous_situation": "The machine works in Power-frequency Magnetic Field",
+      "probability": 2,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R7",
+      "hazard": "Proximity magnetic fields immunity test",
+      "hazardous_situation": "The machine works in Proximity magnetic field",
+      "probability": 2,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R8",
+      "hazard": "Leakage current",
+      "hazardous_situation": "Improper electrical safety design, excessive leakage current",
+      "probability": 3,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R9",
+      "hazard": "Separation parts",
+      "hazardous_situation": "Device insulation failure",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R10",
+      "hazard": "The parts that contact the patient",
+      "hazardous_situation": "Improper design, The parts that contact the patient have Exceed voltage",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R11",
+      "hazard": "Temperature of parts",
+      "hazardous_situation": "Without control the temperature rise caused by device operation. Excessive temperature after operation for a while.",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R12",
+      "hazard": "Temperature of applied parts",
+      "hazardous_situation": "Without control the applied parts temperature rise. Cuff temperature exceed 41℃",
+      "probability": 2,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R13",
+      "hazard": "Mechanical strength",
+      "hazardous_situation": "The mechanical strength is not sufficient",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R14",
+      "hazard": "Inner lead",
+      "hazardous_situation": "Electrical aluminium wire with sectional area is unqualified",
+      "probability": 2,
+      "severity": 4,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R15",
+      "hazard": "Component fixing",
+      "hazardous_situation": "Sharp corner and moved parts rubbing with internal wire",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R16",
+      "hazard": "The protective measures components",
+      "hazardous_situation": "Fire, Electric shock",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R17",
+      "hazard": "Infrared radiation",
+      "hazardous_situation": "Infrared exceedance",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.1 Energy hazards"
+    },
+    {
+      "risk_id": "R18",
+      "hazard": "Allergenicity/Irritancy",
+      "hazardous_situation": "Biocompatibility is not qualified",
+      "probability": 4,
+      "severity": 3,
+      "phase": "3.2 Biological and chemical hazards"
+    },
+    {
+      "risk_id": "R19",
+      "hazard": "Allergenicity/Irritancy",
+      "hazardous_situation": "Can't clean the applied part on time, users share the same device",
+      "probability": 2,
+      "severity": 3,
+      "phase": "3.2 Biological and chemical hazards"
+    },
+    {
+      "risk_id": "R20",
+      "hazard": "Temperature transducer accuracy",
+      "hazardous_situation": "the temperature sensor failure, large accuracy error",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R21",
+      "hazard": "System leakage",
+      "hazardous_situation": "system leak is too large",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R22",
+      "hazard": "System leakage",
+      "hazardous_situation": "system leak is unqualified",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R23",
+      "hazard": "Low battery",
+      "hazardous_situation": "The performance of low battery is unqualified",
+      "severity": 3,
+      "probability": 2,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R24",
+      "hazard": "Low battery",
+      "hazardous_situation": "The performance of low battery is unqualified",
+      "severity": 3,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R25",
+      "hazard": "Battery leakage",
+      "hazardous_situation": "Not use for a long time, not remove the batteries.",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R26",
+      "hazard": "Clean",
+      "hazardous_situation": "Device damaged, insulation protection reduced after cleaning",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R27",
+      "hazard": "Expected service life",
+      "hazardous_situation": "Lifetime short than intended; still be used out of the expected service life",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R28",
+      "hazard": "Expected service life",
+      "hazardous_situation": "Lifetime short than intended; still be used out of the expected service life",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R29",
+      "hazard": "Environment condition",
+      "hazardous_situation": "Components have large error in regulate environment condition",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R30",
+      "hazard": "Environment condition",
+      "hazardous_situation": "Working, transportation and storage conditions unreasonable",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R31",
+      "hazard": "Environment condition",
+      "hazardous_situation": "Storage or use in unregulated environment condition",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R32",
+      "hazard": "SFC and MOP",
+      "hazardous_situation": "Not enough insulation and Insulation breakdown",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R33",
+      "hazard": "SFC and MOP",
+      "hazardous_situation": "Creepage distance and electrical clearance breakdown",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R34",
+      "hazard": "SFC and MOP",
+      "hazardous_situation": "Contact current exceeds bid",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R35",
+      "hazard": "Knowledge-based failure",
+      "hazardous_situation": "Fail operating according to user guide",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R36",
+      "hazard": "Shape",
+      "hazardous_situation": "The sharp angle, sharp edge and rough surface are exposed",
+      "severity": 4,
+      "probability": 2,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R37",
+      "hazard": "Measurement range",
+      "hazardous_situation": "User's temperature out of the range",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R38",
+      "hazard": "Measuring site",
+      "hazardous_situation": "Use wrong measuring site",
+      "severity": 3,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.3 Performance hazards"
+    },
+    {
+      "risk_id": "R39",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Hard to understand, user can't operate the device correctly",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R40",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "The marking abrasion or not stick firmly, user can't operate the device correctly",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R41",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Inadequate disclosure of Limitations, restricted user use the device, used by users who is outside the indications.",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R42",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Inadequate specification of intended use, user can't understand and operate the device correctly",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R43",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Inadequate description of performance characteristics, user can't understand and operate the device correctly",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R44",
+      "hazard": "Accompanying documents, marking on the outside",
+      "hazardous_situation": "Incomplete instructions for use, user can't understand and operate the device correctly",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R45",
+      "hazard": "Control keys and display",
+      "hazardous_situation": "The indication is not clear, complete, display error",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R46",
+      "hazard": "Battery storehouse",
+      "hazardous_situation": "Battery model, positive and negative is not clear in the battery storehouse, battery is loaded incorrectly. Discharge gas cannot be discharged from the battery compartment.",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R47",
+      "hazard": "Waste disposal",
+      "hazardous_situation": "No specification about waste disposal",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R48",
+      "hazard": "Specification of service and maintenance",
+      "hazardous_situation": "No specification of service and maintenance",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R49",
+      "hazard": "Deglutible separate part",
+      "hazardous_situation": "No warning about the deglutible separate part",
+      "severity": 2,
+      "probability": 3,
+      "risk_level": "N",
+      "phase": "3.4 Information hazards"
+    },
+    {
+      "risk_id": "R50",
+      "hazard": "Memory times",
+      "hazardous_situation": "Lack of memory or error",
+      "severity": 6,
+      "probability": 3,
+      "risk_level": "N"
+    },
+    {
+      "risk_id": "R51",
+      "hazard": "Classification display",
+      "hazardous_situation": "Classification display is not qualified",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N"
+    },
+    {
+      "risk_id": "R52",
+      "hazard": "Algorithm",
+      "hazardous_situation": "Incorrect algorithm",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N"
+    },
+    {
+      "risk_id": "R53",
+      "hazard": "Software label",
+      "hazardous_situation": "The software version is not qualified",
+      "severity": 4,
+      "probability": 3,
+      "risk_level": "N"
+    },
+    {
+      "risk_id": "R54",
+      "hazard": "Improper alarm",
+      "hazardous_situation": "alarm is not qualified",
+      "severity": 3,
+      "probability": 3,
+      "risk_level": "N"
+    }
+  ],
+  "risk_controls": [
+    {
+      "control_id": "R1",
+      "measure": "EMC test",
+      "evidence_type": "EMC report"
+    },
+    {
+      "control_id": "R2",
+      "measure": "EMC test",
+      "evidence_type": "EMC report"
+    },
+    {
+      "control_id": "R3",
+      "measure": "EMC test",
+      "evidence_type": "EMC report"
+    },
+    {
+      "control_id": "R4",
+      "measure": "EMC test",
+      "evidence_type": "EMC report"
+    },
+    {
+      "control_id": "R5",
+      "measure": "EMC test",
+      "evidence_type": "EMC report"
+    },
+    {
+      "control_id": "R6",
+      "measure": "EMC test",
+      "evidence_type": "EMC report"
+    },
+    {
+      "control_id": "R7",
+      "measure": "EMC test",
+      "evidence_type": "EMC report"
+    },
+    {
+      "control_id": "R8",
+      "measure": "Touch current test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R9",
+      "measure": "Dielectric strength test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R10",
+      "measure": "Live parts test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R11",
+      "measure": "Parts temperature test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R12",
+      "measure": "Applied parts temperature test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R13",
+      "measure": "Shock, drop test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R14",
+      "measure": "Check the lead",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R15",
+      "measure": "Check the components",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R16",
+      "measure": "Check the components",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R17",
+      "measure": "Check the components",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R18",
+      "measure": "Biocompatibility test",
+      "evidence_type": "biocompatibility report"
+    },
+    {
+      "control_id": "R19",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R20-ctrl",
+      "measure": "Temperature transducer accuracy test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R21-ctrl",
+      "measure": "System leakage test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R22-ctrl",
+      "measure": "System leakage test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R23-ctrl",
+      "measure": "Low battery test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R24-ctrl",
+      "measure": "Low battery test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R25-ctrl",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R26-ctrl",
+      "measure": "Clean test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R27-ctrl",
+      "measure": "Life test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R28-ctrl",
+      "measure": "Life test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R29-ctrl",
+      "measure": "Environmental test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R30-ctrl",
+      "measure": "Environmental test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R31-ctrl",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R32-ctrl",
+      "measure": "Dielectric strength test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R33-ctrl",
+      "measure": "Measure the electrical clearance and creepage distance",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R34-ctrl",
+      "measure": "Leakage current test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R35-ctrl",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R36-ctrl",
+      "measure": "Sharp test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R37-ctrl",
+      "measure": "Range of measurement test",
+      "evidence_type": "type performance report"
+    },
+    {
+      "control_id": "R38-ctrl",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R39-ctrl",
+      "measure": "Usability test",
+      "evidence_type": "usability report"
+    },
+    {
+      "control_id": "R40-ctrl",
+      "measure": "Durability test",
+      "evidence_type": "electrical safety report"
+    },
+    {
+      "control_id": "R41-ctrl",
+      "measure": "Usability test",
+      "evidence_type": "usability report"
+    },
+    {
+      "control_id": "R42-ctrl",
+      "measure": "Usability test",
+      "evidence_type": "usability report"
+    },
+    {
+      "control_id": "R43-ctrl",
+      "measure": "Usability test",
+      "evidence_type": "usability report"
+    },
+    {
+      "control_id": "R44-ctrl",
+      "measure": "Usability test",
+      "evidence_type": "usability report"
+    },
+    {
+      "control_id": "R45-ctrl",
+      "measure": "Usability test; Check the operation guide",
+      "evidence_type": "usability report; operation guide"
+    },
+    {
+      "control_id": "R46-ctrl",
+      "measure": "Check the marking of battery storehouse; check the drawing",
+      "evidence_type": "battery storehouse marking the battery type and polarity; Anti reverse design on the drawing and Exhaust gas design on the drawing"
+    },
+    {
+      "control_id": "R47-ctrl",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R48-ctrl",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R49-ctrl",
+      "measure": "Check the operation guide",
+      "evidence_type": "operation guide"
+    },
+    {
+      "control_id": "R50-ctrl",
+      "measure": "Check software validation file",
+      "evidence_type": "software validation report"
+    },
+    {
+      "control_id": "R51-ctrl",
+      "measure": "Check software validation file",
+      "evidence_type": "software validation report"
+    },
+    {
+      "control_id": "R52-ctrl",
+      "measure": "Check clinical (assessment) report",
+      "evidence_type": "clinical report"
+    },
+    {
+      "control_id": "R53-ctrl",
+      "measure": "Check software validation file",
+      "evidence_type": "software validation report"
+    },
+    {
+      "control_id": "R54-ctrl",
+      "measure": "Check the operation guide; Check software validation file",
+      "evidence_type": "operation guide; software validation report"
+    }
+  ],
+  "_meta": {
+    "source_file": "03 风险分析/2L风险改 - 历史文件/V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+    "doc_type": "risk_analysis"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险管理团队",
+      "to": "风险管理计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L",
+      "to": "风险管理计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险评估准则",
+      "to": "缩写说明",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析报告",
+      "to": "缩写说明",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R1",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R2",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R3",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R4",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R5",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R6",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R7",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R8",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R9",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R10",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R11",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R12",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R13",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R14",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R15",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R16",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R17",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R18",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R19",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R20",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R21",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R22",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R23",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R24",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R25",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R26",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R27",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R28",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R29",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R30",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R31",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R32",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R33",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R34",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R35",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R36",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R37",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R38",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R39",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R40",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R41",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R42",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R43",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R44",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R45",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R46",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R47",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R48",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R49",
+      "to": "performance hazards",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk_controls",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risks",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "behavioral_spec_risk_management_activity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "constraint_statement_abbreviations",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "constraint_statement_risk_acceptance",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "behavioral_spec_risk_table_R20_R49",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "behavioral_spec_residual_risk_conclusion",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R8",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R9",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R10",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R12",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R13",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R14",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R15",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R16",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R17",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R18",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R20",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R21",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R22",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R23",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "R24",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT2L",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R1",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R2",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R3",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R4",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R5",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R6",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R7",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R8",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R9",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R10",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R11",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R12",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R13",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R14",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R15",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R16",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R17",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R18",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R19",
+      "to": "behavioral_spec_residual_risk_R1_R19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R20",
+      "to": "behavioral_spec_risk_table_R20_R49",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R21",
+      "to": "behavioral_spec_risk_table_R20_R49",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R22",
+      "to": "behavioral_spec_risk_table_R20_R49",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R23",
+      "to": "behavioral_spec_risk_table_R20_R49",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R24",
+      "to": "behavioral_spec_risk_table_R20_R49",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "Cong Ming",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Technical Director / Group leader"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Hou Guangwei",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Project Leader / Hardware design director / Software design director / Mechanical design director"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Wan Long",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Hardware design personnel"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Ma Jun",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Software design personnel"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Liu Zhao",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Mechanical design personnel"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Meng Zhaojun",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Process design personnel"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Zhang Xun",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Quality management personnel"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Zhao Yiping",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Sales personnel"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Wang Yanhong",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "Certification personnel"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Gao Kejian",
+      "to": "PT2L(美亚)-SGYS01 V1.0",
+      "properties": {
+        "role": "People with medical background"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT2L(美亚)-SGYS01 V1.0",
+      "to": "V1.0",
+      "properties": {
+        "version": "V1.0"
+      }
+    }
+  ],
+  "_claims": []
+}

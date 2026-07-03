@@ -1,0 +1,768 @@
+{
+  "document": {
+    "title": "传感器 PCB（T-Z1-P14 V1.0）2D 图读图报告",
+    "drawing_no": "T-Z1-P14",
+    "edition": "V1.0",
+    "part_name": "PCB",
+    "model_no": "T-Z1",
+    "scale": "2:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "source_file": "传感器PCB.pdf",
+    "report_date": "2026-06-02",
+    "skill_used": "SKILL_2D_Drawing_Reading.md",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/设计输出清单二/图纸/传感器PCB.pdf"
+  },
+  "products": [
+    {
+      "name": "传感器 PCB",
+      "drawing_no": "T-Z1-P14",
+      "version": "V1.0",
+      "model": "T-Z1",
+      "material": "环氧树脂板（FR4）",
+      "shape": "圆形，左侧带鱼眼形小凸出",
+      "outer_diameter_mm": 20.5,
+      "thickness_mm": 1.0,
+      "thickness_tolerance_mm": "±0.1",
+      "surface_treatment": "未明确（推测沉金/喷锡/OSP）",
+      "compliance": "RoHS 2.0",
+      "system": "PT9L",
+      "pcb_count_in_system": 2,
+      "peer_pcb": "主板.pdf"
+    }
+  ],
+  "components": [
+    {
+      "name": "传感器 PCB 主体",
+      "geometry": "圆形",
+      "diameter_mm": 20.5,
+      "tolerance": "Level B (±0.1)",
+      "material": "FR4",
+      "confidence": "A"
+    },
+    {
+      "name": "左侧鱼眼形小凸出",
+      "description": "含 Ø2.2 大孔，推测为排线/导线焊接区或定位标识",
+      "hole_diameter_mm": 2.2,
+      "protrusion_length_mm": 1.5,
+      "tolerance": "Level B",
+      "confidence": "A"
+    },
+    {
+      "name": "中心 SMD 焊孔阵列",
+      "hole_count": 4,
+      "hole_diameter_mm": 0.7,
+      "prefix": "4-Ø0.7",
+      "pitch_x_mm": 1.8,
+      "pitch_y_mm": 1.8,
+      "description": "典型红外传感器引脚焊孔，如 MLX90614 或类似 IR 传感器",
+      "tolerance": "Level B",
+      "confidence": "A"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-001",
+      "description": "PCB 板厚 TH. = 1.0±0.1 mm",
+      "source": "技术要求第1条",
+      "type": "dimensional_spec"
+    },
+    {
+      "id": "DI-002",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求第2条",
+      "type": "regulatory_requirement"
+    },
+    {
+      "id": "DI-003",
+      "description": "PCB 外径 Ø20.5 mm，与支架内圈 Ø21.3 配合，单边间隙约 0.35 mm",
+      "source": "装配约束推断 + 支架.pdf",
+      "type": "interface_requirement"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "description": "PCB 板厚 TH. = 1.0±0.1 mm",
+      "source": "技术要求 1",
+      "category": "dimensional"
+    },
+    {
+      "id": "REQ-002",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求 2",
+      "category": "regulatory"
+    },
+    {
+      "id": "REQ-003",
+      "description": "所有外形尺寸按 SELECT LEVEL B 公差执行",
+      "source": "标题栏",
+      "category": "dimensional"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品符合 RoHS 2.0 有害物质限制要求",
+      "source": "技术要求第2条"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "drawing_no",
+      "value": "T-Z1-P14"
+    },
+    {
+      "type": "edition",
+      "value": "V1.0"
+    },
+    {
+      "type": "model_no",
+      "value": "T-Z1"
+    },
+    {
+      "type": "system",
+      "value": "PT9L"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "4-Ø0.7 SMD 焊孔对应的传感器型号（MLX90614? MLX90632? TMP117?）",
+      "required_source": "PCBA BOM + 工程师",
+      "status": "待确认"
+    },
+    {
+      "id": "C-2",
+      "description": "左侧 Ø2.2 凸出的功能（排线焊接？接地？定位？）",
+      "required_source": "PCBA Gerber + 工程师",
+      "status": "待确认"
+    },
+    {
+      "id": "C-3",
+      "description": "PCB 表面处理工艺（沉金 / 喷锡 / OSP）",
+      "required_source": "PCBA SPEC",
+      "status": "待确认"
+    },
+    {
+      "id": "C-4",
+      "description": "与主板的电气连接方式（排线 FFC / 焊接导线 / 弹簧 pin）",
+      "required_source": "装配 SOP",
+      "status": "待确认"
+    },
+    {
+      "id": "C-5",
+      "description": "与支架 Ø21.3 安装孔的极限公差（Ø20.5±0.1 vs Ø21.3±0.05）",
+      "required_source": "极限公差链",
+      "status": "待确认"
+    },
+    {
+      "id": "C-6",
+      "description": "PCB 上其他元件布局（NTC？运放？），需在 PCBA 装配图中查",
+      "required_source": "PCBA 装配图",
+      "status": "待确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "本图为 PCB 板外形/钻孔图（FR4 环氧树脂板），不含元件位号；与主板.pdf 是 2 块独立 PCB（PT9L 系统含传感器板 + 主板双 PCB 架构）。视图为单一俯视图，圆形 PCB Ø20.5 + 左侧鱼眼形小凸出含 Ø2.2 大孔 + 中心 4-Ø0.7 SMD 焊孔阵列 + 多处定位标注，Scale 2:1（小件放大）。",
+      "topic_tags": [
+        "PCB架构",
+        "双PCB",
+        "传感器板",
+        "PT9L",
+        "外形图"
+      ],
+      "related_subjects": [
+        "主板.pdf",
+        "PT9L系统",
+        "T-Z1-P14"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中心 4-Ø0.7 SMD 焊孔阵列（间距 1.8×1.8 mm）：典型的红外传感器引脚（如 4-pin TO 封装的 MLX90614 或类似 IR 传感器，间距 1.8 mm 与 MLX90614 引脚布局接近）。板厚 1.0 mm：标准薄板，常用于空间受限的传感器/穿戴设备。",
+      "topic_tags": [
+        "红外传感器",
+        "MLX90614",
+        "SMD焊孔",
+        "穿戴设备",
+        "薄板"
+      ],
+      "related_subjects": [
+        "4-Ø0.7焊孔",
+        "传感器PCB",
+        "MLX90614"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "几何配合关系：传感器 PCB Ø20.5 与支架.pdf（仰视图 Ø21.3 内圆 + 4-Ø1.7 螺丝安装孔）配合，PCB 嵌入支架内圈，单边间隙约 0.35 mm（Ø20.5±0.1 vs 支架内圈 Ø21.2）。传感器 PCB 通过排线/导线与主板.pdf 连接。极限公差 Ø20.5±0.1 vs Ø21.3±0.05 需进一步公差链验证。",
+      "topic_tags": [
+        "装配配合",
+        "公差链",
+        "支架",
+        "间隙配合",
+        "传感器PCB"
+      ],
+      "related_subjects": [
+        "支架.pdf",
+        "主板.pdf",
+        "Ø21.3",
+        "Ø20.5"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本图为外形/钻孔图，不含元件位号。PCB 表面处理工艺（Surf dispose）字段为空白，需从 PCBA SPEC 获取。文字层仅 65 字符，含 'PCB'、'环氧树脂板'、'TH.=1.0±0.1'、'技术要求'。无圆圈编号，不走 IQC 编号尺寸流程。",
+      "topic_tags": [
+        "读图限制",
+        "表面处理未知",
+        "元件位号缺失",
+        "IQC"
+      ],
+      "related_subjects": [
+        "传感器PCB",
+        "PCBA SPEC",
+        "PCBA BOM"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/设计输出清单二/图纸/传感器PCB.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板.pdf",
+      "to": "PCB架构",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L系统",
+      "to": "PCB架构",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "PCB架构",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4-Ø0.7焊孔",
+      "to": "红外传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器PCB",
+      "to": "红外传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MLX90614",
+      "to": "红外传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf",
+      "to": "装配配合",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主板.pdf",
+      "to": "装配配合",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Ø21.3",
+      "to": "装配配合",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Ø20.5",
+      "to": "装配配合",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器PCB",
+      "to": "读图限制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PCBA SPEC",
+      "to": "读图限制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PCBA BOM",
+      "to": "读图限制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "传感器 PCB 主体",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "左侧鱼眼形小凸出",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "中心 SMD 焊孔阵列",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "传感器 PCB 主体",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "左侧鱼眼形小凸出",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "中心 SMD 焊孔阵列",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "DI-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "DI-002",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "DI-003",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-002",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-002",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB",
+      "to": "C-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "中心 SMD 焊孔阵列",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "左侧鱼眼形小凸出",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB 主体",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器 PCB 主体",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "DI-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "DI-002",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "DI-003",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P14",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-001",
+      "to": "DI-001",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-002",
+      "to": "DI-002",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-003",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "传感器 PCB",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "传感器 PCB",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "传感器 PCB",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "传感器 PCB",
+      "to": "DI-003",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "传感器 PCB 主体",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "传感器 PCB 主体",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "左侧鱼眼形小凸出",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "中心 SMD 焊孔阵列",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "传感器 PCB",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P14",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P14",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P14",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P14",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P14",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P14",
+      "to": "C-6",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P14",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P14",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P14",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P14",
+      "to": "DI-001",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P14",
+      "to": "DI-002",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P14",
+      "to": "DI-003",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "PCB板厚",
+      "attribute": "标称值",
+      "value": "1.0",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "",
+      "raw_text": "PCB 板厚 TH. = 1.0±0.1 mm"
+    },
+    {
+      "subject": "PCB板厚",
+      "attribute": "公差等级",
+      "value": "Level B",
+      "unit": "",
+      "tolerance": "",
+      "condition": "所有外形尺寸",
+      "raw_text": "所有外形尺寸按 SELECT LEVEL B 公差执行"
+    },
+    {
+      "subject": "RoHS合规性",
+      "attribute": "标准版本",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "产品符合 RoHS 2.0"
+    },
+    {
+      "subject": "PCB外径",
+      "attribute": "标称值",
+      "value": "20.5",
+      "unit": "mm",
+      "tolerance": "±0.1 (Level B)",
+      "condition": "",
+      "raw_text": "PCB 外径 Ø20.5 mm，与支架内圈 Ø21.3 配合，单边间隙约 0.35 mm"
+    },
+    {
+      "subject": "支架内圈直径",
+      "attribute": "标称值",
+      "value": "21.3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "与PCB外径配合",
+      "raw_text": "PCB 外径 Ø20.5 mm，与支架内圈 Ø21.3 配合，单边间隙约 0.35 mm"
+    },
+    {
+      "subject": "PCB与支架配合间隙",
+      "attribute": "单边间隙",
+      "value": "0.35",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "PCB外径Ø20.5与支架内圈Ø21.3配合",
+      "raw_text": "PCB 外径 Ø20.5 mm，与支架内圈 Ø21.3 配合，单边间隙约 0.35 mm"
+    },
+    {
+      "subject": "传感器PCB主体",
+      "attribute": "外径",
+      "value": "20.5",
+      "unit": "mm",
+      "tolerance": "±0.1 (Level B)",
+      "condition": "圆形，FR4材质",
+      "raw_text": "传感器 PCB 主体，圆形，diameter_mm: 20.5，tolerance: Level B (±0.1)，material: FR4"
+    },
+    {
+      "subject": "鱼眼凸出定位孔",
+      "attribute": "孔径",
+      "value": "2.2",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "左侧鱼眼形小凸出区域",
+      "raw_text": "左侧鱼眼形小凸出，含 Ø2.2 大孔，推测为排线/导线焊接区或定位标识"
+    },
+    {
+      "subject": "鱼眼凸出长度",
+      "attribute": "凸出长度",
+      "value": "1.5",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "左侧鱼眼形小凸出",
+      "raw_text": "左侧鱼眼形小凸出，protrusion_length_mm: 1.5，tolerance: Level B"
+    },
+    {
+      "subject": "传感器引脚焊孔",
+      "attribute": "数量",
+      "value": "4",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "中心SMD焊孔阵列",
+      "raw_text": "中心 SMD 焊孔阵列，hole_count: 4，prefix: 4-Ø0.7"
+    },
+    {
+      "subject": "传感器引脚焊孔",
+      "attribute": "孔径",
+      "value": "0.7",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "中心SMD焊孔阵列，典型红外传感器引脚",
+      "raw_text": "中心 SMD 焊孔阵列，hole_diameter_mm: 0.7，tolerance: Level B"
+    },
+    {
+      "subject": "传感器引脚焊孔间距",
+      "attribute": "X轴节距",
+      "value": "1.8",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "中心SMD焊孔阵列",
+      "raw_text": "中心 SMD 焊孔阵列，pitch_x_mm: 1.8"
+    },
+    {
+      "subject": "传感器引脚焊孔间距",
+      "attribute": "Y轴节距",
+      "value": "1.8",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "中心SMD焊孔阵列",
+      "raw_text": "中心 SMD 焊孔阵列，pitch_y_mm: 1.8"
+    },
+    {
+      "subject": "红外传感器",
+      "attribute": "测量原理",
+      "value": "红外非接触式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "典型红外传感器如MLX90614或类似IR传感器",
+      "raw_text": "典型红外传感器引脚焊孔，如 MLX90614 或类似 IR 传感器"
+    }
+  ]
+}

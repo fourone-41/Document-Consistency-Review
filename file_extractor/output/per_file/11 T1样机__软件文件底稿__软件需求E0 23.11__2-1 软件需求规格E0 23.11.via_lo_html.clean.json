@@ -1,0 +1,702 @@
+{
+  "document": {
+    "title": "PT9L 下位机软件需求规格书",
+    "doc_type": "软件需求规格书",
+    "version": "V1.0"
+  },
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "编制（软件工程师）"
+    },
+    {
+      "name": "侯广伟",
+      "title": "批准（技术负责人）"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RJXQ01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-SJSR01 V1.0"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-FXPJ01 V1.0"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-RJCH01 V1.0"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-SRGN01 V1.0"
+    },
+    {
+      "id_type": "参考文件编号",
+      "value": "PT9L-SRXN01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "01",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": "2024.5.15"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本软件应适用于所有年龄段的人从额头皮肤表面间歇性测量体温。它可以由消费者在家庭环境中使用，也可以由医疗保健提供者使用。",
+      "topic_tags": [
+        "预期用途",
+        "用户特征",
+        "体温计",
+        "家庭使用",
+        "医疗保健"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "软件系统的信号输入：压力脉宽信号、低电压信号、AD输入信号、EEPROM数据读取、UART输入信号。软件系统信号输出：50Hz，10%占空比的方波、泵/阀驱动信号、EEPROM数据写入、UART输出信号。",
+      "topic_tags": [
+        "信号输入",
+        "信号输出",
+        "EEPROM",
+        "UART",
+        "PWM"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "软件系统将要实现的功能：1.初始化功能：血压计上电后，初始化相关模块，等待移动设备与血压计建立蓝牙连接；2.关机功能：蓝牙无连接时，血压计自动关机，关机时，泵和阀都不能工作；3.加压过程：加压期间，袖带压力被显示在app界面中，当加压到190mmHg（机器无记忆时）或者高于上一次记忆的高压38mmHg时，泵会停止工作；4.加压出错检查功能：在加压过程中夹住气路，软件应该能检测出来，同时停止加压，打开阀，在app上显示错误信息；在加压过程中不连接袖带，几秒后软件应该能检测出气路断开，同时停止加压，在app上显示错误信息；在任何时候，袖带压力都不允许超过297mmHg超过1.5s；5.测量过程：每次检测到脉搏时，app界面上的心形符号会闪烁，同时袖带内压力及小波波形也显示在app界面上；在高压被检测到后，加压到合适的压力平台，机器会自动打开阀；6.计算过程：通过在测量过程中记录脉搏，来分别计算高压值、低压值、心率值；7.错误显示功能：机器主要检测的错误包括：检测不到零点、高低压未检出、压力大于297mmHg时间超过1.5s、袖带内的压力在15mmHg以上的时间超过160s、满度错误、数据传输失败、EEPROM访问失败、EEPROM三备份错误、电量低等；8.数据传输功能：在与移动设备蓝牙建立连接后，机器和移动设备间能够进行数据传输。",
+      "topic_tags": [
+        "软件功能",
+        "初始化",
+        "关机",
+        "加压",
+        "测量",
+        "蓝牙",
+        "错误检测",
+        "数据传输"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件",
+        "血压计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人机接口及软件与系统内部接口：键盘：1个按键，复位单片机。通讯接口：I2C总线，单片机为主设备，EEPROM为从设备；UART：单片机与蓝牙模块之间通讯；UART：单片机与测试工装通讯。人机交互描述：上电后系统进入关机态（低功耗状态），不开机并且不充电时灯不亮。在关机态，与手机蓝牙进行连接并建立通信后，绿灯常亮，启动iHealth APP点击开始测量键开始测量，测量过程中血压计将得到的压力及心跳信息传输至手机；测量完毕后，手机显示高压、低压、心率、血压分类、心律不齐（如果有）；测量过程中若出现异常，手机会显示相应提示信息。当电池电量不足时，手机会显示电量不足提示并且血压计上的红色LED灯闪烁。",
+      "topic_tags": [
+        "人机接口",
+        "I2C",
+        "UART",
+        "蓝牙",
+        "LED",
+        "按键",
+        "iHealth APP"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件",
+        "EEPROM",
+        "蓝牙模块"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "错误描述列表：Pressure system is unstable before measurement（搜索压力零点失败，压力不稳定达20秒）；Fail to detect systolic pressure（高压未检出或心跳小于4次）；Fail to detect diastolic pressure（低压未检出，或者高低压差为负值）；Pneumatic system blocked or cuff is too tight during inflation（气路阻塞、袖带太紧而加压过快）；Pneumatic system leakage or cuff is too loose during inflation（气路漏气、袖带过松而加压过慢）；Cuff pressure above 297mmHg（加压/测量中压力大于297mmHg的持续时间>1.5S）；More than 160 seconds with cuff pressure above 15 mmHg（一次测量中压力大于15mmHg的持续时间>160S）；EEPROM accessing error（EEPROM访问出错）；Three backups in EEPROM error（EEPROM中的3备份内容出错）；Span Error（机器SPAN值错误，SPAN<3000 or >6000）；Communication Error（通讯异常）；Low battery（低电压）。",
+      "topic_tags": [
+        "错误代码",
+        "错误描述",
+        "压力异常",
+        "EEPROM",
+        "通讯错误",
+        "低电压"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件",
+        "血压计"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "响应时间要求：自动关机时间：血压计与手机蓝牙断开连接后，血压计自动关机；压力超过297mmHg判断：不大于1.5s；压力超过15mmHg判断：不大于160秒；加压过慢：压力<30mmHg时：<3mmHg/4S，压力>30mmHg时：<2mmHg/4S；加压过快：≥75mmHg/0.32S。",
+      "topic_tags": [
+        "响应时间",
+        "自动关机",
+        "压力阈值",
+        "加压速率"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "软件接受的阈值或特殊值：血压测量范围：高压60-260mmHg、低压40-199mmHg；静压测量范围：0-300mmHg；心率测量范围：40-180次/分；记忆容量：与手机蓝牙连接测量时，手机储存记忆设备；零点采样范围：1000～2500，单位2μS；SPAN范围：3500～5500，单位2μS。",
+      "topic_tags": [
+        "测量范围",
+        "血压",
+        "心率",
+        "SPAN",
+        "零点",
+        "阈值"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "软件与安全相关的要求：1.危害：袖带、腕带压力，危害处境：患者使用中袖、腕带压力未解除，控制措施：软件控制最大压力小于300mmHg，测量时间小于3min，紧急停止键放气；2.危害：显示信息不明确，危害处境：患者、操作者将显示的信息理解错误，控制措施：软件控制显示的信息，说明书解释显示的信息；3.危害：不正确的算法，危害处境：患者、操作者使用了算法不正确的设备，控制措施：软件控制；4.危害：错误的数据转换，危害处境：患者得到错误的测量结果，控制措施：软件控制；5.危害：不正确的测试结果存储，包括结果分组和时间的对应，危害处境：患者、操作者查询错误的记忆值，控制措施：软件控制。",
+      "topic_tags": [
+        "安全要求",
+        "危害分析",
+        "风险控制",
+        "最大压力",
+        "测量时间"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "风险评价报告",
+        "下位机软件"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "存储器容量要求：单片机：2K字节的RAM，60K字节的ROM；存储器件：>=1K字节EEPROM。软件预期运行环境：单片机系统：uPD78F0485；软件操作系统：无。",
+      "topic_tags": [
+        "存储器",
+        "RAM",
+        "ROM",
+        "EEPROM",
+        "单片机",
+        "运行环境"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件",
+        "uPD78F0485"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "软件测试规划：本软件应进行如下各阶段的测试：单元测试/子程序测试、系统测试/整机测试、用户测试。",
+      "topic_tags": [
+        "软件测试",
+        "单元测试",
+        "系统测试",
+        "用户测试"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "下位机软件"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/软件文件底稿/软件需求E0 23.11/2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L 下位机软件需求规格书",
+      "to": "01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "信号输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "信号输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "软件功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "软件功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计",
+      "to": "软件功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "人机接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "人机接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EEPROM",
+      "to": "人机接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "蓝牙模块",
+      "to": "人机接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "错误代码",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "错误代码",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计",
+      "to": "错误代码",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "响应时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "响应时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "测量范围",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "测量范围",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "安全要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险评价报告",
+      "to": "安全要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "安全要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "存储器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "存储器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "uPD78F0485",
+      "to": "存储器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "软件测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下位机软件",
+      "to": "软件测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "scope_limitation_预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "behavioral_spec_信号输入输出",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "behavioral_spec_软件功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "behavioral_spec_人机接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "behavioral_spec_错误描述列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "constraint_statement_响应时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "constraint_statement_阈值",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "constraint_statement_安全要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "constraint_statement_存储器容量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "behavioral_spec_软件测试规划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "scope_limitation_预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_信号输入输出",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_软件功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_人机接口",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_错误描述列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement_响应时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement_阈值",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement_安全要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement_存储器容量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_软件测试规划",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-SJSR01 V1.0",
+      "properties": {
+        "relation_note": "软件需求规格书派生自系统设计输入"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-FXPJ01 V1.0",
+      "properties": {
+        "relation_note": "软件需求规格书派生自风险分析评价报告"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-SRGN01 V1.0",
+      "properties": {
+        "relation_note": "软件需求规格书派生自系统输入功能文件"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-SRXN01 V1.0",
+      "properties": {
+        "relation_note": "软件需求规格书派生自系统输入性能文件"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {
+        "relation_note": "软件需求规格书参考软件测试文件"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "安全相关要求",
+      "to": "PT9L-FXPJ01 V1.0",
+      "properties": {
+        "relation_note": "安全要求中的危害分析与控制措施派生自风险评价报告"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "加压过程",
+      "to": "响应时间要求",
+      "properties": {
+        "relation_note": "加压过程受加压速率、压力阈值时间限制约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "测量过程",
+      "to": "软件接受的阈值或特殊值",
+      "properties": {
+        "relation_note": "测量过程受血压、心率、零点、SPAN等阈值约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "软件与安全相关的要求",
+      "to": "响应时间要求",
+      "properties": {
+        "relation_note": "安全控制措施受最大压力持续时间、测量总时间等响应时间约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "下位机软件",
+      "to": "存储器容量要求",
+      "properties": {
+        "relation_note": "软件受2K RAM、60K ROM、>=1K EEPROM的存储器容量约束"
+      }
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "下位机软件",
+      "to": "uPD78F0485",
+      "properties": {
+        "relation_note": "下位机软件运行于uPD78F0485单片机平台"
+      }
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "数据传输功能",
+      "to": "蓝牙模块",
+      "properties": {
+        "relation_note": "数据传输功能通过UART与蓝牙模块通信实现"
+      }
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "EEPROM数据读写",
+      "to": "EEPROM",
+      "properties": {
+        "relation_note": "EEPROM数据读写功能通过I2C总线在EEPROM器件上实现"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L",
+      "properties": {
+        "description": "软件需求规格书覆盖红外体温计PT9L下位机软件需求"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "constraint_statement:安全要求",
+      "to": "PT9L-FXPJ01 V1.0",
+      "properties": {
+        "description": "软件安全相关要求由风险评价报告PT9L-FXPJ01验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "behavioral_spec:软件测试规划",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {
+        "description": "软件测试规划由软件测试/查验相关文件PT9L-RJCH01验证"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-SJSR01 V1.0",
+      "properties": {
+        "description": "软件需求规格书覆盖系统设计输入要求"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-SRGN01 V1.0",
+      "properties": {
+        "description": "软件需求规格书覆盖输入功能相关要求"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-SRXN01 V1.0",
+      "properties": {
+        "description": "软件需求规格书覆盖输入性能相关要求"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {
+        "description": "软件需求规格书由软件测试查验文件验证"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RJXQ01 V1.0",
+      "properties": {
+        "role": "编制"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RJXQ01 V1.0",
+      "properties": {
+        "role": "批准"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RJXQ01 V1.0",
+      "to": "01",
+      "properties": {
+        "version": "V1.0",
+        "author": "王迪",
+        "date": "2024.5.15",
+        "change_description": "起草"
+      }
+    }
+  ],
+  "_claims": []
+}

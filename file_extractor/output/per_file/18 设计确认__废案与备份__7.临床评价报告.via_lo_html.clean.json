@@ -1,0 +1,208 @@
+{
+  "document": {
+    "title": "临床评价报告",
+    "doc_type": "临床评价报告",
+    "version": "V1.0"
+  },
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RLPB01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    },
+    {
+      "product_id": "PT3",
+      "name": "红外体温计（同品种）"
+    }
+  ],
+  "persons": [
+    {
+      "name": null,
+      "title": "软件工程师（拟制）"
+    },
+    {
+      "name": null,
+      "title": "软件主管（审核）"
+    },
+    {
+      "name": null,
+      "title": "技术负责人（批准）"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本报告通过将PT9L红外体温计与已在中国上市的同品种医疗器械进行比较，旨在证明申报产品的安全性和有效性。申报产品为柯顿（天津）电子医疗器械有限公司生产的PT9L红外体温计，同品种医疗器械为同公司生产的PT3红外体温计，制造商地址均为天津空港经济区航宇路26号。",
+      "topic_tags": [
+        "临床评价",
+        "同品种比较",
+        "安全性",
+        "有效性"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT3"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "申报产品PT9L基本原理：本产品使用红外传感器，在不接触额头的情况下，可接收额头温度所辐射出的红外线信号，并转换成感应电压，通过测量该感应电压，并经过计算处理修正后，将测量温度以数字的形式通过LCD显示器显示出测量体温值，同时喇叭响起，测量过程结束。同品种PT3基本原理相同，但显示器为LED显示器，提示方式为机身振动。",
+      "topic_tags": [
+        "工作原理",
+        "红外传感器",
+        "体温测量",
+        "LCD显示"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "申报产品与同品种医疗器械等效性比较结论：\n1. 基本原理：无差异（显示器类型及提示方式存在形式差异）\n2. 结构与构成：均由塑胶外壳、红外温度传感器、显示器和外观结构部件等组成，主机外观有差异\n3. 结构尺寸：PT3为137mm×34mm×39mm，PT9L为131mm×35mm×38mm\n4. 软件信息：核心算法无差异，非算法部分的功能控制存在差异\n5. 生产工艺：无差异\n6. 原材料：外壳均为ABS，无差异\n7. 性能要求：显示范围均为32.0℃～42.9℃；最大允许误差：CLA模式下35.0℃～42.0℃范围内±0.2℃；32.0℃～34.9℃和42.1℃～42.9℃范围内±0.3℃；最小分度值0.1℃；无差异\n8. 安全性评价（安全性、电磁兼容性）：无差异\n9. 符合标准：同品种符合GB9706.1-2007、YY0505-2012；申报产品符合GB9706.1-2020、YY 9706.102-2021，相应法规升级，申报产品测量更加全面\n10. 应用：均用于红外非接触式额头温度测量，无使用年龄限制，应用部位为额头，非接触方式，用于发烧监控\n11. 运行环境：同品种温度16.0℃~35.0℃，湿度≤85%RH；申报产品温度10℃-40℃，湿度15-95%RH，申报产品运行环境范围更加宽泛\n12. 使用方法：将体温计探头瞄准额头中心，距离保持在3cm以内，轻按测量键开始测量；提示方式有差异（PT9L为鸣笛，PT3为震动），实质相同\n13. 禁忌症：申报产品明确前额有局部病变（炎症、创伤、近期手术等）不建议使用，描述更加全面",
+      "topic_tags": [
+        "等效性比较",
+        "技术指标",
+        "性能要求",
+        "运行环境",
+        "禁忌症"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT3",
+        "临床评价报告"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "18 设计确认/废案与备份/7.临床评价报告.via_lo_html.clean.md",
+    "doc_type": "design_validation"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "临床评价",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT3",
+      "to": "临床评价",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT3",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "等效性比较",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT3",
+      "to": "等效性比较",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床评价报告",
+      "to": "等效性比较",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLPB01 V1.0",
+      "to": "PT9L",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLPB01 V1.0",
+      "to": "PT3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLPB01 V1.0",
+      "to": "30000078",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床评价报告",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床评价报告",
+      "to": "working_principle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床评价报告",
+      "to": "behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "scope_limitation",
+      "to": "PT9L",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "scope_limitation",
+      "to": "PT3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "working_principle",
+      "to": "PT9L",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "working_principle",
+      "to": "PT3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "behavioral_spec",
+      "to": "PT9L",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "behavioral_spec",
+      "to": "PT3",
+      "properties": {}
+    }
+  ],
+  "_claims": []
+}

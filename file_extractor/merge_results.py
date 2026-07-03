@@ -28,6 +28,8 @@ def main():
                 if key not in all_nodes:
                     all_nodes[key] = []
                 for item in val:
+                    if not isinstance(item, dict):
+                        item = {"value": item}
                     item["_source"] = source
                     all_nodes[key].append(item)
             elif isinstance(val, dict) and key == "document":

@@ -1,0 +1,274 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "total_pages": 182,
+    "current_pages": "4-7",
+    "status": "DRAFT",
+    "test_result": "PASSED"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1",
+      "name": "General requirements for basic safety and essential performance of medical electrical equipment",
+      "clauses": [
+        {
+          "clause": "4",
+          "title": "General requirements"
+        },
+        {
+          "clause": "5",
+          "title": "General requirements for testing ME EQUIPMENT"
+        },
+        {
+          "clause": "6",
+          "title": "Classification of ME EQUIPMENT and ME SYSTEMS"
+        },
+        {
+          "clause": "7",
+          "title": "ME EQUIPMENT identification, marking and documents"
+        },
+        {
+          "clause": "8",
+          "title": "Protection against electrical HAZARDS from ME EQUIPMENT"
+        },
+        {
+          "clause": "9",
+          "title": "Protection against MECHANICAL HAZARDS of ME EQUIPMENT and ME SYSTEMS"
+        },
+        {
+          "clause": "11",
+          "title": "Protection against excessive temperatures and other HAZARDS"
+        },
+        {
+          "clause": "12",
+          "title": "Accuracy of controls and instruments and protection against hazardous outputs"
+        },
+        {
+          "clause": "13",
+          "title": "HAZARDOUS SITUATIONs and fault conditions for ME EQUIPMENT"
+        },
+        {
+          "clause": "14",
+          "title": "PROGRAMMABLE ELECTRICAL MEDICAL SYSTEMS (PEMS)"
+        },
+        {
+          "clause": "15",
+          "title": "Construction of ME EQUIPMENT"
+        }
+      ],
+      "conditions_of_acceptability": [
+        {
+          "clause": "11.7",
+          "description": "Biocompatibility according to ISO 10993 is not evaluated in this report"
+        },
+        {
+          "clause": "12.3",
+          "description": "ALARM SYSTEM that complies with IEC 60601-1-8 is not evaluated in this report"
+        },
+        {
+          "clause": "17",
+          "description": "EMC according to IEC 60601-1-2 is not evaluated in this report"
+        }
+      ]
+    },
+    {
+      "id": "IEC 60601-1-11",
+      "name": "Requirements for ME equipment and ME systems used in home healthcare environments",
+      "clauses": [
+        {
+          "clause": "4",
+          "title": "General requirements"
+        },
+        {
+          "clause": "5",
+          "title": "GENERAL REQUIREMENTS FOR TESTING ME EQUIPMENT"
+        },
+        {
+          "clause": "6",
+          "title": "Classification of ME EQUIPMENT and ME SYSTEMS"
+        },
+        {
+          "clause": "7",
+          "title": "ME EQUIPMENT identification, marking and documents"
+        },
+        {
+          "clause": "8",
+          "title": "Protection against electrical HAZARDS from ME EQUIPMENT"
+        },
+        {
+          "clause": "9",
+          "title": "Protection against MECHANICAL HAZARDS of ME EQUIPMENT and ME SYSTEMS"
+        },
+        {
+          "clause": "10",
+          "title": "Construction of ME EQUIPMENT"
+        }
+      ],
+      "conditions_of_acceptability": [
+        {
+          "clause": "12",
+          "description": "ADDITIONAL REQUIREMENTS FOR ELECTROMAGNETIC EMISSIONS according to IEC 60601-1-2 is not evaluated in this report"
+        },
+        {
+          "clause": "13",
+          "description": "ADDITIONAL REQUIREMENTS FOR ALARM SYSTEMS that complies with IEC 60601-1-8 is not evaluated in this report"
+        }
+      ]
+    },
+    {
+      "id": "ISO 10993",
+      "name": "Biological evaluation of medical devices",
+      "note": "Referenced in IEC 60601-1 Clause 11.7; not evaluated in this report"
+    },
+    {
+      "id": "IEC 60601-1-2",
+      "name": "EMC requirements for medical electrical equipment",
+      "note": "Not evaluated in this report"
+    },
+    {
+      "id": "IEC 60601-1-8",
+      "name": "Alarm systems requirements for medical electrical equipment",
+      "note": "Not evaluated in this report"
+    }
+  ],
+  "tests": [
+    {
+      "test_name": "IEC 60601-1 Safety Test",
+      "standard": "IEC 60601-1",
+      "result": "PASSED",
+      "clauses_tested": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ]
+    },
+    {
+      "test_name": "IEC 60601-1-11 Safety Test",
+      "standard": "IEC 60601-1-11",
+      "result": "PASSED",
+      "clauses_tested": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
+    },
+    {
+      "test_name": "Insulation / Creepage and Clearance Test",
+      "standard": "IEC 60601-1",
+      "pollution_degree": "II",
+      "overvoltage_category": "No overvoltage category",
+      "altitude": "< 2000m",
+      "applied_parts": "None",
+      "insulation_areas": [
+        {
+          "area_id": "A",
+          "means_of_protection": "2MOOP",
+          "cti_class": "IIIb",
+          "working_voltage_vrms": "3V d.c.",
+          "working_voltage_vpk": "--",
+          "required_creepage_mm": 3.4,
+          "required_clearance_mm": 1.6,
+          "measured_creepage_mm": ">3.4",
+          "measured_clearance_mm": ">1.6",
+          "remarks": "Batteries electrode to non-metallic enclosure"
+        },
+        {
+          "area_id": "B",
+          "means_of_protection": "2MOOP",
+          "cti_class": "IIIb",
+          "working_voltage_vrms": "3V d.c.",
+          "working_voltage_vpk": "--",
+          "required_creepage_mm": 3.4,
+          "required_clearance_mm": 1.6,
+          "measured_creepage_mm": ">3.4",
+          "measured_clearance_mm": ">1.6",
+          "remarks": "Batteries electrode to the probe"
+        },
+        {
+          "area_id": "C",
+          "means_of_protection": "2MOPP",
+          "cti_class": "IIIb",
+          "working_voltage_vrms": "3V d.c.",
+          "working_voltage_vpk": "--",
+          "required_creepage_mm": 1.0,
+          "required_clearance_mm": 0.8,
+          "measured_creepage_mm": ">1.0",
+          "measured_clearance_mm": ">0.8",
+          "remarks": "From the positive battery terminal to the negative power"
+        },
+        {
+          "area_id": "D",
+          "means_of_protection": "1MOPP",
+          "cti_class": "IIIb",
+          "working_voltage_vrms": "AC 339",
+          "working_voltage_vpk": "AC 240",
+          "required_creepage_mm": 4.0,
+          "required_clearance_mm": 2.5,
+          "measured_creepage_mm": ">4.0",
+          "measured_clearance_mm": ">2.5",
+          "remarks": "From monitor enclosure to the probe"
+        }
+      ],
+      "supplementary_info": [
+        "No any electrical circuit in the probe (Applied part).",
+        "No protective earthing in ME equipment."
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "The test results presented in this report relate only to the object tested. Without permission of the Report department this test report is not permitted to be duplicated in extracts.",
+      "topic_tags": [
+        "test report",
+        "disclaimer",
+        "confidentiality"
+      ],
+      "related_subjects": [
+        "ETX2023-07-078-02"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Insulation diagram is a graphical representation of equipment insulation barriers, protective impedance and protective earthing. Conventions: All isolation barriers are identified by letters between separate parts of diagram, for example separate transformer windings, optocouplers, wire insulation, creepage and clearance distances. Parts connected to earth with large dots are protectively earthed. Other connections to earth are functional. Applied parts are extended beyond the equipment enclosure and terminated with an arrow. Parts accessible to the operator only are extended outside of the enclosure, but are not terminated with an arrow.",
+      "topic_tags": [
+        "insulation diagram",
+        "creepage",
+        "clearance",
+        "applied part",
+        "protective earth"
+      ],
+      "related_subjects": [
+        "IEC 60601-1",
+        "Insulation / Creepage and Clearance Test"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "A measured value must be provided in the value columns for the device under evaluation. The symbol > (greater than sign) must not be used. Switch-mode power supplies must be re-evaluated in the device under evaluation therefore N/A must not be used with a generic statement that the component is certified.",
+      "topic_tags": [
+        "insulation diagram",
+        "measurement convention",
+        "SMPS",
+        "creepage",
+        "clearance"
+      ],
+      "related_subjects": [
+        "Insulation / Creepage and Clearance Test",
+        "ETX2023-07-078-02"
+      ]
+    }
+  ]
+}

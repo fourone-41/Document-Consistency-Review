@@ -1,0 +1,150 @@
+```json
+{
+  "context_summary": "本轮已补全 PT3_双联弹簧_REV01.pdf.md 的完整本地上下文（第1-42行），确认：①图纸标题栏 Drawing NO.=PT3-P10、Model NO.=PT3；②文件头注释明确标注"共用件：PT3项目原件，被PT9L DHF借用归档（外购件/设计参照）"；③技术要求5条及盐雾测试附注已完整提取。关键缺口在于：该"共用件/借用归档"声明仅出现在读图报告的元数据注释中（由读图脚本生成），并非来自任何正式的设计变更单、BOM共用件清单或PT9L DMR受控文件；PT1标签图纸（PT1-F05、PT1-F07）的本地上下文尚未提取；PT9L DHF设计输出清单二的目录/索引文件尚未检索，无法确认该图纸是否被正式列入PT9L受控BOM；PT9L与PT3之间的共用件/平台件关系未见任何ECO、设计评审记录或BOM交叉引用文件支撑。",
+  "evidence_gaps": [
+    "PT1-F05（PT1标签图纸）和PT1-F07（PT1外箱标签图纸）的本地上下文完全缺失，尚未提取其标题栏、Model NO.字段及任何共用件注释",
+    ""共用件：PT3项目原件，被PT9L DHF借用归档"这一声明仅存在于读图报告元数据注释行（第6行），其来源文件（原始PDF标题栏）中是否存在对应的PT9L关联说明尚未核实",
+    "PT9L DHF 设计输出清单二的目录/索引文件（如BOM表、设计输出清单Excel）尚未检索，无法确认PT3-P10图纸是否被正式列为PT9L受控组件",
+    "PT9L DMR中是否存在引用PT3-P10作为共用件/外购件的BOM条目或物料清单记录，完全缺失",
+    "PT3项目与PT9L项目之间是否存在正式的平台件共用协议、ECO变更单或设计评审会议纪要，完全缺失",
+    "PT9L DHF清单文件（F0006: PT9L-DHF清单）中是否列出PT3_双联弹簧或PT1标签图纸的条目，page_context中该文件内容为空，尚未有效提取",
+    "PT9L开发计划文件（F0005、F0007）中是否有关于借用PT3/PT1组件的说明，page_context内容同样为空",
+    "原始PDF文件（PT3_双联弹簧_REV01.pdf）标题栏中是否存在PT9L的任何标注或批准签字，无法从读图报告中确认"
+  ],
+  "additional_search_queries": [
+    "PT1-F05 标签 图纸 Model NO. Drawing NO. rel_path:设计输出清单二",
+    "PT1-F07 外箱标签 图纸 标题栏 Model NO. PT1",
+    "设计输出清单二 目录 BOM 索引 PT9L rel_path:设计输出清单二",
+    "PT9L-DHF清单 doc_id:F0006 共用件 PT3 PT1 借用",
+    "PT9L 开发计划 doc_id:F0005 doc_id:F0007 PT3 PT1 共用 平台件",
+    "PT3 PT9L 共用件 ECO 设计变更 评审",
+    "设计输出清单 PT3-P10 PT1-F05 PT1-F07 受控 BOM",
+    "PT9L DMR 物料清单 弹簧 标签 外购件 共用"
+  ],
+  "agent_instruction": "请针对以下两个方向执行补充检索，并将结果填入 recovered_context：\n\n【方向A：PT1标签图纸本地上下文】\n检索 rel_path 包含"PT1"且位于"设计输出清单二/图纸"路径下的所有.md文件（预期文件名含PT1-F05或PT1-F07），提取其第1-50行完整内容，重点获取：标题栏全表（Drawing NO.、Model NO.、Part name、Edition字段）、文件头元数据注释（来源PDF路径、共用件声明）。\n\n【方向B：PT9L DHF设计输出清单二索引及DHF总清单】\n1. 检索 doc_id=F0006（PT9L-DHF清单）的有效内容行，查找是否存在PT3-P10、PT1-F05、PT1-F07、双联弹簧、标签等条目及其备注列；\n2. 检索"设计输出清单二"目录下是否存在清单索引文件（如README、目录.md、BOM.md），提取其完整内容；\n3. 检索 doc_id=F0005或F0007 中与PT3/PT1共用件相关的任何行。\n\n【判断标准】：若在上述受控文件中找到明确将PT3-P10或PT1-Fxx列为PT9L共用件/外购件的条目，则可降低该发现的严重性；若仅有读图报告元数据中的单方面注释而无受控文件支撑，则原始claim的P3评级应维持或升级。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "DMR-129",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 1,
+        "source_text": "# PT3 双联弹簧 REV01 (V1.0) 2D 图读图报告",
+        "actual_text": "# PT3 双联弹簧 REV01 (V1.0) 2D 图读图报告",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-130",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 3,
+        "source_text": "> **来源 PDF**：`02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf`",
+        "actual_text": "> **来源 PDF**：`02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf`",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-132",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 6,
+        "source_text": "> **共用件**：**PT3 项目原件**，被 PT9L DHF 借用归档（外购件 / 设计参照）",
+        "actual_text": "> **共用件**：**PT3 项目原件**，被 PT9L DHF 借用归档（外购件 / 设计参照）",
+        "verified": true,
+        "excluded_from_primary_scope": false,
+        "annotation": "【关键缺口】此声明仅出现在读图报告元数据注释中，属于读图脚本生成内容，非受控设计文件中的正式记录，尚无ECO/BOM/DMR受控文件交叉印证"
+      },
+      {
+        "evidence_id": "DMR-133",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 14,
+        "source_text": "| **Drawing NO.** | **PT3-P10** |",
+        "actual_text": "| **Drawing NO.** | **PT3-P10** |",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-134",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 17,
+        "source_text": "| **Model NO.** | **PT3**（注：归档于 PT9L DHF，实为 PT3 项目原件） |",
+        "actual_text": "| **Model NO.** | **PT3**（注：归档于 PT9L DHF，实为 PT3 项目原件） |",
+        "verified": true,
+        "excluded_from_primary_scope": false,
+        "annotation": "Model NO.字段值为PT3，括号内注释同为读图报告生成内容，原始PDF标题栏是否含PT9L关联信息未经核实"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9L-DHF清单",
+        "text": "【待补充】当前page_context中该文件内容为空，需重新检索有效行内容，特别是包含PT3、PT1、双联弹簧、标签、共用件字样的行",
+        "status": "content_missing_needs_retrieval"
+      },
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9L开发计划",
+        "text": "【待补充】当前page_context中该文件内容为空，需重新检索有效行内容",
+        "status": "content_missing_needs_retrieval"
+      },
+      {
+        "doc_id": "F0007",
+        "rel_path": "02 开发计划E0 23.11\\PT9L.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9L项目文件",
+        "text": "【待补充】当前page_context中该文件内容为空，需重新检索有效行内容",
+        "status": "content_missing_needs_retrieval"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "source": "F0176 PT3_双联弹簧_REV01.pdf.md 完整本地上下文 lines 1-42",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "lines_covered": "1-42",
+        "full_text": "1: # PT3 双联弹簧 REV01 (V1.0) 2D 图读图报告\n2: \n3: > **来源 PDF**：`02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf`\n4: > **生成时间**：2026-06-02（按 `SKILL_2D_Drawing_Reading.md` 流程视觉读图）\n5: > **DPI**：overview 150 / blocks 300（2×2）\n6: > **共用件**：**PT3 项目原件**，被 PT9L DHF 借用归档（外购件 / 设计参照）\n7: \n8: ---\n9: \n10: ## 0. 标题栏（A 级）\n11: \n12: | 字段 | 内容 |\n13: | --- | --- |\n14: | **Drawing NO.** | **PT3-P10** |\n15: | **Part name** | **双联弹簧** |\n16: | **Edition** | **V1.0** |\n17: | **Model NO.** | **PT3**（注：归档于 PT9L DHF，实为 PT3 项目原件） |\n18: | **Pro material** | **弹簧钢** |\n19: | Surf dispose | （空白） |\n20: | Scale | **1:1** |\n21: | Units | mm |\n22: | Tolerance Level | **B** |\n23: \n24: **andon LOGO**：图纸左上角有。\n25: \n26: ---\n27: \n28: ## 1. 技术要求（A 级，逐字转写）\n29: \n30: 1. 产品外观良好，无毛刺、利角，包装良好；\n31: 2. 带编号尺寸为重点检测尺寸；\n32: 3. 未标注尺寸请以样板为准！未注公差按图纸公差为准！品质部检验结构时，请以结构签板和组装（实配）为准；\n33: 4. 材质符合 RoHS。\n34: \n35: **附注**：通过通用 **GB2423.17-2008** 盐雾测试报告（温度 35°、盐水浓度 5%、24H 后无生锈）。\n36: \n37: **几何注**：此两处结构尺寸**与左、右极弹簧一样**（弹片说明）。\n38: \n39: ---\n40: \n41: ## 2. 完整尺寸表\n42: ",
+        "key_findings": [
+          "Drawing NO.=PT3-P10，Model NO.=PT3，图纸本身不含任何PT9L标识",
+          "共用件声明（第6行）为读图报告元数据注释，非原始PDF受控内容",
+          "技术要求中无PT9L产品关联说明",
+          "几何注说明弹片结构与左右极弹簧相同，未提及PT9L适用性",
+          "盐雾测试附注引用GB2423.17-2008，未关联PT9L验证记录"
+        ]
+      },
+      {
+        "context_id": "RC-002",
+        "source": "缺失证据占位：PT1-F05标签图纸",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT1_*标签*F05*.pdf.md（预期路径，待确认）",
+        "lines_covered": "待检索",
+        "full_text": "【未检索】PT1-F05标签图纸的本地上下文完全缺失，需在下一轮检索",
+        "key_findings": [],
+        "status": "missing_needs_retrieval"
+      },
+      {
+        "context_id": "RC-003",
+        "source": "缺失证据占位：PT1-F07外箱标签图纸",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT1_*外箱标签*F07*.pdf.md（预期路径，待确认）",
+        "lines_covered": "待检索",
+        "full_text": "【未检索】PT1-F07外箱标签图纸的本地上下文完全缺失，需在下一轮检索",
+        "key_findings": [],
+        "status": "missing_needs_retrieval"
+      },
+      {
+        "context_id": "RC-004",
+        "source": "分析结论：共用件声明的证据强度评估",
+        "analysis": "当前唯一支撑'借用归档'说法的证据是F0176第6行的读图报告元数据注释。该注释由读图脚本（SKILL_2D_Drawing_Reading.md流程）生成，属于二次解读性内容，不构成ISO 13485或21 CFR 820意义下的受控设计文件记录。原始PDF标题栏（Drawing NO.=PT3-P10，Model NO.=PT3）不含任何PT9L关联标识。在PT9L DHF清单（F0006）、PT9L开发计划（F0005/F0007）、PT9L DMR BOM等受控文件中尚未找到对应的共用件条目。因此，claim中'without any documented shared-component or sub-assembly justification'的描述在现有证据范围内成立，P3评级有据可查。",
+        "evidence_strength": "weak_single_source_uncontrolled",
+        "supports_claim": true
+      }
+    ]
+  }
+}
+```

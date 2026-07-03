@@ -4,12 +4,13 @@ import json
 import sys
 import re
 import time
+import argparse
 from pathlib import Path
 from openai import OpenAI
 
 from config import API_KEY, LLM_BASE_URL, LLM_MODEL, PER_FILE_DIR, LLM_MAX_TOKENS
 
-client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL)
+client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL, timeout=180.0)
 
 CLAIM_PROMPT = """你是医疗器械文档一致性审查专家。请从以下已抽取的领域实体中生成"归一化事实断言"（Claim）。
 
@@ -93,6 +94,11 @@ def generate_claims_for_file(filepath: Path) -> list[dict]:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Step 3: generate per-file claims.")
+    parser.add_argument("--resume", action="store_true",
+                        help="Skip files that already contain a _claims field.")
+    args = parser.parse_args()
+
     json_files = sorted(PER_FILE_DIR.glob("*.json"))
     print(f"=== Step 3: Generate Claims ===", flush=True)
     print(f"Processing {len(json_files)} files\n", flush=True)
@@ -102,11 +108,15 @@ def main():
     for i, fp in enumerate(json_files, 1):
         print(f"[{i}/{len(json_files)}] {fp.stem}...", end="", flush=True)
         t0 = time.time()
+        data = json.loads(fp.read_text(encoding="utf-8"))
+        if args.resume and "_claims" in data:
+            print(f" skip existing {len(data.get('_claims') or [])} claims", flush=True)
+            continue
+
         claims = generate_claims_for_file(fp)
         elapsed = time.time() - t0
         print(f" {len(claims)} claims ({elapsed:.1f}s)", flush=True)
 
-        data = json.loads(fp.read_text(encoding="utf-8"))
         data["_claims"] = claims
         fp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 

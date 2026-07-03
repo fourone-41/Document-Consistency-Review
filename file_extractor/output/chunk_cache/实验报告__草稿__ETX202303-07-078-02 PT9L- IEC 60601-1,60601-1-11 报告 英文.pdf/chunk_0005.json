@@ -1,0 +1,340 @@
+{
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "name": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "Medical electrical equipment general requirements for basic safety and essential performance"
+    },
+    {
+      "id": "IEC60529",
+      "name": "IEC 60529",
+      "description": "Degrees of protection provided by enclosures (IP Code)"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "5.7",
+      "name": "Humidity Preconditioning",
+      "description": "ME EQUIPMENT or parts thereof affected by climatic conditions subjected to humidity preconditioning prior to tests of Clauses 8.7.4 and 8.8.3",
+      "conditions": "25°C, RH=93%, 168 hours",
+      "result": "Humidity preconditioning: 25℃, RH=93%, 168 hours",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.7",
+      "name": "Manually Detachable Parts Humidity Test",
+      "description": "Manually detachable parts removed and treated concurrently with major parts; manually removable ACCESS COVERS opened and detached",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.7",
+      "name": "Humidity Chamber Test - Units rated IPX0",
+      "description": "ME EQUIPMENT heated between T and T+4°C for at least 4h, placed in humidity chamber (RH 93%±3%), ambient within 2°C of T in range +20°C to +32°C for 48h for units rated IPX0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.7",
+      "name": "Humidity Chamber Test - Units rated higher than IPX0",
+      "description": "For units rated higher than IPX0, test time extended to 168h",
+      "conditions": "25°C, RH=93%, 168 hours",
+      "result": "Humidity preconditioning: 25℃, RH=93%, 168 hours",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.8",
+      "name": "Test Sequence",
+      "description": "Unless stated otherwise, tests in this standard sequenced as in Annex B to prevent influencing results of any subsequent test",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.9",
+      "name": "Determination of APPLIED PARTS and ACCESSIBLE PARTS",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.9.1",
+      "name": "APPLIED PARTS Identification",
+      "description": "APPLIED PARTS identified by inspection and reference to ACCOMPANYING DOCUMENTS",
+      "result": "The probe is identified as applied parts.",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.9.2.1",
+      "name": "Accessibility Test - Standard Test Finger",
+      "description": "Accessibility determined using standard test finger of Fig 6 applied in bent or straight position",
+      "result": "See Appended Table 5.9.2",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.9.2.1",
+      "name": "Opening Test - Straight Un-jointed Test Finger",
+      "description": "Openings preventing entry of test finger of Fig. 6 mechanically tested with straight un-jointed test finger of same dimensions with force of 30 N",
+      "result": "No opening",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.9.2.1",
+      "name": "Re-test with Standard Test Finger after Straight Finger Entry",
+      "description": "When the straight un-jointed test finger entered, test with the standard test finger (Fig 6) was repeated if necessary by pushing the finger through the opening",
+      "result": "See above.",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.9.2.2",
+      "name": "Test Hook Insertion Test",
+      "description": "Test hook of Fig. 7 inserted in all openings of ME EQUIPMENT and pulled with a force of 20 N for 10 s",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.9.2.2",
+      "name": "Additional Accessible Parts Check",
+      "description": "All additional parts that became accessible checked using standard test finger and by inspection",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.9.2.3",
+      "name": "Conductive Parts of Actuating Mechanisms - Accessible Parts Check",
+      "description": "Conductive parts of actuating mechanisms of electrical controls accessible after removal of handles, knobs, levers and the like regarded as ACCESSIBLE PARTS",
+      "result": "No such conductive part.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.9.2.3",
+      "name": "Conductive Parts - Tool Required for Removal",
+      "description": "Conductive parts of actuating mechanisms not considered ACCESSIBLE PARTS when removal of handles, knobs, etc. required use of a TOOL",
+      "result": "See above.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - CLASS I ME EQUIPMENT externally powered",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - CLASS II ME EQUIPMENT externally powered",
+      "result": "CLASS II",
+      "verdict": "P"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - INTERNALLY POWERED ME EQUIPMENT",
+      "result": "INTERNALLY POWERED ME EQUIPMENT",
+      "verdict": "P"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - Equipment with mains connection",
+      "description": "EQUIPMENT with means of connection to a SUPPLY MAINS complied with CLASS I or CLASS II ME EQUIPMENT requirements when so connected, and when not connected to SUPPLY MAINS with INTERNALLY POWERED ME EQUIPMENT requirements",
+      "verdict": "P"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - TYPE B APPLIED PART",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - TYPE BF APPLIED PART",
+      "result": "TYPE BF APPLIED PART",
+      "verdict": "P"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - TYPE CF APPLIED PART",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.2",
+      "name": "Classification - DEFIBRILLATION-PROOF APPLIED PARTS",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.3",
+      "name": "Enclosure IP Classification",
+      "description": "ENCLOSURES classified according to degree of protection against ingress of water and particulate matter (IPN1N2) as per IEC 60529",
+      "result": "IP22",
+      "verdict": "P"
+    },
+    {
+      "clause": "6.4",
+      "name": "Sterilization Classification",
+      "description": "ME EQUIPMENT or its parts intended to be sterilized classified according to method(s) of sterilization in instructions for use",
+      "result": "No sterilization need.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.5",
+      "name": "Oxygen Rich Environment Classification",
+      "description": "ME EQUIPMENT and ME SYSTEMS intended for use in an OXYGEN RICH ENVIRONMENT classified for such use and complied with 11.2.2",
+      "result": "Not used in an OXYGEN RICH ENVIRONMENT",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.6",
+      "name": "Continuous Operation Classification",
+      "description": "CONTINUOUS or Non-CONTINUOUS OPERATION",
+      "result": "CONTINUOUS OPERATION.",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.1.2",
+      "name": "Legibility of Markings Test",
+      "description": "Legibility of Markings Test for Markings specified in Clause 7.2-7.6",
+      "result": "See Appended Table 7.1.2",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.1.3",
+      "name": "Durability and Legibility of Markings",
+      "description": "Required markings can be removed only with a TOOL or by appreciable force, are durable and remain CLEARLY LEGIBLE during EXPECTED SERVICE LIFE of ME EQUIPMENT in NORMAL USE",
+      "result": "Can be removed only with appreciable force",
+      "verdict": "P"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "5.7",
+      "description": "ME EQUIPMENT or parts thereof affected by climatic conditions subjected to humidity preconditioning prior to tests of Clauses 8.7.4 and 8.8.3. Humidity preconditioning: 25°C, RH=93%, 168 hours."
+    },
+    {
+      "clause": "5.9.1",
+      "description": "APPLIED PARTS identified by inspection and reference to ACCOMPANYING DOCUMENTS. The probe is identified as applied parts."
+    },
+    {
+      "clause": "6.2",
+      "description": "Equipment classified as CLASS II and INTERNALLY POWERED ME EQUIPMENT. Applied part classified as TYPE BF APPLIED PART."
+    },
+    {
+      "clause": "6.3",
+      "description": "Enclosure protection rated IP22 per IEC 60529."
+    },
+    {
+      "clause": "6.6",
+      "description": "Equipment classified as CONTINUOUS OPERATION."
+    },
+    {
+      "clause": "7.1.3",
+      "description": "Required markings can be removed only with a TOOL or by appreciable force, are durable and remain CLEARLY LEGIBLE during EXPECTED SERVICE LIFE of ME EQUIPMENT in NORMAL USE."
+    }
+  ],
+  "components": [
+    {
+      "name": "Probe",
+      "description": "Identified as APPLIED PART (TYPE BF APPLIED PART)",
+      "role": "Applied part"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "IP Rating",
+      "value": "IP22",
+      "description": "Degree of protection against ingress of water and particulate matter per IEC 60529"
+    },
+    {
+      "type": "Applied Part Type",
+      "value": "TYPE BF APPLIED PART",
+      "description": "Classification of applied part type"
+    },
+    {
+      "type": "Power Classification",
+      "value": "CLASS II / INTERNALLY POWERED",
+      "description": "Equipment power classification"
+    },
+    {
+      "type": "Operation Mode",
+      "value": "CONTINUOUS OPERATION",
+      "description": "Equipment operation mode classification"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For Clause 5.7: ME EQUIPMENT heated to a temperature between T and T+4°C for at least 4 hours and placed in a humidity chamber (relative humidity 93%±3%) with an ambient within 2°C of T in the range of +20°C to +32°C for 48 hours for units rated IPX0. For units rated higher than IPX0, test time extended to 168 hours. Manually detachable parts removed and treated concurrently with major parts; manually removable ACCESS COVERS opened and detached.",
+      "topic_tags": [
+        "humidity preconditioning",
+        "IPX0",
+        "climatic conditions",
+        "test procedure"
+      ],
+      "related_subjects": [
+        "5.7",
+        "8.7.4",
+        "8.8.3"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 5.8: Unless stated otherwise, tests in this standard are sequenced as in Annex B to prevent influencing results of any subsequent test.",
+      "topic_tags": [
+        "test sequence",
+        "Annex B",
+        "test order"
+      ],
+      "related_subjects": [
+        "5.8",
+        "Annex B"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 5.9.2.1: Accessibility, when necessary, determined using standard test finger of Fig 6 applied in a bent or straight position. Openings preventing entry of test finger of Fig. 6 mechanically tested with a straight un-jointed test finger of the same dimensions with a force of 30 N. When the straight un-jointed test finger entered, test with the standard test finger (Fig 6) was repeated, if necessary, by pushing the finger through the opening. Result: No opening found.",
+      "topic_tags": [
+        "accessible parts",
+        "test finger",
+        "Fig 6",
+        "30N force",
+        "openings"
+      ],
+      "related_subjects": [
+        "5.9.2.1",
+        "5.9.2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 5.9.2.3: Conductive parts of actuating mechanisms of electrical controls accessible after removal of handles, knobs, levers and the like are regarded as ACCESSIBLE PARTS. However, conductive parts of actuating mechanisms are not considered ACCESSIBLE PARTS when removal of handles, knobs, etc. required the use of a TOOL. Result: No such conductive part found.",
+      "topic_tags": [
+        "accessible parts",
+        "actuating mechanisms",
+        "conductive parts",
+        "handles",
+        "knobs",
+        "tool"
+      ],
+      "related_subjects": [
+        "5.9.2.3",
+        "5.9.2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 6.2: EQUIPMENT with means of connection to a SUPPLY MAINS complied with CLASS I or CLASS II ME EQUIPMENT requirements when so connected, and when not connected to SUPPLY MAINS complied with INTERNALLY POWERED ME EQUIPMENT requirements.",
+      "topic_tags": [
+        "CLASS II",
+        "internally powered",
+        "supply mains",
+        "dual classification"
+      ],
+      "related_subjects": [
+        "6.2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 7.1.3: Required markings can be removed only with a TOOL or by appreciable force, are durable and remain CLEARLY LEGIBLE during EXPECTED SERVICE LIFE of ME EQUIPMENT in NORMAL USE. Test result: Can be removed only with appreciable force.",
+      "topic_tags": [
+        "markings",
+        "durability",
+        "legibility",
+        "expected service life",
+        "normal use"
+      ],
+      "related_subjects": [
+        "7.1.3",
+        "7.1.2"
+      ]
+    }
+  ]
+}

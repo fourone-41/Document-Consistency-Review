@@ -1,0 +1,2829 @@
+{
+  "document": {
+    "title": "PT9L EMC 型式试验报告（英文）",
+    "report_number": "ETX202303-07-078-01",
+    "date": "2024-08-15",
+    "total_pages": 29,
+    "document_type": "EMC Type Test Report",
+    "doc_id": "ETX202303-07-078-01",
+    "doc_type": "EMC型式试验报告",
+    "test_date": "2024-07-05",
+    "language": "英文",
+    "file_reference": "TX202303-07-078-01",
+    "fragment_pages": "13-14",
+    "test_date_radiated": "2024-07-09/10/24-26",
+    "report_no": "ETX202303-07-078-01",
+    "current_pages": "23-24",
+    "standard": "IEC 60601-1-2:2014+A1:2020",
+    "product_model": "PT9L",
+    "page_range": "第25-26页 / 共30页",
+    "source_file": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/最终报告/2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf"
+  },
+  "products": [
+    {
+      "name": "Infrared No-Touch Forehead Thermometer",
+      "model": "PT9L",
+      "dimensions": "5.15 in x 1.37 in x 1.49 in (W x H x D)",
+      "rated_input": "DC 3V, 2*AAA battery",
+      "ac_dc_adapter": "N/A",
+      "attachment": "N/A",
+      "software_version": "PT-HT2762-V00029-1.0.0",
+      "firmware_version": "PT9L-HFMP01 V1.0",
+      "intended_healthcare_environment": "Professional healthcare facility environment and HOME HEALTHCARE ENVIRONMENT as described in IEC 60601-1-2 (ed.4.1)"
+    },
+    {
+      "name": "PT9L",
+      "description": "High-tech infra-red (IR) thermometer designed to take human body temperature by measuring the energy of IR emitted from the forehead",
+      "type": "IR Thermometer"
+    },
+    {
+      "name": "PT9L",
+      "type": "EUT (Equipment Under Test)",
+      "description": "Temperature measurement device (thermometer)"
+    },
+    {
+      "name": "PT9L",
+      "role": "EUT (Equipment Under Test)",
+      "test_mode": "UE1 mode",
+      "power_supply": "DC 3V"
+    },
+    {
+      "model": "PT9L",
+      "type": "Medical Electrical Equipment (EUT)",
+      "notes": "Does not contain magnetic sensing components or circuits; does not contain non-ME equipment; not specified for use only in a shielded location"
+    },
+    {
+      "name": "PT9L",
+      "type": "医疗电气设备（EUT）",
+      "classification": "CISPR 11 Class B"
+    },
+    {
+      "name": "PT9L",
+      "role": "EUT (Equipment Under Test)",
+      "characteristics": [
+        "Does not intentionally receive RF electromagnetic energy",
+        "Does not include RF transmitter/emission",
+        "Not a permanently installed large ME system",
+        "Does not claim compatibility with HF Surgical equipment",
+        "Battery powered"
+      ]
+    }
+  ],
+  "persons": [
+    {
+      "role": "Applicant",
+      "organization": "Andon Health Co., Ltd.",
+      "address": "No. 3 JinPing Street, YaAn Road, Nankai District, Tianjin 300190, China"
+    },
+    {
+      "role": "Manufacturer",
+      "organization": "Andon Health Co., Ltd.",
+      "address": "No. 3 JinPing Street, YaAn Road, Nankai District, Tianjin 300190, China"
+    }
+  ],
+  "tests": [
+    {
+      "name": "Conducted Emission (150 kHz to 30 MHz)",
+      "category": "EMI",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "CISPR11 group 1, class B",
+      "result": "N/A"
+    },
+    {
+      "name": "Radiated Emission (30 MHz to 1000 MHz)",
+      "category": "EMI",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "CISPR11 group 1, class B",
+      "result": "PASS"
+    },
+    {
+      "name": "Electrostatic Discharge (ESD)",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-2",
+      "result": "PASS"
+    },
+    {
+      "name": "Radiated RF Electromagnetic Fields",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-3",
+      "result": "PASS"
+    },
+    {
+      "name": "Proximity field from RF wireless communication equipment",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-3",
+      "result": "PASS"
+    },
+    {
+      "name": "Electrical Fast Transients and Bursts (EFT/B)",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-4",
+      "result": "N/A"
+    },
+    {
+      "name": "Surges",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-5",
+      "result": "N/A"
+    },
+    {
+      "name": "Conducted Disturbance, Induced by RF Fields (150 kHz to 80 MHz)",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-6",
+      "result": "N/A"
+    },
+    {
+      "name": "Voltage Dips, Short Interruptions and Voltage Variations",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-11",
+      "result": "N/A"
+    },
+    {
+      "name": "Power Frequency Magnetic Field",
+      "category": "EMS",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-8",
+      "result": "Exemption, see annex"
+    },
+    {
+      "test_name": "Conducted Emissions on Mains Terminals",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "frequency_range": "150 kHz to 30 MHz",
+      "test_date": "N/A",
+      "temperature_humidity": "N/A",
+      "power_supply": "N/A",
+      "class_severity": "N/A",
+      "detector": "N/A",
+      "remark": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_name": "Radiated Emissions",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "CISPR11",
+      "test_date": "2024-07-05",
+      "temperature_humidity": "28℃ 52%",
+      "power_supply": "DC 3V",
+      "frequency_range": "30 MHz to 1 GHz",
+      "test_site": "3m Semi-anechoic chamber",
+      "class_severity": "Group 1, Class B",
+      "detector": "Peak for pre-scan (120 kHz resolution bandwidth)",
+      "test_mode": "Mode1, Mode2"
+    },
+    {
+      "name": "Radiated Emission Test",
+      "description": "Radiated emission test conducted in a semi-anechoic chamber. Tabletop EUT placed on non-metallic table 0.8m above ground reference plane. Floor-standing EUT placed on horizontal ground reference plane separated by 0.1m insulation. Pre-scan performed in spectrum mode with peak detector. EUT rotated 360°, antenna raised and lowered from 1 to 4 meters. Measurements performed for both horizontal and vertical antenna polarization.",
+      "test_modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "figures": [
+        {
+          "figure_number": "Figure 1",
+          "description": "Measurement results of radiated emission, Mode 1"
+        },
+        {
+          "figure_number": "Figure 2",
+          "description": "Measurement results of radiated emission, Mode 2"
+        }
+      ],
+      "section": "5.2.3"
+    },
+    {
+      "name": "Electromagnetic Susceptibility Test",
+      "description": "EMC susceptibility testing per IEC 60601-1-2 with defined pass/fail criteria for ME equipment and ME systems",
+      "section": "6",
+      "standard": "IEC 60601-1-2"
+    },
+    {
+      "test_name": "Electrostatic Discharge (ESD) Immunity Test",
+      "test_id": "6.2",
+      "standard_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-2",
+      "test_date": "2024-07-29",
+      "environmental_conditions": {
+        "temperature": "28℃",
+        "humidity": "44%",
+        "pressure": "101kPa"
+      },
+      "power_supply": "DC 3V",
+      "test_parameters": {
+        "air_discharge_voltages": "±2, 4, 8, 15kV",
+        "contact_discharge_voltage": "±8kV",
+        "vcp_hcp_voltage": "±8kV",
+        "polarity": "Positive / Negative",
+        "number_of_discharges": "Minimum 10 times at each test point",
+        "discharge_mode": "Single Discharge",
+        "discharge_period": "1 second minimum"
+      },
+      "test_mode": "Mode 1, Mode 2",
+      "test_points": {
+        "air_discharge_points": [
+          {
+            "point": "A1",
+            "description": "Insulated enclosure/seams (Key-press, nonmetallic enclosure, LCD display, seams, cables)",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A2",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A3",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A4",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A5",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A6",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          }
+        ],
+        "contact_discharge_points": [
+          {
+            "point": "C1",
+            "description": "Accessible metal parts of the enclosure (metallic part of the cuff)",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          },
+          {
+            "point": "C2",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          },
+          {
+            "point": "C3",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          }
+        ]
+      },
+      "legend": {
+        "√": "Pass",
+        "×": "Fail",
+        "ND": "No Discharge",
+        "-": "Non-test"
+      }
+    },
+    {
+      "test_name": "Radiated RF EM Fields Immunity Test",
+      "pass_fail_criteria_description": "Same as ESD criteria (referenced in immunity table)",
+      "means_of_monitoring": "Visual"
+    },
+    {
+      "test_name": "Proximity Fields from RF Wireless Communications Immunity Test",
+      "means_of_monitoring": "Visual"
+    },
+    {
+      "test_id": "6.2_ESD_Indirect",
+      "test_type": "Electrostatic Discharge (ESD) - Indirect Application",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method_standard": "IEC 61000-4-2",
+      "discharge_levels_kV": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "interval_s": 1,
+      "test_items": [
+        {
+          "coupling_plate": "Horizontally coupled plate - Front",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Horizontally coupled plate - Left",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Horizontally coupled plate - Rear",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Horizontally coupled plate - Right",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Front",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Left",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Rear",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Right",
+          "result": "A"
+        }
+      ],
+      "legend": "√: Pass; ×: Fail; ND: No Discharge; -: Non-test",
+      "overall_result": "Pass"
+    },
+    {
+      "test_id": "6.3_Radiated_Immunity",
+      "test_type": "Radiated Immunity",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method_standard": "IEC 61000-4-3",
+      "test_date": "2024-07-09/10/24-26",
+      "temperature_humidity": "25-31°C, 32%-50%",
+      "power_supply": "DC 3V",
+      "frequency_range": "80 MHz to 2.7 GHz",
+      "antenna_polarization": [
+        "Horizontal",
+        "Vertical"
+      ],
+      "test_level": "10 V/m",
+      "modulation": "80%, 1KHz Amplitude Modulation",
+      "frequency_step": "not exceed 1% of preceding frequency",
+      "dwell_time_min_s": 0.5,
+      "test_results": [
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Front",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Front",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Rear",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Rear",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Left",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Left",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Right",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Right",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "N/A",
+          "face": "Top",
+          "result": "N/A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "N/A",
+          "face": "Bottom",
+          "result": "N/A"
+        }
+      ]
+    },
+    {
+      "test_id": "6.3",
+      "test_name": "Radiated Immunity",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method": "IEC 61000-4-3",
+      "result": "PASS",
+      "result_detail": "The EUT does meet the Radiated Immunity requirements of the Standard.",
+      "remarks": [
+        "Front face oriented toward transmitting antenna.",
+        "EUT tested in UE1 mode; temperature sensor collection point aligned with blackbody set at 37°C; display temperature accuracy does not exceed ±0.2°C.",
+        "EUT could operate as intended and no disturbance of function during and after test.",
+        "Tests against top side and bottom side are only for adaptor."
+      ]
+    },
+    {
+      "test_id": "6.4",
+      "test_name": "Proximity Fields from RF Wireless Communications Equipment",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method": "IEC 61000-4-3",
+      "test_date": "2024-07-09/10/24-26",
+      "temperature_humidity": "25-31°C, 32%-50%",
+      "power_supply": "DC 3V",
+      "test_level_reference": "Table 9 of IEC 60601-1-2",
+      "antenna_polarization": "Horizontal / Vertical",
+      "modulation": "Pulse Modulation, 18Hz or 217Hz",
+      "result": "PASS",
+      "result_detail": "The EUT does meet the immunity requirements of Proximity Fields from RF Wireless Communications Equipment.",
+      "test_results_table": [
+        {
+          "frequency_mhz": 385,
+          "band_mhz": "380-390",
+          "level_vm": 27,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 450,
+          "band_mhz": "430-470",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 710,
+          "band_mhz": "704-787",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 745,
+          "band_mhz": "704-787",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 780,
+          "band_mhz": "704-787",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 810,
+          "band_mhz": "800-960",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 870,
+          "band_mhz": "800-960",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 930,
+          "band_mhz": "800-960",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 18Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 1720,
+          "band_mhz": "1700-1990",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 1845,
+          "band_mhz": "1700-1990",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 1970,
+          "band_mhz": "1700-1990",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 2450,
+          "band_mhz": "2400-2570",
+          "level_vm": 28,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 5240,
+          "band_mhz": "5100-5800",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 5500,
+          "band_mhz": "5100-5800",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        },
+        {
+          "frequency_mhz": 5785,
+          "band_mhz": "5100-5800",
+          "level_vm": 9,
+          "modulation": "Pulse modulation 217Hz",
+          "test_mode": "Mode 1,2",
+          "antenna_polarization": "Horizontal/Vertical",
+          "eut_face": "Front, Rear, Left, Right",
+          "result": "A"
+        }
+      ],
+      "remarks": [
+        "EUT tested in UE1 mode; temperature sensor collection point aligned with blackbody set at 37°C; display temperature accuracy does not exceed ±0.2°C.",
+        "EUT could operate as intended and no disturbance of function during and after test.",
+        "Tests against top side and bottom side are only for adaptor."
+      ]
+    },
+    {
+      "test_id": "6.5",
+      "test_name": "Electrical Fast Transients (EFT)",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method": "N/A",
+      "test_date": "N/A",
+      "power_supply": "N/A",
+      "test_level_reference": "N/A",
+      "result": "N/A"
+    },
+    {
+      "test_id": "6.5",
+      "test_name": "Electrical Fast Transient / Burst (EFT)",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "sections": [
+        "6.5.1",
+        "6.5.2"
+      ],
+      "result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.6",
+      "test_name": "Surge",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "test_level": "N/A",
+      "polarity": "N/A",
+      "generator_source_impedance": "N/A",
+      "trigger_mode": "N/A",
+      "no_of_surges": "N/A",
+      "sections": [
+        "6.6.1",
+        "6.6.2"
+      ],
+      "result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.7",
+      "test_name": "Conducted Immunity 0.15 MHz to 80 MHz",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "frequency_range": "N/A",
+      "test_level": "N/A",
+      "modulation": "N/A",
+      "dwell_time": "N/A"
+    },
+    {
+      "test_id": "6.7",
+      "test_name": "Conducted RF Immunity (Clamp Injection)",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "frequency_range": "150 kHz to 80 MHz",
+      "modulation": "80% amplitude modulated with 1 kHz sine wave",
+      "frequency_step": "not exceed 1% of preceding frequency value",
+      "dwell_time": "not less than 0.5 s",
+      "eut_height": "0.1 m above ground reference plane",
+      "cable_height": "at least 30 mm above ground reference plane",
+      "coupling_device_distance": "between 0.1 m and 0.3 m from EUT",
+      "ae_cable_height": "between 30 mm and 50 mm above ground reference plane",
+      "test_result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.8",
+      "test_name": "Voltage Dips and Interruptions",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "test_level": "N/A",
+      "no_of_dips_interruptions": "N/A",
+      "test_result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.9",
+      "test_name": "Power Frequency Magnetic Field Immunity",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "field_frequency": "N/A",
+      "face_under_test": "N/A",
+      "test_level": "N/A"
+    },
+    {
+      "id": "6.9",
+      "name": "Power Frequency Magnetic Field Immunity Test",
+      "clause": "6.9",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "setup": "EUT placed on GRP insulated by 0.1m insulating support; GRP on 0.8m wooden table for tabletop equipment; induction coil 1m×1m; immersion method; coil rotated 90° for orthogonal orientations",
+      "result": "EUT does not contain magnetic sensing components or circuits; exempt from this test per Table 4 Remark d",
+      "verdict": "N/A (Exempt)"
+    },
+    {
+      "clause": "5.2.1.1 d)",
+      "requirement": "List of cables, transducers and accessories",
+      "result": "Reference Document: PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.1.1 e)",
+      "requirement": "A warning that other cables and accessories may negatively affect EMC performance",
+      "result": "Reference Document: PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.1.1 f)",
+      "requirement": "A statement that portable RF communications equipment including Antennas, can effect medical electrical equipment. The warning includes a use distance such as 'be used no closer than 30 cm (12 inches) to any part of the me equipment or me system, including cables specified by manufacturer'",
+      "result": "Reference Document: PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.1.2",
+      "requirement": "Requirements applicable to me equipment and me systems classified class A according to CISPR 11",
+      "result": "The EUT complaints class B limit",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.1",
+      "requirement": "The technical description describes precautions to be taken to prevent adverse events to the patient and Operator due to electromagnetic disturbances",
+      "result": "Reference Document: Instructions for Use PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.2.1 a)",
+      "requirement": "Compliance for each emissions and immunity standard or test specified by this collateral standard, e.g. emissions class and group and immunity test level",
+      "result": "Reference Document: Instructions for Use PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.2.1 b)",
+      "requirement": "Any deviations from this collateral standard and allowances used",
+      "result": "Reference Document: N/A. Full tests were performed on the EUT. No deviation from this collateral standard and allowances used.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.1 c)",
+      "requirement": "All necessary instructions for maintaining basic safety and essential performance with regard to electromagnetic disturbances for the expected service life",
+      "result": "Reference Document: Instructions for Use PT9L-SMSY01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.2.2.2 a)",
+      "requirement": "A warning to the effect that: WARNING: Failure to use this equipment in the specified type of shielded location could result in degradation of performance, interference with other equipment or interference with radio services",
+      "result": "The EUT does not intend to use only in shielded location Special Environment.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.2 b)",
+      "requirement": "Specifications for shielded location including: minimum RF shielding effectiveness; for each cable that enters or exits the shielded location, the minimum RF filter attenuation; and the frequency range(s) over which the specifications apply",
+      "result": "Reference Document: N/A. The EUT does not intend to use only in shielded location Special Environment.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.2 c)",
+      "requirement": "Test methods for measurement of RF shielding effectiveness and RF filter attenuation",
+      "result": "The EUT does not intend to use only in shielded location Special Environment.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.2 d)",
+      "requirement": "One or more of the following and a recommendation that a notice containing this information be posted at the entrance(s) to the shielded location: a specification of the emissions characteristics of other equipment allowed inside the shielded location; a list of specific equipment allowed; a list of types of equipment prohibited.",
+      "result": "Reference Document: N/A. The EUT does not intend to use only in shielded location Special Environment.",
+      "verdict": "N/A"
+    },
+    {
+      "name": "Radiated Emission Test",
+      "section": "8.1",
+      "modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "description": "Radiated emission test setup with two operating modes"
+    },
+    {
+      "name": "ESD Test",
+      "section": "8.2",
+      "modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "description": "Electrostatic discharge test setup, discharge position documented"
+    },
+    {
+      "name": "Radiated Immunity Test",
+      "section": "8.3",
+      "modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "description": "Radiated immunity test setup with two operating modes"
+    },
+    {
+      "name": "Proximity Fields from RF Wireless Communications Equipment Test",
+      "section": "8.4",
+      "modes": [
+        "Battery Power 385MHz~1970MHz",
+        "Battery Power 2450MHz~5785MHz"
+      ],
+      "description": "Proximity fields from RF wireless communications equipment test setup covering frequency ranges 385MHz~1970MHz and 2450MHz~5785MHz"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "description": "EMC requirements for medical electrical equipment"
+    },
+    {
+      "id": "CISPR11",
+      "description": "Industrial, scientific and medical equipment – Radio-frequency disturbance characteristics, group 1, class B"
+    },
+    {
+      "id": "IEC 61000-4-2",
+      "description": "Electrostatic discharge immunity test"
+    },
+    {
+      "id": "IEC 61000-4-3",
+      "description": "Radiated, radio-frequency, electromagnetic field immunity test"
+    },
+    {
+      "id": "IEC 61000-4-4",
+      "description": "Electrical fast transient/burst immunity test"
+    },
+    {
+      "id": "IEC 61000-4-5",
+      "description": "Surge immunity test"
+    },
+    {
+      "id": "IEC 61000-4-6",
+      "description": "Conducted disturbances induced by radio-frequency fields immunity test"
+    },
+    {
+      "id": "IEC 61000-4-8",
+      "description": "Power frequency magnetic field immunity test"
+    },
+    {
+      "id": "IEC 61000-4-11",
+      "description": "Voltage dips, short interruptions and voltage variations immunity test"
+    },
+    {
+      "identifier": "IEC 60601-1-2:2014+A1:2020",
+      "description": "EMC requirements for medical electrical equipment"
+    },
+    {
+      "identifier": "CISPR11",
+      "description": "Test method for radiated emissions"
+    },
+    {
+      "identifier": "CISPR 16-4-2",
+      "description": "Measurement uncertainty standard referenced for uncertainty values"
+    },
+    {
+      "name": "IEC 60601-1-2",
+      "description": "Performance Criteria for Electromagnetic Susceptibility Test of ME Equipment and ME Systems"
+    },
+    {
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Medical electrical equipment EMC requirements"
+    },
+    {
+      "standard": "IEC 61000-4-2",
+      "description": "Electrostatic discharge immunity test method"
+    },
+    {
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "clause": "6.1",
+      "description": "EMC requirements for medical electrical equipment"
+    },
+    {
+      "standard": "IEC 61000-4-2",
+      "description": "Electrostatic discharge immunity test"
+    },
+    {
+      "standard": "IEC 61000-4-3",
+      "description": "Radiated, radio-frequency, electromagnetic field immunity test"
+    },
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "name": "IEC 60601-1-2:2014+A1:2020",
+      "applicable_clause": "clause 6.1"
+    },
+    {
+      "id": "IEC 61000-4-3",
+      "name": "IEC 61000-4-3",
+      "context": "Test Method for Radiated Immunity / Proximity Fields from RF Wireless Communications Equipment"
+    },
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "scope": "EMC requirements for medical electrical equipment",
+      "applied_to": [
+        "6.5 EFT",
+        "6.6 Surge",
+        "6.7 Conducted Immunity"
+      ]
+    },
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "applicable_to": [
+        "6.7 Conducted RF Immunity",
+        "6.8 Voltage Dips and Interruptions",
+        "6.9 Power Frequency Magnetic Field Immunity"
+      ]
+    },
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "full_name": "IEC 60601-1-2:2014+A1:2020 / EN 60601-1-2:2015+A1:2021",
+      "description": "EMC collateral standard for medical electrical equipment"
+    },
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "type": "EMC标准",
+      "description": "医用电气设备电磁兼容要求"
+    },
+    {
+      "id": "CISPR 11",
+      "type": "EMC排放标准",
+      "description": "工业、科学和医疗设备无线电骚扰特性"
+    },
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "name": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Medical electrical equipment EMC requirements standard"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "description": "This product is a high-tech infra-red (IR) thermometer designed to take human body temperature by measuring the energy of IR emitted from the forehead. The product will help you to assess you and your family members' health conditions easily and quickly.",
+      "intended_environments": "Professional healthcare facility environment and HOME HEALTHCARE ENVIRONMENT as described in IEC 60601-1-2 (ed.4.1)"
+    },
+    {
+      "description": "This product is a high-tech infra-red (IR) thermometer designed to take human body temperature by measuring the energy of IR emitted from the forehead. The product helps you to assess you and your family members' forehead temperature easily and quickly.",
+      "source_section": "6.1 - Basic Safety and Essential Performance Description"
+    }
+  ],
+  "components": [
+    {
+      "name": "BDB Series Precision Temperature Controllers & Blackbody Radiation Source",
+      "role": "Support Unit / Auxiliary Equipment",
+      "manufacturer": "Beijing Boda Changzheng Technology Development Co., LTD",
+      "model": "BDB15"
+    },
+    {
+      "category": "Radiated Emission Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "Test receiver",
+          "manufacturer": "Agilent",
+          "model": "N9038A-508",
+          "serial_no": "MY54130074",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 2,
+          "name": "310 Low Noise Amplifier",
+          "manufacturer": "SONOMA",
+          "model": "310N",
+          "serial_no": "344218",
+          "cal_date": "2024-01-08",
+          "cal_due_date": "2026-01-07"
+        },
+        {
+          "item_no": 3,
+          "name": "BiConiLog Antenna",
+          "manufacturer": "ETS-Lindgren",
+          "model": "3142E",
+          "serial_no": "166231",
+          "cal_date": "2024-05-11",
+          "cal_due_date": "2027-05-10"
+        }
+      ]
+    },
+    {
+      "category": "Electrostatic Discharge Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "ESD simulator",
+          "manufacturer": "EMTEST",
+          "model": "Dito",
+          "serial_no": "P1420134242",
+          "cal_date": "2024-04-28",
+          "cal_due_date": "2025-04-27"
+        }
+      ]
+    },
+    {
+      "category": "Radiated RF Electromagnetic Fields Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "Signal generator",
+          "manufacturer": "Agilent",
+          "model": "N5171B-506",
+          "serial_no": "MY53050921",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 2,
+          "name": "RF power amplifier",
+          "manufacturer": "Milmega",
+          "model": "80RF1000-250",
+          "serial_no": "1066643",
+          "cal_date": "2024-01-08",
+          "cal_due_date": "2027-01-07"
+        },
+        {
+          "item_no": 3,
+          "name": "Directional coupler",
+          "manufacturer": "Werlatone(HDC)",
+          "model": "C5982-12",
+          "serial_no": "106464",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 4,
+          "name": "RF power amplifier",
+          "manufacturer": "Milmega",
+          "model": "AS0827-55",
+          "serial_no": "1066644",
+          "cal_date": "2023-12-28",
+          "cal_due_date": "2026-12-27"
+        },
+        {
+          "item_no": 5,
+          "name": "Directional coupler",
+          "manufacturer": "Werlatone(HDC)",
+          "model": "C6148-12",
+          "serial_no": "106400",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 6,
+          "name": "Power meter",
+          "manufacturer": "Agilent",
+          "model": "N1914A",
+          "serial_no": "MY54466075",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 7,
+          "name": "Power sensor (2 set)",
+          "manufacturer": "Agilent",
+          "model": "E9304A",
+          "serial_no": "MY54370020 / MY54370019",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 8,
+          "name": "Isotropic field probe",
+          "manufacturer": "ETS-Lindgren",
+          "model": "HI6105-USB",
+          "serial_no": "168988",
+          "cal_date": "2024-05-24",
+          "cal_due_date": "2025-05-23"
+        },
+        {
+          "item_no": 9,
+          "name": "Log periodic antenna",
+          "manufacturer": "Schwarzbeck",
+          "model": "STLP9128D",
+          "serial_no": "9128D088",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 10,
+          "name": "Log periodic antenna",
+          "manufacturer": "Schwarzbeck",
+          "model": "STLP9149",
+          "serial_no": "9149-465",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 11,
+          "name": "RF power amplifier",
+          "manufacturer": "BONN",
+          "model": "BLMA 2060-100S",
+          "serial_no": "1610981",
+          "cal_date": "2023-01-14",
+          "cal_due_date": "2026-01-13"
+        }
+      ]
+    },
+    {
+      "category": "Environment Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "Semi-anechoic chamber",
+          "manufacturer": "TDK",
+          "model": "SAC-3",
+          "serial_no": "N/A",
+          "cal_date": "2024-01-05",
+          "cal_due_date": "2029-01-04"
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Report Number",
+      "value": "ETX202303-07-078-01"
+    },
+    {
+      "type": "Model Number",
+      "value": "PT9L"
+    },
+    {
+      "type": "Software Version",
+      "value": "PT-HT2762-V00029-1.0.0"
+    },
+    {
+      "type": "Firmware Version",
+      "value": "PT9L-HFMP01 V1.0"
+    },
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-01"
+    },
+    {
+      "id": "PT9L-FXPJ01 V1.0",
+      "type": "Risk Management File",
+      "description": "RMF Reference Document for PT9L"
+    },
+    {
+      "id": "PT9L-SMSY01 V1.0",
+      "type": "Instructions for Use / Accompanying Document",
+      "description": "Reference document for instructions for use, PT9L"
+    },
+    {
+      "id": "PT9L-SMSY01 V1.0",
+      "type": "参考文件",
+      "description": "PT9L使用说明书（Instructions for Use）"
+    },
+    {
+      "id": "ETX202303-07-078-01",
+      "type": "报告编号"
+    },
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-01"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Mode 1 – Battery power Standby mode: Install battery to the EUT and keep the EUT in standby state. Mode 2 – Battery power Test mode: PT9L is powered by the internal battery. Hold down the power button to install the battery and set PT9L in UE1 mode. During the radiation disturbance test, PT9L detects the air and carries out continuous measurement. During the immunity test, the temperature sensor detection is point to the blackbody, and the blackbody is set to 37°C. The temperature is continuously measured and compared with the blackbody temperature. The measurement accuracy is ±0.2°C.",
+      "topic_tags": [
+        "EUT mode",
+        "test configuration",
+        "immunity test",
+        "emission test",
+        "blackbody",
+        "measurement accuracy"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "BDB15",
+        "Radiated Emission",
+        "Electromagnetic Susceptibility"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Emission: The equipment under test (EUT) was configured to measure its highest possible emission level. The test conditions were adapted accordingly in reference to the instructions for use. Immunity: The equipment under test (EUT) was configured to have its highest possible susceptibility against the tested phenomena. The test conditions were adapted accordingly in reference to the instructions for use.",
+      "topic_tags": [
+        "emission test setup",
+        "immunity test setup",
+        "EUT configuration",
+        "worst-case"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "EMI",
+        "EMS"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Submitted Documents: Circuit diagram, PCB layout, components list, user's manual and label. Deviation from Standards: None. Abnormalities from Standard Conditions: None. Modification/Retest record: None. Countermeasures to achieve EMC Compliance: None.",
+      "topic_tags": [
+        "submitted documents",
+        "deviation",
+        "abnormality",
+        "modification",
+        "EMC compliance"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Measurement Uncertainty per CISPR 16-4-2: Conducted Emission at mains port using AMN (150kHz-30MHz): U=3.2dB, Ucispr=3.4dB; Radiated Emission (30MHz-1000MHz): U=3.9dB, Ucispr=6.3dB; Radiated Emission (1GHz-6GHz): U=5.1dB, Ucispr=5.2dB. The measurement uncertainty represents an expanded uncertainty expressed at approximately the 95% confidence level using a coverage factor of k=2.",
+      "topic_tags": [
+        "measurement uncertainty",
+        "CISPR 16-4-2",
+        "conducted emission",
+        "radiated emission",
+        "coverage factor"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-01",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Radiated emission test operation: Pre-scan was performed with peak detector on the EUT. Quasi-peak measurements were performed at the frequencies at which maximum peak emission level were detected. During the tests, the EUT were tested at different working modes (Mode1, Mode2) to find the maximum emission results. For radiated emission: Level = Read Level + Antenna Factor + Cable Loss – Preamp Factor.",
+      "topic_tags": [
+        "radiated emission",
+        "pre-scan",
+        "quasi-peak",
+        "peak detector",
+        "EUT operation",
+        "measurement formula"
+      ],
+      "related_subjects": [
+        "Radiated Emissions test",
+        "CISPR11",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "The EUT is powered by batteries, and does not apply to the Conducted Emissions on Mains Terminals clause (5.1). All related test parameters (test date, temperature, humidity, power supply, frequency range, class/severity, detector) are listed as N/A.",
+      "topic_tags": [
+        "battery-powered",
+        "conducted emission",
+        "not applicable",
+        "EUT"
+      ],
+      "related_subjects": [
+        "Conducted Emissions on Mains Terminals",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Performance Criteria Description per IEC 60601-1-2. Examples of test failures include: malfunction; non-operation when operation is required; unwanted operation when no operation is required; deviation from normal operation that poses an unacceptable RISK to the PATIENT or OPERATOR; component failures; change in programmable parameters; reset to factory defaults (MANUFACTURER's presets); change of operating mode; a FALSE POSITIVE ALARM CONDITION; a FALSE NEGATIVE ALARM CONDITION (failure to alarm); cessation or interruption of any intended operation, even if accompanied by an ALARM signal; initiation of any unintended operation, including unintended or uncontrolled motion, even if accompanied by an ALARM signal; error of a displayed numerical value sufficiently large to affect diagnosis or treatment; noise on a waveform in which the noise would interfere with diagnosis, treatment or monitoring; artefact or distortion in an image in which the artefact would interfere with diagnosis, treatment or monitoring; failure of automatic diagnosis or treatment ME EQUIPMENT or ME SYSTEM to diagnose or treat, even if accompanied by an ALARM signal.",
+      "topic_tags": [
+        "EMC",
+        "pass/fail criteria",
+        "IEC 60601-1-2",
+        "test failures",
+        "alarm",
+        "essential performance",
+        "basic safety"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2",
+        "Electromagnetic Susceptibility Test",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Examples of performance during and after the applied testing stimulus required to pass the test: for a mammography system, the compression full release and associated command remains fully operational; for ULTRASOUND DIAGNOSTIC EQUIPMENT, the probe heating, dissipative power and temperature shall remain within specifications; safety-related functions perform as intended; false operation of alarms, 'fail safe' modes and similar functions do not occur. NOTE: This might require performing the test twice – once to ensure the functions occur as expected and again to ensure they do not occur falsely.",
+      "topic_tags": [
+        "pass criteria",
+        "EMC",
+        "safety functions",
+        "alarm",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2",
+        "Electromagnetic Susceptibility Test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Examples of acceptable degradation: an imaging system displays an image that could be altered, but in a way that would not affect the diagnosis or treatment; a heart rate monitor displays a heart rate that could be in error, but by an amount that is not clinically significant; a PATIENT monitor exhibits a small amount of noise or a transient on a waveform and the noise or transient would not affect diagnosis, treatment or monitoring.",
+      "topic_tags": [
+        "acceptable degradation",
+        "EMC",
+        "IEC 60601-1-2",
+        "clinical significance"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2",
+        "Electromagnetic Susceptibility Test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Failure of therapy equipment to terminate a treatment at the intended time can be considered cessation or interruption of an intended operation related to ESSENTIAL PERFORMANCE. If the effect of the test signal on an ME EQUIPMENT or ME SYSTEM is so brief as to be transparent to the PATIENT or OPERATOR and does not affect diagnosis, monitoring or treatment of the PATIENT, this can be considered not to be cessation or interruption of an intended operation. For example, if in response to the IMMUNITY TEST LEVEL a ventilator stops pumping for 50 ms and then resumes operation such that accuracy is within acceptable limits, this would not be considered cessation or interruption of an intended operation.",
+      "topic_tags": [
+        "essential performance",
+        "immunity test",
+        "therapy equipment",
+        "cessation",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2",
+        "Electromagnetic Susceptibility Test"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "Radiated emission test procedure: Before final measurements, a pre-scan was performed in the spectrum mode with the peak detector to find out the maximum emission spectrum signature data plots of the EUT. The frequencies of maximum emission were determined in the final radiated emissions measurement; the physical arrangement of the test system and associated cabling was varied in order to determine the effect on the EUT's emissions in amplitude, direction and frequency. At each frequency, the EUT was rotated 360°, and the Antenna was raised and lowered from 1 to 4 meters in order to determine the maximum disturbance. Measurements were performed for both horizontal and vertical Antenna polarization.",
+      "topic_tags": [
+        "radiated emission",
+        "semi-anechoic chamber",
+        "pre-scan",
+        "antenna polarization",
+        "EUT rotation"
+      ],
+      "related_subjects": [
+        "Radiated Emission Test",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ESD Test Setup Procedure: (1) Contact discharge was applied only to conductive surfaces of the EUT. Air discharge was applied only to non-conducted surfaces of the EUT. (2) The EUT was put on a 0.8m high wooden table for table-top equipment or 0.1m high for floor standing equipment standing on the ground reference plane (GRP). (3) A horizontal coupling plane (HCP) 1.6m by 0.8m in size was placed on the table, and the EUT with its cables were isolated from the HCP by an insulating support thicker than 0.5mm. The VCP 0.5m by 0.5m in size while HCP were constructed from the same material type and thickness as that of the GRP, and connected to the GRP via a 470kΩ resistor at each end. The distance between EUT and any of the other metallic surfaces except the GRP, HCP and VCP was greater than 1m. (4) During the contact discharges, the tip of the discharge electrode touched the EUT before the discharge switch is operated. During the air discharges, the round discharge tip was approached as fast as possible to touch the EUT. (5) After each discharge, the ESD generator was removed from the EUT, the generator is then retriggered for a new single discharge. For ungrounded product, a discharge cable with two resistances was used after each discharge to remove remnant electrostatic voltage. 10 times of each polarity single discharge were applied to HCP and VCP.",
+      "topic_tags": [
+        "ESD",
+        "test setup",
+        "HCP",
+        "VCP",
+        "GRP",
+        "IEC 61000-4-2",
+        "discharge procedure"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01",
+        "ESD Immunity Test"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Immunity Pass/Fail Criteria Note: Specific, detailed immunity pass/fail criteria shall be based on applicable part two standards or risk management, for immunity with regard to EM disturbances. These pass/fail criteria shall be included in the risk management file.",
+      "topic_tags": [
+        "pass/fail criteria",
+        "risk management",
+        "EMC",
+        "immunity"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2:2014+A1:2020",
+        "risk management file"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Remarks A (ESD Indirect): During and after test, The EUT is tested in UE1 mode, the collection point of the temperature sensor is aligned with the blackbody, which is set at 37°C. The temperature is continuously measured and compared with the blackbody temperature. The accuracy of the display temperature of the EUT does not exceed ± 0.2°C. During and after test, the EUT could operate as intended and no disturbance of function. The EUT could meet the requirements of clause 6.1.",
+      "topic_tags": [
+        "ESD",
+        "temperature accuracy",
+        "blackbody",
+        "UE1 mode",
+        "pass criteria",
+        "±0.2°C"
+      ],
+      "related_subjects": [
+        "6.2_ESD_Indirect",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Radiated Immunity Test Setup and Procedure: 1. For table-top equipment, the EUT was placed in the chamber on a non-conductive table 0.8m high. For floor-standing equipment, the EUT was mounted on a non-conductive support 0.1m above the supporting plane. 2. If possible, a minimum of 1m of cable is exposed to the electromagnetic field. Excess length of cables interconnecting units of the EUT shall be bundled low-inductively in the approximate center of the cable to form a bundle 30 cm to 40 cm in length. 3. The EUT was initially placed with one face coincident with the calibration plane. The EUT face being illuminated was contained within the UFA (Uniform Field Area). 4. The frequency ranges to be considered were swept with the signal modulated and pausing to adjust the RF signal level or to switch oscillators and Antennas as necessary. The frequency range was swept incrementally, the step size was not exceed 1% of the preceding frequency value. 5. The dwell time of the amplitude modulated carrier at each frequency was not be less than the time necessary for the EUT to be exercised and to respond, and was not less than 0.5 s. 6. The test normally was performed with the generating Antenna facing each side of the EUT. 7. The polarization of the field generated by each Antenna necessitates testing each selected side twice, once with the Antenna positioned vertically and again with the Antenna positioned horizontally. 8. The EUT was performed in a configuration to actual installation conditions, a video camera and/or an audio monitor were used to monitor the performance of the EUT.",
+      "topic_tags": [
+        "radiated immunity",
+        "test setup",
+        "antenna",
+        "EUT placement",
+        "cable bundling",
+        "UFA",
+        "frequency sweep",
+        "dwell time",
+        "polarization"
+      ],
+      "related_subjects": [
+        "6.3_Radiated_Immunity",
+        "IEC 61000-4-3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "During and after test, The EUT is tested in UE1 mode, the collection point of the temperature sensor is aligned with the blackbody, which is set at 37°C. The temperature is continuously measured and compared with the blackbody temperature. The accuracy of the display temperature of the EUT does not exceed ±0.2°C. During and after test, the EUT could operate as intended and no disturbance of function. The EUT could meet the requirements of clause 6.1.",
+      "topic_tags": [
+        "temperature accuracy",
+        "blackbody",
+        "UE1 mode",
+        "EMC immunity",
+        "±0.2°C"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Radiated Immunity",
+        "Proximity Fields RF",
+        "IEC 60601-1-2 clause 6.1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Tests against top side and bottom side are only for adaptor.",
+      "topic_tags": [
+        "adaptor",
+        "test sides",
+        "radiated immunity"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Radiated Immunity",
+        "Proximity Fields RF"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "EFT Test Setup (6.5.1): The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The GRP shall project beyond the EUT and the clamp by at least 0.1m on all sides. The distance between the EUT and any other metallic surface except the GRP was greater than 0.5m. All cables to the EUT was placed on the insulation support 0.1m above GRP. Cables not subject to EFT was routed as far as possible from cable under test to minimize coupling between cables. The length of signal and power cable between the EUT and EFT generator was 0.5m. If the cable is a non-detachable supply cable more than 0.5m, the excess length shall be folded to avoid a flat coil and situated at a distance of 0.1m above the GRP. The EUT was conducted the below specified level voltage test for line to neutral or line to neutral to earth (for clamp coupling is for the signal line), 120 seconds duration. If the equipment contains identical ports, only one was tested; multiconductor cables were tested as a single cable. Interface ports intended by the manufacturer to be connected to data cables not longer than 3m did not be tested. During the test, the EUT was tested with the hand-held parts terminated with artificial hand.",
+      "topic_tags": [
+        "EFT",
+        "test setup",
+        "GRP",
+        "cable routing",
+        "insulating support",
+        "artificial hand"
+      ],
+      "related_subjects": [
+        "6.5.1",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Surge Test Setup (6.6.1): The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The 1.2/50 µs surge was to be applied to the EUT power supply terminals via the capacitive coupling network. Decoupling networks were required in order to avoid possible adverse effects on equipment not under test that may be powered by the same lines and to provide sufficient decoupling impedance to the surge wave. The power cord between the EUT and the coupling/decoupling network shall not exceed 2m in length. The EUT was conducted 1kV test voltage for line to line and line to neutral, and 2kV test voltage for line to earth and neutral to earth, five positive pulses and five negative pulses each at 90° and 270° for AC power ports and five positive pulses and five negative surge pulses for DC power ports. The test levels were applied with a 2Ω generator source impedance for power supply terminals and 40Ω output impedance for interconnection lines. Tests were done at repetition rate 1 per minute.",
+      "topic_tags": [
+        "Surge",
+        "test setup",
+        "1.2/50 µs",
+        "capacitive coupling",
+        "decoupling network",
+        "GRP",
+        "1kV",
+        "2kV"
+      ],
+      "related_subjects": [
+        "6.6.1",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For tests 6.5 (EFT) and 6.6 (Surge), the EUT is powered by batteries and therefore these clauses do not apply. All test parameters for 6.6 (Surge) and 6.7 (Conducted Immunity 0.15 MHz to 80 MHz) are listed as N/A.",
+      "topic_tags": [
+        "battery powered",
+        "not applicable",
+        "EFT",
+        "Surge",
+        "Conducted Immunity"
+      ],
+      "related_subjects": [
+        "6.5.2",
+        "6.6.2",
+        "6.7",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test Setup and Procedure for Conducted RF Immunity (6.7.1): The EUT was placed on an insulating support of 0.1m height above a ground reference plane, arranged and connected to satisfy its functional requirement. All cables exiting the EUT was supported at a height of at least 30 mm above the ground reference plane. The coupling and decoupling devices were required, they were located between 0.1m and 0.3m from the EUT. Each AE, used with clamp injection, shall be placed on an insulating support 0.1m above the ground reference plane. A decoupling network shall be installed on each cable between the EUT and AE except the cable under test. The frequency range was swept from 150 kHz to 80 MHz, using the signal levels established during the setting process, and with the disturbance signal 80% amplitude modulated with a 1kHz sine wave. Where the frequency was swept incrementally, the step size do not exceed 1% of the preceding frequency value. The dwell time at each frequency was not less than 0.5 s. During the test, the EUT was tested with the hand-held parts terminated with artificial hand.",
+      "topic_tags": [
+        "conducted RF immunity",
+        "clamp injection",
+        "test setup",
+        "frequency sweep",
+        "amplitude modulation",
+        "decoupling network"
+      ],
+      "related_subjects": [
+        "6.7",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test Setup and Procedure for Voltage Dips and Interruptions (6.8.1): The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The test was performed with the EUT connected to the test generator with the shortest power supply cable as specified by the EUT manufacturer. The EUT was tested for each selected combination of test level and duration with a sequence of three dips/interruptions with intervals of 10 s minimum. Each representative mode of operation was tested. For EUT with more than one power cord, each power cord was tested individually.",
+      "topic_tags": [
+        "voltage dips",
+        "interruptions",
+        "test setup",
+        "ground reference plane",
+        "power cord"
+      ],
+      "related_subjects": [
+        "6.8",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Both Voltage Dips and Interruptions (6.8) and Conducted RF Immunity via clamp injection (6.7) test results note that the EUT is powered by batteries and therefore these clauses do not apply.",
+      "topic_tags": [
+        "battery powered",
+        "N/A",
+        "exemption",
+        "voltage dips",
+        "conducted RF"
+      ],
+      "related_subjects": [
+        "6.7",
+        "6.8",
+        "EUT",
+        "power supply"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The EUT was configured and connected to satisfy its functional requirements. The power supply, input and output circuits was connected to the sources of power supply, control and signal. The cables supplied or recommended by the equipment manufacturer were used. In absence of any recommendation, unshielded cables were adopted, of a type appropriate for the signals involved. All cables were exposed to the magnetic field for 1m of their length. The EUT was subjected to the test magnetic field by using the induction coil of standard dimensions (1m×1m) by the immersion method. The induction coil was then be rotated by 90° in order to expose the EUT to the test field with different orientations. For floor-standing equipment the test was repeated by moving and shifting the induction coils, in order to test the whole volume of the EUT for each orthogonal direction.",
+      "topic_tags": [
+        "EMC",
+        "magnetic field immunity",
+        "test setup",
+        "GRP",
+        "induction coil",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01",
+        "IEC 60601-1-2:2014+A1:2020",
+        "clause 6.9"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "IEC 60601-1-2:2014+A1:2020/EN 60601-1-2:2015+A1:2021 Table 4 Remark d Applies only to ME EQUIPMENT and ME SYSTEMS with magnetically sensitive components or circuitry. The EUT does not contain magnetic sensing components or circuits (see Annex statement) and exempt from this test.",
+      "topic_tags": [
+        "exemption",
+        "magnetic sensing",
+        "Table 4",
+        "Remark d",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01",
+        "clause 6.9.2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "5.2.1.2 条款要求：对于依照CISPR 11被分类为A类的医用电气设备和医用电气系统，使用说明书中应包含以下说明：'本设备的排放特性使其适合用于工业区域和医院（CISPR 11 A类）。如果在住宅环境中使用（通常需要CISPR 11 B类），本设备可能无法为无线电频率通信服务提供足够的保护。用户可能需要采取缓解措施，例如重新定位或重新调整设备方向。' EUT实际符合B类限值，因此本条款判定为N/A。",
+      "topic_tags": [
+        "CISPR 11",
+        "Class A",
+        "Class B",
+        "EMC",
+        "使用说明",
+        "排放分类"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "IEC 60601-1-2:2014+A1:2020",
+        "5.2.1.2"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "5.2.2.2条款（屏蔽场所特殊环境要求）整体适用性说明：EUT（PT9L）不打算仅在屏蔽场所特殊环境中使用，因此5.2.2.2的所有子条款（a、b、c、d）均判定为N/A，不需要在技术文件中描述屏蔽场所相关规格、测试方法及进入限制告知等内容。",
+      "topic_tags": [
+        "屏蔽场所",
+        "Special Environment",
+        "射频屏蔽",
+        "N/A",
+        "适用范围"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "IEC 60601-1-2:2014+A1:2020",
+        "5.2.2.2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "5.2.2.1条款要求技术描述中须包含：(a) 本附属标准规定的每项排放和抗扰度标准或测试的合规性信息（如排放级别/组别及抗扰度测试等级）；(b) 与本附属标准的任何偏差及所用允许偏差（EUT进行了全项测试，无偏差）；(c) 在预期使用寿命内，针对电磁干扰维持基本安全和基本性能所需的全部说明。上述内容均参考文件PT9L-SMSY01 V1.0（使用说明书）。",
+      "topic_tags": [
+        "技术描述",
+        "EMC合规性",
+        "排放等级",
+        "抗扰度",
+        "使用寿命",
+        "基本安全",
+        "基本性能"
+      ],
+      "related_subjects": [
+        "PT9L-SMSY01 V1.0",
+        "IEC 60601-1-2:2014+A1:2020",
+        "5.2.2.1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.3: Requirements applicable to ME equipment that intentionally receive RF electromagnetic energy include the following information: each frequency or frequency of reception, the preferred frequency or frequency band if applicable, and the bandwidth of the receiving section of the ME Equipment in those bands. Result: N/A - Equipment does not intentionally receive RF electromagnetic energy.",
+      "topic_tags": [
+        "RF reception",
+        "EMC",
+        "IEC 60601-1-2",
+        "ME equipment",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.4: Requirements applicable to ME equipment that include RF transmitters - technical description includes the frequency or frequency band of transmission, the type and frequency characteristics of the modulation and the effective radiated power (ERP). Result: N/A - EUT does not include RF emission.",
+      "topic_tags": [
+        "RF transmitter",
+        "ERP",
+        "EMC",
+        "IEC 60601-1-2",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.5: Requirements applicable to Permanently Installed Large ME equipment and large ME systems - items (a), (b), (c) all marked N/A as the EUT (PT9L) is not a permanently installed large ME system. Items include: exemption statement for radiated RF immunity not tested over 80 MHz to 6 GHz; WARNING about testing only at selected frequencies; list of frequencies and modulations used for immunity testing.",
+      "topic_tags": [
+        "permanently installed",
+        "large ME system",
+        "radiated RF immunity",
+        "80MHz-6GHz",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "IEC 60601-1-2:2014+A1:2020 Clause 5.2.2.6: Requirements applicable to ME equipment that claim compatibility with HF Surgical equipment - technical description includes a statement of HF Surgical Equipment compatibility and the conditions of intended use during HF Surgery. Result: N/A - The EUT does not claim compatibility with HF Surgical equipment.",
+      "topic_tags": [
+        "HF surgical equipment",
+        "compatibility",
+        "EMC",
+        "IEC 60601-1-2",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Test photographs section (Section 8) documents the following test setups for PT9L EMC testing: 8.1 Radiated Emission Test Setup (Mode 1 and Mode 2); 8.2 ESD Test Setup (Discharge position, Mode 1 and Mode 2); 8.3 Radiated Immunity Test Setup (Mode 1 and Mode 2); 8.4 Proximity Fields from RF Wireless Communications Equipment Test Setup (Battery Power 385MHz~1970MHz; Battery Power 2450MHz~5785MHz); 8.5 EUT photographs.",
+      "topic_tags": [
+        "test setup",
+        "photographs",
+        "radiated emission",
+        "ESD",
+        "radiated immunity",
+        "proximity fields",
+        "RF wireless"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "req_id": "Conducted_Emission_Limit",
+      "description": "Conducted emission limits at mains terminals",
+      "details": [
+        {
+          "frequency_range_MHz": "0.15 to 0.50",
+          "quasi_peak_dBuV": "66-56",
+          "average_dBuV": "56-46"
+        },
+        {
+          "frequency_range_MHz": "0.50 to 5",
+          "quasi_peak_dBuV": "56",
+          "average_dBuV": "46"
+        },
+        {
+          "frequency_range_MHz": "5 to 30",
+          "quasi_peak_dBuV": "60",
+          "average_dBuV": "50"
+        }
+      ],
+      "note": "The lower limit is applicable at the transition frequency."
+    },
+    {
+      "req_id": "Radiated_Emission_Limit",
+      "description": "Radiated emission quasi-peak limits for Group 1, Class B",
+      "details": [
+        {
+          "frequency_range_MHz": "30 to 230",
+          "quasi_peak_limit": "40 dB(µV/m)"
+        },
+        {
+          "frequency_range_MHz": "230 to 1000",
+          "quasi_peak_limit": "47 dB(µV/m)"
+        }
+      ],
+      "note": "At transitional frequencies the lower limit applies."
+    },
+    {
+      "requirement_id": "IMM-CRIT-ESD",
+      "description": "During ESD immunity test, EUT is tested in UE1 mode. Basic safety performance: Measurement accuracy ±0.2℃ at 35.0℃~42.0℃, other ranges ±0.3℃. EUT working condition visually inspected, set at 37℃. Temperature continuously measured and compared with blackbody temperature. Display accuracy shall not exceed ±0.2℃.",
+      "test_name": "Electrostatic Discharges",
+      "means_of_monitoring": "Visual"
+    },
+    {
+      "requirement_id": "IMM-CRIT-NOTE1",
+      "description": "Specific, detailed immunity pass/fail criteria shall be based on applicable part two standards or risk management, for immunity with regard to EM disturbances. These pass/fail criteria shall be included in the risk management file.",
+      "source": "IEC 60601-1-2:2014+A1:2020 Note 1"
+    },
+    {
+      "req_id": "6.4-setup-1",
+      "description": "For table-top equipment, EUT placed on non-conductive table 0.8m high; for floor-standing equipment, mounted on non-conductive support 0.1m above supporting plane."
+    },
+    {
+      "req_id": "6.4-setup-2",
+      "description": "A minimum of 1m of cable exposed to electromagnetic field; excess cable bundled low-inductively in approximate center to form bundle 30–40cm in length."
+    },
+    {
+      "req_id": "6.4-setup-3",
+      "description": "EUT initially placed with one face coincident with the calibration plane; illuminated face contained within the UFA (Uniform Field Area)."
+    },
+    {
+      "req_id": "6.4-setup-4",
+      "description": "Test distances: 3m for frequencies between 1970MHz and 5785MHz; 2.5m for frequencies between 385MHz and 1970MHz."
+    },
+    {
+      "req_id": "6.4-setup-5",
+      "description": "Dwell time of amplitude modulated carrier at each frequency not less than time necessary for EUT to be exercised and respond, and not less than 1s."
+    },
+    {
+      "req_id": "6.4-setup-6",
+      "description": "Test performed with generating antenna facing each side of EUT."
+    },
+    {
+      "req_id": "6.4-setup-7",
+      "description": "Each selected side tested twice: once with antenna vertical and once with antenna horizontal."
+    },
+    {
+      "req_id": "6.4-setup-8",
+      "description": "EUT performance monitored via video camera and/or audio monitor during testing."
+    },
+    {
+      "clause": "4",
+      "title": "GENERAL REQUIREMENTS",
+      "standard": "IEC 60601-1-2:2014+A1:2020"
+    },
+    {
+      "clause": "4.1",
+      "title": "Risks from reasonably foreseeable electromagnetic disturbances",
+      "requirement": "Risks resulting from reasonably foreseeable electromagnetic disturbances taken into account in the risk management process.",
+      "result_remark": "RMF Reference Document: PT9L-FXPJ01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2",
+      "title": "Non-ME equipment used in ME system",
+      "requirement": "Non-ME equipment used in an ME system shall comply with IEC and ISO EMC standards applicable to that equipment.",
+      "result_remark": "EUT does not contain non-ME equipment.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.3.1",
+      "title": "Configurations",
+      "requirement": "ME equipment and ME systems tested in representative configurations consistent with intended use, most likely to result in unacceptable risk.",
+      "result_remark": "See Chapter 5.3 and RMF Reference Document: PT9L-FXPJ01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3.3",
+      "title": "Power input and frequencies",
+      "result_remark": "See Chapter 5.2 for reference",
+      "verdict": "P"
+    },
+    {
+      "clause": "5",
+      "title": "IDENTIFICATION, MARKING AND DOCUMENTS",
+      "standard": "IEC 60601-1-2:2014+A1:2020"
+    },
+    {
+      "clause": "5.1",
+      "title": "Marking for shielded location special environment",
+      "requirement": "ME equipment and ME systems specified for use only in a shielded location shall be labelled with a clearly legible warning.",
+      "result_remark": "The EUT does not specify use only in a shielded location special environment.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2",
+      "title": "ACCOMPANYING DOCUMENTS",
+      "standard": "IEC 60601-1-2:2014+A1:2020"
+    },
+    {
+      "clause": "5.2.1",
+      "title": "Instructions for Use – General",
+      "sub_items": [
+        {
+          "sub_clause": "a",
+          "requirement": "A statement of the environments for which the ME equipment or ME system is suitable. Relevant exclusions determined by risk analysis are listed.",
+          "result_remark": "Reference Document: PT9L-SMSY01 V1.0",
+          "verdict": "P"
+        },
+        {
+          "sub_clause": "b",
+          "requirement": "The essential performance of ME equipment and a description of what the operator can expect if the essential performance is lost or degraded due to EM disturbances.",
+          "result_remark": "Reference Document: PT9L-SMSY01 V1.0",
+          "verdict": "P"
+        },
+        {
+          "sub_clause": "c",
+          "requirement": "A warning regarding stacking and location close to other equipment.",
+          "result_remark": "Reference Document: PT9L-SMSY01 V1.0",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "5.2.2.3",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Requirements applicable to ME equipment that intentionally receive RF electromagnetic energy: each frequency or frequency of reception, preferred frequency or frequency band if applicable, and bandwidth of the receiving section in those bands",
+      "result": "N/A - Equipment does not intentionally receive RF electromagnetic energy",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.4",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Requirements applicable to ME equipment that include RF transmitters: technical description includes frequency or frequency band of transmission, type and frequency characteristics of modulation, and effective radiated power (ERP)",
+      "result": "N/A - EUT does not include RF emission",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.5a",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Permanently Installed Large ME equipment and large ME systems: statement that an exemption has been used and that the equipment has not been tested for radiated RF immunity over the entire frequency range 80 MHz to 6 GHz",
+      "result": "N/A - The EUT is not a permanently installed large ME system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.5b",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Permanently Installed Large ME equipment WARNING: equipment tested for radiated RF immunity only at selected frequencies, use nearby of emitters at other frequencies could result in improper operation",
+      "result": "N/A - The EUT is not a permanently installed large ME system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.5c",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Permanently Installed Large ME equipment: list of frequencies and modulations used to test the immunity of the ME equipment or ME systems",
+      "result": "N/A - The EUT is not a permanently installed large ME system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "5.2.2.6",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Requirements applicable to ME equipment that claim compatibility with HF Surgical equipment: technical description includes a statement of HF Surgical Equipment compatibility and the conditions of intended use during HF Surgery",
+      "result": "N/A - The EUT does not claim compatibility with HF Surgical equipment",
+      "verdict": "N/A"
+    }
+  ],
+  "_meta": {
+    "source_file": "实验报告/最终报告/2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+    "doc_type": "general"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "EUT mode",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BDB15",
+      "to": "EUT mode",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Radiated Emission",
+      "to": "EUT mode",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Electromagnetic Susceptibility",
+      "to": "EUT mode",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "emission test setup",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EMI",
+      "to": "emission test setup",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EMS",
+      "to": "emission test setup",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "submitted documents",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "submitted documents",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "measurement uncertainty",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "measurement uncertainty",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Radiated Emissions test",
+      "to": "radiated emission",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CISPR11",
+      "to": "radiated emission",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "radiated emission",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Conducted Emissions on Mains Terminals",
+      "to": "battery-powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "battery-powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2",
+      "to": "EMC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Electromagnetic Susceptibility Test",
+      "to": "EMC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "EMC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2",
+      "to": "pass criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Electromagnetic Susceptibility Test",
+      "to": "pass criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2",
+      "to": "acceptable degradation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Electromagnetic Susceptibility Test",
+      "to": "acceptable degradation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2",
+      "to": "essential performance",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Electromagnetic Susceptibility Test",
+      "to": "essential performance",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Radiated Emission Test",
+      "to": "radiated emission",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "radiated emission",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "ESD",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "ESD",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ESD Immunity Test",
+      "to": "ESD",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "pass/fail criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk management file",
+      "to": "pass/fail criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.2_ESD_Indirect",
+      "to": "ESD",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "ESD",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.3_Radiated_Immunity",
+      "to": "radiated immunity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 61000-4-3",
+      "to": "radiated immunity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "temperature accuracy",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Radiated Immunity",
+      "to": "temperature accuracy",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Proximity Fields RF",
+      "to": "temperature accuracy",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2 clause 6.1",
+      "to": "temperature accuracy",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "adaptor",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Radiated Immunity",
+      "to": "adaptor",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Proximity Fields RF",
+      "to": "adaptor",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.5.1",
+      "to": "EFT",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "EFT",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EUT",
+      "to": "EFT",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.6.1",
+      "to": "Surge",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "Surge",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EUT",
+      "to": "Surge",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.5.2",
+      "to": "battery powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.6.2",
+      "to": "battery powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.7",
+      "to": "battery powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EUT",
+      "to": "battery powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.7",
+      "to": "conducted RF immunity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "conducted RF immunity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EUT",
+      "to": "conducted RF immunity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.8",
+      "to": "voltage dips",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "voltage dips",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EUT",
+      "to": "voltage dips",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6.8",
+      "to": "battery powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "power supply",
+      "to": "battery powered",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "EMC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "EMC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clause 6.9",
+      "to": "EMC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "exemption",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "exemption",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clause 6.9.2",
+      "to": "exemption",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "CISPR 11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "CISPR 11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5.2.1.2",
+      "to": "CISPR 11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "屏蔽场所",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "屏蔽场所",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5.2.2.2",
+      "to": "屏蔽场所",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SMSY01 V1.0",
+      "to": "技术描述",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "技术描述",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5.2.2.1",
+      "to": "技术描述",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "RF reception",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "RF reception",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "RF transmitter",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "RF transmitter",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "permanently installed",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "permanently installed",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60601-1-2:2014+A1:2020",
+      "to": "permanently installed",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "HF surgical equipment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "HF surgical equipment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "test setup",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-01",
+      "to": "test setup",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "传导发射限值",
+      "attribute": "准峰值限值",
+      "value": "66-56",
+      "unit": "dBµV",
+      "tolerance": "",
+      "condition": "频率范围0.15~0.50 MHz，电源端子",
+      "raw_text": "frequency_range_MHz: 0.15 to 0.50, quasi_peak_dBuV: 66-56"
+    },
+    {
+      "subject": "传导发射限值",
+      "attribute": "平均值限值",
+      "value": "56-46",
+      "unit": "dBµV",
+      "tolerance": "",
+      "condition": "频率范围0.15~0.50 MHz，电源端子",
+      "raw_text": "frequency_range_MHz: 0.15 to 0.50, average_dBuV: 56-46"
+    },
+    {
+      "subject": "传导发射限值",
+      "attribute": "准峰值限值",
+      "value": "56",
+      "unit": "dBµV",
+      "tolerance": "",
+      "condition": "频率范围0.50~5 MHz，电源端子",
+      "raw_text": "frequency_range_MHz: 0.50 to 5, quasi_peak_dBuV: 56"
+    },
+    {
+      "subject": "传导发射限值",
+      "attribute": "平均值限值",
+      "value": "46",
+      "unit": "dBµV",
+      "tolerance": "",
+      "condition": "频率范围0.50~5 MHz，电源端子",
+      "raw_text": "frequency_range_MHz: 0.50 to 5, average_dBuV: 46"
+    },
+    {
+      "subject": "传导发射限值",
+      "attribute": "准峰值限值",
+      "value": "60",
+      "unit": "dBµV",
+      "tolerance": "",
+      "condition": "频率范围5~30 MHz，电源端子",
+      "raw_text": "frequency_range_MHz: 5 to 30, quasi_peak_dBuV: 60"
+    },
+    {
+      "subject": "传导发射限值",
+      "attribute": "平均值限值",
+      "value": "50",
+      "unit": "dBµV",
+      "tolerance": "",
+      "condition": "频率范围5~30 MHz，电源端子",
+      "raw_text": "frequency_range_MHz: 5 to 30, average_dBuV: 50"
+    },
+    {
+      "subject": "辐射发射限值",
+      "attribute": "准峰值限值",
+      "value": "40",
+      "unit": "dB(µV/m)",
+      "tolerance": "",
+      "condition": "频率范围30~230 MHz，Group 1 Class B",
+      "raw_text": "frequency_range_MHz: 30 to 230, quasi_peak_limit: 40 dB(µV/m)"
+    },
+    {
+      "subject": "辐射发射限值",
+      "attribute": "准峰值限值",
+      "value": "47",
+      "unit": "dB(µV/m)",
+      "tolerance": "",
+      "condition": "频率范围230~1000 MHz，Group 1 Class B",
+      "raw_text": "frequency_range_MHz: 230 to 1000, quasi_peak_limit: 47 dB(µV/m)"
+    },
+    {
+      "subject": "测量精度",
+      "attribute": "允差",
+      "value": "±0.2",
+      "unit": "℃",
+      "tolerance": "±0.2℃",
+      "condition": "温度范围35.0℃~42.0℃，ESD免疫测试",
+      "raw_text": "Measurement accuracy ±0.2℃ at 35.0℃~42.0℃"
+    },
+    {
+      "subject": "测量精度",
+      "attribute": "允差",
+      "value": "±0.3",
+      "unit": "℃",
+      "tolerance": "±0.3℃",
+      "condition": "温度范围35.0℃~42.0℃以外，ESD免疫测试",
+      "raw_text": "other ranges ±0.3℃"
+    },
+    {
+      "subject": "显示精度",
+      "attribute": "允差",
+      "value": "±0.2",
+      "unit": "℃",
+      "tolerance": "±0.2℃",
+      "condition": "ESD测试，设定温度37℃，与黑体温度比较",
+      "raw_text": "Display accuracy shall not exceed ±0.2℃"
+    },
+    {
+      "subject": "EUT设定温度",
+      "attribute": "测试设定值",
+      "value": "37",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "ESD免疫测试，目视检查工作状态",
+      "raw_text": "EUT working condition visually inspected, set at 37℃"
+    },
+    {
+      "subject": "台式设备测试台高度",
+      "attribute": "高度",
+      "value": "0.8",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "台式设备，非导电台面",
+      "raw_text": "EUT placed on non-conductive table 0.8m high"
+    },
+    {
+      "subject": "落地设备测试支撑高度",
+      "attribute": "高度",
+      "value": "0.1",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "落地式设备，非导电支撑",
+      "raw_text": "mounted on non-conductive support 0.1m above supporting plane"
+    },
+    {
+      "subject": "暴露电缆长度",
+      "attribute": "最小长度",
+      "value": "1",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "电磁场照射，多余电缆低感抗捆扎",
+      "raw_text": "A minimum of 1m of cable exposed to electromagnetic field"
+    },
+    {
+      "subject": "电缆捆扎长度",
+      "attribute": "范围",
+      "value": "30-40",
+      "unit": "cm",
+      "tolerance": "",
+      "condition": "多余电缆低感抗捆扎于中心位置",
+      "raw_text": "excess cable bundled low-inductively in approximate center to form bundle 30–40cm in length"
+    },
+    {
+      "subject": "测试距离",
+      "attribute": "距离",
+      "value": "3",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "频率范围1970 MHz~5785 MHz",
+      "raw_text": "3m for frequencies between 1970MHz and 5785MHz"
+    },
+    {
+      "subject": "测试距离",
+      "attribute": "距离",
+      "value": "2.5",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "频率范围385 MHz~1970 MHz",
+      "raw_text": "2.5m for frequencies between 385MHz and 1970MHz"
+    },
+    {
+      "subject": "驻留时间",
+      "attribute": "最小值",
+      "value": "1",
+      "unit": "s",
+      "tolerance": "",
+      "condition": "调幅载波在每个频率点的驻留时间，EUT需充分响应",
+      "raw_text": "Dwell time of amplitude modulated carrier at each frequency not less than 1s"
+    },
+    {
+      "subject": "辐射发射测试频率范围",
+      "attribute": "范围",
+      "value": "30~1000",
+      "unit": "MHz",
+      "tolerance": "",
+      "condition": "半消声室，CISPR11 Group 1 Class B",
+      "raw_text": "Radiated Emissions, frequency_range: 30 MHz to 1 GHz"
+    },
+    {
+      "subject": "辐射发射测试环境温度",
+      "attribute": "测试温度",
+      "value": "28",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "辐射发射测试，2024-07-05",
+      "raw_text": "temperature_humidity: 28℃ 52%"
+    },
+    {
+      "subject": "辐射发射测试湿度",
+      "attribute": "测试湿度",
+      "value": "52",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "辐射发射测试，2024-07-05",
+      "raw_text": "temperature_humidity: 28℃ 52%"
+    },
+    {
+      "subject": "辐射发射测试电源",
+      "attribute": "供电电压",
+      "value": "3",
+      "unit": "V DC",
+      "tolerance": "",
+      "condition": "辐射发射测试",
+      "raw_text": "power_supply: DC 3V"
+    },
+    {
+      "subject": "辐射发射测试场地",
+      "attribute": "测试距离",
+      "value": "3",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "半消声室",
+      "raw_text": "test_site: 3m Semi-anechoic chamber"
+    },
+    {
+      "subject": "天线扫描高度",
+      "attribute": "范围",
+      "value": "1~4",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "辐射发射测试，天线升降",
+      "raw_text": "antenna raised and lowered from 1 to 4 meters"
+    },
+    {
+      "subject": "ESD空气放电电压",
+      "attribute": "测试电压",
+      "value": "±2, 4, 8, 15",
+      "unit": "kV",
+      "tolerance": "",
+      "condition": "ESD免疫测试，IEC 61000-4-2",
+      "raw_text": "air_discharge_voltages: ±2, 4, 8, 15kV"
+    },
+    {
+      "subject": "ESD接触放电电压",
+      "attribute": "测试电压",
+      "value": "±8",
+      "unit": "kV",
+      "tolerance": "",
+      "condition": "ESD免疫测试，IEC 61000-4-2",
+      "raw_text": "contact_discharge_voltage: ±8kV"
+    },
+    {
+      "subject": "ESD VCP/HCP放电电压",
+      "attribute": "测试电压",
+      "value": "±8",
+      "unit": "kV",
+      "tolerance": "",
+      "condition": "ESD免疫测试，垂直/水平耦合板",
+      "raw_text": "vcp_hcp_voltage: ±8kV"
+    },
+    {
+      "subject": "ESD放电次数",
+      "attribute": "最小次数",
+      "value": "10",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "每个测试点，单次放电模式",
+      "raw_text": "number_of_discharges: Minimum 10 times at each test point"
+    },
+    {
+      "subject": "ESD放电间隔",
+      "attribute": "最小间隔",
+      "value": "1",
+      "unit": "s",
+      "tolerance": "",
+      "condition": "单次放电模式",
+      "raw_text": "discharge_period: 1 second minimum"
+    },
+    {
+      "subject": "ESD测试环境温度",
+      "attribute": "测试温度",
+      "value": "28",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "ESD免疫测试，2024-07-29",
+      "raw_text": "environmental_conditions: temperature: 28℃"
+    },
+    {
+      "subject": "ESD测试湿度",
+      "attribute": "测试湿度",
+      "value": "44",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "ESD免疫测试，2024-07-29",
+      "raw_text": "environmental_conditions: humidity: 44%"
+    },
+    {
+      "subject": "ESD测试气压",
+      "attribute": "测试气压",
+      "value": "101",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "ESD免疫测试，2024-07-29",
+      "raw_text": "environmental_conditions: pressure: 101kPa"
+    },
+    {
+      "subject": "ESD测试电源",
+      "attribute": "供电电压",
+      "value": "3",
+      "unit": "V DC",
+      "tolerance": "",
+      "condition": "ESD免疫测试",
+      "raw_text": "power_supply: DC 3V"
+    },
+    {
+      "subject": "传导发射测试频率范围",
+      "attribute": "范围",
+      "value": "150 kHz~30",
+      "unit": "MHz",
+      "tolerance": "",
+      "condition": "电源端子传导发射，CISPR11 Group 1 Class B",
+      "raw_text": "Conducted Emission (150 kHz to 30 MHz)"
+    }
+  ]
+}

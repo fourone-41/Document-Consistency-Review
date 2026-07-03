@@ -14,62 +14,62 @@
     {
       "item_type": "存储器",
       "name": "RAM",
-      "description": "单片机内部RAM",
-      "value": "1K字节"
+      "value": "1K字节",
+      "run_environment": "单片机内部"
     },
     {
       "item_type": "存储器",
       "name": "ROM",
-      "description": "单片机内部ROM",
-      "value": "16K字节"
+      "value": "16K字节",
+      "run_environment": "单片机内部"
     },
     {
       "item_type": "存储器",
       "name": "EEPROM",
-      "description": "外部存储器件",
-      "value": ">=256字节"
+      "value": ">=256字节",
+      "run_environment": "单片机外部/内部"
     }
   ],
   "functions": [
     {
       "name": "初始化功能",
-      "description": "上电后或关机态按按键开机并打开LCD显示；MCU系统功能初始化，配置相关模块和功能设置"
+      "description": "在上电后或者关机态，按按键，体温计能开机并打开LCD显示；MCU系统功能初始化，配置相关模块和功能设置。"
     },
     {
       "name": "关机功能",
-      "description": "测量结束后15秒无按键自动关机；测量模式设置界面3秒无按键自动关机"
+      "description": "测量结束后不管是否测量成功，如果没有按键按下，机器会在15秒后自动关机；测量模式设置界面设置完成后，没有按键按下，机器会在3秒后自动关机。"
     },
     {
       "name": "LCD显示功能",
-      "description": "LCD显示包括测量结果数字显示、℃图标、℉图标、电池图标、静音图标、体温图标、物温图标"
+      "description": "LCD显示包括测量结果的数字显示，℃图标，℉图标，电池图标，静音图标，体温图标，物温图标。"
     },
     {
       "name": "蜂鸣器提示功能",
-      "description": "测试完成、设置完成及按键操作时有蜂鸣器提示音，提示音可随时关闭"
+      "description": "在测试完成、设置完成以及按键操作时应该有蜂鸣器提示音，同时提示音也可以随时关闭。"
     },
     {
       "name": "低电压检测功能",
-      "description": "低电提示分两阶段：第一阶段保证设备至少能测量20次；第二阶段设备关机"
+      "description": "低电提示分两阶段，当电量低于第一阶段时，能够保证设备至少能测量20次；当电量低于第二阶段时，设备关机。"
     },
     {
       "name": "测量模式设置功能",
-      "description": "通过设置按键选择婴儿体温、成人体温、物温模式"
+      "description": "通过设置按键选择婴儿体温、成人体温、物温模式。"
     },
     {
       "name": "单位切换功能",
-      "description": "通过按键切换摄氏度和华氏度单位"
+      "description": "通过按键切换摄氏度和华氏度单位。"
     },
     {
       "name": "测量功能",
-      "description": "短按测量按键1秒内完成测量；长按按键2秒完成深度测量；测量结束后蜂鸣器提示并LCD显示测量结果"
+      "description": "短按测量按键，1秒内完成测量，测量结束后蜂鸣器提示，且LCD显示测量结果；深度测量，长按按键2秒后完成测量，测量结束后蜂鸣器提示，且LCD显示测量结果。"
     },
     {
       "name": "错误检测功能",
-      "description": "工作环境温度超出范围给出错误提示；测量结果超出量程给出提示"
+      "description": "工作环境温度超出范围给出错误提示；测量结果超出量程，给出提示。"
     },
     {
       "name": "记忆功能",
-      "description": "能够存储40条测量数据，并支持查看"
+      "description": "能够存储40条测量数据，并支持查看。"
     }
   ],
   "persons": [
@@ -134,8 +134,8 @@
       "topic_tags": [
         "预期用途",
         "用户特征",
-        "适用人群",
-        "使用环境"
+        "使用场景",
+        "体温测量"
       ],
       "related_subjects": [
         "PT9L红外体温计",
@@ -144,70 +144,69 @@
     },
     {
       "fragment_type": "behavioral_spec",
-      "content": "人机交互描述：测量：上电后系统进行初始化设置，LCD全屏显示。待显示关闭之后，对准被测额面按下测量按键，1秒内测量结束后，LCD显示测量结果，当电池电量不足时，LCD在显示结果时会同时显示电池符号提醒，蜂鸣器也会给出蜂鸣提示。",
+      "content": "人机交互描述-测量：上电后系统进行初始化设置，LCD全屏显示。待显示关闭之后，对准被测额面按下测量按键，1秒内测量结束后，LCD显示测量结果，当电池电量不足时，LCD在显示结果时会同时显示电池符号提醒，蜂鸣器也会给出蜂鸣提示。",
       "topic_tags": [
-        "人机交互",
+        "人机接口",
         "测量流程",
         "LCD显示",
         "蜂鸣器",
         "低电提示"
       ],
       "related_subjects": [
-        "LCD显示功能",
+        "初始化功能",
         "测量功能",
-        "蜂鸣器提示功能",
-        "低电压检测功能"
+        "低电压检测功能",
+        "LCD显示功能"
       ]
     },
     {
       "fragment_type": "constraint_statement",
-      "content": "错误描述：被测温度低于32℃或高于42.9℃；环境温度高于40℃或低于10℃。软件接受的阈值：人体温度显示范围最大42.9℃、最小32℃；环境温度最大40℃、最小10℃。响应时间：自动关机时间为连续15秒没有按键操作。",
+      "content": "软件与安全相关的要求：\n1. 危害：显示信息不明确；危害处境：患者、操作者将显示的信息理解错误；计划控制措施：软件控制显示的信息，说明书解释显示的信息。\n2. 危害：不正确的算法；危害处境：患者、操作者使用了算法不正确的设备；计划控制措施：软件控制。\n3. 危害：不正确的测试结果存储，包括结果分组和时间的对应；危害处境：患者、操作者查询错误的记忆值；计划控制措施：软件控制。",
       "topic_tags": [
-        "错误检测",
-        "温度范围",
-        "阈值",
-        "自动关机",
-        "量程"
+        "安全要求",
+        "危害分析",
+        "风险控制",
+        "软件安全"
       ],
       "related_subjects": [
-        "错误检测功能",
-        "关机功能",
+        "PT9L-FXPJ01 V1.0",
+        "LCD显示功能",
+        "记忆功能",
         "测量功能"
       ]
     },
     {
       "fragment_type": "constraint_statement",
-      "content": "软件信号输入：红外传感器信号输入、电池电量采集信号输入、按键触发信号输入、E2PROM数据读取。软件信号输出：蜂鸣器驱动信号、LCD显示信号输出。人机接口：键盘3个按键，显示1个LCD。",
+      "content": "软件接受的阈值或特殊值：人体温度显示范围：最大42.9℃、最小32℃；环境温度：最大40℃、最小10℃。错误描述：被测温度低于32℃或高于42.9℃；环境温度高于40℃或低于10℃。",
       "topic_tags": [
-        "信号输入",
-        "信号输出",
-        "人机接口",
-        "接口说明",
-        "键盘",
-        "LCD"
+        "阈值",
+        "量程",
+        "温度范围",
+        "错误检测"
       ],
       "related_subjects": [
-        "LCD显示功能",
-        "蜂鸣器提示功能",
-        "记忆功能",
-        "BH67F2762"
+        "错误检测功能",
+        "测量功能",
+        "性能要求"
       ]
     },
     {
-      "fragment_type": "constraint_statement",
-      "content": "软件与安全相关的要求：\n1. 危害：显示信息不明确，危害处境：患者、操作者将显示的信息理解错误，计划控制措施：软件控制显示的信息，说明书解释显示的信息；\n2. 危害：不正确的算法，危害处境：患者、操作者使用了算法不正确的设备，计划控制措施：软件控制；\n3. 危害：不正确的测试结果存储，包括结果分组和时间的对应，危害处境：患者、操作者查询错误的记忆值，计划控制措施：软件控制。",
+      "fragment_type": "behavioral_spec",
+      "content": "软件系统的信号输入：红外传感器信号输入、电池电量采集信号输入、按键触发信号输入、E2PROM数据读取。软件系统信号输出：蜂鸣器驱动信号、LCD显示信号输出。",
       "topic_tags": [
-        "安全要求",
-        "危害分析",
-        "风险控制",
-        "显示信息",
-        "算法",
-        "数据存储"
+        "信号输入",
+        "信号输出",
+        "接口",
+        "传感器",
+        "按键",
+        "蜂鸣器",
+        "LCD"
       ],
       "related_subjects": [
-        "PT9L-FXPJ01 V1.0",
-        "记忆功能",
-        "LCD显示功能"
+        "初始化功能",
+        "测量功能",
+        "LCD显示功能",
+        "蜂鸣器提示功能"
       ]
     },
     {
@@ -225,7 +224,7 @@
     },
     {
       "fragment_type": "behavioral_spec",
-      "content": "性能要求引用设计输入文件：引用《设计输入-功能部分》(PT9L-SRGN01 V1.0)全项功能要求；引用《设计输入-性能规格部分》(PT9L-SRXN01 V1.0)第1项温度显示范围、第2项显示分辨率、第3项测量误差、第4项工作环境、第5项存储环境。",
+      "content": "性能要求引用表：\n1. 《设计输入-功能部分》(PT9L-SRGN01 V1.0) 全项-功能要求\n2. 《设计输入-性能规格部分》(PT9L-SRXN01 V1.0) 第1项-温度显示范围\n3. 《设计输入-性能规格部分》(PT9L-SRXN01 V1.0) 第2项-显示分辨率\n4. 《设计输入-性能规格部分》(PT9L-SRXN01 V1.0) 第3项-测量误差\n5. 《设计输入-性能规格部分》(PT9L-SRXN01 V1.0) 第4项-工作环境\n6. 《设计输入-性能规格部分》(PT9L-SRXN01 V1.0) 第5项-存储环境",
       "topic_tags": [
         "性能要求",
         "设计输入",
@@ -290,68 +289,26 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "LCD显示功能",
-      "to": "人机交互",
+      "from": "初始化功能",
+      "to": "人机接口",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "测量功能",
-      "to": "人机交互",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "蜂鸣器提示功能",
-      "to": "人机交互",
+      "to": "人机接口",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "低电压检测功能",
-      "to": "人机交互",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "错误检测功能",
-      "to": "错误检测",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "关机功能",
-      "to": "错误检测",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "测量功能",
-      "to": "错误检测",
+      "to": "人机接口",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "LCD显示功能",
-      "to": "信号输入",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "蜂鸣器提示功能",
-      "to": "信号输入",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "记忆功能",
-      "to": "信号输入",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "BH67F2762",
-      "to": "信号输入",
+      "to": "人机接口",
       "properties": {}
     },
     {
@@ -362,14 +319,62 @@
     },
     {
       "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "安全要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
       "from": "记忆功能",
       "to": "安全要求",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
-      "from": "LCD显示功能",
+      "from": "测量功能",
       "to": "安全要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "错误检测功能",
+      "to": "阈值",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "阈值",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "性能要求",
+      "to": "阈值",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "初始化功能",
+      "to": "信号输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "信号输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "信号输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "蜂鸣器提示功能",
+      "to": "信号输入",
       "properties": {}
     },
     {
@@ -477,119 +482,145 @@
     {
       "type": "HAS_DETAIL",
       "from": "初始化功能",
-      "to": "behavioral_spec_人机交互描述",
-      "properties": {}
+      "to": "behavioral_spec_测量人机交互",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "content_summary": "上电后系统进行初始化设置，LCD全屏显示，对准被测额面按下测量按键，1秒内测量结束后LCD显示测量结果"
+      }
     },
     {
       "type": "HAS_DETAIL",
       "from": "测量功能",
-      "to": "behavioral_spec_人机交互描述",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "蜂鸣器提示功能",
-      "to": "behavioral_spec_人机交互描述",
-      "properties": {}
+      "to": "behavioral_spec_测量人机交互",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "content_summary": "上电后系统进行初始化设置，LCD全屏显示，对准被测额面按下测量按键，1秒内测量结束后LCD显示测量结果"
+      }
     },
     {
       "type": "HAS_DETAIL",
       "from": "低电压检测功能",
-      "to": "behavioral_spec_人机交互描述",
-      "properties": {}
+      "to": "behavioral_spec_测量人机交互",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "content_summary": "当电池电量不足时，LCD在显示结果时会同时显示电池符号提醒，蜂鸣器也会给出蜂鸣提示"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "behavioral_spec_测量人机交互",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "content_summary": "LCD显示测量结果，低电时显示电池符号"
+      }
     },
     {
       "type": "HAS_DETAIL",
       "from": "错误检测功能",
-      "to": "constraint_statement_错误描述",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "关机功能",
-      "to": "constraint_statement_错误描述",
-      "properties": {}
+      "to": "constraint_statement_阈值",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "content_summary": "人体温度显示范围32-42.9℃，环境温度10-40℃，超出范围给出错误描述"
+      }
     },
     {
       "type": "HAS_DETAIL",
       "from": "测量功能",
-      "to": "constraint_statement_错误描述",
-      "properties": {}
+      "to": "constraint_statement_阈值",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "content_summary": "人体温度显示范围32-42.9℃，环境温度10-40℃"
+      }
     },
     {
       "type": "HAS_DETAIL",
       "from": "LCD显示功能",
-      "to": "constraint_statement_信号输入输出",
-      "properties": {}
+      "to": "constraint_statement_安全要求",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "content_summary": "危害：显示信息不明确；计划控制措施：软件控制显示的信息"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "记忆功能",
+      "to": "constraint_statement_安全要求",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "content_summary": "危害：不正确的测试结果存储；危害处境：患者、操作者查询错误的记忆值；计划控制措施：软件控制"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "constraint_statement_安全要求",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "content_summary": "危害：不正确的算法；危害处境：患者、操作者使用了算法不正确的设备；计划控制措施：软件控制"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "初始化功能",
+      "to": "behavioral_spec_信号输入输出",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "content_summary": "软件系统信号输入输出描述"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "behavioral_spec_信号输入输出",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "content_summary": "红外传感器信号输入、电池电量采集信号输入、按键触发信号输入、E2PROM数据读取、蜂鸣器驱动信号、LCD显示信号输出"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD显示功能",
+      "to": "behavioral_spec_信号输入输出",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "content_summary": "LCD显示信号输出"
+      }
     },
     {
       "type": "HAS_DETAIL",
       "from": "蜂鸣器提示功能",
-      "to": "constraint_statement_信号输入输出",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "记忆功能",
-      "to": "constraint_statement_信号输入输出",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "BH67F2762",
-      "to": "constraint_statement_信号输入输出",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "记忆功能",
-      "to": "constraint_statement_安全要求",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "LCD显示功能",
-      "to": "constraint_statement_安全要求",
-      "properties": {}
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "PT9L-RJXQ01 V1.0",
-      "to": "PT9L-SJSR01 V1.0",
+      "to": "behavioral_spec_信号输入输出",
       "properties": {
-        "relation": "参考文件"
+        "fragment_type": "behavioral_spec",
+        "content_summary": "蜂鸣器驱动信号"
       }
     },
     {
-      "type": "LISTS_FILE",
+      "type": "HAS_DETAIL",
       "from": "PT9L-RJXQ01 V1.0",
-      "to": "PT9L-FXPJ01 V1.0",
+      "to": "behavioral_spec_软件测试规划",
       "properties": {
-        "relation": "参考文件"
+        "fragment_type": "behavioral_spec",
+        "content_summary": "本软件应进行单元测试/子程序测试、系统测试/整机测试、用户测试"
       }
     },
     {
-      "type": "LISTS_FILE",
+      "type": "HAS_DETAIL",
       "from": "PT9L-RJXQ01 V1.0",
-      "to": "PT9L-RJCH01 V1.0",
+      "to": "behavioral_spec_性能要求引用表",
       "properties": {
-        "relation": "参考文件"
+        "fragment_type": "behavioral_spec",
+        "content_summary": "引用PT9L-SRGN01 V1.0和PT9L-SRXN01 V1.0中的功能要求和性能规格"
       }
     },
     {
-      "type": "LISTS_FILE",
+      "type": "HAS_DETAIL",
       "from": "PT9L-RJXQ01 V1.0",
-      "to": "PT9L-SRGN01 V1.0",
+      "to": "scope_limitation_预期用途",
       "properties": {
-        "relation": "参考文件"
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "PT9L-RJXQ01 V1.0",
-      "to": "PT9L-SRXN01 V1.0",
-      "properties": {
-        "relation": "参考文件"
+        "fragment_type": "scope_limitation",
+        "content_summary": "适用于所有年龄段人群从额头皮肤表面间歇性测量体温，消费者家庭环境或医疗保健提供者使用"
       }
     },
     {
@@ -605,7 +636,7 @@
       "from": "PT9L-RJXQ01 V1.0",
       "to": "PT9L-FXPJ01 V1.0",
       "properties": {
-        "reason": "软件需求规格书参考风险分析文件"
+        "reason": "软件需求规格书参考风险分析文件，包含安全相关要求"
       }
     },
     {
@@ -613,7 +644,7 @@
       "from": "PT9L-RJXQ01 V1.0",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "性能要求引用设计输入-功能部分"
+        "reason": "功能要求全项来源于设计输入-功能部分"
       }
     },
     {
@@ -621,7 +652,7 @@
       "from": "PT9L-RJXQ01 V1.0",
       "to": "PT9L-SRXN01 V1.0",
       "properties": {
-        "reason": "性能要求引用设计输入-性能规格部分"
+        "reason": "性能要求来源于设计输入-性能规格部分"
       }
     },
     {
@@ -629,7 +660,7 @@
       "from": "初始化功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -637,7 +668,7 @@
       "from": "关机功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -645,7 +676,7 @@
       "from": "LCD显示功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -653,7 +684,7 @@
       "from": "蜂鸣器提示功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -661,7 +692,7 @@
       "from": "低电压检测功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -669,7 +700,7 @@
       "from": "测量模式设置功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -677,7 +708,7 @@
       "from": "单位切换功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -685,7 +716,7 @@
       "from": "测量功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -693,7 +724,7 @@
       "from": "错误检测功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -701,7 +732,7 @@
       "from": "记忆功能",
       "to": "PT9L-SRGN01 V1.0",
       "properties": {
-        "reason": "功能要求派生自设计输入-功能部分"
+        "reason": "功能需求派生自设计输入功能部分"
       }
     },
     {
@@ -709,7 +740,7 @@
       "from": "测量功能",
       "to": "PT9L-SRXN01 V1.0",
       "properties": {
-        "reason": "测量误差、温度显示范围等性能要求派生自设计输入-性能规格部分"
+        "reason": "测量误差、温度显示范围等性能要求派生自设计输入性能规格部分"
       }
     },
     {
@@ -717,7 +748,7 @@
       "from": "错误检测功能",
       "to": "PT9L-SRXN01 V1.0",
       "properties": {
-        "reason": "工作环境温度范围要求派生自设计输入-性能规格部分"
+        "reason": "工作环境温度范围要求派生自设计输入性能规格部分"
       }
     },
     {
@@ -725,7 +756,7 @@
       "from": "LCD显示功能",
       "to": "PT9L-SRXN01 V1.0",
       "properties": {
-        "reason": "显示分辨率、温度显示范围派生自设计输入-性能规格部分"
+        "reason": "显示分辨率要求派生自设计输入性能规格部分"
       }
     },
     {
@@ -733,7 +764,15 @@
       "from": "LCD显示功能",
       "to": "PT9L-FXPJ01 V1.0",
       "properties": {
-        "reason": "显示信息不明确的危害控制措施来源于风险分析"
+        "reason": "显示信息不明确危害的控制措施"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "测量功能",
+      "to": "PT9L-FXPJ01 V1.0",
+      "properties": {
+        "reason": "不正确算法危害的控制措施"
       }
     },
     {
@@ -741,7 +780,7 @@
       "from": "记忆功能",
       "to": "PT9L-FXPJ01 V1.0",
       "properties": {
-        "reason": "不正确的测试结果存储危害控制措施来源于风险分析"
+        "reason": "不正确测试结果存储危害的控制措施"
       }
     },
     {
@@ -749,7 +788,7 @@
       "from": "初始化功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "MCU运行本软件，初始化功能在MCU中实现"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -757,7 +796,7 @@
       "from": "关机功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "关机功能在MCU中实现"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -765,7 +804,7 @@
       "from": "LCD显示功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "LCD显示控制在MCU中实现"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -773,7 +812,7 @@
       "from": "蜂鸣器提示功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "蜂鸣器驱动信号由MCU输出"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -781,7 +820,7 @@
       "from": "低电压检测功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "电池电量采集信号由MCU处理"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -789,7 +828,7 @@
       "from": "测量模式设置功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "模式设置在MCU中实现"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -797,7 +836,7 @@
       "from": "单位切换功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "单位切换在MCU中实现"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -805,7 +844,7 @@
       "from": "测量功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "测量算法在MCU中实现"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -813,7 +852,7 @@
       "from": "错误检测功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "错误检测逻辑在MCU中实现"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -821,15 +860,7 @@
       "from": "记忆功能",
       "to": "BH67F2762",
       "properties": {
-        "reason": "记忆功能控制逻辑在MCU中实现"
-      }
-    },
-    {
-      "type": "IMPLEMENTED_IN",
-      "from": "记忆功能",
-      "to": "EEPROM",
-      "properties": {
-        "reason": "40条测量数据存储在外部EEPROM中"
+        "run_environment": "无操作系统"
       }
     },
     {
@@ -973,7 +1004,7 @@
     {
       "type": "COVERS",
       "from": "PT9L-FXPJ01 V1.0",
-      "to": "错误检测功能",
+      "to": "LCD显示功能",
       "properties": {}
     },
     {
@@ -985,7 +1016,7 @@
     {
       "type": "COVERS",
       "from": "PT9L-FXPJ01 V1.0",
-      "to": "LCD显示功能",
+      "to": "测量功能",
       "properties": {}
     },
     {
@@ -1078,30 +1109,39 @@
   "_claims": [
     {
       "subject": "自动关机",
-      "attribute": "延迟时间（测量结束后）",
+      "attribute": "延时时长（测量结束后）",
       "value": "15",
       "unit": "秒",
       "tolerance": "",
       "condition": "测量结束后无按键操作",
-      "raw_text": "测量结束后15秒无按键自动关机"
+      "raw_text": "测量结束后不管是否测量成功，如果没有按键按下，机器会在15秒后自动关机"
     },
     {
       "subject": "自动关机",
-      "attribute": "延迟时间（设置界面）",
+      "attribute": "延时时长（设置界面）",
       "value": "3",
       "unit": "秒",
       "tolerance": "",
-      "condition": "测量模式设置界面无按键操作",
-      "raw_text": "测量模式设置界面3秒无按键自动关机"
+      "condition": "测量模式设置界面设置完成后无按键操作",
+      "raw_text": "测量模式设置界面设置完成后，没有按键按下，机器会在3秒后自动关机"
     },
     {
       "subject": "低电压检测",
-      "attribute": "第一阶段最少可测量次数",
+      "attribute": "第一阶段剩余测量次数",
       "value": "20",
       "unit": "次",
       "tolerance": "",
-      "condition": "低电第一阶段",
-      "raw_text": "第一阶段保证设备至少能测量20次"
+      "condition": "电量低于第一阶段阈值时",
+      "raw_text": "当电量低于第一阶段时，能够保证设备至少能测量20次"
+    },
+    {
+      "subject": "低电压检测",
+      "attribute": "第二阶段动作",
+      "value": "关机",
+      "unit": "",
+      "tolerance": "",
+      "condition": "电量低于第二阶段阈值时",
+      "raw_text": "当电量低于第二阶段时，设备关机"
     },
     {
       "subject": "快速测量",
@@ -1110,20 +1150,20 @@
       "unit": "秒",
       "tolerance": "",
       "condition": "短按测量按键",
-      "raw_text": "短按测量按键1秒内完成测量"
+      "raw_text": "短按测量按键，1秒内完成测量"
     },
     {
       "subject": "深度测量",
-      "attribute": "完成时间",
+      "attribute": "长按触发时长",
       "value": "2",
       "unit": "秒",
       "tolerance": "",
       "condition": "长按测量按键",
-      "raw_text": "长按按键2秒完成深度测量"
+      "raw_text": "深度测量，长按按键2秒后完成测量"
     },
     {
       "subject": "记忆存储",
-      "attribute": "存储容量",
+      "attribute": "存储条数",
       "value": "40",
       "unit": "条",
       "tolerance": "",

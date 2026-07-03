@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Product Identity Agent",
+  "decision": "confirm",
+  "severity": "P1",
+  "error_type": "document_identification_error",
+  "claim": "PT9L DHF 设计确认文件夹（F0245）中的可用性检查清单存在产品标识不一致缺陷：文件标题行（H1）及文件名中嵌入了 'PT2L（美亚）-UETR01 V1.0' 字样，而文档编号（DN:PT9L-UETR01 V1.0）、正文 Model name（PT9L）、Project number（30000078）及归档路径均一致指向 PT9L 项目。综合判断为模板复用时标题行未同步更新，属于文档控制缺陷，而非错误归档。",
+  "reason": "基于已恢复的全量证据，可作出如下确定性判断：\n\n1. 【支持 Hypothesis A 的证据链】\n   - DN 行（line 16）明确标注 'PT9L-UETR01 V1.0'，文档编号前缀为 PT9L；\n   - 正文第1页（line 30-38）明确记载 Model name: PT9L、Project number: 30000078、Conclusion: Pass，三项正文字段均指向 PT9L；\n   - 归档路径为 '02_RnD_DHF/PT9L DHF-历史文件/设计确认/'，属于 PT9L DHF；\n   - 全部合规检查结果（IEC 60601-1-6 条款 4.0、4.2、5）均为 P（Pass），内容完整且自洽；\n   - 文件名前缀亦为 'PT9L Checklist of ...'，仅括号内保留了 'PT2L（美亚）' 字样。\n\n2. 【排除 Hypothesis B 的理由】\n   - 若为错误归档，则正文中 Model name、DN 编号、归档路径三处均需被篡改，概率极低且无篡改痕迹；\n   - 'PT2L（美亚）' 仅出现在标题行括号内及文件名中，属于孤立残留字段，符合模板复用时局部未更新的典型模式；\n   - 无任何证据显示 PT2L（美亚）项目使用 Project number 30000078。\n\n3. 【缺陷定性】\n   该文件标题行（H1）及文件名中残留 'PT2L（美亚）' 字样，构成 ISO 13485 §4.2.4 文件控制要求下的产品标识不一致缺陷（document identification error）。虽不影响实质合规结论，但在 DHF 审查、监管机构检查或技术文件提交时，标题与内容的不一致将引发可追溯性质疑，属于需纠正的文档控制问题，严重性维持 P1。\n\n4. 【建议措施】\n   应对该文件执行文件变更控制程序，将标题行及文件名中的 'PT2L（美亚）' 更新为 'PT9L'，确保标题、文档编号、正文内容三者一致，并记录变更原因（模板复用遗漏更新）。"
+}
+```

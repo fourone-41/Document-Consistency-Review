@@ -1,0 +1,626 @@
+{
+  "route_plans": [
+    {
+      "cycle": 1,
+      "decision": "continue",
+      "reason": "Cycle 1 — no agent runs have been executed yet. All five mandatory audit matrix checks (MATRIX-001 through MATRIX-005) are unassigned and uncovered. In addition, no candidate discovery has been performed. This cycle launches the full first-pass sweep: one Candidate Discovery Agent run to surface cross-model and document-control anomalies, plus all five domain agents executing their mandatory matrix checks in parallel. This maximises coverage and allows subsequent cycles to focus on confirmed candidates.",
+      "assignments": [
+        {
+          "assignment_id": "ASG-0001",
+          "target_agent": "Candidate Discovery Agent",
+          "task_type": "candidate_discovery",
+          "review_focus": "Identify all candidate consistency issues across the PT9L DHF/DMR corpus. Priority signals: (1) documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical or draft folders; (2) PT9C appearing as a PCB sub-component number vs. standalone product in clinical/user-test documents; (3) PT3SBT references in design output lists or label review documents filed under T1 sample folder; (4) BP3L software diagrams appearing in the main software design folder or T1 sample subfolder; (5) PT2L risk document F0013 carrying a PT9L document number internally despite residing in a '历史文件' subfolder; (6) version, revision, and approval-signature gaps across all document ID patterns (PT9L-KHXQ01, PT9L-KXPS01, PT9L-FXJH01, PT9L-FXGB01, PT9L-EBOM01, PT9L-T1EB01, PT9L-SJSC01, PT9C-CNTP01); (7) regulatory-standard applicability inconsistencies between draft and final design inputs (EN ISO 80601-2-56, MDR 2017/745, CE registration status).",
+          "input_refs": [
+            "PT9L-KHXQ01",
+            "PT9L-KXPS01",
+            "PT9L-FXJH01",
+            "PT9L-FXGB01",
+            "PT9L-EBOM01",
+            "PT9L-T1EB01",
+            "PT9L-SJSC01",
+            "PT9C-CNTP01",
+            "2L风险改 - 历史文件 folder",
+            "T1 sample folder"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-KHXQ01",
+              "PT9L-KXPS01",
+              "PT9L-FXJH01",
+              "PT9L-FXGB01",
+              "PT9L-EBOM01",
+              "PT9L-T1EB01",
+              "PT9L-SJSC01",
+              "PT9C-CNTP01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0002",
+          "target_agent": "Hardware Agent",
+          "task_type": "domain_review",
+          "review_focus": "MATRIX-001 — Design input to output parameter consistency for PT9L. Verify that key design-input parameters (measurement range, accuracy, response time, environmental conditions, Bluetooth specification, intended-use population, forehead measurement site) stated in the design input document (PT9L-KHXQ01 or equivalent) are carried forward without alteration or omission into design output documents (drawings, specifications, verification/validation test conditions). Flag any parameter value, unit, or scope discrepancy between design input and output layers. Also check whether PT9C PCB sub-component parameters are correctly scoped to PT9L system-level requirements rather than being inherited verbatim from a PT9C standalone specification.",
+          "input_refs": [
+            "PT9L-KHXQ01",
+            "PT9L-KXPS01",
+            "PT9L-FXJH01",
+            "PT9L-FXGB01",
+            "PT9L-EBOM01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-KHXQ01",
+              "PT9L-KXPS01",
+              "PT9L-FXJH01",
+              "PT9L-FXGB01",
+              "PT9L-EBOM01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0003",
+          "target_agent": "Risk Traceability Agent",
+          "task_type": "domain_review",
+          "review_focus": "MATRIX-002 — Risk-to-verification traceability chain for PT9L. Verify that every risk item identified in the Risk Management Report (which references Bluetooth transmission per project profile) has: (a) an assigned risk control measure, (b) a corresponding verification or validation activity, and (c) a closed-loop record confirming the control was implemented and effective. Specifically check: whether PT2L risk document F0013 (which carries a PT9L document number internally) introduces any risk items or controls that are not re-evaluated under PT9L-specific conditions; whether Bluetooth-related hazards are fully traced to verification tests; and whether any risk items reference PT9C, PT3SBT, or BP3L without a documented rationale for applicability to PT9L.",
+          "input_refs": [
+            "PT9L-KHXQ01",
+            "PT9L-FXJH01",
+            "PT9L-FXGB01",
+            "2L风险改 - 历史文件 folder",
+            "PT9L-T1EB01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-FXJH01",
+              "PT9L-FXGB01",
+              "PT9L-T1EB01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0004",
+          "target_agent": "Software Agent",
+          "task_type": "domain_review",
+          "review_focus": "MATRIX-003 — Software lifecycle traceability for PT9L. Verify that software requirements, architecture/design documents, unit and integration test records, software validation records, and the software traceability matrix are mutually consistent and all scoped to PT9L. Specifically investigate: (1) BP3L software diagrams appearing in the main PT9L software design folder and/or the T1 sample subfolder — determine whether these are shared-component references with documented rationale or erroneous inclusions; (2) whether the software version identifier in test records matches the version in the design document and the released BOM; (3) whether Bluetooth software requirements are traced to test cases and validation evidence; (4) whether any software document header, footer, or internal reference cites PT9C, PT3SBT, or BP3L as the primary product model without justification.",
+          "input_refs": [
+            "PT9L-KXPS01",
+            "PT9L-FXJH01",
+            "PT9L-T1EB01",
+            "T1 sample folder"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-KXPS01",
+              "PT9L-FXJH01",
+              "PT9L-T1EB01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0005",
+          "target_agent": "DMR/SOP Agent",
+          "task_type": "domain_review",
+          "review_focus": "MATRIX-004 — DMR chain consistency for PT9L. Verify consistency across: (a) Engineering BOM (PT9L-EBOM01) vs. manufacturing BOM and any released BOM revision; (b) process SOPs and work instructions vs. BOM line items; (c) incoming inspection and in-process inspection criteria vs. design output specifications; (d) packaging and labelling documents vs. approved label artwork and regulatory marking requirements; (e) design transfer records confirming DHF-to-DMR handoff completeness. Flag any BOM line item referencing PT9C, PT3SBT, or BP3L part numbers that lack a documented shared-component or sub-assembly justification. Also check whether PT3SBT references in the design output list and label review document filed under the T1 sample folder are reconciled with the released PT9L DMR.",
+          "input_refs": [
+            "PT9L-EBOM01",
+            "PT9L-SJSC01",
+            "PT9L-T1EB01",
+            "PT9L-FXGB01",
+            "T1 sample folder"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-EBOM01",
+              "PT9L-SJSC01",
+              "PT9L-T1EB01",
+              "PT9L-FXGB01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0006",
+          "target_agent": "Regulatory Agent",
+          "task_type": "domain_review",
+          "review_focus": "MATRIX-005 — Document control and regulatory completeness across all PT9L DHF/DMR stages. Verify: (1) controlled status, current revision level, and approval signatures for all documents matching PT9L document ID patterns (PT9L-KHXQ01, PT9L-KXPS01, PT9L-FXJH01, PT9L-FXGB01, PT9L-EBOM01, PT9L-T1EB01, PT9L-SJSC01) and PT9C-CNTP01; (2) whether the regulatory standard list is consistent between the draft design input and the final design input — specifically the applicability status of EN ISO 80601-2-56:2017+A1:2018, MDR 2017/745, and CE registration; (3) whether ASTM E1965-98:2016 and ASTM E1965-98:2023 are both cited and whether the transition between versions is documented; (4) whether the 510(k) registration responsibility assignment to 'andon' is documented in the DHF with a formal agreement or design transfer record; (5) whether PT9C-CNTP01 is a controlled PT9L DHF document or a standalone PT9C document incorrectly included, and whether its document-control record reflects the correct product scope.",
+          "input_refs": [
+            "PT9L-KHXQ01",
+            "PT9L-KXPS01",
+            "PT9L-FXJH01",
+            "PT9L-FXGB01",
+            "PT9L-EBOM01",
+            "PT9L-T1EB01",
+            "PT9L-SJSC01",
+            "PT9C-CNTP01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-KHXQ01",
+              "PT9L-KXPS01",
+              "PT9L-FXJH01",
+              "PT9L-FXGB01",
+              "PT9L-EBOM01",
+              "PT9L-T1EB01",
+              "PT9L-SJSC01",
+              "PT9C-CNTP01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        }
+      ],
+      "stop_conditions_checked": [
+        "No prior agent runs exist — stop condition (all matrix items covered) is not met.",
+        "No unresolvable ambiguity identified at this stage — human_review escalation not required for cycle 1.",
+        "All five mandatory matrix items are unassigned — continue is the correct decision."
+      ],
+      "human_review_items": []
+    },
+    {
+      "cycle": 2,
+      "decision": "continue",
+      "reason": "All five mandatory audit matrix checks (MATRIX-001 through MATRIX-005) have been executed by their assigned domain agents across RUN-0002 through RUN-0006. The corpus now contains 33 substantive findings across hardware, risk traceability, software, DMR/SOP, and regulatory dimensions. Two cross-cutting verification gaps remain unaddressed: (1) V&V Agent has not yet been assigned to close the risk-to-verification loop on specific hardware and software findings (Bluetooth hazard verification absence, object-temperature accuracy tolerance at out-of-range conditions, BP3L diagram contamination in verification context), and (2) several findings from multiple agents converge on shared document-control and product-identity threads that require a synthesis context-recheck to determine whether any findings can be grouped, escalated, or require human review before final report assembly. Assigning V&V Agent for verification gap closure and a final Regulatory Agent context-recheck for cross-finding synthesis is the safe next step.",
+      "assignments": [
+        {
+          "assignment_id": "ASG-0007",
+          "target_agent": "V&V Agent",
+          "task_type": "domain_review",
+          "review_focus": "Close the verification gap analysis for PT9L. Specifically: (1) Determine whether any verification or validation record in the DHF corpus confirms that the object-temperature mode accuracy tolerance of ±0.2 °C applied at 30 °C and 45 °C in software test plans is intentional and justified against the design-input specification (which requires ±0.2 °C only for ≥35 °C and ≤42 °C body-temperature range). (2) Determine whether any V&V record addresses Bluetooth-specific hazards or Bluetooth functional verification for PT9L, given that the Risk Management Report acknowledges Bluetooth transmission capability but no Bluetooth hazard verification evidence was found by the Risk Traceability Agent. (3) Determine whether the battery design-verification plan/report blood-pressure residue phrase (identified by Hardware Agent) appears in a pass/fail verdict section or only in a boilerplate/template section, and whether the overall battery verification record carries a signed pass verdict. (4) Identify whether any verification record explicitly references the PT9L-FXGB01 V2.0 risk report (rather than V1.0) as the controlling risk document for verification closure. (5) Confirm whether the IEC 60601-1 test report referencing software design document DN:PT9L-RJFA01 V1.0 (noted by Software Agent as absent from the evidence catalog) has any corresponding entry in the design output list or verification index.",
+          "input_refs": [
+            "RUN-0002",
+            "RUN-0003",
+            "RUN-0004",
+            "RUN-0006"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-KHXQ01",
+              "PT9L-FXGB01",
+              "PT9L-FXJH01",
+              "PT9L-EBOM01",
+              "PT9L-T1EB01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0008",
+          "target_agent": "Regulatory Agent",
+          "task_type": "context_recheck",
+          "review_focus": "Perform a cross-finding synthesis and escalation assessment across all completed agent runs (RUN-0002 through RUN-0006) to support final report assembly. Specifically: (1) Assess whether the IFT-prefixed document number on the active Risk Management Plan (IFT-FXJH01 vs. expected PT9L-FXJH01) constitutes a document-control nonconformance under the applicable SOP or whether it is a known legacy prefix with a documented transition record. (2) Assess whether the F0013 PT2L risk plan carrying a PT9L-series document number internally (identified by both Risk Traceability Agent and Regulatory Agent) represents a single root cause or two distinct nonconformances requiring separate corrective actions. (3) Assess whether the biocompatibility reports conducted on PT5 samples rather than PT9L samples are covered by any equivalence or shared-component justification in the DHF, or whether this constitutes an unmitigated gap for 510(k) and CE submissions. (4) Assess whether the operation guide reference to MDD rather than MDR for biocompatibility compliance is a live document in the controlled release set or a draft/historical artifact. (5) Identify any findings across all agent runs that, in combination, suggest a systemic document-control process failure (e.g., unsigned approvals appearing across risk, design output, and DMR documents simultaneously) that should be flagged as a systemic finding rather than individual point findings. (6) Confirm whether the dual ASTM E1965 version citation (1998:2016 and 1998:2023) appears in the same document or in different documents at different design stages, and whether any transition rationale document exists in the corpus.",
+          "input_refs": [
+            "RUN-0002",
+            "RUN-0003",
+            "RUN-0004",
+            "RUN-0005",
+            "RUN-0006"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-FXJH01",
+              "PT9L-FXGB01",
+              "PT9L-SJSC01",
+              "PT9C-CNTP01",
+              "PT9L-KXPS01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        }
+      ],
+      "stop_conditions_checked": [
+        {
+          "condition": "All mandatory audit matrix checks assigned and executed",
+          "status": "satisfied",
+          "detail": "MATRIX-001 through MATRIX-005 completed by Hardware Agent, Risk Traceability Agent, Software Agent, DMR/SOP Agent, and Regulatory Agent in RUN-0002 through RUN-0006 respectively."
+        },
+        {
+          "condition": "No unresolved routing deadlock or missing evidence preventing safe continuation",
+          "status": "satisfied",
+          "detail": "Sufficient corpus evidence exists for V&V Agent and Regulatory Agent context-recheck to proceed. No agent has reported a complete evidence blackout."
+        },
+        {
+          "condition": "No finding requires immediate human escalation before domain work completes",
+          "status": "pending",
+          "detail": "The biocompatibility sample identity gap (PT5 vs PT9L) and the F0013 document-number conflict are candidates for human review escalation pending Regulatory Agent synthesis in ASG-0008. Escalation decision deferred to post-ASG-0008 cycle."
+        }
+      ],
+      "human_review_items": []
+    },
+    {
+      "cycle": 3,
+      "decision": "continue",
+      "reason": "All five mandatory audit matrix checks (MATRIX-001 through MATRIX-005) have been completed by their assigned agents across RUN-0002 through RUN-0006, with a cross-run synthesis completed in RUN-0008. The corpus now contains substantive findings across hardware, risk traceability, software, DMR/SOP, and regulatory dimensions. However, several high-severity cross-cutting issues identified across multiple agent runs require consolidation and inter-agent cross-verification before the audit can be closed or escalated to human review. Specifically: (1) the Bluetooth hazard gap was independently flagged by Risk Traceability Agent, Software Agent, and V&V Agent but no single agent has been tasked to consolidate and determine whether any Bluetooth verification evidence exists anywhere in the corpus; (2) the version mismatch between PT9L-FXGB01 V1.0 (cited in verification records) and V2.0 (active risk report) was flagged by both Risk Traceability Agent and V&V Agent and requires a focused cross-document traceability recheck; (3) the biocompatibility sample identity issue (PT5 samples used for PT9L reports) flagged by Regulatory Agent requires Hardware Agent confirmation against design output and BOM records; and (4) the unsigned approval fields systemic finding requires DMR/SOP Agent to confirm whether the design transfer record and design output list are also unsigned, completing the document-control closure picture. One additional cross-cutting synthesis assignment is warranted to produce a consolidated finding register before human review.",
+      "assignments": [
+        {
+          "assignment_id": "ASG-0009",
+          "target_agent": "Risk Traceability Agent",
+          "task_type": "context_recheck",
+          "review_focus": "Bluetooth hazard traceability closure check. Three independent agents (Risk Traceability Agent RUN-0003, Software Agent RUN-0004, V&V Agent RUN-0007) have each reported absence of Bluetooth-specific hazard identification, risk control, and verification evidence. This recheck must: (1) search the full corpus for any document referencing Bluetooth, BLE, wireless, or RF in the context of PT9L hazard analysis or risk controls; (2) determine whether the Risk Management Report (PT9L-FXGB01 V2.0) contains a Bluetooth hazard entry and whether any corresponding verification record closes that control; (3) confirm whether the absence is a true gap or whether evidence exists in documents not yet retrieved; (4) assess whether the Bluetooth feature described in the project profile (PT9L transmits temperature to smart device via Bluetooth) is reflected anywhere in the ISO 14971 risk assessment chain. Do not confirm or dismiss the gap — locate and report all available evidence.",
+          "input_refs": [
+            "RUN-0003",
+            "RUN-0004",
+            "RUN-0007",
+            "PT9L-FXGB01",
+            "PT9L-FXJH01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-FXGB01",
+              "PT9L-FXJH01",
+              "IFT-FXJH01",
+              "F0071",
+              "F0074"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0010",
+          "target_agent": "V&V Agent",
+          "task_type": "context_recheck",
+          "review_focus": "Risk document version alignment in verification records. Risk Traceability Agent (RUN-0003) and V&V Agent (RUN-0007) both flagged that the design verification plan/report cites PT9L-FXGB01 V1.0 while the active risk management report is V2.0. This recheck must: (1) retrieve the design verification plan/report and identify every location where PT9L-FXGB01 is cited, recording the version number cited at each location; (2) retrieve PT9L-FXGB01 V2.0 and identify what changed between V1.0 and V2.0 — specifically whether any risk controls added or modified in V2.0 have corresponding verification activities in the verification plan/report; (3) determine whether any change record, amendment, or addendum to the verification plan/report acknowledges the V2.0 update; (4) assess whether the closed-loop confirmation between risk controls and verification activities is broken by this version mismatch. Do not render a finding verdict — locate and report all available evidence.",
+          "input_refs": [
+            "RUN-0003",
+            "RUN-0007",
+            "PT9L-FXGB01",
+            "PT9L-KXPS01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-FXGB01",
+              "PT9L-KXPS01",
+              "PT9L-KHXQ01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0011",
+          "target_agent": "Hardware Agent",
+          "task_type": "context_recheck",
+          "review_focus": "Biocompatibility sample identity cross-check against BOM and design output records. Regulatory Agent (RUN-0006) flagged that biocompatibility reports were conducted on PT5 samples rather than PT9L samples. This recheck must: (1) retrieve the biocompatibility report(s) and identify the sample description, part numbers, and product model cited in the test sample section; (2) cross-reference those sample part numbers against the PT9L EBOM (PT9L-EBOM01) and any PT9L hardware design output drawings to determine whether the tested samples are materially equivalent to PT9L production parts; (3) identify whether any material equivalence justification or sample bridging rationale document exists in the corpus; (4) check whether the PT5 designation corresponds to a predecessor model or a sub-assembly designation within the PT9L product family. Do not confirm or dismiss the finding — locate and report all available evidence.",
+          "input_refs": [
+            "RUN-0006",
+            "PT9L-EBOM01",
+            "PT9L-FXGB01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-EBOM01",
+              "PT9L-FXGB01",
+              "PT9L-KHXQ01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0012",
+          "target_agent": "DMR/SOP Agent",
+          "task_type": "context_recheck",
+          "review_focus": "Unsigned approval fields — design transfer record and design output list completeness. Regulatory Agent (RUN-0006 and RUN-0008) identified a systemic finding of unsigned approval fields across all risk management documents. DMR/SOP Agent (RUN-0005) identified blank approval-date fields in the design output list. This recheck must: (1) retrieve the design transfer record and confirm whether approval, review, and release signature fields are populated or blank; (2) retrieve the design output list (both versions if two exist) and confirm the specific fields that are blank versus populated; (3) check whether any separate design review meeting minutes, ECO records, or approval routing records exist in the corpus that could serve as the approval evidence even if the document header fields are blank; (4) determine whether the process instruction referencing EBOM without version pinning also lacks an approval signature. Do not confirm or dismiss findings — locate and report all available evidence.",
+          "input_refs": [
+            "RUN-0005",
+            "RUN-0006",
+            "RUN-0008",
+            "PT9L-EBOM01",
+            "PT9L-SJSC01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-SJSC01",
+              "PT9L-EBOM01",
+              "PT9L-T1EB01",
+              "PT9L-FXGB01",
+              "PT9L-FXJH01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        },
+        {
+          "assignment_id": "ASG-0013",
+          "target_agent": "Regulatory Agent",
+          "task_type": "context_recheck",
+          "review_focus": "F0013 product-identity conflict resolution and IFT-prefix document number scope. Risk Traceability Agent (RUN-0003) and Regulatory Agent (RUN-0006) both flagged that F0013 (a PT2L risk plan filed in the historical folder) internally carries a PT9L-series document number, and that the active Risk Management Plan carries an IFT-FXJH01 prefix rather than PT9L-FXJH01. This recheck must: (1) retrieve F0013 and record the exact internal document number shown on the document face, the document title, the product model referenced in the scope section, and the folder path where it is filed; (2) retrieve the active Risk Management Plan and record both the file name and the internal document number on the document face; (3) determine whether IFT is a recognized document-control prefix in the PT9L DHF (e.g., appears on other active documents) or is unique to this file; (4) assess whether any document index or master document list reconciles the IFT-FXJH01 identifier to the PT9L DHF scope. Do not confirm or dismiss findings — locate and report all available evidence.",
+          "input_refs": [
+            "RUN-0003",
+            "RUN-0006",
+            "RUN-0008",
+            "PT9L-FXJH01"
+          ],
+          "evidence_strategy": {
+            "use_page_index": true,
+            "use_relation_index": true,
+            "use_full_text": true,
+            "read_files": [
+              "PT9L-FXJH01",
+              "IFT-FXJH01",
+              "F0013",
+              "PT9L-FXGB01"
+            ]
+          },
+          "routing_source": "orchestrator_llm",
+          "review_status": "candidate",
+          "final_decision": null
+        }
+      ],
+      "stop_conditions_checked": [
+        {
+          "condition": "All mandatory audit matrix checks assigned and completed",
+          "status": "satisfied",
+          "evidence": "MATRIX-001 through MATRIX-005 covered by RUN-0002 through RUN-0006 respectively"
+        },
+        {
+          "condition": "No unresolved routing deadlock or missing agent capability",
+          "status": "satisfied",
+          "evidence": "All five available domain agents have been invoked; cross-recheck assignments use agents with demonstrated capability in the relevant domain"
+        },
+        {
+          "condition": "No finding requires immediate human_review escalation before cross-verification",
+          "status": "conditionally satisfied",
+          "evidence": "Bluetooth gap, version mismatch, biocompatibility sample identity, and unsigned approvals are high-severity but require one additional recheck cycle before escalation can be properly scoped; no safety-critical finding has been confirmed that would require immediate stop"
+        }
+      ],
+      "human_review_items": []
+    },
+    {
+      "cycle": 4,
+      "decision": "stop",
+      "reason": "All five mandatory audit matrix items (MATRIX-001 through MATRIX-005) have been fully executed by their assigned agents. All available domain agents (Hardware, Risk Traceability, Software, DMR/SOP, Regulatory, V&V) have completed at least one domain_review run and at least one context_recheck run. Thirteen agent runs have been completed across seven agents. All major candidate areas identified in RUN-0001 have been investigated, cross-checked, and escalated where unresolved. No new candidate discovery is warranted; the corpus has been exhaustively interrogated within the supplied evidence catalog. The accumulated findings across all runs are sufficient for a human auditor to assess DHF/DMR consistency. Further agent cycling would not produce new evidence from the supplied corpus and would risk circular re-confirmation of already-documented gaps.",
+      "assignments": [],
+      "stop_conditions_checked": [
+        {
+          "condition": "MATRIX-001 (design_input_to_output / parameter_consistency)",
+          "status": "covered",
+          "covered_by": [
+            "RUN-0002 (Hardware Agent domain_review)",
+            "RUN-0011 (Hardware Agent context_recheck)"
+          ]
+        },
+        {
+          "condition": "MATRIX-002 (risk_to_verification / risk_traceability)",
+          "status": "covered",
+          "covered_by": [
+            "RUN-0003 (Risk Traceability Agent domain_review)",
+            "RUN-0009 (Risk Traceability Agent context_recheck)"
+          ]
+        },
+        {
+          "condition": "MATRIX-003 (software_lifecycle / software_traceability)",
+          "status": "covered",
+          "covered_by": [
+            "RUN-0004 (Software Agent domain_review)"
+          ]
+        },
+        {
+          "condition": "MATRIX-004 (dmr_chain / dmr_sop_consistency)",
+          "status": "covered",
+          "covered_by": [
+            "RUN-0005 (DMR/SOP Agent domain_review)",
+            "RUN-0012 (DMR/SOP Agent context_recheck)"
+          ]
+        },
+        {
+          "condition": "MATRIX-005 (all_stages / document_control)",
+          "status": "covered",
+          "covered_by": [
+            "RUN-0006 (Regulatory Agent domain_review)",
+            "RUN-0008 (Regulatory Agent context_recheck)",
+            "RUN-0013 (Regulatory Agent context_recheck)"
+          ]
+        },
+        {
+          "condition": "V&V cross-check",
+          "status": "covered",
+          "covered_by": [
+            "RUN-0007 (V&V Agent domain_review)",
+            "RUN-0010 (V&V Agent context_recheck)"
+          ]
+        },
+        {
+          "condition": "All candidate areas from RUN-0001 investigated",
+          "status": "covered",
+          "covered_by": [
+            "RUN-0002 through RUN-0013"
+          ]
+        }
+      ],
+      "human_review_items": [
+        {
+          "item_id": "HRI-001",
+          "source_runs": [
+            "RUN-0003",
+            "RUN-0009",
+            "RUN-0007"
+          ],
+          "topic": "Bluetooth hazard traceability gap",
+          "description": "PT9L is documented as having Bluetooth capability in the project profile and Risk Management Report, but no Bluetooth/BLE/wireless/RF hazard identification, risk control, or verification closure exists in any supplied document. This is a confirmed open gap requiring human auditor determination of whether a Bluetooth-specific risk assessment and verification record must be added to the DHF before design transfer or regulatory submission."
+        },
+        {
+          "item_id": "HRI-002",
+          "source_runs": [
+            "RUN-0003",
+            "RUN-0006",
+            "RUN-0008",
+            "RUN-0013"
+          ],
+          "topic": "Dual IFT/PT9L document-number prefix system on active risk management documents with no reconciling master document list",
+          "description": "At least four active PT9L risk management documents (F0017–F0020) carry IFT-prefixed document numbers while four parallel documents (F0021–F0024) carry PT9L-prefixed numbers. No master document list, index, or change record reconciling the two prefix systems is present in the supplied evidence. Human auditor must determine whether one set supersedes the other and whether a formal document-number correction or change order is required."
+        },
+        {
+          "item_id": "HRI-003",
+          "source_runs": [
+            "RUN-0003",
+            "RUN-0006",
+            "RUN-0008",
+            "RUN-0013"
+          ],
+          "topic": "Blank approval fields across all risk management documents",
+          "description": "All approval/review/submission date fields across every risk management document in the supplied evidence are blank. No signed approval records are present. Human auditor must determine whether signed originals exist outside the supplied corpus or whether formal approval of the risk management file is genuinely incomplete."
+        },
+        {
+          "item_id": "HRI-004",
+          "source_runs": [
+            "RUN-0003",
+            "RUN-0010",
+            "RUN-0007"
+          ],
+          "topic": "Risk Management Report version mismatch in verification closure (V1.0 cited vs. V2.0 active) and unacknowledged revised test report",
+          "description": "The design verification plan/report cites PT9L-FXGB01 V1.0 while the active risk report is V2.0. A revised ISO 80601-2-56 test report (ETX202303-07-078-03R1, dated 2025-05-29) exists in the corpus with no corresponding update to the design verification report. Human auditor must determine whether the verification closure loop is complete and whether a verification plan/report amendment is required."
+        },
+        {
+          "item_id": "HRI-005",
+          "source_runs": [
+            "RUN-0002",
+            "RUN-0011"
+          ],
+          "topic": "BOM spring-component conflict (PT3-P10 vs. PT5-M02+M03) and T-Z1-P10 dual-PCB part-number anomaly",
+          "description": "Two BOM documents specify different spring components (single dual-spring PT3-P10 vs. separate PT5-M02 and PT5-M03), and the total-assembly drawing uses part number T-Z1-P10 for two distinct PCBs. Human auditor must determine which BOM is controlling, whether an ECO resolves the conflict, and whether the drawing part-number collision requires a drawing revision."
+        },
+        {
+          "item_id": "HRI-006",
+          "source_runs": [
+            "RUN-0004",
+            "RUN-0007"
+          ],
+          "topic": "BP3L software diagrams in PT9L software design folder without shared-component rationale; software version identifier mismatch (E0 23.11 vs. V1.0)",
+          "description": "BP3L software architecture diagrams appear in the primary PT9L software design folder and T1 sample subfolder with no documented shared-component or reuse rationale. The software design document carries version identifier 'E0 23.11' which cannot be reconciled with 'V1.0' cited in test/validation records and BOM. Human auditor must determine whether a shared-component justification document is required and whether a version-identifier correction is needed."
+        },
+        {
+          "item_id": "HRI-007",
+          "source_runs": [
+            "RUN-0004",
+            "RUN-0007"
+          ],
+          "topic": "IEC 60601-1 test report references software design document PT9L-RJFA01 V1.0 absent from evidence catalog and design output index",
+          "description": "The IEC 60601-1 test report cites software design document DN:PT9L-RJFA01 V1.0, which does not appear in the supplied evidence catalog or design output index. Human auditor must determine whether this document exists, whether it is the same as the document carrying 'E0 23.11', and whether the design output index requires updating."
+        },
+        {
+          "item_id": "HRI-008",
+          "source_runs": [
+            "RUN-0005",
+            "RUN-0012"
+          ],
+          "topic": "Design output list blank approval dates and absence of design transfer record",
+          "description": "The design output list carries blank submission/review/approval date fields. No design transfer record or ECO/approval routing record is present in the supplied evidence catalog. Human auditor must determine whether formal design transfer has been completed and whether the design output list approval is genuinely outstanding."
+        },
+        {
+          "item_id": "HRI-009",
+          "source_runs": [
+            "RUN-0005",
+            "RUN-0012"
+          ],
+          "topic": "Document-number collision on drawing PT9L-F01 and part-number mismatch between packaging BOM files",
+          "description": "Drawing PT9L-F01 is used for two distinct items in the design output chain. Two packaging BOM files specify different part numbers for what appears to be the same packaging component. Human auditor must determine which document/part number is controlling and whether a drawing or BOM correction is required."
+        },
+        {
+          "item_id": "HRI-010",
+          "source_runs": [
+            "RUN-0006",
+            "RUN-0008"
+          ],
+          "topic": "Biocompatibility reports conducted on PT5 samples rather than PT9L; operation guide references MDD rather than MDR",
+          "description": "Biocompatibility reports in the supplied evidence were conducted on PT5 samples. No PT9L-specific biocompatibility report is present. The operation guide references MDD rather than MDR for biocompatibility compliance. Human auditor must determine whether PT5 biocompatibility data is acceptable for PT9L under ISO 10993-1 equivalence rationale and whether the operation guide requires correction."
+        },
+        {
+          "item_id": "HRI-011",
+          "source_runs": [
+            "RUN-0006",
+            "RUN-0008"
+          ],
+          "topic": "Dual ASTM E1965 version citation (1998:2016 and 1998:2023) without documented transition rationale; inconsistent EN ISO 80601-2-56 and MDR 2017/745 applicability between design input stages",
+          "description": "Both the 2016 and 2023 editions of ASTM E1965-98 are cited in active documents without a documented rationale for the dual citation or a transition plan. EN ISO 80601-2-56 and MDR 2017/745 applicability differs between draft and final design input documents. Human auditor must determine which standards versions are controlling and whether a standards applicability matrix or change record is required."
+        },
+        {
+          "item_id": "HRI-012",
+          "source_runs": [
+            "RUN-0006",
+            "RUN-0008"
+          ],
+          "topic": "Absent 510(k) responsibility agreement for 'andon' as responsible and paying party",
+          "description": "The project profile states that 'andon' is responsible and paying for 510(k) registration, but no 510(k) responsibility agreement, contract, or authorization letter is present in the supplied evidence. Human auditor must determine whether this agreement exists outside the supplied corpus and whether it must be included in the DHF."
+        },
+        {
+          "item_id": "HRI-013",
+          "source_runs": [
+            "RUN-0002",
+            "RUN-0007"
+          ],
+          "topic": "Object-temperature accuracy tolerance (±0.2 °C) applied at 30 °C and 45 °C in software test plans outside design-input specified range (≥35 °C to ≤42 °C)",
+          "description": "Software test plans and the design verification plan apply the ±0.2 °C object-temperature accuracy tolerance at 30 °C and 45 °C, which are outside the design-input specified range of ≥35 °C to ≤42 °C. No documented justification for extending the tolerance to these temperatures is present. Human auditor must determine whether this represents a test plan error, a design-input gap, or an intentional extension requiring documented rationale."
+        },
+        {
+          "item_id": "HRI-014",
+          "source_runs": [
+            "RUN-0003",
+            "RUN-0006"
+          ],
+          "topic": "F0013 (PT2L risk plan in historical folder) internally carries a PT9L-series document number",
+          "description": "F0013 is titled as a PT2L risk plan and filed in the '2L风险改 - 历史文件' historical folder, but its internal document number is a PT9L-series identifier. Human auditor must determine whether this document has been incorrectly numbered, whether it has any active status in the PT9L DHF, and whether a document-control correction is required."
+        }
+      ]
+    }
+  ]
+}

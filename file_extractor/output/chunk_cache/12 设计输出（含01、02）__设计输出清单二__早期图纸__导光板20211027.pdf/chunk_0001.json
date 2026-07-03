@@ -1,0 +1,167 @@
+{
+  "document": {
+    "title": "导光板（T-Z1-P10 V1.0，2021-10-15）2D 图读图",
+    "document_no": "T-Z1-P10",
+    "version": "V1.0b",
+    "date": "2021-10-15",
+    "source_file": "早期图纸/导光板20211027.pdf",
+    "page_format": "A4 竖向",
+    "note": "早期版历史归档，精简版"
+  },
+  "products": [
+    {
+      "name": "导光板",
+      "drawing_no": "T-Z1-P10",
+      "edition": "V1.0",
+      "material": "PMMA",
+      "scale": "1:1",
+      "tolerance_level": "LEVEL B"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "T-Z1-P10",
+      "type": "图号",
+      "description": "导光板图纸编号"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "1",
+      "description": "制版制作",
+      "date": "2021-10-15"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "category": "质量检验"
+    },
+    {
+      "id": "REQ-2",
+      "description": "产品符合 RoHS 2.0",
+      "category": "法规合规"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 要求"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "①",
+      "name": "外形长",
+      "value": "32.7",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "note": "共用 3 个膜，重要尺寸（IQC测量）"
+    },
+    {
+      "id": "②",
+      "name": "外形宽",
+      "value": "22",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "note": "共用 3 个膜，重要尺寸（IQC测量）"
+    },
+    {
+      "id": "③",
+      "name": "导光板厚度",
+      "value": "2.7",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "note": "重要尺寸（IQC测量），已从 V1.0a 的 2.5 修订"
+    },
+    {
+      "id": "—",
+      "name": "带膜厚度",
+      "value": "2.9",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "note": "已从 V1.0a 的 2.7 修订"
+    },
+    {
+      "id": "—",
+      "name": "倒角",
+      "value": "C4.42",
+      "unit": "mm",
+      "tolerance": "—",
+      "note": "已从 V1.0a 的 C2.42 修订"
+    },
+    {
+      "id": "—",
+      "name": "反射膜/透射膜厚",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "—",
+      "note": "与现版一致"
+    },
+    {
+      "id": "—",
+      "name": "分段尺寸",
+      "value": "13.15 / 2.2 / 8.9",
+      "unit": "mm",
+      "tolerance": "—",
+      "note": "与现版一致"
+    },
+    {
+      "id": "—",
+      "name": "黑色区域宽（透射膜）",
+      "value": "3.7",
+      "unit": "mm",
+      "tolerance": "—",
+      "note": "已从 V1.0a 的 3.2 修订"
+    }
+  ],
+  "components": [
+    {
+      "name": "反射膜",
+      "thickness": "0.1mm"
+    },
+    {
+      "name": "透射膜",
+      "thickness": "0.1mm"
+    },
+    {
+      "name": "导光板本体",
+      "material": "PMMA",
+      "thickness": "2.7mm"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "本图（V1.0b，2021-10-15）是 T-Z1-P10 导光板从 V1.0a（2021-07）到现版的过渡定型版。相对前一版（导光板20210727.pdf），本版进行了以下修订：导光板增厚（2.5→2.7mm）、带膜厚度增加（2.7→2.9mm）、倒角扩大（C2.42→C4.42）、黑色区域增宽（3.2→3.7mm）。与现版图纸/导光板.pdf 几何完全相同，只是文件位置和文件名不同。所有修订点已在本版落地定型。",
+      "topic_tags": [
+        "导光板",
+        "版本演进",
+        "设计修订",
+        "T-Z1-P10"
+      ],
+      "related_subjects": [
+        "T-Z1-P10",
+        "导光板20210727.pdf",
+        "导光板20211027.pdf",
+        "图纸/导光板.pdf"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "版本演进对比：V1.0a(2021-07) → V1.0b(2021-10，本图) → 现版。导光板厚：2.5 → 2.7 → 2.7；带膜厚度：2.7 → 2.9 → 2.9；倒角：C2.42 → C4.42 → C4.42；黑色区域：3.2 → 3.7 → 3.7。",
+      "topic_tags": [
+        "版本对比",
+        "尺寸变更",
+        "导光板",
+        "历史归档"
+      ],
+      "related_subjects": [
+        "T-Z1-P10",
+        "V1.0a",
+        "V1.0b"
+      ]
+    }
+  ]
+}

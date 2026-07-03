@@ -1,0 +1,213 @@
+{
+  "document": {
+    "title": "【早期版】液晶（PT9L-L01 V1.0，2021-07-15）2D 图读图",
+    "document_type": "2D工程图读图归档",
+    "version": "V1.0",
+    "date": "2021-07-15",
+    "source_file": "早期图纸/液晶20210727.pdf",
+    "format": "A4 竖向",
+    "scale": "2:1",
+    "status": "DHF 归档副本（早期版）",
+    "notes": "现版文件为 图纸/PT9L-液晶-20240627.pdf.md，几何+PIN映射完全相同；打样版为 液晶-打样-20210917.pdf"
+  },
+  "products": [
+    {
+      "name": "液晶显示模组",
+      "drawing_number": "PT9L-L01",
+      "edition": "V1.0",
+      "material": "ITO（玻璃）",
+      "tolerance_level": "LEVEL B",
+      "related_files": [
+        "早期图纸/液晶20210727.pdf",
+        "液晶-打样-20210917.pdf",
+        "图纸/PT9L-液晶-20240627.pdf.md"
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "PT9L-L01"
+    },
+    {
+      "type": "版本号",
+      "value": "V1.0"
+    },
+    {
+      "type": "源文件",
+      "value": "早期图纸/液晶20210727.pdf"
+    },
+    {
+      "type": "打样版文件",
+      "value": "液晶-打样-20210917.pdf"
+    },
+    {
+      "type": "现版文件",
+      "value": "图纸/PT9L-液晶-20240627.pdf.md"
+    }
+  ],
+  "components": [
+    {
+      "name": "液晶显示屏（LCD）",
+      "part_number": "PT9L-L01",
+      "type": "外购定型件",
+      "material": "ITO（玻璃）",
+      "display_type": "TN POSITIVE TRANSMISSIVE",
+      "operating_method": "1/4 DUTY, 1/3 BIAS",
+      "connector_type": "ZEBRA",
+      "pin_count": 16,
+      "com_count": 4
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "category": "质量检验要求"
+    },
+    {
+      "id": "REQ-2",
+      "description": "产品符合 RoHS 2.0",
+      "category": "法规合规要求"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 要求",
+      "applicability": "PT9L-L01 液晶模组"
+    }
+  ],
+  "design_inputs": [
+    {
+      "parameter": "Display Type",
+      "value": "TN POSITIVE TRANSMISSIVE"
+    },
+    {
+      "parameter": "Operating Method",
+      "value": "1/4 DUTY, 1/3 BIAS"
+    },
+    {
+      "parameter": "Operation Voltage",
+      "value": "3.0V"
+    },
+    {
+      "parameter": "Viewing Angle",
+      "value": "6:00"
+    },
+    {
+      "parameter": "Operation Temperature",
+      "value": "0°C TO 55°C"
+    },
+    {
+      "parameter": "Storage Temperature",
+      "value": "-20°C TO 65°C"
+    },
+    {
+      "parameter": "Connector Type",
+      "value": "ZEBRA"
+    },
+    {
+      "parameter": "PIN 间距",
+      "value": "P 1.0×15=15.00"
+    },
+    {
+      "parameter": "PIN 数量",
+      "value": "16 PIN"
+    },
+    {
+      "parameter": "COM 数量",
+      "value": "4 COM"
+    }
+  ],
+  "tests": [
+    {
+      "test_type": "IQC 尺寸检验",
+      "description": "对带编号的重要尺寸进行 IQC 测量",
+      "scope": "PT9L-L01 液晶模组来料检验"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "LCD SPEC（与现版完全相同）：DISPLAY TYPE: TN POSITIVE TRANSMISSIVE；OPERATING METHOD: 1/4 DUTY, 1/3 BIAS；OPERATION VOLTAGE: 3.0V；VIEWING ANGLE: 6:00；OPERATION TEMPERATURE: 0°C TO 55°C；STORAGE TEMPERATURE: -20°C TO 65°C；CONNECTOR TYPE: ZEBRA。",
+      "topic_tags": [
+        "LCD规格",
+        "TN液晶",
+        "工作电压",
+        "视角",
+        "工作温度",
+        "储存温度",
+        "连接器"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "液晶显示模组"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "与现版对比结论：3年来LCD设计未变更（很合理——LCD是外购定型件）。早期V1.0（2021-07-15）与现版V1.0（2024-06-27）在Drawing NO.、Edition、几何、LCD SPEC、PIN映射各方面完全相同，仅状态区别为DHF归档副本与当前生产版。",
+      "topic_tags": [
+        "版本比对",
+        "设计变更历史",
+        "外购定型件",
+        "DHF归档"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "液晶-打样-20210917.pdf",
+        "图纸/PT9L-液晶-20240627.pdf.md"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "关键尺寸清单（公差等级 LEVEL B）：①玻璃外形宽 22.00（Level B）；②玻璃外形高 31.50±0.2；③玻璃叠层总厚 1.7 MAX。其他尺寸：PIN间距 P 1.0×15=15.00、V.A. 20.00/27.50 MIN、28.70/29.50±0.2、14.00±0.5、4-0.40±0.4、0.76±0.07。",
+      "topic_tags": [
+        "关键尺寸",
+        "公差",
+        "玻璃外形",
+        "IQC"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "IQC测量"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文档定位为PT9L-L01初版V1.0早期版历史归档文件，源自2021-07-15图纸，属于DHF归档副本，当前生产版为图纸/PT9L-液晶-20240627.pdf.md（内容相同）。打样阶段版本为液晶-打样-20210917.pdf（2个月后打样，PDF内容相同）。",
+      "topic_tags": [
+        "DHF归档",
+        "早期版",
+        "版本说明",
+        "打样"
+      ],
+      "related_subjects": [
+        "PT9L-L01",
+        "DHF",
+        "液晶-打样-20210917.pdf"
+      ]
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0",
+      "date": "2021-07-15",
+      "description": "初版图纸发布，DHF归档副本",
+      "file": "早期图纸/液晶20210727.pdf"
+    },
+    {
+      "version": "V1.0（打样版）",
+      "date": "2021-09-17",
+      "description": "打样阶段版本，PDF内容与初版相同",
+      "file": "液晶-打样-20210917.pdf"
+    },
+    {
+      "version": "V1.0（现版）",
+      "date": "2024-06-27",
+      "description": "当前生产版，几何+PIN映射与初版完全相同",
+      "file": "图纸/PT9L-液晶-20240627.pdf.md"
+    }
+  ]
+}

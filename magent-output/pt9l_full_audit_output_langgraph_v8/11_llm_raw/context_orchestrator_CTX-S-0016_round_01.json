@@ -1,0 +1,44 @@
+```json
+{
+  "assigned_agent": "Risk Traceability Agent",
+  "review_focus": "核查风险管理文件（F0018/F0019）中是否存在与EMC免疫性通过/失败准则相关的条款，验证EMC型式试验报告（F0456）所要求的免疫性pass/fail准则是否已被纳入风险管理文件体系",
+  "agent_input": {
+    "claim": "EMC型式试验报告（F0456）要求免疫性通过/失败准则应纳入风险管理文件，但证据目录中未见风险管理文件中包含EMC免疫性准则的对应条款。",
+    "context_summary": "补证轮次因LLM输出解析失败未能产出结论，但已检索到三条相关证据：(1) RISK-135来自F0456 EMC型式试验报告第622行，明确记载Note 1要求免疫性pass/fail准则须基于适用的第二部分标准或风险管理文件，且该准则须被纳入风险管理文件；(2) RISK-007来自F0018，为风险评估报告（Risk Assessment Report IFT-FXPJ01 V2.0 20240530）；(3) RISK-013来自F0019，为风险控制措施验证与残余风险评价报告（IFT-FXYS01 V2.0 20240530）。当前缺口在于：F0018和F0019的正文内容尚未被检索，无法确认其中是否包含EMC免疫性准则相关条款。",
+    "evidence": [
+      {
+        "evidence_id": "RISK-135",
+        "doc_id": "F0456",
+        "rel_path": "实验报告\\最终报告\\2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+        "line": 622,
+        "source_text": "| Note 1: Specific, detailed immunity pass/fail criteria, shall be based on applicable part two standards or risk management, for immunity with regard to em disturbances. These pass/fail criteria shall be included in the risk management file |  |  |",
+        "role": "需求来源：EMC报告明确要求免疫性pass/fail准则须纳入风险管理文件"
+      },
+      {
+        "evidence_id": "RISK-007",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "role": "候选风险管理文件之一：风险评估报告，需全文检索EMC/immunity/免疫相关条款"
+      },
+      {
+        "evidence_id": "RISK-013",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N: IFT-FXYS01 V2.0 Verification of risk control measure and residual risk evaluation r eport",
+        "role": "候选风险管理文件之二：风险控制措施验证报告，需全文检索EMC/immunity/免疫相关条款"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": {
+      "step_1": "在F0018（风险评估报告）全文中检索关键词：EMC、immunity、免疫、electromagnetic、pass/fail、IEC 60601-1-2，确认是否存在对应的危害识别或风险控制条款",
+      "step_2": "在F0019（风险控制措施验证报告）全文中执行相同关键词检索，确认是否存在EMC免疫性准则的验证记录",
+      "step_3": "若F0018或F0019中存在EMC免疫性相关条款，则判定为dismiss（原声明不成立）；若两份文件均无相关条款，则判定为confirm（原声明成立，存在合规缺口）；若文件内容不可访问或检索结果不明确，则判定为needs_more_context",
+      "severity": "P3",
+      "task_id": "CTX-S-0016"
+    }
+  }
+}
+```

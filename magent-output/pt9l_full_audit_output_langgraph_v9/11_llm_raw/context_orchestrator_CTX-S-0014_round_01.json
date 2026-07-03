@@ -1,0 +1,58 @@
+```json
+{
+  "assigned_agent": "DMR/SOP Agent",
+  "review_focus": "验证PT9L-F01（外箱）是否作为行项目出现在已发布的包装BOM文件中，以及设计输出清单二中的BOM表（PT9L-P BOM01 V1.0）是否构成正式受控的包装BOM，从而判断原始声明"外箱未出现在任何包装BOM行项目中"是否成立",
+  "agent_input": {
+    "claim": "The outer carton (PT9L-F01) is present as a drawing in the design output folder but does not appear as a line item in either of the two packaging BOM files, leaving the outer carton uncontrolled in the released packaging BOM.",
+    "context_summary": "补证检索已从文件 F0161（路径：12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md）中取得完整的包装BOM表格内容。该文件标题为"PT9L-P BOM01 V1.0 PT9L包装BOM(美版)【组件清单】"，共列出12个行项目。其中第8行明确记录：序号8、品名"外箱"、物料编码K040100014357620814、规格PT9L-F01、型号PT9L、配比1960-01-01（疑为数量字段格式异常）、符合ROHS √、重要度等级C。这与原始声明"PT9L-F01不出现在任何包装BOM行项目中"直接矛盾。原始声明所指的"两个包装BOM文件"的第二个文件尚未在本次补证中被识别，需要DMR/SOP Agent进一步核查：(1) 该BOM表（F0161）是否属于已正式发布/受控的包装BOM；(2) 原始声明所指的另一个包装BOM文件是否存在，PT9L-F01在其中是否缺失；(3) 配比字段显示"1960-01-01"是否为数据录入异常。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-058-KEY",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 28,
+        "content": "| 8 | 外箱 | K040100014357620814 | 190g牛皮面纸+170g(A)楞 +80g芯纸+130g(B)楞+200g牛皮里纸 |  | PT9L-F01 |  |  | PT9L |  | 1960-01-01 |  | √ | C |  |  |",
+        "significance": "PT9L-F01（外箱）在F0161包装BOM表第8行作为行项目明确列出，直接反驳原始声明中"不出现在任何包装BOM行项目中"的核心断言",
+        "verified": true
+      },
+      {
+        "evidence_id": "DMR-050",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 21,
+        "content": "| 1 | 彩包装 | K040200021397620814 | 350g白卡纸 覆哑膜 |  | PT9L-CBZP01 |  |  | PT9L |  | 1 |  | √ | A |  |  |",
+        "significance": "BOM表第1行，确认表格结构完整，行项目从序号1开始连续列出",
+        "verified": true
+      },
+      {
+        "evidence_id": "DMR-051",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 22,
+        "content": "| 2 | 纸托 | K040500002717620814 | 350g白卡纸 覆哑膜 |  | PT9L-F04 |  |  | PT9L |  | 1 |  | √ | C |  |  |",
+        "significance": "BOM表第2行，确认表格连续性",
+        "verified": true
+      },
+      {
+        "evidence_id": "DMR-BOM-HEADER",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 8,
+        "content": "andon文件编号：PT9L-P BOM01 V1 . 0 PT9L包装BOM(美版)【组件清单】",
+        "significance": "确认该文件为PT9L包装BOM（美版）V1.0，文件编号PT9L-P BOM01，是正式设计输出文件之一",
+        "verified": true
+      },
+      {
+        "evidence_id": "DMR-BOM-ANOMALY",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 28,
+        "content": "配比字段值为 1960-01-01（外箱行），同行第29行标签配比亦为 1960-01-01",
+        "significance": "配比字段显示日期格式值（1960-01-01），疑为Excel单元格格式错误导致数量显示异常，需核查原始xlsx文件确认实际配比数量",
+        "verified": false
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

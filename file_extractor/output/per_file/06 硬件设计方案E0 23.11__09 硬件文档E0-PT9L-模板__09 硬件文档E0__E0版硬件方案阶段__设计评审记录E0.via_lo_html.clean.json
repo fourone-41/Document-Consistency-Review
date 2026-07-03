@@ -1,0 +1,316 @@
+{
+  "document": {
+    "title": "硬件设计方案评审记录",
+    "doc_type": "设计评审记录",
+    "version": "V1.0"
+  },
+  "review_records": [
+    {
+      "review_id": "E0",
+      "stage": "硬件设计方案评审",
+      "date": null,
+      "conclusion": null
+    }
+  ],
+  "review_items": [
+    {
+      "seq": "一",
+      "category": "对项目进度的评估",
+      "content": "本阶段计划评审时间与实际评审时间对比，项目进度评估结论：对整体项目进度无影响；对整体项目进度有影响。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "未填写"
+    },
+    {
+      "seq": "二",
+      "category": "对设计验证的评审",
+      "content": "本阶段是否有设计验证：无；有（设计验证报告文件编号）。对设计验证报告的评估：已按验证计划进行并完成且合格；未按验证计划进行；已按验证计划进行但未完成；已按验证计划进行并完成但有不合格项。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "未填写"
+    },
+    {
+      "seq": "三",
+      "category": "对设计更改的评估",
+      "content": "本阶段是否有只影响设计输出的设计更改：无；有（设计更改需求评审单文件编号）。对设计更改的适宜性评估：未解决原有问题；解决了原有问题且未产生新的问题；解决了原有问题但产生了新的问题（问题B1、B2、B3）。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "未填写"
+    },
+    {
+      "seq": "四",
+      "category": "对上阶段评审遗留问题追踪",
+      "content": "上阶段评审无遗留问题；上阶段评审有遗留问题（问题C1、C2）。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "未填写"
+    },
+    {
+      "seq": "五",
+      "category": "本次评审问题记录",
+      "content": "本次评审问题记录（问题D1、D2、D3），包括产生原因、评审意见、解决措施、负责人、完成时间、评审结论、未决问题处理方法、决议结论。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "未填写"
+    }
+  ],
+  "persons": [
+    {
+      "name": "侯广伟",
+      "title": "硬件主管"
+    },
+    {
+      "name": "万龙",
+      "title": "硬件工程师"
+    },
+    {
+      "name": "王迪",
+      "title": "软件工程师"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-YFPL01"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "评审记录模板结构说明：本文件为硬件设计方案评审记录模板，包含六大评审章节：一、对项目进度的评估（含计划与实际评审时间对比、进度影响评估及改进措施）；二、对设计验证的评审（含设计验证报告评估，包括合格、未按计划、未完成、有不合格项四种情形，不合格项最多记录A1-A4）；三、对设计更改的评估（含设计更改适宜性评估，问题记录B1-B3）；四、对上阶段评审遗留问题追踪（问题C1-C2，含追踪结论与解决措施）；五、本次评审问题记录（问题D1-D3，含产生原因、评审意见、解决措施、评审结论、决议结论）；六、评审人员签字（含职务、部门、姓名、签名、日期）。各选项均以复选框形式呈现，适用选项划√，不适用选项空白。",
+      "topic_tags": [
+        "评审流程",
+        "设计验证",
+        "设计更改",
+        "遗留问题追踪",
+        "硬件设计",
+        "评审记录"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "硬件设计方案",
+        "设计验证报告",
+        "设计更改需求评审单"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评审人员签字要求：打印前填写职务、部门、姓名，需与评审计划中人员一致。已规划评审人员包括：序号1-硬件主管-智能产品部-侯广伟；序号2-硬件工程师-智能产品部-万龙；序号3-软件工程师-智能产品部-王迪。",
+      "topic_tags": [
+        "评审人员",
+        "签字要求",
+        "评审计划一致性"
+      ],
+      "related_subjects": [
+        "侯广伟",
+        "万龙",
+        "王迪",
+        "智能产品部"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "06 硬件设计方案E0 23.11/09 硬件文档E0-PT9L-模板/09 硬件文档E0/E0版硬件方案阶段/设计评审记录E0.via_lo_html.clean.md",
+    "doc_type": "review_checklist"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审记录",
+      "to": "一",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审记录",
+      "to": "二",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审记录",
+      "to": "三",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审记录",
+      "to": "四",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审记录",
+      "to": "五",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "评审流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "硬件设计方案",
+      "to": "评审流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证报告",
+      "to": "评审流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计更改需求评审单",
+      "to": "评审流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "侯广伟",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "万龙",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "王迪",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "智能产品部",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "E0",
+      "to": "一",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "E0",
+      "to": "二",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "E0",
+      "to": "三",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "E0",
+      "to": "四",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "E0",
+      "to": "五",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT9L-YFPL01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "30000078",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "E0",
+      "to": "PT9L",
+      "properties": {
+        "stage": "硬件设计方案评审"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "E0",
+      "to": "一",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "E0",
+      "to": "二",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "E0",
+      "to": "三",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "E0",
+      "to": "四",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "E0",
+      "to": "五",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "E0",
+      "properties": {
+        "title": "硬件主管"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "万龙",
+      "to": "E0",
+      "properties": {
+        "title": "硬件工程师"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "E0",
+      "properties": {
+        "title": "软件工程师"
+      }
+    }
+  ],
+  "_claims": []
+}

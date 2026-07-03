@@ -1,0 +1,906 @@
+{
+  "document": {
+    "title": "正极弹簧 PT5-M02 V1.0 2D 图读图报告",
+    "document_number": "PT5-M02",
+    "version": "V1.0",
+    "part_name": "正极弹簧",
+    "edition": "A",
+    "stage": "量产管控",
+    "scale": "2:1",
+    "unit": "mm",
+    "tolerance_level": "B",
+    "company": "iHealth",
+    "design_date": "2019-07-15",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/正极弹簧PT5-M02.pdf",
+    "report_generated": "2026-06-02",
+    "pages": 1,
+    "page_size": "A4纵向"
+  },
+  "products": [
+    {
+      "name": "正极弹簧",
+      "part_number": "PT5-M02",
+      "applicable_products": [
+        "PT5 耳温计",
+        "PT9L"
+      ],
+      "description": "PT5 / PT9L 共用电池正极弹簧"
+    },
+    {
+      "name": "负极弹簧",
+      "part_number": "PT5-M03",
+      "description": "与正极弹簧互为对应件"
+    }
+  ],
+  "persons": [
+    {
+      "name": "刘钊",
+      "role": "设计",
+      "signature_date": "2019-07-15"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT5-M02",
+      "type": "图号/Drawing NO.",
+      "description": "正极弹簧图纸编号"
+    },
+    {
+      "id": "PT5-M03",
+      "type": "关联件图号",
+      "description": "负极弹簧图纸编号"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "GB2423.17-2008",
+      "description": "盐雾测试标准：5% 盐水 / 35°C / 24H 后无生锈"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "弹簧长 (中间) Φ Z5.5 大约 6.3 mm",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "REQ-02",
+      "description": "材料：镀镍不锈钢线 Φ0.5 / 不锈钢线 Φ0.5 mm + Ni 镀层",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "REQ-03",
+      "description": "弹簧不能有锈",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "REQ-04",
+      "description": "表面色泽：银白色或浅金色",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "REQ-05",
+      "description": "当压缩 5.0 mm 时，弹簧力 ≥ 0.5 kgf",
+      "source": "技术要求第5条",
+      "type": "性能要求",
+      "parameter": "弹簧力",
+      "condition": "压缩5.0 mm",
+      "limit": "≥ 0.5 kgf"
+    },
+    {
+      "id": "REQ-06",
+      "description": "弹簧可上锡焊接（上锡型接）",
+      "source": "技术要求第6条"
+    },
+    {
+      "id": "REQ-07",
+      "description": "符合 GB2423.17-2008 盐雾测试：5% 盐水 / 35°C / 24H 后无生锈",
+      "source": "技术要求第7条",
+      "type": "环境可靠性要求"
+    },
+    {
+      "id": "REQ-08",
+      "description": "放在电池槽用力按弹簧顶端，不卡槽及无异响",
+      "source": "技术要求附注（三角警示）",
+      "type": "功能验证要求"
+    }
+  ],
+  "design_inputs": [
+    {
+      "name": "线径",
+      "dimension_id": "①",
+      "symbol": "Ø",
+      "value": 0.5,
+      "tolerance": "±0.03",
+      "unit": "mm",
+      "view": "主视图",
+      "iqc_key": true
+    },
+    {
+      "name": "工作段长（弹簧紧密段）",
+      "dimension_id": "②",
+      "symbol": null,
+      "value": 7.0,
+      "tolerance": "±0.30",
+      "unit": "mm",
+      "view": "侧视图",
+      "iqc_key": true
+    },
+    {
+      "name": "弹簧外径",
+      "dimension_id": "③",
+      "symbol": "Ø",
+      "value": 6.5,
+      "tolerance": "±0.10",
+      "unit": "mm",
+      "view": "主视图",
+      "iqc_key": true
+    },
+    {
+      "name": "自由高",
+      "symbol": null,
+      "value": 11.7,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "侧视图（左）",
+      "iqc_key": false
+    },
+    {
+      "name": "挂钩展开宽",
+      "symbol": null,
+      "value": 5.3,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "侧视图（挂钩1）",
+      "iqc_key": false
+    },
+    {
+      "name": "挂钩中段",
+      "symbol": null,
+      "value": 3.8,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "侧视图（挂钩2）",
+      "iqc_key": false
+    },
+    {
+      "name": "挂钩末端",
+      "symbol": null,
+      "value": 1.8,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "侧视图（挂钩3）",
+      "iqc_key": false
+    },
+    {
+      "name": "挂钩端到底座",
+      "symbol": null,
+      "value": 8.5,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "侧视图",
+      "iqc_key": false
+    },
+    {
+      "name": "螺距",
+      "symbol": null,
+      "value": 2.3,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "侧视图",
+      "iqc_key": false
+    },
+    {
+      "name": "Z形挂钩弯折角",
+      "symbol": "角度",
+      "value": 90,
+      "tolerance": "±0.5°",
+      "unit": "°",
+      "view": "侧视图",
+      "iqc_key": false
+    },
+    {
+      "name": "顶端内孔",
+      "symbol": "Ø",
+      "value": 4.8,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "SECTION A-A",
+      "iqc_key": false
+    },
+    {
+      "name": "顶端中心孔",
+      "symbol": "Ø",
+      "value": 3.0,
+      "tolerance": "默认B级",
+      "unit": "mm",
+      "view": "SECTION A-A",
+      "iqc_key": false
+    }
+  ],
+  "components": [
+    {
+      "name": "正极弹簧",
+      "part_number": "PT5-M02",
+      "material": "镀镍不锈钢线 Φ0.5 / 不锈钢线 Φ0.5 mm + Ni 镀层",
+      "surface_finish": "银白色或浅金色",
+      "applicable_products": [
+        "PT5",
+        "PT9L"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "name": "盐雾测试",
+      "standard": "GB2423.17-2008",
+      "conditions": "5% 盐水 / 35°C / 24H",
+      "acceptance_criteria": "无生锈"
+    },
+    {
+      "name": "弹簧力测试",
+      "conditions": "压缩 5.0 mm",
+      "acceptance_criteria": "弹簧力 ≥ 0.5 kgf"
+    },
+    {
+      "name": "装配验证（电池槽卡槽异响测试）",
+      "conditions": "放在电池槽用力按弹簧顶端",
+      "acceptance_criteria": "不卡槽且无异响"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "Q-01",
+      "description": "电池槽 / PCB 焊盘的实际配合（焊点位置、焊盘大小）",
+      "status": "待确认",
+      "default_assumption": "工程师释义"
+    },
+    {
+      "id": "Q-02",
+      "description": "弹力 ≥0.5 kgf 的实测验收记录",
+      "status": "待确认"
+    },
+    {
+      "id": "Q-03",
+      "description": "技术要求第1条\"弹簧长 (中间) Φ Z5.5 大约 6.3 mm\"中 Z5.5 是何参数的意义释义",
+      "status": "待工程师确认"
+    },
+    {
+      "id": "Q-04",
+      "description": "与 PT3 双联弹簧 REV01 的功能区别（PT3 为双联，PT5/PT9L 为分离的正/负 2 件）",
+      "status": "待确认"
+    },
+    {
+      "id": "Q-05",
+      "description": "PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件）",
+      "status": "推测同件复用",
+      "default_assumption": "PT9L 沿用 PT5-M02"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "装配关系：正极弹簧与电池正极配合，压缩 5.0 mm 时弹力 ≥ 0.5 kgf，确保接触可靠。正极弹簧与 PCB / 电池仓盖配合，技术要求第6条\"可上锡焊接\"，焊接固定到 PCB。本图为正极（PT5-M02），与负极弹簧 PT5-M03 互为对应件。",
+      "topic_tags": [
+        "装配关系",
+        "弹簧力",
+        "焊接",
+        "电池接触",
+        "正极",
+        "负极"
+      ],
+      "related_subjects": [
+        "PT5-M02",
+        "PT5-M03",
+        "PCB",
+        "电池仓",
+        "电池正极"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "技术要求附注（三角警示）：请放在电池槽用力按弹簧顶端，不卡槽及无异响就 OK。此为装配功能验证的定性判断标准。",
+      "topic_tags": [
+        "装配验证",
+        "卡槽",
+        "异响",
+        "功能测试"
+      ],
+      "related_subjects": [
+        "PT5-M02",
+        "电池槽",
+        "装配验证"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "共用件说明：正极弹簧 PT5-M02 为 PT5 耳温计与 PT9L 共用件，PT9L 沿用 PT5 弹簧设计，设计日期为 2019-07-15（PT5 项目），PT9L 为后续沿用。",
+      "topic_tags": [
+        "共用件",
+        "PT5",
+        "PT9L",
+        "耳温计",
+        "版本沿用"
+      ],
+      "related_subjects": [
+        "PT5-M02",
+        "PT5 耳温计",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "自动校验结果：DPI 检查 overview 150 + blocks 300 通过；编号连续性①②③完整通过；角度反推 90° 是挂钩弯折几何角（非运动量）通过；公差形式 ±0.03 / ±0.30 / ±0.10 均对称通过；Φ ↔ ①视觉确认：① 0.5 引出线径向、位于侧视图中部为线径通过；② 7.0 在轴向位置为长度（无Ø）通过；③ 6.50 径向引出为外径通过；配合关系：与电池仓/下盖电池槽配合（技术要求附注）。",
+      "topic_tags": [
+        "校验",
+        "DPI",
+        "编号连续性",
+        "公差",
+        "尺寸标注",
+        "配合关系"
+      ],
+      "related_subjects": [
+        "PT5-M02",
+        "尺寸表",
+        "IQC重点尺寸"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/正极弹簧PT5-M02.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "装配关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M03",
+      "to": "装配关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PCB",
+      "to": "装配关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池仓",
+      "to": "装配关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池正极",
+      "to": "装配关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "装配验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池槽",
+      "to": "装配验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "装配验证",
+      "to": "装配验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "共用件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5 耳温计",
+      "to": "共用件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "共用件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "尺寸表",
+      "to": "校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC重点尺寸",
+      "to": "校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-07",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "REQ-08",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-07",
+      "to": "GB2423.17-2008",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "Q-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "Q-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "Q-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "Q-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT5-M02",
+      "to": "Q-05",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-01",
+      "properties": {
+        "description": "弹簧长约6.3mm要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-02",
+      "properties": {
+        "description": "材料要求：镀镍不锈钢线Φ0.5"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-03",
+      "properties": {
+        "description": "弹簧不能有锈"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-04",
+      "properties": {
+        "description": "表面色泽要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-05",
+      "properties": {
+        "description": "压缩5.0mm时弹簧力≥0.5kgf"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-06",
+      "properties": {
+        "description": "可上锡焊接要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-07",
+      "properties": {
+        "description": "符合GB2423.17-2008盐雾测试要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "REQ-08",
+      "properties": {
+        "description": "装配验证：不卡槽及无异响"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-07",
+      "to": "GB2423.17-2008",
+      "properties": {
+        "description": "盐雾测试要求受GB2423.17-2008标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT5-M02",
+      "to": "GB2423.17-2008",
+      "properties": {
+        "description": "正极弹簧受盐雾测试标准约束"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-07",
+      "to": "GB2423.17-2008",
+      "properties": {
+        "description": "环境可靠性要求来源于GB2423.17-2008标准"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "PT5-M02",
+      "to": "PT5-M03",
+      "properties": {
+        "description": "正极弹簧与负极弹簧PT5-M03互为对应件，设计上相互派生关联"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-07",
+      "to": "盐雾测试",
+      "properties": {
+        "standard": "GB2423.17-2008",
+        "conditions": "5% 盐水 / 35°C / 24H",
+        "acceptance_criteria": "无生锈"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-05",
+      "to": "弹簧力测试",
+      "properties": {
+        "conditions": "压缩5.0 mm",
+        "acceptance_criteria": "弹簧力 ≥ 0.5 kgf"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-08",
+      "to": "装配验证（电池槽卡槽异响测试）",
+      "properties": {
+        "conditions": "放在电池槽用力按弹簧顶端",
+        "acceptance_criteria": "不卡槽且无异响"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-05",
+      "to": "弹簧力测试",
+      "properties": {
+        "parameter": "弹簧力",
+        "condition": "压缩5.0 mm",
+        "limit": "≥ 0.5 kgf",
+        "unit": "kgf"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT5-M02",
+      "to": "①",
+      "properties": {
+        "name": "线径",
+        "value": 0.5,
+        "tolerance": "±0.03",
+        "unit": "mm",
+        "iqc_key": true
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT5-M02",
+      "to": "②",
+      "properties": {
+        "name": "工作段长（弹簧紧密段）",
+        "value": 7.0,
+        "tolerance": "±0.30",
+        "unit": "mm",
+        "iqc_key": true
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT5-M02",
+      "to": "③",
+      "properties": {
+        "name": "弹簧外径",
+        "value": 6.5,
+        "tolerance": "±0.10",
+        "unit": "mm",
+        "iqc_key": true
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "刘钊",
+      "to": "PT5-M02",
+      "properties": {
+        "role": "设计",
+        "signature_date": "2019-07-15"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT5-M02",
+      "to": "Q-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT5-M02",
+      "to": "Q-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT5-M02",
+      "to": "Q-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT5-M02",
+      "to": "Q-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT5-M02",
+      "to": "Q-05",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "弹簧长（中间）",
+      "attribute": "外径",
+      "value": "5.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "中间段",
+      "raw_text": "弹簧长 (中间) Φ Z5.5 大约 6.3 mm"
+    },
+    {
+      "subject": "弹簧长（中间）",
+      "attribute": "长度",
+      "value": "6.3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "中间段",
+      "raw_text": "弹簧长 (中间) Φ Z5.5 大约 6.3 mm"
+    },
+    {
+      "subject": "材料线径",
+      "attribute": "直径",
+      "value": "0.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "不锈钢线 + Ni 镀层",
+      "raw_text": "材料：镀镍不锈钢线 Φ0.5 / 不锈钢线 Φ0.5 mm + Ni 镀层"
+    },
+    {
+      "subject": "弹簧力",
+      "attribute": "最小值",
+      "value": "0.5",
+      "unit": "kgf",
+      "tolerance": "",
+      "condition": "压缩 5.0 mm",
+      "raw_text": "当压缩 5.0 mm 时，弹簧力 ≥ 0.5 kgf"
+    },
+    {
+      "subject": "盐雾测试",
+      "attribute": "盐水浓度",
+      "value": "5",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "GB2423.17-2008",
+      "raw_text": "符合 GB2423.17-2008 盐雾测试：5% 盐水 / 35°C / 24H 后无生锈"
+    },
+    {
+      "subject": "盐雾测试",
+      "attribute": "温度",
+      "value": "35",
+      "unit": "°C",
+      "tolerance": "",
+      "condition": "GB2423.17-2008",
+      "raw_text": "符合 GB2423.17-2008 盐雾测试：5% 盐水 / 35°C / 24H 后无生锈"
+    },
+    {
+      "subject": "盐雾测试",
+      "attribute": "持续时间",
+      "value": "24",
+      "unit": "H",
+      "tolerance": "",
+      "condition": "GB2423.17-2008",
+      "raw_text": "符合 GB2423.17-2008 盐雾测试：5% 盐水 / 35°C / 24H 后无生锈"
+    },
+    {
+      "subject": "线径",
+      "attribute": "直径",
+      "value": "0.5",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "IQC关键尺寸，主视图",
+      "raw_text": "线径 Ø 0.5 ±0.03 mm，IQC关键尺寸"
+    },
+    {
+      "subject": "工作段长",
+      "attribute": "长度",
+      "value": "7.0",
+      "unit": "mm",
+      "tolerance": "±0.30",
+      "condition": "弹簧紧密段，IQC关键尺寸，侧视图",
+      "raw_text": "工作段长（弹簧紧密段）7.0 ±0.30 mm，IQC关键尺寸"
+    },
+    {
+      "subject": "弹簧外径",
+      "attribute": "直径",
+      "value": "6.5",
+      "unit": "mm",
+      "tolerance": "±0.10",
+      "condition": "IQC关键尺寸，主视图",
+      "raw_text": "弹簧外径 Ø 6.5 ±0.10 mm，IQC关键尺寸"
+    },
+    {
+      "subject": "自由高",
+      "attribute": "长度",
+      "value": "11.7",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "侧视图（左）",
+      "raw_text": "自由高 11.7 mm，默认B级公差"
+    },
+    {
+      "subject": "挂钩展开宽",
+      "attribute": "宽度",
+      "value": "5.3",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "侧视图（挂钩1）",
+      "raw_text": "挂钩展开宽 5.3 mm，默认B级公差"
+    },
+    {
+      "subject": "挂钩中段",
+      "attribute": "长度",
+      "value": "3.8",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "侧视图（挂钩2）",
+      "raw_text": "挂钩中段 3.8 mm，默认B级公差"
+    },
+    {
+      "subject": "挂钩末端",
+      "attribute": "长度",
+      "value": "1.8",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "侧视图（挂钩3）",
+      "raw_text": "挂钩末端 1.8 mm，默认B级公差"
+    },
+    {
+      "subject": "挂钩端到底座",
+      "attribute": "距离",
+      "value": "8.5",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "侧视图",
+      "raw_text": "挂钩端到底座 8.5 mm，默认B级公差"
+    },
+    {
+      "subject": "螺距",
+      "attribute": "间距",
+      "value": "2.3",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "侧视图",
+      "raw_text": "螺距 2.3 mm，默认B级公差"
+    },
+    {
+      "subject": "Z形挂钩弯折角",
+      "attribute": "角度",
+      "value": "90",
+      "unit": "°",
+      "tolerance": "±0.5°",
+      "condition": "侧视图",
+      "raw_text": "Z形挂钩弯折角 90° ±0.5°"
+    },
+    {
+      "subject": "顶端内孔",
+      "attribute": "直径",
+      "value": "4.8",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "SECTION A-A",
+      "raw_text": "顶端内孔 Ø 4.8 mm，默认B级公差"
+    },
+    {
+      "subject": "顶端中心孔",
+      "attribute": "直径",
+      "value": "3.0",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "SECTION A-A",
+      "raw_text": "顶端中心孔 Ø 3.0 mm，默认B级公差"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "document": {
+    "title": "Analysis and Evaluation Report of Infrared No-Touch Forehead Thermometer (PT9L)",
+    "fragment": "2/2",
+    "conclusion": "The Expected Life of the product can reach 5 years under the operating conditions in the user manual. The expected life is reflected in the device label and user manual."
+  },
+  "products": [
+    {
+      "name": "Infrared No-Touch Forehead Thermometer",
+      "model": "PT9L"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "5.2.3",
+      "test_name": "Accelerated Aging Test (Damp Heat, Steady State)",
+      "standard": "IEC 60068-2-78:2012 Environmental Testing-Part 2: Test Method Test Cab: Damp heat, steady state",
+      "conditions": {
+        "temperature": "40℃",
+        "humidity": "95% RH"
+      },
+      "start_time": "12:10, July 10, 2024",
+      "end_time": "02:58, July 11, 2024",
+      "total_duration_hours": 14.8,
+      "steps": [
+        {
+          "step_id": "5.2.3.1",
+          "description": "Before the test, the basic performance of the Infrared No-Touch Forehead Thermometer is tested, and the test results are qualified."
+        },
+        {
+          "step_id": "5.2.3.2",
+          "description": "Place the Infrared No-Touch Forehead Thermometer in the temperature alternating chamber. Allow the Infrared No-Touch Forehead Thermometer to continuously measure in normal measurement mode."
+        },
+        {
+          "step_id": "5.2.3.3",
+          "description": "Adjust the temperature alternating chamber to 40℃ and 95% RH per IEC 60068-2-78:2012; record test time after temperature and humidity are stable."
+        },
+        {
+          "step_id": "5.2.3.4",
+          "description": "After the acceleration time from the normal work to the fifth year, test the basic performance of the prototype, and all the test results are qualified. See Annex II."
+        }
+      ],
+      "result": "Pass"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-LIFE-001",
+      "description": "Expected Life of 5 years",
+      "value": "5 years / 30.5 hours operational time",
+      "confidence_level": "90%",
+      "reliability": "90%"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "ETX202303-07-078-05",
+      "type": "Test Report",
+      "description": "Annex I: Test Report"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60068-2-78:2012",
+      "title": "Environmental Testing-Part 2: Test Method Test Cab: Damp heat, steady state"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Accelerated aging calculation: TestRunTime = 238.410h. Accelerated testing time for 5 years = TestRunTime / AF = 14.8h. Parameters used: Confidence = 90%, Reliability = 90%, Expected Life = 30.5h.",
+      "topic_tags": [
+        "accelerated aging",
+        "Arrhenius model",
+        "TestRunTime",
+        "acceleration factor",
+        "expected life"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "IEC 60068-2-78:2012",
+        "Accelerated Aging Test"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "In summary, considering the influencing factors of use frequency, use time, environmental temperature and humidity, and the temperature and humidity as accelerated stress, the Arrhenius model is used for accelerated aging test method. After risk analysis, the Expected Life of this product can reach 5 years under the operating conditions in the user manual. The expected life is reflected in the device label and user manual.",
+      "topic_tags": [
+        "Arrhenius model",
+        "accelerated aging",
+        "expected life",
+        "risk analysis",
+        "use frequency",
+        "temperature",
+        "humidity"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Risk Analysis Report",
+        "user manual",
+        "device label"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Annexes referenced in the report: Annex I: ETX202303-07-078-05 Test Report. Annex II: the Infrared No-Touch Forehead Thermometer performance test report. Annex III: Risk Analysis Report.",
+      "topic_tags": [
+        "annex",
+        "test report",
+        "performance test",
+        "risk analysis"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-05",
+        "PT9L",
+        "Risk Analysis Report"
+      ]
+    }
+  ]
+}

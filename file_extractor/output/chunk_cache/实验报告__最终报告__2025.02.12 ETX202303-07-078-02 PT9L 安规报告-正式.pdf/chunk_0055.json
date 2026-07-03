@@ -1,0 +1,195 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "total_pages": 181,
+    "current_pages": "115-116",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 Medical Electrical Equipment General Requirements for Basic Safety and Essential Performance",
+      "version": "2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 Medical Electrical Equipment General Requirements",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "ISO14971",
+      "name": "ISO 14971 Risk Management for Medical Devices"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "4.3",
+      "description": "Hazard analysis per ISO 14971",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Hazard analysis recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.4.2",
+      "description": "Working Voltage / Power Measurement",
+      "verdict": "N/A",
+      "measurements": [
+        {
+          "location": "Between opposite polarity of batteries",
+          "Vrms": "--",
+          "Vpk_or_Vdc": "3 Vdc",
+          "peak_to_peak_ripple": "--",
+          "power_W_VA": "--",
+          "energy_J": "--"
+        }
+      ],
+      "notes": [
+        "The input supply voltage to the ME EQUIPMENT was the RATED voltage or the voltage within the RATED voltage range which results in the highest measured value. See clause 8.5.4.",
+        "If the d.c peak-to-peak ripple >10%, waveform considered as a.c. See clause 8.4.2.2"
+      ]
+    },
+    {
+      "clause": "8.4.2a",
+      "description": "RM RESULTS TABLE: Accessible parts including applied parts",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.4.3",
+      "description": "ME EQUIPMENT for connection to a power source by a plug - measurement of voltage or calculation of stored charge 1s after disconnection of plug from mains supply",
+      "verdict": "N/A",
+      "limits": {
+        "maximum_allowable_voltage_V": "--",
+        "maximum_allowable_stored_charge_above_60V": "45 μC"
+      },
+      "measurements": {
+        "plug_pins_1_and_2": [
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--"
+        ],
+        "plug_pin_1_and_enclosure": [
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--"
+        ],
+        "plug_pin_2_and_enclosure": [
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--",
+          "--"
+        ]
+      }
+    },
+    {
+      "clause": "8.4.4",
+      "description": "Internal capacitive circuits – measurement of residual voltage or calculation of the stored charge in capacitive circuits after de-energizing ME EQUIPMENT",
+      "verdict": "N/A",
+      "limits": {
+        "maximum_allowable_residual_voltage_V": "60 V",
+        "maximum_allowable_stored_charge_above_60V": "45 C"
+      }
+    },
+    {
+      "clause": "8.5.2.2",
+      "description": "RM RESULTS TABLE: Type B applied parts",
+      "verdict": "N/A",
+      "iso14971_clauses_reviewed": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ]
+    },
+    {
+      "clause": "8.5.2.3",
+      "description": "RM RESULTS TABLE: PATIENT Leads",
+      "verdict": "N/A",
+      "iso14971_clauses_reviewed": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ]
+    },
+    {
+      "clause": "8.5.5.1a",
+      "description": "Defibrillation-proof applied parts – measurement of hazardous electrical energies",
+      "verdict": "N/A"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-02"
+    },
+    {
+      "type": "risk_management_report_document_number",
+      "value": "PT9L-FXGB01 V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Maximum allowable stored charge when measured voltage exceeded 60V: 45 μC. This applies to ME equipment connected to power source by plug, measured 1 second after disconnection from mains supply (clause 8.4.3).",
+      "topic_tags": [
+        "stored charge",
+        "electrical safety",
+        "plug disconnection",
+        "60V limit"
+      ],
+      "related_subjects": [
+        "8.4.3",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Internal capacitive circuits: Maximum allowable residual voltage = 60V; Maximum allowable stored charge when residual voltage exceeded 60V = 45C. Applies to accessible capacitors or circuit parts after de-energizing ME equipment (clause 8.4.4).",
+      "topic_tags": [
+        "capacitive circuit",
+        "residual voltage",
+        "stored charge",
+        "de-energizing",
+        "electrical safety"
+      ],
+      "related_subjects": [
+        "8.4.4",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Working voltage measurement for batteries: Between opposite polarity of batteries, measured Vdc = 3 Vdc. No AC component detected. Test supply voltage/frequency not applicable (battery-powered device).",
+      "topic_tags": [
+        "working voltage",
+        "battery",
+        "power measurement",
+        "3Vdc"
+      ],
+      "related_subjects": [
+        "8.4.2",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

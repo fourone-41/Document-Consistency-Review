@@ -1,0 +1,2773 @@
+{
+  "document": {
+    "title": "Clinical accuracy report - iHealth PT9L Infrared No-Touch Forehead Thermometer",
+    "doc_type": "临床研究报告",
+    "version": "20200610"
+  },
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "iHealth PT9L Infrared No-Touch Forehead Thermometer"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "Clinical_Accuracy_Test",
+      "item": "临床准确性与重复性验证",
+      "condition": "温度23±2℃，湿度55±10%；被试者总数不少于90人，分三组（0-12月婴儿、1-5岁儿童、5岁以上成人），每组发烧与非发烧人数接近",
+      "expected_value": "符合ATSEM 1965-98要求",
+      "actual_result": "各组临床偏差：组1 -0.07℃，组2 -0.05℃，组3 -0.05℃；标准差：组1 0.1，组2 0.08，组3 0.1；一致性限：组1 0.2，组2 0.17，组3 0.19；重复性：组1 0.06℃，组2 0.07℃，组3 0.08℃；t检验p值均>0.05",
+      "pass_criteria": "t检验p>0.05，即DUT与口腔参考温度无显著差异",
+      "environment": "温度23±2℃，湿度55±10%"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "Clinical_Accuracy_Report_PT9L_20200610",
+      "conclusion": "红外额温计与口腔温度在各年龄组间无显著差异（t检验p>0.05）：组1 p=0.72，组2 p=0.79，组3 p=0.84。95%置信区间：组1[-0.10,-0.03]，组2[-0.08,-0.03]，组3[-0.05,-0.02]。"
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.1",
+      "reading": "38.2/38.3/38.2",
+      "unit": "℃",
+      "reference_value": "RCT=38.3, Braun=38.4",
+      "condition": "σj=0.058, △cb1=-0.10, △cb2=-0.20"
+    },
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.2",
+      "reading": "36.8/36.6/36.6",
+      "unit": "℃",
+      "reference_value": "RCT=36.8, Braun=36.9",
+      "condition": "σj=0.115, △cb1=0.00, △cb2=-0.10"
+    },
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.3",
+      "reading": "36.8/36.9/36.9",
+      "unit": "℃",
+      "reference_value": "RCT=36.9, Braun=37.0",
+      "condition": "σj=0.058, △cb1=-0.10, △cb2=-0.20"
+    },
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.4",
+      "reading": "38.7/38.7/38.5",
+      "unit": "℃",
+      "reference_value": "RCT=38.7, Braun=38.8",
+      "condition": "σj=0.115, △cb1=0.00, △cb2=-0.10"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 5 (M, 2yr) ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "reference_value": 38.2,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 5 (M, 2yr) ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "reference_value": 38.3,
+      "condition": "Group 1 Adults, Braun reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 6 (F, 1yr) ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "reference_value": 37.7,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 6 (F, 1yr) ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "reference_value": 37.8,
+      "condition": "Group 1 Adults, Braun reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 7 (M, 0.5yr) ti1",
+      "reading": 38.8,
+      "unit": "°C",
+      "reference_value": 38.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 7 (M, 0.5yr) ti1",
+      "reading": 38.8,
+      "unit": "°C",
+      "reference_value": 38.9,
+      "condition": "Group 1 Adults, Braun reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 8 (F, 0.5yr) ti1",
+      "reading": 38.5,
+      "unit": "°C",
+      "reference_value": 38.7,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 9 (M, 3yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "reference_value": 37.0,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 10 (M, 1yr) ti1",
+      "reading": 37.6,
+      "unit": "°C",
+      "reference_value": 37.5,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 11 (M, 1yr) ti1",
+      "reading": 36.6,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 12 (M, 2yr) ti1",
+      "reading": 36.7,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 13 (F, 2.5yr) ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "reference_value": 36.5,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 14 (M, 0.5yr) ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "reference_value": 37.1,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 15 (M, 0.5yr) ti1",
+      "reading": 37.2,
+      "unit": "°C",
+      "reference_value": 37.1,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 16 (F, 1yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "reference_value": 36.9,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 17 (M, 1yr) ti1",
+      "reading": 36.6,
+      "unit": "°C",
+      "reference_value": 36.7,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 18 (M, 3yr) ti1",
+      "reading": 36.6,
+      "unit": "°C",
+      "reference_value": 36.6,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 19 (F, 2yr) ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "reference_value": 37.1,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 20 (M, 0.5yr) ti1",
+      "reading": 38.3,
+      "unit": "°C",
+      "reference_value": 38.3,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 21 (F, 7yr) ti1",
+      "reading": 37.9,
+      "unit": "°C",
+      "reference_value": 38.1,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 22 (M, 8yr) ti1",
+      "reading": 38.5,
+      "unit": "°C",
+      "reference_value": 38.5,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 23 (M, 10yr) ti1",
+      "reading": 38.8,
+      "unit": "°C",
+      "reference_value": 38.9,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 24 (F, 10yr) ti1",
+      "reading": 38.7,
+      "unit": "°C",
+      "reference_value": 38.6,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 25 (M, 10yr) ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "reference_value": 37.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 26 (M, 10yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 27 (F, 5yr) ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "reference_value": 36.7,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 28 (F, 5yr) ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "reference_value": 36.5,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 29 (F, 9yr) ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 30 (M, 10yr) ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "reference_value": 36.2,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 31 (M, 10yr) ti1",
+      "reading": 36.7,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 32 (M, 10yr) ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "reference_value": 37.1,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 33 (F, 10yr) ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "reference_value": 36.4,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 34 (M, 8yr) ti1",
+      "reading": 36.6,
+      "unit": "°C",
+      "reference_value": 36.7,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 35 (F, 6yr) ti1",
+      "reading": 36.1,
+      "unit": "°C",
+      "reference_value": 36.1,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 36 (F, 5yr) ti1",
+      "reading": 37.6,
+      "unit": "°C",
+      "reference_value": 37.6,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 37 (F, 10yr) ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "reference_value": 37.9,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 38 (M, 9yr) ti1",
+      "reading": 38.0,
+      "unit": "°C",
+      "reference_value": 38.1,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 39 (F, 10yr) ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "reference_value": 36.6,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 40 (M, 10yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Group 1 Adults, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 1 (M, 1.5yr) ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "reference_value": 37.3,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 1 (M, 1.5yr) ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "reference_value": 37.3,
+      "condition": "Group 2 Children, Braun reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 2 (F, 2yr) ti1",
+      "reading": 38.9,
+      "unit": "°C",
+      "reference_value": 38.8,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 2 (F, 2yr) ti1",
+      "reading": 38.9,
+      "unit": "°C",
+      "reference_value": 39.0,
+      "condition": "Group 2 Children, Braun reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 3 (F, 2yr) ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "reference_value": 39.3,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 3 (F, 2yr) ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "reference_value": 39.4,
+      "condition": "Group 2 Children, Braun reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 4 (M, 3yr) ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "reference_value": 38.3,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 5 (M, 3yr) ti1",
+      "reading": 38.5,
+      "unit": "°C",
+      "reference_value": 38.6,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 6 (F, 3yr) ti1",
+      "reading": 38.1,
+      "unit": "°C",
+      "reference_value": 38.2,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 7 (M, 3yr) ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "reference_value": 38.1,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 8 (F, 3yr) ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 9 (F, 3yr) ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "reference_value": 37.0,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 10 (F, 3yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "reference_value": 36.9,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 11 (M, 3yr) ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "reference_value": 37.1,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 12 (F, 3yr) ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "reference_value": 36.9,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 13 (F, 3yr) ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "reference_value": 37.1,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 14 (F, 3yr) ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "reference_value": 37.0,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 15 (F, 4yr) ti1",
+      "reading": 38.3,
+      "unit": "°C",
+      "reference_value": 38.4,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 16 (M, 4yr) ti1",
+      "reading": 38.5,
+      "unit": "°C",
+      "reference_value": 38.5,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 17 (M, 4yr) ti1",
+      "reading": 39.0,
+      "unit": "°C",
+      "reference_value": 39.0,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Group2 Subject 18 (F, 4yr) ti1",
+      "reading": 38.0,
+      "unit": "°C",
+      "reference_value": 38.0,
+      "condition": "Group 2 Children, RCT reference"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 19 (Group 2, F, 5yr) ti1",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 19 (Group 2, F, 5yr) ti2",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 19 (Group 2, F, 5yr) ti3",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 19 (Group 2, F, 5yr) reference",
+      "reading": 38.9,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 19 (Group 2, F, 5yr) reference",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 20 (Group 2, F, 5yr) ti1",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 20 (Group 2, F, 5yr) ti2",
+      "reading": 38.5,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 20 (Group 2, F, 5yr) ti3",
+      "reading": 38.5,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 20 (Group 2, F, 5yr) reference",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 20 (Group 2, F, 5yr) reference",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 21 (Group 2, F, 5yr) ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 21 (Group 2, F, 5yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 21 (Group 2, F, 5yr) reference",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 22 (Group 2, M, 5yr) ti1",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 22 (Group 2, M, 5yr) ti2",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 22 (Group 2, M, 5yr) ti3",
+      "reading": 38.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 22 (Group 2, M, 5yr) reference",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 22 (Group 2, M, 5yr) reference",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 23 (Group 2, F, 5yr) ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 23 (Group 2, F, 5yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 23 (Group 2, F, 5yr) reference",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 24 (Group 2, M, 2.5yr) ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 24 (Group 2, M, 2.5yr) ti2",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 24 (Group 2, M, 2.5yr) ti3",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 24 (Group 2, M, 2.5yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 24 (Group 2, M, 2.5yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 25 (Group 2, M, 2.5yr) ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 25 (Group 2, M, 2.5yr) reference",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 25 (Group 2, M, 2.5yr) reference",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 26 (Group 2, F, 3.5yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 26 (Group 2, F, 3.5yr) reference",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 26 (Group 2, F, 3.5yr) reference",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 27 (Group 2, M, 4.5yr) ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 27 (Group 2, M, 4.5yr) reference",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 27 (Group 2, M, 4.5yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 28 (Group 2, F, 4.5yr) ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 28 (Group 2, F, 4.5yr) reference",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 28 (Group 2, F, 4.5yr) reference",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 29 (Group 2, M, 1.5yr) ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 29 (Group 2, M, 1.5yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 29 (Group 2, M, 1.5yr) reference",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 30 (Group 2, F, 1.5yr) ti1",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 30 (Group 2, F, 1.5yr) reference",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 30 (Group 2, F, 1.5yr) reference",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 31 (Group 2, F, 2yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 31 (Group 2, F, 2yr) reference",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 31 (Group 2, F, 2yr) reference",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 32 (Group 2, M, 3yr) ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 32 (Group 2, M, 3yr) reference",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 32 (Group 2, M, 3yr) reference",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 33 (Group 2, M, 4yr) ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 33 (Group 2, M, 4yr) reference",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 33 (Group 2, M, 4yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 34 (Group 2, M, 1.5yr) ti1",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 34 (Group 2, M, 1.5yr) reference",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 34 (Group 2, M, 1.5yr) reference",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 35 (Group 2, F, 5yr) ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 35 (Group 2, F, 5yr) reference",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 35 (Group 2, F, 5yr) reference",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 36 (Group 2, F, 5yr) ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 36 (Group 2, F, 5yr) reference",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 36 (Group 2, F, 5yr) reference",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 37 (Group 2, M, 1.5yr) ti1",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 37 (Group 2, M, 1.5yr) reference",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 37 (Group 2, M, 1.5yr) reference",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 38 (Group 2, M, 1.5yr) ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 38 (Group 2, M, 1.5yr) reference",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 38 (Group 2, M, 1.5yr) reference",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 39 (Group 2, F, 2yr) ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 39 (Group 2, F, 2yr) reference",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 39 (Group 2, F, 2yr) reference",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 40 (Group 2, M, 3yr) ti1",
+      "reading": 37.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 40 (Group 2, M, 3yr) reference",
+      "reading": 37.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 40 (Group 2, M, 3yr) reference",
+      "reading": 37.6,
+      "unit": "°C",
+      "condition": "Group 2 Children clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 1 (Group 3, M, 80yr) ti1",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 1 (Group 3, M, 80yr) reference",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 1 (Group 3, M, 80yr) reference",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 2 (Group 3, F, 27yr) ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 2 (Group 3, F, 27yr) reference",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 2 (Group 3, F, 27yr) reference",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 3 (Group 3, F, 75yr) ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 3 (Group 3, F, 75yr) reference",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 3 (Group 3, F, 75yr) reference",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 4 (Group 3, F, 20yr) ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 4 (Group 3, F, 20yr) reference",
+      "reading": 39.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 4 (Group 3, F, 20yr) reference",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 5 (Group 3, M, 25yr) ti1",
+      "reading": 37.6,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 5 (Group 3, M, 25yr) reference",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 5 (Group 3, M, 25yr) reference",
+      "reading": 37.7,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 6 (Group 3, F, 6yr) ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 6 (Group 3, F, 6yr) reference",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 6 (Group 3, F, 6yr) reference",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 7 (Group 3, M, 25yr) ti1",
+      "reading": 38.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 7 (Group 3, M, 25yr) reference",
+      "reading": 38.6,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 7 (Group 3, M, 25yr) reference",
+      "reading": 38.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 8 (Group 3, M, 22yr) ti1",
+      "reading": 38.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 8 (Group 3, M, 22yr) reference",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 8 (Group 3, M, 22yr) reference",
+      "reading": 38.6,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 9 (Group 3, F, 38yr) ti1",
+      "reading": 39.7,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 9 (Group 3, F, 38yr) reference",
+      "reading": 39.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 9 (Group 3, F, 38yr) reference",
+      "reading": 39.6,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 10 (Group 3, M, 81yr) ti1",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 10 (Group 3, M, 81yr) reference",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 10 (Group 3, M, 81yr) reference",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 11 (Group 3, F, 43yr) ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 11 (Group 3, F, 43yr) reference",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 11 (Group 3, F, 43yr) reference",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 12 (Group 3, F, 83yr) ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 12 (Group 3, F, 83yr) reference",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 12 (Group 3, F, 83yr) reference",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 13 (Group 3, F, 57yr) ti1",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 13 (Group 3, F, 57yr) reference",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 13 (Group 3, F, 57yr) reference",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 14 (Group 3, F, 21yr) ti1",
+      "reading": 38.6,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 14 (Group 3, F, 21yr) reference",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 14 (Group 3, F, 21yr) reference",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 15 (Group 3, M, 86yr) ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 15 (Group 3, M, 86yr) reference",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 15 (Group 3, M, 86yr) reference",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 16 (Group 3, M, 76yr) ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 16 (Group 3, M, 76yr) reference",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 16 (Group 3, M, 76yr) reference",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 17 (Group 3, F, 12yr) ti1",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 17 (Group 3, F, 12yr) reference",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 17 (Group 3, F, 12yr) reference",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 18 (Group 3, M, 64yr) ti1",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 18 (Group 3, M, 64yr) reference",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 18 (Group 3, M, 64yr) reference",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 19 (Group 3, F, 75yr) ti1",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 19 (Group 3, F, 75yr) reference",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 19 (Group 3, F, 75yr) reference",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 20 (Group 3, F, 76yr) ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 20 (Group 3, F, 76yr) reference",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 20 (Group 3, F, 76yr) reference",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 21 (Group 3, F, 75yr) ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 21 (Group 3, F, 75yr) reference",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 21 (Group 3, F, 75yr) reference",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 22 (Group 3, M, 28yr) ti1",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 22 (Group 3, M, 28yr) reference",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 22 (Group 3, M, 28yr) reference",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 23 (Group 3, F, 19yr) ti1",
+      "reading": 38.6,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 23 (Group 3, F, 19yr) reference",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 23 (Group 3, F, 19yr) reference",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 24 (Group 3, M, 80yr) ti1",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 24 (Group 3, M, 80yr) reference",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 24 (Group 3, M, 80yr) reference",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 25 (Group 3, M, 88yr) ti1",
+      "reading": 35.8,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 25 (Group 3, M, 88yr) reference",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 25 (Group 3, M, 88yr) reference",
+      "reading": 35.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 26 (Group 3, M, 76yr) ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 26 (Group 3, M, 76yr) reference",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 26 (Group 3, M, 76yr) reference",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 27 (Group 3, F, 75yr) ti1",
+      "reading": 35.9,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 27 (Group 3, F, 75yr) reference",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 27 (Group 3, F, 75yr) reference",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 28 (Group 3, F, 75yr) ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 28 (Group 3, F, 75yr) reference",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 28 (Group 3, F, 75yr) reference",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 29 (Group 3, M, 44yr) ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 29 (Group 3, M, 44yr) reference",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 29 (Group 3, M, 44yr) reference",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 30 (Group 3, M, 41yr) ti1",
+      "reading": 38.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 30 (Group 3, M, 41yr) reference",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 30 (Group 3, M, 41yr) reference",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 31 (Group 3, F, 41yr) ti1",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 31 (Group 3, F, 41yr) reference",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 31 (Group 3, F, 41yr) reference",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 32 (Group 3, F, 45yr) ti1",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 32 (Group 3, F, 45yr) reference",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 32 (Group 3, F, 45yr) reference",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 33 (Group 3, F, 20yr) ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 33 (Group 3, F, 20yr) reference",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 33 (Group 3, F, 20yr) reference",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "PT9L",
+      "test_point": "Subject 34 (Group 3, M, 77yr) ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "RCT",
+      "test_point": "Subject 34 (Group 3, M, 77yr) reference",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "Braun",
+      "test_point": "Subject 34 (Group 3, M, 77yr) reference",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "Group 3 Adults clinical study"
+    },
+    {
+      "machine_no": "35",
+      "test_point": "Subject 35 M age84 Meas1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "35",
+      "test_point": "Subject 35 M age84 Meas2",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "35",
+      "test_point": "Subject 35 M age84 Meas3",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "35",
+      "test_point": "Subject 35 M age84 RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "reference_value": 36.4,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "36",
+      "test_point": "Subject 36 F age88 Meas1",
+      "reading": 35.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "36",
+      "test_point": "Subject 36 F age88 Meas2",
+      "reading": 35.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "36",
+      "test_point": "Subject 36 F age88 Meas3",
+      "reading": 35.6,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "36",
+      "test_point": "Subject 36 F age88 RCT",
+      "reading": 35.8,
+      "unit": "°C",
+      "reference_value": 35.8,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "37",
+      "test_point": "Subject 37 F age76 Meas1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "37",
+      "test_point": "Subject 37 F age76 Meas2",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "37",
+      "test_point": "Subject 37 F age76 Meas3",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "37",
+      "test_point": "Subject 37 F age76 RCT",
+      "reading": 36.5,
+      "unit": "°C",
+      "reference_value": 36.4,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "38",
+      "test_point": "Subject 38 M age80 Meas1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "38",
+      "test_point": "Subject 38 M age80 Meas2",
+      "reading": 35.9,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "38",
+      "test_point": "Subject 38 M age80 Meas3",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "38",
+      "test_point": "Subject 38 M age80 RCT",
+      "reading": 36.1,
+      "unit": "°C",
+      "reference_value": 36.2,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "39",
+      "test_point": "Subject 39 F age36 Meas1",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "39",
+      "test_point": "Subject 39 F age36 Meas2",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "39",
+      "test_point": "Subject 39 F age36 Meas3",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "39",
+      "test_point": "Subject 39 F age36 RCT",
+      "reading": 38.0,
+      "unit": "°C",
+      "reference_value": 37.9,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "40",
+      "test_point": "Subject 40 M age27 Meas1",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "40",
+      "test_point": "Subject 40 M age27 Meas2",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "40",
+      "test_point": "Subject 40 M age27 Meas3",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "40",
+      "test_point": "Subject 40 M age27 RCT",
+      "reading": 39.1,
+      "unit": "°C",
+      "reference_value": 39.2,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "41",
+      "test_point": "Subject 41 F age35 Meas1",
+      "reading": 37.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "41",
+      "test_point": "Subject 41 F age35 Meas2",
+      "reading": 37.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "41",
+      "test_point": "Subject 41 F age35 Meas3",
+      "reading": 37.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "41",
+      "test_point": "Subject 41 F age35 RCT",
+      "reading": 37.7,
+      "unit": "°C",
+      "reference_value": 37.8,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "42",
+      "test_point": "Subject 42 F age83 Meas1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "42",
+      "test_point": "Subject 42 F age83 Meas2",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "42",
+      "test_point": "Subject 42 F age83 Meas3",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "42",
+      "test_point": "Subject 42 F age83 RCT",
+      "reading": 36.1,
+      "unit": "°C",
+      "reference_value": 36.2,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "43",
+      "test_point": "Subject 43 M age48 Meas1",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "43",
+      "test_point": "Subject 43 M age48 Meas2",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "43",
+      "test_point": "Subject 43 M age48 Meas3",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "43",
+      "test_point": "Subject 43 M age48 RCT",
+      "reading": 36.7,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "44",
+      "test_point": "Subject 44 M age76 Meas1",
+      "reading": 35.5,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "44",
+      "test_point": "Subject 44 M age76 Meas2",
+      "reading": 35.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "44",
+      "test_point": "Subject 44 M age76 Meas3",
+      "reading": 35.5,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "44",
+      "test_point": "Subject 44 M age76 RCT",
+      "reading": 35.7,
+      "unit": "°C",
+      "reference_value": 35.7,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "45",
+      "test_point": "Subject 45 M age83 Meas1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "45",
+      "test_point": "Subject 45 M age83 Meas2",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "45",
+      "test_point": "Subject 45 M age83 Meas3",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "45",
+      "test_point": "Subject 45 M age83 RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "reference_value": 36.4,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "46",
+      "test_point": "Subject 46 M age87 Meas1",
+      "reading": 35.5,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "46",
+      "test_point": "Subject 46 M age87 Meas2",
+      "reading": 35.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "46",
+      "test_point": "Subject 46 M age87 Meas3",
+      "reading": 35.5,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "46",
+      "test_point": "Subject 46 M age87 RCT",
+      "reading": 35.7,
+      "unit": "°C",
+      "reference_value": 35.7,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "47",
+      "test_point": "Subject 47 M age6 Meas1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "47",
+      "test_point": "Subject 47 M age6 Meas2",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "47",
+      "test_point": "Subject 47 M age6 Meas3",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "47",
+      "test_point": "Subject 47 M age6 RCT",
+      "reading": 36.8,
+      "unit": "°C",
+      "reference_value": 37.0,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "48",
+      "test_point": "Subject 48 F age47 Meas1",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "48",
+      "test_point": "Subject 48 F age47 Meas2",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "48",
+      "test_point": "Subject 48 F age47 Meas3",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "48",
+      "test_point": "Subject 48 F age47 RCT",
+      "reading": 36.8,
+      "unit": "°C",
+      "reference_value": 36.8,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "49",
+      "test_point": "Subject 49 F age40 Meas1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "49",
+      "test_point": "Subject 49 F age40 Meas2",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "49",
+      "test_point": "Subject 49 F age40 Meas3",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "49",
+      "test_point": "Subject 49 F age40 RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "reference_value": 36.3,
+      "condition": "Reference RCT"
+    },
+    {
+      "machine_no": "50",
+      "test_point": "Subject 50 M age76 Meas1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "50",
+      "test_point": "Subject 50 M age76 Meas2",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "50",
+      "test_point": "Subject 50 M age76 Meas3",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "Clinical comparison"
+    },
+    {
+      "machine_no": "50",
+      "test_point": "Subject 50 M age76 RCT",
+      "reading": 36.2,
+      "unit": "°C",
+      "reference_value": 36.2,
+      "condition": "Reference RCT"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "标准/规范编号",
+      "value": "ATSEM 1965-98"
+    },
+    {
+      "id_type": "对比仪器型号",
+      "value": "Braun NTF3000"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Contraindications: It is not recommended for people whose forehead has local lesions, such as inflammation, trauma, recent surgery, etc..",
+      "topic_tags": [
+        "禁忌症",
+        "额头病变",
+        "炎症",
+        "外伤",
+        "手术"
+      ],
+      "related_subjects": [
+        "iHealth PT9L",
+        "临床研究报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Intended use: The Infrared No-Touch Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by healthcare providers.",
+      "topic_tags": [
+        "预期用途",
+        "体温测量",
+        "额头皮肤",
+        "家用",
+        "医疗机构"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "Device description: The iHealth PT9L Infrared No-Touch Forehead Thermometer is hand-held, reusable, battery operated device, which can measure human body temperature on the skin temperature on one's forehead. Its operation is based on measuring the natural thermal radiation from the central forehead. Put the probe of the thermometer is onto the skin of a patient's central forehead. Pressing the activation button to start the measurement of proposed infrared radiation. The electrical signal read out from the detector is fed to the circuit for amplification and calculation. The final measured temperature will be appeared on a LCD display.",
+      "topic_tags": [
+        "工作原理",
+        "红外辐射",
+        "额温测量",
+        "LCD显示",
+        "电路放大"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test method: Step1: Sequence the Participants and sign Serial numbers. Step2: Verify reference thermometer accuracy using water bath. Step3: Supervisor takes DUT and prepares measurement. Step4: Perform three consecutive measurements with time interval no more than 1 min, record results. Step5: Take one RCT oral temperature measurement, record results. Step6: Repeat for all participants (odd-numbered: DUT first then RCT; even-numbered: RCT first then DUT). Final step: Verify reference thermometer accuracy again with water bath.",
+      "topic_tags": [
+        "测试方法",
+        "测试步骤",
+        "水浴验证",
+        "参考体温计",
+        "测量顺序"
+      ],
+      "related_subjects": [
+        "临床研究报告",
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Subject participation criteria: Total number no less than 90. Within each age group both afebrile and febrile subjects represented by nearly equal numbers. Oral temperature 37.5℃ or higher considered febrile. Group 1: infants 0-12 months, no less than 30. Group 2: children 1-5 years, no less than 30. Group 3: adults older than 5 years, no less than 30. Exclusion: subjects with medical conditions affecting accuracy (e.g., inflammation at measuring site), subjects who took antipyretics in preceding 120 min.",
+      "topic_tags": [
+        "受试者纳入标准",
+        "排除标准",
+        "年龄分组",
+        "发烧",
+        "退烧药"
+      ],
+      "related_subjects": [
+        "临床研究报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Subject distribution results: Group1(Infants): 40 participants (F=18, M=22, Febrile=16, Afebrile=24); Group2(Children): 40 participants (F=22, M=18, Febrile=15, Afebrile=25); Group3(Adults): 50 participants (F=26, M=24, Febrile=20, Afebrile=30); Total: 130 participants (Female=66/50.8%, Male=64/49.2%, Febrile=51/39.2%, Afebrile=79/60.8%).",
+      "topic_tags": [
+        "受试者分布",
+        "人口统计",
+        "发烧人数",
+        "性别分布"
+      ],
+      "related_subjects": [
+        "临床研究报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group 1 clinical study statistical summary (N=40): PT9L Repeatability Sr = 0.06. PT9L vs RCT: Clinical bias Average(Δcb1) = -0.07, Standard deviation σΔcb1 = 0.10, Limits of agreement LA1 = 0.20, Uncertainty +/-0.10. PT9L vs Braun: Clinical bias Average(Δcb2) = -0.15, Standard deviation σΔcb2 = 0.06, Limits of agreement LA2 = 0.13, Uncertainty +/-0.06.",
+      "topic_tags": [
+        "clinical bias",
+        "repeatability",
+        "limits of agreement",
+        "uncertainty",
+        "PT9L",
+        "RCT",
+        "Braun"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "RCT reference thermometer",
+        "Braun reference thermometer",
+        "Group 1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group 1 clinical data table (subjects 5-40): Each row contains subject number, gender (M/F), age (years), three DUT readings (ti1, ti2, ti3), standard deviation σj and σj², RCT reference temperature tRi, Braun reference temperature, clinical bias Δcb1=ti1-RCT, clinical bias Δcb2=ti1-Braun, and repeatability differences D1=ti2-ti1, D2=ti3-ti2, D3=ti1-ti3. Ages range from 0.5 to 10 years.",
+      "topic_tags": [
+        "clinical data",
+        "temperature measurement",
+        "DUT",
+        "RCT",
+        "Braun",
+        "repeatability",
+        "bias"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Group 1",
+        "clinical study"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group 2 (Children) clinical data table (subjects 1-18): Each row contains subject number, gender (M/F), age (years), three DUT readings (ti1, ti2, ti3), standard deviation σj and σj², RCT reference temperature tRi, Braun reference temperature, clinical bias Δcb1=ti1-RCT, clinical bias Δcb2=ti1-Braun, and repeatability differences D1=ti2-ti1, D2=ti3-ti2, D3=ti1-ti3. Ages range from 1.5 to 4 years.",
+      "topic_tags": [
+        "clinical data",
+        "children",
+        "temperature measurement",
+        "DUT",
+        "RCT",
+        "Braun",
+        "repeatability",
+        "bias"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Group 2",
+        "clinical study"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group 2 (Children, N=40) Repeatability: Sr = 0.07. PT9L and RCT Clinical bias: Average(△cb1) = -0.05, Standard deviation: σ△cb1 = 0.08, Limits of agreement: LA1 = 0.17, Uncertainty: +/-0.08. PT9L and Braun Clinical bias: Average(△cb2) = -0.13, Standard deviation: σ△cb2 = 0.06, Limits of agreement: LA2 = 0.12, Uncertainty: +/-0.06.",
+      "topic_tags": [
+        "clinical bias",
+        "repeatability",
+        "limits of agreement",
+        "uncertainty",
+        "children",
+        "PT9L",
+        "RCT",
+        "Braun"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "RCT",
+        "Braun",
+        "Group 2 Children"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group 3 (Adults) clinical study data: PT9L (DUT) measurements compared against RCT reference thermometer and Braun reference thermometer for 34 adult subjects. Three repeated measurements (ti1, ti2, ti3) taken per subject. σj (standard deviation of DUT readings) and σj² calculated per subject. Clinical bias △cb1 = ti1 - RCT and △cb2 = ti1 - Braun computed for each subject. Intra-measurement differences D1 = ti2-ti1, D2 = ti3-ti2, D3 = ti1-ti3 also recorded.",
+      "topic_tags": [
+        "clinical study",
+        "adults",
+        "temperature measurement",
+        "PT9L",
+        "RCT",
+        "Braun",
+        "repeatability",
+        "clinical bias"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "RCT",
+        "Braun",
+        "Group 3 Adults"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clinical study summary statistics for PT9L vs RCT and PT9L vs Braun thermometers. N=50. Repeatability: Sr = 0.08°C. PT9L and RCT: Clinical bias Average(△cb1) = -0.05°C, Standard deviation σ△cb1 = 0.10, Limits of agreement LA1 = 0.19, Measurement uncertainty +/-0.10. PT9L and Braun: Clinical bias Average(△cb2) = -0.13°C, Standard deviation σ△cb2 = 0.07, Limits of agreement LA2 = 0.14, Measurement uncertainty +/-0.07.",
+      "topic_tags": [
+        "clinical bias",
+        "repeatability",
+        "limits of agreement",
+        "uncertainty",
+        "PT9L",
+        "RCT",
+        "Braun",
+        "thermometer",
+        "clinical comparison"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "RCT reference thermometer",
+        "Braun thermometer"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "18 设计确认/010_Attachment 8. Clinical study report修改20200610.via_lo_html.clean.md",
+    "doc_type": "design_validation"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "禁忌症",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床研究报告",
+      "to": "禁忌症",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床研究报告",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床研究报告",
+      "to": "受试者纳入标准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "临床研究报告",
+      "to": "受试者分布",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RCT reference thermometer",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Braun reference thermometer",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group 1",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "clinical data",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group 1",
+      "to": "clinical data",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clinical study",
+      "to": "clinical data",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group 2",
+      "to": "clinical data",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RCT",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Braun",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group 2 Children",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RCT",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Braun",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group 3 Adults",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Braun thermometer",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "Clinical_Accuracy_Test",
+      "to": "Clinical_Accuracy_Report_PT9L_20200610",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "临床测试环境温度",
+      "attribute": "范围",
+      "value": "23",
+      "unit": "℃",
+      "tolerance": "±2℃",
+      "condition": "临床准确性与重复性验证",
+      "raw_text": "温度23±2℃，湿度55±10%"
+    },
+    {
+      "subject": "临床测试环境湿度",
+      "attribute": "范围",
+      "value": "55",
+      "unit": "%",
+      "tolerance": "±10%",
+      "condition": "临床准确性与重复性验证",
+      "raw_text": "温度23±2℃，湿度55±10%"
+    },
+    {
+      "subject": "临床验证被试者数量",
+      "attribute": "最小值",
+      "value": "90",
+      "unit": "人",
+      "tolerance": "",
+      "condition": "临床准确性与重复性验证",
+      "raw_text": "被试者总数不少于90人"
+    },
+    {
+      "subject": "临床验证分组数量",
+      "attribute": "数量",
+      "value": "3",
+      "unit": "组",
+      "tolerance": "",
+      "condition": "分组为0-12月婴儿、1-5岁儿童、5岁以上成人",
+      "raw_text": "分三组（0-12月婴儿、1-5岁儿童、5岁以上成人）"
+    },
+    {
+      "subject": "临床偏差（组1，0-12月婴儿）",
+      "attribute": "偏差值",
+      "value": "-0.07",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "0-12月婴儿组",
+      "raw_text": "组1 -0.07℃"
+    },
+    {
+      "subject": "临床偏差（组2，1-5岁儿童）",
+      "attribute": "偏差值",
+      "value": "-0.05",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "1-5岁儿童组",
+      "raw_text": "组2 -0.05℃"
+    },
+    {
+      "subject": "临床偏差（组3，5岁以上成人）",
+      "attribute": "偏差值",
+      "value": "-0.05",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "5岁以上成人组",
+      "raw_text": "组3 -0.05℃"
+    },
+    {
+      "subject": "临床标准差（组1）",
+      "attribute": "标准差",
+      "value": "0.1",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "0-12月婴儿组",
+      "raw_text": "标准差：组1 0.1"
+    },
+    {
+      "subject": "临床标准差（组2）",
+      "attribute": "标准差",
+      "value": "0.08",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "1-5岁儿童组",
+      "raw_text": "标准差：组2 0.08"
+    },
+    {
+      "subject": "临床标准差（组3）",
+      "attribute": "标准差",
+      "value": "0.1",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "5岁以上成人组",
+      "raw_text": "标准差：组3 0.1"
+    },
+    {
+      "subject": "一致性限（组1）",
+      "attribute": "一致性限",
+      "value": "0.2",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "0-12月婴儿组",
+      "raw_text": "一致性限：组1 0.2"
+    },
+    {
+      "subject": "一致性限（组2）",
+      "attribute": "一致性限",
+      "value": "0.17",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "1-5岁儿童组",
+      "raw_text": "一致性限：组2 0.17"
+    },
+    {
+      "subject": "一致性限（组3）",
+      "attribute": "一致性限",
+      "value": "0.19",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "5岁以上成人组",
+      "raw_text": "一致性限：组3 0.19"
+    },
+    {
+      "subject": "重复性（组1）",
+      "attribute": "重复性",
+      "value": "0.06",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "0-12月婴儿组",
+      "raw_text": "重复性：组1 0.06℃"
+    },
+    {
+      "subject": "重复性（组2）",
+      "attribute": "重复性",
+      "value": "0.07",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "1-5岁儿童组",
+      "raw_text": "重复性：组2 0.07℃"
+    },
+    {
+      "subject": "重复性（组3）",
+      "attribute": "重复性",
+      "value": "0.08",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "5岁以上成人组",
+      "raw_text": "重复性：组3 0.08℃"
+    },
+    {
+      "subject": "t检验p值",
+      "attribute": "阈值",
+      "value": "0.05",
+      "unit": "",
+      "tolerance": "",
+      "condition": "各组均须满足，DUT与口腔参考温度无显著差异",
+      "raw_text": "t检验p值均>0.05，即DUT与口腔参考温度无显著差异"
+    },
+    {
+      "subject": "符合标准",
+      "attribute": "标准名称",
+      "value": "ATSEM 1965-98",
+      "unit": "",
+      "tolerance": "",
+      "condition": "临床准确性与重复性验证",
+      "raw_text": "符合ATSEM 1965-98要求"
+    }
+  ]
+}

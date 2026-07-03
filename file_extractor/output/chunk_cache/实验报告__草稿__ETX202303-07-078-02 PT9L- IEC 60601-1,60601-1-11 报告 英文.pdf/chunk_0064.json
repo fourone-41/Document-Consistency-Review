@@ -1,0 +1,225 @@
+{
+  "document": {
+    "report_no": "ETX2023-07-078-02",
+    "page_range": "137-138 of 182",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "clause": "11.1.1b / 11.1.1"
+  },
+  "products": [
+    {
+      "model": "PT9L",
+      "identifier": "T PT9L"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_no",
+      "value": "ETX2023-07-078-02"
+    },
+    {
+      "type": "risk_management_report",
+      "value": "PT9L-FXGB01 V1.0",
+      "description": "Risk Management Report Document Number"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment safety standard"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European version of medical electrical equipment safety standard"
+    },
+    {
+      "id": "ISO 14971",
+      "description": "Risk management for medical devices"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "11.1.1b",
+      "title": "Excessive temperatures in ME EQUIPMENT",
+      "model": "PT9L",
+      "test_ambient_c": 17.1,
+      "supply_voltage": "DC 3",
+      "overall_verdict": "P",
+      "measurements": [
+        {
+          "thermocouple_no": 1,
+          "location": "Test corner",
+          "max_allowable_temp_c": 90,
+          "max_calculated_temp_at_40c_c": 39.15,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 2,
+          "location": "PCB",
+          "max_allowable_temp_c": 105,
+          "max_calculated_temp_at_40c_c": 39.6,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 3,
+          "location": "U1",
+          "max_allowable_temp_c": 105,
+          "max_calculated_temp_at_40c_c": 39.55,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 4,
+          "location": "U2",
+          "max_allowable_temp_c": 105,
+          "max_calculated_temp_at_40c_c": 39.5,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 5,
+          "location": "NTC1",
+          "max_allowable_temp_c": 105,
+          "max_calculated_temp_at_40c_c": 39.45,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 6,
+          "location": "NTC2",
+          "max_allowable_temp_c": 105,
+          "max_calculated_temp_at_40c_c": 39.4,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 7,
+          "location": "Enclosure",
+          "max_allowable_temp_c": 71,
+          "max_calculated_temp_at_40c_c": 39.3,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 8,
+          "location": "Battery",
+          "max_allowable_temp_c": 71,
+          "max_calculated_temp_at_40c_c": 39.35,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 9,
+          "location": "PCB near the battery",
+          "max_allowable_temp_c": 71,
+          "max_calculated_temp_at_40c_c": 39.45,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 10,
+          "location": "button",
+          "max_allowable_temp_c": 71,
+          "max_calculated_temp_at_40c_c": 39.5,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 11,
+          "location": "Inner wiring",
+          "max_allowable_temp_c": 80,
+          "max_calculated_temp_at_40c_c": 39.4,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 12,
+          "location": "The probe",
+          "max_allowable_temp_c": 43,
+          "max_calculated_temp_at_40c_c": 39.25,
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "11.1.1",
+      "title": "Maximum temperature during normal use (Table 23 or 24) - Risk Management Results",
+      "overall_verdict": "P",
+      "risk_management_items": [
+        {
+          "iso_14971_clause": "5.2",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "result": "Intended use and identification of characteristics related to safety issue analysed and recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "5.3",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "result": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "5.4",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "result": "Risk estimation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "6",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "result": "Risk evaluation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "7.2",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "result": "Risk control option analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "7.3",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "result": "a. Risk control measures recorded. b. Effectiveness of risk control measures verified and recorded. c. Implementation of risk control measures verified and recorded.",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "7.4",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "result": "Residual risk evaluated.",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "7.5",
+          "document_ref": "No such analysis",
+          "result": "All residual risk is acceptable.",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Supplementary information for temperature testing: 1. Maximum allowable temperature on surfaces of test corner is 90°C. 2. Max temperature determined in accordance with 11.1.3e). 3. When thermocouples used to determine temperature of windings, limits of Table 22 reduced by 10°C. 4. Supply voltage rules: ME EQUIPMENT with heating elements tested at 110% of maximum RATED voltage; Motor operated ME EQUIPMENT tested at least favourable voltage between 90% of minimum RATED and 110% of maximum RATED voltage under normal load and normal DUTY CYCLE; Combined heating and motor operated and other ME EQUIPMENT tested both at 110% of maximum RATED voltage and at 90% of minimum RATED voltage. 5. APPLIED PARTS intended to supply heat to a PATIENT - See RISK MANAGEMENT FILE containing temperatures and clinical effects. Also, see instructions for use.",
+      "topic_tags": [
+        "temperature limits",
+        "supply voltage",
+        "thermocouple",
+        "test conditions",
+        "IEC60601-1",
+        "clause 11.1.1"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX2023-07-078-02",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Temperature limit references: 1) Temperature limit according to table 23; 2) Temperature limit according to clause 11.1.1; 3) Temperature limit according to components certificate; 4) Temperature limit according to table 24.",
+      "topic_tags": [
+        "temperature limit",
+        "table 22",
+        "table 23",
+        "table 24",
+        "clause 11.1.1",
+        "components certificate"
+      ],
+      "related_subjects": [
+        "IEC60601-1",
+        "PT9L"
+      ]
+    }
+  ]
+}

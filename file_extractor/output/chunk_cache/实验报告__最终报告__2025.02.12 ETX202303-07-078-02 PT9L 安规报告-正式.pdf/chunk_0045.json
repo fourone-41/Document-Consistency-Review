@@ -1,0 +1,155 @@
+{
+  "document": {
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "93-95",
+    "total_pages": 182
+  },
+  "requirements": [
+    {
+      "id": "16.6.3",
+      "description": "PATIENT LEAKAGE CURRENT and total PATIENT LEAKAGE CURRENT of ME SYSTEM in NORMAL CONDITION did not exceed values specified for ME EQUIPMENT in Tables 3 and 4. Measurements made using a device as in clause 8.7.4.4.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.7",
+      "description": "ME SYSTEM complied with applicable requirements of Clause 9 when a MECHANICAL HAZARD existed.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.8",
+      "description": "Interruption and restoration power to the ME SYSTEM or any part of the ME SYSTEM did not result in a loss of BASIC SAFETY or ESSENTIAL PERFORMANCE.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9",
+      "description": "ME SYSTEM connections and wiring.",
+      "verdict": null
+    },
+    {
+      "id": "16.9.1",
+      "description": "Incorrect connection of accessible connectors, removable without a TOOL, prevented where unacceptable RISK can result. Plugs for connection of PATIENT leads or PATIENT cables could not be connected to other outlets of the same ME SYSTEM likely to be located in PATIENT ENVIRONMENT, except when examination of connectors and interchanging them proved no unacceptable RISK results. Medical gas connections on the ME SYSTEM for different gasses operated in NORMAL USE are not interchangeable.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9.2",
+      "description": "MAINS PARTS, components and layout.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9.2.1a",
+      "description": "MULTIPLE SOCKET-OUTLET only allows connection using a TOOL, or is of a type that cannot accept MAINS PLUGS of any of the kinds specified in IEC/TR 60083, or is supplied via a separating transformer.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9.2.1b",
+      "description": "MULTIPLE SOCKET-OUTLET marked with safety sign 2 of Table D.2 (ISO 7010-W001) visible in NORMAL USE, and marked with maximum allowed continuous output in amperes or volt-amperes, or marked to indicate the equipment or equipment parts it may safely be attached to. MULTIPLE SOCKET-OUTLET is a separate item or an integral part of ME EQUIPMENT or non-ME EQUIPMENT.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9.2.1c",
+      "description": "MULTIPLE SOCKET-OUTLET complied with IEC 60884-1 and following requirements: CREEPAGE and CLEARANCES complied with 8.9; CLASS I with PROTECTIVE EARTH CONDUCTOR connected to earthing contacts in socket-outlets; PROTECTIVE EARTH TERMINALS and PROTECTIVE EARTH CONNECTIONS comply with 8.6; ENCLOSURE complied with 8.4.2 d); MAINS TERMINAL DEVICES and wiring complied with 8.11.4; RATINGS of components not in conflict with conditions of use; Electrical terminals and connectors prevent incorrect connection of accessible connectors removable without a TOOL; POWER SUPPLY CORD complied with 8.11.3.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9.2.1d",
+      "description": "Additional requirements applied when MULTIPLE SOCKET-OUTLET combined with a separating transformer: Separating transformer complied with this standard or IEC 61558-2-1 (except requirements of maximum RATED output power of 1 kVA and degree of protection IPX4 not applied); Separating transformer is CLASS I; Degree of protection against ingress of water specified as in IEC 60529; Separating transformer assembly marked according to 7.2 and 7.3; MULTIPLE SOCKET-OUTLET permanently connected to separating transformer, or socket-outlet of separating transformer assembly cannot accept MAINS PLUGS as identified in IEC/TR 60083.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9.2.2",
+      "description": "Impedance between protective earth pin in MAINS PLUG and any part that is PROTECTIVELY EARTHED did not exceed 200 mΩ for each part of ME SYSTEM that shares a MAINS CONNECTION when tested per 8.6.4. Removal of any single item of equipment in ME SYSTEM will not interrupt the protective earthing of any other part without simultaneous disconnection of electrical supply to that part. Additional PROTECTIVE EARTH CONDUCTORS can be detachable only by use of a TOOL.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "16.9.2.3",
+      "description": "Conductors connecting different items within an ME SYSTEM protected against mechanical damage.",
+      "verdict": "N/A"
+    },
+    {
+      "id": "17",
+      "description": "ELECTROMAGNETIC COMPATIBILITY OF ME EQUIPMENT AND ME SYSTEMS. RISKS associated with electromagnetic phenomena at locations where ME EQUIPMENT or ME SYSTEM is to be used as stated in ACCOMPANYING DOCUMENTS; introduction of electromagnetic phenomena into environment by ME EQUIPMENT or ME SYSTEM that might degrade performance of other devices, electrical equipment, and systems.",
+      "result_remark": "Not evaluated in this report, see EMC test report.",
+      "verdict": "N/E"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment general safety standard"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European version of medical electrical equipment general safety standard"
+    },
+    {
+      "id": "IEC/TR 60083",
+      "description": "Reference standard for MAINS PLUGS types"
+    },
+    {
+      "id": "IEC 60884-1",
+      "description": "Standard for plugs and socket-outlets for household and similar purposes"
+    },
+    {
+      "id": "IEC 61558-2-1",
+      "description": "Standard for safety of transformers, reactors, power supply units and combinations - separating transformers"
+    },
+    {
+      "id": "IEC 60529",
+      "description": "Standard for degrees of protection provided by enclosures (IP Code)"
+    },
+    {
+      "id": "ISO 7010-W001",
+      "description": "Safety sign referenced in Table D.2 (safety sign 2)"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 16.9.1: Incorrect connection of accessible connectors, removable without a TOOL, must be prevented where unacceptable RISK can result. Plugs for connection of PATIENT leads or PATIENT cables could not be connected to other outlets of the same ME SYSTEM likely to be located in PATIENT ENVIRONMENT, except when examination of connectors and interchanging them proved no unacceptable RISK results. Medical gas connections on the ME SYSTEM for different gasses operated in NORMAL USE are not interchangeable.",
+      "topic_tags": [
+        "connector safety",
+        "patient leads",
+        "medical gas",
+        "PATIENT ENVIRONMENT",
+        "risk prevention"
+      ],
+      "related_subjects": [
+        "16.9.1",
+        "ME SYSTEM",
+        "PATIENT ENVIRONMENT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 16.9.2.2: The impedance between the protective earth pin in the MAINS PLUG and any part that is PROTECTIVELY EARTHED did not exceed 200 mΩ for each part of the ME SYSTEM that shares a MAINS CONNECTION when tested per 8.6.4. Removal of any single item of equipment in ME SYSTEM will not interrupt the protective earthing of any other part without simultaneous disconnection of electrical supply to that part. Additional PROTECTIVE EARTH CONDUCTORS can be detachable only by use of a TOOL.",
+      "topic_tags": [
+        "protective earth",
+        "impedance",
+        "earthing",
+        "ME SYSTEM",
+        "mains connection"
+      ],
+      "related_subjects": [
+        "16.9.2.2",
+        "8.6.4",
+        "PROTECTIVE EARTH CONDUCTOR"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Clause 17 - ELECTROMAGNETIC COMPATIBILITY OF ME EQUIPMENT AND ME SYSTEMS: Not evaluated in this report. See EMC test report. RISKS associated with electromagnetic phenomena at locations where ME EQUIPMENT or ME SYSTEM is to be used as stated in ACCOMPANYING DOCUMENTS, and introduction of electromagnetic phenomena into environment by ME EQUIPMENT or ME SYSTEM that might degrade performance of other devices, electrical equipment, and systems are addressed separately.",
+      "topic_tags": [
+        "EMC",
+        "electromagnetic compatibility",
+        "risk management",
+        "N/E",
+        "separate report"
+      ],
+      "related_subjects": [
+        "Clause 17",
+        "EMC test report",
+        "RISK MANAGEMENT PROCESS"
+      ]
+    }
+  ]
+}

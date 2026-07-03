@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Regulatory Agent",
+  "decision": "confirm",
+  "severity": "P1",
+  "error_type": "missing_approval_signature_in_controlled_documents",
+  "claim": "All eight active and historical risk management documents in the PT9L DHF carry approval fields with no recorded date or named approver, rendering none of the risk management documents demonstrably approved under a controlled document system.",
+  "reason": "Direct textual evidence from five verified historical risk management documents (F0012, F0013, F0014, F0015, F0016) confirms that the 'Approved by (Technical Director) Date:' signature field is blank in every case — no approver name and no date are filled in on the approval page. The version history table in F0012 and F0013 does record 'Hou Guangwei' as approver with date '2024.4.16', but a version history table entry is not equivalent to a formal approval signature under a controlled document system: it records intended or administrative metadata, not a verified, dated, named signature on the document's approval block. ISO 13485 and ISO 14971 require that risk management documents be formally approved with traceable, dated authorization; a blank approval field fails this requirement regardless of version table entries. The three active-scope documents (including F0017) could not be read due to empty text fields in the index, meaning their approval status is unverifiable from available evidence — this does not weaken the finding but rather extends it: the confirmed five historical documents are all non-compliant, and the active documents cannot be shown to be compliant either. The claim that 'none of the risk management documents [are] demonstrably approved under a controlled document system' is substantiated for all documents where content is readable, and unrefuted for those where content is unreadable. The finding is confirmed at P1 severity."
+}
+```

@@ -1,0 +1,52 @@
+```json
+{
+  "assigned_agent": "Software Agent",
+  "review_focus": "软件测试计划中 object-temperature 模式在 30 °C 和 45 °C 测试点使用 ±0.2 °C 精度容差的依据，以及该容差是否有设计输入或 V&V 记录支撑其超出体温模式规定范围（≥35 °C 至 ≤42 °C）的合理性",
+  "agent_input": {
+    "claim": "软件测试计划在 object-temperature 模式下，于 30 °C 和 45 °C 测试点应用了 ±0.2 °C 的精度容差。然而，现有证据语料库中没有任何 V&V 记录能够证明该容差扩展至设计输入所规定的体温精度范围（≥35 °C 至 ≤42 °C）之外是合理的。该差距在验证关闭证据中尚未解决，属于 P1 级别未决问题。",
+    "context_summary": "本轮补充证据检索未能成功解析 LLM 输出（JSONDecodeError），因此未获得新的直接上下文。现有已确认证据包括：(1) 设计输入汇总表（F0031/F0319，line 10）——通用要求部分，未包含具体精度参数条目；(2) 设计验证报告-通用要求和法规部分（F0114，line 136）——确认 ISO 80601-2-56:2017/Amd1:2018 和 ASTM E1965-98:2016/2023 适用，验证记录号为 ETX202303-07-078-03/ETX202303-07-078-04，结论合格；但上述证据均未直接涉及 object-temperature 模式在 30 °C / 45 °C 的容差定义或授权依据。实验报告（F0462）页面内容为空，未提供有效信息。核心缺口在于：软件测试计划中 object-temperature 模式的测试范围（30 °C–45 °C）及其 ±0.2 °C 容差，是否有独立的设计输入条目、软件需求规格或 V&V 测试报告予以明确授权和验证。",
+    "evidence": [
+      {
+        "evidence_id": "VV-005",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 10,
+        "actual_text": "Design Input - General part",
+        "relevance": "设计输入通用部分标题，未见 object-temperature 模式精度参数条目"
+      },
+      {
+        "evidence_id": "VV-010",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 136,
+        "actual_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "relevance": "确认 ISO 80601-2-56 适用并通过，但未细化 object-temperature 模式测试范围或容差"
+      },
+      {
+        "evidence_id": "VV-028",
+        "doc_id": "F0319",
+        "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 10,
+        "actual_text": "Design Input - General part",
+        "relevance": "历史草稿版设计输入通用部分，与 F0031 内容一致，同样未见相关精度参数"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_guidance": {
+      "primary_question": "软件测试计划中 object-temperature 模式在 30 °C 和 45 °C 使用 ±0.2 °C 容差，是否有明确的设计输入条目（软件需求规格、性能规格部分）或经批准的测试方案授权该范围和容差？",
+      "secondary_questions": [
+        "设计输入-性能规格部分是否定义了 object-temperature 模式的测量范围及精度要求（区别于 body-temperature 模式的 ≥35 °C 至 ≤42 °C）？",
+        "验证记录 ETX202303-07-078-03 / ETX202303-07-078-04 是否包含 object-temperature 模式在 30 °C 和 45 °C 的实测数据及判定准则？",
+        "软件测试计划（STP）文件中是否有追溯至设计输入的需求编号，能够证明 30 °C / 45 °C 测试点的容差来源？",
+        "ISO 80601-2-56:2017/Amd1:2018 或 ASTM E1965-98 标准本身是否对 object-temperature 模式规定了超出体温范围的精度要求，从而构成设计输入依据？"
+      ],
+      "suggested_documents_to_retrieve": [
+        "设计输入-性能规格部分（PT9L 软件/性能相关 Sheet）",
+        "软件测试计划（STP）或软件验证计划文件",
+        "验证记录 ETX202303-07-078-03 和 ETX202303-07-078-04 全文",
+        "软件需求规格说明书（SRS）中关于 object-temperature 模式的精度条目"
+      ]
+    }
+  }
+}
+```

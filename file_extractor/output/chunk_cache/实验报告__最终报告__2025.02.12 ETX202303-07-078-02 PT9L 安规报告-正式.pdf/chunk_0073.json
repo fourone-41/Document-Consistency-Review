@@ -1,0 +1,284 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "title": "IEC 60601-1 Test Report with US National Differences",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "total_pages": 181,
+    "fragment_pages": "157-159"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "name": "IEC 60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment, Part 1: General Requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1",
+      "name": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European harmonized standard for medical electrical equipment"
+    },
+    {
+      "id": "AAMI_ES60601-1",
+      "name": "AAMI/ANSI ES60601-1:2005/(R)2012 And A1:2012, C1:2009/(R)2012 And A2:2010/(R)2012",
+      "description": "US National Differences for IEC 60601-1"
+    },
+    {
+      "id": "ISO14971",
+      "name": "ISO 14971",
+      "description": "Risk management for medical devices, referenced in RM Results Tables"
+    },
+    {
+      "id": "NFPA70",
+      "name": "NFPA 70 / NEC",
+      "description": "National Electrical Code, referenced in US national differences"
+    },
+    {
+      "id": "NFPA99",
+      "name": "NFPA 99",
+      "description": "Health Care Facilities Code, referenced for medical gas cylinders"
+    },
+    {
+      "id": "IEC60364-4-41",
+      "name": "IEC 60364-4-41",
+      "description": "Protective measures referenced in US national differences clause 4.10.2"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "15.5.2",
+      "name": "Transformer dielectric strength after humidity preconditioning",
+      "reference_clause": "5.7",
+      "verdict": "N/A",
+      "parameters": [
+        {
+          "test_voltage_applied_between": "Primary & secondary windings"
+        },
+        {
+          "test_voltage_applied_between": "Primary winding & frame"
+        },
+        {
+          "test_voltage_applied_between": "Secondary winding & frame"
+        }
+      ],
+      "fields": [
+        "Transformer Model/Type/Part No",
+        "Test voltage (V)",
+        "Test frequency (Hz)",
+        "Breakdown Yes/No",
+        "Deterioration Yes/No"
+      ],
+      "supplementary": "Tests conducted under the conditions of 11.1, in ME EQUIPMENT or under simulated conditions on the bench. See Clause 15.5.2 for test parameters & other details."
+    },
+    {
+      "clause": "16.6.1",
+      "name": "Leakage Currents in ME System - Touch Current Measurements",
+      "verdict": "N/A",
+      "parameters": [
+        {
+          "allowable_touch_current_normal_condition_uA": 100,
+          "allowable_touch_current_protective_earth_interruption_uA": 500
+        }
+      ],
+      "fields": [
+        "Specific area where TOUCH CURRENT measured",
+        "Allowable TOUCH CURRENT in NORMAL CONDITION (µA)",
+        "Measured TOUCH CURRENT in NORMAL CONDITION (µA)",
+        "Allowable TOUCH CURRENT in event of interruption of PROTECTIVE EARTH CONDUCTOR (µA)",
+        "Measured TOUCH CURRENT in event of interruption of PROTECTIVE EARTH CONDUCTOR (µA)"
+      ]
+    },
+    {
+      "clause": "15.4.3.2",
+      "name": "Batteries connected with incorrect polarity",
+      "test_type_and_condition": "Batteries connected with incorrect polarity",
+      "observed_results": "No operating, no hazard",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.4.3.5",
+      "name": "Protective device and Two MEANS OF OPERATOR PROTECTION",
+      "test_type_and_condition": "Protective device and Two MEANS OF OPERATOR PROTECTION be provided",
+      "observed_results": "No hazard",
+      "verdict": "P"
+    }
+  ],
+  "review_items": [
+    {
+      "clause": "16.1",
+      "name": "RM Results Table: General requirements for ME Systems",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ],
+      "fields": [
+        "Clause of ISO 14971",
+        "Document Ref. in RMF (Document No. & paragraph)",
+        "Result - Remarks",
+        "Verdict"
+      ]
+    },
+    {
+      "clause": "16.9.1",
+      "name": "RM Results Table: Connection terminals and connectors",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ],
+      "fields": [
+        "Clause of ISO 14971",
+        "Document Ref. in RMF (Document No. & paragraph)",
+        "Result - Remarks",
+        "Verdict"
+      ]
+    },
+    {
+      "clause": "17",
+      "name": "RM Results Table: Electromagnetic compatibility of ME equipment and ME systems",
+      "verdict": "N/E",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ],
+      "fields": [
+        "Clause of ISO 14971",
+        "Document Ref. in RMF (Document No. & paragraph)",
+        "Result - Remarks",
+        "Verdict"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "4.8b",
+      "standard": "AAMI/ANSI ES60601-1",
+      "type": "Replacement",
+      "description": "Where there was no relevant IEC/ISO standard, the relevant US ANSI standard applied; when no relevant US ANSI standard existed, the requirements of this standard applied.",
+      "result_remark": "Replaced. See appended table 8.10 in main report.",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.10.2",
+      "standard": "AAMI/ANSI ES60601-1",
+      "type": "Replacement",
+      "description": "Rated voltage not exceeding 250V dc or single phase ac, or 600V poly-phase ac for ME EQUIPMENT and ME SYSTEMS up to 4kVA; Rated voltage not exceeding 600V for all other ME EQUIPMENT and ME SYSTEMS; Addition: Protective measures as described in IEC 60364-4-41 and the NEC.",
+      "result_remark": "Internally powered",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "6.6",
+      "standard": "AAMI/ANSI ES60601-1",
+      "type": "Addition",
+      "description": "To comply with NFPA 70, X-Ray systems are classified as long time operation (> 5 min) or momentary operation (< 5 sec).",
+      "result_remark": "Not an X-Ray system",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.11",
+      "standard": "AAMI/ANSI ES60601-1",
+      "type": "Addition",
+      "description": "To comply with NFPA 70, X-Ray systems are marked as long time operation or momentary operation.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.22",
+      "standard": "AAMI/ANSI ES60601-1",
+      "type": "New Sub-clause",
+      "description": "Colors of medical gas cylinders. To comply with NFPA 99: Cylinders containing medical gases and their connection points are colored in accordance with the requirements of NFPA 99.",
+      "result_remark": "No medical gas cylinders",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.2",
+      "standard": "AAMI/ANSI ES60601-1",
+      "type": "Addition",
+      "description": "All FIXED ME EQUIPMENT & PERMANENTLY INSTALLED ME EQUIPMENT are CLASS I ME EQUIPMENT.",
+      "result_remark": "Portable equipment",
+      "verdict": "N/A"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-02"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "16.6.1 Touch Current Measurements for ME System: Allowable TOUCH CURRENT in NORMAL CONDITION is 100 µA; Allowable TOUCH CURRENT in event of interruption of PROTECTIVE EARTH CONDUCTOR is 500 µA. These limits apply to touch current measured from or between parts of the ME SYSTEM within the PATIENT ENVIRONMENT.",
+      "topic_tags": [
+        "touch current",
+        "leakage current",
+        "ME system",
+        "patient environment",
+        "protective earth"
+      ],
+      "related_subjects": [
+        "16.6.1",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "SP - Additional or special tests conducted: Clause 15.4.3.2: Batteries connected with incorrect polarity — result: No operating, no hazard (Pass). Clause 15.4.3.5: Protective device and Two MEANS OF OPERATOR PROTECTION be provided — result: No hazard (Pass).",
+      "topic_tags": [
+        "special tests",
+        "battery polarity",
+        "operator protection",
+        "hazard"
+      ],
+      "related_subjects": [
+        "15.4.3.2",
+        "15.4.3.5",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "US National Differences Attachment 1 covers AAMI/ANSI ES60601-1 requirements. The device under test is internally powered and portable, making several rated voltage and classification requirements N/A. The device is not an X-Ray system, making X-Ray-specific NFPA 70 markings N/A. No medical gas cylinders are present, making NFPA 99 gas cylinder color requirements N/A.",
+      "topic_tags": [
+        "US national differences",
+        "AAMI",
+        "portable equipment",
+        "internally powered",
+        "X-Ray",
+        "medical gas"
+      ],
+      "related_subjects": [
+        "AAMI/ANSI ES60601-1",
+        "NFPA70",
+        "NFPA99",
+        "IEC60364-4-41"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "END OF IEC 60601-1 TEST REPORT. The report continues with ATTACHMENT 1: US NATIONAL DIFFERENCES and ATTACHMENT 2: PHOTO DOCUMENTATION.",
+      "topic_tags": [
+        "report structure",
+        "attachments",
+        "US national differences",
+        "photo documentation"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-02"
+      ]
+    }
+  ]
+}

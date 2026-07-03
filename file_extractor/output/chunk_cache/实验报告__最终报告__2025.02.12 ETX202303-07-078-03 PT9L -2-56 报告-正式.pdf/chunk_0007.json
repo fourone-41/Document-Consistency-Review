@@ -1,0 +1,151 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-03",
+    "title": "Test Report for Clinical Thermometer PT9L",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/最终报告/2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式.pdf",
+    "total_pages": 21
+  },
+  "tests": [
+    {
+      "clause": "201.11.6.6",
+      "test_name": "Cleaning and disinfection of ME EQUIPMENT and ME SYSTEM - RM Results Table",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "iso_clause": "4.2",
+          "document_ref": "Risk Management Report (file No.: PT9C-FXGB01 V1.0)",
+          "result": "Intended use and identification of characteristics related to cleaning analyzed and recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_clause": "4.3",
+          "document_ref": "Risk Management Report (file No.: PT9C-FXGB01 V1.0)",
+          "result": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_clause": "4.4",
+          "document_ref": "Risk Management Report (file No.: PT9C-FXGB01 V1.0)",
+          "result": "Risk estimation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_clause": "5",
+          "document_ref": "Risk Management Report (file No.: PT9C-FXGB01 V1.0)",
+          "result": "Risk evaluation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_clause": "6.4",
+          "document_ref": "Risk Management Report (file No.: PT9C-FXGB01 V1.0)",
+          "result": "Residual risk evaluated",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "201.11.6.6",
+      "test_name": "Cleaning and disinfection of ME EQUIPMENT and ME SYSTEM - Characteristics Table",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "clause_no": "201.12.1.101",
+          "requirement": "When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE",
+          "result_observed": "The CLINICAL THERMOMETER shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source. The CLINICAL THERMOMETER shows '- - -°F' or '- - -℃' when output temperature outside the rated extended output range.",
+          "verdict": "Y"
+        }
+      ]
+    },
+    {
+      "clause": "211.10.1.1",
+      "test_name": "General requirements for mechanical strength",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "clause_no": "201.12.1.101",
+          "requirement": "When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE",
+          "result_observed": "The CLINICAL THERMOMETER shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source. The CLINICAL THERMOMETER shows '- - -°F' or '- - -℃' when output temperature outside the rated extended output range.",
+          "verdict": "Y"
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-03"
+    },
+    {
+      "type": "risk_management_report_file_no",
+      "value": "PT9C-FXGB01 V1.0"
+    },
+    {
+      "type": "product_model",
+      "value": "PT9L"
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "ISO 14971",
+      "clauses": [
+        "4.2",
+        "4.3",
+        "4.4",
+        "5",
+        "6.4"
+      ],
+      "context": "Risk Management requirements referenced in cleaning and disinfection RM results table"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Combination of upper and lower limits of environmental temperature and humidity ranges: 1. Midpoint of humidity and ambient temperature; 2. Upper limit of humidity + upper limit of ambient temperature; 3. Upper limit of humidity + lower limit of ambient temperature; 4. Lower limit of humidity + upper limit of ambient temperature; 5. Lower limit of humidity + lower limit of ambient temperature.",
+      "topic_tags": [
+        "environmental conditions",
+        "temperature",
+        "humidity",
+        "test combinations"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-03",
+        "PT9L",
+        "clinical thermometer"
+      ]
+    },
+    {
+      "fragment_type": "assumption",
+      "content": "TRTS – Measured temperature of REFERENCE TEMPERATURE SOURCE; TTUT – Measured temperature of CLINICAL THERMOMETER under test; TRCT – Measured temperature of REFERENCE CLINICAL THERMOMETER. Note: reference temperature source and reference clinical thermometer are same one thermometer.",
+      "topic_tags": [
+        "measurement terminology",
+        "reference temperature source",
+        "clinical thermometer",
+        "abbreviations"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-03",
+        "PT9L",
+        "TRTS",
+        "TTUT",
+        "TRCT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 201.12.1.101 requirement: When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE. Observed behavior: The CLINICAL THERMOMETER shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source. The CLINICAL THERMOMETER shows '- - -°F' or '- - -℃' when output temperature is outside the rated extended output range. This requirement appears under both clause 201.11.6.6 (Cleaning and disinfection) and clause 211.10.1.1 (General requirements for mechanical strength) test tables.",
+      "topic_tags": [
+        "alarm condition",
+        "low power",
+        "output temperature",
+        "laboratory accuracy",
+        "technical alarm"
+      ],
+      "related_subjects": [
+        "201.12.1.101",
+        "PT9L",
+        "clinical thermometer",
+        "ETX202303-07-078-03"
+      ]
+    }
+  ]
+}

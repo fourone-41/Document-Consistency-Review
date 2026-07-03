@@ -1,0 +1,69 @@
+```json
+{
+  "assigned_agent": "Regulatory Agent",
+  "review_focus": "验证PT9L DHF中风险管理文件审批字段是否存在已填写的审批人姓名与日期，或仅为空白模板字段；同时核查版本历史表中是否记录了审批人信息以作补充证明",
+  "agent_input": {
+    "claim": "All eight active and historical risk management documents in the PT9L DHF carry approval fields with no recorded date or named approver, rendering none of the risk management documents demonstrably approved under a controlled document system.",
+    "context_summary": "补证检索已从以下5份历史风险管理文件中提取直接证据（均位于 03 风险分析\\2L风险改 - 历史文件\\）：\n1. F0012 V1.0-1 Risk Management Plan IFT-FXJH01 V1.0（第18行）\n2. F0013 V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0（第22行）\n3. F0014 V1.0-2 Risk Assessment Report（第22行）\n4. F0015 V1.0-3 Verification of risk control measure and residual risk evaluation report（第22行）\n5. F0016 V1.0-4 Risk Management Report（第22行）\n\n上述5份文件的审批行均呈现为：**Approved by** *(Technical Director)* Date:（无填写内容，日期与签名人均为空白）。\n\n关键对立证据：F0013（PT2L美亚版本）的版本历史表（第22行附近）记录了：版本1 | 日期2024.4.16 | 起草人Wang Di | 审批人Hou Guangwei。这表明至少该文件的版本历史表中存在具名审批人记录，但签字页审批字段仍为空白。\n\n尚未检索的文件：active scope中的3份当前版本文件（F0017等，位于 03 风险分析\\ 根目录），page_context显示F0017（Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202）存在内容但text字段为空，需要审查其审批字段状态。claim所述'eight documents'的完整范围尚未全部核实。",
+    "evidence": [
+      {
+        "evidence_id": "REG-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 18,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "observation": "审批签字行存在但日期与审批人姓名均为空白"
+      },
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "observation": "审批签字行空白；但同文件版本历史表（line 22附近）记录审批人Hou Guangwei，日期2024.4.16"
+      },
+      {
+        "evidence_id": "REG-006",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "observation": "审批签字行存在但日期与审批人姓名均为空白"
+      },
+      {
+        "evidence_id": "REG-012",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "observation": "审批签字行存在但日期与审批人姓名均为空白"
+      },
+      {
+        "evidence_id": "REG-013",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "observation": "审批签字行存在但日期与审批人姓名均为空白"
+      },
+      {
+        "evidence_id": "REG-VERSION-TABLE-F0013",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "| 1 | 2024.4.16 | Originated | V1.0 | Wang Di | Hou Guangwei |",
+        "observation": "版本历史表中记录了具名审批人Hou Guangwei及日期2024.4.16，与签字页空白形成对比，需判断版本表记录是否构成受控文件系统下的有效审批证明"
+      },
+      {
+        "evidence_id": "REG-F0017-PENDING",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": null,
+        "actual_text": null,
+        "observation": "该文件为active scope文件，page_context已索引但text内容为空，审批字段状态未知，需要读取全文核查"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

@@ -1,0 +1,161 @@
+{
+  "document": {
+    "title": "Clinical accuracy report - iHealth PT9L Infrared No-Touch Forehead Thermometer",
+    "doc_type": "临床研究报告",
+    "version": "20200610"
+  },
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "iHealth PT9L Infrared No-Touch Forehead Thermometer"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "Clinical_Accuracy_Test",
+      "item": "临床准确性与重复性验证",
+      "condition": "温度23±2℃，湿度55±10%；被试者总数不少于90人，分三组（0-12月婴儿、1-5岁儿童、5岁以上成人），每组发烧与非发烧人数接近",
+      "expected_value": "符合ATSEM 1965-98要求",
+      "actual_result": "各组临床偏差：组1 -0.07℃，组2 -0.05℃，组3 -0.05℃；标准差：组1 0.1，组2 0.08，组3 0.1；一致性限：组1 0.2，组2 0.17，组3 0.19；重复性：组1 0.06℃，组2 0.07℃，组3 0.08℃；t检验p值均>0.05",
+      "pass_criteria": "t检验p>0.05，即DUT与口腔参考温度无显著差异",
+      "environment": "温度23±2℃，湿度55±10%"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "Clinical_Accuracy_Report_PT9L_20200610",
+      "conclusion": "红外额温计与口腔温度在各年龄组间无显著差异（t检验p>0.05）：组1 p=0.72，组2 p=0.79，组3 p=0.84。95%置信区间：组1[-0.10,-0.03]，组2[-0.08,-0.03]，组3[-0.05,-0.02]。"
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.1",
+      "reading": "38.2/38.3/38.2",
+      "unit": "℃",
+      "reference_value": "RCT=38.3, Braun=38.4",
+      "condition": "σj=0.058, △cb1=-0.10, △cb2=-0.20"
+    },
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.2",
+      "reading": "36.8/36.6/36.6",
+      "unit": "℃",
+      "reference_value": "RCT=36.8, Braun=36.9",
+      "condition": "σj=0.115, △cb1=0.00, △cb2=-0.10"
+    },
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.3",
+      "reading": "36.8/36.9/36.9",
+      "unit": "℃",
+      "reference_value": "RCT=36.9, Braun=37.0",
+      "condition": "σj=0.058, △cb1=-0.10, △cb2=-0.20"
+    },
+    {
+      "machine_no": "DUT_1",
+      "test_point": "Group1-No.4",
+      "reading": "38.7/38.7/38.5",
+      "unit": "℃",
+      "reference_value": "RCT=38.7, Braun=38.8",
+      "condition": "σj=0.115, △cb1=0.00, △cb2=-0.10"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "标准/规范编号",
+      "value": "ATSEM 1965-98"
+    },
+    {
+      "id_type": "对比仪器型号",
+      "value": "Braun NTF3000"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Contraindications: It is not recommended for people whose forehead has local lesions, such as inflammation, trauma, recent surgery, etc..",
+      "topic_tags": [
+        "禁忌症",
+        "额头病变",
+        "炎症",
+        "外伤",
+        "手术"
+      ],
+      "related_subjects": [
+        "iHealth PT9L",
+        "临床研究报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Intended use: The Infrared No-Touch Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by healthcare providers.",
+      "topic_tags": [
+        "预期用途",
+        "体温测量",
+        "额头皮肤",
+        "家用",
+        "医疗机构"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "Device description: The iHealth PT9L Infrared No-Touch Forehead Thermometer is hand-held, reusable, battery operated device, which can measure human body temperature on the skin temperature on one's forehead. Its operation is based on measuring the natural thermal radiation from the central forehead. Put the probe of the thermometer is onto the skin of a patient's central forehead. Pressing the activation button to start the measurement of proposed infrared radiation. The electrical signal read out from the detector is fed to the circuit for amplification and calculation. The final measured temperature will be appeared on a LCD display.",
+      "topic_tags": [
+        "工作原理",
+        "红外辐射",
+        "额温测量",
+        "LCD显示",
+        "电路放大"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test method: Step1: Sequence the Participants and sign Serial numbers. Step2: Verify reference thermometer accuracy using water bath. Step3: Supervisor takes DUT and prepares measurement. Step4: Perform three consecutive measurements with time interval no more than 1 min, record results. Step5: Take one RCT oral temperature measurement, record results. Step6: Repeat for all participants (odd-numbered: DUT first then RCT; even-numbered: RCT first then DUT). Final step: Verify reference thermometer accuracy again with water bath.",
+      "topic_tags": [
+        "测试方法",
+        "测试步骤",
+        "水浴验证",
+        "参考体温计",
+        "测量顺序"
+      ],
+      "related_subjects": [
+        "临床研究报告",
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Subject participation criteria: Total number no less than 90. Within each age group both afebrile and febrile subjects represented by nearly equal numbers. Oral temperature 37.5℃ or higher considered febrile. Group 1: infants 0-12 months, no less than 30. Group 2: children 1-5 years, no less than 30. Group 3: adults older than 5 years, no less than 30. Exclusion: subjects with medical conditions affecting accuracy (e.g., inflammation at measuring site), subjects who took antipyretics in preceding 120 min.",
+      "topic_tags": [
+        "受试者纳入标准",
+        "排除标准",
+        "年龄分组",
+        "发烧",
+        "退烧药"
+      ],
+      "related_subjects": [
+        "临床研究报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Subject distribution results: Group1(Infants): 40 participants (F=18, M=22, Febrile=16, Afebrile=24); Group2(Children): 40 participants (F=22, M=18, Febrile=15, Afebrile=25); Group3(Adults): 50 participants (F=26, M=24, Febrile=20, Afebrile=30); Total: 130 participants (Female=66/50.8%, Male=64/49.2%, Febrile=51/39.2%, Afebrile=79/60.8%).",
+      "topic_tags": [
+        "受试者分布",
+        "人口统计",
+        "发烧人数",
+        "性别分布"
+      ],
+      "related_subjects": [
+        "临床研究报告"
+      ]
+    }
+  ]
+}

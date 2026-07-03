@@ -4,6 +4,7 @@ import json
 import sys
 import re
 import time
+import argparse
 from pathlib import Path
 from openai import OpenAI
 
@@ -14,7 +15,9 @@ from config import (
 )
 from schema import DOC_TYPE_TO_MODEL
 
-client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL)
+client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL, timeout=180.0)
+
+CHUNK_CACHE_DIR = PER_FILE_DIR.parent / "chunk_cache"
 
 # ============================================================
 # Document-type-specific system prompts
@@ -361,6 +364,28 @@ def _fix_json_string_issues(text: str) -> str:
     return ''.join(result)
 
 
+def _chunk_cache_path(filepath: Path, chunk_index: int) -> Path:
+    out_path = output_path_for_markdown(filepath)
+    return CHUNK_CACHE_DIR / out_path.stem / f"chunk_{chunk_index + 1:04d}.json"
+
+
+def _load_chunk_cache(filepath: Path, chunk_index: int) -> dict | None:
+    cache_path = _chunk_cache_path(filepath, chunk_index)
+    if not cache_path.exists():
+        return None
+    try:
+        data = json.loads(cache_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def _write_chunk_cache(filepath: Path, chunk_index: int, parsed: dict) -> None:
+    cache_path = _chunk_cache_path(filepath, chunk_index)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(parsed, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def extract_file(filepath: Path) -> dict:
     """Extract nodes from a single file."""
     doc_type = detect_doc_type(str(filepath))
@@ -372,6 +397,12 @@ def extract_file(filepath: Path) -> dict:
 
     all_results = []
     for i, chunk in enumerate(chunks):
+        cached = _load_chunk_cache(filepath, i)
+        if cached:
+            print(f"    chunk {i+1}/{len(chunks)} ({len(chunk)} chars)... CACHED", flush=True)
+            all_results.append(cached)
+            continue
+
         user_msg = f"【文件片段 {i+1}/{len(chunks)}】\n\n{chunk}"
         print(f"    chunk {i+1}/{len(chunks)} ({len(chunk)} chars)...", end="", flush=True)
         t0 = time.time()
@@ -399,6 +430,7 @@ def extract_file(filepath: Path) -> dict:
 
             if parsed:
                 all_results.append(parsed)
+                _write_chunk_cache(filepath, i, parsed)
         except Exception as e:
             elapsed = time.time() - t0
             print(f" ERROR ({elapsed:.1f}s): {e}", flush=True)
@@ -448,10 +480,52 @@ def select_sample_files() -> list[Path]:
     return [f for f in samples if f.exists()]
 
 
+def select_all_markdown_files() -> list[Path]:
+    """Select all markdown files under MARKDOWN_DIR, excluding configured folders."""
+    files = []
+    for fp in MARKDOWN_DIR.rglob("*.md"):
+        rel_parts = set(fp.relative_to(MARKDOWN_DIR).parts)
+        if rel_parts & EXCLUDE_FOLDERS:
+            continue
+        files.append(fp)
+    return sorted(files)
+
+
+def output_path_for_markdown(filepath: Path) -> Path:
+    rel = filepath.relative_to(MARKDOWN_DIR)
+    out_name = str(rel).replace("/", "__").replace("\\", "__")
+    out_name = re.sub(r'\.md$', '.json', out_name)
+    return PER_FILE_DIR / out_name
+
+
+def has_nonempty_result(path: Path) -> bool:
+    if not path.exists():
+        return False
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return False
+    return any(not key.startswith("_") and bool(value) for key, value in data.items())
+
+
 def main():
-    files = select_sample_files()
+    parser = argparse.ArgumentParser(description="Step1: extract structured nodes from markdown files")
+    parser.add_argument(
+        "--scope",
+        choices=["sample", "all"],
+        default="sample",
+        help="sample: original 10 representative files; all: every markdown file under pt9l_markdown_output",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="skip files whose output JSON already contains at least one non-meta node",
+    )
+    args = parser.parse_args()
+
+    files = select_all_markdown_files() if args.scope == "all" else select_sample_files()
     print(f"=== Step 1: Extract Nodes (v2 - no instructor) ===", flush=True)
-    print(f"Selected {len(files)} diverse sample files", flush=True)
+    print(f"Selected {len(files)} {'markdown files' if args.scope == 'all' else 'diverse sample files'}", flush=True)
     print(f"Model: {LLM_MODEL} | max_tokens: {LLM_MAX_TOKENS} | chunk_size: {MAX_CHUNK_CHARS}\n", flush=True)
 
     total_start = time.time()
@@ -460,6 +534,11 @@ def main():
         doc_type = detect_doc_type(str(filepath))
         print(f"[{i}/{len(files)}] {rel}", flush=True)
         print(f"  doc_type: {doc_type}", flush=True)
+
+        out_path = output_path_for_markdown(filepath)
+        if args.resume and has_nonempty_result(out_path):
+            print(f"  skip: existing non-empty result ({out_path.name})\n", flush=True)
+            continue
 
         file_start = time.time()
         result = extract_file(filepath)
@@ -474,9 +553,6 @@ def main():
             "doc_type": doc_type,
         }
 
-        out_name = str(rel).replace("/", "__").replace("\\", "__")
-        out_name = re.sub(r'\.md$', '.json', out_name)
-        out_path = PER_FILE_DIR / out_name
         out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2),
                            encoding="utf-8")
 

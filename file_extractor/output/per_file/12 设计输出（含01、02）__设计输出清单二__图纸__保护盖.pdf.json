@@ -1,0 +1,1037 @@
+{
+  "document": {
+    "title": "保护盖 2D图读图报告",
+    "drawing_number": "T-Z1-P08",
+    "edition": "V1.0",
+    "part_name": "保护盖",
+    "model_number": "T-Z1",
+    "scale": "2:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "date": "2026-06-02",
+    "source_file": "保护盖.pdf",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/保护盖.pdf",
+    "skill_reference": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "保护盖",
+      "drawing_number": "T-Z1-P08",
+      "edition": "V1.0",
+      "model": "T-Z1",
+      "material": "PC（聚碳酸酯，半透明）",
+      "manufacturing_process": "注塑",
+      "shape": "钟罩形",
+      "outer_diameter": "Ø26.3 mm",
+      "total_height": "13.85 mm",
+      "wall_thickness": "1.4 mm"
+    }
+  ],
+  "components": [
+    {
+      "name": "保护盖",
+      "part_number": "T-Z1-P08",
+      "material": "PC（聚碳酸酯，半透明）",
+      "description": "钟罩形PC半透明注塑件，外径Ø26.3 × 高13.85 mm，A-A截面壁厚1.4 mm",
+      "related_components": [
+        "探头",
+        "主壳前端"
+      ]
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-1",
+      "description": "底部外径 Ø26.3 ±0.05 mm（IQC重点，与配合件配合的主直径）",
+      "dimension_number": "②",
+      "view": "主视图底部（圆视图）",
+      "symbol": "Ø",
+      "value": 26.3,
+      "tolerance": "±0.05",
+      "confidence": "A"
+    },
+    {
+      "id": "DI-2",
+      "description": "保护盖总高 13.85 ±0.05 mm（IQC重点）",
+      "dimension_number": "③",
+      "view": "主视图右侧（竖向）",
+      "value": 13.85,
+      "tolerance": "±0.05",
+      "confidence": "A"
+    },
+    {
+      "id": "DI-3",
+      "description": "A-A中部薄壁 1.4 ±0.03 mm（Level A极严精度，光学透射壁厚关键尺寸）",
+      "dimension_number": "①",
+      "view": "SECTION A-A 中部",
+      "value": 1.4,
+      "tolerance": "±0.03",
+      "precision_level": "Level A",
+      "confidence": "A"
+    },
+    {
+      "id": "DI-4",
+      "description": "A-A左侧高度 12.3 mm",
+      "view": "SECTION A-A 左",
+      "value": 12.3,
+      "tolerance": "Level B",
+      "confidence": "A"
+    },
+    {
+      "id": "DI-5",
+      "description": "4处0.3 mm特征（4-0.3，可能是4处小孔/槽/定位/卡扣/排气孔，是否带Ø待复核）",
+      "view": "SECTION A-A 中下",
+      "prefix": "4-",
+      "value": 0.3,
+      "confidence": "B",
+      "note": "需高清复核是否带Ø字符"
+    },
+    {
+      "id": "DI-6",
+      "description": "A-A上部某厚度 1.53 mm",
+      "view": "SECTION A-A 上",
+      "value": 1.53,
+      "tolerance": "Level B",
+      "confidence": "A"
+    },
+    {
+      "id": "DI-7",
+      "description": "A-A总宽 23 mm",
+      "view": "SECTION A-A 下",
+      "value": 23,
+      "tolerance": "Level B",
+      "confidence": "A"
+    },
+    {
+      "id": "DI-8",
+      "description": "仰视图斜向尺寸 11.6 mm",
+      "view": "仰视图",
+      "value": 11.6,
+      "tolerance": "Level B",
+      "confidence": "A"
+    },
+    {
+      "id": "DI-9",
+      "description": "底部翻边/小厚 1.5 mm",
+      "view": "主视图右下",
+      "value": 1.5,
+      "tolerance": "Level B",
+      "confidence": "A"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "带编号为重要尺寸，需要IQC测量",
+      "source": "产品技术要求第1条",
+      "type": "inspection"
+    },
+    {
+      "id": "REQ-2",
+      "description": "材质为PC（半透明）；产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象",
+      "source": "产品技术要求第2条",
+      "type": "material_and_appearance"
+    },
+    {
+      "id": "REQ-3",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "source": "产品技术要求第3条",
+      "type": "assembly_fit"
+    },
+    {
+      "id": "REQ-4",
+      "description": "产品符合RoHS 2.0",
+      "source": "产品技术要求第4条",
+      "type": "regulatory_compliance"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合RoHS 2.0有害物质限制指令",
+      "applicability": "保护盖（T-Z1-P08）"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-1",
+      "name": "IQC尺寸测量",
+      "description": "对带编号重要尺寸（①1.4±0.03、②Ø26.3±0.05、③13.85±0.05）进行IQC测量",
+      "dimensions_checked": [
+        "①1.4±0.03",
+        "②Ø26.3±0.05",
+        "③13.85±0.05"
+      ]
+    },
+    {
+      "id": "TEST-2",
+      "name": "外观检验",
+      "description": "检查无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象"
+    },
+    {
+      "id": "TEST-3",
+      "name": "试装配合验证",
+      "description": "须试装产品，验证能顺利装入产品，以结构签板和组装（实配）为准"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "drawing_number",
+      "value": "T-Z1-P08"
+    },
+    {
+      "type": "model_number",
+      "value": "T-Z1"
+    },
+    {
+      "type": "edition",
+      "value": "V1.0"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "`4-0.3` 是否带Ø（4处小孔径），高清复核确认",
+      "required_source": "高清PDF局部放大",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-2",
+      "description": "装配在哪个零件上（探头组件？主壳前端？）",
+      "required_source": "3D装配 + BOM",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-3",
+      "description": "PC半透明的光学SPEC（红外透过率8-14μm？可见光透过率？）",
+      "required_source": "材料SPEC + 工程师",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-4",
+      "description": "①1.4±0.03薄壁是否经过模具试做验证（Level A精度对模具能力要求高）",
+      "required_source": "模具厂",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-5",
+      "description": "与`探头.pdf`（Ø9.58内孔/中心Ø6.8）的位置关系",
+      "required_source": "3D装配",
+      "priority": "C级待确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "PC半透明 + 钟罩外形 + Ø26.3主直径 → 红外探头前端保护盖/光学窗口。1.4±0.03薄壁是光学透射壁厚的关键尺寸，太厚影响红外透射，太薄影响强度。'4-0.3' 4处小特征：可能是装配定位孔/卡扣/排气孔。配合关系：②Ø26.3 ↔ 主壳前端开孔或探头筒外径。",
+      "topic_tags": [
+        "功能推断",
+        "光学窗口",
+        "红外探头",
+        "保护盖",
+        "壁厚",
+        "配合"
+      ],
+      "related_subjects": [
+        "保护盖",
+        "T-Z1-P08",
+        "探头",
+        "主壳前端"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "GENERAL TOLERANCE Level B：尺寸＜5 mm为±0.1，5–15 mm为±0.1，15–50 mm为±0.1，50–100 mm为±0.2，＞100 mm为±0.2%，ANGULAR为±0.5°。编号①1.4±0.03为Level A极严精度，远严于Level B，适用于光学透射壁厚关键控制。",
+      "topic_tags": [
+        "公差",
+        "通用公差",
+        "Level B",
+        "精度等级",
+        "IQC"
+      ],
+      "related_subjects": [
+        "保护盖",
+        "T-Z1-P08",
+        "尺寸①",
+        "尺寸②",
+        "尺寸③"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "产品技术要求全文：1.带编号为重要尺寸，需要IQC测量；2.材质为PC（半透明）；产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象；3.须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准；4.产品符合RoHS 2.0。",
+      "topic_tags": [
+        "技术要求",
+        "IQC",
+        "外观检验",
+        "试装",
+        "RoHS",
+        "PC材质"
+      ],
+      "related_subjects": [
+        "保护盖",
+        "T-Z1-P08",
+        "RoHS 2.0"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "材质PC（半透明）区别于ABS件，PC有透光性、抗冲击性更好，常用于光学窗口/保护罩。配合件参照：探头20210727.pdf.md（Ø9.58内孔/中心Ø6.8）、支架.pdf.md、T-Z1-下盖-v2.0-20240627.pdf.md。",
+      "topic_tags": [
+        "PC材质",
+        "半透明",
+        "光学性能",
+        "配合件",
+        "探头"
+      ],
+      "related_subjects": [
+        "保护盖",
+        "探头",
+        "支架",
+        "T-Z1下盖"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "4-0.3前缀已捕获（B级可信度）：根据SKILL 6.3前缀规则，若图上写法是`4-0.3`且为Φ标注（应有Ø字符），可能是'4处Ø0.3小孔'。需在高清图复核确认是否带Ø；当前按'4处0.3 mm某特征'保留B级可信度。",
+      "topic_tags": [
+        "4-0.3",
+        "前缀规则",
+        "待复核",
+        "小孔",
+        "B级可信度"
+      ],
+      "related_subjects": [
+        "保护盖",
+        "T-Z1-P08",
+        "C-1"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/保护盖.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "功能推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "功能推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头",
+      "to": "功能推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主壳前端",
+      "to": "功能推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "尺寸①",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "尺寸②",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "尺寸③",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RoHS 2.0",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "PC材质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头",
+      "to": "PC材质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "PC材质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1下盖",
+      "to": "PC材质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "4-0.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "4-0.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "4-0.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-1",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-2",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-3",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-1",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-1",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-1",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-2",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-4",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-4",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-8",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "DI-9",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "TEST-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "TEST-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "TEST-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P08",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-1",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-2",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-4",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-1",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-2",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-3",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-1",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-2",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-4",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-7",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-1",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-3",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护盖",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护盖",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-1",
+      "to": "TEST-1",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-2",
+      "to": "TEST-2",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-3",
+      "to": "TEST-3",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-4",
+      "to": "TEST-1",
+      "properties": {
+        "note": "RoHS合规通过IQC检验体系覆盖"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-1",
+      "to": "DI-1",
+      "properties": {
+        "dimension_number": "②"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-1",
+      "to": "DI-2",
+      "properties": {
+        "dimension_number": "③"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-1",
+      "to": "DI-3",
+      "properties": {
+        "dimension_number": "①"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-2",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-1",
+      "to": "DI-1",
+      "properties": {
+        "dimension": "Ø26.3",
+        "tolerance": "±0.05",
+        "unit": "mm",
+        "dimension_number": "②"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-2",
+      "to": "DI-2",
+      "properties": {
+        "dimension": "13.85",
+        "tolerance": "±0.05",
+        "unit": "mm",
+        "dimension_number": "③"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-3",
+      "to": "DI-3",
+      "properties": {
+        "dimension": "1.4",
+        "tolerance": "±0.03",
+        "unit": "mm",
+        "precision_level": "Level A",
+        "dimension_number": "①"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-4",
+      "to": "DI-4",
+      "properties": {
+        "dimension": "12.3",
+        "tolerance": "Level B",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-5",
+      "to": "DI-5",
+      "properties": {
+        "dimension": "0.3",
+        "prefix": "4-",
+        "unit": "mm",
+        "confidence": "B"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-6",
+      "to": "DI-6",
+      "properties": {
+        "dimension": "1.53",
+        "tolerance": "Level B",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-7",
+      "to": "DI-7",
+      "properties": {
+        "dimension": "23",
+        "tolerance": "Level B",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-8",
+      "to": "DI-8",
+      "properties": {
+        "dimension": "11.6",
+        "tolerance": "Level B",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "DI-9",
+      "to": "DI-9",
+      "properties": {
+        "dimension": "1.5",
+        "tolerance": "Level B",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P08",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P08",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P08",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P08",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P08",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-1",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-4",
+      "to": "DI-3",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "底部外径",
+      "attribute": "尺寸",
+      "value": "26.3",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC重点，与配合件配合的主直径",
+      "raw_text": "底部外径 Ø26.3 ±0.05 mm（IQC重点，与配合件配合的主直径）"
+    },
+    {
+      "subject": "保护盖总高",
+      "attribute": "尺寸",
+      "value": "13.85",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC重点",
+      "raw_text": "保护盖总高 13.85 ±0.05 mm（IQC重点）"
+    },
+    {
+      "subject": "光学透射壁厚",
+      "attribute": "尺寸",
+      "value": "1.4",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "A-A截面中部，Level A极严精度，光学透射壁厚关键尺寸",
+      "raw_text": "A-A中部薄壁 1.4 ±0.03 mm（Level A极严精度，光学透射壁厚关键尺寸）"
+    },
+    {
+      "subject": "光学透射壁厚",
+      "attribute": "精度等级",
+      "value": "Level A",
+      "unit": "",
+      "tolerance": "",
+      "condition": "A-A截面中部薄壁",
+      "raw_text": "A-A中部薄壁 1.4 ±0.03 mm（Level A极严精度，光学透射壁厚关键尺寸）"
+    },
+    {
+      "subject": "A-A左侧高度",
+      "attribute": "尺寸",
+      "value": "12.3",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "SECTION A-A 左侧",
+      "raw_text": "A-A左侧高度 12.3 mm"
+    },
+    {
+      "subject": "小孔/槽特征",
+      "attribute": "数量及尺寸",
+      "value": "4处，每处0.3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "SECTION A-A 中下，是否带Ø待复核",
+      "raw_text": "4处0.3 mm特征（4-0.3，可能是4处小孔/槽/定位/卡扣/排气孔，是否带Ø待复核）"
+    },
+    {
+      "subject": "A-A上部壁厚",
+      "attribute": "尺寸",
+      "value": "1.53",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "SECTION A-A 上部",
+      "raw_text": "A-A上部某厚度 1.53 mm"
+    },
+    {
+      "subject": "A-A截面总宽",
+      "attribute": "尺寸",
+      "value": "23",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "SECTION A-A 下部",
+      "raw_text": "A-A总宽 23 mm"
+    },
+    {
+      "subject": "仰视图斜向尺寸",
+      "attribute": "尺寸",
+      "value": "11.6",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "仰视图",
+      "raw_text": "仰视图斜向尺寸 11.6 mm"
+    },
+    {
+      "subject": "底部翻边厚度",
+      "attribute": "尺寸",
+      "value": "1.5",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "主视图右下，底部翻边/小厚",
+      "raw_text": "底部翻边/小厚 1.5 mm"
+    },
+    {
+      "subject": "保护盖材质",
+      "attribute": "材料类型",
+      "value": "PC（聚碳酸酯，半透明）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "注塑件",
+      "raw_text": "材质为PC（半透明）"
+    },
+    {
+      "subject": "保护盖",
+      "attribute": "RoHS合规版本",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "产品符合RoHS 2.0"
+    },
+    {
+      "subject": "IQC检验尺寸",
+      "attribute": "检验项目数量",
+      "value": "3",
+      "unit": "项",
+      "tolerance": "",
+      "condition": "①1.4±0.03、②Ø26.3±0.05、③13.85±0.05",
+      "raw_text": "对带编号重要尺寸（①1.4±0.03、②Ø26.3±0.05、③13.85±0.05）进行IQC测量"
+    }
+  ]
+}

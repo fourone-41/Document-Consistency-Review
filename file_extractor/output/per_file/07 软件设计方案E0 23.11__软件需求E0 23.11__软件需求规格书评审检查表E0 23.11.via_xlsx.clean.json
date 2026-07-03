@@ -6,8 +6,8 @@
   },
   "products": [
     {
-      "product_id": "PT9L",
-      "name": "红外体温计"
+      "name": "红外体温计",
+      "product_id": "PT9L"
     }
   ],
   "identifiers": [
@@ -118,16 +118,29 @@
   ],
   "persons": [
     {
-      "name": null,
-      "title": "制表（软件工程师）"
+      "title": "制表(软件工程师)"
     },
     {
-      "name": null,
-      "title": "审核（软件主管）"
+      "title": "审核(软件主管)"
     },
     {
-      "name": null,
       "title": "记录人"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本评审检查表适用于软件需求规格书的评审，覆盖存储器容量要求、信号输入输出、软件功能、性能要求、人机接口、错误定义、响应时间、运行环境、阈值/特殊值、安全相关要求及软件测试策划等方面的检查，共14项评审条目，结论选项为通过/不通过/不适用。",
+      "topic_tags": [
+        "软件需求规格书",
+        "评审检查表",
+        "红外体温计",
+        "软件工程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "项目编号30000078"
+      ]
     }
   ],
   "_meta": {
@@ -220,8 +233,110 @@
       "properties": {}
     },
     {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "软件需求规格书",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "项目编号30000078",
+      "to": "软件需求规格书",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "2",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "3",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "7",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "9",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "10",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "11",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "12",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "13",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "14",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "软件需求规格书评审检查表",
+      "to": "软件需求规格书",
+      "properties": {}
+    },
+    {
       "type": "SIGNED",
-      "from": "制表（软件工程师）",
+      "from": "制表(软件工程师)",
       "to": "软件需求规格书评审检查表",
       "properties": {
         "role": "制表"
@@ -229,7 +344,7 @@
     },
     {
       "type": "SIGNED",
-      "from": "审核（软件主管）",
+      "from": "审核(软件主管)",
       "to": "软件需求规格书评审检查表",
       "properties": {
         "role": "审核"
@@ -241,14 +356,6 @@
       "to": "软件需求规格书评审检查表",
       "properties": {
         "role": "记录人"
-      }
-    },
-    {
-      "type": "REVIEWS",
-      "from": "软件需求规格书评审检查表",
-      "to": "PT9L",
-      "properties": {
-        "project_id": "30000078"
       }
     }
   ],

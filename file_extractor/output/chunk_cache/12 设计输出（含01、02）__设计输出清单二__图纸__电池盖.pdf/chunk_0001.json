@@ -1,0 +1,309 @@
+{
+  "document": {
+    "title": "电池盖 2D 图读图报告",
+    "drawing_number": "T-Z1-P04",
+    "edition": "V1.0",
+    "part_name": "电池盖",
+    "model_number": "T-Z1",
+    "scale": "1:1",
+    "units": "mm",
+    "projection": "第一角法投影",
+    "source_file": "电池盖.pdf",
+    "report_date": "2026-06-02",
+    "skill_workflow": "SKILL_2D_Drawing_Reading.md 9步强制工作流"
+  },
+  "products": [
+    {
+      "name": "电池盖",
+      "part_number": "T-Z1-P04",
+      "version": "V1.0",
+      "model": "T-Z1",
+      "material": "ABS（白色）",
+      "surface_treatment": "ABS白色素材，无喷涂",
+      "standard": "RoHS 2.0"
+    },
+    {
+      "name": "主壳体下盖",
+      "part_number": "T-Z1-P02",
+      "version": "V2.0",
+      "note": "配合零件，需交叉验证电池仓开口尺寸"
+    }
+  ],
+  "components": [
+    {
+      "name": "电池盖",
+      "drawing_no": "T-Z1-P04",
+      "material": "ABS",
+      "color": "白色",
+      "surface": "素材无喷涂"
+    },
+    {
+      "name": "6处薄壁特征",
+      "description": "B-B截面6处0.3±0.05薄壁特征，疑为柔性卡扣/防呆筋",
+      "quantity": 6
+    },
+    {
+      "name": "电池极弹片定位筋",
+      "description": "主视图内腔两条长筋，用于压紧/定位AAA电池正负极弹片",
+      "spacing": "7.3 mm",
+      "width": "4 mm"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "材质为ABS（白色），产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-02",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "DI-03",
+      "description": "产品符合RoHS 2.0",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "DI-04",
+      "description": "带编号为重要尺寸，需要IQC测量",
+      "source": "技术要求第1条"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "category": "外观",
+      "description": "产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "REQ-02",
+      "category": "材料",
+      "description": "材质为ABS（白色）",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "REQ-03",
+      "category": "装配",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "REQ-04",
+      "category": "法规",
+      "description": "产品符合RoHS 2.0",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "REQ-05",
+      "category": "检验",
+      "description": "带编号尺寸为IQC重要尺寸，需要IQC测量",
+      "source": "技术要求第1条"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合RoHS 2.0有害物质限制要求"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "T-Z1-P04"
+    },
+    {
+      "type": "版本",
+      "value": "V1.0"
+    },
+    {
+      "type": "型号",
+      "value": "T-Z1"
+    }
+  ],
+  "revision_records": [
+    {
+      "note": "文字层提取到更改记录表头：'更 改 记 录 · 更改时间 · 更 改 记 录 · 更改时间'，具体变更内容已转曲无法读取"
+    }
+  ],
+  "tests": [
+    {
+      "id": "IQC-01",
+      "name": "IQC重要尺寸测量",
+      "description": "对编号①②③④⑤共5个带圆圈编号的重要尺寸进行IQC检验",
+      "items": [
+        {
+          "no": "①",
+          "dimension": "63.5 mm",
+          "tolerance": "±0.1",
+          "description": "电池盖总长"
+        },
+        {
+          "no": "②",
+          "dimension": "Ø33.0 mm",
+          "tolerance": "±0.1",
+          "description": "端面外径"
+        },
+        {
+          "no": "③",
+          "dimension": "7 mm",
+          "tolerance": "±0.05",
+          "description": "仰视图右段高度/壁高"
+        },
+        {
+          "no": "④",
+          "dimension": "1.5 mm",
+          "tolerance": "±0.05",
+          "description": "A-A截面左下小筋/凸台高度"
+        },
+        {
+          "no": "⑤",
+          "dimension": "2.96 mm",
+          "tolerance": "±0.05",
+          "description": "A-A截面上部卡扣/筋水平间距"
+        }
+      ]
+    },
+    {
+      "id": "IQC-02",
+      "name": "试装验证",
+      "description": "须试装产品，并能顺利装入产品（与主壳体下盖T-Z1-P02配合）",
+      "reference": "技术要求第3条"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "priority": "C级待确认",
+      "description": "6处0.3±0.05薄壁特征的实际形态（卡扣？防呆筋？密封筋？）",
+      "required_source": "3D STEP剖面 + 工程师"
+    },
+    {
+      "id": "C-2",
+      "priority": "C级待确认",
+      "description": "电池盖的拆装方向（滑动 or 翻盖 or 直推）",
+      "required_source": "3D装配图 / 实物样机"
+    },
+    {
+      "id": "C-3",
+      "priority": "C级待确认",
+      "description": "端面②Ø33是否带止退结构 / 弹性变形量",
+      "required_source": "3D端面剖面 + 试装结果"
+    },
+    {
+      "id": "C-4",
+      "priority": "C级待确认",
+      "description": "是否需要喷涂/表面色（Surf dispose空白，按技要2推测为ABS白色素材）",
+      "required_source": "工程师 / BOM"
+    },
+    {
+      "id": "C-5",
+      "priority": "C级待确认",
+      "description": "IQC是否对①-⑤共5个编号尺寸都做检验，是否需补充更多重要尺寸",
+      "required_source": "品质部检验作业指导书"
+    },
+    {
+      "id": "C-6",
+      "priority": "C级待确认",
+      "description": "与下盖T-Z1-P02电池仓开口（长×宽×端孔直径）尺寸链交叉验证",
+      "required_source": "T-Z1-P02 V2.0图纸"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "通用公差表（GENERAL TOLERANCE，已选LEVEL B）：尺寸<5mm时±0.1；5~15mm时±0.1；15~50mm时±0.1；50~100mm时±0.2；>100mm时±0.2%；角度公差±0.5°。所有未单独标注公差的尺寸均按Level B执行。",
+      "topic_tags": [
+        "通用公差",
+        "Level B",
+        "尺寸公差",
+        "角度公差"
+      ],
+      "related_subjects": [
+        "T-Z1-P04",
+        "电池盖",
+        "IQC检验"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "完整尺寸列表（带编号IQC重要尺寸）：①63.5±0.1mm（电池盖总长，与68.5端到端总长配套）；②Ø33.0±0.1mm（端面外径，与下盖端孔配合的主直径）；③7±0.05mm（仰视图右端面壁高）；④1.5±0.05mm（A-A截面左下小筋/凸台高度）；⑤2.96±0.05mm（A-A截面上部卡扣/筋水平间距）。",
+      "topic_tags": [
+        "IQC重要尺寸",
+        "带编号尺寸",
+        "关键尺寸"
+      ],
+      "related_subjects": [
+        "T-Z1-P04",
+        "电池盖",
+        "IQC检验",
+        "SECTION A-A"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "完整尺寸列表（无编号尺寸，按Level B默认公差）：SECTION A-A各截面尺寸：1±0.05mm（壁厚/凸台）、0.8±0.1mm（中段薄壁）、0.3±0.05mm（末端薄翻边）、1.2±0.05mm（末端筋高）；主视图内腔：1.5±0.1mm（左侧凸台/筋宽）、7.3±0.1mm（电池正负极弹片筋间距）、4±0.1mm（筋宽/电池极弹片宽）、3.4±0.05mm（内腔宽度）；SECTION B-B：6处0.3±0.05mm薄壁特征；端面侧视：4.5±0.1mm（端面侧视高度）；仰视图：68.5±0.2mm（外形总长含端面凸台）。",
+      "topic_tags": [
+        "无编号尺寸",
+        "Level B公差",
+        "截面尺寸",
+        "内腔尺寸"
+      ],
+      "related_subjects": [
+        "T-Z1-P04",
+        "电池盖",
+        "SECTION A-A",
+        "SECTION B-B"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "装配约束推断：电池盖（T-Z1-P04）与主壳体下盖（T-Z1-P02）配合。配合面：①63.5±0.1mm（盖体主长度）+68.5mm（含端凸台总长）装入下盖电池仓长向开口；②Ø33±0.1mm（端面外径）与下盖端部圆形开孔做装配（滑动/扣合配合，具体方式待3D模型确认）；B-B截面6处0.3±0.05mm薄壁特征很可能是6个柔性卡扣/防呆筋；主视图内腔两条长筋（间距7.3mm，单筋宽4mm）用于压紧/定位AAA电池正负极弹片。运动方向未在2D图直接给出，需工程师确认。",
+      "topic_tags": [
+        "装配约束",
+        "配合关系",
+        "卡扣",
+        "电池定位"
+      ],
+      "related_subjects": [
+        "T-Z1-P04",
+        "T-Z1-P02",
+        "电池盖",
+        "下盖",
+        "SECTION B-B"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "视觉读图说明：PDF文字层仅40字符，几乎全部转曲为路径，包含内容：'尺寸序号'、'电池盖'、'更 改 记 录 · 更改时间 · 更 改 记 录 · 更改时间'。所有尺寸数值、技术要求均通过300DPI视觉读图获取。编号连续性检查：观察到①②③④⑤共5个圆圈编号，未见⑥及以上；若IQC实际需要更多重要尺寸，需对照高清版补查。",
+      "topic_tags": [
+        "视觉读图",
+        "转曲",
+        "读图限制",
+        "IQC编号"
+      ],
+      "related_subjects": [
+        "T-Z1-P04",
+        "IQC检验"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "图面分6个视图：①SECTION A-A纵剖（左上）②整体立体外观图（右上）③端面侧视+主视图（俯视、内腔）④仰视图（外侧）⑤SECTION B-B横剖⑥端面圆视图（右）。右上角图例：⊗尺寸序号，所有带圆圈编号的尺寸为IQC重要尺寸。渲染方式：概览150DPI+3×2块300DPI，符合SKILL≥300DPI要求。",
+      "topic_tags": [
+        "视图布局",
+        "IQC重要尺寸",
+        "图面说明",
+        "截面视图"
+      ],
+      "related_subjects": [
+        "T-Z1-P04",
+        "电池盖",
+        "SECTION A-A",
+        "SECTION B-B"
+      ]
+    }
+  ]
+}

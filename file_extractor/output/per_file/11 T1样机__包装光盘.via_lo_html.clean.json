@@ -1,0 +1,119 @@
+{
+  "document": {
+    "title": "包装光盘",
+    "doc_type": "平面设计稿评审文件"
+  },
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-SMSP01 V1.0"
+    },
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-CBZP01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文件PT9L-SMSP01 V1.0，文件名称：说明书（平面设计稿），产品型号：PT9L，产品名称：红外体温计，项目编号：30000078。评审结论：评审通过，直接进入下一阶段。",
+      "topic_tags": [
+        "说明书",
+        "平面设计稿",
+        "评审通过",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L-SMSP01 V1.0",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文件PT9L-CBZP01 V1.0，文件名称：彩包装（平面设计稿），产品型号：PT9L，产品名称：红外体温计，项目编号：30000078。评审结论：评审通过，直接进入下一阶段。",
+      "topic_tags": [
+        "彩包装",
+        "平面设计稿",
+        "评审通过",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L-CBZP01 V1.0",
+        "PT9L"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/包装光盘.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SMSP01 V1.0",
+      "to": "说明书",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "说明书",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01 V1.0",
+      "to": "彩包装",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "彩包装",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SMSP01 V1.0",
+      "to": "PT9L",
+      "properties": {
+        "relation_desc": "说明书平面设计稿所属产品"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01 V1.0",
+      "to": "PT9L",
+      "properties": {
+        "relation_desc": "彩包装平面设计稿所属产品"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SMSP01 V1.0",
+      "to": "30000078",
+      "properties": {
+        "relation_desc": "说明书平面设计稿所属项目编号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01 V1.0",
+      "to": "30000078",
+      "properties": {
+        "relation_desc": "彩包装平面设计稿所属项目编号"
+      }
+    }
+  ],
+  "_claims": []
+}

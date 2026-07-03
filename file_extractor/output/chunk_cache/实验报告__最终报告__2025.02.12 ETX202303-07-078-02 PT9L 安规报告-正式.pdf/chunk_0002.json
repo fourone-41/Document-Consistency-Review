@@ -1,0 +1,216 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "total_pages": 181,
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+  },
+  "requirements": [
+    {
+      "clause": "4.1",
+      "description": "Requirements of this standard applied in NORMAL USE and reasonably foreseeable misuse",
+      "result": "Normal use and reasonably foreseeable misuse were concerned",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2",
+      "description": "RISK MANAGEMENT PROCESS FOR ME EQUIPMENT OR ME SYSTEMS",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.2",
+      "description": "General requirement for RISK MANAGEMENT - PROCESS complies with ISO14971 (2019)",
+      "result": "See Appended RM Results",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3",
+      "description": "Evaluating RISK",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1a",
+      "description": "Compliance with the standard reduces residual risk to an acceptable level",
+      "result": "See Appended RM Results",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1b",
+      "description": "Manufacturer has defined risk acceptability criteria in the RISK MANAGEMENT PLAN",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1c",
+      "description": "When no specific technical requirements provided manufacturer has determined HAZARDS or HAZARDOUS SITUATIONS exists",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1c-sub",
+      "description": "HAZARDS or HAZARDOUS SITUATIONS have been evaluated using the RISK MANAGEMENT PROCESS",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.2.3.2",
+      "description": "MANUFACTURER has addressed HAZARDS or HAZARDOUS SITUATIONS not specifically addressed in the IEC 60601-1 series",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.3",
+      "description": "Performance of clinical functions necessary to achieve INTENDED USE or that could affect the safety of the ME EQUIPMENT or ME SYSTEM were identified during RISK ANALYSIS",
+      "result": "Limits of the error of the thermometer",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3-performance_limits",
+      "description": "Performance limits were identified in both NORMAL CONDITION and SINGLE FAULT CONDITION",
+      "result": "Essential performance considered",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3-loss_degradation",
+      "description": "Loss or degradation of performance beyond the limits specified by the MANUFACTURER were evaluated",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3-essential_performance",
+      "description": "Functions with unacceptable risks are identified as ESSENTIAL PERFORMANCE",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3-risk_control",
+      "description": "RISK CONTROL measures implemented",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.3-verify_effectiveness",
+      "description": "Methods used to verify the effectiveness of RISK CONTROL measures implemented",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.4",
+      "description": "EXPECTED SERVICE LIFE stated in RISK MANAGEMENT FILE",
+      "result": "Described in risk management file. 5 years.",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.5",
+      "description": "Alternative means of addressing particular RISKS considered acceptable based on MANUFACTURER'S justification",
+      "result": "No alternative means provided",
+      "verdict": "N/A"
+    }
+  ],
+  "tests": [
+    {
+      "area": "A",
+      "means_of_protection": "2MOOP",
+      "cti": "IIIb",
+      "working_voltage_vrms": "3V d.c.",
+      "working_voltage_vpk": "--",
+      "required_creepage_mm": 3.4,
+      "required_clearance_mm": 1.6,
+      "measured_creepage_mm": ">3.4",
+      "measured_clearance_mm": ">1.6",
+      "remarks": "RI: Batteries electrode to non-metallic enclosure"
+    },
+    {
+      "area": "B",
+      "means_of_protection": "2MOOP",
+      "cti": "IIIb",
+      "working_voltage_vrms": "3V d.c.",
+      "working_voltage_vpk": "--",
+      "required_creepage_mm": 3.4,
+      "required_clearance_mm": 1.6,
+      "measured_creepage_mm": ">3.4",
+      "measured_clearance_mm": ">1.6",
+      "remarks": "RI: Batteries electrode to the probe"
+    },
+    {
+      "area": "C",
+      "means_of_protection": "2MOPP",
+      "cti": "IIIb",
+      "working_voltage_vrms": "3V d.c.",
+      "working_voltage_vpk": "--",
+      "required_creepage_mm": 1.0,
+      "required_clearance_mm": 0.8,
+      "measured_creepage_mm": ">1.0",
+      "measured_clearance_mm": ">0.8",
+      "remarks": "RI: From the positive battery terminal to the negative power"
+    },
+    {
+      "area": "D",
+      "means_of_protection": "1MOPP",
+      "cti": "IIIb",
+      "working_voltage_vrms": "AC 339",
+      "working_voltage_vpk": "AC240",
+      "required_creepage_mm": 4.0,
+      "required_clearance_mm": 2.5,
+      "measured_creepage_mm": ">4.0",
+      "measured_clearance_mm": ">2.5",
+      "remarks": "RI: From monitor enclosure to the probe"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment general requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European harmonized standard equivalent to IEC60601-1"
+    },
+    {
+      "id": "ISO14971:2019",
+      "description": "Application of risk management to medical devices"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Insulation diagram parameters: Pollution degree II, No overvoltage category, Altitude < 2000m, No applied parts areas. Supplementary information: 1) No any electrical circuit in the probe (Applied part). 2) No protective earthing in ME equipment.",
+      "topic_tags": [
+        "insulation",
+        "pollution_degree",
+        "overvoltage_category",
+        "altitude",
+        "applied_part",
+        "protective_earthing"
+      ],
+      "related_subjects": [
+        "Area A",
+        "Area B",
+        "Area C",
+        "Area D"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "INSULATION DIAGRAM CONVENTIONS and GUIDANCE: A measured value must be provided in the value columns for the device under evaluation. The symbol > (greater than sign) must not be used. Switch-mode power supplies must be re-evaluated in the device under evaluation therefore N/A must not be used with a generic statement that the component is certified. Insulation diagram is a graphical representation of equipment insulation barriers, protective impedance and protective earthing. Conventions: All isolation barriers are identified by letters between separate parts of diagram, for example separate transformer windings, optocouplers, wire insulation, creepage and clearance distances. Parts connected to earth with large dots are protectively earthed. Other connections to earth are functional. Applied parts are extended beyond the equipment enclosure and terminated with an arrow. Parts accessible to the operator only are extended outside of the enclosure, but are not terminated with an arrow.",
+      "topic_tags": [
+        "insulation_diagram",
+        "creepage",
+        "clearance",
+        "applied_part",
+        "protective_earthing",
+        "conventions"
+      ],
+      "related_subjects": [
+        "Area A",
+        "Area B",
+        "Area C",
+        "Area D"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Expected service life is 5 years as described in the risk management file (Clause 4.4, IEC60601-1).",
+      "topic_tags": [
+        "service_life",
+        "risk_management",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "4.4",
+        "RISK MANAGEMENT FILE"
+      ]
+    }
+  ]
+}

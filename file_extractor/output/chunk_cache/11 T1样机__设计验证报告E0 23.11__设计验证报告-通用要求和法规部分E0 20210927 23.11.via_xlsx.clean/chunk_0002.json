@@ -1,0 +1,229 @@
+{
+  "document": {
+    "title": "设计验证报告-通用要求部分（设计确认阶段）",
+    "doc_type": "设计验证报告",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "2",
+      "item": "销售地区及认证",
+      "condition": "设计确认阶段",
+      "expected_value": "符合相关的标准及法规要求",
+      "actual_result": "标准及法规检查清单",
+      "pass_criteria": "符合相关的标准及法规要求",
+      "environment": "FDA认证，对应地区：美国"
+    },
+    {
+      "test_id": "7",
+      "item": "风险管理",
+      "condition": "设计确认阶段",
+      "expected_value": "符合此项设计输入要求的标准",
+      "actual_result": "风险管理报告",
+      "pass_criteria": "符合此项设计输入要求的标准"
+    },
+    {
+      "test_id": "8",
+      "item": "电气安全",
+      "condition": "设计确认阶段",
+      "expected_value": "电气安全测试/评估结论通过",
+      "actual_result": "电气安全测试报告",
+      "pass_criteria": "电气安全测试/评估结论通过"
+    },
+    {
+      "test_id": "11",
+      "item": "易用性",
+      "condition": "设计确认阶段",
+      "expected_value": "易用性测试/评估结论通过",
+      "actual_result": "易用性测试/评估结论通过",
+      "pass_criteria": "易用性测试/评估结论通过"
+    },
+    {
+      "test_id": "12",
+      "item": "专利",
+      "condition": "设计确认阶段",
+      "expected_value": "结论为不涉及侵权风险",
+      "actual_result": "专利查新报告/专利综述报告",
+      "pass_criteria": "结论为不涉及侵权风险"
+    },
+    {
+      "test_id": "14a",
+      "item": "生产过程要求-工装及机芯检测/调试",
+      "condition": "设计确认阶段",
+      "expected_value": "工装要求验证记录的内容全部合格",
+      "actual_result": "工装硬件验证报告",
+      "pass_criteria": "工装要求验证记录的内容全部合格"
+    },
+    {
+      "test_id": "14b",
+      "item": "生产过程要求-工厂态要求",
+      "condition": "设计确认阶段",
+      "expected_value": "工厂态测试通过",
+      "actual_result": "工装硬件验证报告",
+      "pass_criteria": "工厂态测试通过"
+    },
+    {
+      "test_id": "17",
+      "item": "电磁兼容性",
+      "condition": "设计确认阶段",
+      "expected_value": "EMC测试/评估通过",
+      "actual_result": "EMC测试/评估报告",
+      "pass_criteria": "EMC测试/评估通过"
+    },
+    {
+      "test_id": "19",
+      "item": "防尘防水",
+      "condition": "设计确认阶段",
+      "expected_value": "电气安全相关项测试/评估结论通过",
+      "actual_result": "电气安全测试报告",
+      "pass_criteria": "电气安全相关项测试/评估结论通过"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "2",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "7",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "8",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "11",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "12",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "14a",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "14b",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "17",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "19",
+      "conclusion": "合格"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "验证依据",
+      "value": "PT9L-YZTY01 V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "生产过程要求-工装要求及机芯检测/调试：工装要求；机芯检测：1、能正确检测LCD端口连接线的通断；2、能正确检测按键端口连接线的通断；3、能正确检测低电压检测端口连接线的通断；4、能查看待机态和工作态电流。机芯调试：1、能对测温模块进行检测；2、能实现对机芯的自检查看。",
+      "topic_tags": [
+        "生产过程",
+        "机芯检测",
+        "机芯调试",
+        "工装"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "工装硬件验证报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "生产过程要求-工厂态要求：机芯检测态要求：1.能够检验LCD与PCB的连接；2.能够检验按键与PCB的连接；3.能够检验待机态和工作态电流。机芯调试态要求：1.能够显示测温模块测量值；2.能够设定蜂鸣提示音开关；3.能够设定测量单位。",
+      "topic_tags": [
+        "工厂态",
+        "机芯检测态",
+        "机芯调试态",
+        "生产过程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "工装硬件验证报告"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "环保要求：要求满足加州RoHS。其余可选指令包括ROHS(2011/65/EU)、REACH(1907/2006/EC)、WEEE(2012/19/EU)、电池指令(2013/56/EU)、包装指令(2005/20/EC)、中国ROHS 2.0 POPs、美国TSCA CPSC CPSIA、加州65提案等，本产品在T1阶段验证，当前未选中大部分欧洲环保指令。",
+      "topic_tags": [
+        "环保",
+        "RoHS",
+        "REACH",
+        "WEEE",
+        "加州RoHS"
+      ],
+      "related_subjects": [
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "防尘防水要求：应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备）。",
+      "topic_tags": [
+        "防尘防水",
+        "IP22",
+        "IEC60529"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "电气安全测试报告"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "报告使用说明：在设计验证报告中标记\"■\"或是在\"□\"中划\"√\"都表示当前项已经被选中；标记\"□\"表示当前项未选中。本设计验证报告需审核后方能生效，存档并设计历史文档（DHF）。",
+      "topic_tags": [
+        "标记说明",
+        "审核",
+        "DHF"
+      ],
+      "related_subjects": [
+        "设计验证报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "消毒要求：按照风险分析的结论添加消毒方面的要求，说明书中按照风险分析的结论添加消毒方面的要求。验证阶段为T1阶段。",
+      "topic_tags": [
+        "消毒",
+        "风险分析",
+        "说明书"
+      ],
+      "related_subjects": [
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "防误用注意信息：用户说明书上必须指明本产品的禁忌症。验证阶段为T1阶段。",
+      "topic_tags": [
+        "防误用",
+        "禁忌症",
+        "用户说明书"
+      ],
+      "related_subjects": [
+        "PT9L"
+      ]
+    }
+  ]
+}

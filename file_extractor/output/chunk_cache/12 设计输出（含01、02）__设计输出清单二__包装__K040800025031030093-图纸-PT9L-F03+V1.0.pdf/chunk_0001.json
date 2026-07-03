@@ -1,0 +1,157 @@
+{
+  "document": {
+    "title": "PT9L 彩包装标签（PT9L-F03）",
+    "drawing_number": "PT9L-F03",
+    "edition": "V1.0",
+    "part_name": "彩包装标签",
+    "model_number": "PT9L",
+    "source_file": "K040800025031030093-图纸-PT9L-F03+V1.0.pdf",
+    "drawing_id": "K04080002503",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance": "X=±0.5; XX; X°",
+    "date": "2026-05-13"
+  },
+  "products": [
+    {
+      "name": "PT9L 彩包装标签",
+      "model": "PT9L",
+      "part_number": "PT9L-F03",
+      "description": "GS1 DataMatrix/QR 二维码标签，贴附于 PT9L 彩包装盒",
+      "material": "80g 白色不干胶铜版纸 + 覆亮膜"
+    }
+  ],
+  "components": [
+    {
+      "name": "彩包装标签",
+      "part_number": "PT9L-F03",
+      "material": "80g 白色不干胶铜版纸 + 覆亮膜",
+      "dimensions": {
+        "width_mm": 20.0,
+        "height_mm": 25.0,
+        "corner_radius_mm": 1.2
+      },
+      "print_color": "单黑印刷",
+      "surface_treatment": "覆亮膜"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "材质：80g 白色不干胶铜版纸",
+      "category": "材料要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-2",
+      "description": "印刷颜色：单黑印刷",
+      "category": "印刷要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-3",
+      "description": "表面覆亮膜",
+      "category": "表面处理要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-4",
+      "description": "本件要求通过 RoHS 测试",
+      "category": "合规要求",
+      "priority": "A级"
+    }
+  ],
+  "tests": [
+    {
+      "name": "RoHS 测试",
+      "description": "标签需通过 RoHS 有害物质限制测试",
+      "requirement_reference": "REQ-4"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "有害物质限制指令，标签需通过 RoHS 测试"
+    },
+    {
+      "name": "GS1",
+      "description": "GS1 QR Code 标准，用于产品二维码编码规范"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "GTIN",
+      "value": "00850044118700",
+      "ai_code": "AI (01)",
+      "description": "产品 GTIN"
+    },
+    {
+      "type": "批号",
+      "value": "201347011001",
+      "ai_code": "AI (10)",
+      "description": "批号变量，12位：1-6制造令 / 7-9部件序号 / 10-12批次序列号"
+    },
+    {
+      "type": "图号",
+      "value": "K04080002503"
+    },
+    {
+      "type": "源文件编号",
+      "value": "K040800025031030093"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "外形尺寸",
+      "description": "宽（W）= 20.0 mm，高（H）= 25.0 mm，圆角半径 R1.2 mm",
+      "source": "图面直接标注",
+      "priority": "A级"
+    },
+    {
+      "category": "印刷内容",
+      "description": "条码类型为 GS1 QR Code，包含 GTIN、批号、生产日期、有效期等信息；字体 Myriad Pro 4.5 pt",
+      "priority": "A级"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0",
+      "date": "2026-05-13",
+      "description": "初版，视觉读图后填写完整内容"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "印刷内容详细说明：条码类型为 GS1 QR Code，二维码图案随批号变量变化。AI (01) 为产品 GTIN：00850044118700；AI (10) 为批号变量：12位编码（1-6位为制造令，7-9位为部件序号，10-12位为批次序列号）。附加内容包括 (01) 产品GTIN，(10) AI批号，(11) 生产日期，(17) 有效期，依据评审要求以上内容生成二维码。字体使用 Myriad Pro 4.5 pt。",
+      "topic_tags": [
+        "GS1 QR Code",
+        "批号",
+        "GTIN",
+        "生产日期",
+        "有效期",
+        "二维码",
+        "印刷内容"
+      ],
+      "related_subjects": [
+        "PT9L-F03",
+        "彩包装标签",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "标签尺寸约束：宽（W）= 20.0 mm，高（H）= 25.0 mm，圆角半径 R1.2 mm，尺寸公差 X=±0.5 mm，比例 1:1，单位 mm。",
+      "topic_tags": [
+        "尺寸",
+        "公差",
+        "圆角",
+        "标签规格"
+      ],
+      "related_subjects": [
+        "PT9L-F03",
+        "彩包装标签"
+      ]
+    }
+  ]
+}

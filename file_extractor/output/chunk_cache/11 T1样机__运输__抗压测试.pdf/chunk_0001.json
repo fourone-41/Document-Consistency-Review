@@ -1,0 +1,86 @@
+{
+  "document": {
+    "title": "抗压测试 Test Report",
+    "doc_type": "检测报告/测试报告",
+    "version": null
+  },
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "抗压测试",
+      "condition": "将测试产品放于抗压机上，以10±3mm/min速度施加压力，直到箱体压溃，记录最大抗压力值",
+      "expected_value": "测试后最大抗压力值不小于150kgf",
+      "actual_result": "1# 205kgf；2# 198kgf",
+      "pass_criteria": "最大抗压力值不小于150kgf",
+      "environment": "测试周期：2017.06.05-2017.06.08"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "2017060822",
+      "conclusion": "测试结果判定为合格"
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "1#",
+      "test_point": "抗压测试",
+      "reading": 205,
+      "unit": "kgf",
+      "reference_value": "≥150kgf",
+      "condition": "10±3mm/min速度施加压力至箱体压溃"
+    },
+    {
+      "machine_no": "2#",
+      "test_point": "抗压测试",
+      "reading": 198,
+      "unit": "kgf",
+      "reference_value": "≥150kgf",
+      "condition": "10±3mm/min速度施加压力至箱体压溃"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "报告编号",
+      "value": "2017060822"
+    },
+    {
+      "id_type": "客户编号/项目",
+      "value": "A1939"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "A1939",
+      "name": "NA（送样2PCS，由上海锦盈印刷有限公司营业部送样）"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "以上测试样品及样品资料由客户提供并确认，本公司未验证其真实性。",
+      "topic_tags": [
+        "免责声明",
+        "样品来源",
+        "客户提供"
+      ],
+      "related_subjects": [
+        "Test Report 2017060822",
+        "上海锦盈印刷有限公司营业部"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "送样公司名称：上海锦盈印刷有限公司营业部；送样公司地址：上海市闵行区华漕镇金平路329号锦盈工业园；样品接收日期：2017.06.05；测试周期：2017.06.05-2017.06.08；送样数量：2PCS；测试方法：见第二页。",
+      "topic_tags": [
+        "送样信息",
+        "测试周期",
+        "样品接收"
+      ],
+      "related_subjects": [
+        "Test Report 2017060822",
+        "抗压测试"
+      ]
+    }
+  ]
+}

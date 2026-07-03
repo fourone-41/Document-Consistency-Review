@@ -1,0 +1,286 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Checklist / PEMS Design Review Record",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "80-81 of 182"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment general requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European harmonized version of IEC60601-1"
+    },
+    {
+      "id": "IEC 62304",
+      "description": "Medical device software lifecycle processes, referenced for clauses 4.3, 5, 7, 8, 9"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-RJCH01",
+      "version": "V1.0",
+      "description": "Software Quality Plan / Software Quality Planning document"
+    },
+    {
+      "id": "PT9L-RZCL01",
+      "version": "V1.0",
+      "description": "PT9L Subroutine Test Record E0 - design broken up into subsystems with test specification"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "14.8",
+      "description": "Architecture specification considers specified items to reduce RISK to acceptable level",
+      "sub_items": [
+        {
+          "item": "a",
+          "description": "Components with high-integrity characteristics",
+          "verdict": "N/A"
+        },
+        {
+          "item": "b",
+          "description": "Fail-safe functions",
+          "verdict": "N/A"
+        },
+        {
+          "item": "c",
+          "description": "Redundancy",
+          "verdict": "N/A"
+        },
+        {
+          "item": "d",
+          "description": "Diversity",
+          "verdict": "N/A"
+        },
+        {
+          "item": "e",
+          "description": "Partitioning of functionality",
+          "verdict": "P"
+        },
+        {
+          "item": "f",
+          "description": "Defensive design limiting hazardous effects by restricting output power or limiting actuator travel",
+          "verdict": "N/A"
+        },
+        {
+          "item": "g",
+          "description": "Allocation of RISK CONTROL measures to subsystems and components of PEMS",
+          "verdict": "N/A"
+        },
+        {
+          "item": "h",
+          "description": "Failure modes of components and their effects",
+          "verdict": "P"
+        },
+        {
+          "item": "i",
+          "description": "Common cause failures",
+          "verdict": "N/A"
+        },
+        {
+          "item": "j",
+          "description": "Systematic failures",
+          "verdict": "P"
+        },
+        {
+          "item": "k",
+          "description": "Test interval duration and diagnostic coverage",
+          "verdict": "P"
+        },
+        {
+          "item": "l",
+          "description": "Maintainability",
+          "verdict": "N/A"
+        },
+        {
+          "item": "m",
+          "description": "Protection from reasonably foreseeable misuse",
+          "verdict": "P"
+        },
+        {
+          "item": "n",
+          "description": "IT-NETWORK specification, when applicable",
+          "verdict": "N/A"
+        }
+      ],
+      "reference_document": "PT9L-RJCH01 V1.0",
+      "overall_verdict": "P"
+    },
+    {
+      "clause": "14.9",
+      "description": "Design is broken up into subsystems, each with a design and test specification where appropriate, and descriptive data on design environment documented",
+      "reference_document": "PT9L-RZCL01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.10",
+      "description": "VERIFICATION plan containing specified information used to verify and document functions implementing BASIC SAFETY, ESSENTIAL PERFORMANCE, or RISK CONTROL measures",
+      "sub_items": [
+        {
+          "item": "milestone(s)",
+          "description": "Milestone(s) when VERIFICATION is to be performed for each function",
+          "verdict": "P"
+        },
+        {
+          "item": "strategies",
+          "description": "Selection and documentation of VERIFICATION strategies, activities, techniques, and appropriate level of independence",
+          "verdict": "P"
+        },
+        {
+          "item": "tools",
+          "description": "Selection and utilization of VERIFICATION tools",
+          "verdict": "P"
+        },
+        {
+          "item": "coverage",
+          "description": "Coverage criteria for VERIFICATION",
+          "verdict": "P"
+        }
+      ],
+      "reference_document": "PT9L-RJCH01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.11",
+      "description": "A PEMS VALIDATION plan containing validation of BASIC SAFETY & ESSENTIAL PERFORMANCE",
+      "sub_items": [
+        {
+          "description": "Methods used for PEMS VALIDATION documented",
+          "verdict": "P"
+        },
+        {
+          "description": "Person with overall responsibility for PEMS VALIDATION is independent of design team; no member of design team is responsible for PEMS VALIDATION of their own design",
+          "verdict": "P"
+        },
+        {
+          "description": "All professional relationships of members of PEMS VALIDATION team with members of design team documented in RISK MANAGEMENT FILE",
+          "verdict": "P"
+        }
+      ],
+      "reference_document": "PT9L-RJCH01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.12",
+      "description": "Continued validity of previous design documentation assessed under a documented modification/change PROCEDURE",
+      "sub_items": [
+        {
+          "description": "Software Classification for Software changes applied in accordance with Clause 4.3 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Software Process for Software changes applied according to Clause 5 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "RISK MANAGEMENT for Software changes applied according to Clause 7 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Configuration management of software changes applied per Clause 8 of IEC 62304",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Problem resolution for Software changes applied according to Clause 9 of IEC 62304",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "14.13",
+      "description": "For PEMS incorporated into an IT-NETWORK not VALIDATED by the PEMS MANUFACTURER, instructions made available",
+      "result_remark": "Not be incorporated into an IT-NETWORK",
+      "sub_items": [
+        {
+          "item": "a",
+          "description": "Purpose of the PEMS connection to an IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "item": "b",
+          "description": "Required characteristics of the IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "item": "c",
+          "description": "Required configuration of the IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "item": "d",
+          "description": "Technical specifications of the network connection, including security specifications",
+          "verdict": "N/A"
+        },
+        {
+          "item": "e",
+          "description": "Intended information flow between the PEMS, the IT-NETWORK and other devices on the IT-NETWORK, and the intended routing through the IT-NETWORK",
+          "verdict": "N/A"
+        },
+        {
+          "item": "f",
+          "description": "A list of HAZARDOUS SITUATIONS resulting from failure of the IT-NETWORK to provide the required service",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ACCOMPANYING DOCUMENTS for the RESPONSIBLE ORGANIZATION - statement that connection to IT-NETWORKS could result in previously unidentified RISKS TO PATIENTS, OPERATORS or third parties",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Notification that the RESPONSIBLE ORGANIZATION should identify, analyse, evaluate and control these RISKS",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For PEMS incorporated into an IT-NETWORK: the product under review is stated as 'Not be incorporated into an IT-NETWORK', therefore all IT-NETWORK related requirements under clause 14.13 are marked N/A.",
+      "topic_tags": [
+        "IT-NETWORK",
+        "PEMS",
+        "N/A",
+        "clause 14.13"
+      ],
+      "related_subjects": [
+        "14.13",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "All software change management requirements under clause 14.12 (Software Classification per IEC 62304 clause 4.3, Software Process per clause 5, RISK MANAGEMENT per clause 7, Configuration management per clause 8, Problem resolution per clause 9) are marked N/A, indicating no software changes have been assessed at this review stage.",
+      "topic_tags": [
+        "software change",
+        "IEC 62304",
+        "configuration management",
+        "risk management",
+        "clause 14.12"
+      ],
+      "related_subjects": [
+        "14.12",
+        "IEC 62304"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PEMS VALIDATION independence requirement: The person with overall responsibility for PEMS VALIDATION must be independent of the design team, and no member of a design team is responsible for PEMS VALIDATION of their own design. All professional relationships of members of PEMS VALIDATION team with members of design team must be documented in the RISK MANAGEMENT FILE.",
+      "topic_tags": [
+        "PEMS VALIDATION",
+        "independence",
+        "design team",
+        "RISK MANAGEMENT FILE",
+        "clause 14.11"
+      ],
+      "related_subjects": [
+        "14.11",
+        "PT9L-RJCH01"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "document": {
+    "title": "上盖（T-Z1-P01 V2.0，2024-11-04）2D 图读图报告",
+    "drawing_no": "T-Z1-P01",
+    "edition": "V2.0",
+    "date": "2024-11-04",
+    "source_file": "T-Z1-上盖-v2.0-20241104.pdf",
+    "model_no": "T-Z1",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "brand": "andon iHealth",
+    "report_date": "2026-06-02",
+    "skill_reference": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "上盖",
+      "part_no": "T-Z1-P01",
+      "model": "T-Z1",
+      "edition": "V2.0",
+      "material": "ABS（白色）",
+      "surface_treatment": "ABS 白色素材，无表面处理",
+      "brand": "andon iHealth"
+    }
+  ],
+  "components": [
+    {
+      "name": "上盖",
+      "part_no": "T-Z1-P01",
+      "material": "ABS（白色）",
+      "edition": "V2.0",
+      "date": "2024-11-04"
+    },
+    {
+      "name": "下盖",
+      "part_no": "T-Z1-P02",
+      "edition": "V2.0",
+      "note": "配合件，与上盖共用外形 Ø130.1×34.1×11.5"
+    },
+    {
+      "name": "下盖",
+      "part_no": "T-Z1-P02",
+      "edition": "V1.0",
+      "date": "2024-11-04",
+      "note": "同目录新版下盖，配合关系待确认"
+    },
+    {
+      "name": "液晶（LCD）",
+      "note": "22.00±0.1 mm，与上盖 LCD 内腔 22.2±0.05 配合"
+    },
+    {
+      "name": "主传感器（PIR）",
+      "note": "安装于上盖主传感器开孔 Ø21.5"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "①",
+      "description": "整件外形宽（IQC 重要）",
+      "value": 34.1,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（外侧底视）水平向",
+      "confidence": "A"
+    },
+    {
+      "id": "②",
+      "description": "壳体总高（IQC 重要）",
+      "value": 11.5,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "SECTION A-A 顶部",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_length",
+      "description": "整件外形总长（与下盖匹配，IQC 重要）",
+      "symbol": "Ø",
+      "value": 130.1,
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "view": "主视图（外侧）总长",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_sensor_large",
+      "description": "传感器安装大孔",
+      "symbol": "Ø",
+      "value": 13.9,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（外侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_sensor_small",
+      "description": "传感器安装小孔",
+      "symbol": "Ø",
+      "value": 9.9,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（外侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_loc_hole",
+      "description": "微小定位孔",
+      "symbol": "Ø",
+      "value": 0.8,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "主视图（外侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_lcd_win_w",
+      "description": "LCD 显示窗口宽",
+      "value": 26.5,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "主视图（外侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_lcd_win_n",
+      "description": "LCD 显示窗口窄",
+      "value": 19,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "主视图（外侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_lcd_cavity",
+      "description": "LCD 内腔宽（与液晶 22.00 mm 配合）",
+      "value": 22.2,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（内侧俯视）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_inner_w",
+      "description": "内腔结构主宽",
+      "value": 34.9,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（内侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_inner_seg",
+      "description": "内腔分段宽",
+      "value": 30,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（内侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_pir_hole",
+      "description": "主传感器（PIR）开孔",
+      "symbol": "Ø",
+      "value": 21.5,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "主视图（内侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_boss_hole",
+      "description": "螺柱孔径（多处）",
+      "symbol": "Ø",
+      "value": 4.4,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（内侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_lcd_margin",
+      "description": "LCD 窗口边距（2 处）",
+      "value": 2.5,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图（内侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_inner_misc",
+      "description": "内腔细节尺寸",
+      "values": [
+        38.7,
+        26.7,
+        24.2,
+        7,
+        1.25
+      ],
+      "tolerance": "Level B / ±0.05",
+      "unit": "mm",
+      "view": "主视图（内侧）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_section_aa",
+      "description": "A-A 截面细节",
+      "values": [
+        4.4,
+        30,
+        34.9,
+        2.1,
+        3.2,
+        11.2
+      ],
+      "tolerance": "Level B / ±0.05",
+      "unit": "mm",
+      "view": "SECTION A-A",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_section_bb_cc",
+      "description": "B-B / C-C 截面尺寸",
+      "values": [
+        11,
+        1.4
+      ],
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "SECTION B-B / C-C",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_detail_d_a",
+      "description": "细节特征 A（卡扣/台阶面，Level A 精度）",
+      "value": 1.2,
+      "tolerance": "±0.03",
+      "tolerance_level": "Level A",
+      "unit": "mm",
+      "view": "DETAIL D（SCALE 5:1）",
+      "confidence": "A"
+    },
+    {
+      "id": "dim_detail_d_b",
+      "description": "细节特征 B（薄壁/配合间隙，Level A 精度）",
+      "value": 0.8,
+      "tolerance": "±0.03",
+      "tolerance_level": "Level A",
+      "unit": "mm",
+      "view": "DETAIL D（SCALE 5:1）",
+      "confidence": "A"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "category": "质量检验"
+    },
+    {
+      "id": "REQ-2",
+      "description": "材质为 ABS（白色）；产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象",
+      "category": "材料与外观"
+    },
+    {
+      "id": "REQ-3",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "category": "装配验证"
+    },
+    {
+      "id": "REQ-4",
+      "description": "产品符合 RoHS 2.0",
+      "category": "法规符合性"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 要求",
+      "applicability": "上盖（T-Z1-P01）"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "1",
+      "description": "初版制作",
+      "date": null
+    },
+    {
+      "version": "2",
+      "description": "LOGO 取消",
+      "date": "2024-11-04"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Drawing NO.",
+      "value": "T-Z1-P01"
+    },
+    {
+      "type": "Model NO.",
+      "value": "T-Z1"
+    },
+    {
+      "type": "Part Name",
+      "value": "上盖"
+    },
+    {
+      "type": "Edition",
+      "value": "V2.0"
+    },
+    {
+      "type": "Source File",
+      "value": "T-Z1-上盖-v2.0-20241104.pdf"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "V2.0 vs V3.0 版本号管理冲突（日期上 V2.0 晚但版本号小）",
+      "source_required": "项目管理 + 工程师",
+      "status": "待确认"
+    },
+    {
+      "id": "C-2",
+      "description": "当前生产用哪一版（V2.0 还是 V3.0？）",
+      "source_required": "工程师 / BOM / 制造令",
+      "status": "待确认"
+    },
+    {
+      "id": "C-3",
+      "description": "LOGO 取消是因为认证/品牌策略？（影响其它件如外观图）",
+      "source_required": "工程师 + 产品",
+      "status": "待确认"
+    },
+    {
+      "id": "C-4",
+      "description": "DETAIL D 1.2±0.03 / 0.8±0.03 Level A 精度模具稳定性",
+      "source_required": "模具厂",
+      "status": "待确认"
+    },
+    {
+      "id": "C-5",
+      "description": "LCD 内腔 22.2±0.05 ↔ 液晶 22.00±0.1 极限公差链装配间隙",
+      "source_required": "液晶图 + 极限公差分析",
+      "status": "待确认"
+    },
+    {
+      "id": "C-6",
+      "description": "与下盖 V1.0（2024-11-04）的配合（同目录新版下盖）",
+      "source_required": "T-Z1-下盖-v1.0-20241104 图",
+      "status": "待确认"
+    }
+  ],
+  "tests": [
+    {
+      "name": "IQC 测量",
+      "description": "对带编号尺寸（① 整件外形宽 34.1±0.05、② 壳体总高 11.5±0.05）进行 IQC 重点测量",
+      "items": [
+        "① 34.1±0.05 整件外形宽",
+        "② 11.5±0.05 壳体总高",
+        "Ø130.1±0.1 整件外形总长"
+      ],
+      "category": "来料质量检验"
+    },
+    {
+      "name": "试装验证",
+      "description": "须试装产品，并能顺利装入产品；品质部检验结构时，以结构签板和组装（实配）为准",
+      "category": "装配验证"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "版本号管理异常：本图 Edition = V2.0（日期 2024-11-04），但同目录上一版 T-Z1-上盖-v3.0-20240627.pdf 是 V3.0（日期 2024-06-27）。日期上 V2.0 > V3.0（晚 4 个月），但版本号反而小，版本号体系不一致。修改记录显示：版本 1 = 初版制作，版本 2 = LOGO 取消。推测 V2.0 是产品上市后回退式版本号（取消 LOGO 后另起编号），实际生产可能以最新日期 V2.0 为准；需工程师确认。",
+      "topic_tags": [
+        "版本号冲突",
+        "LOGO取消",
+        "版本管理",
+        "V2.0",
+        "V3.0"
+      ],
+      "related_subjects": [
+        "T-Z1-P01",
+        "T-Z1-上盖-v3.0-20240627.pdf",
+        "C-1",
+        "C-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "配合关系说明：上盖 T-Z1-P01 V2.0 与下盖 T-Z1-P02 V2.0 试装，共用外形尺寸 Ø130.1×34.1×11.5 mm。LCD 内腔 22.2±0.05 mm 与液晶模块 22.00±0.1 mm 配合，需验证极限公差链装配间隙。DETAIL D 卡扣/台阶面采用 Level A 精度（±0.03 mm），对模具稳定性要求较高。",
+      "topic_tags": [
+        "配合关系",
+        "公差链",
+        "LCD内腔",
+        "卡扣",
+        "模具精度"
+      ],
+      "related_subjects": [
+        "T-Z1-P02",
+        "液晶",
+        "DETAIL D",
+        "C-4",
+        "C-5",
+        "C-6"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "完整尺寸表与 V3.0 高度一致（同 Drawing NO. T-Z1-P01），详细字段参见已读图的图纸/T-Z1-上盖-v3.0-20240627.pdf.md 的 §2.1-2.5。本报告重点突出 V2.0 特征（LOGO 取消）。未标注尺寸以样板为准；品质部检验结构时，以结构签板和组装（实配）为准。",
+      "topic_tags": [
+        "版本对比",
+        "V2.0特征",
+        "未标注尺寸",
+        "样板基准"
+      ],
+      "related_subjects": [
+        "T-Z1-P01",
+        "T-Z1-上盖-v3.0-20240627.pdf"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "视图说明：图纸包含 7 个视图：① 主视图（左上，外侧底视，含 LCD 窗口 + 2 个传感器圆孔）+ ② SECTION A-A（中部，纵剖含螺柱）+ ③ 主视图（右上，内侧俯视，IQC 重点视图）+ ④ SECTION B-B + ⑤ SECTION C-C + ⑥ DETAIL D（SCALE 5:1）+ ⑦ 立体图（底部）。DETAIL D 以 5:1 放大比例展示卡扣/台阶面和薄壁/配合间隙等 Level A 精度特征。",
+      "topic_tags": [
+        "视图布局",
+        "SECTION",
+        "DETAIL D",
+        "IQC视图",
+        "剖视图"
+      ],
+      "related_subjects": [
+        "T-Z1-P01",
+        "SECTION A-A",
+        "SECTION B-B",
+        "SECTION C-C",
+        "DETAIL D"
+      ]
+    }
+  ]
+}

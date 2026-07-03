@@ -1,0 +1,60 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "判断 T040800073941030093-PT3-F21.pdf.md 中所有标题栏字段均为'待填'的根本原因：该文件是2026-05-14脚本自动生成的模板框架（文字层字符<400，视觉读图尚未执行），'待填'反映的是MD解析模板的未完成状态，而非PDF原图本身标题栏为空白；需核查PDF原图是否已有完整标题栏内容，以及该图纸在设计输出清单中的受控状态与版本记录。",
+  "agent_input": {
+    "claim": "The packaging label drawing filed as T040800073941030093-PT3-F21 has an incomplete title block with Drawing NO. and Pro material fields marked as '待填' (to be filled), meaning this drawing has been archived in the PT9L DHF in an unfinished state and cannot serve as a controlled DMR output.",
+    "context_summary": "现有证据（DMR-108至DMR-113及完整文件内容）均来自同一文件：12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md。关键发现如下：\n1. 该.md文件注释行明确标注'2026-05-14 自动生成模板 + 待填'，正文亦注明'2026-05-14 脚本生成框架，标题栏 / 技术要求 / 尺寸表待视觉读图后填写'；\n2. PDF源文件文字层字符<400，说明脚本无法通过文字提取获得标题栏内容，所有字段'待填'是OCR/视觉读图尚未执行的结果，不能等同于PDF原图标题栏本身为空；\n3. 目前没有任何证据直接证明PDF原图的Drawing NO.和Pro material字段为空白；\n4. page_context中的F0075（PT3 transport report）和F0082（PT3SBT标签审核表）内容为空，未提供关联信息；\n5. 原claim将'MD模板待填'等同于'图纸归档为未完成状态'，存在逻辑跳跃，需要文件控制层面核查。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-108",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 1,
+        "actual_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-14 自动生成模板 + 待填 -->",
+        "significance": "明确标注该.md为自动生成模板，待填状态源于脚本框架而非PDF原图"
+      },
+      {
+        "evidence_id": "DMR-109",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 2,
+        "actual_text": "# T040800073941030093-PT3-F21 2D 图读图报告",
+        "significance": "文件标题确认图号"
+      },
+      {
+        "evidence_id": "DMR-110",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 4,
+        "actual_text": "> 源文件：`T040800073941030093-PT3-F21.pdf`（PDF 尺寸 741×488 pt，文字层字符 < 400，矢量图纸）。",
+        "significance": "PDF文字层字符<400，说明标题栏内容无法通过文字提取获得，需视觉读图；不能证明PDF原图标题栏为空"
+      },
+      {
+        "evidence_id": "DMR-112",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 20,
+        "actual_text": "| **Drawing NO.** | （待填 - 见右下标题栏） |",
+        "significance": "注释'见右下标题栏'暗示PDF原图右下角存在标题栏，内容待视觉读图后录入"
+      },
+      {
+        "evidence_id": "DMR-113",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 22,
+        "actual_text": "| **Pro material** | （待填） |",
+        "significance": "Pro material字段待填，同属视觉读图未执行范畴"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "specific_questions_for_agent": [
+      "1. 请核查PDF原图 T040800073941030093-PT3-F21.pdf 本身的标题栏（右下角）是否已填写Drawing NO.和Pro material，还是确实为空白/待填状态？",
+      "2. 该图纸在设计输出清单二中的受控版本号、批准状态、归档日期是否有记录？",
+      "3. 是否存在该图纸的ECO/变更记录或版本历史，可证明其受控状态？",
+      "4. .md模板的'待填'是否已有后续更新版本（即视觉读图完成后的填写版）？",
+      "5. 该图纸在DMR设计输出清单中的条目状态（如：草稿/受控/作废）是什么？"
+    ]
+  }
+}
+```

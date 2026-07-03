@@ -1,0 +1,101 @@
+{
+  "document": {
+    "title": "Usability Engineering File",
+    "doc_type": "可用性工程文件"
+  },
+  "test_reports": [
+    {
+      "report_id": "Summative Evaluation",
+      "conclusion": "30名代表性操作者各进行3次测试，共90次测试。(1)使用错误在±95%范围内，设备便于使用；(2)大多数用户知道如何维护设备，仅3人需查阅用户手册确认是否可浸泡清洁；(3)部分用户需查阅用户手册确认使用环境，仅3名用户认为设备可能受无线设备干扰；(4)所有用户均能明确设备不可使用的条件。未发现新的危害、危险情境或风险场景，无需改进。IFT红外额温计可在用户手册指导下正确便捷地使用。"
+    },
+    {
+      "report_id": "Design Modification Conclusion",
+      "conclusion": "根据可用性验证结果，无需对原设计进行修改。用户界面设计的进一步改进不必要也不可行，因为目前没有关于IFT的客户投诉。"
+    }
+  ],
+  "persons": [
+    {
+      "name": "Cong Ming",
+      "title": "Product manager"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Project manager"
+    },
+    {
+      "name": "Wan Long",
+      "title": "Hardware Design personnel"
+    },
+    {
+      "name": "Wang Di",
+      "title": "Software Design personnel"
+    },
+    {
+      "name": "Liu Zhao",
+      "title": "Mechanical design personnel"
+    },
+    {
+      "name": "Gao Kejian",
+      "title": "Personnel with medical background"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "设计输入文件编号",
+      "value": "PT9L-FXGB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "name": "IFT Infrared Forehead Thermometer"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "总结性评估的目的是评估红外额温计用户界面在与危害相关的使用场景中成功完成任务的可用性。通过可用性测试的定性调查，30名代表性操作者各进行了3次测试，共90次测试。结果：(1)使用错误在±95%范围内，设备便于使用；(2)大多数用户知道如何维护设备，仅3人需查阅用户指南确认设备是否可浸泡清洁，该风险可通过用户再次查阅用户指南来避免；(3)部分用户需查阅用户手册确认使用地点，仅3名用户认为设备可能受手机等无线设备干扰；(4)所有用户均能明确设备不可使用的条件。未发现新的危害、危险情境或风险场景，无需改进。",
+      "topic_tags": [
+        "总结性评估",
+        "可用性测试",
+        "使用错误",
+        "风险",
+        "红外额温计"
+      ],
+      "related_subjects": [
+        "IFT Infrared Forehead Thermometer",
+        "Summative Evaluation"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "可用性工程文件人员资质要求：可用性工程文件应由软件工程师起草，由具有临床背景的软件总监审核，并由合格人员审查。团队成员资质如下：产品经理Cong Ming，专业为电子信息工程，10年以上相关经验；项目经理Hou Guangwei，专业为生物医学工程，10年以上相关经验；硬件设计人员Wan Long，专业为生物医学工程，10年以上相关经验；软件设计人员Wang Di，专业为电气工程与自动化，4年以上相关经验；机械设计人员Liu Zhao，专业为机械设计与制造，5年以上设计经验；具有医学背景人员Gao Kejian，专业为心血管，30年以上临床经验，教授，熟悉血压计可用性工程。",
+      "topic_tags": [
+        "人员资质",
+        "可用性工程",
+        "团队成员",
+        "DHF"
+      ],
+      "related_subjects": [
+        "Cong Ming",
+        "Hou Guangwei",
+        "Wan Long",
+        "Wang Di",
+        "Liu Zhao",
+        "Gao Kejian"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "DHF要求：设计输入文件应记录医疗设备引用可用性工程过程，参见PT9L-FXGB01 V1.0。",
+      "topic_tags": [
+        "DHF",
+        "设计输入",
+        "可用性工程过程"
+      ],
+      "related_subjects": [
+        "PT9L-FXGB01 V1.0",
+        "IFT Infrared Forehead Thermometer"
+      ]
+    }
+  ]
+}

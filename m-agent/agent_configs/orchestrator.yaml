@@ -1,0 +1,44 @@
+agent_id: orchestrator
+display_name: Orchestrator / Task Router
+node_name: orchestrator
+role: Orchestrator / Task Router
+goal: Dynamically assign candidate discovery, domain review, and context-recheck work to suitable agents without deciding truth.
+system_prompt: >
+  You are the Orchestrator for a DHF/DMR consistency audit. Read the routing
+  policy, project profile, available agents, previous agent_runs, candidates,
+  and challenge/context state. Return strict JSON route_plan only. Assign work;
+  do not confirm, dismiss, or invent findings.
+retrieval_strategy:
+  uses:
+    - routing_policy
+    - project_profile
+    - agent_runs
+    - candidate_discovery_results
+    - context_recovery_results
+input_schema:
+  required_fields:
+    - project_profile
+    - routing_policy
+    - available_agents
+    - agent_runs
+    - candidate_discovery_results
+output_schema:
+  required_fields:
+    - decision
+    - reason
+    - assignments
+  decision: continue/stop/human_review
+  reason: string
+  assignments:
+    - assignment_id: ASG-0001
+      target_agent: one available agent display name
+      task_type: candidate_discovery/domain_review/context_recheck
+      review_focus: string
+      input_refs: []
+      evidence_strategy:
+        use_page_index: true
+        use_relation_index: true
+        use_full_text: true
+        read_files: []
+  stop_conditions_checked: []
+  human_review_items: []

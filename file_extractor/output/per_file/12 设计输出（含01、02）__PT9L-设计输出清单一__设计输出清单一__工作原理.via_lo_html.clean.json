@@ -1,0 +1,376 @@
+{
+  "document": {
+    "title": "工作原理说明",
+    "document_id": "PT 9 L-GZYL01",
+    "total_pages": 2,
+    "subject": "PT9L红外体温计工作原理"
+  },
+  "products": [
+    {
+      "name": "PT9L红外体温计",
+      "type": "快速测量体温产品",
+      "features": [
+        "简单易用",
+        "测量迅速",
+        "数据准确"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "name": "测温部分",
+      "index": 1,
+      "description": "利用温度传感器把人体温度转换成电信号，交给MCU进行处理"
+    },
+    {
+      "name": "电源部分",
+      "index": 2,
+      "description": "使用2颗AAA电池供电，使用升压芯片给整个系统提供电源；MCU的一路AD管脚接到电源上用于检测电压，当电压低于预设值时发出提示"
+    },
+    {
+      "name": "MCU系统",
+      "index": 3,
+      "description": "采用合泰公司的BH67F2762芯片，具有功能强大、性能稳定、抗干扰能力强、低功耗、价格低廉等优点，适于大规模生产；主要功能是采集温度传感器发出的电信号并计算出温度值，同时控制按键、显示和声音"
+    },
+    {
+      "name": "交互模块",
+      "index": 4,
+      "description": "由显示、声音和按键组成，负责接收用户的指令和给出温度信息",
+      "sub_components": [
+        {
+          "name": "显示部分",
+          "description": "采用LCD屏幕，由MCU直接驱动，显示温度信息"
+        },
+        {
+          "name": "声音部分",
+          "description": "采用蜂鸣器，由MCU直接控制，在需要时给出声音"
+        },
+        {
+          "name": "按键部分",
+          "description": "由MCU控制，接收用户的按键信息"
+        }
+      ]
+    }
+  ],
+  "software_items": [
+    {
+      "name": "MCU固件",
+      "chip": "BH67F2762",
+      "manufacturer": "合泰公司",
+      "functions": [
+        "采集温度传感器电信号",
+        "计算温度值",
+        "控制按键",
+        "控制显示",
+        "控制声音",
+        "检测电源电压并在低于预设值时发出提示"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "体温测量",
+      "description": "快速测量体温，将人体温度转换为电信号并由MCU计算温度值"
+    },
+    {
+      "name": "低电量检测",
+      "description": "MCU的AD管脚监测电源电压，当电压低于预设值时发出提示"
+    },
+    {
+      "name": "温度显示",
+      "description": "通过LCD屏幕显示温度信息"
+    },
+    {
+      "name": "声音提示",
+      "description": "通过蜂鸣器在需要时给出声音反馈"
+    },
+    {
+      "name": "按键交互",
+      "description": "接收用户按键指令"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件编号",
+      "value": "PT 9 L-GZYL01"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "PT9L红外体温计是一款快速测量体温的产品。具有简单易用、测量迅速、数据准确的特点。机芯主要由四部分组成：1、测温部分；2、电源部分；3、MCU系统；4、交互模块。测温部分利用温度传感器把人体温度转换成电信号，交给MCU进行处理。电源部分使用2颗AAA电池供电，使用升压芯片给整个系统提供电源，同时MCU的一路AD管脚接到电源上用于检测电压，当电压低于预设值时发出提示。MCU采用合泰公司的BH67F2762芯片，具有功能强大、性能稳定、抗干扰能力强、低功耗、价格低廉等优点，适于大规模生产。MCU的主要功能是采集温度传感器发出的电信号并计算出温度值，同时控制按键、显示和声音，使体温计完成测试及显示。交互模块由显示、声音和按键组成，负责接收用户的指令和给出温度信息；显示部分采用LCD屏幕由MCU直接驱动；声音部分采用蜂鸣器由MCU直接控制；按键部分同样由MCU控制接收用户的按键信息。",
+      "topic_tags": [
+        "红外体温计",
+        "工作原理",
+        "MCU",
+        "温度传感器",
+        "LCD",
+        "蜂鸣器",
+        "AAA电池",
+        "BH67F2762"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "BH67F2762",
+        "测温部分",
+        "电源部分",
+        "MCU系统",
+        "交互模块"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/工作原理.via_lo_html.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "工作原理说明",
+      "to": "MCU固件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BH67F2762",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测温部分",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电源部分",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MCU系统",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "交互模块",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT 9 L-GZYL01",
+      "to": "MCU固件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MCU系统",
+      "to": "MCU固件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "交互模块",
+      "to": "显示部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "交互模块",
+      "to": "声音部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "交互模块",
+      "to": "按键部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "测温部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "电源部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "MCU系统",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "交互模块",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "体温测量",
+      "to": "测温部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低电量检测",
+      "to": "电源部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "温度显示",
+      "to": "显示部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "声音提示",
+      "to": "声音部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "按键交互",
+      "to": "按键部分",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "体温测量",
+      "to": "MCU固件",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "低电量检测",
+      "to": "MCU固件",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "温度显示",
+      "to": "MCU固件",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "声音提示",
+      "to": "MCU固件",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "按键交互",
+      "to": "MCU固件",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "体温测量",
+      "attribute": "测量原理",
+      "value": "红外非接触式/传感器电信号转换",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "利用温度传感器把人体温度转换成电信号，交给MCU进行处理"
+    },
+    {
+      "subject": "电源供电",
+      "attribute": "电池数量",
+      "value": "2",
+      "unit": "颗",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "使用2颗AAA电池供电"
+    },
+    {
+      "subject": "电源电池",
+      "attribute": "型号规格",
+      "value": "AAA",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "使用2颗AAA电池供电"
+    },
+    {
+      "subject": "电源升压",
+      "attribute": "供电方式",
+      "value": "升压芯片",
+      "unit": "",
+      "tolerance": "",
+      "condition": "整个系统供电",
+      "raw_text": "使用升压芯片给整个系统提供电源"
+    },
+    {
+      "subject": "低电量检测",
+      "attribute": "检测方式",
+      "value": "AD管脚监测电源电压",
+      "unit": "",
+      "tolerance": "",
+      "condition": "MCU一路AD管脚接电源",
+      "raw_text": "MCU的一路AD管脚接到电源上用于检测电压，当电压低于预设值时发出提示"
+    },
+    {
+      "subject": "低电量阈值",
+      "attribute": "触发条件",
+      "value": "低于预设值",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "电源电压监测",
+      "raw_text": "当电压低于预设值时发出提示"
+    },
+    {
+      "subject": "MCU芯片",
+      "attribute": "型号",
+      "value": "BH67F2762",
+      "unit": "",
+      "tolerance": "",
+      "condition": "合泰公司",
+      "raw_text": "采用合泰公司的BH67F2762芯片"
+    },
+    {
+      "subject": "MCU芯片",
+      "attribute": "性能特性",
+      "value": "功能强大、性能稳定、抗干扰能力强、低功耗",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "具有功能强大、性能稳定、抗干扰能力强、低功耗、价格低廉等优点，适于大规模生产"
+    },
+    {
+      "subject": "温度显示",
+      "attribute": "显示器件",
+      "value": "LCD屏幕",
+      "unit": "",
+      "tolerance": "",
+      "condition": "MCU直接驱动",
+      "raw_text": "采用LCD屏幕，由MCU直接驱动，显示温度信息"
+    },
+    {
+      "subject": "声音提示",
+      "attribute": "发声器件",
+      "value": "蜂鸣器",
+      "unit": "",
+      "tolerance": "",
+      "condition": "MCU直接控制",
+      "raw_text": "采用蜂鸣器，由MCU直接控制，在需要时给出声音"
+    }
+  ]
+}

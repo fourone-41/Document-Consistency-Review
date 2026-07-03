@@ -1,0 +1,615 @@
+{
+  "document": {
+    "title": "产品维修指南",
+    "document_number": "PT9L-WXZN01 V1.0",
+    "version": "V1.0",
+    "product_model": "PT9L",
+    "project_number": "30000078",
+    "product_name": "红外体温计",
+    "type": "维修指南"
+  },
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "project_number": "30000078"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件编号",
+      "value": "PT9L-WXZN01 V1.0"
+    },
+    {
+      "type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "revision_records": [
+    {
+      "sequence": "1",
+      "description": "起草",
+      "version": "V1.0",
+      "author": "万龙",
+      "approver": "侯广伟"
+    }
+  ],
+  "persons": [
+    {
+      "name": "万龙",
+      "role": "编制"
+    },
+    {
+      "name": "侯广伟",
+      "role": "批准"
+    }
+  ],
+  "components": [
+    {
+      "name": "电源弹簧",
+      "description": "正负极弹簧，负责电源连接"
+    },
+    {
+      "name": "稳压片",
+      "description": "稳压电路核心器件"
+    },
+    {
+      "name": "主芯片",
+      "description": "主控芯片，含按键端口、LCD驱动端口、LED驱动端口、低电检测端口、控制端口"
+    },
+    {
+      "name": "按键",
+      "description": "开机按键"
+    },
+    {
+      "name": "LCD",
+      "description": "液晶显示屏"
+    },
+    {
+      "name": "导电胶条",
+      "description": "LCD连接导电件"
+    },
+    {
+      "name": "背光LED",
+      "description": "LCD背光光源"
+    },
+    {
+      "name": "蜂鸣器",
+      "description": "声音提示器件"
+    },
+    {
+      "name": "温度传感器",
+      "description": "测温核心传感器"
+    },
+    {
+      "name": "低电检测电路",
+      "description": "检测电池低电量的电路"
+    },
+    {
+      "name": "LCD驱动芯片",
+      "description": "驱动LCD显示的芯片"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "目的：对产品生产过程中出现的不符合产品检验标准要求并需要进行维修的情况提供借鉴。",
+      "topic_tags": [
+        "维修目的",
+        "不合格品",
+        "生产过程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "维修准备：1. 确认维修时产品不良现象；2. 确保维修不对产品造成破坏或二次损伤。",
+      "topic_tags": [
+        "维修准备",
+        "操作规范",
+        "维修流程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "产品维修指南"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——开机不良：\n1. 不开机：（1）电源弹簧不良：①正负极簧连；②正负极簧装反；③正负极簧松。（2）稳压电路不良：①电源短路；②稳压片不良。（3）主芯片不良：①主芯片程序错误；②主芯片不良。（4）按键不良：①按键不良；②主芯片按键端口不良。\n2. 无显示或显示不全：见显示不良分析。\n3. 无声音：见蜂鸣器不良分析。",
+      "topic_tags": [
+        "开机不良",
+        "故障分析",
+        "原因分析",
+        "维修"
+      ],
+      "related_subjects": [
+        "电源弹簧",
+        "稳压片",
+        "主芯片",
+        "按键",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——显示不良：\n1. 全显缺段：①LCD不良；②主芯片LCD驱动端口不良；③导电胶条不良。\n2. 显示深浅不一：①LCD不良；②主芯片LCD驱动端口不良。\n3. 背光不亮：①背光LED不良；②主芯片LED驱动端口不良。",
+      "topic_tags": [
+        "显示不良",
+        "LCD故障",
+        "背光故障",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "LCD",
+        "导电胶条",
+        "背光LED",
+        "主芯片",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——蜂鸣器不良：\n1. 不响：①蜂鸣器不良；②主芯片控制端口不良。\n2. 声音小或时断时续：①蜂鸣器不良；②主芯片控制端口不良。",
+      "topic_tags": [
+        "蜂鸣器不良",
+        "声音故障",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "蜂鸣器",
+        "主芯片",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——测温不准：\n测温不准：①温度传感器不良；②温度标定不良。",
+      "topic_tags": [
+        "测温不准",
+        "温度传感器",
+        "温度标定",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "温度传感器",
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——低电压不良：\n1. 开机出电池符号：①低电检测电路不良；②主芯片低电检测端口不良。\n2. 低电压不出电池符号：①主芯片低电检测端口不良；②低电检测电路不良；③LCD驱动芯片端口不良。",
+      "topic_tags": [
+        "低电压不良",
+        "电池符号",
+        "低电检测",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "低电检测电路",
+        "主芯片",
+        "LCD驱动芯片",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——供电、漏电不良：\n1. 供电大：①主芯片端口不良（短路）；②稳压片电路不良；③元器件损坏。\n2. 供电小：①稳压片电路不良；②主芯片端口不良。\n3. 漏电大：①元器件不良；②主芯片端口不良；③稳压片电路不良。",
+      "topic_tags": [
+        "供电不良",
+        "漏电",
+        "电流异常",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "主芯片",
+        "稳压片",
+        "PT9L"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/产品维修指南.via_lo_html.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "产品维修指南",
+      "to": "V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "维修目的",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "维修目的",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "维修准备",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "产品维修指南",
+      "to": "维修准备",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电源弹簧",
+      "to": "开机不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "稳压片",
+      "to": "开机不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主芯片",
+      "to": "开机不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "按键",
+      "to": "开机不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "开机不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD",
+      "to": "显示不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导电胶条",
+      "to": "显示不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "背光LED",
+      "to": "显示不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主芯片",
+      "to": "显示不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "显示不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "蜂鸣器",
+      "to": "蜂鸣器不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主芯片",
+      "to": "蜂鸣器不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "蜂鸣器不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "温度传感器",
+      "to": "测温不准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "测温不准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "测温不准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "低电检测电路",
+      "to": "低电压不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主芯片",
+      "to": "低电压不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD驱动芯片",
+      "to": "低电压不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "低电压不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主芯片",
+      "to": "供电不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "稳压片",
+      "to": "供电不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "供电不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-WXZN01 V1.0",
+      "to": "万龙",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-WXZN01 V1.0",
+      "to": "侯广伟",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "电源弹簧",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "稳压片",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "主芯片",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "按键",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "LCD",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "导电胶条",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "背光LED",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "温度传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "低电检测电路",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "LCD驱动芯片",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-WXZN01 V1.0",
+      "to": "30000078",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "开机不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "显示不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "蜂鸣器不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "低电压不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "供电漏电不良",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-WXZN01 V1.0",
+      "to": "1",
+      "properties": {
+        "version": "V1.0",
+        "description": "起草",
+        "author": "万龙",
+        "approver": "侯广伟"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "万龙",
+      "to": "PT9L-WXZN01 V1.0",
+      "properties": {
+        "role": "编制",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-WXZN01 V1.0",
+      "properties": {
+        "role": "批准",
+        "version": "V1.0"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "主芯片",
+      "attribute": "功能端口",
+      "value": "按键端口、LCD驱动端口、LED驱动端口、低电检测端口、控制端口",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "主控芯片，含按键端口、LCD驱动端口、LED驱动端口、低电检测端口、控制端口"
+    },
+    {
+      "subject": "温度传感器",
+      "attribute": "测量原理",
+      "value": "测温核心传感器",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "测温核心传感器"
+    },
+    {
+      "subject": "背光LED",
+      "attribute": "功能类型",
+      "value": "LCD背光光源",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "LCD背光光源"
+    },
+    {
+      "subject": "蜂鸣器",
+      "attribute": "功能类型",
+      "value": "声音提示",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "声音提示器件"
+    },
+    {
+      "subject": "低电检测电路",
+      "attribute": "功能类型",
+      "value": "检测电池低电量",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "检测电池低电量的电路"
+    },
+    {
+      "subject": "稳压片",
+      "attribute": "功能类型",
+      "value": "稳压电路核心器件",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "稳压电路核心器件"
+    },
+    {
+      "subject": "LCD驱动芯片",
+      "attribute": "功能类型",
+      "value": "驱动LCD显示",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "驱动LCD显示的芯片"
+    },
+    {
+      "subject": "导电胶条",
+      "attribute": "功能类型",
+      "value": "LCD连接导电",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "LCD连接导电件"
+    },
+    {
+      "subject": "电源弹簧",
+      "attribute": "功能类型",
+      "value": "正负极电源连接",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "正负极弹簧，负责电源连接"
+    }
+  ]
+}

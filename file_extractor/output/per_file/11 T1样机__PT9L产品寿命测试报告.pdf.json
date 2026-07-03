@@ -1,0 +1,263 @@
+{
+  "document": {
+    "title": "PT9L产品寿命测试报告",
+    "doc_type": "整机寿命评估报告",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "PT9L-PLER01",
+      "item": "整机寿命测试（按键功能、蜂鸣器功能、屏幕显示功能、测量误差）",
+      "condition": "实验室环境：23℃，湿度65%，正常大气压；水槽温度：37.00℃；使用恒温水槽中的黑体进行测量",
+      "expected_value": "按键功能正常、蜂鸣器正常、屏幕显示正常，测量误差符合产品检验标准要求，等效5年使用寿命",
+      "actual_result": "按键功能、蜂鸣功能、屏幕显示功能均正常，测量误差满足产品检验标准的要求",
+      "pass_criteria": "10000次测试后各功能正常，测量误差满足产品检验标准",
+      "instrument": "恒温水槽（编号：RPZ03003）；PT9L样机1台（#1）",
+      "environment": "温度23℃，湿度65%，正常大气压"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-PLER01",
+      "conclusion": "PT9L进行1万次实际测试中，按键功能、蜂鸣功能、屏幕显示功能均正常，测量误差满足产品检验标准的要求。按照每天使用5次的假设，1万次测量等效为5年的使用寿命，PT9L红外体温计能够达到整机5年的使用寿命。"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-PLER01 V1.0"
+    },
+    {
+      "id_type": "仪器编号",
+      "value": "RPZ03003"
+    },
+    {
+      "id_type": "样机编号",
+      "value": "#1"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "PT9L红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L要求满足产品寿命为整机5年，其中可以影响到整机寿命的电子元器件以及结构组件需要进行整机进行测试（包括按键，显示模组，蜂鸣器，热敏电阻）。此次测试假设PT9L平均每天使用5次，5年等效大约1万次的使用寿命。",
+      "topic_tags": [
+        "寿命测试",
+        "等效使用次数",
+        "测试假设",
+        "电子元器件",
+        "结构组件"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "整机寿命评估"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测试方法：1. 将恒温水槽设定在37.00℃，待恒温水槽温度稳定后，使用额温计对水槽中的黑体进行测量；2. 测试过程中记录按键功能是否正常、蜂鸣器是否正常、屏幕显示是否正常，测量误差是否符合要求；3. 重复测试10000次。",
+      "topic_tags": [
+        "测试方法",
+        "恒温水槽",
+        "黑体",
+        "重复测试",
+        "10000次"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "寿命测试",
+        "PT9L-PLER01"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/PT9L产品寿命测试报告.pdf.md",
+    "doc_type": "test_report"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "寿命测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "整机寿命评估",
+      "to": "寿命测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "寿命测试",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "PT9L-PLER01",
+      "to": "PT9L-PLER01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "RPZ03003",
+      "properties": {
+        "detail_type": "instrument"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "#1",
+      "properties": {
+        "detail_type": "sample"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "PT9L-PLER01_conclusion",
+      "properties": {
+        "detail_type": "conclusion"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "behavioral_spec_测试方法",
+      "properties": {
+        "detail_type": "test_method"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "behavioral_spec_寿命假设",
+      "properties": {
+        "detail_type": "behavioral_spec"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_寿命假设",
+      "properties": {
+        "detail_type": "product_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01_conclusion",
+      "to": "PT9L-PLER01",
+      "properties": {
+        "detail_type": "result_summary"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-PLER01",
+      "to": "PT9L",
+      "properties": {
+        "measurement_item": "整机寿命测试",
+        "test_count": 10000,
+        "equivalent_life_years": 5,
+        "daily_usage_assumption": 5,
+        "water_bath_temperature": "37.00℃",
+        "lab_temperature": "23℃",
+        "lab_humidity": "65%",
+        "functions_tested": [
+          "按键功能",
+          "蜂鸣器功能",
+          "屏幕显示功能",
+          "测量误差"
+        ],
+        "actual_result": "按键功能、蜂鸣功能、屏幕显示功能均正常，测量误差满足产品检验标准的要求",
+        "pass": true
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "整机寿命",
+      "attribute": "等效使用年限",
+      "value": "5",
+      "unit": "年",
+      "tolerance": "",
+      "condition": "实验室环境：23℃，湿度65%，正常大气压",
+      "raw_text": "等效5年使用寿命"
+    },
+    {
+      "subject": "整机寿命测试",
+      "attribute": "按键测试次数阈值",
+      "value": "10000",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "实验室环境：23℃，湿度65%，正常大气压；水槽温度：37.00℃",
+      "raw_text": "10000次测试后各功能正常，测量误差满足产品检验标准"
+    },
+    {
+      "subject": "实验室环境温度",
+      "attribute": "测试条件值",
+      "value": "23",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "整机寿命测试（PT9L-PLER01）",
+      "raw_text": "实验室环境：23℃，湿度65%，正常大气压"
+    },
+    {
+      "subject": "实验室环境湿度",
+      "attribute": "测试条件值",
+      "value": "65",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "整机寿命测试（PT9L-PLER01）",
+      "raw_text": "实验室环境：23℃，湿度65%，正常大气压"
+    },
+    {
+      "subject": "恒温水槽温度",
+      "attribute": "测试条件设定值",
+      "value": "37.00",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "整机寿命测试（PT9L-PLER01）；使用黑体进行测量",
+      "raw_text": "水槽温度：37.00℃；使用恒温水槽中的黑体进行测量"
+    },
+    {
+      "subject": "测量误差",
+      "attribute": "合格判据",
+      "value": "符合产品检验标准要求",
+      "unit": "",
+      "tolerance": "",
+      "condition": "10000次按键测试后；实验室环境：23℃，湿度65%，正常大气压",
+      "raw_text": "测量误差符合产品检验标准要求；测量误差满足产品检验标准的要求"
+    },
+    {
+      "subject": "测量原理",
+      "attribute": "测量方式",
+      "value": "黑体红外非接触式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "整机寿命测试（PT9L-PLER01）",
+      "raw_text": "使用恒温水槽中的黑体进行测量"
+    }
+  ]
+}

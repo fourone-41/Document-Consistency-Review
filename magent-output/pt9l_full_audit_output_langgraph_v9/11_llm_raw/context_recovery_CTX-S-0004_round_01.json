@@ -1,0 +1,93 @@
+```json
+{
+  "context_summary": "本轮已补充了 F0242 文件的完整本地上下文：文件标题为"PT9C设计确认E0 23.11"，位于 DHF 主目录"18 设计确认"文件夹下。关键发现：文件标题含"PT9C"而非"PT9L"，但文件内部"产品型号"字段明确填写为"PT9L"（第12行），且预期用途描述亦为"PT9L红外体温计"。同时发现 F0388 为同名文件的历史草稿副本，路径为"历史记录\\PT9LDHF-草稿\\设计确认\\"。当前上下文已能确认：该文档内容指向 PT9L 产品，但文件名标题仍保留"PT9C"字样，存在文件名与内容不一致的情况。仍缺少：设计确认评审记录 Sheet（第27行之后）的完整内容、文档控制信息（版本历史、审批签字页）、以及 DHF 文件索引中对该文件的登记记录，以判断该文件是否被正式纳入 PT9L DHF 范围。",
+  "evidence_gaps": [
+    "F0242 第27行之后的'设计确认评审记录' Sheet 完整内容（含签字、审批人、日期、评审结论）尚未读取",
+    "F0242 文档控制页或封面页（若存在独立 Sheet）中的版本号、批准人、生效日期等元数据未获取",
+    "DHF 主目录文件索引（如'文件清单'或'设计历史文件索引'类文档）中对 F0242 的登记条目未检索，无法确认该文件是否被正式列为 PT9L DHF 受控文件",
+    "F0388（历史草稿副本）的内容与 F0242 是否完全一致尚未比对，无法判断草稿与正式版的差异",
+    "DHF 中是否存在独立的 PT9C 设计确认文件（即 PT9C 产品自身的设计确认），以区分本文件究竟是 PT9C 文件被误放入 PT9L DHF，还是 PT9C 平台文件被 PT9L 项目复用"
+  ],
+  "additional_search_queries": [
+    "F0242 第67行之后全文（设计确认评审记录 Sheet 完整内容）",
+    "DHF 文件清单 OR 设计历史文件索引 OR 文件目录 site:18设计确认 OR site:PT9LDHF",
+    "PT9C设计确认 文件索引 OR 受控清单 OR DHF目录",
+    "F0388 历史记录 PT9LDHF草稿 设计确认 完整内容对比",
+    "PT9L DHF 根目录 文件清单 OR index OR 目录文件",
+    "PT9C 设计确认 PT9L 关系 OR 平台 OR 衍生 OR 复用"
+  ],
+  "agent_instruction": "请执行以下补充检索，以判断 F0242（PT9C设计确认E0 23.11）是否被正式纳入 PT9L DHF 受控范围，以及文件名与内容不一致的性质：\n\n1. 【优先】读取 F0242 第27行至文件末尾的完整内容，重点提取'设计确认评审记录' Sheet 中的产品型号字段、审批人、签字日期、评审结论；\n2. 检索 DHF 根目录或'18 设计确认'文件夹下是否存在文件清单、受控文件目录或索引文档，查找 F0242 的登记条目及其标注的产品型号；\n3. 检索 DHF 中是否存在以'PT9L'命名的独立设计确认文件（如'PT9L设计确认'），若存在则比对其内容与 F0242 的关系；\n4. 读取 F0388 对应行范围内容，确认历史草稿与 F0242 正式版的异同，特别关注产品型号字段是否一致；\n5. 基于以上结果，判断该问题属于以下哪种情形：(A) PT9C 文件被错误归档至 PT9L DHF；(B) PT9C 为 PT9L 的前代/平台型号，文件被有意复用但未更新标题；(C) 文件标题录入错误，内容实为 PT9L 专属文件。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "SCOUT-138",
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 2,
+        "source_text": "# PT9C设计确认E0  23.11",
+        "note": "文件标题含PT9C，与所在DHF文件夹（PT9L）不一致"
+      },
+      {
+        "evidence_id": "CTX-R1-001",
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 12,
+        "source_text": "| 产品型号 | PT9L |  |  |  |  |  |  |",
+        "note": "文件内部产品型号字段明确填写为PT9L，与文件标题PT9C不一致"
+      },
+      {
+        "evidence_id": "CTX-R1-002",
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 13,
+        "source_text": "| 预期用途 | PT9L红外体温计是一款采用红外测温传感器采集温度信息的产品。具有简单易用、测量迅速、数据准确的特点。适用于儿童及成人家用测量，医院测量。 |  |  |  |  |  |  |",
+        "note": "预期用途描述明确指向PT9L产品"
+      },
+      {
+        "evidence_id": "CTX-R1-003",
+        "doc_id": "F0388",
+        "rel_path": "历史记录\\PT9LDHF-草稿\\设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 2,
+        "source_text": "# PT9C设计确认E0  23.11",
+        "note": "F0388为同名文件的历史草稿副本，路径归属PT9LDHF草稿目录，标题同样含PT9C"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line_start": 1,
+        "line_end": 26,
+        "section": "Sheet: 设计确认计划",
+        "summary": "文件元数据注释行 + 标题 + 设计确认计划Sheet全文（含产品概况表：产品型号=PT9L，预期用途=PT9L红外体温计；确认项目表：标识/包装/软件/风险/模拟现场测试/临床评估六类确认项目）"
+      },
+      {
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line_start": 27,
+        "line_end": null,
+        "section": "Sheet: 设计确认评审记录",
+        "summary": "【待读取】第27行起为设计确认评审记录Sheet，内容尚未获取，需补充读取"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "CTX-R1-FINDING-001",
+        "type": "title_content_mismatch",
+        "description": "F0242 文件名/标题为'PT9C设计确认E0 23.11'，但文件内部产品概况表中产品型号字段填写为'PT9L'，预期用途亦描述为'PT9L红外体温计'。文件归档路径为 PT9L DHF 主目录下的'18 设计确认'文件夹。标题与内容存在明确不一致。"
+      },
+      {
+        "context_id": "CTX-R1-FINDING-002",
+        "type": "draft_copy_identified",
+        "description": "F0388 为 F0242 的同名历史草稿副本，路径为'历史记录\\PT9LDHF-草稿\\设计确认\\'，表明该文件在 PT9L DHF 草稿阶段即已存在，且标题同样保留'PT9C'字样，说明标题问题并非后期归档错误引入，而是文件本身自草稿阶段即存在。"
+      },
+      {
+        "context_id": "CTX-R1-FINDING-003",
+        "type": "scope_determination_pending",
+        "description": "当前证据尚不足以判断该文件是：(A)PT9C产品文件被误归档至PT9L DHF，(B)PT9C为PT9L平台前代型号文件被有意复用，或(C)文件标题录入错误。需进一步检索DHF文件索引及PT9L独立设计确认文件以确定性质。"
+      }
+    ]
+  }
+}
+```

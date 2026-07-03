@@ -1,0 +1,298 @@
+{
+  "document": {
+    "title": "硬件设计方案E0 2D图读图报告",
+    "document_number": "PT9L-YJFA01",
+    "version": "V1.0",
+    "total_pages": 2,
+    "source_file": "硬件设计方案E0.pdf",
+    "generated_date": "2026-05-14",
+    "document_type": "硬件设计方案"
+  },
+  "products": [
+    {
+      "name": "红外体温计",
+      "model_number": "PT9L",
+      "project_number": "30000078"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件编号",
+      "value": "PT9L-YJFA01"
+    },
+    {
+      "type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "type": "版本号",
+      "value": "V1.0"
+    }
+  ],
+  "components": [
+    {
+      "name": "MCU",
+      "part_number": "BH67F2762",
+      "manufacturer": "合泰",
+      "description": "主控芯片，用于PT9L红外体温计主板"
+    },
+    {
+      "name": "升压片",
+      "part_number": "SR1833",
+      "description": "电源部分升压芯片"
+    }
+  ],
+  "review_items": [
+    {
+      "option": "评审未通过，重新提交文件再次评审",
+      "selected": false
+    },
+    {
+      "option": "评审通过，需按照评审记录进行修改",
+      "selected": false
+    },
+    {
+      "option": "评审通过，文件放行",
+      "selected": false
+    }
+  ],
+  "persons": [
+    {
+      "role": "申请(硬件工程师)",
+      "name": "（待填）"
+    },
+    {
+      "role": "审核(硬件主管)",
+      "name": "（待填）"
+    },
+    {
+      "role": "批准(技术负责人)",
+      "name": "（待填）"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "主板方案内容：PT9L红外体温计采用合泰的MCU BH67F2762，电源部分采用的升压片SR1833，无存储器。",
+      "topic_tags": [
+        "主板方案",
+        "MCU",
+        "电源",
+        "升压片",
+        "存储器",
+        "PT9L",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "BH67F2762",
+        "SR1833",
+        "硬件设计方案"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本报告为2026-05-14脚本生成框架，标题栏/技术要求/尺寸表待视觉读图后填写。源文件硬件设计方案E0.pdf（PDF尺寸842×595 pt，文字层字符<400，矢量图纸）。渲染：概览150 DPI + 2×2块300 DPI（符合SKILL≥300 DPI要求）。",
+      "topic_tags": [
+        "自动生成",
+        "待填写",
+        "模板",
+        "读图报告",
+        "DPI"
+      ],
+      "related_subjects": [
+        "硬件设计方案E0.pdf",
+        "SKILL_2D_Drawing_Reading"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "自动检查结果（SKILL Step 6）：DPI检查（≥300）通过，300 DPI渲染✓；分块切图2×2=4块；编号连续性（Step 6.1）待填；角度反推（Step 6.2）待填；公差形式（Step 6.4）待填-检查不对称公差是否保留原始形式；配合关系（Step 6.5）待填-来自技术要求第1条；①↔Φ视觉确认（Step 6.6）待填。",
+      "topic_tags": [
+        "自动检查",
+        "DPI",
+        "公差",
+        "配合关系",
+        "SKILL",
+        "编号连续性"
+      ],
+      "related_subjects": [
+        "SKILL_2D_Drawing_Reading",
+        "硬件设计方案E0"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "06 硬件设计方案E0 23.11/硬件设计方案E0.md",
+    "doc_type": "general"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "主板方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BH67F2762",
+      "to": "主板方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SR1833",
+      "to": "主板方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "硬件设计方案",
+      "to": "主板方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "硬件设计方案E0.pdf",
+      "to": "自动生成",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SKILL_2D_Drawing_Reading",
+      "to": "自动生成",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SKILL_2D_Drawing_Reading",
+      "to": "自动检查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "硬件设计方案E0",
+      "to": "自动检查",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT9L-YJFA01",
+      "to": "硬件设计方案E0.pdf",
+      "properties": {
+        "document_type": "硬件设计方案",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-YJFA01",
+      "to": "BH67F2762",
+      "properties": {
+        "role": "主控芯片",
+        "manufacturer": "合泰",
+        "product": "PT9L"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-YJFA01",
+      "to": "SR1833",
+      "properties": {
+        "role": "电源升压芯片",
+        "description": "电源部分升压芯片"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "BH67F2762",
+      "properties": {
+        "role": "主控MCU",
+        "manufacturer": "合泰"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "SR1833",
+      "properties": {
+        "role": "升压片",
+        "subsystem": "电源部分"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-YJFA01",
+      "to": "SKILL_2D_Drawing_Reading",
+      "properties": {
+        "check_steps": [
+          "Step 6",
+          "Step 6.1",
+          "Step 6.2",
+          "Step 6.4",
+          "Step 6.5",
+          "Step 6.6"
+        ],
+        "dpi_check": "通过",
+        "dpi_value": 300
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "申请(硬件工程师)",
+      "to": "PT9L-YJFA01",
+      "properties": {
+        "role": "申请",
+        "name": "（待填）"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "审核(硬件主管)",
+      "to": "PT9L-YJFA01",
+      "properties": {
+        "role": "审核",
+        "name": "（待填）"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "批准(技术负责人)",
+      "to": "PT9L-YJFA01",
+      "properties": {
+        "role": "批准",
+        "name": "（待填）"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-YJFA01",
+      "to": "评审未通过，重新提交文件再次评审",
+      "properties": {
+        "selected": false
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-YJFA01",
+      "to": "评审通过，需按照评审记录进行修改",
+      "properties": {
+        "selected": false
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-YJFA01",
+      "to": "评审通过，文件放行",
+      "properties": {
+        "selected": false
+      }
+    }
+  ],
+  "_claims": []
+}

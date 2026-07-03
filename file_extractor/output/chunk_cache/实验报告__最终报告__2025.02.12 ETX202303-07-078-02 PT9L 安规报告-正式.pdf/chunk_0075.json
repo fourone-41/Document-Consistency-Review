@@ -1,0 +1,203 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "page_range": "163-164 of 181/182",
+    "standard": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+    "fragment_index": "75/84"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-11:2015+A1:2020",
+      "name": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+      "description": "Requirements for medical electrical equipment used in home healthcare environments"
+    },
+    {
+      "id": "ISO 15223-1:2012",
+      "name": "ISO 15223-1:2012",
+      "description": "Symbols to be used with medical device labels"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "4.1",
+      "name": "Supply Mains Characteristics - General",
+      "result": "N/A",
+      "verdict": "N/A",
+      "remarks": "Non-life-supporting me equipment; No 12V/24V dc supply mains applicable"
+    },
+    {
+      "clause": "4.2.1",
+      "name": "Environmental conditions of transport and storage between uses",
+      "result": "Transport/storage range: -20°C to +55°C, 15%RH to 95%RH",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "description": "Temperature range: -25°C to +5°C",
+          "verdict": "P"
+        },
+        {
+          "description": "Temperature range: +5°C to +35°C at non-condensing relative humidity up to 90%",
+          "verdict": "P"
+        },
+        {
+          "description": "Temperature range: >35°C to 70°C at water vapour pressure up to 50 hPa",
+          "verdict": "P"
+        },
+        {
+          "description": "Not intended to be transported or stored in a carrying case between uses",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "4.2.2",
+      "name": "Environmental transport and storage test",
+      "verdict": "P",
+      "steps": [
+        {
+          "step": "a",
+          "description": "Me equipment prepared for transportation or storage according to instructions for use",
+          "result": "Removal of batteries",
+          "verdict": "P"
+        },
+        {
+          "step": "b",
+          "description": "Me equipment exposed to lowest specified environmental transport and storage conditions",
+          "result": "-20°C",
+          "verdict": "P"
+        },
+        {
+          "step": "b_duration",
+          "description": "Held at low temperature for at least 16h or thermal stability for at least 2h",
+          "result": "2h",
+          "verdict": "P"
+        },
+        {
+          "step": "c",
+          "description": "Me equipment exposed to 34°C ±4°C and 90% -0%+6% relative humidity until equilibrium and held for at least 2 hours; transition from low to high temperature made slowly for non-condensing environment",
+          "result": "34°C, 90%RH, 2h",
+          "verdict": "P"
+        },
+        {
+          "step": "d",
+          "description": "Me equipment exposed to highest specified environmental transport and storage conditions, not requiring water vapour pressure greater than 50 hPa",
+          "result": "55°C, 33%RH, 2h",
+          "verdict": "P"
+        },
+        {
+          "step": "d_duration",
+          "description": "For at least 16h or ensured thermal stability for at least 2h",
+          "verdict": "P"
+        },
+        {
+          "step": "e",
+          "description": "At end of conditioning period, me equipment allowed to return and stabilize at operating conditions of normal use",
+          "verdict": "P"
+        },
+        {
+          "step": "f",
+          "description": "Me equipment evaluated to its specifications and ensured it provides basic safety and essential performance",
+          "result": "Provide basic safety and essential performance",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "4.2.3.1",
+      "name": "Environmental operating conditions - Continuous operating conditions",
+      "verdict": "P",
+      "result": "Instructions for use indicated permissible environmental operating conditions: 10°C-40°C, 15%RH~90%RH, 700hPa-1060hPa. Described in 'Product specifications' of User's Manual."
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "4.1",
+      "title": "Supply Mains Characteristics for Home Healthcare Environment",
+      "description": "Supply mains voltage shall not exceed 110% or be below 85% of nominal voltage. For life-supporting equipment, lower limit is 80%. DC supply mains rated ranges: 12.4V-15.1V for 12V dc; 24.8V-30.3V for 24V dc. Equipment must maintain basic safety and essential performance during 30s dip to 10V (12V dc) or 20V (24V dc).",
+      "verdict": "N/A",
+      "remarks": "Non-life-supporting equipment; no applicable dc supply mains"
+    },
+    {
+      "clause": "4.2.1",
+      "title": "Environmental conditions of transport and storage between uses",
+      "description": "Me equipment (except stationary) shall operate within specified normal use after transport or storage in specified environmental conditions.",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.2",
+      "title": "Environmental transport and storage test procedure",
+      "description": "Defined multi-step test: low temperature exposure (-20°C, 2h), transition to 34°C/90%RH (2h), high temperature exposure (55°C/33%RH, 2h), stabilization, then performance evaluation.",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1",
+      "title": "Environmental operating conditions - Continuous",
+      "description": "Instructions for use shall indicate permissible environmental operating conditions of the me equipment.",
+      "verdict": "P"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For me equipment or me systems intended to actively keep alive or resuscitate a patient, Supply Mains in the home healthcare environment did not exceed 110% or was not below 80% of nominal voltage between any of the conductors of the system or between any of these conductors and earth. Verdict: N/A — Non-life-supporting me equipment.",
+      "topic_tags": [
+        "supply mains",
+        "home healthcare",
+        "life-supporting",
+        "voltage range",
+        "IEC 60601-1-11"
+      ],
+      "related_subjects": [
+        "4.1",
+        "IEC 60601-1-11:2015+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Where me equipment used different marking for conditions of transport and storage between uses, continuous operating conditions and transient operating conditions, markings accompanied by supplementary markings except where the respective applicability was obvious. Verdict: N/A.",
+      "topic_tags": [
+        "marking",
+        "transport",
+        "storage",
+        "operating conditions",
+        "ISO 15223-1"
+      ],
+      "related_subjects": [
+        "4.2.1",
+        "ISO 15223-1:2012"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Continuous operating conditions per clause 4.2.3.1: Instructions for use indicated permissible environmental operating conditions as 10°C to 40°C, 15%RH to 90%RH, 700hPa to 1060hPa. These conditions are described in the 'Product specifications' section of the User's Manual.",
+      "topic_tags": [
+        "operating conditions",
+        "temperature",
+        "humidity",
+        "pressure",
+        "user manual"
+      ],
+      "related_subjects": [
+        "4.2.3.1",
+        "IEC 60601-1-11:2015+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Symbols from ISO 15223-1:2012 used for marking: Symbol 5.3.5 (ISO 7000-0534), 5.3.6 (ISO 7000-0533), or 5.3.7 (ISO 7000-0632) for temperature range; Symbol 5.3.8 (ISO 7000-2620) for humidity range; Symbol 5.3.9 (ISO 7000-2621) for atmospheric pressure range. All marked N/A as not applicable to this device.",
+      "topic_tags": [
+        "ISO 15223-1",
+        "symbols",
+        "marking",
+        "temperature",
+        "humidity",
+        "pressure"
+      ],
+      "related_subjects": [
+        "4.2.1",
+        "ISO 15223-1:2012",
+        "ISO 7000"
+      ]
+    }
+  ]
+}

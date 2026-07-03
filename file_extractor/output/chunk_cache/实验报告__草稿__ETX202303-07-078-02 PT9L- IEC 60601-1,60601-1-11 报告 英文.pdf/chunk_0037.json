@@ -1,0 +1,180 @@
+{
+  "document": {
+    "title": "IEC 60601-1 / IEC 60601-1-11 Test Report",
+    "document_number": "ETX202303-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "total_pages": 182,
+    "current_pages": "76-77"
+  },
+  "tests": [
+    {
+      "clause": "13.2.13.3",
+      "title": "ME EQUIPMENT with motors",
+      "sub_tests": [
+        {
+          "clause": "13.2.13.3 a1",
+          "description": "For the motor part of the ME EQUIPMENT, compliance checked by tests of 13.2.8-13.2.10, 13.2.13.3 b), 13.2.13.3 c), and 13.2.13.4, as applicable",
+          "result_remark": "No motor",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 a1 (sub)",
+          "description": "To determine compliance with 13.2.9 and 13.2.10 motors in circuits running at 42.4 V peak a.c./60 V d.c. or less are covered with a single layer of cheesecloth which did not ignite during the test",
+          "result_remark": "No use such method",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 a2",
+          "description": "Tests on ME EQUIPMENT containing heating parts conducted at prescribed voltage with motor & heating parts operated simultaneously to produce the least favourable condition",
+          "result_remark": "No heating parts",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 a3",
+          "description": "Tests performed consecutively when more tests were applicable to the same ME EQUIPMENT",
+          "result_remark": "",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 b1",
+          "description": "Motor met running overload protection test when it is intended to be remotely or automatically controlled by a single control device with no redundant protection",
+          "result_remark": "Not intended to be remotely or automatically controlled",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 b2",
+          "description": "Motor met running overload protection test when it is likely to be subjected to CONTINUOUS OPERATION while unattended",
+          "result_remark": "Not continuous operation while unattended",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 b (motor winding temp)",
+          "description": "Motor winding temperature determined during each steady period and maximum value did not exceed Table 27 (Insulation Class, Maximum temperature measured °C)",
+          "result_remark": "See above",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 b (motor removed)",
+          "description": "Motor removed from ME EQUIPMENT and tested separately when load could not be changed in appropriate steps",
+          "result_remark": "",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 b (low voltage overload)",
+          "description": "Running overload test for motors operating at 42.4 V peak a.c./60 V d.c. or less performed only when examination and review of design indicated possibility of an overload",
+          "result_remark": "",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 b (electronic drive)",
+          "description": "Test not conducted where electronic drive circuits maintained a substantially constant drive current",
+          "result_remark": "",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 b (other justification)",
+          "description": "Test not conducted based on other justifications",
+          "result_remark": "Not applicable",
+          "verdict": "N/A"
+        },
+        {
+          "clause": "13.2.13.3 c",
+          "description": "ME EQUIPMENT with 3-phase motors operated with normal load, connected to a 3-phase SUPPLY MAINS with one phase disconnected, and periods of operation per 13.2.10",
+          "result_remark": "",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "13.2.13.4",
+      "title": "ME EQUIPMENT RATED for NON-CONTINUOUS OPERATION",
+      "sub_tests": [
+        {
+          "description": "ME EQUIPMENT (other than HAND-HELD) operated under normal load and at RATED voltage or at upper limit of RATED voltage range until increase in temperature was 5 °C in one hour, or a protective device operated",
+          "result_remark": "Continuous operation",
+          "verdict": "N/A"
+        },
+        {
+          "description": "When a load-reducing device operated in NORMAL USE, test continued with ME EQUIPMENT running idle",
+          "result_remark": "",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Motor winding temperatures did not exceed values in 13.2.10",
+          "result_remark": "Continuous operation",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Insulation Class",
+          "result_remark": "",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Maximum temperature measured (°C)",
+          "result_remark": "",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Heating period tests (page 76): When more than one test was applicable to same ME EQUIPMENT, tests performed consecutively. Heating period stopped when a heating element or an intentionally weak part of a non-SELF-RESETTING THERMAL CUT-OUT ruptured, or current interrupted before THERMAL STABILITY without possibility of automatic restoration. Test repeated on a second sample when interruption was due to rupture of a heating element or an intentionally weak part. Both samples met 13.1.2, and open circuiting of a heating element or an intentionally weak part in second sample not considered a failure by itself.",
+      "topic_tags": [
+        "heating element",
+        "thermal cut-out",
+        "thermal stability",
+        "non-self-resetting",
+        "test procedure"
+      ],
+      "related_subjects": [
+        "13.1.2",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 13.2.13.3 b) - ME EQUIPMENT with heating elements tested per clause 11.1 without adequate heat discharge, and supply voltage set at 90 or 110 % of RATED supply voltage, least favourable of the two. Operating period stopped when a non-SELF-RESETTING THERMAL CUT-OUT operated, or current interrupted without possibility of automatic restoration before THERMAL STABILITY. ME EQUIPMENT switched off as soon as THERMAL STABILITY established and allowed to cool to room temperature when current not interrupted. Test duration was equal to RATED operating time for non-CONTINUOUS OPERATION.",
+      "topic_tags": [
+        "supply voltage",
+        "thermal cut-out",
+        "thermal stability",
+        "operating time",
+        "non-continuous operation"
+      ],
+      "related_subjects": [
+        "13.2.13.3",
+        "11.1",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 13.2.13.3 c) - Heating parts of ME EQUIPMENT tested with ME EQUIPMENT operated in NORMAL CONDITION at 110% of RATED supply voltage and as in 11.1: 1) Controls limiting temperature in NORMAL CONDITION disabled, except THERMAL CUT-OUTS. 2) When more than one control provided, they were disabled in turn. 3) ME EQUIPMENT operated at RATED DUTY CYCLE until THERMAL STABILITY achieved, regardless of RATED operating time. All results: N/A.",
+      "topic_tags": [
+        "heating parts",
+        "normal condition",
+        "rated supply voltage",
+        "thermal cut-out",
+        "duty cycle",
+        "thermal stability"
+      ],
+      "related_subjects": [
+        "13.2.13.3",
+        "11.1",
+        "IEC60601-1"
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "name": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "General requirements for basic safety and essential performance of medical electrical equipment"
+    },
+    {
+      "name": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European version of IEC60601-1 general requirements standard"
+    }
+  ]
+}

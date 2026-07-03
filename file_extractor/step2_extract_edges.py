@@ -3,13 +3,14 @@ Enhanced version: covers all extraction_edges types + rule-based implicit edges.
 import json
 import re
 import time
+import argparse
 import yaml
 from pathlib import Path
 from openai import OpenAI
 
 from config import API_KEY, LLM_BASE_URL, LLM_MODEL, PER_FILE_DIR, LLM_MAX_TOKENS
 
-client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL)
+client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL, timeout=180.0)
 
 RELATION_GROUPS_PATH = Path(__file__).parent.parent / "schema" / "relation_groups.yaml"
 
@@ -293,6 +294,11 @@ def deduplicate_edges(edges: list[dict]) -> list[dict]:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Step 2: extract per-file edges.")
+    parser.add_argument("--resume", action="store_true",
+                        help="Skip files that already contain an _edges field.")
+    args = parser.parse_args()
+
     json_files = sorted(PER_FILE_DIR.glob("*.json"))
     print(f"=== Step 2: Extract Edges (Enhanced) ===", flush=True)
     print(f"Processing {len(json_files)} files\n", flush=True)
@@ -305,6 +311,9 @@ def main():
         t0 = time.time()
 
         data = json.loads(fp.read_text(encoding="utf-8"))
+        if args.resume and "_edges" in data:
+            print(f"    skip existing: {len(data.get('_edges') or [])} edges", flush=True)
+            continue
 
         # Rule-based edges
         rule_edges = derive_rule_based_edges(data)

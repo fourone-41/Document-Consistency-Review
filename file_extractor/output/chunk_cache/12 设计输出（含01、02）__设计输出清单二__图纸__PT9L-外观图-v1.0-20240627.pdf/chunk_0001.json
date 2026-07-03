@@ -1,0 +1,212 @@
+{
+  "document": {
+    "title": "PT9L 外观图 V1.0 读图报告",
+    "drawing_number": "PT9L-F01",
+    "part_name": "外观图",
+    "edition": "V1.0",
+    "model_number": "PT9L",
+    "date": "2024-06-27",
+    "report_generated": "2026-06-02",
+    "scale": "1:1",
+    "units": "mm",
+    "page_count": 1,
+    "page_format": "A3 横向",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT9L-外观图-v1.0-20240627.pdf",
+    "document_type": "整机颜色 + 表面处理规格图",
+    "authority": "供应商配色 / 印刷主权威依据"
+  },
+  "products": [
+    {
+      "name": "PT9L",
+      "model": "PT9L",
+      "primary_material": "ABS"
+    }
+  ],
+  "components": [
+    {
+      "index": 1,
+      "name": "上盖",
+      "material": "ABS 白色 YH121",
+      "color_pantone": null,
+      "notes": "外观图未列 Cool Gray 8U 或拉伸版纹路"
+    },
+    {
+      "index": 2,
+      "name": "下盖（外壳）",
+      "material": "ABS+TPU 白色 V0121 / TPE",
+      "color_pantone": "PANTONE Cool Gray 6U"
+    },
+    {
+      "index": 3,
+      "name": "静音开关",
+      "material": "ABS 白色 YH121",
+      "color_pantone": "PANTONE Cool Gray 6U"
+    },
+    {
+      "index": 4,
+      "name": "电池盖",
+      "material": "ABS 白色 V0121",
+      "color_pantone": "PANTONE Cool Gray 6U"
+    },
+    {
+      "index": 5,
+      "name": "按键",
+      "material": "ABS 白色 YH121",
+      "color_pantone": "PANTONE Cool Gray 6U"
+    },
+    {
+      "index": 6,
+      "name": "镜片（透镜）",
+      "material": "PMMA 透明",
+      "color_pantone": "PANTONE Silver 10077 C 50%",
+      "notes": "背面丝印，与透镜.pdf.md 一致"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-F01",
+      "type": "图纸编号",
+      "notes": "与外箱 PT9L-F01 同号但不同件，存在潜在 ERP/BOM 混淆风险"
+    },
+    {
+      "id": "T-Z1-P01",
+      "type": "零件图编号",
+      "description": "上盖"
+    },
+    {
+      "id": "T-Z1-P02",
+      "type": "零件图编号",
+      "description": "下盖"
+    },
+    {
+      "id": "T-Z1-P04",
+      "type": "零件图编号",
+      "description": "电池盖"
+    },
+    {
+      "id": "T-Z1-P05",
+      "type": "零件图编号",
+      "description": "按键"
+    },
+    {
+      "id": "T-Z1-P09",
+      "type": "零件图编号",
+      "description": "透镜"
+    },
+    {
+      "id": "YH121",
+      "type": "材料牌号",
+      "description": "ABS 牌号代号（推测）"
+    },
+    {
+      "id": "V0121",
+      "type": "材料牌号",
+      "description": "ABS 牌号代号（推测）"
+    }
+  ],
+  "review_items": [
+    {
+      "index": 1,
+      "question": "上盖是否仍按早期\"PANTONE Cool Gray 8U + 拉伸版纹路\"生产？",
+      "default_assumption": "否（外观图未列）",
+      "status": "待工程师确认"
+    },
+    {
+      "index": 2,
+      "question": "YH121 / V0121 是 ABS 的什么改型号？",
+      "default_assumption": "推测为 ABS 牌号代号",
+      "status": "待工程师确认"
+    },
+    {
+      "index": 3,
+      "question": "PANTONE Cool Gray 6U vs 早期 Cool Gray 6U 是否一致？",
+      "default_assumption": "一致",
+      "status": "待确认"
+    },
+    {
+      "index": 4,
+      "question": "与外箱 PT9L-F01 同号但不同件，是否引起 ERP / BOM 混淆？",
+      "default_assumption": null,
+      "status": "待工程师确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "本图为颜色 + 表面处理整机规格图，无传统\"技术要求条目\"。所有规格通过逐件引线 + 颜色代号表达。本图为颜色规格图，无重点尺寸编号，所有尺寸以对应零件图为准（上盖 T-Z1-P01 / 下盖 T-Z1-P02 / 透镜 T-Z1-P09 / 按键 T-Z1-P05 / 电池盖 T-Z1-P04 等）。",
+      "topic_tags": [
+        "颜色规格",
+        "表面处理",
+        "外观图",
+        "尺寸参考"
+      ],
+      "related_subjects": [
+        "PT9L-F01",
+        "T-Z1-P01",
+        "T-Z1-P02",
+        "T-Z1-P09",
+        "T-Z1-P05",
+        "T-Z1-P04"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "视图分布：8 个标准视图 + 2 个 3D 透视图，涵盖全方位外观：1. 背面（电池盖侧）2. 左侧 3. 左 3/4 4. 正面（透镜侧）5. 右 3/4 6. 右侧 7. 顶部（探头侧）8. 底部 9. 3D 透视图（右上）10. 3D 透视图（右下）。",
+      "topic_tags": [
+        "视图分布",
+        "3D透视图",
+        "外观图",
+        "多视角"
+      ],
+      "related_subjects": [
+        "PT9L-F01",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "PANTONE Cool Gray 6U 在下盖 / 静音开关 / 电池盖 / 按键共 4 处使用，均为同一号。PANTONE Silver 拼写为 \"10077 C 50%\"，与透镜图同一拼写，保持一致性。",
+      "topic_tags": [
+        "PANTONE",
+        "颜色一致性",
+        "Cool Gray 6U",
+        "Silver 10077 C"
+      ],
+      "related_subjects": [
+        "下盖",
+        "静音开关",
+        "电池盖",
+        "按键",
+        "镜片（透镜）"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "早期上盖图（早期图纸/上盖20210727.pdf.md）Surf dispose 写 \"PANTONE Cool Gray 8U + 拉伸版纹路设计文件\"。本外观图（2024-06-27）未提及 \"Cool Gray 8U\" 或 \"拉伸版纹路\"，推测当前生产已取消，或仅在结构件图（上盖）单独标注。疑点表 §3.3：外观图（本图）只标了上盖白色，未提 Cool Gray 8U 上盖装饰 → 高概率取消，待工程师确认。",
+      "topic_tags": [
+        "版本对比",
+        "Cool Gray 8U",
+        "拉伸版纹路",
+        "设计变更",
+        "疑点"
+      ],
+      "related_subjects": [
+        "上盖",
+        "PT9L-F01",
+        "早期图纸/上盖20210727.pdf.md"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本副本嵌套版：…/设计输出清单二/图纸/PT9L-外观图-v1.0-20240627.pdf.md（仅 PDF 装订方向旋转 90°，无设计差异 → 简本）。关联：wiki/drawings/pt9l-drawings.md §2.5 外观图。",
+      "topic_tags": [
+        "文件版本",
+        "副本说明",
+        "关联文件"
+      ],
+      "related_subjects": [
+        "wiki/drawings/pt9l-drawings.md"
+      ]
+    }
+  ]
+}

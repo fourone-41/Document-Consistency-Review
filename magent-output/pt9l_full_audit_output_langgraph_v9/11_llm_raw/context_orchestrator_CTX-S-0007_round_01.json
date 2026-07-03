@@ -1,0 +1,45 @@
+```json
+{
+  "assigned_agent": "Hardware Agent",
+  "review_focus": "PT9L总装图(F0178) BOM第20项列PT3-P10双联弹簧，而PT3-P10图纸(F0176)注释指出PT9L量产BOM应使用分离件PT5-M02+PT5-M03，同时ABOM(F0094)第15行同时列有PT3-P10与PT5-M02/PT5-M03三项，三份文件之间存在直接矛盾，需判断哪份文件具有最终BOM权威性，以及PT3-P10是否应从PT9L量产BOM中移除或保留。",
+  "agent_input": {
+    "claim": "PT9L总装图(F0178) BOM第20项将PT3-P10双联弹簧列为正式装配件（数量1），而PT3-P10图纸本身(F0176 line 81/89)注明PT9L实际装配以分离件PT5-M02+PT5-M03为准、PT3-P10不一定进入PT9L量产BOM；ABOM(F0094 line 26-28)则同时列出PT5-M03（第13行）、PT5-M02（第14行）和PT3-P10（第15行）三项，意味着总装图与图纸级注释及ABOM之间存在未解决的BOM冲突，可能导致错误采购或错误装配。",
+    "context_summary": "三份文件证据如下：\n1. F0178（PT9L总装图v1.0-20240627）BOM第20行：PT3-P10 双连弹簧 数量1，同图BOM第21行PT5-M03负极弹簧、第22行PT5-M02正极弹簧亦同时出现，即总装图BOM中PT3-P10与PT5-M02/M03并列存在。\n2. F0176（PT3_双联弹簧_REV01图纸）第81行注释：'PT9L实际装配：以分离的PT5-M02+PT5-M03为准，PT3-P10双联弹簧不一定进入PT9L量产BOM'；第89行确认清单默认推测为'分离件（PT5系列）'。\n3. F0094（PT9L-ABOM01 V1.0总装类组件清单）第13行PT5-M03正极弹簧、第14行PT5-M02负极弹簧、第15行PT3-P10双联弹簧均同时列出，三项并存。\n核心矛盾：总装图和ABOM均同时列有PT3-P10与PT5-M02/M03，但图纸注释明确指出两者功能等价且PT9L应用分离件；若三项同时采购装配则存在功能重复或装配干涉风险。",
+    "evidence": [
+      {
+        "evidence_id": "HW-092",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 42,
+        "source_text": "| 20 | **PT3-P10** | **双连弹簧** | 1 |",
+        "note": "总装图BOM第20项，PT3-P10与PT5-M02(第22项)/PT5-M03(第21项)并列出现"
+      },
+      {
+        "evidence_id": "HW-089",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 81,
+        "source_text": "- **PT9L 实际装配**：以分离的 PT5-M02 + PT5-M03 为准（详见 wiki 主页 §2.4），PT3-P10 双联弹簧**不一定**进入 PT9L 量产 BOM",
+        "note": "图纸级注释明确指出PT9L应使用分离件，PT3-P10不一定进入量产BOM"
+      },
+      {
+        "evidence_id": "HW-090",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 89,
+        "source_text": "| 1 | PT9L 量产 BOM 是否使用 PT3-P10 双联弹簧？还是分离的 PT5-M02 + M03？ | 分离件（PT5 系列） |",
+        "note": "工程师确认清单默认推测为分离件，但仍标注为待确认状态"
+      },
+      {
+        "evidence_id": "HW-039",
+        "doc_id": "F0094",
+        "rel_path": "11 T1样机\\总装类组件清单PT9L-ABOM01 V1.0.via_xlsx.clean.md",
+        "line": 28,
+        "source_text": "| 15 | 双联弹簧 | T030100000482550143 | 0.5mm弹簧钢 | PT3-P10 | PT3 |  | 1 |  | √ | C |  |  |",
+        "note": "ABOM第15行列PT3-P10，同文件第13行PT5-M03、第14行PT5-M02亦同时存在，三项并列"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

@@ -1,0 +1,795 @@
+{
+  "document": {
+    "title": "透镜 V1.0 2D 图读图报告",
+    "drawing_no": "T-Z1-P09",
+    "part_name": "透镜",
+    "edition": "V1.0",
+    "model_no": "T-Z1",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "B",
+    "page_count": 1,
+    "page_size": "A3横向",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/透镜.pdf",
+    "generated_date": "2026-06-02"
+  },
+  "products": [
+    {
+      "name": "透镜",
+      "drawing_no": "T-Z1-P09",
+      "model_no": "T-Z1",
+      "edition": "V1.0",
+      "material": "透明PMMA",
+      "dimensions": {
+        "height": "25.8 ±0.05 mm",
+        "width": "41.8 ±0.05 mm",
+        "corner_radius": "R12.9 mm",
+        "overall_thickness_with_adhesive": "1.1–1.2 mm"
+      }
+    }
+  ],
+  "components": [
+    {
+      "name": "透镜本体",
+      "material": "透明PMMA",
+      "drawing_no": "T-Z1-P09"
+    },
+    {
+      "name": "3M背胶",
+      "description": "背面附3M背胶，贴胶后产品整体厚度1.1-1.2 mm，背胶距长边0.2 mm边距"
+    },
+    {
+      "name": "上表面保护膜",
+      "description": "出货时贴保护膜，避免运输划伤"
+    },
+    {
+      "name": "背面丝印层",
+      "description": "丝印区域颜色为PANTONE Silver 10077 C 50%，印刷面位于透镜背面（朝向PCB侧）"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "材质：透明PMMA",
+      "category": "材料"
+    },
+    {
+      "id": "REQ-02",
+      "description": "毛刺、飞边不大于0.1 mm",
+      "category": "外观/工艺"
+    },
+    {
+      "id": "REQ-03",
+      "description": "厚度含背胶，不含离型纸及保护膜",
+      "category": "尺寸定义"
+    },
+    {
+      "id": "REQ-04",
+      "description": "要求背胶牢固、均匀、无缺失，与被粘物粘贴牢固",
+      "category": "工艺/粘接"
+    },
+    {
+      "id": "REQ-05",
+      "description": "透镜上表面需有保护膜",
+      "category": "包装/防护"
+    },
+    {
+      "id": "REQ-06",
+      "description": "内外表面铅笔硬度不小于4H",
+      "category": "机械性能"
+    },
+    {
+      "id": "REQ-07",
+      "description": "本件要求通过RoHS 2.0测试",
+      "category": "法规合规"
+    },
+    {
+      "id": "REQ-08",
+      "description": "印刷后，背面附3M背胶，贴胶后产品整体厚度1.1-1.2之间",
+      "category": "尺寸/装配"
+    },
+    {
+      "id": "REQ-09",
+      "description": "丝印区域颜色为PANTONE Silver 10077 C 50%",
+      "category": "外观/颜色"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "关键尺寸",
+      "items": [
+        {
+          "id": "①",
+          "name": "透镜高度（短边）",
+          "value": "25.8",
+          "tolerance": "±0.05",
+          "unit": "mm",
+          "view": "正面（俯视图）",
+          "priority": "IQC重点尺寸"
+        },
+        {
+          "id": "②",
+          "name": "透镜宽度（长边）",
+          "value": "41.8",
+          "tolerance": "±0.05",
+          "unit": "mm",
+          "view": "正面（俯视图）",
+          "priority": "IQC重点尺寸"
+        }
+      ]
+    },
+    {
+      "category": "未编号尺寸",
+      "items": [
+        {
+          "name": "4角圆角",
+          "symbol": "R",
+          "value": "12.9",
+          "tolerance": "默认B级",
+          "unit": "mm",
+          "view": "正面"
+        },
+        {
+          "name": "顶缘到丝印区边距",
+          "value": "3.9",
+          "tolerance": "默认B级",
+          "unit": "mm",
+          "view": "正面"
+        },
+        {
+          "name": "左侧丝印区宽",
+          "value": "8.4",
+          "tolerance": "默认B级",
+          "unit": "mm",
+          "view": "正面"
+        },
+        {
+          "name": "左侧背胶边距",
+          "value": "0.2",
+          "tolerance": "默认B级",
+          "unit": "mm",
+          "view": "3M背胶图"
+        },
+        {
+          "name": "右侧背胶边距",
+          "value": "0.2",
+          "tolerance": "默认B级",
+          "unit": "mm",
+          "view": "3M背胶图"
+        },
+        {
+          "name": "整体厚度（含3M背胶；不含离型纸及保护膜）",
+          "value": "1.1–1.2",
+          "unit": "mm",
+          "view": "侧视图"
+        }
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "requirement": "本件要求通过RoHS 2.0测试",
+      "status": "强制"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Drawing NO.",
+      "value": "T-Z1-P09"
+    },
+    {
+      "type": "Model NO.",
+      "value": "T-Z1"
+    },
+    {
+      "type": "Edition",
+      "value": "V1.0"
+    },
+    {
+      "type": "PANTONE色卡（现版）",
+      "value": "PANTONE Silver 10077 C 50%"
+    },
+    {
+      "type": "PANTONE色卡（早期版）",
+      "value": "PANTONE Silver 1007C 50%"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0（现版）",
+      "drawing_no": "T-Z1-P09",
+      "note": "与早期V1.0（2021-07-15）几何与材料完全一致，仅PANTONE色卡拼写存在差异（10077C vs 1007C）"
+    },
+    {
+      "version": "V1.0（早期，2021-07-15）",
+      "drawing_no": "T-Z1-P09",
+      "source": "早期图纸/透镜20210727.pdf.md"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "RC-1",
+      "topic": "PANTONE色卡型号确认",
+      "description": "PANTONE Silver 10077 C 50%是否为标准PANTONE号？或是1007C笔误？",
+      "default_assumption": "推测为1007C",
+      "source": "疑点表§3.4"
+    },
+    {
+      "id": "RC-2",
+      "topic": "整体厚度公差充分性",
+      "description": "整体厚度1.1–1.2公差范围（0.1 mm）是否足够覆盖3M背胶变厚"
+    },
+    {
+      "id": "RC-3",
+      "topic": "铅笔硬度实测验证",
+      "description": "透镜上下表面铅笔硬度≥4H的实测样件"
+    },
+    {
+      "id": "RC-4",
+      "topic": "3D试装报告",
+      "description": "与下盖透镜窗的实际3D试装报告"
+    },
+    {
+      "id": "RC-5",
+      "topic": "保护膜规格补图",
+      "description": "保护膜出货状态（PE透明保护膜规格）补图"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "3M背胶贴合下盖透镜窗：背胶应用区域（含0.2 mm边距）与下盖透镜窗几何匹配。配合保护盖：透镜（25.8×41.8 mm，R12.9）与保护膜（25.8±0.05×41.8±0.05 mm）尺寸完全一致——二者覆盖同一感应窗。整体厚度1.1-1.2 vs 下盖透镜窗深度的实测装配。背面丝印PANTONE Silver 50%透光率是否影响传感器读数。",
+      "topic_tags": [
+        "3M背胶",
+        "装配配合",
+        "透镜窗",
+        "透光率",
+        "传感器"
+      ],
+      "related_subjects": [
+        "透镜",
+        "下盖",
+        "保护盖",
+        "保护膜"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "现版V1.0与早期V1.0几何与材料完全一致，沿用同一版本。疑点表§6.1修正：本图存在（未缺失），现版透镜规格沿用2021-07-15版。疑点表§3.4修正：PANTONE Silver拼写差异需色卡室核实10077C是否标准型号（推测为1007C的图纸文字识别误差）。",
+      "topic_tags": [
+        "版本对比",
+        "PANTONE色卡",
+        "图纸一致性",
+        "疑点澄清"
+      ],
+      "related_subjects": [
+        "T-Z1-P09",
+        "透镜20210727.pdf",
+        "疑点表§6.1",
+        "疑点表§3.4"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "透镜上表面需有保护膜（出货时贴保护膜，避免运输划伤）。印刷后，背面附3M背胶，贴胶后产品整体厚度1.1-1.2之间（含背胶，不含离型纸及保护膜）。背面丝印区域颜色为PANTONE Silver 10077 C 50%，印刷面位于透镜背面（朝向PCB侧）。",
+      "topic_tags": [
+        "保护膜",
+        "3M背胶",
+        "丝印",
+        "厚度定义",
+        "出货状态"
+      ],
+      "related_subjects": [
+        "透镜",
+        "3M背胶",
+        "丝印层",
+        "PCB"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/透镜.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "透镜 V1.0 2D 图读图报告",
+      "to": "V1.0（现版）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "透镜 V1.0 2D 图读图报告",
+      "to": "V1.0（早期，2021-07-15）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "3M背胶",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下盖",
+      "to": "3M背胶",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "3M背胶",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护膜",
+      "to": "3M背胶",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "版本对比",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜20210727.pdf",
+      "to": "版本对比",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "疑点表§6.1",
+      "to": "版本对比",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "疑点表§3.4",
+      "to": "版本对比",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "保护膜",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "3M背胶",
+      "to": "保护膜",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "丝印层",
+      "to": "保护膜",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PCB",
+      "to": "保护膜",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "透镜本体",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "上表面保护膜",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "背面丝印层",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-07",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-08",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "REQ-09",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "RC-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "RC-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "RC-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "RC-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "RC-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "①",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "②",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "V1.0（现版）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P09",
+      "to": "V1.0（早期，2021-07-15）",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-08",
+      "to": "①",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-08",
+      "to": "②",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-03",
+      "to": "REQ-08",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-09",
+      "to": "PANTONE Silver 10077 C 50%",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "RC-1",
+      "to": "REQ-09",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "RC-2",
+      "to": "REQ-08",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "RC-3",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "透镜本体",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "透镜本体",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "透镜本体",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "透镜本体",
+      "to": "REQ-07",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "3M背胶",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "3M背胶",
+      "to": "REQ-08",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "3M背胶",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "上表面保护膜",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "背面丝印层",
+      "to": "REQ-09",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "①",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "②",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "透镜",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P09",
+      "to": "RC-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P09",
+      "to": "RC-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P09",
+      "to": "RC-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P09",
+      "to": "RC-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P09",
+      "to": "RC-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P09",
+      "to": "V1.0（现版）",
+      "properties": {
+        "note": "与早期V1.0（2021-07-15）几何与材料完全一致，仅PANTONE色卡拼写存在差异（10077C vs 1007C）"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P09",
+      "to": "V1.0（早期，2021-07-15）",
+      "properties": {
+        "source": "早期图纸/透镜20210727.pdf.md"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "毛刺飞边",
+      "attribute": "最大允许值",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "外观/工艺检验",
+      "raw_text": "毛刺、飞边不大于0.1 mm"
+    },
+    {
+      "subject": "透镜材质",
+      "attribute": "材料类型",
+      "value": "透明PMMA",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "材质：透明PMMA"
+    },
+    {
+      "subject": "表面铅笔硬度",
+      "attribute": "最小硬度等级",
+      "value": "4H",
+      "unit": "",
+      "tolerance": "",
+      "condition": "内外表面",
+      "raw_text": "内外表面铅笔硬度不小于4H"
+    },
+    {
+      "subject": "产品整体厚度",
+      "attribute": "范围",
+      "value": "1.1–1.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "含3M背胶，不含离型纸及保护膜",
+      "raw_text": "印刷后，背面附3M背胶，贴胶后产品整体厚度1.1-1.2之间"
+    },
+    {
+      "subject": "丝印颜色",
+      "attribute": "色号规格",
+      "value": "PANTONE Silver 10077 C 50%",
+      "unit": "",
+      "tolerance": "",
+      "condition": "丝印区域",
+      "raw_text": "丝印区域颜色为PANTONE Silver 10077 C 50%"
+    },
+    {
+      "subject": "法规合规",
+      "attribute": "测试要求",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "本件要求通过RoHS 2.0测试"
+    },
+    {
+      "subject": "透镜高度",
+      "attribute": "标称值",
+      "value": "25.8",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "短边，正面俯视图，IQC重点尺寸",
+      "raw_text": "透镜高度（短边）25.8 ±0.05 mm"
+    },
+    {
+      "subject": "透镜宽度",
+      "attribute": "标称值",
+      "value": "41.8",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "长边，正面俯视图，IQC重点尺寸",
+      "raw_text": "透镜宽度（长边）41.8 ±0.05 mm"
+    },
+    {
+      "subject": "4角圆角",
+      "attribute": "半径",
+      "value": "12.9",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "正面视图",
+      "raw_text": "4角圆角 R12.9，默认B级公差"
+    },
+    {
+      "subject": "顶缘丝印区边距",
+      "attribute": "距离",
+      "value": "3.9",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "正面视图",
+      "raw_text": "顶缘到丝印区边距 3.9 mm，默认B级"
+    },
+    {
+      "subject": "左侧丝印区宽",
+      "attribute": "宽度",
+      "value": "8.4",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "正面视图",
+      "raw_text": "左侧丝印区宽 8.4 mm，默认B级"
+    },
+    {
+      "subject": "左侧背胶边距",
+      "attribute": "距离",
+      "value": "0.2",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "3M背胶图，长边侧",
+      "raw_text": "左侧背胶边距 0.2 mm，默认B级"
+    },
+    {
+      "subject": "右侧背胶边距",
+      "attribute": "距离",
+      "value": "0.2",
+      "unit": "mm",
+      "tolerance": "默认B级",
+      "condition": "3M背胶图，长边侧",
+      "raw_text": "右侧背胶边距 0.2 mm，默认B级"
+    },
+    {
+      "subject": "产品整体厚度",
+      "attribute": "范围",
+      "value": "1.1–1.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "含3M背胶，不含离型纸及保护膜，侧视图",
+      "raw_text": "整体厚度（含3M背胶；不含离型纸及保护膜）1.1–1.2 mm"
+    }
+  ]
+}

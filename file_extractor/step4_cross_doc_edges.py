@@ -5,6 +5,7 @@ Combines:
 2. Three-layer matching: exact -> fuzzy -> LLM semantic
 3. Tiered output: high/medium/low confidence
 """
+import argparse
 import json
 import re
 import time
@@ -20,11 +21,19 @@ import bridge_entities as be
 import embedding_retrieval as er
 import graph_pattern_propagation as gpp
 
-client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL)
+client = OpenAI(api_key=API_KEY, base_url=LLM_BASE_URL, timeout=60.0)
 
 MERGED_PATH = Path(__file__).parent / "output" / "merged_graph.json"
 OUTPUT_DIR = Path(__file__).parent / "output"
 REGULATORY_CLAUSES_PATH = Path(__file__).parent / "regulatory_clauses.yaml"
+
+# graph_pattern 候选送 LLM 前的上限（fast 模式）。
+# 图模式传播在全量数据集下可能产出数千候选，全部送 LLM 需要数百次调用、数小时。
+# fast 模式先用 embedding 相似度排序，取 top N 送 LLM；full 模式不截断。
+MAX_GRAPH_PATTERN_CANDIDATES = 200
+RECALL_GRAPH_PATTERN_CANDIDATES = 800
+RECALL_PER_FROM_NODE = 3
+RECALL_LOW_SEMANTIC_EXPLORATION_RATIO = 0.10
 
 
 def load_regulatory_clauses() -> dict:
@@ -729,13 +738,159 @@ def _normalize_step2_edges(existing_edges: list[dict], id_to_type: dict) -> list
     return normalized
 
 
-def discover_open_candidates(nodes: dict, layer1_edges: list[dict]) -> list[dict]:
+_ANCHOR_FIELDS = [
+    "req_id", "di_id", "risk_id", "control_id", "test_id", "std_id", "clause",
+    "description", "measure", "item", "expected_value", "hazard",
+    "hazardous_situation", "name", "title", "file_name", "content", "value", "unit",
+]
+
+_STRUCTURAL_RELATION_PRIORITY = {
+    ("MITIGATED_BY", "VERIFIED_BY"): 5,
+    ("MITIGATED_BY", "VALIDATED_BY"): 5,
+    ("TRACES_TO", "VERIFIED_BY"): 5,
+    ("TRACES_TO", "TESTED_BY"): 5,
+    ("IMPLEMENTED_BY", "VERIFIED_BY"): 4,
+    ("IMPLEMENTED_BY", "TESTED_BY"): 4,
+    ("PRODUCES", "REFERENCES_DOC"): 3,
+}
+
+
+def _node_text_for_anchors(node: dict) -> str:
+    parts = [str(node.get(field, "") or "") for field in _ANCHOR_FIELDS]
+    return " ".join(part for part in parts if part).lower()
+
+
+def _extract_anchor_tokens(node: dict) -> set[str]:
+    text = _node_text_for_anchors(node)
+    tokens = set(re.findall(r"[A-Za-z]{1,10}-?\d+(?:[-.]\d+)*", text, re.I))
+    tokens.update(re.findall(r"\d+(?:\.\d+)?\s*(?:℃|°c|c|mm|cm|kg|g|hz|mhz|v|ma|a|h|hour|小时|次|%)", text, re.I))
+    tokens.update(tok for tok in tokenize_chinese(text) if len(tok) >= 2)
+    return {tok.lower().strip() for tok in tokens if tok.strip()}
+
+
+def _anchor_overlap_score(node_a: dict, node_b: dict) -> float:
+    anchors_a = _extract_anchor_tokens(node_a)
+    anchors_b = _extract_anchor_tokens(node_b)
+    if not anchors_a or not anchors_b:
+        return 0.0
+    common = anchors_a & anchors_b
+    return min(1.0, len(common) / max(1, min(len(anchors_a), len(anchors_b))))
+
+
+def _candidate_structural_score(candidate: dict) -> float:
+    pattern = tuple(candidate.get("expected_relation") or ())
+    frequency = int(candidate.get("pattern_frequency") or 0)
+    relation_priority = _STRUCTURAL_RELATION_PRIORITY.get(pattern, 2)
+    anchor_score = _anchor_overlap_score(candidate["from"], candidate["to"])
+
+    # 结构证据是主信号；锚点只作为加分，避免回到纯文本相似度筛选。
+    return relation_priority * 10 + min(frequency, 20) + anchor_score * 5
+
+
+def _select_graph_pattern_candidates_recall_first(
+    candidates: list[dict],
+    budget: int = RECALL_GRAPH_PATTERN_CANDIDATES,
+    per_from_node: int = RECALL_PER_FROM_NODE,
+) -> list[tuple]:
+    """结构优先选择 graph_pattern 候选，embedding 只保留给 fast 模式使用。
+
+    recall 模式的目标是减少结构性断链漏检：先保证每个缺第二跳的中间节点、
+    每种高频模式都有候选进入 LLM，再把剩余预算给结构分最高的候选。
+    """
+    if len(candidates) <= budget:
+        return [(c["from"], c["to"], "graph_pattern") for c in candidates]
+
+    scored = []
+    for idx, candidate in enumerate(candidates):
+        candidate = dict(candidate)
+        candidate["_idx"] = idx
+        candidate["_score"] = _candidate_structural_score(candidate)
+        candidate["_from_key"] = id(candidate["from"])
+        candidate["_pattern_key"] = tuple(candidate.get("expected_relation") or ())
+        scored.append(candidate)
+
+    selected = []
+    selected_ids = set()
+
+    def add(candidate: dict) -> bool:
+        if len(selected) >= budget:
+            return False
+        idx = candidate["_idx"]
+        if idx in selected_ids:
+            return False
+        selected.append(candidate)
+        selected_ids.add(idx)
+        return True
+
+    # 1) 覆盖每个缺边中间节点，避免少数语义相似节点吃掉所有预算。
+    by_from = {}
+    for candidate in sorted(scored, key=lambda c: c["_score"], reverse=True):
+        bucket = by_from.setdefault(candidate["_from_key"], [])
+        if len(bucket) < per_from_node:
+            bucket.append(candidate)
+
+    for bucket in by_from.values():
+        for candidate in bucket:
+            add(candidate)
+
+    # 2) 覆盖每种高频二跳模式，保留 graph_pattern 的结构多样性。
+    by_pattern = {}
+    for candidate in sorted(scored, key=lambda c: c["_score"], reverse=True):
+        by_pattern.setdefault(candidate["_pattern_key"], []).append(candidate)
+
+    per_pattern_budget = max(per_from_node, budget // max(1, len(by_pattern)))
+    for bucket in by_pattern.values():
+        kept = 0
+        for candidate in bucket:
+            if kept >= per_pattern_budget:
+                break
+            if add(candidate):
+                kept += 1
+
+    # 3) 预留少量预算给“结构强但锚点/语义不明显”的探索样本。
+    exploration_budget = int(budget * RECALL_LOW_SEMANTIC_EXPLORATION_RATIO)
+    low_anchor = sorted(
+        scored,
+        key=lambda c: (int(c.get("pattern_frequency") or 0), _STRUCTURAL_RELATION_PRIORITY.get(c["_pattern_key"], 2)),
+        reverse=True,
+    )
+    kept = 0
+    for candidate in low_anchor:
+        if kept >= exploration_budget:
+            break
+        if _anchor_overlap_score(candidate["from"], candidate["to"]) > 0:
+            continue
+        if add(candidate):
+            kept += 1
+
+    # 4) 剩余预算给综合结构分最高的候选。
+    for candidate in sorted(scored, key=lambda c: c["_score"], reverse=True):
+        if not add(candidate):
+            if len(selected) >= budget:
+                break
+
+    print(
+        f"    [recall模式] graph_pattern 候选 {len(candidates)} 对 → "
+        f"结构优先保留 {len(selected)} 对 "
+        f"(覆盖节点={len(by_from)}, 模式={len(by_pattern)})",
+        flush=True,
+    )
+    return [(c["from"], c["to"], "graph_pattern") for c in selected]
+
+
+def discover_open_candidates(nodes: dict, layer1_edges: list[dict],
+                             graph_pattern_mode: str = "fast",
+                             rank_graph_pattern: bool | None = None) -> list[dict]:
     """合并层②③④候选，去重后送开放式 LLM 验证，返回最终边列表。
 
     每一层独立失败不应中断整体流程（设计文档第6节降级策略）：
     某层抛异常时跳过该层，记录警告，继续用其余层的候选。
     """
+    if rank_graph_pattern is not None:
+        graph_pattern_mode = "fast" if rank_graph_pattern else "full"
+
     raw_candidates = []  # (node_a, node_b, layer)
+    graph_pattern_candidates = []
 
     try:
         for a, b in be.find_bridge_entities(nodes):
@@ -764,7 +919,22 @@ def discover_open_candidates(nodes: dict, layer1_edges: list[dict]) -> list[dict
         if from_node is None:
             continue
         for target in m["candidate_targets"]:
-            raw_candidates.append((from_node, target, "graph_pattern"))
+            graph_pattern_candidates.append({
+                "from": from_node,
+                "to": target,
+                "layer": "graph_pattern",
+                "expected_relation": m.get("expected_relation"),
+                "pattern_frequency": m.get("pattern_frequency", 0),
+                "from_type": m.get("from_type"),
+                "target_type": m.get("target_type"),
+            })
+
+    if graph_pattern_mode == "recall":
+        raw_candidates.extend(_select_graph_pattern_candidates_recall_first(graph_pattern_candidates))
+    else:
+        raw_candidates.extend(
+            (c["from"], c["to"], "graph_pattern") for c in graph_pattern_candidates
+        )
 
     # 去重：同一对节点（不分先后顺序）只保留一次，优先保留先出现的层标签
     seen = set()
@@ -776,7 +946,36 @@ def discover_open_candidates(nodes: dict, layer1_edges: list[dict]) -> list[dict
         seen.add(key)
         deduped.append((a, b, layer))
 
-    return verify_candidates_open_llm(deduped)
+    # embedding / bridge 候选已经过相似度或共现过滤，直接输出 medium 置信度，
+    # 不再送 LLM 验证——这些候选数量大（本次 391 对），全部走 LLM 会累积
+    # 20 次连续调用，gateway 偶发延迟即导致无限挂起。
+    # 只有 graph_pattern（图模式传播发现的断链）才送 LLM 做开放式验证，
+    # 因为断链候选本身不携带语义相似度证据，需要 LLM 判断关系是否真实存在。
+    no_verify = []
+    need_verify = []
+    for a, b, layer in deduped:
+        if layer in ("embedding", "bridge"):
+            no_verify.append((a, b, layer))
+        else:
+            need_verify.append((a, b, layer))
+
+    # fast 模式：graph_pattern 候选先用 embedding 相似度排序，取 top N 送 LLM，
+    # 保证 LLM 只看最有可能有关系的候选对，避免数千次串行调用导致程序挂起。
+    # recall 模式：已在去重前做结构优先选择，embedding 只作为独立的层③候选，
+    # 不再作为 graph_pattern 的硬截断条件。
+    # full 模式：保留全量候选送 LLM（适合离线批处理，可能耗时数小时）。
+    if graph_pattern_mode == "fast" and len(need_verify) > MAX_GRAPH_PATTERN_CANDIDATES:
+        print(f"    [fast模式] graph_pattern 候选 {len(need_verify)} 对 → embedding排序取 top {MAX_GRAPH_PATTERN_CANDIDATES}", flush=True)
+        need_verify = er.rank_candidate_pairs_by_embedding(need_verify, MAX_GRAPH_PATTERN_CANDIDATES)
+
+    direct_edges = [
+        {"from": a, "to": b, "type": "SEMANTICALLY_RELATED", "discovery_layer": layer}
+        for a, b, layer in no_verify
+    ]
+
+    print(f"    层②③④候选：{len(no_verify)} 对直接输出，{len(need_verify)} 对送 LLM 验证", flush=True)
+    verified_edges = verify_candidates_open_llm(need_verify)
+    return direct_edges + verified_edges
 
 
 def run_guide(guide, nodes):
@@ -822,6 +1021,18 @@ def run_guide(guide, nodes):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Step4: 跨文档关系发现")
+    parser.add_argument(
+        "--mode", choices=["fast", "recall", "full"], default="recall",
+        help=(
+            "fast：graph_pattern候选先用embedding相似度排序，取top200送LLM；"
+            "recall（默认）：结构优先保留graph_pattern候选，尽量减少断链漏检；"
+            "full：全量候选送LLM，结果最完整但可能耗时数小时"
+        ),
+    )
+    args = parser.parse_args()
+    print(f"运行模式：{args.mode}")
+
     print("=== Step 4: Cross-Document Relationship Discovery ===")
     print(f"Loading {MERGED_PATH.name}...")
     nodes, existing_edges, claims = load_graph()
@@ -855,7 +1066,8 @@ def main():
         for guide, s, t, conf in all_cross_edges
     ] + _normalize_step2_edges(existing_edges, id_to_type)
     try:
-        open_edges = discover_open_candidates(nodes, layer1_edges_for_pattern)
+        open_edges = discover_open_candidates(nodes, layer1_edges_for_pattern,
+                                              graph_pattern_mode=args.mode)
         print(f"    Found {len(open_edges)} edges from open candidate discovery")
     except Exception as e:
         print(f"    [WARN] Open candidate discovery failed entirely, skipping: {e}", flush=True)

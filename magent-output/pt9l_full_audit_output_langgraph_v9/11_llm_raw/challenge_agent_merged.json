@@ -1,0 +1,774 @@
+{
+  "agent": "Challenge Agent",
+  "summary": "Challenge completed for 98 semantic findings across 20 batches.",
+  "batch_size": 5,
+  "batch_count": 20,
+  "decisions": [
+    {
+      "finding_id": "LLM-0001",
+      "decision": "revise",
+      "reason": "三条证据均有效：line 2确认文件标题含PT2L，line 6确认内部文档号为PT9L-FXJH01 V1.0，line 14确认产品型号为PT9L，身份冲突成立。但该文件路径明确位于'2L风险改 - 历史文件'子文件夹，属于历史归档文件而非现行受控文件，可追溯性风险低于活跃文件。原P1严重度偏高，建议降至P2，并在描述中注明文件处于历史文件夹。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0002",
+      "decision": "needs_more_context",
+      "reason": "三条证据文本均只显示通用意图声明（'The Infrared Forehead Thermometer is intended for...'），截断处未出现'PT3SBT'字样。主张的核心——文本中含有'PT3SBT can transmit the temperature to a smart device with Bluetooth'——在所提供证据片段中完全不可见。无法仅凭当前证据确认该字符串存在于这两份V2.0文件中。需提供包含'PT3SBT'字样的完整行文本作为补充证据，方可判定保留或丢弃。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0003",
+      "decision": "needs_more_context",
+      "reason": "line 3（文件标题）确实显示'PT2L（美亚）-UETR01 V1.0'，支持文件名层面的身份混淆。但line 14和line 88均为图片引用行（![](...png)），不含任何可读文本内容，无法从文档正文验证内部文档号或产品型号字段。文件为PDF转换产物，关键内容可能仅存在于图片中而未被OCR提取。需提供文档内部文本字段（如文档编号、产品型号单元格）的可读证据，或确认OCR结果，方可升级为keep。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0004",
+      "decision": "keep",
+      "reason": "证据直接支持主张：line 2明确显示文档标题为'BP3L 软件图样E0 23.11'，line 50和line 54的图片资产路径均含'BP3L'前缀，文件路径位于PT9L DHF的活跃软件设计文件夹（非历史子文件夹）。BP3L标识符出现在PT9L DHF活跃目录中构成可追溯性问题，P2严重度合理。无过度报告迹象。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0005",
+      "decision": "keep",
+      "reason": "证据直接支持主张：line 187显示'PT3SBT-PBOM01'条目，line 239显示表头'产品型号:PT3SBT 提交部门:智能产品部'，line 263显示'PT3SBT-P01'条目，均出现在PT9L DHF活跃设计输出清单路径下（非历史子文件夹）。PT3SBT产品型号段落嵌入PT9L设计输出清单构成明确的文件身份混淆，P2严重度合理。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0006",
+      "decision": "keep",
+      "reason": "三条证据（文件标题 PT3SBT、内部表头 PT2L(美亚)、产品型号 PT2L + 项目编号 2020-DEV01）相互印证，且文件路径确认位于活跃 PT9L DHF 的",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0007",
+      "decision": "revise",
+      "reason": "核心问题成立，但严重性和表述需要调整。所提供的三条关键证据均来自",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0008",
+      "decision": "keep",
+      "reason": "证据直接对比了正式版（04 设计输入E0 23.11）与草稿版（历史记录\\\\PT9LDHF-草稿\\\\04 设计输入E0 23.11）中同一条目的适用性标记，MDR 2017/745 从",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0009",
+      "decision": "keep",
+      "reason": "三条证据（工程 BOM PT9L-EBOM01、T1样机 BOM PT9L-T1EB01、设计输出清单一）均在 PT9L 文件中明确列出",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0010",
+      "decision": "revise",
+      "reason": "仅凭文件标题",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0011",
+      "decision": "keep",
+      "reason": "三条证据形成完整证据链：文件名/文件夹标识为PT2L（line 2），但内部文档编号字段明确写有'DN: PT9L-FXJH01 V1.0'（line 6），而该编号同时被合法PT9L风险管理计划使用（RISK-056/RISK-002）。文件位于历史文件夹不能消除受控文档编号唯一性冲突——历史文件夹中的文档编号同样受文档控制体系约束。证据直接支持结论，无夸大迹象，P1严重度合理。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0012",
+      "decision": "keep",
+      "reason": "证据确认：文件存于PT9L活跃T1样机文件夹（路径无历史/草稿标记），内部标题为'PT2L(美亚)标签检查报告'，产品型号为PT2L，项目编号2020-DEV01，被审核标签文件均为PT2L前缀文档编号。文件标题含'PT3SBT'可能指审核表模板名称，不影响核心问题：一份PT2L产品的标签审核记录被置于PT9L活跃T1证据集中，可能被误作PT9L合规记录使用。P1严重度合理。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0013",
+      "decision": "keep",
+      "reason": "证据显示标题明确为'BP3L 软件图样E0 23.11'的文件同时存在于PT9L主软件设计文件夹（07目录）和PT9L T1样机软件文件底稿（11目录），两处均无历史/废案标记，且excluded_from_primary_scope=false。证据目录中无可见的PT9L专属软件图样文件替代。核心风险成立：BP3L软件架构图样被用作PT9L软件设计记录。P1严重度合理。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0014",
+      "decision": "revise",
+      "reason": "发现将两份性质不同的文件混合处理，需修订。F0255（临床评价报告）位于'废案与备份'子文件夹，该文件夹名称本身即为隔离标记，将其列为活跃合规风险存在夸大；其严重度应降至P2。F0260（用户现场测试计划PT9C V1.0）位于活跃'用户测试'子文件夹，无任何历史/废案标记，PT9C用户测试计划被置于PT9L活跃设计确认证据集的问题确实成立，维持P1。建议将发现拆分或修订措辞，明确区分两份文件的不同风险状态，并将整体严重度修订为P1（以F0260为主要风险驱动）。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0015",
+      "decision": "keep",
+      "reason": "三条证据一致显示：PT9L EBOM（PT9L-EBOM01 V1.0）、T1 EBOM（PT9L-T1EB01 V1.0）及设计输出清单一中的EBOM均包含图号'PT9C-CNTP01 V1.0'的传感器PCB，且该图号在设计输出清单一（PT9L-HFMP01 V1.0为主PCB图）中未被收录，无交叉引用说明或等同性声明。PT9C前缀图号出现在PT9L受控生产BOM中且未在设计输出索引中正式登记，构成真实的文档控制与设计输出完整性问题。P1严重度合理。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0016",
+      "decision": "revise",
+      "reason": "核心声明成立：活跃风险评估报告（IFT-FXPJ01 V2.0）和风险控制验证报告（IFT-FXYS01 V2.0）的预期用途描述中确实出现了",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0017",
+      "decision": "needs_more_context",
+      "reason": "声明称",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0018",
+      "decision": "revise",
+      "reason": "声明存在逻辑缺陷：设计输入将EN ISO 80601-2-56和MDR 2017/745标注为",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0019",
+      "decision": "revise",
+      "reason": "声明部分成立，但严重性被高估。证据行110和行47中，血压测量语言所在的电池需求行已勾选",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0020",
+      "decision": "keep",
+      "reason": "证据直接且充分支持声明。三条证据均来自活跃路径",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0021",
+      "decision": "revise",
+      "reason": "证据链基本成立：文件名含V2.0而内部DN字段明确写PT9L-FXGB01 V1.0，两份独立文件（IFT前缀和PT9L前缀）均呈现相同模式，设计验证报告也引用V1.0，形成交叉印证。但P2定级偏高：版本号不一致在医疗器械文件管理中属于文件控制缺陷，若内部DN为权威版本则文件名标注错误，反之亦然；在未确认哪个版本为受控版本之前，该问题属于文件追溯性缺陷而非直接安全风险，降为P3更为准确。此外finding未说明哪个版本号为正确受控版本，表述需补充。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0022",
+      "decision": "revise",
+      "reason": "证据显示line 110确实含有'次血压测量'而非'次测量'，与设计输入F0031不一致，核心事实成立。但有两点需要修正：第一，line 54（设计验证报告正文行）使用的是正确的'次测量'，说明错误仅出现在line 110；查看line 110上下文，该行对应的验证阶段列为空（'--'），结果列也为空，高度疑似为模板残留行或未激活的备选行，而非已执行的验证记录，因此将其定性为'traceability break'过重。第二，设计验证计划HW-058的证据未在evidence字段中直接引用原文，仅在rationale中提及，证据完整性不足。建议将严重度从P1降至P2，并修正表述为'模板残留文字污染'而非'追溯断裂'。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0023",
+      "decision": "needs_more_context",
+      "reason": "finding的核心矛盾依赖line 81的注释文字：'PT9L实际装配：以分离的PT5-M02+PT5-M03为准（详见wiki主页§2.4），PT3-P10双联弹簧不一定进入PT9L量产BOM'。该文字格式（含wiki主页引用、§符号、加粗警告）高度疑似PDF转换过程中由OCR或LLM自动生成的解释性注释，而非原始工程图纸上的正式标注内容。若该注释为转换产物而非原图内容，则finding的整个论据基础不成立。ABOM中PT3-P10的存在是真实证据，但仅凭此无法构成'assembly drawing与drawing-level annotation矛盾'的结论。需要人工核查原始PDF图纸line 81对应内容是否确为图纸正文。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0024",
+      "decision": "needs_more_context",
+      "reason": "finding的核心证据HW-091（F0178 line 7）：'BOM中T-Z1-P10同时指导光板和PCB（一图号两零件）⚠️'以及HW-093中的'T-Z1-P10/PCB⚠️'标注，均含有⚠️符号和括号解释，格式特征与LLM-0023中的可疑注释高度一致，疑似为文档转换过程中自动插入的分析性注释而非原始图纸字段。提供的evidence仅引用了EBOM中的PCB料号（PT9L-HFMP01、PT9C-CNTP01），这些是真实证据，但仅能说明EBOM与T-Z1-P10之间存在命名差异，不能直接证明'一图号两零件'的断言。需人工核查原始总装图F0178确认T-Z1-P10的实际标注情况。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0025",
+      "decision": "keep",
+      "reason": "证据直接且可信：三份检查表（F0076、F0078、F0080）的PCB相关检查项均显示'□通过□不通过□不适用'无任何勾选，这是原始表格内容的直接呈现，不依赖任何转换注释。FMEA中传感器PCB固定不良被评为严重度9，与空白PCB固定检查项形成显著风险敞口。空白检查表在医疗器械设计验证中属于客观记录缺陷，无论是模板未填还是实际未执行，均构成审计不符合项。P2定级合理，finding表述准确，建议保留。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0026",
+      "decision": "revise",
+      "reason": "核心事实可被证据支持：设计输入（line 85）和检验标准（line 249）均明确规定 35–42 °C 范围外允差为 ±0.3 °C，而软件测试计划（line 343）在 30 °C 和 45 °C 两点使用了 ±0.2 °C。事实层面的不一致成立。但 finding 的表述存在两处需要修正：①将「更严格的测试准则」定性为可能「incorrectly reject conforming product」在逻辑上是正确的，但同时也可能是制造商有意选择更保守的出厂控制，这是常见的合规做法，并非必然构成缺陷；②严重度 P3 偏低——若测试计划与设计输入之间的允差不一致未经文件化变更控制，属于设计控制程序（21 CFR 820.30 / ISO 13485 §7.3）的可观察偏差，应升至 P2。建议修订表述为：「测试计划在设计输入规定允差范围之外的测量点采用了更严格的允差，该偏差未见设计变更或工程决策记录支撑，违反设计控制要求」，并将严重度升至 P2。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0027",
+      "decision": "needs_more_context",
+      "reason": "finding 声称当前有效版本为 V2.0，但所提供的关键证据本身即存在矛盾：文件标题为「Risk Management Report IFT-FXGB01 V2.0 20240530」，而同一文件内部 line 6 显示「DN：PT9L-FXGB01 V1.0 Risk Management Report」。这意味着该文件的文件名版本（V2.0）与内部文件编号版本（V1.0）不一致，无法从现有证据中确认「V2.0 是当前有效版本」这一前提是否成立——V2.0 可能仅是文件名修订标识而非正式受控版本号。在此前提未澄清之前，无法判断设计验证报告引用「V1.0」是否真正构成版本脱节。需要人工核查该文件的文件控制页（封面/变更历史）以确认受控版本号。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0028",
+      "decision": "keep",
+      "reason": "证据直接且一致地支持 finding：F0017 文件内部编号为「IFT-FXJH01 V1.0」，F0021 文件内部编号为「PT9L-FXJH01 V1.0」，两份文件共存于 DHF 且编号前缀不同。下游风险文件（F0022、F0023、F0024）均使用 PT9L 前缀，若其追溯链指向 IFT 前缀的计划文件，则第一级追溯链断裂。这是可直接观察的文件控制缺陷，符合 ISO 14971:2019 §4.4 对风险管理计划唯一标识的要求。P1 严重度合理，无需修改。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0029",
+      "decision": "keep",
+      "reason": "证据直接支持 finding：文件标题明确标注「PT2L美亚」产品，而内部文件编号（line 6）为「PT9L-FXJH01 V1.0」，与 PT9L 风险管理计划使用相同文件编号。同一文件编号对应两个不同产品的文件，违反文件唯一性原则，且该文件存放于「2L风险改 - 历史文件」目录，说明其历史沿革未经正式产品切换评审。finding 未过度推断，仅指出文件编号冲突及潜在的风险项目错误归属风险，表述合理。P1 严重度合理，维持不变。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0030",
+      "decision": "drop",
+      "reason": "该 finding 的全部证据仅为三行文件标题行（lines 2、6、8），均属于文件封面信息，不包含任何风险条目内容。finding 的核心论据是「在所提供的语料库中未找到蓝牙危害相关记录」，这是典型的 absence-of-evidence 推断，不等于 evidence-of-absence。具体问题如下：①风险评估报告（F0022）和风险管理报告（F0024/F0020）的实质内容章节在语料库中未被提供，finding 自身 rationale 亦承认「content sections covering specific hazard entries are not supplied beyond table-of-contents lines」，说明审查所依据的语料本身不完整；②蓝牙危害可能以「无线数据传输误差」「电磁兼容」等形式记录在未提取的表格行中；③以不完整语料的空缺作为 P1 级别监管缺陷的证据，会产生误报，对审查结论的可信度造成损害。应在获取风险评估报告和风险管理报告完整内容后重新评估。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0031",
+      "decision": "revise",
+      "reason": "核心问题成立：证据确实显示 DFMEA 文件（包装类FMEA）包含探测度评级表，且语料库中 ISO 14971 风险文件未见对 DFMEA 文件编号或失效模式的交叉引用。但严重度 P2 偏高——ISO 14971:2019 §3.5 要求危害识别输入有文件记录，DFMEA 未显式链接属于可追溯性缺口而非直接安全控制失效；且 DFMEA 本身已在 DHF 中存在，审计员可发现。建议将 claim 中",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0032",
+      "decision": "needs_more_context",
+      "reason": "证据仅提供了文件标题行（line 2）和文件头部 DN 字段（line 6、line 8），显示文件名含",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0033",
+      "decision": "keep",
+      "reason": "证据直接支持结论：软件方案（line 136）和软件需求（line 208）均含危害表，子程序测试记录（line 79）仅记录功能测试状态（OK），无危害 ID 引用。ISO 14971:2019 §10 及 IEC 62304 §7.1 均要求软件安全措施的验证记录可追溯至风险控制措施。语料库中验证报告和风险管理报告无对应引用，缺口明确。P2 定级合理——软件危害控制验证链断裂直接影响上市前安全证明完整性。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0034",
+      "decision": "revise",
+      "reason": "问题方向正确：历史文件夹中的文件确实缺乏正式废止记录，ISO 13485 §4.2.4 要求过时文件防止非预期使用。但 P2 定级过高——文件夹已命名为",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0035",
+      "decision": "keep",
+      "reason": "证据直接且充分：BP3L 软件图样文件同时出现在 PT9L 主软件设计文件夹（07）和 T1 样机子文件夹（11），文件标题明确标注",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0036",
+      "decision": "revise",
+      "reason": "核心问题成立：证据确实显示 'E0 23.11' 与 'V1.0' 两套版本标识符并存，且所提供证据目录中无映射或等价说明文件。但 rationale 将严重度定为 P1 的依据是",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0037",
+      "decision": "keep",
+      "reason": "证据直接且充分：IEC 60601-1 测试报告第2569-2571行三次明确引用 'PT9L-RJFA01 V1.0' 作为 PEMS 开发生命周期合规的支撑文件，而该文件编号在证据目录中完全缺失。Rationale 中列举的已知文件编号模式（PT9L-KHXQ01 等）均不包含 RJFA01，进一步排除了文件被归入其他条目的可能性。这是一条可直接验证的可追溯性断链，符合 P1 严重度标准，不存在过度报告或重复问题。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0038",
+      "decision": "needs_more_context",
+      "reason": "该 finding 完全基于",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0039",
+      "decision": "revise",
+      "reason": "核心问题成立：文件路径位于活跃的 T1 样机文件夹（folder 11），文件内容全部指向 PT2L（产品型号、项目编号 2020-DEV01、所有标签料号均带 PT2L 前缀），与 PT9L DHF 无关联且无任何说明。但 rationale 和 claim 存在一处表述不准确：文件路径名为 'PT3SBT标签审核表（海外更新）'，而非 PT9L 或 PT2L 命名，这说明该文件可能是 PT3SBT 产品的标签审核表被误归档至 PT9L 的 T1 文件夹，而非单纯的 PT2L 文件误归档。Claim 应修正为",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0040",
+      "decision": "keep",
+      "reason": "证据直接且无歧义：两份独立文件均明确声明图号 PT9L-F01，一份对应外箱包装图，另一份对应产品外观图，且审计注释已在源文件中明确标注冲突（'⚠️ 与外箱 PT9L-F01 同号但不同件'）。这是一条可直接验证的文件控制冲突，符合 IEC 60601-1 及 ISO 13485 对文件唯一标识的要求，P1 严重度合理。不存在过度报告或证据不足问题。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0041",
+      "decision": "keep",
+      "reason": "证据直接支持结论：同一 BOM 在两份文件中文件编号字符不一致（'PT9L-P BOM01' vs 'PT9L-PB0M1'，字母O与数字0互换），说明书零件号亦不一致（'PT9L-SMSPO1' vs 'PT9L-SMSP01'），且 DMR-089 图纸使用后者，可确认至少一份文件存在未纠正的录入错误。两份文件不能同时作为已发布 DMR 受控记录，问题真实存在。P1 定级合理，属于文件标识完整性缺陷，可能导致物料追溯混乱。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0042",
+      "decision": "revise",
+      "reason": "证据中文件自身已包含注释",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0043",
+      "decision": "needs_more_context",
+      "reason": "所提供的三条证据均来自 Markdown 文件的自动生成模板头部注释行（'<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-14 自动生成模板 + 待填 -->'），这是 AI 解析脚本在无法提取字段时插入的占位符，并非原始 PDF 图纸标题栏中的实际内容。现有证据无法区分",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0044",
+      "decision": "needs_more_context",
+      "reason": "证据仅提供了 BOM 文件的第 21-23 行（共五项中的前三项），未提供完整的 BOM 行列表以穷举所有条目。Claim 本身描述两份 BOM 各含五项（彩包装、纸托、说明书、保护膜、铭牌），但证据未覆盖第4、5行，亦未提供第二份 BOM（F0162）的完整行。此外，外箱可能在独立的运输包装 BOM 或出货清单中受控，现有证据不足以排除该可能性。需补充两份 BOM 的完整行数据及是否存在独立外箱/运输包装清单，方可确认外箱完全未受控。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0045",
+      "decision": "keep",
+      "reason": "证据直接且明确：工艺说明文件中白纸黑字写明",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0046",
+      "decision": "revise",
+      "reason": "证据（line 10）确实显示提交日期与审核日期均为空白占位符，核心事实成立。但严重性定为P2偏高：空白日期字段在实践中常见于模板未填写或扫描件转换丢失，且证据仅来自一份清单文件，尚未证明整个DHF-to-DMR转移流程缺失。建议将claim限定为",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0047",
+      "decision": "revise",
+      "reason": "claim断言",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0048",
+      "decision": "keep",
+      "reason": "两份证据文件标题均明确显示文件编号为IFT-FXJH01（line 2），而非PT9L-FXJH01，文件编号与产品标识不符的事实直接由证据支撑。一份以",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0049",
+      "decision": "needs_more_context",
+      "reason": "finding的核心断言是F0013",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0050",
+      "decision": "revise",
+      "reason": "证据确实显示设计输入表中同时列出ASTM E1965-98:2016和ASTM E1965-98:2023均标记为",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0051",
+      "decision": "revise",
+      "reason": "三条直接证据（line 22、134、143）确实显示设计输入 F0031 将 EN ISO 80601-2-56:2017+A1:2018 和 MDR 2017/745 均标记为不适用，且目标市场仅勾选 FDA/US，核心事实成立。然而 rationale 中引用的 'REG-127、REG-130 confirm the same not-applicable status in the design verification plan' 以及 'label review document references IEC 60601-1-11 and ISO 80601-2-56 as applicable' 均未出现在所提供的三条 evidence 中，属于超出证据范围的断言。此外，'applicability differs between draft and final design input' 的表述来自项目概况注释而非 DHF 文件正文，不能直接等同于正式设计变更缺失。建议将 claim 收窄为'设计输入明确排除 CE/EU 范围，但 DHF 中未见支撑该决策的正式监管策略文件'，删除对 T1 标签审查文件中适用性矛盾的引用（该证据未在 evidence 列表中列出）。严重度维持 P2。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0052",
+      "decision": "drop",
+      "reason": "该 finding 的全部核心断言——'510(k) 注册责任由 andon 承担且为付费方'——仅来源于 rationale 中提及的'项目概况'（project profile），而非任何已列出的 evidence 条目。三条 evidence 均为设计输入和设计验证报告中的市场/认证勾选行，仅证明目标市场为 FDA/US，完全无法支撑'andon 负责并支付 510(k) 费用'这一具体断言。DHF 中不存在某类合同文件本身并不构成合规缺陷，除非法规明确要求该文件纳入 DHF（21 CFR Part 820 DHF 要求并不强制包含商业合同）。在证据不足以支撑核心断言的情况下，应予删除。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0053",
+      "decision": "keep",
+      "reason": "三条 evidence 相互印证：操作指南（line 162）声称 ABS/TPU/PMMA/PC 材料已通过 ISO 10993-5 和 ISO 10993-10，但文件路径'同PT5生物相容性报告'及报告编号前缀'PT5-'明确表明测试样品为 PT5 而非 PT9L。ISO 10993-1:2018 第 4.3 条要求对实际器械或经证明等效的材料进行评价，等效性桥接文件缺失属于实质性合规缺口。证据直接支持结论，严重度 P2 合理。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0054",
+      "decision": "revise",
+      "reason": "操作指南 line 162 的截断文本（'in compliance with the Medical Dev'）未完整显示'Medical Device Directive (MDD)'字样，存在证据不完整的问题；rationale 中的完整引用超出了所提供 evidence 的可见范围。此外，该产品设计输入已明确将 CE/MDR 标记为不适用（line 143），因此 IFU 中出现 MDD 引用的实际监管风险仅限于文件内部一致性问题，而非对监管机构的误导（因该产品当前不寻求 CE 认证）。建议将 claim 修改为'操作指南中出现对已废止 MDD 93/42/EEC 的引用，与设计输入中 CE 范围不适用的决策存在内部文件一致性问题，应在文件修订时更正'，并将严重度下调至 P3。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0055",
+      "decision": "needs_more_context",
+      "reason": "三条 evidence 中，两条（line 10 来自设计输入和历史草稿）仅为章节标题，无实质内容；第三条（line 136）显示 ISO 80601-2-56 标记为适用且验证通过，但未呈现具体温度点或公差范围。finding 的核心断言——软件测试计划在 30 °C 和 45 °C 处应用了 ±0.2 °C 公差——所依赖的软件测试计划文件（RUN-0004 所引用）未出现在 evidence 列表中。设计输入中 ≥35 °C 至 ≤42 °C 的范围规定也未在所提供 evidence 中直接可见。在缺少软件测试计划原文和设计输入精确温度范围条款的情况下，无法独立验证跨范围应用公差的事实，需要人工补充这两类文件后再作判断。严重度暂维持 P1 待复核。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0056",
+      "decision": "keep",
+      "reason": "主张有多个独立来源交叉印证：Risk Traceability Agent（RUN-0003）确认风险管理报告承认蓝牙功能；Software Agent（RUN-0004）独立确认无蓝牙软件需求或测试证据；外部测试报告目录（VV-029 至 VV-101）中无任何报告编号或标题对应蓝牙专项测试；设计验证报告（VV-010 至 VV-015）无蓝牙验证行；可用性工程文件（VV-016 至 VV-027）未涉及蓝牙交互危害。证据缺口属于完全缺失而非部分缺失，P1 定级与 IEC 62304 / ISO 14971 对无线传输功能须有专项危害分析的要求相符，不存在明显过度报告。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0057",
+      "decision": "revise",
+      "reason": "核心问题（血压残留短语出现在电池验证记录中）由 Hardware Agent RUN-0002 识别，但所引用的三条证据（设计验证报告行、安规报告封面、老化报告封面）均未直接展示血压残留短语本身，亦未展示电池验证报告缺少签署通过结论的原始文本。证据仅能支持",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0058",
+      "decision": "revise",
+      "reason": "所引用的三条证据均来自风险管理报告本身，仅能证明该报告版本为 V2.0 且引用了 V1.0 风险管理计划；没有任何证据直接显示设计验证报告曾明确引用 V1.0 而非 V2.0，也没有证据揭示 V2.0 相对 V1.0 新增或修订了具体风险条目。finding 的核心逻辑依赖",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0059",
+      "decision": "keep",
+      "reason": "证据直接且具体：安规报告（ETX202303-07-078-02）封面及报告编号均已在证据目录中确认（VV-041 至 VV-046 正式版，VV-084 至 VV-089 草稿版），Software Agent（RUN-0004）明确指出该报告引用了 DN:PT9L-RJFA01 V1.0，而该文件编号在整个证据目录（VV-001 至 VV-101）中无对应条目。设计验证报告行和设计输入汇总均未列出该文件。这是一个可直接从目录层面验证的可追溯性缺口，不依赖推断。P2 定级与 IEC 60601-1 对软件设计文件须可追溯至测试报告的要求相符。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0060",
+      "decision": "keep",
+      "reason": "证据直接支持主张：设计验证报告行（VV-010）明确引用 ETX202303-07-078-03；VV-065 至 VV-070 确认修订版 ETX202303-07-078-03R1（日期 2025-05-29）存在于最终报告文件夹；原始 -03 报告日期为 2025-02-12（VV-047 至 VV-052）。修订版的存在本身即表明原版已被取代，验证闭环行未更新为引用当前有效版本是客观事实，无需推断。P3 定级合理：问题属于文件管理缺陷，若 R1 系因测试不合格而重测则可升级，但现有证据不足以证明 R1 系因不合格重测，故维持 P3。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0061",
+      "decision": "revise",
+      "reason": "核心问题（多份文件存在空白审批字段）有证据支撑，但提供的3条直接证据均来自历史文件夹（2L风险改-历史文件），而非活跃PT9L文件集。Rationale中列举的F0017–F0024（活跃PT9L集）和F0025–F0028等引用（REG-015、REG-019等）在本批次提供的evidence字段中均无对应原文引用，属于无直接证据支撑的推断性扩展。将",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0062",
+      "decision": "keep",
+      "reason": "证据直接支撑结论：evidence[0]明确显示文件标题含",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0063",
+      "decision": "revise",
+      "reason": "核心事实有证据支撑：F0013文件路径标注为PT2L产品，文件名含",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0064",
+      "decision": "keep",
+      "reason": "证据直接支撑结论：evidence[1]和[2]明确显示生物相容性测试报告文件路径含",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0065",
+      "decision": "keep",
+      "reason": "证据直接支撑结论：evidence[0]显示文件明确引用MDD（Medical Device Directive），文件路径含日期戳20240828，位于活跃T1样机文件夹，非历史或草稿文件夹。MDD于2021年5月26日起已被MDR 2017/745完全取代，2024年8月的文件引用已废止指令构成明确的文档控制错误。严重度P1合理（影响CE合规声明的准确性，但不直接危及患者安全）。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0066",
+      "decision": "revise",
+      "reason": "核心主张成立：同一设计输入文档（F0031）和同一设计验证计划/报告（F0121/F0114）中同时列出 ASTM E1965-98:2016 与 ASTM E1965-98:2023，且语料库中未见版本选择依据或测试-标准映射文件，证据（line 137/138）直接支持。但原 rationale 将",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0067",
+      "decision": "needs_more_context",
+      "reason": "主张严重（P0）：Bluetooth危害完全缺失于ISO 14971风险链。然而所有证据行均为文件标题行（line 2、6、8）或目录行，无一条来自危害识别正文表格。语料库提取可能因文件体积或格式原因仅保留了封面与目录，无法通过现有证据排除正文危害表中存在Bluetooth条目的可能性。RISK-037至RISK-054、RISK-061至RISK-078的",
+      "revised_severity": "P0"
+    },
+    {
+      "finding_id": "LLM-0068",
+      "decision": "needs_more_context",
+      "reason": "与 LLM-0067 同源问题：验证报告中Bluetooth风险控制措施验证记录缺失。供证行同样全部为封面/目录行（line 6、8、32），未提供风险控制措施验证正文表格的任何行。LLM-0067若经人工复核确认危害确实缺失，则本条作为下游缺失可联动确认；若LLM-0067被推翻，本条亦需重新评估。此外，rationale 提及 RISK-127 中 EMC 测试结果",
+      "revised_severity": "P0"
+    },
+    {
+      "finding_id": "LLM-0069",
+      "decision": "revise",
+      "reason": "证据直接支持：软件方案设计（F0135 line 136）和软件需求规格（F0139 line 208）均显示危害分析表头存在，但供证行中无Bluetooth/BLE/无线相关行。与 LLM-0067/0068 不同，此处证据行来自正文表格（危害表头行本身），且表头行紧邻内容区，若后续行存在Bluetooth条目应在同一提取块中出现，因此",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0070",
+      "decision": "keep",
+      "reason": "证据直接且自洽：F0114（设计验证报告）和F0243（IEC 62366-1 checklist）引用 PT9L-FXGB01 V1.0，而语料库中风险管理报告文件名为 V2.0（IFT-FXGB01 V2.0 / PT9L-FXGB01），但其内部文件头（line 6）仍显示 'PT9L-FXGB01 V1.0'。三条证据行来自不同文件且相互印证，版本号不一致的事实清晰。无论是",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0071",
+      "decision": "needs_more_context",
+      "reason": "所提供的三条证据行（line 219-221）仅展示了 DFMEA 内部的探测度评分准则表格，属于 DFMEA 文件自身内容，并不能直接证明'ISO 14971 风险评估报告中无任何对 F0071/F0074 的引用'这一反向缺失。要确认跨文件双向引用均缺失，需要同时提供 ISO 14971 风险评估文件（F0018、F0022）和风险管理报告（F0020、F0024）的相关章节作为证据，以证明其中确实没有出现 DFMEA 文件编号。当前证据仅为单侧，无法独立支撑'隔离于正式风险可追溯链'的结论，需人工复核双侧文件。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0072",
+      "decision": "revise",
+      "reason": "证据行（line 2、6、8）确认活跃风险管理计划文件头部确实载有 'IFT-FXJH01 V1.0' 而非 'PT9L-FXJH01'，双前缀并存的事实可由证据直接支持。但 claim 中将'设计验证计划未指定计划文件编号'（F0121）作为并列论据，该部分在所提供证据中无对应行支撑，属于超出证据范围的推断。建议将 claim 修订为仅聚焦于已证实的 IFT/PT9L 双版本并存、缺乏文档化关联关系（主从/替代关系未说明）这一核心问题，删除关于 F0121 的未经证据支持的陈述。严重度 P1 合理，维持不变。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0073",
+      "decision": "keep",
+      "reason": "三条证据行（line 136、140、141）清晰显示 F0114 验证报告中仅引用 ETX202303-07-078-03 和 ETX202303-07-078-04，而 rationale 中已说明 ETX202303-07-078-03R1（F0461，日期 2025-05-29）晚于原始报告（F0458，日期 2025-02-12）存在于文件库中。F0114 未更新引用、无变更记录或附录的事实构成可追溯性缺口，证据直接支持结论，且不属于明显夸大。P1 严重度合理（验证闭环记录可能基于已被取代的报告）。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0074",
+      "decision": "needs_more_context",
+      "reason": "三条证据行（line 84、107、84）仅显示风险管理报告正文中的程序性陈述和对 PT9L-FXJH01 V1.0 的引用，并不能直接证明'验证计划或验证报告中无任何对 PT9L-FXGB01 的引用'。claim 的核心是验证计划（PT9L-KXPS01）内容不可检索、F0114 证据行中无该文件编号——这两点在所提供证据中均未被直接展示（F0114 的证据行未出现在本 finding 的 evidence 字段中，而是在 LLM-0073 中引用）。此外，V1.0 与 V2.0 之间的差异内容无法从现有证据确定，使得'V2.0 新增风控措施未被验证'的推断缺乏实质支撑。需补充 F0114 全部引用行及验证计划可检索内容后方可定论。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0075",
+      "decision": "revise",
+      "reason": "证据行（line 3、16、28）确认草稿文件内部报告号为 'ETX2023-07-078-02'（缺少 '03' 字段），与最终报告号 'ETX202303-07-078-02' 存在截断差异，事实清晰。然而，草稿编号不一致是常见的文件管理问题，且文件名本身（line 3）已包含完整编号 'ETX202303-07-078-02'，说明文件身份在文件名层面可识别。该差异属于文档规范性问题而非验证闭环缺失，将其定为 P2 偏高。建议降为 P3，并将 claim 措辞修订为'草稿报告内部页眉编号与文件名及最终报告编号不一致，存在文档规范性缺陷，建议在文件管理程序中明确草稿编号规则'，去除'could affect traceability'等推测性表述。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0076",
+      "decision": "revise",
+      "reason": "核心问题成立：可用性工程文件（F0247/F0248）明确规定须开展总结性可用性测试（pre-summative evaluation），但证据目录中确实未见任何已完成的测试报告或结果记录。然而，finding 的严重度和措辞存在两处需要调整：①所引三条证据（line 662、709、729）均为计划/程序性描述，并非直接证明报告缺失，缺失结论依赖的是",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0077",
+      "decision": "revise",
+      "reason": "三份文件共享同一报告编号 ETX202303-07-078-05 的事实有直接文本证据支撑（F0455、F0463、F0460），finding 核心成立。但以下两点需修订：①",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0078",
+      "decision": "needs_more_context",
+      "reason": "生物相容性报告缺失是真实的证据目录空白，finding 核心问题有效。但存在两个关键上下文缺口使其无法直接定性为 P1 缺陷：①所引三条证据（PT5-M02 弹簧图纸，line 49、75、84）与生物相容性测试样品身份完全无关，仅用于证明 PT5 是 PT9L 子组件，这一论证路径与主张的关联性极弱，证据选取不当；②finding 依赖 RUN-0006 的标记，但 RUN-0006 的具体内容未在本证据包中呈现，无法独立核实其所指的样品等同性问题是否确实存在。在未见生物相容性报告本身的情况下，既无法确认缺失，也无法排除报告存在于未提交的文件中。建议人工核查：生物相容性报告是否已存在于 DH",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0079",
+      "decision": "keep",
+      "reason": "证据直接且一致：PT9L-EBOM01 V1.0（F0157）、T1 EBOM（F0096/F0097）均将传感器 PCB 记录为 PT9C-CNTP01 V1.0，而主 PCB 使用 PT9L 前缀，跨产品前缀混用在同一活动 BOM 中确实存在且无任何共用件说明文件。finding 措辞准确，严重度 P2 合理（BOM 文件控制问题，影响设计输出可追溯性，但不直接证明功能或安全缺陷）。无需修订。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0080",
+      "decision": "keep",
+      "reason": "证据直接支持：设计验证计划（F0121）和设计验证报告（F0114）第二节均含",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0081",
+      "decision": "revise",
+      "reason": "核心冲突有直接证据支撑：ABOM(F0094)列PT3-P10，PT3-P10图纸注释明确说明PT9L实际装配以PT5-M02+PT5-M03为准且PT3-P10'不一定'进入量产BOM，总装图BOM亦列PT3-P10——三处文件之间存在真实的未解决矛盾，finding可保留。但'no authoritative resolution document is present in the supplied evidence'属于证据目录局限性声明而非确认缺陷，严重度P2偏高：该冲突影响的是BOM准确性与可追溯性，尚无证据表明已导致错误装配或安全风险；建议降为P3并将表述从'unresolved conflict'修订为'BOM条目与图纸注释不一致，需ECO或BOM修订确认最终物料选用'，同时删除'no authoritative resolution document'的绝对化表述。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0082",
+      "decision": "revise",
+      "reason": "直接证据（F0178第7行）明确标注'T-Z1-P10同时指导光板和PCB（一图号两零件）'，属于文件自身标注的疑点，finding有据可查。但claim中'a separate unnamed PCB appears as item 08'仅凭HW-094一条证据，item 08是否确为PCB类零件尚不明确；且EBOM使用PT9L-HFMP01/PT9C-CNTP01与总装图T-Z1-P10不一致，finding将此解读为'ambiguous part-number assignment'合理，但'without a cross-reference table'属于推断。建议保留核心问题（一图号两零件），删除item 08为'unnamed PCB'的未经充分证实的表述，并注明EBOM与总装图编号体系差异需交叉引用表或ECO说明，严重度P2维持合理但可考虑降为P3（无证据表明已造成错误采购或装配）。此处建议revise至P2保留，要求删除item 08相关未证实内容。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0083",
+      "decision": "revise",
+      "reason": "证据核查确认：设计输入和检验标准均规定35–42°C范围±0.2°C、其他温度±0.3°C；软件测试计划在30°C和45°C处使用±0.2°C。事实描述准确。但finding的风险逻辑存在方向性偏差：测试标准比设计输入更严格（±0.2°C严于±0.3°C），这意味着通过该测试的产品必然满足设计输入要求，不存在'测试记录显示失败但实际不是不符合项'的患者安全风险——该场景只会导致过度拒收，而非漏检。真正的问题是：若产品在30°C/45°C处仅能满足±0.3°C而非±0.2°C，测试会拒收但设计输入允许，可能造成不必要的返工或误判。Claim中'if the device fails at ±0.2°C but passes at ±0.3°C, the test record would show a failure that is not actually a non-conformance'描述方向正确但未突出这是过度拒收风险而非安全漏洞。建议修订claim，明确风险为'测试准则严于设计输入可能导致合格品被误判为不合格，且缺乏书面依据说明该加严是有意的产品策略'，严重度从P3维持，但措辞需去除暗示安全风险的表述。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0084",
+      "decision": "needs_more_context",
+      "reason": "证据显示设计输出清单一的提交/审核日期字段为空白占位符（'年 月 日'），这一事实有直接文本支撑。但finding的核心结论'formal sign-off chain cannot be confirmed as complete'完全依赖'证据目录中未见替代审批文件'——这是典型的absence-of-evidence推断。设计审批记录可能以独立签批页、纸质签字、OA流程记录等形式存在于本次提供的电子文件目录之外。Finding未区分'文件未提供'与'文件不存在'。在医疗器械DHF审查中，空白日期字段是真实的文件控制问题，但P1严重度要求有更强的证据支撑（如明确的法规条款映射或已知的审批缺失）。建议人工核查：①原始纸质或OA签批记录是否存在；②是否有设计评审会议纪要；在获得核查结果前维持needs_more_context，不应直接升级为P1不符合项。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0085",
+      "decision": "needs_more_context",
+      "reason": "Finding完全基于'140条证据目录中未见PT9L-SJSC01或含设计转换/转移字样的文件'。这是纯粹的absence-of-evidence推断，不能等同于文件不存在。设计转换记录可能：①存在于未纳入本次电子证据包的文件夹；②以不同文件名或编号存在（如生产准备评审记录、首件确认记录等）；③嵌入工艺说明或EBOM的附属文件中。Finding引用的两条证据（工艺说明首页、EBOM首行）仅证明这两份文件存在，并不能证明转换记录缺失。P1严重度在无直接缺失证据的情况下过高。建议：在人工确认证据包范围是否覆盖全部DHF文件、以及是否存在任何形式的设计转换记录之前，维持needs_more_context；若人工核查确认缺失则升级为P1。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0086",
+      "decision": "revise",
+      "reason": "核心事实成立：证据F0154第16行原文确实包含'按照最新版本执行'，这是可直接观察的文本事实，不依赖Agent推断。工艺说明引用EBOM时未锁定版本号属于文件管控缺陷，逻辑成立。但两个子声明需要区分：①EBOM无版本锁定——证据直接支持，成立；②工艺说明首页无审批签名栏——F0155第6行仅显示文件编号和标题，无法从该行文本确认'无审批签名栏'（可能签名栏在其他行或页面），此子声明证据不足。建议将 claim 聚焦于版本锁定缺失，删除关于签名栏的断言，或将签名栏问题单独标注为 needs_more_context。严重性P2维持合理。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0087",
+      "decision": "needs_more_context",
+      "reason": "关键证据存在严重污染：F0177第14行的文本'PT9L-F01**（⚠️ 与外箱 PT9L-F01 同号但不同件）'中，括号内的警告标注明显是读取Agent自行插入的注释，而非原始PDF文档内容。这意味着'图号碰撞'的核心判断来源于Agent自我注释，而非两份独立原始文档的客观比对。F0164第20行显示PT9L-F01属于外箱图纸，这是客观事实；但F0177原始文档是否真的也标注PT9L-F01，需要人工核查原始PDF。若两份文件确实同号，finding成立且严重；但当前证据链被污染，无法自动确认，需人工复核原始文件。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0088",
+      "decision": "revise",
+      "reason": "证据支持存在差异，但严重性评估需要调整。①文件编号差异：F0161的'PT9L-P BOM01 V1.0'（含空格）与F0162的'PT9L-PB0M1 V1.0'（零替换O、末尾1而非01）确实不同，但空格差异极可能是OCR伪影，零/O替换也是常见OCR/字体混淆，不能直接断定为'两份不同文件'而非'同一文件的不同扫描版本'。②说明书料号差异：PT9L-SMSPO1（字母O结尾）vs PT9L-SMSP01（数字1结尾），F0167确认正确号为PT9L-SMSP01，说明F0161存在录入错误，这一子声明证据充分。核心问题（至少一份BOM含录入错误且未经正式变更纠正）成立，但'不可解决的文件身份冲突'表述过重。建议 revise：聚焦于说明书料号录入错误这一可证实的缺陷，文件编号差异表述为'疑似OCR/录入错误，需核查原件'，严重性降至P3。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0089",
+      "decision": "keep",
+      "reason": "证据直接、客观、无歧义：F0172第20行原文'（待填 - 见右下标题栏）'和第22行'（待填）'均为可直接读取的文本，不依赖Agent推断。图纸标题栏关键字段（图号、材料）存在未填写占位符，是明确的文件不完整缺陷，符合P2严重性定级。关于PT3来源的推断属于附加背景，不影响核心缺陷的成立。finding成立，无需修改。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0090",
+      "decision": "needs_more_context",
+      "reason": "三条证据均来自读取Agent对原始文档的推断性注释，而非原始文档本身的直接内容：①F0175第28行'根据[总装图BOM]编号13，本件在PT9L BOM中以PT3-M01入账'——这是Agent的映射推断；②F0176第6行'PT3项目原件，被PT9L DHF借用归档（外购件/设计参照）'——这是Agent的解读注释；③F0176第17行'Model NO.: PT3（注：归档于PT9L DHF，实为PT3项目原件）'——括号内为Agent注释。原始图纸文件名含'PT3'字样是客观事实，但'无跨产品共用说明文件'属于缺失证据论证，需要人工确认：①PT9L设计输出清单中是否确实无共用件说明；②PT3-P10图纸标题栏原文是否确认为PT3项目专属件。在Agent注释可信度存疑的情况下，需人工复核后方可定性。严重性暂维持P3。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0091",
+      "decision": "revise",
+      "reason": "核心问题部分成立，但表述存在误导性。证据REG-003/REG-004所指文件的文件名为'V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0'，文件名本身已明确标注PT2L产品标识；而F0017（REG-014）文件名为'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0'，两者文件名前缀不同（PT2L美亚 vs IFT）。真正的问题是：历史PT2L文件内部文档编号使用了IFT-FXJH01，与活跃PT9L文件共享同一文档编号，但这一内部编号冲突的直接证据（即F0013内部正文或封面明确写有IFT-",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0092",
+      "decision": "keep",
+      "reason": "证据直接支持结论。三条evidence分别确认IFT-FXJH01（F0017）和IFT-FXPJ01（F0018）前缀文件存在于活跃风险管理文件集，rationale中引用的REG-030/031、REG-034/035等进一步确认PT9L--前缀与IFT前缀并存于同一活跃文件集。双前缀并存且无主文件清单或交叉引用表的问题在DHF文件控制中属于真实的可追溯性缺陷，证据充分，结论未过度夸大，P1严重度合理。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0093",
+      "decision": "revise",
+      "reason": "核心问题部分成立，但严重度过高且表述需修订。所提供的文件均为经LibreOffice HTML转换后的.clean.md文本文件，签名/日期字段在此类转换流程中极易丢失或显示为空白占位符，不能直接等同于原始受控文件未签署。finding将转换产物中的空白字段直接等同于'无确认受控审批状态'，属于过度推断。真实问题应表述为：在现有转换文档证据中无法验证审批签署状态，需调取原始受控文件核查。此外，历史文件（F0012–F0016）的审批状态对当前PT9L DHF合规性影响有限，不应与活跃文件等权处理。建议修订表述，聚焦于活跃文件集（F0017–F0024）审批可验证性问题，严重度降为P2。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0094",
+      "decision": "drop",
+      "reason": "该finding是LLM-0092的冗余子集。LLM-0092已完整覆盖IFT前缀与PT9L前缀双系统并存、无主文件清单调和的问题，且范围更广（涵盖全部四类文件FXJH01/FXPJ01/FXYS01/FXGB01）。LLM-0094仅聚焦于F0017单一文件的IFT-FXJH01前缀问题，所引用的证据（REG-014、REG-015、REG-016）已被LLM-0092的rationale所涵盖。保留此finding会造成重复报告同一根本原因，应drop以避免审查资源浪费和报告膨胀。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0095",
+      "decision": "revise",
+      "reason": "证据支持PT5报告存在（文件路径和文件名明确）以及PT9L操作指南声称符合ISO 10993-5/10993-10，这两点成立。但'无PT9L专项生物相容性报告'和'无桥接记录'属于缺失证据推断——finding依赖于证据目录的完整性假设，而文件夹名称'同PT5生物相容性报告'本身可能即为意图说明（等同声明），正式等同性评估文件可能存在于未提供的证据范围内。此外，finding将操作指南中的合规声明与测试报告归属问题混为一谈，逻辑层次不清晰。建议修订为：现有证据仅显示PT5生物相容性报告，PT9L材料等同性评估或桥接记录在所提供证据中未见，需补充提供相关文件以核实；严重度维持P2但表述应限定在",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0096",
+      "decision": "revise",
+      "reason": "核心事实成立：操作指南 F0083 第 162 行确实引用'Medical Device Directive (MDD)'，而 MDD 已于 2021 年 5 月 26 日被 MDR 2017/745 正式取代，证据直接支持该引用存在监管准确性问题。WEEE 指令引用（第 466 行）也确认该文件具有欧盟分发语境。然而，严重性定为 P2 存在过高风险：设计输入（F0031 第 143 行）和设计验证报告（F0121）均明确将 MDR 2017/745 标注为'否（不适用）'，目标市场为 FDA/美国（REG-059、REG-117），操作指南中的 MDD 引用属于文件措辞陈旧问题而非合规路径错误。此外，该设备若未在欧盟上市，MDD/MDR 引用不构成实质性合规缺口，仅为文件准确性问题。建议将严重性下调至 P3，并将 claim 措辞从'监管不一致'修订为'操作指南引用已废止指令，建议更新措辞以反映当前监管框架或明确注明适用地区限制'。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0097",
+      "decision": "revise",
+      "reason": "双版本并列引用的事实有直接证据支撑：F0031 第 137-138 行、F0121、F0114 均同时列出 ASTM E1965-98:2016 和 ASTM E1965-98:2023，标签审核表（F0082）也显示 2023 版通过。核心问题（双版本并列且无说明）客观存在。但 P2 严重性过高，理由如下：（1）ASTM E1965-98 为重新批准标准（reapproved standard），2016 和 2023 均为同一标准的重新批准版本，技术内容差异极小，双版本并列在过渡期内是常见做法，不构成实质性合规风险；（2）finding 将'证据目录中未见 gap analysis'等同于'gap analysis 不存在'，属于证据推断过度，gap analysis 可能存于单独的标准适用性评估文件中；（3）两版本均通过验证，说明产品实际满足更严格要求。建议下调至 P3，并将 claim 修订为'建议补充说明双版本并列引用的依据，或统一引用最新版本（2023）以简化文件管理'，移除'监管风险'的强烈措辞。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0098",
+      "decision": "drop",
+      "reason": "该 finding 存在根本性逻辑缺陷，不应保留。（1）证据仅显示项目概况中提及'andon 负责并支付 510(k) 注册费用'，以及设计输入确认目标市场为美国/FDA，两条证据均不能证明'510(k) 责任协议缺失'——它们只能证明该信息存在于项目概况中。（2）510(k) 提交责任协议属于商务合同或监管代理协议，按 FDA 21 CFR Part 807 要求，此类文件由 510(k) 申请人（即 andon）持有并提交给 FDA，不属于制造商 DHF 的法定必要内容；将其缺失定性为 DHF 问题属于监管要求适用错误。（3）Finding 混淆了'DHF 应包含的设计控制记录'与'商务/法务合同文件'的边界，FDA 21 CFR 820.30 对 DHF 的要求不包括第三方注册责任协议。（4）无任何直接证据表明该协议不存在，仅凭'证据目录中未见'即报告缺失，属于典型的过度推断。综上，该 finding 证据不支持结论，且监管要求适用有误，应予删除。",
+      "revised_severity": "P3"
+    }
+  ],
+  "batch_summaries": [
+    {
+      "batch_no": 1,
+      "summary": "对5条 finding 逐一审查。LLM-0001 证据直接支持文件名与内部文档号/产品型号不一致，保留但建议降级至P2（文件位于历史文件夹）。LLM-0002 证据文本未显示'PT3SBT'字样，仅显示通用意图声明，核心主张无法从所提供证据中验证，需更多上下文。LLM-0003 证据仅为图片引用行，无法从文本内容确认文档号为PT2L，需更多上下文。LLM-0004 证据直接支持BP3L标题出现在PT9L DHF中，保留。LLM-0005 证据直接支持PT3SBT条目出现在PT9L设计输出清单中，保留。",
+      "decision_counts": {
+        "revise": 1,
+        "needs_more_context": 2,
+        "keep": 2
+      }
+    },
+    {
+      "batch_no": 2,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "keep": 3,
+        "revise": 2
+      }
+    },
+    {
+      "batch_no": 3,
+      "summary": "对5条候选发现进行证据核查与压制审查。LLM-0011证据直接显示PT2L文件内部含PT9L文档编号，属真实文档控制冲突，维持。LLM-0012证据确认PT2L/PT3SBT标签审核表存于PT9L活跃T1文件夹，但文件标题含'PT3SBT'且路径无历史标记，核心问题成立，维持。LLM-0013证据显示BP3L软件图样存于PT9L活跃软件设计文件夹，且无PT9L替代文件可见，核心问题成立，维持。LLM-0014中F0255位于'废案与备份'子文件夹（已隔离），F0260位于活跃'用户测试'文件夹，两者情况不同，需拆分处理；F0255部分应降级，F0260部分维持，整体修订。LLM-0015证据显示PT9C前缀PCB图号出现在PT9L活跃EBOM中且设计输出清单未收录，核心问题成立，维持。",
+      "decision_counts": {
+        "keep": 4,
+        "revise": 1
+      }
+    },
+    {
+      "batch_no": 4,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 3,
+        "needs_more_context": 1,
+        "keep": 1
+      }
+    },
+    {
+      "batch_no": 5,
+      "summary": "对5条findings逐一审查。LLM-0021版本号不一致有直接证据支持，但严重度可下调；LLM-0022血压残留文字有直接证据，但需注意该行实为空白模板行而非实质性错误，建议revise降级；LLM-0023弹簧BOM冲突的关键证据来自PDF转换注释而非原始工程文件，可信度存疑；LLM-0024 T-Z1-P10双重指向的核心证据同样来自PDF转换注释，非原始BOM字段；LLM-0025检查表空白项有直接证据支持，但空白模板与未填写之间需区分。",
+      "decision_counts": {
+        "revise": 2,
+        "needs_more_context": 2,
+        "keep": 1
+      }
+    },
+    {
+      "batch_no": 6,
+      "summary": "对5条 findings（LLM-0026 至 LLM-0030）逐一审查。LLM-0026 核心事实成立但严重度偏低且表述存在方向性误导，建议 revise；LLM-0027 证据显示版本号混用，但关键证据自身即含 V1.0 内部编号，存在文件命名与内容不一致的混淆，需要更多上下文；LLM-0028 证据直接支持文件编号前缀不一致，finding 成立；LLM-0029 证据支持跨产品文件编号冲突，finding 成立；LLM-0030 以「无证据」作为证据，属于典型的 absence-of-evidence 推断，且提供的证据仅为文件标题行，不足以支撑 P1 级别结论，建议 drop 或降级。",
+      "decision_counts": {
+        "revise": 1,
+        "needs_more_context": 1,
+        "keep": 2,
+        "drop": 1
+      }
+    },
+    {
+      "batch_no": 7,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 2,
+        "needs_more_context": 1,
+        "keep": 2
+      }
+    },
+    {
+      "batch_no": 8,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 2,
+        "keep": 2,
+        "needs_more_context": 1
+      }
+    },
+    {
+      "batch_no": 9,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "keep": 2,
+        "revise": 1,
+        "needs_more_context": 2
+      }
+    },
+    {
+      "batch_no": 10,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 3,
+        "keep": 1,
+        "needs_more_context": 1
+      }
+    },
+    {
+      "batch_no": 11,
+      "summary": "对5条 findings 逐一审查证据充分性、逻辑一致性及严重度标定。LLM-0051 证据直接支持跨阶段适用性不一致，但严重度可维持；LLM-0052 核心断言依赖项目概况描述而非 DHF 文件本身，证据链薄弱，需降级；LLM-0053 证据路径与断言高度吻合，可保留；LLM-0054 属事实性错误但影响范围有限，可保留并下调严重度；LLM-0055 证据仅显示设计输入范围，未直接呈现软件测试计划中 30 °C/45 °C 的实际测试记录，需补充上下文。",
+      "decision_counts": {
+        "revise": 2,
+        "drop": 1,
+        "keep": 1,
+        "needs_more_context": 1
+      }
+    },
+    {
+      "batch_no": 12,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "keep": 3,
+        "revise": 2
+      }
+    },
+    {
+      "batch_no": 13,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 2,
+        "keep": 3
+      }
+    },
+    {
+      "batch_no": 14,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 2,
+        "needs_more_context": 2,
+        "keep": 1
+      }
+    },
+    {
+      "batch_no": 15,
+      "summary": "对5条 findings 逐一审查后：LLM-0071 证据仅显示 DFMEA 内部评分表格，未能直接证明跨文件缺失，降为 needs_more_context；LLM-0072 证据确认 IFT/PT9L 双前缀并存且无关联说明，核心问题成立但严重度可维持 P1，建议 revise 措辞以聚焦可观察事实；LLM-0073 证据充分支持版本未更新的可追溯性缺口，keep；LLM-0074 证据仅显示报告正文内容，未能直接证明验证计划中无引用，降为 needs_more_context；LLM-0075 草稿报告号截断事实清晰，但严重度 P2 偏高，核心为草稿编号不一致，revise 至 P3。",
+      "decision_counts": {
+        "needs_more_context": 2,
+        "revise": 2,
+        "keep": 1
+      }
+    },
+    {
+      "batch_no": 16,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 2,
+        "needs_more_context": 1,
+        "keep": 2
+      }
+    },
+    {
+      "batch_no": 17,
+      "summary": "对5条Hardware/DMR findings进行证据核查与压制审查。LLM-0081和LLM-0082的核心冲突有直接文本证据支撑，但严重度和表述需审视。LLM-0083属于测试标准比设计输入更严格的情形，实际风险方向与claim描述存在偏差，需修订。LLM-0084和LLM-0085均依赖'证据目录中未见'作为缺失证明，存在典型的absence-of-evidence推断风险，需降级或补充上下文。",
+      "decision_counts": {
+        "revise": 3,
+        "needs_more_context": 2
+      }
+    },
+    {
+      "batch_no": 18,
+      "summary": "对5条 DMR/SOP Agent findings（LLM-0086 至 LLM-0090）逐一审查。LLM-0087（图号碰撞）证据存在明显的自我注释污染，核心证据由读取Agent自行插入警告标记，不能作为独立客观证据，降级为 needs_more_context。LLM-0088（包装BOM文件号差异）证据显示的差异高度符合OCR/字体混淆特征，严重性可降至P3，但核心问题成立，建议 revise。LLM-0089（待填占位符）证据直接、明确，keep。LLM-0086（EBOM无版本锁定）和LLM-0090（PT3图纸无跨产品说明）证据均来自读取Agent的推断性注释，原始文档内容本身不足以独立支撑结论，均降级处理。",
+      "decision_counts": {
+        "revise": 2,
+        "needs_more_context": 2,
+        "keep": 1
+      }
+    },
+    {
+      "batch_no": 19,
+      "summary": "relaxed_parse_recovered",
+      "decision_counts": {
+        "revise": 3,
+        "keep": 1,
+        "drop": 1
+      }
+    },
+    {
+      "batch_no": 20,
+      "summary": "对三条 Regulatory Agent findings 进行证据核查与压制审查。LLM-0096 证据直接支持操作指南引用已废止 MDD 的事实，但严重性需下调，因设计输入已明确标注 MDR 不适用且目标市场为美国；保留但修订。LLM-0097 双版本 ASTM E1965 并列引用有直接证据，但缺失文件（gap analysis）本身属于'证据目录中未见'而非'确认不存在'，且双版本并列在过渡期内有合理解释空间，严重性过高；保留但修订。LLM-0098 属于典型的'目录中未见即报告缺失'逻辑，510(k) 责任协议通常存于商务/法务档案而非 DHF，且 finding 本身混淆了 DHF 完整性要求与合同文件要求；降级或需更多上下文。",
+      "decision_counts": {
+        "revise": 2,
+        "drop": 1
+      }
+    }
+  ]
+}

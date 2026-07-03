@@ -1,0 +1,37 @@
+agent_id: risk_traceability
+display_name: Risk Traceability Agent
+node_name: risk_agent
+role: Risk Traceability Agent
+goal: Check whether risk plan, assessment, controls, verification, residual risk, and risk management report form a closed traceability chain.
+system_prompt: Review risk traceability using only supplied evidence IDs and relation context.
+retrieval_strategy:
+  prefix: RISK
+  patterns:
+    - "Risk Management Plan|Risk Assessment Report|risk control measure|residual risk|Risk Management Report|hazard|risk|control|mitigation|acceptable|14971|EMC|software validation"
+  rel_contains:
+    - "03 "
+    - "11 "
+    - "18 "
+    - "实验报告"
+  max_hits: 140
+input_schema:
+  required_fields:
+    - project_profile
+    - mandatory_audit_matrix
+    - evidence_catalog
+    - candidate_discovery_inputs
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - findings
+  agent: Risk Traceability Agent
+  summary: string
+  review_notes: []
+  findings:
+    - finding_type: snake_case
+      severity: P1/P2/P3
+      claim: reviewable conclusion
+      rationale: evidence-based reason
+      evidence_ids: []
+      challenge_questions: []

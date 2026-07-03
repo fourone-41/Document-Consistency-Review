@@ -1,0 +1,61 @@
+```json
+{
+  "assigned_agent": "Risk Traceability Agent",
+  "review_focus": "核查F0018/F0019中PT3SBT型号出现是否构成法规文件型号错误：重点判断PT9L与PT3SBT的产品关系（同平台不同SKU、蓝牙版/非蓝牙版、重命名/前身型号），结合F0022正文预期用途描述、F0018封面适用型号字段、以及风险文件体系中型号引用的系统性模式，给出confirm/dismiss/needs_more_context裁决。",
+  "agent_input": {
+    "claim": "主范围风险评估报告（F0018）中预期用途描述使用旧型号PT3SBT而非PT9L，构成法规文件型号错误。",
+    "context_summary": "已确认证据：SCOUT-073显示F0018第93行出现'And PT3SBT can transmit the temperature to a smart device with Bluetooth.'；SCOUT-041显示F0019第85行出现完全相同文本，表明两份风险文件使用相同模板且PT3SBT系统性出现。F0022（PT9L专属风险评估报告）文件路径含'PT9L--'前缀，与F0018共享报告编号IFT-FXPJ01，但正文内容未提取。结构推断：PT3SBT出现于预期用途末尾独立补充句，专门描述蓝牙传输功能，提示PT3SBT可能为蓝牙版型号标识。关键缺失：①F0022正文预期用途章节（PT9L是否有独立正确描述）；②F0018/F0019封面适用型号字段；③PT9L与PT3SBT型号关系说明文件（ECO/DCO/产品规格书）；④PT9L是否具备蓝牙功能的产品规格证据。",
+    "evidence": [
+      {
+        "evidence_id": "SCOUT-073",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 93,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "verified": true,
+        "analysis_note": "F0018主范围风险评估报告第93行明确出现PT3SBT型号，为claim的直接证据。PT3SBT出现在蓝牙功能描述补充句中，需判断是否为刻意区分蓝牙型号还是型号错误。"
+      },
+      {
+        "evidence_id": "SCOUT-041",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 85,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "verified": true,
+        "analysis_note": "F0019与F0018使用完全相同的预期用途模板文本，PT3SBT在风险文件体系中系统性出现，非单一文件笔误。"
+      },
+      {
+        "evidence_id": "SCOUT-054",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 1,
+        "actual_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "verified": true,
+        "analysis_note": "F0022路径含PT9L前缀，与F0018共享报告编号IFT-FXPJ01，提示PT9L存在独立风险评估报告，但正文缺失，无法确认PT9L预期用途描述内容。"
+      },
+      {
+        "evidence_id": "RCV-001",
+        "context_type": "structural_inference",
+        "content": "F0022文件路径为'PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530'，F0018路径为'Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530'，两者共享报告编号IFT-FXPJ01，F0022仅增加'PT9L--'前缀，提示F0022为F0018针对PT9L的专属衍生版本，可能存在版本管理问题。",
+        "analysis_note": "有助于判断PT9L与PT3SBT文件体系关系及F0018覆盖范围。"
+      },
+      {
+        "evidence_id": "RCV-002",
+        "context_type": "text_pattern_analysis",
+        "content": "PT3SBT在F0018和F0019中均出现于预期用途末尾独立补充句'And PT3SBT can transmit the temperature to a smart device with Bluetooth.'，专门描述蓝牙传输功能。若PT9L为蓝牙版型号，该句应使用PT9L；若PT9L为非蓝牙版而PT3SBT为蓝牙版，则PT9L文件中出现PT3SBT属于型号混用。",
+        "analysis_note": "直接关联核心判断：PT3SBT出现是否为型号错误取决于PT9L是否具备蓝牙功能。"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": {
+      "step_1": "检索F0022正文（第2行至第200行），提取PT9L预期用途描述章节，确认PT9L是否有独立且正确的预期用途描述，以及该描述中是否同样出现PT3SBT或已正确使用PT9L。",
+      "step_2": "检索F0018封面/标题页（第1行至第30行），确认'适用型号'或'Applicable Model'字段填写内容（PT3SBT、PT9L或两者均有）。",
+      "step_3": "检索F0019封面/标题页，确认风险控制验证报告适用型号范围。",
+      "step_4": "检索DHF主文件、产品规格书或设计输入文件中PT9L与PT3SBT的型号关系说明（同平台不同SKU、蓝牙版/非蓝牙版、重命名/前身型号、ECO/DCO变更记录）。",
+      "step_5": "检索IFU/标签文件中PT9L与PT3SBT的型号标注，确认市售产品实际型号。",
+      "step_6": "综合以上证据判断：若PT9L具备蓝牙功能且F0018封面适用型号为PT9L，则第93行使用PT3SBT构成实质性型号错误（confirm）；若PT9L为非蓝牙版且PT3SBT为独立蓝牙版型号，则F0018中PT3SBT描述蓝牙功能属于合理区分（dismiss）；若关键证据仍缺失，标记为needs_more_context并列明所需补充文件。",
+      "fallback_instruction": "在缺少PT9L与PT3SBT型号关系证据的情况下，不得直接裁决confirm或dismiss，应标记为'needs_more_context'并要求申请人提供：①PT9L产品规格书中蓝牙功能说明；②PT9L与PT3SBT型号对应关系说明文件；③F0018封面适用型号字段截图。"
+    }
+  }
+}
+```

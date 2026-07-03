@@ -1,0 +1,215 @@
+{
+  "document": {
+    "title": "PT9L 安规报告",
+    "doc_id": "ETX202303-07-078-02",
+    "date": "2025.02.12",
+    "total_pages": 182,
+    "status": "正式"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "医用电气设备通用安全要求"
+    },
+    {
+      "id": "IEC60384-14",
+      "description": "电容器（Y型）标准"
+    },
+    {
+      "id": "IEC60950-1",
+      "full_reference": "IEC 60950-1:2005, IEC 60950-1:2005/A1:2009, IEC 60950-1:2005/A2:2013",
+      "description": "信息技术设备安全 - 绝缘配合要求"
+    },
+    {
+      "id": "IEC62368-1",
+      "full_reference": "IEC 62368-1:2018",
+      "description": "音视频、信息和通信技术设备安全 - 绝缘配合要求"
+    },
+    {
+      "id": "IEC60747-5-5",
+      "full_reference": "IEC 60747-5-5:2007",
+      "description": "光耦合器安全要求"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.4.3",
+      "test_name": "插头断开后引脚间及引脚与外壳间电压测试",
+      "description": "断开ME设备插头后1秒内，插头引脚间及任意供电引脚与外壳间的最坏情况电压不超过60V；若超过60V，计算或测量的存储电荷不超过45μC",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.5",
+      "test_name": "零部件隔离",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.1",
+      "test_name": "保护手段（MOP）",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.1.1",
+      "test_name": "双重保护手段验证",
+      "description": "ME设备提供两种保护手段，防止应用部分和其他可接触部分超过8.4规定的限值",
+      "remarks": "参见绝缘图；已提供MOPP",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.1.2",
+      "test_name": "患者保护手段（MOPP）",
+      "sub_tests": [
+        {
+          "description": "构成MOPP的固体绝缘符合8.8条介电强度测试（表6电压）",
+          "remark": "参见附表8.8.3",
+          "verdict": "P"
+        },
+        {
+          "description": "构成MOPP的爬电距离和电气间隙符合表12",
+          "remark": "Complied.",
+          "verdict": "P"
+        },
+        {
+          "description": "构成MOPP的保护接地连接符合第8.6条",
+          "remark": "无保护接地连接",
+          "verdict": "N/A"
+        },
+        {
+          "description": "符合IEC 60384-14的Y型（Y1或Y2）电容视为一种MOPP",
+          "remark": "无Y1电容",
+          "verdict": "N/A"
+        },
+        {
+          "description": "工作电压低于42.4V峰值交流或60V直流时，单个Y1电容可用作两种MOPP",
+          "verdict": "N/A"
+        },
+        {
+          "description": "串联两个电容，每个均按整对两端总工作电压额定，且具有相同标称电容值",
+          "verdict": "N/A"
+        }
+      ],
+      "verdict": "P"
+    },
+    {
+      "clause": "8.5.1.3",
+      "test_name": "操作者保护手段（MOOP）",
+      "sub_tests": [
+        {
+          "description": "构成MOOP的固体绝缘符合8.8条介电强度测试（表6电压）",
+          "verdict": "P"
+        },
+        {
+          "description": "构成MOOP的固体绝缘符合IEC 60950-1或IEC 62368-1:2018的绝缘配合要求",
+          "verdict": "N/A"
+        },
+        {
+          "description": "构成MOOP的爬电距离和电气间隙符合表13至16",
+          "verdict": "P"
+        },
+        {
+          "description": "构成MOOP的爬电距离和电气间隙符合IEC 60950-1或IEC 62368-1:2018绝缘配合要求",
+          "verdict": "N/A"
+        },
+        {
+          "description": "构成MOOP的保护接地连接符合第8.6条",
+          "verdict": "N/A"
+        },
+        {
+          "description": "符合IEC 60384-14的Y2电容视为一种MOOP",
+          "remark": "无Y2电容",
+          "verdict": "N/A"
+        },
+        {
+          "description": "符合IEC 60384-14的Y1电容视为两种MOOP",
+          "remark": "无Y1电容",
+          "verdict": "N/A"
+        },
+        {
+          "description": "串联两个电容，每个均按整对两端总工作电压额定，且具有相同标称电容值",
+          "verdict": "N/A"
+        },
+        {
+          "description": "符合IEC 60747-5-5:2007或更新版本的光耦合器，视为等效满足8.8.2和8.9.3的要求",
+          "verdict": "N/A"
+        },
+        {
+          "description": "外部空气间隙和爬电距离测量",
+          "verdict": "N/A"
+        },
+        {
+          "description": "光耦合器介电强度测试",
+          "verdict": "N/A"
+        }
+      ],
+      "remark": "Complied.",
+      "verdict": "P"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L",
+      "doc_ref": "ETX202303-07-078-02"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "8.5.1.1：ME设备应提供两种保护手段，防止应用部分和其他可接触部分超过8.4规定的限值。保护应用部分或按4.6条识别为须满足相同要求的部件的保护手段，应视为患者保护手段（MOPP）。每种保护手段应按照第4.6条及图A.12的流程，归类为患者保护手段（MOPP）或操作者保护手段（MOOP）。涂漆、搪瓷、氧化及类似防护涂层，以及在运行和灭菌预期温度下会重新增塑的密封化合物，不应视为保护手段。构成保护手段的组件和布线应符合8.10条。不符合8.5.1.2和8.5.1.3的绝缘、爬电距离、电气间隙、组件或接地连接不视为保护手段，此类部件的失效应视为正常状态。",
+      "topic_tags": [
+        "MOPP",
+        "MOOP",
+        "保护手段",
+        "MOP",
+        "绝缘",
+        "爬电距离",
+        "电气间隙",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "8.5.1.1",
+        "8.5.1.2",
+        "8.5.1.3",
+        "8.4",
+        "8.6",
+        "8.8",
+        "8.10",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "关于Y型电容的使用规定：符合IEC 60384-14的Y1或Y2电容可视为一种患者保护手段（MOPP）；当工作电压低于42.4V峰值交流或60V直流时，单个Y1电容可用作两种MOPP。两个串联电容使用时，每个均须按整对两端总工作电压额定，且应具有相同标称电容值。本产品（PT9L）无Y1电容及Y2电容，相关条款均判定为N/A。",
+      "topic_tags": [
+        "Y型电容",
+        "IEC60384-14",
+        "MOPP",
+        "绝缘配合",
+        "工作电压"
+      ],
+      "related_subjects": [
+        "8.5.1.2",
+        "8.5.1.3",
+        "PT9L",
+        "IEC60384-14"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "关于光耦合器的规定：符合IEC 60747-5-5:2007或更新版本的光耦合器，可视为等效满足8.8.2和8.9.3的要求。需进行外部空气间隙和爬电距离测量，以及光耦合器介电强度测试。本产品相关条款判定为N/A。",
+      "topic_tags": [
+        "光耦合器",
+        "IEC60747-5-5",
+        "爬电距离",
+        "介电强度",
+        "MOOP"
+      ],
+      "related_subjects": [
+        "8.5.1.3",
+        "8.8.2",
+        "8.9.3",
+        "PT9L"
+      ]
+    }
+  ]
+}

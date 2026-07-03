@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>最新多智能体 DHF/DMR 一致性审查流程架构</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #667085;
+      --line: #c8d0da;
+      --panel: #ffffff;
+      --soft: #f6f8fb;
+      --blue: #2563eb;
+      --teal: #0f766e;
+      --green: #15803d;
+      --amber: #b45309;
+      --red: #b91c1c;
+      --violet: #6d28d9;
+      --shadow: 0 16px 36px rgba(15, 23, 42, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: #eef2f7;
+      line-height: 1.55;
+    }
+
+    header {
+      background: #101828;
+      color: #fff;
+      padding: 28px 36px 24px;
+      border-bottom: 4px solid #38bdf8;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3vw, 42px);
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    header p {
+      margin: 0;
+      color: #d0d5dd;
+      max-width: 1100px;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      color: #111827;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: -8px 0 18px;
+      font-size: 14px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      background: var(--soft);
+      border: 1px solid #dce4ef;
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 92px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1.1;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .stage {
+      border: 1px solid #d6dee8;
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfe;
+      position: relative;
+      min-height: 190px;
+    }
+
+    .stage::after {
+      content: "→";
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .stage:last-child::after { content: ""; }
+
+    .stage h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .b { background: var(--blue); }
+    .t { background: var(--teal); }
+    .g { background: var(--green); }
+    .a { background: var(--amber); }
+    .r { background: var(--red); }
+    .v { background: var(--violet); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #334155;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .graph {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr 2.1fr 1.1fr 1.1fr;
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .lane {
+      min-width: 210px;
+      border: 1px solid #dbe3ec;
+      border-radius: 8px;
+      background: #f8fafc;
+      padding: 12px;
+    }
+
+    .node {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      min-height: 76px;
+    }
+
+    .node.teal { border-left-color: var(--teal); }
+    .node.green { border-left-color: var(--green); }
+    .node.amber { border-left-color: var(--amber); }
+    .node.red { border-left-color: var(--red); }
+    .node.violet { border-left-color: var(--violet); }
+
+    .node b {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .node p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid #d9e1ea;
+      padding: 9px 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .step {
+      border: 1px solid #d7e0ea;
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .step .num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #111827;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .result {
+      border: 1px solid #d7e0ea;
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .result strong {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+
+    .confirm strong { color: var(--red); }
+    .dismiss strong { color: var(--green); }
+    .pending strong { color: var(--amber); }
+
+    .file-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .file {
+      border: 1px solid #d7e0ea;
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 10px;
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .metrics { grid-template-columns: repeat(3, 1fr); }
+      .flow, .graph, .pipeline { grid-template-columns: 1fr; }
+      .stage::after { content: "↓"; right: 50%; top: auto; bottom: -21px; transform: translateX(50%); }
+      .two-col, .result-grid, .file-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 12px; }
+      header { padding: 22px 18px; }
+      section { padding: 16px; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      table { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>最新多智能体 DHF/DMR 一致性审查流程架构</h1>
+    <p>v6 架构：LangGraph 多 Agent 编排、项目级索引底座、领域语义审查、机械候选一轮复审与二轮补证据最终裁决、证据核验、Challenge 裁决、Context Recovery 自动补证据闭环和错误汇总。</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>v6 运行指标</h2>
+      <p class="subtitle">数据来源：`pt9l_full_audit_output_langgraph_v6/08_reports/run_summary_full_langgraph.json`</p>
+      <div class="metrics">
+        <div class="metric"><strong>470</strong><span>全量 Markdown 文件</span></div>
+        <div class="metric"><strong>227</strong><span>主审范围文件</span></div>
+        <div class="metric"><strong>4,222</strong><span>PageIndex 章节</span></div>
+        <div class="metric"><strong>12,168</strong><span>参数实例</span></div>
+        <div class="metric"><strong>3,207 / 214</strong><span>Relation 节点 / 边</span></div>
+        <div class="metric"><strong>52</strong><span>Context Recovery 补证任务</span></div>
+        <div class="metric"><strong>66</strong><span>当前确认错误总数</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>一屏看懂总流程</h2>
+      <div class="flow">
+        <div class="stage">
+          <h3><span class="tag b">1</span>输入与覆盖</h3>
+          <p>读取已转换 Markdown，建立文档清单、主审范围和阶段归属。</p>
+          <div class="chips">
+            <span class="chip">Manifest</span>
+            <span class="chip">Readiness</span>
+            <span class="chip">Scope</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag t">2</span>索引底座</h3>
+          <p>构建可复用的项目级检索和结构化事实，不依赖预建图谱。</p>
+          <div class="chips">
+            <span class="chip">PageIndex</span>
+            <span class="chip">SSOT 参数</span>
+            <span class="chip">Relation Index</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag v">3</span>多 Agent 审查</h3>
+          <p>Orchestrator 生成任务包，领域 Agent 并行判断专业一致性问题。</p>
+          <div class="chips">
+            <span class="chip">Scout</span>
+            <span class="chip">Regulatory</span>
+            <span class="chip">Hardware</span>
+            <span class="chip">Software</span>
+            <span class="chip">Risk</span>
+            <span class="chip">V&V</span>
+            <span class="chip">DMR/SOP</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag a">4</span>机械候选裁决</h3>
+          <p>规则层高召回，再由多 Agent LLM 一轮复审和二轮补证据最终裁决。</p>
+          <div class="chips">
+            <span class="chip">515 候选</span>
+            <span class="chip">103 Cluster</span>
+            <span class="chip">31 待复审</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag g">5</span>补证据与报告闭环</h3>
+          <p>证据核验、Challenge 裁决、Context Recovery 补上下文，最终输出错误汇总和人工复核任务。</p>
+          <div class="chips">
+            <span class="chip">Evidence Gate</span>
+            <span class="chip">Challenge</span>
+            <span class="chip">Context Recovery</span>
+            <span class="chip">Reports</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>LangGraph 节点架构</h2>
+      <p class="subtitle">工程调度使用 LangGraph；专业判断由各 Agent 和工具完成。</p>
+      <div class="graph">
+        <div class="lane">
+          <h3>基础节点</h3>
+          <div class="node">
+            <b>bootstrap</b>
+            <p>建立 Manifest、Readiness、PageIndex、SSOT、Relation Index 和机械候选。</p>
+          </div>
+          <div class="node teal">
+            <b>scout_agent</b>
+            <p>确认产品类别、型号残留、法规基线和明显污染线索。</p>
+          </div>
+        </div>
+        <div class="lane">
+          <h3>编排节点</h3>
+          <div class="node violet">
+            <b>orchestrator</b>
+            <p>按阶段轴与维度轴生成领域 Agent 任务包。</p>
+          </div>
+        </div>
+        <div class="lane">
+          <h3>并行领域 Agent</h3>
+          <div class="node"><b>regulatory_agent</b><p>法规、标签、说明书、标准、受控程序。</p></div>
+          <div class="node"><b>hardware_agent</b><p>硬件参数、BOM、PCB、电池、测量精度。</p></div>
+          <div class="node"><b>software_agent</b><p>软件需求、设计、测试、版本、追溯。</p></div>
+          <div class="node"><b>risk_agent</b><p>风险计划、风险评估、控制验证、剩余风险。</p></div>
+          <div class="node"><b>vv_agent</b><p>验证确认计划、报告、外部测试闭环。</p></div>
+          <div class="node"><b>dmr_agent</b><p>设计输出、图纸、BOM、工艺、包装与 SOP。</p></div>
+        </div>
+        <div class="lane">
+          <h3>裁决节点</h3>
+          <div class="node amber">
+            <b>mechanical_review</b>
+            <p>机械候选聚类、多 Agent LLM 复审、补证据最终裁决。</p>
+          </div>
+          <div class="node green">
+            <b>evidence_gate</b>
+            <p>确认 finding 证据是否能回溯到 Markdown 原文。</p>
+          </div>
+          <div class="node red">
+            <b>challenge_agent</b>
+            <p>对语义 finding 做 keep/revise/drop/needs_more_context 裁决。</p>
+          </div>
+          <div class="node violet">
+            <b>context_recovery</b>
+            <p>接收机械和语义待补证项，诊断缺口、补充上下文，并收敛为 confirm/dismiss/human_review。</p>
+          </div>
+        </div>
+        <div class="lane">
+          <h3>输出节点</h3>
+          <div class="node green">
+            <b>report</b>
+            <p>输出全量报告、错误汇总、机械裁决总表、驳回清单和人工任务。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>机械候选复审闭环</h2>
+      <p class="subtitle">v6 的关键升级：新增 Parameter Alignment 数值候选、Challenge 理由质量闸门，并把待补证项交给 Context Recovery 结构化补上下文，避免无限停留在 needs_more_context。</p>
+      <div class="pipeline">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>规则高召回</h3>
+          <p>扫描旧型号、异类品类、模板词、参数候选等。</p>
+          <div class="chips"><span class="chip">515 条候选</span></div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>标准化与聚类</h3>
+          <p>补充阶段、文档类型、主审范围、上下文和分派 Agent。</p>
+          <div class="chips"><span class="chip">103 个 Cluster</span></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>一轮 Agent 复审</h3>
+          <p>Product Identity、Regulatory、Document Control 进行语义判断。</p>
+          <div class="chips"><span class="chip">confirm / dismiss / pending</span></div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>二轮最终裁决</h3>
+          <p>对未决 cluster 补充跨文件、同术语、同文件上下文后强制最终判断。</p>
+          <div class="chips"><span class="chip">未决清零</span></div>
+        </div>
+      </div>
+
+      <div class="result-grid" style="margin-top:14px">
+        <div class="result confirm"><strong>156</strong><span>候选行确认错误</span></div>
+        <div class="result dismiss"><strong>328</strong><span>候选行判定非错误</span></div>
+        <div class="result pending"><strong>31</strong><span>机械/数值候选转人工复核</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Context Recovery 自动补证据闭环</h2>
+      <p class="subtitle">这个节点不是简单重跑更长 prompt，而是先把“缺什么上下文”结构化，再让 Orchestrator 式任务包回查 PageIndex、SSOT 参数和原始证据。</p>
+      <div class="pipeline">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>收集待补证项</h3>
+          <p>汇总 mechanical_review 和 challenge_agent 里仍为 needs_more_context 的条目。</p>
+          <div class="chips"><span class="chip">31 机械</span><span class="chip">21 语义</span></div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>诊断缺口类型</h3>
+          <p>区分参数语义、型号身份、追溯链、受控版本、程序性记录等缺口。</p>
+          <div class="chips"><span class="chip">context_need_type</span></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>补充上下文</h3>
+          <p>回查同术语参数、同文件片段、相关文件引用和 PageIndex 命中证据。</p>
+          <div class="chips"><span class="chip">SSOT</span><span class="chip">PageIndex</span></div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>二审收敛</h3>
+          <p>自动补证后只允许 confirm、dismiss 或 human_review，不再继续悬停。</p>
+          <div class="chips"><span class="chip">52 human_review</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Agent 与工具职责</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>组件</th>
+            <th>角色</th>
+            <th>使用的数据/工具</th>
+            <th>输出</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Orchestrator</td><td>任务规划和分发</td><td>Manifest、PageIndex、SSOT、Relation Index、Scout 输出</td><td>领域任务包</td></tr>
+          <tr><td>Scout Agent</td><td>产品类别和明显污染侦察</td><td>PageIndex、型号关键词、法规基线</td><td>市场类别、风险线索、初始 findings</td></tr>
+          <tr><td>Regulatory Agent</td><td>法规和受控文件审查</td><td>法规/标签/说明书/测试报告证据</td><td>法规和程序性 finding</td></tr>
+          <tr><td>Hardware Agent</td><td>硬件与参数一致性</td><td>SSOT 参数、BOM、PCB、设计输出</td><td>参数或硬件不一致 finding</td></tr>
+          <tr><td>Software Agent</td><td>软件 DHF 审查</td><td>软件需求、软件图样、测试记录、追溯表</td><td>软件追溯或受控缺陷 finding</td></tr>
+          <tr><td>Risk Agent</td><td>风险闭环审查</td><td>风险计划、评价、控制验证、Relation Index</td><td>风险断链或双套文件 finding</td></tr>
+          <tr><td>V&amp;V Agent</td><td>验证确认审查</td><td>验证计划、确认报告、外部测试报告</td><td>验证确认闭环 finding</td></tr>
+          <tr><td>DMR/SOP Agent</td><td>设计输出与生产文件审查</td><td>BOM、图纸、工艺、包装、标签</td><td>DMR/SOP 不一致 finding</td></tr>
+          <tr><td>Evidence Gate</td><td>证据核验</td><td>文件路径、行号、原文文本</td><td>verified / failed</td></tr>
+          <tr><td>Challenge Agent</td><td>语义 finding 反审</td><td>finding、证据、理由</td><td>keep / revise / drop / needs_more_context</td></tr>
+          <tr><td>Context Recovery Agent</td><td>待补证项闭环</td><td>needs_more_context、PageIndex、SSOT 参数、相关证据片段</td><td>confirm / dismiss / human_review</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>关键数据产物</h2>
+      <div class="two-col">
+        <div>
+          <h3>索引与中间数据</h3>
+          <div class="file-list">
+            <div class="file">00_manifest/full_manifest.jsonl</div>
+            <div class="file">01_page_index/page_index.jsonl</div>
+            <div class="file">03_ssot_parameters/parameter_instances.jsonl</div>
+            <div class="file">04_relation_index/relation_edges.jsonl</div>
+            <div class="file">10_task_packages/*.json</div>
+            <div class="file">11_llm_raw/*.json</div>
+            <div class="file">14_context_recovery/context_recovery_tasks.json</div>
+            <div class="file">14_context_recovery/context_recovery_results.jsonl</div>
+          </div>
+        </div>
+        <div>
+          <h3>最终报告</h3>
+          <div class="file-list">
+            <div class="file">08_reports/PT9L_当前全部错误汇总.md</div>
+            <div class="file">08_reports/PT9L_full_audit_report_langgraph.md</div>
+            <div class="file">08_reports/PT9L_mechanical_cluster_decision_table.md</div>
+            <div class="file">08_reports/PT9L_mechanical_review_true_errors.md</div>
+            <div class="file">08_reports/PT9L_mechanical_review_dismissed.md</div>
+            <div class="file">08_reports/second_round_tasks.md</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>当前错误汇总口径</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>类别</th>
+            <th>计数口径</th>
+            <th>数量</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>机械确认错误</td>
+            <td>按 cluster 去重</td>
+            <td>21</td>
+            <td>156 条候选行压缩为 21 类可整改问题。</td>
+          </tr>
+          <tr>
+            <td>语义确认/修订错误</td>
+            <td>按 finding</td>
+            <td>45</td>
+            <td>Challenge 状态为 keep 或 revise。</td>
+          </tr>
+          <tr>
+            <td>当前确认错误总数</td>
+            <td>机械 cluster + 语义 finding</td>
+            <td>66</td>
+            <td>进入主错误汇总清单。</td>
+          </tr>
+          <tr>
+            <td>Context Recovery 人工复核项</td>
+            <td>机械待补证 + 语义待补证</td>
+            <td>52</td>
+            <td>自动补上下文后仍无法确认或否定，统一转入 human_review。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>运行与复用</h2>
+      <div class="two-col">
+        <div>
+          <h3>全量运行命令</h3>
+          <div class="file">python m-agent/run_pt9l_full_audit_langgraph.py --input D:\项目文档一致性审查\pt9l_markdown_output --output D:\项目文档一致性审查\pt9l_full_audit_output_langgraph_v6</div>
+        </div>
+        <div>
+          <h3>重新生成错误汇总</h3>
+          <div class="file">python m-agent/generate_current_error_summary.py</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:14px">后续新项目不需要提前构建知识图谱。只要先完成 Markdown 转换，系统会在跑批时重新生成 Manifest、PageIndex、SSOT 参数表和 Relation Index，再进行多 Agent 审查。</p>
+    </section>
+  </main>
+</body>
+</html>

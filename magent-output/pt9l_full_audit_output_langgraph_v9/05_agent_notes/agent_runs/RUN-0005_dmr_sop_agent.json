@@ -1,0 +1,1596 @@
+{
+  "run_id": "RUN-0005",
+  "agent": "DMR/SOP Agent",
+  "assignment_id": "ASG-0005",
+  "task_type": "domain_review",
+  "assignment": {
+    "assignment_id": "ASG-0005",
+    "target_agent": "DMR/SOP Agent",
+    "task_type": "domain_review",
+    "review_focus": "MATRIX-004 — DMR chain consistency for PT9L. Verify consistency across: (a) Engineering BOM (PT9L-EBOM01) vs. manufacturing BOM and any released BOM revision; (b) process SOPs and work instructions vs. BOM line items; (c) incoming inspection and in-process inspection criteria vs. design output specifications; (d) packaging and labelling documents vs. approved label artwork and regulatory marking requirements; (e) design transfer records confirming DHF-to-DMR handoff completeness. Flag any BOM line item referencing PT9C, PT3SBT, or BP3L part numbers that lack a documented shared-component or sub-assembly justification. Also check whether PT3SBT references in the design output list and label review document filed under the T1 sample folder are reconciled with the released PT9L DMR.",
+    "input_refs": [
+      "PT9L-EBOM01",
+      "PT9L-SJSC01",
+      "PT9L-T1EB01",
+      "PT9L-FXGB01",
+      "T1 sample folder"
+    ],
+    "evidence_strategy": {
+      "use_page_index": true,
+      "use_relation_index": true,
+      "use_full_text": true,
+      "read_files": [
+        "PT9L-EBOM01",
+        "PT9L-SJSC01",
+        "PT9L-T1EB01",
+        "PT9L-FXGB01"
+      ]
+    },
+    "routing_source": "orchestrator_llm",
+    "review_status": "candidate",
+    "final_decision": null
+  },
+  "input_package": {
+    "role": "DMR/SOP Agent",
+    "goal": "Check design output lists, EBOM, ABOM, BOM, drawings, assembly instructions, process instructions, trial production, packaging, labels, and transfer records.",
+    "system_prompt": "Review DMR/SOP consistency using only supplied evidence IDs.",
+    "retrieval_strategy": {
+      "prefix": "DMR",
+      "patterns": [
+        "design output|EBOM|ABOM|BOM|component list|assembly|work instruction|process|trial production|drawing|material|PT3|PT5|PT9L"
+      ],
+      "rel_contains": [
+        "12 ",
+        "13 ",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "max_hits": 140
+    },
+    "input_schema": {
+      "required_fields": [
+        "project_profile",
+        "mandatory_audit_matrix",
+        "evidence_catalog",
+        "candidate_discovery_inputs"
+      ]
+    },
+    "required_schema": {
+      "required_fields": [
+        "agent",
+        "summary",
+        "findings"
+      ],
+      "agent": "DMR/SOP Agent",
+      "summary": "string",
+      "review_notes": [],
+      "findings": [
+        {
+          "finding_type": "snake_case",
+          "severity": "P1/P2/P3",
+          "claim": "reviewable conclusion",
+          "rationale": "evidence-based reason",
+          "evidence_ids": [],
+          "challenge_questions": []
+        }
+      ]
+    },
+    "evidence_catalog": [
+      {
+        "evidence_id": "DMR-001",
+        "doc_id": "F0148",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\SMT加工说明.via_lo_html.clean.md",
+        "line": 12,
+        "source_text": "1、PCB：PT9L-HFMP01 V1.0拼板；",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-002",
+        "doc_id": "F0149",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品概述.via_lo_html.clean.md",
+        "line": 10,
+        "source_text": "PT9L 红外体温计是一款快速测量体温的产品。具有简单易用、测量迅速、数据准确的特点。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-003",
+        "doc_id": "F0149",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品概述.via_lo_html.clean.md",
+        "line": 88,
+        "source_text": "█ PT9L 产品概述 V 1 .0 文件编号：PT9L-CPGS01 V 1 .0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-004",
+        "doc_id": "F0149",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品概述.via_lo_html.clean.md",
+        "line": 90,
+        "source_text": "█ PT9L 工作原理说明 V 1 .0 文件编号：PT9L-GZYL01 V 1 .0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-005",
+        "doc_id": "F0149",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品概述.via_lo_html.clean.md",
+        "line": 92,
+        "source_text": "█ PT9L 设计原理 V 1 .0 文件编号：PT9L-SJYL01 V 1 .0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-006",
+        "doc_id": "F0150",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品维修指南.via_lo_html.clean.md",
+        "line": 58,
+        "source_text": "**参考附表《 PT9L 测试不良现象及原因分析 》**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-007",
+        "doc_id": "F0150",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品维修指南.via_lo_html.clean.md",
+        "line": 60,
+        "source_text": "**PT9L 测试不良现象及原因分析**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-008",
+        "doc_id": "F0151",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品缺陷定义V1.0.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**PT9L 产品缺陷定义**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-009",
+        "doc_id": "F0151",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品缺陷定义V1.0.via_lo_html.clean.md",
+        "line": 14,
+        "source_text": "产 品 型 号： PT9L",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-010",
+        "doc_id": "F0151",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品缺陷定义V1.0.via_lo_html.clean.md",
+        "line": 37,
+        "source_text": "## PT9L红外体温计功能缺陷等级分析和评价",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-011",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 1,
+        "source_text": "# PT9L-HFMP01 V1.0-带原理图.pdf",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-012",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 3,
+        "source_text": "> 由 `PT9L-HFMP01 V1.0-带原理图.pdf` 导出（PyMuPDF 文本层）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-013",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 12,
+        "source_text": "产品型号:PT9L",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-014",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 21,
+        "source_text": "PT9L-HFXS01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-015",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 24,
+        "source_text": "PT9L-HFMP01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-016",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 58,
+        "source_text": "PT9L-HFXS01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-017",
+        "doc_id": "F0153",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工作原理.via_lo_html.clean.md",
+        "line": 10,
+        "source_text": "PT9L红外体温计是一款快速测量体温的产品。具有简单易用、测量迅速、数据准确的特点。机芯主要由四部分组成：1、测温部分；2、电源部分；3、MCU系统；4、交互模块。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-018",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 2,
+        "source_text": "# 工艺说明-PT9L",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-019",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 13,
+        "source_text": "|  | 探头板焊线 | 导线焊到探头板上 | 1、焊锡：无铅，符合ROHS； 2、恒温电烙铁：最高温度满足元器件焊接温度 | 依次将红、白、黑线焊接到相应标识位置上。 ![工艺说明-PT9L_image_003.png](工艺说明-PT9L.via_xlsx_assets/工艺说明-PT9L_image_003.png) | 要求： 1、红线焊在PCB丝印“1”位置； 2、白线焊在PCB丝印“2”位置； 3、黑线焊在PCB丝印“3”位置。 | 重要 | 导线焊到探头板上 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-020",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 14,
+        "source_text": "|  | 组装探头支架 | 探头支架组装 | 电动螺丝起子 扭力要求：1.8±0.2kgf.cm | 1、将焊接完成的探头装入支架内； 2、将装有探头的支架放置在工装治具内； 3、将螺钉打入PCB螺钉定位孔内。 ![工艺说明-PT9L_image_001.png](工艺说明-PT9L.via_xlsx_assets/工艺说明-PT9L_image_001.png) | 要求： 1、检验探头焊点，无虚焊、漏焊、连焊现象； 2、探头放置平稳无虚位，晃动现象； 3、螺钉安装到位。 | 重要 | 组装探头支架 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-021",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 16,
+        "source_text": "|  | SMT | 贴片 | --- | 1、主板SMT加工参考“PT9L SMT加工说明 PT9L-SMTW01”(按照最新版本执行)； 2、元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)； | 1、 焊接元器件正确，PCB板上相应贴片元件需与BOM中元器件名称规格一一对应，带极性元器件焊接方向正确； 2、 元器件不能有缺口、破裂和烫伤，元器件焊接高度不影响装配，PCB板不能有破损、变形、翘曲，表面清洁、无焊料小圆球； 3、 焊点要表面润湿、完整、连续和圆滑，焊料量适中，焊点位置准确，无漏焊、虚焊、脱焊、立碑、桥接、拉尖等不良缺陷； | 关键工序 | 贴片元器件 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-022",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 17,
+        "source_text": "|  | 烧写 | 主板程序烧写 | 1、工装：PT9L烧写工装PT9L-SHAOXIE； 2、烧写器：合泰Gang-Writer8-8烧写器（需事先下载好要烧写的程序）； 3、需佩戴静电手腕带。 | 参考“PT9L工装操作说明 PT9L-GZSM01”(按照最新版本执行)； | 参考“PT9L工装操作说明 PT9L-GZSM01”(按照最新版本执行)； | 关键工序 | 主板程序烧写 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-023",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 18,
+        "source_text": "|  | 检测 | 主板贴片检测 | 1、工装：PT9L检测工装PT9L-CESHI； 2、电源：输出电压5±0.1V，最大输出电流500mA，电流指示精度0.01mA； 3、需佩戴静电手腕带。 | 1、上电后两个LED灯D1和D2全亮，屏幕显示CB1，然后显示软件版本号，2s后进入休眠，两个LED灯熄灭，显示黑屏，操作人员查看休眠电流，应小于50uA； 2、按下按键B1唤醒，两个LED点亮，LCD全显，再次按下按键保存，CB1完成； 3、若自检未通过，屏幕显示Er1。 | 程序自动检测电池电压，外部NTC，红外传感器的贴片情况，应该满足如下条件： a． 电池电压在2.7V到3.3V之间 b． 红外传感器测温应在10℃到40℃之间 否则，LCD会显示Er1错误提示，此时按下按键会循环显示上面两个测量结果供查找问题。 | 关键工序 | 检测贴片的元件功能、性能、虚焊、连焊 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-024",
+        "doc_id": "F0155",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明首页.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "文件编号： PT9L-GYSM01 V1.0 工艺说明",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-025",
+        "doc_id": "F0155",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明首页.via_lo_html.clean.md",
+        "line": 12,
+        "source_text": "产 品 型 号： PT9L",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-026",
+        "doc_id": "F0156",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工装操作说明 V1.0-PT9L.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# 工装操作说明 V1.0-PT9L",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-027",
+        "doc_id": "F0156",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工装操作说明 V1.0-PT9L.via_lo_html.clean.md",
+        "line": 47,
+        "source_text": "1、机芯检测工装：PT9L-CESHI",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-028",
+        "doc_id": "F0156",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工装操作说明 V1.0-PT9L.via_lo_html.clean.md",
+        "line": 49,
+        "source_text": "2、烧写工装：PT9L-SHAOXIE",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-029",
+        "doc_id": "F0156",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工装操作说明 V1.0-PT9L.via_lo_html.clean.md",
+        "line": 53,
+        "source_text": "需要的工装和工具：烧写工装PT9L-SHAOXIE，合泰Gang-Writer8-8烧写器（需事先下载好要烧写的程序），J-LINK。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-030",
+        "doc_id": "F0156",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工装操作说明 V1.0-PT9L.via_lo_html.clean.md",
+        "line": 57,
+        "source_text": "| 1 | 工装准备：<br>1、使用杜邦线连接工装的ICP端子和合泰烧写器的烧写端口：<br>工装ICP“V”脚连烧写器VDD1脚；<br>工装ICP“D”脚连烧写器ICPDA1脚；<br>工装ICP“C”脚连烧写器ICPCK1脚；<br>工装ICP“G”脚连烧写器GND1脚； |  | ![图片 8](工装操作说明 V1.0-PT9L.via_lo_html_assets/工装操作说明 V1.0-PT9L_html_741cfa65.png) |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-031",
+        "doc_id": "F0156",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工装操作说明 V1.0-PT9L.via_lo_html.clean.md",
+        "line": 58,
+        "source_text": "| 2 | 合泰烧写器上电 | 烧写器的STATUS灯亮； | ![图片 6](工装操作说明 V1.0-PT9L.via_lo_html_assets/工装操作说明 V1.0-PT9L_html_dc076dec.png) |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-032",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 2,
+        "source_text": "# 机芯类组件清单PT9L-EBOM01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-033",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 8,
+        "source_text": "| ![机芯类组件清单PT9L-EBOM01 V1.0_image_001.png](机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx_assets/机芯类组件清单PT9L-EBOM01 V1.0_image_001.png) |  | 文件编号：PT9L-EBOM01 V1.0 PT9L机芯类【组件清单】 |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-034",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 10,
+        "source_text": "|  |  | 文件编号：PT9L-EBOM01 V1.0 PT9L机芯类【组件清单】 |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-035",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "source_text": "| 24 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-036",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 60,
+        "source_text": "| ![机芯类组件清单PT9L-EBOM01 V1.0_image_002.png](机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx_assets/机芯类组件清单PT9L-EBOM01 V1.0_image_002.png) |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-037",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 83,
+        "source_text": "| ![机芯类组件清单PT9L-EBOM01 V1.0_image_003.png](机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx_assets/机芯类组件清单PT9L-EBOM01 V1.0_image_003.png) |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-038",
+        "doc_id": "F0158",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\目标代码输出确认单.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "编号：PT9L-MBSC01 V1.0 表号：QR-7.3-11-01/E0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-039",
+        "doc_id": "F0158",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\目标代码输出确认单.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "适用机型：PT9L",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-040",
+        "doc_id": "F0159",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计原理.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "PT9L -SJYL01 V 1 .0 设计原理",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-041",
+        "doc_id": "F0159",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计原理.via_lo_html.clean.md",
+        "line": 10,
+        "source_text": "PT9L红外体温计是一款快速测量体温的产品。具有简单易用、测量迅速、数据准确的特点。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-042",
+        "doc_id": "F0159",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计原理.via_lo_html.clean.md",
+        "line": 30,
+        "source_text": "可满足PT9L的控制需要。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-043",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 10,
+        "source_text": "产品型号: PT9L 提交部门:智能产品部 提交: 年 月 日 审核: 年 月 日",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-044",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 17,
+        "source_text": "| 1 | 主板电路原理图 |  | PT9L-HFXS01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-045",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 18,
+        "source_text": "| 2 | 主板PCB图 | Top Layer 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-046",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 19,
+        "source_text": "| 2 | 主板PCB图 | Top Overlay 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-047",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 20,
+        "source_text": "| 2 | 主板PCB图 | Bottom Layer 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-048",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 21,
+        "source_text": "| 2 | 主板PCB图 | Bottom Overlay 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-049",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 8,
+        "source_text": "andon文件编号：PT9L-P BOM01 V1 . 0 PT9L包装BOM(美版)【组件清单】",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-050",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 21,
+        "source_text": "| 1 | 彩包装 | K040200021397620814 | 350g白卡纸 覆哑膜 |  | PT9L-CBZP01 |  |  | PT9L |  | 1 |  | √ | A |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-051",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 22,
+        "source_text": "| 2 | 纸托 | K040500002717620814 | 350g白卡纸 覆哑膜 |  | PT9L-F04 |  |  | PT9L |  | 1 |  | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-052",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 23,
+        "source_text": "| 3 | 说明书 | K040700022027620814 | 70g双胶纸 |  | PT9L-SMSPO1 |  |  | PT9L |  | 1 |  | √ | A |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-053",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 24,
+        "source_text": "| 4 | 保护膜 | K030200025221070216 | PE |  | PT9L-P10 |  |  | PT9L |  | 1 |  | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-054",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 25,
+        "source_text": "| 5 | 铭牌 | K040800025021030093 | 25μ透明PET |  | PT9L-F02 |  |  | PT9L |  | 1 |  | √ | B |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-055",
+        "doc_id": "F0162",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\PT9L包装BOM.via_xlsx.clean.md",
+        "line": 2,
+        "source_text": "# PT9L包装BOM",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-056",
+        "doc_id": "F0162",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\PT9L包装BOM.via_xlsx.clean.md",
+        "line": 8,
+        "source_text": "| ![PT9L包装BOM_image_001.png](PT9L包装BOM.via_xlsx_assets/PT9L包装BOM_image_001.png) |  | 文件编号：PT9L-PB0M1 V1.0 PT9L包装B0M（美版）【组件清单】 |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-057",
+        "doc_id": "F0162",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\PT9L包装BOM.via_xlsx.clean.md",
+        "line": 10,
+        "source_text": "|  |  | 文件编号：PT9L-PB0M1 V1.0 PT9L包装B0M（美版）【组件清单】 |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-058",
+        "doc_id": "F0162",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\PT9L包装BOM.via_xlsx.clean.md",
+        "line": 14,
+        "source_text": "| 1 | 彩包装 | K040200021397620814 | 350g白卡纸 覆哑膜 | PT9L-CBZP01 | PT9L |  | 1 |  | √ | A |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-059",
+        "doc_id": "F0162",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\PT9L包装BOM.via_xlsx.clean.md",
+        "line": 15,
+        "source_text": "| 2 | 纸托 | K040500002717620814 | 350g白卡纸 覆哑膜 | PT9L-F04 | PT9L |  | 1 |  | √ | C |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-060",
+        "doc_id": "F0162",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\PT9L包装BOM.via_xlsx.clean.md",
+        "line": 16,
+        "source_text": "| 3 | 说明书 | K040700022027620814 | 70g双胶纸 | PT9L-SMSP01 | PT9L |  | 1 |  | √ | A |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-061",
+        "doc_id": "F0163",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K030200025221070216-图纸-PT9L-P10+V2.0.pdf.md",
+        "line": 2,
+        "source_text": "# K030200025221070216-图纸-PT9L-P10+V2.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-062",
+        "doc_id": "F0163",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K030200025221070216-图纸-PT9L-P10+V2.0.pdf.md",
+        "line": 4,
+        "source_text": "> 由 `K030200025221070216-图纸-PT9L-P10+V2.0.pdf` 导出（PyMuPDF 文字块提取，共 1 页）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-063",
+        "doc_id": "F0163",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K030200025221070216-图纸-PT9L-P10+V2.0.pdf.md",
+        "line": 27,
+        "source_text": "<tr><td style=\"padding:6px 10px; border:1px solid #dde1ea; background:#f8f9fb\">16</td><td style=\"padding:6px 10px; border:1px solid #dde1ea\">PT9L&lt;br&gt;PP+PE&lt;br&gt;Model NO.&lt;br&gt;Pro material&lt;br&gt;Date&lt;br&gt;Tolerance&lt;br&gt;Signature&lt;br&gt;3</td></tr>",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-064",
+        "doc_id": "F0163",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K030200025221070216-图纸-PT9L-P10+V2.0.pdf.md",
+        "line": 28,
+        "source_text": "<tr><td style=\"padding:6px 10px; border:1px solid #dde1ea; background:#f8f9fb\">17</td><td style=\"padding:6px 10px; border:1px solid #dde1ea\">保护膜&lt;br&gt;Part name&lt;br&gt;Surf dispose&lt;br&gt;Design&lt;br&gt;2&lt;br&gt;PT9L-P10&lt;br&gt;Drawing No.&lt;br&gt;1:1</td></tr>",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-065",
+        "doc_id": "F0163",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K030200025221070216-图纸-PT9L-P10+V2.0.pdf.md",
+        "line": 39,
+        "source_text": "- 源文件：`K030200025221070216-图纸-PT9L-P10+V2.0.pdf`",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-066",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 1,
+        "source_text": "# PT9L 外箱图纸 F01（K04010001435）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-067",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 3,
+        "source_text": "> 由 `K040100014357620814-图纸-PT9L-F01+V1.0.pdf` **按 `SKILL_2D_Drawing_Reading.md` 流程读图**：PDF 是 6052×4211 pt 的 A0+ 大尺寸印刷展开图，文字层 0 字符（**全部转曲**），200 DPI 分块渲染（3×2=6 块）后视觉读图。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-068",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 20,
+        "source_text": "| **Drawing NO.** | PT9L-F01 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-069",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 23,
+        "source_text": "| **Model NO.** | PT9L |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-070",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 24,
+        "source_text": "| **Pro material** | （未填，由技术要求第 3 条详写） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-071",
+        "doc_id": "F0164",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+        "line": 78,
+        "source_text": "- 产品标签（型号 PT9L、电源 4.5V DC 等）；",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-072",
+        "doc_id": "F0165",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-073",
+        "doc_id": "F0165",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf.md",
+        "line": 2,
+        "source_text": "# PT9L 彩包装（PT9L-CBZP01 V2.0）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-074",
+        "doc_id": "F0165",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf.md",
+        "line": 4,
+        "source_text": "> 源文件：K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf（彩包装展开图，文字已转曲）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-075",
+        "doc_id": "F0165",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf.md",
+        "line": 12,
+        "source_text": "![CBZP01 V2.0 概览](_assets/K040200021397620814-图纸-PT9L-CBZP01+V2.0/overview.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-076",
+        "doc_id": "F0165",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf.md",
+        "line": 14,
+        "source_text": "> PT9L 额温计的零售彩包装（彩盒）展开图，橙/白双色外观，正面印有产品渲染图及功能说明，背面印有技术参数和多语言说明。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-077",
+        "doc_id": "F0165",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf.md",
+        "line": 22,
+        "source_text": "| **Drawing NO.** | PT9L-CBZP01 V2.0 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-078",
+        "doc_id": "F0166",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040500002717620814-图纸-PT9L-F04+V1.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-079",
+        "doc_id": "F0166",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040500002717620814-图纸-PT9L-F04+V1.0.pdf.md",
+        "line": 2,
+        "source_text": "# PT9L 纸托（PT9L-F04）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-080",
+        "doc_id": "F0166",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040500002717620814-图纸-PT9L-F04+V1.0.pdf.md",
+        "line": 4,
+        "source_text": "> 源文件：K040500002717620814-图纸-PT9L-F04+V1.0.pdf（内托插板展开图，文字已转曲）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-081",
+        "doc_id": "F0166",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040500002717620814-图纸-PT9L-F04+V1.0.pdf.md",
+        "line": 11,
+        "source_text": "![PT9L-F04 概览](_assets/K040500002717620814-图纸-PT9L-F04+V1.0/overview.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-082",
+        "doc_id": "F0166",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040500002717620814-图纸-PT9L-F04+V1.0.pdf.md",
+        "line": 13,
+        "source_text": "> PT9L 彩包装内部纸托（纸插板），用于固定产品，无印刷。结构为插托折叠型，展开图如上。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-083",
+        "doc_id": "F0166",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040500002717620814-图纸-PT9L-F04+V1.0.pdf.md",
+        "line": 21,
+        "source_text": "| **Drawing NO.** | PT9L-F04 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-084",
+        "doc_id": "F0167",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040700022027620814-图纸-PT9L-SMSP01+V1.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-085",
+        "doc_id": "F0167",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040700022027620814-图纸-PT9L-SMSP01+V1.0.pdf.md",
+        "line": 2,
+        "source_text": "# PT9L 说明书（PT9L-SMSP01 V1.0）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-086",
+        "doc_id": "F0167",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040700022027620814-图纸-PT9L-SMSP01+V1.0.pdf.md",
+        "line": 4,
+        "source_text": "> 源文件：K040700022027620814-图纸-PT9L-SMSP01+V1.0.pdf（说明书版面展开图，文字已转曲）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-087",
+        "doc_id": "F0167",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040700022027620814-图纸-PT9L-SMSP01+V1.0.pdf.md",
+        "line": 11,
+        "source_text": "![SMSP01 概览](_assets/K040700022027620814-图纸-PT9L-SMSP01+V1.0/overview.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-088",
+        "doc_id": "F0167",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040700022027620814-图纸-PT9L-SMSP01+V1.0.pdf.md",
+        "line": 13,
+        "source_text": "> PT9L 额温计说明书（Quick Reference Guide）版面展开图。展开尺寸 250×300 mm，折叠成型尺寸 50×150 mm。内容包含使用说明、功能键说明、温度规格参数表及多语言声明（正面/背面）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-089",
+        "doc_id": "F0167",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040700022027620814-图纸-PT9L-SMSP01+V1.0.pdf.md",
+        "line": 21,
+        "source_text": "| **Drawing NO.** | PT9L-SMSP01 V1.0 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-090",
+        "doc_id": "F0168",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800021467620814-图纸-PT1-F05+V1.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-091",
+        "doc_id": "F0168",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800021467620814-图纸-PT1-F05+V1.0.pdf.md",
+        "line": 21,
+        "source_text": "| **Drawing NO.** | PT1-F05 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-092",
+        "doc_id": "F0168",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800021467620814-图纸-PT1-F05+V1.0.pdf.md",
+        "line": 25,
+        "source_text": "| **Pro material** | 25# 透明 PET 覆哑胶 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-093",
+        "doc_id": "F0169",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800021487620814-图纸-PT1-F07+V1.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-094",
+        "doc_id": "F0169",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800021487620814-图纸-PT1-F07+V1.0.pdf.md",
+        "line": 21,
+        "source_text": "| **Drawing NO.** | PT1-F07 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-095",
+        "doc_id": "F0169",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800021487620814-图纸-PT1-F07+V1.0.pdf.md",
+        "line": 25,
+        "source_text": "| **Pro material** | 80g 不干胶铜版纸，覆膜 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-096",
+        "doc_id": "F0170",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025021030093-图纸-PT9L-F02+V1.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-097",
+        "doc_id": "F0170",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025021030093-图纸-PT9L-F02+V1.0.pdf.md",
+        "line": 2,
+        "source_text": "# PT9L 铭牌（PT9L-F02）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-098",
+        "doc_id": "F0170",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025021030093-图纸-PT9L-F02+V1.0.pdf.md",
+        "line": 4,
+        "source_text": "> 源文件：K040800025021030093-图纸-PT9L-F02+V1.0.pdf（铭牌印刷图，PDF 尺寸 842×595 pt，文字已转曲）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-099",
+        "doc_id": "F0170",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025021030093-图纸-PT9L-F02+V1.0.pdf.md",
+        "line": 12,
+        "source_text": "![PT9L-F02 概览](_assets/K040800025021030093-图纸-PT9L-F02+V1.0/overview.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-100",
+        "doc_id": "F0170",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025021030093-图纸-PT9L-F02+V1.0.pdf.md",
+        "line": 14,
+        "source_text": "> 产品铭牌（name plate）：贴附于 PT9L 额温计机身表面的长方形标签，含产品信息、制造商、LOT 和 IP22 标识。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-101",
+        "doc_id": "F0170",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025021030093-图纸-PT9L-F02+V1.0.pdf.md",
+        "line": 22,
+        "source_text": "| **Drawing NO.** | PT9L-F02 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-102",
+        "doc_id": "F0171",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025031030093-图纸-PT9L-F03+V1.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-103",
+        "doc_id": "F0171",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025031030093-图纸-PT9L-F03+V1.0.pdf.md",
+        "line": 2,
+        "source_text": "# PT9L 彩包装标签（PT9L-F03）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-104",
+        "doc_id": "F0171",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025031030093-图纸-PT9L-F03+V1.0.pdf.md",
+        "line": 4,
+        "source_text": "> 源文件：K040800025031030093-图纸-PT9L-F03+V1.0.pdf（二维码不干胶标签印刷图，文字已转曲）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-105",
+        "doc_id": "F0171",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025031030093-图纸-PT9L-F03+V1.0.pdf.md",
+        "line": 11,
+        "source_text": "![PT9L-F03 概览](_assets/K040800025031030093-图纸-PT9L-F03+V1.0/overview.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-106",
+        "doc_id": "F0171",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025031030093-图纸-PT9L-F03+V1.0.pdf.md",
+        "line": 13,
+        "source_text": "> GS1 DataMatrix/QR 二维码标签，贴附于 PT9L 彩包装盒。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-107",
+        "doc_id": "F0171",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800025031030093-图纸-PT9L-F03+V1.0.pdf.md",
+        "line": 21,
+        "source_text": "| **Drawing NO.** | PT9L-F03 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-108",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-14 自动生成模板 + 待填 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-109",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 2,
+        "source_text": "# T040800073941030093-PT3-F21 2D 图读图报告",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-110",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 4,
+        "source_text": "> 源文件：`T040800073941030093-PT3-F21.pdf`（PDF 尺寸 741×488 pt，文字层字符 < 400，矢量图纸）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-111",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 12,
+        "source_text": "![T040800073941030093-PT3-F21 概览](_assets/T040800073941030093-PT3-F21/overview.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-112",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 20,
+        "source_text": "| **Drawing NO.** | （待填 - 见右下标题栏） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-113",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 22,
+        "source_text": "| **Pro material** | （待填） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-114",
+        "doc_id": "F0173",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\外箱条码标签-PT1-F07 V1.0.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-13 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-115",
+        "doc_id": "F0173",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\外箱条码标签-PT1-F07 V1.0.pdf.md",
+        "line": 21,
+        "source_text": "| **Drawing NO.** | PT1-F07 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-116",
+        "doc_id": "F0173",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\外箱条码标签-PT1-F07 V1.0.pdf.md",
+        "line": 25,
+        "source_text": "| **Pro material** | 80g 不干胶铜版纸，覆膜 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-117",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-06-02 视觉读图填写 -->",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-118",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 6,
+        "source_text": "> **2026-06-02 按 `SKILL_2D_Drawing_Reading.md` 9 步强制工作流视觉读图后填写。**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-119",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 8,
+        "source_text": "> **关键背景**：本图非 T-Z1/PT9L 自制结构件，是 **外购供应商图纸**（天津小泉精密金属制品有限公司 2018-09-17），用于 PT9L 红外探头组件中的\"散热器金属套\"，与 `FDIR-V14_散热器压块_REV01_0714.pdf` 配合使用（见技术要求第 4 条）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-120",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 26,
+        "source_text": "| **图番（Drawing NO.）** | **5B44C** |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-121",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 28,
+        "source_text": "| **材质（Pro material）** | **黄铜** |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-122",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 117,
+        "source_text": "| C-2 | 散热器金属套在 PT9L 整机中的功能位置（包覆 PIR 红外传感器？散热？屏蔽？） | 3D 装配图 + 工程师 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-123",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 3,
+        "source_text": "> **来源 PDF**：`02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/FDIR-V14_散热器压块_REV01_0714.pdf`",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-124",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 4,
+        "source_text": "> **生成时间**：2026-06-02（按 `SKILL_2D_Drawing_Reading.md` 9 步流程视觉读图）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-125",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 6,
+        "source_text": "> **关联**：[疑点表 §4.1](../../../../wiki/drawings/pt9l-2d-audit-doubts.md#41-75cee0-散热器金属套图号-5b44cgxt-001) **75CEE0 黄铜套 2m 跌落要求** 的配合件；[疑点表 §6.3 新增](#疑点新增) 总装图 BOM 编号 13 PT3-M01 = 本图",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-126",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 28,
+        "source_text": "**iHealth 内部图号映射**：根据 [总装图 BOM](PT9L-总装图-v1.0-20240627.pdf.md) 编号 13，本件在 PT9L BOM 中以 **PT3-M01** 入账（\"压块\"）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-127",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 98,
+        "source_text": "- **PT9L BOM 中位置**：[总装图序号 13 (PT3-M01)](PT9L-总装图-v1.0-20240627.pdf.md)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-128",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 99,
+        "source_text": "- **配合 75CEE0 在 BOM 中位置**：序号 14 (PT3-M03)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-129",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 1,
+        "source_text": "# PT3 双联弹簧 REV01 (V1.0) 2D 图读图报告",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-130",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 3,
+        "source_text": "> **来源 PDF**：`02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf`",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-131",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 4,
+        "source_text": "> **生成时间**：2026-06-02（按 `SKILL_2D_Drawing_Reading.md` 流程视觉读图）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-132",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 6,
+        "source_text": "> **共用件**：**PT3 项目原件**，被 PT9L DHF 借用归档（外购件 / 设计参照）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-133",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 14,
+        "source_text": "| **Drawing NO.** | **PT3-P10** |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-134",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 17,
+        "source_text": "| **Model NO.** | **PT3**（注：归档于 PT9L DHF，实为 PT3 项目原件） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-135",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 1,
+        "source_text": "# PT9L 外观图 V1.0 (2024-06-27) 2D 图读图报告",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-136",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 3,
+        "source_text": "> **来源 PDF**：`02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT9L-外观图-v1.0-20240627.pdf`",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-137",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 4,
+        "source_text": "> **生成时间**：2026-06-02（按 `SKILL_2D_Drawing_Reading.md` 流程视觉读图）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-138",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 14,
+        "source_text": "| **Drawing NO.** | **PT9L-F01**（⚠️ 与外箱 PT9L-F01 同号但不同件） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-139",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 17,
+        "source_text": "| **Model NO.** | PT9L |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "DMR-140",
+        "doc_id": "F0177",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-外观图-v1.0-20240627.pdf.md",
+        "line": 18,
+        "source_text": "| **Pro material** | ABS（主体） |",
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "project_profile": {
+      "profile_source": "Project Scout Agent",
+      "target_model": "PT9L",
+      "product_family": [
+        "PT9L",
+        "PT9C",
+        "PT2L",
+        "PT3SBT",
+        "BP3L"
+      ],
+      "document_id_patterns": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ],
+      "primary_scope_rules": [
+        "PT9L is the target product model for this DHF",
+        "Documents in '2L风险改 - 历史文件' folder are explicitly historical",
+        "Documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical/draft folders require justification"
+      ],
+      "key_entities": {
+        "customer": "九安 (iHealth / Jiuan Medical)",
+        "customer_representative": "赵一平",
+        "product_description": "红外非接触式额头温度计 (Infrared No-Touch Forehead Thermometer)",
+        "intended_use": "Intermittent measurement of body temperature from forehead skin surface on people of all ages; consumer home use and healthcare provider use",
+        "bluetooth": "PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)"
+      },
+      "regulatory_baseline": [
+        "ISO 80601-2-56:2017/Amd1:2018 (international, applicable)",
+        "EN ISO 80601-2-56:2017+A1:2018 (EU, applicability differs between draft and final design input)",
+        "ASTM E1965-98:2016 (US, applicable)",
+        "ASTM E1965-98:2023 (US, applicable)",
+        "MDR 2017/745 (EU, applicability differs between draft and final design input)",
+        "ISO 14971:2019 / EN ISO 14971:2019 / EN ISO 14971:2019/A11:2021 (risk management)",
+        "ISO/TR 24971:2020 (risk assessment methodology)",
+        "EN 60601-1-6:2010+A1:2015+A2:2021 (usability)",
+        "GB/T 16886.1-2022 / ISO 10993-1:2018 (biocompatibility, China)",
+        "510(k) registration: andon responsible and paying",
+        "CE registration: applicability not yet determined per final design input"
+      ],
+      "candidate_discovery_hints": [
+        "PT9C appears as a sub-component PCB document number and as a standalone product in clinical evaluation and user test documents",
+        "PT3SBT appears in design output list two and a label review document filed under T1 sample folder",
+        "BP3L software diagrams appear in both the main software design folder and T1 sample subfolder",
+        "PT2L risk documents are in a '历史文件' subfolder but one (F0013) carries a PT9L document number internally"
+      ]
+    },
+    "mandatory_audit_matrix": [
+      {
+        "matrix_id": "MATRIX-004",
+        "stage_axis": "dmr_chain",
+        "dimension_axis": "dmr_sop_consistency",
+        "suggested_agent": "DMR/SOP Agent",
+        "check_goal": "Verify consistency across BOM, process, inspection, packaging, labels, drawings, and transfer records.",
+        "assigned_agent": "DMR/SOP Agent"
+      }
+    ],
+    "corpus_scope": "full_markdown",
+    "assignment": {
+      "assignment_id": "ASG-0005",
+      "target_agent": "DMR/SOP Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-004 — DMR chain consistency for PT9L. Verify consistency across: (a) Engineering BOM (PT9L-EBOM01) vs. manufacturing BOM and any released BOM revision; (b) process SOPs and work instructions vs. BOM line items; (c) incoming inspection and in-process inspection criteria vs. design output specifications; (d) packaging and labelling documents vs. approved label artwork and regulatory marking requirements; (e) design transfer records confirming DHF-to-DMR handoff completeness. Flag any BOM line item referencing PT9C, PT3SBT, or BP3L part numbers that lack a documented shared-component or sub-assembly justification. Also check whether PT3SBT references in the design output list and label review document filed under the T1 sample folder are reconciled with the released PT9L DMR.",
+      "input_refs": [
+        "PT9L-EBOM01",
+        "PT9L-SJSC01",
+        "PT9L-T1EB01",
+        "PT9L-FXGB01",
+        "T1 sample folder"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-EBOM01",
+          "PT9L-SJSC01",
+          "PT9L-T1EB01",
+          "PT9L-FXGB01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    "candidate_discovery_inputs": [],
+    "agent_runs": [
+      {
+        "run_id": "RUN-0001",
+        "agent": "Candidate Discovery Agent",
+        "task_type": "candidate_discovery",
+        "assignment_id": "ASG-0001",
+        "summary": "Cross-corpus scan of the PT9L DHF/DMR package reveals 14 candidate consistency issues spanning legacy product residue in active documents, document-number mismatches, unsigned approvals, wrong-product references in BOM and label documents, regulatory applicability conflicts, software diagram contamination, and blood-pressure-specific language appearing in a thermometer DHF.",
+        "finding_count": 11,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0002",
+        "agent": "Hardware Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0002",
+        "summary": "Hardware audit of PT9L DHF/DMR reveals five substantive consistency findings: a blood-pressure residue phrase in the battery design-verification plan/report, an unresolved BOM conflict between PT3-P10 dual-spring and PT5-M02/M03 separate springs, a total-assembly drawing part-number anomaly (T-Z1-P10 used for two distinct PCBs), missing pass/fail verdicts in multiple T1 sample review checklists, and object-temperature mode accuracy tolerance (±0.2 °C) applied at 30 °C and 45 °C in software test plans despite the design-input accuracy specification only requiring ±0.2 °C for ≥35 °C and ≤42 °C.",
+        "finding_count": 5,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0003",
+        "agent": "Risk Traceability Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0003",
+        "summary": "The PT9L risk management file set contains multiple traceability chain breaks: the current Risk Management Report references document number PT9L-FXGB01 V1.0 while the active risk set has been revised to V2.0; the active Risk Management Plan carries document number IFT-FXJH01 rather than PT9L-FXJH01; F0013 (PT2L risk plan) internally carries a PT9L-series document number creating a product-identity conflict; no evidence of Bluetooth-specific hazard verification is present in the supplied corpus; DFMEA files (F0071, F0074) are not cross-referenced to the ISO 14971 risk assessment; and the design verification plan/report cites only PT9L-FXGB01 V1.0 while the current report is V2.0, leaving the closed-loop confirmation potentially misaligned.",
+        "finding_count": 8,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0004",
+        "agent": "Software Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0004",
+        "summary": "PT9L software lifecycle audit reveals five substantive findings: BP3L software diagrams appear in the primary PT9L software design folder and T1 sample subfolder without documented shared-component rationale; the software design document version identifier (E0 23.11) cannot be reconciled with the V1.0 identifier cited in test/validation records and BOM; no Bluetooth software requirements or corresponding test/validation evidence is present in the supplied corpus; the IEC 60601-1 test report references software design document DN:PT9L-RJFA01 V1.0 which does not appear in the evidence catalog; and a label review document filed under the active T1 sample folder carries PT2L as the primary product model without justification.",
+        "finding_count": 5,
+        "candidate_count": 0
+      }
+    ]
+  },
+  "llm_output": {
+    "agent": "DMR/SOP Agent",
+    "summary": "DMR/SOP audit of PT9L design output chain reveals seven substantive findings including a document-number collision on drawing PT9L-F01, a part-number mismatch between the two packaging BOM files, PT3-origin shared-component drawings archived in the PT9L DHF without cross-product justification, an incomplete drawing title-block in a packaging label drawing, a missing outer-carton BOM entry in the primary packaging BOM, a process instruction referencing EBOM by document number without pinning a version, and the design output list carrying blank approval-date fields indicating the formal sign-off record is incomplete.",
+    "review_notes": [
+      "EBOM PT9L-EBOM01 V1.0 (DMR-032 to DMR-037) is internally consistent: PCB line item PT9L-HFMP01 V1.0 matches the schematic drawing reference in the design output list (DMR-044 to DMR-048) and the SMT process instruction (DMR-021).",
+      "Process instruction PT9L-GYSM01 V1.0 (DMR-024, DMR-025) covers all major assembly steps (SMT, probe wire soldering, probe bracket assembly, firmware flash, functional test) and each step cites the relevant downstream document.",
+      "Tooling document PT9L-GZSM01 (DMR-026 to DMR-031) is consistent with the process instruction references to PT9L-CESHI and PT9L-SHAOXIE fixtures.",
+      "Packaging drawing PT9L-CBZP01 is at V2.0 in the drawing file (DMR-077) while the BOM entries in both packaging BOM files list it as V1.0 or without version; this version delta is noted but the drawing number itself is consistent.",
+      "Firmware target-code confirmation sheet PT9L-MBSC01 V1.0 (DMR-038, DMR-039) is present and references PT9L, consistent with the process instruction burn step (DMR-022).",
+      "Product defect definition PT9L (DMR-008 to DMR-010) and maintenance guide (DMR-006, DMR-007) are present and reference PT9L consistently.",
+      "Supplier drawing 75CEE0 (DMR-117 to DMR-122) is identified as an external supplier document; its presence in the DHF is noted but the functional role of the brass heat-sink sleeve in the PT9L assembly is not confirmed by any BOM line item in the supplied EBOM evidence."
+    ],
+    "findings": [
+      {
+        "finding_type": "drawing_number_collision",
+        "severity": "P1",
+        "claim": "Drawing number PT9L-F01 is assigned to two distinct physical items — the outer carton and the product appearance drawing — creating an unresolvable document-control conflict in the DMR.",
+        "rationale": "The outer-carton drawing file (DMR-068) declares Drawing NO. PT9L-F01 for the shipping carton. The product appearance drawing file (DMR-138) also declares Drawing NO. PT9L-F01 for the ABS-body exterior, with an explicit auditor warning '⚠️ 与外箱 PT9L-F01 同号但不同件'. Two released drawings sharing the same document number violates document-control requirements and makes unambiguous BOM or process-instruction citation impossible.",
+        "evidence_ids": [
+          "DMR-068",
+          "DMR-138"
+        ],
+        "challenge_questions": [
+          "Which of the two PT9L-F01 drawings is the formally released version in the document-control system, and what is the ECO or revision history for each?",
+          "Has a corrective action been initiated to assign a unique drawing number to one of the two items, and if so what is the new number and its release status?",
+          "Are there any BOM lines, work instructions, or inspection records that cite PT9L-F01 — and if so, which physical item do they intend to reference?"
+        ]
+      },
+      {
+        "finding_type": "packaging_bom_part_number_mismatch",
+        "severity": "P1",
+        "claim": "The two packaging BOM documents for the PT9L US version carry different document numbers for the same BOM (PT9L-PBOM01 vs. PT9L-PB0M1) and the instruction-manual part number differs between them (PT9L-SMSPO1 vs. PT9L-SMSP01), indicating at least one file is either a draft or an uncorrected transcription error that has not been reconciled in the DMR.",
+        "rationale": "DMR-049 (F0161) shows the BOM header as 'PT9L-P BOM01 V1.0' and the manual part number as 'PT9L-SMSPO1' (letter O in place of digit 0). DMR-056 and DMR-057 (F0162) show the header as 'PT9L-PB0M1 V1.0' (digit 0 in place of letter O in BOM) and the manual part number as 'PT9L-SMSP01' (correct). The drawing for the manual (DMR-089) uses PT9L-SMSP01 V1.0. The two BOM files therefore cannot both be the released DMR record; one contains a typographic corruption that has propagated into the document number itself.",
+        "evidence_ids": [
+          "DMR-049",
+          "DMR-052",
+          "DMR-053",
+          "DMR-056",
+          "DMR-057"
+        ],
+        "challenge_questions": [
+          "Which of the two packaging BOM files (F0161 or F0162) is the formally released DMR record, and what is its controlled document number?",
+          "Has the typographic discrepancy in the manual part number (SMSPO1 vs. SMSP01) been identified and corrected in the document-control system?",
+          "Is there a single master packaging BOM that supersedes both files, and if so what is its document ID and version?"
+        ]
+      },
+      {
+        "finding_type": "cross_product_drawing_without_justification",
+        "severity": "P2",
+        "claim": "Two drawings archived in the PT9L DHF design output folder carry PT3 or PT1 product identifiers (PT3-P10 dual spring, PT1-F05 label, PT1-F07 outer-carton label) without any documented shared-component or sub-assembly justification linking them to the PT9L DMR.",
+        "rationale": "DMR-133 and DMR-134 (F0176) show Drawing NO. PT3-P10 with Model NO. PT3, explicitly noted as 'PT3 项目原件' borrowed into the PT9L DHF. DMR-091 (F0168) shows Drawing NO. PT1-F05 and DMR-094, DMR-115 (F0169, F0173) show Drawing NO. PT1-F07, both referencing PT1 not PT9L. No evidence in the supplied corpus provides a formal shared-component declaration, design-change notice, or sub-assembly justification that authorises these PT3/PT1 drawings as controlled PT9L DMR outputs. The assignment brief specifically flags PT3SBT references requiring justification.",
+        "evidence_ids": [
+          "DMR-129",
+          "DMR-130",
+          "DMR-132",
+          "DMR-133",
+          "DMR-134"
+        ],
+        "challenge_questions": [
+          "Is there a formal shared-component or common-part declaration that authorises PT3-P10 (dual spring) as a controlled component of the PT9L assembly, and where is it filed in the DMR?",
+          "Are PT1-F05 and PT1-F07 label drawings intentionally shared between PT1 and PT9L product lines, and if so is there a released cross-reference document or ECO that records this decision?",
+          "Do the PT9L EBOM or ABOM contain line items that explicitly cite PT3-P10, PT1-F05, or PT1-F07 part numbers, and if not, why are these drawings present in the PT9L design output folder?"
+        ]
+      },
+      {
+        "finding_type": "incomplete_drawing_title_block",
+        "severity": "P2",
+        "claim": "The packaging label drawing filed as T040800073941030093-PT3-F21 has an incomplete title block with Drawing NO. and Pro material fields marked as '待填' (to be filled), meaning this drawing has been archived in the PT9L DHF in an unfinished state and cannot serve as a controlled DMR output.",
+        "rationale": "DMR-112 shows Drawing NO. as '（待填 - 见右下标题栏）' and DMR-113 shows Pro material as '（待填）'. A drawing with unfilled mandatory title-block fields does not meet the minimum requirements for a released design output document. The file name contains 'PT3-F21', further suggesting it may be a PT3-origin document that was never completed for PT9L use.",
+        "evidence_ids": [
+          "DMR-108",
+          "DMR-109",
+          "DMR-110",
+          "DMR-112",
+          "DMR-113"
+        ],
+        "challenge_questions": [
+          "Has this drawing ever been formally released with a complete title block, and if so what is the released document number and version?",
+          "Is PT3-F21 a PT3-origin drawing that was intended to be adapted for PT9L, and if so what is the current status of that adaptation?",
+          "Which BOM line item in the PT9L packaging BOM corresponds to this drawing, and how is the component currently controlled in production without a complete drawing?"
+        ]
+      },
+      {
+        "finding_type": "missing_outer_carton_in_primary_packaging_bom",
+        "severity": "P2",
+        "claim": "The outer carton (PT9L-F01) is present as a drawing in the design output folder but does not appear as a line item in either of the two packaging BOM files, leaving the outer carton uncontrolled in the released packaging BOM.",
+        "rationale": "DMR-066 to DMR-071 (F0164) document the outer carton drawing PT9L-F01 V1.0. The packaging BOM in F0161 (DMR-050 to DMR-054) lists five items: colour box, paper tray, manual, protective film, and nameplate. The packaging BOM in F0162 (DMR-058 to DMR-060) lists the same five items. Neither BOM contains a line item for the outer carton or references drawing PT9L-F01 (carton). An outer carton is a required packaging component for shipping and regulatory labelling purposes; its absence from the BOM means it is not subject to incoming inspection or version control through the DMR.",
+        "evidence_ids": [
+          "DMR-050",
+          "DMR-051",
+          "DMR-052",
+          "DMR-053",
+          "DMR-054"
+        ],
+        "challenge_questions": [
+          "Is the outer carton PT9L-F01 controlled under a separate shipping BOM or master BOM that was not included in the supplied evidence, and if so what is that document's ID and version?",
+          "Has the outer carton ever been subject to incoming inspection, and if so what inspection criteria and acceptance records exist?",
+          "Given the drawing-number collision finding (PT9L-F01 used for both carton and appearance drawing), how does the production team distinguish which PT9L-F01 is referenced in any given context?"
+        ]
+      },
+      {
+        "finding_type": "process_instruction_bom_version_not_pinned",
+        "severity": "P2",
+        "claim": "The SMT process instruction directs operators to reference the EBOM 'PT9L-EBOM01 (按照最新版本执行)' without specifying a locked version, which means the process instruction does not constitute a frozen DMR record and could silently pick up future BOM revisions without a formal change-control event.",
+        "rationale": "DMR-021 (F0154, line 16) states: '元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)'. The phrase '按照最新版本执行' (execute per the latest version) means the process instruction is not tied to a specific released BOM version. In a controlled DMR, each process document must reference a specific document version so that the manufacturing record is reproducible and auditable. The current EBOM is at V1.0 (DMR-032 to DMR-035), but if a V2.0 is released the process instruction would automatically adopt it without a formal process-change review.",
+        "evidence_ids": [
+          "DMR-021",
+          "DMR-032",
+          "DMR-033",
+          "DMR-034",
+          "DMR-035"
+        ],
+        "challenge_questions": [
+          "Is there a document-control procedure that requires process instructions to cite a specific BOM version rather than 'latest version', and if so why was this instruction approved without a pinned version?",
+          "When the EBOM is revised, what change-control mechanism ensures the process instruction is reviewed and updated before the new BOM version is used in production?",
+          "Are there any production records (travellers, batch records) that capture which specific EBOM version was used for each production lot?"
+        ]
+      },
+      {
+        "finding_type": "design_output_list_approval_fields_blank",
+        "severity": "P2",
+        "claim": "The Design Output List One (PT9L-SJSC01 equivalent) carries blank submission and review date fields, indicating the formal design-output approval sign-off has not been recorded, which means the DHF-to-DMR transfer cannot be confirmed as complete.",
+        "rationale": "DMR-043 (F0160, line 10) shows: '提交: 年 月 日 审核: 年 月 日' — both the submission date and review date fields are unfilled placeholders. A design output list with blank approval dates does not constitute a formally approved design transfer record. Under 21 CFR 820.30(d) and ISO 13485 §7.3.4, design outputs must be reviewed and approved before release. The blank fields mean there is no documented evidence that the design output package was formally accepted as the basis for the DMR.",
+        "evidence_ids": [
+          "DMR-043",
+          "DMR-044",
+          "DMR-045",
+          "DMR-046",
+          "DMR-047"
+        ],
+        "challenge_questions": [
+          "Is there a separate design transfer record or design review meeting minutes that captures the formal approval of Design Output List One, and if so what is its document ID and date?",
+          "Were the blank date fields an artefact of the document template that was subsequently completed in a controlled system, or does the production DMR record also carry blank approval dates?",
+          "What is the formal design-freeze date for PT9L, and is it traceable to a signed design output approval record?"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "finding_type": "drawing_number_collision",
+      "severity": "P1",
+      "claim": "Drawing number PT9L-F01 is assigned to two distinct physical items — the outer carton and the product appearance drawing — creating an unresolvable document-control conflict in the DMR.",
+      "rationale": "The outer-carton drawing file (DMR-068) declares Drawing NO. PT9L-F01 for the shipping carton. The product appearance drawing file (DMR-138) also declares Drawing NO. PT9L-F01 for the ABS-body exterior, with an explicit auditor warning '⚠️ 与外箱 PT9L-F01 同号但不同件'. Two released drawings sharing the same document number violates document-control requirements and makes unambiguous BOM or process-instruction citation impossible.",
+      "evidence_ids": [
+        "DMR-068",
+        "DMR-138"
+      ],
+      "challenge_questions": [
+        "Which of the two PT9L-F01 drawings is the formally released version in the document-control system, and what is the ECO or revision history for each?",
+        "Has a corrective action been initiated to assign a unique drawing number to one of the two items, and if so what is the new number and its release status?",
+        "Are there any BOM lines, work instructions, or inspection records that cite PT9L-F01 — and if so, which physical item do they intend to reference?"
+      ]
+    },
+    {
+      "finding_type": "packaging_bom_part_number_mismatch",
+      "severity": "P1",
+      "claim": "The two packaging BOM documents for the PT9L US version carry different document numbers for the same BOM (PT9L-PBOM01 vs. PT9L-PB0M1) and the instruction-manual part number differs between them (PT9L-SMSPO1 vs. PT9L-SMSP01), indicating at least one file is either a draft or an uncorrected transcription error that has not been reconciled in the DMR.",
+      "rationale": "DMR-049 (F0161) shows the BOM header as 'PT9L-P BOM01 V1.0' and the manual part number as 'PT9L-SMSPO1' (letter O in place of digit 0). DMR-056 and DMR-057 (F0162) show the header as 'PT9L-PB0M1 V1.0' (digit 0 in place of letter O in BOM) and the manual part number as 'PT9L-SMSP01' (correct). The drawing for the manual (DMR-089) uses PT9L-SMSP01 V1.0. The two BOM files therefore cannot both be the released DMR record; one contains a typographic corruption that has propagated into the document number itself.",
+      "evidence_ids": [
+        "DMR-049",
+        "DMR-052",
+        "DMR-053",
+        "DMR-056",
+        "DMR-057"
+      ],
+      "challenge_questions": [
+        "Which of the two packaging BOM files (F0161 or F0162) is the formally released DMR record, and what is its controlled document number?",
+        "Has the typographic discrepancy in the manual part number (SMSPO1 vs. SMSP01) been identified and corrected in the document-control system?",
+        "Is there a single master packaging BOM that supersedes both files, and if so what is its document ID and version?"
+      ]
+    },
+    {
+      "finding_type": "cross_product_drawing_without_justification",
+      "severity": "P2",
+      "claim": "Two drawings archived in the PT9L DHF design output folder carry PT3 or PT1 product identifiers (PT3-P10 dual spring, PT1-F05 label, PT1-F07 outer-carton label) without any documented shared-component or sub-assembly justification linking them to the PT9L DMR.",
+      "rationale": "DMR-133 and DMR-134 (F0176) show Drawing NO. PT3-P10 with Model NO. PT3, explicitly noted as 'PT3 项目原件' borrowed into the PT9L DHF. DMR-091 (F0168) shows Drawing NO. PT1-F05 and DMR-094, DMR-115 (F0169, F0173) show Drawing NO. PT1-F07, both referencing PT1 not PT9L. No evidence in the supplied corpus provides a formal shared-component declaration, design-change notice, or sub-assembly justification that authorises these PT3/PT1 drawings as controlled PT9L DMR outputs. The assignment brief specifically flags PT3SBT references requiring justification.",
+      "evidence_ids": [
+        "DMR-129",
+        "DMR-130",
+        "DMR-132",
+        "DMR-133",
+        "DMR-134"
+      ],
+      "challenge_questions": [
+        "Is there a formal shared-component or common-part declaration that authorises PT3-P10 (dual spring) as a controlled component of the PT9L assembly, and where is it filed in the DMR?",
+        "Are PT1-F05 and PT1-F07 label drawings intentionally shared between PT1 and PT9L product lines, and if so is there a released cross-reference document or ECO that records this decision?",
+        "Do the PT9L EBOM or ABOM contain line items that explicitly cite PT3-P10, PT1-F05, or PT1-F07 part numbers, and if not, why are these drawings present in the PT9L design output folder?"
+      ]
+    },
+    {
+      "finding_type": "incomplete_drawing_title_block",
+      "severity": "P2",
+      "claim": "The packaging label drawing filed as T040800073941030093-PT3-F21 has an incomplete title block with Drawing NO. and Pro material fields marked as '待填' (to be filled), meaning this drawing has been archived in the PT9L DHF in an unfinished state and cannot serve as a controlled DMR output.",
+      "rationale": "DMR-112 shows Drawing NO. as '（待填 - 见右下标题栏）' and DMR-113 shows Pro material as '（待填）'. A drawing with unfilled mandatory title-block fields does not meet the minimum requirements for a released design output document. The file name contains 'PT3-F21', further suggesting it may be a PT3-origin document that was never completed for PT9L use.",
+      "evidence_ids": [
+        "DMR-108",
+        "DMR-109",
+        "DMR-110",
+        "DMR-112",
+        "DMR-113"
+      ],
+      "challenge_questions": [
+        "Has this drawing ever been formally released with a complete title block, and if so what is the released document number and version?",
+        "Is PT3-F21 a PT3-origin drawing that was intended to be adapted for PT9L, and if so what is the current status of that adaptation?",
+        "Which BOM line item in the PT9L packaging BOM corresponds to this drawing, and how is the component currently controlled in production without a complete drawing?"
+      ]
+    },
+    {
+      "finding_type": "missing_outer_carton_in_primary_packaging_bom",
+      "severity": "P2",
+      "claim": "The outer carton (PT9L-F01) is present as a drawing in the design output folder but does not appear as a line item in either of the two packaging BOM files, leaving the outer carton uncontrolled in the released packaging BOM.",
+      "rationale": "DMR-066 to DMR-071 (F0164) document the outer carton drawing PT9L-F01 V1.0. The packaging BOM in F0161 (DMR-050 to DMR-054) lists five items: colour box, paper tray, manual, protective film, and nameplate. The packaging BOM in F0162 (DMR-058 to DMR-060) lists the same five items. Neither BOM contains a line item for the outer carton or references drawing PT9L-F01 (carton). An outer carton is a required packaging component for shipping and regulatory labelling purposes; its absence from the BOM means it is not subject to incoming inspection or version control through the DMR.",
+      "evidence_ids": [
+        "DMR-050",
+        "DMR-051",
+        "DMR-052",
+        "DMR-053",
+        "DMR-054"
+      ],
+      "challenge_questions": [
+        "Is the outer carton PT9L-F01 controlled under a separate shipping BOM or master BOM that was not included in the supplied evidence, and if so what is that document's ID and version?",
+        "Has the outer carton ever been subject to incoming inspection, and if so what inspection criteria and acceptance records exist?",
+        "Given the drawing-number collision finding (PT9L-F01 used for both carton and appearance drawing), how does the production team distinguish which PT9L-F01 is referenced in any given context?"
+      ]
+    },
+    {
+      "finding_type": "process_instruction_bom_version_not_pinned",
+      "severity": "P2",
+      "claim": "The SMT process instruction directs operators to reference the EBOM 'PT9L-EBOM01 (按照最新版本执行)' without specifying a locked version, which means the process instruction does not constitute a frozen DMR record and could silently pick up future BOM revisions without a formal change-control event.",
+      "rationale": "DMR-021 (F0154, line 16) states: '元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)'. The phrase '按照最新版本执行' (execute per the latest version) means the process instruction is not tied to a specific released BOM version. In a controlled DMR, each process document must reference a specific document version so that the manufacturing record is reproducible and auditable. The current EBOM is at V1.0 (DMR-032 to DMR-035), but if a V2.0 is released the process instruction would automatically adopt it without a formal process-change review.",
+      "evidence_ids": [
+        "DMR-021",
+        "DMR-032",
+        "DMR-033",
+        "DMR-034",
+        "DMR-035"
+      ],
+      "challenge_questions": [
+        "Is there a document-control procedure that requires process instructions to cite a specific BOM version rather than 'latest version', and if so why was this instruction approved without a pinned version?",
+        "When the EBOM is revised, what change-control mechanism ensures the process instruction is reviewed and updated before the new BOM version is used in production?",
+        "Are there any production records (travellers, batch records) that capture which specific EBOM version was used for each production lot?"
+      ]
+    },
+    {
+      "finding_type": "design_output_list_approval_fields_blank",
+      "severity": "P2",
+      "claim": "The Design Output List One (PT9L-SJSC01 equivalent) carries blank submission and review date fields, indicating the formal design-output approval sign-off has not been recorded, which means the DHF-to-DMR transfer cannot be confirmed as complete.",
+      "rationale": "DMR-043 (F0160, line 10) shows: '提交: 年 月 日 审核: 年 月 日' — both the submission date and review date fields are unfilled placeholders. A design output list with blank approval dates does not constitute a formally approved design transfer record. Under 21 CFR 820.30(d) and ISO 13485 §7.3.4, design outputs must be reviewed and approved before release. The blank fields mean there is no documented evidence that the design output package was formally accepted as the basis for the DMR.",
+      "evidence_ids": [
+        "DMR-043",
+        "DMR-044",
+        "DMR-045",
+        "DMR-046",
+        "DMR-047"
+      ],
+      "challenge_questions": [
+        "Is there a separate design transfer record or design review meeting minutes that captures the formal approval of Design Output List One, and if so what is its document ID and date?",
+        "Were the blank date fields an artefact of the document template that was subsequently completed in a controlled system, or does the production DMR record also carry blank approval dates?",
+        "What is the formal design-freeze date for PT9L, and is it traceable to a signed design output approval record?"
+      ]
+    }
+  ],
+  "status": "completed"
+}

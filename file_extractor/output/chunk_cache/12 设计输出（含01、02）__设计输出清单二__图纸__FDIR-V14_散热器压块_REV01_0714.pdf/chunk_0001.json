@@ -1,0 +1,292 @@
+{
+  "document": {
+    "title": "散热器压块 FDIR-V14 REV01 V1.0 2D 图读图报告",
+    "doc_type": "2D图读图报告",
+    "file_ref": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/FDIR-V14_散热器压块_REV01_0714.pdf",
+    "version": "V1.0",
+    "revision": "REV01",
+    "date_design": "2017-06-28",
+    "date_approved": "2017-07-14",
+    "date_generated": "2026-06-02",
+    "form_number": "QR-12-118",
+    "scale": "1:1",
+    "drawing_size": "A4横向",
+    "confidentiality": "机密",
+    "supplier": "Famidoc（深圳法米德/厦门法米德医疗器械有限公司）"
+  },
+  "products": [
+    {
+      "name": "散热器压块",
+      "part_number": "FDIR-V14",
+      "internal_bom_number": "PT3-M01",
+      "bom_sequence": 13,
+      "material": "黄铜",
+      "surface": "光亮，清洗干净",
+      "product_family": "PT3系列散热器组件",
+      "associated_product": "体温计",
+      "associated_product_no": "FDIR-V14"
+    },
+    {
+      "name": "散热器金属套（黄铜套）",
+      "part_number": "75CEE0",
+      "internal_bom_number": "PT3-M03",
+      "bom_sequence": 14,
+      "notes": "配合件，Ø8.5 (+0.02/0)"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "FDIR-V14",
+      "type": "产品号/Famidoc图号",
+      "description": "散热器压块 Famidoc 供应商图号"
+    },
+    {
+      "id": "PT3-M01",
+      "type": "iHealth内部BOM编号",
+      "description": "总装图序号13，压块"
+    },
+    {
+      "id": "PT3-M03",
+      "type": "iHealth内部BOM编号",
+      "description": "总装图序号14，75CEE0黄铜套"
+    },
+    {
+      "id": "75CEE0",
+      "type": "零件编号",
+      "description": "散热器金属套（黄铜套），配合件"
+    },
+    {
+      "id": "QR-12-118",
+      "type": "文件编号/表单编号",
+      "description": "本图纸文件编号"
+    }
+  ],
+  "components": [
+    {
+      "name": "散热器压块",
+      "part_number": "PT3-M01 / FDIR-V14",
+      "material": "黄铜",
+      "bom_position": 13,
+      "key_dimensions": {
+        "outer_diameter": "Ø11.58 (+0.13/+0.0)",
+        "main_length": "8.58 ±0.04",
+        "fit_inner_diameter": "Ø8.48 (+0.0/-0.02)",
+        "fit_width": "1.5 ±0.1",
+        "center_hole_diameter": "Ø3.6",
+        "top_segment_length": "12.95 ±0.05",
+        "chamfer": "C0.2（未注）"
+      }
+    },
+    {
+      "name": "散热器金属套（黄铜套）",
+      "part_number": "75CEE0 / PT3-M03",
+      "material": "黄铜",
+      "bom_position": 14,
+      "key_dimensions": {
+        "fit_outer_diameter": "Ø8.5 (+0.02/0)",
+        "chamfer": "C0.5"
+      }
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "材质为黄铜，表面光亮，清洗干净",
+      "category": "材料要求"
+    },
+    {
+      "id": "DI-02",
+      "description": "未注尺寸请以电子档为准，未注倒角 C=0.2",
+      "category": "通用公差要求"
+    },
+    {
+      "id": "DI-03",
+      "description": "带编号尺寸为重点检测尺寸，但4号尺寸不检，以实配为准",
+      "category": "IQC检测要求"
+    },
+    {
+      "id": "DI-04",
+      "description": "3、4号尺寸需与散热金属套实配能装能拆，能过2M跌落",
+      "category": "装配与跌落要求"
+    },
+    {
+      "id": "DI-05",
+      "description": "与75CEE0黄铜套（散热器金属套）③ Ø8.5 (+0.02/0) 配合，装配后必须能过2m跌落测试",
+      "category": "配合与跌落测试要求"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "type": "材料",
+      "description": "材质为黄铜，表面光亮，清洗干净"
+    },
+    {
+      "id": "REQ-02",
+      "type": "尺寸公差",
+      "description": "公差等级B：DTM ≤5/±0.1, 5-15/±0.1, 15-50/±0.1, 50-100/±0.2, >100/±0.2%；角度公差 ANGULAR ±0.5°"
+    },
+    {
+      "id": "REQ-03",
+      "type": "未注倒角",
+      "description": "未注倒角 C=0.2"
+    },
+    {
+      "id": "REQ-04",
+      "type": "配合要求",
+      "description": "③④尺寸需与散热金属套（75CEE0）实配能装能拆；④号尺寸不检，以实配为准"
+    },
+    {
+      "id": "REQ-05",
+      "type": "跌落测试",
+      "description": "压块与金属套装配后能通过2m跌落测试，不脱落、不松动"
+    },
+    {
+      "id": "REQ-06",
+      "type": "光路通孔",
+      "description": "中心Ø3.6通孔为红外光路通道，须保持畅通"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-01",
+      "name": "2m跌落测试",
+      "description": "散热器压块与75CEE0黄铜套实装后，装配体必须能通过2m跌落测试，压块与套之间不脱落、不松动",
+      "related_dimensions": [
+        "③ Ø8.48 (+0.0/-0.02)",
+        "④ 1.5 ±0.1"
+      ],
+      "status": "待确认（2m跌落测试报告待归档）"
+    },
+    {
+      "id": "TEST-02",
+      "name": "IQC重点尺寸检测",
+      "description": "①②③号尺寸为重点检测尺寸；④号尺寸不检，以实配为准",
+      "inspected_dimensions": [
+        "① Ø11.58 (+0.13/+0.0)",
+        "② 8.58 ±0.04",
+        "③ Ø8.48 (+0.0/-0.02)"
+      ],
+      "exempt_dimensions": [
+        "④ 1.5 ±0.1（以实配为准）"
+      ]
+    }
+  ],
+  "review_items": [
+    {
+      "id": "RV-01",
+      "description": "2m跌落测试报告（与75CEE0黄铜套实装实测）",
+      "status": "待确认"
+    },
+    {
+      "id": "RV-02",
+      "description": "确认 FDIR-V14 = PT3-M01（Famidoc图号 = iHealth内部BOM号）",
+      "status": "推测为是，待确认"
+    },
+    {
+      "id": "RV-03",
+      "description": "① Ø11.58 (+0.13/+0.0) 单边正公差的设计意图（推测留压配间隙）",
+      "status": "待工程师确认"
+    },
+    {
+      "id": "RV-04",
+      "description": "③ Ø8.48 (+0/-0.02) 与75CEE0 ③ Ø8.5 (+0.02/0) 的实测过盈范围（推测0.01-0.03mm）",
+      "status": "待实测确认"
+    },
+    {
+      "id": "RV-05",
+      "description": "④ 1.5 ±0.1 但技要3写\"不检以实配为准\"→ 这是图纸BUG还是工艺合规？",
+      "status": "待QC澄清"
+    },
+    {
+      "id": "RV-06",
+      "description": "iHealth内部是否有\"压块\"独立图（带PT3-M01图号）补归档",
+      "status": "推测无，待确认"
+    },
+    {
+      "id": "RV-07",
+      "description": "中心Ø3.6通孔的光学性能（黄铜内壁反射率、是否需镀铜防氧化）",
+      "status": "待光学工程师确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "配合直径分析：本件③ Ø8.48 (+0.0/-0.02) → 实际范围 Ø8.46~Ø8.48；75CEE0黄铜套③ Ø8.5 (+0.02/0) → 实际范围 Ø8.50~Ø8.52；单边过盈 0.01~0.03mm（紧配合）。配合宽度④ 1.5 ±0.1 由\"实配为准\"决定。",
+      "topic_tags": [
+        "配合分析",
+        "过盈配合",
+        "尺寸公差",
+        "紧配合"
+      ],
+      "related_subjects": [
+        "散热器压块 PT3-M01",
+        "75CEE0黄铜套 PT3-M03",
+        "③号尺寸",
+        "④号尺寸"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "装配工序描述：压块（黄铜）压入金属套（黄铜）形成紧配合（同材料避免热膨胀差异）；中心Ø3.6通孔保留红外光路（与下盖探头开口Ø10 → 支架探头筒Ø9.5 一气通到75CEE0）；2m跌落测试验证压块与套之间不脱落、不松动。",
+      "topic_tags": [
+        "装配工序",
+        "紧配合",
+        "红外光路",
+        "跌落测试",
+        "黄铜同材"
+      ],
+      "related_subjects": [
+        "散热器压块",
+        "75CEE0黄铜套",
+        "红外传感器组",
+        "2m跌落测试"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "公差校验说明：①(+0.13/+0.0) 不能简化为 ±0.065/+0.13；③(+0.0/-0.02) 不能简化为 ±0.01；①③均为严格单边公差，必须保留原始标注形式。配合关系：本件③ Ø8.48 vs 套最小 Ø8.50 → 最大单边过盈0.01mm（紧配合）；最小过盈0.04mm。",
+      "topic_tags": [
+        "单边公差",
+        "公差标注规范",
+        "过盈计算"
+      ],
+      "related_subjects": [
+        "①号尺寸",
+        "③号尺寸",
+        "配合分析"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "历史沿用说明：设计日期2017-06-28，早于PT9L项目立项。PT9L项目沿用PT3系列散热器组件，Famidoc为PT3散热器组件供应商（深圳法米德/厦门法米德医疗器械有限公司）。iHealth审批日期2017-07-14（红印章\"审批+iHealth\"）。",
+      "topic_tags": [
+        "历史文件",
+        "沿用设计",
+        "PT3系列",
+        "Famidoc供应商"
+      ],
+      "related_subjects": [
+        "PT9L项目",
+        "PT3-M01",
+        "Famidoc"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "疑点关联：本件为疑点表§4.1（75CEE0黄铜套图号5B44CGXT-001，2m跌落要求）的配合件；疑点表§6.3新增：总装图BOM编号13 PT3-M01=本图（散热器压块FDIR-V14）。④号尺寸1.5±0.1在技要中注明\"不检以实配为准\"，与标注存在矛盾，疑为图纸BUG或工艺合规问题，待QC澄清。",
+      "topic_tags": [
+        "疑点",
+        "图纸审查",
+        "BOM映射",
+        "工艺合规"
+      ],
+      "related_subjects": [
+        "75CEE0",
+        "PT3-M01",
+        "④号尺寸",
+        "总装图BOM"
+      ]
+    }
+  ]
+}

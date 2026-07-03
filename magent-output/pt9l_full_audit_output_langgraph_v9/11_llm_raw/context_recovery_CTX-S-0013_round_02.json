@@ -1,0 +1,143 @@
+```json
+{
+  "context_summary": "Round 2 补充检索聚焦于同一图号 T040800073941030093-PT3-F21 在语料库中的所有出现。已确认：(1) F0172 中的 .md 文件是由自动脚本于 2026-05-14 生成的模板框架，标题栏全部字段（Drawing NO.、Part name、Pro material、Surf dispose、Scale、Tolerance、Edition、Model NO.）均标注为"待填"，技术要求与尺寸表同样为空占位符；(2) 该 .md 文件注释明确写明"2026-05-14 脚本生成框架，标题栏/技术要求/尺寸表待视觉读图后填写"，说明这是一份未完成的中间产物而非已审核的受控图纸；(3) page_context 命中了 F0075（PT3 transport report）和 F0082（PT3SBT标签审核表海外更新版），但这两份文件的实际文本内容在本轮检索中均为空，无法提供图号或物料号的交叉验证；(4) 仍未找到：① 该图纸对应的已签署/已审核 PDF 原件的任何文字层内容；② 设计输出清单中对该图号的正式登记记录（含版本号、审核人、批准日期）；③ DMR 物料清单或 BOM 中引用该图号的条目；④ 变更控制记录或 ECO 显示该图纸已从"待填"状态升级为受控版本。综合两轮证据，claim 所述"以未完成状态归档于 DHF"具有充分文件支撑，但"无法作为受控 DMR 输出"的结论仍需设计输出清单正式条目和 DMR BOM 引用记录加以完整佐证。",
+  "evidence_gaps": [
+    "设计输出清单（Design Output List）中对图号 T040800073941030093-PT3-F21 的正式登记条目（含版本号、状态、审核人、批准日期）——当前仅有自动生成模板，无受控清单条目",
+    "DMR 物料清单（BOM）或装配图中引用该图号的记录——需确认该图纸是否已被 DMR 正式引用或仅存于 DHF 草稿层",
+    "F0082（PT3SBT标签审核表海外更新）的实际文本内容——page_context 命中但内容为空，无法判断其是否包含该图号或对应物料号",
+    "F0075（PT3 transport report）的实际文本内容——同上，命中但内容为空",
+    "变更控制记录（ECO/DCO）——确认是否存在针对该图纸从"待填"升级为完整受控版本的变更指令",
+    "该 PDF 原件的视觉读图结果——脚本注释要求"待视觉读图后填写"，需确认视觉读图是否已完成并产生更新版本",
+    "包装设计验证/确认记录（V&V）中对该标签图纸的引用——以判断其在设计验证阶段的受控状态"
+  ],
+  "additional_search_queries": [
+    "T040800073941030093 设计输出清单 版本 审核 批准",
+    "PT3-F21 包装标签 Drawing NO. 物料号 BOM",
+    "F0082 PT3SBT 标签审核表 图号 T040800073941030093",
+    "设计输出清单二 包装 受控 版本 签署",
+    "T040800073941030093-PT3-F21 ECO DCO 变更",
+    "PT9L DMR 包装图纸清单 F21",
+    "PT3 packaging label drawing approved controlled"
+  ],
+  "agent_instruction": "请针对以下方向补充检索，以完整支撑或推翻 LLM-0043 的 claim：\n1. 在"设计输出清单二"或任何设计输出索引文件中检索图号 T040800073941030093-PT3-F21 的正式登记条目，重点获取：版本号、文件状态（草稿/受控）、审核人、批准日期；\n2. 读取 F0082（PT3SBT标签审核表海外更新）的完整文本，检索是否包含该图号、对应物料号或包装标签的审核状态；\n3. 读取 F0075（PT3 transport report）完整文本，检索是否引用该图号或包装图纸；\n4. 在 DMR BOM 或装配图文件中检索 T040800073941030093 或 PT3-F21，确认该图纸是否已被 DMR 正式引用；\n5. 检索任何 ECO/DCO 变更记录中涉及 T040800073941030093-PT3-F21 的条目，判断是否存在已完成的版本升级；\n6. 如存在包装设计 V&V 报告，检索其中对该标签图纸的引用状态。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "DMR-108",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 1,
+        "source_text": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-14 自动生成模板 + 待填 -->",
+        "significance": "明确标注该文件为自动生成模板且处于待填状态，非受控图纸"
+      },
+      {
+        "evidence_id": "DMR-109",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 2,
+        "source_text": "# T040800073941030093-PT3-F21 2D 图读图报告",
+        "significance": "确认文件标识与 claim 中图号一致"
+      },
+      {
+        "evidence_id": "DMR-110",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 4,
+        "source_text": "> 源文件：`T040800073941030093-PT3-F21.pdf`（PDF 尺寸 741×488 pt，文字层字符 < 400，矢量图纸）。",
+        "significance": "PDF 文字层字符 < 400，说明原始 PDF 文字层极少，脚本无法自动提取标题栏内容，这是"待填"的技术原因"
+      },
+      {
+        "evidence_id": "DMR-111",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 6,
+        "source_text": "**2026-05-14 脚本生成框架，标题栏 / 技术要求 / 尺寸表待视觉读图后填写。**",
+        "significance": "明确说明视觉读图尚未完成，整份报告为未完成中间产物"
+      },
+      {
+        "evidence_id": "DMR-112",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 20,
+        "source_text": "| **Drawing NO.** | （待填 - 见右下标题栏） |",
+        "significance": "Drawing NO. 字段未填写，图纸编号无法从该文件中确认"
+      },
+      {
+        "evidence_id": "DMR-113",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 22,
+        "source_text": "| **Pro material** | （待填） |",
+        "significance": "Pro material（产品物料号）字段未填写，无法与 DMR BOM 交叉核对"
+      },
+      {
+        "evidence_id": "DMR-114",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 21,
+        "source_text": "| **Part name** | （待填 - 见右下标题栏中文零件名） |",
+        "significance": "零件名称未填写，无法确认该图纸对应的具体包装部件"
+      },
+      {
+        "evidence_id": "DMR-115",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 27,
+        "source_text": "| **Model NO.** | （待填） |",
+        "significance": "Model NO. 未填写，无法确认该图纸归属的产品型号（如 PT9L）"
+      },
+      {
+        "evidence_id": "DMR-116",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 35,
+        "source_text": "1. （待填）",
+        "significance": "技术要求全部为空占位符，图纸技术内容无法核实"
+      },
+      {
+        "evidence_id": "DMR-117",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 46,
+        "source_text": "| （待填） | | | | | | | |",
+        "significance": "尺寸表全部为空，图纸几何尺寸信息完全缺失"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "note": "该文件在 page_context 中多次命中（lines 1,2,6,39,68,101,134,224,314,348），但实际文本内容为空，需在下一轮读取完整内容以确认是否包含图号 T040800073941030093-PT3-F21 或相关包装标签审核状态",
+        "status": "content_empty_needs_full_read"
+      },
+      {
+        "doc_id": "F0075",
+        "rel_path": "11 T1样机\\09a-10 PT3 transport report.via_lo_html.clean.md",
+        "note": "该文件在 page_context 中命中（lines 1,2），但实际文本内容为空，需在下一轮读取完整内容",
+        "status": "content_empty_needs_full_read"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "document_nature_clarification",
+        "description": "F0172 中的 T040800073941030093-PT3-F21.pdf.md 是由自动化脚本（SKILL_2D_Drawing_Reading）于 2026-05-14 生成的读图报告框架，其设计意图是在视觉读图完成后由人工填写标题栏、技术要求和尺寸表。当前归档版本为未完成的中间产物，不代表原始 PDF 图纸本身的内容状态，但其存在于 DHF 受控路径（12 设计输出/设计输出清单二/包装/）下，说明该未完成文件已被纳入 DHF 归档范围。",
+        "implication_for_claim": "支持 claim 中'以未完成状态归档于 DHF'的表述；但需注意：待填状态可能是读图报告的问题而非原始 PDF 图纸本身的问题，需区分两者。原始 PDF 是否完整需通过视觉读图或直接检查 PDF 原件确认。"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "technical_root_cause",
+        "description": "PDF 文字层字符 < 400 是导致自动脚本无法提取标题栏信息的直接技术原因。这意味着原始 PDF 可能是扫描件或纯矢量图（无嵌入文字），标题栏内容以图形方式存储，自动脚本无法读取。",
+        "implication_for_claim": "这一技术事实说明'待填'状态是系统性限制的结果，不能直接等同于图纸本身内容缺失。需通过视觉读图或人工审查原始 PDF 才能最终判断图纸是否完整。"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "missing_cross_reference",
+        "description": "在当前已检索的语料库范围内，未发现任何设计输出清单、DMR BOM、或变更控制记录中对图号 T040800073941030093-PT3-F21 的正式引用或受控登记。",
+        "implication_for_claim": "缺乏正式引用记录进一步支持该图纸未作为受控 DMR 输出的判断，但也可能是检索范围未覆盖相关文件，需扩大检索范围确认。"
+      }
+    ]
+  }
+}
+```

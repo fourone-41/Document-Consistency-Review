@@ -1,0 +1,271 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "total_pages": 181,
+    "current_pages": "142-144"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "name": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "ISO14971",
+      "name": "ISO 14971",
+      "description": "Risk Management for Medical Devices"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-FXGB01",
+      "version": "V1.0",
+      "type": "Risk Management Report",
+      "description": "Risk Management Report"
+    },
+    {
+      "id": "PT9L-FXPJ01",
+      "version": "V1.0",
+      "type": "Risk Assessment Report",
+      "description": "Risk Assessment Report"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "11.6.1",
+      "name": "Overflow, spillage, leakage, ingress of water, cleaning, disinfection, sterilization, compatibility with substances",
+      "sub_tests": [
+        {
+          "name": "Cleaning",
+          "condition": "Cleaning according to operation guide",
+          "part_under_test": "Whole equipment",
+          "remarks": "Pass dielectric test",
+          "verdict": "P"
+        }
+      ],
+      "verdict": "P"
+    },
+    {
+      "clause": "11.6.3",
+      "name": "RM RESULTS TABLE: Spillage on ME equipment and ME system",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "11.5",
+      "name": "RM RESULTS TABLE: ME equipment and ME systems intended for use in conjunction with flammable agents",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "11.6.5",
+      "name": "RM RESULTS TABLE: Ingress of water or particulate matter into ME EQUIPMENT and ME SYSTEMS",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ]
+    },
+    {
+      "clause": "11.6.6",
+      "name": "RM RESULTS TABLE: Cleaning and disinfection of ME equipment and ME systems",
+      "verdict": "P",
+      "iso14971_results": [
+        {
+          "clause": "5.2",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Cleaning is defined",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.3",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Hazards are addressed",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.4",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risks of each hazardous situation are estimated",
+          "verdict": "P"
+        },
+        {
+          "clause": "6",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risks of each hazardous situation are evaluated",
+          "verdict": "P"
+        },
+        {
+          "clause": "7.2",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risk control measures are defined",
+          "verdict": "P"
+        },
+        {
+          "clause": "7.3",
+          "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+          "result": "Risk controls measure implementation is defined",
+          "verdict": "P"
+        },
+        {
+          "clause": "7.4",
+          "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+          "result": "Residual risk level are evaluated",
+          "verdict": "P"
+        },
+        {
+          "clause": "7.5",
+          "document_ref": "--",
+          "result": "All the residual risk is judged acceptable",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "11.6.7",
+      "name": "RM RESULTS TABLE: Sterilization of ME equipment and ME systems",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "11.6.8",
+      "name": "RM RESULTS TABLE: Compatibility with substances used",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "12.1",
+      "name": "RM RESULTS TABLE: Accuracy of controls and equipment",
+      "verdict": "P",
+      "iso14971_results": [
+        {
+          "clause": "5.2",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Accuracy is defined",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.3",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Hazards are addressed",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.4",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risks of each hazardous situation are estimated",
+          "verdict": "P"
+        },
+        {
+          "clause": "6",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risks of each hazardous situation are evaluated",
+          "verdict": "P"
+        },
+        {
+          "clause": "7.2",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risk control measures are defined",
+          "verdict": "P"
+        }
+      ]
+    }
+  ],
+  "review_items": [
+    {
+      "clause": "7.2",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Risk control option analysis recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.3",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "a. Risk control measures recorded. b. Effectiveness of risk control measures verified and recorded.",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.4",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Residual risk evaluated.",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.5",
+      "document_ref": "No such analysis",
+      "result": "All residual risk is acceptable.",
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 11.6.1 Cleaning test: Cleaning according to operation guide applied to whole equipment. Result: Pass dielectric test. Verdict: P. Reference to clause 11.6.6 for further cleaning and disinfection risk management details.",
+      "topic_tags": [
+        "cleaning",
+        "dielectric test",
+        "whole equipment",
+        "IEC60601-1 clause 11.6.1"
+      ],
+      "related_subjects": [
+        "PT9L-FXPJ01",
+        "PT9L-FXGB01"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Several risk management result tables are marked N/A indicating they are not applicable to this device: 11.5 (flammable agents), 11.6.3 (spillage), 11.6.5 (ingress of water or particulate matter), 11.6.7 (sterilization), 11.6.8 (compatibility with substances used).",
+      "topic_tags": [
+        "N/A",
+        "flammable agents",
+        "spillage",
+        "ingress of water",
+        "sterilization",
+        "compatibility"
+      ],
+      "related_subjects": [
+        "ISO 14971",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

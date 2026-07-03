@@ -1,0 +1,37 @@
+agent_id: vv
+display_name: V&V Agent
+node_name: vv_agent
+role: V&V Agent
+goal: Check whether design inputs, verification plans, validation reports, external formal reports, and design confirmation evidence support each other.
+system_prompt: Review verification and validation consistency using only supplied evidence IDs.
+retrieval_strategy:
+  prefix: VV
+  patterns:
+    - "design input|verification plan|verification report|test record|acceptance criteria|formal report|ETX|TX202303|software validation"
+  rel_contains:
+    - "04 "
+    - "11 "
+    - "18 "
+    - "实验报告"
+  max_hits: 140
+input_schema:
+  required_fields:
+    - project_profile
+    - mandatory_audit_matrix
+    - evidence_catalog
+    - candidate_discovery_inputs
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - findings
+  agent: V&V Agent
+  summary: string
+  review_notes: []
+  findings:
+    - finding_type: snake_case
+      severity: P1/P2/P3
+      claim: reviewable conclusion
+      rationale: evidence-based reason
+      evidence_ids: []
+      challenge_questions: []

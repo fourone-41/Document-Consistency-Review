@@ -1,0 +1,332 @@
+{
+  "document": {
+    "title": "软件质量策划评审记录",
+    "doc_type": "评审记录",
+    "version": "V1.0"
+  },
+  "review_records": [
+    {
+      "review_id": "PT9L-RCPL01",
+      "stage": "软件质量策划评审",
+      "date": null,
+      "conclusion": "评审通过，直接进入下一阶段"
+    }
+  ],
+  "review_items": [
+    {
+      "seq": "一",
+      "category": "对项目进度的评估",
+      "content": "本阶段计划评审时间与实际评审时间对比，项目进度评估：对整体项目进度无影响；或对整体项目进度有影响。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "影响项目进度的原因、改进措施及未决问题处理方法均未填写"
+    },
+    {
+      "seq": "二",
+      "category": "对设计验证的评审",
+      "content": "本阶段是否有设计验证；对设计验证报告的评估（是否按验证计划进行并完成，是否有不合格项）。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "设计验证报告文件编号及不合格项A1-A4均未填写"
+    },
+    {
+      "seq": "三",
+      "category": "对设计更改的评估",
+      "content": "本阶段是否有只影响设计输出的设计更改；对设计更改的适宜性评估（是否解决原有问题，是否产生新问题）。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "设计更改需求评审单文件编号及问题B1-B3均未填写"
+    },
+    {
+      "seq": "四",
+      "category": "对上阶段评审遗留问题追踪",
+      "content": "上阶段评审是否有遗留问题；遗留问题C1、C2的处理追踪及结论。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "问题C1、C2均未填写"
+    },
+    {
+      "seq": "五",
+      "category": "本次评审问题记录",
+      "content": "本次评审发现问题D1、D2、D3的记录，包括产生原因、评审意见、解决措施、负责人、完成时间及决议结论。",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "问题D1-D3均未填写"
+    },
+    {
+      "seq": "六",
+      "category": "评审结论",
+      "content": "评审通过，直接进入下一阶段。/评审通过，完成评审记录中的修改后进入下一阶段。/评审基本通过，需补充资料，重新提交批准。/评审未通过，重新整理后提交再次评审。",
+      "actual_situation": "已勾选：评审通过，直接进入下一阶段",
+      "conclusion": "评审通过，直接进入下一阶段",
+      "improvement": null,
+      "note": null
+    }
+  ],
+  "persons": [
+    {
+      "name": "侯广伟",
+      "title": "技术负责人 / 软件主管"
+    },
+    {
+      "name": "王迪",
+      "title": "软件工程师"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RCPL01"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "本评审记录适用于软件质量策划阶段，评审内容涵盖：一、项目进度评估（计划与实际评审时间对比，进度影响分析及改进措施）；二、设计验证评审（是否按验证计划完成，不合格项处理）；三、设计更改评估（是否解决原有问题，新问题的处理）；四、上阶段评审遗留问题追踪；五、本次评审新发现问题记录。评审结论分为四级：直接通过、修改后通过、基本通过需补充资料、未通过需重新提交。",
+      "topic_tags": [
+        "软件质量策划",
+        "评审流程",
+        "设计验证",
+        "设计更改",
+        "遗留问题追踪",
+        "评审结论"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "软件质量策划评审记录",
+        "设计验证报告",
+        "设计更改需求评审单"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评审人员签字栏要求：打印前填写职务、部门、姓名，需与评审计划中人员一致。本次记录评审地点为二楼会议室。",
+      "topic_tags": [
+        "评审人员",
+        "签字要求",
+        "评审地点"
+      ],
+      "related_subjects": [
+        "侯广伟",
+        "王迪",
+        "评审计划"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/软件文件底稿/质量策划E0 23.11/设计评审记录E0 23.11.via_lo_html.clean.md",
+    "doc_type": "review_checklist"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件质量策划评审记录",
+      "to": "一",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件质量策划评审记录",
+      "to": "二",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件质量策划评审记录",
+      "to": "三",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件质量策划评审记录",
+      "to": "四",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件质量策划评审记录",
+      "to": "五",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件质量策划评审记录",
+      "to": "六",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "软件质量策划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件质量策划评审记录",
+      "to": "软件质量策划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证报告",
+      "to": "软件质量策划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计更改需求评审单",
+      "to": "软件质量策划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "侯广伟",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "王迪",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "评审计划",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RCPL01",
+      "to": "一",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RCPL01",
+      "to": "二",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RCPL01",
+      "to": "三",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RCPL01",
+      "to": "四",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RCPL01",
+      "to": "五",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RCPL01",
+      "to": "六",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "PT9L-RCPL01",
+      "to": "PT9L",
+      "properties": {
+        "stage": "软件质量策划评审"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RCPL01",
+      "to": "一",
+      "properties": {
+        "category": "对项目进度的评估"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RCPL01",
+      "to": "二",
+      "properties": {
+        "category": "对设计验证的评审"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RCPL01",
+      "to": "三",
+      "properties": {
+        "category": "对设计更改的评估"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RCPL01",
+      "to": "四",
+      "properties": {
+        "category": "对上阶段评审遗留问题追踪"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RCPL01",
+      "to": "五",
+      "properties": {
+        "category": "本次评审问题记录"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RCPL01",
+      "to": "六",
+      "properties": {
+        "category": "评审结论"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RCPL01",
+      "properties": {
+        "title": "技术负责人 / 软件主管"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RCPL01",
+      "properties": {
+        "title": "软件工程师"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RCPL01",
+      "to": "V1.0",
+      "properties": {
+        "doc_type": "评审记录"
+      }
+    }
+  ],
+  "_claims": []
+}

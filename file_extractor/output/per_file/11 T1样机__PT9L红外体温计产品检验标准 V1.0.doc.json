@@ -1,0 +1,2559 @@
+{
+  "document": {
+    "title": "PT9L红外体温计产品检验标准",
+    "doc_type": "检验标准",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    },
+    {
+      "name": "PT9L红外体温计"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "1.1 本标准用于PT9L红外体温计。1.2 本标准用于PT9L红外体温计过程检验及产品出厂验证。",
+      "topic_tags": [
+        "适用范围",
+        "过程检验",
+        "出厂验证",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "assumption",
+      "content": "2.1 如果由于技术原因，某项测试不能完全执行时，可采用实质等同或更严格的测试方法。",
+      "topic_tags": [
+        "声明",
+        "测试方法",
+        "等同替代"
+      ],
+      "related_subjects": [
+        "测试方法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "术语和定义：3.1 红外体温计——通过使用红外传感器将测量到的温度显示出来的电子仪器。3.2 黑体模式——体温计显示从黑体处测量所得的温度的模式。3.3 恒温水槽——具有自动控温，提供恒定温度源的一种装置。此处使用的恒温水槽要求水温在工作区域内任意两点的温差不大于0.01℃，恒温时温度波动不大于0.015℃/15min。3.4 恒温水槽的稳定状态——恒温水槽到达预设的温度后，在15分钟内温度波动不超过0.015℃，则认为该恒温水槽达到稳定状态。3.5 黑体——能精确知道孔壁温度和在孔的任意开口处辐射率近似为1.0的孔状红外辐射基准源。",
+      "topic_tags": [
+        "术语定义",
+        "红外体温计",
+        "黑体模式",
+        "恒温水槽",
+        "稳定状态",
+        "黑体"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "试验器具"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "试验器具清单：4.1 振动试验台（跌落测试机）；4.2 恒温恒湿箱（高低温湿热试验箱）；4.3 可调稳压直流电源；4.4 电流表；4.5 恒温水槽；4.6 标准铂电阻温度计；4.7 黑体；4.8 卡尺/菲林尺；4.9 塞尺。",
+      "topic_tags": [
+        "试验器具",
+        "仪器设备",
+        "检测工具"
+      ],
+      "related_subjects": [
+        "测试方法",
+        "出厂检验"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "出厂检验抽样方案（外观）：抽样方案参考GB2828.1-2012，CR AQL=0，MA AQL=0.4，MI AQL=1.0。出厂检验抽样方案（包装）：抽样方案参考GB2828.1-2012，CR AQL=0，MA AQL=0.4。",
+      "topic_tags": [
+        "抽样方案",
+        "AQL",
+        "GB2828.1-2012",
+        "外观检验",
+        "包装检验"
+      ],
+      "related_subjects": [
+        "出厂检验项目"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "测试条件要求：1) 工作电压 DC3.0V±0.1V；2) 测试标准黑体时，产品需在恒温房中放置120min以上；3) 恒温房温湿度要求：a）温度：23.0±2.0℃；b）相对湿度：50%RH±20%RH；c）大气压强：70~106kPa；4）恒温水槽精度要求：±0.02℃。",
+      "topic_tags": [
+        "测试条件",
+        "工作电压",
+        "恒温房",
+        "温湿度",
+        "大气压强",
+        "恒温水槽精度"
+      ],
+      "related_subjects": [
+        "上电自检",
+        "温度显示范围",
+        "显示分辨率"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "常温精度测试：进入黑体模式方法为断电情况下按住按键后装入电池，显示\"CAL\"后松开按键。对被测水槽连续测量三次。精度要求：≥35℃且≤42℃为±0.2℃，其它为±0.3℃。对测试结果不符合规定的温度计，可复测两次，两次复测合格亦可作合格处理。",
+      "topic_tags": [
+        "常温精度",
+        "黑体模式",
+        "恒温水槽",
+        "体温计",
+        "精度要求"
+      ],
+      "related_subjects": [
+        "测试8"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "低电压提示功能：3.0V供电时应能正常测量；低于2.7V时仍可进行测量但低电符号将随测量结果显示；低于2.5V时屏幕单独闪烁显示低电图标，15秒后将自动关机。",
+      "topic_tags": [
+        "低电压",
+        "电压阈值",
+        "自动关机",
+        "低电提示"
+      ],
+      "related_subjects": [
+        "测试9"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "背光灯测试：体温计应处于用户模式，不要进入黑体模式。测试34℃水槽时背光应为白色，测试35.7℃水槽时背光应为橙色，测试37℃水槽时背光应为红色。对测试结果不符合规定的温度计，可复测两次，两次复测合格亦可作合格处理。",
+      "topic_tags": [
+        "背光灯",
+        "背光颜色",
+        "用户模式",
+        "温度阈值"
+      ],
+      "related_subjects": [
+        "测试10"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "裸机跌落测试细则：跌落高度1M，跌3次，依次顺序底部、LCD面、有测量键面朝下方跌落各一次，探头部位不可跌落。应跌落于密度为700kg/M³、厚度为50mm的硬质木板或混凝土地面，若未完成跌落次数就已经解体或严重损伤时，应立即停止后续动作并分析。以产品自身重量自由下落，不可有外力加持，下落过程中产品不可在空中翻转，否则无效。",
+      "topic_tags": [
+        "跌落测试",
+        "裸机",
+        "跌落高度",
+        "硬木板",
+        "跌落方向"
+      ],
+      "related_subjects": [
+        "测试13"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "产品寿命测试：产品整机寿命5年，假设平均每天使用5次，等效1万次使用寿命。对可影响整机寿命的电子元器件及结构组件进行测试。选取5个样品实际测量1万次，测试前后均按第8项进行测试，精度和功能均需正常，则认为产品寿命达到要求。",
+      "topic_tags": [
+        "产品寿命",
+        "使用寿命",
+        "10000次",
+        "电子元器件",
+        "结构组件"
+      ],
+      "related_subjects": [
+        "测试19"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "电池寿命测试：要求测量次数≥1000次，待机能力≥6个月。模拟人体测试，通过测试不同状态的功耗推算出连续工作时间和待机时间，结果应满足设计要求。",
+      "topic_tags": [
+        "电池寿命",
+        "待机能力",
+        "功耗",
+        "测量次数"
+      ],
+      "related_subjects": [
+        "测试20"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外观检验项目按面别（A面、B面、C面、D面、E面）分级管控，检验工具包括塞尺、目视、菲林卡。各面别缺陷判定标准如下：1.组装间隙：A/B/C面≤0.1mm，D/E面不影响组装及功能即可；2.段差：A/B/C面≤0.1mm，D/E面不影响组装及功能即可；3.脏污、指纹：A/B/C/D面不允许，E面不影响组装及功能即可；4.无感划伤/划痕线状缺陷：A面不允许，B面划伤不允许划痕L≤2mm W≤0.1mm N≤1，C面划伤不允许划痕L≤3mm W≤0.1mm N≤2 DS≥20mm，D面划伤L≤3mm W≤0.1mm划痕L≤10mm W≤0.3mm N≤2 DS≥20mm，E面不影响组装及功能即可；5.异色点/凹凸点：A面不允许，B面D≤0.20mm N≤1，C面D≤0.30mm N≤2 DS≥20mm，D面D≤0.30mm N≤2 DS忽略，E面不影响组装及功能即可；6.同色点：A面不允许，B面D≤0.30mm N≤1，C面D≤0.30mm N≤2 DS≥20mm，D面D≤0.40mm N≤2 DS忽略，E面不影响组装及功能即可；7.顶凸/顶白：A/B/C面不允许，D/E面不影响组装及功能即可；8.缩水、凹陷：A/B/C/D面不允许，E面不影响组装及功能即可；9.产品本体或装配后翘曲/变形：A/B面不允许，C/D面目测不明显/参照限度样本，E面不影响组装及功能即可。",
+      "topic_tags": [
+        "外观检验",
+        "面别分级",
+        "缺陷判定",
+        "塞尺",
+        "菲林卡",
+        "组装间隙",
+        "段差",
+        "划痕",
+        "异色点",
+        "同色点",
+        "顶凸",
+        "缩水",
+        "翘曲"
+      ],
+      "related_subjects": [
+        "外观检验标准",
+        "MI判定等级"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外观检验项目按面别（A/B/C/D/E面）分级管控，主要检验项目包括：注塑件拉伤、料口/水口、熔接线/气痕、毛边/批锋/分型线、高光面光泽度、缺料/断裂/裂痕/烧焦、金属部件锈蚀氧化、色差、螺丝、按键等。各缺陷根据面别严格程度不同，A面要求最严（多为不允许），E面要求最宽松（不影响组装及功能即可）。色差控制要求△E≤0.8，肉眼不可见。螺丝需紧固到位，无松动、未打紧现象，不允许漏装、滑丝/滑牙、划伤。按键需有正常回弹性。",
+      "topic_tags": [
+        "外观检验",
+        "注塑件",
+        "面别分级",
+        "色差",
+        "螺丝",
+        "按键",
+        "缺陷判定"
+      ],
+      "related_subjects": [
+        "外观检验标准",
+        "注塑件检验",
+        "整机检验"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "耐压测试：测试项1为电池正极到外壳，要求能承受DC1000V 1分钟内无绝缘击穿；测试项2为电池正极到探头，要求能承受DC1000V 1分钟内无绝缘击穿。具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目。缺陷等级MA，每批抽3台，AC=0，RE=1，测试完的机器不可出货，作为留样保存。",
+      "topic_tags": [
+        "耐压测试",
+        "DC1000V",
+        "绝缘击穿",
+        "IEC60601-1",
+        "GB9706.1",
+        "留样"
+      ],
+      "related_subjects": [
+        "功能-9",
+        "IEC60601-1-2020",
+        "GB9706.1-2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "漏电流测试：测试项1为接触电流，要求正常状态≤0.1mA；测试项2为患者漏电流F型，要求正常状态≤5mA。具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目。缺陷等级MA，每批抽3台，AC=0，RE=1，测试完的机器不可出货，作为留样保存。",
+      "topic_tags": [
+        "漏电流",
+        "接触电流",
+        "患者漏电流",
+        "F型",
+        "IEC60601-1",
+        "GB9706.1",
+        "留样"
+      ],
+      "related_subjects": [
+        "功能-10",
+        "IEC60601-1-2020",
+        "GB9706.1-2020"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "精度测试抽样方案参考GB2828.1-2012，缺陷等级为MA。其余功能检验项（上电自检、低电压提示、背光灯、测量单位切换、测量模式切换、提示音开关）均为MI缺陷等级，每批抽5个，AC=0，RE=1。电池反接和耐压测试缺陷等级为MA。",
+      "topic_tags": [
+        "抽样方案",
+        "GB2828.1-2012",
+        "缺陷等级",
+        "AC=0",
+        "RE=1"
+      ],
+      "related_subjects": [
+        "功能-1",
+        "功能-2",
+        "功能-3",
+        "功能-4",
+        "功能-5",
+        "功能-6",
+        "功能-7",
+        "功能-8",
+        "功能-9",
+        "功能-10"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "彩盒检验具体要求：1）确认彩盒颜色与生产通知单是否相符合；2）确认彩盒印刷与生产通知单要求是否相符合；3）确认彩盒上所有条形码内容与生产通知单要求一致，字迹清楚不模糊，漏贴多贴或贴错不允许，标签位置方向贴错不允许，歪斜两水平位置相对差值≤1.5mm不允许盖住文字，表面无明显脏污破损开胶；4）彩盒粘合处不允许出现开胶现象，粘合边上下错位≤2mm，前后错位不允许露白，空隙不得影响正常成型；5）成型过程中彩盒插口插舌处不允许有瓦楞开胶现象；6）折线居中清晰，不得有破裂断线重线等现象；7）划痕30-50cm直视L≤10mm W≤0.3mm N≤1，未造成表面破损；8）脏污30-50cm直视无明显脏污；9）褶皱30-50cm直视，客户Logo和主图案L≤2mm，其他L≤5mm N≤1。",
+      "topic_tags": [
+        "彩盒",
+        "包装检验",
+        "条形码",
+        "外观",
+        "折线",
+        "划痕",
+        "褶皱"
+      ],
+      "related_subjects": [
+        "包装-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外箱及配件检验具体要求：1）图案条码等内容大小图像与合同评审（样件）完全一致；2）外箱标签内容、材质及粘贴位置符合客户要求；3）标签粘贴不可盖住外箱文字，外箱破损造成字体条形码无法辨识不可以；4）撕裂长度≤2cm宽度≤5mm未在文字处允许有一个，穿透不可以，表面破损≤20cm²且不影响字符辨识允收一个，外箱标签破损长度>10mm不可以，倾斜超过30度不可以，标签褶皱N≤2；5）外箱没有被内箱或彩盒装入后顶起。",
+      "topic_tags": [
+        "外箱",
+        "包装检验",
+        "标签",
+        "破损",
+        "条形码"
+      ],
+      "related_subjects": [
+        "包装-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "装箱列表要求包含以下物品：整机一台、说明书、保修卡、快纸、7号电池*2。所有文件资料（说明书、保修卡、快纸）印刷需清晰易读，无脏污、折痕、破损等缺陷。装箱数量需正确，不得有漏装或多装问题。称重检验项目需包含外箱重量。",
+      "topic_tags": [
+        "装箱检验",
+        "包装",
+        "随附文件",
+        "称重",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计产品检验标准"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "上电自检",
+      "condition": "工作电压 DC3.0V±0.1V；恒温房温度23.0±2.0℃；相对湿度50%RH±20%RH；大气压强70~106kPa",
+      "expected_value": "白色背光灯点亮，LCD显示屏全显，显示内容正确，无乱显、多显、少显现象，蜂鸣器响0.5S，2S后进入待机模式",
+      "pass_criteria": "显示内容正确，无乱显、多显、少显现象；若自检故障，屏幕全亮且闪烁"
+    },
+    {
+      "test_id": "2",
+      "item": "提示音开关",
+      "condition": "工作电压 DC3.0V±0.1V",
+      "expected_value": "静音键关时屏幕出现静音符号，提示音关；静音键开时静音符号消失，提示音开。测温完成后若目标温度正常按设定蜂鸣；若测量错误显示三条杠和温度单位并按设定蜂鸣",
+      "pass_criteria": "提示音开关状态与静音键设置一致，测量结果显示及蜂鸣符合设定"
+    },
+    {
+      "test_id": "3",
+      "item": "测量单位切换",
+      "condition": "工作电压 DC3.0V±0.1V",
+      "expected_value": "待机状态下长按测量键8秒进入单位切换；短按切换℃或℉单位，对应符号闪烁伴短蜂鸣；长按2秒确认，对应符号常亮2秒伴短蜂鸣，之后自动关机",
+      "pass_criteria": "单位切换操作响应正确，符号显示及蜂鸣符合要求，确认后自动关机"
+    },
+    {
+      "test_id": "4",
+      "item": "测量模式切换",
+      "condition": "工作电压 DC3.0V±0.1V",
+      "expected_value": "测量状态下短按设置键进入模式切换，短按循环切换婴儿模式、成人模式和物温模式，LCD屏上对应图标显示",
+      "pass_criteria": "模式切换正常，LCD图标显示正确"
+    },
+    {
+      "test_id": "5",
+      "item": "自动关机",
+      "condition": "工作电压 DC3.0V±0.1V",
+      "expected_value": "测温后无操作15±1S自动转入待机模式",
+      "pass_criteria": "15±1S内自动进入待机模式"
+    },
+    {
+      "test_id": "6",
+      "item": "温度显示范围",
+      "condition": "工作电压 DC3.0V±0.1V；恒温水槽精度±0.02℃；产品在恒温房中放置120min以上",
+      "expected_value": "要求：32℃~42.9℃；32.4℃、42.5℃可正确显示温度，31.6℃和43.4℃无法显示温度，屏显\"--.-\"报错",
+      "pass_criteria": "32.4℃和42.5℃正确显示，31.6℃和43.4℃显示\"--.-\"报错"
+    },
+    {
+      "test_id": "7",
+      "item": "显示分辨率",
+      "condition": "实验室环境，黑体温度变化0.1℃~0.15℃",
+      "expected_value": "黑体温度变化在0.1℃~0.15℃时，显示数值应随之发生改变",
+      "pass_criteria": "显示分辨率达到0.1℃"
+    },
+    {
+      "test_id": "8",
+      "item": "常温精度测试",
+      "condition": "室温：23.0±2.0℃，相对湿度：50%RH±20%RH；恒温水槽设定温度：32℃、32.5℃、35℃、38.5℃、42℃、42.5℃、42.9℃；断电按键后装入电池进入黑体模式，对被测水槽连续测量三次",
+      "expected_value": "≥35℃且≤42℃：±0.2℃，其它：±0.3℃",
+      "pass_criteria": "≥35℃且≤42℃：±0.2℃，其它：±0.3℃；不符合可复测两次，两次复测合格亦可作合格处理"
+    },
+    {
+      "test_id": "9",
+      "item": "低电压提示功能",
+      "condition": "使用可调直流稳压电源供电",
+      "expected_value": "3.0V时正常测量；低于2.7V时可测量但显示低电符号；低于2.5V时屏幕单独闪烁显示低电图标，15秒后自动关机",
+      "pass_criteria": "各电压档位下设备响应符合规定"
+    },
+    {
+      "test_id": "10",
+      "item": "背光灯",
+      "condition": "室温：24℃-26℃，相对湿度：30%-70%；恒温水槽设定34℃、35.7℃、37℃；体温计处于用户模式，连续测量三次",
+      "expected_value": "34℃水槽时背光为白色，35.7℃水槽时背光为橙色，37℃水槽时背光为红色",
+      "pass_criteria": "背光颜色与规定一致；不符合可复测两次，两次复测合格亦可作合格处理"
+    },
+    {
+      "test_id": "11",
+      "item": "静态电流",
+      "condition": "省电模式（睡眠状态）下，电源电压DC3.0V，万用表mA档串接直流电源",
+      "expected_value": "≤0.02mA",
+      "pass_criteria": "≤0.02mA"
+    },
+    {
+      "test_id": "12",
+      "item": "工作电流",
+      "condition": "电源电压DC3.0V，万用表mA档串接直流电源，按测量键测量时LCD背光点亮",
+      "expected_value": "≤20mA（工作中任意状态）",
+      "pass_criteria": "工作电流≤20mA"
+    },
+    {
+      "test_id": "13",
+      "item": "裸机跌落测试",
+      "condition": "产品开机状态，跌落高度1.0米，平整硬木板（密度700kg/M³，厚度50mm）或混凝土地面作基垫，垂直自由落下；依次底部、LCD面、有测量键面朝下各跌落一次，共3次；探头部位不可跌落",
+      "expected_value": "产品无开裂，PCB板元器件无损伤，产品结构功能完好",
+      "pass_criteria": "产品无开裂，PCB板元器件无损伤，产品结构功能完好"
+    },
+    {
+      "test_id": "14",
+      "item": "带包装振动",
+      "condition": "1箱成品以不同方向固定在测试机上；振动条件：5Hz-35Hz-5Hz，振幅0.35mm，振动方向X/Y/Z各15次，Z方向振动时外箱处于自由状态",
+      "expected_value": "包装不可见被包装物品，边角不可破裂；测试后精度满足第8项要求",
+      "pass_criteria": "包装完整，边角无破裂；测试后精度在第8项允许范围内"
+    },
+    {
+      "test_id": "15",
+      "item": "低温工作试验",
+      "condition": "温度10℃~40℃，相对湿度≤95%不结露，大气压力70kPa～106kPa；在10℃恒温箱中放置24h，常温下恢复1h",
+      "expected_value": "按第8项测试，测量结果满足设计要求",
+      "pass_criteria": "测量结果满足第8项设计要求"
+    },
+    {
+      "test_id": "16",
+      "item": "高温工作试验",
+      "condition": "温度10℃~40℃，相对湿度≤95%不结露，大气压力70kPa～106kPa；在40℃恒温箱中放置24h，常温下恢复1h",
+      "expected_value": "按第8项测试，测量结果满足设计要求",
+      "pass_criteria": "测量结果满足第8项设计要求"
+    },
+    {
+      "test_id": "17",
+      "item": "低温存储试验",
+      "condition": "温度-20℃~55℃，相对湿度≤95%不结露，大气压力70kPa～106kPa；在-20℃恒温箱中放置48h，常温下恢复1h",
+      "expected_value": "按第8项测试，测量结果满足设计要求",
+      "pass_criteria": "测量结果满足第8项设计要求"
+    },
+    {
+      "test_id": "18",
+      "item": "高温存储试验",
+      "condition": "温度-20℃~55℃，相对湿度≤95%不结露，大气压力70kPa～106kPa；在55℃恒温箱中放置48h，常温下恢复1h",
+      "expected_value": "按第8项测试，测量结果满足设计要求",
+      "pass_criteria": "测量结果满足第8项设计要求"
+    },
+    {
+      "test_id": "19",
+      "item": "产品寿命",
+      "condition": "选取5个样品实际测量1万次，测试前后均按第8项进行测试",
+      "expected_value": "五年或10000次；精度和功能均需正常",
+      "pass_criteria": "测试前后精度和功能均正常，则认为产品寿命达到要求"
+    },
+    {
+      "test_id": "20",
+      "item": "电池寿命",
+      "condition": "模拟人体测试，通过测试不同状态的功耗推算连续工作时间和待机时间",
+      "expected_value": "测量次数≥1000次，待机能力≥6个月",
+      "pass_criteria": "结果满足设计要求"
+    },
+    {
+      "test_id": "1",
+      "item": "组装间隙",
+      "expected_value": "A面≤0.1mm；B面≤0.1mm；C面≤0.1mm；D面不影响组装及功能即可；E面不影响组装及功能即可",
+      "instrument": "塞尺",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "2",
+      "item": "段差",
+      "expected_value": "A面≤0.1mm；B面≤0.1mm；C面≤0.1mm；D面不影响组装及功能即可；E面不影响组装及功能即可",
+      "instrument": "塞尺",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "3",
+      "item": "脏污、指纹",
+      "expected_value": "A面不允许；B面不允许；C面不允许；D面不允许；E面不影响组装及功能即可",
+      "instrument": "目视",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "4",
+      "item": "无感划伤/划痕线状缺陷",
+      "expected_value": "A面不允许；B面划伤不允许，划痕L≤2mm W≤0.1mm 同一平面N≤1；C面划伤不允许，划痕L≤3mm W≤0.1mm 同一平面N≤2 DS≥20mm；D面划伤L≤3mm W≤0.1mm，划痕L≤10mm W≤0.3mm 同一平面总N≤2 DS≥20mm；E面不影响组装及功能即可",
+      "instrument": "菲林卡",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "5",
+      "item": "异色点/凹凸点点状缺陷",
+      "expected_value": "A面不允许；B面D≤0.20mm 同一平面N≤1；C面D≤0.30mm 同一平面N≤2 DS≥20mm；D面D≤0.30mm 同一平面N≤2 DS忽略；E面不影响组装及功能即可",
+      "instrument": "菲林卡",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "6",
+      "item": "同色点",
+      "expected_value": "A面不允许；B面D≤0.30mm 同一平面N≤1；C面D≤0.30mm 同一平面N≤2 DS≥20mm；D面D≤0.40mm 同一平面N≤2 DS忽略；E面不影响组装及功能即可",
+      "instrument": "菲林卡",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "7",
+      "item": "顶凸/顶白",
+      "expected_value": "A面不允许；B面不允许；C面不允许；D面不影响组装及功能即可；E面不影响组装及功能即可",
+      "instrument": "目视",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "8",
+      "item": "缩水、凹陷",
+      "expected_value": "A面不允许；B面不允许；C面不允许；D面不允许；E面不影响组装及功能即可",
+      "instrument": "目视",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "9",
+      "item": "产品本体或装配后翘曲/变形",
+      "expected_value": "A面不允许；B面不允许；C面目测不明显/参照限度样本；D面目测不明显/参照限度样本；E面不影响组装及功能即可",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "10",
+      "item": "注塑件拉伤",
+      "expected_value": "A面：不允许；B面：不允许；C面：不允许；D面：目测不明显/参照限度样本；E面：不影响组装及功能即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "11",
+      "item": "注塑件料口/水口",
+      "expected_value": "A面：不允许；B面：不允许；C面：不允许；D面：目测不明显/参照限度样本；E面：不影响组装及功能即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "12",
+      "item": "注塑件熔接线/气痕",
+      "expected_value": "A面：不允许；B面：目测不明显/参照限度样本；C面：目测不明显/参照限度样本；D面：目测不明显/参照限度样本；E面：不影响组装及功能即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "13",
+      "item": "毛边/批锋/分型线",
+      "expected_value": "A面：不允许；B面：不允许；C面：无刮手感，不允许有安全风险的批锋；D面：无刮手感，不允许有安全风险的批锋；E面：不影响组装及功能且牢固即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "14",
+      "item": "高光面光泽度",
+      "expected_value": "A面：参照限度样本；B/C/D/E面：N/A",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "15",
+      "item": "缺料、断裂、裂痕、烧焦",
+      "expected_value": "所有面：不允许",
+      "pass_criteria": "目视",
+      "condition": "MI"
+    },
+    {
+      "test_id": "16",
+      "item": "金属部件锈蚀氧化",
+      "expected_value": "A/B/C面：N/A；D面：不允许；E面：不允许",
+      "pass_criteria": "目视",
+      "condition": "MI"
+    },
+    {
+      "test_id": "17",
+      "item": "色差",
+      "expected_value": "色差值管控△E≤0.8，色差肉眼不可见，表面光泽与样件相同",
+      "pass_criteria": "目视，与样件对比，色差仪",
+      "condition": "MI"
+    },
+    {
+      "test_id": "18",
+      "item": "螺丝",
+      "expected_value": "漏装、滑丝/滑牙、划伤不允许，需紧固到位，无松动、未打紧现象",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "19",
+      "item": "按键",
+      "expected_value": "用指腹正常力按压按键，无弹性、不回弹不允许",
+      "pass_criteria": "目视/按键",
+      "condition": "MI"
+    },
+    {
+      "test_id": "装配-20",
+      "item": "装配后异响",
+      "condition": "装配后晃动产品",
+      "expected_value": "不允许零部件松动、异常声音",
+      "pass_criteria": "目视/晃动检查无松动无异响",
+      "environment": "MI缺陷等级"
+    },
+    {
+      "test_id": "功能-1",
+      "item": "精度测试",
+      "condition": "测试方法和要求见第二项第8条",
+      "pass_criteria": "MA缺陷等级，抽样方案参考GB2828.1-2012"
+    },
+    {
+      "test_id": "功能-2",
+      "item": "上电自检",
+      "condition": "测试方法和要求见第二项第1条",
+      "pass_criteria": "MI缺陷等级，每批抽5个，AC=0，RE=1"
+    },
+    {
+      "test_id": "功能-3",
+      "item": "低电压提示功能",
+      "condition": "测试方法和要求见第二项第9条",
+      "pass_criteria": "MI缺陷等级，每批抽5个，AC=0，RE=1"
+    },
+    {
+      "test_id": "功能-4",
+      "item": "背光灯",
+      "condition": "测试方法和要求见第二项第10条",
+      "pass_criteria": "MI缺陷等级，每批抽5个，AC=0，RE=1"
+    },
+    {
+      "test_id": "功能-5",
+      "item": "测量单位切换",
+      "condition": "测试方法和要求见第二项第3条",
+      "pass_criteria": "MI缺陷等级，每批抽5个，AC=0，RE=1"
+    },
+    {
+      "test_id": "功能-6",
+      "item": "测量模式切换",
+      "condition": "测试方法和要求见第二项第4条",
+      "pass_criteria": "MI缺陷等级，每批抽5个，AC=0，RE=1"
+    },
+    {
+      "test_id": "功能-7",
+      "item": "提示音开关",
+      "condition": "测试方法和要求见第二项第2条",
+      "pass_criteria": "MI缺陷等级，每批抽5个，AC=0，RE=1"
+    },
+    {
+      "test_id": "功能-8",
+      "item": "电池反接",
+      "condition": "把电池用相反方向放入机器",
+      "expected_value": "机器应无明显反应；再次正确放入后机器应能正常工作",
+      "pass_criteria": "MA缺陷等级，每批抽5个，AC=0，RE=1"
+    },
+    {
+      "test_id": "功能-9",
+      "item": "耐压测试",
+      "condition": "1.电池正极到外壳；2.电池正极到探头；施加DC1000V，持续1分钟；参照IEC60601-1-2020/GB9706.1-2020",
+      "expected_value": "无绝缘击穿",
+      "pass_criteria": "MA缺陷等级，每批抽3台，AC=0，RE=1；测试完的机器不可出货，作留样保存"
+    },
+    {
+      "test_id": "功能-10",
+      "item": "漏电流测试",
+      "condition": "参照IEC60601-1-2020/GB9706.1-2020",
+      "expected_value": "接触电流正常状态≤0.1mA；患者漏电流F型正常状态≤5mA",
+      "pass_criteria": "MA缺陷等级，每批抽3台，AC=0，RE=1；测试完的机器不可出货，作留样保存"
+    },
+    {
+      "test_id": "包装-1",
+      "item": "彩盒检验",
+      "condition": "目视检查，30-50cm直视距离",
+      "expected_value": "颜色、印刷与生产通知单相符；条形码清晰无漏贴；歪斜≤1.5mm；无脏污破损开胶；折线清晰；划痕L≤10mm W≤0.3mm N≤1；褶皱Logo/主图案L≤2mm其他L≤5mm N≤1",
+      "pass_criteria": "MI缺陷等级"
+    },
+    {
+      "test_id": "包装-2",
+      "item": "外箱及配件检验",
+      "condition": "目视检查",
+      "expected_value": "图案条码与合同评审样件一致；标签内容材质粘贴位置符合要求；撕裂≤2cm×5mm允许一个；表面破损≤20cm²且不影响字符辨识允收一个；标签倾斜≤30度，褶皱N≤2；外箱未被顶起",
+      "pass_criteria": "MI缺陷等级"
+    },
+    {
+      "test_id": "3",
+      "item": "说明书 保修卡 快纸",
+      "expected_value": "印刷清晰易读，无脏污折痕、破损等",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "4",
+      "item": "装箱数量",
+      "expected_value": "装箱数量正确，没有漏装、多装问题",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "5",
+      "item": "称重",
+      "expected_value": "带外箱重量",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "6",
+      "item": "装箱列表",
+      "expected_value": "整机一台、说明书、保修卡、快纸、7号电池*2",
+      "pass_criteria": "MI"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "万龙"
+    }
+  ],
+  "persons": [
+    {
+      "name": "万龙",
+      "title": "拟制"
+    },
+    {
+      "name": "侯广伟",
+      "title": "批准"
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/PT9L红外体温计产品检验标准 V1.0.doc.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L红外体温计产品检验标准",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "适用范围",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试方法",
+      "to": "声明",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "术语定义",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "试验器具",
+      "to": "术语定义",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试方法",
+      "to": "试验器具",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "出厂检验",
+      "to": "试验器具",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "出厂检验项目",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "上电自检",
+      "to": "测试条件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "温度显示范围",
+      "to": "测试条件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "显示分辨率",
+      "to": "测试条件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试8",
+      "to": "常温精度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试9",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试10",
+      "to": "背光灯",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试13",
+      "to": "跌落测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试19",
+      "to": "产品寿命",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试20",
+      "to": "电池寿命",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外观检验标准",
+      "to": "外观检验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MI判定等级",
+      "to": "外观检验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "注塑件检验",
+      "to": "外观检验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "整机检验",
+      "to": "外观检验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-9",
+      "to": "耐压测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC60601-1-2020",
+      "to": "耐压测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GB9706.1-2020",
+      "to": "耐压测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-10",
+      "to": "漏电流",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC60601-1-2020",
+      "to": "漏电流",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GB9706.1-2020",
+      "to": "漏电流",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-1",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-2",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-3",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-4",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-5",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-6",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-7",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-8",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-9",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-10",
+      "to": "抽样方案",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "包装-1",
+      "to": "彩盒",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "包装-2",
+      "to": "外箱",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计产品检验标准",
+      "to": "装箱检验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "scope_limitation_fragment",
+      "properties": {
+        "detail_type": "scope"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "scope_limitation_fragment",
+      "properties": {
+        "detail_type": "scope_description"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_terms",
+      "properties": {
+        "detail_type": "terminology_definition"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement_instruments",
+      "properties": {
+        "detail_type": "test_instruments"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement_sampling",
+      "properties": {
+        "detail_type": "sampling_plan"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "constraint_statement_conditions",
+      "properties": {
+        "detail_type": "test_conditions"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_1_functional",
+      "to": "constraint_statement_conditions",
+      "properties": {
+        "detail_type": "test_condition"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_6",
+      "to": "constraint_statement_conditions",
+      "properties": {
+        "detail_type": "test_condition"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_8",
+      "to": "behavioral_spec_accuracy",
+      "properties": {
+        "detail_type": "procedure_detail"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_9",
+      "to": "behavioral_spec_low_voltage",
+      "properties": {
+        "detail_type": "procedure_detail"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_10",
+      "to": "behavioral_spec_backlight",
+      "properties": {
+        "detail_type": "procedure_detail"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_13",
+      "to": "behavioral_spec_drop",
+      "properties": {
+        "detail_type": "procedure_detail"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_19",
+      "to": "behavioral_spec_product_life",
+      "properties": {
+        "detail_type": "procedure_detail"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "test_id_20",
+      "to": "behavioral_spec_battery_life",
+      "properties": {
+        "detail_type": "procedure_detail"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外观检验标准",
+      "to": "behavioral_spec_appearance_1",
+      "properties": {
+        "detail_type": "defect_criteria"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外观检验标准",
+      "to": "behavioral_spec_appearance_2",
+      "properties": {
+        "detail_type": "defect_criteria"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "包装-1",
+      "to": "behavioral_spec_carton",
+      "properties": {
+        "detail_type": "inspection_criteria"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "包装-2",
+      "to": "behavioral_spec_outer_box",
+      "properties": {
+        "detail_type": "inspection_criteria"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_packing_list",
+      "properties": {
+        "detail_type": "packing_list"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-9",
+      "to": "behavioral_spec_hipot",
+      "properties": {
+        "detail_type": "test_criteria"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "功能-10",
+      "to": "behavioral_spec_leakage",
+      "properties": {
+        "detail_type": "test_criteria"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-1",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-2",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-3",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-4",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-5",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-6",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-7",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-8",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-9",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "constraint_statement_defect_levels",
+      "to": "功能-10",
+      "properties": {
+        "detail_type": "sampling_assignment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "revision_record_1",
+      "to": "万龙",
+      "properties": {
+        "detail_type": "author"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计产品检验标准",
+      "to": "revision_record_1",
+      "properties": {
+        "detail_type": "revision_history"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "1",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "工作电压DC3.0V±0.1V；恒温房温度23.0±2.0℃；相对湿度50%RH±20%RH；大气压强70~106kPa"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "6",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "工作电压DC3.0V±0.1V；恒温水槽精度±0.02℃；产品在恒温房中放置120min以上"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "7",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "黑体温度变化0.1℃~0.15℃"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "8",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "室温23.0±2.0℃；相对湿度50%RH±20%RH；恒温水槽精度±0.02℃；产品在恒温房中放置120min以上"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "9",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "使用可调直流稳压电源供电"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "10",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "室温24℃-26℃；相对湿度30%-70%；体温计处于用户模式"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "11",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "省电模式（睡眠状态）下，电源电压DC3.0V"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "12",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "电源电压DC3.0V"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "13",
+      "to": "裸机跌落测试细则",
+      "properties": {
+        "constraint": "跌落高度1.0米；密度700kg/M³厚度50mm硬质木板或混凝土地面；底部、LCD面、有测量键面各一次共3次；探头不可跌落"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "14",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "振动条件：5Hz-35Hz-5Hz，振幅0.35mm，X/Y/Z各15次"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "15",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "温度10℃~40℃；相对湿度≤95%不结露；大气压力70kPa～106kPa；10℃恒温箱放置24h，常温恢复1h"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "16",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "温度10℃~40℃；相对湿度≤95%不结露；大气压力70kPa～106kPa；40℃恒温箱放置24h，常温恢复1h"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "17",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "温度-20℃~55℃；相对湿度≤95%不结露；大气压力70kPa～106kPa；-20℃恒温箱放置48h，常温恢复1h"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "18",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "温度-20℃~55℃；相对湿度≤95%不结露；大气压力70kPa～106kPa；55℃恒温箱放置48h，常温恢复1h"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "19",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "选取5个样品实际测量1万次，测试前后均按第8项进行测试"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "20",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "模拟人体测试，通过测试不同状态的功耗推算"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "8",
+      "to": "GB2828.1-2012",
+      "properties": {
+        "constraint": "精度测试抽样方案参考GB2828.1-2012，缺陷等级MA"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "出厂检验外观抽样",
+      "to": "GB2828.1-2012",
+      "properties": {
+        "constraint": "CR AQL=0，MA AQL=0.4，MI AQL=1.0"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "出厂检验包装抽样",
+      "to": "GB2828.1-2012",
+      "properties": {
+        "constraint": "CR AQL=0，MA AQL=0.4"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "耐压测试",
+      "to": "IEC60601-1-2020",
+      "properties": {
+        "constraint": "具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "耐压测试",
+      "to": "GB9706.1-2020",
+      "properties": {
+        "constraint": "具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "漏电流测试",
+      "to": "IEC60601-1-2020",
+      "properties": {
+        "constraint": "具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "漏电流测试",
+      "to": "GB9706.1-2020",
+      "properties": {
+        "constraint": "具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "8",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "常温精度测试需使用恒温水槽、标准铂电阻温度计、黑体等器具"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "6",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "温度显示范围测试需使用恒温水槽，精度±0.02℃"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "13",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "裸机跌落测试需使用振动试验台（跌落测试机）"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "15",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "低温工作试验需使用恒温恒湿箱"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "16",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "高温工作试验需使用恒温恒湿箱"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "17",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "低温存储试验需使用恒温恒湿箱"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "18",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "高温存储试验需使用恒温恒湿箱"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "9",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "低电压提示测试需使用可调稳压直流电源、电流表"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "11",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "静态电流测试需使用可调稳压直流电源、电流表"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "12",
+      "to": "试验器具清单",
+      "properties": {
+        "constraint": "工作电流测试需使用可调稳压直流电源、电流表"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "假设声明",
+      "to": "测试条件要求",
+      "properties": {
+        "constraint": "技术原因无法完全执行时可采用实质等同或更严格的测试方法"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "8",
+      "to": "≥35℃且≤42℃：±0.2℃，其它：±0.3℃",
+      "properties": {
+        "item": "常温精度测试",
+        "metric": "温度精度"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "9",
+      "to": "2.7V/2.5V/15秒自动关机",
+      "properties": {
+        "item": "低电压提示功能",
+        "metric": "电压阈值"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "11",
+      "to": "≤0.02mA",
+      "properties": {
+        "item": "静态电流",
+        "metric": "电流"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "12",
+      "to": "≤20mA",
+      "properties": {
+        "item": "工作电流",
+        "metric": "电流"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "13",
+      "to": "1.0米",
+      "properties": {
+        "item": "裸机跌落测试",
+        "metric": "跌落高度"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "14",
+      "to": "5Hz-35Hz-5Hz，振幅0.35mm",
+      "properties": {
+        "item": "带包装振动",
+        "metric": "振动参数"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "19",
+      "to": "10000次/5年",
+      "properties": {
+        "item": "产品寿命",
+        "metric": "使用寿命"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "20",
+      "to": "≥1000次，待机≥6个月",
+      "properties": {
+        "item": "电池寿命",
+        "metric": "电池续航"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "6",
+      "to": "32℃~42.9℃",
+      "properties": {
+        "item": "温度显示范围",
+        "metric": "显示范围"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "7",
+      "to": "0.1℃",
+      "properties": {
+        "item": "显示分辨率",
+        "metric": "分辨率"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "5",
+      "to": "15±1S",
+      "properties": {
+        "item": "自动关机",
+        "metric": "关机时间"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "8",
+      "to": "GB2828.1-2012",
+      "properties": {
+        "item": "常温精度测试",
+        "defect_level": "MA"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "耐压测试",
+      "to": "IEC60601-1-2020",
+      "properties": {
+        "item": "耐压测试",
+        "voltage": "DC1000V"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "耐压测试",
+      "to": "GB9706.1-2020",
+      "properties": {
+        "item": "耐压测试",
+        "voltage": "DC1000V"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "漏电流测试",
+      "to": "IEC60601-1-2020",
+      "properties": {
+        "item": "漏电流测试"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "漏电流测试",
+      "to": "GB9706.1-2020",
+      "properties": {
+        "item": "漏电流测试"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "GB2828.1-2012",
+      "properties": {
+        "usage": "出厂检验抽样方案"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "14",
+      "to": "8",
+      "properties": {
+        "desc": "带包装振动测试后按第8项精度测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "15",
+      "to": "8",
+      "properties": {
+        "desc": "低温工作试验后按第8项精度测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "16",
+      "to": "8",
+      "properties": {
+        "desc": "高温工作试验后按第8项精度测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "17",
+      "to": "8",
+      "properties": {
+        "desc": "低温存储试验后按第8项精度测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "18",
+      "to": "8",
+      "properties": {
+        "desc": "高温存储试验后按第8项精度测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "19",
+      "to": "8",
+      "properties": {
+        "desc": "产品寿命测试前后均按第8项精度测试验证"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "1",
+      "to": "PT9L红外体温计产品检验标准",
+      "properties": {
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "万龙",
+      "to": "PT9L红外体温计产品检验标准",
+      "properties": {
+        "role": "拟制",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "侯广伟",
+      "to": "PT9L红外体温计产品检验标准",
+      "properties": {
+        "role": "批准",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "万龙",
+      "to": "PT9L红外体温计产品检验标准",
+      "properties": {
+        "role": "拟制"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L红外体温计产品检验标准",
+      "properties": {
+        "role": "批准"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "工作电压",
+      "attribute": "额定值",
+      "value": "3.0",
+      "unit": "V",
+      "tolerance": "±0.1V",
+      "condition": "上电自检",
+      "raw_text": "工作电压 DC3.0V±0.1V"
+    },
+    {
+      "subject": "工作环境温度",
+      "attribute": "测试条件",
+      "value": "23.0",
+      "unit": "℃",
+      "tolerance": "±2.0℃",
+      "condition": "上电自检",
+      "raw_text": "恒温房温度23.0±2.0℃"
+    },
+    {
+      "subject": "工作环境湿度",
+      "attribute": "测试条件",
+      "value": "50",
+      "unit": "%RH",
+      "tolerance": "±20%RH",
+      "condition": "上电自检",
+      "raw_text": "相对湿度50%RH±20%RH"
+    },
+    {
+      "subject": "工作大气压",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "上电自检",
+      "raw_text": "大气压强70~106kPa"
+    },
+    {
+      "subject": "蜂鸣器响声时长",
+      "attribute": "持续时间",
+      "value": "0.5",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "上电自检",
+      "raw_text": "蜂鸣器响0.5S"
+    },
+    {
+      "subject": "上电自检待机延时",
+      "attribute": "时长",
+      "value": "2",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "上电自检",
+      "raw_text": "2S后进入待机模式"
+    },
+    {
+      "subject": "单位切换触发时长",
+      "attribute": "长按时间",
+      "value": "8",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "待机状态",
+      "raw_text": "待机状态下长按测量键8秒进入单位切换"
+    },
+    {
+      "subject": "单位切换确认时长",
+      "attribute": "长按时间",
+      "value": "2",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "单位切换界面",
+      "raw_text": "长按2秒确认"
+    },
+    {
+      "subject": "自动关机延时",
+      "attribute": "无操作时长",
+      "value": "15",
+      "unit": "S",
+      "tolerance": "±1S",
+      "condition": "测温后无操作",
+      "raw_text": "测温后无操作15±1S自动转入待机模式"
+    },
+    {
+      "subject": "温度显示范围",
+      "attribute": "范围",
+      "value": "32~42.9",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "工作电压DC3.0V±0.1V，恒温水槽精度±0.02℃",
+      "raw_text": "要求：32℃~42.9℃"
+    },
+    {
+      "subject": "恒温水槽精度",
+      "attribute": "精度",
+      "value": "±0.02",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "温度显示范围测试",
+      "raw_text": "恒温水槽精度±0.02℃"
+    },
+    {
+      "subject": "产品预置时间",
+      "attribute": "恒温放置时间",
+      "value": "120",
+      "unit": "min",
+      "tolerance": "",
+      "condition": "温度显示范围测试",
+      "raw_text": "产品在恒温房中放置120min以上"
+    },
+    {
+      "subject": "显示分辨率",
+      "attribute": "最小分辨率",
+      "value": "0.1",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "黑体温度变化0.1℃~0.15℃",
+      "raw_text": "显示分辨率达到0.1℃"
+    },
+    {
+      "subject": "黑体温度变化量",
+      "attribute": "测试范围",
+      "value": "0.1~0.15",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "显示分辨率测试",
+      "raw_text": "黑体温度变化在0.1℃~0.15℃时，显示数值应随之发生改变"
+    },
+    {
+      "subject": "测量精度",
+      "attribute": "允差（35℃~42℃）",
+      "value": "±0.2",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "室温23.0±2.0℃，湿度50%RH±20%RH，测温范围≥35℃且≤42℃",
+      "raw_text": "≥35℃且≤42℃：±0.2℃"
+    },
+    {
+      "subject": "测量精度",
+      "attribute": "允差（其他范围）",
+      "value": "±0.3",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "室温23.0±2.0℃，湿度50%RH±20%RH，测温范围<35℃或>42℃",
+      "raw_text": "其它：±0.3℃"
+    },
+    {
+      "subject": "常温精度测试温度点",
+      "attribute": "设定温度",
+      "value": "32, 32.5, 35, 38.5, 42, 42.5, 42.9",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "恒温水槽",
+      "raw_text": "恒温水槽设定温度：32℃、32.5℃、35℃、38.5℃、42℃、42.5℃、42.9℃"
+    },
+    {
+      "subject": "低电压提示阈值",
+      "attribute": "正常工作电压",
+      "value": "3.0",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "低电压提示功能测试",
+      "raw_text": "3.0V时正常测量"
+    },
+    {
+      "subject": "低电压提示阈值",
+      "attribute": "低电提示下限",
+      "value": "2.7",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "低于此值时显示低电符号",
+      "raw_text": "低于2.7V时可测量但显示低电符号"
+    },
+    {
+      "subject": "低电压关机阈值",
+      "attribute": "自动关机电压",
+      "value": "2.5",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "低于此值时屏幕闪烁并自动关机",
+      "raw_text": "低于2.5V时屏幕单独闪烁显示低电图标，15秒后自动关机"
+    },
+    {
+      "subject": "低电关机延时",
+      "attribute": "关机等待时长",
+      "value": "15",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "电压低于2.5V",
+      "raw_text": "15秒后自动关机"
+    },
+    {
+      "subject": "背光颜色",
+      "attribute": "白色背光温度",
+      "value": "34",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "用户模式，恒温水槽34℃",
+      "raw_text": "34℃水槽时背光为白色"
+    },
+    {
+      "subject": "背光颜色",
+      "attribute": "橙色背光温度",
+      "value": "35.7",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "用户模式，恒温水槽35.7℃",
+      "raw_text": "35.7℃水槽时背光为橙色"
+    },
+    {
+      "subject": "背光颜色",
+      "attribute": "红色背光温度",
+      "value": "37",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "用户模式，恒温水槽37℃",
+      "raw_text": "37℃水槽时背光为红色"
+    },
+    {
+      "subject": "背光测试环境温度",
+      "attribute": "室温范围",
+      "value": "24~26",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "背光灯测试",
+      "raw_text": "室温：24℃-26℃"
+    },
+    {
+      "subject": "背光测试环境湿度",
+      "attribute": "湿度范围",
+      "value": "30~70",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "背光灯测试",
+      "raw_text": "相对湿度：30%-70%"
+    },
+    {
+      "subject": "静态电流",
+      "attribute": "上限值",
+      "value": "0.02",
+      "unit": "mA",
+      "tolerance": "",
+      "condition": "省电模式（睡眠状态），电源电压DC3.0V",
+      "raw_text": "≤0.02mA"
+    },
+    {
+      "subject": "工作电流",
+      "attribute": "上限值",
+      "value": "20",
+      "unit": "mA",
+      "tolerance": "",
+      "condition": "电源电压DC3.0V，工作中任意状态",
+      "raw_text": "≤20mA（工作中任意状态）"
+    },
+    {
+      "subject": "裸机跌落高度",
+      "attribute": "跌落高度",
+      "value": "1.0",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "产品开机状态，平整硬木板或混凝土地面",
+      "raw_text": "跌落高度1.0米"
+    },
+    {
+      "subject": "跌落测试基垫密度",
+      "attribute": "木板密度",
+      "value": "700",
+      "unit": "kg/m³",
+      "tolerance": "",
+      "condition": "裸机跌落测试",
+      "raw_text": "平整硬木板（密度700kg/M³，厚度50mm）"
+    },
+    {
+      "subject": "跌落测试基垫厚度",
+      "attribute": "木板厚度",
+      "value": "50",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "裸机跌落测试",
+      "raw_text": "厚度50mm"
+    },
+    {
+      "subject": "跌落测试次数",
+      "attribute": "跌落次数",
+      "value": "3",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "裸机跌落测试，底部、LCD面、有测量键面各一次",
+      "raw_text": "依次底部、LCD面、有测量键面朝下各跌落一次，共3次"
+    },
+    {
+      "subject": "带包装振动频率",
+      "attribute": "振动频率范围",
+      "value": "5~35",
+      "unit": "Hz",
+      "tolerance": "",
+      "condition": "带包装振动测试",
+      "raw_text": "振动条件：5Hz-35Hz-5Hz"
+    },
+    {
+      "subject": "带包装振动幅值",
+      "attribute": "振幅",
+      "value": "0.35",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "带包装振动测试",
+      "raw_text": "振幅0.35mm"
+    },
+    {
+      "subject": "带包装振动次数",
+      "attribute": "各方向振动次数",
+      "value": "15",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "振动方向X/Y/Z",
+      "raw_text": "振动方向X/Y/Z各15次"
+    },
+    {
+      "subject": "低温工作试验温度",
+      "attribute": "试验温度",
+      "value": "10",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "低温工作试验",
+      "raw_text": "在10℃恒温箱中放置24h"
+    },
+    {
+      "subject": "低温工作试验时长",
+      "attribute": "放置时间",
+      "value": "24",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "低温工作试验，10℃恒温箱",
+      "raw_text": "在10℃恒温箱中放置24h"
+    },
+    {
+      "subject": "低温工作恢复时长",
+      "attribute": "常温恢复时间",
+      "value": "1",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "低温工作试验后",
+      "raw_text": "常温下恢复1h"
+    },
+    {
+      "subject": "低温工作环境湿度",
+      "attribute": "上限值",
+      "value": "95",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "低温工作试验，不结露",
+      "raw_text": "相对湿度≤95%不结露"
+    },
+    {
+      "subject": "低温工作大气压",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "低温工作试验",
+      "raw_text": "大气压力70kPa～106kPa"
+    },
+    {
+      "subject": "高温工作试验温度",
+      "attribute": "试验温度",
+      "value": "40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "高温工作试验",
+      "raw_text": "在40℃恒温箱中放置24h"
+    },
+    {
+      "subject": "高温工作试验时长",
+      "attribute": "放置时间",
+      "value": "24",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "高温工作试验，40℃恒温箱",
+      "raw_text": "在40℃恒温箱中放置24h"
+    },
+    {
+      "subject": "高温工作恢复时长",
+      "attribute": "常温恢复时间",
+      "value": "1",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "高温工作试验后",
+      "raw_text": "常温下恢复1h"
+    },
+    {
+      "subject": "低温存储试验温度",
+      "attribute": "试验温度",
+      "value": "-20",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "低温存储试验",
+      "raw_text": "在-20℃恒温箱中放置48h"
+    },
+    {
+      "subject": "低温存储试验时长",
+      "attribute": "放置时间",
+      "value": "48",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "低温存储试验，-20℃恒温箱",
+      "raw_text": "在-20℃恒温箱中放置48h"
+    },
+    {
+      "subject": "低温存储恢复时长",
+      "attribute": "常温恢复时间",
+      "value": "1",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "低温存储试验后",
+      "raw_text": "常温下恢复1h"
+    },
+    {
+      "subject": "低温存储大气压",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "低温存储试验",
+      "raw_text": "大气压力70kPa～106kPa"
+    },
+    {
+      "subject": "高温存储试验温度",
+      "attribute": "试验温度",
+      "value": "55",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "高温存储试验",
+      "raw_text": "在55℃恒温箱中放置48h"
+    },
+    {
+      "subject": "高温存储试验时长",
+      "attribute": "放置时间",
+      "value": "48",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "高温存储试验，55℃恒温箱",
+      "raw_text": "在55℃恒温箱中放置48h"
+    },
+    {
+      "subject": "高温存储恢复时长",
+      "attribute": "常温恢复时间",
+      "value": "1",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "高温存储试验后",
+      "raw_text": "常温下恢复1h"
+    },
+    {
+      "subject": "产品寿命",
+      "attribute": "使用年限",
+      "value": "5",
+      "unit": "年",
+      "tolerance": "",
+      "condition": "产品寿命测试",
+      "raw_text": "五年或10000次"
+    },
+    {
+      "subject": "产品寿命",
+      "attribute": "测量次数",
+      "value": "10000",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "产品寿命测试，5个样品",
+      "raw_text": "五年或10000次；精度和功能均需正常"
+    },
+    {
+      "subject": "产品寿命测试样品数",
+      "attribute": "样品数量",
+      "value": "5",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "产品寿命测试",
+      "raw_text": "选取5个样品实际测量1万次"
+    },
+    {
+      "subject": "电池寿命",
+      "attribute": "最少测量次数",
+      "value": "1000",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "电池寿命测试",
+      "raw_text": "测量次数≥1000次"
+    },
+    {
+      "subject": "电池寿命",
+      "attribute": "待机时间",
+      "value": "6",
+      "unit": "个月",
+      "tolerance": "",
+      "condition": "电池寿命测试",
+      "raw_text": "待机能力≥6个月"
+    },
+    {
+      "subject": "组装间隙",
+      "attribute": "A面上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "A面",
+      "raw_text": "A面≤0.1mm"
+    },
+    {
+      "subject": "组装间隙",
+      "attribute": "B面上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "B面",
+      "raw_text": "B面≤0.1mm"
+    },
+    {
+      "subject": "组装间隙",
+      "attribute": "C面上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面",
+      "raw_text": "C面≤0.1mm"
+    },
+    {
+      "subject": "段差",
+      "attribute": "A面上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "A面",
+      "raw_text": "A面≤0.1mm"
+    },
+    {
+      "subject": "段差",
+      "attribute": "B面上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "B面",
+      "raw_text": "B面≤0.1mm"
+    },
+    {
+      "subject": "段差",
+      "attribute": "C面上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面",
+      "raw_text": "C面≤0.1mm"
+    },
+    {
+      "subject": "划痕缺陷（B面）",
+      "attribute": "长度上限",
+      "value": "2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "B面划痕",
+      "raw_text": "B面划痕L≤2mm W≤0.1mm 同一平面N≤1"
+    },
+    {
+      "subject": "划痕缺陷（B面）",
+      "attribute": "宽度上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "B面划痕",
+      "raw_text": "B面划痕L≤2mm W≤0.1mm 同一平面N≤1"
+    },
+    {
+      "subject": "划痕缺陷（B面）",
+      "attribute": "同面数量上限",
+      "value": "1",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "B面同一平面",
+      "raw_text": "同一平面N≤1"
+    },
+    {
+      "subject": "划痕缺陷（C面）",
+      "attribute": "长度上限",
+      "value": "3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面划痕",
+      "raw_text": "C面划痕L≤3mm W≤0.1mm 同一平面N≤2 DS≥20mm"
+    },
+    {
+      "subject": "划痕缺陷（C面）",
+      "attribute": "宽度上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面划痕",
+      "raw_text": "C面划痕L≤3mm W≤0.1mm 同一平面N≤2 DS≥20mm"
+    },
+    {
+      "subject": "划痕缺陷（C面）",
+      "attribute": "同面数量上限",
+      "value": "2",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "C面同一平面",
+      "raw_text": "同一平面N≤2"
+    },
+    {
+      "subject": "划痕缺陷（C面）",
+      "attribute": "缺陷间距下限",
+      "value": "20",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面划痕间距",
+      "raw_text": "DS≥20mm"
+    },
+    {
+      "subject": "划伤缺陷（D面）",
+      "attribute": "长度上限",
+      "value": "3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "D面划伤",
+      "raw_text": "D面划伤L≤3mm W≤0.1mm"
+    },
+    {
+      "subject": "划伤缺陷（D面）",
+      "attribute": "宽度上限",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "D面划伤",
+      "raw_text": "D面划伤L≤3mm W≤0.1mm"
+    },
+    {
+      "subject": "划痕缺陷（D面）",
+      "attribute": "长度上限",
+      "value": "10",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "D面划痕",
+      "raw_text": "划痕L≤10mm W≤0.3mm 同一平面总N≤2 DS≥20mm"
+    },
+    {
+      "subject": "划痕缺陷（D面）",
+      "attribute": "宽度上限",
+      "value": "0.3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "D面划痕",
+      "raw_text": "划痕L≤10mm W≤0.3mm"
+    },
+    {
+      "subject": "划痕缺陷（D面）",
+      "attribute": "同面数量上限",
+      "value": "2",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "D面同一平面",
+      "raw_text": "同一平面总N≤2"
+    },
+    {
+      "subject": "划痕缺陷（D面）",
+      "attribute": "缺陷间距下限",
+      "value": "20",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "D面划痕间距",
+      "raw_text": "DS≥20mm"
+    },
+    {
+      "subject": "异色点缺陷（B面）",
+      "attribute": "直径上限",
+      "value": "0.20",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "B面异色点/凹凸点",
+      "raw_text": "B面D≤0.20mm 同一平面N≤1"
+    },
+    {
+      "subject": "异色点缺陷（B面）",
+      "attribute": "同面数量上限",
+      "value": "1",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "B面同一平面",
+      "raw_text": "同一平面N≤1"
+    },
+    {
+      "subject": "异色点缺陷（C面）",
+      "attribute": "直径上限",
+      "value": "0.30",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面异色点/凹凸点",
+      "raw_text": "C面D≤0.30mm 同一平面N≤2 DS≥20mm"
+    },
+    {
+      "subject": "异色点缺陷（C面）",
+      "attribute": "同面数量上限",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "C面同一平面",
+      "raw_text": "同一平面N≤2"
+    },
+    {
+      "subject": "异色点缺陷（C面）",
+      "attribute": "缺陷间距下限",
+      "value": "20",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面异色点间距",
+      "raw_text": "DS≥20mm"
+    },
+    {
+      "subject": "异色点缺陷（D面）",
+      "attribute": "直径上限",
+      "value": "0.30",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "D面异色点/凹凸点",
+      "raw_text": "D面D≤0.30mm 同一平面N≤2"
+    },
+    {
+      "subject": "异色点缺陷（D面）",
+      "attribute": "同面数量上限",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "D面同一平面",
+      "raw_text": "同一平面N≤2"
+    },
+    {
+      "subject": "同色点缺陷（B面）",
+      "attribute": "直径上限",
+      "value": "0.30",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "B面同色点",
+      "raw_text": "B面D≤0.30mm 同一平面N≤1"
+    },
+    {
+      "subject": "同色点缺陷（B面）",
+      "attribute": "同面数量上限",
+      "value": "1",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "B面同一平面",
+      "raw_text": "同一平面N≤1"
+    },
+    {
+      "subject": "同色点缺陷（C面）",
+      "attribute": "直径上限",
+      "value": "0.30",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面同色点",
+      "raw_text": "C面D≤0.30mm 同一平面N≤2 DS≥20mm"
+    },
+    {
+      "subject": "同色点缺陷（C面）",
+      "attribute": "同面数量上限",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "C面同一平面",
+      "raw_text": "同一平面N≤2"
+    },
+    {
+      "subject": "同色点缺陷（C面）",
+      "attribute": "缺陷间距下限",
+      "value": "20",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "C面同色点间距",
+      "raw_text": "DS≥20mm"
+    },
+    {
+      "subject": "同色点缺陷（D面）",
+      "attribute": "直径上限",
+      "value": "0.40",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "D面同色点",
+      "raw_text": "D面D≤0.40mm 同一平面N≤2"
+    },
+    {
+      "subject": "同色点缺陷（D面）",
+      "attribute": "同面数量上限",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "D面同一平面",
+      "raw_text": "同一平面N≤2"
+    },
+    {
+      "subject": "色差值",
+      "attribute": "上限（△E）",
+      "value": "0.8",
+      "unit": "",
+      "tolerance": "",
+      "condition": "色差检验",
+      "raw_text": "色差值管控△E≤0.8，色差肉眼不可见，表面光泽与样件相同"
+    }
+  ]
+}

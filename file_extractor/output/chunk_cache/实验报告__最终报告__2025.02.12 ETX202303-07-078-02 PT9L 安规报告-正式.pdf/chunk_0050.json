@@ -1,0 +1,170 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "104-105",
+    "total_pages": 182
+  },
+  "tests": [
+    {
+      "clause": "L.3.1",
+      "name": "Dielectric strength",
+      "verdict": "N/A",
+      "description": "Dielectric strength test of Clause 8.8.3 for the appropriate type and number of MOP(s) conducted by preparing the sample according to IEC 60851-5:1996, Clause 4.4.1 for a twisted pair",
+      "test_voltages": [
+        {
+          "insulation_type": "BASIC and SUPPLEMENTARY INSULATION",
+          "voltage": "3000 V"
+        },
+        {
+          "insulation_type": "REINFORCED INSULATION",
+          "voltage": "6000 V"
+        }
+      ],
+      "reference_standards": [
+        "IEC 60851-5:1996 Clause 4.4.1"
+      ]
+    },
+    {
+      "clause": "L.3.2",
+      "name": "Flexibility and adherence",
+      "verdict": "N/A",
+      "description": "Sample subjected to flexibility and adherence test 8 of IEC 60851-3:1996, clause 5.1.1, using mandrel diameters of Table L.1. Followed by dielectric test of clause 8.8.3.",
+      "test_voltages": [
+        {
+          "insulation_type": "BASIC and SUPPLEMENTARY INSULATION",
+          "voltage": "1500 V"
+        },
+        {
+          "insulation_type": "REINFORCED INSULATION",
+          "voltage": "3000 V"
+        }
+      ],
+      "tension": "118 MPa ±11.8 MPa",
+      "reference_standards": [
+        "IEC 60851-3:1996 clause 5.1.1",
+        "IEC 60851-3:1997 clause 5.1.1.4"
+      ]
+    },
+    {
+      "clause": "L.3.3",
+      "name": "Heat Shock",
+      "verdict": "N/A",
+      "description": "Sample subjected to heat shock test 9 of IEC 60851-6:1996, followed by dielectric strength test of clause 8.8.3. Dielectric strength test conducted at room temperature after removal from the oven.",
+      "test_voltages": [
+        {
+          "insulation_type": "BASIC and SUPPLEMENTARY INSULATION",
+          "voltage": "1500 V"
+        },
+        {
+          "insulation_type": "REINFORCED INSULATION",
+          "voltage": "3000 V"
+        }
+      ],
+      "reference_standards": [
+        "IEC 60851-6:1996"
+      ]
+    },
+    {
+      "clause": "L.3.4",
+      "name": "Retention of electric strength after bending",
+      "verdict": "N/A",
+      "description": "Five samples prepared as in L.3.2 subjected to dielectric strength and bending tests. Test voltage applied between the shot and conductor.",
+      "test_voltages": [
+        {
+          "insulation_type": "BASIC and SUPPLEMENTARY INSULATION",
+          "voltage": "1500 V"
+        },
+        {
+          "insulation_type": "REINFORCED INSULATION",
+          "voltage": "3000 V"
+        }
+      ]
+    },
+    {
+      "clause": "L.4",
+      "name": "Tests during manufacture",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "L.4.1",
+      "name": "Production line dielectric strength tests",
+      "verdict": "N/A",
+      "description": "Production line dielectric strength tests conducted by the manufacture according to L.4.2 and L.4.3"
+    },
+    {
+      "clause": "L.4.2",
+      "name": "Routine testing (100% testing) dielectric strength",
+      "verdict": "N/A",
+      "description": "Test voltage for routine testing (100% testing)",
+      "test_voltages": [
+        {
+          "insulation_type": "BASIC and SUPPLEMENTARY INSULATION",
+          "voltage_rms": "1500 V r.m.s.",
+          "voltage_peak": "2100 V peak"
+        },
+        {
+          "insulation_type": "REINFORCED INSULATION",
+          "voltage_rms": "3000 V r.m.s.",
+          "voltage_peak": "4200 V peak"
+        }
+      ]
+    },
+    {
+      "clause": "L.4.3",
+      "name": "Sampling tests",
+      "verdict": "N/A",
+      "description": "Sampling tests conducted using twisted pair samples (IEC 60851-5:1996, clause 4.4.1). Minimum breakdown test voltage at least twice the voltage in Tables 6 and 7.",
+      "test_voltages": [
+        {
+          "insulation_type": "BASIC and SUPPLEMENTARY INSULATION",
+          "voltage_rms": "3000 V r.m.s.",
+          "voltage_peak": "4200 V peak"
+        },
+        {
+          "insulation_type": "REINFORCED INSULATION",
+          "voltage_rms": "6000 V r.m.s.",
+          "voltage_peak": "8400 V peak"
+        }
+      ],
+      "reference_standards": [
+        "IEC 60851-5:1996 clause 4.4.1"
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment general requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European version of IEC60601-1"
+    },
+    {
+      "id": "IEC 60851-5:1996",
+      "clause": "4.4.1",
+      "description": "Winding wires - Methods of test - Part 5: Electrical properties - twisted pair dielectric test"
+    },
+    {
+      "id": "IEC 60851-3:1996",
+      "clause": "5.1.1",
+      "description": "Winding wires - Methods of test - Part 3: Mechanical properties - flexibility and adherence"
+    },
+    {
+      "id": "IEC 60851-3:1997",
+      "clause": "5.1.1.4",
+      "description": "Winding wires - Methods of test - Part 3: Mechanical properties"
+    },
+    {
+      "id": "IEC 60851-6:1996",
+      "description": "Winding wires - Methods of test - Part 6: Thermal properties - heat shock test"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-02"
+    }
+  ]
+}

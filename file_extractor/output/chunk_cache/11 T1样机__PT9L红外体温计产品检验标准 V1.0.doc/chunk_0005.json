@@ -1,0 +1,98 @@
+{
+  "document": {
+    "title": "外观检验标准（注塑件/金属件/整机）",
+    "doc_type": "检验标准"
+  },
+  "tests": [
+    {
+      "test_id": "10",
+      "item": "注塑件拉伤",
+      "expected_value": "A面：不允许；B面：不允许；C面：不允许；D面：目测不明显/参照限度样本；E面：不影响组装及功能即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "11",
+      "item": "注塑件料口/水口",
+      "expected_value": "A面：不允许；B面：不允许；C面：不允许；D面：目测不明显/参照限度样本；E面：不影响组装及功能即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "12",
+      "item": "注塑件熔接线/气痕",
+      "expected_value": "A面：不允许；B面：目测不明显/参照限度样本；C面：目测不明显/参照限度样本；D面：目测不明显/参照限度样本；E面：不影响组装及功能即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "13",
+      "item": "毛边/批锋/分型线",
+      "expected_value": "A面：不允许；B面：不允许；C面：无刮手感，不允许有安全风险的批锋；D面：无刮手感，不允许有安全风险的批锋；E面：不影响组装及功能且牢固即可",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "14",
+      "item": "高光面光泽度",
+      "expected_value": "A面：参照限度样本；B/C/D/E面：N/A",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "15",
+      "item": "缺料、断裂、裂痕、烧焦",
+      "expected_value": "所有面：不允许",
+      "pass_criteria": "目视",
+      "condition": "MI"
+    },
+    {
+      "test_id": "16",
+      "item": "金属部件锈蚀氧化",
+      "expected_value": "A/B/C面：N/A；D面：不允许；E面：不允许",
+      "pass_criteria": "目视",
+      "condition": "MI"
+    },
+    {
+      "test_id": "17",
+      "item": "色差",
+      "expected_value": "色差值管控△E≤0.8，色差肉眼不可见，表面光泽与样件相同",
+      "pass_criteria": "目视，与样件对比，色差仪",
+      "condition": "MI"
+    },
+    {
+      "test_id": "18",
+      "item": "螺丝",
+      "expected_value": "漏装、滑丝/滑牙、划伤不允许，需紧固到位，无松动、未打紧现象",
+      "pass_criteria": "目视，与样件对比",
+      "condition": "MI"
+    },
+    {
+      "test_id": "19",
+      "item": "按键",
+      "expected_value": "用指腹正常力按压按键，无弹性、不回弹不允许",
+      "pass_criteria": "目视/按键",
+      "condition": "MI"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外观检验项目按面别（A/B/C/D/E面）分级管控，主要检验项目包括：注塑件拉伤、料口/水口、熔接线/气痕、毛边/批锋/分型线、高光面光泽度、缺料/断裂/裂痕/烧焦、金属部件锈蚀氧化、色差、螺丝、按键等。各缺陷根据面别严格程度不同，A面要求最严（多为不允许），E面要求最宽松（不影响组装及功能即可）。色差控制要求△E≤0.8，肉眼不可见。螺丝需紧固到位，无松动、未打紧现象，不允许漏装、滑丝/滑牙、划伤。按键需有正常回弹性。",
+      "topic_tags": [
+        "外观检验",
+        "注塑件",
+        "面别分级",
+        "色差",
+        "螺丝",
+        "按键",
+        "缺陷判定"
+      ],
+      "related_subjects": [
+        "外观检验标准",
+        "注塑件检验",
+        "整机检验"
+      ]
+    }
+  ]
+}

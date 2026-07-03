@@ -1,0 +1,181 @@
+```json
+{
+  "context_summary": "本轮已补充了两份文件（F0020 和 F0024）的完整文件头部局部上下文，包括：文件名标题行、DN 字段（均为 PT9L-FXGB01 V1.0）、内部版本声明（V1.0）、产品名称（Infrared Forehead Thermometer）、起草/审核/批准签字栏，以及版本历史表格全行。关键发现：F0020 的版本历史表有两行（V1.0 起源于 2024.2.2，V2.0 内容变更于 2024.5.30，起草人 Wang Di，批准人 Hou Guangwei）；F0024 的版本历史表仅有一行（V1.0 起源于 2024.10.22，起草人与批准人均为 Hou Guangwei），且无 V2.0 记录。两份文件的文件名均含 'IFT-FXGB01 V2.0 20240530'，但内部 DN 字段均写 'PT9L-FXGB01 V1.0'，形成外部文件名版本与内部 DN 版本的双重不一致。仍缺：文件正文风险评估内容、结论章节、与 DHF 清单中对该文件的引用记录、F0005/F0006/F0007 中对风险管理报告的具体引用行内容（page_context 中这些条目的 text 字段均为空）。",
+  "evidence_gaps": [
+    "F0024 版本历史表中无 V2.0 条目，需确认 F0024 是否为独立的 PT9L 专属版本还是 F0020 的副本/衍生件",
+    "F0005（PT9L 开发计划）中对风险管理报告的引用行内容为空，未能确认其指向 F0020 还是 F0024",
+    "F0006（PT9L-DHF 清单）中对风险管理报告的引用行内容为空，无法判断 DHF 清单登记的权威文件是哪一份",
+    "F0007（PT9L 开发计划另一版本）中对风险管理报告的引用行内容为空，同上",
+    "两份文件的正文风险评估章节、风险可接受性结论、残余风险总结尚未读取，无法判断内容是否相同或存在差异",
+    "文件 F0024 的文件名前缀 'PT9L--' 的命名规则含义未经其他索引文件确认",
+    "未见任何关系索引（relation index）或 DHF 主索引中明确标注哪份文件为 PT9L 风险管理关闭文件的权威版本"
+  ],
+  "additional_search_queries": [
+    "F0006 PT9L-DHF清单 风险管理报告 FXGB01 行内容",
+    "F0005 PT9L开发计划 Risk Management Report 引用行",
+    "F0007 PT9L 风险管理 FXGB01 引用",
+    "F0024 正文 风险可接受 residual risk conclusion",
+    "F0020 正文 风险可接受 residual risk conclusion",
+    "PT9L FXGB01 relation index 权威文件",
+    "DHF index F0024 F0020 authoritative risk management"
+  ],
+  "agent_instruction": "请重点核查以下三点后作出判断：①F0006（DHF清单）中登记的风险管理报告条目指向 F0020 还是 F0024，或两者均登记；②F0024 与 F0020 的正文风险评估内容是否实质相同（若相同则 F0024 很可能是 F0020 的 PT9L 专属重命名副本，而非独立文件）；③F0024 版本历史仅有 V1.0（2024.10.22），晚于 F0020 的 V2.0（2024.5.30），需判断这是否意味着 F0024 是在 F0020 基础上为 PT9L 单独建档的新起点文件。在上述证据未补全前，不应直接裁定哪份为权威关闭文件。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "RISK-049",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "actual_text": "# Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "note": "文件名标题行，前缀为 'IFT-FXGB01'，外部版本标注 V2.0，日期 20240530"
+      },
+      {
+        "evidence_id": "RISK-050",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "actual_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "note": "内部 DN 字段，文件编号为 PT9L-FXGB01，内部版本为 V1.0，与文件名 V2.0 不一致"
+      },
+      {
+        "evidence_id": "RISK-050-ext-L8-L10",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line_range": "8-10",
+        "actual_text": "**Risk Management Report**\n\n**( V 1 .0 )**",
+        "note": "文件封面标题及版本声明，内部版本明确为 V1.0"
+      },
+      {
+        "evidence_id": "RISK-050-ext-L12",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 12,
+        "actual_text": "Product name: Infrared Forehead Thermometer",
+        "note": "产品名称：红外额温计"
+      },
+      {
+        "evidence_id": "RISK-050-ext-L14-L18",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line_range": "14-18",
+        "actual_text": "**Drafted by** *(Regulation Engineer)* Date:\n\n**Reviewed by** *(Certification Engineer)* Date:\n\n**Approved by** *(Technical Director)* Date:",
+        "note": "签字栏，起草/审核/批准角色均有，但日期字段为空"
+      },
+      {
+        "evidence_id": "RISK-050-ext-version-table",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line_range": "20-23",
+        "actual_text": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| 1 | 2024.2.2 | Originated | V1.0 | Wang Di | Hou Guangwei |\n| 2 | 2024.5.30 | Content Change | V2.0 | Wang Di | Hou Guangwei |",
+        "note": "F0020 版本历史表：共两个版本，V1.0 起源于 2024-02-02，V2.0 内容变更于 2024-05-30；起草人 Wang Di，批准人 Hou Guangwei"
+      },
+      {
+        "evidence_id": "RISK-073",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "actual_text": "# PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "note": "文件名标题行，前缀为 'PT9L--'，外部版本标注仍为 V2.0 20240530，与 F0020 文件名仅差前缀"
+      },
+      {
+        "evidence_id": "RISK-074",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "actual_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "note": "内部 DN 字段与 F0020 完全相同，均为 PT9L-FXGB01 V1.0"
+      },
+      {
+        "evidence_id": "RISK-074-ext-L8-L10",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line_range": "8-10",
+        "actual_text": "**Risk Management Report**\n\n**( V 1 .0 )**",
+        "note": "封面标题及版本声明与 F0020 相同，均为 V1.0"
+      },
+      {
+        "evidence_id": "RISK-074-ext-L12",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 12,
+        "actual_text": "Product name: Infrared Forehead Thermometer",
+        "note": "产品名称与 F0020 相同"
+      },
+      {
+        "evidence_id": "RISK-074-ext-version-table",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line_range": "20-22",
+        "actual_text": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| 1 | 2024.10.22 | Originated | V1.0 | Hou Guangwei | Hou Guangwei |",
+        "note": "F0024 版本历史表：仅一个版本，V1.0 起源于 2024-10-22，起草人与批准人均为 Hou Guangwei（与 F0020 的 Wang Di 不同）；无 V2.0 记录；日期晚于 F0020 的 V2.0（2024-05-30）"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 96,
+        "note": "DHF清单第96行附近，疑为风险管理报告登记行，但当前 text 字段为空，需读取实际内容以确认登记的是 F0020 还是 F0024"
+      },
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 54,
+        "note": "开发计划第54行附近，疑为风险管理相关任务行，text 字段为空，需读取"
+      },
+      {
+        "doc_id": "F0007",
+        "rel_path": "02 开发计划E0 23.11\\PT9L.via_xlsx.clean.md",
+        "line_start": 63,
+        "note": "另一版本开发计划第63行附近，text 字段为空，需读取"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "version_discrepancy_summary",
+        "description": "两文件版本差异对比表",
+        "content": {
+          "dimension": ["文件名前缀", "外部文件名版本", "内部DN版本声明", "封面版本声明", "版本历史条目数", "V1.0日期", "V1.0起草人", "V1.0批准人", "V2.0记录"],
+          "F0020": ["IFT-FXGB01（无PT9L前缀）", "V2.0 20240530", "PT9L-FXGB01 V1.0", "V1.0", "2条", "2024.2.2", "Wang Di", "Hou Guangwei", "有（2024.5.30，Content Change）"],
+          "F0024": ["PT9L--（含PT9L前缀）", "V2.0 20240530（文件名未更新）", "PT9L-FXGB01 V1.0", "V1.0", "1条", "2024.10.22", "Hou Guangwei", "Hou Guangwei", "无"]
+        },
+        "interpretation": "F0024 的版本历史仅有 V1.0 且日期为 2024-10-22，晚于 F0020 的 V2.0（2024-05-30），表明 F0024 可能是在 F0020 基础上为 PT9L 单独新建的文件，但其文件名仍沿用了 F0020 的 'IFT-FXGB01 V2.0 20240530' 命名，造成文件名与内部版本历史的双重混乱。两份文件内部 DN 字段完全相同（PT9L-FXGB01 V1.0），无法通过 DN 区分权威性。"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "naming_pattern_analysis",
+        "description": "文件命名规律分析",
+        "content": "F0020 文件名以 'Attachment 7 04' 开头，符合 IFT 产品系列的附件命名规范；F0024 文件名以 'PT9L--Attachment 7 04' 开头，'PT9L--' 前缀是在 IFT 命名基础上叠加的产品型号标识，这种命名模式在 DHF 文件体系中通常表示该文件是针对特定型号（PT9L）的专属版本或适配版本。然而两者文件名中的 'IFT-FXGB01 V2.0 20240530' 部分完全相同，说明 F0024 的文件名未随内部版本历史更新而同步修改。"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "critical_gap_identification",
+        "description": "当前最关键的未解决证据缺口",
+        "gaps": [
+          {
+            "gap_id": "GAP-1",
+            "description": "F0006 DHF清单第96行内容为空，无法确认 DHF 官方登记的风险管理报告权威文件",
+            "priority": "最高",
+            "action": "读取 F0006 第90-105行完整内容"
+          },
+          {
+            "gap_id": "GAP-2",
+            "description": "F0024 正文内容未读取，无法判断其与 F0020 是否实质相同",
+            "priority": "高",
+            "action": "读取 F0024 正文风险评估章节及结论章节"
+          },
+          {
+            "gap_id": "GAP-3",
+            "description": "未见任何关系索引或主索引明确标注权威文件",
+            "priority": "高",
+            "action": "检索 relation index 或 DHF master index 中 FXGB01 相关条目"
+          }
+        ]
+      }
+    ]
+  }
+}
+```

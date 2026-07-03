@@ -1,0 +1,60 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "判断 T040800073941030093-PT3-F21.pdf.md 中所有标题栏字段均为'待填'的根本原因：究竟是（A）该 .md 文件本身是一个尚未完成视觉读图的自动生成脚本框架（即 MD 文件未完成，但源 PDF 本身可能已有完整标题栏），还是（B）源 PDF 本身的标题栏确实为空白/未填写状态，从而判定该图纸是否以未完成状态归档于 DHF，以及是否能作为受控 DMR 输出。",
+  "agent_input": {
+    "claim": "The packaging label drawing filed as T040800073941030093-PT3-F21 has an incomplete title block with Drawing NO. and Pro material fields marked as '待填' (to be filled), meaning this drawing has been archived in the PT9L DHF in an unfinished state and cannot serve as a controlled DMR output.",
+    "context_summary": "现有证据均来自 T040800073941030093-PT3-F21.pdf.md，该文件注释明确标注为'2026-05-14 自动生成模板 + 待填'，正文也说明'2026-05-14 脚本生成框架，标题栏 / 技术要求 / 尺寸表待视觉读图后填写'。标题栏所有字段（Drawing NO.、Part name、Pro material、Surf dispose、Scale、Tolerance、Edition、Model NO.）均为'（待填）'。关键不确定性在于：'待填'状态是 MD 解析脚本尚未执行视觉读图所致（源 PDF 可能已有完整内容），还是源 PDF 本身标题栏为空。此外，page_context 中存在相关文件（PT3SBT标签审核表、PT3 transport report）但内容为空，未能提供交叉验证。context_recovery 第1轮因 LLM 输出解析失败未能产出有效补充证据。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-108",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 1,
+        "content": "<!-- 主源 = PDF; SKILL_2D_Drawing_Reading; 2026-05-14 自动生成模板 + 待填 -->",
+        "significance": "明确标注该 .md 文件为自动生成模板，尚未完成视觉读图填写，不能直接等同于源 PDF 内容为空"
+      },
+      {
+        "evidence_id": "DMR-109",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 2,
+        "content": "# T040800073941030093-PT3-F21 2D 图读图报告",
+        "significance": "文件标题确认图号"
+      },
+      {
+        "evidence_id": "DMR-110",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 4,
+        "content": "> 源文件：`T040800073941030093-PT3-F21.pdf`（PDF 尺寸 741×488 pt，文字层字符 < 400，矢量图纸）。",
+        "significance": "文字层字符 < 400 是关键线索：矢量图纸文字层极少，可能意味着标题栏文字以矢量路径而非文本层存储，导致自动脚本无法提取，并非 PDF 内容为空的直接证明"
+      },
+      {
+        "evidence_id": "DMR-112",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 20,
+        "content": "| **Drawing NO.** | （待填 - 见右下标题栏） |",
+        "significance": "注释'见右下标题栏'暗示脚本知道标题栏位置但未执行视觉读取，不等于该字段在 PDF 中为空"
+      },
+      {
+        "evidence_id": "DMR-113",
+        "doc_id": "F0172",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\T040800073941030093-PT3-F21.pdf.md",
+        "line": 22,
+        "content": "| **Pro material** | （待填） |",
+        "significance": "同上，待填状态来源于脚本框架未完成，非 PDF 原始内容确认"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "specific_questions_for_agent": [
+      "1. 请核查源文件 T040800073941030093-PT3-F21.pdf 本身（非 .md 派生文件）是否已在文档控制系统中以受控版本存档，其标题栏是否有实际填写内容。",
+      "2. '文字层字符 < 400，矢量图纸'是否意味着 PDF 标题栏内容以矢量路径存储而非可提取文本，导致自动脚本无法读取但内容实际存在？",
+      "3. 该图纸在设计输出清单二中的归档状态（版本号、审批状态、发布日期）是否有记录？",
+      "4. PT3SBT标签审核表（F0082）中是否包含对该图号的引用或审核记录，可作为图纸完整性的交叉验证？",
+      "5. DHF 文档控制程序是否允许以'待视觉读图后填写'的 .md 派生文件作为图纸的正式归档表示，还是仅源 PDF 为受控文件？"
+    ]
+  }
+}
+```

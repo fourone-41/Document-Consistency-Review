@@ -1,0 +1,388 @@
+{
+  "document": {
+    "title": "支架.pdf（嵌套副本｜portrait 旋转版）",
+    "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/设计输出清单二/图纸/支架.pdf",
+    "generated_date": "2026-06-02",
+    "status": "自动识别为主目录主图的装订方向旋转副本，无设计内容差异",
+    "document_type": "设计输出图纸（嵌套副本）",
+    "authority_version_md": "图纸/支架.pdf.md",
+    "authority_version_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/支架.pdf"
+  },
+  "products": [
+    {
+      "name": "支架",
+      "product_code": "PT9L",
+      "drawing_file": "支架.pdf"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L",
+      "type": "产品型号",
+      "context": "DHF历史文件产品编号"
+    },
+    {
+      "id": "T-Z1-上盖-v3.0",
+      "type": "图纸版本标识",
+      "context": "代表性视觉抽样中引用的对比基准图纸"
+    },
+    {
+      "id": "5188",
+      "type": "审核站标编号",
+      "context": "ECN后嵌套副本被单独修订时的审核站标"
+    }
+  ],
+  "design_inputs": [
+    {
+      "description": "PDF mediabox 规格：本副本为 A3 portrait（595 × 841 pt），主图为 A3 landscape（841 × 595 pt）",
+      "source": "自动校验记录"
+    },
+    {
+      "description": "视图布局：本副本与主图整体逆时针旋转 90°",
+      "source": "比对结论表"
+    }
+  ],
+  "review_items": [
+    {
+      "item": "标题栏内容",
+      "result": "与主图逐字一致"
+    },
+    {
+      "item": "技术要求",
+      "result": "与主图逐条一致"
+    },
+    {
+      "item": "尺寸 / 公差 / 几何",
+      "result": "与主图逐项一致"
+    },
+    {
+      "item": "修订记录块",
+      "result": "与主图一致"
+    },
+    {
+      "item": "PDF 文件 hash",
+      "result": "与主图字节级不同（差 ≤ 200 字节，属 PDF 元数据 /CreationDate、/ModDate、/Producer 重导出差异，与几何无关）"
+    },
+    {
+      "item": "150 DPI overview PNG 像素 diff",
+      "result": "旋转 90° 后比对，差异 4–12% 均来自旋转重采样的字体抗锯齿噪声（max 灰度差=255 只出现在单像素粒度文字边缘），未发现任何尺寸数值、技要文字、几何线条的内容性差异"
+    },
+    {
+      "item": "代表性视觉抽样（人/AI 双重核验）",
+      "result": "T-Z1-上盖-v3.0 与本目录保护盖逐张 overview 对比，4 个视图、所有标注、所有标题栏字段、所有技要条目逐字相同"
+    },
+    {
+      "item": "综合判定",
+      "result": "E 组 14 张为 DHF 归档双份保险用途，权威版本以主目录主图（B 组）为准"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本副本（嵌套 E 组）与主图（B 组）设计内容完全一致，仅 PDF 装订方向不同。PDF mediabox：本副本 A3 portrait（595 × 841 pt），主图 A3 landscape（841 × 595 pt）。装订方向：本副本纵向（短边在上下），主图横向（短边在左右）。视图布局：本副本与主图整体逆时针旋转 90°。标题栏内容、技术要求、尺寸/公差/几何、修订记录块均与主图一致。权威版本以主目录主图（B 组）为准。",
+      "topic_tags": [
+        "嵌套副本",
+        "装订方向",
+        "旋转",
+        "DHF归档",
+        "权威版本"
+      ],
+      "related_subjects": [
+        "支架.pdf",
+        "图纸/支架.pdf.md",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "若 ECN 后嵌套副本被单独修订（与主图脱钩），请在审核 5188 站标\"不好\"并在意见中注明发现的具体差异，自动触发本副本\"升级为独立详读\"。",
+      "topic_tags": [
+        "ECN",
+        "变更控制",
+        "审核流程",
+        "副本管理"
+      ],
+      "related_subjects": [
+        "5188",
+        "支架.pdf",
+        "主图"
+      ]
+    },
+    {
+      "fragment_type": "assumption",
+      "content": "本简本不重复主图内容。如需详查标题栏、技要、IQC 尺寸表、未编号默认公差、自动校验、装配链、3D 确认清单，请打开主图 md（图纸/支架.pdf.md）。",
+      "topic_tags": [
+        "IQC尺寸表",
+        "默认公差",
+        "装配链",
+        "3D确认清单",
+        "主图"
+      ],
+      "related_subjects": [
+        "图纸/支架.pdf.md",
+        "支架.pdf"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/设计输出清单二/图纸/支架.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf",
+      "to": "嵌套副本",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "图纸/支架.pdf.md",
+      "to": "嵌套副本",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "嵌套副本",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5188",
+      "to": "ECN",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf",
+      "to": "ECN",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主图",
+      "to": "ECN",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "图纸/支架.pdf.md",
+      "to": "IQC尺寸表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf",
+      "to": "IQC尺寸表",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "支架.pdf",
+      "properties": {
+        "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/设计输出清单二/图纸/支架.pdf",
+        "document_type": "设计输出图纸（嵌套副本）"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "图纸/支架.pdf.md",
+      "properties": {
+        "role": "authority_version_md"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "T-Z1-上盖-v3.0",
+      "properties": {
+        "context": "代表性视觉抽样中引用的对比基准图纸",
+        "type": "图纸版本标识"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "5188",
+      "properties": {
+        "context": "ECN后嵌套副本被单独修订时的审核站标",
+        "type": "审核站标编号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "PT9L",
+      "properties": {
+        "context": "DHF历史文件产品编号",
+        "type": "产品型号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "scope_limitation",
+      "properties": {
+        "fragment_type": "scope_limitation",
+        "topic_tags": [
+          "嵌套副本",
+          "装订方向",
+          "旋转",
+          "DHF归档",
+          "权威版本"
+        ]
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "behavioral_spec",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "topic_tags": [
+          "ECN",
+          "变更控制",
+          "审核流程",
+          "副本管理"
+        ]
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架.pdf（嵌套副本｜portrait 旋转版）",
+      "to": "assumption",
+      "properties": {
+        "fragment_type": "assumption",
+        "topic_tags": [
+          "IQC尺寸表",
+          "默认公差",
+          "装配链",
+          "3D确认清单",
+          "主图"
+        ]
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "标题栏内容",
+      "properties": {
+        "result": "与主图逐字一致"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "技术要求",
+      "properties": {
+        "result": "与主图逐条一致"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "尺寸 / 公差 / 几何",
+      "properties": {
+        "result": "与主图逐项一致"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "修订记录块",
+      "properties": {
+        "result": "与主图一致"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "PDF 文件 hash",
+      "properties": {
+        "result": "与主图字节级不同（差 ≤ 200 字节，属 PDF 元数据 /CreationDate、/ModDate、/Producer 重导出差异，与几何无关）"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "150 DPI overview PNG 像素 diff",
+      "properties": {
+        "result": "旋转 90° 后比对，差异 4–12% 均来自旋转重采样的字体抗锯齿噪声（max 灰度差=255 只出现在单像素粒度文字边缘），未发现任何尺寸数值、技要文字、几何线条的内容性差异"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "代表性视觉抽样（人/AI 双重核验）",
+      "properties": {
+        "result": "T-Z1-上盖-v3.0 与本目录保护盖逐张 overview 对比，4 个视图、所有标注、所有标题栏字段、所有技要条目逐字相同"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "支架.pdf",
+      "to": "综合判定",
+      "properties": {
+        "result": "E 组 14 张为 DHF 归档双份保险用途，权威版本以主目录主图（B 组）为准"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "支架.pdf",
+      "to": "修订记录块",
+      "properties": {
+        "context": "修订记录块与主图一致"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "PDF页面尺寸",
+      "attribute": "宽度",
+      "value": "595",
+      "unit": "pt",
+      "tolerance": "",
+      "condition": "A3 portrait副本",
+      "raw_text": "PDF mediabox 规格：本副本为 A3 portrait（595 × 841 pt）"
+    },
+    {
+      "subject": "PDF页面尺寸",
+      "attribute": "高度",
+      "value": "841",
+      "unit": "pt",
+      "tolerance": "",
+      "condition": "A3 portrait副本",
+      "raw_text": "PDF mediabox 规格：本副本为 A3 portrait（595 × 841 pt）"
+    },
+    {
+      "subject": "PDF页面尺寸",
+      "attribute": "宽度",
+      "value": "841",
+      "unit": "pt",
+      "tolerance": "",
+      "condition": "A3 landscape主图",
+      "raw_text": "主图为 A3 landscape（841 × 595 pt）"
+    },
+    {
+      "subject": "PDF页面尺寸",
+      "attribute": "高度",
+      "value": "595",
+      "unit": "pt",
+      "tolerance": "",
+      "condition": "A3 landscape主图",
+      "raw_text": "主图为 A3 landscape（841 × 595 pt）"
+    },
+    {
+      "subject": "视图旋转角度",
+      "attribute": "旋转方向及角度",
+      "value": "逆时针旋转90",
+      "unit": "°",
+      "tolerance": "",
+      "condition": "本副本与主图整体",
+      "raw_text": "本副本与主图整体逆时针旋转 90°"
+    }
+  ]
+}

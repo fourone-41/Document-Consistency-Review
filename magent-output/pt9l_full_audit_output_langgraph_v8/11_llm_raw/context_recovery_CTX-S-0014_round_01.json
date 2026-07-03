@@ -1,0 +1,149 @@
+```json
+{
+  "context_summary": "本轮已收集到以下证据：(1) F0260文件路径确认含'PT9C'字样（用户现场测试计划 PT9C V1.0），且该文件位于'18 设计确认\\用户测试\\'目录下，内含风险评估条款（RISK-127/128/129）；(2) F0258（PT9L 用户测试记录）同样位于'18 设计确认\\用户测试\\'目录下，含相同结构的风险评估条款（RISK-125/126）；(3) F0242存在于'18 设计确认\\'主目录（PT9C设计确认E0 23.11），同时F0388在'历史记录\\PT9LDHF-草稿\\设计确认\\'下存在同名PT9C设计确认文件，说明PT9C相关文件同时出现在PT9L DHF草稿历史目录中。然而，page_context中所有条目的text字段均为空，无法获取实际内容；缺少PT9L设计确认主索引文件对F0260的引用关系证据；缺少F0260文件头部元数据（适用型号、版本声明、适用范围）；缺少PT9L风险管理文件（如风险管理报告/风险评估汇总）对F0260风险评估条款的引用或交叉引用记录；缺少F0260与PT9L设计确认矩阵之间的追溯链路证据。",
+  "evidence_gaps": [
+    "F0260文件头部元数据缺失：无法确认该文件声明的适用型号是PT9C还是PT9L，或是否有版本升级说明将其纳入PT9L范围",
+    "PT9L设计确认索引/目录文件缺失：无法确认'18 设计确认\\用户测试\\'目录下F0260是否被PT9L设计确认主文件正式引用",
+    "PT9L风险管理报告或风险评估汇总文件缺失：无法确认F0260中的风险评估条款是否被PT9L风险闭环链路正式纳入",
+    "F0260与PT9L设计确认矩阵（Design Validation Matrix）之间的追溯关系缺失：无法判断该文件是否作为PT9L设计确认证据被正式接受",
+    "F0242（PT9C设计确认E0 23.11）实际内容缺失：page_context中text为空，无法判断该文件是否包含对F0260的引用或适用范围声明",
+    "F0388（历史记录\\PT9LDHF-草稿中的PT9C设计确认）实际内容缺失：无法判断该草稿文件与F0242的关系，以及是否说明PT9C文件被有意保留用于PT9L",
+    "F0258（PT9L用户测试记录）与F0260（PT9C用户测试计划）之间的配对关系证据缺失：无法确认F0258是否引用F0260作为其测试计划依据，或两者是否属于同一测试活动",
+    "变更控制记录缺失：无法确认是否存在ECO/DCO将PT9C用户测试计划正式升版或重新标识为适用于PT9L",
+    "PT9L DHF文件清单（Document List）缺失：无法确认F0260是否被正式列入PT9L DHF受控文件范围"
+  ],
+  "additional_search_queries": [
+    "F0260 文件头部 适用型号 PT9L OR PT9C 版本 scope",
+    "18 设计确认 PT9L 设计确认索引 OR 目录 OR 文件清单",
+    "PT9L 风险管理报告 OR 风险评估汇总 用户现场测试",
+    "PT9L 设计确认矩阵 OR Design Validation Matrix F0260",
+    "F0258 用户测试记录 测试计划 引用 F0260 OR PT9C",
+    "F0242 PT9C设计确认 适用范围 OR 型号声明",
+    "F0388 PT9LDHF草稿 PT9C设计确认 说明 OR 备注",
+    "变更控制 ECO DCO 用户现场测试计划 PT9C PT9L",
+    "DHF文件清单 PT9L F0260 OR 用户现场测试计划",
+    "rel_path:18 设计确认 title:PT9L 设计确认报告 OR 确认总结"
+  ],
+  "agent_instruction": "Risk Traceability Agent 复审指令：本任务需判断F0260（文件名含PT9C的用户现场测试计划）是否构成PT9L风险闭环链路中的混入风险。请重点核查以下四个维度：(1)【文件归属合法性】检索F0260文件头部元数据，确认其声明的适用型号；若文件头部明确标注PT9C且无PT9L适用声明，则构成型号混入；(2)【引用链路完整性】检索PT9L设计确认主索引或DHF文件清单，确认F0260是否被正式引用为PT9L设计确认证据；若无正式引用记录，则风险评估条款的纳入缺乏合规依据；(3)【风险闭环追溯】检索PT9L风险管理报告，确认F0260中的风险评估条款（RISK-128/129）是否被PT9L风险管理活动正式接受和关闭；(4)【历史文件区分】注意F0388位于'历史记录\\PT9LDHF-草稿\\'路径，需区分其是否为已废止草稿，避免将历史草稿中的PT9C文件误判为当前PT9L DHF的组成部分。在证据不完整的情况下，不得直接裁决为confirmed或false_positive，应标注needs_more_context并列明仍缺失的具体证据。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "RISK-127",
+        "doc_id": "F0260",
+        "rel_path": "18 设计确认\\用户测试\\用户现场测试计划 PT9C V1.0.via_lo_html.clean.md",
+        "line": 87,
+        "source_text": "4\\. 测试人员在评审用户现场测试记录表中的用户使用过程记录时，检查用户操作是否正确。若操作过程中发现异常情况或新的风险，应进行记录；",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "4\\. 测试人员在评审用户现场测试记录表中的用户使用过程记录时，检查用户操作是否正确。若操作过程中发现异常情况或新的风险，应进行记录；",
+        "annotation": "F0260文件内含风险识别程序条款，位于PT9L DHF的'18 设计确认\\用户测试\\'目录下，但文件名明确标注PT9C V1.0"
+      },
+      {
+        "evidence_id": "RISK-128",
+        "doc_id": "F0260",
+        "rel_path": "18 设计确认\\用户测试\\用户现场测试计划 PT9C V1.0.via_lo_html.clean.md",
+        "line": 151,
+        "source_text": "**风险评估：**",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "**风险评估：**",
+        "annotation": "F0260含独立风险评估章节，该章节若被PT9L风险管理报告引用则构成跨型号风险闭环；若未被引用则风险条款悬空"
+      },
+      {
+        "evidence_id": "RISK-129",
+        "doc_id": "F0260",
+        "rel_path": "18 设计确认\\用户测试\\用户现场测试计划 PT9C V1.0.via_lo_html.clean.md",
+        "line": 153,
+        "source_text": "是否发现新的风险 ｜ □未发现 □有新风险，解决方案：",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "是否发现新的风险 ｜ □未发现 □有新风险，解决方案：",
+        "annotation": "风险评估结论字段为空白模板状态，无法判断该条款是否已被填写完成并纳入PT9L风险闭环"
+      },
+      {
+        "evidence_id": "RISK-125",
+        "doc_id": "F0258",
+        "rel_path": "18 设计确认\\用户测试\\PT9L 用户测试记录.via_lo_html.clean.md",
+        "line": 108,
+        "source_text": "**风险评估：**",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "**风险评估：**",
+        "annotation": "F0258为PT9L用户测试记录，含相同结构的风险评估章节；需确认F0258是否引用F0260作为其对应测试计划"
+      },
+      {
+        "evidence_id": "RISK-126",
+        "doc_id": "F0258",
+        "rel_path": "18 设计确认\\用户测试\\PT9L 用户测试记录.via_lo_html.clean.md",
+        "line": 110,
+        "source_text": "是否发现新的风险 ｜ □未发现 □有新风险，解决方案：",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "是否发现新的风险 ｜ □未发现 □有新风险，解决方案：",
+        "annotation": "F0258风险评估结论字段同样为空白模板状态，与F0260结构高度一致，需判断两者是否为计划-记录配对关系"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9C设计确认E0（主DHF目录）",
+        "text": "[内容待检索：需获取该文件的适用型号声明、文件清单及对F0260的引用情况]",
+        "annotation": "F0242位于PT9L DHF主目录'18 设计确认\\'下，文件名含PT9C，与F0388（历史草稿中同名文件）的关系需澄清"
+      },
+      {
+        "doc_id": "F0388",
+        "rel_path": "历史记录\\PT9LDHF-草稿\\设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9C设计确认E0（历史草稿目录）",
+        "text": "[内容待检索：需确认该文件是否为已废止草稿，与F0242的版本关系]",
+        "annotation": "F0388位于'历史记录\\PT9LDHF-草稿\\'路径，表明PT9C设计确认文件曾作为PT9L DHF草稿的一部分存在，需判断是否已被正式版本替代"
+      },
+      {
+        "doc_id": "F0260",
+        "rel_path": "18 设计确认\\用户测试\\用户现场测试计划 PT9C V1.0.via_lo_html.clean.md",
+        "line_start": 1,
+        "title": "用户现场测试计划PT9C V1.0（文件头部）",
+        "text": "[内容待检索：需获取文件头部的型号声明、版本历史、适用范围及审批记录]",
+        "annotation": "关键缺失：文件头部元数据是判断该文件是否合法纳入PT9L DHF的首要证据"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "context_type": "structural_observation",
+        "description": "目录结构分析：F0260（PT9C用户测试计划）与F0258（PT9L用户测试记录）同处于'18 设计确认\\用户测试\\'目录，形成潜在的计划-记录配对关系，但两者型号标识不一致（一为PT9C，一为PT9L）",
+        "implication": "若F0258（PT9L记录）的对应测试计划应为PT9L版本，则F0260（PT9C计划）的存在可能表明PT9L缺少独立的用户测试计划，或PT9C计划被错误复用",
+        "confidence": "medium",
+        "requires_further_verification": true
+      },
+      {
+        "context_id": "RC-002",
+        "context_type": "structural_observation",
+        "description": "历史草稿路径发现：F0388在'历史记录\\PT9LDHF-草稿\\'中存在与F0242同名的PT9C设计确认文件，说明PT9C文件在PT9L DHF开发过程中曾被作为参考或草稿基础",
+        "implication": "这可能是正常的产品迭代行为（PT9L基于PT9C开发），也可能是文件清理不彻底导致旧型号文件残留。需结合变更控制记录判断",
+        "confidence": "medium",
+        "requires_further_verification": true
+      },
+      {
+        "context_id": "RC-003",
+        "context_type": "risk_chain_gap",
+        "description": "风险评估条款状态：RISK-129和RISK-126均显示风险评估结论字段为空白模板（'□未发现 □有新风险'），无法确认任一文件的风险评估是否已完成填写",
+        "implication": "若F0260的风险评估条款未被填写完成，则其被纳入PT9L风险闭环链路的问题更为严重；若已填写但当前证据未能获取填写内容，则需进一步检索完整文件",
+        "confidence": "low",
+        "requires_further_verification": true
+      },
+      {
+        "context_id": "RC-004",
+        "context_type": "missing_link_identification",
+        "description": "PT9L风险闭环链路的关键缺失节点：当前证据无法证明存在以下链路：PT9L风险管理报告 → 引用F0260风险评估条款 → 风险关闭记录。该链路的缺失是claim成立的核心条件",
+        "implication": "在获取PT9L风险管理报告之前，无法最终判断claim的真实性。建议下一轮优先检索PT9L风险管理报告",
+        "confidence": "high",
+        "requires_further_verification": true
+      }
+    ]
+  }
+}
+```

@@ -1,0 +1,131 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-03",
+    "title": "PT9L 红外体温计 ISO 80601-2-56 Test Report",
+    "total_pages": 21,
+    "status": "DRAFT",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/草稿/ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf"
+  },
+  "products": [
+    {
+      "name": "PT9L 红外体温计",
+      "type": "CLINICAL THERMOMETER",
+      "identifiers": [
+        "PT9L"
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "ISO 80601-2-56",
+      "context": "Test standard for clinical thermometers"
+    },
+    {
+      "standard": "ISO 14971",
+      "context": "Risk management for medical devices, referenced in RM Results Table"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-FXJH01 V1.0",
+      "type": "Risk Management Plan",
+      "description": "Risk Management Plan - Intended use and identification of characteristics related to cleaning"
+    },
+    {
+      "id": "PT9L-FXPJ01 V1.0",
+      "type": "Risk Assessment Report",
+      "description": "Risk Assessment Report - Hazard analysis, risk estimation, risk evaluation"
+    },
+    {
+      "id": "PT9L-FXYS01 V1.0",
+      "type": "Verification Report",
+      "description": "Verification of risk control measure and residual risk evaluation report"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "201.11.6.6",
+      "title": "Cleaning and disinfection of ME EQUIPMENT and ME SYSTEM",
+      "verdict": "P",
+      "description": "Check compliance by inspection of the RISK MANAGEMENT FILE. Clean and disinfect CLINICAL THERMOMETER, PROBE or its parts or ACCESSORIES 100 times in accordance with methods indicated in the instruction for use, including any cooling or drying period. After these PROCEDURES, confirm that BASIC SAFETY and ESSENTIAL PERFORMANCE are maintained.",
+      "sub_results": [
+        {
+          "iso14971_clause": "4.2",
+          "document_ref": "PT9L-FXJH01 V1.0",
+          "result": "Intended use and identification of characteristics related to cleaning analyzed and recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "4.3",
+          "document_ref": "PT9L-FXPJ01 V1.0",
+          "result": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "4.4",
+          "document_ref": "PT9L-FXPJ01 V1.0",
+          "result": "Risk estimation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "5",
+          "document_ref": "PT9L-FXPJ01 V1.0",
+          "result": "Risk evaluation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "6.4",
+          "document_ref": "PT9L-FXYS01 V1.0",
+          "result": "Residual risk evaluated",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "201.12.1.101",
+      "title": "Additional requirements for accuracy of controls and instruments",
+      "verdict": "P",
+      "description": "When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE.",
+      "results_observed": [
+        "The CLINICAL THERMOMETER shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source.",
+        "The CLINICAL THERMOMETER shows '- - -°F' or '- - -℃' when output temperature is outside the rated extended output range."
+      ],
+      "remarks": "Y"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 201.11.6.6: When compliance with this document could be affected by the cleaning or the disinfecting of the CLINICAL THERMOMETER, PROBE or its parts or ACCESSORIES, clean and disinfect them 100 times in accordance with the methods indicated in the instruction for use, including any cooling or drying period. After these PROCEDURES, confirm that BASIC SAFETY and ESSENTIAL PERFORMANCE are maintained. Confirm that the MANUFACTURER has evaluated the effects of multiple PROCESS cycles and the effectiveness of those cycles.",
+      "topic_tags": [
+        "cleaning",
+        "disinfection",
+        "clinical thermometer",
+        "basic safety",
+        "essential performance",
+        "ISO 80601-2-56"
+      ],
+      "related_subjects": [
+        "PT9L 红外体温计",
+        "201.11.6.6",
+        "PT9L-FXYS01 V1.0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 201.12.1.101: When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE. Test result: The CLINICAL THERMOMETER shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source. The CLINICAL THERMOMETER shows '- - -°F' or '- - -℃' when output temperature is outside the rated extended output range.",
+      "topic_tags": [
+        "accuracy",
+        "alarm condition",
+        "output temperature",
+        "low power",
+        "clinical thermometer",
+        "ISO 80601-2-56"
+      ],
+      "related_subjects": [
+        "PT9L 红外体温计",
+        "201.12.1.101"
+      ]
+    }
+  ]
+}

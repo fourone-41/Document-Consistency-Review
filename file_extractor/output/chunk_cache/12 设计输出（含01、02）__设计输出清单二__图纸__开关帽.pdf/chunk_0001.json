@@ -1,0 +1,323 @@
+{
+  "document": {
+    "title": "开关帽（T-Z1-P06 V1.0）2D 图读图报告",
+    "drawing_no": "T-Z1-P06",
+    "edition": "V1.0",
+    "model_no": "T-Z1",
+    "scale": "2:1",
+    "units": "mm",
+    "date": "2026-06-02",
+    "source_file": "开关帽.pdf",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/开关帽.pdf",
+    "skill_reference": "SKILL_2D_Drawing_Reading.md",
+    "tolerance_level": "SELECT LEVEL B"
+  },
+  "products": [
+    {
+      "name": "开关帽",
+      "part_number": "T-Z1-P06",
+      "version": "V1.0",
+      "model": "T-Z1",
+      "material": "ABS（白色）",
+      "surface_treatment": "无（ABS白色素材）",
+      "dimensions_summary": "16.8 × 6.1 × 1.8 mm",
+      "manufacturing_process": "注塑件",
+      "shape_description": "矩形扁平按键帽，A-A截面呈H形（顶部薄壁0.1mm + 中间圆柱杆 + 底部薄壁）"
+    }
+  ],
+  "components": [
+    {
+      "name": "开关帽",
+      "part_number": "T-Z1-P06",
+      "material": "ABS",
+      "color": "白色",
+      "type": "注塑件"
+    },
+    {
+      "name": "下盖",
+      "part_number": "T-Z1-P02",
+      "relationship": "配合件（按键开口）",
+      "note": "待跨件确认开口尺寸"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "①",
+      "description": "主视图水平向总长",
+      "value": 16.8,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图水平向（俯视）",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "②",
+      "description": "主视图竖向总宽",
+      "value": 6.1,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图右侧（竖向）",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "③",
+      "description": "A-A顶端极薄壁（接合面，公差Level A极严）",
+      "value": 0.1,
+      "tolerance": "±0.03",
+      "unit": "mm",
+      "view": "A-A截面顶（薄壁）",
+      "iqc_required": true,
+      "precision_level": "Level A",
+      "note": "按键按压变形关键尺寸，模具能力关键项",
+      "confidence": "A"
+    },
+    {
+      "id": "④",
+      "description": "侧视图总高",
+      "value": 1.8,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "侧视图右侧（竖向）",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "⑤",
+      "description": "侧视图顶部小宽",
+      "value": 1.6,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "侧视图上方水平",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "无编号-1",
+      "description": "A-A顶部水平向",
+      "value": 2.7,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "SECTION A-A上方",
+      "confidence": "A"
+    },
+    {
+      "id": "无编号-2",
+      "description": "A-A总高",
+      "value": 7.7,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "SECTION A-A左侧",
+      "confidence": "A"
+    },
+    {
+      "id": "无编号-3",
+      "description": "A-A中段宽",
+      "value": 4,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "SECTION A-A中",
+      "confidence": "A"
+    },
+    {
+      "id": "无编号-4",
+      "description": "主视图分段水平向（与①16.8配对）",
+      "value": 15,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "主视图顶水平",
+      "confidence": "A"
+    },
+    {
+      "id": "无编号-5",
+      "description": "主视图中部水平段（中央按键区）",
+      "value": 9.1,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图中",
+      "confidence": "A"
+    },
+    {
+      "id": "无编号-6",
+      "description": "主视图中部宽",
+      "value": 4,
+      "tolerance": "Level B",
+      "unit": "mm",
+      "view": "主视图中",
+      "confidence": "A"
+    },
+    {
+      "id": "无编号-7",
+      "description": "主视图侧高（与②6.1配对）",
+      "value": 4.1,
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "主视图右",
+      "confidence": "A"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "TR-1",
+      "description": "带编号为重要尺寸，需要IQC测量",
+      "category": "检验要求"
+    },
+    {
+      "id": "TR-2",
+      "description": "材质为ABS（白色）；产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "category": "材料与外观要求"
+    },
+    {
+      "id": "TR-3",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "category": "装配验证要求"
+    },
+    {
+      "id": "TR-4",
+      "description": "产品符合RoHS 2.0",
+      "category": "法规合规要求"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "applicability": "产品须符合",
+      "context": "技术要求第4条"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Drawing NO.",
+      "value": "T-Z1-P06"
+    },
+    {
+      "type": "Model NO.",
+      "value": "T-Z1"
+    },
+    {
+      "type": "Edition",
+      "value": "V1.0"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "开关帽是单按键还是多按键（主视图中部9.1长+中间一条分隔线推测2键？）",
+      "required_source": "3D装配 + 产品定义",
+      "priority": "C级"
+    },
+    {
+      "id": "C-2",
+      "description": "③0.1±0.03是按键弹性变形薄壁，模具能否稳定做到？",
+      "required_source": "模具厂确认",
+      "priority": "C级"
+    },
+    {
+      "id": "C-3",
+      "description": "下方接触PCBA tact switch的预压量/行程",
+      "required_source": "3D装配 + 工程师",
+      "priority": "C级"
+    },
+    {
+      "id": "C-4",
+      "description": "按键复位回弹是否依赖TPU/硅胶填充件，还是ABS自身弹性",
+      "required_source": "3D模型 + BOM",
+      "priority": "C级"
+    },
+    {
+      "id": "C-5",
+      "description": "下盖按键开口尺寸（16.8±X / 6.1±X间隙合适否）",
+      "required_source": "T-Z1-P02图纸",
+      "priority": "C级"
+    }
+  ],
+  "tests": [
+    {
+      "name": "IQC测量",
+      "scope": "带编号重要尺寸（①~⑤）",
+      "critical_item": "③ 0.1±0.03 Level A精度，需IQC重点关注",
+      "method": "尺寸测量"
+    },
+    {
+      "name": "试装验证",
+      "scope": "整体产品装配",
+      "method": "装入主壳体（下盖T-Z1-P02上的开关孔）顺利装入",
+      "reference": "结构签板和组装（实配）"
+    },
+    {
+      "name": "外观检验",
+      "scope": "产品外观",
+      "acceptance_criteria": "无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "零件类型：ABS注塑件，矩形扁平按键帽，主体16.8×6.1×1.8mm，A-A截面呈\"H\"形（顶部薄壁0.1mm + 中间圆柱杆 + 底部薄壁），是典型的硅胶式/塑胶按键帽。③0.1±0.03薄壁是按键按压时变形的关键尺寸，太厚会按不动，太薄会断裂，为模具能力关键项。9.1±0.05中部水平可能是底部接触面，按下时压在PCBA上的tact switch。配合面①16.8+②6.1装入下盖按键开口（待跨件确认开口尺寸）。",
+      "topic_tags": [
+        "按键帽",
+        "薄壁",
+        "ABS注塑",
+        "H形截面",
+        "模具能力",
+        "tact switch",
+        "配合"
+      ],
+      "related_subjects": [
+        "T-Z1-P06",
+        "T-Z1-P02",
+        "SECTION A-A",
+        "③0.1±0.03"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "GENERAL TOLERANCE表（Level B采用）：尺寸＜5mm为±0.1；5–15mm为±0.1；15–50mm为±0.1；50–100mm为±0.2；＞100mm为±0.2%；角度为±0.5°。Level A精度对应：＜5mm为±0.03；5–15mm为±0.05；15–50mm为±0.05；50–100mm为±0.08；＞100mm为±0.1%；角度为±0.1°。Level C精度对应：＜5mm为±0.15；5–15mm为±0.15；15–50mm为±0.2；50–100mm为±0.3；＞100mm为±0.3%；角度为±0.5°。",
+      "topic_tags": [
+        "通用公差",
+        "Level B",
+        "Level A",
+        "Level C",
+        "公差等级"
+      ],
+      "related_subjects": [
+        "T-Z1-P06",
+        "标题栏",
+        "IQC"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "自动检查结果：DPI满足300DPI要求；编号①②③④⑤共5个，连续无跳号；无角度尺寸；无n-前缀；公差全部对称；③0.1±0.03为Level A级精度（远严于Level B ±0.1，是3倍严的精度），需IQC重点关注；技要第3条声明配合方为主壳体上的开关孔（推测下盖T-Z1-P02）；全部为长度/宽度尺寸，无Φ，视觉确认①-⑤引出线均为水平/竖向，与圆视图无关。",
+      "topic_tags": [
+        "自动检查",
+        "编号连续性",
+        "公差验证",
+        "配合交叉验证",
+        "IQC"
+      ],
+      "related_subjects": [
+        "T-Z1-P06",
+        "T-Z1-P02",
+        "③0.1±0.03"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准。配合件下盖T-Z1-P02的开关开口尺寸尚待跨件确认，需参考T-Z1-下盖-v2.0-20240627.pdf.md。",
+      "topic_tags": [
+        "样板基准",
+        "结构签板",
+        "实配",
+        "跨件确认",
+        "配合件"
+      ],
+      "related_subjects": [
+        "T-Z1-P02",
+        "T-Z1-P06",
+        "开关孔"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1503 @@
+{
+  "run_id": "RUN-0002",
+  "agent": "Hardware Agent",
+  "assignment_id": "ASG-0002",
+  "task_type": "domain_review",
+  "assignment": {
+    "assignment_id": "ASG-0002",
+    "target_agent": "Hardware Agent",
+    "task_type": "domain_review",
+    "review_focus": "MATRIX-001 — Design input to output parameter consistency for PT9L. Verify that key design-input parameters (measurement range, accuracy, response time, environmental conditions, Bluetooth specification, intended-use population, forehead measurement site) stated in the design input document (PT9L-KHXQ01 or equivalent) are carried forward without alteration or omission into design output documents (drawings, specifications, verification/validation test conditions). Flag any parameter value, unit, or scope discrepancy between design input and output layers. Also check whether PT9C PCB sub-component parameters are correctly scoped to PT9L system-level requirements rather than being inherited verbatim from a PT9C standalone specification.",
+    "input_refs": [
+      "PT9L-KHXQ01",
+      "PT9L-KXPS01",
+      "PT9L-FXJH01",
+      "PT9L-FXGB01",
+      "PT9L-EBOM01"
+    ],
+    "evidence_strategy": {
+      "use_page_index": true,
+      "use_relation_index": true,
+      "use_full_text": true,
+      "read_files": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01"
+      ]
+    },
+    "routing_source": "orchestrator_llm",
+    "review_status": "candidate",
+    "final_decision": null
+  },
+  "input_package": {
+    "role": "Hardware Agent",
+    "goal": "Check measurement accuracy, measurement range, battery, low-voltage behavior, hardware design, BOM references, and validation report consistency.",
+    "system_prompt": "Review hardware consistency using only supplied evidence IDs and routed candidate inputs.",
+    "retrieval_strategy": {
+      "prefix": "HW",
+      "patterns": [
+        "accuracy|measurement error|measurement range|battery|low voltage|PCB|PT9C-CNTP|PT3-P10|0[,.][23]\\s*°?C|±\\s*0[,.]\\s*[23]"
+      ],
+      "rel_contains": [
+        "04 ",
+        "06 ",
+        "11 ",
+        "12 ",
+        "实验报告"
+      ],
+      "max_hits": 140
+    },
+    "input_schema": {
+      "required_fields": [
+        "project_profile",
+        "mandatory_audit_matrix",
+        "evidence_catalog",
+        "candidate_discovery_inputs"
+      ]
+    },
+    "required_schema": {
+      "required_fields": [
+        "agent",
+        "summary",
+        "findings"
+      ],
+      "agent": "Hardware Agent",
+      "summary": "string",
+      "review_notes": [],
+      "findings": [
+        {
+          "finding_type": "snake_case",
+          "severity": "P1/P2/P3",
+          "claim": "reviewable conclusion",
+          "rationale": "evidence-based reason",
+          "evidence_ids": [],
+          "challenge_questions": []
+        }
+      ]
+    },
+    "evidence_catalog": [
+      {
+        "evidence_id": "HW-001",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 35,
+        "source_text": "| 14 | 生产过程要求 Manufacture procedure | ■工厂态要求 ■机芯检测态要求： 1.能够检验LCD与PCB的连接。 2.能够检验按键与PCB的连接。 3.能够检验待机态和工作态电流。 ■机芯调试态要求： 1.能够显示测温模块测量值。 2.能够设定蜂鸣提示音开关。 3.能够设定测量单位。 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-002",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 42,
+        "source_text": "| 20 | 电池 battery | □可充电电池：在充满电后，电池电量至少能进行 次测量，并且电池性能参数不变。 □电池：需要符合WERC认证 ■无要求 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-003",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 85,
+        "source_text": "| 3 | 测量误差 | ≥35℃且≤42℃：±0.2℃，其它：±0.3℃ |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-004",
+        "doc_id": "F0037",
+        "rel_path": "06 硬件设计方案E0 23.11\\09 硬件文档E0-PT9L-模板\\09 硬件文档E0\\E0版硬件图样阶段\\2 硬件图样评审检查表E0.via_xlsx.clean.md",
+        "line": 14,
+        "source_text": "|  | 1 | PCB 设 计 | PCB网表与原理图对应一致性 | 一致 | ■通过 □不通过 □不适用 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-005",
+        "doc_id": "F0037",
+        "rel_path": "06 硬件设计方案E0 23.11\\09 硬件文档E0-PT9L-模板\\09 硬件文档E0\\E0版硬件图样阶段\\2 硬件图样评审检查表E0.via_xlsx.clean.md",
+        "line": 15,
+        "source_text": "|  | 2 | PCB 设 计 | 连线布通率应为100% | 1 | ■通过 □不通过 □不适用 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-006",
+        "doc_id": "F0037",
+        "rel_path": "06 硬件设计方案E0 23.11\\09 硬件文档E0-PT9L-模板\\09 硬件文档E0\\E0版硬件图样阶段\\2 硬件图样评审检查表E0.via_xlsx.clean.md",
+        "line": 16,
+        "source_text": "|  | 3 | PCB 设 计 | 走线距定位孔应≧0.5mm | 合格 | ■通过 □不通过 □不适用 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-007",
+        "doc_id": "F0037",
+        "rel_path": "06 硬件设计方案E0 23.11\\09 硬件文档E0-PT9L-模板\\09 硬件文档E0\\E0版硬件图样阶段\\2 硬件图样评审检查表E0.via_xlsx.clean.md",
+        "line": 17,
+        "source_text": "|  | 4 | PCB 设 计 | 过孔开窗设置 | 不开窗 | ■通过 □不通过 □不适用 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-008",
+        "doc_id": "F0037",
+        "rel_path": "06 硬件设计方案E0 23.11\\09 硬件文档E0-PT9L-模板\\09 硬件文档E0\\E0版硬件图样阶段\\2 硬件图样评审检查表E0.via_xlsx.clean.md",
+        "line": 18,
+        "source_text": "|  | 5 | PCB 设 计 | 测试点检查 | 大小：1.5mm 数量：32 | ■通过 □不通过 □不适用 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-009",
+        "doc_id": "F0037",
+        "rel_path": "06 硬件设计方案E0 23.11\\09 硬件文档E0-PT9L-模板\\09 硬件文档E0\\E0版硬件图样阶段\\2 硬件图样评审检查表E0.via_xlsx.clean.md",
+        "line": 19,
+        "source_text": "|  | 6 | PCB 设 计 | Mark点设置 | 数量：8 | ■通过 □不通过 □不适用 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-010",
+        "doc_id": "F0040",
+        "rel_path": "06 硬件设计方案E0 23.11\\09 硬件文档E0-PT9L-模板\\09 硬件文档E0\\E0版硬件方案阶段\\硬件设计方案E0.doc.md",
+        "line": 64,
+        "source_text": "> 下图为 PDF 第1页嵌入电路图（1257×913 px，PyMuPDF xref=26），包含完整 PCB 硬件方案。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-011",
+        "doc_id": "F0073",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\硬件类 FMEA E0 23.11.via_xlsx.clean.md",
+        "line": 29,
+        "source_text": "|  | PCB | PCB | 电气连接 | PCB损坏 | 不能正常测量 | 8 | C | 线路焊盘短路 | 2 |  | 功能检验 | 2 | 32 | 无需采取措施 |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-012",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 388,
+        "source_text": "|  | 压块 | 固定传感器PCB | 传感器PCB固定不良 | 影响准确度 | 9 | B | 装配不良 | 5 | 1.工程工艺控制 2.黑体测试 | 1.跌落试验及运输试验 2.黑体测试 | 2 | 90 | 对成品进行100%黑体复测 | 9 | 5 | 1 | 45 | 符合黑体测量标准 | □ |  | □ |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-013",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 390,
+        "source_text": "|  | 自攻螺钉 | 固定PCB | 螺钉连接强度不够 | PCB跌落后散落 | 9 | C | 1.螺钉本身强度或螺纹强度不符合设计要求 | 1 | 1.工程工艺控制 | 跌落试验、运输试验 | 2 | 18 |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-014",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 34,
+        "source_text": "| 20 | 装 配 检 查 | PCB固定 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-015",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 35,
+        "source_text": "| 21 | 装 配 检 查 | PCB元件与结构干涉检查 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-016",
+        "doc_id": "F0076",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\PT9L-T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 52,
+        "source_text": "| 38 | 单 板 工 艺 | PCB尺寸检查 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-017",
+        "doc_id": "F0078",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 34,
+        "source_text": "| 20 | 装 配 检 查 | PCB固定 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-018",
+        "doc_id": "F0078",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 35,
+        "source_text": "| 21 | 装 配 检 查 | PCB元件与结构干涉检查 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-019",
+        "doc_id": "F0078",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\T1样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 52,
+        "source_text": "| 38 | 单 板 工 艺 | PCB尺寸检查 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-020",
+        "doc_id": "F0080",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\手版样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 20,
+        "source_text": "| 6 | 装 配 检 查 | PCB固定 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-021",
+        "doc_id": "F0080",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\手版样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 21,
+        "source_text": "| 7 | 装 配 检 查 | PCB元件与结构干涉检查 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-022",
+        "doc_id": "F0080",
+        "rel_path": "11 T1样机\\10 评审E1 23.11\\手版样机评审检查表E0 23.11.via_xlsx.clean.md",
+        "line": 32,
+        "source_text": "| 18 | 单 板 工 艺 | PCB尺寸检查 |  | □通过 □不通过 □不适用 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-023",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 204,
+        "source_text": "|  | The type of battery and the mode of insertion (if applicable) shall be marked (see 15.4.3.2)./应标明电池的型号及其装入方法（如合适用）（见15.4.3.2）。 | A | 检查设备电池仓是否有标识，和正负极 | OK |  | 电池仓有正极标志 | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-024",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 224,
+        "source_text": "|  | Numeric indications of parameters on ME EQUIPMENT shall be expressed in SI units according to ISO 31 except the base quantities listed in Table 1 may be expressed in the indicated units, which are outside the SI units system./ME设备参数的数值指示，应采用ISO 31的国际单位制表示，除了表1中列出的基本量可采用国际单位制以外的单位表示之外。 | A | 检查温度计显示和随机文件中参数的单位是否为摄氏度 | OK |  | 温度计符合要求 Specification Resolution: 0.1℉/0.1℃ Measurement range:89.6℉-109.2℉(32℃-42.9℃) | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-025",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 225,
+        "source_text": "|  | For application of SI units, their multiples and certain other units, ISO 1000 applies./对于国际单位制的应用，其倍数和某些其他单位，按ISO1000规定。 | A | 检查温度计显示和随机文件中参数的单位是否为摄氏度 | OK |  | 温度计符合要求 Specification Resolution: 0.1℉/0.1℃ Measurement range:89.6℉-109.2℉(32℃-42.9℃) | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-026",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 281,
+        "source_text": "|  | If leakage from a battery would result in an unacceptable RISK, the instructions for use shallinclude a warning to remove the battery if the ME EQUIPMENT is not likely to be used for sometime./如果电池的漏液会导致不可接受的风险，使用说明书中应有警告性说明：若在一段时间内可能不使用ME设备时，应取出这些电池。 | A | 检查说明书 | OK |  | Remove the batteries if the device will not be used more than one month. | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-027",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 322,
+        "source_text": "|  | – all characteristics of the ME EQUIPMENT, including range(s), accuracy, and precision of the displayed values or an indication where they can be found;/— ME设备的所有特性，包括范围、准确度和显示数值的精度，或在何处可获到这些数据； | A | 检查说明书有无此信息 | OK |  | Product specifications 5、6、8 | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-028",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 414,
+        "source_text": "|  | The type of battery and the mode of insertion (if applicable) shall be marked (see 15.4.3.2)./应标明电池的型号及其装入方法（如合适用）（见15.4.3.2）。 | A | 检查设备电池仓是否有标识，和正负极 | OK |  | 电池仓有正极标志 | —— |  | The type of battery and the mode of insertion (if applicable) shall be marked (see 15.4.3.2)./应标明电池的型号及其装入方法（如合适用）（见15.4.3.2）。 | A | 检查设备电池仓是否有标识，和正负极 | OK |  | 电池仓有正极标志 | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-029",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 90,
+        "source_text": "□ Keep the thermometer out of reach of children. For accidental swallowing of the battery or other components, please contact emergency services immediately.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-030",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 112,
+        "source_text": "(8) It is normal for readings taken from continuous measurements to fluctuate within a small range. During continuous measurements, the subject’s body temperature may be transmitted to the thermometer, affecting measurement accuracy. We recommend taking only up to 3 continuous readings within a short period.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-031",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 136,
+        "source_text": "(15) ASTM laboratory accuracy requirements in the display range of 37 to 39°C (98 to 102°F) for IR thermometers is ±0.2 °C (±0.4°F), whereas for mercury-in-glass and electronic thermometers, the requirement per ASTM Standards E667-86 and E1112-86 is ±0.1 °C (±0.2°F).",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-032",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 178,
+        "source_text": "4\\. Battery cover",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-033",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 214,
+        "source_text": "10\\. Battery symbol",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-034",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 230,
+        "source_text": "4\\. Measurement range: 89.6℉-109.2℉(32℃-42.9℃)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-035",
+        "doc_id": "F0090",
+        "rel_path": "11 T1样机\\PT9L红外体温计产品检验标准 V1.0.doc.md",
+        "line": 249,
+        "source_text": "3. 精度要求：≥35℃且≤42℃：±0.2℃，其它：±0.3℃。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-036",
+        "doc_id": "F0090",
+        "rel_path": "11 T1样机\\PT9L红外体温计产品检验标准 V1.0.doc.md",
+        "line": 294,
+        "source_text": "跌落后产品没有开裂，PCB板 元器件没有损伤，产品结构功能完好。</td>",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-037",
+        "doc_id": "F0092",
+        "rel_path": "11 T1样机\\PT9L红外体温计检测报告 V1.0.via_lo_html.clean.md",
+        "line": 60,
+        "source_text": "| 8 | **常温精度测试** | 环境要求：室温：23.0±2.0℃ 相对湿度：50%RH±20%RH<br>将恒温水槽分别设定在32℃、32.5℃、35℃、38.5℃、42℃、42.5℃、42.9℃，待恒温水槽温度稳定后，使用体温计进行测量：<br>1. 在断电情况下按住按键后装入电池，显示“CAL”后松开按键，产品进入黑体模式；<br>2. 对被测水槽连续测量三次；<br>3. 精度要求：≥35℃且≤42℃：±0.2℃，其它：±0.3℃。<br>4. 对测试结果不符合规定的温度计，可复测两次，两次复测合格，亦可作合格处理。 | 见测试记录二 | 见测试记录二 | 合格 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-038",
+        "doc_id": "F0092",
+        "rel_path": "11 T1样机\\PT9L红外体温计检测报告 V1.0.via_lo_html.clean.md",
+        "line": 65,
+        "source_text": "| 13 | **裸机跌落测试** | 产品在开机状态下，跌落高度 1.0 米，跌落正下方用平整硬木板作基垫，以垂直于地面自由落下。<br>1. 跌落高度为 1M，跌 3 次，依次顺序底部、LCD 面、有测量键 面朝下方跌落各一次，探头部位不可跌落。<br>2.应跌落于密度为 700kg/M3，厚度为 50mm 的硬质木板或混凝 土地面，若未完成跌落次数就已经解体或严重损伤时，应立即 停止后续动作。并分析。<br>3.以产品自身的重量自由下落，不可有外力加持，下落过程中 产品不可在空中翻转，否则无效。<br>跌落后产品没有开裂，PCB板 元器件没有损伤，产品结构功能完好。 | 符合要求 | 符合要求 | 合格 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-039",
+        "doc_id": "F0094",
+        "rel_path": "11 T1样机\\总装类组件清单PT9L-ABOM01 V1.0.via_xlsx.clean.md",
+        "line": 28,
+        "source_text": "| 15 | 双联弹簧 | T030100000482550143 | 0.5mm弹簧钢 | PT3-P10 | PT3 |  | 1 |  | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-040",
+        "doc_id": "F0096",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "source_text": "| 24 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-041",
+        "doc_id": "F0096",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 50,
+        "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-042",
+        "doc_id": "F0097",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-T1EB01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "source_text": "| 21 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-043",
+        "doc_id": "F0097",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-T1EB01 V1.0.via_xlsx.clean.md",
+        "line": 50,
+        "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-044",
+        "doc_id": "F0100",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\子程序测试记录E0 23.11.via_lo_html.clean.md",
+        "line": 58,
+        "source_text": "| GetBatValue | Get battery Value | I | OK |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-045",
+        "doc_id": "F0101",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\软件测试计划E0 23.11.via_lo_html.clean.md",
+        "line": 343,
+        "source_text": "| 1 | 选中物温模式，常温下将体温计对准30℃黑体，按下测量按键 | LCD显示30±0.2℃，背光为白色，单次长鸣，500ms | I，O |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-046",
+        "doc_id": "F0101",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\软件测试计划E0 23.11.via_lo_html.clean.md",
+        "line": 344,
+        "source_text": "| 2 | 选中物温模式，常温下将体温计对准45℃黑体，按下测量按键 | LCD显示45±0.2℃，背光为白色，单次长鸣，500ms | I，O |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-047",
+        "doc_id": "F0101",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\软件测试计划E0 23.11.via_lo_html.clean.md",
+        "line": 394,
+        "source_text": "| 1 | 选中物温模式，常温下将体温计对准37℃黑体，按下测量按键 | LCD显示37±0.2℃，背光为白色，单次长鸣，500ms | I，O |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-048",
+        "doc_id": "F0102",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\软件系统测试记录 E0 23.11.via_lo_html.clean.md",
+        "line": 68,
+        "source_text": "| 1 | 选中物温模式，常温下将体温计对准30℃黑体，按下测量按键 | LCD显示30±0.2℃，背光为白色，单次长鸣，500ms | I，O |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-049",
+        "doc_id": "F0102",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\软件系统测试记录 E0 23.11.via_lo_html.clean.md",
+        "line": 69,
+        "source_text": "| 2 | 选中物温模式，常温下将体温计对准45℃黑体，按下测量按键 | LCD显示45±0.2℃，背光为白色，单次长鸣，500ms | I，O |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-050",
+        "doc_id": "F0102",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\软件系统测试记录 E0 23.11.via_lo_html.clean.md",
+        "line": 139,
+        "source_text": "| 1 | 选中物温模式，常温下将体温计对准37℃黑体，按下测量按键 | LCD显示37±0.2℃，背光为白色，单次长鸣，500ms | I，O |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-051",
+        "doc_id": "F0112",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\性能规格部分（一）EN1060-1项.via_xlsx.clean.md",
+        "line": 25,
+        "source_text": "| 3 | 测量误差 | ≥35℃且≤42℃：±0.2℃，其它：±0.3℃ | □手板■T1□设计确认 ![性能规格部分（一）EN1060-1项_image_001.png](性能规格部分（一）EN1060-1项.via_xlsx_assets/性能规格部分（一）EN1060-1项_image_001.png) ![性能规格部分（一）EN1060-1项_image_001.png](性能规格部分（一）EN1060-1项.via_xlsx_assets/性能规格部分（一）EN1060-1项_image_001.png) ![性能规格部分（一）EN1060-1项_image_001.png](性能规格部分（一）EN1060-1项.via_xlsx_assets/性能规格部分（一）EN1060-1项_image_001.png) | 参见《PT9L红外体温计产品检验标准V1.0 》第8项 | 全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第8项的要求 | 参见《PT9L红外体温计检测报告 V1.0》中第8项测试结果 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-052",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 47,
+        "source_text": "| 14 | 生产过程要求 Manufacture procedure | ■工厂态要求 ■机芯检测态要求： 1.能够检验LCD与PCB的连接。 2.能够检验按键与PCB的连接。 3.能够检验待机态和工作态电流。 ■机芯调试态要求： 1.能够显示测温模块测量值。 2.能够设定蜂鸣提示音开关。 3.能够设定测量单位。 | □手板□T1■设计确认 | -- | -- | -- | -- |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-053",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 54,
+        "source_text": "| 20 | 电池 battery | □可充电电池：在充满电后，电池电量至少能进行 次测量，并且电池性能参数不变。 □电池：需要符合WERC认证 ■无要求 | □手板■T1□设计确认 | 电池使用寿命测试报告 | 符合设计输入要求 | 电池使用寿命测试报告 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-054",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 103,
+        "source_text": "| 14 | 生产过程要求 Manufacture procedure | ■工厂态要求 ■机芯检测态要求： 1.能够检验LCD与PCB的连接。 2.能够检验按键与PCB的连接。 3.能够检验待机态和工作态电流。 ■机芯调试态要求： 1.能够显示测温模块测量值。 2.能够设定蜂鸣提示音开关。 3.能够设定测量单位。 | □手板□T1■设计确认 | 检查工厂态测试是否通过 | 工厂态测试通过 | 工装硬件验证报告 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-055",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 110,
+        "source_text": "| 20 | 电池 battery | □可充电电池：在充满电后，电池电量至少能进行 次血压测量，并且电池性能参数不变。 □电池：需要符合WERC认证 ■无要求 | □手板■T1□设计确认 | -- | -- | -- | -- |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-056",
+        "doc_id": "F0117",
+        "rel_path": "11 T1样机\\设计验证计划E0\\xingneng.via_xlsx.clean.md",
+        "line": 31,
+        "source_text": "| 3 | 测量误差 | ≥35℃且≤42℃：±0.2℃，其它：±0.3℃ | □手板■T1□设计确认 | 参见《PT9L红外体温计产品检验标准V1.0 》第8项 | 全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第8项的要求 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-057",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 40,
+        "source_text": "| 14 | 生产过程要求 Manufacture procedure | ■工厂态要求 ■机芯检测态要求： 1.能够检验LCD与PCB的连接。 2.能够检验按键与PCB的连接。 3.能够检验待机态和工作态电流。 ■机芯调试态要求： 1.能够显示测温模块测量值。 2.能够设定蜂鸣提示音开关。 3.能够设定测量单位。 | □手板□T1■设计确认 | 检查工厂态测试是否通过 | 工厂态测试通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-058",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 47,
+        "source_text": "| 20 | 电池 battery | □可充电电池：在充满电后，电池电量至少能进行 次血压测量，并且电池性能参数不变。 □电池：需要符合WERC认证 ■无要求 | □手板■T1□设计确认 | 电池寿命测试报告 | 符合设计输入要求 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-059",
+        "doc_id": "F0124",
+        "rel_path": "11 T1样机\\软件文件底稿\\测试计划及测试记录E0 23.11\\软件测试计划E0 23.11.via_lo_html.clean.md",
+        "line": 367,
+        "source_text": "unsigned int BATDECT(void) ｜ Check the battery voltage，采样电池电压 ｜ C",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-060",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 168,
+        "source_text": "| Low battery | 低电压 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-061",
+        "doc_id": "F0148",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\SMT加工说明.via_lo_html.clean.md",
+        "line": 10,
+        "source_text": "**PCB 板信息：**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-062",
+        "doc_id": "F0148",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\SMT加工说明.via_lo_html.clean.md",
+        "line": 12,
+        "source_text": "1、PCB：PT9L-HFMP01 V1.0拼板；",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-063",
+        "doc_id": "F0149",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品概述.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "准确性：≥35℃且≤42℃：±0.2℃，其它±0.3℃",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-064",
+        "doc_id": "F0151",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\产品缺陷定义V1.0.via_lo_html.clean.md",
+        "line": 45,
+        "source_text": "| 测量精度 | ≥35℃且≤42℃：±0.2℃，其它±0.3℃。 |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-065",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 756,
+        "source_text": "PCB编号",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-066",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 1058,
+        "source_text": "PCB编号",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-067",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 1349,
+        "source_text": "PCB编号",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-068",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 1639,
+        "source_text": "PCB编号",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-069",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 1932,
+        "source_text": "PCB编号",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-070",
+        "doc_id": "F0152",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\图纸\\PT9L-HFMP01 V1.0-带原理图.pdf.md",
+        "line": 2222,
+        "source_text": "PCB编号",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-071",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 12,
+        "source_text": "|  | 组装探头板 | 焊探头到PCB | 1、焊锡：无铅，符合ROHS； 2、恒温电烙铁：最高温度满足元器件焊接温度 | 1、把涂抹好硅脂的传感器探头插入传感器板，探头金脚插入传感器板的4脚位置； 2、焊探头脚到PCB上； 3、剪脚。 | 1、 插装到位； 2、 焊点饱满圆润，无漏焊、虚焊、脱焊、立碑、桥接、拉尖等不良缺陷； | 关键工序 | 焊温度传感器板 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-072",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 13,
+        "source_text": "|  | 探头板焊线 | 导线焊到探头板上 | 1、焊锡：无铅，符合ROHS； 2、恒温电烙铁：最高温度满足元器件焊接温度 | 依次将红、白、黑线焊接到相应标识位置上。 ![工艺说明-PT9L_image_003.png](工艺说明-PT9L.via_xlsx_assets/工艺说明-PT9L_image_003.png) | 要求： 1、红线焊在PCB丝印“1”位置； 2、白线焊在PCB丝印“2”位置； 3、黑线焊在PCB丝印“3”位置。 | 重要 | 导线焊到探头板上 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-073",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 14,
+        "source_text": "|  | 组装探头支架 | 探头支架组装 | 电动螺丝起子 扭力要求：1.8±0.2kgf.cm | 1、将焊接完成的探头装入支架内； 2、将装有探头的支架放置在工装治具内； 3、将螺钉打入PCB螺钉定位孔内。 ![工艺说明-PT9L_image_001.png](工艺说明-PT9L.via_xlsx_assets/工艺说明-PT9L_image_001.png) | 要求： 1、检验探头焊点，无虚焊、漏焊、连焊现象； 2、探头放置平稳无虚位，晃动现象； 3、螺钉安装到位。 | 重要 | 组装探头支架 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-074",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 16,
+        "source_text": "|  | SMT | 贴片 | --- | 1、主板SMT加工参考“PT9L SMT加工说明 PT9L-SMTW01”(按照最新版本执行)； 2、元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)； | 1、 焊接元器件正确，PCB板上相应贴片元件需与BOM中元器件名称规格一一对应，带极性元器件焊接方向正确； 2、 元器件不能有缺口、破裂和烫伤，元器件焊接高度不影响装配，PCB板不能有破损、变形、翘曲，表面清洁、无焊料小圆球； 3、 焊点要表面润湿、完整、连续和圆滑，焊料量适中，焊点位置准确，无漏焊、虚焊、脱焊、立碑、桥接、拉尖等不良缺陷； | 关键工序 | 贴片元器件 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-075",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 19,
+        "source_text": "|  | 焊接 | 在主板上焊接蜂鸣器 | 1、焊锡：无铅，符合ROHS； 2、恒温电烙铁：最高温度满足元器件焊接温度 | 1、将蜂鸣器放置在工装制具内； 2、将PCB放置工装内，使蜂鸣器两个管脚穿过PCB“BUZZER”位置的两个过孔； 3、将蜂鸣器与PCB焊接在一起。 ![工艺说明-PT9L_image_005.png](工艺说明-PT9L.via_xlsx_assets/工艺说明-PT9L_image_005.png) | 1、放置平稳； 2、蜂鸣器本体紧贴PCB； 3、焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊， | 重要 | 往主板上焊接蜂鸣器 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-076",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 20,
+        "source_text": "|  | 焊接 | 在主板上焊接电池正负极弹簧 | 1、焊锡：无铅，符合ROHS； 2、恒温电烙铁：最高温度满足元器件焊接温度 | 1、将正负极簧放置在工装制具内； 2、将PCB放置工装内，使正负极簧两个管脚分别穿过PCB“+”“-”位置的过孔； 3、将正负极簧与PCB焊接在一起。 ![工艺说明-PT9L_image_004.png](工艺说明-PT9L.via_xlsx_assets/工艺说明-PT9L_image_004.png) | 1、放置平稳； 2、正负极簧本体紧贴PCB； 3、焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊。 | 重要 | 在主板上焊接电池正负极弹簧 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-077",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "source_text": "| 24 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-078",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 50,
+        "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-079",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 18,
+        "source_text": "| 2 | 主板PCB图 | Top Layer 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-080",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 19,
+        "source_text": "| 2 | 主板PCB图 | Top Overlay 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-081",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 20,
+        "source_text": "| 2 | 主板PCB图 | Bottom Layer 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-082",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 21,
+        "source_text": "| 2 | 主板PCB图 | Bottom Overlay 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-083",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 22,
+        "source_text": "| 2 | 主板PCB图 | Drill Layer 层 | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-084",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 23,
+        "source_text": "| 2 | 主板PCB图 | 拼板示意图(顶层) | PT9L-HFMP01 V1.0 | V1.0 |  |  |  |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-085",
+        "doc_id": "F0169",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\K040800021487620814-图纸-PT1-F07+V1.0.pdf.md",
+        "line": 28,
+        "source_text": "| **Tolerance** | .X ±0.3; .XX; .X° |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-086",
+        "doc_id": "F0173",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\包装\\外箱条码标签-PT1-F07 V1.0.pdf.md",
+        "line": 28,
+        "source_text": "| **Tolerance** | .X ±0.3; .XX; .X° |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-087",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 25,
+        "source_text": "| **Tolerance Level** | **B**（DTM ≤5/±0.1, 5-15/±0.1, 15-50/±0.1, 50-100/±0.2, >100/±0.2%）；ANGULAR ±0.5° |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-088",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 14,
+        "source_text": "| **Drawing NO.** | **PT3-P10** |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-089",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 81,
+        "source_text": "- **PT9L 实际装配**：以分离的 PT5-M02 + PT5-M03 为准（详见 wiki 主页 §2.4），PT3-P10 双联弹簧**不一定**进入 PT9L 量产 BOM",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-090",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 89,
+        "source_text": "| 1 | PT9L 量产 BOM 是否使用 PT3-P10 双联弹簧？还是分离的 PT5-M02 + M03？ | 分离件（PT5 系列） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-091",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 7,
+        "source_text": "> **重大发现**：BOM 中 **T-Z1-P10 同时指导光板和 PCB**（一图号两零件）⚠️ 新疑点 → 见 §6",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-092",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 42,
+        "source_text": "| 20 | **PT3-P10** | **双连弹簧** | 1 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-093",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 51,
+        "source_text": "| 11 | **T-Z1-P10** | **PCB** ⚠️ | 1 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-094",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 54,
+        "source_text": "| 08 | — | **PCB**（另一块？） | 1 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-095",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 72,
+        "source_text": "4. **PCB 组**：主板 PCB (08) + 螺钉 M2X5 × 7 (09)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-096",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 73,
+        "source_text": "5. **传感器组**：快速探温电阻 (10) + 传感器 PCB (11, T-Z1-P10) + 红外传感器 (12)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-097",
+        "doc_id": "F0179",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-斑马条-v2.0-20240524.pdf.md",
+        "line": 8,
+        "source_text": "> **斑马条 (Zebra Strip / Elastomeric Connector)** = 由导电硅胶（金/银粉填充）与绝缘硅胶交替条纹层叠而成的弹性连接器，**专用于 LCD 段码屏与 PCBA 之间的无焊接电气连接**，对应 `PT9L-液晶-20240627.pdf` 中 SPEC 表标 `CONNECTOR TYPE = ZEBRA`。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-098",
+        "doc_id": "F0179",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-斑马条-v2.0-20240524.pdf.md",
+        "line": 59,
+        "source_text": "- **\"导电方向\"**：侧视图中央箭头标识 → **垂直于长度方向**，即电流从 LCD PIN 沿厚度方向传到 PCBA 焊盘（不沿长度方向短路）。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-099",
+        "doc_id": "F0179",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-斑马条-v2.0-20240524.pdf.md",
+        "line": 72,
+        "source_text": "| **6.5 配合交叉验证** | ✅ **配合方=PT9L 液晶（PT9L-L01）**（液晶 SPEC 表 CONNECTOR TYPE = ZEBRA）；同时与 PCBA 上对应 16 个焊盘配合（位置间距对齐 LCD PIN 1.0 mm 间距） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-100",
+        "doc_id": "F0179",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-斑马条-v2.0-20240524.pdf.md",
+        "line": 80,
+        "source_text": "- **工作原理**：装配时被 LCD 与 PCBA 之间的弹性压缩力（推测 10-20% 压缩量）压紧，导电硅胶层与 LCD PIN + PCBA 焊盘做面接触。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-101",
+        "doc_id": "F0179",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-斑马条-v2.0-20240524.pdf.md",
+        "line": 83,
+        "source_text": "- **底部**：与 PCBA 上 16 个对应焊盘接触",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-102",
+        "doc_id": "F0179",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-斑马条-v2.0-20240524.pdf.md",
+        "line": 96,
+        "source_text": "| C-4 | PCBA 焊盘的位置 / 镀金层是否对应 | PCBA Gerber + BOM |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-103",
+        "doc_id": "F0180",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-液晶-20240627.pdf.md",
+        "line": 79,
+        "source_text": "| 主视图顶 PIN 区右 | — | — | 3.50 | ±0.2 | PIN 阵列到玻璃右边距 | A |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-104",
+        "doc_id": "F0180",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-液晶-20240627.pdf.md",
+        "line": 91,
+        "source_text": "| 主视图右 | — | — | 28.50 | ±0.2 | 外形高度子段 | A |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-105",
+        "doc_id": "F0180",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-液晶-20240627.pdf.md",
+        "line": 132,
+        "source_text": "- **斑马条**（同目录 `PT9L-斑马条-v2.0-20240524.pdf`）= ZEBRA 连接器，连接 LCD PIN 与 PCBA。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-106",
+        "doc_id": "F0180",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-液晶-20240627.pdf.md",
+        "line": 146,
+        "source_text": "| C-4 | ZEBRA 连接器对应 PCBA 16 个焊盘的间距 / 接触压力 | PCBA Gerber + 装配 SOP |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-107",
+        "doc_id": "F0181",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\T-Z1-上盖-v3.0-20240627.pdf.md",
+        "line": 22,
+        "source_text": "| Tolerance Level | **B**（DTM ≤5/±0.1, 5-15/±0.1, 15-50/±0.1, 50-100/±0.2, >100/±0.2%）；ANGULAR ±0.5° |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-108",
+        "doc_id": "F0182",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\T-Z1-下盖-v2.0-20240627.pdf.md",
+        "line": 22,
+        "source_text": "| Tolerance Level | **B**（DTM ≤5/±0.1, 5-15/±0.1, 15-50/±0.1, 50-100/±0.2, >100/±0.2%）；ANGULAR ±0.5° |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-109",
+        "doc_id": "F0182",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\T-Z1-下盖-v2.0-20240627.pdf.md",
+        "line": 171,
+        "source_text": "- 电池仓 3 处 Ø2.2 螺丝孔与 PCB / 电池盖的同心度。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-110",
+        "doc_id": "F0183",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\T-Z1-按键-v3.0-20240627.pdf.md",
+        "line": 42,
+        "source_text": "| 50–100 | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-111",
+        "doc_id": "F0183",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\T-Z1-按键-v3.0-20240627.pdf.md",
+        "line": 43,
+        "source_text": "| ＞ 100 | ±0.2% |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-112",
+        "doc_id": "F0184",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\保护盖.pdf.md",
+        "line": 39,
+        "source_text": "| 50–100 | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-113",
+        "doc_id": "F0184",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\保护盖.pdf.md",
+        "line": 40,
+        "source_text": "| ＞ 100 | ±0.2% |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-114",
+        "doc_id": "F0185",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\导光板.pdf.md",
+        "line": 41,
+        "source_text": "| 50–100 | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-115",
+        "doc_id": "F0185",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\导光板.pdf.md",
+        "line": 42,
+        "source_text": "| ＞ 100 | ±0.2% |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-116",
+        "doc_id": "F0185",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\导光板.pdf.md",
+        "line": 117,
+        "source_text": "| C-2 | LED 光源入光侧（哪一条边边缘有 LED？） | 3D 装配 + PCBA 图 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-117",
+        "doc_id": "F0186",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\开关帽.pdf.md",
+        "line": 38,
+        "source_text": "| 15–50 | **±0.1** | ±0.05 | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-118",
+        "doc_id": "F0186",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\开关帽.pdf.md",
+        "line": 39,
+        "source_text": "| 50–100 | **±0.2** | ±0.08 | ±0.3 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-119",
+        "doc_id": "F0186",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\开关帽.pdf.md",
+        "line": 40,
+        "source_text": "| ＞ 100 | **±0.2%** | ±0.1% | ±0.3% |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-120",
+        "doc_id": "F0186",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\开关帽.pdf.md",
+        "line": 105,
+        "source_text": "- **9.1±0.05 中部水平**：可能是底部接触面，按下时压在 PCBA 上的 tact switch。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-121",
+        "doc_id": "F0186",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\开关帽.pdf.md",
+        "line": 116,
+        "source_text": "| C-3 | 下方接触 PCBA tact switch 的预压量 / 行程 | 3D 装配 + 工程师 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-122",
+        "doc_id": "F0187",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\探头20210727.pdf.md",
+        "line": 42,
+        "source_text": "| 15–50 | **±0.1** | ±0.05 | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-123",
+        "doc_id": "F0187",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\探头20210727.pdf.md",
+        "line": 43,
+        "source_text": "| 50–100 | **±0.2** | ±0.08 | ±0.3 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-124",
+        "doc_id": "F0187",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\探头20210727.pdf.md",
+        "line": 44,
+        "source_text": "| ＞ 100 | **±0.2%** | ±0.1% | ±0.3% |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-125",
+        "doc_id": "F0188",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支撑垫.pdf.md",
+        "line": 42,
+        "source_text": "| 15–50 | **±0.1** | ±0.05 | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-126",
+        "doc_id": "F0188",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支撑垫.pdf.md",
+        "line": 43,
+        "source_text": "| 50–100 | **±0.2** | ±0.08 | ±0.3 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-127",
+        "doc_id": "F0188",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支撑垫.pdf.md",
+        "line": 44,
+        "source_text": "| ＞ 100 | **±0.2%** | ±0.1% | ±0.3% |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-128",
+        "doc_id": "F0188",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支撑垫.pdf.md",
+        "line": 109,
+        "source_text": "2. 贴在传感器筒/PCB 与壳体之间作密封/避震",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-129",
+        "doc_id": "F0188",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支撑垫.pdf.md",
+        "line": 119,
+        "source_text": "| C-1 | 贴在哪个零件上（探头筒外壁？支架背面？PCB 周边？） | 3D 装配 + BOM |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-130",
+        "doc_id": "F0189",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支架.pdf.md",
+        "line": 39,
+        "source_text": "| 15–50 | **±0.1** | ±0.05 | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-131",
+        "doc_id": "F0189",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支架.pdf.md",
+        "line": 40,
+        "source_text": "| 50–100 | **±0.2** | ±0.08 | ±0.3 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-132",
+        "doc_id": "F0189",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支架.pdf.md",
+        "line": 41,
+        "source_text": "| ＞ 100 | **±0.2%** | ±0.1% | ±0.3% |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-133",
+        "doc_id": "F0189",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支架.pdf.md",
+        "line": 113,
+        "source_text": "- **零件类型**：ABS 注塑件，含圆形端面（仰视圆视）+ 斜锥面（SECTION A-A 倾斜结构）。结构上类似某传感器/PCB 支架，仰视图圆环 Ø21.3 + 中心孔 Ø12.2 + 4 处 Ø1.7 安装孔的形态强烈提示 **光学传感器载体**。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-134",
+        "doc_id": "F0189",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\支架.pdf.md",
+        "line": 114,
+        "source_text": "- **4-Ø1.7 安装孔**：4 处规则分布螺丝/定位孔，用于把支架固定到主壳体或 PCB 上。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-135",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 49,
+        "source_text": "| ② | 侧视图 | （无） | **7.0** | ±0.30 | **工作段长**（弹簧紧密段） |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-136",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 75,
+        "source_text": "| **公差形式** | `±0.03` / `±0.30` / `±0.10` 均对称 ✓ |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-137",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 84,
+        "source_text": "- **正极弹簧 ↔ PCB / 电池仓盖**：技要 6\"可上锡焊接\" → 焊接固定到 PCB。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-138",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 93,
+        "source_text": "| 1 | 电池槽 / PCB 焊盘的实际配合（焊点位置、焊盘大小） | 工程师释义 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-139",
+        "doc_id": "F0191",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\电池盖.pdf.md",
+        "line": 40,
+        "source_text": "| 15 – 50 | ±0.05 | **±0.1** | ±0.2 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "HW-140",
+        "doc_id": "F0191",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\电池盖.pdf.md",
+        "line": 41,
+        "source_text": "| 50 – 100 | ±0.08 | **±0.2** | ±0.3 |",
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "project_profile": {
+      "profile_source": "Project Scout Agent",
+      "target_model": "PT9L",
+      "product_family": [
+        "PT9L",
+        "PT9C",
+        "PT2L",
+        "PT3SBT",
+        "BP3L"
+      ],
+      "document_id_patterns": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ],
+      "primary_scope_rules": [
+        "PT9L is the target product model for this DHF",
+        "Documents in '2L风险改 - 历史文件' folder are explicitly historical",
+        "Documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical/draft folders require justification"
+      ],
+      "key_entities": {
+        "customer": "九安 (iHealth / Jiuan Medical)",
+        "customer_representative": "赵一平",
+        "product_description": "红外非接触式额头温度计 (Infrared No-Touch Forehead Thermometer)",
+        "intended_use": "Intermittent measurement of body temperature from forehead skin surface on people of all ages; consumer home use and healthcare provider use",
+        "bluetooth": "PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)"
+      },
+      "regulatory_baseline": [
+        "ISO 80601-2-56:2017/Amd1:2018 (international, applicable)",
+        "EN ISO 80601-2-56:2017+A1:2018 (EU, applicability differs between draft and final design input)",
+        "ASTM E1965-98:2016 (US, applicable)",
+        "ASTM E1965-98:2023 (US, applicable)",
+        "MDR 2017/745 (EU, applicability differs between draft and final design input)",
+        "ISO 14971:2019 / EN ISO 14971:2019 / EN ISO 14971:2019/A11:2021 (risk management)",
+        "ISO/TR 24971:2020 (risk assessment methodology)",
+        "EN 60601-1-6:2010+A1:2015+A2:2021 (usability)",
+        "GB/T 16886.1-2022 / ISO 10993-1:2018 (biocompatibility, China)",
+        "510(k) registration: andon responsible and paying",
+        "CE registration: applicability not yet determined per final design input"
+      ],
+      "candidate_discovery_hints": [
+        "PT9C appears as a sub-component PCB document number and as a standalone product in clinical evaluation and user test documents",
+        "PT3SBT appears in design output list two and a label review document filed under T1 sample folder",
+        "BP3L software diagrams appear in both the main software design folder and T1 sample subfolder",
+        "PT2L risk documents are in a '历史文件' subfolder but one (F0013) carries a PT9L document number internally"
+      ]
+    },
+    "mandatory_audit_matrix": [
+      {
+        "matrix_id": "MATRIX-001",
+        "stage_axis": "design_input_to_output",
+        "dimension_axis": "parameter_consistency",
+        "suggested_agent": "Hardware Agent",
+        "check_goal": "Verify that key PT9L design-input parameters are carried into design outputs and validation conditions consistently.",
+        "assigned_agent": "Hardware Agent"
+      }
+    ],
+    "corpus_scope": "full_markdown",
+    "assignment": {
+      "assignment_id": "ASG-0002",
+      "target_agent": "Hardware Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-001 — Design input to output parameter consistency for PT9L. Verify that key design-input parameters (measurement range, accuracy, response time, environmental conditions, Bluetooth specification, intended-use population, forehead measurement site) stated in the design input document (PT9L-KHXQ01 or equivalent) are carried forward without alteration or omission into design output documents (drawings, specifications, verification/validation test conditions). Flag any parameter value, unit, or scope discrepancy between design input and output layers. Also check whether PT9C PCB sub-component parameters are correctly scoped to PT9L system-level requirements rather than being inherited verbatim from a PT9C standalone specification.",
+      "input_refs": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-KHXQ01",
+          "PT9L-KXPS01",
+          "PT9L-FXJH01",
+          "PT9L-FXGB01",
+          "PT9L-EBOM01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    "candidate_discovery_inputs": [],
+    "agent_runs": [
+      {
+        "run_id": "RUN-0001",
+        "agent": "Candidate Discovery Agent",
+        "task_type": "candidate_discovery",
+        "assignment_id": "ASG-0001",
+        "summary": "Cross-corpus scan of the PT9L DHF/DMR package reveals 14 candidate consistency issues spanning legacy product residue in active documents, document-number mismatches, unsigned approvals, wrong-product references in BOM and label documents, regulatory applicability conflicts, software diagram contamination, and blood-pressure-specific language appearing in a thermometer DHF.",
+        "finding_count": 11,
+        "candidate_count": 0
+      }
+    ]
+  },
+  "llm_output": {
+    "agent": "Hardware Agent",
+    "summary": "Hardware audit of PT9L DHF/DMR reveals five substantive consistency findings: a blood-pressure residue phrase in the battery design-verification plan/report, an unresolved BOM conflict between PT3-P10 dual-spring and PT5-M02/M03 separate springs, a total-assembly drawing part-number anomaly (T-Z1-P10 used for two distinct PCBs), missing pass/fail verdicts in multiple T1 sample review checklists, and object-temperature mode accuracy tolerance (±0.2 °C) applied at 30 °C and 45 °C in software test plans despite the design-input accuracy specification only requiring ±0.2 °C for ≥35 °C and ≤42 °C.",
+    "review_notes": [
+      "Measurement accuracy specification ≥35 °C and ≤42 °C: ±0.2 °C; outside that range: ±0.3 °C is consistently stated across design input (HW-003), product inspection standard (HW-035), design verification plan (HW-056), design verification report (HW-051), product overview (HW-063), and defect definition (HW-064). No discrepancy found for body-temperature mode accuracy.",
+      "Measurement range 32 °C–42.9 °C stated in label audit (HW-024, HW-025) and operation guide (HW-034) is consistent with each other.",
+      "PCB design review checklist items (HW-004 through HW-009) all show 'pass' verdicts; no anomaly found in those items.",
+      "Battery polarity marking confirmed present in label audit (HW-023, HW-028); battery removal warning confirmed in operation guide (HW-026, HW-029).",
+      "Low-battery software requirement (HW-060) and battery-voltage sampling function (HW-044, HW-059) are present; no explicit low-voltage cutoff threshold value was found in the supplied evidence to cross-check against a hardware specification, so no finding is raised on threshold value alone.",
+      "PCB part number PT9L-HFMP01 V1.0 is consistently referenced across EBOM (HW-040, HW-077), T1 BOM (HW-042), SMT instruction (HW-062), and design output list (HW-079 through HW-084).",
+      "PT9C-CNTP01 V1.0 sensor PCB appears in EBOM (HW-041, HW-078) and T1 BOM (HW-043); its presence as a sub-component is noted but no standalone PT9C accuracy specification was supplied in evidence to compare against PT9L system-level requirements, so a separate finding is not raised beyond what is observable.",
+      "ASTM accuracy reference in operation guide (HW-031) cites ±0.2 °C for 37–39 °C range for IR thermometers, which is consistent with the design-input accuracy requirement for the clinical range."
+    ],
+    "findings": [
+      {
+        "finding_type": "wrong_product_residue_in_battery_requirement",
+        "severity": "P1",
+        "claim": "The design verification plan and one section of the design verification report for the PT9L thermometer contain the phrase '次血压测量' (blood pressure measurements) in the rechargeable-battery capacity requirement, which is a blood-pressure-monitor residue that does not apply to a thermometer and creates a traceability break between the design input and the verification documents.",
+        "rationale": "HW-002 (design input, F0031) states the battery requirement as '□可充电电池：在充满电后，电池电量至少能进行 次测量' using the generic word '测量' (measurements). HW-058 (design verification plan, F0121) and HW-055 (design verification report section, F0114 line 110) both replace '测量' with '血压测量' (blood pressure measurements). HW-053 (design verification report, F0114 line 54) correctly uses '测量' without the blood-pressure qualifier, showing the error is not universal but is present in at least two documents. This inconsistency means the verification plan and one report section are tracing to a wrong-product requirement.",
+        "evidence_ids": [
+          "HW-002",
+          "HW-053",
+          "HW-055",
+          "HW-058"
+        ],
+        "challenge_questions": [
+          "Which document version control step introduced '血压测量' into the PT9L verification plan and report, and has a formal correction or deviation been raised?",
+          "Is there a separate battery-life test report referenced in HW-053 ('电池使用寿命测试报告') that also contains the blood-pressure phrase, and if so, does it affect the validity of the battery verification conclusion?",
+          "Has the design verification plan (F0121) been reviewed and approved after the '血压测量' phrase was introduced, and by whom?"
+        ]
+      },
+      {
+        "finding_type": "bom_spring_part_number_conflict",
+        "severity": "P2",
+        "claim": "The PT9L total-assembly drawing (F0178) lists PT3-P10 dual-spring as BOM item 20, while the PT3-P10 drawing itself (F0176) states that PT9L production BOM uses separate springs PT5-M02 and PT5-M03 instead, and the ABOM (F0094) also lists PT3-P10; this unresolved conflict means the released assembly drawing and the drawing-level annotation are contradictory, creating a risk of wrong-part procurement or assembly.",
+        "rationale": "HW-092 (F0178, total assembly drawing) lists 'PT3-P10 双连弹簧' as item 20 with quantity 1. HW-088 (F0176, PT3-P10 drawing) confirms the drawing number is PT3-P10. However, HW-089 and HW-090 (F0176, same drawing, lines 81 and 89) explicitly state that PT9L production BOM uses PT5-M02 + PT5-M03 as separate parts and that PT3-P10 'does not necessarily enter the PT9L production BOM.' HW-039 (F0094, ABOM) also lists PT3-P10. No evidence in the supplied catalog shows PT5-M02 or PT5-M03 in any PT9L BOM line. The positive-spring drawing (HW-137, F0190) references PT5-M02 but only in the design-output drawing folder, not in any BOM line.",
+        "evidence_ids": [
+          "HW-039",
+          "HW-088",
+          "HW-089",
+          "HW-090",
+          "HW-092"
+        ],
+        "challenge_questions": [
+          "Which part is actually installed in production units: PT3-P10 dual-spring or PT5-M02 + PT5-M03 separate springs, and is there a formal ECO or design change record resolving this?",
+          "If PT5-M02 and PT5-M03 are the production parts, why does the released total-assembly drawing (F0178 v1.0-20240627) still reference PT3-P10, and has the drawing been updated?",
+          "Does the ABOM (F0094) need to be revised to remove PT3-P10 and add PT5-M02/PT5-M03, and has a change request been initiated?"
+        ]
+      },
+      {
+        "finding_type": "assembly_drawing_part_number_ambiguity",
+        "severity": "P2",
+        "claim": "In the PT9L total-assembly drawing (F0178), part number T-Z1-P10 is assigned to the sensor PCB (item 11), yet the same drawing also lists a separate unnamed PCB at item 08, and the annotation flags that T-Z1-P10 simultaneously refers to both a bare board and a PCB assembly; this dual-use of one part number for two distinct items is a BOM integrity defect.",
+        "rationale": "HW-091 (F0178, line 7) contains the annotation 'BOM 中 T-Z1-P10 同时指导光板和 PCB（一图号两零件）⚠️'. HW-093 (F0178, line 51) shows item 11 as 'T-Z1-P10 / PCB ⚠️' and HW-094 (F0178, line 54) shows item 08 as an unnamed PCB. HW-095 and HW-096 (F0178, lines 72–73) describe item 08 as the main board PCB and item 11 as the sensor PCB. The EBOM (HW-040, HW-077) uses PT9L-HFMP01 V1.0 for the main PCB and PT9C-CNTP01 V1.0 for the sensor PCB, neither of which matches T-Z1-P10, further deepening the traceability gap between the assembly drawing and the EBOM.",
+        "evidence_ids": [
+          "HW-040",
+          "HW-041",
+          "HW-077",
+          "HW-078",
+          "HW-091"
+        ],
+        "challenge_questions": [
+          "What is the correct and unique part number for the sensor PCB (item 11) in the PT9L assembly drawing, and has T-Z1-P10 been formally retired or reassigned?",
+          "Why does the assembly drawing use T-Z1-P10 while the EBOM uses PT9C-CNTP01 V1.0 for the sensor PCB — are these the same part, and if so, which number is the controlled identifier?",
+          "Has a drawing change notice been issued to resolve the one-number-two-parts anomaly flagged in the assembly drawing annotation?"
+        ]
+      },
+      {
+        "finding_type": "sample_review_checklist_verdicts_blank",
+        "severity": "P2",
+        "claim": "Multiple T1 sample and prototype review checklists contain PCB-related inspection items (PCB fixation, PCB component interference, PCB dimension) with no pass/fail verdict recorded, meaning the hardware review evidence is incomplete and cannot demonstrate that these checks were actually performed.",
+        "rationale": "HW-014 (F0076, PT9L-T1 checklist item 20 'PCB固定'), HW-015 (item 21 'PCB元件与结构干涉检查'), and HW-016 (item 38 'PCB尺寸检查') all show '□通过 □不通过 □不适用' with no box checked. The same pattern appears in HW-017, HW-018, HW-019 (F0078, T1 checklist) and HW-020, HW-021, HW-022 (F0080, prototype checklist). All three checklists across two separate documents have identical blank verdicts for the same PCB inspection items. FMEA evidence (HW-012) identifies sensor PCB fixation as a severity-9 failure mode, making the blank PCB-fixation verdict particularly significant.",
+        "evidence_ids": [
+          "HW-012",
+          "HW-014",
+          "HW-015",
+          "HW-016",
+          "HW-017"
+        ],
+        "challenge_questions": [
+          "Were the PCB fixation, interference, and dimension checks physically performed during T1 sample review, and if so, where are the recorded results?",
+          "Given that the structural FMEA (HW-012) assigns severity 9 to sensor PCB fixation failure, what compensating control exists if the checklist verdict for PCB fixation was never formally recorded?",
+          "Are the blank checklists the final released versions, or are there signed/completed versions in the DHF that were not captured in the evidence catalog?"
+        ]
+      },
+      {
+        "finding_type": "object_temperature_accuracy_tolerance_scope_inconsistency",
+        "severity": "P3",
+        "claim": "The software test plan and test record apply an accuracy tolerance of ±0.2 °C to object-temperature mode measurements at 30 °C and 45 °C blackbody targets, but the design-input accuracy specification only mandates ±0.2 °C for the body-temperature range ≥35 °C and ≤42 °C; outside that range the requirement is ±0.3 °C, so the test plan imposes a tighter-than-specified tolerance at 30 °C and 45 °C without documented justification.",
+        "rationale": "HW-003 (F0031, design input) and HW-035 (F0090, inspection standard) both state: '≥35 °C and ≤42 °C: ±0.2 °C; other: ±0.3 °C.' HW-045 and HW-046 (F0101, software test plan lines 343–344) specify acceptance criteria of '30±0.2 °C' and '45±0.2 °C' for object-temperature mode blackbody tests. HW-048 and HW-049 (F0102, software test record lines 68–69) repeat the same ±0.2 °C criteria at 30 °C and 45 °C. Since 30 °C and 45 °C are outside the ≥35–42 °C range, the design input would permit ±0.3 °C at those points. Applying ±0.2 °C is more stringent than required; if units fail at ±0.2 °C but pass at ±0.3 °C, the test plan would incorrectly reject conforming product, or alternatively the tighter tolerance represents an undocumented design intent that has not been captured in the design input.",
+        "evidence_ids": [
+          "HW-003",
+          "HW-035",
+          "HW-045",
+          "HW-046",
+          "HW-047"
+        ],
+        "challenge_questions": [
+          "Is the ±0.2 °C tolerance at 30 °C and 45 °C in the software test plan an intentional tighter requirement for object-temperature mode, and if so, has it been formally documented as a design input or design output specification?",
+          "Were any units rejected during software testing at 30 °C or 45 °C that would have passed under the ±0.3 °C design-input tolerance, and how were those dispositioned?",
+          "Should the design input (HW-003) be updated to separately specify accuracy requirements for object-temperature mode versus body-temperature mode, or should the test plan be corrected to use ±0.3 °C outside the 35–42 °C range?"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "finding_type": "wrong_product_residue_in_battery_requirement",
+      "severity": "P1",
+      "claim": "The design verification plan and one section of the design verification report for the PT9L thermometer contain the phrase '次血压测量' (blood pressure measurements) in the rechargeable-battery capacity requirement, which is a blood-pressure-monitor residue that does not apply to a thermometer and creates a traceability break between the design input and the verification documents.",
+      "rationale": "HW-002 (design input, F0031) states the battery requirement as '□可充电电池：在充满电后，电池电量至少能进行 次测量' using the generic word '测量' (measurements). HW-058 (design verification plan, F0121) and HW-055 (design verification report section, F0114 line 110) both replace '测量' with '血压测量' (blood pressure measurements). HW-053 (design verification report, F0114 line 54) correctly uses '测量' without the blood-pressure qualifier, showing the error is not universal but is present in at least two documents. This inconsistency means the verification plan and one report section are tracing to a wrong-product requirement.",
+      "evidence_ids": [
+        "HW-002",
+        "HW-053",
+        "HW-055",
+        "HW-058"
+      ],
+      "challenge_questions": [
+        "Which document version control step introduced '血压测量' into the PT9L verification plan and report, and has a formal correction or deviation been raised?",
+        "Is there a separate battery-life test report referenced in HW-053 ('电池使用寿命测试报告') that also contains the blood-pressure phrase, and if so, does it affect the validity of the battery verification conclusion?",
+        "Has the design verification plan (F0121) been reviewed and approved after the '血压测量' phrase was introduced, and by whom?"
+      ]
+    },
+    {
+      "finding_type": "bom_spring_part_number_conflict",
+      "severity": "P2",
+      "claim": "The PT9L total-assembly drawing (F0178) lists PT3-P10 dual-spring as BOM item 20, while the PT3-P10 drawing itself (F0176) states that PT9L production BOM uses separate springs PT5-M02 and PT5-M03 instead, and the ABOM (F0094) also lists PT3-P10; this unresolved conflict means the released assembly drawing and the drawing-level annotation are contradictory, creating a risk of wrong-part procurement or assembly.",
+      "rationale": "HW-092 (F0178, total assembly drawing) lists 'PT3-P10 双连弹簧' as item 20 with quantity 1. HW-088 (F0176, PT3-P10 drawing) confirms the drawing number is PT3-P10. However, HW-089 and HW-090 (F0176, same drawing, lines 81 and 89) explicitly state that PT9L production BOM uses PT5-M02 + PT5-M03 as separate parts and that PT3-P10 'does not necessarily enter the PT9L production BOM.' HW-039 (F0094, ABOM) also lists PT3-P10. No evidence in the supplied catalog shows PT5-M02 or PT5-M03 in any PT9L BOM line. The positive-spring drawing (HW-137, F0190) references PT5-M02 but only in the design-output drawing folder, not in any BOM line.",
+      "evidence_ids": [
+        "HW-039",
+        "HW-088",
+        "HW-089",
+        "HW-090",
+        "HW-092"
+      ],
+      "challenge_questions": [
+        "Which part is actually installed in production units: PT3-P10 dual-spring or PT5-M02 + PT5-M03 separate springs, and is there a formal ECO or design change record resolving this?",
+        "If PT5-M02 and PT5-M03 are the production parts, why does the released total-assembly drawing (F0178 v1.0-20240627) still reference PT3-P10, and has the drawing been updated?",
+        "Does the ABOM (F0094) need to be revised to remove PT3-P10 and add PT5-M02/PT5-M03, and has a change request been initiated?"
+      ]
+    },
+    {
+      "finding_type": "assembly_drawing_part_number_ambiguity",
+      "severity": "P2",
+      "claim": "In the PT9L total-assembly drawing (F0178), part number T-Z1-P10 is assigned to the sensor PCB (item 11), yet the same drawing also lists a separate unnamed PCB at item 08, and the annotation flags that T-Z1-P10 simultaneously refers to both a bare board and a PCB assembly; this dual-use of one part number for two distinct items is a BOM integrity defect.",
+      "rationale": "HW-091 (F0178, line 7) contains the annotation 'BOM 中 T-Z1-P10 同时指导光板和 PCB（一图号两零件）⚠️'. HW-093 (F0178, line 51) shows item 11 as 'T-Z1-P10 / PCB ⚠️' and HW-094 (F0178, line 54) shows item 08 as an unnamed PCB. HW-095 and HW-096 (F0178, lines 72–73) describe item 08 as the main board PCB and item 11 as the sensor PCB. The EBOM (HW-040, HW-077) uses PT9L-HFMP01 V1.0 for the main PCB and PT9C-CNTP01 V1.0 for the sensor PCB, neither of which matches T-Z1-P10, further deepening the traceability gap between the assembly drawing and the EBOM.",
+      "evidence_ids": [
+        "HW-040",
+        "HW-041",
+        "HW-077",
+        "HW-078",
+        "HW-091"
+      ],
+      "challenge_questions": [
+        "What is the correct and unique part number for the sensor PCB (item 11) in the PT9L assembly drawing, and has T-Z1-P10 been formally retired or reassigned?",
+        "Why does the assembly drawing use T-Z1-P10 while the EBOM uses PT9C-CNTP01 V1.0 for the sensor PCB — are these the same part, and if so, which number is the controlled identifier?",
+        "Has a drawing change notice been issued to resolve the one-number-two-parts anomaly flagged in the assembly drawing annotation?"
+      ]
+    },
+    {
+      "finding_type": "sample_review_checklist_verdicts_blank",
+      "severity": "P2",
+      "claim": "Multiple T1 sample and prototype review checklists contain PCB-related inspection items (PCB fixation, PCB component interference, PCB dimension) with no pass/fail verdict recorded, meaning the hardware review evidence is incomplete and cannot demonstrate that these checks were actually performed.",
+      "rationale": "HW-014 (F0076, PT9L-T1 checklist item 20 'PCB固定'), HW-015 (item 21 'PCB元件与结构干涉检查'), and HW-016 (item 38 'PCB尺寸检查') all show '□通过 □不通过 □不适用' with no box checked. The same pattern appears in HW-017, HW-018, HW-019 (F0078, T1 checklist) and HW-020, HW-021, HW-022 (F0080, prototype checklist). All three checklists across two separate documents have identical blank verdicts for the same PCB inspection items. FMEA evidence (HW-012) identifies sensor PCB fixation as a severity-9 failure mode, making the blank PCB-fixation verdict particularly significant.",
+      "evidence_ids": [
+        "HW-012",
+        "HW-014",
+        "HW-015",
+        "HW-016",
+        "HW-017"
+      ],
+      "challenge_questions": [
+        "Were the PCB fixation, interference, and dimension checks physically performed during T1 sample review, and if so, where are the recorded results?",
+        "Given that the structural FMEA (HW-012) assigns severity 9 to sensor PCB fixation failure, what compensating control exists if the checklist verdict for PCB fixation was never formally recorded?",
+        "Are the blank checklists the final released versions, or are there signed/completed versions in the DHF that were not captured in the evidence catalog?"
+      ]
+    },
+    {
+      "finding_type": "object_temperature_accuracy_tolerance_scope_inconsistency",
+      "severity": "P3",
+      "claim": "The software test plan and test record apply an accuracy tolerance of ±0.2 °C to object-temperature mode measurements at 30 °C and 45 °C blackbody targets, but the design-input accuracy specification only mandates ±0.2 °C for the body-temperature range ≥35 °C and ≤42 °C; outside that range the requirement is ±0.3 °C, so the test plan imposes a tighter-than-specified tolerance at 30 °C and 45 °C without documented justification.",
+      "rationale": "HW-003 (F0031, design input) and HW-035 (F0090, inspection standard) both state: '≥35 °C and ≤42 °C: ±0.2 °C; other: ±0.3 °C.' HW-045 and HW-046 (F0101, software test plan lines 343–344) specify acceptance criteria of '30±0.2 °C' and '45±0.2 °C' for object-temperature mode blackbody tests. HW-048 and HW-049 (F0102, software test record lines 68–69) repeat the same ±0.2 °C criteria at 30 °C and 45 °C. Since 30 °C and 45 °C are outside the ≥35–42 °C range, the design input would permit ±0.3 °C at those points. Applying ±0.2 °C is more stringent than required; if units fail at ±0.2 °C but pass at ±0.3 °C, the test plan would incorrectly reject conforming product, or alternatively the tighter tolerance represents an undocumented design intent that has not been captured in the design input.",
+      "evidence_ids": [
+        "HW-003",
+        "HW-035",
+        "HW-045",
+        "HW-046",
+        "HW-047"
+      ],
+      "challenge_questions": [
+        "Is the ±0.2 °C tolerance at 30 °C and 45 °C in the software test plan an intentional tighter requirement for object-temperature mode, and if so, has it been formally documented as a design input or design output specification?",
+        "Were any units rejected during software testing at 30 °C or 45 °C that would have passed under the ±0.3 °C design-input tolerance, and how were those dispositioned?",
+        "Should the design input (HW-003) be updated to separately specify accuracy requirements for object-temperature mode versus body-temperature mode, or should the test plan be corrected to use ±0.3 °C outside the 35–42 °C range?"
+      ]
+    }
+  ],
+  "status": "completed"
+}

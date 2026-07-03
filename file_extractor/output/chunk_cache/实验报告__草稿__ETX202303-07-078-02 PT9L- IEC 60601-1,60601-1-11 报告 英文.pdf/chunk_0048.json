@@ -1,0 +1,141 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Record",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "99-100 of 182"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 Medical Electrical Equipment General Requirements for Basic Safety and Essential Performance",
+      "version": "2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 Medical Electrical Equipment",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "G.5.4",
+      "name": "External ventilation with internal overpressure",
+      "verdict": "N/A",
+      "sub_tests": [
+        {
+          "id": "G.5.4-a",
+          "description": "Flammable anaesthetic mixtures with air removed by ventilation before ME EQUIPMENT energized, and penetration prevented by maintenance of overpressure",
+          "verdict": "N/A"
+        },
+        {
+          "id": "G.5.4-b",
+          "description": "Overpressure inside enclosure was 75 Pa minimum in normal condition",
+          "verdict": "N/A"
+        },
+        {
+          "id": "G.5.4-c",
+          "description": "Ignition sources de-energized automatically where G.4 does not apply, or complied with G.5 when overpressure dropped below 50 Pa",
+          "verdict": "N/A"
+        },
+        {
+          "id": "G.5.4-d",
+          "description": "External surface of enclosure did not exceed 150°C in 25°C ambient under normal use and condition",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "G.5.5",
+      "name": "Enclosures with restricted breathing",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G (Figs G.1-G.3)",
+      "name": "Sparking contact circuit measurements",
+      "verdict": "N/A",
+      "sub_tests": [
+        {
+          "description": "Measured U_max ≤ U_zR with I as in Fig. G.1",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measured U_max ≤ U_c with C as in Fig. G.2",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measured I_max ≤ I_zR with U_zR as in Fig G.1",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measured I_max ≤ I_zL with L_max and U_max ≤ 24V as in Fig G.3",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Combinations of currents and voltages within limitations I_zR × U_zR ≤ 50W extrapolated from Fig G.1; no extrapolation for voltages above 42V",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Combinations of capacitances and voltages within limitations C/2U² ≤ 1.2mJ extrapolated from Fig G.2; no extrapolation for voltages above 242V",
+          "verdict": "N/A"
+        },
+        {
+          "description": "U_max determined using actual resistance R when equivalent resistance R was less than 8000 Ω",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Combinations of currents and inductances within limitations L/2I² ≤ 0.3mJ extrapolated from Fig G.3; no extrapolation for inductances larger than 900 mH",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Temperature measurements made according to 11.1, and U_max, I_max, R, L_max, C_max determined with application of Figs G.1-G.3",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Alternatively, compliance verified by examination of design data",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "U_max was the highest supply voltage occurring in circuit under investigation with sparking contact open, taking into consideration MAINS VOLTAGE variations in 4.10. I_max was the highest current flowing in circuit under investigation with sparking contact closed, taking into consideration MAINS VOLTAGE variations required in 4.10. C_max and L_max taken as values occurring at the component under investigation producing sparks. Peak value considered when a.c. supplied. An equivalent circuit calculated to determine equivalent max capacitance, inductance, and equivalent U_max and I_max, either as d.c. or a.c. max peak values in case of a complicated circuit.",
+      "topic_tags": [
+        "sparking contact",
+        "U_max",
+        "I_max",
+        "C_max",
+        "L_max",
+        "mains voltage",
+        "equivalent circuit"
+      ],
+      "related_subjects": [
+        "Fig G.1",
+        "Fig G.2",
+        "Fig G.3",
+        "IEC60601-1 Clause 4.10",
+        "IEC60601-1 Clause 11.1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ME EQUIPMENT, its parts, and components enclosed in an ENCLOSURE with external ventilation by means of internal overpressure must comply with: a) FLAMMABLE AESTHETIC MIXTURES WITH AIR that might have penetrated into ENCLOSURE of ME EQUIPMENT or part removed by ventilation before EQUIPMENT energized, and penetration of such mixtures during operation was prevented by maintenance of overpressure by means of air without flammable gases, or by physiologically acceptable inert gas (e.g., nitrogen). b) Overpressure inside ENCLOSURE was 75 Pa minimum in NORMAL CONDITION. Overpressure maintained at the site of potential ignition even when air or inert gas could escape through openings in ENCLOSURE necessary for normal operation. ME EQUIPMENT could be energized only after the required minimum overpressure was present long enough to ventilate the ENCLOSURE so that the displaced volume of air or inert gas was at least five times the volume of ENCLOSURE. ME EQUIPMENT energized at will or repeatedly when overpressure was continuously present. c) Ignition sources de-energized automatically where G.4 does not apply, or complied with G.5 when overpressure dropped below 50 Pa. d) External surface of ENCLOSURE in which internal overpressure was maintained did not exceed 150°C in 25°C ambient under NORMAL USE and CONDITION.",
+      "topic_tags": [
+        "internal overpressure",
+        "flammable anaesthetic mixtures",
+        "enclosure ventilation",
+        "ignition sources",
+        "75 Pa",
+        "50 Pa",
+        "150°C"
+      ],
+      "related_subjects": [
+        "G.5.4",
+        "G.4",
+        "G.5",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

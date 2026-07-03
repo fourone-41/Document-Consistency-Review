@@ -1,0 +1,134 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-01",
+    "title": "型式试验报告（草稿）",
+    "total_pages": 30,
+    "status": "Draft"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Medical electrical equipment EMC standard",
+      "applies_to": [
+        "Surge Immunity",
+        "Conducted Immunity 0.15 MHz to 80 MHz",
+        "Voltage Dips and Interruptions",
+        "Power Frequency Magnetic Field Immunity"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "6.6",
+      "name": "Surge Immunity",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_voltage_line_to_line": "1kV",
+      "test_voltage_line_to_neutral": "1kV",
+      "test_voltage_line_to_earth": "2kV",
+      "test_voltage_neutral_to_earth": "2kV",
+      "pulse_count": "5 positive + 5 negative each",
+      "phase_angles_AC": [
+        "90°",
+        "270°"
+      ],
+      "generator_source_impedance_power": "2Ω",
+      "output_impedance_interconnection": "40Ω",
+      "repetition_rate": "1 per minute",
+      "waveform": "1.2/50 µs",
+      "result_note": "EUT is powered by batteries, does not apply to this clause"
+    },
+    {
+      "id": "6.7",
+      "name": "Conducted Immunity 0.15 MHz to 80 MHz",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "frequency_range": "150 kHz to 80 MHz",
+      "modulation": "80% amplitude modulated with 1 kHz sine wave",
+      "frequency_step_size": "≤1% of preceding frequency value",
+      "dwell_time": "≥0.5 s",
+      "result_note": "EUT is powered by batteries, does not apply to this clause"
+    },
+    {
+      "id": "6.8",
+      "name": "Voltage Dips and Interruptions",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "dips_interruptions_interval": "10 s minimum",
+      "sequence": "3 dips/interruptions per combination",
+      "result_note": "EUT is powered by batteries, does not apply to this clause"
+    },
+    {
+      "id": "6.9",
+      "name": "Power Frequency Magnetic Field Immunity",
+      "requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "6.6.1 Test Setup and Procedure for Surge Immunity: The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The 1.2/50 µs surge was applied to the EUT power supply Terminals via the capacitive coupling network. Decoupling networks were required to avoid adverse effects on equipment not under test. The power cord and interconnection line between the EUT and the coupling/decoupling network shall not exceed 2m in length. Test voltages: 1kV for line to line and line to neutral; 2kV for line to earth and neutral to earth. Five positive and five negative pulses at 90° and 270° for AC ports, five positive and five negative pulses for DC ports. Generator source impedance: 2Ω for power supply terminals, 40Ω for interconnection lines. Repetition rate: 1 per minute.",
+      "topic_tags": [
+        "surge immunity",
+        "test setup",
+        "GRP",
+        "coupling network",
+        "1.2/50 µs",
+        "EUT"
+      ],
+      "related_subjects": [
+        "6.6",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "6.7.1 Test Setup and Procedure for Conducted Immunity 0.15 MHz to 80 MHz: The EUT was placed on an insulating support 0.1m height above a ground reference plane. All cables exiting the EUT were supported at least 30 mm above the ground reference plane. Coupling and decoupling devices were located between 0.1m and 0.3m from the EUT. Each AE used with clamp injection was placed on an insulating support 0.1m above the ground reference plane. Decoupling networks were installed on each cable between EUT and AE except the cable under test. Frequency swept from 150 kHz to 80 MHz with 80% amplitude modulation with 1 kHz sine wave. Frequency step size ≤1% of preceding frequency value. Dwell time ≥0.5 s. EUT hand-held parts terminated with artificial hand during test.",
+      "topic_tags": [
+        "conducted immunity",
+        "test setup",
+        "frequency sweep",
+        "clamp injection",
+        "decoupling network",
+        "EUT"
+      ],
+      "related_subjects": [
+        "6.7",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "6.8.1 Test Setup and Procedure for Voltage Dips and Interruptions: The EUT was placed on a GRP insulated by an insulating support 0.1m thick, with the GRP on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The test was performed with the EUT connected to the test generator with the shortest power supply cable as specified by the manufacturer. The EUT was tested for each selected combination of test level and duration with a sequence of three dips/interruptions at intervals of at least 10 s. Each representative mode of operation was tested. For EUT with more than one power cord, each power cord was tested individually.",
+      "topic_tags": [
+        "voltage dips",
+        "interruptions",
+        "test setup",
+        "GRP",
+        "EUT"
+      ],
+      "related_subjects": [
+        "6.8",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "For test clauses 6.6 (Surge Immunity), 6.7 (Conducted Immunity), and 6.8 (Voltage Dips and Interruptions): The EUT is powered by batteries and does not apply to these clauses. All test parameters are marked N/A.",
+      "topic_tags": [
+        "battery powered",
+        "N/A",
+        "not applicable",
+        "EUT"
+      ],
+      "related_subjects": [
+        "6.6",
+        "6.7",
+        "6.8"
+      ]
+    }
+  ]
+}

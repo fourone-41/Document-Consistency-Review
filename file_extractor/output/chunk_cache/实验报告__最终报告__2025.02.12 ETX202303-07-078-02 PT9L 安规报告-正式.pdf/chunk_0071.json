@@ -1,0 +1,175 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "154-155",
+    "total_pages": 181
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "title": "IEC 60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "type": "international_standard"
+    },
+    {
+      "id": "ISO14971",
+      "title": "ISO 14971 Risk Management for Medical Devices",
+      "type": "international_standard"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-FXGB01 V1.0",
+      "type": "document_number",
+      "description": "Risk Management Report DN"
+    }
+  ],
+  "review_items": [
+    {
+      "clause": "15.4.2.1c",
+      "title": "RM RESULTS TABLE: Independent non-SELF-RESETTING THERMAL CUT-OUT",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ]
+    },
+    {
+      "clause": "15.4.2.1d",
+      "title": "RM RESULTS TABLE: Loss of function of ME EQUIPMENT",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ]
+    },
+    {
+      "clause": "15.4.2.1h",
+      "title": "RM RESULTS TABLE: ME EQUIPMENT with tubular heating elements",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ]
+    },
+    {
+      "clause": "15.4.3.1",
+      "title": "RM RESULTS TABLE: Battery Housing",
+      "verdict": "P",
+      "iso14971_clauses": [
+        {
+          "clause": "5.2",
+          "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+          "result": "Intended use and identification of characteristics related to safety issue analysed and recorded",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.3",
+          "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+          "result": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.4",
+          "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+          "result": "Risk estimation recorded",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "15.4.3.2",
+      "title": "RM RESULTS TABLE: Connection",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ]
+    },
+    {
+      "clause": "15.4.3.3",
+      "title": "RM RESULTS TABLE: Protection against overcharging",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ]
+    },
+    {
+      "clause": "15.4.4",
+      "title": "RM RESULTS TABLE: Indicators",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ]
+    },
+    {
+      "clause": "15.4.5",
+      "title": "RM RESULTS TABLE: Pre-set controls",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "15.4.6",
+      "title": "TABLE: actuating parts of controls of ME EQUIPMENT – torque & axial pull tests",
+      "verdict": "N/A",
+      "fields": [
+        "Rotating control under test",
+        "Gripping diameter d of control knob (mm)",
+        "Torque from Table 30 (Nm)",
+        "Axial force applied (N)",
+        "Unacceptable RISK occurred Yes/No",
+        "Remarks"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 15.4.3.1 Battery Housing, the Risk Management assessment references Risk Management Report DN: PT9L-FXGB01 V1.0. ISO 14971 clause 5.2 covers intended use and identification of characteristics related to safety issues (Verdict: P). Clause 5.3 covers hazard analysis (Verdict: P). Clause 5.4 covers risk estimation (Verdict: P). Overall verdict for Battery Housing is Pass (P).",
+      "topic_tags": [
+        "risk management",
+        "battery housing",
+        "ISO 14971",
+        "IEC 60601-1",
+        "hazard analysis"
+      ],
+      "related_subjects": [
+        "PT9L-FXGB01 V1.0",
+        "15.4.3.1",
+        "ISO 14971"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Multiple clauses under IEC60601-1 clause 15 are marked N/A, including: 15.4.2.1c (Independent non-SELF-RESETTING THERMAL CUT-OUT), 15.4.2.1d (Loss of function of ME EQUIPMENT), 15.4.2.1h (ME EQUIPMENT with tubular heating elements), 15.4.3.2 (Connection), 15.4.3.3 (Protection against overcharging), 15.4.4 (Indicators), 15.4.5 (Pre-set controls), and 15.4.6 (actuating parts of controls – torque & axial pull tests). These are not applicable to the device under test.",
+      "topic_tags": [
+        "N/A clauses",
+        "IEC 60601-1",
+        "risk management",
+        "thermal cut-out",
+        "overcharging protection"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-02",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

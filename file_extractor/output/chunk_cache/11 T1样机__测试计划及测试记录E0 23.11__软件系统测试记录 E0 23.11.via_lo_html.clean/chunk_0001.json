@@ -1,0 +1,466 @@
+{
+  "document": {
+    "title": "软件系统测试记录 E0 23.11",
+    "doc_type": "软件系统测试记录",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "1-1",
+      "item": "初始化功能",
+      "condition": "初次使用，给体温计上电",
+      "expected_value": "体温计开机：蜂鸣器长鸣，LCD全显示3秒后，接着关机进入休眠状态",
+      "pass_criteria": "蜂鸣器长鸣，LCD全显示3秒后关机进入休眠状态",
+      "environment": "常温"
+    },
+    {
+      "test_id": "1-2",
+      "item": "初始化功能",
+      "condition": "在关机态，按一下测量按键，使体温计开机",
+      "expected_value": "体温计开机：LCD能够正常显示，显示内容和蜂鸣状态不确定，能够正常唤醒即可",
+      "pass_criteria": "LCD能够正常显示，能够正常唤醒"
+    },
+    {
+      "test_id": "2-1",
+      "item": "关机功能",
+      "condition": "体温测量结束后，无动作",
+      "expected_value": "体温计在15秒后自动关机",
+      "pass_criteria": "15秒后自动关机"
+    },
+    {
+      "test_id": "2-2",
+      "item": "关机功能",
+      "condition": "温度模式设置结束后，无动作",
+      "expected_value": "体温计在15秒后自动关机",
+      "pass_criteria": "15秒后自动关机"
+    },
+    {
+      "test_id": "3-1",
+      "item": "LCD显示功能",
+      "condition": "首次上电",
+      "expected_value": "LCD会全屏显示3s",
+      "pass_criteria": "LCD全屏显示3s"
+    },
+    {
+      "test_id": "3-2",
+      "item": "LCD显示功能",
+      "condition": "常温下将体温计对准34℃黑体，温度模式为人体模式下，短按测量按键",
+      "expected_value": "1秒内结束，显示人体温度36.2℃左右，同时人体图标点亮",
+      "pass_criteria": "1秒内结束，显示人体温度36.2℃左右，人体图标点亮",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "3-3",
+      "item": "LCD显示功能",
+      "condition": "将体温计放置5℃或42℃环境温度下静置1H，再开机",
+      "expected_value": "LCD显示\"Err\" 图标闪烁15秒后关机",
+      "pass_criteria": "LCD显示Err图标闪烁15秒后关机",
+      "instrument": "恒温槽：RPZ03003"
+    },
+    {
+      "test_id": "3-4",
+      "item": "LCD显示功能-物温模式30℃",
+      "condition": "选中物温模式，常温下将体温计对准30℃黑体，按下测量按键",
+      "expected_value": "LCD显示30±0.2℃，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示30±0.2℃，背光白色，单次长鸣500ms",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "3-5",
+      "item": "LCD显示功能-物温模式45℃",
+      "condition": "选中物温模式，常温下将体温计对准45℃黑体，按下测量按键",
+      "expected_value": "LCD显示45±0.2℃，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示45±0.2℃，背光白色，单次长鸣500ms",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "3-6",
+      "item": "LCD显示功能-人体模式35℃黑体",
+      "condition": "选中人体模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示36.5左右，背光白色，单次长鸣500ms",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "3-7",
+      "item": "LCD显示功能-人体模式37℃黑体",
+      "condition": "选中人体模式，常温下将体温计对准37℃黑体，按下测量按键",
+      "expected_value": "LCD显示38.2左右，背光为橙色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示38.2左右，背光橙色，连续短鸣4次",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "3-8",
+      "item": "LCD显示功能-人体模式38℃黑体",
+      "condition": "选中人体模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示39.2左右，背光红色，连续短鸣4次",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "3-9",
+      "item": "LCD显示功能-人体模式25℃黑体",
+      "condition": "选中人体模式，常温下将体温计对准25℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光白色，无蜂鸣",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "3-10",
+      "item": "LCD显示功能-人体模式40℃黑体",
+      "condition": "选中人体模式，常温下将体温计对准40℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为红色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光红色，无蜂鸣",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "4-1",
+      "item": "蜂鸣器提示",
+      "condition": "首次上电",
+      "expected_value": "蜂鸣器长鸣，LCD保持全显3S",
+      "pass_criteria": "蜂鸣器长鸣，LCD全显3S"
+    },
+    {
+      "test_id": "4-2",
+      "item": "蜂鸣器提示",
+      "condition": "短按测量按键",
+      "expected_value": "蜂鸣器三次短鸣，提示测量未完成，LCD显示\"---℃\"",
+      "pass_criteria": "蜂鸣器三次短鸣，LCD显示---℃"
+    },
+    {
+      "test_id": "4-3",
+      "item": "蜂鸣器提示",
+      "condition": "常温下将体温计对准34℃黑体，按下测量按键3S以上",
+      "expected_value": "蜂鸣器长鸣，提示测量完成，LCD显示测量结果",
+      "pass_criteria": "蜂鸣器长鸣，LCD显示测量结果",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "4-4",
+      "item": "蜂鸣器提示",
+      "condition": "常温下将体温计对准25℃黑体，按下测量按键3S以上",
+      "expected_value": "蜂鸣器三次短鸣，提示测量结果异常，LCD显示\"---℃\"",
+      "pass_criteria": "蜂鸣器三次短鸣，LCD显示---℃",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "4-5",
+      "item": "蜂鸣器提示",
+      "condition": "常温下将体温计对准40℃黑体，按下测量按键3S以上",
+      "expected_value": "蜂鸣器三次短鸣，提示测量结果异常，LCD显示\"---℃\"",
+      "pass_criteria": "蜂鸣器三次短鸣，LCD显示---℃",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "5-1",
+      "item": "低电压检测功能",
+      "condition": "将电压调到3.0V，开机",
+      "expected_value": "LCD不会提示低电压，实心电池图标常亮",
+      "pass_criteria": "LCD不提示低电压，实心电池图标常亮",
+      "instrument": "直流稳压电源：DJS10005"
+    },
+    {
+      "test_id": "5-2",
+      "item": "低电压检测功能",
+      "condition": "将电压调到2.65V，开机",
+      "expected_value": "LCD提示低电压，实心电池图标常亮",
+      "pass_criteria": "LCD提示低电压，实心电池图标常亮",
+      "instrument": "直流稳压电源：DJS10005"
+    },
+    {
+      "test_id": "5-2b",
+      "item": "低电压检测功能",
+      "condition": "不断电，将电压调到2.8V，按测量键",
+      "expected_value": "LCD显示，空心电池图标常亮",
+      "pass_criteria": "LCD显示，空心电池图标常亮",
+      "instrument": "直流稳压电源：DJS10005"
+    },
+    {
+      "test_id": "5-2c",
+      "item": "低电压检测功能",
+      "condition": "保持电压2.8V，重新上电",
+      "expected_value": "LCD不会提示低电压，实心电池图标常亮",
+      "pass_criteria": "LCD不提示低电压，实心电池图标常亮",
+      "instrument": "直流稳压电源：DJS10005"
+    },
+    {
+      "test_id": "5-3",
+      "item": "低电压检测功能",
+      "condition": "将电压调到2.45V，开机",
+      "expected_value": "空心电池图标闪烁15秒后关机",
+      "pass_criteria": "空心电池图标闪烁15秒后关机",
+      "instrument": "直流稳压电源：DJS10005"
+    },
+    {
+      "test_id": "5-3b",
+      "item": "低电压检测功能",
+      "condition": "不断电，将电压调到2.8V，按测量键",
+      "expected_value": "空心电池图标闪烁15秒后关机",
+      "pass_criteria": "空心电池图标闪烁15秒后关机",
+      "instrument": "直流稳压电源：DJS10005"
+    },
+    {
+      "test_id": "5-3c",
+      "item": "低电压检测功能",
+      "condition": "保持电压2.8V，重新上电",
+      "expected_value": "LCD不会提示低电压，实心电池图标常亮",
+      "pass_criteria": "LCD不提示低电压，实心电池图标常亮",
+      "instrument": "直流稳压电源：DJS10005"
+    },
+    {
+      "test_id": "6-1",
+      "item": "测量模式设置功能",
+      "condition": "在测量界面，短按设置按键",
+      "expected_value": "切换模式图标",
+      "pass_criteria": "切换模式图标"
+    },
+    {
+      "test_id": "6-2",
+      "item": "测量模式设置功能",
+      "condition": "按下测量按键",
+      "expected_value": "在之前选定的模式下，完成一次测量",
+      "pass_criteria": "在选定模式下完成测量"
+    },
+    {
+      "test_id": "6-3",
+      "item": "测量模式设置功能",
+      "condition": "设置时超过15S没有按键操作",
+      "expected_value": "体温计进入关机状态",
+      "pass_criteria": "超过15S无操作后关机"
+    },
+    {
+      "test_id": "7-1",
+      "item": "单位切换功能",
+      "condition": "关机时，长按测量按键8s以上",
+      "expected_value": "当前的单位图标，闪烁显示",
+      "pass_criteria": "单位图标闪烁显示"
+    },
+    {
+      "test_id": "7-1b",
+      "item": "单位切换功能",
+      "condition": "短按测量按键",
+      "expected_value": "蜂鸣器短鸣，被选择的单位图标，闪烁显示",
+      "pass_criteria": "蜂鸣器短鸣，选中单位图标闪烁"
+    },
+    {
+      "test_id": "7-2",
+      "item": "单位切换功能",
+      "condition": "长按2秒测量按键",
+      "expected_value": "蜂鸣器短鸣，LCD显示选定的单位图标",
+      "pass_criteria": "蜂鸣器短鸣，LCD显示选定单位图标"
+    },
+    {
+      "test_id": "7-3",
+      "item": "单位切换功能",
+      "condition": "超过2S没有按键操作",
+      "expected_value": "体温计进入关机状态",
+      "pass_criteria": "超过2S无操作后关机"
+    },
+    {
+      "test_id": "8-1",
+      "item": "测量功能-物温模式37℃",
+      "condition": "选中物温模式，常温下将体温计对准37℃黑体，按下测量按键",
+      "expected_value": "LCD显示37±0.2℃，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示37±0.2℃，背光白色，单次长鸣500ms",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "8-2a",
+      "item": "测量功能-成人体温模式35℃",
+      "condition": "选中成人体温模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示36.5左右，背光白色，单次长鸣500ms",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "8-2b",
+      "item": "测量功能-成人体温模式36.5℃",
+      "condition": "选中成人体温模式，常温下将体温计对准36.5℃黑体，按下测量按键",
+      "expected_value": "LCD显示37.7左右，背光为橙色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示37.7左右，背光橙色，连续短鸣4次",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "8-2c",
+      "item": "测量功能-成人体温模式38℃",
+      "condition": "选中成人体温模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示39.2左右，背光红色，连续短鸣4次",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "8-3a",
+      "item": "测量功能-婴儿体温模式35℃",
+      "condition": "选中婴儿体温模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示36.5左右，背光白色，单次长鸣500ms",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "8-3b",
+      "item": "测量功能-婴儿模式38℃",
+      "condition": "选中婴儿模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示39.2左右，背光红色，连续短鸣4次",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "8-4a",
+      "item": "测量功能-成人体温模式25℃异常",
+      "condition": "选中成人体温模式，常温下将体温计对准25℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光白色，无蜂鸣",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "8-4b",
+      "item": "测量功能-成人体温模式40℃异常",
+      "condition": "选中成人体温模式，常温下将体温计对准40℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光白色，无蜂鸣",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "9-1",
+      "item": "错误检测功能",
+      "condition": "将体温计放置5℃环境温度下静置1H",
+      "expected_value": "LCD显示\"Err\" 图标闪烁15次后关机",
+      "pass_criteria": "LCD显示Err图标闪烁15次后关机",
+      "instrument": "恒温槽：RPZ03003"
+    },
+    {
+      "test_id": "9-2",
+      "item": "错误检测功能",
+      "condition": "将体温计放置42℃环境温度下静置1H",
+      "expected_value": "LCD显示\"Err\" 图标闪烁15次后关机",
+      "pass_criteria": "LCD显示Err图标闪烁15次后关机",
+      "instrument": "恒温槽：RPZ03003"
+    },
+    {
+      "test_id": "10-1",
+      "item": "记忆功能",
+      "condition": "体温计物温模式下，对准35℃黑体测量",
+      "expected_value": "LCD显示测试完成的结果，并记录",
+      "pass_criteria": "LCD显示测量结果并记录",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "10-2",
+      "item": "记忆功能",
+      "condition": "在关机态，长按设置键3秒，进入记忆浏览模式",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录（显示当前测量模式、测量数值和测量记录数）",
+      "pass_criteria": "LCD显示记忆结果"
+    },
+    {
+      "test_id": "10-3",
+      "item": "记忆功能",
+      "condition": "短按设置按键显示下一条记录",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录",
+      "pass_criteria": "LCD显示下一条记忆结果"
+    },
+    {
+      "test_id": "10-4",
+      "item": "记忆功能",
+      "condition": "切换到体温模式，对准35℃黑体测量",
+      "expected_value": "LCD显示测试完成的结果，并记录",
+      "pass_criteria": "LCD显示测量结果并记录",
+      "instrument": "黑体辐射源：RJS05001"
+    },
+    {
+      "test_id": "10-5",
+      "item": "记忆功能",
+      "condition": "在关机态，长按设置键3秒，进入记忆浏览模式",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录",
+      "pass_criteria": "LCD显示记忆结果"
+    },
+    {
+      "test_id": "10-6",
+      "item": "记忆功能",
+      "condition": "短按设置按键显示下一条记录",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录",
+      "pass_criteria": "LCD显示下一条记忆结果"
+    },
+    {
+      "test_id": "10-7",
+      "item": "记忆功能-清空记忆",
+      "condition": "在关机态时，长按测量键和设置键8s后",
+      "expected_value": "开始自动清除记忆，全部记录被清空",
+      "pass_criteria": "记忆结果清空"
+    },
+    {
+      "test_id": "10-8",
+      "item": "记忆功能-清空后查看",
+      "condition": "进行清空记忆操作后，进入记忆查看界面",
+      "expected_value": "记忆结果为空",
+      "pass_criteria": "记忆结果为空"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RXCL01 V1.0"
+    },
+    {
+      "id_type": "软件版本号",
+      "value": "PT-HT2762-V0029-1.0.0"
+    },
+    {
+      "id_type": "直流稳压电源编号",
+      "value": "DJS10005"
+    },
+    {
+      "id_type": "万用表编号",
+      "value": "DJS06046"
+    },
+    {
+      "id_type": "恒温槽编号",
+      "value": "RPZ03003"
+    },
+    {
+      "id_type": "黑体辐射源编号",
+      "value": "RJS05001"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "PT9L体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "软件测试说明：软件版本PT-HT2762-V0029-1.0.0，目标机型PT9L。PT9L的设计输入V1.0要求该软件支持：测温过程中检测体温，将测量中的数据及测量结果通过LCD显示。按照测试大纲的要求，逐项测试，如果测试通过，PT-HT2762-V0029-1.0.0版软件可以定版。接收标准：按照测试大纲的要求，逐项测试，每项测试均测试通过。",
+      "topic_tags": [
+        "软件测试",
+        "接收标准",
+        "定版条件",
+        "PT9L",
+        "LCD显示",
+        "体温测量"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT-HT2762-V0029-1.0.0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人体体温测量过程中的其他情况测试（状态机交叉测试）：体温计开机处于全显状态时，短按/长按测量按键、短按/长按设置按键、拨动静音开关均无反应。体温计处于关机状态时，短按测量按键可唤醒测量并显示结果；长按2秒完成深度测量，长按8秒进入切换单位模式；短按设置按键无反应；长按设置按键超过3s进入记忆查询模式；拨动静音开关无反应。体温计处于显示测量结果状态时，短按测量按键LCD显示测量结果；长按2秒完成深度测量，长按8秒进入切换单位模式；短按设置按键切换测量模式；长按设置按键超过3s进入记忆查询模式；拨动静音开关LCD显示静音图标。体温计模式设置界面状态时，短按测量按键退出模式设置界面并保存之前的模式，进入测量；长按2秒完成深度测量，长按8秒进入切换单位模式；短按设置按键切换模式选择；长按设置按键超过3s进入记忆查询模式；拨动静音开关LCD显示静音图标。",
+      "topic_tags": [
+        "状态机",
+        "按键交叉测试",
+        "测量模式",
+        "静音",
+        "记忆查询",
+        "单位切换",
+        "深度测量"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "测量功能",
+        "LCD显示功能"
+      ]
+    }
+  ]
+}

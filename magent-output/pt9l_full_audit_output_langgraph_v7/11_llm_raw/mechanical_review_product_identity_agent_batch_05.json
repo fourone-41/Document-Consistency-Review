@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Product Identity Agent",
+  "summary": "本轮共审查6个cluster。MC-CLUSTER-0047涉及正式DHF清单中PT9C作为参考来源列入设计输出条目，属于正式主审范围内的异型号引用，需进一步核查是否为合理共用件来源标注或产品身份混淆。MC-CLUSTER-0048涉及正式DHF结构阶段文件标题直接使用"血压计"，属于品类错误污染。MC-CLUSTER-0055、MC-CLUSTER-0056、MC-CLUSTER-0059、MC-CLUSTER-0061均位于历史记录/草稿路径，属于非正式主审范围，予以dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0047",
+      "decision": "needs_more_context",
+      "severity": "P2",
+      "error_type": "cross_model_reference_unverified",
+      "claim": "正式DHF清单中设计输出条目PT9L-SJSC01 V1.0的来源列标注为"PT9C"，需核查该标注含义",
+      "reason": "证据位于正式主审范围文件PT9L-DHF清单-常规.via_xlsx.clean.md第92行，属于primary_scope=true。表格中第82项"设计输出清单一"（文件编号PT9L-SJSC01 V1.0）在某列（疑为"参考来源"或"转化自"列）填写了"PT9C"。若该列含义为"本文件内容转化自PT9C对应文件"，则属于合理的历史来源标注，不构成产品身份污染；若该列为"适用型号"或"受控范围"，则PT9C出现在PT9L正式设计输出清单中构成产品身份混淆。当前证据无法判断该列的列头含义，需补查该表格完整列头定义及PT9L-SJSC01文件正文，确认PT9C是否仅为来源标注。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0048",
+      "decision": "confirm",
+      "severity": "P2",
+      "error_type": "product_identity_contamination_wrong_category",
+      "claim": "正式DHF结构阶段文件标题直接使用"血压计"，与PT9L（红外体温计）品类不符，构成产品身份污染",
+      "reason": "证据位于PT9结构DHF路径下，primary_scope=true，属于正式主审范围。文件标题为"结构设计方案评审检查表-血压计E0 23.11"，明确以"血压计"命名，而PT9L为红外体温计，两者属于不同医疗器械品类。该文件若作为PT9L正式DHF的结构设计方案评审记录，其标题标注错误品类，将导致产品身份证据链混乱，影响法规符合性审查。需确认该文件是否已被正式受控版本替换，或是否存在版本管理缺失问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0055",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_draft_out_of_scope",
+      "claim": "历史记录草稿路径下的客户需求书标题含"血压计"，属于历史草稿范围，不影响PT9L正式DHF/DMR",
+      "reason": "证据路径为"历史记录\\PT9LDHF-草稿\\01 立项批准书E0 23.11\\客户需求书E0-血压计 23.6"，primary_scope=false，明确属于历史草稿归档目录。该文件为早期版本（23.6），已被后续正式版本替代。历史草稿中的品类标注不构成对正式DHF/DMR产品身份的污染，属于合理的历史演进记录，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0056",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_draft_out_of_scope",
+      "claim": "历史记录草稿路径下的多份文件含"血压计"词条，均属历史草稿范围，不影响PT9L正式DHF/DMR",
+      "reason": "6个候选证据（MF-0353至MF-0361）均位于"历史记录\\PT9LDHF-草稿"路径，primary_scope=false。涉及文件包括结构设计方案评审检查表（E0 23.11）和结构类FMEA（E0 23.11），均为早期草稿版本。FMEA中"血压计"出现在功能描述（如"给血压计供电""包装血压计"）中，系描述性用语，反映早期设计阶段产品定义尚未最终确定，或文件模板来源于血压计项目。这些文件已归入历史草稿，不在正式受控范围内，不构成正式DHF/DMR产品身份污染，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0059",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_draft_out_of_scope",
+      "claim": "历史记录草稿路径下的多份文件含"PT9C"词条，均属历史草稿范围，不影响PT9L正式DHF/DMR",
+      "reason": "22个候选证据均位于"历史记录\\PT9LDHF-草稿"路径，primary_scope=false。其中PT9L-operation guide草稿（MF-0364至MF-0368）中出现"PT9CPT9L"连写形式，系文件编辑过程中型号拼接未分离的草稿痕迹，属于历史草稿文本问题。PT9C设计确认E0文件（MF-0399）标题直接为PT9C，属于PT9C项目历史文件被归入PT9L草稿目录，不影响PT9L正式受控文件。临床评价报告草稿（MF-0400、MF-0401）中型号标注为PT9CL或PT9C，属于草稿阶段型号未最终确定的历史记录。所有证据均在历史草稿范围内，不构成正式DHF/DMR产品身份污染，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0061",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_draft_out_of_scope",
+      "claim": "历史记录草稿路径下的设计验证报告含"血压计法规标准清单"Sheet，属于历史草稿范围，不影响PT9L正式DHF/DMR",
+      "reason": "证据位于"历史记录\\PT9LDHF-草稿\\T1样机\\设计验证报告E0 23.11"路径，primary_scope=false。该Sheet名称"血压计法规标准清单20160719"日期为2016年，系极早期历史文件或模板遗留，已归入历史草稿目录。该Sheet内容为空表（第67-69行均为空行），不包含实质性PT9L设计验证内容，不影响PT9L正式DHF/DMR的证据链完整性，予以dismiss。"
+    }
+  ]
+}
+```

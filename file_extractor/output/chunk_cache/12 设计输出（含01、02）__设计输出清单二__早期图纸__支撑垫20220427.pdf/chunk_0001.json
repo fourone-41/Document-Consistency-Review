@@ -1,0 +1,212 @@
+{
+  "document": {
+    "title": "支撑垫（T-Z1-P15 V2.0，聚氨酯，2022-04-27）",
+    "drawing_no": "T-Z1-P15",
+    "edition": "V2.0",
+    "date": "2022-04-27",
+    "source_file": "早期图纸/支撑垫20220427.pdf",
+    "page_size": "A4 竖向",
+    "note": "早期版历史归档，精简版"
+  },
+  "products": [
+    {
+      "name": "支撑垫",
+      "drawing_no": "T-Z1-P15",
+      "edition": "V2.0",
+      "material": "聚氨酯（PU）",
+      "color": "黑色",
+      "project_no": "K03020002129",
+      "tolerance_level": "LEVEL B"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "T-Z1-P15"
+    },
+    {
+      "type": "项目号",
+      "value": "K03020002129"
+    },
+    {
+      "type": "版本",
+      "value": "V2.0"
+    }
+  ],
+  "components": [
+    {
+      "name": "支撑垫",
+      "material": "聚氨酯（PU）",
+      "color": "黑色",
+      "dimensions": [
+        {
+          "parameter": "内弧 R3.25",
+          "value": 3.25,
+          "unit": "mm",
+          "tolerance": "±0.05"
+        },
+        {
+          "parameter": "外弧 R5.75",
+          "value": 5.75,
+          "unit": "mm",
+          "tolerance": "±0.05"
+        },
+        {
+          "parameter": "厚度",
+          "value": 4,
+          "unit": "mm",
+          "tolerance": "±0.1"
+        }
+      ],
+      "adhesive": {
+        "type": "单面背胶",
+        "thickness_range": "0.05~0.1mm",
+        "requirement": "背胶牢固，不可出现背胶分离的情况"
+      },
+      "hardness": "邵氏硬度 50±5 度",
+      "note": "标注厚度不包含背胶"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "标注厚度不包含背胶"
+    },
+    {
+      "id": "REQ-2",
+      "description": "材质：聚氨酯"
+    },
+    {
+      "id": "REQ-3",
+      "description": "颜色：黑色"
+    },
+    {
+      "id": "REQ-4",
+      "description": "单面背胶，背胶厚度 0.05~0.1mm，背胶牢固，不可出现背胶分离的情况"
+    },
+    {
+      "id": "REQ-5",
+      "description": "邵氏硬度：50±5 度"
+    },
+    {
+      "id": "REQ-6",
+      "description": "出货排版需要方便生产加工取放"
+    },
+    {
+      "id": "REQ-7",
+      "description": "本件要求通过 RoHS 测试"
+    }
+  ],
+  "tests": [
+    {
+      "name": "RoHS 测试",
+      "requirement": "零件须通过 RoHS 测试",
+      "applicable_item": "支撑垫 T-Z1-P15"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0",
+      "revision_no": 1,
+      "description": "V1.0 初版制作",
+      "date": "2021-07-15",
+      "material": "PMMA（笔误）",
+      "project_no": null
+    },
+    {
+      "version": "V2.0",
+      "revision_no": 2,
+      "description": "V2.0 变更材质、形象",
+      "date": "2022-04-27",
+      "material": "聚氨酯（修正）",
+      "project_no": "K03020002129"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "现版 图纸/支撑垫.pdf 实际是 V1.0 还是 V2.0",
+      "type": "open_issue"
+    },
+    {
+      "id": "C-2",
+      "description": "\"变更形象\"具体指什么",
+      "type": "open_issue"
+    },
+    {
+      "id": "C-3",
+      "description": "DHF 中是否有 V1.0 → V2.0 的 ECN 文档",
+      "type": "open_issue"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "有害物质限制指令，零件需通过测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "V1.0 材质字段原标注为 PMMA，属笔误；V2.0 修正为聚氨酯（PU）。同时新增项目号 K03020002129。几何尺寸（R3.25/R5.75/厚度4±0.1）在两版中保持不变。",
+      "topic_tags": [
+        "材质变更",
+        "PMMA",
+        "聚氨酯",
+        "设计变更",
+        "ECN"
+      ],
+      "related_subjects": [
+        "T-Z1-P15",
+        "V1.0",
+        "V2.0"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "修改记录写\"变更材质、形象\"——但本图视图上并没有看到明显的\"形象\"变化（图面与V1.0几乎一样）。\"形象\"可能指标题栏外品牌/版面调整，或对应同时期的整机LOGO取消。V2.0修订之后，再无后续版本——直接成为现版（同V2.0几何/材质，但现版md标V1.0，版本号未递增到V2.0，在仓库另存为 图纸/支撑垫.pdf）。",
+      "topic_tags": [
+        "形象变更",
+        "版本号倒退",
+        "仓库管理",
+        "LOGO"
+      ],
+      "related_subjects": [
+        "T-Z1-P15 V2.0",
+        "图纸/支撑垫.pdf",
+        "C-1",
+        "C-2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "现版 图纸/支撑垫.pdf 与本 V2.0 归档版对比：Edition 现版标为 V1.0（疑似版本号倒退），但 Pro material（聚氨酯）、项目号（K03020002129）、几何尺寸均与 V2.0 一致。需工程师确认现版版本号是否存在错误，以及 DHF 中是否存在对应的 ECN 变更文件。",
+      "topic_tags": [
+        "版本管理",
+        "版本号倒退",
+        "DHF",
+        "ECN",
+        "配置管理"
+      ],
+      "related_subjects": [
+        "图纸/支撑垫.pdf",
+        "T-Z1-P15 V2.0",
+        "C-1",
+        "C-3"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文件为早期版 V2.0 历史归档（精简版），源文件文字层仅 71 字符。现行版本存放于 图纸/支撑垫.pdf，前版文件包括：支撑垫20211102.pdf.md、支撑垫20211104.pdf.md、支撑垫20220425.pdf.md。",
+      "topic_tags": [
+        "归档",
+        "历史版本",
+        "文件管理"
+      ],
+      "related_subjects": [
+        "早期图纸/支撑垫20220427.pdf",
+        "图纸/支撑垫.pdf"
+      ]
+    }
+  ]
+}

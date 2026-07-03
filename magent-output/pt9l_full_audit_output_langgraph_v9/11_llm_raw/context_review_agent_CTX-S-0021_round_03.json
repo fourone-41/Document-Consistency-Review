@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Risk Traceability Agent",
+  "decision": "needs_more_context",
+  "severity": "P0",
+  "error_type": "bluetooth_hazard_coverage_unverified",
+  "claim": "No Bluetooth-specific hazard, hazardous situation, or harm entry exists anywhere in the PT9L ISO 14971 risk assessment chain (Risk Assessment Report IFT-FXPJ01 V2.0 / PT9L-FXPJ01, Verification Report IFT-FXYS01 V2.0 / PT9L-FXYS01, or Risk Management Report IFT-FXGB01 V2.0 / PT9L-FXGB01 V1.0), despite the project profile confirming PT9L transmits temperature data to a smart device via Bluetooth.",
+  "reason": "After three rounds of context recovery, the substantive content of IFT-FXPJ01 V2.0 (F0018) has still not been read beyond cover page, version history, and table of contents (lines 1–75). The two critical sections required to verify or refute the claim — Section 3.4 (IEC 60601-1-2:2014+A1:2020 additional questions, estimated lines 350–500, pages 13–15) and Section 4 risk analysis table (estimated lines 500–900, pages 16–28) — remain unread. Additionally, documents IFT-FXYS01 (Verification Report) and IFT-FXGB01 (Risk Management Report) have not yet been located or read. All three context recovery LLM calls in rounds 1–3 failed with JSON parse errors, producing zero substantive evidence. The claim cannot be confirmed or dismissed without: (1) full-text keyword scan of F0018 lines ~350–900 for 'Bluetooth', 'BT', 'wireless', 'RF', 'radio', '蓝牙', '无线', '2.4GHz', 'electromagnetic'; (2) location and full-text scan of IFT-FXYS01 in path '03 风险分析\\'; (3) location and full-text scan of IFT-FXGB01 in path '03 风险分析\\'. Until these three reads are completed successfully, the P0 severity is preserved and the decision remains needs_more_context."
+}
+```

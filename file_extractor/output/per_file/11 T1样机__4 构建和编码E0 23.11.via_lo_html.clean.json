@@ -1,0 +1,524 @@
+{
+  "document": {
+    "title": "软件构建与编码",
+    "doc_type": "软件构建与编码文档",
+    "version": "V1.0"
+  },
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "软件工程师（负责人/更改人）"
+    },
+    {
+      "name": "侯广伟",
+      "title": "软件主管（审核人）"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RJGJ01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "软件代码版本",
+      "value": "PT-HT2762-V0029-1.0.0"
+    },
+    {
+      "id_type": "目标代码版本",
+      "value": "PT-HT2762-V0029-1.0.0.MTP"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "01",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": "2024.2.27"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "初始化功能",
+      "condition": "上电后或关机态按按键开机",
+      "expected_value": "1.体温计能开机并打开LCD显示；2.MCU系统功能初始化，配置相关模块和功能设置，读取EEPROM存储信息",
+      "pass_criteria": "S.O",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "2",
+      "item": "关机功能",
+      "condition": "测量结束后无按键操作15秒；模式设置界面无按键操作3秒",
+      "expected_value": "1.达15秒后关闭外设，单片机进入低功耗状态；2.模式设置界面3秒后自动关机",
+      "pass_criteria": "S",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "3",
+      "item": "LCD显示功能",
+      "condition": "首次上电、测量完成、发烧提示场景",
+      "expected_value": "1.首次上电LCD全屏显示3秒；2.测量完成后LCD显示测量温度结果、单位、电量等信息；3.结合测试结果给出发烧提示，用背光颜色区分",
+      "pass_criteria": "S.O.C.I",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "4",
+      "item": "蜂鸣器提示功能",
+      "condition": "测试完成、设置完成、按键操作时",
+      "expected_value": "1.首次上电时蜂鸣器长鸣；2.成功长鸣，发烧连续四次短鸣；3.模式设置界面选择时短鸣，确认后长鸣",
+      "pass_criteria": "S.O.C.I",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "5",
+      "item": "低电压检测功能",
+      "condition": "电源电压低于2.7V或2.5V",
+      "expected_value": "1.电压2.5V–2.7V时LCD提示低电压并保存低电状态；2.电压小于2.5V时LCD提示超低电压后关机",
+      "pass_criteria": "S.O.C.I",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "6",
+      "item": "测量模式设置功能",
+      "condition": "开机状态下短按设置按键",
+      "expected_value": "1.短按设置按键切换测量模式；2.按下测量按键保存当前模式并完成一次测量；3.15s无操作关机",
+      "pass_criteria": "S.O.C.I",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "7",
+      "item": "单位切换功能",
+      "condition": "长按测量按键8秒后进入单位切换",
+      "expected_value": "出现单位图标闪烁，短按切换单位，长按2秒后图标停止闪烁，3秒后关机；进入设置后15秒无操作关机",
+      "pass_criteria": "S.O.C",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "8",
+      "item": "测量功能",
+      "condition": "短按测量按键或长按2秒进行深度测量",
+      "expected_value": "1.短按1秒内完成测量，蜂鸣器提示，LCD显示结果；2.深度测量长按2秒后完成，蜂鸣器提示，LCD显示结果",
+      "pass_criteria": "S.O.C.I",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "9",
+      "item": "错误检测功能",
+      "condition": "工作环境温度超出范围或测量结果超出量程",
+      "expected_value": "1.环境温度超出10~40℃时LCD闪烁显示\"Err\"；2.测温大于42.9℃或小于32℃时提示\"---℃\"，不显示结果",
+      "pass_criteria": "S.O.C.I",
+      "instrument": "e-link 仿真器"
+    },
+    {
+      "test_id": "10",
+      "item": "记忆功能",
+      "condition": "测量成功后存储、长按设置键3秒查看记忆、关机状态同时长按测量键和设置键8秒清空",
+      "expected_value": "1.每次测量成功保存数据到EEPROM；2.长按设置键3秒进入记忆查看模式，只能查看对应测量模式的记忆数据；3.同时长按两键8秒可清空记忆",
+      "pass_criteria": "S.O.C.I",
+      "instrument": "e-link 仿真器"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "软件工程师根据软件设计方案和软件流程图进行软件的构建和编码工作，构建程序框架，编写子程序并形成功能模块，调试、测试，全通过后输出软件代码和相关文件，并汇总设计需求、设计方案、子程序、以及测试方面追溯表。",
+      "topic_tags": [
+        "软件构建",
+        "编码",
+        "功能模块",
+        "调试",
+        "测试",
+        "追溯"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计",
+        "软件设计方案"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测试方法缩写说明：S：模拟软件单步执行，观察程序执行的结果；C：输入不同值，确认软件的输出是否和人工计算的一致；O：执行软件，观察硬件的响应；I：改变硬件的输入，确认软件的响应。",
+      "topic_tags": [
+        "测试方法",
+        "单步执行",
+        "验证",
+        "硬件响应"
+      ],
+      "related_subjects": [
+        "软件测试",
+        "源代码可追溯性分析"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "软件开发和测试环境维护：1、是否使用测试程序（HT_TEST）确认软件开发和测试环境正常运行？是；2、软件开发和测试环境是否有更新？是，并使用测试程序（HT_TEST）再次确认软件开发和测试环境正常运行。主控芯片：simBH67F2762，开发环境：HT-IDE3000 V8.04，开发工具：e-link 仿真器，编程语言：C语言。",
+      "topic_tags": [
+        "开发环境",
+        "测试环境",
+        "主控芯片",
+        "HT_TEST",
+        "C语言"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "软件构建与编码"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/4 构建和编码E0 23.11.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "软件构建与编码",
+      "to": "01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "软件构建",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "软件构建",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件设计方案",
+      "to": "软件构建",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件测试",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "源代码可追溯性分析",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "开发环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件构建与编码",
+      "to": "开发环境",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "PT9L",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "PT-HT2762-V0029-1.0.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "1",
+      "properties": {
+        "item": "初始化功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "2",
+      "properties": {
+        "item": "关机功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "3",
+      "properties": {
+        "item": "LCD显示功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "4",
+      "properties": {
+        "item": "蜂鸣器提示功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "5",
+      "properties": {
+        "item": "低电压检测功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "6",
+      "properties": {
+        "item": "测量模式设置功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "7",
+      "properties": {
+        "item": "单位切换功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "8",
+      "properties": {
+        "item": "测量功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "9",
+      "properties": {
+        "item": "错误检测功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "10",
+      "properties": {
+        "item": "记忆功能"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT-HT2762-V0029-1.0.0",
+      "properties": {
+        "id_type": "软件代码版本"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT-HT2762-V0029-1.0.0.MTP",
+      "properties": {
+        "id_type": "目标代码版本"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RJGJ01 V1.0",
+      "properties": {
+        "role": "软件工程师（负责人/更改人）"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RJGJ01 V1.0",
+      "properties": {
+        "role": "软件主管（审核人）"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RJGJ01 V1.0",
+      "to": "01",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "王迪",
+        "date": "2024.2.27"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "自动关机",
+      "attribute": "超时时长",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "测量结束后无按键操作",
+      "raw_text": "达15秒后关闭外设，单片机进入低功耗状态"
+    },
+    {
+      "subject": "自动关机",
+      "attribute": "超时时长",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "模式设置界面无按键操作",
+      "raw_text": "模式设置界面3秒后自动关机"
+    },
+    {
+      "subject": "LCD全屏显示",
+      "attribute": "持续时长",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "首次上电",
+      "raw_text": "首次上电LCD全屏显示3秒"
+    },
+    {
+      "subject": "低电压阈值",
+      "attribute": "低电压范围",
+      "value": "2.5~2.7",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "电源电压低于2.7V",
+      "raw_text": "电压2.5V–2.7V时LCD提示低电压并保存低电状态"
+    },
+    {
+      "subject": "超低电压阈值",
+      "attribute": "关机电压",
+      "value": "2.5",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "电源电压低于2.5V",
+      "raw_text": "电压小于2.5V时LCD提示超低电压后关机"
+    },
+    {
+      "subject": "单位切换",
+      "attribute": "触发长按时长",
+      "value": "8",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "长按测量按键进入单位切换",
+      "raw_text": "长按测量按键8秒后进入单位切换"
+    },
+    {
+      "subject": "单位切换确认",
+      "attribute": "长按确认时长",
+      "value": "2",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "单位切换界面长按确认",
+      "raw_text": "长按2秒后图标停止闪烁，3秒后关机"
+    },
+    {
+      "subject": "单位切换关机",
+      "attribute": "无操作关机时长",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "单位切换确认后",
+      "raw_text": "长按2秒后图标停止闪烁，3秒后关机"
+    },
+    {
+      "subject": "单位切换关机",
+      "attribute": "无操作关机时长",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "进入单位设置后无操作",
+      "raw_text": "进入设置后15秒无操作关机"
+    },
+    {
+      "subject": "普通测量",
+      "attribute": "完成时长",
+      "value": "1",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "短按测量按键",
+      "raw_text": "短按1秒内完成测量，蜂鸣器提示，LCD显示结果"
+    },
+    {
+      "subject": "深度测量",
+      "attribute": "触发长按时长",
+      "value": "2",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "长按测量按键进行深度测量",
+      "raw_text": "深度测量长按2秒后完成，蜂鸣器提示，LCD显示结果"
+    },
+    {
+      "subject": "工作环境温度",
+      "attribute": "正常范围",
+      "value": "10~40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "超出范围时LCD闪烁显示Err",
+      "raw_text": "环境温度超出10~40℃时LCD闪烁显示\"Err\""
+    },
+    {
+      "subject": "体温测量上限",
+      "attribute": "显示结果阈值",
+      "value": "42.9",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "测量结果超出量程上限",
+      "raw_text": "测温大于42.9℃时提示\"---℃\"，不显示结果"
+    },
+    {
+      "subject": "体温测量下限",
+      "attribute": "显示结果阈值",
+      "value": "32",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "测量结果超出量程下限",
+      "raw_text": "测温小于32℃时提示\"---℃\"，不显示结果"
+    },
+    {
+      "subject": "记忆查看",
+      "attribute": "触发长按时长",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "长按设置键进入记忆查看模式",
+      "raw_text": "长按设置键3秒进入记忆查看模式"
+    },
+    {
+      "subject": "记忆清空",
+      "attribute": "触发长按时长",
+      "value": "8",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "关机状态同时长按测量键和设置键",
+      "raw_text": "同时长按两键8秒可清空记忆"
+    },
+    {
+      "subject": "测量模式关机",
+      "attribute": "无操作关机时长",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "模式设置界面无操作",
+      "raw_text": "15s无操作关机"
+    }
+  ]
+}

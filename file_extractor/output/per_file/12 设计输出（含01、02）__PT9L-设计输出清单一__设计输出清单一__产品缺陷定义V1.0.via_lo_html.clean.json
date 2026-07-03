@@ -1,0 +1,469 @@
+{
+  "document": {
+    "title": "产品缺陷定义",
+    "document_number": "KD-5961E-QXDY01",
+    "version": "V1.0",
+    "product_name": "红外体温计",
+    "product_model": "PT9L",
+    "project_number": "30000078",
+    "total_pages": 4
+  },
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "project_number": "30000078"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "document_number",
+      "value": "KD-5961E-QXDY01"
+    },
+    {
+      "type": "project_number",
+      "value": "30000078"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0",
+      "description": "初始版本",
+      "roles": [
+        "编制",
+        "审核",
+        "批准"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "正常测量",
+      "description": "产品每次测温时，如果目标温度正常，显示所测温度，同时显示相对应的颜色，蜂鸣器长鸣0.5S，若测量错误，显示三条杠和温度单位，蜂鸣器短鸣3次。"
+    },
+    {
+      "name": "自检",
+      "description": "将产品断电后（无余电），重新上电进入上电模式，产品自检正常：显示屏全显且白色背光亮，检查LCD显示内容是否正确，是否有乱显、多显、少显现象，同时蜂鸣器长鸣0.5S，3S后进入待机模式。若自检故障，屏幕全亮且闪烁。"
+    },
+    {
+      "name": "测量范围",
+      "description": "32℃～42.9℃，范围内任意温度均可以测量出数值。超出测量范围，机器应当报错。"
+    },
+    {
+      "name": "测量精度",
+      "description": "≥35℃且≤42℃：±0.2℃，其它±0.3℃。"
+    },
+    {
+      "name": "自动关机",
+      "description": "测温后无操作15S自动关机。"
+    },
+    {
+      "name": "电流消耗",
+      "description": "测量模式耗电电流：平均值须小于50mA；待机电流：平均值须小于20uA。"
+    },
+    {
+      "name": "短路测试",
+      "description": "将电池装反或将装在电池盒内的电池短路，不可有明火或冒烟现象。"
+    },
+    {
+      "name": "低电压检测",
+      "description": "1、使用直流电源供电，将供电电压调至2.7V时，测量完毕后LCD显示电池符号；2、继续将供电电压调至DC 2.5V时，LCD应显示低电压图标且闪烁15S后产品关机。"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "category": "功能",
+      "name": "正常测量",
+      "description": "产品每次测温时，如果目标温度正常，显示所测温度，同时显示相对应的颜色，蜂鸣器长鸣0.5S，若测量错误，显示三条杠和温度单位，蜂鸣器短鸣3次。"
+    },
+    {
+      "id": "REQ-002",
+      "category": "功能",
+      "name": "自检",
+      "description": "上电自检正常：显示屏全显且白色背光亮，蜂鸣器长鸣0.5S，3S后进入待机模式；若自检故障，屏幕全亮且闪烁。"
+    },
+    {
+      "id": "REQ-003",
+      "category": "性能",
+      "name": "测量范围",
+      "description": "32℃～42.9℃，超出测量范围机器应报错。"
+    },
+    {
+      "id": "REQ-004",
+      "category": "性能",
+      "name": "测量精度",
+      "description": "≥35℃且≤42℃：±0.2℃，其它±0.3℃。"
+    },
+    {
+      "id": "REQ-005",
+      "category": "功能",
+      "name": "自动关机",
+      "description": "测温后无操作15S自动关机。"
+    },
+    {
+      "id": "REQ-006",
+      "category": "性能",
+      "name": "电流消耗",
+      "description": "测量模式耗电电流平均值须小于50mA；待机电流平均值须小于20uA。"
+    },
+    {
+      "id": "REQ-007",
+      "category": "安全",
+      "name": "短路测试",
+      "description": "将电池装反或将装在电池盒内的电池短路，不可有明火或冒烟现象。"
+    },
+    {
+      "id": "REQ-008",
+      "category": "功能",
+      "name": "低电压检测",
+      "description": "供电电压调至2.7V时测量完毕后LCD显示电池符号；供电电压调至DC 2.5V时LCD显示低电压图标且闪烁15S后产品关机。"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "严重度定性分级：CR—可能导致永久性损伤或患者死亡，违反法令；CR—可能导致要求专业医疗介入的伤害或损伤，产品损坏，无法使用；MA—导致不要求专业医疗介入的暂时的伤害及损伤；MA—产品有缺陷，但不影响继续使用；MI—通常仅略感不便，暂时不适；MI—通常不至于对产品发生显著影响，患者少许不便。",
+      "topic_tags": [
+        "严重度",
+        "缺陷等级",
+        "CR",
+        "MA",
+        "MI",
+        "风险分级"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计功能缺陷等级分析和评价"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L红外体温计功能缺陷等级分析和评价表，包含以下项目的规格及检验标准描述与对应CR/MA/MI缺陷等级：正常测量、自检、测量范围、测量精度、自动关机、电流消耗、短路测试、低电压检测。各项目的具体缺陷等级分配尚未在当前文档片段中明确填写。",
+      "topic_tags": [
+        "缺陷等级分析",
+        "功能评价",
+        "检验标准",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "严重度的定义",
+        "产品缺陷定义"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/产品缺陷定义V1.0.via_lo_html.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "产品缺陷定义",
+      "to": "V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计功能缺陷等级分析和评价",
+      "to": "严重度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "严重度的定义",
+      "to": "缺陷等级分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "产品缺陷定义",
+      "to": "缺陷等级分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-001",
+      "to": "正常测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-002",
+      "to": "自检",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-003",
+      "to": "测量范围",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-004",
+      "to": "测量精度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-005",
+      "to": "自动关机",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-006",
+      "to": "电流消耗",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-007",
+      "to": "短路测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-008",
+      "to": "低电压检测",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-001",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-002",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-003",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-004",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-005",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-006",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-007",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "IMPLEMENTED_IN",
+      "from": "REQ-008",
+      "to": "KD-5961E-QXDY01",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-004",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-005",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-006",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-007",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "KD-5961E-QXDY01",
+      "to": "REQ-008",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "KD-5961E-QXDY01",
+      "to": "V1.0",
+      "properties": {
+        "description": "初始版本",
+        "roles": [
+          "编制",
+          "审核",
+          "批准"
+        ]
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "测量范围",
+      "attribute": "下限",
+      "value": "32",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "32℃～42.9℃，超出测量范围机器应报错。"
+    },
+    {
+      "subject": "测量范围",
+      "attribute": "上限",
+      "value": "42.9",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "32℃～42.9℃，超出测量范围机器应报错。"
+    },
+    {
+      "subject": "测量精度",
+      "attribute": "允差",
+      "value": "±0.2",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "≥35℃且≤42℃",
+      "raw_text": "≥35℃且≤42℃：±0.2℃，其它±0.3℃。"
+    },
+    {
+      "subject": "测量精度",
+      "attribute": "允差",
+      "value": "±0.3",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "其它温度段（32℃～34.9℃ 或 42.1℃～42.9℃）",
+      "raw_text": "≥35℃且≤42℃：±0.2℃，其它±0.3℃。"
+    },
+    {
+      "subject": "蜂鸣器鸣响",
+      "attribute": "时长（正常测量）",
+      "value": "0.5",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "目标温度正常时",
+      "raw_text": "蜂鸣器长鸣0.5S，若测量错误，蜂鸣器短鸣3次。"
+    },
+    {
+      "subject": "蜂鸣器鸣响",
+      "attribute": "次数（测量错误）",
+      "value": "3",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "测量错误时",
+      "raw_text": "若测量错误，显示三条杠和温度单位，蜂鸣器短鸣3次。"
+    },
+    {
+      "subject": "上电自检",
+      "attribute": "蜂鸣器时长",
+      "value": "0.5",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "上电自检正常",
+      "raw_text": "上电自检正常：显示屏全显且白色背光亮，蜂鸣器长鸣0.5S，3S后进入待机模式。"
+    },
+    {
+      "subject": "上电自检",
+      "attribute": "待机进入延迟",
+      "value": "3",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "上电自检正常后",
+      "raw_text": "上电自检正常：蜂鸣器长鸣0.5S，3S后进入待机模式。"
+    },
+    {
+      "subject": "自动关机",
+      "attribute": "无操作超时时长",
+      "value": "15",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "测温后无操作",
+      "raw_text": "测温后无操作15S自动关机。"
+    },
+    {
+      "subject": "测量模式电流",
+      "attribute": "平均值上限",
+      "value": "50",
+      "unit": "mA",
+      "tolerance": "",
+      "condition": "测量模式",
+      "raw_text": "测量模式耗电电流平均值须小于50mA。"
+    },
+    {
+      "subject": "待机电流",
+      "attribute": "平均值上限",
+      "value": "20",
+      "unit": "uA",
+      "tolerance": "",
+      "condition": "待机模式",
+      "raw_text": "待机电流平均值须小于20uA。"
+    },
+    {
+      "subject": "低电压检测",
+      "attribute": "电池符号显示阈值",
+      "value": "2.7",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "测量完毕后LCD显示电池符号",
+      "raw_text": "供电电压调至2.7V时测量完毕后LCD显示电池符号。"
+    },
+    {
+      "subject": "低电压检测",
+      "attribute": "低电压关机阈值",
+      "value": "2.5",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "LCD显示低电压图标且闪烁后关机",
+      "raw_text": "供电电压调至DC 2.5V时LCD显示低电压图标且闪烁15S后产品关机。"
+    },
+    {
+      "subject": "低电压关机",
+      "attribute": "闪烁持续时长",
+      "value": "15",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "供电电压降至2.5V",
+      "raw_text": "LCD显示低电压图标且闪烁15S后产品关机。"
+    }
+  ]
+}

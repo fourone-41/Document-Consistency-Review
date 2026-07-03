@@ -1,0 +1,116 @@
+```json
+{
+  "context_summary": "本轮已补充了设计输出清单一（PT9L-设计输出清单一）的完整本地上下文，包括：文档元数据注释（hybrid clean-md 来源说明）、Sheet 标题"硬件、软件"、表头签字行（提交/审核/批准字段均为空白占位符"年 月 日"）、以及第14–35行的完整 GFM 表格内容（序号1–5，涵盖主板电路原理图、主板PCB图各层、接口板PCB图各层、机芯类组件清单、产品概述）。确认：①批准行（第12行）独立存在且同样为空白；②表格中无任何签字/日期填写；③文档编号体系为 PT9L-HFXS01、PT9L-HFMP01、PT9C-CNTP01、PT9L-EBOM01、PT9L-CPGS01，版本均为 V1.0；④接口板PCB图引用的是 PT9C 系列文件（跨产品引用）。仍未找到：独立审批路由记录、ECO 变更记录、设计评审纪要，以及 DHF 清单中对该文档审批状态的标注。",
+  "evidence_gaps": [
+    "PT9L-设计输出清单一 的提交日期、审核日期、批准日期字段均为空白，无任何填写痕迹，无法确认该文档是否已经过正式审批",
+    "DHF 清单（F0006，PT9L-DHF清单）中对"设计输出清单一"条目的审批状态列内容尚未读取，不知是否标注为已批准/待批准",
+    "开发计划文档（F0005、F0007）中是否包含设计输出阶段的里程碑审批记录或设计评审会议节点，尚未读取具体内容",
+    "无独立 ECO（工程变更令）记录文件被识别为与 PT9L 设计输出清单一相关",
+    "无设计评审纪要（Design Review Minutes）文件在已提供证据目录中被识别",
+    "接口板 PCB 图引用 PT9C-CNTP01（跨产品文件），该引用文件的审批状态及其与 PT9L 设计输出的关联授权依据缺失",
+    "设计输出清单一仅覆盖硬件/软件 Sheet，是否存在其他 Sheet（如结构、包装、标签等）及其审批状态未确认"
+  ],
+  "additional_search_queries": [
+    "PT9L-DHF清单 F0006 设计输出 审批 状态 批准",
+    "PT9L 开发计划 F0005 设计评审 里程碑 批准",
+    "PT9L 设计输出清单 审核 批准 签字 日期",
+    "PT9L ECO 工程变更 设计输出",
+    "PT9L 设计评审纪要 会议记录",
+    "PT9C-CNTP01 接口板 授权 引用 PT9L",
+    "设计输出清单一 Sheet 结构 包装 标签",
+    "F0160 文档控制 版本 审批记录"
+  ],
+  "agent_instruction": "请对以下文件执行精确内容读取，重点提取审批相关字段，不得推断或补全空白字段：\n1. 【优先级P1】读取 F0006（PT9L-DHF清单 - 真实.via_xlsx.clean.md）第96行附近及全部内容，定位"设计输出清单一"或"设计输出"相关条目行，提取其审批状态列、负责人列、完成日期列的实际填写值；\n2. 【优先级P1】读取 F0005（PT9L - 真实.via_xlsx.clean.md）第54行附近内容，确认是否存在设计输出阶段审批节点或设计评审会议记录引用；\n3. 【优先级P1】读取 F0007（PT9L.via_xlsx.clean.md）第63行附近内容，确认是否包含审批路由或设计评审纪要引用；\n4. 【优先级P2】在证据目录中搜索文件名含"评审""ECO""变更""会议""纪要""审批"且与 PT9L 相关的所有文件，列出其 doc_id 和 rel_path；\n5. 【优先级P2】确认设计输出清单一（F0160）是否存在除"硬件、软件"之外的其他 Sheet，若存在请读取其签字行内容；\n6. 所有读取结果须原文引用，明确标注行号，不得对空白字段作任何推断性填充。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "DMR-043",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line_range": "1–35",
+        "source_text_full": "1: <!-- hybrid clean-md; source = via_xlsx.md; 规整表=GFM，合并表=展开重建GFM，满行说明=段落，无 HTML 标签/无合并记号 -->\n2: # 设计输出清单一\n4: > hybrid clean-md（excel）：每个 Sheet 的表用 GFM 重建（合并格按 rowspan 向下继承、满行说明铺成段落）；保留全部文字、复选框与图片；不保留 HTML 表格标签。涉及严格行列/签字仍回查 `.via_xlsx.md`。\n6: ## Sheet: 硬件、软件\n8: 设计输出文档清单一\n10: 产品型号: PT9L 提交部门:智能产品部 提交: 年 月 日 审核: 年 月 日\n12: 批准: 年 月 日\n14–16: [表头行：序号|图纸名称|板层|文件图纸号/编号|版本|引用文件图纸号/编号|版本|...|备注]\n17: 1 | 主板电路原理图 | | PT9L-HFXS01 V1.0 | V1.0\n18–25: 2 | 主板PCB图 | [Top Layer/Top Overlay/Bottom Layer/Bottom Overlay/Drill Layer/拼板示意图(顶层)/拼板示意图(底层)/尺寸图] | PT9L-HFMP01 V1.0 | V1.0\n26–33: 3 | 接口板PCB图 | [Top Layer/Top Overlay/Bottom Layer/Bottom Overlay/Drill Layer/拼板示意图(顶层)/拼板示意图(底层)/T-Z1-P14] | 引用: PT9C-CNTP01 V1.0 | V1.0\n34: 4 | PT9L机芯类组件清单 | | PT9L-EBOM01 | V1.0\n35: 5 | PT9L产品概述 | | PT9L-CPGS01 | V1.0",
+        "key_finding": "提交、审核、批准三个签字日期字段（第10、12行）均为空白占位符，无任何实际填写值",
+        "verified": true
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter": "提交日期",
+        "location": "F0160 line 10",
+        "value": "空白（'年 月 日'占位符）",
+        "status": "未填写"
+      },
+      {
+        "parameter": "审核日期",
+        "location": "F0160 line 10",
+        "value": "空白（'年 月 日'占位符）",
+        "status": "未填写"
+      },
+      {
+        "parameter": "批准日期",
+        "location": "F0160 line 12",
+        "value": "空白（'年 月 日'占位符）",
+        "status": "未填写"
+      },
+      {
+        "parameter": "产品型号",
+        "location": "F0160 line 10",
+        "value": "PT9L",
+        "status": "已填写"
+      },
+      {
+        "parameter": "提交部门",
+        "location": "F0160 line 10",
+        "value": "智能产品部",
+        "status": "已填写"
+      },
+      {
+        "parameter": "文档版本体系",
+        "location": "F0160 lines 17–35",
+        "value": "PT9L-HFXS01 V1.0, PT9L-HFMP01 V1.0, PT9C-CNTP01 V1.0（跨产品引用）, PT9L-EBOM01 V1.0, PT9L-CPGS01 V1.0",
+        "status": "已填写，但跨产品引用授权依据缺失"
+      }
+    ],
+    "page_context": [
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 96,
+        "relevance": "DHF清单中可能包含设计输出清单一的审批状态标注，需读取该行附近内容",
+        "status": "待读取"
+      },
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 54,
+        "relevance": "开发计划中可能包含设计输出阶段里程碑审批节点",
+        "status": "待读取"
+      },
+      {
+        "doc_id": "F0007",
+        "rel_path": "02 开发计划E0 23.11\\PT9L.via_xlsx.clean.md",
+        "line_start": 63,
+        "relevance": "可能包含审批路由或设计评审纪要引用",
+        "status": "待读取"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_type": "document_structure_confirmation",
+        "finding": "F0160 设计输出清单一当前仅确认存在 Sheet '硬件、软件'，是否存在其他 Sheet 未经确认",
+        "implication": "若存在其他 Sheet 且含签字，可能提供部分审批证据；若不存在，则整份文档审批状态均为空白"
+      },
+      {
+        "context_type": "cross_product_reference_flag",
+        "finding": "序号3接口板PCB图引用 PT9C-CNTP01 V1.0（PT9C 系列，非 PT9L 原生文件）",
+        "implication": "需确认该跨产品引用是否有正式授权记录，否则构成额外的设计控制合规风险"
+      },
+      {
+        "context_type": "substitute_approval_evidence_search_result",
+        "finding": "在已提供证据目录中，未发现与 PT9L 设计输出清单一直接关联的 ECO 记录、设计评审纪要或独立审批路由文件",
+        "implication": "当前证据包中无替代审批证据，P1 缺口未被弥合，需进一步检索 DHF 清单和开发计划文件"
+      }
+    ]
+  }
+}
+```

@@ -1,0 +1,56 @@
+```json
+{
+  "assigned_agent": "Risk Traceability Agent",
+  "review_focus": "验证F0015（V1.0-3 Verification of risk control measure and residual risk evaluation report）中是否存在针对蓝牙相关风险控制措施的验证记录，以判断蓝牙风险控制验证链是否完全缺失",
+  "agent_input": {
+    "claim": "No verification record exists in the supplied corpus that closes a Bluetooth-related risk control measure, meaning the verification-to-residual-risk traceability chain for Bluetooth is entirely absent, not merely incomplete.",
+    "context_summary": "补证检索已定位到文档 F0015（路径：03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md），该文档为红外额温计 PT2L 的风险控制措施验证与残余风险评估报告（V1.0）。目录显示第3节为"Validation of risk control measures and residual risk assessment"（第5-17页），第4节为"Residual risk evaluation and conclusion"（第17页）。当前补证仅取得封面与目录部分（lines 1-61），尚未读取第3节正文内容，因此无法确认该节是否包含蓝牙相关条目。上一轮 context_recovery LLM 输出解析失败（JSONDecodeError），未能产出可用结论。需要 Risk Traceability Agent 直接审查 F0015 第3节正文（lines ~62 至文档末尾）中的验证表格，检索是否存在 Bluetooth/蓝牙关键词对应的风险控制验证行。",
+    "evidence": [
+      {
+        "evidence_id": "RISK-019",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 6,
+        "content": "D N: PT2L( 美亚 ) - SGYS 01 V 1 .0 Verification of risk control measure and residual risk evaluation report",
+        "note": "文档封面标题行，确认文档身份"
+      },
+      {
+        "evidence_id": "RISK-020",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 8,
+        "content": "**V erification of risk control measure and residual risk evaluation report**",
+        "note": "文档标题确认"
+      },
+      {
+        "evidence_id": "RISK-021",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 38,
+        "content": "3\\. Validation of risk control measures and residual risk assessment 5",
+        "note": "目录条目，指向第5页起的验证正文，为需要重点审查的章节"
+      },
+      {
+        "evidence_id": "RISK-022",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 40,
+        "content": "4\\. esidual risk evaluation and conclusion 17",
+        "note": "目录条目，残余风险结论章节"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "search_instruction": {
+      "primary_target_doc": "F0015",
+      "target_section": "Section 3 — Validation of risk control measures and residual risk assessment（正文 lines ~62 至文档末尾）",
+      "keywords_to_search": ["Bluetooth", "bluetooth", "蓝牙", "BT", "wireless", "RF", "electromagnetic"],
+      "table_columns_of_interest": ["Risk NO.", "Hazard", "Risk control measure", "Verification method", "Verification result", "Residual risk", "ACC/NACC"],
+      "fallback_docs_to_check": [
+        "03 风险分析\\（任何包含 Bluetooth 或蓝牙的风险分析文档）",
+        "历史记录\\给实验室\\可用性\\Infrared forehead thermometer 09a-2 Checklist of IEC 62366-1 2021.via_lo_html.clean.md（F0440，已在补证中出现，检查是否含蓝牙可用性风险条目）"
+      ],
+      "decision_logic": "若 Section 3 表格中存在任一行包含 Bluetooth/蓝牙相关危害且有对应验证结果，则 dismiss 原 claim；若全文扫描后确认无任何蓝牙验证条目，则 confirm 原 claim；若文档读取仍不完整，则 needs_more_context"
+    }
+  }
+}
+```

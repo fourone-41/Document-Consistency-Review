@@ -1,0 +1,247 @@
+{
+  "document": {
+    "title": "PT9L产品寿命测试报告",
+    "doc_type": "检测报告/测试报告",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "PT9L-PLER01",
+      "item": "PT9L整机寿命测试（按键功能、蜂鸣器功能、屏幕显示功能、测量误差）",
+      "condition": "实验室环境：23℃，湿度65%，正常大气压；水槽温度：37.00℃；使用恒温水槽中黑体进行测量",
+      "expected_value": "按键功能正常、蜂鸣器正常、屏幕显示正常，测量误差符合产品检验标准要求",
+      "actual_result": "按键功能、蜂鸣功能、屏幕显示功能均正常，测量误差满足产品检验标准的要求",
+      "pass_criteria": "1万次测试中各功能均正常，测量误差满足产品检验标准，等效5年使用寿命",
+      "instrument": "恒温水槽（编号RPZ03003）；PT9L样机1台（#1）",
+      "environment": "温度23℃，湿度65%，正常大气压，水槽温度37.00℃"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-PLER01",
+      "conclusion": "PT9L进行1万次实际测试中，按键功能、蜂鸣功能、屏幕显示功能均正常，测量误差满足产品检验标准的要求。按照每天使用5次的假设，1万次测量可以等效为5年的使用寿命，PT9L红外体温计能够达到整机5年的使用寿命。"
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "RPZ03003",
+      "test_point": "恒温水槽设定温度",
+      "reading": 37.0,
+      "unit": "℃",
+      "condition": "水槽温度稳定后对黑体进行测量"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-PLER01"
+    },
+    {
+      "id_type": "仪器编号",
+      "value": "RPZ03003"
+    },
+    {
+      "id_type": "样机编号",
+      "value": "#1"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "PT9L红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "PT9L要求满足产品寿命为整机5年，其中可以影响到整机寿命的电子元器件以及结构组件需要进行整机进行测试（包括按键，显示模组，蜂鸣器，热敏电阻）。此次测试假设PT9L平均每天使用5次，5年等效大约1万次的使用寿命。",
+      "topic_tags": [
+        "寿命测试",
+        "整机寿命",
+        "等效使用次数",
+        "电子元器件",
+        "结构组件"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT9L-PLER01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测试方法：1. 将恒温水槽设定在37.00℃，待恒温水槽温度稳定后，使用额温计对水槽中的黑体进行测量；2. 测试过程中记录按键功能是否正常、蜂鸣器是否正常、屏幕显示是否正常，测量误差是否符合要求；3. 重复测试10000次。",
+      "topic_tags": [
+        "测试方法",
+        "恒温水槽",
+        "黑体",
+        "重复测试",
+        "10000次"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT9L-PLER01",
+        "恒温水槽RPZ03003"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/PT9L产品寿命测试报告.via_lo_html.clean.md",
+    "doc_type": "test_report"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "寿命测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "寿命测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "恒温水槽RPZ03003",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "PT9L-PLER01",
+      "to": "PT9L-PLER01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "RPZ03003",
+      "properties": {
+        "detail_type": "test_measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "PT9L",
+      "properties": {
+        "detail_type": "tested_product"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "design_rationale_fragment",
+      "properties": {
+        "detail_type": "design_rationale",
+        "content_summary": "整机5年寿命，等效1万次使用"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-PLER01",
+      "to": "behavioral_spec_fragment",
+      "properties": {
+        "detail_type": "behavioral_spec",
+        "content_summary": "测试方法：恒温水槽37℃，黑体测量，重复10000次"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PT9L-PLER01",
+      "properties": {
+        "detail_type": "life_test_report"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "PT9L",
+      "to": "PT9L-PLER01",
+      "properties": {
+        "test_item": "PT9L整机寿命测试（按键功能、蜂鸣器功能、屏幕显示功能、测量误差）",
+        "conclusion": "通过"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-PLER01",
+      "to": "RPZ03003",
+      "properties": {
+        "test_point": "恒温水槽设定温度",
+        "reading": 37.0,
+        "unit": "℃",
+        "condition": "水槽温度稳定后对黑体进行测量"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "整机寿命测试",
+      "attribute": "测试循环次数",
+      "value": "10000",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "实验室环境：23℃，湿度65%，正常大气压；水槽温度37.00℃",
+      "raw_text": "1万次测试中各功能均正常，测量误差满足产品检验标准，等效5年使用寿命"
+    },
+    {
+      "subject": "整机使用寿命",
+      "attribute": "等效年限",
+      "value": "5",
+      "unit": "年",
+      "tolerance": "",
+      "condition": "1万次按键/功能测试通过",
+      "raw_text": "等效5年使用寿命"
+    },
+    {
+      "subject": "实验室环境温度",
+      "attribute": "测试条件值",
+      "value": "23",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L整机寿命测试",
+      "raw_text": "实验室环境：23℃，湿度65%，正常大气压"
+    },
+    {
+      "subject": "实验室环境湿度",
+      "attribute": "测试条件值",
+      "value": "65",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "PT9L整机寿命测试",
+      "raw_text": "实验室环境：23℃，湿度65%，正常大气压"
+    },
+    {
+      "subject": "恒温水槽温度",
+      "attribute": "设定值",
+      "value": "37.00",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "使用恒温水槽中黑体进行测量",
+      "raw_text": "水槽温度：37.00℃；使用恒温水槽中黑体进行测量"
+    },
+    {
+      "subject": "测量原理",
+      "attribute": "测量方式",
+      "value": "黑体恒温水槽",
+      "unit": "",
+      "tolerance": "",
+      "condition": "寿命测试期间测量误差验证",
+      "raw_text": "使用恒温水槽中黑体进行测量"
+    }
+  ]
+}

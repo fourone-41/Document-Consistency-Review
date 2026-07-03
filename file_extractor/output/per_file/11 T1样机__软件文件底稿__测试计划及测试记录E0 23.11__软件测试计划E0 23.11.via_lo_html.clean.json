@@ -1,0 +1,1865 @@
+{
+  "document": {
+    "title": "PT9L软件测试报告",
+    "doc_type": "测试报告",
+    "version": "V1.0"
+  },
+  "revision_records": [
+    {
+      "seq": "01",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": "2024年06月19日"
+    }
+  ],
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "软件工程师/测试人"
+    },
+    {
+      "name": "侯广伟",
+      "title": "软件主管/审核人/批准人"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RJCJ01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "DJS10005"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "DJS06046"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "DJS01002"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "RPZ03003"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "RJS05001"
+    },
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RSYB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    },
+    {
+      "name": "PT9L血压计"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "单元测试/子程序测试",
+      "item": "验证单元的内部结构以及单元实现的功能",
+      "condition": "编码和调试之后",
+      "pass_criteria": "测试子程序是否按预期运行",
+      "instrument": "稳压电源(DJS10005)、万用表(DJS06046)、示波器(DJS01002)"
+    },
+    {
+      "test_id": "系统测试",
+      "item": "确认系统工作的版本满足需求",
+      "condition": "在单元测试完成之后",
+      "pass_criteria": "测试整机功能是否正常",
+      "instrument": "稳压电源(DJS10005)、万用表(DJS06046)、恒温槽(RPZ03003)、黑体辐射源(RJS05001)"
+    },
+    {
+      "test_id": "io_init_P1_P1",
+      "item": "void io_init(void) - 端口1 端口寄存器P1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x70",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P1_PU1",
+      "item": "void io_init(void) - 端口1 上拉电阻选择寄存器PU1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P1_PM1",
+      "item": "void io_init(void) - 端口1 端口模式寄存器PM1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x2C",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P1_PF1",
+      "item": "void io_init(void) - 端口1 端口功能寄存器PF1",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_PF2",
+      "item": "void io_init(void) - 端口2 端口功能寄存器PF2",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_P2",
+      "item": "void io_init(void) - 端口2 端口寄存器P2",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x20",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_PM2",
+      "item": "void io_init(void) - 端口2 端口模式寄存器PM2",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xF9",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P2_ADPC0",
+      "item": "void io_init(void) - 端口2 AD端口配置寄存器ADPC0",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x06",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P3_P3",
+      "item": "void io_init(void) - 端口3 端口寄存器P3",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x08",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P3_PU3",
+      "item": "void io_init(void) - 端口3 上拉电阻选择寄存器PU3",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P3_PM3",
+      "item": "void io_init(void) - 端口3 端口模式寄存器PM3",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xE9",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P4_P4",
+      "item": "void io_init(void) - 端口4 端口寄存器P4",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xC0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P4_PU4",
+      "item": "void io_init(void) - 端口4 上拉电阻选择寄存器PU4",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_P4_PM4",
+      "item": "void io_init(void) - 端口4 端口模式寄存器PM4",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xC2",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_SCK10",
+      "item": "void io_init(void) - 其他端口 串行时钟选择寄存器10",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_SOM10",
+      "item": "void io_init(void) - 其他端口 串行操作模式寄存器10",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_PM12",
+      "item": "void io_init(void) - 其他端口 端口模式寄存器PM12",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0xFE",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "io_init_other_PFALL",
+      "item": "void io_init(void) - 其他端口 端口功能寄存器PFALL",
+      "condition": "高速运行状态的端口初始化",
+      "expected_value": "0x7F",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_P1",
+      "item": "void stop_io_set(void) - 端口1 端口寄存器P1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x60",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_PU1",
+      "item": "void stop_io_set(void) - 端口1 上拉电阻选择寄存器PU1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_PM1",
+      "item": "void stop_io_set(void) - 端口1 端口模式寄存器PM1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x2C",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P1_PF1",
+      "item": "void stop_io_set(void) - 端口1 端口功能寄存器PF1",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_PF2",
+      "item": "void stop_io_set(void) - 端口2 端口功能寄存器PF2",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_P2",
+      "item": "void stop_io_set(void) - 端口2 端口寄存器P2",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x35",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_PM2",
+      "item": "void stop_io_set(void) - 端口2 端口模式寄存器PM2",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x79",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P2_ADPC0",
+      "item": "void stop_io_set(void) - 端口2 AD端口配置寄存器ADPC0",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x06",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P3_P3",
+      "item": "void stop_io_set(void) - 端口3 端口寄存器P3",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x11",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P3_PU3",
+      "item": "void stop_io_set(void) - 端口3 上拉电阻选择寄存器PU3",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P3_PM3",
+      "item": "void stop_io_set(void) - 端口3 端口模式寄存器PM3",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xE9",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P4_P4",
+      "item": "void stop_io_set(void) - 端口4 端口寄存器P4",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xC0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P4_PU4",
+      "item": "void stop_io_set(void) - 端口4 上拉电阻选择寄存器PU4",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_P4_PM4",
+      "item": "void stop_io_set(void) - 端口4 端口模式寄存器PM4",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xC0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_SCK10",
+      "item": "void stop_io_set(void) - 其他端口 串行时钟选择寄存器10",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_SOM10",
+      "item": "void stop_io_set(void) - 其他端口 串行操作模式寄存器10",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_PM12",
+      "item": "void stop_io_set(void) - 其他端口 端口模式寄存器PM12",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0xFE",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "stop_io_set_other_PFALL",
+      "item": "void stop_io_set(void) - 其他端口 端口功能寄存器PFALL",
+      "condition": "低功耗状态的端口设定",
+      "expected_value": "0x7F",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "BufCmp_case1",
+      "item": "unsigned char BufCmp(unsigned int r0,unsigned int r1,unsigned char y) - 比较大小并返回不同的值",
+      "condition": "r0=0x03; r1=0x04; y=0x03",
+      "expected_value": "返回1",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "BufCmp_case2",
+      "item": "unsigned char BufCmp(unsigned int r0,unsigned int r1,unsigned char y) - 比较大小并返回不同的值",
+      "condition": "r0=0x05; r1=0x04; y=0x01",
+      "expected_value": "返回0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "BufCmp_case3",
+      "item": "unsigned char BufCmp(unsigned int r0,unsigned int r1,unsigned char y) - 比较大小并返回不同的值",
+      "condition": "r0=0x04; r1=0x01; y=0x02",
+      "expected_value": "返回3",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case1",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=0x00",
+      "expected_value": "2595",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case2",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=2000",
+      "expected_value": "2512",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case3",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=1000",
+      "expected_value": "1639",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "set_maxpre_case4",
+      "item": "unsigned int set_maxpre(unsigned int p_pre) - 设定压力平台",
+      "condition": "p_pre=3600",
+      "expected_value": "4028",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Rising_Edge_case1",
+      "item": "unsigned char Find_Rising_Edage - 检测上升沿",
+      "condition": "Buffer[]={1002,1006,1009,1025,1018,1028,1025,1020,...}; optr=5; y=4",
+      "expected_value": "0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Rising_Edge_case2",
+      "item": "unsigned char Find_Rising_Edage - 检测上升沿",
+      "condition": "Buffer[]={1002,1016,1009,1012,1018,1028,1025,1030,...}; Optr=5; y=4",
+      "expected_value": "1",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Peak_case1",
+      "item": "unsigned char Find_Peak - 搜索每一次心跳的最大峰值点",
+      "condition": "Buffer[]={1001,...,1023,...,1005}; Optr=5; y=1; count=10; count1=9; peakp=1005",
+      "expected_value": "Count1=10; peakp=1006; 返回0",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Find_Peak_case2",
+      "item": "unsigned char Find_Peak - 搜索每一次心跳的最大峰值点",
+      "condition": "Buffer[]={1001,...,1023,...,1005}; Optr=28; y=1; count=18; count1=12; peakp=1023",
+      "expected_value": "Count1=12; peakp=1023; 返回1",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Detect_Max_Peak_case1",
+      "item": "unsigned char Detect_Max_Peak - 寻找最大的幅值点",
+      "condition": "Bpdata的心跳强度分别为02,06,09,12,18,28,25,20; bpptr=7",
+      "expected_value": "Maxvp=4",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Enoise_case1",
+      "item": "unsigned char Enoise - 数据抗干扰",
+      "condition": "Bpdata的心跳强度分别为02,06,09,12,18,25,25,20; bpptr=7",
+      "expected_value": "bpptr=7，不剔出",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Enoise_case2",
+      "item": "unsigned char Enoise - 数据抗干扰",
+      "condition": "Bpdata的心跳强度分别为02,06,09,12,18,34,25,20; bpptr=7",
+      "expected_value": "bpptr=6，剔出bpptr-1点（34）",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "i2_write3to_case1",
+      "item": "void i2_write3to - 将数据写入eeprom三个单元",
+      "condition": "a=0x55; wraddr=0x001f; BANK3_offset=16",
+      "expected_value": "能够将0x55写入0x001f、0x002f、0x003f三个单元",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "i2_read3fr_case1",
+      "item": "unsigned char i2_read3fr - 从eeprom三个单元读取数据",
+      "condition": "rdaddr=0x001f、0x002f、0x003f（都已经存储了数据0x55）",
+      "expected_value": "返回0x55",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "waitdata_case1",
+      "item": "void waitdata(void) - 加载数据到BUFDATA",
+      "condition": "执行程序前Iptr=3; optr=3",
+      "expected_value": "Iptr=4; optr=3",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "waitdata_case2",
+      "item": "void waitdata(void) - 产生20ms定时",
+      "condition": "循环执行，使用端口反转方法测试定时",
+      "expected_value": "端口20ms反转一次电平状态",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "WaitForAck_case1",
+      "item": "void WaitForAck(void) - 等待接收方回复Ack",
+      "condition": "发送加压过慢错误提示数据时等待ACK，0.5S内上位机回复ACK，用串口检测血压计发送数据",
+      "expected_value": "串口发送加压过慢数据：A0 07 00 7E A1 38 04 00 00 5B，不重发",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "WaitForAck_case2",
+      "item": "void WaitForAck(void) - 等待接收方回复Ack超时处理",
+      "condition": "发送加压过慢错误提示数据时等待ACK，上位机不回复ACK",
+      "expected_value": "用串口侦测到的数据为 A0 07 00 7E A1 38 04 00 00 5B 以0.5s重发三次；run_mode=MODE_erC",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Andon_Base_Protocol_Manager_case1",
+      "item": "void Andon_Base_Protocol_Manager(void) - 基础通讯协议公共命令分析",
+      "condition": "运行程序，连接蓝牙，上位机询问下位机功能信息：0xB0,0x0A,0x00,0x17,0xA1,0x21,0x0F,0x06,0x11,0x0E,0x02,0x0E,0x1D，通过串口检测单片机回复信息",
+      "expected_value": "下位机发送回复：0xA0,0x0F,0x00,0x18,0xA1,0x21,0x55,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x32",
+      "pass_criteria": "实测值与预期值完全符合"
+    },
+    {
+      "test_id": "Bpm_Cmd_Decete-1",
+      "item": "上位机发送请求电量命令，用串口查看单片机回复命令",
+      "expected_value": "上位机发送请求电量命令：B0 07 00 19 A1 20 00 00 00 DA；单片机发送：A0 07 00 1A A1 20 41 00 00 1C",
+      "pass_criteria": "单片机回复命令与预期值一致"
+    },
+    {
+      "test_id": "Bpm_Cmd_Decete-2",
+      "item": "上位机发送开始测量命令，查看单片机回复信息和相关变量值：press_speed_set.PressFastV、press_speed_set.PressLowVA、press_speed_set.PressLowVP、press_speed_set.PressTurn、sameperson、run_mode",
+      "expected_value": "上位机发送：B0 0C 00 29 A1 31 00 55 4B 29 29 1B 1B 1E 41；单片机发送：A0 04 00 2A A1 31 FC；press_speed_set.PressFastV=0x0400；press_speed_set.PressLowVA=0x0029；press_speed_set.PressLowVP=0x001B；press_speed_set.PressTurn=0x019A；run_mode=MODE_test",
+      "pass_criteria": "各变量值与预期一致"
+    },
+    {
+      "test_id": "Bpm_Cmd_Decete-3",
+      "item": "上位机发送请求停止测量命令，用串口查看单片机回复命令并查看run_mode的值",
+      "expected_value": "上位机发送数据：B0 07 00 4D A1 37 00 00 00 25；单片机发送：A0 04 00 4E A1 37 26；run_mode=MODE_sleep",
+      "pass_criteria": "单片机回复及run_mode值与预期一致"
+    },
+    {
+      "test_id": "Command_Detect-1",
+      "item": "向单片机发送FF CC B0 0C 00 23 A1 31 00 00 4B 00 29 00 1B 1E A2 FF 0D，查看Moptr、Commandlng的值",
+      "expected_value": "Moptr=6；Commandlng=0x0C",
+      "pass_criteria": "Moptr和Commandlng值与预期一致"
+    },
+    {
+      "test_id": "calbuf-1",
+      "item": "计算buffer中从a所指向的数据向前的n个点的平均值",
+      "condition": "Buffer[]={1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1021,1019,1017,1015,1013,1011,1009,1007,1005}；a=7；n=8",
+      "expected_value": "1005",
+      "pass_criteria": "返回值等于1005"
+    },
+    {
+      "test_id": "adapt_pre_4096-1",
+      "item": "将buffer中optr所指向的数据转为4096格式，验证转化是否正确",
+      "condition": "Buffer[]={2283,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1021,1019,1017,1015,1013,1011,1009,1007,1005}；optr=0；zerohl=1300；spanhl=4023",
+      "expected_value": "Buffer[0]=1001；其他数据不变",
+      "pass_criteria": "Buffer[0]正确转化为1001，其余数据不变"
+    },
+    {
+      "test_id": "Find_Systolic-1",
+      "item": "高压计算（Calculate Systolic）",
+      "condition": "Bp队列的心跳起始压力bpp={2053,1964,1888,1810,1740,1678,1616,1556,1500,1455,1407,1360,1314,1269,1227,1189,1153,1121,1089,1055}；心跳强度bpv={13,15,15,16,17,21,28,29,28,40,40,42,41,38,34,30,23,17,14,12}；MAXBPP=1360；MAXBPV=42",
+      "expected_value": "108",
+      "pass_criteria": "计算结果等于108"
+    },
+    {
+      "test_id": "Find_Diastolic-1",
+      "item": "低压计算（Calculate Diastolic）",
+      "condition": "Bp队列的心跳起始压力bpp={2053,1964,1888,1810,1740,1678,1616,1556,1500,1455,1407,1360,1314,1269,1227,1189,1153,1121,1089,1055}；心跳强度bpv={13,15,15,16,17,21,28,29,28,40,40,42,41,38,34,30,23,17,14,12}；MAXBPP=1360；MAXBPV=42",
+      "expected_value": "75",
+      "pass_criteria": "计算结果等于75"
+    },
+    {
+      "test_id": "search_zero-1",
+      "item": "搜索稳定零点，cnt20s=1001时run_mode值",
+      "condition": "cnt20s=1001",
+      "expected_value": "run_mode=MODE_er0",
+      "pass_criteria": "run_mode值等于MODE_er0"
+    },
+    {
+      "test_id": "search_zero-2",
+      "item": "搜索稳定零点，cnt20s=25时run_mode值",
+      "condition": "cnt20s=25",
+      "expected_value": "run_mode=MODE_test",
+      "pass_criteria": "run_mode值等于MODE_test"
+    },
+    {
+      "test_id": "BATDECT-1",
+      "item": "采样电池电压，外接电源电压4V时ad_value值",
+      "condition": "将外接电源电压调为4V，运行程序",
+      "expected_value": "ad_value=758",
+      "pass_criteria": "ad_value等于758"
+    },
+    {
+      "test_id": "UART6transmit-1",
+      "item": "通过串口向外发送数据，验证发送内容是否正确",
+      "condition": "data[0]=0xA0, data[1]=0x05, data[2]=0x00, data[3]=0x00, data[4]=0xFF, data[5]=0x91, data[6]=0x06",
+      "expected_value": "发出0xA0,0x05,0x00,0x00,0xFF,0x91,0x06,0x96",
+      "pass_criteria": "单片机实际发出数据与预期一致"
+    },
+    {
+      "test_id": "isr_INTTM010-1",
+      "item": "压力采集中断的周期",
+      "expected_value": "20ms",
+      "pass_criteria": "中断周期等于20ms"
+    },
+    {
+      "test_id": "isr_INTTM010-2",
+      "item": "实际采样值和BUF中数据是否一致",
+      "expected_value": "1451",
+      "pass_criteria": "实际采样值与BUF中数据一致且等于1451"
+    },
+    {
+      "test_id": "isr_INTSR6-1",
+      "item": "通过串口向单片机发送数据，查看recivebuf.arraybuf[]中是否存储了该命令",
+      "condition": "通过串口向单片机发送0xB0,0x05,0x00,0x00,0xFF,0x91,0x06,0x96",
+      "expected_value": "存储了命令0xB0,0x05,0x00,0x00,0xFF,0x91,0x06,0x96",
+      "pass_criteria": "recivebuf.arraybuf[]中正确存储所发送命令"
+    },
+    {
+      "test_id": "3",
+      "item": "测量过程中关闭蓝牙后重连",
+      "condition": "开启ISO设备蓝牙，启动软件，认证通过，点击开始测量，测量过程中上拉菜单关闭ISO设备蓝牙",
+      "expected_value": "血压计5s后停止测量，绿灯熄灭，APP处于无设备连接界面；打开蓝牙后重新建立连接，绿灯点亮，可正常测量",
+      "pass_criteria": "血压计5s后停止测量，重连后可正常测量"
+    },
+    {
+      "test_id": "5.1",
+      "item": "退出APP-待机状态",
+      "condition": "开启ISO设备蓝牙，启动软件，认证通过，APP进入开始测量界面，双击HOME键关闭APP",
+      "expected_value": "血压计不加压，绿灯熄灭；打开APP后重新建立连接，绿灯点亮，点击开始测量后正常加压测量",
+      "pass_criteria": "关闭APP后血压计停止，重开后可正常测量"
+    },
+    {
+      "test_id": "5.2",
+      "item": "退出APP-浮零过程中",
+      "condition": "点击开始测量同时挤压袖带，在浮零过程中双击HOME键关闭APP",
+      "expected_value": "血压计立即停止测量，绿灯熄灭；打开APP后重新建立连接，绿灯点亮，可正常加压测量",
+      "pass_criteria": "关闭APP后血压计立即停止，重开后可正常测量"
+    },
+    {
+      "test_id": "5.3",
+      "item": "退出APP-测量过程中",
+      "condition": "点击开始测量正常开始测量，测量过程中双击HOME键关闭APP",
+      "expected_value": "血压计立即停止测量，绿灯熄灭；打开APP后重新建立蓝牙连接，绿灯点亮，再次点击开始测量后正常加压测量",
+      "pass_criteria": "关闭APP后血压计立即停止，重开后可正常测量"
+    },
+    {
+      "test_id": "7",
+      "item": "调试态",
+      "condition": "机芯工装上电后短按S1键，或使用整机测试工装SW1=0/SW2=0/SW3=1",
+      "expected_value": "液晶高低压位置显示当前压力采样值，心率处显示16点采样值最大最小差值，差值范围00~03；不施加气压时压力采样值应在1300~2500之间",
+      "pass_criteria": "差值范围00~03，无气压时采样值1300~2500"
+    },
+    {
+      "test_id": "7.3",
+      "item": "零点存储",
+      "condition": "传感器通大气，机内值介于1300~2500之间，短按工装MEM键",
+      "expected_value": "寻找到四次稳定机内值后，液晶显示当前存储的零点值，心率处显示SA，2s后回到压力值显示状态，心形标志显示",
+      "pass_criteria": "机内值在1300~2500范围内方可标定"
+    },
+    {
+      "test_id": "7.4",
+      "item": "满度存储",
+      "condition": "确认零点已标定，给传感器通300mmHg稳定压力，短按MEM键",
+      "expected_value": "满度值在3000~6000之间时液晶显示当前满度值和SA，2s后显示下箭头提示放气；满度值<3000显示SP LO，>6000显示SP HI",
+      "pass_criteria": "满度值在3000~6000范围内"
+    },
+    {
+      "test_id": "8",
+      "item": "静压态测试",
+      "condition": "使用整机测试工装SW1=1/SW2=0/SW3=0，工装液晶右上角显示2 9",
+      "expected_value": "各标准静压点实际测量值在合格范围内",
+      "pass_criteria": "0mmHg：0~2；60mmHg：60±3；90mmHg：90±3；150mmHg：150±3；210mmHg：210±3；240mmHg：240±3；300mmHg：300±3"
+    },
+    {
+      "test_id": "9",
+      "item": "低电压测试",
+      "condition": "低电压接收标准为3.3+0.1V以下",
+      "expected_value": "电压调到3.3V以下时红灯闪烁；调回3.8V按复位键或连接充电线后机器正常使用",
+      "pass_criteria": "低电压时红灯闪烁，恢复电压后正常工作"
+    },
+    {
+      "test_id": "10.1",
+      "item": "搜索零点错误",
+      "condition": "启动软件通过蓝牙连接血压计，按开始测量键开始测量",
+      "expected_value": "如果30S未搜索到稳定的零点，则停泵放气，退到开始测量界面",
+      "pass_criteria": "30S内未找到稳定零点时停止测量并退出"
+    },
+    {
+      "test_id": "10.2",
+      "item": "高压未检出或心跳小于4次错误",
+      "condition": "加压测量，加压完毕未测出结果，错误原因为高压未检出或心跳小于4次",
+      "expected_value": "停泵放气，错误代码为01，红灯点亮10s",
+      "pass_criteria": "错误代码01，红灯亮10s"
+    },
+    {
+      "test_id": "10.3",
+      "item": "低压未检出或高低压差为负值错误",
+      "condition": "加压测量，加压完毕未测出结果，错误原因为低压未检出或高低压差为负值",
+      "expected_value": "停泵放气，错误代码为02，红灯点亮10s",
+      "pass_criteria": "错误代码02，红灯亮10s"
+    },
+    {
+      "test_id": "10.4",
+      "item": "气路堵塞错误",
+      "condition": "全自动加压时气路堵塞使加压过快",
+      "expected_value": "停泵放气，错误代码为03，红灯点亮10s",
+      "pass_criteria": "错误代码03，红灯亮10s"
+    },
+    {
+      "test_id": "10.5",
+      "item": "气路漏气错误",
+      "condition": "全自动加压时袖带过松使加压过慢",
+      "expected_value": "停泵放气，错误代码为04，红灯点亮10s",
+      "pass_criteria": "错误代码04，红灯亮10s"
+    },
+    {
+      "test_id": "10.6",
+      "item": "压力大于297mmHg超过1.5s错误",
+      "condition": "泵上气性能测试过程中，加压至295mmHg后停泵进入阀放气速度检测，维持压力60s内袖带内压力大于297mmHg时间超过1.5s",
+      "expected_value": "停泵放气，错误代码为05，红灯点亮10s",
+      "pass_criteria": "错误代码05，红灯亮10s"
+    },
+    {
+      "test_id": "10.7",
+      "item": "压力大于15mmHg超过3分钟错误",
+      "condition": "加压/测量时袖带内压力在15mmHg以上时间达2min40s",
+      "expected_value": "停泵放气，错误代码为06，红灯点亮10s",
+      "pass_criteria": "错误代码06，红灯亮10s"
+    },
+    {
+      "test_id": "10.8",
+      "item": "EEPROM访问错误",
+      "condition": "打开APP建立蓝牙连接，使用中出现EEPROM访问错误",
+      "expected_value": "停泵放气，错误代码为07，红灯点亮10s",
+      "pass_criteria": "错误代码07，红灯亮10s"
+    },
+    {
+      "test_id": "10.9",
+      "item": "3备份内容校验出错",
+      "condition": "将EEPROM内三备份区域的内容打乱，重新焊接好上电",
+      "expected_value": "停泵放气，错误代码为08，红灯点亮10s",
+      "pass_criteria": "错误代码08，红灯亮10s"
+    },
+    {
+      "test_id": "10.10",
+      "item": "满度错误",
+      "condition": "打开APP建立蓝牙连接，检测到满度不在3000到6000之内",
+      "expected_value": "停泵放气，错误代码为0A，红灯点亮10s",
+      "pass_criteria": "错误代码0A，红灯亮10s"
+    },
+    {
+      "test_id": "10.11",
+      "item": "连接异常错误",
+      "condition": "打开APP建立蓝牙连接，点击开始测量后，把单片机通讯的串口RX端与地短接",
+      "expected_value": "绿灯灭，红灯亮10秒，错误代码为0C",
+      "pass_criteria": "错误代码0C，红灯亮10s"
+    },
+    {
+      "test_id": "10.12",
+      "item": "低电压错误",
+      "condition": "除关机态、调试态、smt态外，其他状态出现低电",
+      "expected_value": "红灯闪10s后血压计关机，错误代码为0D",
+      "pass_criteria": "错误代码0D，红灯亮10s后关机"
+    },
+    {
+      "test_id": "11",
+      "item": "灯状态检测",
+      "condition": "8种不同工作状态",
+      "expected_value": "1.无连接不充电：绿灯灭红灯灭；2.无连接充电未充满：绿灯闪红灯灭；3.无连接充电充满：绿灯常亮红灯灭；4.有连接充电充满：绿灯常亮红灯灭；5.有连接充电未充满：绿灯常亮红灯灭；6.有连接不充电：绿灯常亮红灯灭；7.低电压：红灯闪绿灯灭；8.异常：红灯亮绿灯灭",
+      "pass_criteria": "各状态灯显示符合规定"
+    },
+    {
+      "test_id": "12",
+      "item": "异常状态处理",
+      "condition": "任何时候（包括未知死机状态）按下机器按键",
+      "expected_value": "重启单片机（停泵、开阀）",
+      "pass_criteria": "按键后单片机重启，停泵开阀"
+    },
+    {
+      "test_id": "13",
+      "item": "USB充电测试",
+      "condition": "血压计电池电压在3.8V±0.1V，通过直流电源给机器充电",
+      "expected_value": "电源电流应在520±50mA范围内",
+      "pass_criteria": "充电电流520±50mA"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "PT9L红外体温计是基于红外技术测量人体额面温度的体温计。测量时利用红外测温探头测量额面温度进而计算出人体内核的温度。电源采用两节7号电池。用于儿童及成人在正常或发烧状态下的体温测量。",
+      "topic_tags": [
+        "红外体温计",
+        "额面温度",
+        "内核温度",
+        "工作原理"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "软件测试计划"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "软件功能：1.MCU系统初始化，配置相关模块的模式和功能设置；2.测量人体表面温度，计算出人体内核的温度（通过AD采集接口）；3.片内EEPROM标定参数数据读取；4.AD采集、判断电池电压状态（通过AD采集端口）；5.LCD显示（通过数据端口）。输入：红外传感器信号输入、电池电量采集信号输入、按键触发信号输入、EEPROM数据读取。输出：蜂鸣器驱动信号、LCD显示信号输出。",
+      "topic_tags": [
+        "MCU",
+        "EEPROM",
+        "AD采集",
+        "LCD",
+        "蜂鸣器",
+        "软件功能"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "软件需求规格书"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "测试方法缩写字母说明：S：模拟软件单步执行，观察程序执行的结果；C：输入不同值，确认软件的输出是否和人工计算的一致；O：执行软件，观察硬件的响应；I：改变硬件的输入，确认软件的响应。",
+      "topic_tags": [
+        "测试方法",
+        "单步执行",
+        "输入输出验证",
+        "硬件观察"
+      ],
+      "related_subjects": [
+        "软件测试计划",
+        "单元测试",
+        "系统测试"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "测试前完成的各项任务：制定《质量策划》，提交《软件需求规格书》等在测试工作前需要提交的报告。参考资料：a．《PT9L设计输入》V1.0；b．《PT9L软件质量策划》V1.0。",
+      "topic_tags": [
+        "前置任务",
+        "参考资料",
+        "质量策划",
+        "软件需求规格书"
+      ],
+      "related_subjects": [
+        "PT9L设计输入",
+        "PT9L软件质量策划"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "系统测试设计：控制方式为人工输入，测试各个不同的输入引起的不同的输出。测试输入参见附录二、附件三表格中\"测试输入\"一栏；测试输出参见附录二、附件三表格中\"测试输出\"一栏；测试过程参见附录二、附件三表格中\"测试方法\"一栏。",
+      "topic_tags": [
+        "系统测试",
+        "人工输入",
+        "测试设计"
+      ],
+      "related_subjects": [
+        "附录二",
+        "附件三"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评价准则：测试结果应完全符合\"预期值\"栏或\"测试输出\"中对测试结果的描述。",
+      "topic_tags": [
+        "评价准则",
+        "通过准则",
+        "预期值"
+      ],
+      "related_subjects": [
+        "所有测试项目"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "unsigned int set_maxpre(unsigned int p_pre) 函数逻辑：设定压力平台，根据函数参数确定加压的压力高度，并返回4096格式的压力平台值。返回值=p_pre+512；如果p_pre+512>=4028，则返回4028；如果p_pre+512<=1639，则返回1639。",
+      "topic_tags": [
+        "压力平台",
+        "set_maxpre",
+        "边界条件",
+        "子程序"
+      ],
+      "related_subjects": [
+        "set_maxpre测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "unsigned char Enoise(struct Pdata *bpdata, unsigned char bpptr)：将bpptr-1、bpptr-2、bpptr-3三点进行运算分析，如果满足剔出条件，将bpptr-2点剔出，且bpptr--。用于数据抗干扰处理。",
+      "topic_tags": [
+        "抗干扰",
+        "Enoise",
+        "峰值剔除",
+        "子程序"
+      ],
+      "related_subjects": [
+        "Enoise测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "void WaitForAck(void)：等待接收方回复Ack，若超时未回复，改变run_mode退出。超时时间为0.5s，最多重发三次，超时后run_mode=MODE_erC。",
+      "topic_tags": [
+        "WaitForAck",
+        "通信协议",
+        "超时处理",
+        "ACK",
+        "重发"
+      ],
+      "related_subjects": [
+        "WaitForAck测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "void i2_write3to(unsigned char a, unsigned int wraddr)：将数据a写入eeprom的wraddr、wraddr+BANK3_offset、wraddr+2*BANK3_offset三个单元，实现三备份写入。",
+      "topic_tags": [
+        "EEPROM",
+        "i2_write3to",
+        "三备份写入",
+        "子程序"
+      ],
+      "related_subjects": [
+        "i2_write3to测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "unsigned char i2_read3fr(unsigned int rdaddr)：从eeprom的rdaddr、rdaddr+BANK3_offset、rdaddr+2*BANK3_offset三个单元读取数据，并返回。实现三备份读取。",
+      "topic_tags": [
+        "EEPROM",
+        "i2_read3fr",
+        "三备份读取",
+        "子程序"
+      ],
+      "related_subjects": [
+        "i2_read3fr测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "系统测试计划注释：测试结果用如下符号标明：测试通过：OK；不通过：NG；如测试不通过，还要注明原因。按键描述：KS1为复位键。功能描述：全自动臂式、带BLE蓝牙功能。",
+      "topic_tags": [
+        "测试结果标记",
+        "按键",
+        "蓝牙",
+        "全自动臂式血压计"
+      ],
+      "related_subjects": [
+        "系统测试计划",
+        "血压计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "关机态：不与手机蓝牙连接，机器处于关机态，此时灯不亮。",
+      "topic_tags": [
+        "关机态",
+        "蓝牙",
+        "指示灯"
+      ],
+      "related_subjects": [
+        "血压计状态机"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "加压态操作流程：1.将血压计袖带捆绑于胳膊；2.开启手机APP，将手机与血压计通过蓝牙建立连接，认证通过后绿色指示灯点亮；3.进入设置画面，显示当前电量；4.按APP中\"开始测量\"，血压计进入测量态。加压过程：搜索零点时屏幕左侧水银柱示数为零；机器找到稳定零点后关闭电磁阀、启动泵；机器加压后APP显示当前袖带内压力；加压时可点击APP界面暂停图标停止测量。",
+      "topic_tags": [
+        "加压态",
+        "蓝牙连接",
+        "零点搜索",
+        "电磁阀",
+        "泵",
+        "袖带压力"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "压力平台控制：PT9L为上气测量机器，当找到高压后或高压长时间未找到时，自动停止加压。若绑在弹性圆柱体（或接在500CC双口气缸）上则加压到190mmHg（+/-3mmHg）（不记忆加压平台），停止加压。",
+      "topic_tags": [
+        "压力平台",
+        "高压检测",
+        "190mmHg",
+        "加压控制"
+      ],
+      "related_subjects": [
+        "血压计",
+        "气动系统"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "加压过程中的泵气速度判断：打气过慢：压力<30mmHg时，<2mmHg/4S；压力>30mmHg时，<3mmHg/4S。打气过快：压力上升>75mmHg/0.32S。测试方法：打气过慢检测：将袖带平展，开机，自动加压，5s后泵应停转且电磁阀放气，屏幕显示\"测量时气动系统泄露或袖带太松\"，点击\"确认\"，APP回到开始测量界面。打气过快检测：将气路堵塞，开机，加压，泵启动后应马上停转且电磁阀放气，屏幕显示\"测量时气动系统已锁住或袖带太紧\"，点击\"确认\"，APP回到开始测量界面。",
+      "topic_tags": [
+        "泵气速度",
+        "打气过慢",
+        "打气过快",
+        "气动系统泄露",
+        "袖带太松",
+        "袖带太紧"
+      ],
+      "related_subjects": [
+        "气动系统",
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "加压测量态：1.机器加压到30mmHg后进入测量态，加压速度约为5~6mmHg/S，APP中显示当前袖带内压力；2.如果检测到心跳，屏幕会随着心跳闪烁心跳符号；3.在加压过程中短按复位按键，停止测量，APP退回到开始测量界面；4.在加压过程中点击APP中暂停图标，血压计停止测量；加压过程中关闭APP，血压计停止测量；加压过程中关闭IOS设备蓝牙，血压计停止测量，绿灯熄灭。",
+      "topic_tags": [
+        "测量态",
+        "30mmHg",
+        "加压速度",
+        "心跳检测",
+        "复位按键",
+        "蓝牙断连"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP",
+        "指示灯"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "结果显示态：血压测量完毕后，血压计停泵放气，屏幕显示此次的测量结果。按返回键可以再次回到\"开始测量\"界面，点击\"开始测量\"启动新的测量。",
+      "topic_tags": [
+        "结果显示",
+        "停泵放气",
+        "测量结果"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——点击返回：1.在血压计浮零过程中点击APP界面暂停图标退出测量界面，退出后血压计不加压，再次点击\"开始测量\"后正常进行测量；2.在血压计测量过程中点击APP界面暂停图标退出测量界面，血压计立即关泵开阀，再次点击\"开始测量\"后正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "暂停图标",
+        "浮零",
+        "关泵开阀"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——点击HOME：1.在血压计浮零过程中点击HOME键离开APP界面，退出后血压计不加压，再次打开APP点击\"开始测量\"后正常进行测量；2.在测量过程中点击HOME键离开APP界面，1S后血压计关泵开阀，再次打开APP点击\"开始测量\"后血压计正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "HOME键",
+        "浮零",
+        "关泵开阀"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——短按复位按键：1.在血压计浮零过程中短按复位按键，APP 1s后回到开始测量界面，血压计随之绿灯亮起，再次点击\"开始测量\"，血压计正常进行测量；2.在测量过程中短按复位按键，血压计关泵开阀，APP 1s后回到开始测量界面，血压计随之绿灯亮起，再次点击\"开始测量\"，血压计正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "复位按键",
+        "绿灯",
+        "关泵开阀"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP",
+        "指示灯"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——关闭IOS设备蓝牙：1.认证通过后绿灯点亮，上拉菜单关闭IOS设备蓝牙，血压计绿灯熄灭，APP处于无设备连接界面，打开蓝牙后APP重新与血压计建立连接，绿灯点亮，APP转入开始测量界面，可正常进行测量；2.在血压计浮零过程中关闭IOS设备蓝牙，血压计5s后停止测量，绿灯熄灭，APP处于无设备连接界面，打开蓝牙后APP重新与血压计建立连接，绿灯点亮，APP转入开始测量界面，可正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "蓝牙断连",
+        "IOS设备",
+        "绿灯",
+        "重新连接"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP",
+        "蓝牙",
+        "指示灯"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "算法验证：参见《PT9L软件算法验证报告V1.0》（文件编号：PT9L-RSYB01 V1.0）",
+      "topic_tags": [
+        "算法验证",
+        "软件算法",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "PT9L-RSYB01 V1.0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "调试态进入方式：A、机芯工装上电后，短按S1键；B、将整机测试工装调到标定状态（SW1=0，SW2=0，SW3=1，测试工装显示\"2 7\"），然后插到机器上，即进入标定状态。该状态用于工厂标定零/满点。",
+      "topic_tags": [
+        "调试态",
+        "标定",
+        "工装",
+        "零点",
+        "满点"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "整机测试工装"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "压力采样值显示：进入调试态后，液晶的高低压位置显示当前压力的采样值，心率处显示16点采样值的最大最小差值，差值范围应为（00~03）。心形标志显示说明压力稳定。如果液晶显示\"低电压\"符号和4条\"-\"则说明当前压力采样电路不正常，需检修。当不给传感器施加气压时，压力采样值应在1300到2500之间。如果压力采样值不在此范围内，不可标定，需修整电路。",
+      "topic_tags": [
+        "压力采样",
+        "调试态",
+        "液晶显示",
+        "标定条件"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "调试态"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "上气性能测试态（SW1=0，SW2=0，SW3=0；测试工装显示\"2 8\"）：将工装插入机器进入上气性能测试态，每2S控制泵占空比，缓慢上气，程序自动判断加压速度是否合适，当加压完毕，若速度合格液晶会显示\"Er F\"，否则显示\"Er E\"。按工装上\"START\"键放气，如无按键操作，一分钟后自动放气，而后显示放气时间，单位为0.1S。",
+      "topic_tags": [
+        "上气性能测试",
+        "工装",
+        "加压速度",
+        "放气"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "整机测试工装"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "动压测试：将工装测试功能调整到动压测试态（SW1=0，SW2=1，SW3=0），按工装上RESET键，工装显示工装软件版本号0002约1s后，工装液晶上右上角显示\"2 C\"，将机器、袖带、动压仪连接好，确认整机此时为待机态。将整机测试工装与整机连接起来。当液晶屏显示程序号\"0278\"，则证明机器接口部分正常并正常进入动压测试态。如果液晶屏无变化或是全屏显示则说明机器不良、工装不良或USB线没插好，机器开始测试后在低压处显示当前压力值，机器开始测量，测量完毕液晶显示结果。",
+      "topic_tags": [
+        "动压测试",
+        "工装",
+        "程序号",
+        "袖带"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "整机测试工装",
+        "动压仪"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "低电压检测状态说明：允许低电压检测的状态为：按机器上的RESET键重新启动芯片；蓝牙连接后；测量态；整机测试。Smt态和调试态不检测低电压。低电压接收标准为3.3+0.1V以下。",
+      "topic_tags": [
+        "低电压",
+        "检测状态",
+        "蓝牙",
+        "测量态"
+      ],
+      "related_subjects": [
+        "PT9L血压计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "USB充电规格：血压计电池电压在3.8V±0.1V，通过直流电源给机器充电，电源电流应在520±50mA范围内。",
+      "topic_tags": [
+        "USB充电",
+        "电池电压",
+        "充电电流"
+      ],
+      "related_subjects": [
+        "PT9L血压计"
+      ]
+    }
+  ],
+  "test_measurements": [
+    {
+      "test_point": "静压0mmHg",
+      "reference_value": "0",
+      "unit": "mmHg",
+      "condition": "标准静压0mmHg，合格范围0~2mmHg"
+    },
+    {
+      "test_point": "静压60mmHg",
+      "reference_value": "60±3",
+      "unit": "mmHg",
+      "condition": "标准静压60mmHg"
+    },
+    {
+      "test_point": "静压90mmHg",
+      "reference_value": "90±3",
+      "unit": "mmHg",
+      "condition": "标准静压90mmHg"
+    },
+    {
+      "test_point": "静压150mmHg",
+      "reference_value": "150±3",
+      "unit": "mmHg",
+      "condition": "标准静压150mmHg"
+    },
+    {
+      "test_point": "静压210mmHg",
+      "reference_value": "210±3",
+      "unit": "mmHg",
+      "condition": "标准静压210mmHg"
+    },
+    {
+      "test_point": "静压240mmHg",
+      "reference_value": "240±3",
+      "unit": "mmHg",
+      "condition": "标准静压240mmHg"
+    },
+    {
+      "test_point": "静压300mmHg",
+      "reference_value": "300±3",
+      "unit": "mmHg",
+      "condition": "标准静压300mmHg"
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/软件文件底稿/测试计划及测试记录E0 23.11/软件测试计划E0 23.11.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L软件测试报告",
+      "to": "01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件测试计划",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件需求规格书",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件测试计划",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "单元测试",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "系统测试",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L设计输入",
+      "to": "前置任务",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L软件质量策划",
+      "to": "前置任务",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "附录二",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "附件三",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "所有测试项目",
+      "to": "评价准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "set_maxpre测试项",
+      "to": "压力平台",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Enoise测试项",
+      "to": "抗干扰",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "WaitForAck测试项",
+      "to": "WaitForAck",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "i2_write3to测试项",
+      "to": "EEPROM",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "i2_read3fr测试项",
+      "to": "EEPROM",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "系统测试计划",
+      "to": "测试结果标记",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计",
+      "to": "测试结果标记",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计状态机",
+      "to": "关机态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计状态机",
+      "to": "加压态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "APP",
+      "to": "加压态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计",
+      "to": "压力平台",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "气动系统",
+      "to": "压力平台",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "气动系统",
+      "to": "泵气速度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计状态机",
+      "to": "泵气速度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "APP",
+      "to": "泵气速度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计状态机",
+      "to": "测量态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "APP",
+      "to": "测量态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "指示灯",
+      "to": "测量态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计状态机",
+      "to": "结果显示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "APP",
+      "to": "结果显示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计状态机",
+      "to": "中断测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "APP",
+      "to": "中断测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "指示灯",
+      "to": "中断测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "蓝牙",
+      "to": "中断测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RSYB01 V1.0",
+      "to": "算法验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L血压计",
+      "to": "调试态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "整机测试工装",
+      "to": "调试态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L血压计",
+      "to": "压力采样",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "调试态",
+      "to": "压力采样",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L血压计",
+      "to": "上气性能测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "整机测试工装",
+      "to": "上气性能测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L血压计",
+      "to": "动压测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "整机测试工装",
+      "to": "动压测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "动压仪",
+      "to": "动压测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L血压计",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L血压计",
+      "to": "USB充电",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L软件测试报告",
+      "properties": {
+        "role": "软件工程师/测试人"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L软件测试报告",
+      "properties": {
+        "role": "软件主管/审核人/批准人"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "端口1寄存器P1",
+      "attribute": "初始化预期值",
+      "value": "0x70",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口1 端口寄存器P1，预期值0x70"
+    },
+    {
+      "subject": "端口1上拉电阻寄存器PU1",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口1 上拉电阻选择寄存器PU1，预期值0x00"
+    },
+    {
+      "subject": "端口1模式寄存器PM1",
+      "attribute": "初始化预期值",
+      "value": "0x2C",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口1 端口模式寄存器PM1，预期值0x2C"
+    },
+    {
+      "subject": "端口1功能寄存器PF1",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口1 端口功能寄存器PF1，预期值0x00"
+    },
+    {
+      "subject": "端口2功能寄存器PF2",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口2 端口功能寄存器PF2，预期值0x00"
+    },
+    {
+      "subject": "端口2寄存器P2",
+      "attribute": "初始化预期值",
+      "value": "0x20",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口2 端口寄存器P2，预期值0x20"
+    },
+    {
+      "subject": "端口2模式寄存器PM2",
+      "attribute": "初始化预期值",
+      "value": "0xF9",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口2 端口模式寄存器PM2，预期值0xF9"
+    },
+    {
+      "subject": "AD端口配置寄存器ADPC0",
+      "attribute": "初始化预期值",
+      "value": "0x06",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口2 AD端口配置寄存器ADPC0，预期值0x06"
+    },
+    {
+      "subject": "端口3寄存器P3",
+      "attribute": "初始化预期值",
+      "value": "0x08",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口3 端口寄存器P3，预期值0x08"
+    },
+    {
+      "subject": "端口3上拉电阻寄存器PU3",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口3 上拉电阻选择寄存器PU3，预期值0x00"
+    },
+    {
+      "subject": "端口3模式寄存器PM3",
+      "attribute": "初始化预期值",
+      "value": "0xE9",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口3 端口模式寄存器PM3，预期值0xE9"
+    },
+    {
+      "subject": "端口4寄存器P4",
+      "attribute": "初始化预期值",
+      "value": "0xC0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口4 端口寄存器P4，预期值0xC0"
+    },
+    {
+      "subject": "端口4上拉电阻寄存器PU4",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口4 上拉电阻选择寄存器PU4，预期值0x00"
+    },
+    {
+      "subject": "端口4模式寄存器PM4",
+      "attribute": "初始化预期值",
+      "value": "0xC2",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 端口4 端口模式寄存器PM4，预期值0xC2"
+    },
+    {
+      "subject": "串行时钟选择寄存器SCK10",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 其他端口 串行时钟选择寄存器10，预期值0x00"
+    },
+    {
+      "subject": "串行操作模式寄存器SOM10",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 其他端口 串行操作模式寄存器10，预期值0x00"
+    },
+    {
+      "subject": "端口模式寄存器PM12",
+      "attribute": "初始化预期值",
+      "value": "0xFE",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 其他端口 端口模式寄存器PM12，预期值0xFE"
+    },
+    {
+      "subject": "端口功能寄存器PFALL",
+      "attribute": "初始化预期值",
+      "value": "0x7F",
+      "unit": "",
+      "tolerance": "",
+      "condition": "高速运行状态的端口初始化",
+      "raw_text": "void io_init(void) - 其他端口 端口功能寄存器PFALL，预期值0x7F"
+    },
+    {
+      "subject": "端口1寄存器P1",
+      "attribute": "低功耗设定预期值",
+      "value": "0x60",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口1 端口寄存器P1，预期值0x60"
+    },
+    {
+      "subject": "端口1上拉电阻寄存器PU1",
+      "attribute": "低功耗设定预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口1 上拉电阻选择寄存器PU1，预期值0x00"
+    },
+    {
+      "subject": "端口1模式寄存器PM1",
+      "attribute": "低功耗设定预期值",
+      "value": "0x2C",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口1 端口模式寄存器PM1，预期值0x2C"
+    },
+    {
+      "subject": "端口1功能寄存器PF1",
+      "attribute": "低功耗设定预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口1 端口功能寄存器PF1，预期值0x00"
+    },
+    {
+      "subject": "端口2功能寄存器PF2",
+      "attribute": "低功耗设定预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口2 端口功能寄存器PF2，预期值0x00"
+    },
+    {
+      "subject": "端口2寄存器P2",
+      "attribute": "低功耗设定预期值",
+      "value": "0x35",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口2 端口寄存器P2，预期值0x35"
+    },
+    {
+      "subject": "端口2模式寄存器PM2",
+      "attribute": "低功耗设定预期值",
+      "value": "0x79",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口2 端口模式寄存器PM2，预期值0x79"
+    },
+    {
+      "subject": "AD端口配置寄存器ADPC0",
+      "attribute": "低功耗设定预期值",
+      "value": "0x06",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口2 AD端口配置寄存器ADPC0，预期值0x06"
+    },
+    {
+      "subject": "端口3寄存器P3",
+      "attribute": "低功耗设定预期值",
+      "value": "0x11",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口3 端口寄存器P3，预期值0x11"
+    },
+    {
+      "subject": "端口3上拉电阻寄存器PU3",
+      "attribute": "低功耗设定预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口3 上拉电阻选择寄存器PU3，预期值0x00"
+    },
+    {
+      "subject": "端口3模式寄存器PM3",
+      "attribute": "低功耗设定预期值",
+      "value": "0xE9",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口3 端口模式寄存器PM3，预期值0xE9"
+    },
+    {
+      "subject": "端口4寄存器P4",
+      "attribute": "低功耗设定预期值",
+      "value": "0xC0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口4 端口寄存器P4，预期值0xC0"
+    },
+    {
+      "subject": "端口4上拉电阻寄存器PU4",
+      "attribute": "低功耗设定预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口4 上拉电阻选择寄存器PU4，预期值0x00"
+    },
+    {
+      "subject": "端口4模式寄存器PM4",
+      "attribute": "低功耗设定预期值",
+      "value": "0xC0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 端口4 端口模式寄存器PM4，预期值0xC0"
+    },
+    {
+      "subject": "串行时钟选择寄存器SCK10",
+      "attribute": "低功耗设定预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 其他端口 串行时钟选择寄存器10，预期值0x00"
+    },
+    {
+      "subject": "串行操作模式寄存器SOM10",
+      "attribute": "低功耗设定预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 其他端口 串行操作模式寄存器10，预期值0x00"
+    },
+    {
+      "subject": "端口模式寄存器PM12",
+      "attribute": "低功耗设定预期值",
+      "value": "0xFE",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 其他端口 端口模式寄存器PM12，预期值0xFE"
+    },
+    {
+      "subject": "端口功能寄存器PFALL",
+      "attribute": "低功耗设定预期值",
+      "value": "0x7F",
+      "unit": "",
+      "tolerance": "",
+      "condition": "低功耗状态的端口设定",
+      "raw_text": "void stop_io_set(void) - 其他端口 端口功能寄存器PFALL，预期值0x7F"
+    },
+    {
+      "subject": "BufCmp函数返回值",
+      "attribute": "比较结果（r0<r1时）",
+      "value": "1",
+      "unit": "",
+      "tolerance": "",
+      "condition": "r0=0x03, r1=0x04, y=0x03",
+      "raw_text": "BufCmp(r0,r1,y) - r0=0x03; r1=0x04; y=0x03，预期返回1"
+    },
+    {
+      "subject": "BufCmp函数返回值",
+      "attribute": "比较结果（r0>r1时）",
+      "value": "0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "r0=0x05, r1=0x04, y=0x01",
+      "raw_text": "BufCmp(r0,r1,y) - r0=0x05; r1=0x04; y=0x01，预期返回0"
+    }
+  ]
+}

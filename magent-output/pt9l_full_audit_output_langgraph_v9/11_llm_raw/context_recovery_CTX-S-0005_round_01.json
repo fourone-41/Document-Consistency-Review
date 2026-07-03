@@ -1,0 +1,195 @@
+```json
+{
+  "context_summary": "本轮已补充了5份历史文件（F0012–F0016）封面页的完整本地上下文，确认每份文件第18或22行均存在空白的 'Approved by (Technical Director) Date:' 字段。同时发现关键反证：F0012（IFT版本）封面下方版本历史表（第20–22行）明确记录了 'Approver: Hou Guangwei'，日期 2024.4.16，版本 V1.0。这说明至少该文件存在版本历史表层面的审批记录，与原始声明'无任何可验证审批记录'存在矛盾。仍缺失：①活跃集（active set）文件的封面审批字段截图/内容；②PT9L前缀文件集的封面审批字段；③F0017（Attachment 7，active文件）封面审批字段的实际文本；④其他文件版本历史表中 Approver 列是否同样填写了姓名；⑤签字页（Signature of the risk management group）的实际内容。",
+  "evidence_gaps": [
+    "F0017（03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable）封面审批字段实际文本未读取，page_context 中 text 字段均为空，无法判断该活跃文件是否同样空白",
+    "F0013–F0016 版本历史表（Version History Table）中 Approver 列内容未提取，仅 F0012 确认填写了 'Hou Guangwei'，其余文件是否相同未知",
+    "F0015 第42行提及 'Signature of the risk management group 18'，对应正文第18节签字页实际内容未读取，可能包含手写或打印签名",
+    "PT9L 前缀文件集（除 F0012/F0013 外）是否存在其他文件，其封面审批字段状态未覆盖",
+    "活跃集（active set）中除 F0017 外是否还有其他风险管理文件，其审批字段状态未知",
+    "原始声明覆盖范围（'active, historical, and PT9L-prefixed sets'）中，活跃集文件数量及文件列表未明确，导致覆盖完整性无法验证"
+  ],
+  "additional_search_queries": [
+    "F0017 封面页第14–25行全文，重点提取 'Approved by' 字段及其后内容",
+    "F0013 F0014 F0015 F0016 版本历史表完整行，提取 Approver 列所有填写值",
+    "F0015 正文第18节 'Signature of the risk management group' 完整内容（约第160–200行）",
+    "03 风险分析 目录下所有非历史文件子目录中包含 'Risk Management' 的文件列表及其封面审批字段",
+    "全语料库中 'Approved by' 后紧跟非空内容（即已填写签名或日期）的所有命中行"
+  ],
+  "agent_instruction": "审查子 Agent 注意：原始声明（LLM-0017）称'所有风险管理文件均无可验证审批记录'，但当前证据已发现反证——F0012 版本历史表第22行明确记录 Approver 为 'Hou Guangwei'，日期 2024.4.16。这与封面签字行空白并不矛盾（封面签字行是手写签名位，版本历史表是打印记录），但说明存在打印形式的审批人记录。请在后续审查中区分以下两类证据：(1) 封面手写签字行是否空白；(2) 版本历史表 Approver 列是否填写。两者均需覆盖才能支持或推翻原始声明。优先读取 F0017 封面完整内容及 F0015 签字页内容，并检索活跃集全部风险管理文件清单。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "REG-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 18,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "field_status": "blank_signature_line",
+        "local_context_lines": {
+          "line_14": "**Drafted by** *(Regulation Engineer)* Date:",
+          "line_16": "**Reviewed by** *(Certification Engineer)* Date:",
+          "line_18": "**Approved by** *(Technical Director)* Date:",
+          "line_20_table_header": "| No. | Version Date | Version Description | Version | Drafter | Approver |",
+          "line_22_table_row1": "| 1 | 2024.4.16 | Originated | V1.0 | Wang Di | Hou Guangwei |"
+        },
+        "counter_evidence_note": "版本历史表第22行 Approver 列填写了 'Hou Guangwei'，日期 2024.4.16，与封面签字行空白并存，属打印审批记录",
+        "document_metadata": {
+          "doc_number": "PT9L-FXJH01 V1.0",
+          "doc_type": "Risk Management Plan",
+          "product": "Infrared Forehead Thermometer",
+          "version": "V1.0",
+          "set": "historical"
+        }
+      },
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "field_status": "blank_signature_line",
+        "local_context_lines": {
+          "line_12": "Product name: Infrared Forehead Thermometer",
+          "line_14": "Product model： PT9L",
+          "line_16": "Project number： 30000078",
+          "line_18": "**Drafted by** *(Regulation Engineer)* Date:",
+          "line_20": "**Reviewed by** *(Certification Engineer)* Date:",
+          "line_22": "**Approved by** *(Technical Director)* Date:",
+          "line_24": "**Contents**"
+        },
+        "counter_evidence_note": "版本历史表内容未提取，Approver列填写状态未知，需补充读取",
+        "document_metadata": {
+          "doc_number": "PT9L-FXJH01 V1.0",
+          "doc_type": "Risk Management Plan",
+          "product": "Infrared Forehead Thermometer",
+          "product_model": "PT9L",
+          "project_number": "30000078",
+          "version": "V1.0",
+          "set": "historical/PT9L-prefixed"
+        }
+      },
+      {
+        "evidence_id": "REG-006",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "field_status": "blank_signature_line",
+        "local_context_lines": {
+          "line_6": "DN: PT2L(美亚)-SGFP01 V1.0 Risk Assessment Report",
+          "line_12": "Product name: Infrared Forehead Thermometer",
+          "line_14": "Product model： PT2L",
+          "line_16": "Project number： 2020-002-WX02",
+          "line_18": "**Drafted by** *(Project Leader)* Date:",
+          "line_20": "**Reviewed by** *(Certification Engineer)* Date:",
+          "line_22": "**Approved by** *(Technical Director)* Date:",
+          "line_24": "**Contents**"
+        },
+        "counter_evidence_note": "版本历史表内容未提取，Approver列填写状态未知",
+        "document_metadata": {
+          "doc_number": "PT2L(美亚)-SGFP01 V1.0",
+          "doc_type": "Risk Assessment Report",
+          "product": "Infrared Forehead Thermometer",
+          "product_model": "PT2L",
+          "project_number": "2020-002-WX02",
+          "version": "V1.0",
+          "set": "historical"
+        }
+      },
+      {
+        "evidence_id": "REG-012",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "field_status": "blank_signature_line",
+        "local_context_lines": {
+          "line_6": "DN: PT2L(美亚)-SGYS01 V1.0 Verification of risk control measure and residual risk evaluation report",
+          "line_12": "Product name: Infrared Forehead Thermometer",
+          "line_14": "Product model： PT2L",
+          "line_16": "Project number： 2020-002-WX02",
+          "line_18": "**Drafted by** *(Project Leader)* Date:",
+          "line_20": "**Reviewed by** *(Certification Engineer)* Date:",
+          "line_22": "**Approved by** *(Technical Director)* Date:",
+          "line_42": "Signature of the risk management group 18"
+        },
+        "counter_evidence_note": "目录第42行提及正文第18节含'Signature of the risk management group'，该节实际内容未读取，可能包含审批签名信息，需优先补充",
+        "document_metadata": {
+          "doc_number": "PT2L(美亚)-SGYS01 V1.0",
+          "doc_type": "Verification of Risk Control Measure and Residual Risk Evaluation Report",
+          "product": "Infrared Forehead Thermometer",
+          "product_model": "PT2L",
+          "project_number": "2020-002-WX02",
+          "version": "V1.0",
+          "set": "historical"
+        }
+      },
+      {
+        "evidence_id": "REG-013",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "field_status": "blank_signature_line",
+        "local_context_lines": {
+          "line_6": "DN: PT2L-FXGB01 V4.0 Risk Management Report",
+          "line_12": "Product name: Infrared Forehead Thermometer",
+          "line_14": "Product model： PT2L",
+          "line_16": "Project number： 2020-002-WX02",
+          "line_18": "**Drafted by** *(Project Leader)* Date:",
+          "line_20": "**Reviewed by** *(Certification Engineer)* Date:",
+          "line_22": "**Approved by** *(Technical Director)* Date:",
+          "line_24": "**Contents**"
+        },
+        "counter_evidence_note": "版本历史表内容未提取，Approver列填写状态未知",
+        "document_metadata": {
+          "doc_number": "PT2L-FXGB01 V4.0",
+          "doc_type": "Risk Management Report",
+          "product": "Infrared Forehead Thermometer",
+          "product_model": "PT2L",
+          "project_number": "2020-002-WX02",
+          "version": "V4.0",
+          "set": "historical"
+        }
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line_start": 1,
+        "retrieval_status": "text_empty_needs_reread",
+        "priority": "HIGH",
+        "note": "该文件属于活跃集（active set），封面审批字段内容未成功读取，page_context text 为空，必须重新读取第1–50行以获取 'Approved by' 字段实际内容"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "counter_evidence_version_history_table",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "lines": "20–22",
+        "content": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 2024.4.16 | Originated | V1.0 | Wang Di | Hou Guangwei |",
+        "significance": "版本历史表中 Approver 列填写了 'Hou Guangwei'，日期 2024.4.16。这是打印形式的审批人记录，与封面手写签字行空白并存。原始声明若仅依据封面签字行空白得出'无任何可验证审批记录'的结论，需要进一步区分手写签字与打印审批记录两种形式，否则结论过于绝对。"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "missing_section_pointer",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "lines": "42",
+        "content": "Signature of the risk management group 18",
+        "significance": "目录条目指向正文第18节'Signature of the risk management group'，该节可能包含风险管理组成员的签名记录，是审批验证的关键证据节点，当前未读取。"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "scope_gap_analysis",
+        "significance": "原始声明覆盖'active, historical, and PT9L-prefixed sets'三类文件集。当前已读取5份历史文件（F0012–F0016），但活跃集仅有 F0017 且内容未成功读取，PT9L前缀集仅 F0013 被识别。活跃集和PT9L集的覆盖严重不足，无法支持'所有文件均无审批记录'的全称判断。"
+      }
+    ]
+  }
+}
+```

@@ -1,0 +1,632 @@
+{
+  "document": {
+    "title": "支架（T-Z1-P07 V1.0，2021-07-15）2D 图读图",
+    "document_number": "T-Z1-P07",
+    "version": "V1.0",
+    "date": "2021-07-15",
+    "source_file": "早期图纸/支架20210727.pdf",
+    "format": "A4 竖向",
+    "notes": "早期版定位：T-Z1-P07 初版 V1.0；现版见 图纸/支架.pdf.md"
+  },
+  "products": [
+    {
+      "name": "支架",
+      "drawing_number": "T-Z1-P07",
+      "version": "V1.0",
+      "material": "ABS",
+      "scale": "2:1",
+      "tolerance_level": "LEVEL B"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "T-Z1-P07",
+      "type": "Drawing NO.",
+      "description": "支架工程图纸编号"
+    },
+    {
+      "id": "C-1",
+      "type": "工程师待确认项",
+      "description": "IQC 编号 ① ② 位置迁移的工程原因"
+    },
+    {
+      "id": "C-2",
+      "type": "工程师待确认项",
+      "description": "早期 Ø22.2 / Ø25.6 现在是否仍存在（作为无编号尺寸保留？）"
+    }
+  ],
+  "components": [
+    {
+      "name": "支架",
+      "drawing_number": "T-Z1-P07",
+      "version": "V1.0",
+      "material": "ABS",
+      "key_dimensions": [
+        {
+          "index": "①",
+          "view": "顶视图中心圆径",
+          "symbol": "Ø",
+          "value": 22.2,
+          "tolerance": "±0.05",
+          "grade": "A级",
+          "note": "早期版 ① 在顶视图圆径"
+        },
+        {
+          "index": "②",
+          "view": "右下俯视圆径",
+          "symbol": "Ø",
+          "value": 25.6,
+          "tolerance": "±0.05",
+          "grade": "A级",
+          "note": "早期版 ② 在右下俯视"
+        },
+        {
+          "view": "仰视图",
+          "dimensions": [
+            {
+              "value": 1.5,
+              "tolerance": "±0.05"
+            },
+            {
+              "value": 1.0,
+              "tolerance": "±0.05"
+            },
+            {
+              "symbol": "Ø",
+              "value": 17.2,
+              "tolerance": "±0.05"
+            },
+            {
+              "symbol": "Ø",
+              "value": 29.8,
+              "tolerance": "±0.05"
+            },
+            {
+              "value": 20.8
+            }
+          ]
+        },
+        {
+          "view": "SECTION A-A",
+          "dimensions": [
+            {
+              "value": 0.17,
+              "tolerance": "±0.03",
+              "note": "Level A 薄壁"
+            },
+            {
+              "value": 12.6
+            },
+            {
+              "value": 12.9
+            },
+            {
+              "value": 3
+            }
+          ]
+        },
+        {
+          "view": "右侧视图",
+          "dimensions": [
+            {
+              "value": 9
+            },
+            {
+              "value": 16.1
+            },
+            {
+              "value": 14.1
+            }
+          ]
+        },
+        {
+          "view": "右下俯视图",
+          "dimensions": [
+            {
+              "value": 32,
+              "tolerance": "±0.05"
+            },
+            {
+              "symbol": "Ø",
+              "value": 25.6,
+              "tolerance": "±0.05"
+            },
+            {
+              "value": 2.2
+            },
+            {
+              "value": 2.4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0（早期版）",
+      "date": "2021-07-15",
+      "source_file": "早期图纸/支架20210727.pdf",
+      "iqc_index_1": "Ø22.2±0.05（顶视图中心圆径）",
+      "iqc_index_2": "Ø25.6±0.05（右下俯视圆径）"
+    },
+    {
+      "version": "V1.0（现版）",
+      "source_file": "图纸/支架.pdf.md",
+      "iqc_index_1": "29.8±0.05（仰视图圆孔径上方）",
+      "iqc_index_2": "25.2±0.05（右下侧视斜向）",
+      "note": "IQC 编号位置 / 数值与早期版存在差异"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "IQC 编号 ① ② 位置迁移的工程原因",
+      "status": "待工程师确认"
+    },
+    {
+      "id": "C-2",
+      "description": "早期 Ø22.2 / Ø25.6 现在是否仍存在（作为无编号尺寸保留？）",
+      "status": "待工程师确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "早期版 V1.0（2021-07-15）与现版 V1.0 之间，IQC 关键尺寸编号 ① ② 的位置及数值发生变化：① 由顶视图中心圆径 Ø22.2±0.05 迁移至仰视图圆孔径上方 29.8±0.05；② 由右下俯视圆径 Ø25.6±0.05 迁移至右下侧视斜向 25.2±0.05。编号点变化原因推测为：IQC 检验位置在版本迭代中被工程师重新评估，编号迁移到更易测量或更关键的尺寸位置。需要工程师确认。",
+      "topic_tags": [
+        "IQC编号迁移",
+        "版本差异",
+        "关键尺寸",
+        "工程变更"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "支架",
+        "C-1",
+        "C-2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "图纸公差等级为 LEVEL B，SECTION A-A 截面中薄壁尺寸 0.17±0.03 标注为 Level A 薄壁，属于关键尺寸管控项。仰视图含多个带 ±0.05 公差的圆径尺寸（Ø17.2、Ø29.8、1.5、1.0），顶视图和俯视图均有 A 级关键圆径标注。",
+      "topic_tags": [
+        "公差等级",
+        "薄壁尺寸",
+        "Level A",
+        "LEVEL B",
+        "关键尺寸"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "支架",
+        "SECTION A-A"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文档为早期版历史归档，定位为 T-Z1-P07 初版 V1.0 的精简读图记录。源文件文字层仅 71 字符（PDF 文字层较少），技术要求共 4 条但正文未列出具体内容。现版图纸见 图纸/支架.pdf.md，同为 V1.0 但 IQC 编号位置/数值可能有差异。",
+      "topic_tags": [
+        "早期版归档",
+        "文字层限制",
+        "技术要求未展开",
+        "版本说明"
+      ],
+      "related_subjects": [
+        "T-Z1-P07",
+        "支架",
+        "图纸/支架.pdf.md"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/早期图纸/支架20210727.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "支架（T-Z1-P07 V1.0，2021-07-15）2D 图读图",
+      "to": "V1.0（早期版）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "支架（T-Z1-P07 V1.0，2021-07-15）2D 图读图",
+      "to": "V1.0（现版）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "IQC编号迁移",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "IQC编号迁移",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "IQC编号迁移",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "IQC编号迁移",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "公差等级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "公差等级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SECTION A-A",
+      "to": "公差等级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "早期版归档",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "早期版归档",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "图纸/支架.pdf.md",
+      "to": "早期版归档",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P07",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "①",
+      "properties": {
+        "view": "顶视图中心圆径",
+        "value": 22.2,
+        "tolerance": "±0.05",
+        "grade": "A级"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "②",
+      "properties": {
+        "view": "右下俯视圆径",
+        "value": 25.6,
+        "tolerance": "±0.05",
+        "grade": "A级"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "仰视图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "SECTION A-A",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "右侧视图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "右下俯视图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V1.0（早期版）",
+      "to": "①",
+      "properties": {
+        "iqc_index": "Ø22.2±0.05",
+        "view": "顶视图中心圆径"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V1.0（早期版）",
+      "to": "②",
+      "properties": {
+        "iqc_index": "Ø25.6±0.05",
+        "view": "右下俯视圆径"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V1.0（现版）",
+      "to": "①",
+      "properties": {
+        "iqc_index": "29.8±0.05",
+        "view": "仰视图圆孔径上方"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V1.0（现版）",
+      "to": "②",
+      "properties": {
+        "iqc_index": "25.2±0.05",
+        "view": "右下侧视斜向"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "V1.0（早期版）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "V1.0（现版）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "①",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "②",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P07",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P07",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P07",
+      "to": "V1.0（早期版）",
+      "properties": {
+        "date": "2021-07-15",
+        "source_file": "早期图纸/支架20210727.pdf"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P07",
+      "to": "V1.0（现版）",
+      "properties": {
+        "source_file": "图纸/支架.pdf.md"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "支架顶视图中心圆径",
+      "attribute": "直径",
+      "value": "22.2",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "顶视图中心圆，A级，图号T-Z1-P07 V1.0",
+      "raw_text": "顶视图中心圆径 Ø22.2 ±0.05 A级"
+    },
+    {
+      "subject": "支架右下俯视圆径",
+      "attribute": "直径",
+      "value": "25.6",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "右下俯视图，A级，图号T-Z1-P07 V1.0",
+      "raw_text": "右下俯视圆径 Ø25.6 ±0.05 A级"
+    },
+    {
+      "subject": "支架仰视图尺寸①",
+      "attribute": "长度",
+      "value": "1.5",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "仰视图，图号T-Z1-P07 V1.0",
+      "raw_text": "仰视图 1.5 ±0.05"
+    },
+    {
+      "subject": "支架仰视图尺寸②",
+      "attribute": "长度",
+      "value": "1.0",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "仰视图，图号T-Z1-P07 V1.0",
+      "raw_text": "仰视图 1.0 ±0.05"
+    },
+    {
+      "subject": "支架仰视图内圆径",
+      "attribute": "直径",
+      "value": "17.2",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "仰视图，图号T-Z1-P07 V1.0",
+      "raw_text": "仰视图 Ø17.2 ±0.05"
+    },
+    {
+      "subject": "支架仰视图外圆径",
+      "attribute": "直径",
+      "value": "29.8",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "仰视图，图号T-Z1-P07 V1.0",
+      "raw_text": "仰视图 Ø29.8 ±0.05"
+    },
+    {
+      "subject": "支架仰视图参考尺寸",
+      "attribute": "长度",
+      "value": "20.8",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "仰视图，无公差，图号T-Z1-P07 V1.0",
+      "raw_text": "仰视图 20.8"
+    },
+    {
+      "subject": "支架截面薄壁厚度",
+      "attribute": "壁厚",
+      "value": "0.17",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "SECTION A-A，Level A薄壁，图号T-Z1-P07 V1.0",
+      "raw_text": "SECTION A-A 0.17 ±0.03 Level A 薄壁"
+    },
+    {
+      "subject": "支架截面尺寸①",
+      "attribute": "长度",
+      "value": "12.6",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "SECTION A-A，图号T-Z1-P07 V1.0",
+      "raw_text": "SECTION A-A 12.6"
+    },
+    {
+      "subject": "支架截面尺寸②",
+      "attribute": "长度",
+      "value": "12.9",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "SECTION A-A，图号T-Z1-P07 V1.0",
+      "raw_text": "SECTION A-A 12.9"
+    },
+    {
+      "subject": "支架截面尺寸③",
+      "attribute": "长度",
+      "value": "3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "SECTION A-A，图号T-Z1-P07 V1.0",
+      "raw_text": "SECTION A-A 3"
+    },
+    {
+      "subject": "支架右侧视图尺寸①",
+      "attribute": "长度",
+      "value": "9",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "右侧视图，图号T-Z1-P07 V1.0",
+      "raw_text": "右侧视图 9"
+    },
+    {
+      "subject": "支架右侧视图尺寸②",
+      "attribute": "长度",
+      "value": "16.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "右侧视图，图号T-Z1-P07 V1.0",
+      "raw_text": "右侧视图 16.1"
+    },
+    {
+      "subject": "支架右侧视图尺寸③",
+      "attribute": "长度",
+      "value": "14.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "右侧视图，图号T-Z1-P07 V1.0",
+      "raw_text": "右侧视图 14.1"
+    },
+    {
+      "subject": "支架右下俯视图宽度",
+      "attribute": "长度",
+      "value": "32",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "右下俯视图，图号T-Z1-P07 V1.0",
+      "raw_text": "右下俯视图 32 ±0.05"
+    },
+    {
+      "subject": "支架右下俯视圆径（复验）",
+      "attribute": "直径",
+      "value": "25.6",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "右下俯视图，图号T-Z1-P07 V1.0",
+      "raw_text": "右下俯视图 Ø25.6 ±0.05"
+    },
+    {
+      "subject": "支架右下俯视图尺寸①",
+      "attribute": "长度",
+      "value": "2.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "右下俯视图，图号T-Z1-P07 V1.0",
+      "raw_text": "右下俯视图 2.2"
+    },
+    {
+      "subject": "支架右下俯视图尺寸②",
+      "attribute": "长度",
+      "value": "2.4",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "右下俯视图，图号T-Z1-P07 V1.0",
+      "raw_text": "右下俯视图 2.4"
+    },
+    {
+      "subject": "支架材料",
+      "attribute": "材质",
+      "value": "ABS",
+      "unit": "",
+      "tolerance": "",
+      "condition": "图号T-Z1-P07 V1.0",
+      "raw_text": "material: ABS"
+    }
+  ]
+}

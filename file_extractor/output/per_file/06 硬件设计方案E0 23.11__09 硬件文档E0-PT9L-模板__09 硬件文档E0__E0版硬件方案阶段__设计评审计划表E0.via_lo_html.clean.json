@@ -1,0 +1,354 @@
+{
+  "document": {
+    "title": "设计评审计划表",
+    "doc_type": "评审计划表",
+    "version": "V1.0"
+  },
+  "review_records": [
+    {
+      "review_id": "QR-7.3-08/E0",
+      "stage": "硬件方案评审",
+      "date": null,
+      "conclusion": null
+    }
+  ],
+  "review_items": [
+    {
+      "seq": "1",
+      "category": "硬件方案评估",
+      "content": "对硬件方案的评估：评审内容见附表（文件编号：PT9L-YFPB01 V1.0）",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "2",
+      "category": "问题跟踪",
+      "content": "评估出的问题、原因及采取的纠正措施、负责人、完成日期",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "3",
+      "category": "设计更改评估",
+      "content": "在本阶段进行的设计更改，如设计更改需求评审中确定其未影响预期用途及设计输入，即只影响设计输出的设计更改，本次评审时需评估设计更改的适宜性及是否引起了新的问题",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "4",
+      "category": "进度评估",
+      "content": "对设计进度的评估",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    }
+  ],
+  "persons": [
+    {
+      "name": "侯广伟",
+      "title": "硬件主管"
+    },
+    {
+      "name": "万龙",
+      "title": "硬件工程师"
+    },
+    {
+      "name": "王迪",
+      "title": "软件工程师"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-YFPJ01 V1.0"
+    },
+    {
+      "id_type": "表号",
+      "value": "QR-7.3-08/E0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "附表文件编号",
+      "value": "PT9L-YFPB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "接收准则：1.硬件方案评审内容表中，所有条目需识别其适用性，适用的条目需评估其是否通过；2.对评估出的问题，需在评审记录中明确产生问题的原因以及采取的纠正措施、负责人和完成日期；3.如有设计更改，则更改解决了原有问题，且没有引起新的问题，如有新的问题，需追踪直至解决；4.设计进度符合项目进度表的时间要求，或者更新项目进度表并得到批准。",
+      "topic_tags": [
+        "接收准则",
+        "硬件方案评审",
+        "问题跟踪",
+        "设计更改",
+        "进度管理"
+      ],
+      "related_subjects": [
+        "PT9L-YFPB01 V1.0",
+        "硬件方案评审",
+        "项目进度表"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人员职责：硬件主管：对硬件设计方案询问信息、提出问题等，对其可行性、合理性及项目进度等进行评审；软件工程师：对硬件设计方案询问信息、阐明议题、提出问题等，对其可行性、合理性等进行评审；硬件工程师：主持硬件设计方案评审，解答问题和/或承诺改进硬件设计方案，并形成评审记录。",
+      "topic_tags": [
+        "人员职责",
+        "硬件主管",
+        "软件工程师",
+        "硬件工程师",
+        "评审角色"
+      ],
+      "related_subjects": [
+        "侯广伟",
+        "万龙",
+        "王迪"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "06 硬件设计方案E0 23.11/09 硬件文档E0-PT9L-模板/09 硬件文档E0/E0版硬件方案阶段/设计评审计划表E0.via_lo_html.clean.md",
+    "doc_type": "review_checklist"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-YFPB01 V1.0",
+      "to": "接收准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "硬件方案评审",
+      "to": "接收准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "项目进度表",
+      "to": "接收准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "侯广伟",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "万龙",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "王迪",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "QR-7.3-08/E0",
+      "to": "PT9L-YFPJ01 V1.0",
+      "properties": {
+        "id_type": "文件编号"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "QR-7.3-08/E0",
+      "to": "PT9L-YFPB01 V1.0",
+      "properties": {
+        "id_type": "附表文件编号",
+        "referenced_by_seq": "1"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "1",
+      "properties": {
+        "category": "硬件方案评估"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "2",
+      "properties": {
+        "category": "问题跟踪"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "3",
+      "properties": {
+        "category": "设计更改评估"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "4",
+      "properties": {
+        "category": "进度评估"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "侯广伟",
+      "to": "1",
+      "properties": {
+        "role": "硬件主管",
+        "responsibility": "对硬件设计方案询问信息、提出问题等，对其可行性、合理性及项目进度等进行评审"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "侯广伟",
+      "to": "4",
+      "properties": {
+        "role": "硬件主管",
+        "responsibility": "对设计进度进行评审"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "万龙",
+      "to": "1",
+      "properties": {
+        "role": "硬件工程师",
+        "responsibility": "主持硬件设计方案评审，解答问题和/或承诺改进硬件设计方案，并形成评审记录"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "万龙",
+      "to": "2",
+      "properties": {
+        "role": "硬件工程师",
+        "responsibility": "明确问题原因及纠正措施，形成评审记录"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "万龙",
+      "to": "3",
+      "properties": {
+        "role": "硬件工程师",
+        "responsibility": "主持设计更改评估，解答问题并形成评审记录"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "王迪",
+      "to": "1",
+      "properties": {
+        "role": "软件工程师",
+        "responsibility": "对硬件设计方案询问信息、阐明议题、提出问题等，对其可行性、合理性等进行评审"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "侯广伟",
+      "to": "QR-7.3-08/E0",
+      "properties": {
+        "role": "硬件主管",
+        "responsibility": "对硬件设计方案询问信息、提出问题等，对其可行性、合理性及项目进度等进行评审"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "万龙",
+      "to": "QR-7.3-08/E0",
+      "properties": {
+        "role": "硬件工程师",
+        "responsibility": "主持硬件设计方案评审，解答问题和/或承诺改进硬件设计方案，并形成评审记录"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "王迪",
+      "to": "QR-7.3-08/E0",
+      "properties": {
+        "role": "软件工程师",
+        "responsibility": "对硬件设计方案询问信息、阐明议题、提出问题等，对其可行性、合理性等进行评审"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "1",
+      "properties": {
+        "category": "硬件方案评估"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "2",
+      "properties": {
+        "category": "问题跟踪"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "3",
+      "properties": {
+        "category": "设计更改评估"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "4",
+      "properties": {
+        "category": "进度评估"
+      }
+    }
+  ],
+  "_claims": []
+}

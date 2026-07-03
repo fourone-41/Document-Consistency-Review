@@ -1,0 +1,114 @@
+```json
+{
+  "assigned_agent": "Risk Traceability Agent",
+  "review_focus": "验证 PT9L ISO 14971 风险评估链（Risk Assessment Report IFT-FXPJ01 V2.0、Verification Report IFT-FXYS01 V2.0、Risk Management Report IFT-FXGB01 V2.0）中是否存在任何 Bluetooth 相关危害、危险情况或伤害条目；重点读取 F0018 第3.4节（IEC 60601-1-2附加问题，第13-15页）及第4节风险分析主体表格（第16-28页），并定位 IFT-FXYS01 / IFT-FXGB01 文档。",
+  "agent_input": {
+    "claim": "No Bluetooth-specific hazard, hazardous situation, or harm entry exists anywhere in the PT9L ISO 14971 risk assessment chain (Risk Assessment Report IFT-FXPJ01 V2.0 / PT9L-FXPJ01, Verification Report IFT-FXYS01 V2.0 / PT9L-FXYS01, or Risk Management Report IFT-FXGB01 V2.0 / PT9L-FXGB01 V1.0), despite the project profile confirming PT9L transmits temperature data to a smart device via Bluetooth.",
+    "context_summary": "已完成5轮补证，当前已知信息：(1) F0018 文档元数据与目录已确认：文档编号 IFT-FXPJ01 V2.0，日期 2024.5.30，产品为 Infrared Forehead Thermometer；(2) 目录结构显示第3.4节专门处理 IEC 60601-1-2:2014+A1:2020 附加问题（第13-15页），第4节为风险分析主体表格（第16-28页）——这两节是 Bluetooth 危害最可能出现的位置，但内容尚未读取；(3) Verification Report（IFT-FXYS01）和 Risk Management Report（IFT-FXGB01）文档尚未定位；(4) 第5轮 context_recovery LLM 输出解析失败（JSONDecodeError），未能产出新内容；(5) 前4轮均未在已读内容中发现任何 Bluetooth/wireless 相关条目，但核心章节内容尚未覆盖。待读关键区域：F0018 lines 350-900（第3.4节+第4节全文），以及 IFT-FXYS01、IFT-FXGB01 全文。",
+    "evidence": [
+      {
+        "evidence_id": "RISK-037",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "content": "# Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "relevance": "文档标识确认，内容层面无 Bluetooth 信息"
+      },
+      {
+        "evidence_id": "RISK-038",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "content": "D N ： IFT-FXPJ01 V2.0 Risk Assessment Report",
+        "relevance": "文档编号确认"
+      },
+      {
+        "evidence_id": "RC-001",
+        "doc_id": "F0018",
+        "lines_covered": "1-75",
+        "section": "封面页 / 版本历史表 / 目录",
+        "content": "文档元数据确认；目录显示第3.4节（IEC 60601-1-2附加问题，第13-15页）及第4节（风险分析表，第16-28页）为核心待读区域；版本历史未提及 Bluetooth 相关修订内容",
+        "relevance": "仅元数据，核心风险条目内容尚未读取，无法支持或反驳 claim"
+      },
+      {
+        "evidence_id": "PC-001",
+        "doc_id": "F0018",
+        "target_page_range": "13-15",
+        "target_line_range_estimate": "350-500",
+        "section": "3.4 Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1",
+        "read_status": "NOT_YET_READ",
+        "priority": "CRITICAL",
+        "rationale": "IEC 60601-1-2 是电磁兼容标准，其附加问题清单是 Bluetooth/无线传输危害识别的首要位置；若此节未提及 Bluetooth，则构成关键遗漏证据"
+      },
+      {
+        "evidence_id": "PC-002",
+        "doc_id": "F0018",
+        "target_page_range": "16-28",
+        "target_line_range_estimate": "500-900",
+        "section": "4. Risk analysis, risk evaluation and PRM",
+        "read_status": "NOT_YET_READ",
+        "priority": "CRITICAL",
+        "rationale": "风险分析主体表格，需全文扫描确认是否存在任何 Bluetooth/wireless 相关危害条目"
+      },
+      {
+        "evidence_id": "PC-003",
+        "doc_id": "UNKNOWN_PENDING_SEARCH",
+        "rel_path": "03 风险分析\\[待搜索] IFT-FXYS01 OR PT9L-FXYS01 Verification Report",
+        "read_status": "DOC_NOT_YET_LOCATED",
+        "priority": "HIGH",
+        "rationale": "验证报告需确认是否存在针对 Bluetooth 功能的风险控制措施验证记录"
+      },
+      {
+        "evidence_id": "PC-004",
+        "doc_id": "UNKNOWN_PENDING_SEARCH",
+        "rel_path": "03 风险分析\\[待搜索] IFT-FXGB01 OR PT9L-FXGB01 Risk Management Report",
+        "read_status": "DOC_NOT_YET_LOCATED",
+        "priority": "HIGH",
+        "rationale": "风险管理报告需确认整体残余风险评估中是否涵盖 Bluetooth 相关风险"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "priority_read_instructions": [
+      {
+        "step": 1,
+        "action": "READ_LINES",
+        "doc_id": "F0018",
+        "line_range": "350-500",
+        "section": "3.4 Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1",
+        "search_terms": ["Bluetooth", "bluetooth", "wireless", "WLAN", "RF", "radio", "electromagnetic", "interference", "无线", "蓝牙"],
+        "expected_outcome": "若存在 Bluetooth 相关问题条目及对应回答，则为 dismiss 证据；若完全缺失，则为 confirm 证据"
+      },
+      {
+        "step": 2,
+        "action": "READ_LINES",
+        "doc_id": "F0018",
+        "line_range": "500-900",
+        "section": "4. Risk analysis, risk evaluation and PRM（全表扫描）",
+        "search_terms": ["Bluetooth", "bluetooth", "wireless", "WLAN", "RF", "radio", "无线", "蓝牙", "data transmission", "smart device", "app"],
+        "expected_outcome": "若风险分析表中存在任何 Bluetooth 相关危害行，则为 dismiss 证据；若全表无任何相关条目，则为 confirm 证据"
+      },
+      {
+        "step": 3,
+        "action": "SEARCH_AND_READ",
+        "search_query": "IFT-FXYS01 OR PT9L-FXYS01 Verification Report",
+        "search_scope": "03 风险分析",
+        "search_terms": ["Bluetooth", "wireless", "蓝牙", "无线"],
+        "expected_outcome": "定位验证报告并确认是否存在 Bluetooth 风险控制验证条目"
+      },
+      {
+        "step": 4,
+        "action": "SEARCH_AND_READ",
+        "search_query": "IFT-FXGB01 OR PT9L-FXGB01 Risk Management Report",
+        "search_scope": "03 风险分析",
+        "search_terms": ["Bluetooth", "wireless", "蓝牙", "无线", "residual risk", "benefit-risk"],
+        "expected_outcome": "定位风险管理报告并确认整体残余风险评估是否涵盖 Bluetooth"
+      }
+    ],
+    "decision_criteria": {
+      "confirm": "完成上述4步读取后，F0018 第3.4节及第4节全文、IFT-FXYS01 全文、IFT-FXGB01 全文均无任何 Bluetooth/wireless 相关危害、危险情况、伤害或风险控制条目",
+      "dismiss": "在上述任一文档中发现至少一条明确涉及 Bluetooth 或无线传输的危害识别、风险评估或控制措施条目",
+      "needs_more_context": "步骤3或步骤4中目标文档仍无法定位，或读取内容不完整，无法覆盖全部风险分析表格"
+    }
+  }
+}
+```

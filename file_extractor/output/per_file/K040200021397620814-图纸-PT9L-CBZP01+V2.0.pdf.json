@@ -1,0 +1,479 @@
+{
+  "document": {
+    "title": "PT9L 彩包装（PT9L-CBZP01 V2.0）",
+    "drawing_no": "PT9L-CBZP01 V2.0",
+    "part_name": "彩包装",
+    "edition": "V2.0",
+    "model_no": "PT9L",
+    "figure_no": "K04020002139",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance": ".X / .XX / .X°",
+    "source_file": "K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf"
+  },
+  "products": [
+    {
+      "name": "PT9L 彩包装",
+      "model": "PT9L",
+      "part_no": "PT9L-CBZP01",
+      "version": "V2.0",
+      "description": "PT9L 额温计的零售彩包装（彩盒），橙/白双色外观，正面印有产品渲染图及功能说明，背面印有技术参数和多语言说明"
+    }
+  ],
+  "components": [
+    {
+      "name": "彩包装盒体",
+      "material": "350g 白卡纸，覆哑膜",
+      "dimensions": "58.5×36×159 mm",
+      "tolerance": "±1 mm",
+      "print_spec": "4色+2专色印刷；PANTONE 1655C + PANTONE Cool Gray 11C"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "本件要求通过 RoHS 测试",
+      "category": "合规要求"
+    },
+    {
+      "id": "REQ-2",
+      "description": "材质为 350g 白卡，覆哑膜",
+      "category": "材料要求"
+    },
+    {
+      "id": "REQ-3",
+      "description": "尺寸：58.5×36×159 mm，公差：±1 mm",
+      "category": "尺寸要求"
+    },
+    {
+      "id": "REQ-4",
+      "description": "印刷颜色：4色+2专色印刷；PANTONE 1655C + PANTONE Cool Gray 11C",
+      "category": "印刷要求"
+    }
+  ],
+  "design_inputs": [
+    {
+      "name": "成型尺寸-长",
+      "value": "159 mm",
+      "tolerance": "±1 mm",
+      "source": "技术要求第3条 + 图面"
+    },
+    {
+      "name": "成型尺寸-宽",
+      "value": "58.5 mm",
+      "tolerance": "±1 mm",
+      "source": "技术要求第3条 + 图面"
+    },
+    {
+      "name": "成型尺寸-深",
+      "value": "36 mm",
+      "tolerance": "±1 mm",
+      "source": "技术要求第3条 + 图面"
+    },
+    {
+      "name": "展开图底面宽度1（侧面深度）",
+      "value": "36 mm",
+      "geometric_meaning": "侧面（深度）"
+    },
+    {
+      "name": "展开图底面宽度2（正面宽度）",
+      "value": "58.5 mm",
+      "geometric_meaning": "正面（宽度）"
+    },
+    {
+      "name": "展开图高度",
+      "value": "159 mm",
+      "geometric_meaning": "盒体高度"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "K04020002139"
+    },
+    {
+      "type": "Drawing NO.",
+      "value": "PT9L-CBZP01 V2.0"
+    },
+    {
+      "type": "源文件编号",
+      "value": "K040200021397620814"
+    }
+  ],
+  "revision_records": [
+    {
+      "version_from": "V1.0",
+      "version_to": "V2.0",
+      "date": "2024-09-24",
+      "description": "版本号由 V1.0 升至 V2.0"
+    },
+    {
+      "date": "2026-05-13",
+      "description": "视觉读图后填写完整内容"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "限制有害物质指令，本件要求通过 RoHS 测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "包装正面印刷内容：品牌区域印 iHealth（橙色 PANTONE 1655C）；产品名印 iHealth PT9L（大字）；产品图区域印 PT9L 额温计渲染图（正面展示）；功能描述区域印 INCLUDES 及功能图标列表；标识区域印 iHealth PT9L 字样（背面侧面）。",
+      "topic_tags": [
+        "印刷内容",
+        "包装正面",
+        "品牌标识",
+        "功能图标"
+      ],
+      "related_subjects": [
+        "PT9L 彩包装",
+        "PT9L-CBZP01 V2.0"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "源文件为 PT9L-CBZP01+V2.0.pdf，为彩包装展开图，文字已转曲。参考旧版文件为 K040200021397620814-图纸-PT9L-CBZP01+V1.0.pdf（V1.0）。视觉块图资产存放于 _assets/K040200021397620814-图纸-PT9L-CBZP01+V2.0/ 目录。",
+      "topic_tags": [
+        "源文件",
+        "展开图",
+        "版本参考",
+        "文件管理"
+      ],
+      "related_subjects": [
+        "PT9L-CBZP01 V2.0",
+        "K040200021397620814"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "K040200021397620814-图纸-PT9L-CBZP01+V2.0.pdf.md",
+    "doc_type": "general"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L 彩包装",
+      "to": "印刷内容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01 V2.0",
+      "to": "印刷内容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01 V2.0",
+      "to": "源文件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K040200021397620814",
+      "to": "源文件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01",
+      "to": "彩包装盒体",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-3",
+      "to": "成型尺寸-长",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-3",
+      "to": "成型尺寸-宽",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-3",
+      "to": "成型尺寸-深",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-3",
+      "to": "展开图底面宽度1（侧面深度）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-3",
+      "to": "展开图底面宽度2（正面宽度）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-3",
+      "to": "展开图高度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-1",
+      "to": "RoHS",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01 V2.0",
+      "to": "K04020002139",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CBZP01 V2.0",
+      "to": "K040200021397620814",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "成型尺寸-长",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "成型尺寸-宽",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "成型尺寸-深",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "展开图底面宽度1（侧面深度）",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "展开图底面宽度2（正面宽度）",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "展开图高度",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "成型尺寸-长",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "成型尺寸-宽",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "成型尺寸-深",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "彩包装盒体",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "彩包装盒体",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "彩包装盒体",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT9L 彩包装",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT9L 彩包装",
+      "to": "RoHS",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-CBZP01",
+      "to": "V1.0",
+      "properties": {
+        "version_from": "V1.0",
+        "version_to": "V2.0",
+        "date": "2024-09-24",
+        "description": "版本号由 V1.0 升至 V2.0"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-CBZP01",
+      "to": "V2.0",
+      "properties": {
+        "date": "2026-05-13",
+        "description": "视觉读图后填写完整内容"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "包装盒尺寸-长",
+      "attribute": "成型尺寸",
+      "value": "159",
+      "unit": "mm",
+      "tolerance": "±1 mm",
+      "condition": "成品",
+      "raw_text": "尺寸：58.5×36×159 mm，公差：±1 mm"
+    },
+    {
+      "subject": "包装盒尺寸-宽",
+      "attribute": "成型尺寸",
+      "value": "58.5",
+      "unit": "mm",
+      "tolerance": "±1 mm",
+      "condition": "成品",
+      "raw_text": "尺寸：58.5×36×159 mm，公差：±1 mm"
+    },
+    {
+      "subject": "包装盒尺寸-深",
+      "attribute": "成型尺寸",
+      "value": "36",
+      "unit": "mm",
+      "tolerance": "±1 mm",
+      "condition": "成品",
+      "raw_text": "尺寸：58.5×36×159 mm，公差：±1 mm"
+    },
+    {
+      "subject": "包装盒材质",
+      "attribute": "纸张克重",
+      "value": "350",
+      "unit": "g",
+      "tolerance": "",
+      "condition": "白卡纸",
+      "raw_text": "材质为 350g 白卡，覆哑膜"
+    },
+    {
+      "subject": "包装盒表面处理",
+      "attribute": "覆膜类型",
+      "value": "哑膜",
+      "unit": "",
+      "tolerance": "",
+      "condition": "外表面",
+      "raw_text": "材质为 350g 白卡，覆哑膜"
+    },
+    {
+      "subject": "印刷色数",
+      "attribute": "印刷颜色数量",
+      "value": "4+2",
+      "unit": "色",
+      "tolerance": "",
+      "condition": "4色+2专色",
+      "raw_text": "印刷颜色：4色+2专色印刷；PANTONE 1655C + PANTONE Cool Gray 11C"
+    },
+    {
+      "subject": "专色1",
+      "attribute": "PANTONE色号",
+      "value": "PANTONE 1655C",
+      "unit": "",
+      "tolerance": "",
+      "condition": "专色印刷",
+      "raw_text": "PANTONE 1655C + PANTONE Cool Gray 11C"
+    },
+    {
+      "subject": "专色2",
+      "attribute": "PANTONE色号",
+      "value": "PANTONE Cool Gray 11C",
+      "unit": "",
+      "tolerance": "",
+      "condition": "专色印刷",
+      "raw_text": "PANTONE 1655C + PANTONE Cool Gray 11C"
+    },
+    {
+      "subject": "展开图侧面深度",
+      "attribute": "展开尺寸",
+      "value": "36",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "展开图底面宽度（侧面）",
+      "raw_text": "展开图底面宽度1（侧面深度）：36 mm"
+    },
+    {
+      "subject": "展开图正面宽度",
+      "attribute": "展开尺寸",
+      "value": "58.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "展开图底面宽度（正面）",
+      "raw_text": "展开图底面宽度2（正面宽度）：58.5 mm"
+    },
+    {
+      "subject": "展开图盒体高度",
+      "attribute": "展开尺寸",
+      "value": "159",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "展开图高度",
+      "raw_text": "展开图高度：159 mm"
+    },
+    {
+      "subject": "合规要求",
+      "attribute": "RoHS认证",
+      "value": "通过",
+      "unit": "",
+      "tolerance": "",
+      "condition": "产品整体",
+      "raw_text": "本件要求通过 RoHS 测试"
+    }
+  ]
+}

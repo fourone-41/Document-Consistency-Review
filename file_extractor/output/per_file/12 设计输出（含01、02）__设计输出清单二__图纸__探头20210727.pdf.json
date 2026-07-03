@@ -1,0 +1,752 @@
+{
+  "document": {
+    "title": "探头（T-Z1-P03 V1.0）2D 图读图报告",
+    "drawing_no": "T-Z1-P03",
+    "edition": "V1.0",
+    "part_name": "探头",
+    "model_no": "T-Z1",
+    "source_file": "探头20210727.pdf",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/探头20210727.pdf",
+    "report_date": "2026-06-02",
+    "scale": "2:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "projection": "第一角法",
+    "brand": "andon（iHealth）",
+    "skill_version": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "探头",
+      "drawing_no": "T-Z1-P03",
+      "edition": "V1.0",
+      "model_no": "T-Z1",
+      "material": "TPU（灰色弹性体）",
+      "description": "TPU 灰色弹性体瓶盖型软质包覆件，外形高 19.14 mm，内孔 Ø9.58 mm，中心透光孔 Ø6.8 mm"
+    }
+  ],
+  "components": [
+    {
+      "name": "探头",
+      "drawing_no": "T-Z1-P03",
+      "material": "TPU（灰色）",
+      "type": "弹性体注塑件",
+      "key_dimensions": {
+        "overall_height": "19.14 mm",
+        "inner_diameter": "Ø9.58 mm",
+        "center_optical_aperture": "Ø6.8 mm",
+        "top_wall_thickness": "0.8 mm",
+        "side_view_height": "3.86 mm",
+        "bottom_thickness": "0.9 mm",
+        "feature_width": "3.65 mm",
+        "thickness_feature": "1 mm"
+      },
+      "related_parts": [
+        "支架（Ø9.5 外圆）",
+        "透镜（Ø13.9 / Ø9.9 传感器开孔）",
+        "T-Z1-下盖-v2.0（探头开口 Ø10）"
+      ]
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-1",
+      "description": "材质为 TPU（灰色），产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "source": "产品技术要求第2条"
+    },
+    {
+      "id": "DI-2",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "source": "产品技术要求第3条"
+    },
+    {
+      "id": "DI-3",
+      "description": "产品符合 RoHS 2.0",
+      "source": "产品技术要求第4条"
+    },
+    {
+      "id": "DI-4",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "source": "产品技术要求第1条"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "type": "material",
+      "description": "材质为 TPU（灰色）",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "REQ-2",
+      "type": "appearance",
+      "description": "产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "REQ-3",
+      "type": "assembly",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "REQ-4",
+      "type": "regulatory",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "REQ-5",
+      "type": "dimensional",
+      "description": "带编号重要尺寸需 IQC 测量：① 19.14±0.05 mm（截面A-A总高度），② 3.86±0.05 mm（侧视右端中段高度）",
+      "source": "技术要求第1条 + 尺寸表"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "drawing_no",
+      "value": "T-Z1-P03"
+    },
+    {
+      "type": "model_no",
+      "value": "T-Z1"
+    },
+    {
+      "type": "edition",
+      "value": "V1.0"
+    },
+    {
+      "type": "source_pdf_date",
+      "value": "20210727"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 有害物质限制要求",
+      "applicability": "探头零件 T-Z1-P03"
+    }
+  ],
+  "tests": [
+    {
+      "id": "IQC-1",
+      "name": "IQC 重点尺寸测量",
+      "description": "对带编号重要尺寸进行 IQC 测量",
+      "items": [
+        {
+          "dimension_no": "①",
+          "description": "SECTION A-A 总高度",
+          "value": "19.14 mm",
+          "tolerance": "±0.05 mm"
+        },
+        {
+          "dimension_no": "②",
+          "description": "侧视右端中段高度",
+          "value": "3.86 mm",
+          "tolerance": "±0.05 mm"
+        }
+      ]
+    },
+    {
+      "id": "IQC-2",
+      "name": "外观检验",
+      "description": "检查无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象"
+    },
+    {
+      "id": "IQC-3",
+      "name": "装配试装验证",
+      "description": "须试装产品，并能顺利装入产品；品质部检验结构时以结构签板和组装（实配）为准"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "确认套在哪个硬质件外面（支架探头筒？下盖探头开口？）",
+      "required_source": "3D 装配 + BOM",
+      "confidence": "C级（待确认）"
+    },
+    {
+      "id": "C-2",
+      "description": "与中心红外光路 Ø6.8 是否对齐传感器 FOV 中心",
+      "required_source": "3D 装配 + 光学 SPEC",
+      "confidence": "C级（待确认）"
+    },
+    {
+      "id": "C-3",
+      "description": "TPU 灰色 SPEC（邵氏硬度、抗黄变、耐酒精擦拭）",
+      "required_source": "材料 BOM",
+      "confidence": "C级（待确认）"
+    },
+    {
+      "id": "C-4",
+      "description": "装配方式（套入？粘贴？过盈压入？）",
+      "required_source": "SOP",
+      "confidence": "C级（待确认）"
+    },
+    {
+      "id": "C-5",
+      "description": "与透镜.pdf Ø13.9 / Ø9.9 传感器开孔的位置关系",
+      "required_source": "3D 装配",
+      "confidence": "C级（待确认）"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "功能推断（B 级）：TPU + 灰色 → 红外测温头前端柔性套（保护探头/接触额头时的柔性贴合）；中心 Ø6.8 通透 → 红外光路通过口（保证 IR 信号无遮挡）；Ø9.58 内孔 → 套在硬质探头筒（推测 Ø9.5 外径，与支架件中 Ø9.5 一致）外面。",
+      "topic_tags": [
+        "红外测温",
+        "柔性套",
+        "光路通过口",
+        "TPU",
+        "探头"
+      ],
+      "related_subjects": [
+        "支架",
+        "透镜",
+        "T-Z1-下盖",
+        "红外传感器"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "配合假设：探头 Ø9.58 内孔 ↔ 支架/壳体上的 Ø9.5 外径 → 单边间隙 (9.58 − 9.5)/2 = 0.04 mm（紧配合，TPU 弹性吸收）。材质 TPU（灰色）≠ 标准 ABS 注塑件：弹性体，存在弹性变形、回弹特性。",
+      "topic_tags": [
+        "配合公差",
+        "TPU弹性体",
+        "过盈配合",
+        "Ø9.58内孔",
+        "Ø9.5外径"
+      ],
+      "related_subjects": [
+        "支架",
+        "探头 T-Z1-P03"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "GENERAL TOLERANCE Level B 规则：尺寸＜5 mm → ±0.1 mm；5–15 mm → ±0.1 mm；15–50 mm → ±0.1 mm；50–100 mm → ±0.2 mm；＞100 mm → ±0.2%；角度 → ±0.5°。本零件采用 SELECT LEVEL B。",
+      "topic_tags": [
+        "通用公差",
+        "Level B",
+        "尺寸公差",
+        "角度公差"
+      ],
+      "related_subjects": [
+        "T-Z1-P03",
+        "探头"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "注意文件名后缀 20210727 是21年的旧日期，但 Drawing NO. T-Z1-P03 + Edition V1.0，与早期图纸/探头20210727.pdf 同名但应是当前正式版（左上角带 andon iHealth logo）。第3条技术要求：配合方推测为下盖 T-Z1-P02 上的探头开口（Ø10）或主壳前端。",
+      "topic_tags": [
+        "版本管理",
+        "图纸历史",
+        "配合关系",
+        "下盖T-Z1-P02"
+      ],
+      "related_subjects": [
+        "T-Z1-P02 下盖",
+        "早期图纸",
+        "andon iHealth"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "视图组成：① 主视图（中部圆环视图，俯视/前视）+ ② 立体外观图（右上）+ ③ SECTION A-A 截面（左下，呈瓶盖形断面）+ ④ 侧视图（右下，弧形）。Scale 2:1（小件放大图）。A-A 截面外形为瓶盖型（外径渐扩+顶部圆弧），是典型软质 TPU 包覆件外形。",
+      "topic_tags": [
+        "视图布局",
+        "截面图",
+        "SECTION A-A",
+        "瓶盖型",
+        "放大图"
+      ],
+      "related_subjects": [
+        "T-Z1-P03 探头"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/探头20210727.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-下盖",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外传感器",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "配合公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头 T-Z1-P03",
+      "to": "配合公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03",
+      "to": "通用公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头",
+      "to": "通用公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02 下盖",
+      "to": "版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "早期图纸",
+      "to": "版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "andon iHealth",
+      "to": "版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03 探头",
+      "to": "视图布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-1",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-2",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-3",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-4",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-5",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC-1",
+      "to": "REQ-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC-2",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03",
+      "to": "REQ-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-3",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-4",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "REQ-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-5",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-1",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-2",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-3",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-4",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-5",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "IQC-1",
+      "to": "REQ-5",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "IQC-2",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "IQC-3",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "探头",
+      "to": "REQ-5",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "T-Z1-P03",
+      "to": "RoHS 2.0",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "REQ-5",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "IQC-1",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "IQC-2",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P03",
+      "to": "IQC-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P03",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P03",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P03",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P03",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P03",
+      "to": "C-5",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "截面A-A总高度",
+      "attribute": "尺寸",
+      "value": "19.14",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "IQC重点测量尺寸①",
+      "raw_text": "SECTION A-A 总高度 19.14±0.05 mm"
+    },
+    {
+      "subject": "侧视右端中段高度",
+      "attribute": "尺寸",
+      "value": "3.86",
+      "unit": "mm",
+      "tolerance": "±0.05 mm",
+      "condition": "IQC重点测量尺寸②",
+      "raw_text": "侧视右端中段高度 3.86±0.05 mm"
+    },
+    {
+      "subject": "探头材质",
+      "attribute": "材料类型",
+      "value": "TPU（灰色）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "弹性体注塑件",
+      "raw_text": "材质为 TPU（灰色）"
+    },
+    {
+      "subject": "RoHS合规",
+      "attribute": "符合标准",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "产品符合 RoHS 2.0"
+    },
+    {
+      "subject": "探头总高度",
+      "attribute": "尺寸",
+      "value": "19.14",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸overall_height",
+      "raw_text": "overall_height: 19.14 mm"
+    },
+    {
+      "subject": "探头内径",
+      "attribute": "尺寸",
+      "value": "9.58",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸inner_diameter",
+      "raw_text": "inner_diameter: Ø9.58 mm"
+    },
+    {
+      "subject": "中心光学孔径",
+      "attribute": "尺寸",
+      "value": "6.8",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸center_optical_aperture",
+      "raw_text": "center_optical_aperture: Ø6.8 mm"
+    },
+    {
+      "subject": "顶部壁厚",
+      "attribute": "尺寸",
+      "value": "0.8",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸top_wall_thickness",
+      "raw_text": "top_wall_thickness: 0.8 mm"
+    },
+    {
+      "subject": "侧视高度",
+      "attribute": "尺寸",
+      "value": "3.86",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸side_view_height",
+      "raw_text": "side_view_height: 3.86 mm"
+    },
+    {
+      "subject": "底部壁厚",
+      "attribute": "尺寸",
+      "value": "0.9",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸bottom_thickness",
+      "raw_text": "bottom_thickness: 0.9 mm"
+    },
+    {
+      "subject": "特征宽度",
+      "attribute": "尺寸",
+      "value": "3.65",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸feature_width",
+      "raw_text": "feature_width: 3.65 mm"
+    },
+    {
+      "subject": "特征厚度",
+      "attribute": "尺寸",
+      "value": "1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "组件关键尺寸thickness_feature",
+      "raw_text": "thickness_feature: 1 mm"
+    }
+  ]
+}

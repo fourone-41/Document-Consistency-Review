@@ -1,0 +1,257 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-03",
+    "page_range": "第9-11页 / 共21页",
+    "document_type": "合规性测试报告（符合性检查表）"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1:2005+A1:2012",
+      "clauses": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "description": "医用电气设备通用要求"
+    },
+    {
+      "id": "IEC 60601-1-11",
+      "description": "适用于临床体温计相关条款（201系列）"
+    },
+    {
+      "id": "ISO 14155-1:2003",
+      "description": "临床准确性验证方法"
+    },
+    {
+      "id": "ISO 14155-2:2003",
+      "description": "临床准确性验证方法"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "201.12",
+      "title": "ACCURACY OF CONTROLS AND INSTRUMENTS AND PROTECTION AGAINST HAZARDOUS OUTPUTS",
+      "result": "P"
+    },
+    {
+      "id": "201.12.1",
+      "title": "Accuracy of controls and instruments",
+      "result": "P"
+    },
+    {
+      "id": "201.12.1.101",
+      "title": "Additional requirements for accuracy of controls and instruments",
+      "description": "若临床体温计不能在实验室精度内显示温度，则提供技术报警状态或不提供输出温度。最小额定输出范围为34°C至42°C。",
+      "actual_value": "32.0°C to 42.9°C",
+      "result": "P"
+    },
+    {
+      "id": "201.12.2",
+      "title": "USABILITY",
+      "result": "P"
+    },
+    {
+      "id": "201.12.2.101",
+      "title": "Additional requirements for USABILITY",
+      "description": "家用临床体温计的输出温度显示至少4mm或经光学放大至该高度；分段显示的临床体温计激活后执行所有段功能测试。",
+      "actual_value": "10mm",
+      "result": "P (分段显示部分 N/A)"
+    },
+    {
+      "id": "201.13",
+      "title": "HAZARDOUS SITUATIONS and fault conditions",
+      "reference_standard": "IEC 60601-1:2005+A1:2012, Clause 13",
+      "result": "P"
+    },
+    {
+      "id": "201.14",
+      "title": "PROGRAMMABLE ELECTRICAL MEDICAL SYSTEMS (PEMS)",
+      "reference_standard": "IEC 60601-1:2005+A1:2012, Clause 14",
+      "result": "P"
+    },
+    {
+      "id": "201.15",
+      "title": "Construction of ME EQUIPMENT",
+      "reference_standard": "IEC 60601-1:2005+A1:2012, Clause 15",
+      "result": "P"
+    },
+    {
+      "id": "201.16",
+      "title": "ME SYSTEMS",
+      "reference_standard": "IEC 60601-1:2005+A1:2012, Clause 16",
+      "actual_value": "Not ME systems",
+      "result": "N/A"
+    },
+    {
+      "id": "201.17",
+      "title": "Electromagnetic compatibility of ME EQUIPMENT and ME SYSTEMS",
+      "reference_standard": "IEC 60601-1:2005, Clause 17",
+      "actual_value": "Not evaluate in this report",
+      "result": "N/E"
+    },
+    {
+      "id": "201.101",
+      "title": "LABORATORY PERFORMANCE REQUIREMENTS"
+    },
+    {
+      "id": "201.101.1",
+      "title": "General test requirements",
+      "description": "实验室性能在DIRECT MODE或TEST MODE下相同条件评估；可用修正方法从输出温度推导未调整温度；若使用探头套则每次测量更换新探头套。",
+      "actual_value": "In test mode; No PROBE COVER used",
+      "result": "P (探头套部分 N/A)"
+    },
+    {
+      "id": "201.101.2",
+      "title": "LABORATORY ACCURACY",
+      "description": "额定输出范围内正常使用的实验室精度应在±0.3°C以内；扩展额定输出范围内正常使用的实验室精度应在±0.4°C以内（除非指示超范围）；若探头可分离则可分别测试。",
+      "required_value": "±0.3°C (额定范围); ±0.4°C (扩展范围)",
+      "actual_value": "0.3°C",
+      "result": "P"
+    },
+    {
+      "id": "201.101.3",
+      "title": "Time response for a continuous CLINICAL THERMOMETER",
+      "description": "非ADJUSTED MODE的DIRECT MODE临床体温计的瞬态响应应在说明书中描述；瞬态时间低于说明书建议最短测量时间。",
+      "actual_value": "Not a DIRECT MODE CLINICAL THERMOMETER",
+      "result": "P (瞬态时间部分 N/A)"
+    },
+    {
+      "id": "201.102",
+      "title": "CLINICAL ACCURACY VALIDATION",
+      "result": "N/E"
+    },
+    {
+      "id": "201.102.1",
+      "title": "Method",
+      "description": "ADJUSTED MODE临床体温计应按ISO 14155-1:2003和ISO 14155-2:2003在每种调整模式下验证临床准确性；结果应在随附文件中披露；若使用探头套则每次测量更换新探头套。",
+      "result": "N/E"
+    },
+    {
+      "id": "201.102.2",
+      "title": "Human subject population requirements",
+      "description": "发热受试者总数不低于30%且不超过所有受试者的50%；应在说明书中指明的所有年龄组进行验证；各年龄组受试者数量足够大（最小105人，各组最小35人，A1或A2子组最小15人）。",
+      "age_groups": [
+        "A1 (0-3个月)",
+        "A2 (3-12个月)",
+        "B (>1岁且<5岁)",
+        "C (>5岁)"
+      ],
+      "result": "N/E"
+    },
+    {
+      "id": "201.102.3",
+      "title": "Calculated CLINICAL BIAS for the OPERATING MODE being evaluated (∆cb)",
+      "result": "N/E"
+    },
+    {
+      "id": "201.102.4",
+      "title": "Calculated LIMITS OF AGREEMENT (LA)",
+      "result": "N/E"
+    },
+    {
+      "id": "201.102.5",
+      "title": "Calculated CLINICAL REPEATABILITY for particular OPERATING MODE (σr)",
+      "result": "N/E"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "201.101.2",
+      "test_name": "Laboratory Accuracy Test",
+      "method": "TEST MODE",
+      "acceptance_criteria": "±0.3°C within RATED OUTPUT RANGE; ±0.4°C within RATED EXTENDED OUTPUT RANGE",
+      "actual_result": "0.3°C",
+      "pass_fail": "P",
+      "reference": "Appended Table 201.101.2"
+    },
+    {
+      "test_id": "201.12.1.101",
+      "test_name": "Rated Output Range Test",
+      "acceptance_criteria": "34°C to 42°C minimum",
+      "actual_result": "32.0°C to 42.9°C",
+      "pass_fail": "P"
+    },
+    {
+      "test_id": "201.12.2.101",
+      "test_name": "Display Height Test",
+      "acceptance_criteria": "≥4mm",
+      "actual_result": "10mm",
+      "pass_fail": "P"
+    }
+  ],
+  "products": [
+    {
+      "name": "CLINICAL THERMOMETER",
+      "type": "体温计（非DIRECT MODE，非ME SYSTEM，无PROBE COVER，家用）",
+      "features": [
+        "额定输出范围：32.0°C至42.9°C",
+        "显示字高：10mm",
+        "测试模式：TEST MODE",
+        "无分段显示",
+        "无可分离探头",
+        "非DIRECT MODE临床体温计"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "临床体温计若不能在实验室精度范围内指示温度，则必须：（1）提供技术报警状态（TECHNICAL ALARM CONDITION），或（2）不提供输出温度（OUTPUT TEMPERATURE）。最小额定输出范围（RATED OUTPUT RANGE）从34°C到42°C。",
+      "topic_tags": [
+        "体温计",
+        "报警",
+        "输出范围",
+        "实验室精度"
+      ],
+      "related_subjects": [
+        "201.12.1.101",
+        "LABORATORY ACCURACY"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "实验室性能评估可在DIRECT MODE或TEST MODE下进行，两种模式条件相同。或者可使用修正方法，根据随附文件（ACCOMPANYING DOCUMENT）从输出温度推导未调整温度。若说明书指明临床体温计与探头套（PROBE COVER）配合使用，则每次输出温度测量均需使用新探头套。",
+      "topic_tags": [
+        "实验室性能",
+        "测试模式",
+        "探头套",
+        "修正方法"
+      ],
+      "related_subjects": [
+        "201.101.1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "临床准确性验证（CLINICAL ACCURACY VALIDATION）要求：(1) 发热受试者（febrile subjects）占总受试者30%-50%；(2) 覆盖说明书指明的所有年龄组；(3) 最小样本量：全部年龄组合计105人，各年龄组35人，A1或A2子组各15人（若A组未排除）。年龄组划分：A1（0-3个月），A2（3-12个月），B（>1岁且<5岁），C（>5岁）。",
+      "topic_tags": [
+        "临床准确性验证",
+        "年龄组",
+        "样本量",
+        "发热受试者"
+      ],
+      "related_subjects": [
+        "201.102.2",
+        "ISO 14155-1:2003",
+        "ISO 14155-2:2003"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "电磁兼容性（EMC，条款201.17）在本报告中不作评估（标注为N/E，Not evaluate in this report）。ME SYSTEMS相关要求（条款201.16）因产品不属于ME系统而标注N/A。临床准确性验证（201.102系列条款）全部标注为N/E，不在本次报告评估范围内。",
+      "topic_tags": [
+        "电磁兼容",
+        "ME系统",
+        "临床准确性验证",
+        "评估范围"
+      ],
+      "related_subjects": [
+        "201.16",
+        "201.17",
+        "201.102"
+      ]
+    }
+  ]
+}

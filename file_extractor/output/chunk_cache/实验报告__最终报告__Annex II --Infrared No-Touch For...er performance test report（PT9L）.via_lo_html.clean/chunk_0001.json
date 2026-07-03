@@ -1,0 +1,177 @@
+{
+  "document": {
+    "title": "Infrared No-Touch Forehead Thermometer Performance Test Report (PT9L)",
+    "report_number": "A20107",
+    "date": "July 11, 2024",
+    "total_pages": 15,
+    "page_range": "Page 12 of 15 pages",
+    "issuer": "ANDON HEALTH CO., LTD",
+    "annex": "Annex II"
+  },
+  "products": [
+    {
+      "name": "Infrared No-Touch Forehead Thermometer",
+      "model": "PT9L",
+      "sample_number": "YP2407017",
+      "lot_number": "KE04",
+      "sample_quantity": "1 unit"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "PRE_AGING_1",
+      "test_name": "Accuracy (Before Aging)",
+      "condition": "Pre-aging baseline",
+      "environment": "16℃~24℃, 40%RH~64%RH",
+      "test_date": "July 10–11, 2024",
+      "test_place": "Area B, Testing Center",
+      "results": [
+        {
+          "target_temperature": "33.0℃",
+          "requirement": "±0.3℃",
+          "measured_deviation": "0.0℃",
+          "conclusion": "Meet the requirement"
+        },
+        {
+          "target_temperature": "37.0℃",
+          "requirement": "±0.2℃",
+          "measured_deviation": "-0.1℃",
+          "conclusion": "Meet the requirement"
+        },
+        {
+          "target_temperature": "41.0℃",
+          "requirement": "±0.2℃",
+          "measured_deviation": "-0.1℃",
+          "conclusion": "Meet the requirement"
+        }
+      ]
+    },
+    {
+      "test_id": "POST_AGING_1",
+      "test_name": "Accuracy (After Damp-Heat Accelerated Aging)",
+      "condition": "Damp-heat aging: Temperature 40℃, Humidity 95% RH, Duration 14.8h",
+      "environment": "16℃~24℃, 40%RH~64%RH",
+      "test_date": "July 10–11, 2024",
+      "test_place": "Area B, Testing Center",
+      "aging_performed_by": "Tianxu (Tianjin) Testing Technology Service Co., LTD",
+      "results": [
+        {
+          "target_temperature": "33.0℃",
+          "requirement": "±0.3℃",
+          "measured_deviation": "-0.1℃",
+          "conclusion": "Meet the requirement"
+        },
+        {
+          "target_temperature": "37.0℃",
+          "requirement": "±0.2℃",
+          "measured_deviation": "-0.2℃",
+          "conclusion": "Meet the requirement"
+        },
+        {
+          "target_temperature": "41.0℃",
+          "requirement": "±0.2℃",
+          "measured_deviation": "0.0℃",
+          "conclusion": "Meet the requirement"
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "REQ-ACC-1",
+      "description": "Accuracy at 33.0℃",
+      "specification": "33.0℃ ± 0.3℃",
+      "source": "Infrared No-Touch Forehead Thermometer Accelerated Life Test Protocol"
+    },
+    {
+      "requirement_id": "REQ-ACC-2",
+      "description": "Accuracy at 37.0℃",
+      "specification": "37.0℃ ± 0.2℃",
+      "source": "Infrared No-Touch Forehead Thermometer Accelerated Life Test Protocol"
+    },
+    {
+      "requirement_id": "REQ-ACC-3",
+      "description": "Accuracy at 41.0℃",
+      "specification": "41.0℃ ± 0.2℃",
+      "source": "Infrared No-Touch Forehead Thermometer Accelerated Life Test Protocol"
+    }
+  ],
+  "regulations": [
+    {
+      "regulation_id": "IEC 80601-2-30:2009+A1:2013",
+      "title": "Medical Electrical Equipment – Part 2-30: Special Requirements for Basic Safety and Basic Performance of Non-invasive Automatic Sphygmomanometer",
+      "note": "Referenced in report context on page 12 of 15"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Report Number",
+      "value": "A20107"
+    },
+    {
+      "type": "Sample Number",
+      "value": "YP2407017"
+    },
+    {
+      "type": "LOT Number",
+      "value": "KE04"
+    }
+  ],
+  "persons": [
+    {
+      "role": "Approver",
+      "name": null
+    },
+    {
+      "role": "Prepared by",
+      "name": null
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The damp-heat aging test was carried out by Tianxu (Tianjin) Testing Technology Service Co., LTD. The tested sample includes: 1 pcs Infrared No-Touch Forehead Thermometer. The basic functions of the sample are normal before and after the test.",
+      "topic_tags": [
+        "aging test",
+        "subcontractor",
+        "sample condition",
+        "functional verification"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Damp-Heat Accelerated Aging",
+        "Accuracy Test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test Conclusion: The accuracy of the tested Infrared No-Touch Forehead Thermometer meets the requirements of the Infrared No-Touch Forehead Thermometer Accelerated Life Test Protocol. Report date: July 11, 2024.",
+      "topic_tags": [
+        "test conclusion",
+        "accuracy",
+        "accelerated life test",
+        "compliance"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Accuracy",
+        "Infrared No-Touch Forehead Thermometer Accelerated Life Test Protocol"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Damp-heat Accelerated aging test conditions: Temperature: 40℃; Humidity: 95% RH; Time: 14.8h. Test environment during measurement: 16℃~24℃, 40%RH~64%RH.",
+      "topic_tags": [
+        "aging conditions",
+        "temperature",
+        "humidity",
+        "test environment"
+      ],
+      "related_subjects": [
+        "Damp-Heat Accelerated Aging",
+        "Accuracy Test",
+        "PT9L"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+```json
+{
+  "assigned_agent": "DMR/SOP Agent",
+  "review_focus": "外购供应商图纸受控状态四维核查：①PT9L EBOM中75CEE0散热器金属套的料号/版本号/受控标识；②开放问题C-5的关闭记录或设计评审决议；③本厂外购件图纸纳入DMR的管理SOP符合性；④天津小泉在合格供应商清单中的资质状态",
+  "agent_input": {
+    "claim": "散热器金属套图纸（75CEE0-Model.pdf）为外购供应商天津小泉原图，图号GXT-001，尚未转换为本厂标准图号体系，且其在PT9L EBOM中的受控状态不明。",
+    "context_summary": "已确认证据：①DMR-118证实75CEE0-Model.pdf为天津小泉精密金属制品有限公司2018-09-17提供的外购供应商原图，用于PT9L红外探头组件散热器金属套；②DMR-123证实开放问题C-5明确记录了GXT-001图号是否需转换为本厂T-Z1-Pxx标准图号体系的待决问题，无关闭记录；③DMR-120提供图纸尺寸公差技术内容，属辅助证据。仍缺失的关键证据：PT9L EBOM中75CEE0条目的受控状态字段（料号/版本号/受控标识）；设计输出清单二中该图纸的签批/受控章记录；C-5问题的关闭记录或设计评审决议；本厂外购件图纸管理SOP；天津小泉在AVL/ASL中的资质记录；75CEE0-Model.pdf的ECO/ECR变更历史及签批记录。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-118",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 8,
+        "evidence_type": "supplier_origin_confirmation",
+        "relevance": "直接确认75CEE0-Model.pdf为外购供应商天津小泉精密金属制品有限公司2018-09-17原图，非本厂自制结构件图纸",
+        "source_text": "> **关键背景**：本图非 T-Z1/PT9L 自制结构件，是 **外购供应商图纸**（天津小泉精密金属制品有限公司 2018-09-17），用于 PT9L 红外探头组件中的\"散热器金属套\"，与 `FDIR-V14_散热器压块_REV01_0714.pdf` 配合使用（见技术要求第 4 条）。",
+        "verified": true
+      },
+      {
+        "evidence_id": "DMR-123",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 120,
+        "evidence_type": "open_issue_record",
+        "relevance": "直接证明图号转换问题（GXT-001 vs T-Z1-Pxx）作为开放问题C-5存在，且无关闭记录，支持claim中'尚未转换为本厂标准图号体系'的陈述",
+        "source_text": "| C-5 | 是否需要保留供应商原图（GXT-001 / 天津小泉），还是要换为本厂标准化的 T-Z1-Pxx 图号 | 项目管理 |",
+        "verified": true
+      },
+      {
+        "evidence_id": "DMR-120",
+        "doc_id": "F0174",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\75CEE0-Model.pdf.md",
+        "line": 107,
+        "evidence_type": "drawing_content",
+        "relevance": "图纸内容证据，确认该图纸存在具体技术参数，可辅助判断图纸是否为完整技术文件，但不直接涉及受控状态",
+        "source_text": "- **总长 11.79⁻⁰·⁰⁵⁻⁰**：**只能小不能大**——避免影响装配链。",
+        "verified": true
+      }
+    ],
+    "review_instructions": {
+      "dimension_1_ebom_control": {
+        "label": "EBOM受控维度",
+        "action": "在PT9L EBOM文件（通常位于'设计输出'或'物料清单'目录）中检索75CEE0或'散热器金属套'条目，确认是否存在受控料号、版本号及受控标识",
+        "defect_trigger": "若EBOM中无该条目，或标注为'待定/未受控'，则判定为实质性设计输出缺陷",
+        "suggested_queries": ["PT9L EBOM 散热器金属套", "PT9L BOM 75CEE0", "PT9L 物料清单 受控"]
+      },
+      "dimension_2_c5_closure": {
+        "label": "图号转换决策维度",
+        "action": "检索C-5问题的关闭记录、设计评审决议或项目管理问题跟踪表，确认该开放问题是否已被正式决策（保留GXT-001还是转换为T-Z1-Pxx）",
+        "defect_trigger": "若C-5在设计冻结前无关闭证据，则图号体系不一致属于未解决的设计输出缺陷",
+        "suggested_queries": ["C-5 关闭 图号 GXT-001", "设计评审 开放问题 关闭记录 PT9L", "问题跟踪 C-5 决议"]
+      },
+      "dimension_3_sop_compliance": {
+        "label": "SOP符合性维度",
+        "action": "检索本厂外购件图纸纳入DMR/DHF的管理程序（SOP），判断GXT-001原图是否满足最低受控要求，特别是是否强制要求转换图号",
+        "defect_trigger": "若SOP要求外购图纸必须转换图号方可受控，而C-5问题未关闭，则构成SOP不符合项；若SOP允许保留供应商原图号，则'尚未转换'不构成缺陷",
+        "suggested_queries": ["外购件图纸 管理程序 SOP", "供应商图纸 纳入 受控 程序", "图纸管理规定 外购"]
+      },
+      "dimension_4_supplier_qualification": {
+        "label": "供应商资质维度",
+        "action": "在合格供应商清单（AVL/ASL）中检索天津小泉精密金属制品有限公司，确认其资质状态",
+        "defect_trigger": "若天津小泉未在合格供应商清单中，则外购图纸来源合规性存疑，claim严重程度应升级",
+        "suggested_queries": ["合格供应商清单 天津小泉", "AVL ASL 天津小泉精密", "供应商资质 散热器金属套"]
+      },
+      "evidence_insufficiency_instruction": "在无法获取EBOM受控状态记录和C-5关闭证据的情况下，不应直接裁定claim为confirm或dismiss，应标注decision_value为'needs_more_context'，并在备注中注明'证据不足，建议升级为P1并要求设计团队提供EBOM截图及C-5关闭记录'",
+      "current_evidence_confidence": {
+        "sub_claim_1_supplier_origin": "HIGH——DMR-118和DMR-123强支持，外购供应商天津小泉原图、图号GXT-001可信度高",
+        "sub_claim_2_no_conversion": "MEDIUM-HIGH——DMR-123的C-5开放问题间接支持，但无关闭记录作为反证",
+        "sub_claim_3_ebom_status_unknown": "UNKNOWN——完全无证据，既无支持也无反驳，需补充EBOM检索"
+      }
+    },
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "task_metadata": {
+      "task_id": "CTX-S-0020",
+      "gap_source": "semantic",
+      "source_id": "LLM-0060",
+      "severity": "P2",
+      "round": 1,
+      "escalation_threshold": "若EBOM受控状态缺失且C-5无关闭记录同时成立，建议升级为P1"
+    }
+  }
+}
+```

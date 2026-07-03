@@ -1,0 +1,24 @@
+```json
+{
+  "agent": "Hardware Agent",
+  "summary": "对MC-CLUSTER-0096和MC-CLUSTER-0098两个第一轮needs_more_context机械候选cluster进行最终裁决。MC-CLUSTER-0096中各公差值分属不同测量对象（测试设备精度、环境温度容差、产品测量精度），并非同一参数的跨阶段矛盾，当前证据不构成可确认错误。MC-CLUSTER-0098中±0.03为某尺寸的公差标注，±0.1为通用精度等级，两者属于同一图纸内不同精度等级的合理并存，nearby_context显示该标注已被审查确认（[x]），不构成文件错误。两个cluster均裁决为dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0096",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "false_positive_parameter_context_mismatch",
+      "claim": "各公差值分属不同测量对象，非同一参数跨阶段矛盾，不构成DHF/DMR不一致错误",
+      "reason": "nearby_context明确显示：±0.02℃为恒温水槽精度要求（测试设备参数，第200行），±2.0℃为恒温房环境温度容差（测试环境参数，第199行），±0.1V为工作电压容差（电气参数，第197行），±0.3℃为产品测量精度规格。这些公差值分属不同物理量和不同测量对象，cluster将其归并为同一参数的多值冲突属于误报。source_text中跨阶段标注（Stage 01/04/11/12/18）是系统检索到同类温度公差词汇的结果，并非同一规格在不同阶段取不同值的证据。当前证据不能证明产品测量精度规格在各阶段存在受控缺陷，当前证据不构成可确认错误。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0098",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "false_positive_tolerance_grade_by_design",
+      "claim": "开关帽图纸中Level A精度±0.03与Level B精度±0.1为同一图纸内不同精度等级的合理并存，非错误标注",
+      "reason": "nearby_context第151行显示该条目已被审查标记为[x]（通过），说明审查者已确认该标注存在并认为其合规。±0.03为某特定尺寸（0.1±0.03）的公差，±0.1为通用Level B精度等级，两者在同一图纸中并存是机械图纸的常规做法：关键配合尺寸采用更严格的Level A精度，其余尺寸采用通用Level B精度。source_text中出现的电压值（2.7V、3.3V等）系系统将机械公差数值与电气参数混合检索所致，属于误报。当前证据无法证明该精度标注缺乏设计依据或与其他文件存在矛盾，当前证据不构成可确认错误。"
+    }
+  ]
+}
+```

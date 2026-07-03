@@ -1,0 +1,153 @@
+{
+  "agent": "Regulatory Agent",
+  "summary": "PT9L DHF regulatory audit identifies eight substantive findings spanning unsigned approval fields across all risk management documents, dual ASTM E1965 version citation without documented transition rationale, inconsistent EN ISO 80601-2-56 and MDR 2017/745 applicability between design input stages, absent 510(k) responsibility agreement for 'andon', biocompatibility reports conducted on PT5 samples rather than PT9L, IFT-prefixed document numbers on active PT9L risk management plans, a historical-folder risk plan (F0013) carrying a PT9L-series document number, and the operation guide referencing MDD rather than MDR for biocompatibility compliance.",
+  "review_notes": [
+    "ISO 14971:2019, EN ISO 14971:2019, and EN ISO 14971:2019/A11:2021 are consistently cited as the governing risk management standards across all active risk documents (REG-002, REG-004, REG-016, REG-032, REG-047).",
+    "IEC 60601-1:2005+AMD1:2012+AMD2:2020 Ed.3.2 and IEC 60601-1-2:2014+A1:2020 Ed.4.1 are consistently cited in both the historical and active risk assessment reports (REG-007, REG-008, REG-010, REG-011, REG-020, REG-021, REG-036, REG-037, REG-049, REG-050, REG-052, REG-053).",
+    "IEC 60601-1-11:2015+A1:2020 is consistently cited for home healthcare environment applicability (REG-009, REG-010, REG-052).",
+    "Transport test reports (cold-hot cycle, compression, simulated transport) carry handwritten approval signatures per REG-138, REG-139, REG-140, which is consistent with physical test records.",
+    "The design verification plan and report both mark CE (EN ISO 80601-2-56) and MDR 2017/745 as not applicable (REG-120, REG-121, REG-127, REG-130), which is internally consistent between plan and report.",
+    "GB/T 16886 series (Parts 2, 5, 10, 12) are consistently cited across all five biocompatibility test reports (REG-088 through REG-116).",
+    "DFMEA files reference IEC 60601-1 marking durability requirements (REG-065, REG-066), indicating some traceability to the applicable safety standard."
+  ],
+  "findings": [
+    {
+      "finding_type": "unsigned_approval_fields_across_risk_management_file",
+      "severity": "P1",
+      "claim": "All eight active and historical risk management documents in the PT9L DHF carry approval fields with no recorded date or named approver, rendering none of the risk management documents demonstrably approved under a controlled document system.",
+      "rationale": "Every risk management document in the evidence catalog — Risk Management Plans (REG-001, REG-003, REG-015, REG-031, REG-046), Risk Assessment Reports (REG-006, REG-019, REG-035, REG-048), Verification of Risk Control Measures reports (REG-012, REG-024, REG-040, REG-054), and Risk Management Reports (REG-013, REG-027, REG-043, REG-056) — shows the approval field as 'Approved by (Technical Director) Date:' with no actual signature, name, or date populated. ISO 14971:2019 requires that the risk management file be maintained under a controlled document system with defined responsibilities. Blank approval fields across all documents indicate that formal approval has not been recorded in the DHF corpus.",
+      "evidence_ids": [
+        "REG-001",
+        "REG-003",
+        "REG-006",
+        "REG-012",
+        "REG-013"
+      ],
+      "challenge_questions": [
+        "Can the manufacturer produce signed paper originals or a document management system audit trail showing dated approvals for each of these risk management documents?",
+        "What is the document control procedure that governs approval of risk management file documents, and does it permit electronic or wet-ink signatures outside the document body?",
+        "If approvals exist only on physical originals, why are the digital DHF copies not updated to reflect the approved status, version, and date?"
+      ]
+    },
+    {
+      "finding_type": "ift_prefixed_document_numbers_on_active_pt9l_risk_management_plan",
+      "severity": "P1",
+      "claim": "The active PT9L Risk Management Plan (F0017) and its PT9L-prefixed counterpart (F0021) both carry document number IFT-FXJH01 rather than PT9L-FXJH01, creating a product-identity mismatch in the controlled document numbering system.",
+      "rationale": "REG-014 shows the active Risk Management Plan file title as 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable' and REG-030 shows the PT9L-prefixed version as 'PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable'. Both carry document number IFT-FXJH01, not PT9L-FXJH01 as required by the project document ID pattern. The project profile identifies PT9L-FXJH01 as the correct document number for the PT9L Risk Management Plan. An IFT-prefixed document number suggests the document originated for a different product (IFT) and was repurposed without a formal document number change, undermining traceability and controlled status.",
+      "evidence_ids": [
+        "REG-014",
+        "REG-015",
+        "REG-030",
+        "REG-031"
+      ],
+      "challenge_questions": [
+        "What product does the 'IFT' prefix designate, and is there a formal change record showing this document was re-scoped from IFT to PT9L?",
+        "Has a document number change request been raised to assign PT9L-FXJH01 to this plan, and if so, where is that record in the DHF?",
+        "Does the document control system treat IFT-FXJH01 and PT9L-FXJH01 as the same document or as separate controlled items?"
+      ]
+    },
+    {
+      "finding_type": "pt2l_risk_plan_carrying_pt9l_series_document_number",
+      "severity": "P1",
+      "claim": "Document F0013, filed in the '2L风险改 - 历史文件' folder and titled as a PT2L Risk Management Plan, internally carries a PT9L-series document number, creating an irreconcilable product-identity conflict in the controlled document record.",
+      "rationale": "REG-003 shows the approval field of F0013 (rel_path: '03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0') and REG-004 shows its risk management standard citation. The project profile primary scope rules note that F0013 'carries a PT9L document number internally' despite being a PT2L-titled document in a historical folder. A document that is simultaneously identified as PT2L in its title and PT9L in its internal document number cannot be unambiguously assigned to either product's controlled document system, and its presence in the DHF corpus without a formal cross-reference or obsolescence notice creates a traceability gap.",
+      "evidence_ids": [
+        "REG-003",
+        "REG-004",
+        "REG-005"
+      ],
+      "challenge_questions": [
+        "What is the internal document number shown on F0013, and does it match PT9L-FXJH01 or another PT9L-series identifier?",
+        "Has F0013 been formally superseded or obsoleted in the document control system, and is there a change notice linking it to the current PT9L risk management plan?",
+        "Why does a PT2L historical document carry a PT9L document number — was this a copy-paste error during document creation, and has it been corrected in the current controlled version?"
+      ]
+    },
+    {
+      "finding_type": "dual_astm_e1965_version_citation_without_transition_documentation",
+      "severity": "P2",
+      "claim": "Both ASTM E1965-98:2016 and ASTM E1965-98:2023 are listed as applicable standards in the design input and design verification plan/report without any documented rationale for citing two versions simultaneously or a transition plan specifying which version governs conformance testing.",
+      "rationale": "REG-062 and REG-063 show both ASTM E1965-98:2016 and ASTM E1965-98:2023 marked as applicable (■是) in the design input. REG-128 and REG-129 repeat this dual applicability in the design verification plan, and REG-121 and REG-122 confirm both versions are listed as passed in the design verification report. REG-071 shows the label review references ASTM E1965-98:2023. REG-073 (operation guide) cites 'ASTM Standard(E1965-98)' without specifying a year. No evidence in the corpus documents why two editions of the same standard are simultaneously applicable, which edition takes precedence for 510(k) submission, or whether a formal standard transition assessment was conducted when the 2023 edition superseded the 2016 edition.",
+      "evidence_ids": [
+        "REG-062",
+        "REG-063",
+        "REG-071",
+        "REG-073",
+        "REG-121"
+      ],
+      "challenge_questions": [
+        "What is the substantive technical difference between ASTM E1965-98:2016 and ASTM E1965-98:2023, and has a gap analysis been performed to confirm the device meets both editions?",
+        "Which edition of ASTM E1965-98 will be cited in the 510(k) submission, and is there a formal decision record in the DHF?",
+        "The operation guide (REG-073) omits the edition year for ASTM E1965-98 — will this be corrected before market release to specify the governing edition?"
+      ]
+    },
+    {
+      "finding_type": "en_iso_80601_2_56_and_mdr_applicability_inconsistency_between_design_input_stages",
+      "severity": "P2",
+      "claim": "The applicability of EN ISO 80601-2-56:2017+A1:2018 and MDR 2017/745 differs between the draft design input (F0031) and the final design verification plan/report (F0121/F0114), and no formal design change or regulatory strategy document in the DHF explains this change in scope.",
+      "rationale": "REG-061 shows EN ISO 80601-2-56:2017+A1:2018 marked as not applicable (□是 ■否) in the design input F0031, while REG-064 shows MDR 2017/745 also marked as not applicable. REG-127 and REG-130 confirm the same not-applicable status in the design verification plan. However, the project profile regulatory baseline notes that 'applicability differs between draft and final design input' for both standards, and REG-059 shows the design input marks only FDA/US as the target market (■FDA, □CE). The label review document (REG-067 through REG-072) filed under the active T1 sample folder references IEC 60601-1-11 and ISO 80601-2-56:2017/AC:2018 as applicable for what appears to be a PT2L/PT3SBT product, creating ambiguity about whether CE/EU scope was reconsidered during T1 sampling. No formal regulatory strategy document or design change notice documenting the decision to exclude EU scope is present in the evidence catalog.",
+      "evidence_ids": [
+        "REG-059",
+        "REG-061",
+        "REG-064",
+        "REG-067",
+        "REG-068"
+      ],
+      "challenge_questions": [
+        "Is there a formal regulatory strategy document or design change notice in the DHF that records the decision to exclude CE marking and MDR 2017/745 from the PT9L scope?",
+        "The label review document (F0082) filed under the T1 sample folder references IEC 60601-1-11 and ISO 80601-2-56 as applicable — does this document apply to PT9L, PT2L, or PT3SBT, and if PT9L, does it contradict the not-applicable determination for EU standards?",
+        "If EU market entry is planned in the future, is there a documented plan for when and how MDR 2017/745 compliance will be established?"
+      ]
+    },
+    {
+      "finding_type": "510k_registration_responsibility_assignment_undocumented_in_dhf",
+      "severity": "P2",
+      "claim": "The project profile records that 510(k) registration responsibility is assigned to 'andon' as the responsible and paying party, but no formal agreement, design transfer record, or regulatory responsibility document evidencing this assignment is present in the supplied DHF evidence catalog.",
+      "rationale": "The project profile states '510(k) registration: andon responsible and paying' as part of the regulatory baseline. None of the 140 evidence items in the catalog reference a contract, memorandum of understanding, design transfer agreement, or regulatory filing responsibility document between the manufacturer and 'andon'. Under 21 CFR Part 807, the 510(k) submitter must be the legal manufacturer or their authorized representative, and the DHF should contain documentation establishing who holds this responsibility and under what terms. The absence of any such record in the DHF corpus means the regulatory submission chain cannot be verified from the design history file alone.",
+      "evidence_ids": [
+        "REG-059",
+        "REG-117",
+        "REG-118",
+        "REG-125"
+      ],
+      "challenge_questions": [
+        "Where in the DHF or quality management system is the formal agreement or contract with 'andon' that assigns 510(k) submission responsibility?",
+        "Is 'andon' the legal manufacturer, the US agent, or a contract regulatory affairs organization, and is this distinction documented?",
+        "Has the design transfer to 'andon' for 510(k) purposes been completed under a formal design transfer procedure, and is there a design transfer record in the DHF?"
+      ]
+    },
+    {
+      "finding_type": "biocompatibility_reports_conducted_on_pt5_samples_not_pt9l",
+      "severity": "P2",
+      "claim": "All five biocompatibility test reports in the DHF were conducted on PT5 product samples, not PT9L samples, and no bridging justification or material equivalence assessment is present in the evidence catalog to support their applicability to PT9L.",
+      "rationale": "REG-088 through REG-116 cover five biocompatibility reports (cytotoxicity, two skin irritation, two skin sensitization) all filed under the path '11 T1样机\\生物相容性\\同PT5生物相容性报告\\' with report IDs prefixed 'PT5-'. The operation guide (REG-074) states that materials ABS, TPU, PMMA, PC have passed ISO 10993-5 and ISO 10993-10, but the cited reports are for PT5. ISO 10993-1:2018 requires that biocompatibility evaluation be conducted on the actual device or on materials demonstrated to be equivalent. No material equivalence assessment, bridging study, or formal justification document linking PT5 biocompatibility data to PT9L is present in the evidence catalog.",
+      "evidence_ids": [
+        "REG-074",
+        "REG-088",
+        "REG-089",
+        "REG-090",
+        "REG-091"
+      ],
+      "challenge_questions": [
+        "Is there a formal material equivalence assessment or biocompatibility bridging document in the DHF that demonstrates PT9L uses the same materials (ABS, TPU, PMMA, PC) in the same patient-contact configuration as PT5?",
+        "Were any material changes made between PT5 and PT9L that could affect biocompatibility, such as changes in colorants, surface treatments, or contact duration?",
+        "For the 510(k) submission, will new biocompatibility testing on PT9L samples be conducted, or will the PT5 data be submitted with a bridging rationale?"
+      ]
+    },
+    {
+      "finding_type": "operation_guide_references_mdd_instead_of_mdr_for_biocompatibility_compliance",
+      "severity": "P3",
+      "claim": "The PT9L operation guide states that patient-contact materials comply with 'Medical Device Directive (MDD) requirements', but MDD 93/42/EEC has been repealed and replaced by MDR 2017/745, making this a regulatory reference to a superseded directive.",
+      "rationale": "REG-074 states: 'They are in compliance with the Medical Device Directive (MDD) requirements.' MDR 2017/745 fully replaced MDD 93/42/EEC with effect from 26 May 2021. Referencing MDD in a document dated 20240828 (per REG-073 file name) is factually incorrect and could mislead notified bodies, regulators, or users about the applicable EU regulatory framework. This is compounded by the fact that the design input marks CE/MDR as not applicable (REG-064), making the MDD reference in the IFU internally inconsistent with the regulatory scope decision.",
+      "evidence_ids": [
+        "REG-074",
+        "REG-064",
+        "REG-076"
+      ],
+      "challenge_questions": [
+        "Will the MDD reference in the operation guide be corrected to either remove the EU regulatory claim or update it to reference MDR 2017/745 before market release?",
+        "Given that the design input marks CE as not applicable, why does the operation guide contain any EU directive compliance statement for biocompatibility?",
+        "Is the WEEE Directive reference (REG-076) in the same operation guide also inconsistent with the decision to exclude EU market scope?"
+      ]
+    }
+  ]
+}

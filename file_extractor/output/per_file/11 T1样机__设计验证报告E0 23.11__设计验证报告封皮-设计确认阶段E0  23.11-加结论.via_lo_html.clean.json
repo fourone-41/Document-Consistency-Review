@@ -1,0 +1,101 @@
+{
+  "document": {
+    "title": "设计验证报告封皮-设计确认阶段",
+    "doc_type": "设计验证报告",
+    "version": "V1.0"
+  },
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-Q1YB01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "子文件编号-通用要求部分",
+      "value": "PT9L-Q1TY01 V1.0"
+    },
+    {
+      "id_type": "子文件编号-法规标准部分",
+      "value": "PT9L-Q1BZ01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本设计验证报告处于设计确认阶段，包括两部分子文件：设计验证报告－通用要求部分（PT9L-Q1TY01 V1.0）和设计验证报告－法规标准部分（PT9L-Q1BZ01 V1.0）。结论栏中\"设计验证合格\"与\"设计验证不合格\"均未勾选，表明结论尚未最终确认填写完毕。",
+      "topic_tags": [
+        "设计验证",
+        "设计确认阶段",
+        "红外体温计",
+        "结论"
+      ],
+      "related_subjects": [
+        "PT9L-Q1TY01 V1.0",
+        "PT9L-Q1BZ01 V1.0",
+        "PT9L"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/设计验证报告E0 23.11/设计验证报告封皮-设计确认阶段E0  23.11-加结论.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-Q1TY01 V1.0",
+      "to": "设计验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-Q1BZ01 V1.0",
+      "to": "设计验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "设计验证",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-Q1YB01 V1.0",
+      "to": "PT9L-Q1TY01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-Q1YB01 V1.0",
+      "to": "PT9L-Q1BZ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-Q1YB01 V1.0",
+      "to": "PT9L-Q1TY01 V1.0",
+      "properties": {
+        "detail_type": "子文件-通用要求部分"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-Q1YB01 V1.0",
+      "to": "PT9L-Q1BZ01 V1.0",
+      "properties": {
+        "detail_type": "子文件-法规标准部分"
+      }
+    }
+  ],
+  "_claims": []
+}

@@ -1,0 +1,232 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "111-112 of 181"
+  },
+  "tests": [
+    {
+      "clause": "5.4",
+      "test_name": "Risk Assessment - Other Conditions",
+      "standard_ref": "ISO 14971",
+      "verdict": "P",
+      "document_ref": "PT9L-FXPJ01 V1.0",
+      "remarks": "Risks of each hazardous situation are estimated"
+    },
+    {
+      "clause": "5.9.2",
+      "test_name": "Determination of ACCESSIBLE parts",
+      "verdict": "P",
+      "items": [
+        {
+          "location": "Enclosure outside",
+          "determination_method": "visual"
+        },
+        {
+          "location": "The probe",
+          "determination_method": "visual"
+        },
+        {
+          "location": "battery compartment",
+          "determination_method": "visual"
+        }
+      ]
+    },
+    {
+      "clause": "7.1.2",
+      "test_name": "Legibility of Marking",
+      "verdict": "P",
+      "ambient_illuminance": "Between 100lx and 1500lx",
+      "items": [
+        {
+          "marking_type": "Outside Markings (Clause 7.2)",
+          "result": "Reads the marking correctly"
+        },
+        {
+          "marking_type": "Inside Markings (Clause 7.3)",
+          "result": "No such parts"
+        },
+        {
+          "marking_type": "Controls & Instruments (Clause 7.4)",
+          "result": "Reads the marking correctly"
+        },
+        {
+          "marking_type": "SAFETY SIGNS (Clause 7.5)",
+          "result": "Reads the marking correctly"
+        },
+        {
+          "marking_type": "Symbols (Clause 7.6)",
+          "result": "Reads the marking correctly"
+        }
+      ]
+    },
+    {
+      "clause": "7.1.3",
+      "test_name": "Durability of marking test",
+      "verdict": "P",
+      "items": [
+        {
+          "characteristic": "Material of Marking Label",
+          "value": "PET",
+          "verdict": "P"
+        },
+        {
+          "characteristic": "Ink/other printing material or process",
+          "value": "Oiliness",
+          "verdict": "P"
+        },
+        {
+          "characteristic": "Material of Warning Label",
+          "value": "No warning label used",
+          "verdict": "N/A"
+        },
+        {
+          "characteristic": "Ink/other printing material or process (Warning)",
+          "value": "No other material",
+          "verdict": "N/A"
+        },
+        {
+          "characteristic": "Other",
+          "value": "none",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "7.2.2",
+      "test_name": "RM RESULTS TABLE: Identification",
+      "verdict": "P",
+      "iso14971_clauses": [
+        {
+          "clause": "5.2",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Intended use and identification of characteristics related to safety issue analyzed and recorded",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.3",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.4",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Risk estimation recorded",
+          "verdict": "P"
+        },
+        {
+          "clause": "6",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Risk evaluation recorded",
+          "verdict": "P"
+        },
+        {
+          "clause": "7.4",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Residual risk evaluated.",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "7.2.13",
+      "test_name": "RM RESULTS TABLE: Physiological effects (SAFETY SIGNS and warning)",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.17",
+      "test_name": "RM RESULTS TABLE: Protective packaging",
+      "verdict": "P",
+      "iso14971_clauses": [
+        {
+          "clause": "5.2",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Have special handling instruction for transportation or storage needed.",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.3",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "clause": "5.4",
+          "document_ref": "PT9L-FXGB01 V1.0",
+          "remarks": "Risk estimation recorded",
+          "verdict": "P"
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-FXPJ01 V1.0",
+      "description": "Risk Assessment Report"
+    },
+    {
+      "id": "PT9L-FXGB01 V1.0",
+      "description": "Risk Management Report"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "IEC60601-1",
+      "version": "2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "name": "EN60601-1",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "name": "ISO 14971",
+      "description": "Risk Management for Medical Devices"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Marking legibility test: Observer, with a visual acuity of 0 on the log Minimum Angle of Resolution (log MAR) scale or 6/6 (20/20) and is able to read N6 of the Jaeger test card in normal room lighting condition (~500lx), reads marking at ambient illuminance least favourable level in the range of 100 lx to 1,500 lx. The ME EQUIPMENT or its part was positioned so that the viewpoint was the intended position of the OPERATOR or if not defined at any point within the base of a cone subtended by an angle of 30° to the axis normal to the centre of the plane of the marking and at a distance of 1 m.",
+      "topic_tags": [
+        "marking legibility",
+        "visual acuity",
+        "ambient illuminance",
+        "log MAR",
+        "IEC60601-1 clause 7.1.2"
+      ],
+      "related_subjects": [
+        "7.1.2 Legibility of Marking"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Durability of marking test procedure: Marking rubbed by hand, first for 15 s with a cloth rag soaked with distilled water, then for 15 s with a cloth rag soaked with ethanol 96%, and then for 15 s with a cloth rag soaked with isopropyl alcohol.",
+      "topic_tags": [
+        "marking durability",
+        "rubbing test",
+        "distilled water",
+        "ethanol",
+        "isopropyl alcohol",
+        "IEC60601-1 clause 7.1.3"
+      ],
+      "related_subjects": [
+        "7.1.3 Durability of marking test"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Accessible parts determination methods include: visual; rigid test finger; jointed test finger; test hook. Locations evaluated: Enclosure outside, The probe, battery compartment - all determined by visual inspection.",
+      "topic_tags": [
+        "accessible parts",
+        "enclosure",
+        "probe",
+        "battery compartment",
+        "IEC60601-1 clause 5.9.2"
+      ],
+      "related_subjects": [
+        "5.9.2 Determination of ACCESSIBLE parts"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "document": {
+    "title": "体温计功能测试报告",
+    "doc_type": "测试报告"
+  },
+  "tests": [
+    {
+      "test_id": "7-1",
+      "item": "单位切换功能 - 关机时长按测量按键8s以上",
+      "condition": "关机时，长按测量按键8s以上",
+      "expected_value": "当前的单位图标，闪烁显示",
+      "pass_criteria": "当前的单位图标闪烁显示",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "7-1b",
+      "item": "单位切换功能 - 短按测量按键",
+      "condition": "短按测量按键",
+      "expected_value": "蜂鸣器短鸣，被选择的单位图标，闪烁显示",
+      "pass_criteria": "蜂鸣器短鸣，被选择的单位图标闪烁显示",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "7-2",
+      "item": "单位切换功能 - 长按2秒测量按键",
+      "condition": "长按2秒测量按键",
+      "expected_value": "蜂鸣器短鸣，LCD显示选定的单位图标",
+      "pass_criteria": "蜂鸣器短鸣，LCD显示选定的单位图标",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "7-3",
+      "item": "单位切换功能 - 超过2S没有按键操作",
+      "condition": "超过2S没有按键操作",
+      "expected_value": "体温计进入关机状态",
+      "pass_criteria": "体温计进入关机状态",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "8-1",
+      "item": "测量功能 - 物温模式37℃黑体",
+      "condition": "选中物温模式，常温下将体温计对准37℃黑体，按下测量按键",
+      "expected_value": "LCD显示37±0.2℃，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示37±0.2℃，背光为白色，单次长鸣500ms",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "8-2a",
+      "item": "测量功能 - 成人体温模式35℃黑体",
+      "condition": "选中成人体温模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示36.5左右，背光为白色，单次长鸣500ms",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "8-2b",
+      "item": "测量功能 - 成人体温模式36.5℃黑体",
+      "condition": "选中成人体温模式，常温下将体温计对准36.5℃黑体，按下测量按键",
+      "expected_value": "LCD显示37.7左右，背光为橙色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示37.7左右，背光为橙色，连续短鸣4次"
+    },
+    {
+      "test_id": "8-2c",
+      "item": "测量功能 - 成人体温模式38℃黑体",
+      "condition": "选中成人体温模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示39.2左右，背光为红色，连续短鸣4次"
+    },
+    {
+      "test_id": "8-3a",
+      "item": "测量功能 - 婴儿体温模式35℃黑体",
+      "condition": "选中婴儿体温模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示36.5左右，背光为白色，单次长鸣500ms"
+    },
+    {
+      "test_id": "8-3b",
+      "item": "测量功能 - 婴儿模式38℃黑体",
+      "condition": "选中婴儿模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示39.2左右，背光为红色，连续短鸣4次"
+    },
+    {
+      "test_id": "8-4a",
+      "item": "测量功能 - 成人体温模式25℃黑体（低于下限）",
+      "condition": "选中成人体温模式，常温下将体温计对准25℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光为白色，无蜂鸣"
+    },
+    {
+      "test_id": "8-4b",
+      "item": "测量功能 - 成人体温模式40℃黑体（高于上限）",
+      "condition": "选中成人体温模式，常温下将体温计对准40℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光为白色，无蜂鸣"
+    },
+    {
+      "test_id": "9-1",
+      "item": "错误检测功能 - 工作温度低于下限",
+      "condition": "将体温计放置5℃环境温度下静置1H",
+      "expected_value": "LCD显示\"Err\" 图标闪烁15秒后关机",
+      "pass_criteria": "LCD显示Err图标闪烁15秒后关机",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "9-2",
+      "item": "错误检测功能 - 工作温度高于上限",
+      "condition": "将体温计放置42℃环境温度下静置1H",
+      "expected_value": "LCD显示\"Err\" 图标闪烁15秒后关机",
+      "pass_criteria": "LCD显示Err图标闪烁15秒后关机",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-1",
+      "item": "记忆功能 - 物温模式测量记录",
+      "condition": "体温计物温模式下，对准35℃黑体测量",
+      "expected_value": "LCD显示测试完成的结果，并记录",
+      "pass_criteria": "LCD显示测试完成的结果并记录",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-2",
+      "item": "记忆功能 - 进入记忆浏览模式",
+      "condition": "在关机态，长按设置键3秒，进入记忆浏览模式",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录（显示当前测量模式、测量数值和测量记录数）",
+      "pass_criteria": "LCD正确显示当前测量模式、测量数值和测量记录数",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-3",
+      "item": "记忆功能 - 短按设置按键显示下一条记录",
+      "condition": "短按设置按键",
+      "expected_value": "LCD显示下一条记忆结果",
+      "pass_criteria": "LCD显示测试完成的记忆结果",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-4",
+      "item": "记忆功能 - 体温模式测量记录",
+      "condition": "切换到体温模式，对准35℃黑体测量",
+      "expected_value": "LCD显示测试完成的结果，并记录",
+      "pass_criteria": "LCD显示测试完成的结果并记录",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-5",
+      "item": "记忆功能 - 体温模式下进入记忆浏览模式",
+      "condition": "在关机态，长按设置键3秒，进入记忆浏览模式",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录",
+      "pass_criteria": "LCD正确显示当前测量模式、测量数值和测量记录数",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-6",
+      "item": "记忆功能 - 短按设置按键显示下一条记录（体温模式）",
+      "condition": "短按设置按键显示下一条记录",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录",
+      "pass_criteria": "LCD显示测试完成的记忆结果",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-7",
+      "item": "记忆功能 - 清空记忆",
+      "condition": "在关机态时，长按测量键和设置键8s",
+      "expected_value": "开始自动清除记忆，全部记录被清空",
+      "pass_criteria": "记忆结果清空",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-8",
+      "item": "记忆功能 - 清空后查看记忆",
+      "condition": "进行清空记忆操作后，进入记忆查看界面",
+      "expected_value": "记忆结果为空",
+      "pass_criteria": "记忆结果为空",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "3-3",
+      "item": "设置功能 - 超时关机",
+      "condition": "设置时超过15S没有按键操作",
+      "expected_value": "体温计进入关机状态",
+      "pass_criteria": "体温计进入关机状态"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人体体温测量过程中的其他情况测试（状态-操作交叉矩阵）：A2全显状态下，B1-B5所有按键操作均无反应；A3关机状态下，B1短按唤醒测量并显示结果，B2长按2秒完成深度测量/长按8秒进入单位切换模式，B3无反应，B4进入记忆查询模式，B5无反应；A4显示测量结果状态下，B1显示测量结果，B2长按2秒完成深度测量/长按8秒进入单位切换模式，B3切换测量模式，B4进入记忆查询模式，B5显示静音图标；A5模式设置界面状态下，B1退出模式设置界面并保存之前的模式进入测量，B2长按2秒完成深度测量/长按8秒进入单位切换模式，B3切换模式选择，B4进入记忆查询模式，B5显示静音图标。",
+      "topic_tags": [
+        "体温计",
+        "状态机",
+        "按键操作",
+        "测量模式",
+        "静音",
+        "记忆查询"
+      ],
+      "related_subjects": [
+        "测量功能",
+        "单位切换功能",
+        "记忆功能",
+        "模式设置"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测量功能说明：1. 测量结束后蜂鸣器提示，且LCD显示测量结果；2. 测量结果低于显示下限，LCD显示\"---℃\"；3. 测量结果高于显示上限，LCD显示\"---℃\"。",
+      "topic_tags": [
+        "测量功能",
+        "蜂鸣器",
+        "LCD显示",
+        "显示上下限"
+      ],
+      "related_subjects": [
+        "测量功能测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "错误检测功能说明：1. 工作温度低于温度下限；2. 工作温度高于温度上限。工作温度范围为5℃至42℃，超出范围时LCD显示\"Err\"图标闪烁15秒后关机。",
+      "topic_tags": [
+        "错误检测",
+        "工作温度",
+        "Err显示",
+        "关机"
+      ],
+      "related_subjects": [
+        "错误检测功能测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "记忆功能说明：1. 完成测量后，进入记忆查询界面查询；2. 切换测试模式后，再次进入查询；3. 清空记忆，查看是否有效。记忆查询通过在关机态长按设置键3秒进入记忆浏览模式，可短按设置按键切换显示下一条记录，包含当前测量模式、测量数值和测量记录数。在关机态长按测量键和设置键8秒后清空全部记录。",
+      "topic_tags": [
+        "记忆功能",
+        "记忆查询",
+        "清空记忆",
+        "测量模式",
+        "记录数"
+      ],
+      "related_subjects": [
+        "记忆功能测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "单位切换功能说明：通过测量按键切换摄氏度和华氏度单位。在关机时长按测量按键8秒以上进入单位切换模式，单位图标闪烁显示；短按测量按键蜂鸣器短鸣并切换选中单位；长按2秒测量按键确认选择，蜂鸣器短鸣，LCD显示选定单位图标；超过2秒无按键操作体温计进入关机状态。",
+      "topic_tags": [
+        "单位切换",
+        "摄氏度",
+        "华氏度",
+        "按键操作"
+      ],
+      "related_subjects": [
+        "单位切换功能测试"
+      ]
+    }
+  ]
+}

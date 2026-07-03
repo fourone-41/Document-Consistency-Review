@@ -1,0 +1,825 @@
+{
+  "document": {
+    "title": "散热器金属套 2D图读图报告",
+    "document_number": "GXT-001",
+    "drawing_number": "5B44C",
+    "file_name": "75CEE0-Model.pdf",
+    "version": "GXT-001",
+    "date": "2018-09-17",
+    "report_date": "2026-06-02",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/75CEE0-Model.pdf",
+    "document_type": "2D工程图读图报告",
+    "skill_used": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "散热器金属套",
+      "drawing_number": "5B44C",
+      "version": "GXT-001",
+      "material": "黄铜",
+      "surface_treatment": "电泳黑色",
+      "part_type": "外购件/供应商图纸",
+      "manufacturing_method": "车削件，回转对称结构",
+      "geometry_description": "轴对称回转体，左大右小阶梯轴套形态",
+      "application": "PT9L红外探头组件中的散热器金属套",
+      "associated_product": "PT9L红外探头"
+    }
+  ],
+  "components": [
+    {
+      "name": "散热器金属套",
+      "drawing_number": "5B44C",
+      "document_version": "GXT-001",
+      "material": "黄铜",
+      "surface_treatment": "电泳高光黑色",
+      "supplier": "天津小泉精密金属制品有限公司",
+      "date": "2018-09-17",
+      "default_tolerance": "±0.1",
+      "default_chamfer": "C0.2",
+      "associated_component": "散热器压块（FDIR-V14_散热器压块_REV01_0714.pdf）"
+    },
+    {
+      "name": "散热器压块",
+      "drawing_number": "FDIR-V14",
+      "file_reference": "FDIR-V14_散热器压块_REV01_0714.pdf",
+      "revision": "REV01",
+      "relationship": "与散热器金属套③Ø8.5和④C0.5配合，需能装能拆能过2m跌落"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-001",
+      "description": "材质为黄铜，表面电泳高光黑色，清洗干净，无碰划伤",
+      "source": "技术要求第1条",
+      "category": "材料与表面处理要求"
+    },
+    {
+      "id": "DI-002",
+      "description": "未注公差±0.1，未注倒角C0.2",
+      "source": "技术要求第2条",
+      "category": "通用公差要求"
+    },
+    {
+      "id": "DI-003",
+      "description": "带编号尺寸为重点检测尺寸",
+      "source": "技术要求第3条",
+      "category": "检测要求"
+    },
+    {
+      "id": "DI-004",
+      "description": "3、4号尺寸与散热器压块套配能装能拆能过2m跌落",
+      "source": "技术要求第4条",
+      "category": "配合与跌落要求",
+      "critical": true
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "材料要求",
+      "description": "零件材质为黄铜",
+      "verification_method": "IQC外观检查",
+      "priority": "mandatory"
+    },
+    {
+      "id": "REQ-002",
+      "title": "表面处理要求",
+      "description": "表面电泳高光黑色，清洗干净，无碰划伤",
+      "verification_method": "IQC外观检查",
+      "priority": "mandatory"
+    },
+    {
+      "id": "REQ-003",
+      "title": "通用尺寸公差",
+      "description": "未注公差±0.1，未注倒角C0.2",
+      "priority": "mandatory"
+    },
+    {
+      "id": "REQ-004",
+      "title": "重点检测尺寸",
+      "description": "带圆圈编号①②③④的尺寸为重点检测尺寸（IQC重要项）",
+      "priority": "critical"
+    },
+    {
+      "id": "REQ-005",
+      "title": "配合与跌落要求",
+      "description": "③Ø8.5（+0.02/0）和④C0.5与散热器压块配合：能装、能拆、能过2m跌落测试",
+      "source": "技术要求第4条",
+      "related_component": "散热器压块FDIR-V14",
+      "test_requirement": "2m跌落测试",
+      "priority": "critical"
+    },
+    {
+      "id": "REQ-006",
+      "title": "总长单边负公差",
+      "description": "总长11.79 0/-0.05，只能小不能大，避免影响装配链",
+      "priority": "important"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-001",
+      "name": "2m跌落测试",
+      "description": "散热器金属套与散热器压块装配后必须通过2m跌落测试",
+      "test_level": "组件级（待确认是否为整机级）",
+      "related_dimensions": [
+        "③Ø8.5 +0.02/0",
+        "④C0.5"
+      ],
+      "source": "技术要求第4条",
+      "open_issue": "2m跌落是组件级单点冲击还是整机级，测试方法待确认"
+    },
+    {
+      "id": "TEST-002",
+      "name": "IQC尺寸检测",
+      "description": "对带编号尺寸①②③④进行重点检测",
+      "inspection_items": [
+        "①壁厚0.35±0.02",
+        "②内孔径Ø4.75 +0.03/0",
+        "③外圆台直径Ø8.5 +0.02/0",
+        "④倒角C0.5"
+      ]
+    },
+    {
+      "id": "TEST-003",
+      "name": "配合装拆验证",
+      "description": "与散热器压块的配合验证：能装、能拆",
+      "related_component": "散热器压块FDIR-V14"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件版本号",
+      "value": "GXT-001",
+      "location": "左上角"
+    },
+    {
+      "type": "图番",
+      "value": "5B44C"
+    },
+    {
+      "type": "配合件图纸编号",
+      "value": "FDIR-V14"
+    },
+    {
+      "type": "源PDF文件名",
+      "value": "75CEE0-Model.pdf"
+    }
+  ],
+  "persons": [
+    {
+      "organization": "天津小泉精密金属制品有限公司",
+      "role": "供应商/图纸来源方",
+      "date": "2018-09-17"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "level": "C级",
+      "title": "配合尺寸核对",
+      "description": "与FDIR-V14_散热器压块_REV01_0714.pdf上Ø8.5+C0.5配合处的对应尺寸是否匹配（极限公差链）",
+      "required_source": "散热器压块图",
+      "status": "待确认"
+    },
+    {
+      "id": "C-2",
+      "level": "C级",
+      "title": "功能位置确认",
+      "description": "散热器金属套在PT9L整机中的功能位置（包覆PIR红外传感器？散热？屏蔽？）",
+      "required_source": "3D装配图+工程师",
+      "status": "待确认"
+    },
+    {
+      "id": "C-3",
+      "level": "C级",
+      "title": "材料/表面处理目的确认",
+      "description": "黄铜+电泳黑色是为了散热、屏蔽、还是抗反射？影响IQC测光参数选择",
+      "required_source": "工程师/红外光学SPEC",
+      "status": "待确认"
+    },
+    {
+      "id": "C-4",
+      "level": "C级",
+      "title": "跌落测试级别确认",
+      "description": "2m跌落是组件级单点冲击还是整机级？测试方法",
+      "required_source": "测试SOP",
+      "status": "待确认"
+    },
+    {
+      "id": "C-5",
+      "level": "C级",
+      "title": "图号标准化确认",
+      "description": "是否需要保留供应商原图（GXT-001/天津小泉），还是要换为本厂标准化的T-Z1-Pxx图号",
+      "required_source": "项目管理",
+      "status": "待确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "本图非T-Z1/PT9L自制结构件，是外购供应商图纸（天津小泉精密金属制品有限公司2018-09-17），用于PT9L红外探头组件中的\"散热器金属套\"，与FDIR-V14_散热器压块_REV01_0714.pdf配合使用（见技术要求第4条）。",
+      "topic_tags": [
+        "外购件",
+        "供应商图纸",
+        "PT9L",
+        "红外探头",
+        "散热器金属套"
+      ],
+      "related_subjects": [
+        "散热器金属套",
+        "散热器压块",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "技术要求第4条关键配合声明：本件③Ø8.5（+0.02/0）和④C0.5与\"散热器压块\"（FDIR-V14_散热器压块_REV01_0714.pdf）必须①能装②能拆③能过2m跌落测试。这与T1样机/运输/跌落.pdf中的整机跌落要求应该独立验证。",
+      "topic_tags": [
+        "配合要求",
+        "跌落测试",
+        "2m跌落",
+        "散热器压块",
+        "能装能拆"
+      ],
+      "related_subjects": [
+        "散热器压块",
+        "跌落测试",
+        "配合尺寸③",
+        "配合尺寸④"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "完整尺寸体系说明：图面只有一个主视图（轴向剖面图，含8个直径标注+5个长度标注），无Section、无端面视图。零件为轴对称回转体（车削件）。不对称公差用强制原始形式保留：11.79 0/-0.05、2.85 +0.15/0、Ø4.75 +0.03/0、Ø8.5 +0.02/0，禁止简化为±。",
+      "topic_tags": [
+        "尺寸公差",
+        "不对称公差",
+        "单边公差",
+        "车削件"
+      ],
+      "related_subjects": [
+        "散热器金属套",
+        "尺寸表"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "带编号重点检测尺寸（IQC）：①右端薄段壁厚0.35±0.02（精度最高项）；②右段内孔径Ø4.75 +0.03/0（单边正公差，配合孔）；③右端外圆台直径Ø8.5 +0.02/0（与散热器压块配合，技要4）；④右端45°倒角C0.5（默认±0.1，与散热器压块配合，技要4）。",
+      "topic_tags": [
+        "IQC",
+        "重点检测尺寸",
+        "编号尺寸",
+        "配合尺寸",
+        "壁厚",
+        "内孔径",
+        "外圆台"
+      ],
+      "related_subjects": [
+        "散热器金属套",
+        "IQC检测",
+        "散热器压块"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "无编号尺寸（默认±0.1）完整列表：总长11.79（0/-0.05，只能小不能大）；主体段长10.99（±0.1）；左侧台阶段长0.5（±0.1）；右段长2.85（+0.15/0）；右段薄段长0.83（±0.1）；大端外圆主直径Ø9.5（±0.1）；大端内圆/锥面起始内径Ø6.18（±0.1）；中段细内孔径Ø3.1（±0.1）；右段内孔径Ø4.87（±0.1）；中端外圆/内圆Ø6（±0.1）。",
+      "topic_tags": [
+        "尺寸",
+        "总长",
+        "直径",
+        "内径",
+        "外径",
+        "默认公差"
+      ],
+      "related_subjects": [
+        "散热器金属套",
+        "尺寸表"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "装配约束推断（B级）：零件类型为黄铜车削件，回转对称结构，左大右小阶梯轴套形态。左端Ø9.5法兰直径最大，应起轴向定位/限位作用。中段Ø6/Ø3.1内孔由Ø6.18渐变到Ø3.1（与某锥形配合面）。右端Ø8.5+Ø4.75+C0.5为与散热器压块配合的核心区域（技要4强制要求装/拆/跌落）。总长11.79（0/-0.05）只能小不能大，避免影响装配链。",
+      "topic_tags": [
+        "装配约束",
+        "轴向定位",
+        "配合区域",
+        "装配链",
+        "法兰"
+      ],
+      "related_subjects": [
+        "散热器金属套",
+        "散热器压块",
+        "装配"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本图采用简化标题栏（无GENERAL TOLERANCE三档表，公差由技要2直接给出），与T-Z1系列自制图纸标题栏样式不同。文字层为空（0字符），全部转曲，所有信息来自视觉读图。源PDF为PDF 792×612 pt（Letter横向）。",
+      "topic_tags": [
+        "简化标题栏",
+        "外购图纸",
+        "转曲",
+        "视觉读图"
+      ],
+      "related_subjects": [
+        "GXT-001",
+        "5B44C"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "必查确认清单（C级）：C-1 与散热器压块上Ø8.5+C0.5配合处尺寸是否匹配（极限公差链）；C-2 散热器金属套在PT9L整机中的功能位置（包覆PIR红外传感器？散热？屏蔽？）；C-3 黄铜+电泳黑色的功能目的（散热/屏蔽/抗反射），影响IQC测光参数选择；C-4 2m跌落是组件级还是整机级，测试方法待确认；C-5 是否需要保留供应商原图或换为本厂T-Z1-Pxx图号。",
+      "topic_tags": [
+        "待确认项",
+        "配合验证",
+        "功能确认",
+        "跌落测试",
+        "图号标准化"
+      ],
+      "related_subjects": [
+        "散热器压块",
+        "PT9L",
+        "IQC",
+        "跌落测试",
+        "项目管理"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/75CEE0-Model.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器金属套",
+      "to": "外购件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器压块",
+      "to": "外购件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "外购件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器压块",
+      "to": "配合要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "跌落测试",
+      "to": "配合要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "配合尺寸③",
+      "to": "配合要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "配合尺寸④",
+      "to": "配合要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器金属套",
+      "to": "尺寸公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "尺寸表",
+      "to": "尺寸公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器金属套",
+      "to": "IQC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC检测",
+      "to": "IQC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器压块",
+      "to": "IQC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器金属套",
+      "to": "尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "尺寸表",
+      "to": "尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器金属套",
+      "to": "装配约束",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器压块",
+      "to": "装配约束",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "装配",
+      "to": "装配约束",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GXT-001",
+      "to": "简化标题栏",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5B44C",
+      "to": "简化标题栏",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "散热器压块",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "跌落测试",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "项目管理",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-004",
+      "to": "TEST-002",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-005",
+      "to": "TEST-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-005",
+      "to": "TEST-003",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-004",
+      "to": "REQ-005",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-001",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-001",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-002",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-003",
+      "to": "REQ-004",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-001",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-005",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-006",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-001",
+      "to": "TEST-002",
+      "properties": {
+        "note": "材料要求通过IQC外观检查验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-002",
+      "to": "TEST-002",
+      "properties": {
+        "note": "表面处理要求通过IQC外观检查验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-004",
+      "to": "TEST-002",
+      "properties": {
+        "note": "重点检测尺寸①②③④通过IQC尺寸检测验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-005",
+      "to": "TEST-001",
+      "properties": {
+        "note": "配合与跌落要求通过2m跌落测试验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-005",
+      "to": "TEST-003",
+      "properties": {
+        "note": "配合与跌落要求通过配合装拆验证"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-002",
+      "to": "REQ-003",
+      "properties": {
+        "note": "IQC尺寸检测覆盖通用尺寸公差要求"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-002",
+      "to": "REQ-004",
+      "properties": {
+        "note": "IQC尺寸检测覆盖重点检测尺寸要求"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-001",
+      "to": "REQ-005",
+      "properties": {
+        "note": "2m跌落测试覆盖配合与跌落要求"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "TEST-003",
+      "to": "REQ-005",
+      "properties": {
+        "note": "配合装拆验证覆盖能装能拆要求"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "TEST-002",
+      "to": "REQ-004",
+      "properties": {
+        "measurements": [
+          "①壁厚0.35±0.02",
+          "②内孔径Ø4.75 +0.03/0",
+          "③外圆台直径Ø8.5 +0.02/0",
+          "④倒角C0.5"
+        ]
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "TEST-001",
+      "to": "REQ-005",
+      "properties": {
+        "measurements": [
+          "③Ø8.5 +0.02/0",
+          "④C0.5"
+        ],
+        "test_condition": "2m跌落"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-006",
+      "to": "REQ-003",
+      "properties": {
+        "measurement": "总长11.79 0/-0.05",
+        "note": "总长单边负公差为通用公差要求的特例"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-006",
+      "to": "TEST-002",
+      "properties": {
+        "note": "总长单边负公差通过IQC尺寸检测验证"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "GXT-001",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "GXT-001",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "GXT-001",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "GXT-001",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "GXT-001",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-1",
+      "to": "REQ-005",
+      "properties": {
+        "review_focus": "配合尺寸极限公差链匹配验证"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-4",
+      "to": "TEST-001",
+      "properties": {
+        "review_focus": "2m跌落测试级别及测试方法确认"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-1",
+      "to": "TEST-003",
+      "properties": {
+        "review_focus": "与散热器压块配合尺寸核对"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "通用尺寸公差",
+      "attribute": "未注公差",
+      "value": "±0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "图纸未注明公差的尺寸",
+      "raw_text": "未注公差±0.1，未注倒角C0.2"
+    },
+    {
+      "subject": "通用倒角",
+      "attribute": "未注倒角",
+      "value": "C0.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "图纸未注明倒角的位置",
+      "raw_text": "未注公差±0.1，未注倒角C0.2"
+    },
+    {
+      "subject": "外圆台直径③",
+      "attribute": "尺寸规格",
+      "value": "8.5",
+      "unit": "mm",
+      "tolerance": "+0.02/0",
+      "condition": "重点检测尺寸，与散热器压块配合",
+      "raw_text": "③Ø8.5（+0.02/0）和④C0.5与散热器压块配合：能装、能拆、能过2m跌落测试"
+    },
+    {
+      "subject": "配合倒角④",
+      "attribute": "倒角规格",
+      "value": "C0.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "重点检测尺寸，与散热器压块配合",
+      "raw_text": "③Ø8.5（+0.02/0）和④C0.5与散热器压块配合：能装、能拆、能过2m跌落测试"
+    },
+    {
+      "subject": "跌落测试",
+      "attribute": "跌落高度",
+      "value": "2",
+      "unit": "m",
+      "tolerance": "",
+      "condition": "散热器金属套与散热器压块装配后，组件级或整机级（待确认）",
+      "raw_text": "能装、能拆、能过2m跌落测试；2m跌落是组件级单点冲击还是整机级，测试方法待确认"
+    },
+    {
+      "subject": "零件总长",
+      "attribute": "长度规格",
+      "value": "11.79",
+      "unit": "mm",
+      "tolerance": "0/-0.05",
+      "condition": "只能小不能大，避免影响装配链",
+      "raw_text": "总长11.79 0/-0.05，只能小不能大，避免影响装配链"
+    },
+    {
+      "subject": "壁厚①",
+      "attribute": "尺寸规格",
+      "value": "0.35",
+      "unit": "mm",
+      "tolerance": "±0.02",
+      "condition": "重点检测尺寸（IQC重要项）",
+      "raw_text": "①壁厚0.35±0.02"
+    },
+    {
+      "subject": "内孔径②",
+      "attribute": "尺寸规格",
+      "value": "4.75",
+      "unit": "mm",
+      "tolerance": "+0.03/0",
+      "condition": "重点检测尺寸（IQC重要项）",
+      "raw_text": "②内孔径Ø4.75 +0.03/0"
+    },
+    {
+      "subject": "零件材质",
+      "attribute": "材料类型",
+      "value": "黄铜",
+      "unit": "",
+      "tolerance": "",
+      "condition": "散热器金属套本体",
+      "raw_text": "材质为黄铜，表面电泳高光黑色，清洗干净，无碰划伤"
+    },
+    {
+      "subject": "表面处理",
+      "attribute": "处理工艺",
+      "value": "电泳高光黑色",
+      "unit": "",
+      "tolerance": "",
+      "condition": "零件表面，要求清洗干净，无碰划伤",
+      "raw_text": "表面电泳高光黑色，清洗干净，无碰划伤"
+    }
+  ]
+}

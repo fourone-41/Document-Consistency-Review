@@ -1,0 +1,129 @@
+{
+  "document": {
+    "title": "PT9L 液晶规格文件信息抽取记录",
+    "source_file": "PT9L-液晶-20240627.pdf",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT9L-液晶-20240627.pdf",
+    "date": "2024-06-27",
+    "fragment_index": "2/2"
+  },
+  "products": [
+    {
+      "name": "PT9L 液晶模组",
+      "drawing_number": "PT9L-液晶-20240627",
+      "type": "LCD"
+    }
+  ],
+  "components": [
+    {
+      "name": "液晶（LCD）",
+      "drawing_ref": "PT9L-液晶-20240627.pdf",
+      "notes": "含LCD SPEC表、PIN映射表（16×4）"
+    },
+    {
+      "name": "斑马条",
+      "drawing_ref": "PT9L-斑马条-v2.0-20240524.pdf.md",
+      "relationship": "与液晶配合件，存在跨件尺寸关系"
+    },
+    {
+      "name": "导光板",
+      "drawing_ref": "导光板.pdf.md",
+      "relationship": "与液晶配合件，存在跨件尺寸关系"
+    },
+    {
+      "name": "上盖 LCD 窗口",
+      "drawing_ref": "T-Z1-上盖-v3.0-20240627.pdf.md",
+      "relationship": "与液晶配合件，存在跨件LCD窗口尺寸关系"
+    }
+  ],
+  "review_items": [
+    {
+      "item": "DPI ≥ 300 / 3×2 分块",
+      "status": "passed"
+    },
+    {
+      "item": "标题栏 + LCD SPEC 表完整",
+      "status": "passed"
+    },
+    {
+      "item": "技要 2 条逐字（特殊条目数）",
+      "status": "passed"
+    },
+    {
+      "item": "编号 ①-③ 连续",
+      "status": "passed"
+    },
+    {
+      "item": "P Pitch 前缀和 4- 前缀均已保留",
+      "status": "passed"
+    },
+    {
+      "item": "MIN / MAX 标注单独识别（视区 MIN、玻璃厚度 MAX）",
+      "status": "passed"
+    },
+    {
+      "item": "无 Φ、无角度",
+      "status": "N/A"
+    },
+    {
+      "item": "PIN 映射表（16×4）完整录入",
+      "status": "passed"
+    },
+    {
+      "item": "与斑马条 / 导光板 / 上盖 LCD 窗口的跨件关系已加入",
+      "status": "passed"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图纸编号",
+      "value": "PT9L-液晶-20240627"
+    },
+    {
+      "type": "配合件图纸",
+      "value": "PT9L-斑马条-v2.0-20240524"
+    },
+    {
+      "type": "配合件图纸",
+      "value": "T-Z1-上盖-v3.0-20240627"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "SKILL 自检 Checklist 记录了本次液晶图纸信息抽取的质量核查项目，包括：图像分辨率（DPI≥300/3×2分块）、标题栏与LCD SPEC表完整性、技术要求条目逐字核对（2条，含特殊条目数）、编号①-③连续性、P Pitch前缀与4-前缀保留、MIN/MAX标注单独识别（视区MIN、玻璃厚度MAX）、PIN映射表（16×4）完整录入、以及与斑马条/导光板/上盖LCD窗口配合件的跨件关系录入。其中\"无Φ、无角度\"项标注为N/A，其余均已通过。",
+      "topic_tags": [
+        "SKILL自检",
+        "LCD",
+        "图纸信息抽取",
+        "质量核查",
+        "PIN映射表",
+        "跨件关系",
+        "MIN/MAX标注"
+      ],
+      "related_subjects": [
+        "PT9L液晶",
+        "斑马条",
+        "导光板",
+        "上盖LCD窗口"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "本文件来源说明：源PDF为 02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT9L-液晶-20240627.pdf；视觉块图存储于 _assets/PT9L-液晶-20240627/；配合件参照文件包括 PT9L-斑马条-v2.0-20240524.pdf.md、导光板.pdf.md、T-Z1-上盖-v3.0-20240627.pdf.md；读图所用技能文件为 SKILL_2D_Drawing_Reading.md。",
+      "topic_tags": [
+        "来源说明",
+        "DHF",
+        "设计输出",
+        "配合件",
+        "读图技能"
+      ],
+      "related_subjects": [
+        "PT9L液晶",
+        "PT9L DHF",
+        "斑马条",
+        "导光板",
+        "上盖"
+      ]
+    }
+  ]
+}

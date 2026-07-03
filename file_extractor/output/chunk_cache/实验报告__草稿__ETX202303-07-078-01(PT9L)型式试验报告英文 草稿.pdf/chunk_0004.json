@@ -1,0 +1,150 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-01",
+    "total_pages": 30,
+    "current_pages": "12-13",
+    "page_in_report": "11-12 of 29"
+  },
+  "products": [
+    {
+      "name": "IR Thermometer (PT9L)",
+      "description": "High-tech infra-red (IR) thermometer designed to take human body temperature by measuring the energy of IR emitted from the forehead",
+      "intended_use": "Assess forehead temperature of individuals and family members easily and quickly"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "6.2",
+      "test_name": "ESD (Electrostatic Discharge)",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-2",
+      "test_date": "2024-07-29",
+      "temperature": "28℃",
+      "humidity": "44%",
+      "pressure": "101kPa",
+      "power_supply": "DC 3V",
+      "discharge_voltage": {
+        "air_discharge": "±2, 4, 8, 15kV",
+        "contact_discharge": "±8kV",
+        "VCP_HCP": "±8kV"
+      },
+      "polarity": "Positive / Negative",
+      "number_of_discharges": "Minimum 10 times at each test point",
+      "discharge_mode": "Single Discharge",
+      "discharge_period": "1 second minimum"
+    }
+  ],
+  "requirements": [
+    {
+      "req_id": "PASS_FAIL_ESD",
+      "category": "Immunity Pass/Fail Criteria",
+      "description": "Measurement accuracy: ±0.2℃ at ranges 35.0℃ ~ 42.0℃, other ranges ±0.3℃",
+      "test_condition": "EUT tested in UE1 mode, set at 37℃, temperature continuously measured and compared with blackbody temperature",
+      "monitoring_method": "Visual"
+    },
+    {
+      "req_id": "PASS_FAIL_RF",
+      "category": "Immunity Pass/Fail Criteria",
+      "description": "Radiated RF EM Fields pass/fail criteria",
+      "monitoring_method": "Not specified in fragment"
+    },
+    {
+      "req_id": "PASS_FAIL_PROXIMITY",
+      "category": "Immunity Pass/Fail Criteria",
+      "description": "Proximity fields from RF wireless communications pass/fail criteria",
+      "monitoring_method": "Not specified in fragment"
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "context": "EMC test requirement for medical electrical equipment"
+    },
+    {
+      "standard": "IEC 61000-4-2",
+      "context": "ESD test method"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "An imaging system displays an image that could be altered, but in a way that would not affect the diagnosis or treatment; a heart rate monitor displays a heart rate that could be in error, but by an amount that is not clinically significant; a PATIENT monitor exhibits a small amount of noise or a transient on a waveform and the noise or transient would not affect diagnosis, treatment or monitoring.",
+      "topic_tags": [
+        "essential performance",
+        "pass/fail criteria",
+        "clinical significance",
+        "imaging",
+        "heart rate monitor",
+        "patient monitor"
+      ],
+      "related_subjects": [
+        "BASIC SAFETY",
+        "ESSENTIAL PERFORMANCE",
+        "immunity test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Examples of ME EQUIPMENT and ME SYSTEMS with multiple functions: multi-parameter monitors; anaesthesia system with monitors; ventilators with monitors; multiple instances of the same function (e.g. multiple invasive blood pressure sensors).",
+      "topic_tags": [
+        "ME equipment",
+        "ME system",
+        "multi-parameter",
+        "anaesthesia",
+        "ventilator",
+        "multiple functions"
+      ],
+      "related_subjects": [
+        "ESSENTIAL PERFORMANCE",
+        "immunity test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Failure of therapy equipment to terminate a treatment at the intended time can be considered cessation or interruption of an intended operation related to ESSENTIAL PERFORMANCE. If the effect of the test signal on an ME EQUIPMENT or ME SYSTEM is so brief as to be transparent to the PATIENT or OPERATOR and does not affect diagnosis, monitoring or treatment of the PATIENT, this can be considered not to be cessation or interruption of an intended operation. For example, if in response to the IMMUNITY TEST LEVEL a ventilator stops pumping for 50 ms and then resumes operation such that accuracy is within acceptable limits, this would not be considered cessation or interruption of an intended operation.",
+      "topic_tags": [
+        "essential performance",
+        "cessation",
+        "interruption",
+        "therapy equipment",
+        "immunity test level",
+        "ventilator",
+        "50ms"
+      ],
+      "related_subjects": [
+        "BASIC SAFETY",
+        "ESSENTIAL PERFORMANCE",
+        "immunity test"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Note that it might be necessary to test the ME EQUIPMENT or ME SYSTEM multiple times, e.g. under one set of conditions to assure that it sounds an ALARM signal when it should, within the MANUFACTURER's specifications for sensitivity and response time, and under another set of conditions to assure that it does not sound an ALARM signal when it should not.",
+      "topic_tags": [
+        "alarm signal",
+        "multiple tests",
+        "sensitivity",
+        "response time",
+        "manufacturer specification"
+      ],
+      "related_subjects": [
+        "immunity test",
+        "ESSENTIAL PERFORMANCE"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Note 1: Specific, detailed immunity pass/fail criteria, shall be based on applicable part two standards or risk management, for immunity with regard to EM disturbances. These pass/fail criteria shall be included in the risk management file.",
+      "topic_tags": [
+        "pass/fail criteria",
+        "risk management",
+        "EM disturbances",
+        "part two standards"
+      ],
+      "related_subjects": [
+        "immunity test",
+        "risk management file"
+      ]
+    }
+  ]
+}

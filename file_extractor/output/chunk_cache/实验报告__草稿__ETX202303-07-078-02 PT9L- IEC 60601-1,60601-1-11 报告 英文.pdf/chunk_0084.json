@@ -1,0 +1,172 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "title": "IEC 60601-1 / IEC 60601-1-11 Test Report (English)",
+    "total_pages": 182,
+    "current_pages": "181-182",
+    "status": "DRAFT",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/草稿/ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文.pdf"
+  },
+  "products": [
+    {
+      "sample_id": "YP2407017",
+      "lot": "KE04",
+      "model": "PT9L"
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "equivalent": "EN 60601-1-11:2015 + A1:2021",
+      "topic": "Requirements for ME equipment used in home healthcare environments"
+    },
+    {
+      "standard": "IEC 60068-2-31:2008",
+      "topic": "Free fall test, Procedure 1"
+    },
+    {
+      "standard": "IEC/TR 60721-4-7:2001",
+      "topic": "Classification of environmental conditions - portable and non-stationary use",
+      "classes_referenced": [
+        "7M1",
+        "7M2"
+      ]
+    },
+    {
+      "standard": "ISO 14971",
+      "topic": "Risk management for medical devices"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "10.1.3d",
+      "test_name": "Free fall test",
+      "reference_standard": "IEC 60068-2-31:2008, Procedure 1",
+      "applicability": "N/A",
+      "scope": "Portable and mobile ME equipment, parts, and mounting accessories (with carrying case if intended)",
+      "conditions": [
+        {
+          "mass_range": "≤ 1 kg",
+          "fall_height_m": 0.25,
+          "fall_number": 1
+        },
+        {
+          "mass_range": "≤ 1 kg",
+          "fall_height_m": 0.25,
+          "fall_number": 2
+        },
+        {
+          "mass_range": "> 1 kg and ≤ 10 kg",
+          "fall_height_m": 0.1,
+          "fall_number": 1
+        },
+        {
+          "mass_range": "> 1 kg and ≤ 10 kg",
+          "fall_height_m": 0.1,
+          "fall_number": 2
+        },
+        {
+          "mass_range": "> 10 kg and ≤ 50 kg",
+          "fall_height_m": 0.05,
+          "fall_number": 1
+        },
+        {
+          "mass_range": "> 10 kg and ≤ 50 kg",
+          "fall_height_m": 0.05,
+          "fall_number": 2
+        },
+        {
+          "mass_range": "> 50 kg",
+          "fall_height_m": 0.01,
+          "fall_number": 1
+        },
+        {
+          "mass_range": "> 50 kg",
+          "fall_height_m": 0.01,
+          "fall_number": 2
+        }
+      ],
+      "notes": "Represents Class 7M2 as described in IEC/TR 60721-4-7:2001"
+    },
+    {
+      "clause": "11.0",
+      "test_name": "Protection against strangulation and asphyxiation",
+      "applicability": "N/A",
+      "risk_management_clauses_checked": [
+        "4.3",
+        "4.4",
+        "5",
+        "6.2",
+        "6.3",
+        "6.4",
+        "6.5",
+        "6.6"
+      ],
+      "risk_management_standard": "ISO 14971"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX2023-07-078-02"
+    },
+    {
+      "type": "sample_id",
+      "value": "YP2407017"
+    },
+    {
+      "type": "lot_number",
+      "value": "KE04"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Free fall test per IEC 60068-2-31:2008 Procedure 1 specifies fall heights by equipment mass: ≤1 kg → 0.25 m; >1 kg & ≤10 kg → 0.10 m; >10 kg & ≤50 kg → 0.05 m; >50 kg → 0.01 m. Each mass category requires 2 falls. After each fall, basic safety and essential performance must be maintained. This represents Class 7M2 per IEC/TR 60721-4-7:2001. Clause 10.1.3d of IEC 60601-1-11:2015+A1:2020 is marked N/A for this device.",
+      "topic_tags": [
+        "free fall test",
+        "IEC 60068-2-31",
+        "portable equipment",
+        "mechanical safety",
+        "Class 7M2"
+      ],
+      "related_subjects": [
+        "10.1.3d",
+        "IEC 60601-1-11",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Results table for Clause 11.0 (Protection against strangulation and asphyxiation) references ISO 14971 risk management clauses 4.3, 4.4, 5, 6.2, 6.3, 6.4, 6.5, 6.6. Each clause requires a document reference from the Risk Management File (RMF) with document number and paragraph. The verdict for this section is N/A.",
+      "topic_tags": [
+        "strangulation",
+        "asphyxiation",
+        "risk management",
+        "ISO 14971",
+        "RMF"
+      ],
+      "related_subjects": [
+        "11.0",
+        "ISO 14971",
+        "PT9L",
+        "IEC 60601-1-11"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The report (ETX2023-07-078-02) is marked as DRAFT throughout. Attachment 3 contains photo documentation for Sample YP2407017, Lot KE04. The attachment section is marked 'DRAFT DRAFT DRAFT' and concludes with 'END OF ATTACHMENT 3' and 'THE END', indicating this is the final page (182 of 182) of the report.",
+      "topic_tags": [
+        "draft status",
+        "photo documentation",
+        "attachment",
+        "report end"
+      ],
+      "related_subjects": [
+        "ETX2023-07-078-02",
+        "YP2407017",
+        "PT9L"
+      ]
+    }
+  ]
+}

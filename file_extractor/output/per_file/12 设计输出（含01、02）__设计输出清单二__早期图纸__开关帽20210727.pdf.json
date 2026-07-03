@@ -1,0 +1,471 @@
+{
+  "document": {
+    "title": "开关帽（T-Z1-P06 V1.0，2021-07-16）2D 图读图",
+    "document_number": "T-Z1-P06",
+    "version": "V1.0",
+    "date": "2021-07-16",
+    "source_file": "早期图纸/开关帽20210727.pdf",
+    "page_size": "A4 竖向",
+    "scale": "2:1",
+    "tolerance_level": "LEVEL B",
+    "material": "ABS",
+    "notes": "早期版定位，现版图纸为 图纸/开关帽.pdf.md（同 V1.0），编号③关键尺寸有差异"
+  },
+  "products": [
+    {
+      "name": "开关帽",
+      "drawing_number": "T-Z1-P06",
+      "version": "V1.0",
+      "material": "ABS",
+      "scale": "2:1",
+      "tolerance_level": "LEVEL B",
+      "edition_date": "2021-07-16"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "T-Z1-P06",
+      "type": "图纸编号",
+      "description": "开关帽零件图纸编号"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DIM-①",
+      "view": "主视图水平",
+      "value": 16.8,
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "grade": "A级",
+      "description": "主视图水平向总长",
+      "current_version_comparison": "同"
+    },
+    {
+      "id": "DIM-②",
+      "view": "主视图竖向",
+      "value": 6.1,
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "grade": "A级",
+      "description": "主视图竖向总宽",
+      "current_version_comparison": "同"
+    },
+    {
+      "id": "DIM-③",
+      "view": "A-A 截面薄壁",
+      "value": 0.3,
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "grade": "A级",
+      "description": "A-A 顶部薄壁",
+      "current_version_comparison": "⚠️ 现版是 0.1±0.03",
+      "flag": "关键差异项"
+    },
+    {
+      "id": "DIM-④",
+      "view": "侧视图竖向",
+      "value": 1.8,
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "grade": "A级",
+      "description": "侧视图总高",
+      "current_version_comparison": "同"
+    },
+    {
+      "id": "DIM-⑤",
+      "view": "未明确",
+      "value": 1.6,
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "grade": "A级",
+      "description": "可能存在",
+      "flag": "待确认"
+    },
+    {
+      "id": "DIM-OTHER",
+      "description": "其他主要尺寸",
+      "values": [
+        "2.7",
+        "4",
+        "4",
+        "15",
+        "7.7±0.05",
+        "9.1±0.05",
+        "4.1±0.05"
+      ],
+      "unit": "mm"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "0.3 → 0.1 修订时间（ECN 记录？）",
+      "status": "待确认"
+    },
+    {
+      "id": "C-2",
+      "description": "修订是因为手感？模具优化？还是其他？",
+      "status": "待确认"
+    },
+    {
+      "id": "C-3",
+      "description": "同 V1.0 不同尺寸的版本号管理",
+      "status": "待确认"
+    }
+  ],
+  "revision_records": [
+    {
+      "item": "③ 薄壁尺寸",
+      "early_version": "0.3±0.03 mm（V1.0，2021-07-16）",
+      "current_version": "0.1±0.03 mm",
+      "change_magnitude": "减薄 0.2 mm（减薄 67%）",
+      "version_note": "同 Edition V1.0 但实际两个尺寸版，版本号未递增的隐性修订"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "早期 0.3 → 现 0.1：减薄 67%——按键弹性变形大幅增加（手感更软）。但模具能力要求剧增（0.1 比 0.3 难做 3 倍以上）。同 Edition V1.0 但实际两个尺寸版——版本号未递增的隐性修订。",
+      "topic_tags": [
+        "薄壁尺寸",
+        "手感设计",
+        "模具能力",
+        "版本管理",
+        "开关帽"
+      ],
+      "related_subjects": [
+        "DIM-③",
+        "C-1",
+        "C-2",
+        "C-3",
+        "T-Z1-P06"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文件定位为 T-Z1-P06 的初版 V1.0，属于早期版历史归档。现版为 图纸/开关帽.pdf.md（同 V1.0），但编号③关键尺寸存在差异（0.3 vs 0.1）。源 PDF 文字层仅 56 字符，信息有限。",
+      "topic_tags": [
+        "早期版",
+        "归档",
+        "版本差异",
+        "开关帽",
+        "T-Z1-P06"
+      ],
+      "related_subjects": [
+        "T-Z1-P06",
+        "DIM-③",
+        "revision_records"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "技术要求共 4 条标准（文档中未展开具体内容）。公差等级为 LEVEL B，材料为 ABS，比例 2:1。",
+      "topic_tags": [
+        "技术要求",
+        "公差",
+        "材料",
+        "ABS",
+        "LEVEL B"
+      ],
+      "related_subjects": [
+        "T-Z1-P06",
+        "开关帽"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/早期图纸/开关帽20210727.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "DIM-③",
+      "to": "薄壁尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "薄壁尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "薄壁尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-3",
+      "to": "薄壁尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "薄壁尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DIM-③",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "revision_records",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "开关帽",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "DIM-①",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "DIM-②",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "DIM-③",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "DIM-④",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "DIM-⑤",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "DIM-OTHER",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P06",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DIM-③",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DIM-③",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DIM-③",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P06",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P06",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P06",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P06",
+      "to": "DIM-③",
+      "properties": {
+        "early_version": "0.3±0.03 mm（V1.0，2021-07-16）",
+        "current_version": "0.1±0.03 mm",
+        "change_magnitude": "减薄 0.2 mm（减薄 67%）",
+        "version_note": "同 Edition V1.0 但实际两个尺寸版，版本号未递增的隐性修订"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-1",
+      "to": "DIM-③",
+      "properties": {
+        "description": "0.3 → 0.1 修订时间（ECN 记录？）",
+        "status": "待确认"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-2",
+      "to": "DIM-③",
+      "properties": {
+        "description": "修订是因为手感？模具优化？还是其他？",
+        "status": "待确认"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-3",
+      "to": "T-Z1-P06",
+      "properties": {
+        "description": "同 V1.0 不同尺寸的版本号管理",
+        "status": "待确认"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "主视图水平总长",
+      "attribute": "尺寸",
+      "value": "16.8",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "主视图水平向，A级",
+      "raw_text": "DIM-①：主视图水平向总长 16.8±0.05 mm，A级"
+    },
+    {
+      "subject": "主视图竖向总宽",
+      "attribute": "尺寸",
+      "value": "6.1",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "主视图竖向，A级",
+      "raw_text": "DIM-②：主视图竖向总宽 6.1±0.05 mm，A级"
+    },
+    {
+      "subject": "A-A顶部薄壁",
+      "attribute": "壁厚",
+      "value": "0.3",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "A-A截面薄壁，A级；⚠️关键差异项：现版为0.1±0.03 mm",
+      "raw_text": "DIM-③：A-A顶部薄壁 0.3±0.03 mm，A级；当前版本为0.1±0.03，存在关键差异"
+    },
+    {
+      "subject": "侧视图总高",
+      "attribute": "尺寸",
+      "value": "1.8",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "侧视图竖向，A级",
+      "raw_text": "DIM-④：侧视图总高 1.8±0.05 mm，A级"
+    },
+    {
+      "subject": "待确认尺寸",
+      "attribute": "尺寸",
+      "value": "1.6",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "视图未明确，A级，待确认",
+      "raw_text": "DIM-⑤：可能存在的尺寸 1.6±0.05 mm，A级，待确认"
+    },
+    {
+      "subject": "其他主要尺寸-2.7",
+      "attribute": "尺寸",
+      "value": "2.7",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "DIM-OTHER其他主要尺寸",
+      "raw_text": "DIM-OTHER：其他主要尺寸之一 2.7 mm"
+    },
+    {
+      "subject": "其他主要尺寸-4(×2)",
+      "attribute": "尺寸",
+      "value": "4",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "DIM-OTHER其他主要尺寸，出现两次",
+      "raw_text": "DIM-OTHER：其他主要尺寸 4 mm（共2处）"
+    },
+    {
+      "subject": "其他主要尺寸-15",
+      "attribute": "尺寸",
+      "value": "15",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "DIM-OTHER其他主要尺寸",
+      "raw_text": "DIM-OTHER：其他主要尺寸之一 15 mm"
+    },
+    {
+      "subject": "其他主要尺寸-7.7",
+      "attribute": "尺寸",
+      "value": "7.7",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "DIM-OTHER其他主要尺寸",
+      "raw_text": "DIM-OTHER：其他主要尺寸 7.7±0.05 mm"
+    },
+    {
+      "subject": "其他主要尺寸-9.1",
+      "attribute": "尺寸",
+      "value": "9.1",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "DIM-OTHER其他主要尺寸",
+      "raw_text": "DIM-OTHER：其他主要尺寸 9.1±0.05 mm"
+    },
+    {
+      "subject": "其他主要尺寸-4.1",
+      "attribute": "尺寸",
+      "value": "4.1",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "DIM-OTHER其他主要尺寸",
+      "raw_text": "DIM-OTHER：其他主要尺寸 4.1±0.05 mm"
+    }
+  ]
+}

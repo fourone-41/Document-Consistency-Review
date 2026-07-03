@@ -30,7 +30,8 @@ def find_missing_next_hop(nodes: dict, edges: list[dict], min_frequency: int = 3
     """对高频二跳模式，找出只完成第一跳、缺第二跳的节点，把第二跳候选目标节点纳入候选。
 
     返回格式：[{"from_id": ..., "from_type": ..., "expected_relation": (type1, type2),
-                "candidate_targets": [node, ...], "target_type": ...}, ...]
+                "pattern_frequency": ..., "candidate_targets": [node, ...],
+                "target_type": ...}, ...]
     """
     pattern_counts = count_two_hop_patterns(edges)
     high_freq_patterns = {p: c for p, c in pattern_counts.items() if c >= min_frequency}
@@ -46,8 +47,9 @@ def find_missing_next_hop(nodes: dict, edges: list[dict], min_frequency: int = 3
                 if e1["to_id"] == e2["from_id"]:
                     pattern_types[key] = (e1["to_type"], e2["to_type"])
 
-    # 找出已完成第一跳的中间节点
-    second_hop_from_ids = {e["from_id"] for e in edges}
+    # 找出已经拥有期望第二跳的中间节点。这里必须按关系类型判断：
+    # 一个节点有无关出边，不代表它已经完成当前高频模式所需的第二跳。
+    second_hop_from_by_type = {(e["from_id"], e["type"]) for e in edges}
 
     completed_first_hop_by_pattern = defaultdict(set)
     for e in edges:
@@ -63,12 +65,13 @@ def find_missing_next_hop(nodes: dict, edges: list[dict], min_frequency: int = 3
         candidate_targets = nodes.get(target_type, [])
 
         for mid_id in intermediate_ids:
-            if mid_id in second_hop_from_ids:
+            if (mid_id, pattern[1]) in second_hop_from_by_type:
                 continue  # 第二跳已存在，不缺
             results.append({
                 "from_id": mid_id,
                 "from_type": intermediate_type,
                 "expected_relation": pattern,
+                "pattern_frequency": high_freq_patterns.get(pattern, 0),
                 "candidate_targets": candidate_targets,
                 "target_type": target_type,
             })

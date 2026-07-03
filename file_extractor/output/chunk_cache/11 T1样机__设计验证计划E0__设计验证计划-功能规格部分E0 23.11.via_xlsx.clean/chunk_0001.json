@@ -1,0 +1,160 @@
+{
+  "document": {
+    "title": "设计验证计划-功能规格部分E0 23.11",
+    "doc_type": "设计验证计划",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_id": "30000078",
+      "name": "红外体温计 PT9L"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "测量原理",
+      "condition": "T1阶段",
+      "expected_value": "红外非接触式",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第1,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "2",
+      "item": "测量位置",
+      "condition": "T1阶段",
+      "expected_value": "额面",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第1,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "3",
+      "item": "检测项目",
+      "condition": "T1阶段",
+      "expected_value": "人体体温、物温",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第6,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "4",
+      "item": "分类指示方式",
+      "condition": "T1阶段",
+      "expected_value": "屏幕选择",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第6,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "5",
+      "item": "按键描述",
+      "condition": "T1阶段",
+      "expected_value": "3个按键：开机测量键、设置键、静音键",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第4,6,7项测试合格"
+    },
+    {
+      "test_id": "6a",
+      "item": "LCD型式",
+      "condition": "T1阶段",
+      "expected_value": "段码式",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第3项进行测试，测试合格"
+    },
+    {
+      "test_id": "6b",
+      "item": "LCD背光",
+      "condition": "T1阶段",
+      "expected_value": "有背光：白橙红",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第8项进行测试，测试合格"
+    },
+    {
+      "test_id": "10",
+      "item": "低电压检出",
+      "condition": "T1阶段",
+      "expected_value": "双阶段",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第5项进行测试，测试合格"
+    },
+    {
+      "test_id": "11",
+      "item": "错误分类显示",
+      "condition": "T1阶段",
+      "expected_value": "错误种类2种：1、超出工作环境温度；2、超过量程",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第9项进行测试，测试合格"
+    },
+    {
+      "test_id": "12",
+      "item": "自动关机时间",
+      "condition": "T1阶段",
+      "expected_value": "常规为15秒",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第2项进行测试，测试合格"
+    },
+    {
+      "test_id": "13",
+      "item": "温度显示单位",
+      "condition": "T1阶段",
+      "expected_value": "℃和℉",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第7项进行测试，测试合格"
+    },
+    {
+      "test_id": "14",
+      "item": "提示功能",
+      "condition": "T1阶段",
+      "expected_value": "蜂鸣",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第4项进行测试，测试合格"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": 1,
+      "version": "V1.0",
+      "change_description": "起草",
+      "date": "XX年X月X日"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "1.本设计验证计划需批准后方能使用执行。\n2.存档并归入设计历史文档（DHF）。\n3.请根据项目具体实际情况对于验证阶段，方法及判定准则进行相应调整。",
+      "topic_tags": [
+        "验证计划",
+        "审批",
+        "DHF",
+        "归档"
+      ],
+      "related_subjects": [
+        "设计验证计划",
+        "DHF"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人员职责安排：软件工程师负责拟制产品功能规格部分的设计验证计划；软件主管负责审核产品功能规格部分的设计验证计划。软件工程师负责产品功能规格部分的设计验证并形成设计验证报告；软件主管负责审核产品功能规格部分的设计验证报告。",
+      "topic_tags": [
+        "人员职责",
+        "软件工程师",
+        "软件主管",
+        "设计验证报告"
+      ],
+      "related_subjects": [
+        "设计验证计划",
+        "设计验证报告"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "以下条目标记为不适用（■不适用），无需验证：壳体变色（No）、位置检测（No）、PC Link（No）、分类指示方式中\"其他\"选项。",
+      "topic_tags": [
+        "不适用项",
+        "壳体变色",
+        "位置检测",
+        "PC Link"
+      ],
+      "related_subjects": [
+        "设计验证计划"
+      ]
+    }
+  ]
+}

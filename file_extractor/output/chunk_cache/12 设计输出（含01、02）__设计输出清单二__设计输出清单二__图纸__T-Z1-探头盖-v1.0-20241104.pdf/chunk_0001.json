@@ -1,0 +1,276 @@
+{
+  "document": {
+    "title": "探头（盖）2D图读图报告",
+    "document_no": "T-Z1-P03",
+    "edition": "V1.0",
+    "date": "2024-11-04",
+    "source_file": "T-Z1-探头盖-v1.0-20241104.pdf",
+    "page_size": "A4竖向（595×842 pt）",
+    "scale": "2:1",
+    "units": "mm",
+    "report_date": "2026-06-02",
+    "skill_used": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "探头",
+      "part_name_on_drawing": "探头",
+      "file_alias": "探头盖",
+      "drawing_no": "T-Z1-P03",
+      "model_no": "T-Z1",
+      "edition": "V1.0",
+      "date": "2024-11-04",
+      "material": "TPU（弹性体）",
+      "material_color": "灰色",
+      "surface_finish": "（空白）",
+      "tolerance_level": "SELECT LEVEL B",
+      "brand": "andon iHealth"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Drawing NO.",
+      "value": "T-Z1-P03"
+    },
+    {
+      "type": "Model NO.",
+      "value": "T-Z1"
+    },
+    {
+      "type": "Edition",
+      "value": "V1.0"
+    },
+    {
+      "type": "Source PDF path",
+      "value": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/设计输出清单二/图纸/T-Z1-探头盖-v1.0-20241104.pdf"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-1",
+      "description": "带编号尺寸①：SECTION A-A截面总高度（探头零件主高度）19.14 mm，公差±0.05",
+      "dimension_no": "①",
+      "value": "19.14",
+      "tolerance": "±0.05",
+      "view": "SECTION A-A",
+      "iqc_required": true
+    },
+    {
+      "id": "DI-2",
+      "description": "带编号尺寸②：侧视图右端中段高度 3.86 mm，公差±0.05",
+      "dimension_no": "②",
+      "value": "3.86",
+      "tolerance": "±0.05",
+      "view": "侧视图",
+      "iqc_required": true
+    },
+    {
+      "id": "DI-3",
+      "description": "SECTION A-A顶部薄壁厚度 0.8 mm，公差Level B",
+      "value": "0.8",
+      "tolerance": "Level B",
+      "view": "SECTION A-A",
+      "iqc_required": false
+    },
+    {
+      "id": "DI-4",
+      "description": "套筒内径 Ø9.58 mm，公差±0.05",
+      "dimension_symbol": "Ø",
+      "value": "9.58",
+      "tolerance": "±0.05",
+      "view": "SECTION A-A",
+      "iqc_required": false
+    },
+    {
+      "id": "DI-5",
+      "description": "中心透光孔径 Ø6.83 mm，公差±0.05（较早期版Ø6.8增大0.03 mm，光路孔径精修）",
+      "dimension_symbol": "Ø",
+      "value": "6.83",
+      "tolerance": "±0.05",
+      "view": "主视图圆环外圆",
+      "iqc_required": false,
+      "change_note": "早期版Ø6.8→本版Ø6.83，+0.03 mm"
+    },
+    {
+      "id": "DI-6",
+      "description": "中心圆视图小尺寸 3.65 mm，公差±0.05",
+      "value": "3.65",
+      "tolerance": "±0.05",
+      "view": "主视图圆环细节",
+      "iqc_required": false
+    },
+    {
+      "id": "DI-7",
+      "description": "主视图右上某厚度 1 mm，公差±0.05",
+      "value": "1",
+      "tolerance": "±0.05",
+      "view": "主视图右上",
+      "iqc_required": false
+    },
+    {
+      "id": "DI-8",
+      "description": "侧视图底部小厚度 0.9 mm，公差Level B",
+      "value": "0.9",
+      "tolerance": "Level B",
+      "view": "侧视图底",
+      "iqc_required": false
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "带编号为重要尺寸，需要IQC测量",
+      "source": "产品技术要求第1条",
+      "category": "检验要求"
+    },
+    {
+      "id": "REQ-2",
+      "description": "材质为TPU（灰色）；产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "source": "产品技术要求第2条",
+      "category": "材料与外观要求"
+    },
+    {
+      "id": "REQ-3",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "source": "产品技术要求第3条",
+      "category": "装配与检验要求"
+    },
+    {
+      "id": "REQ-4",
+      "description": "产品符合RoHS 2.0",
+      "source": "产品技术要求第4条",
+      "category": "法规合规要求"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合RoHS 2.0有害物质限制要求",
+      "applicability": "探头（T-Z1-P03）零件"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "1",
+      "change_description": "初版制作",
+      "date": "—"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "Ø6.8→Ø6.83修订原因（光学SPEC？工艺良率？）",
+      "required_source": "工程师 / ECN",
+      "status": "待确认"
+    },
+    {
+      "id": "C-2",
+      "description": "当前生产版是哪一日期（早期版 vs 2024-11-04）",
+      "required_source": "工程师 / BOM",
+      "status": "待确认"
+    },
+    {
+      "id": "C-3",
+      "description": "文件名\"探头盖\" vs 标题栏\"探头\"的命名规范",
+      "required_source": "项目管理",
+      "status": "待确认"
+    },
+    {
+      "id": "C-4",
+      "description": "探头套在哪个硬质件外面",
+      "required_source": "3D装配 + BOM",
+      "status": "待确认"
+    },
+    {
+      "id": "C-5",
+      "description": "TPU灰色SPEC（邵氏硬度、耐久、卫生级）",
+      "required_source": "材料BOM",
+      "status": "待确认"
+    }
+  ],
+  "components": [
+    {
+      "name": "探头（盖）",
+      "drawing_no": "T-Z1-P03",
+      "material": "TPU（弹性体，灰色）",
+      "model": "T-Z1",
+      "edition": "V1.0",
+      "date": "2024-11-04",
+      "key_features": [
+        "中心透光孔径Ø6.83（红外光路）",
+        "套筒内径Ø9.58（套在硬质支架/壳体探头筒外径）",
+        "截面总高度19.14 mm"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "命名与版本管理重要提示：文件名为\"T-Z1-探头盖-v1.0-20241104.pdf\"，但标题栏Part name为\"探头\"（不是\"探头盖\"）。Drawing NO. T-Z1-P03与早期版\"图纸/探头20210727.pdf\"同号，Edition均为V1.0但日期不同。本图为早期版的修订版，文件名中的\"探头盖\"是仓库管理者添加的区分前缀。重要差异：Ø6.8→Ø6.83（光路孔径精修0.03 mm）。同版本号不同日期属于\"原地修订\"，需在ECN/工程变更记录中查证。",
+      "topic_tags": [
+        "命名规范",
+        "版本管理",
+        "文件名冲突",
+        "原地修订",
+        "ECN"
+      ],
+      "related_subjects": [
+        "T-Z1-P03",
+        "探头",
+        "探头盖",
+        "V1.0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "配合交叉验证：Ø9.58内孔推测套在硬质支架/壳体探头筒外径；Ø6.83透光孔径对应红外光路。探头零件为TPU弹性体材质，具备弹性，可顺利套装在硬质件上。试装要求：须试装产品并能顺利装入，未标注尺寸以样板为准，品质部检验以结构签板和组装（实配）为准。",
+      "topic_tags": [
+        "配合关系",
+        "装配",
+        "红外光路",
+        "TPU弹性体",
+        "试装"
+      ],
+      "related_subjects": [
+        "Ø9.58内孔",
+        "Ø6.83透光孔",
+        "SECTION A-A"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "版本对比：早期版（图纸/探头20210727.pdf，Drawing NO. T-Z1-P03，Edition V1.0）与本图（V1.0，2024-11-04）主要差异为中心透光孔径Ø6.8→Ø6.83（+0.03 mm）。其余尺寸（Ø9.58、19.14、3.86、0.8、3.65、1、0.9）保持一致。该0.03 mm修订可能为光学SPEC微调或工艺优化，需通过ECN查证原因。当前生产版需工程师确认以最新日期为准。",
+      "topic_tags": [
+        "版本对比",
+        "尺寸修订",
+        "光学SPEC",
+        "工艺优化",
+        "Ø6.83"
+      ],
+      "related_subjects": [
+        "T-Z1-P03",
+        "早期版20210727",
+        "Ø6.8",
+        "Ø6.83",
+        "ECN"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "自动检查结果摘要：DPI达300，编号①②共2个与早期版一致，无角度尺寸，无n-前缀，公差形式全为对称±a。Ø6.8→Ø6.83（+0.03 mm）为单点修订，已识别为需关注的变更点。文字层仅44字符，含\"andon\"、\"探头\"、\"产品技术要求\"、\"初版制作\"等关键词。",
+      "topic_tags": [
+        "自动检查",
+        "DPI",
+        "公差",
+        "文字层",
+        "编号连续性"
+      ],
+      "related_subjects": [
+        "T-Z1-P03",
+        "①",
+        "②",
+        "Ø6.83"
+      ]
+    }
+  ]
+}

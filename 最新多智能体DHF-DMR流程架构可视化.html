@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>多智能体 DHF/DMR 一致性审查调度架构图</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --panel: #ffffff;
+      --soft: #f8fafc;
+      --line: #cbd5e1;
+      --blue: #1d4ed8;
+      --teal: #0f766e;
+      --green: #15803d;
+      --amber: #b45309;
+      --red: #b91c1c;
+      --violet: #6d28d9;
+      --cyan: #0369a1;
+      --shadow: 0 14px 32px rgba(15, 23, 42, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: #edf2f7;
+      line-height: 1.55;
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 30px 38px 26px;
+      border-bottom: 4px solid #38bdf8;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    header p {
+      margin: 0;
+      color: #d0d5dd;
+      max-width: 1180px;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      color: #111827;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    p { margin: 0 0 10px; }
+
+    .subtitle {
+      color: var(--muted);
+      margin: -8px 0 18px;
+      font-size: 14px;
+    }
+
+    .diagram-wrap {
+      background: #f8fafc;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      padding: 10px;
+      overflow-x: auto;
+    }
+
+    .diagram {
+      width: 100%;
+      min-width: 1040px;
+      height: auto;
+      display: block;
+    }
+
+    .node rect {
+      fill: #fff;
+      stroke: #cbd5e1;
+      stroke-width: 1.5;
+      rx: 8;
+      filter: drop-shadow(0 8px 14px rgba(15, 23, 42, .09));
+    }
+
+    .node text {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      fill: var(--ink);
+      font-size: 14px;
+    }
+
+    .node .small {
+      fill: var(--muted);
+      font-size: 12px;
+    }
+
+    .hub rect {
+      fill: #fff;
+      stroke: var(--violet);
+      stroke-width: 3;
+      filter: drop-shadow(0 16px 24px rgba(109, 40, 217, .15));
+    }
+
+    .hub-title {
+      fill: var(--violet);
+      font-weight: 760;
+      font-size: 20px;
+    }
+
+    .tool rect { fill: #ecfeff; stroke: #99f6e4; }
+    .candidate rect { fill: #fffbeb; stroke: #fde68a; }
+    .gate rect { fill: #fff7ed; stroke: #fed7aa; }
+    .recovery rect { fill: #f5f3ff; stroke: #ddd6fe; }
+    .report rect { fill: #f0fdf4; stroke: #bbf7d0; }
+
+    .arrow {
+      stroke: #64748b;
+      stroke-width: 2.4;
+      fill: none;
+      marker-end: url(#arrowGray);
+    }
+
+    .arrow.violet { stroke: var(--violet); marker-end: url(#arrowViolet); }
+    .arrow.blue { stroke: var(--blue); marker-end: url(#arrowBlue); }
+    .arrow.amber { stroke: var(--amber); marker-end: url(#arrowAmber); }
+    .arrow.red { stroke: var(--red); marker-end: url(#arrowRed); }
+    .arrow.teal { stroke: var(--teal); marker-end: url(#arrowTeal); }
+
+    .label-text {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      font-size: 12px;
+      fill: #475569;
+    }
+
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .legend-item {
+      border: 1px solid #d9e1ea;
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    .legend-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid #d7e0ea;
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid #d9e1ea;
+      padding: 9px 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .rounds {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .round {
+      border: 1px solid #d7e0ea;
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .round .num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #111827;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .file {
+      border: 1px solid #d7e0ea;
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 10px;
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1180px) {
+      .legend, .two-col, .three-col, .rounds {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 12px; }
+      header { padding: 22px 18px; }
+      section { padding: 16px; }
+      table { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>多智能体 DHF/DMR 一致性审查调度架构图</h1>
+    <p>按“主干调度 + 左右支路 + 回路”的方式展示 Agent 协作：Project Scout 建画像，Orchestrator 居中派发和路由，Candidate Discovery 提候选，领域 Agent 复审，Challenge 和 Context Recovery 把不确定项带回 Orchestrator。</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>主干调度图</h2>
+      <p class="subtitle">这版按你给出的结构绘制：不是复杂环形线路，而是清楚展示 Orchestrator 如何连接工具、候选发现、领域 Agent 和补证闭环。</p>
+
+      <div class="diagram-wrap">
+        <svg class="diagram" viewBox="0 0 1180 960" role="img" aria-label="Orchestrator task routing architecture">
+          <defs>
+            <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"></path>
+            </marker>
+            <marker id="arrowViolet" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#6d28d9"></path>
+            </marker>
+            <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#1d4ed8"></path>
+            </marker>
+            <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#b45309"></path>
+            </marker>
+            <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#b91c1c"></path>
+            </marker>
+            <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#0f766e"></path>
+            </marker>
+          </defs>
+
+          <g class="node">
+            <rect x="438" y="36" width="304" height="96"></rect>
+            <text x="590" y="72" text-anchor="middle" font-weight="700">Project Scout Agent</text>
+            <text x="590" y="98" text-anchor="middle" class="small">项目画像 / 主审范围 / 法规基线</text>
+            <text x="590" y="120" text-anchor="middle" class="small">文件编号体系 / 候选发现提示</text>
+          </g>
+
+          <g class="tool">
+            <rect x="58" y="204" width="240" height="190" rx="8"></rect>
+            <text x="78" y="236" font-weight="700">Evidence Tools</text>
+            <text x="78" y="266" class="small">PageIndex</text>
+            <text x="78" y="292" class="small">Relation Index</text>
+            <text x="78" y="318" class="small">Full-text Search</text>
+            <text x="78" y="344" class="small">File Reader</text>
+            <text x="78" y="370" class="small">SSOT Parameters</text>
+          </g>
+
+          <g class="hub">
+            <rect x="414" y="214" width="352" height="166" rx="12"></rect>
+            <text class="hub-title" x="590" y="254" text-anchor="middle">Orchestrator / Task Router</text>
+            <text x="590" y="286" text-anchor="middle" class="small">Task Board / Candidate Router</text>
+            <text x="590" y="314" text-anchor="middle" class="small">生成必查任务矩阵</text>
+            <text x="590" y="340" text-anchor="middle" class="small">路由候选、组织补证、重新派发</text>
+          </g>
+
+          <g class="candidate">
+            <rect x="880" y="204" width="240" height="190" rx="8"></rect>
+            <text x="1000" y="236" text-anchor="middle" font-weight="700">Candidate Discovery Agent</text>
+            <text x="1000" y="266" text-anchor="middle" class="small">语义提出候选假设</text>
+            <text x="1000" y="292" text-anchor="middle" class="small">Candidate Hypotheses</text>
+            <text x="1000" y="318" text-anchor="middle" class="small">证据引用 / 缺口说明</text>
+            <text x="1000" y="344" text-anchor="middle" class="small">候选回到 Router</text>
+          </g>
+
+          <g class="node">
+            <rect x="238" y="500" width="704" height="118"></rect>
+            <text x="590" y="536" text-anchor="middle" font-weight="700">Regulatory / Hardware / Software / Risk / V&amp;V / DMR Agents</text>
+            <text x="590" y="564" text-anchor="middle" class="small">领域 Agent 接收 Orchestrator 派发的必查任务和 routed candidate package</text>
+            <text x="590" y="588" text-anchor="middle" class="small">输出 confirm / dismiss / needs_more_context / human_review</text>
+          </g>
+
+          <g class="gate">
+            <rect x="354" y="690" width="472" height="94" rx="8"></rect>
+            <text x="590" y="726" text-anchor="middle" font-weight="700">Evidence Gate + Challenge Agent</text>
+            <text x="590" y="754" text-anchor="middle" class="small">证据回溯 + 反向质疑：confirm / dismiss / needs_more_context</text>
+          </g>
+
+          <g class="recovery">
+            <rect x="400" y="846" width="380" height="82" rx="8"></rect>
+            <text x="590" y="882" text-anchor="middle" font-weight="700">Context Recovery Agent</text>
+            <text x="590" y="908" text-anchor="middle" class="small">结构化缺口，补证后回到 Orchestrator 重新派发</text>
+          </g>
+
+          <path class="arrow violet" d="M590 132 L590 214"></path>
+          <text x="610" y="178" class="label-text">项目画像进入调度中心</text>
+
+          <path class="arrow teal" d="M298 286 L414 286"></path>
+          <path class="arrow teal" d="M414 322 L298 322"></path>
+          <text x="356" y="270" text-anchor="middle" class="label-text">取证工具双向调用</text>
+
+          <path class="arrow amber" d="M766 286 L880 286"></path>
+          <path class="arrow amber" d="M880 332 L766 332"></path>
+          <text x="823" y="270" text-anchor="middle" class="label-text">派发现候选任务</text>
+          <text x="823" y="356" text-anchor="middle" class="label-text">候选假设回流</text>
+
+          <path class="arrow violet" d="M590 380 L590 500"></path>
+          <text x="612" y="446" class="label-text">派发领域复审任务</text>
+
+          <path class="arrow blue" d="M590 618 L590 690"></path>
+          <text x="612" y="658" class="label-text">领域 Agent 返回判断</text>
+
+          <path class="arrow red" d="M590 784 L590 846"></path>
+          <text x="612" y="822" class="label-text">needs_more_context</text>
+
+          <path class="arrow red" d="M400 888 C142 856,118 424,414 348"></path>
+          <text x="154" y="680" class="label-text">补证结果回到 Orchestrator</text>
+        </svg>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item"><strong>主干</strong>Scout -> Orchestrator -> 领域 Agent -> Evidence Gate -> Context Recovery。</div>
+        <div class="legend-item"><strong>左侧工具</strong>Evidence Tools 与 Orchestrator/Agent 双向取证，不直接裁决。</div>
+        <div class="legend-item"><strong>右侧候选</strong>Candidate Discovery 提候选，候选必须回到 Router。</div>
+        <div class="legend-item"><strong>闭环</strong>needs_more_context 经 Context Recovery 回到 Orchestrator 重新派发。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>这张图想表达什么</h2>
+      <div class="three-col">
+        <div class="card">
+          <h3>Orchestrator 是调度中心</h3>
+          <p>它不是普通 workflow 节点，而是生成任务、路由候选、组织补证、重新派发的中心。</p>
+        </div>
+        <div class="card">
+          <h3>Candidate Discovery 不直接裁决</h3>
+          <p>它只提出候选假设。候选先回到 Orchestrator Candidate Router，再进入领域 Agent 复审。</p>
+        </div>
+        <div class="card">
+          <h3>工具只是取证能力</h3>
+          <p>PageIndex、Relation Index、全文检索、文件读取都只提供证据和上下文，不直接生成 finding。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Orchestrator 的调度边界</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Orchestrator 做什么</th>
+            <th>具体动作</th>
+            <th>不做什么</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>生成必查任务</td>
+            <td>按阶段轴 x 维度轴生成任务矩阵，保证生命周期闭环和横向覆盖。</td>
+            <td>不因为没有候选就跳过必查项。</td>
+          </tr>
+          <tr>
+            <td>路由候选</td>
+            <td>标准化、去重、合并、绑定必查任务，分派一个或多个领域 Agent。</td>
+            <td>不做 confirm / dismiss，不直接输出 finding。</td>
+          </tr>
+          <tr>
+            <td>组织补证</td>
+            <td>根据 Context Recovery 的缺口诊断，重新派发补证任务。</td>
+            <td>不让同一个长 prompt 无限重跑。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Agent 回流结果如何处理</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>回流结果</th>
+            <th>Orchestrator 下一步</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>候选假设</td><td>进入 Candidate Router，分派给一个或多个领域 Agent。</td></tr>
+          <tr><td>confirm</td><td>送 Evidence Gate 和 Challenge 验证。</td></tr>
+          <tr><td>dismiss</td><td>记录驳回理由，可写入裁决库。</td></tr>
+          <tr><td>needs_more_context</td><td>送 Context Recovery 诊断缺口，再回 Orchestrator 派补证任务。</td></tr>
+          <tr><td>human_review</td><td>进入人工复核包，不再自动循环。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Context Recovery 五轮补证</h2>
+      <p class="subtitle">每一轮都会回到 Orchestrator 再派发，不是同一个 prompt 变长后硬跑。</p>
+      <div class="rounds">
+        <div class="round">
+          <div class="num">1</div>
+          <h3>局部上下文</h3>
+          <p>补原证据前后行、完整表格行列、小节标题和文件基本信息。</p>
+        </div>
+        <div class="round">
+          <div class="num">2</div>
+          <h3>同实体跨文件</h3>
+          <p>补同一型号、料号、参数、文件编号、需求编号或风险编号的全项目出现位置。</p>
+        </div>
+        <div class="round">
+          <div class="num">3</div>
+          <h3>生命周期上下游</h3>
+          <p>补设计输入到输出、风险到控制到验证、BOM 到工艺到检验的链路。</p>
+        </div>
+        <div class="round">
+          <div class="num">4</div>
+          <h3>版本受控状态</h3>
+          <p>补封面、修订历史、签批页、文件清单、变更记录、归档或废止信息。</p>
+        </div>
+        <div class="round">
+          <div class="num">5</div>
+          <h3>反证与人工包</h3>
+          <p>整理支持 confirm 的证据、支持 dismiss 的反证、仍缺证据和人工复核建议。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>关键输出</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>任务与候选</h3>
+          <div class="file">10_task_packages/mandatory_audit_matrix.json</div>
+          <div class="file" style="margin-top:8px">07_findings/candidate_discovery_results.jsonl</div>
+          <div class="file" style="margin-top:8px">10_task_packages/routed_candidate_review_packages.json</div>
+        </div>
+        <div class="card">
+          <h3>补证与报告</h3>
+          <div class="file">14_context_recovery/context_recovery_tasks.json</div>
+          <div class="file" style="margin-top:8px">14_context_recovery/context_recovery_results.jsonl</div>
+          <div class="file" style="margin-top:8px">08_reports/PT9L_full_audit_report_langgraph.md</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:14px">这张图表达 Agent 间调度关系，不把 LangGraph 的工程执行顺序误画成业务审查 workflow。</p>
+    </section>
+  </main>
+</body>
+</html>
+

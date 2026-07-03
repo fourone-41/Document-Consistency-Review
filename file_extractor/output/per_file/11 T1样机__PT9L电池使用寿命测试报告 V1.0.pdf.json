@@ -1,0 +1,468 @@
+{
+  "document": {
+    "title": "PT9L电池使用寿命测试报告",
+    "doc_type": "测试报告",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "PT9L-BLTR01",
+      "item": "电池使用寿命测试（动态功耗）",
+      "condition": "温度22℃；湿度55%；两节七号干电池（3V/1000mAh）供电；串入万用表电流档；模拟一次用户测量过程，从按键唤醒到自动进入待机",
+      "expected_value": "满足设计输入要求",
+      "actual_result": "平均动态功耗12.7mA，连续工作时间=1000mAh*0.6/12.7mA=47.24h",
+      "pass_criteria": "满足设计输入的要求",
+      "instrument": "万用表（电流档）",
+      "environment": "温度22℃；湿度55%"
+    },
+    {
+      "test_id": "PT9L-BLTR01",
+      "item": "电池使用寿命测试（静态功耗）",
+      "condition": "温度22℃；湿度55%；两节七号干电池（3V/1000mAh）供电；串入万用表电流档；模拟一次用户测量过程，从按键唤醒到自动进入待机后开始测量",
+      "expected_value": "满足设计输入要求",
+      "actual_result": "平均静态功耗8.1uA，待机时间=1000mAh*1000*0.6/8.1uA/24/30=102.88月",
+      "pass_criteria": "满足设计输入要求",
+      "instrument": "万用表（电流档）",
+      "environment": "温度22℃；湿度55%"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-BLTR01 V1.0",
+      "conclusion": "此测试方法是模拟人体测试，通过测试不同状态的功耗推算出连续工作时间和待机时间，满足设计输入的要求。"
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "动态功耗-第1次",
+      "reading": 12.1,
+      "unit": "mA",
+      "condition": "动态功耗测量，两节七号干电池供电"
+    },
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "动态功耗-第2次",
+      "reading": 12.8,
+      "unit": "mA",
+      "condition": "动态功耗测量，两节七号干电池供电"
+    },
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "动态功耗-第3次",
+      "reading": 13.2,
+      "unit": "mA",
+      "condition": "动态功耗测量，两节七号干电池供电"
+    },
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "动态功耗-平均值",
+      "reading": 12.7,
+      "unit": "mA",
+      "condition": "动态功耗测量，两节七号干电池供电"
+    },
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "静态功耗-第1次",
+      "reading": 8.4,
+      "unit": "uA",
+      "condition": "静态功耗测量，两节七号干电池供电"
+    },
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "静态功耗-第2次",
+      "reading": 8.2,
+      "unit": "uA",
+      "condition": "静态功耗测量，两节七号干电池供电"
+    },
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "静态功耗-第3次",
+      "reading": 7.8,
+      "unit": "uA",
+      "condition": "静态功耗测量，两节七号干电池供电"
+    },
+    {
+      "machine_no": "PT9L整机（T1样机）",
+      "test_point": "静态功耗-平均值",
+      "reading": 8.1,
+      "unit": "uA",
+      "condition": "静态功耗测量，两节七号干电池供电"
+    }
+  ],
+  "persons": [
+    {
+      "title": "硬件工程师（编制）"
+    },
+    {
+      "title": "硬件主管（审核）"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-BLTR01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L整机（T1样机）"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "实验方法——动态功耗：1、被测试PT9L使用两节七号干电池供电，串入万用表电流档，记录万用表实际测量值；2、模拟一次用户测量过程，从按键唤醒到自动进入待机，重复几轮，取平均值。静态功耗：1、被测试PT9L使用两节七号干电池供电，串入万用表电流档，记录万用表实际测量值。2、模拟一次用户测量过程，从按键唤醒到自动进入待机后，开始测量，重复几轮，取平均值。",
+      "topic_tags": [
+        "动态功耗",
+        "静态功耗",
+        "测试方法",
+        "万用表",
+        "电池供电"
+      ],
+      "related_subjects": [
+        "PT9L整机",
+        "电池使用寿命测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "连续工作时间：1000mAh*0.6/12.7mA=47.24h。满足设计输入的要求。待机时间：1000mAh*1000*0.6/8.1uA/24/30=102.88月。满足设计输入要求。",
+      "topic_tags": [
+        "连续工作时间",
+        "待机时间",
+        "电池寿命计算",
+        "设计输入"
+      ],
+      "related_subjects": [
+        "PT9L整机",
+        "电池使用寿命测试",
+        "动态功耗",
+        "静态功耗"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/PT9L电池使用寿命测试报告 V1.0.pdf.md",
+    "doc_type": "test_report"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L整机",
+      "to": "动态功耗",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池使用寿命测试",
+      "to": "动态功耗",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L整机",
+      "to": "连续工作时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池使用寿命测试",
+      "to": "连续工作时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "动态功耗",
+      "to": "连续工作时间",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "静态功耗",
+      "to": "连续工作时间",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "PT9L-BLTR01",
+      "to": "PT9L-BLTR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-第1次",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-第2次",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-第3次",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-平均值",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-第1次",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-第2次",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-第3次",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-平均值",
+      "properties": {
+        "detail_type": "measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01 V1.0",
+      "to": "PT9L-BLTR01",
+      "properties": {
+        "detail_type": "test_item"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01 V1.0",
+      "to": "behavioral_spec_动态静态功耗测试方法",
+      "properties": {
+        "detail_type": "semantic_fragment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-BLTR01 V1.0",
+      "to": "behavioral_spec_连续工作时间待机时间",
+      "properties": {
+        "detail_type": "semantic_fragment"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-第1次",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 12.1,
+        "unit": "mA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-第2次",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 12.8,
+        "unit": "mA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-第3次",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 13.2,
+        "unit": "mA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "动态功耗-平均值",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 12.7,
+        "unit": "mA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-第1次",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 8.4,
+        "unit": "uA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-第2次",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 8.2,
+        "unit": "uA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-第3次",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 7.8,
+        "unit": "uA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L-BLTR01",
+      "to": "静态功耗-平均值",
+      "properties": {
+        "machine_no": "PT9L整机（T1样机）",
+        "reading": 8.1,
+        "unit": "uA"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "PT9L整机（T1样机）",
+      "to": "PT9L-BLTR01",
+      "properties": {
+        "test_item": "电池使用寿命测试（动态功耗）",
+        "result": "满足设计输入的要求"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-BLTR01",
+      "to": "PT9L-BLTR01 V1.0",
+      "properties": {
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "硬件工程师（编制）",
+      "to": "PT9L-BLTR01 V1.0",
+      "properties": {
+        "role": "编制"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "硬件主管（审核）",
+      "to": "PT9L-BLTR01 V1.0",
+      "properties": {
+        "role": "审核"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "动态功耗",
+      "attribute": "平均值",
+      "value": "12.7",
+      "unit": "mA",
+      "tolerance": "",
+      "condition": "温度22℃；湿度55%；两节七号干电池（3V/1000mAh）供电；从按键唤醒到自动进入待机",
+      "raw_text": "平均动态功耗12.7mA，连续工作时间=1000mAh*0.6/12.7mA=47.24h"
+    },
+    {
+      "subject": "连续工作时间",
+      "attribute": "计算值",
+      "value": "47.24",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "温度22℃；湿度55%；两节七号干电池（3V/1000mAh）供电；动态功耗12.7mA；容量利用率60%",
+      "raw_text": "连续工作时间=1000mAh*0.6/12.7mA=47.24h"
+    },
+    {
+      "subject": "电池容量",
+      "attribute": "额定值",
+      "value": "1000",
+      "unit": "mAh",
+      "tolerance": "",
+      "condition": "两节七号干电池（3V）",
+      "raw_text": "两节七号干电池（3V/1000mAh）供电"
+    },
+    {
+      "subject": "电池电压",
+      "attribute": "额定值",
+      "value": "3",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "两节七号干电池",
+      "raw_text": "两节七号干电池（3V/1000mAh）供电"
+    },
+    {
+      "subject": "静态功耗",
+      "attribute": "平均值",
+      "value": "8.1",
+      "unit": "uA",
+      "tolerance": "",
+      "condition": "温度22℃；湿度55%；两节七号干电池（3V/1000mAh）供电；自动进入待机后",
+      "raw_text": "平均静态功耗8.1uA，待机时间=1000mAh*1000*0.6/8.1uA/24/30=102.88月"
+    },
+    {
+      "subject": "待机时间",
+      "attribute": "计算值",
+      "value": "102.88",
+      "unit": "月",
+      "tolerance": "",
+      "condition": "温度22℃；湿度55%；两节七号干电池（3V/1000mAh）供电；静态功耗8.1uA；容量利用率60%",
+      "raw_text": "待机时间=1000mAh*1000*0.6/8.1uA/24/30=102.88月"
+    },
+    {
+      "subject": "测试环境温度",
+      "attribute": "设定值",
+      "value": "22",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "电池使用寿命测试",
+      "raw_text": "温度22℃；湿度55%"
+    },
+    {
+      "subject": "测试环境湿度",
+      "attribute": "设定值",
+      "value": "55",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "电池使用寿命测试",
+      "raw_text": "温度22℃；湿度55%"
+    }
+  ]
+}

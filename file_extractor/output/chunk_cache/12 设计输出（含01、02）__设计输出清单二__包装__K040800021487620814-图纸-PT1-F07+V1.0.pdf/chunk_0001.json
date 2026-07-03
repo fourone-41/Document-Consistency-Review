@@ -1,0 +1,110 @@
+{
+  "document": {
+    "title": "PT1 条码标签（PT1-F07）",
+    "drawing_no": "PT1-F07",
+    "edition": "V1.0",
+    "model_no": "PT1",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance": ".X ±0.3; .XX; .X°",
+    "source_file": "K040800021487620814-图纸-PT1-F07+V1.0.pdf",
+    "created_date": "2026-05-13"
+  },
+  "products": [
+    {
+      "name": "条码标签",
+      "model": "PT1",
+      "drawing_no": "PT1-F07",
+      "material": "80g 不干胶铜版纸，覆膜",
+      "description": "PT1 产品的批次条码标签（一维条码），贴附于包装"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "K04080002148"
+    },
+    {
+      "type": "Drawing NO.",
+      "value": "PT1-F07"
+    },
+    {
+      "type": "源文件编号",
+      "value": "K040800021487620814-图纸-PT1-F07+V1.0.pdf"
+    }
+  ],
+  "components": [
+    {
+      "name": "条码标签",
+      "part_name": "条码标签",
+      "drawing_no": "PT1-F07",
+      "material": "80g 不干胶铜版纸，覆膜",
+      "dimensions": {
+        "width_mm": 40,
+        "height_mm": 15
+      },
+      "print_color": "单黑",
+      "barcode_type": "GS1-128 一维条码",
+      "barcode_ai": "AI (10): 201012011001（批号变量，12位：1-6制造令 / 7-9部件序号 / 10-12批次序列号）",
+      "font": "Myriad Pro 6 pt"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-PT1-F07-01",
+      "description": "本件要求通过 RoHS 测试",
+      "category": "合规要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1-F07-02",
+      "description": "材料：80g 不干胶铜版纸，覆膜",
+      "category": "材料要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1-F07-03",
+      "description": "印刷颜色：单黑",
+      "category": "印刷要求",
+      "priority": "A级"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "限制有害物质指令，本件要求通过 RoHS 测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "条码类型为 GS1-128 一维条码，AI (10) 数据字段为 201012011001，格式为12位批号变量：第1-6位为制造令编号，第7-9位为部件序号，第10-12位为批次序列号。字体使用 Myriad Pro 6 pt。",
+      "topic_tags": [
+        "GS1-128",
+        "一维条码",
+        "批号",
+        "AI(10)",
+        "条码格式"
+      ],
+      "related_subjects": [
+        "条码标签",
+        "PT1-F07",
+        "PT1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "标签外形尺寸：宽（W）40 mm，高（H）15 mm，尺寸公差 .X ±0.3，比例 1:1，单位 mm。材料为80g不干胶铜版纸并覆膜，印刷为单黑色。",
+      "topic_tags": [
+        "标签尺寸",
+        "公差",
+        "材料",
+        "印刷"
+      ],
+      "related_subjects": [
+        "条码标签",
+        "PT1-F07"
+      ]
+    }
+  ]
+}

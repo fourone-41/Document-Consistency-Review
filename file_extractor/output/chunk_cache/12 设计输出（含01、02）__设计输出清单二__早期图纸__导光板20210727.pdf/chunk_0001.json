@@ -1,0 +1,240 @@
+{
+  "document": {
+    "title": "导光板（T-Z1-P10 V1.0，2021-07-15）2D 图读图",
+    "document_number": "T-Z1-P10",
+    "version": "V1.0",
+    "version_label": "V1.0a（早期版）",
+    "date": "2021-07-15",
+    "source_file": "早期图纸/导光板20210727.pdf",
+    "page_size": "A4 竖向",
+    "scale": "1:1",
+    "tolerance_level": "LEVEL B",
+    "notes": "最初版，3个月后修订为下一版（导光板20211027.pdf），尺寸有显著变更"
+  },
+  "products": [
+    {
+      "name": "导光板",
+      "drawing_number": "T-Z1-P10",
+      "edition": "V1.0",
+      "material": "PMMA",
+      "version_label": "早期版 V1.0a",
+      "related_files": [
+        "早期图纸/导光板20210727.pdf",
+        "早期图纸/导光板20211027.pdf",
+        "../图纸/导光板.pdf"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "name": "导光板本体",
+      "material": "PMMA",
+      "thickness": "2.5 mm",
+      "tolerance": "±0.1 mm",
+      "note": "早期版厚度，后续修订为2.7mm"
+    },
+    {
+      "name": "反射膜",
+      "thickness": "0.1 mm",
+      "note": "与现版相同"
+    },
+    {
+      "name": "透射膜",
+      "thickness": "0.1 mm",
+      "note": "与现版相同"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "外形长度",
+      "value": "32.7 mm",
+      "tolerance": "±0.1 mm",
+      "dimension_number": "①",
+      "grade": "A级关键尺寸",
+      "note": "共用3个膜"
+    },
+    {
+      "id": "DI-02",
+      "description": "外形宽度",
+      "value": "22 mm",
+      "tolerance": "±0.1 mm",
+      "dimension_number": "②",
+      "grade": "A级关键尺寸",
+      "note": "共用3个膜"
+    },
+    {
+      "id": "DI-03",
+      "description": "导光板厚度",
+      "value": "2.5 mm",
+      "tolerance": "±0.1 mm",
+      "dimension_number": "③",
+      "grade": "A级关键尺寸",
+      "note": "早期版，后续修订为2.7mm"
+    },
+    {
+      "id": "DI-04",
+      "description": "带膜总厚度（反射膜0.1 + 导光板2.5 + 透射膜0.1）",
+      "value": "2.7 mm",
+      "tolerance": "±0.1 mm",
+      "grade": "A级关键尺寸",
+      "note": "早期版，后续修订为2.9mm"
+    },
+    {
+      "id": "DI-05",
+      "description": "倒角",
+      "value": "C2.42",
+      "grade": "A级关键尺寸",
+      "note": "早期版小倒角，后续扩大为C4.42"
+    },
+    {
+      "id": "DI-06",
+      "description": "反射膜/透射膜厚度",
+      "value": "0.1 mm",
+      "note": "与现版相同"
+    },
+    {
+      "id": "DI-07",
+      "description": "缺口（反射膜）",
+      "value": "3.2 / 8.9 mm",
+      "note": "早期版"
+    },
+    {
+      "id": "DI-08",
+      "description": "黑色区域宽（透射膜）",
+      "value": "3.2 mm",
+      "note": "早期版（窄），后续修订为3.7mm"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "带编号为重要尺寸，需要IQC测量",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "REQ-02",
+      "description": "产品符合RoHS 2.0",
+      "source": "技术要求第2条",
+      "regulation_ref": "RoHS 2.0"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品需符合RoHS 2.0有害物质限制指令"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "1",
+      "description": "制版制作",
+      "date": "2021-07-15",
+      "version_label": "V1.0 / V1.0a"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "grade": "C级",
+      "description": "修订原因待确认（实测漏光？装配干涉？光强不均？）"
+    },
+    {
+      "id": "C-2",
+      "grade": "C级",
+      "description": "DHF中是否有ECN文档记录V1.0a → V1.0b演进"
+    },
+    {
+      "id": "C-3",
+      "grade": "C级",
+      "description": "同Edition V1.0但实际两个尺寸版——版本号管理问题"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "T-Z1-P10",
+      "description": "导光板图纸编号"
+    },
+    {
+      "type": "源文件",
+      "value": "早期图纸/导光板20210727.pdf"
+    },
+    {
+      "type": "下一版文件",
+      "value": "早期图纸/导光板20211027.pdf"
+    },
+    {
+      "type": "现版文件",
+      "value": "../图纸/导光板.pdf"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "版本演进推断：2021-07 → 2021-10期间，导光板增厚0.2mm（2.5→2.7mm），目的是增加导光均匀性；倒角扩大近2倍（C2.42→C4.42），推测是为了避让某新增结构特征（保护盖/支架的角部）；黑色区域增宽0.5mm（3.2→3.7mm），目的是扩大遮光范围，减少漏光。3个月内发生重要工艺/光学修订，说明早期样机的LCD显示效果或装配存在问题。",
+      "topic_tags": [
+        "版本演进",
+        "导光均匀性",
+        "漏光",
+        "倒角",
+        "遮光",
+        "装配"
+      ],
+      "related_subjects": [
+        "T-Z1-P10",
+        "导光板",
+        "V1.0a",
+        "V1.0b"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "版本差异对照：早期V1.0a（2021-07-15）：导光板厚2.5±0.1mm，带膜厚2.7±0.1mm，倒角C2.42，黑色区域3.2mm；早期V1.0b（2021-10-15）：导光板厚2.7±0.1mm，带膜厚2.9±0.1mm，倒角C4.42，黑色区域3.7mm；现版（同V1.0）与V1.0b一致：导光板厚2.7±0.1mm，带膜厚2.9±0.1mm，倒角C4.42，黑色区域3.7mm。",
+      "topic_tags": [
+        "版本差异",
+        "关键尺寸",
+        "导光板厚度",
+        "倒角",
+        "黑色区域"
+      ],
+      "related_subjects": [
+        "T-Z1-P10",
+        "V1.0a",
+        "V1.0b",
+        "现版"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文档定位为早期版V1.0a归档文件，源文件为导光板20210727.pdf（A4竖向，文字层81字符）。该版本为T-Z1-P10的最初版，制版日期2021-07-15，3个月后修订为导光板20211027.pdf，尺寸有显著变更。本文档属精简版早期版历史归档，归档日期2026-06-02。",
+      "topic_tags": [
+        "历史归档",
+        "早期版",
+        "版本定位",
+        "文档说明"
+      ],
+      "related_subjects": [
+        "T-Z1-P10",
+        "V1.0a",
+        "导光板20210727.pdf"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "版本号管理问题：同一Edition标注为V1.0，但实际存在两个不同尺寸的版本（V1.0a与V1.0b），导光板厚度差异0.2mm，倒角差异显著。建议DHF中补充ECN文档记录V1.0a→V1.0b的演进过程及修订原因（实测漏光/装配干涉/光强不均等），并规范版本号管理。",
+      "topic_tags": [
+        "版本号管理",
+        "ECN",
+        "DHF",
+        "质量问题"
+      ],
+      "related_subjects": [
+        "C-1",
+        "C-2",
+        "C-3",
+        "T-Z1-P10"
+      ]
+    }
+  ]
+}

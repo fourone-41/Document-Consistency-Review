@@ -1,0 +1,1708 @@
+{
+  "tests": [
+    {
+      "test_id": "BufCmp_01",
+      "item": "BufCmp: r0=0x01, r1=0x04, y=0x03，返回0",
+      "expected_value": "返回0",
+      "actual_result": "返回0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BufCmp_02",
+      "item": "BufCmp: r0=0x01, r1=0x04, y=0x04，返回1",
+      "expected_value": "返回1",
+      "actual_result": "返回1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BufCmp_03",
+      "item": "BufCmp: r0=0x01, r1=0x04, y=0x02，返回3",
+      "expected_value": "返回3",
+      "actual_result": "返回3",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_01",
+      "item": "set_maxpre: p_pre=0x00",
+      "expected_value": "2595",
+      "actual_result": "2595",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_02",
+      "item": "set_maxpre: p_pre=2000",
+      "expected_value": "2512",
+      "actual_result": "2512",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_03",
+      "item": "set_maxpre: p_pre=1500",
+      "expected_value": "1639",
+      "actual_result": "1639",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "set_maxpre_04",
+      "item": "set_maxpre: p_pre=3600",
+      "expected_value": "4028",
+      "actual_result": "4028",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Rising_Edage_01",
+      "item": "Find_Rising_Edage: Buffer指定数据，Optr=5，y=4",
+      "expected_value": "0",
+      "actual_result": "0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Rising_Edage_02",
+      "item": "Find_Rising_Edage: Buffer指定数据，Optr=5，y=4（上升沿）",
+      "expected_value": "1",
+      "actual_result": "1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Peak_01",
+      "item": "Find_Peak: Buffer指定数据，Optr=5，y=1，count=10，count1=9，peakp=1005",
+      "expected_value": "Count1=10; peakp=1006; 返回0",
+      "actual_result": "Count1=10; peakp=1006; 返回0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Peak_02",
+      "item": "Find_Peak: Buffer指定数据，Optr=28，y=1，count=18，count1=12，peakp=1023",
+      "expected_value": "Count1=12; peakp=1023; 返回1",
+      "actual_result": "Count1=12; peakp=1023; 返回1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Detect_Max_Peak_01",
+      "item": "Detect_Max_Peak: Bpdata心跳强度02,06,09,12,18,28,25,20；bpptr=7",
+      "expected_value": "Maxvp=25",
+      "actual_result": "Maxvp=25",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Enoise_01",
+      "item": "Enoise: Bpdata心跳强度02,06,09,12,18,25,25,20；bpptr=7",
+      "expected_value": "bpptr=7，不剔出",
+      "actual_result": "bpptr=7，不剔出",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Enoise_02",
+      "item": "Enoise: Bpdata心跳强度02,06,09,12,18,34,25,20；bpptr=7",
+      "expected_value": "bpptr=6，剔出bpptr-1点（34）",
+      "actual_result": "bpptr=6，剔出bpptr-1点（34）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Temperature_Test_01",
+      "item": "Temperature_Test: 运行函数，读取温度值",
+      "expected_value": "能读取到温度值，且与室温相差不超过2度",
+      "actual_result": "能读取到温度值，且与室温相差不超过2度（室温23度，读取温度22度）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Temperature_Test_02",
+      "item": "Temperature_Test: 短接温度传输器的SCK和SDA，运行函数",
+      "expected_value": "运行完成后，返回-127",
+      "actual_result": "运行完成后，返回-127",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "calbuf_01",
+      "item": "calbuf: Buffer指定数据，a=7，n=8，计算平均值",
+      "expected_value": "1005",
+      "actual_result": "1005",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "adapt_pre_4096_01",
+      "item": "adapt_pre_4096: Buffer[0]=2283，optr=0，zerohl=1300，spanhl=4023，转换为4096格式",
+      "expected_value": "Buffer[0]=1001；其他数据不变",
+      "actual_result": "Buffer[0]=1001；其他数据不变",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Subabs_01",
+      "item": "BPI_Subabs: temp=200，temp1=300",
+      "expected_value": "100",
+      "actual_result": "100",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Subabs_02",
+      "item": "BPI_Subabs: temp=2000，temp1=1500",
+      "expected_value": "500",
+      "actual_result": "500",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Cal_count_01",
+      "item": "Cal_count: 心跳间隔{45,43,49,45,44,44,44,44,44,45,44,44,45,45,44,46,43,45,44,44}，xt0=20，TAVG=891，计算心率",
+      "expected_value": "67",
+      "actual_result": "67",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Search_Zero_01",
+      "item": "BPI_Search_Zero: cnt20s=1001",
+      "expected_value": "run_mode=MODE_er0",
+      "actual_result": "run_mode=MODE_er0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_Search_Zero_02",
+      "item": "BPI_Search_Zero: cnt20s=25",
+      "expected_value": "run_mode=MODE_test",
+      "actual_result": "run_mode=MODE_test",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Systolic_01",
+      "item": "Find_Systolic: Bp队列起始压力及心跳强度指定数据，MAXBPP=1360，MAXBPV=42，计算高压",
+      "expected_value": "108",
+      "actual_result": "108",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Find_Diastolic_01",
+      "item": "Find_Diastolic: Bp队列起始压力及心跳强度指定数据，MAXBPP=1360，MAXBPV=42，计算低压",
+      "expected_value": "75",
+      "actual_result": "75",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT6_DDR6",
+      "item": "端口6 端口方向选择寄存器DDR6",
+      "expected_value": "0x000F",
+      "actual_result": "0x000F",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT6_PDOR6",
+      "item": "端口6 端口输出寄存器PDOR6",
+      "expected_value": "0x0000",
+      "actual_result": "0x0000",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT8_PFR8",
+      "item": "端口8 端口功能寄存器PFR8",
+      "expected_value": "0x0000",
+      "actual_result": "0x0000",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT8_DDR8",
+      "item": "端口8 端口方向选择寄存器DDR8",
+      "expected_value": "0x0003",
+      "actual_result": "0x0003",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PORT8_PDOR8",
+      "item": "端口8 端口输出寄存器PDOR8",
+      "expected_value": "0x0000",
+      "actual_result": "0x0000",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_save_1",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组1，*p={0,1,2,3,4,..,299}，运行函数",
+      "expected_value": "在组1中第11条记录位置写入*p指向数据",
+      "actual_result": "在组1中第11条记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_save_2",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组2，*p={0,1,2,3,4,..,299}，运行函数",
+      "expected_value": "在组2中第1条记录位置写入*p指向数据",
+      "actual_result": "在组2中第1条记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_save_3",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为10，组1存储9条记录，组2存储0条记录，grp=组1，*p={0,1,2,3,4,..,299}，运行两遍函数",
+      "expected_value": "在组1中第1条、第2条记录位置写入*p指向数据",
+      "actual_result": "在组1中第1条、第2条记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_save_4",
+      "item": "record_def record_save(uint8_t grp, UNION_RCD_DATA_T* p) - 保存记录内容到指定组中",
+      "condition": "组容量设置为10，组1存储9条记录，组2存储0条记录，grp=组1，*p={0,1,2,3,4,..,299}，运行30遍函数",
+      "expected_value": "在组1中所有记录位置写入*p指向数据",
+      "actual_result": "在组1中所有记录位置写入*p指向数据",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_read_1",
+      "item": "result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p) - 从指定的组中读取指定记录号的记录并存储到*p中",
+      "condition": "组容量设置为20，组1存储10条记录，记录1中存储{0,1,2,…,299}...记录10中存储{9,2,3,…,308}，组2存储0条记录，grp=组1，num=10，运行函数",
+      "expected_value": "程序运行完毕后，*p中数据为{9,2,3,…,308}",
+      "actual_result": "程序运行完毕后，*p中数据为{9,2,3,…,308}",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_read_2",
+      "item": "result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p) - 从指定的组中读取指定记录号的记录并存储到*p中",
+      "condition": "组容量设置为20，组1存储10条记录，记录1中存储{0,1,2,…,299}...记录10中存储{9,2,3,…,308}，组2存储0条记录，grp=组2，num=10，运行函数",
+      "expected_value": "程序运行后返回0（查找记录异常）",
+      "actual_result": "程序运行后返回0（查找记录异常）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_read_3",
+      "item": "result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p) - 从指定的组中读取指定记录号的记录并存储到*p中",
+      "condition": "组容量设置为20，组1存储10条记录，记录1中存储{0,1,2,…,299}...记录10中存储{9,2,3,…,308}，组2存储0条记录，grp=组1，num=5，运行函数",
+      "expected_value": "程序运行完毕后，*p中数据为{4,2,3,…,303}",
+      "actual_result": "程序运行完毕后，*p中数据为{4,2,3,…,303}",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_sum_1",
+      "item": "result_def record_sum(uint8_t grp, int16_t* sum) - 统计指定组中存储的记录数",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组1，运行函数",
+      "expected_value": "程序运行完毕后，*sum = 10",
+      "actual_result": "程序运行完毕后，*sum = 10",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_sum_2",
+      "item": "result_def record_sum(uint8_t grp, int16_t* sum) - 统计指定组中存储的记录数",
+      "condition": "组容量设置为20，组1存储22条记录，组2存储0条记录，grp=组1，运行函数",
+      "expected_value": "程序运行完毕后，*sum = 20",
+      "actual_result": "程序运行完毕后，*sum = 20",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_sum_3",
+      "item": "result_def record_sum(uint8_t grp, int16_t* sum) - 统计指定组中存储的记录数",
+      "condition": "组容量设置为20，组1存储10条记录，组2存储0条记录，grp=组2，运行函数",
+      "expected_value": "程序运行完毕后，*sum = 0",
+      "actual_result": "程序运行完毕后，*sum = 0",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_clear_from_1",
+      "item": "result_def record_clear_from(uint8_t grp, int16_t start) - 删除指定组中指定记录之前的记忆值",
+      "condition": "组1存储10条记录，组2存储0条记录，grp=组1，start=5，运行函数后再次运行record_sum",
+      "expected_value": "record_sum运行完毕后，*sum = 5",
+      "actual_result": "record_sum运行完毕后，*sum = 5",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "record_clear_from_2",
+      "item": "result_def record_clear_from(uint8_t grp, int16_t start) - 删除指定组中指定记录之前的记忆值",
+      "condition": "组1存储10条记录，组2存储0条记录，grp=组2，start=5，运行函数",
+      "expected_value": "程序运行后返回0（删除记录异常）",
+      "actual_result": "程序运行后返回0（删除记录异常）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Cuff_PlugIn_Detect_1",
+      "item": "void Cuff_PlugIn_Decete(void) - 检测袖带插入状态",
+      "condition": "插入袖带，运行三次函数",
+      "expected_value": "运行完毕后返回1（袖带插入）",
+      "actual_result": "运行完毕后返回1（袖带插入）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Cuff_PlugIn_Detect_2",
+      "item": "void Cuff_PlugIn_Decete(void) - 检测袖带插入状态",
+      "condition": "上述测试完毕后，拔出袖带，运行三次函数",
+      "expected_value": "运行完毕后返回0（袖带未插入）",
+      "actual_result": "运行完毕后返回0（袖带未插入）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_1",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，正常操作",
+      "expected_value": "成功设置Wifi",
+      "actual_result": "成功设置Wifi",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_2",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，Wifi模块rst一直为低",
+      "expected_value": "返回上电异常",
+      "actual_result": "返回上电异常",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_3",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，不设置Wifi",
+      "expected_value": "返回连接路由器超时",
+      "actual_result": "返回连接路由器超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_4",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，路由器设置为不支持DHCP",
+      "expected_value": "返回未获取到IP",
+      "actual_result": "返回未获取到IP",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_5",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，路由器未连接到网络",
+      "expected_value": "返回连接云端超时",
+      "actual_result": "返回连接云端超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_6",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "link_mode=WIFI_SMART_LINk，运行程序，配合小米智能家庭App，9min内应输出Wifi工作状态，密码输入错误",
+      "expected_value": "返回密码错误",
+      "actual_result": "返回密码错误",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_7",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，正常操作",
+      "expected_value": "成功连接到网络",
+      "actual_result": "成功连接到网络",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_8",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，Wifi模块rst一直为低",
+      "expected_value": "返回上电异常",
+      "actual_result": "返回上电异常",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_9",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，关闭之前设置的路由器",
+      "expected_value": "返回连接路由器超时",
+      "actual_result": "返回连接路由器超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_10",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，路由器设置为不支持DHCP",
+      "expected_value": "返回未获取到IP",
+      "actual_result": "返回未获取到IP",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_11",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，路由器未连接到网络",
+      "expected_value": "返回连接云端超时",
+      "actual_result": "返回连接云端超时",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_AutoConnect_12",
+      "item": "ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode) - Wifi模块工作模式控制及连接状态检测",
+      "condition": "设置完Wifi后，link_mode=WIFI_AUTO_LINK，运行程序，配合小米智能家庭App，90s内应输出Wifi工作状态，修改路由器密码",
+      "expected_value": "返回密码错误",
+      "actual_result": "返回密码错误",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_All_1",
+      "item": "void User_Dis_All(uint16_t color) - 屏幕显示纯色",
+      "condition": "color = 0x07E0",
+      "expected_value": "屏幕显示绿色",
+      "actual_result": "屏幕显示绿色",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_All_2",
+      "item": "void User_Dis_All(uint16_t color) - 屏幕显示纯色",
+      "condition": "color = 0x001F",
+      "expected_value": "屏幕显示蓝色",
+      "actual_result": "屏幕显示蓝色",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_All_3",
+      "item": "void User_Dis_All(uint16_t color) - 屏幕显示纯色",
+      "condition": "color = 0xF800",
+      "expected_value": "屏幕显示红色",
+      "actual_result": "屏幕显示红色",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_Bp_Result_1",
+      "item": "void User_Dis_Bp_Result(Dis_Result_Str_t result) - 显示测量结果",
+      "condition": "result.sys=120，result.dia=80，result.pul=80，result.bp_level=2，dis_unit=0",
+      "expected_value": "显示高压120、低压80、心率80，正常血压，显示单位为mmHg",
+      "actual_result": "显示高压120、低压80、心率80，正常血压，显示单位为mmHg",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "User_Dis_Bp_Result_2",
+      "item": "void User_Dis_Bp_Result(Dis_Result_Str_t result) - 显示测量结果",
+      "condition": "result.sys=120，result.dia=80，result.pul=80，result.bp_level=2，dis_unit=1",
+      "expected_value": "显示高压16.0、低压10.7、心率80，正常血压，显示单位为kPa",
+      "actual_result": "显示高压16.0、低压10.7、心率80，正常血压，显示单位为kPa",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_Andon_Base_DeCode_1",
+      "item": "void Wifi_Andon_Base_DeCode(void) - 协议解码函数",
+      "condition": "将Wifi模块复位，向Wifi连接的串口中发送D0 00 19 00 00 A1 83 01 08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D C1，检查串口输出及系统配置内容的二进制串",
+      "expected_value": "串口输出C0 00 05 00 00 A1 83 01 25，同时系统配置内容二进制串为08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D",
+      "actual_result": "串口输出C0 00 05 00 00 A1 83 01 25，同时系统配置内容二进制串为08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Wifi_Andon_Base_DeCode_2",
+      "item": "void Wifi_Andon_Base_DeCode(void) - 协议解码函数",
+      "condition": "将Wifi模块复位，向Wifi连接的串口中发送D0 00 10 00 00 FF 10 01 01 01 00 06 00 00 00 00 14 F7 A5 C8，检查串口输出及存储的Wifi_Fwver及DID",
+      "expected_value": "串口输出C0 00 1F 00 00 FF 10 33 04 01 00 00 00 04 01 00 00 00 00 0F 68 65 61 6C 74 68 2E 62 70 2E 62 70 6D 31 6F，同时Wifi_Fwver=0x010006，DID=0x0014F7A5",
+      "actual_result": "串口输出C0 00 1F 00 00 FF 10 33 04 01 00 00 00 04 01 00 00 00 00 0F 68 65 61 6C 74 68 2E 62 70 2E 62 70 6D 31 6F，同时Wifi_Fwver=0x010006，DID=0x0014F7A5",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "MiBpm_SendDataToCloud_Pack_1",
+      "item": "void MiBpm_SendDataToCloud_Pack(uint16_t cmd) - 血压计数据打包函数",
+      "condition": "（无测试用例记录）",
+      "expected_value": null,
+      "actual_result": null,
+      "pass_criteria": null
+    },
+    {
+      "test_id": "POST_SYSTEM_CONFIG",
+      "item": "Cmd为POST_SYSTEM_CONFIG，系统配置内容二进制串为08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D，运行函数，查看串口输出",
+      "expected_value": "串口输出C0 00 19 00 00 A1 82 02 08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D C1",
+      "actual_result": "串口输出C0 00 19 00 00 A1 82 02 08 01 0C 43 47 4C 4F 00 75 08 00 1E 56 63 68 73 64 FF 63 6D C1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "POST_DEVICE_SHUTDOWN_NOTIFY",
+      "item": "Cmd为POST_DEVICE_SHUTDOWN_NOTIFY，运行函数，查看串口输出",
+      "expected_value": "串口输出C0 00 06 00 00 A1 82 10 00 33",
+      "actual_result": "串口输出C0 00 06 00 00 A1 82 10 00 33",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Sound_Sentence_SYSTOLIC",
+      "item": "Sound_Sentence: sen_num=SENTENCE_SYSTOLIC，num=120",
+      "expected_value": "血压计播报高压120mmHg",
+      "actual_result": "血压计播报高压120mmHg",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "Sound_Sentence_DIASTOLIC",
+      "item": "Sound_Sentence: sen_num=SENTENCE_DIASTOLIC，num=80",
+      "expected_value": "血压计播报低压80mmHg",
+      "actual_result": "血压计播报高压80mmHg",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PWC_IRQ_20ms_20pct",
+      "item": "PWC_IRQ: 输入周期为20ms，占空比为20%方波，查看采样值是否符合预期值要求",
+      "expected_value": "2000±3",
+      "actual_result": "2001",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "PWC_IRQ_20ms_50pct",
+      "item": "PWC_IRQ: 输入周期为20ms，占空比为50%方波，查看采样值是否符合预期值要求",
+      "expected_value": "5000±3",
+      "actual_result": "5001",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1_down",
+      "item": "BPI_ScanKey: S1按键按下",
+      "expected_value": "key_stata.keydown=S1",
+      "actual_result": "key_stata.keydown=S1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1_up",
+      "item": "BPI_ScanKey: S1按键抬起",
+      "expected_value": "key_stata.keyup=S1",
+      "actual_result": "key_stata.keyup=S1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1_long",
+      "item": "BPI_ScanKey: S1按键长按2s",
+      "expected_value": "key_stata.keylong=S1",
+      "actual_result": "key_stata.keylong=S1",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S2_down",
+      "item": "BPI_ScanKey: S2按键按下",
+      "expected_value": "key_stata.keydown=S2",
+      "actual_result": "key_stata.keydown=S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S2_up",
+      "item": "BPI_ScanKey: S2按键抬起",
+      "expected_value": "key_stata.keyup=S2",
+      "actual_result": "key_stata.keyup=S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S2_long",
+      "item": "BPI_ScanKey: S2按键长按2s",
+      "expected_value": "key_stata.keylong=S2",
+      "actual_result": "key_stata.keylong=S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BPI_ScanKey_S1S2_long",
+      "item": "BPI_ScanKey: S1和S2按键同时长按2s",
+      "expected_value": "key_stata.keylong=S1+S2",
+      "actual_result": "key_stata.keylong=S1+S2",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BATDECT_low_voltage",
+      "item": "BATDECT: 将供电电压调整至3.2V，运行8次函数，查看函数运行结果",
+      "condition": "供电电压3.2V",
+      "expected_value": "运行完毕后返回1（检测到低电压）",
+      "actual_result": "运行完毕后返回1（检测到低电压）",
+      "pass_criteria": "OK"
+    },
+    {
+      "test_id": "BATDECT_normal_voltage",
+      "item": "BATDECT: 上述测试完毕后，将供电电压调整至3.5V，运行8次函数，查看函数运行结果",
+      "condition": "供电电压3.5V",
+      "expected_value": "运行完毕后返回1（未检测到低电压）",
+      "actual_result": "运行完毕后返回1（未检测到低电压）",
+      "pass_criteria": "OK"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t BufCmp(uint16_t r0,uint16_t r1)：compare to data in buffer，比较大小并返回不同的值。",
+      "topic_tags": [
+        "BufCmp",
+        "数据比较",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "子程序测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t set_maxpre(uint16_t p_pre)：pressure preset，设定压力平台，根据函数参数，确定加压的压力高度，并返回4096格式的压力平台值。返回值=p_pre+512；如果p_pre+512>=4028，则返回4028；如果p_pre+512<=1639，则返回1639。",
+      "topic_tags": [
+        "set_maxpre",
+        "压力平台",
+        "4096格式",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "压力控制"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Find_Rising_Edage(uint16_t Buffer[], uint16_t tmp_uint, uint8_t Optr, uint8_t y)：detect rising edge，根据optr指定的位置和y确定buffer中的数据是否上升沿。",
+      "topic_tags": [
+        "Find_Rising_Edage",
+        "上升沿检测",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "信号处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Find_Peak(uint16_t buffer[], uint8_t Optr, uint8_t y, uint8_t *count, uint8_t *count1, uint16_t *peakp, volatile uint8_t *PHASE)：detect peak point，搜索每一次心跳的最大峰值点，如果找到则返回1，否则返回0。",
+      "topic_tags": [
+        "Find_Peak",
+        "峰值检测",
+        "心跳",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Detect_Max_Peak(struct Pdata *bpdata, uint8_t maxvp, uint8_t bpptr)：calculate peak value of peak point，在找到每次心跳的幅值后，寻找最大的幅值点。",
+      "topic_tags": [
+        "Detect_Max_Peak",
+        "最大峰值",
+        "心跳幅值",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Enoise(struct Pdata *bpdata, uint8_t bpptr)：data anti disturb，将bpptr-1、bpptr-2、bpptr-3三点进行运算分析，如果满足剔出条件，将bpptr-2点剔出，且bpptr--。",
+      "topic_tags": [
+        "Enoise",
+        "抗干扰",
+        "数据剔除",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "信号处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 int8_t Temperature_Test(void)：读取温度传感器测得的温度值。",
+      "topic_tags": [
+        "Temperature_Test",
+        "温度传感器",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "传感器"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t calbuf(uint8_t data1, uint8_t data2)：Handle the data of buffer，计算buffer中从data1所指向的数据向前的data2个点的平均值。测试说明：输入不同值并验证输出值与手动计算结果一致（C: input different values and verify the output values are same as values calculated manually）。",
+      "topic_tags": [
+        "calbuf",
+        "平均值计算",
+        "buffer处理",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "数据处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void adapt_pre_4096(void)：convert unit，将buffer中optr所指向的数据转为4096格式。",
+      "topic_tags": [
+        "adapt_pre_4096",
+        "单位转换",
+        "4096格式",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "压力数据处理"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t BPI_Subabs(uint16_t temp, uint16_t temp1)：计算两个数值的绝对值差值。",
+      "topic_tags": [
+        "BPI_Subabs",
+        "绝对值差值",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void Cal_count(void)：calculate heart rate，计算心率。",
+      "topic_tags": [
+        "Cal_count",
+        "心率计算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t BPI_Search_Zero(uint8_t cur_group)：搜索稳定的零点。",
+      "topic_tags": [
+        "BPI_Search_Zero",
+        "零点搜索",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "压力校准"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t Find_Systolic(struct Pdata *bpdata, uint8_t bpptr, uint8_t maxvp)：Calculate Systolic，高压计算。",
+      "topic_tags": [
+        "Find_Systolic",
+        "收缩压",
+        "高压计算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint16_t Find_Diastolic(struct Pdata *bpdata, uint8_t bpptr, uint8_t maxvp)：Calculate Diastolic，计算低压。",
+      "topic_tags": [
+        "Find_Diastolic",
+        "舒张压",
+        "低压计算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试",
+        "血压算法"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 uint8_t Auto_Off(uint32_t time)：自动关机时间判断。测试记录为空，未记录测试项目与结果。",
+      "topic_tags": [
+        "Auto_Off",
+        "自动关机",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "软件单元测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_save(uint8_t grp, UNION_RCD_DATA_T* p)：保存记录内容到指定组中。当组容量已满时，新记录循环覆盖最旧记录（环形缓冲区行为）。当目标组为空时从第1条位置开始写入。",
+      "topic_tags": [
+        "record_save",
+        "环形缓冲区",
+        "记录存储",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_sum",
+        "record_read",
+        "record_clear_from"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_read(uint8_t grp, int16_t num, UNION_RCD_DATA_T* p)：从指定的组中读取指定记录号的记录并存储到*p中。当目标组不存在记录时返回0（查找记录异常）。",
+      "topic_tags": [
+        "record_read",
+        "记录读取",
+        "异常处理",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_save",
+        "record_sum"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_sum(uint8_t grp, int16_t* sum)：统计指定组中存储的记录数。当实际存储记录数超过组容量时，返回值不超过组容量上限（如组容量20，存储22条，返回20）。",
+      "topic_tags": [
+        "record_sum",
+        "记录统计",
+        "组容量",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_save",
+        "record_clear_from"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 result_def record_clear_from(uint8_t grp, int16_t start)：删除指定组中指定记录之前的记忆值。当目标组不存在记录时返回0（删除记录异常）。",
+      "topic_tags": [
+        "record_clear_from",
+        "记录删除",
+        "异常处理",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "record_sum",
+        "record_save"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 ENUM_LINK_APP_STATA_TYPE Wifi_AutoConnect(uint8_t link_mode)：Wifi模块工作模式控制及连接状态检测。支持WIFI_SMART_LINk（智能配网模式，9min超时）和WIFI_AUTO_LINK（自动连接模式，90s超时）两种模式。异常状态包括：上电异常（rst持续低电平）、连接路由器超时、未获取到IP（DHCP不支持）、连接云端超时、密码错误。测试方式为执行软件单元并观察硬件动作（execute the software unit and observe the action of hardware）。",
+      "topic_tags": [
+        "Wifi_AutoConnect",
+        "Wifi配网",
+        "小米智能家庭App",
+        "连接状态",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "Wifi_Andon_Base_DeCode",
+        "MiBpm_SendDataToCloud_Pack"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void User_Dis_Bp_Result(Dis_Result_Str_t result)：显示测量结果，支持mmHg（dis_unit=0）和kPa（dis_unit=1）两种单位显示。测试验证了120/80 mmHg正常血压等级的显示正确性，及mmHg与kPa的换算关系（120mmHg≈16.0kPa，80mmHg≈10.7kPa）。",
+      "topic_tags": [
+        "User_Dis_Bp_Result",
+        "血压显示",
+        "mmHg",
+        "kPa",
+        "单位换算",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "User_Dis_All"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void Wifi_Andon_Base_DeCode(void)：协议解码函数，负责解析Wifi模块串口输入的二进制协议帧，并向串口输出应答帧，同时将解码后的内容写入系统配置区域（如Wifi_Fwver固件版本号和DID设备ID）。测试通过向串口发送特定十六进制数据帧，验证输出应答及解码存储结果。",
+      "topic_tags": [
+        "Wifi_Andon_Base_DeCode",
+        "协议解码",
+        "串口通信",
+        "DID",
+        "固件版本",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "Wifi_AutoConnect",
+        "MiBpm_SendDataToCloud_Pack"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序 void MiBpm_SendDataToCloud_Pack(uint16_t cmd)：血压计数据打包函数。该子程序在本文档片段中无测试用例记录，测试记录表格为空。",
+      "topic_tags": [
+        "MiBpm_SendDataToCloud_Pack",
+        "数据打包",
+        "云端上传",
+        "软件单元测试"
+      ],
+      "related_subjects": [
+        "Wifi_AutoConnect",
+        "Wifi_Andon_Base_DeCode"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：uint8_t Sound_Sentence(uint16_t sen_num, uint16_t num)；功能描述：announce a sentence，播放一段语音。",
+      "topic_tags": [
+        "语音播报",
+        "Sound_Sentence",
+        "子程序"
+      ],
+      "related_subjects": [
+        "Sound_Sentence_SYSTOLIC",
+        "Sound_Sentence_DIASTOLIC"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：void PWC_IRQ(uint16_t pwc_data)；功能描述：获取压力值采样结果。测试方法类别：--change input(s) of hardware and verify the action of software（改变硬件输入，验证软件动作）。",
+      "topic_tags": [
+        "压力采样",
+        "PWC_IRQ",
+        "硬件输入验证",
+        "子程序"
+      ],
+      "related_subjects": [
+        "PWC_IRQ_20ms_20pct",
+        "PWC_IRQ_20ms_50pct"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：void BPI_ScanKey(void)；功能描述：按键扫描函数，监测按键的动作。",
+      "topic_tags": [
+        "按键扫描",
+        "BPI_ScanKey",
+        "子程序"
+      ],
+      "related_subjects": [
+        "BPI_ScanKey_S1_down",
+        "BPI_ScanKey_S1_up",
+        "BPI_ScanKey_S1_long",
+        "BPI_ScanKey_S2_down",
+        "BPI_ScanKey_S2_up",
+        "BPI_ScanKey_S2_long",
+        "BPI_ScanKey_S1S2_long"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "子程序名：uint16_t BATDECT(void)；功能描述：检测并判断低电压。",
+      "topic_tags": [
+        "低电压检测",
+        "BATDECT",
+        "子程序"
+      ],
+      "related_subjects": [
+        "BATDECT_low_voltage",
+        "BATDECT_normal_voltage"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/软件文件底稿/测试计划及测试记录E0 23.11/子程序测试记录E0 23.11.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "BufCmp",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "子程序测试",
+      "to": "BufCmp",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "set_maxpre",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "压力控制",
+      "to": "set_maxpre",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Find_Rising_Edage",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "信号处理",
+      "to": "Find_Rising_Edage",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Find_Peak",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压算法",
+      "to": "Find_Peak",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Detect_Max_Peak",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压算法",
+      "to": "Detect_Max_Peak",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Enoise",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "信号处理",
+      "to": "Enoise",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Temperature_Test",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "传感器",
+      "to": "Temperature_Test",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "calbuf",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "数据处理",
+      "to": "calbuf",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "adapt_pre_4096",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "压力数据处理",
+      "to": "adapt_pre_4096",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "BPI_Subabs",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Cal_count",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压算法",
+      "to": "Cal_count",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "BPI_Search_Zero",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "压力校准",
+      "to": "BPI_Search_Zero",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Find_Systolic",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压算法",
+      "to": "Find_Systolic",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Find_Diastolic",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压算法",
+      "to": "Find_Diastolic",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件单元测试",
+      "to": "Auto_Off",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_sum",
+      "to": "record_save",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_read",
+      "to": "record_save",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_clear_from",
+      "to": "record_save",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_save",
+      "to": "record_read",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_sum",
+      "to": "record_read",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_save",
+      "to": "record_sum",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_clear_from",
+      "to": "record_sum",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_sum",
+      "to": "record_clear_from",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "record_save",
+      "to": "record_clear_from",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Wifi_Andon_Base_DeCode",
+      "to": "Wifi_AutoConnect",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MiBpm_SendDataToCloud_Pack",
+      "to": "Wifi_AutoConnect",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "User_Dis_All",
+      "to": "User_Dis_Bp_Result",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Wifi_AutoConnect",
+      "to": "Wifi_Andon_Base_DeCode",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MiBpm_SendDataToCloud_Pack",
+      "to": "Wifi_Andon_Base_DeCode",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Wifi_AutoConnect",
+      "to": "MiBpm_SendDataToCloud_Pack",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Wifi_Andon_Base_DeCode",
+      "to": "MiBpm_SendDataToCloud_Pack",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Sound_Sentence_SYSTOLIC",
+      "to": "语音播报",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Sound_Sentence_DIASTOLIC",
+      "to": "语音播报",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PWC_IRQ_20ms_20pct",
+      "to": "压力采样",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PWC_IRQ_20ms_50pct",
+      "to": "压力采样",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPI_ScanKey_S1_down",
+      "to": "按键扫描",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPI_ScanKey_S1_up",
+      "to": "按键扫描",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPI_ScanKey_S1_long",
+      "to": "按键扫描",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPI_ScanKey_S2_down",
+      "to": "按键扫描",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPI_ScanKey_S2_up",
+      "to": "按键扫描",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPI_ScanKey_S2_long",
+      "to": "按键扫描",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPI_ScanKey_S1S2_long",
+      "to": "按键扫描",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BATDECT_low_voltage",
+      "to": "低电压检测",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BATDECT_normal_voltage",
+      "to": "低电压检测",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "BufCmp函数",
+      "attribute": "返回值（y<r1-r0）",
+      "value": "0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "r0=0x01, r1=0x04, y=0x03",
+      "raw_text": "BufCmp: r0=0x01, r1=0x04, y=0x03，返回0"
+    },
+    {
+      "subject": "BufCmp函数",
+      "attribute": "返回值（y=r1-r0）",
+      "value": "1",
+      "unit": "",
+      "tolerance": "",
+      "condition": "r0=0x01, r1=0x04, y=0x04",
+      "raw_text": "BufCmp: r0=0x01, r1=0x04, y=0x04，返回1"
+    },
+    {
+      "subject": "BufCmp函数",
+      "attribute": "返回值（y<r0）",
+      "value": "3",
+      "unit": "",
+      "tolerance": "",
+      "condition": "r0=0x01, r1=0x04, y=0x02",
+      "raw_text": "BufCmp: r0=0x01, r1=0x04, y=0x02，返回3"
+    },
+    {
+      "subject": "set_maxpre函数",
+      "attribute": "输出值（p_pre=0x00）",
+      "value": "2595",
+      "unit": "",
+      "tolerance": "",
+      "condition": "p_pre=0x00",
+      "raw_text": "set_maxpre: p_pre=0x00，期望值2595"
+    },
+    {
+      "subject": "set_maxpre函数",
+      "attribute": "输出值（p_pre=2000）",
+      "value": "2512",
+      "unit": "",
+      "tolerance": "",
+      "condition": "p_pre=2000",
+      "raw_text": "set_maxpre: p_pre=2000，期望值2512"
+    },
+    {
+      "subject": "set_maxpre函数",
+      "attribute": "输出值（p_pre=1500）",
+      "value": "1639",
+      "unit": "",
+      "tolerance": "",
+      "condition": "p_pre=1500",
+      "raw_text": "set_maxpre: p_pre=1500，期望值1639"
+    },
+    {
+      "subject": "set_maxpre函数",
+      "attribute": "输出值（p_pre=3600）",
+      "value": "4028",
+      "unit": "",
+      "tolerance": "",
+      "condition": "p_pre=3600",
+      "raw_text": "set_maxpre: p_pre=3600，期望值4028"
+    },
+    {
+      "subject": "上升沿检测函数",
+      "attribute": "返回值（无上升沿）",
+      "value": "0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=5，y=4",
+      "raw_text": "Find_Rising_Edage: Buffer指定数据，Optr=5，y=4，期望返回0"
+    },
+    {
+      "subject": "上升沿检测函数",
+      "attribute": "返回值（有上升沿）",
+      "value": "1",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=5，y=4（上升沿）",
+      "raw_text": "Find_Rising_Edage: Buffer指定数据，Optr=5，y=4（上升沿），期望返回1"
+    },
+    {
+      "subject": "峰值查找函数",
+      "attribute": "count1输出值",
+      "value": "10",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=5，y=1，count=10，count1=9，peakp=1005",
+      "raw_text": "Find_Peak: Count1=10; peakp=1006; 返回0"
+    },
+    {
+      "subject": "峰值查找函数",
+      "attribute": "peakp输出值",
+      "value": "1006",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=5，y=1，count=10，count1=9，peakp=1005",
+      "raw_text": "Find_Peak: Count1=10; peakp=1006; 返回0"
+    },
+    {
+      "subject": "峰值查找函数",
+      "attribute": "返回值（未到峰值）",
+      "value": "0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=5，y=1，count=10，count1=9，peakp=1005",
+      "raw_text": "Find_Peak: Count1=10; peakp=1006; 返回0"
+    },
+    {
+      "subject": "峰值查找函数",
+      "attribute": "count1输出值",
+      "value": "12",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=28，y=1，count=18，count1=12，peakp=1023",
+      "raw_text": "Find_Peak: Count1=12; peakp=1023; 返回1"
+    },
+    {
+      "subject": "峰值查找函数",
+      "attribute": "peakp输出值",
+      "value": "1023",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=28，y=1，count=18，count1=12，peakp=1023",
+      "raw_text": "Find_Peak: Count1=12; peakp=1023; 返回1"
+    },
+    {
+      "subject": "峰值查找函数",
+      "attribute": "返回值（到达峰值）",
+      "value": "1",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，Optr=28，y=1，count=18，count1=12，peakp=1023",
+      "raw_text": "Find_Peak: Count1=12; peakp=1023; 返回1"
+    },
+    {
+      "subject": "最大峰值检测函数",
+      "attribute": "Maxvp输出值",
+      "value": "25",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Bpdata心跳强度02,06,09,12,18,28,25,20；bpptr=7",
+      "raw_text": "Detect_Max_Peak: Maxvp=25"
+    },
+    {
+      "subject": "噪声剔除函数",
+      "attribute": "bpptr（不剔除）",
+      "value": "7",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Bpdata心跳强度02,06,09,12,18,25,25,20；bpptr=7",
+      "raw_text": "Enoise: bpptr=7，不剔出"
+    },
+    {
+      "subject": "噪声剔除函数",
+      "attribute": "bpptr（剔除后）",
+      "value": "6",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Bpdata心跳强度02,06,09,12,18,34,25,20；bpptr=7，bpptr-1点(34)被剔除",
+      "raw_text": "Enoise: bpptr=6，剔出bpptr-1点（34）"
+    },
+    {
+      "subject": "温度读取函数",
+      "attribute": "测量误差",
+      "value": "2",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "正常运行，室温23℃，读取温度22℃",
+      "raw_text": "Temperature_Test: 能读取到温度值，且与室温相差不超过2度（室温23度，读取温度22度）"
+    },
+    {
+      "subject": "温度读取函数",
+      "attribute": "异常返回值",
+      "value": "-127",
+      "unit": "",
+      "tolerance": "",
+      "condition": "短接温度传感器SCK和SDA",
+      "raw_text": "Temperature_Test: 短接温度传输器的SCK和SDA，运行完成后，返回-127"
+    },
+    {
+      "subject": "缓冲区平均值计算函数",
+      "attribute": "计算结果",
+      "value": "1005",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer指定数据，a=7，n=8",
+      "raw_text": "calbuf: Buffer指定数据，a=7，n=8，计算平均值，期望1005"
+    },
+    {
+      "subject": "4096格式转换函数",
+      "attribute": "Buffer[0]转换结果",
+      "value": "1001",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Buffer[0]=2283，optr=0，zerohl=1300，spanhl=4023",
+      "raw_text": "adapt_pre_4096: Buffer[0]=2283转换后Buffer[0]=1001；其他数据不变"
+    },
+    {
+      "subject": "绝对差值计算函数",
+      "attribute": "计算结果（temp<temp1）",
+      "value": "100",
+      "unit": "",
+      "tolerance": "",
+      "condition": "temp=200，temp1=300",
+      "raw_text": "BPI_Subabs: temp=200，temp1=300，期望100"
+    },
+    {
+      "subject": "绝对差值计算函数",
+      "attribute": "计算结果（temp>temp1）",
+      "value": "500",
+      "unit": "",
+      "tolerance": "",
+      "condition": "temp=2000，temp1=1500",
+      "raw_text": "BPI_Subabs: temp=2000，temp1=1500，期望500"
+    },
+    {
+      "subject": "心率计算函数",
+      "attribute": "计算心率值",
+      "value": "67",
+      "unit": "次/分",
+      "tolerance": "",
+      "condition": "心跳间隔{45,43,49,...,44}，xt0=20，TAVG=891",
+      "raw_text": "Cal_count: 心跳间隔指定数据，xt0=20，TAVG=891，计算心率，期望67"
+    },
+    {
+      "subject": "零点搜索函数",
+      "attribute": "运行模式（cnt20s超限）",
+      "value": "MODE_er0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "cnt20s=1001",
+      "raw_text": "BPI_Search_Zero: cnt20s=1001，run_mode=MODE_er0"
+    },
+    {
+      "subject": "零点搜索函数",
+      "attribute": "运行模式（cnt20s正常）",
+      "value": "MODE_test",
+      "unit": "",
+      "tolerance": "",
+      "condition": "cnt20s=25",
+      "raw_text": "BPI_Search_Zero: cnt20s=25，run_mode=MODE_test"
+    },
+    {
+      "subject": "收缩压计算函数",
+      "attribute": "高压计算结果",
+      "value": "108",
+      "unit": "mmHg",
+      "tolerance": "",
+      "condition": "MAXBPP=1360，MAXBPV=42，Bp队列指定数据",
+      "raw_text": "Find_Systolic: MAXBPP=1360，MAXBPV=42，计算高压，期望108"
+    },
+    {
+      "subject": "舒张压计算函数",
+      "attribute": "低压计算结果",
+      "value": "75",
+      "unit": "mmHg",
+      "tolerance": "",
+      "condition": "MAXBPP=1360，MAXBPV=42，Bp队列指定数据",
+      "raw_text": "Find_Diastolic: MAXBPP=1360，MAXBPV=42，计算低压，期望75"
+    },
+    {
+      "subject": "端口6方向寄存器",
+      "attribute": "DDR6寄存器值",
+      "value": "0x000F",
+      "unit": "",
+      "tolerance": "",
+      "condition": "端口6初始化配置",
+      "raw_text": "端口6 端口方向选择寄存器DDR6，期望值0x000F"
+    },
+    {
+      "subject": "端口6输出寄存器",
+      "attribute": "PDOR6寄存器值",
+      "value": "0x0000",
+      "unit": "",
+      "tolerance": "",
+      "condition": "端口6初始化配置",
+      "raw_text": "端口6 端口输出寄存器PDOR6，期望值0x0000"
+    },
+    {
+      "subject": "端口8功能寄存器",
+      "attribute": "PFR8寄存器值",
+      "value": "0x0000",
+      "unit": "",
+      "tolerance": "",
+      "condition": "端口8初始化配置",
+      "raw_text": "端口8 端口功能寄存器PFR8，期望值0x0000"
+    },
+    {
+      "subject": "端口8方向寄存器",
+      "attribute": "DDR8寄存器值",
+      "value": "0x0003",
+      "unit": "",
+      "tolerance": "",
+      "condition": "端口8初始化配置",
+      "raw_text": "端口8 端口方向选择寄存器DDR8，期望值0x0003"
+    },
+    {
+      "subject": "端口8输出寄存器",
+      "attribute": "PDOR8寄存器值",
+      "value": "0x0000",
+      "unit": "",
+      "tolerance": "",
+      "condition": "端口8初始化配置",
+      "raw_text": "端口8 端口输出寄存器PDOR8，期望值0x0000"
+    },
+    {
+      "subject": "记录存储函数",
+      "attribute": "存储写入位置（未满）",
+      "value": "11",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "组容量20，组1已存10条，grp=组1",
+      "raw_text": "record_save: 在组1中第11条记录位置写入*p指向数据"
+    },
+    {
+      "subject": "记录存储函数",
+      "attribute": "存储写入位置（空组）",
+      "value": "1",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "组容量20，组2已存0条，grp=组2",
+      "raw_text": "record_save: 在组2中第1条记录位置写入*p指向数据"
+    },
+    {
+      "subject": "记录存储函数",
+      "attribute": "循环覆盖写入位置",
+      "value": "1,2",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "组容量10，组1已存9条，grp=组1，运行两遍",
+      "raw_text": "record_save: 在组1中第1条、第2条记录位置写入*p指向数据（组满后循环覆盖）"
+    },
+    {
+      "subject": "记录读取函数",
+      "attribute": "读取记录数据",
+      "value": "{9,2,3,…,308}",
+      "unit": "",
+      "tolerance": "",
+      "condition": "组容量20，组1存10条记录，grp=组1，num=10",
+      "raw_text": "record_read: 程序运行完毕后，*p中数据为{9,2,3,…,308}"
+    },
+    {
+      "subject": "记录读取函数",
+      "attribute": "异常返回值（空组）",
+      "value": "0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "组容量20，组2存0条记录，grp=组2，num=10",
+      "raw_text": "record_read: 程序运行后返回0（查找记录异常）"
+    },
+    {
+      "subject": "记录读取函数",
+      "attribute": "读取指定记录数据",
+      "value": "{4,2,3,…,303}",
+      "unit": "",
+      "tolerance": "",
+      "condition": "组容量20，组1存10条记录，grp=组1，num=5",
+      "raw_text": "record_read: 程序运行完毕后，*p中数据为{4,2,3,…,303}"
+    },
+    {
+      "subject": "记录统计函数",
+      "attribute": "统计记录数（正常）",
+      "value": "10",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "组容量20，组1存10条记录，grp=组1",
+      "raw_text": "record_sum: 程序运行完毕后，*sum = 10"
+    },
+    {
+      "subject": "记录统计函数",
+      "attribute": "统计记录数（超容量上限）",
+      "value": "20",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "组容量20，组1实际存22条记录，grp=组1",
+      "raw_text": "record_sum: 程序运行完毕后，*sum = 20（不超过组容量上限）"
+    },
+    {
+      "subject": "记录统计函数",
+      "attribute": "统计记录数（空组）",
+      "value": "0",
+      "unit": "条",
+      "tolerance": "",
+      "condition": "组容量20，组2存0条记录，grp=组2",
+      "raw_text": "record_sum: 程序运行完毕后，*sum = 0"
+    }
+  ]
+}

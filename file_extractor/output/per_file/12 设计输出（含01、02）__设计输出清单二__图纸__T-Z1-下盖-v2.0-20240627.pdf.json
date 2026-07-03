@@ -1,0 +1,1188 @@
+{
+  "document": {
+    "title": "T-Z1-下盖 V2.0 (2024-06-27) 2D 图读图报告",
+    "drawing_no": "T-Z1-P02",
+    "part_name": "下盖",
+    "edition": "V2.0",
+    "edition_date": "2024-06-27",
+    "model_no": "T-Z1",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/T-Z1-下盖-v2.0-20240627.pdf",
+    "generated_date": "2026-06-02",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "B",
+    "material": "ABS（白色）",
+    "pages": 1,
+    "paper_size": "A3 横向 841×595 pt"
+  },
+  "products": [
+    {
+      "name": "下盖",
+      "part_no": "T-Z1-P02",
+      "model": "T-Z1",
+      "material": "ABS（白色）",
+      "version": "V2.0",
+      "date": "2024-06-27"
+    },
+    {
+      "name": "上盖",
+      "part_no": "T-Z1-P01",
+      "model": "T-Z1",
+      "note": "与下盖配合，须试装"
+    },
+    {
+      "name": "探头",
+      "part_no": "T-Z1-P03",
+      "model": "T-Z1",
+      "note": "Ø9.58，与下盖探头开口Ø10配合，TPU弹性吸收0.21mm单边间隙"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "材质为ABS（白色）",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-02",
+      "description": "产品符合RoHS 2.0",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "DI-03",
+      "description": "须试装产品，并能顺利装入产品（与上盖T-Z1-P01配合）",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "DI-04",
+      "description": "产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "source": "技术要求第2条"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "type": "dimensional",
+      "description": "带编号为重要尺寸，需要IQC测量",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "REQ-02",
+      "type": "material",
+      "description": "材质为ABS（白色）",
+      "value": "ABS",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "REQ-03",
+      "type": "appearance",
+      "description": "产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "REQ-04",
+      "type": "assembly",
+      "description": "须试装产品，并能顺利装入产品；未标注尺寸以样板为准；品质部检验以结构签板和组装（实配）为准",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "REQ-05",
+      "type": "regulatory",
+      "description": "产品符合RoHS 2.0",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "REQ-06",
+      "type": "tolerance",
+      "description": "公差等级B：DTM ≤5/±0.1, 5-15/±0.1, 15-50/±0.1, 50-100/±0.2, >100/±0.2%；ANGULAR ±0.5°",
+      "source": "标题栏"
+    }
+  ],
+  "components": [
+    {
+      "name": "下盖主体",
+      "part_no": "T-Z1-P02",
+      "material": "ABS（白色）",
+      "features": [
+        "总长130.1mm",
+        "总宽34.1mm",
+        "探头开口Ø10mm",
+        "2处Ø1.7小孔",
+        "3处Ø2.2螺丝孔（电池仓周围）",
+        "DETAIL D卡扣结构",
+        "探头微薄壁0.3mm"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-IQC-01",
+      "type": "IQC",
+      "description": "总长尺寸测量",
+      "dimension": "130.1",
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "view": "顶视图（主）"
+    },
+    {
+      "id": "TEST-IQC-02",
+      "type": "IQC",
+      "description": "总宽尺寸测量",
+      "dimension": "34.1",
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "view": "顶视图（主）"
+    },
+    {
+      "id": "TEST-IQC-03",
+      "type": "IQC",
+      "description": "平面度（相对基准A）",
+      "dimension": "0.1",
+      "tolerance": "—",
+      "unit": "mm",
+      "view": "仰视图（左）",
+      "gd_t": "⊥ 基准A"
+    },
+    {
+      "id": "TEST-IQC-04",
+      "type": "IQC",
+      "description": "平行度",
+      "dimension": "0.1",
+      "tolerance": "—",
+      "unit": "mm",
+      "view": "仰视图（右）",
+      "gd_t": "// 基准"
+    },
+    {
+      "id": "TEST-ASSEMBLY",
+      "type": "assembly",
+      "description": "须试装产品，并能顺利装入产品",
+      "reference": "上盖T-Z1-P01"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "drawing_no",
+      "value": "T-Z1-P02",
+      "description": "下盖图纸编号"
+    },
+    {
+      "type": "model_no",
+      "value": "T-Z1",
+      "description": "产品型号"
+    },
+    {
+      "type": "edition",
+      "value": "V2.0",
+      "date": "2024-06-27"
+    },
+    {
+      "type": "logo",
+      "value": "andon",
+      "description": "图纸左上角LOGO，V1.0已取消"
+    },
+    {
+      "type": "drawing_no_early",
+      "value": "T-Z1-P11",
+      "description": "早期下盖图号，推测已废弃"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合RoHS 2.0要求",
+      "source": "技术要求第4条"
+    }
+  ],
+  "revision_records": [
+    {
+      "drawing_no": "T-Z1-P02",
+      "edition": "V2.0",
+      "date": "2024-06-27",
+      "description": "含andon LOGO，与V1.0几何和材料100%相同",
+      "change": "V1.0相比取消LOGO"
+    },
+    {
+      "drawing_no": "T-Z1-P02",
+      "edition": "V1.0",
+      "date": "2024-11-04",
+      "description": "取消andon LOGO，为最新日期版本，默认生产用版本",
+      "change": "相比V2.0取消LOGO"
+    },
+    {
+      "drawing_no": "T-Z1-P11",
+      "edition": "V1.0",
+      "date": "2021-11-02",
+      "description": "早期下盖总图，平行设计方案或废弃图号"
+    },
+    {
+      "drawing_no": "T-Z1-P02",
+      "edition": "V1.0",
+      "date": "2021-07-16",
+      "description": "早期下盖图纸，同图号最早版本"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "REVIEW-01",
+      "category": "open_issue",
+      "description": "当前生产用V2.0还是V1.0？",
+      "default_assumption": "V1.0（最新日期）"
+    },
+    {
+      "id": "REVIEW-02",
+      "category": "open_issue",
+      "description": "取消LOGO的ECN编号",
+      "default_assumption": "与上盖同ECN"
+    },
+    {
+      "id": "REVIEW-03",
+      "category": "open_issue",
+      "description": "Surf dispose空白→是否仍按早期PANTONE Cool Gray 6U？",
+      "default_assumption": "—"
+    },
+    {
+      "id": "REVIEW-04",
+      "category": "open_issue",
+      "description": "T-Z1-P11是否已废弃？",
+      "default_assumption": "推测废弃，以P02为生产用"
+    },
+    {
+      "id": "REVIEW-05",
+      "category": "open_issue",
+      "description": "编号①复用（总长+平面度+平行度）是否合规",
+      "default_assumption": "—"
+    },
+    {
+      "id": "REVIEW-06",
+      "category": "drawing_issue",
+      "description": "图纸内部编号体系不严：①出现3次（总长/平面度0.1/平行度0.1），建议工程师ECN统一编号"
+    },
+    {
+      "id": "REVIEW-07",
+      "category": "version_issue",
+      "description": "版本号反向降级（V2.0→V1.0），原因待ECN确认。疑点表§1.2 V1.0 vs V2.0版本号倒置"
+    },
+    {
+      "id": "REVIEW-08",
+      "category": "open_issue",
+      "description": "仰视图注释'镶嵌之间，公差为：262/8'在本V2.0是否仍存在？意义待工程师释义（疑点表§3.5）"
+    }
+  ],
+  "plan_tasks": [
+    {
+      "id": "TASK-3D-01",
+      "description": "与上盖V3.0（同日2024-06-27）的3D装配试装"
+    },
+    {
+      "id": "TASK-3D-02",
+      "description": "探头开口Ø10与探头T-Z1-P03 Ø9.58的TPU弹性吸收实测（单边间隙0.21mm）"
+    },
+    {
+      "id": "TASK-3D-03",
+      "description": "DETAIL D卡扣（0.88/1.25 ±0.03）与上盖卡扣的实际啮合形态验证"
+    },
+    {
+      "id": "TASK-3D-04",
+      "description": "电池仓3处Ø2.2螺丝孔与PCB/电池盖的同心度验证"
+    },
+    {
+      "id": "TASK-3D-05",
+      "description": "探头微薄0.3/0.9的注塑能力验证（Level A精度）"
+    },
+    {
+      "id": "TASK-GEOMETRY-01",
+      "description": "本V2.0与早期T-Z1-P02（2021-07-16）的几何差异对比，特别是薄壁尺寸"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "探头开口Ø10（±0.05）与探头T-Z1-P03 Ø9.58配合，TPU弹性吸收0.21mm单边间隙。此配合关系决定探头开口尺寸的关键公差要求。",
+      "topic_tags": [
+        "探头配合",
+        "过盈配合",
+        "TPU弹性",
+        "间隙计算"
+      ],
+      "related_subjects": [
+        "T-Z1-P03",
+        "探头开口Ø10",
+        "T-Z1-P02"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "V2.0（2024-06-27）与V1.0（2024-11-04）几何与材料100%相同，唯一区别是LOGO取消（V2.0有andon LOGO，V1.0无）。版本号反向降级（V2.0→V1.0）原因待ECN确认。默认生产用V1.0（最新日期）。",
+      "topic_tags": [
+        "版本管理",
+        "LOGO变更",
+        "版本号倒置",
+        "ECN"
+      ],
+      "related_subjects": [
+        "T-Z1-P02 V1.0",
+        "T-Z1-P02 V2.0",
+        "疑点表§1.2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "公差等级B：线性尺寸公差：DTM ≤5/±0.1，5-15/±0.1，15-50/±0.1，50-100/±0.2，>100/±0.2%；角度公差 ANGULAR ±0.5°。带编号尺寸为重要尺寸，需要IQC测量；未标注尺寸以样板为准；品质部检验结构时以结构签板和组装（实配）为准。",
+      "topic_tags": [
+        "公差等级",
+        "IQC",
+        "检验标准",
+        "默认公差"
+      ],
+      "related_subjects": [
+        "T-Z1-P02",
+        "IQC测量"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "DETAIL D（5:1放大，扣合界面）：卡扣顶部宽1.25±0.03（Level A精度），卡扣侧面厚0.88±0.03（Level A精度）。此为下盖与上盖卡扣配合的关键特征，需验证实际啮合形态。",
+      "topic_tags": [
+        "卡扣设计",
+        "扣合界面",
+        "Level A精度",
+        "上下盖配合"
+      ],
+      "related_subjects": [
+        "T-Z1-P01",
+        "DETAIL D",
+        "卡扣"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "探头区域多处Level A精度尺寸：探头微薄壁0.3±0.03（SECTION A-A），探头斜面薄壁0.9±0.03，局部薄壁0.6±0.03，接合面宽2.93±0.05。这些尺寸对注塑工艺能力要求极高，需验证注塑能力。",
+      "topic_tags": [
+        "薄壁注塑",
+        "Level A精度",
+        "探头区域",
+        "注塑工艺"
+      ],
+      "related_subjects": [
+        "T-Z1-P02",
+        "SECTION A-A",
+        "探头"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "图纸编号体系不严：编号①被重复使用3次，分别对应总长130.1（顶视图主）、平面度0.1（仰视图左，相对基准A）、平行度0.1（仰视图右）。建议工程师在ECN时统一编号，避免IQC检验时混淆。",
+      "topic_tags": [
+        "编号重复",
+        "图纸规范",
+        "ECN",
+        "IQC"
+      ],
+      "related_subjects": [
+        "T-Z1-P02",
+        "IQC测量",
+        "疑点表"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "早期图纸关联：早期T-Z1-P11（V1.0，2021-11-02）为平行设计方案或废弃图号；早期T-Z1-P02（V1.0，2021-07-16）与本图同图号。本图V2.0与早期T-Z1-P02的几何差异需进一步对比（早期版亦有Ø10探头开口，建议工程师核对其他薄壁尺寸）。T-Z1-P11推测已废弃，以P02为生产用图号。",
+      "topic_tags": [
+        "早期图纸",
+        "图号管理",
+        "版本历史",
+        "废弃图号"
+      ],
+      "related_subjects": [
+        "T-Z1-P11",
+        "T-Z1-P02早期版",
+        "疑点表§2.2"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/T-Z1-下盖-v2.0-20240627.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P03",
+      "to": "探头配合",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头开口Ø10",
+      "to": "探头配合",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "探头配合",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02 V1.0",
+      "to": "版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02 V2.0",
+      "to": "版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "疑点表§1.2",
+      "to": "版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "公差等级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC测量",
+      "to": "公差等级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "卡扣设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DETAIL D",
+      "to": "卡扣设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "卡扣",
+      "to": "卡扣设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "薄壁注塑",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SECTION A-A",
+      "to": "薄壁注塑",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "探头",
+      "to": "薄壁注塑",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "编号重复",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC测量",
+      "to": "编号重复",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "疑点表",
+      "to": "编号重复",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P11",
+      "to": "早期图纸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02早期版",
+      "to": "早期图纸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "疑点表§2.2",
+      "to": "早期图纸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "DI-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "DI-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "DI-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "DI-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TEST-IQC-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TEST-IQC-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TEST-IQC-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TEST-IQC-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TEST-ASSEMBLY",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-07",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "REVIEW-08",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TASK-3D-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TASK-3D-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TASK-3D-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TASK-3D-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TASK-3D-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "TASK-GEOMETRY-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "TEST-IQC-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "TEST-IQC-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "TEST-IQC-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "TEST-IQC-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-04",
+      "to": "TEST-ASSEMBLY",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-01",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-02",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-03",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-04",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-02",
+      "to": "DI-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-03",
+      "to": "DI-04",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-04",
+      "to": "DI-03",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-05",
+      "to": "DI-02",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-IQC-01",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-IQC-02",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-IQC-03",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-IQC-04",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-ASSEMBLY",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-ASSEMBLY",
+      "to": "DI-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TEST-IQC-01",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TEST-IQC-02",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TEST-IQC-03",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TEST-IQC-04",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-02",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TASK-3D-02",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TASK-3D-03",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TASK-3D-05",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "TEST-IQC-01",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "TEST-IQC-02",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "TEST-IQC-03",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "TEST-IQC-04",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-04",
+      "to": "TEST-ASSEMBLY",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-03",
+      "to": "TEST-ASSEMBLY",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "TEST-IQC-01",
+      "to": "TEST-IQC-01",
+      "properties": {
+        "dimension": "130.1",
+        "tolerance": "±0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "TEST-IQC-02",
+      "to": "TEST-IQC-02",
+      "properties": {
+        "dimension": "34.1",
+        "tolerance": "±0.05",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "TEST-IQC-03",
+      "to": "TEST-IQC-03",
+      "properties": {
+        "dimension": "0.1",
+        "unit": "mm",
+        "gd_t": "⊥ 基准A"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "TEST-IQC-04",
+      "to": "TEST-IQC-04",
+      "properties": {
+        "dimension": "0.1",
+        "unit": "mm",
+        "gd_t": "// 基准"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-01",
+      "to": "TEST-IQC-01",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-01",
+      "to": "TEST-IQC-02",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-01",
+      "to": "TEST-IQC-03",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-01",
+      "to": "TEST-IQC-04",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-04",
+      "to": "TEST-ASSEMBLY",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-06",
+      "to": "TEST-IQC-01",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-06",
+      "to": "TEST-IQC-02",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-06",
+      "to": "TEST-IQC-03",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "REQ-06",
+      "to": "TEST-IQC-04",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "TASK-3D-01",
+      "to": "TEST-ASSEMBLY",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "REQ-01",
+      "to": "TEST-IQC-01",
+      "properties": {
+        "responsible_party": "IQC"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "REQ-01",
+      "to": "TEST-IQC-02",
+      "properties": {
+        "responsible_party": "IQC"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "REQ-01",
+      "to": "TEST-IQC-03",
+      "properties": {
+        "responsible_party": "IQC"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "REQ-01",
+      "to": "TEST-IQC-04",
+      "properties": {
+        "responsible_party": "IQC"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "REQ-04",
+      "to": "TEST-ASSEMBLY",
+      "properties": {
+        "responsible_party": "品质部"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "总长尺寸",
+      "attribute": "标称值",
+      "value": "130.1",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "IQC测量，顶视图（主）",
+      "raw_text": "总长尺寸测量，dimension: 130.1, tolerance: ±0.1mm"
+    },
+    {
+      "subject": "总宽尺寸",
+      "attribute": "标称值",
+      "value": "34.1",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC测量，顶视图（主）",
+      "raw_text": "总宽尺寸测量，dimension: 34.1, tolerance: ±0.05mm"
+    },
+    {
+      "subject": "平面度",
+      "attribute": "形位公差",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "—",
+      "condition": "相对基准A，仰视图（左）",
+      "raw_text": "平面度（相对基准A），dimension: 0.1mm，GD&T: ⊥ 基准A"
+    },
+    {
+      "subject": "平行度",
+      "attribute": "形位公差",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "—",
+      "condition": "仰视图（右），相对基准",
+      "raw_text": "平行度，dimension: 0.1mm，GD&T: // 基准"
+    },
+    {
+      "subject": "尺寸公差等级B",
+      "attribute": "线性公差-区间≤5mm",
+      "value": "±0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "公差等级B，DTM",
+      "raw_text": "公差等级B：DTM ≤5/±0.1"
+    },
+    {
+      "subject": "尺寸公差等级B",
+      "attribute": "线性公差-区间5~15mm",
+      "value": "±0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "公差等级B，DTM",
+      "raw_text": "公差等级B：DTM 5-15/±0.1"
+    },
+    {
+      "subject": "尺寸公差等级B",
+      "attribute": "线性公差-区间15~50mm",
+      "value": "±0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "公差等级B，DTM",
+      "raw_text": "公差等级B：DTM 15-50/±0.1"
+    },
+    {
+      "subject": "尺寸公差等级B",
+      "attribute": "线性公差-区间50~100mm",
+      "value": "±0.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "公差等级B，DTM",
+      "raw_text": "公差等级B：DTM 50-100/±0.2"
+    },
+    {
+      "subject": "尺寸公差等级B",
+      "attribute": "线性公差-区间>100mm",
+      "value": "±0.2",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "公差等级B，DTM",
+      "raw_text": "公差等级B：DTM >100/±0.2%"
+    },
+    {
+      "subject": "角度公差等级B",
+      "attribute": "角度公差",
+      "value": "±0.5",
+      "unit": "°",
+      "tolerance": "",
+      "condition": "公差等级B，ANGULAR",
+      "raw_text": "公差等级B：ANGULAR ±0.5°"
+    },
+    {
+      "subject": "下盖主体材质",
+      "attribute": "材料类型",
+      "value": "ABS（白色）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "零件号T-Z1-P02",
+      "raw_text": "材质为ABS（白色）"
+    },
+    {
+      "subject": "探头开口直径",
+      "attribute": "标称值",
+      "value": "10",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "下盖主体T-Z1-P02",
+      "raw_text": "探头开口Ø10mm"
+    },
+    {
+      "subject": "小孔直径",
+      "attribute": "标称值",
+      "value": "1.7",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "下盖主体T-Z1-P02，共2处",
+      "raw_text": "2处Ø1.7小孔"
+    },
+    {
+      "subject": "螺丝孔直径",
+      "attribute": "标称值",
+      "value": "2.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "下盖主体T-Z1-P02，电池仓周围，共3处",
+      "raw_text": "3处Ø2.2螺丝孔（电池仓周围）"
+    },
+    {
+      "subject": "探头微薄壁",
+      "attribute": "壁厚",
+      "value": "0.3",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "下盖主体T-Z1-P02，探头区域",
+      "raw_text": "探头微薄壁0.3mm"
+    },
+    {
+      "subject": "RoHS合规",
+      "attribute": "符合标准",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "产品整体",
+      "raw_text": "产品符合RoHS 2.0"
+    }
+  ]
+}

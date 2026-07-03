@@ -1,0 +1,98 @@
+```json
+{
+  "agent": "Regulatory Agent",
+  "summary": "Cross-run synthesis audit of the PT9L DHF/DMR package identifies six substantive regulatory and document-control findings, including one systemic finding covering unsigned approvals across all risk management documents, plus resolution assessments on five specific escalation questions raised by the orchestrator.",
+  "review_notes": [
+    "All risk management documents in the active set (F0017–F0020, F0021–F0024) consistently cite ISO 14971:2019, EN ISO 14971:2019, and EN ISO 14971:2019/A11:2021 as the governing standard, which is appropriate for the declared regulatory baseline.",
+    "The dual ASTM E1965 version citation (1998:2016 and 1998:2023) appears in the same design input document (F0031) and the same design verification report (F0114) and verification plan (F0121), not across separate design stages; both versions are marked applicable.",
+    "Biocompatibility reports (F0104–F0108) are conducted under GB/T 16886 series standards, which are the Chinese equivalents of ISO 10993; the operation guide (F0083) separately cites ISO 10993-5 and ISO 10993-10 for patient-contact materials.",
+    "Transport test reports (F0143, F0144, F0145) carry handwritten approval signatures per the evidence text, distinguishing them from the risk management documents where approval fields are blank.",
+    "The label review document (F0082) references PT2L document numbers (PT2L-ZXBQ01 through PT2L-ZXBQ06) in the controlled-document column, which is consistent with the RUN-0004 and RUN-0006 findings and is not re-raised as a new finding here.",
+    "No transition rationale document, legacy-prefix registry, or IFT-to-PT9L document-number mapping record was located in the supplied evidence catalog."
+  ],
+  "findings": [
+    {
+      "finding_type": "systemic_document_control_failure",
+      "severity": "P0",
+      "claim": "Unsigned approval fields appear simultaneously across all active risk management documents, all historical risk management documents, and the design output list, constituting a systemic document-control process failure rather than isolated point deficiencies.",
+      "rationale": "Every risk management document in the active PT9L set carries a blank 'Approved by (Technical Director) Date:' field: F0017 (REG-015), F0018 (REG-019), F0019 (REG-024), F0020 (REG-027), F0021 (REG-031), F0022 (REG-035), F0023 (REG-040), F0024 (REG-043). The same pattern is present in all historical-folder documents: F0012 (REG-001), F0013 (REG-003), F0014 (REG-006), F0015 (REG-012), F0016 (REG-013), F0025 (REG-046), F0026 (REG-048), F0027 (REG-054), F0028 (REG-056). RUN-0005 independently identified blank approval-date fields in the design output list. RUN-0007 confirmed no signed pass verdict is present in the battery verification record. The simultaneous absence of completed approval signatures across risk management, design output, and verification documents spanning multiple product variants and multiple document versions indicates that the document-control SOP governing approval capture is either not being enforced or is not functioning. This cannot be attributed to a single document author or a single review cycle; it is a process-level gap requiring a corrective action at the SOP and training level, not merely document-by-document remediation.",
+      "evidence_ids": [
+        "REG-001", "REG-003", "REG-006", "REG-012", "REG-013",
+        "REG-015", "REG-019", "REG-024", "REG-027", "REG-031",
+        "REG-035", "REG-040", "REG-043", "REG-046", "REG-048",
+        "REG-054", "REG-056"
+      ],
+      "challenge_questions": [
+        "Can the manufacturer produce a document-control SOP that specifies the required approval workflow, and can it demonstrate that this SOP was in effect during the periods when these documents were created or revised?",
+        "Is there a separate wet-ink or electronic signature record maintained outside the document body that constitutes the formal approval record for these files? If so, where is it stored and how is it linked to each document version?",
+        "Has a root-cause analysis been performed to determine why approval fields are blank across documents spanning at least two product variants (PT9L and PT2L) and at least two version cycles (V1.0 and V2.0)?",
+        "What corrective action has been or will be taken at the process level, beyond retroactively completing individual approval fields?"
+      ]
+    },
+    {
+      "finding_type": "document_number_prefix_nonconformance",
+      "severity": "P1",
+      "claim": "The active PT9L Risk Management Plan carries document number IFT-FXJH01 rather than the expected PT9L-FXJH01, and no legacy-prefix registry, transition record, or documented equivalence mapping was found in the supplied corpus, making this a document-control nonconformance rather than a known managed legacy prefix.",
+      "rationale": "F0017 is titled 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable' (REG-014) and its approval field references the same IFT-FXJH01 identifier (REG-015). The project profile lists the expected document number as PT9L-FXJH01. RUN-0003 and RUN-0006 both flagged this. The orchestrator's escalation question (ASG-0008 item 1) asks whether this is a known legacy prefix with a documented transition record. No such record appears in the evidence catalog. The PT9L-prefixed document number pattern is used consistently for other PT9L documents (e.g., PT9L-FXGB01 per REG-026, REG-042). The IFT prefix is not explained anywhere in the supplied evidence. Absent a documented transition record or legacy-prefix registry, this constitutes a document-control nonconformance: the controlled document number does not match the product identifier, creating a traceability gap for regulators reviewing the 510(k) or CE technical file.",
+      "evidence_ids": ["REG-014", "REG-015", "REG-016", "REG-030", "REG-031", "REG-032"],
+      "challenge_questions": [
+        "Does a document-number registry or legacy-prefix mapping table exist that formally equates IFT-FXJH01 to PT9L-FXJH01, and if so, in which controlled document is it maintained?",
+        "Was the IFT prefix assigned by a customer, a notified body, or an internal legacy system, and is there a change-control record documenting the transition from IFT to PT9L numbering?",
+        "Has the 510(k) submission or CE technical file been prepared using the IFT-FXJH01 document number, and if so, does the submission index reconcile this to the PT9L product identity?"
+      ]
+    },
+    {
+      "finding_type": "dual_product_identity_in_single_document",
+      "severity": "P1",
+      "claim": "F0013 (PT2L risk management plan) internally carries a PT9L-series document number, representing two distinct nonconformances—a product-identity mismatch and a document-number assignment error—that share a single root cause but require separate corrective actions.",
+      "rationale": "REG-003 and REG-004 show F0013 is filed as a PT2L risk management plan (path: '03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0') yet the document internally carries the identifier FXJH01 which is the same functional suffix as the PT9L Risk Management Plan (IFT-FXJH01 / PT9L-FXJH01). The orchestrator's escalation question (ASG-0008 item 2) asks whether this is one root cause or two distinct nonconformances. Assessment: the root cause is likely a copy-paste or template-reuse error during document creation, but the resulting nonconformances are distinct: (a) a product-identity nonconformance—a PT2L product document contains PT9L-series numbering, creating ambiguity about which product's risk file is authoritative; and (b) a document-number assignment nonconformance—the same functional document number suffix (FXJH01) is assigned to risk management plans for two different products without a documented shared-document or family-document justification. These require separate corrective actions because (a) requires a product-scope clarification and possible re-issuance of the PT2L document under a PT2L-specific number, while (b) requires a document-number registry review to ensure no other cross-product number collisions exist.",
+      "evidence_ids": ["REG-003", "REG-004", "REG-005"],
+      "challenge_questions": [
+        "Was F0013 intentionally created as a PT2L-specific document, or was it intended to be a shared risk management plan covering both PT2L and PT9L under a family approach? If the latter, where is the family-device justification?",
+        "Has a document-number collision check been performed across all products in the PT9L product family to identify other instances where the same document-number suffix is used for different products?",
+        "What is the disposition of F0013 in the current PT9L DHF—is it referenced as supporting evidence, as a historical artifact, or as an active controlled document?"
+      ]
+    },
+    {
+      "finding_type": "biocompatibility_sample_equivalence_gap",
+      "severity": "P1",
+      "claim": "Biocompatibility testing was conducted on PT5 samples rather than PT9L samples, and no equivalence justification, shared-component declaration, or bridging rationale document was found in the supplied corpus, leaving an unmitigated gap for both 510(k) and CE submissions.",
+      "rationale": "F0104–F0108 (REG-088 through REG-116) are all filed under the path '11 T1样机\\生物相容性\\同PT5生物相容性报告\\' and are explicitly titled with 'PT5' sample identifiers. The operation guide (F0083, REG-074) states that patient-contact materials (ABS, TPU, PMMA, PC) have passed ISO 10993-5 and ISO 10993-10 tests, but does not identify the test samples as PT9L. The orchestrator's escalation question (ASG-0008 item 3) asks whether any equivalence or shared-component justification exists in the DHF. No such document appears in the evidence catalog. For a 510(k) submission, FDA expects biocompatibility testing to be conducted on the actual device or a documented equivalent; a bridging memo citing identical materials, identical suppliers, and identical manufacturing processes would be required. For CE under MDR 2017/745, Annex I Chapter II requires biocompatibility evaluation of the actual device. The absence of any bridging or equivalence record in the corpus means this gap is currently unmitigated.",
+      "evidence_ids": [
+        "REG-074", "REG-088", "REG-089", "REG-090", "REG-091",
+        "REG-094", "REG-095", "REG-100", "REG-101", "REG-106",
+        "REG-107", "REG-112", "REG-113"
+      ],
+      "challenge_questions": [
+        "Is there a biocompatibility equivalence memo or shared-component declaration that documents that PT5 and PT9L use identical patient-contact materials from identical suppliers with identical manufacturing processes? If so, in which controlled document is it maintained and what is its document number?",
+        "Were the PT5 biocompatibility tests conducted on the same material grades and formulations as those specified in the PT9L BOM and material specifications?",
+        "Has the 510(k) submission package included a biocompatibility bridging rationale, and has FDA accepted it? Has the CE technical file addressed this under MDR Annex I Chapter II?"
+      ]
+    },
+    {
+      "finding_type": "operation_guide_mdd_reference_in_active_document",
+      "severity": "P1",
+      "claim": "The PT9L operation guide (F0083) references MDD rather than MDR 2017/745 for biocompatibility compliance, and this document is filed in the active T1 sample folder without a draft or historical designation, making it a live document-control issue rather than a historical artifact.",
+      "rationale": "REG-074 shows F0083 states: 'They are in compliance with the Medical Device Directive (MDD) requirements.' The file path is '11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md' with a date stamp of 20240828 (28 August 2024). MDD 93/42/EEC was repealed and replaced by MDR 2017/745, which became fully applicable on 26 May 2021. A document dated August 2024 referencing MDD rather than MDR is not a historical artifact—it is a current document with an incorrect regulatory reference. The orchestrator's escalation question (ASG-0008 item 4) asks whether this is a live document or a draft/historical artifact. The date stamp and active folder location confirm it is live. This creates a compliance gap for any CE submission and may also mislead users about the applicable regulatory framework.",
+      "evidence_ids": ["REG-074", "REG-075", "REG-076", "REG-078"],
+      "challenge_questions": [
+        "Has the operation guide (F0083, dated 20240828) been released to production or included in any regulatory submission? If so, which submissions and what is the remediation plan?",
+        "Is there a controlled document review process that checks regulatory references for currency at each document revision? If so, why did the MDD reference survive to a document dated August 2024?",
+        "Does the CE technical file for PT9L reference this operation guide, and if so, has the notified body or EU authorized representative been notified of the incorrect regulatory citation?"
+      ]
+    },
+    {
+      "finding_type": "dual_astm_version_citation_without_transition_rationale",
+      "severity": "P2",
+      "claim": "Both ASTM E1965-98:2016 and ASTM E1965-98:2023 are cited as applicable in the same design input document and the same design verification plan and report, but no transition rationale, version-selection justification, or test-to-standard mapping document was found in the corpus.",
+      "rationale": "REG-062 and REG-063 show F0031 lists both ASTM E1965-98:2016 and ASTM E1965-98:2023 as applicable US standards. REG-128 and REG-129 show F0121 (design verification plan) lists both as applicable with the same verification method. REG-121 and REG-122 show F0114 (design verification report) lists both as passed. REG-071 shows the label review (F0082) references ASTM E1965-98:2023. The orchestrator's escalation question (ASG-0008 item 6) asks whether the dual citation appears in the same document or across different design stages. Assessment: both versions appear in the same documents at the same design stage, not as a staged transition. No transition rationale, version-comparison analysis, or test-to-standard mapping document appears in the corpus. For a 510(k) submission, FDA will expect the manufacturer to identify which version of ASTM E1965 was used for testing and to justify compliance with that version. Citing both without differentiation creates ambiguity about which standard governs the device's performance claims.",
+      "evidence_ids": ["REG-062", "REG-063", "REG-071", "REG-121", "REG-122", "REG-128", "REG-129"],
+      "challenge_questions": [
+        "Were the accuracy and performance tests conducted against ASTM E1965-98:2016, ASTM E1965-98:2023, or both? Which test report documents the results against each version?",
+        "What are the substantive differences between ASTM E1965-98:2016 and ASTM E1965-98:2023 that are relevant to PT9L, and has a gap analysis been performed?",
+        "Is the 510(k) submission claiming compliance with both versions simultaneously, and if so, has FDA guidance on standard version selection been consulted?"
+      ]
+    }
+  ]
+}
+```

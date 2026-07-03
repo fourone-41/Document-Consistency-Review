@@ -1,0 +1,215 @@
+{
+  "document": {
+    "report_no": "ETX2023-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "121-122 of 182"
+  },
+  "tests": [
+    {
+      "clause": "8.7",
+      "name": "Leakage Current Tests",
+      "abbreviations": {
+        "ER": "Earth leakage current",
+        "TC": "Touch current",
+        "A": "After humidity conditioning",
+        "P": "Patient leakage current",
+        "B": "Before humidity conditioning",
+        "PA": "Patient auxiliary current",
+        "1": "Switch closed or set to normal polarity",
+        "TP": "Total Patient current",
+        "0": "Switch open or set to reversed polarity",
+        "PM": "Patient leakage current with mains on the applied parts",
+        "NC": "Normal condition",
+        "MD": "Measuring device",
+        "SFC": "Single fault condition"
+      },
+      "notes": [
+        "For EARTH LEAKAGE CURRENT see 8.7.3 d) and 8.7.4.5",
+        "For TOUCH CURRENT see 8.7.3 c) and 8.7.4.6",
+        "For PATIENT LEAKAGE CURRENT see 8.7.3.b) and 8.7.4.7",
+        "Total PATIENT LEAKAGE CURRENT values are only relative to equipment with multiple APPLIED PARTS of the same type. See 8.7.4.7 h). The individual APPLIED PARTS complied with the PATIENT LEAKAGE CURRENT values.",
+        "Tests conducted at operating temperature and after humidity preconditioning of 5.7, EQUIPMENT energized in stand-by condition and fully operating, max rated supply frequency, at 110% of the max RATED MAINS VOLTAGE, and after relevant tests of Clause 11.6"
+      ]
+    },
+    {
+      "clause": "8.8.3",
+      "name": "Dielectric strength test of solid insulating materials with safety function – MOOP/MOPP",
+      "verdict": "P",
+      "items": [
+        {
+          "insulation_under_test": "Batteries electrode to non-metallic enclosure",
+          "insulation_type": "2 MOPP",
+          "peak_working_voltage_dc": 3,
+          "test_voltage": "DC 1000 V",
+          "dielectric_breakdown": "No"
+        },
+        {
+          "insulation_under_test": "Batteries electrode to the probe",
+          "insulation_type": "2 MOPP",
+          "peak_working_voltage_dc": 3,
+          "test_voltage": "DC 1000 V",
+          "dielectric_breakdown": "No"
+        },
+        {
+          "insulation_under_test": "Positive and negative poles of internal power supply",
+          "insulation_type": "2 MOPP",
+          "peak_working_voltage_dc": 3,
+          "test_voltage": "Non-test",
+          "dielectric_breakdown": "Non-test"
+        },
+        {
+          "insulation_under_test": "ME enclosure to the probe",
+          "insulation_type": "1 MOPP",
+          "peak_working_voltage_ac": 240,
+          "test_voltage": "AC 1500 V",
+          "dielectric_breakdown": "No"
+        }
+      ],
+      "supplementary_info": "1 Alternatively, per the Table (i.e., dc), a d.c. test voltage equal to the peak value of the a.c. test voltage used. 2 A) Immediately after humidity treatment of 5.7, ME EQUIPMENT de-energized, B) after required sterilization PROCEDURE, ME EQUIPMENT de-energized, C) after reaching steady state operating temperature as during heating test of 11.1.1, and D) after relevant tests of 11.6 (i.e., overflow, spillage, leakage, ingress of water, cleaning, disinfection, and sterilization)."
+    },
+    {
+      "clause": "8.8.4.1",
+      "name": "Resistance to heat - Ball pressure test of thermoplastic parts",
+      "verdict": "P",
+      "parameters": {
+        "allowed_impression_diameter_mm": 2,
+        "force_N": 20
+      },
+      "items": [
+        {
+          "part_material": "Enclosure/External insulating parts",
+          "test_temperature_C": 75,
+          "impression_diameter_mm": 0.87
+        },
+        {
+          "part_material": "Screen",
+          "test_temperature_C": 75,
+          "impression_diameter_mm": 1.42
+        },
+        {
+          "part_material": "Insulating material supporting un-insulated Mains Parts",
+          "test_temperature_C": null,
+          "impression_diameter_mm": null
+        }
+      ]
+    },
+    {
+      "clause": "8.8.4.1",
+      "name": "Mechanical strength and resistance to heat – Risk Management Results Table",
+      "verdict": "P",
+      "risk_management_items": [
+        {
+          "iso14971_clause": "5.2",
+          "document_ref": "Risk Management Report DN：PT9L-FXGB01 V1.0",
+          "result_remarks": "Intended use and identification of characteristics related to safety issue analysed and recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "5.3",
+          "document_ref": "Risk Management Report DN：PT9L-FXGB01 V1.0",
+          "result_remarks": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "5.4",
+          "document_ref": "Risk Management Report DN：PT9L-FXGB01 V1.0",
+          "result_remarks": "Risk estimation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "6",
+          "document_ref": "Risk Management Report DN：PT9L-FXGB01 V1.0",
+          "result_remarks": "Risk evaluation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "7.2",
+          "document_ref": "Risk Management Report DN：PT9L-FXGB01 V1.0",
+          "result_remarks": "Risk control option analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "7.3",
+          "document_ref": "Risk Management Report DN：PT9L-FXGB01 V1.0",
+          "result_remarks": "a. Risk control measures recorded. b. Effectiveness of risk control measures verified and recorded. c. Implementation of risk control measures verified and recorded.",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "7.4",
+          "document_ref": "Risk Management Report DN：PT9L-FXGB01 V1.0",
+          "result_remarks": "Residual risk evaluated.",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "7.5",
+          "document_ref": "No such analysis",
+          "result_remarks": "All residual risk is acceptable.",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.9.2",
+      "name": "Short circuiting of each single one of the CREEPAGE DISTANCES and AIR CLEARANCES for insulation in the MAINS PART between parts of opposite polarity",
+      "verdict": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "title": "Medical electrical equipment – Part 1: General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "title": "Medical electrical equipment – Part 1: General requirements for basic safety and essential performance (European version)"
+    },
+    {
+      "id": "ISO 14971",
+      "title": "Medical devices — Application of risk management to medical devices"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX2023-07-078-02"
+    },
+    {
+      "type": "risk_management_report",
+      "value": "PT9L-FXGB01 V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Note 5: In addition to conditions indicated in the Table, tests conducted at operating temperature and after humidity preconditioning of 5.7, EQUIPMENT energized in stand-by condition and fully operating, max rated supply frequency, at 110% of the max RATED MAINS VOLTAGE, and after relevant tests of Clause 11.6 (i.e., overflow, spillage, leakage, ingress of water and particulate matter, cleaning & disinfection, & sterilization).",
+      "topic_tags": [
+        "leakage current",
+        "test conditions",
+        "humidity preconditioning",
+        "mains voltage",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "8.7 leakage current tests",
+        "Clause 11.6"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Dielectric strength test supplementary conditions: A) Immediately after humidity treatment of 5.7, ME EQUIPMENT de-energized, B) after required sterilization PROCEDURE, ME EQUIPMENT de-energized, C) after reaching steady state operating temperature as during heating test of 11.1.1, and D) after relevant tests of 11.6 (i.e., overflow, spillage, leakage, ingress of water, cleaning, disinfection, and sterilization).",
+      "topic_tags": [
+        "dielectric strength",
+        "humidity treatment",
+        "sterilization",
+        "operating temperature",
+        "MOOP",
+        "MOPP"
+      ],
+      "related_subjects": [
+        "8.8.3 dielectric strength test",
+        "Clause 11.6",
+        "5.7 humidity preconditioning"
+      ]
+    }
+  ]
+}

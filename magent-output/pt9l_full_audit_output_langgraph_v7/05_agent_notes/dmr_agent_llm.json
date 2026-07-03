@@ -1,0 +1,175 @@
+{
+  "agent": "DMR/SOP Agent",
+  "summary": "PT9L设计输出清单整体型号标识一致，但存在PT3旧型号图纸混入DHF、两份包装BOM文件编号不一致、外观图与外箱图纸图号重复、散热器压块以PT3-M01入账但图纸来源为旧型号、保护膜图纸版本与BOM版本不匹配等多项一致性风险，需人工复核。",
+  "review_notes": [
+    "正向闭环：EBOM（DMR-041）中PCB型号PT9L-HFMP01 V1.0与SMT加工说明（DMR-001）、设计输出清单一（DMR-053/054）、图纸（DMR-018）完全一致，PCB物料链闭环良好。",
+    "正向闭环：目标代码确认单（DMR-044/045）MCU型号BH67F2762与工艺说明烧写工序（DMR-026/027）引用文件编号PT9L-MBSC01一致，固件烧写链路可追溯。",
+    "正向闭环：工艺说明（DMR-025）明确引用PT9L-EBOM01，与EBOM文件编号（DMR-038）一致，工艺-BOM交叉引用有效。",
+    "包装BOM存在两个文件（F0161/F0162），内容高度重叠但文件编号不同，需确认是否为同一受控文件的两个版本或两个独立文件。",
+    "散热器金属套图纸（DMR-118）为外购供应商原图（天津小泉），图号非PT9L标准体系，是否已完成内部图号转换需确认。",
+    "PT3_双联弹簧图纸（DMR-130至135）明确标注为PT3项目原件借用归档，但证据目录中未见PT9L对应弹簧件的独立图纸或共用件受控声明。"
+  ],
+  "findings": [
+    {
+      "finding_type": "legacy_drawing_in_pt9l_dhf",
+      "severity": "P1",
+      "claim": "PT9L设计输出清单二中归档了型号为PT3的双联弹簧图纸（Drawing NO. PT3-P10，Model NO. PT3），该图纸属于旧型号PT3项目原件，未见PT9L共用件受控声明或设计借用审批记录。",
+      "rationale": "DMR-133/134明确显示图号PT3-P10、型号PT3，DMR-132注明为\"PT3项目原件，被PT9L DHF借用归档\"。若无正式共用件受控程序，该图纸不能作为PT9L的有效设计输出，可能导致验证闭环断裂，影响法规符合性。",
+      "evidence_ids": [
+        "DMR-130",
+        "DMR-131",
+        "DMR-132",
+        "DMR-133",
+        "DMR-134"
+      ],
+      "challenge_questions": [
+        "PT3双联弹簧是否经过正式的共用件/借用件审批流程，是否有ECO或设计借用单？",
+        "PT9L整机BOM中该弹簧件的物料编码与PT3项目是否相同？是否有独立的PT9L图号？",
+        "该弹簧件的验证记录（如弹力测试、寿命测试）是在PT3项目下还是PT9L项目下完成的？"
+      ]
+    },
+    {
+      "finding_type": "packaging_bom_document_number_inconsistency",
+      "severity": "P1",
+      "claim": "设计输出清单二中存在两份包装BOM文件（F0161文件编号PT9L-PBOM01 V1.0，F0162文件编号PT9L-PB0M1 V1.0），文件编号存在差异（字母O与数字0混用），无法确认哪份为受控版本。",
+      "rationale": "DMR-055显示编号\"PT9L-P BOM01 V1.0\"，DMR-062/063显示编号\"PT9L-PB0M1 V1.0\"（含数字0），两份文件均声称是PT9L包装BOM美版组件清单，文件编号不一致可能导致生产现场引用错误版本，构成制造转移一致性风险。",
+      "evidence_ids": [
+        "DMR-055",
+        "DMR-062",
+        "DMR-063"
+      ],
+      "challenge_questions": [
+        "F0161与F0162是否为同一文件的不同导出版本，还是两份独立受控文件？",
+        "哪份文件编号为正式受控版本，文件管理系统中的主版本是哪个？",
+        "两份文件的物料清单内容是否完全一致，是否存在物料条目差异？"
+      ]
+    },
+    {
+      "finding_type": "drawing_number_duplication",
+      "severity": "P1",
+      "claim": "PT9L外观图（F0177）与外箱图纸（F0164）均使用图号PT9L-F01，两者为不同零件，图号重复将导致文件管理混乱和生产引用歧义。",
+      "rationale": "DMR-138明确标注外观图Drawing NO.为PT9L-F01，并附注\"⚠️与外箱PT9L-F01同号但不同件\"；DMR-075显示外箱图纸Drawing NO.同为PT9L-F01。同一图号对应两个不同零件，违反图纸编号唯一性原则，可能导致制造和检验引用错误文件。",
+      "evidence_ids": [
+        "DMR-075",
+        "DMR-076",
+        "DMR-138",
+        "DMR-139"
+      ],
+      "challenge_questions": [
+        "外观图PT9L-F01与外箱图纸PT9L-F01是否已提交ECO进行图号变更？",
+        "当前生产现场和供应商使用的PT9L-F01指向哪份图纸？",
+        "图纸管理系统中是否已标记该重复图号问题并有处理记录？"
+      ]
+    },
+    {
+      "finding_type": "protective_film_drawing_version_mismatch",
+      "severity": "P2",
+      "claim": "包装BOM（F0161）中保护膜规格为PT9L-P10，但对应图纸文件名为PT9L-P10+V2.0（F0163），BOM中未标注版本号，无法确认BOM引用的是否为V2.0版本。",
+      "rationale": "DMR-060显示BOM中保护膜规格仅写\"PT9L-P10\"，未含版本号；DMR-067/072显示图纸文件为V2.0版本。若存在V1.0历史版本，BOM未锁定版本可能导致采购或生产引用旧版图纸，构成物料一致性风险。",
+      "evidence_ids": [
+        "DMR-060",
+        "DMR-067",
+        "DMR-072"
+      ],
+      "challenge_questions": [
+        "保护膜PT9L-P10是否存在V1.0版本，V1.0与V2.0之间有何设计变更？",
+        "包装BOM是否应锁定到具体版本号（如PT9L-P10 V2.0）？",
+        "供应商当前生产的保护膜是否已按V2.0图纸执行？"
+      ]
+    },
+    {
+      "finding_type": "heat_sink_block_legacy_part_number",
+      "severity": "P2",
+      "claim": "散热器压块图纸（FDIR-V14_散热器压块_REV01）在PT9L总装BOM中以PT3-M01入账，图号前缀为PT3旧型号，未见PT9L标准图号，存在旧型号零件混入PT9L BOM的风险。",
+      "rationale": "DMR-126明确指出\"本件在PT9L BOM中以PT3-M01入账\"，图号前缀PT3属于旧型号体系。DMR-125显示该文件归档于PT9L DHF设计输出清单二。若该零件未经PT9L项目正式设计评审和验证，以旧型号图号入账可能导致验证闭环不完整。",
+      "evidence_ids": [
+        "DMR-124",
+        "DMR-125",
+        "DMR-126",
+        "DMR-127"
+      ],
+      "challenge_questions": [
+        "PT3-M01散热器压块是否经过PT9L项目的正式设计评审和验证测试？",
+        "该零件是否应重新赋予PT9L体系图号，还是通过共用件程序正式受控？",
+        "PT9L与PT3的散热器压块是否为完全相同的零件，尺寸和材料规格是否一致？"
+      ]
+    },
+    {
+      "finding_type": "supplier_drawing_without_internal_number",
+      "severity": "P2",
+      "claim": "散热器金属套图纸（75CEE0-Model）为外购供应商（天津小泉）原图，图号为供应商体系编号GXT-001，未见转换为PT9L内部标准图号，且图纸中未标注PT9L型号信息。",
+      "rationale": "DMR-118明确说明该图为\"外购供应商图纸（天津小泉精密金属制品有限公司）\"，图号非PT9L标准体系。DMR-123提出\"是否需要换为本厂标准化的T-Z1-Pxx图号\"的疑问。供应商原图直接归档于DHF，若无内部受控图号，变更管理和验证追溯存在风险。",
+      "evidence_ids": [
+        "DMR-118",
+        "DMR-119",
+        "DMR-120",
+        "DMR-123"
+      ],
+      "challenge_questions": [
+        "散热器金属套是否已建立内部受控图号，还是完全依赖供应商图纸管理？",
+        "供应商图纸版本变更时，PT9L DHF的变更控制程序如何触发？",
+        "该零件的2m跌落验证记录是否已归档于PT9L DHF？"
+      ]
+    },
+    {
+      "finding_type": "pt3_f21_label_in_pt9l_dhf",
+      "severity": "P2",
+      "claim": "设计输出清单二包装目录下存在文件T040800073941030093-PT3-F21.pdf，图号前缀为PT3，与PT9L项目无明确关联说明，疑为旧型号残留文件。",
+      "rationale": "DMR-111/112显示文件名和图号均含\"PT3-F21\"，归档路径在PT9L设计输出清单二包装目录下，但证据中未见任何说明该文件与PT9L的关联关系或共用件声明，与upstream_scout_summary中提到的旧型号残留问题一致。",
+      "evidence_ids": [
+        "DMR-111",
+        "DMR-112",
+        "DMR-113"
+      ],
+      "challenge_questions": [
+        "PT3-F21是什么零件，在PT9L产品中是否实际使用？",
+        "该文件是否应从PT9L设计输出清单二中移除，或补充共用件受控说明？",
+        "PT9L包装BOM中是否有对应该图号的物料条目？"
+      ]
+    },
+    {
+      "finding_type": "design_output_list_missing_submission_date",
+      "severity": "P3",
+      "claim": "设计输出清单一（F0160）中提交日期、审核日期字段均为空白，文件未完成正式签署，不符合受控文件要求。",
+      "rationale": "DMR-051显示\"提交: 年 月 日 审核: 年 月 日\"均未填写，设计输出清单作为DHF核心索引文件，未完成签署意味着该清单的受控状态存疑，可能影响整个设计输出包的法规符合性审查。",
+      "evidence_ids": [
+        "DMR-051"
+      ],
+      "challenge_questions": [
+        "设计输出清单一是否已在文件管理系统中正式签署受控，纸质或电子签署记录在哪里？",
+        "未填写日期是导出格式问题还是确实未完成审核签署？"
+      ]
+    },
+    {
+      "finding_type": "manual_part_number_typo_in_packaging_bom",
+      "severity": "P3",
+      "claim": "包装BOM（F0161）中说明书物料规格填写为\"PT9L-SMSPO1\"（字母O与数字0混用），与图纸文件（F0167）中的正式图号PT9L-SMSP01不一致。",
+      "rationale": "DMR-059显示BOM中说明书规格为\"PT9L-SMSPO1\"（末位为字母O），DMR-095显示图纸Drawing NO.为\"PT9L-SMSP01\"（末位为数字1）。虽可能为录入笔误，但BOM与图纸编号不一致会影响物料追溯和采购核对的准确性。",
+      "evidence_ids": [
+        "DMR-059",
+        "DMR-095",
+        "DMR-096"
+      ],
+      "challenge_questions": [
+        "PT9L-SMSPO1与PT9L-SMSP01是否为同一物料，BOM中是否需要勘误？",
+        "物料编码K040700022027620814是否已与正确图号PT9L-SMSP01绑定？"
+      ]
+    },
+    {
+      "finding_type": "external_box_label_drawing_pt1_prefix",
+      "severity": "P3",
+      "claim": "设计输出清单二包装目录下存在两份图号前缀为PT1的标签图纸（PT1-F05、PT1-F07），与PT9L项目型号不符，疑为旧型号或其他型号文件混入。",
+      "rationale": "DMR-097显示图号K04080002146对应PT1-F05，DMR-098/117显示图号K04080002148对应PT1-F07，两份文件均归档于PT9L设计输出清单二包装目录，但图号前缀PT1与PT9L项目不符，证据中未见关联说明，与旧型号残留风险一致。",
+      "evidence_ids": [
+        "DMR-097",
+        "DMR-098",
+        "DMR-117"
+      ],
+      "challenge_questions": [
+        "PT1-F05和PT1-F07是什么标签，是否在PT9L产品包装中实际使用？",
+        "这两份文件是否应从PT9L设计输出清单二中移除，或补充使用说明？",
+        "PT9L包装BOM中是否有对应这两个图号的物料条目？"
+      ]
+    }
+  ]
+}

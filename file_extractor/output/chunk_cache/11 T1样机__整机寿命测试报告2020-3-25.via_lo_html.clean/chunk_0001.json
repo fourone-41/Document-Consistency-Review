@@ -1,0 +1,652 @@
+{
+  "document": {
+    "title": "整机寿命测试报告",
+    "doc_type": "测试报告",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "寿命试验前后按键功能、蜂鸣器功能、屏幕显示功能及测量误差",
+      "condition": "测试环境：温度22℃，湿度55%，正常大气压力；恒温水槽温度点：32℃、32.5℃、35℃、38.5℃、42℃、42.5℃、42.9℃，每个温度点测量三次，相邻两次间隔1分钟",
+      "expected_value": "按键功能正常、蜂鸣器正常、屏幕显示正常，测量误差符合PT9L红外体温计产品检验标准要求",
+      "actual_result": "5台样机寿命试验前后按键功能、蜂鸣器、屏幕显示均正常，测量误差满足产品检验标准要求",
+      "pass_criteria": "按键功能正常、蜂鸣功能正常、屏幕显示功能正常，测量误差满足PT9L红外体温计产品检验标准",
+      "instrument": "恒温水槽、黑体辐射源",
+      "environment": "温度22℃，湿度55%，正常大气压力"
+    },
+    {
+      "test_id": "2",
+      "item": "整机寿命耐久性测试（10000次按键开机、测量、自动关机操作）",
+      "condition": "样机进行10000次按键开机、测量、自动关机操作",
+      "expected_value": "满足整机寿命5年或1万次",
+      "actual_result": "5台样机完成10000次操作后功能及测量误差均正常",
+      "pass_criteria": "完成10000次操作后功能正常，测量误差符合标准"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-PLER01",
+      "conclusion": "PT9L经过寿命测试后，按键功能、蜂鸣功能、屏幕显示功能均正常，测量误差满足产品检验标准的要求。PT9L能够达到整机5年或1万次的使用寿命。"
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "#1",
+      "test_point": "32.0℃（寿命前）",
+      "reading": "32.1 / 32.0 / 31.8",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "32.5℃（寿命前）",
+      "reading": "32.5 / 32.4 / 32.4",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "35.0℃（寿命前）",
+      "reading": "34.9 / 34.9 / 35.1",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "38.5℃（寿命前）",
+      "reading": "38.5 / 38.4 / 38.7",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "42.0℃（寿命前）",
+      "reading": "41.9 / 42.0 / 41.8",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "42.5℃（寿命前）",
+      "reading": "42.8 / 42.2 / 42.7",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "42.9℃（寿命前）",
+      "reading": "43.1 / 43.0 / 43.0",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "32.0℃（寿命后）",
+      "reading": "32.0 / 31.9 / 32.2",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "32.5℃（寿命后）",
+      "reading": "32.5 / 32.2 / 32.8",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "35.0℃（寿命后）",
+      "reading": "35.1 / 34.9 / 34.9",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "38.5℃（寿命后）",
+      "reading": "38.5 / 38.3 / 38.4",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "42.0℃（寿命后）",
+      "reading": "42.1 / 42.1 / 42.0",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "42.5℃（寿命后）",
+      "reading": "42.6 / 42.3 / 42.5",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#1",
+      "test_point": "42.9℃（寿命后）",
+      "reading": "42.6 / 43.1 / 42.6",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "32.0℃（寿命前）",
+      "reading": "32.0 / 32.2 / 31.9",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "32.5℃（寿命前）",
+      "reading": "32.6 / 32.3 / 32.6",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "35.0℃（寿命前）",
+      "reading": "35.1 / 35.1 / 34.8",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "38.5℃（寿命前）",
+      "reading": "38.7 / 38.4 / 38.5",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "42.0℃（寿命前）",
+      "reading": "42.0 / 42.1 / 42.0",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "42.5℃（寿命前）",
+      "reading": "42.6 / 42.6 / 42.3",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "42.9℃（寿命前）",
+      "reading": "43.1 / 42.7 / 43.0",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "32.0℃（寿命后）",
+      "reading": "32.1 / 32.0 / 31.8",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "32.5℃（寿命后）",
+      "reading": "32.6 / 32.5 / 32.5",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "35.0℃（寿命后）",
+      "reading": "35.0 / 34.8 / 34.9",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "38.5℃（寿命后）",
+      "reading": "38.4 / 38.5 / 38.6",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "42.0℃（寿命后）",
+      "reading": "41.8 / 41.9 / 41.9",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "42.5℃（寿命后）",
+      "reading": "42.8 / 42.3 / 42.8",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#2",
+      "test_point": "42.9℃（寿命后）",
+      "reading": "42.6 / 42.7 / 42.9",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "32.0℃（寿命前）",
+      "reading": "31.7 / 32.3 / 31.8",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "32.5℃（寿命前）",
+      "reading": "32.7 / 32.5 / 32.8",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "35.0℃（寿命前）",
+      "reading": "35.0 / 34.9 / 35.0",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "38.5℃（寿命前）",
+      "reading": "38.7 / 38.5 / 38.7",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "42.0℃（寿命前）",
+      "reading": "42.1 / 41.9 / 42.0",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "42.5℃（寿命前）",
+      "reading": "42.7 / 42.3 / 42.4",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "42.9℃（寿命前）",
+      "reading": "42.7 / 43.0 / 42.6",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "32.0℃（寿命后）",
+      "reading": "32.0 / 32.3 / 32.1",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "32.5℃（寿命后）",
+      "reading": "32.4 / 32.5 / 32.7",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "35.0℃（寿命后）",
+      "reading": "34.8 / 35.0 / 35.1",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "38.5℃（寿命后）",
+      "reading": "38.5 / 38.6 / 38.4",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "42.0℃（寿命后）",
+      "reading": "42.1 / 41.8 / 41.8",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "42.5℃（寿命后）",
+      "reading": "42.5 / 42.3 / 42.7",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#3",
+      "test_point": "42.9℃（寿命后）",
+      "reading": "43.0 / 42.9 / 42.9",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "32.0℃（寿命前）",
+      "reading": "31.7 / 32.0 / 32.1",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "32.5℃（寿命前）",
+      "reading": "32.7 / 32.7 / 32.3",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "35.0℃（寿命前）",
+      "reading": "35.2 / 35.0 / 35.2",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "38.5℃（寿命前）",
+      "reading": "38.4 / 38.5 / 38.6",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "42.0℃（寿命前）",
+      "reading": "42.0 / 42.1 / 41.8",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "42.5℃（寿命前）",
+      "reading": "42.7 / 42.3 / 42.3",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "42.9℃（寿命前）",
+      "reading": "42.7 / 42.8 / 43.1",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "32.0℃（寿命后）",
+      "reading": "31.8 / 31.8 / 32.3",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "32.5℃（寿命后）",
+      "reading": "32.3 / 32.5 / 32.3",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "35.0℃（寿命后）",
+      "reading": "34.9 / 35.0 / 35.0",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "38.5℃（寿命后）",
+      "reading": "38.3 / 38.7 / 38.5",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "42.0℃（寿命后）",
+      "reading": "41.8 / 42.1 / 41.8",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "42.5℃（寿命后）",
+      "reading": "42.6 / 42.2 / 42.3",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#4",
+      "test_point": "42.9℃（寿命后）",
+      "reading": "42.9 / 42.8 / 42.7",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "32.0℃（寿命前）",
+      "reading": "32.1 / 32.2 / 32.2",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "32.5℃（寿命前）",
+      "reading": "32.5 / 32.7 / 32.5",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "35.0℃（寿命前）",
+      "reading": "34.9 / 35.2 / 34.9",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "38.5℃（寿命前）",
+      "reading": "38.5 / 38.4 / 38.3",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "42.0℃（寿命前）",
+      "reading": "41.9 / 41.9 / 42.0",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "42.5℃（寿命前）",
+      "reading": "42.5 / 42.5 / 42.4",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "42.9℃（寿命前）",
+      "reading": "42.9 / 43.2 / 43.2",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验前"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "32.0℃（寿命后）",
+      "reading": "31.9 / 31.7 / 32.0",
+      "unit": "℃",
+      "reference_value": "32.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "32.5℃（寿命后）",
+      "reading": "32.7 / 32.5 / 32.4",
+      "unit": "℃",
+      "reference_value": "32.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "35.0℃（寿命后）",
+      "reading": "35.1 / 35.2 / 34.9",
+      "unit": "℃",
+      "reference_value": "35.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "38.5℃（寿命后）",
+      "reading": "38.5 / 38.6 / 38.5",
+      "unit": "℃",
+      "reference_value": "38.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "42.0℃（寿命后）",
+      "reading": "41.8 / 42.1 / 42.1",
+      "unit": "℃",
+      "reference_value": "42.0",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "42.5℃（寿命后）",
+      "reading": "42.2 / 42.2 / 42.5",
+      "unit": "℃",
+      "reference_value": "42.5",
+      "condition": "寿命试验后"
+    },
+    {
+      "machine_no": "#5",
+      "test_point": "42.9℃（寿命后）",
+      "reading": "42.9 / 42.7 / 42.9",
+      "unit": "℃",
+      "reference_value": "42.9",
+      "condition": "寿命试验后"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-PLER01"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "PT9L红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "PT9L要求满足整机寿命5年或1万次。根据\"PT9L红外体温计产品检验标准\"内的要求，测试中假设正常使用时平均每天使用5次，使用1万次后也同时满足5年的时间。对其中可以影响到整机寿命的电子元器件以及结构组件需要进行整机进行测试（包括按键，显示模组，蜂鸣器，热敏电阻）。",
+      "topic_tags": [
+        "整机寿命",
+        "寿命要求",
+        "测试范围",
+        "电子元器件",
+        "结构组件"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "PT9L红外体温计产品检验标准"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "测试仪器：恒温水槽、黑体辐射源。其中恒温水槽、黑体辐射源都需要符合\"PT9L红外体温计产品检验标准\"内的要求。",
+      "topic_tags": [
+        "测试仪器",
+        "恒温水槽",
+        "黑体辐射源",
+        "仪器要求"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计产品检验标准"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测试方法：1. 将恒温水槽设定在32℃、32.5℃、35℃、38.5℃、42℃、42.5℃、42.9℃，待恒温水槽温度稳定（\"稳定\"的定义见\"PT9L红外体温计产品检验标准\"）后，使用PT9L计进行测量。每个温度点下测量三次，相邻两次测试间隔1分钟，测试过程中记录按键功能是否正常、蜂鸣器是否正常、屏幕显示是否正常、测量误差是否符合要求。2. 样机进行10000次按键开机、测量、自动关机操作。3. 重复1中的步骤，再次测试按键功能、蜂鸣器功能、屏幕显示功能以及测量误差是否符合要求。",
+      "topic_tags": [
+        "测试方法",
+        "温度点",
+        "寿命试验",
+        "测量误差",
+        "功能验证"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "PT9L红外体温计产品检验标准"
+      ]
+    }
+  ]
+}

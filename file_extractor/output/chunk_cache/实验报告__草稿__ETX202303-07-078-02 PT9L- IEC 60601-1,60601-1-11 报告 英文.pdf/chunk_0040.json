@@ -1,0 +1,149 @@
+{
+  "document": {
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "pages": "82-83 of 182",
+    "fragment_index": "40/84"
+  },
+  "tests": [
+    {
+      "clause": "15.1",
+      "name": "Controls and Indicators Risk via Usability Engineering Process",
+      "requirement": "RISKS associated with arrangement of controls and indicators of ME EQUIPMENT addressed through application of USABILITY ENGINEERING PROCESS in accordance with IEC 60601-1-6",
+      "result": "See Appended RM Results",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.2",
+      "name": "Mechanical wear / degradation parts accessibility",
+      "requirement": "Parts subject to mechanical wear, electrical, environmental degradation or ageing resulting in unacceptable RISK are accessible for inspection, replacement, and maintenance",
+      "result": "No such parts.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "15.2",
+      "name": "Servicing without damage to adjacent parts",
+      "requirement": "Inspection, servicing, replacement, and adjustment of parts can easily be done without damage to or interference with adjacent parts or wiring",
+      "result": "Only a qualified personnel service is available to implement.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "15.3",
+      "name": "Mechanical Strength",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.3.1",
+      "name": "Mould stress relief, push, impact, drop, and rough handling tests",
+      "requirement": "Tests did not result in loss of BASIC SAFETY or ESSENTIAL PERFORMANCE",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.3.2",
+      "name": "Push test",
+      "requirement": "External parts of ENCLOSURE subjected to steady force of 250 N ± 10 N for 5 s applied to a circular (30mm) plane surface, except bottom of ENCLOSURE of ME EQUIPMENT >18 kg",
+      "result": "See Appended Table 15.3",
+      "sub_result": "No damage resulting in an unacceptable RISK sustained",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.3.3",
+      "name": "Impact test",
+      "requirement": "Complete ENCLOSURE or its largest non-reinforced area subjected to a free falling 500 g ±25 g solid smooth steel ball, approx. 50 mm diameter from height of 1.3 m; no damage resulting in unacceptable RISK",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "15.3.4",
+      "name": "Drop test",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.3.4.1",
+      "name": "Drop test – HAND-HELD ME EQUIPMENT",
+      "requirement": "Sample of HAND-HELD ME EQUIPMENT, ACCESSORIES and HAND-HELD part with SAFE WORKING LOAD allowed to fall freely once from each of 3 different positions as in NORMAL USE from height specified in ACCOMPANYING DOCUMENTS, or from 1 m onto a 50 mm ±5 mm thick hardwood board on concrete or rigid base",
+      "result": "See Appended Table 15.3",
+      "sub_result": "No unacceptable RISK resulted",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.3.4.2",
+      "name": "Drop test – PORTABLE ME EQUIPMENT",
+      "requirement": "Sample of PORTABLE ME EQUIPMENT, ACCESSORIES and PORTABLE part with SAFE WORKING LOAD lifted to height per Table 29 above a 50 ±5 mm thick hardwood board on concrete floor or rigid base, dropped 3 times from each orientation in NORMAL USE",
+      "sub_result": "No damage resulting in an unacceptable RISK sustained",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "15.3.5",
+      "name": "Rough Handling tests – MOBILE ME EQUIPMENT",
+      "requirement": "Each sample of MOBILE ME EQUIPMENT and MOBILE part with SAFE WORKING LOAD in most adverse condition in NORMAL USE passed Rough Handling tests",
+      "result": "Not mobile me equipment and mobile part",
+      "sub_tests": [
+        {
+          "label": "a) Ascending step shock test",
+          "description": "Sample pushed 3 times in normal direction of travel at 0.8 m/s ±0.1 m/s against ascending hardwood step obstruction without going over"
+        },
+        {
+          "label": "b) Descending step shock test",
+          "description": "Sample pushed 3 times in normal direction of travel at 0.8 m/s ±0.1 m/s to fall over vertical step affixed flat on rigid base"
+        },
+        {
+          "label": "c) Door frame shock test",
+          "description": "Sample moved 3 times in normal direction of travel at 0.8 m/s ±0.1 m/s, or for motor driven equipment at maximum possible speed, against hardwood vertical obstacle higher than equipment contact point(s)"
+        }
+      ],
+      "sub_result": "No damage resulting in an unacceptable RISK sustained",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "15.3.6",
+      "name": "Mould-stress relief test",
+      "requirement": "ENCLOSURE made from moulded or formed thermoplastic material examined; mould-stress relief test conducted by placing sample in circulating air oven at 10°C over max temperature measured on ENCLOSURE in 11.1.3, but no less than 70°C, for 7 hours",
+      "result": "70°C, 7h",
+      "sub_result": "Examination indicated material distortion will not result in unacceptable RISK",
+      "verdict": "P"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "title": "Medical electrical equipment – Part 1: General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "title": "EN harmonized version of IEC 60601-1"
+    },
+    {
+      "id": "IEC 60601-1-6",
+      "title": "Medical electrical equipment – Usability Engineering Process"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Notification that changes to the IT-NETWORK could introduce new RISKS that require additional analysis. Changes to the IT-NETWORK include: changes in network configuration, connection of additional items, disconnection of items, update of equipment, upgrade of equipment.",
+      "topic_tags": [
+        "IT-NETWORK",
+        "risk",
+        "network configuration",
+        "change management"
+      ],
+      "related_subjects": [
+        "IEC60601-1",
+        "risk management"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 15.2: Inspection, servicing, replacement, and adjustment of parts of ME EQUIPMENT can easily be done without damage to or interference with adjacent parts or wiring. Result: Only a qualified personnel service is available to implement.",
+      "topic_tags": [
+        "servicing",
+        "maintenance",
+        "qualified personnel",
+        "ME equipment"
+      ],
+      "related_subjects": [
+        "15.2",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

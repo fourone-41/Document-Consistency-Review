@@ -1,0 +1,221 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-01",
+    "total_pages": 30,
+    "test_date_esd": null,
+    "test_date_radiated": "2024-07-09/10/24-26"
+  },
+  "tests": [
+    {
+      "test_id": "6.2_ESD_Indirect",
+      "test_type": "Electrostatic Discharge (ESD) - Indirect Application",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method_standard": "IEC 61000-4-2",
+      "discharge_levels_kV": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "interval_s": 1,
+      "test_items": [
+        {
+          "coupling_plate": "Horizontally coupled plate - Front",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Horizontally coupled plate - Left",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Horizontally coupled plate - Rear",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Horizontally coupled plate - Right",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Front",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Left",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Rear",
+          "result": "A"
+        },
+        {
+          "coupling_plate": "Vertical coupling plate - Right",
+          "result": "A"
+        }
+      ],
+      "legend": "√: Pass; ×: Fail; ND: No Discharge; -: Non-test",
+      "overall_result": "Pass"
+    },
+    {
+      "test_id": "6.3_Radiated_Immunity",
+      "test_type": "Radiated Immunity",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method_standard": "IEC 61000-4-3",
+      "test_date": "2024-07-09/10/24-26",
+      "temperature_humidity": "25-31°C, 32%-50%",
+      "power_supply": "DC 3V",
+      "frequency_range": "80 MHz to 2.7 GHz",
+      "antenna_polarization": [
+        "Horizontal",
+        "Vertical"
+      ],
+      "test_level": "10 V/m",
+      "modulation": "80%, 1KHz Amplitude Modulation",
+      "frequency_step": "not exceed 1% of preceding frequency",
+      "dwell_time_min_s": 0.5,
+      "test_results": [
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Front",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Front",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Rear",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Rear",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Left",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Left",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "V",
+          "face": "Right",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "H",
+          "face": "Right",
+          "result": "A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "N/A",
+          "face": "Top",
+          "result": "N/A"
+        },
+        {
+          "frequency": "80 MHz to 2.7 GHz",
+          "level": "10 V/m",
+          "modulation": "1KHz 80% Amp.Mod, 1% increment",
+          "test_mode": "Mode 1,2",
+          "polarization": "N/A",
+          "face": "Bottom",
+          "result": "N/A"
+        }
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "clause": "6.1",
+      "description": "EMC requirements for medical electrical equipment"
+    },
+    {
+      "standard": "IEC 61000-4-2",
+      "description": "Electrostatic discharge immunity test"
+    },
+    {
+      "standard": "IEC 61000-4-3",
+      "description": "Radiated, radio-frequency, electromagnetic field immunity test"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Remarks A (ESD Indirect): During and after test, The EUT is tested in UE1 mode, the collection point of the temperature sensor is aligned with the blackbody, which is set at 37°C. The temperature is continuously measured and compared with the blackbody temperature. The accuracy of the display temperature of the EUT does not exceed ± 0.2°C. During and after test, the EUT could operate as intended and no disturbance of function. The EUT could meet the requirements of clause 6.1.",
+      "topic_tags": [
+        "ESD",
+        "temperature accuracy",
+        "blackbody",
+        "UE1 mode",
+        "pass criteria",
+        "±0.2°C"
+      ],
+      "related_subjects": [
+        "6.2_ESD_Indirect",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Radiated Immunity Test Setup and Procedure: 1. For table-top equipment, the EUT was placed in the chamber on a non-conductive table 0.8m high. For floor-standing equipment, the EUT was mounted on a non-conductive support 0.1m above the supporting plane. 2. If possible, a minimum of 1m of cable is exposed to the electromagnetic field. Excess length of cables interconnecting units of the EUT shall be bundled low-inductively in the approximate center of the cable to form a bundle 30 cm to 40 cm in length. 3. The EUT was initially placed with one face coincident with the calibration plane. The EUT face being illuminated was contained within the UFA (Uniform Field Area). 4. The frequency ranges to be considered were swept with the signal modulated and pausing to adjust the RF signal level or to switch oscillators and Antennas as necessary. The frequency range was swept incrementally, the step size was not exceed 1% of the preceding frequency value. 5. The dwell time of the amplitude modulated carrier at each frequency was not be less than the time necessary for the EUT to be exercised and to respond, and was not less than 0.5 s. 6. The test normally was performed with the generating Antenna facing each side of the EUT. 7. The polarization of the field generated by each Antenna necessitates testing each selected side twice, once with the Antenna positioned vertically and again with the Antenna positioned horizontally. 8. The EUT was performed in a configuration to actual installation conditions, a video camera and/or an audio monitor were used to monitor the performance of the EUT.",
+      "topic_tags": [
+        "radiated immunity",
+        "test setup",
+        "antenna",
+        "EUT placement",
+        "cable bundling",
+        "UFA",
+        "frequency sweep",
+        "dwell time",
+        "polarization"
+      ],
+      "related_subjects": [
+        "6.3_Radiated_Immunity",
+        "IEC 61000-4-3"
+      ]
+    }
+  ]
+}

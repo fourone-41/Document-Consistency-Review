@@ -1,0 +1,166 @@
+{
+  "document": {
+    "title": "Clinical accuracy report - iHealth PT9L Infrared No-Touch Forehead Thermometer",
+    "doc_type": "Clinical Study Report / Test Report",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "PT9L-RLTB01",
+      "item": "Clinical accuracy and repeatability of Infrared No-Touch Forehead Thermometer",
+      "condition": "Temperature: 23±2℃, Humidity: 55±10%; Three consecutive measurements per subject with interval ≤1 min; total ≥90 subjects across three age groups",
+      "expected_value": "No significant difference between DUT and RCT (p>0.05); meets ASTM E1965-98 requirements",
+      "actual_result": "Group A: Sr=0.07, △cb=-0.05℃, σ△cb=0.13, LA=0.25, p=0.83>0.05, 95%CI=[-0.09,-0.01]; Group B: Sr=0.07, △cb=-0.04℃, σ△cb=0.10, LA=0.19, p=0.87>0.05, 95%CI=[-0.08,-0.01]; Group C: Sr=0.08, △cb=-0.04℃, σ△cb=0.11, LA=0.23, p=0.88>0.05, 95%CI=[-0.07,-0.01]",
+      "pass_criteria": "p>0.05 (no significant difference between DUT and reference clinical thermometer); conforms to ASTM E1965-98",
+      "environment": "Temperature: 23±2℃, Humidity: 55±10%"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-RLTB01 V1.0",
+      "conclusion": "There was no significant difference between the infrared thermometer and the oral temperature in different age groups. In all groups p>0.05, confirming no significant difference between the two groups of data. Total 130 subjects tested (Group A: 40, Group B: 40, Group C: 50; 67 female/63 male; 56 febrile/74 afebrile)."
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "DUT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - ti1",
+      "reading": 38.4,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "DUT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - ti2",
+      "reading": 38.5,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "DUT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - ti3",
+      "reading": 38.4,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "RCT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - tRi (oral temperature)",
+      "reading": 38.5,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "Braun (Subject No.1)",
+      "test_point": "Group A, Subject 1 - Braun forehead temperature",
+      "reading": 38.5,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Document Number",
+      "value": "PT9L-RLTB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "iHealth PT9L Infrared No-Touch Forehead Thermometer"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Intended use: The Infrared No-Touch Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by healthcare providers.",
+      "topic_tags": [
+        "intended use",
+        "forehead thermometer",
+        "body temperature",
+        "consumer",
+        "healthcare"
+      ],
+      "related_subjects": [
+        "iHealth PT9L",
+        "PT9L-RLTB01"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "The iHealth PT9L Infrared No-Touch Forehead Thermometer is hand-held, reusable, battery operated device, which can measure human body temperature on the skin temperature on one's forehead. Its operation is based on measuring the natural thermal radiation from the central forehead. Put the probe of the thermometer is onto the skin of a patient's central forehead. Pressing the activation button to start the measurement of proposed infrared radiation. The electrical signal read out from the detector is fed to the circuit for amplification and calculation. The final measured temperature will be appeared on a LCD display.",
+      "topic_tags": [
+        "working principle",
+        "infrared radiation",
+        "forehead",
+        "LCD display",
+        "battery operated"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Contraindications: It is not recommended for people whose measuring part has local lesions, such as inflammation, trauma, postoperative, etc.",
+      "topic_tags": [
+        "contraindications",
+        "exclusion",
+        "inflammation",
+        "trauma",
+        "postoperative"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Subject participation criteria: 1. A total number of subjects is no less than 90. 2. Within each age group both afebrile and febrile subjects were represented by nearly equal numbers. 3. Oral temperature of 37.5℃ or higher is considered as febrile subjects. 4. Subject groups: Group A – infants, 0-12 months old: no less than 30 subjects; Group B – children, 1-5 years old: no less than 35 subjects; Group C – adults, older than 5 years old: no less than 35 subjects. 5. Exclusion criteria: Subjects with medical conditions which might affect clinical accuracy validation results such as inflammation at the measuring site; Subjects who have taken antipyretics in the preceding 120 min.",
+      "topic_tags": [
+        "subject criteria",
+        "febrile",
+        "afebrile",
+        "age group",
+        "exclusion criteria",
+        "antipyretics"
+      ],
+      "related_subjects": [
+        "PT9L-RLTB01",
+        "clinical accuracy study"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test method: Step 1: Sequence the Participants and sign Serial numbers for them according to participant time. Step 2: Using a water bath to verify the laboratory accuracy of the reference thermometer. Step 3: The supervisor takes the DUT, prepares to take measurement for the first subject. Step 4: Perform three consecutive measurement procedures with the time interval no more than 1 min between each reading. And record the test results. Step 5: Take one measurement with the RCT to get oral temperature, and record the test results. Step 6: Take one measurement with the Braun thermometer to get forehead temperature, and record the test results. Step 7: Repeat steps 3 to 6 to complete all the measurements of the participants. Note: participants signed with odd numbers were measured with DUT first and then with RCT and Braun thermometer; participants signed with even numbers were measured with RCT and Braun thermometer first and then with DUT. Step 8: Using a water bath to verify the laboratory accuracy of the reference thermometer again.",
+      "topic_tags": [
+        "test method",
+        "measurement procedure",
+        "water bath",
+        "reference thermometer",
+        "DUT",
+        "RCT",
+        "Braun"
+      ],
+      "related_subjects": [
+        "PT9L-RLTB01",
+        "clinical accuracy study",
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Reference clinical thermometer: An electronic thermometer is used as reference clinical thermometer for the forehead mode thermometer. A water bath is used to verify the laboratory accuracy of the reference thermometer before and after the test.",
+      "topic_tags": [
+        "reference thermometer",
+        "water bath",
+        "laboratory accuracy",
+        "electronic thermometer"
+      ],
+      "related_subjects": [
+        "PT9L-RLTB01",
+        "RCT"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,571 @@
+{
+  "document": {
+    "title": "软件质量策划",
+    "doc_type": "软件质量策划",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RJCH01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "引用文件编号",
+      "value": "PT9L-SRGN01 V1.0"
+    },
+    {
+      "id_type": "引用文件编号",
+      "value": "PT9L-SRXN01 V1.0"
+    },
+    {
+      "id_type": "引用文件编号",
+      "value": "PT9L-FXPJ01 V1.0"
+    }
+  ],
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "软件工程师（更改人）"
+    },
+    {
+      "name": "侯广伟",
+      "title": "批准人"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": null
+    }
+  ],
+  "software_config_items": [
+    {
+      "phase": "设计输入阶段",
+      "activity": "将客户需求转变为明确的、可以用客观方法进行验证的设计输入要求",
+      "config_item": "《PT9L设计输入 功能规格部分》",
+      "version": null
+    },
+    {
+      "phase": "设计策划阶段",
+      "activity": "识别与软件确认相关的任务和活动，形成质量策划",
+      "config_item": "《软件质量策划》",
+      "version": "V1.0"
+    },
+    {
+      "phase": "设计策划阶段",
+      "activity": "根据设计输入汇总、整理软件需求规格书",
+      "config_item": "《软件需求规格书》",
+      "version": null
+    },
+    {
+      "phase": "设计开发阶段",
+      "activity": "根据设计输入和软件需求规格书进行软件方案设计",
+      "config_item": "《软件设计方案》",
+      "version": null
+    },
+    {
+      "phase": "设计开发阶段",
+      "activity": "根据设计输入、软件需求规格、软件方案设计流程图",
+      "config_item": "《软件流程图》",
+      "version": null
+    },
+    {
+      "phase": "设计开发阶段",
+      "activity": "根据软件设计方案和软件流程图进行软件编码和调试",
+      "config_item": "软件代码、目标代码、语音代码文件、EEPROM配置文件",
+      "version": null
+    },
+    {
+      "phase": "验证测试阶段",
+      "activity": "根据设计输入、软件需求规格、软件方案、流程图拟制测试计划",
+      "config_item": "《软件测试计划》",
+      "version": null
+    },
+    {
+      "phase": "验证测试阶段",
+      "activity": "对软件子程序进行测试",
+      "config_item": "《子程序测试记录》",
+      "version": null
+    },
+    {
+      "phase": "验证测试阶段",
+      "activity": "软件子程序测试完成后，进行系统测试",
+      "config_item": "《软件测试报告》",
+      "version": null
+    },
+    {
+      "phase": "设计更改",
+      "activity": "设计更改需求、方案评估并实施；评价设计更改后的风险控制及评价",
+      "config_item": "相关设计更改记录；设计更改后风险控制措施验证及剩余风险评价报告",
+      "version": null
+    },
+    {
+      "phase": "设计确认阶段",
+      "activity": "拟制用户现场测试计划",
+      "config_item": "《用户现场测试》",
+      "version": null
+    },
+    {
+      "phase": "设计确认阶段",
+      "activity": "进行用户现场测试",
+      "config_item": "用户现场测试报告",
+      "version": null
+    }
+  ],
+  "software_items": [
+    {
+      "item_type": "软件系统",
+      "name": "PT9L红外体温计软件",
+      "description": "基于单片机系统的、结构相对简单的软件设计，不涉及操作系统，软件的总体机器代码量不得超过60Kbytes，开发设计过程由一名软件工程师负责。",
+      "value": "机器代码量不超过60Kbytes",
+      "run_environment": "单片机（MCU）系统，不涉及操作系统"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本计划作为软件部分的设计和开发策划的结束，识别了必要的任务、阶段，规定了人员职责、必要的资源支持、相关评审要求、各阶段接收准则、软件配置管理要求以及异常报告和解决程序等内容。本软件质量策划在软件生命周期策划部分中包含了软件确认计划相关内容。",
+      "topic_tags": [
+        "软件质量策划",
+        "生命周期策划",
+        "软件确认计划",
+        "人员职责",
+        "评审要求"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计软件",
+        "软件生命周期"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "软件风险分析：软件相关的风险分析已经在设计输入前的风险评价时进行，具体见《风险评价报告V1.0》(PT9L-FXPJ01 V1.0)。",
+      "topic_tags": [
+        "软件风险分析",
+        "风险评价报告"
+      ],
+      "related_subjects": [
+        "PT9L-FXPJ01 V1.0",
+        "风险评价"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "软件版本管理要求：本软件是基于单片机系统的、结构相对简单的软件设计，不涉及操作系统，软件的总体机器代码量不得超过60Kbytes。开发设计过程由一名软件工程师负责，其他工程师仅参与评审和测试等任务活动，因此针对软件配置管理方面，做下述版本管理要求：A 在软件测试或提交评审前，应确定其版本号；B 所有测试报告应与相应软件版本相对应；C 若有软件更新，则应更新软件版本编号。",
+      "topic_tags": [
+        "软件版本管理",
+        "配置管理",
+        "版本编号",
+        "单片机",
+        "代码量限制"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计软件",
+        "软件测试报告"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "问题报告与解决程序：测试人员，测试软件过程中发现错误后，修改软件代码，完成修改后需要对程序进行再次测试。",
+      "topic_tags": [
+        "问题报告",
+        "缺陷修复",
+        "回归测试",
+        "软件测试"
+      ],
+      "related_subjects": [
+        "验证测试阶段",
+        "软件代码"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "设计输入要求引用如下文件：《设计输入-功能部分》(PT9L-SRGN01 V1.0)全项（功能要求）；《设计输入-性能规格部分》(PT9L-SRXN01 V1.0)第1项（温度显示范围）、第2项（显示分辨率）、第3项（准确度）、第4项（工作环境）、第5项（存储环境）。",
+      "topic_tags": [
+        "设计输入",
+        "功能要求",
+        "性能规格",
+        "温度显示范围",
+        "显示分辨率",
+        "准确度",
+        "工作环境",
+        "存储环境"
+      ],
+      "related_subjects": [
+        "PT9L-SRGN01 V1.0",
+        "PT9L-SRXN01 V1.0",
+        "PT9L红外体温计软件"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "维护阶段说明：目标代码在生产过程中固化在产品内的MCU后无需软件维护。",
+      "topic_tags": [
+        "软件维护",
+        "目标代码",
+        "MCU",
+        "固化"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计软件",
+        "设计开发阶段"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "07 软件设计方案E0 23.11/质量策划E0 23.11/1 质量策划E0 23.11.via_lo_html.clean.md",
+    "doc_type": "software_design"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "软件质量策划",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "软件质量策划",
+      "to": "PT9L红外体温计软件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "软件质量策划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件生命周期",
+      "to": "软件质量策划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "软件风险分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险评价",
+      "to": "软件风险分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "软件版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件测试报告",
+      "to": "软件版本管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "验证测试阶段",
+      "to": "问题报告",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件代码",
+      "to": "问题报告",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SRGN01 V1.0",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SRXN01 V1.0",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "软件维护",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计开发阶段",
+      "to": "软件维护",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-RJCH01 V1.0",
+      "to": "PT9L-SRGN01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-RJCH01 V1.0",
+      "to": "PT9L-SRXN01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-RJCH01 V1.0",
+      "to": "PT9L-FXPJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT9L-RJCH01 V1.0",
+      "to": "PT9L红外体温计软件",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "constraint_statement",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "behavioral_spec_问题报告与解决程序",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "behavioral_spec_设计输入要求引用",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计软件",
+      "to": "behavioral_spec_维护阶段说明",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXPJ01 V1.0",
+      "to": "design_rationale",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "王迪",
+      "to": "PT9L红外体温计软件",
+      "properties": {
+        "role": "软件工程师",
+        "description": "开发设计过程由一名软件工程师负责"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "侯广伟",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {
+        "role": "批准人"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "王迪",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {
+        "role": "更改人/起草人",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件质量策划》",
+      "to": "PT9L-SRGN01 V1.0",
+      "properties": {
+        "description": "设计输入要求引用《设计输入-功能部分》"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件质量策划》",
+      "to": "PT9L-SRXN01 V1.0",
+      "properties": {
+        "description": "设计输入要求引用《设计输入-性能规格部分》"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件质量策划》",
+      "to": "PT9L-FXPJ01 V1.0",
+      "properties": {
+        "description": "软件风险分析依赖《风险评价报告》"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件需求规格书》",
+      "to": "PT9L-SRGN01 V1.0",
+      "properties": {
+        "description": "根据设计输入汇总整理软件需求规格书"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件需求规格书》",
+      "to": "PT9L-SRXN01 V1.0",
+      "properties": {
+        "description": "根据设计输入汇总整理软件需求规格书"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件设计方案》",
+      "to": "《软件需求规格书》",
+      "properties": {
+        "description": "根据设计输入和软件需求规格书进行软件方案设计"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件流程图》",
+      "to": "《软件设计方案》",
+      "properties": {
+        "description": "根据设计输入、软件需求规格、软件方案设计流程图"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "软件代码、目标代码、语音代码文件、EEPROM配置文件",
+      "to": "《软件设计方案》",
+      "properties": {
+        "description": "根据软件设计方案和软件流程图进行软件编码和调试"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "软件代码、目标代码、语音代码文件、EEPROM配置文件",
+      "to": "《软件流程图》",
+      "properties": {
+        "description": "根据软件流程图进行软件编码和调试"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件测试计划》",
+      "to": "《软件设计方案》",
+      "properties": {
+        "description": "根据设计输入、软件需求规格、软件方案、流程图拟制测试计划"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "《软件测试报告》",
+      "to": "《子程序测试记录》",
+      "properties": {
+        "description": "软件子程序测试完成后进行系统测试"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "《软件质量策划》",
+      "to": "设计输入阶段",
+      "properties": {
+        "description": "识别必要的任务和阶段"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "《软件质量策划》",
+      "to": "设计策划阶段",
+      "properties": {
+        "description": "识别必要的任务和阶段"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "《软件质量策划》",
+      "to": "设计开发阶段",
+      "properties": {
+        "description": "识别必要的任务和阶段"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "《软件质量策划》",
+      "to": "验证测试阶段",
+      "properties": {
+        "description": "识别必要的任务和阶段"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "《软件质量策划》",
+      "to": "设计确认阶段",
+      "properties": {
+        "description": "识别必要的任务和阶段"
+      }
+    },
+    {
+      "type": "PRODUCES",
+      "from": "PT9L",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {
+        "role": "批准人"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RJCH01 V1.0",
+      "properties": {
+        "role": "更改人"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RJCH01 V1.0",
+      "to": "1",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "王迪"
+      }
+    }
+  ],
+  "_claims": []
+}

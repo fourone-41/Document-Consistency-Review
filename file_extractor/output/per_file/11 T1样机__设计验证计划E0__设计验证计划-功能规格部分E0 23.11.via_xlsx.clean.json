@@ -1,0 +1,942 @@
+{
+  "document": {
+    "title": "设计验证计划-功能规格部分E0 23.11",
+    "doc_type": "设计验证计划",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_id": "30000078",
+      "name": "红外体温计 PT9L"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "测量原理",
+      "condition": "T1阶段",
+      "expected_value": "红外非接触式",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第1,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "2",
+      "item": "测量位置",
+      "condition": "T1阶段",
+      "expected_value": "额面",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第1,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "3",
+      "item": "检测项目",
+      "condition": "T1阶段",
+      "expected_value": "人体体温、物温",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第6,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "4",
+      "item": "分类指示方式",
+      "condition": "T1阶段",
+      "expected_value": "屏幕选择",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第6,8项进行测试，测试合格"
+    },
+    {
+      "test_id": "5",
+      "item": "按键描述",
+      "condition": "T1阶段",
+      "expected_value": "3个按键：开机测量键、设置键、静音键",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第4,6,7项测试合格"
+    },
+    {
+      "test_id": "6a",
+      "item": "LCD型式",
+      "condition": "T1阶段",
+      "expected_value": "段码式",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第3项进行测试，测试合格"
+    },
+    {
+      "test_id": "6b",
+      "item": "LCD背光",
+      "condition": "T1阶段",
+      "expected_value": "有背光：白橙红",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第8项进行测试，测试合格"
+    },
+    {
+      "test_id": "10",
+      "item": "低电压检出",
+      "condition": "T1阶段",
+      "expected_value": "双阶段",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第5项进行测试，测试合格"
+    },
+    {
+      "test_id": "11",
+      "item": "错误分类显示",
+      "condition": "T1阶段",
+      "expected_value": "错误种类2种：1、超出工作环境温度；2、超过量程",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第9项进行测试，测试合格"
+    },
+    {
+      "test_id": "12",
+      "item": "自动关机时间",
+      "condition": "T1阶段",
+      "expected_value": "常规为15秒",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第2项进行测试，测试合格"
+    },
+    {
+      "test_id": "13",
+      "item": "温度显示单位",
+      "condition": "T1阶段",
+      "expected_value": "℃和℉",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第7项进行测试，测试合格"
+    },
+    {
+      "test_id": "14",
+      "item": "提示功能",
+      "condition": "T1阶段",
+      "expected_value": "蜂鸣",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第4项进行测试，测试合格"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": 1,
+      "version": "V1.0",
+      "change_description": "起草",
+      "date": "XX年X月X日"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "1.本设计验证计划需批准后方能使用执行。\n2.存档并归入设计历史文档（DHF）。\n3.请根据项目具体实际情况对于验证阶段，方法及判定准则进行相应调整。",
+      "topic_tags": [
+        "验证计划",
+        "审批",
+        "DHF",
+        "归档"
+      ],
+      "related_subjects": [
+        "设计验证计划",
+        "DHF"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人员职责安排：软件工程师负责拟制产品功能规格部分的设计验证计划；软件主管负责审核产品功能规格部分的设计验证计划。软件工程师负责产品功能规格部分的设计验证并形成设计验证报告；软件主管负责审核产品功能规格部分的设计验证报告。",
+      "topic_tags": [
+        "人员职责",
+        "软件工程师",
+        "软件主管",
+        "设计验证报告"
+      ],
+      "related_subjects": [
+        "设计验证计划",
+        "设计验证报告"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "以下条目标记为不适用（■不适用），无需验证：壳体变色（No）、位置检测（No）、PC Link（No）、分类指示方式中\"其他\"选项。",
+      "topic_tags": [
+        "不适用项",
+        "壳体变色",
+        "位置检测",
+        "PC Link"
+      ],
+      "related_subjects": [
+        "设计验证计划"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/设计验证计划E0/设计验证计划-功能规格部分E0 23.11.via_xlsx.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划",
+      "to": "验证计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DHF",
+      "to": "验证计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证报告",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划",
+      "to": "不适用项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "6a",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "6b",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "10",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "12",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "13",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "14",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "6a",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "6b",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "10",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "12",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "13",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "14",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "constraint_statement",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证计划-功能规格部分E0 23.11",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "1",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "2",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "3",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "6a",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "6b",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "10",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "11",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "12",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "13",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "14",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "stage": "T1阶段"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "1",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "1,8"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "2",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "1,8"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "3",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "6,8"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "4",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "6,8"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "5",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "4,6,7"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "6a",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "3"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "6b",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "8"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "10",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "5"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "11",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "9"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "12",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "2"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "13",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "7"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "14",
+      "to": "软件测试计划(V1.0)",
+      "properties": {
+        "test_items": "4"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "1",
+      "to": "红外非接触式",
+      "properties": {
+        "item": "测量原理",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "2",
+      "to": "额面",
+      "properties": {
+        "item": "测量位置",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "3",
+      "to": "人体体温、物温",
+      "properties": {
+        "item": "检测项目",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "4",
+      "to": "屏幕选择",
+      "properties": {
+        "item": "分类指示方式",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "5",
+      "to": "3个按键：开机测量键、设置键、静音键",
+      "properties": {
+        "item": "按键描述",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "6a",
+      "to": "段码式",
+      "properties": {
+        "item": "LCD型式",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "6b",
+      "to": "有背光：白橙红",
+      "properties": {
+        "item": "LCD背光",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "10",
+      "to": "双阶段",
+      "properties": {
+        "item": "低电压检出",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "11",
+      "to": "错误种类2种：1、超出工作环境温度；2、超过量程",
+      "properties": {
+        "item": "错误分类显示",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "12",
+      "to": "常规为15秒",
+      "properties": {
+        "item": "自动关机时间",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "13",
+      "to": "℃和℉",
+      "properties": {
+        "item": "温度显示单位",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "14",
+      "to": "蜂鸣",
+      "properties": {
+        "item": "提示功能",
+        "condition": "T1阶段"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "软件工程师",
+      "to": "设计验证计划",
+      "properties": {
+        "role": "拟制",
+        "scope": "产品功能规格部分"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "软件主管",
+      "to": "设计验证计划",
+      "properties": {
+        "role": "审核",
+        "scope": "产品功能规格部分"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "软件工程师",
+      "to": "设计验证报告",
+      "properties": {
+        "role": "拟制",
+        "scope": "产品功能规格部分设计验证"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "软件主管",
+      "to": "设计验证报告",
+      "properties": {
+        "role": "审核",
+        "scope": "产品功能规格部分"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "1",
+      "to": "T1阶段",
+      "properties": {
+        "item": "测量原理"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "2",
+      "to": "T1阶段",
+      "properties": {
+        "item": "测量位置"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "3",
+      "to": "T1阶段",
+      "properties": {
+        "item": "检测项目"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "4",
+      "to": "T1阶段",
+      "properties": {
+        "item": "分类指示方式"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "5",
+      "to": "T1阶段",
+      "properties": {
+        "item": "按键描述"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "6a",
+      "to": "T1阶段",
+      "properties": {
+        "item": "LCD型式"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "6b",
+      "to": "T1阶段",
+      "properties": {
+        "item": "LCD背光"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "10",
+      "to": "T1阶段",
+      "properties": {
+        "item": "低电压检出"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "11",
+      "to": "T1阶段",
+      "properties": {
+        "item": "错误分类显示"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "12",
+      "to": "T1阶段",
+      "properties": {
+        "item": "自动关机时间"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "13",
+      "to": "T1阶段",
+      "properties": {
+        "item": "温度显示单位"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "14",
+      "to": "T1阶段",
+      "properties": {
+        "item": "提示功能"
+      }
+    },
+    {
+      "type": "PRODUCES",
+      "from": "30000078",
+      "to": "设计验证计划-功能规格部分E0 23.11",
+      "properties": {
+        "product_name": "红外体温计 PT9L",
+        "doc_type": "设计验证计划"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "测量原理",
+      "attribute": "类型",
+      "value": "红外非接触式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "测量原理：红外非接触式"
+    },
+    {
+      "subject": "测量位置",
+      "attribute": "部位",
+      "value": "额面",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "测量位置：额面"
+    },
+    {
+      "subject": "检测项目",
+      "attribute": "类型",
+      "value": "人体体温、物温",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "检测项目：人体体温、物温"
+    },
+    {
+      "subject": "分类指示方式",
+      "attribute": "方式",
+      "value": "屏幕选择",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "分类指示方式：屏幕选择"
+    },
+    {
+      "subject": "按键",
+      "attribute": "数量",
+      "value": "3",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "3个按键：开机测量键、设置键、静音键"
+    },
+    {
+      "subject": "按键",
+      "attribute": "类型",
+      "value": "开机测量键、设置键、静音键",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "3个按键：开机测量键、设置键、静音键"
+    },
+    {
+      "subject": "LCD显示",
+      "attribute": "型式",
+      "value": "段码式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "LCD型式：段码式"
+    },
+    {
+      "subject": "LCD背光",
+      "attribute": "颜色",
+      "value": "白、橙、红",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "LCD背光：有背光：白橙红"
+    },
+    {
+      "subject": "低电压检出",
+      "attribute": "阶段数",
+      "value": "2",
+      "unit": "阶段",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "低电压检出：双阶段"
+    },
+    {
+      "subject": "错误分类显示",
+      "attribute": "错误种类数量",
+      "value": "2",
+      "unit": "种",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "错误种类2种：1、超出工作环境温度；2、超过量程"
+    },
+    {
+      "subject": "错误类型",
+      "attribute": "类型1",
+      "value": "超出工作环境温度",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "错误种类2种：1、超出工作环境温度；2、超过量程"
+    },
+    {
+      "subject": "错误类型",
+      "attribute": "类型2",
+      "value": "超过量程",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "错误种类2种：1、超出工作环境温度；2、超过量程"
+    },
+    {
+      "subject": "自动关机时间",
+      "attribute": "常规时长",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "T1阶段，常规状态",
+      "raw_text": "自动关机时间：常规为15秒"
+    },
+    {
+      "subject": "温度显示单位",
+      "attribute": "支持单位",
+      "value": "℃和℉",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "温度显示单位：℃和℉"
+    },
+    {
+      "subject": "提示功能",
+      "attribute": "方式",
+      "value": "蜂鸣",
+      "unit": "",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "提示功能：蜂鸣"
+    }
+  ]
+}

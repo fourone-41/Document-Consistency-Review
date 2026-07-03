@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Product Identity Agent",
+  "summary": "本轮对5个cluster进行产品身份污染审查。MC-CLUSTER-0001和MC-CLUSTER-0008中"血压计"为文件标题/内容中的产品类别通用描述词，文件本身属于PT9L正式DHF/DMR范围内的客户需求书和结构设计评审文件，"血压计"系对产品品类的合理称谓，不构成异型号污染，予以dismiss。MC-CLUSTER-0014中"血压计"出现在Stage 11 DFMEA正式受控文件中，产品型号明确标注为KD-5915L，与PT9L存在型号不一致的实质性问题，需进一步确认KD-5915L与PT9L的关系。MC-CLUSTER-0011中"BP3L"作为软件图样文件名及文件标题出现在Stage 07正式软件设计文件中，但文件编号明确标注PT9L-RJTY01，存在文件名与文件编号产品身份不一致的问题，需进一步核查。MC-CLUSTER-0016中"PT3"出现在运输报告文件名中，但文件内容明确标注Model name: PT9L，且另一文件为基于PT3运输试验报告的评估报告，属于合理的同类机型评估引用，整体可dismiss但评估报告引用链需确认完整性。MC-CLUSTER-0019中"PT3"出现在PT9L正式BOM文件中作为共用件来源型号标注，属于正常的跨型号共用件引用，予以dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0001",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "product_category_label_not_model_contamination",
+      "claim": "客户需求书中"血压计"为产品品类通用称谓，不构成异型号污染",
+      "reason": "文件《客户需求书E0-血压计 23.6》位于Stage 01立项批准书目录下，属于PT9L正式DHF的客户需求阶段文件。文件标题及内容中的"血压计"系对本产品所属品类（无创血压/体温测量类医疗器械）的通用描述，并非引用其他型号产品。结合PF-0001至PF-0004的内容（温度测量规格、功能需求、环保要求等），全部内容均指向本次开发产品，无任何其他型号编号出现。"血压计"在此为合理的产品类别标签，不影响PT9L正式DHF/DMR的产品身份证据链，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0008",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "product_category_label_not_model_contamination",
+      "claim": "结构设计方案评审检查表标题中"血压计"为产品品类称谓，不构成异型号污染",
+      "reason": "文件《结构设计方案评审检查表-血压计E0 23.11》位于Stage 05结构设计方案目录下，属于PT9L正式DHF受控范围。文件标题中"血压计"系产品品类描述，与MC-CLUSTER-0001情形相同，为合理的品类标签用法。现有证据（仅MF-0030，内容为Sheet2标题行）未显示任何其他型号编号，不构成产品身份污染，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0011",
+      "decision": "needs_more_context",
+      "severity": "P1",
+      "error_type": "document_title_model_mismatch_vs_document_number",
+      "claim": "软件图样文件名及标题为"BP3L"，但文件编号标注PT9L-RJTY01，存在文件名与产品身份不一致，需核查",
+      "reason": "Stage 07软件设计方案目录下的软件图样文件，其文件名、文件标题均为"BP3L 软件图样E0 23.11"，但文件正文第6行明确标注文件编号"PT9L-RJTY01 V1.0"，表明该文件在编号体系上归属PT9L。BP3L与PT9L是否为同一产品的不同内部代号、BP3L是否为旧型号或平台代号、软件流程图内容是否完全适用于PT9L，均无法从现有证据中确认。若BP3L为旧型号软件图样被直接复用而未经正式转换，则构成软件设计文件产品身份污染；若BP3L为PT9L的内部软件平台代号且有受控说明，则属合理引用。需补查：①BP3L与PT9L的型号对应关系说明或转换记录；②该软件图样是否经过正式变更/转换程序纳入PT9L DHF；③软件流程图内容是否与PT9L产品规格一致。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0014",
+      "decision": "needs_more_context",
+      "severity": "P1",
+      "error_type": "fmea_product_model_number_mismatch",
+      "claim": "Stage 11 DFMEA文件中产品型号标注为KD-5915L，与PT9L不一致，需核查两者关系",
+      "reason": "文件《结构类FMEA E0(1)(1)》位于Stage 11 T1样机目录下，属于PT9L正式DHF/DMR的DFMEA受控文件。但MF-0051的nearby_context第13行明确显示"产品型号：KD-5915L"，而非PT9L。KD-5915L可能是客户型号/OEM型号、也可能是另一独立产品型号。若该DFMEA实为KD-5915L产品的文件被直接引用或复制而未经适当转换，则构成PT9L DFMEA产品身份污染，影响风险分析证据链的有效性。需补查：①KD-5915L与PT9L的关系（是否为同一产品的客户定制型号/OEM关系）；②该DFMEA是否有正式的适用性声明或转换记录说明其适用于PT9L；③FMEA封面页是否同时标注PT9L型号。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0016",
+      "decision": "dismiss",
+      "severity": "P2",
+      "error_type": "cross_model_transport_evaluation_reference",
+      "claim": "PT3运输报告作为同类机型评估基准被合理引用，文件内容明确指向PT9L，不构成产品身份污染",
+      "reason": "MF-0060至MF-0062所在文件《09a-10 PT3 transport report》虽文件名含PT3，但文件正文第12行明确标注"Model name: PT9L"，文件编号为PT9L-YSBG01 V1.0，表明该运输报告本身即为PT9L的正式运输试验报告，文件名中"PT3"可能为试验序号或内部编号（"09a-10 PT3"中PT3疑为"Package Test 3"或试验编号），不代表产品型号PT3。MF-0141《运输试验评估报告》中明确引用"PT3运输试验报告"作为评估基准，并对两机型包装进行了逐项对比，结论为评估合格，属于正式的同类机型评估引用，符合医疗器械DHF中利用相似产品数据进行等效评估的常规做法。整体不构成产品身份污染，予以dismiss。但建议确认MF-0141评估报告中被评估产品型号是否明确标注为PT9L，以及签字批准栏是否完整。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0019",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "shared_component_cross_model_reference_in_bom",
+      "claim": "BOM中PT3来源零件为跨型号共用件，属于正常的共用件引用，不构成产品身份污染",
+      "reason": "PT9L包装BOM（MF-0091）和总装类组件清单PT9L-ABOM01（MF-0092至MF-0094）均为PT9L正式DHF/DMR的受控BOM文件，文件标题和编号均明确归属PT9L。BOM中PT3来源的零件（防拆签PT3-F21、双联弹簧PT3-P10、金属套PT3-M02、压块PT3-M01）以"来源型号"列标注PT3，这是医疗器械制造企业BOM中标注共用件原始开发型号的常规做法，表明这些零件最初为PT3型号开发但在PT9L中共用。同一BOM中同时存在PT9L、PT5、PT1、T-Z1等多个来源型号标注，进一步印证这是系统性的共用件管理方式。零件本身已通过料号（K/T开头编号）进行唯一标识和受控管理，不影响PT9L产品身份的完整性，予以dismiss。"
+    }
+  ]
+}
+```

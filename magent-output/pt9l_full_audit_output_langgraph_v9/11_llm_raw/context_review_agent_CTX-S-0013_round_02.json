@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "decision": "dismiss",
+  "severity": "P3",
+  "error_type": "false_positive_md_template_misread_as_drawing_defect",
+  "claim": "The packaging label drawing filed as T040800073941030093-PT3-F21 has an incomplete title block with Drawing NO. and Pro material fields marked as '待填' (to be filled), meaning this drawing has been archived in the PT9L DHF in an unfinished state and cannot serve as a controlled DMR output.",
+  "reason": "The '待填' (to be filled) entries in the title block fields are artifacts of an auto-generated .md parsing template created on 2026-05-14 by a script framework, not evidence that the PDF source drawing itself has a blank or incomplete title block. The .md file explicitly states in its header comment ('2026-05-14 自动生成模板 + 待填') and in its body ('脚本生成框架，标题栏 / 技术要求 / 尺寸表待视觉读图后填写') that all fields are placeholders pending visual OCR/image reading of the PDF. The PDF source file has fewer than 400 text-layer characters, meaning the script could not extract title block content via text parsing — this is a known limitation of the ingestion pipeline, not a deficiency of the drawing itself. Furthermore, the Drawing NO. field annotation explicitly reads '待填 - 见右下标题栏', which presupposes that a title block exists in the lower-right corner of the PDF and that its content simply has not yet been transcribed into the .md template. No evidence in the corpus directly demonstrates that the PDF original has a blank or unfilled title block. The original claim conflates an incomplete .md parsing artifact with an incomplete controlled drawing, which is a logical non-sequitur. The PDF drawing T040800073941030093-PT3-F21.pdf remains the authoritative source document; the .md file is a derivative parsing scaffold. Absent direct evidence that the PDF itself lacks a completed title block, the claim cannot be sustained. The finding is dismissed as a false positive arising from incomplete .md template population, not from a document control deficiency in the DHF."
+}
+```

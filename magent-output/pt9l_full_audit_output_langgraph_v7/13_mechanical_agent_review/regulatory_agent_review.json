@@ -1,0 +1,190 @@
+{
+  "agent": "Regulatory Agent",
+  "summary": "Regulatory Agent 完成 19 个机械候选 cluster 复审。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0002",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险管理计划属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为\"03 风险分析\\\\2L风险改 - 历史文件\"，文件标题及文档编号均为PT2L美亚-FXJH01 V1.0，属于前代型号PT2L的历史风险管理计划。primary_scope=false已标注非主审范围。该文件不构成PT9L DHF/DMR的合规证据缺陷，属于历史/前代型号文件范围，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0003",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险评估报告属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为\"03 风险分析\\\\2L风险改 - 历史文件\"，文件标题及文档编号均为PT2L(美亚)-SGFP01 V1.0，产品型号字段明确记录为PT2L，项目编号2020-002-WX02亦为PT2L项目。primary_scope=false已标注非主审范围。所有候选均为PT2L历史风险评估文件的正常内容，不构成PT9L合规缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0004",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险控制验证报告属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为\"03 风险分析\\\\2L风险改 - 历史文件\"，文件标题及文档编号均为PT2L(美亚)-SGYS01 V1.0，产品型号字段明确记录为PT2L。文件中引用的型式试验报告、说明书、易用性报告、临床评估报告、软件确认报告等均为PT2L(美亚)系列文件编号，属于PT2L历史项目内部交叉引用，合理且自洽。primary_scope=false已标注非主审范围，不构成PT9L合规缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0005",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险管理报告属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为\"03 风险分析\\\\2L风险改 - 历史文件\"，文件标题及文档编号均为PT2L-FXGB01 V4.0，产品型号字段明确记录为PT2L，项目编号2020-002-WX02为PT2L项目。文件内容完整描述了PT2L设计变更（MCU替换、结构优化、软件适配）的风险管理活动，属于PT2L历史项目的完整风险管理报告。primary_scope=false已标注非主审范围，不构成PT9L合规缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0006",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "reasonable_variant_reference",
+      "claim": "PT3SBT在正式风险评估文件中属于产品型号变体的合理引用，不构成合规缺陷",
+      "reason": "文件为正式风险评估报告IFT-FXPJ01 V2.0（primary_scope=true），PT3SBT出现在产品介绍段落（1.1节），用于说明该型号具备蓝牙传输功能的差异化特性（\"PT3SBT can transmit the temperature to a smart device with Bluetooth\"），属于产品族系内型号变体的功能描述性引用。该引用方式在多型号共用风险文件中属于合理做法，不存在型号混淆、证据链断裂或受控文件错误标注问题。两个候选（MF-0026、MF-0027）指向同一行同一文本，内容完全一致，无额外风险信号，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0007",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "reasonable_variant_reference",
+      "claim": "PT3SBT在正式风险控制验证文件中属于产品型号变体的合理引用，不构成合规缺陷",
+      "reason": "文件为正式风险控制验证报告IFT-FXYS01 V2.0（primary_scope=true），PT3SBT同样出现在产品介绍段落（1.1节），描述蓝牙功能变体，与MC-CLUSTER-0006情形一致，属于产品族系内型号变体的功能描述性引用。两个候选（MF-0028、MF-0029）指向同一行同一文本，内容完全一致。该引用不影响风险控制验证的完整性与受控状态，不构成PT9L合规证据缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0015",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "reasonable_product_reference",
+      "claim": "DFMEA中\"血压计\"为PT9L产品本身功能描述，属合理引用，无合规缺陷",
+      "reason": "证据来源为Stage 11正式DFMEA文件（结构类FMEA E0），文件中\"血压计\"作为被包装/被标识的产品本体出现（如\"包装血压计\"、\"给用户关于机器的信息\"等），系对PT9L产品功能的正常描述，并非误引其他型号。相关FMEA条目（彩包装、铭牌、说明书标识风险）均指向PT9L本机，RPN评估及控制措施完整，不构成合规证据缺陷。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0017",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "label_review_model_mismatch",
+      "claim": "Stage 11正式标签审核表文件标题为PT3SBT，但内容实质填写的是PT2L红外体温计的标签数据，型号严重不符，构成实质性合规缺陷",
+      "reason": "文件\"PT3SBT标签审核表（海外更新）\"位于Stage 11正式目录，文件标题明确为PT3SBT，但文件内容（Sheet\"标签报告模板-美\"）中产品型号填写为PT2L，项目编号为2020-DEV01，产品名称为红外体温计，所有文件编号（PT2L-SMSP09、PT2L-CBZP07、PT2L-F96、PT2L-F97）及检查记录引用（PT2L(美亚)-ZXBQ01 V1.0等）均属PT2L。这意味着PT3SBT的标签审核表实质上是PT2L的审核内容，PT3SBT本身缺乏有效的标签合规审核证据，属于正式DHF文件中的实质性型号错配缺陷，影响PT3SBT标签合规证据链完整性。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0028",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "reasonable_product_reference",
+      "claim": "软件需求规格中\"血压计\"为PT9L产品功能描述的合理引用，无合规缺陷",
+      "reason": "证据来源为Stage 11软件需求规格文件，文件编号引用PT9L-SRXN01 V1.0，内容为PT9L自动血压计的显示、测量范围等功能需求条款，\"血压计\"系对PT9L产品类型的正常描述，属于IEC/EN 80601-2-30标准条款的合理引用。primary_scope虽为false，但内容本身不存在型号混用或合规缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0043",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_废案_reference",
+      "claim": "废案目录下临床评价报告中PT3作为同品种器械对比引用，属合理废案范围，不影响正式DHF证据链",
+      "reason": "文件路径明确为\"18 设计确认\\\\废案与备份\"，属于废案/备份文件范围。文件内容将PT3作为PT9L的同品种医疗器械进行临床对比评价，系临床评价报告的标准写法，PT3作为已上市同品种产品被引用具有合理性。该文件不在正式受控DHF/DMR主文件范围内，不影响PT9L正式证据链。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0045",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_废案_reference",
+      "claim": "废案目录下临床评价报告中TH30F作为同品种器械引用，属合理废案范围，不影响正式DHF证据链",
+      "reason": "文件路径明确为\"18 设计确认\\\\废案与备份\"，属于废案/备份文件范围。TH30F在临床评价报告中作为PT9L的同品种医疗器械被引用，用于说明不良事件、纠正措施及临床数据，系临床评价的合规写法。该文件不在正式受控DHF/DMR主文件范围内，不构成合规缺陷。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0050",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_version_legacy_identifier",
+      "claim": "历史记录目录下说明书历史版本中PT9C以\"PT9CPT9L\"连写形式出现，属历史版本过渡期遗留标识，不影响正式DHF/DMR证据链",
+      "reason": "所有候选证据均位于\"历史记录\"目录（历史记录\\\\6.12说明书、历史记录\\\\8.1说明书），属于明确的历史版本文件范围，不在正式受控DHF/DMR主文件范围内。文件中\"PT9CPT9L\"系型号过渡期连写标识（PT9C与PT9L并列），为历史版本说明书的遗留写法，不影响PT9L正式文件的证据链完整性。按裁决规则，历史/草稿/废案范围的候选应予dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0051",
+      "decision": "needs_more_context",
+      "severity": "P2",
+      "error_type": "legacy_reference_not_cleared_in_labeling",
+      "claim": "多版本说明书EMC表格中存在\"与PT3-SMSP33保持一致\"的内部备注，需确认正式受控版本是否已清除该遗留注释",
+      "reason": "MF-0287、MF-0294、MF-0300、MF-0369、MF-0384、MF-0466均位于历史记录阶段，primary_scope为false。其中MF-0287/MF-0294/MF-0300/MF-0466为不同时间节点的说明书版本，MF-0369为T1样机草稿，MF-0384为临床评价报告中的同品种对比表（PT3作为对比器械被合理引用）。说明书EMC表格中\"与PT3-SMSP33保持一致\"属于开发过程中的内部工程备注，不应出现在面向用户的正式说明书中。多个版本（20240607、20240801、20240821）均存在该注释，说明该问题在多次迭代中未被清除。需补查最终受控版本说明书是否已删除该注释；若正式受控版本仍保留该注释，则构成说明书内容合规性缺陷（P2）。MF-0384中PT3作为同品种对比器械引用属于合理引用，不单独构成缺陷。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0052",
+      "decision": "needs_more_context",
+      "severity": "P1",
+      "error_type": "wrong_model_number_in_labeling_pending_correction",
+      "claim": "说明书正文中存在PT2L残留型号，问题清单已记录待修正，需确认最终受控说明书是否已完成修正",
+      "reason": "MF-0292为8.1版本说明书正文，第768行明确写有\"PT2L\"而非\"PT9L\"，属于型号错误。MF-0302至MF-0308为8.28说明书问题清单，均记录了\"PT9L改为PT2L\"的修改意见（即当前文本为PT9L，应改为PT2L，或反之），说明该问题已被识别但尚未确认是否在正式受控版本中完成修正。MF-0464未在代表性证据中列出，无法评估。说明书中型号标识错误属于标签合规性实质问题，若最终受控版本未修正，则构成P1级标签缺陷。需补查最终受控说明书版本（如20240821版或更新版）中该段落是否已正确标注PT9L，以及问题清单中的修改是否已关闭。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0058",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "template_reuse_in_draft_fmea",
+      "claim": "历史草稿T1样机DFMEA中\"血压计\"为模板复用遗留，不影响PT9L正式DHF/DMR证据链",
+      "reason": "MF-0358、MF-0360、MF-0362均位于\"历史记录\\\\PT9LDHF-草稿\\\\T1样机\\\\05 DFMEA E0 23.11\"路径下，属于T1样机阶段草稿文件，primary_scope为false。文件内容显示该DFMEA模板来源于血压计产品（含腕枕、彩包装等血压计专属组件描述），系模板复用遗留，与PT9L红外体温计产品本身无关联。该草稿文件不属于PT9L正式DHF/DMR受控文件范围，不构成合规证据缺陷。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0060",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "template_reuse_in_draft_validation_report",
+      "claim": "历史草稿设计验证报告中\"血压计环保标准测试/评估报告\"为前代产品模板复用，不影响PT9L正式证据链",
+      "reason": "MF-0370位于\"历史记录\\\\PT9LDHF-草稿\\\\T1样机\\\\设计验证报告E0 23.11\"路径下，属于T1样机阶段草稿，primary_scope为false。第41行引用\"血压计环保标准测试/评估报告\"作为环保验证证据，系前代血压计产品设计验证报告模板被复用时遗留的证据引用，不代表PT9L正式设计验证报告的证据状态。该草稿不属于PT9L正式DHF/DMR受控文件，不构成合规证据缺陷。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0068",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "legitimate_predicate_device_reference",
+      "claim": "临床评价报告草稿中TH30F作为同品种器械被合理引用，不构成合规缺陷",
+      "reason": "MF-0392位于\"历史记录\\\\PT9LDHF-草稿\\\\设计确认\\\\7.临床评价报告\"路径下，属于历史草稿，primary_scope为false。文件中TH30F作为同品种医疗器械在临床评价报告中被引用，用于说明同品种器械无不良事件、无投诉、无纠正措施，属于临床评价路径中对同品种器械的合理引用，符合临床评价报告的标准结构要求。不构成合规证据缺陷。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0070",
+      "decision": "needs_more_context",
+      "severity": "P2",
+      "error_type": "predecessor_model_document_ids_in_traceability_report",
+      "claim": "可追溯性分析报告草稿中引用PT9C文件编号，需确认PT9L正式可追溯性分析报告是否已替换所有PT9C文件编号",
+      "reason": "MF-0448位于\"历史记录\\\\给实验室\\\\软件开发逻辑\\\\可追溯性分析报告\"路径下，属于历史草稿，primary_scope为false。文件中引用了PT9C-FXJH01、PT9C-FXPJ01、PT9C-SRGN01、PT9C-RJXQ01、PT9C-RJFA01、PT9C-RJTY01、PT9C-RJGJ01等多个PT9C前代产品文件编号，说明该可追溯性分析报告系由PT9C版本直接复用而来，文件编号未更新为PT9L对应编号。若该文件被作为PT9L正式可追溯性分析报告提交，则构成文件标识一致性缺陷（P2）。需补查PT9L正式受控可追溯性分析报告是否已将所有PT9C文件编号替换为PT9L对应编号，以及是否存在对应的PT9L版本文件。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0071",
+      "decision": "needs_more_context",
+      "severity": "P1",
+      "error_type": "cross_model_risk_document_reference",
+      "claim": "PT9L 正式外部测试报告中，ISO 14971 符合性验证表格所引用的风险管理报告文件编号为 PT9C-FXGB01 V1.0，文件前缀与被测型号 PT9L 不符，需确认该文件是否适用于 PT9L。",
+      "reason": "证据文件（外部测试报告 ETX202303-07-078-03）为 PT9L 的正式主审范围文件，其中 ISO 14971 各条款（4.2、4.3、4.4、5、6.4）的符合性均以 PT9C-FXGB01 V1.0 作为唯一引用的风险管理报告。PT9C 与 PT9L 为不同型号，若 PT9C-FXGB01 V1.0 并非 PT9L 的受控风险管理文件（即不存在共用件声明、适用性说明或等效性桥接文件），则 PT9L 的风险管理证据链存在实质性缺口，属于合规证据缺陷。但当前证据不足以直接 confirm，原因在于：（1）部分产品族存在平台级风险管理报告，PT9C 文件可能经正式声明适用于 PT9L；（2）需查阅 PT9L DHF 中是否存在专属风险管理报告或对 PT9C-FXGB01 的适用性说明文件。建议补查：① PT9L DHF 中风险管理文件清单；② PT9C-FXGB01 V1.0 文件范围声明是否覆盖 PT9L；③ 测试机构是否收到 PT9L 专属风险管理报告或等效性桥接说明。"
+    }
+  ],
+  "batch_summaries": [
+    {
+      "batch_no": 1,
+      "summary": "本轮共审查6个cluster（MC-CLUSTER-0002至MC-CLUSTER-0007）。MC-CLUSTER-0002至MC-CLUSTER-0005均涉及PT2L型号，文件路径明确标注\"2L风险改 - 历史文件\"，属于历史/前代型号的风险管理文件，不属于PT9L正式DHF/DMR主审范围，予以dismiss。MC-CLUSTER-0006与MC-CLUSTER-0007涉及PT3SBT，出现在primary_scope=true的正式风险评估与风险控制验证文件中，但PT3SBT仅作为产品型号变体在产品描述段落中被合理引用（描述蓝牙功能差异），并非错误混入或遗漏受控，属于合理引用，予以dismiss。",
+      "decision_counts": {
+        "dismiss": 6
+      }
+    },
+    {
+      "batch_no": 2,
+      "summary": "本轮对5个cluster进行合规性裁决。MC-CLUSTER-0015中\"血压计\"出现在PT9L正式Stage 11 DFMEA文件中，属于产品本身功能描述，合理引用，予以dismiss。MC-CLUSTER-0017中\"PT3SBT\"标签审核表文件标题为PT3SBT，但内容实质填写的是PT2L（红外体温计）的标签检查数据，文件标题与内容型号严重不符，属于正式Stage 11文件中的实质性合规缺陷，予以confirm。MC-CLUSTER-0028中\"血压计\"出现在PT9L软件需求规格正式文件中，属于PT9L产品功能描述的合理引用，primary_scope为false但内容本身无缺陷，予以dismiss。MC-CLUSTER-0043中\"PT3\"出现在Stage 18废案与备份目录下的临床评价报告中，作为同品种器械对比引用，属于合理历史/废案范围引用，予以dismiss。MC-CLUSTER-0045中\"TH30F\"同样出现在Stage 18废案与备份目录下的临床评价报告中，作为同品种器械引用，属于合理废案范围引用，予以dismiss。MC-CLUSTER-0050中\"PT9C\"出现在历史记录目录下的说明书历史版本中，文件中型号以\"PT9CPT9L\"连写形式出现，属于历史版本过渡期型号标识遗留问题，文件路径明确为历史记录，不影响正式DHF/DMR证据链，予以dismiss。",
+      "decision_counts": {
+        "dismiss": 5,
+        "confirm": 1
+      }
+    },
+    {
+      "batch_no": 3,
+      "summary": "本轮对MC-CLUSTER-0051、MC-CLUSTER-0052、MC-CLUSTER-0058、MC-CLUSTER-0060、MC-CLUSTER-0068、MC-CLUSTER-0070共6个候选集群进行裁决。所有集群均位于\"历史记录\"阶段，primary_scope为false。综合判断：0051中PT3出现于说明书EMC表格的内部备注，属于历史草稿/过渡版本遗留注释，但多版本说明书中均未清除，需进一步核查正式受控版本是否已修正；0052中PT2L出现于说明书正文及问题清单，问题清单本身已明确标注\"PT9L改为PT2L\"为待修正项，说明书正文中PT2L残留属于已知错误，需确认最终受控版本是否已完成修正；0058中\"血压计\"出现于T1样机草稿DFMEA，属于历史草稿中模板复用遗留，不影响PT9L正式DHF/DMR；0060中\"血压计\"出现于历史草稿设计验证报告，引用的是血压计环保测试报告作为证据，属于模板/前代产品文件复用，不影响PT9L正式证据链；0068中TH30F出现于历史草稿临床评价报告，作为同品种器械被合理引用；0070中PT9C出现于历史草稿可追溯性分析报告，属于前代产品文件被复用为模板，需确认PT9L正式可追溯性分析报告是否已替换所有PT9C文件编号。",
+      "decision_counts": {
+        "needs_more_context": 3,
+        "dismiss": 3
+      }
+    },
+    {
+      "batch_no": 4,
+      "summary": "MC-CLUSTER-0071 涉及 PT9L 正式外部测试报告中，ISO 14971 符合性验证表格引用了编号为 PT9C-FXGB01 V1.0 的风险管理报告作为证据文件。该报告文件编号前缀为 PT9C，而被测产品为 PT9L，存在跨型号引用风险管理文件的情形。需进一步确认 PT9C-FXGB01 V1.0 是否为 PT9L 的共用件/适用文件，或是否存在 PT9L 专属风险管理报告，以判断该引用是否构成证据链缺陷。",
+      "decision_counts": {
+        "needs_more_context": 1
+      }
+    }
+  ]
+}

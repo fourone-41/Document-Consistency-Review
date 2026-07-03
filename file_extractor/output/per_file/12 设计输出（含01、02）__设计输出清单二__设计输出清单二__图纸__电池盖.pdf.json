@@ -1,0 +1,148 @@
+{
+  "document": {
+    "title": "电池盖（嵌套副本｜portrait 旋转版）",
+    "file_name": "电池盖.pdf",
+    "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/设计输出清单二/图纸/电池盖.pdf",
+    "generated_date": "2026-06-02",
+    "status": "自动识别为主目录主图的装订方向旋转副本，无设计内容差异",
+    "document_type": "工程图纸（DHF归档副本）"
+  },
+  "products": [
+    {
+      "name": "电池盖",
+      "version": "v3.0",
+      "identifier": "T-Z1-上盖-v3.0",
+      "notes": "PT9L产品DHF历史文件中的设计输出"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "T-Z1-上盖-v3.0",
+      "type": "图纸版本标识",
+      "description": "电池盖主图版本标识"
+    },
+    {
+      "id": "审核 5188 站标",
+      "type": "审核站点标识",
+      "description": "用于标记嵌套副本与主图脱钩情况的审核站"
+    }
+  ],
+  "components": [
+    {
+      "name": "电池盖",
+      "description": "PT9L产品的电池盖零件，具有4个视图，含尺寸/公差/几何标注及技术要求",
+      "drawing_format": "A3",
+      "notes": "权威版本以主目录主图（B组）为准；本副本为E组DHF归档双份保险用途"
+    }
+  ],
+  "revision_records": [
+    {
+      "description": "修订记录块与主图一致",
+      "notes": "具体修订内容请参见主图md文件"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本副本（嵌套E组）与主图（B组）对比：PDF mediabox为A3 portrait（595×841 pt）vs A3 landscape（841×595 pt）；装订方向纵向（短边在上下）vs横向（短边在左右）；视图布局与主图整体逆时针旋转90°；标题栏内容、技术要求、尺寸/公差/几何、修订记录块均与主图逐字/逐条/逐项一致。",
+      "topic_tags": [
+        "装订方向",
+        "A3图纸",
+        "旋转副本",
+        "DHF归档",
+        "图纸比对"
+      ],
+      "related_subjects": [
+        "电池盖",
+        "主图/电池盖.pdf.md"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "自动校验记录（2026-06-02）：1. PDF文件hash与主图字节级不同（差≤200字节，属PDF元数据/CreationDate、/ModDate、/Producer重导出差异，与几何无关）。2. 150 DPI overview PNG像素diff：旋转90°后比对，差异4–12%均来自旋转重采样的字体抗锯齿噪声（max灰度差=255只出现在单像素粒度的文字边缘），未发现任何尺寸数值、技要文字、几何线条的内容性差异。3. 代表性视觉抽样（人/AI双重核验）：T-Z1-上盖-v3.0与本目录保护盖逐张overview对比，4个视图、所有标注、所有标题栏字段、所有技要条目逐字相同。4. 判定：E组14张为DHF归档双份保险用途，权威版本以主目录主图（B组）为准。",
+      "topic_tags": [
+        "自动校验",
+        "像素diff",
+        "hash比对",
+        "DHF归档",
+        "版本一致性"
+      ],
+      "related_subjects": [
+        "电池盖",
+        "T-Z1-上盖-v3.0",
+        "主图/电池盖.pdf.md"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "若ECN后嵌套副本被单独修订（与主图脱钩），请在审核5188站标\"不好\"并在意见中注明发现的具体差异，自动触发本副本\"升级为独立详读\"。权威版本以主图为读图与变更跟踪基准：主图md为图纸/电池盖.pdf.md，主图PDF路径为02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/电池盖.pdf。",
+      "topic_tags": [
+        "ECN变更控制",
+        "版本脱钩",
+        "审核流程",
+        "权威版本",
+        "变更跟踪"
+      ],
+      "related_subjects": [
+        "电池盖",
+        "审核5188站标",
+        "主图/电池盖.pdf.md"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/设计输出清单二/图纸/电池盖.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池盖",
+      "to": "装订方向",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主图/电池盖.pdf.md",
+      "to": "装订方向",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池盖",
+      "to": "自动校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-上盖-v3.0",
+      "to": "自动校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主图/电池盖.pdf.md",
+      "to": "自动校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池盖",
+      "to": "ECN变更控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "审核5188站标",
+      "to": "ECN变更控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主图/电池盖.pdf.md",
+      "to": "ECN变更控制",
+      "properties": {}
+    }
+  ],
+  "_claims": []
+}

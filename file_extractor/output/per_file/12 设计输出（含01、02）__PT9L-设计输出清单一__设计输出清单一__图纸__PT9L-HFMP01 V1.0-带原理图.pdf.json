@@ -1,0 +1,5824 @@
+{
+  "document": {
+    "title": "拼板示意图(底层)",
+    "document_number": "PT9L-HFMP01 V1.0",
+    "version": "V1.0",
+    "product_model": "PT9L-HFMP01 V1.0",
+    "product_name": "红外体温计",
+    "schematic_number": "PT9L-HFXS01 V1.0",
+    "total_pages": "7",
+    "pcb_number": "PT9L",
+    "doc_type": "PCB设计图",
+    "revision": "V1.0",
+    "page_info": "第7页",
+    "page_number": "7"
+  },
+  "revision_records": [
+    {
+      "version": "V1.0",
+      "change_description": "初始版本"
+    },
+    {
+      "no": "1",
+      "version": "V1.0",
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "2",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "3",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "version": "V1.0",
+      "change_no": null,
+      "change_time": null,
+      "description": "初始版本"
+    },
+    {
+      "no": "1",
+      "version": "V1.0",
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "2",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "3",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "1",
+      "version": "V1.0",
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "2",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "3",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "1",
+      "version": "V1.0",
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "2",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "no": "3",
+      "version": null,
+      "change_time": null,
+      "description": null
+    },
+    {
+      "description": "更改记录表（具体更改内容未填写）",
+      "fields": [
+        "更改时间"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SR1833",
+      "description": "电源控制芯片/升压模块",
+      "pins": [
+        "CE(4)",
+        "VOUT(1)",
+        "LX(2)",
+        "PCTL(5)",
+        "BAT(3)"
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "BH67F2762",
+      "description": "MCU主控芯片",
+      "pin_count": 48,
+      "pins": [
+        "AVSS/VREFN(1)",
+        "VCM(2)",
+        "AN0(3)",
+        "AN1(4)",
+        "AN2(5)",
+        "AN3(6)",
+        "LNOPO(7)",
+        "PE5/COM0(8)",
+        "PE4/COM1(9)",
+        "PE3/COM2(10)",
+        "PE2/COM3(11)",
+        "SEG39/COM4(12)",
+        "SEG38/COM5(13)",
+        "PLCD(14)",
+        "VMAX(15)",
+        "PE1/SEG34(16)",
+        "PE0/SEG33(17)",
+        "PD7/SEG32(18)",
+        "PD6/SEG31(19)",
+        "PD5/SEG30(20)",
+        "PD4/SEG29(21)",
+        "PD3/SEG28(22)",
+        "PD2/SEG27(23)",
+        "PD1/SEG26(24)",
+        "PD0/SEG25(25)",
+        "PC7/SEG24(26)",
+        "PC6/SEG23(27)",
+        "PC5/SEG22(28)",
+        "PC4/SEG21(29)",
+        "PC3/SEG20(30)",
+        "PC2/SEG19(31)",
+        "PC1/SEG9(32)",
+        "PA2/ICPCK(33)",
+        "PA0/ICPDA(34)",
+        "PB6/VDDIO(35)",
+        "PA7/SDI(36)",
+        "PA6/SDO(37)",
+        "PA5/SCS(38)",
+        "PA4/SCK(39)",
+        "PA3/AN7(40)",
+        "PA1/INT0/AN6(41)",
+        "PB5/INT2/AN5(42)",
+        "PB4/INT3/AN4(43)",
+        "PB3/PTPI/OPIP(44)",
+        "PB2/INT1/LVDIN(45)",
+        "VSS(46)",
+        "VDD/VIN(47)",
+        "VOREG/VREFP(48)"
+      ]
+    },
+    {
+      "reference": "D1",
+      "part_number": "SS15",
+      "description": "肖特基二极管"
+    },
+    {
+      "reference": "F1",
+      "part_number": "MF-MSMF050",
+      "description": "自恢复保险丝"
+    },
+    {
+      "reference": "L1",
+      "value": "10uH",
+      "description": "电感"
+    },
+    {
+      "reference": "C1",
+      "value": "100uF/16V",
+      "description": "电解电容"
+    },
+    {
+      "reference": "C2",
+      "value": "22uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C3",
+      "value": "22uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C4",
+      "value": "22uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C5",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C6",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C7",
+      "value": "10uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C8",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C9",
+      "value": "4.7uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C10",
+      "value": "1uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C11",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C12",
+      "value": "1uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C13",
+      "value": "NC/0.1uF",
+      "description": "可选电容"
+    },
+    {
+      "reference": "C14",
+      "value": "NC/0.1uF",
+      "description": "可选电容"
+    },
+    {
+      "reference": "C15",
+      "value": "56pF",
+      "description": "电容"
+    },
+    {
+      "reference": "C16",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C17",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C18",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "R1",
+      "value": "200k",
+      "description": "电阻，电池电压分压"
+    },
+    {
+      "reference": "R2",
+      "value": "100k",
+      "description": "电阻，电池电压分压"
+    },
+    {
+      "reference": "R3",
+      "value": "0",
+      "description": "0欧电阻/跳线"
+    },
+    {
+      "reference": "R4",
+      "value": "0",
+      "description": "0欧电阻/跳线"
+    },
+    {
+      "reference": "R5",
+      "value": "120",
+      "description": "LED限流电阻（红灯）"
+    },
+    {
+      "reference": "R6",
+      "value": "39",
+      "description": "LED限流电阻（白灯）"
+    },
+    {
+      "reference": "R7",
+      "value": "120",
+      "description": "LED限流电阻（黄灯）"
+    },
+    {
+      "reference": "R8",
+      "value": "100k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R9",
+      "value": "0",
+      "description": "0欧电阻/跳线"
+    },
+    {
+      "reference": "R10",
+      "value": "100K",
+      "description": "电阻，NTC分压"
+    },
+    {
+      "reference": "R11",
+      "value": "300K",
+      "description": "电阻"
+    },
+    {
+      "reference": "R12",
+      "value": "1k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R13",
+      "value": "1k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R14",
+      "value": "1k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R15",
+      "value": "10k",
+      "description": "电阻，NTC上拉"
+    },
+    {
+      "reference": "R16",
+      "value": "NC/10k",
+      "description": "可选电阻"
+    },
+    {
+      "reference": "R17",
+      "value": "NC/10k",
+      "description": "可选电阻"
+    },
+    {
+      "reference": "NTC",
+      "value": "10k",
+      "description": "NTC热敏电阻，温度检测"
+    },
+    {
+      "reference": "S1",
+      "description": "MUTE KEY 按键"
+    },
+    {
+      "reference": "S2",
+      "description": "KEY 按键"
+    },
+    {
+      "reference": "LEDR",
+      "description": "红色LED"
+    },
+    {
+      "reference": "LEDW",
+      "description": "白色LED"
+    },
+    {
+      "reference": "LEDY",
+      "description": "黄色LED"
+    },
+    {
+      "reference": "BUZZER",
+      "description": "蜂鸣器，频率4kHz"
+    },
+    {
+      "reference": "LCD",
+      "description": "LCD显示屏，16引脚",
+      "pins": [
+        "LCD_COM0",
+        "LCD_COM1",
+        "LCD_COM2",
+        "LCD_COM3",
+        "LCD_S0",
+        "LCD_S1",
+        "LCD_S2",
+        "LCD_S3",
+        "LCD_S4",
+        "LCD_S5",
+        "LCD_S6",
+        "LCD_S7",
+        "LCD_S8",
+        "LCD_S9",
+        "LCD_S10",
+        "LCD_S11"
+      ]
+    },
+    {
+      "reference": "SENSOR",
+      "description": "红外传感器，4引脚（TX, VTP+, NTC-, VTP-等）"
+    },
+    {
+      "reference": "ICP",
+      "description": "在线编程接口，4引脚（ICPDA, ICPCK, GND, 3.3V）"
+    },
+    {
+      "reference": "B1",
+      "description": "电池负极接口1"
+    },
+    {
+      "reference": "B2",
+      "description": "电池负极接口2"
+    },
+    {
+      "reference": "B3",
+      "description": "电池接口MK（多引脚）"
+    },
+    {
+      "reference": "B1",
+      "pads": [
+        "PAB101",
+        "PAB102"
+      ],
+      "centroid": "COB1"
+    },
+    {
+      "reference": "B2",
+      "pads": [
+        "PAB201",
+        "PAB202"
+      ],
+      "centroid": "COB2"
+    },
+    {
+      "reference": "B3",
+      "pads": [
+        "PAB301",
+        "PAB302",
+        "PAB303",
+        "PAB304",
+        "PAB305",
+        "PAB306"
+      ],
+      "centroid": "COB3"
+    },
+    {
+      "reference": "B01",
+      "pads": [
+        "PAB0101"
+      ],
+      "centroid": "COB01"
+    },
+    {
+      "reference": "B02",
+      "pads": [
+        "PAB0201"
+      ],
+      "centroid": "COB02"
+    },
+    {
+      "reference": "BAT",
+      "pads": [
+        "PABAT01",
+        "PABAT02"
+      ],
+      "centroid": "COBAT"
+    },
+    {
+      "reference": "BUZZER",
+      "pads": [
+        "PABUZZER01",
+        "PABUZZER02"
+      ],
+      "centroid": "COBUZZER"
+    },
+    {
+      "reference": "BZ",
+      "pads": [
+        "PABZ01"
+      ],
+      "centroid": "COBZ"
+    },
+    {
+      "reference": "C1",
+      "pads": [
+        "PAC101",
+        "PAC102"
+      ],
+      "centroid": "COC1"
+    },
+    {
+      "reference": "C2",
+      "pads": [
+        "PAC201",
+        "PAC202"
+      ],
+      "centroid": "COC2"
+    },
+    {
+      "reference": "C3",
+      "pads": [
+        "PAC301",
+        "PAC302"
+      ],
+      "centroid": "COC3"
+    },
+    {
+      "reference": "C4",
+      "pads": [
+        "PAC401",
+        "PAC402"
+      ],
+      "centroid": "COC4"
+    },
+    {
+      "reference": "C5",
+      "pads": [
+        "PAC501",
+        "PAC502"
+      ],
+      "centroid": "COC5"
+    },
+    {
+      "reference": "C6",
+      "pads": [
+        "PAC601",
+        "PAC602"
+      ],
+      "centroid": "COC6"
+    },
+    {
+      "reference": "C7",
+      "pads": [
+        "PAC701",
+        "PAC702"
+      ],
+      "centroid": "COC7"
+    },
+    {
+      "reference": "C8",
+      "pads": [
+        "PAC801",
+        "PAC802"
+      ],
+      "centroid": "COC8"
+    },
+    {
+      "reference": "C9",
+      "pads": [
+        "PAC901",
+        "PAC902"
+      ],
+      "centroid": "COC9"
+    },
+    {
+      "reference": "C10",
+      "pads": [
+        "PAC1001",
+        "PAC1002"
+      ],
+      "centroid": "COC10"
+    },
+    {
+      "reference": "C11",
+      "pads": [
+        "PAC1101",
+        "PAC1102"
+      ],
+      "centroid": "COC11"
+    },
+    {
+      "reference": "C12",
+      "pads": [
+        "PAC1201",
+        "PAC1202"
+      ],
+      "centroid": "COC12"
+    },
+    {
+      "reference": "C13",
+      "pads": [
+        "PAC1301",
+        "PAC1302"
+      ],
+      "centroid": "COC13"
+    },
+    {
+      "reference": "C14",
+      "pads": [
+        "PAC1401",
+        "PAC1402"
+      ],
+      "centroid": "COC14"
+    },
+    {
+      "reference": "C15",
+      "pads": [
+        "PAC1501",
+        "PAC1502"
+      ],
+      "centroid": "COC15"
+    },
+    {
+      "reference": "C16",
+      "pads": [
+        "PAC1601",
+        "PAC1602"
+      ],
+      "centroid": "COC16"
+    },
+    {
+      "reference": "C17",
+      "pads": [
+        "PAC1701",
+        "PAC1702"
+      ],
+      "centroid": "COC17"
+    },
+    {
+      "reference": "C18",
+      "pads": [
+        "PAC1801",
+        "PAC1802"
+      ],
+      "centroid": "COC18"
+    },
+    {
+      "reference": "COM0",
+      "pads": [
+        "PACOM001"
+      ],
+      "centroid": "COCOM0"
+    },
+    {
+      "reference": "COM1",
+      "pads": [
+        "PACOM101"
+      ],
+      "centroid": "COCOM1"
+    },
+    {
+      "reference": "COM2",
+      "pads": [
+        "PACOM201"
+      ],
+      "centroid": "COCOM2"
+    },
+    {
+      "reference": "COM3",
+      "pads": [
+        "PACOM301"
+      ],
+      "centroid": "COCOM3"
+    },
+    {
+      "reference": "D1",
+      "pads": [
+        "PAD101",
+        "PAD102"
+      ],
+      "centroid": "COD1"
+    },
+    {
+      "reference": "F1",
+      "pads": [
+        "PAF101",
+        "PAF102"
+      ],
+      "centroid": "COF1"
+    },
+    {
+      "reference": "GND",
+      "pads": [
+        "PAGND01"
+      ],
+      "centroid": "COGND"
+    },
+    {
+      "reference": "ICP",
+      "pads": [
+        "PAICP01",
+        "PAICP02",
+        "PAICP03",
+        "PAICP04"
+      ],
+      "centroid": "COICP"
+    },
+    {
+      "reference": "L1",
+      "pads": [
+        "PAL101",
+        "PAL102"
+      ],
+      "centroid": "COL1"
+    },
+    {
+      "reference": "LCD",
+      "pads": [
+        "PALCD01",
+        "PALCD02",
+        "PALCD03",
+        "PALCD04",
+        "PALCD05",
+        "PALCD06",
+        "PALCD07",
+        "PALCD08",
+        "PALCD09",
+        "PALCD010",
+        "PALCD011",
+        "PALCD012",
+        "PALCD013",
+        "PALCD014",
+        "PALCD015",
+        "PALCD016"
+      ],
+      "centroid": "COLCD"
+    },
+    {
+      "reference": "LEDR",
+      "pads": [
+        "PALEDR01",
+        "PALEDR02"
+      ],
+      "centroid": "COLEDR"
+    },
+    {
+      "reference": "LEDW",
+      "pads": [
+        "PALEDW01",
+        "PALEDW02"
+      ],
+      "centroid": "COLEDW"
+    },
+    {
+      "reference": "LEDY",
+      "pads": [
+        "PALEDY01",
+        "PALEDY02"
+      ],
+      "centroid": "COLEDY"
+    },
+    {
+      "reference": "MK",
+      "pads": [
+        "PAMK01"
+      ],
+      "centroid": "COMK"
+    },
+    {
+      "reference": "NTC",
+      "pads": [
+        "PANTC01",
+        "PANTC02"
+      ],
+      "centroid": "CONTC"
+    },
+    {
+      "reference": "NTC1",
+      "pads": [
+        "PANTC101"
+      ],
+      "centroid": "CONTC1"
+    },
+    {
+      "reference": "NTC2",
+      "pads": [
+        "PANTC201"
+      ],
+      "centroid": "CONTC2"
+    },
+    {
+      "reference": "PCTL",
+      "pads": [
+        "PAPCTL01"
+      ],
+      "centroid": "COPCTL"
+    },
+    {
+      "reference": "R",
+      "pads": [
+        "PAR01"
+      ],
+      "centroid": "COR"
+    },
+    {
+      "reference": "R1",
+      "pads": [
+        "PAR101",
+        "PAR102"
+      ],
+      "centroid": "COR1"
+    },
+    {
+      "reference": "R2",
+      "pads": [
+        "PAR201",
+        "PAR202"
+      ],
+      "centroid": "COR2"
+    },
+    {
+      "reference": "R3",
+      "pads": [
+        "PAR301",
+        "PAR302"
+      ],
+      "centroid": "COR3"
+    },
+    {
+      "reference": "R4",
+      "pads": [
+        "PAR401",
+        "PAR402"
+      ],
+      "centroid": "COR4"
+    },
+    {
+      "reference": "R5",
+      "pads": [
+        "PAR501",
+        "PAR502"
+      ],
+      "centroid": "COR5"
+    },
+    {
+      "reference": "R6",
+      "pads": [
+        "PAR601",
+        "PAR602"
+      ],
+      "centroid": "COR6"
+    },
+    {
+      "reference": "R7",
+      "pads": [
+        "PAR701",
+        "PAR702"
+      ],
+      "centroid": "COR7"
+    },
+    {
+      "reference": "R8",
+      "pads": [
+        "PAR801",
+        "PAR802"
+      ],
+      "centroid": "COR8"
+    },
+    {
+      "reference": "R9",
+      "pads": [
+        "PAR901",
+        "PAR902"
+      ],
+      "centroid": "COR9"
+    },
+    {
+      "reference": "R10",
+      "pads": [
+        "PAR1001",
+        "PAR1002"
+      ],
+      "centroid": "COR10"
+    },
+    {
+      "reference": "R11",
+      "pads": [
+        "PAR1101",
+        "PAR1102"
+      ],
+      "centroid": "COR11"
+    },
+    {
+      "reference": "R12",
+      "pads": [
+        "PAR1201",
+        "PAR1202"
+      ],
+      "centroid": "COR12"
+    },
+    {
+      "reference": "R13",
+      "pads": [
+        "PAR1301",
+        "PAR1302"
+      ],
+      "centroid": "COR13"
+    },
+    {
+      "reference": "R14",
+      "pads": [
+        "PAR1401",
+        "PAR1402"
+      ],
+      "centroid": "COR14"
+    },
+    {
+      "reference": "R15",
+      "pads": [
+        "PAR1501",
+        "PAR1502"
+      ],
+      "centroid": "COR15"
+    },
+    {
+      "reference": "R16",
+      "pads": [
+        "PAR1601",
+        "PAR1602"
+      ],
+      "centroid": "COR16"
+    },
+    {
+      "reference": "R17",
+      "pads": [
+        "PAR1701",
+        "PAR1702"
+      ],
+      "centroid": "COR17"
+    },
+    {
+      "reference": "S1",
+      "pads": [
+        "PAS101"
+      ],
+      "centroid": "COS1"
+    },
+    {
+      "reference": "S2",
+      "pads": [
+        "PAS201"
+      ],
+      "centroid": "COS2"
+    },
+    {
+      "reference": "SEG0",
+      "pads": [
+        "PASEG001"
+      ],
+      "centroid": "COSEG0"
+    },
+    {
+      "reference": "SEG1",
+      "pads": [
+        "PASEG101"
+      ],
+      "centroid": "COSEG1"
+    },
+    {
+      "reference": "SEG2",
+      "pads": [
+        "PASEG201"
+      ],
+      "centroid": "COSEG2"
+    },
+    {
+      "reference": "SEG3",
+      "pads": [
+        "PASEG301"
+      ],
+      "centroid": "COSEG3"
+    },
+    {
+      "reference": "SEG4",
+      "pads": [
+        "PASEG401"
+      ],
+      "centroid": "COSEG4"
+    },
+    {
+      "reference": "SEG5",
+      "pads": [
+        "PASEG501"
+      ],
+      "centroid": "COSEG5"
+    },
+    {
+      "reference": "SEG6",
+      "pads": [
+        "PASEG601"
+      ],
+      "centroid": "COSEG6"
+    },
+    {
+      "reference": "SEG7",
+      "pads": [
+        "PASEG701"
+      ],
+      "centroid": "COSEG7"
+    },
+    {
+      "reference": "SEG8",
+      "pads": [
+        "PASEG801"
+      ],
+      "centroid": "COSEG8"
+    },
+    {
+      "reference": "SEG9",
+      "pads": [
+        "PASEG901"
+      ],
+      "centroid": "COSEG9"
+    },
+    {
+      "reference": "SEG10",
+      "pads": [
+        "PASEG1001"
+      ],
+      "centroid": "COSEG10"
+    },
+    {
+      "reference": "SEG11",
+      "pads": [
+        "PASEG1101"
+      ],
+      "centroid": "COSEG11"
+    },
+    {
+      "reference": "SENSOR",
+      "pads": [
+        "PASENSOR01",
+        "PASENSOR02",
+        "PASENSOR03"
+      ],
+      "centroid": "COSENSOR"
+    },
+    {
+      "reference": "TX",
+      "pads": [
+        "PATX01"
+      ],
+      "centroid": "COTX"
+    },
+    {
+      "reference": "U1",
+      "pads": [
+        "PAU101",
+        "PAU102",
+        "PAU103",
+        "PAU104",
+        "PAU105"
+      ],
+      "centroid": "COU1"
+    },
+    {
+      "reference": "U2",
+      "pads": [
+        "PAU201",
+        "PAU202",
+        "PAU203",
+        "PAU204",
+        "PAU205",
+        "PAU206",
+        "PAU207",
+        "PAU208",
+        "PAU209",
+        "PAU2010",
+        "PAU2011",
+        "PAU2012",
+        "PAU2013",
+        "PAU2014",
+        "PAU2015",
+        "PAU2016",
+        "PAU2017",
+        "PAU2018",
+        "PAU2019",
+        "PAU2020",
+        "PAU2021",
+        "PAU2022",
+        "PAU2023",
+        "PAU2024",
+        "PAU2025",
+        "PAU2026",
+        "PAU2027",
+        "PAU2028",
+        "PAU2029",
+        "PAU2030",
+        "PAU2031",
+        "PAU2032",
+        "PAU2033",
+        "PAU2034",
+        "PAU2035",
+        "PAU2036",
+        "PAU2037",
+        "PAU2038",
+        "PAU2039",
+        "PAU2040",
+        "PAU2041",
+        "PAU2042",
+        "PAU2043",
+        "PAU2044",
+        "PAU2045",
+        "PAU2046",
+        "PAU2047",
+        "PAU2048"
+      ],
+      "centroid": "COU2"
+    },
+    {
+      "reference": "VBAT",
+      "pads": [
+        "PAVBAT01"
+      ],
+      "centroid": "COVBAT"
+    },
+    {
+      "reference": "W",
+      "pads": [
+        "PAW01"
+      ],
+      "centroid": "COW"
+    },
+    {
+      "reference": "Y",
+      "pads": [
+        "PAY01"
+      ],
+      "centroid": "COY"
+    },
+    {
+      "reference": "B1",
+      "pads": [
+        "PAB101",
+        "PAB102"
+      ],
+      "courtyard": "COB1"
+    },
+    {
+      "reference": "B2",
+      "pads": [
+        "PAB201",
+        "PAB202"
+      ],
+      "courtyard": "COB2"
+    },
+    {
+      "reference": "B3",
+      "pads": [
+        "PAB301",
+        "PAB302",
+        "PAB303",
+        "PAB304",
+        "PAB305",
+        "PAB306"
+      ],
+      "courtyard": "COB3"
+    },
+    {
+      "reference": "B01",
+      "pads": [
+        "PAB0101"
+      ],
+      "courtyard": "COB01"
+    },
+    {
+      "reference": "B02",
+      "pads": [
+        "PAB0201"
+      ],
+      "courtyard": "COB02"
+    },
+    {
+      "reference": "BAT",
+      "pads": [
+        "PABAT01",
+        "PABAT02"
+      ],
+      "courtyard": "COBAT"
+    },
+    {
+      "reference": "BUZZER",
+      "pads": [
+        "PABUZZER01",
+        "PABUZZER02"
+      ],
+      "courtyard": "COBUZZER"
+    },
+    {
+      "reference": "BZ",
+      "pads": [
+        "PABZ01"
+      ],
+      "courtyard": "COBZ"
+    },
+    {
+      "reference": "C1",
+      "pads": [
+        "PAC101",
+        "PAC102"
+      ],
+      "courtyard": "COC1"
+    },
+    {
+      "reference": "C2",
+      "pads": [
+        "PAC201",
+        "PAC202"
+      ],
+      "courtyard": "COC2"
+    },
+    {
+      "reference": "C3",
+      "pads": [
+        "PAC301",
+        "PAC302"
+      ],
+      "courtyard": "COC3"
+    },
+    {
+      "reference": "C4",
+      "pads": [
+        "PAC401",
+        "PAC402"
+      ],
+      "courtyard": "COC4"
+    },
+    {
+      "reference": "C5",
+      "pads": [
+        "PAC501",
+        "PAC502"
+      ],
+      "courtyard": "COC5"
+    },
+    {
+      "reference": "C6",
+      "pads": [
+        "PAC601",
+        "PAC602"
+      ],
+      "courtyard": "COC6"
+    },
+    {
+      "reference": "C7",
+      "pads": [
+        "PAC701",
+        "PAC702"
+      ],
+      "courtyard": "COC7"
+    },
+    {
+      "reference": "C8",
+      "pads": [
+        "PAC801",
+        "PAC802"
+      ],
+      "courtyard": "COC8"
+    },
+    {
+      "reference": "C9",
+      "pads": [
+        "PAC901",
+        "PAC902"
+      ],
+      "courtyard": "COC9"
+    },
+    {
+      "reference": "C10",
+      "pads": [
+        "PAC1001",
+        "PAC1002"
+      ],
+      "courtyard": "COC10"
+    },
+    {
+      "reference": "C11",
+      "pads": [
+        "PAC1101",
+        "PAC1102"
+      ],
+      "courtyard": "COC11"
+    },
+    {
+      "reference": "C12",
+      "pads": [
+        "PAC1201",
+        "PAC1202"
+      ],
+      "courtyard": "COC12"
+    },
+    {
+      "reference": "C13",
+      "pads": [
+        "PAC1301",
+        "PAC1302"
+      ],
+      "courtyard": "COC13"
+    },
+    {
+      "reference": "C14",
+      "pads": [
+        "PAC1401",
+        "PAC1402"
+      ],
+      "courtyard": "COC14"
+    },
+    {
+      "reference": "C15",
+      "pads": [
+        "PAC1501",
+        "PAC1502"
+      ],
+      "courtyard": "COC15"
+    },
+    {
+      "reference": "C16",
+      "pads": [
+        "PAC1601",
+        "PAC1602"
+      ],
+      "courtyard": "COC16"
+    },
+    {
+      "reference": "C17",
+      "pads": [
+        "PAC1701",
+        "PAC1702"
+      ],
+      "courtyard": "COC17"
+    },
+    {
+      "reference": "C18",
+      "pads": [
+        "PAC1801",
+        "PAC1802"
+      ],
+      "courtyard": "COC18"
+    },
+    {
+      "reference": "COM0",
+      "pads": [
+        "PACOM001"
+      ],
+      "courtyard": "COCOM0"
+    },
+    {
+      "reference": "COM1",
+      "pads": [
+        "PACOM101"
+      ],
+      "courtyard": "COCOM1"
+    },
+    {
+      "reference": "COM2",
+      "pads": [
+        "PACOM201"
+      ],
+      "courtyard": "COCOM2"
+    },
+    {
+      "reference": "COM3",
+      "pads": [
+        "PACOM301"
+      ],
+      "courtyard": "COCOM3"
+    },
+    {
+      "reference": "D1",
+      "pads": [
+        "PAD101",
+        "PAD102"
+      ],
+      "courtyard": "COD1"
+    },
+    {
+      "reference": "F1",
+      "pads": [
+        "PAF101",
+        "PAF102"
+      ],
+      "courtyard": "COF1"
+    },
+    {
+      "reference": "GND",
+      "pads": [
+        "PAGND01"
+      ],
+      "courtyard": "COGND"
+    },
+    {
+      "reference": "ICP",
+      "pads": [
+        "PAICP01",
+        "PAICP02",
+        "PAICP03",
+        "PAICP04"
+      ],
+      "courtyard": "COICP"
+    },
+    {
+      "reference": "L1",
+      "pads": [
+        "PAL101",
+        "PAL102"
+      ],
+      "courtyard": "COL1"
+    },
+    {
+      "reference": "LCD",
+      "pads": [
+        "PALCD01",
+        "PALCD02",
+        "PALCD03",
+        "PALCD04",
+        "PALCD05",
+        "PALCD06",
+        "PALCD07",
+        "PALCD08",
+        "PALCD09",
+        "PALCD010",
+        "PALCD011",
+        "PALCD012",
+        "PALCD013",
+        "PALCD014",
+        "PALCD015",
+        "PALCD016"
+      ],
+      "courtyard": "COLCD"
+    },
+    {
+      "reference": "LEDR",
+      "pads": [
+        "PALEDR01",
+        "PALEDR02"
+      ],
+      "courtyard": "COLEDR"
+    },
+    {
+      "reference": "LEDW",
+      "pads": [
+        "PALEDW01",
+        "PALEDW02"
+      ],
+      "courtyard": "COLEDW"
+    },
+    {
+      "reference": "LEDY",
+      "pads": [
+        "PALEDY01",
+        "PALEDY02"
+      ],
+      "courtyard": "COLEDY"
+    },
+    {
+      "reference": "MK",
+      "pads": [
+        "PAMK01"
+      ],
+      "courtyard": "COMK"
+    },
+    {
+      "reference": "NTC",
+      "pads": [
+        "PANTC01",
+        "PANTC02"
+      ],
+      "courtyard": "CONTC"
+    },
+    {
+      "reference": "NTC1",
+      "pads": [
+        "PANTC101"
+      ],
+      "courtyard": "CONTC1"
+    },
+    {
+      "reference": "NTC2",
+      "pads": [
+        "PANTC201"
+      ],
+      "courtyard": "CONTC2"
+    },
+    {
+      "reference": "PCTL",
+      "pads": [
+        "PAPCTL01"
+      ],
+      "courtyard": "COPCTL"
+    },
+    {
+      "reference": "R",
+      "pads": [
+        "PAR01"
+      ],
+      "courtyard": "COR"
+    },
+    {
+      "reference": "R1",
+      "pads": [
+        "PAR101",
+        "PAR102"
+      ],
+      "courtyard": "COR1"
+    },
+    {
+      "reference": "R2",
+      "pads": [
+        "PAR201",
+        "PAR202"
+      ],
+      "courtyard": "COR2"
+    },
+    {
+      "reference": "R3",
+      "pads": [
+        "PAR301",
+        "PAR302"
+      ],
+      "courtyard": "COR3"
+    },
+    {
+      "reference": "R4",
+      "pads": [
+        "PAR401",
+        "PAR402"
+      ],
+      "courtyard": "COR4"
+    },
+    {
+      "reference": "R5",
+      "pads": [
+        "PAR501",
+        "PAR502"
+      ],
+      "courtyard": "COR5"
+    },
+    {
+      "reference": "R6",
+      "pads": [
+        "PAR601",
+        "PAR602"
+      ],
+      "courtyard": "COR6"
+    },
+    {
+      "reference": "R7",
+      "pads": [
+        "PAR701",
+        "PAR702"
+      ],
+      "courtyard": "COR7"
+    },
+    {
+      "reference": "R8",
+      "pads": [
+        "PAR801",
+        "PAR802"
+      ],
+      "courtyard": "COR8"
+    },
+    {
+      "reference": "R9",
+      "pads": [
+        "PAR901",
+        "PAR902"
+      ],
+      "courtyard": "COR9"
+    },
+    {
+      "reference": "R10",
+      "pads": [
+        "PAR1001",
+        "PAR1002"
+      ],
+      "courtyard": "COR10"
+    },
+    {
+      "reference": "R11",
+      "pads": [
+        "PAR1101",
+        "PAR1102"
+      ],
+      "courtyard": "COR11"
+    },
+    {
+      "reference": "R12",
+      "pads": [
+        "PAR1201",
+        "PAR1202"
+      ],
+      "courtyard": "COR12"
+    },
+    {
+      "reference": "R13",
+      "pads": [
+        "PAR1301",
+        "PAR1302"
+      ],
+      "courtyard": "COR13"
+    },
+    {
+      "reference": "R14",
+      "pads": [
+        "PAR1401",
+        "PAR1402"
+      ],
+      "courtyard": "COR14"
+    },
+    {
+      "reference": "R15",
+      "pads": [
+        "PAR1501",
+        "PAR1502"
+      ],
+      "courtyard": "COR15"
+    },
+    {
+      "reference": "R16",
+      "pads": [
+        "PAR1601",
+        "PAR1602"
+      ],
+      "courtyard": "COR16"
+    },
+    {
+      "reference": "R17",
+      "pads": [
+        "PAR1701",
+        "PAR1702"
+      ],
+      "courtyard": "COR17"
+    },
+    {
+      "reference": "S1",
+      "pads": [
+        "PAS101"
+      ],
+      "courtyard": "COS1"
+    },
+    {
+      "reference": "S2",
+      "pads": [
+        "PAS201"
+      ],
+      "courtyard": "COS2"
+    },
+    {
+      "reference": "SEG0",
+      "pads": [
+        "PASEG001"
+      ],
+      "courtyard": "COSEG0"
+    },
+    {
+      "reference": "SEG1",
+      "pads": [
+        "PASEG101"
+      ],
+      "courtyard": "COSEG1"
+    },
+    {
+      "reference": "SEG2",
+      "pads": [
+        "PASEG201"
+      ],
+      "courtyard": "COSEG2"
+    },
+    {
+      "reference": "SEG3",
+      "pads": [
+        "PASEG301"
+      ],
+      "courtyard": "COSEG3"
+    },
+    {
+      "reference": "SEG4",
+      "pads": [
+        "PASEG401"
+      ],
+      "courtyard": "COSEG4"
+    },
+    {
+      "reference": "SEG5",
+      "pads": [
+        "PASEG501"
+      ],
+      "courtyard": "COSEG5"
+    },
+    {
+      "reference": "SEG6",
+      "pads": [
+        "PASEG601"
+      ],
+      "courtyard": "COSEG6"
+    },
+    {
+      "reference": "SEG7",
+      "pads": [
+        "PASEG701"
+      ],
+      "courtyard": "COSEG7"
+    },
+    {
+      "reference": "SEG8",
+      "pads": [
+        "PASEG801"
+      ],
+      "courtyard": "COSEG8"
+    },
+    {
+      "reference": "SEG9",
+      "pads": [
+        "PASEG901"
+      ],
+      "courtyard": "COSEG9"
+    },
+    {
+      "reference": "SEG10",
+      "pads": [
+        "PASEG1001"
+      ],
+      "courtyard": "COSEG10"
+    },
+    {
+      "reference": "SEG11",
+      "pads": [
+        "PASEG1101"
+      ],
+      "courtyard": "COSEG11"
+    },
+    {
+      "reference": "SENSOR",
+      "pads": [
+        "PASENSOR01",
+        "PASENSOR02",
+        "PASENSOR03"
+      ],
+      "courtyard": "COSENSOR"
+    },
+    {
+      "reference": "TX",
+      "pads": [
+        "PATX01"
+      ],
+      "courtyard": "COTX"
+    },
+    {
+      "reference": "U1",
+      "pads": [
+        "PAU101",
+        "PAU102",
+        "PAU103",
+        "PAU104",
+        "PAU105"
+      ],
+      "courtyard": "COU1"
+    },
+    {
+      "reference": "U2",
+      "pads": [
+        "PAU201",
+        "PAU202",
+        "PAU203",
+        "PAU204",
+        "PAU205",
+        "PAU206",
+        "PAU207",
+        "PAU208",
+        "PAU209",
+        "PAU2010",
+        "PAU2011",
+        "PAU2012",
+        "PAU2013",
+        "PAU2014",
+        "PAU2015",
+        "PAU2016",
+        "PAU2017",
+        "PAU2018",
+        "PAU2019",
+        "PAU2020",
+        "PAU2021",
+        "PAU2022",
+        "PAU2023",
+        "PAU2024",
+        "PAU2025",
+        "PAU2026",
+        "PAU2027",
+        "PAU2028",
+        "PAU2029",
+        "PAU2030",
+        "PAU2031",
+        "PAU2032",
+        "PAU2033",
+        "PAU2034",
+        "PAU2035",
+        "PAU2036",
+        "PAU2037",
+        "PAU2038",
+        "PAU2039",
+        "PAU2040",
+        "PAU2041",
+        "PAU2042",
+        "PAU2043",
+        "PAU2044",
+        "PAU2045",
+        "PAU2046",
+        "PAU2047",
+        "PAU2048"
+      ],
+      "courtyard": "COU2"
+    },
+    {
+      "reference": "VBAT",
+      "pads": [
+        "PAVBAT01"
+      ],
+      "courtyard": "COVBAT"
+    },
+    {
+      "reference": "W",
+      "pads": [
+        "PAW01"
+      ],
+      "courtyard": "COW"
+    },
+    {
+      "reference": "Y",
+      "pads": [
+        "PAY01"
+      ],
+      "courtyard": "COY"
+    },
+    {
+      "reference": "COB1",
+      "pads": [
+        "PAB101",
+        "PAB102"
+      ]
+    },
+    {
+      "reference": "COB2",
+      "pads": [
+        "PAB201",
+        "PAB202"
+      ]
+    },
+    {
+      "reference": "COB3",
+      "pads": [
+        "PAB301",
+        "PAB302",
+        "PAB303",
+        "PAB304",
+        "PAB305",
+        "PAB306"
+      ]
+    },
+    {
+      "reference": "COB01",
+      "pads": [
+        "PAB0101"
+      ]
+    },
+    {
+      "reference": "COB02",
+      "pads": [
+        "PAB0201"
+      ]
+    },
+    {
+      "reference": "COBAT",
+      "pads": [
+        "PABAT01",
+        "PABAT02"
+      ]
+    },
+    {
+      "reference": "COBUZZER",
+      "pads": [
+        "PABUZZER01",
+        "PABUZZER02"
+      ]
+    },
+    {
+      "reference": "COBZ",
+      "pads": [
+        "PABZ01"
+      ]
+    },
+    {
+      "reference": "COC1",
+      "pads": [
+        "PAC101",
+        "PAC102"
+      ]
+    },
+    {
+      "reference": "COC2",
+      "pads": [
+        "PAC201",
+        "PAC202"
+      ]
+    },
+    {
+      "reference": "COC3",
+      "pads": [
+        "PAC301",
+        "PAC302"
+      ]
+    },
+    {
+      "reference": "COC4",
+      "pads": [
+        "PAC401",
+        "PAC402"
+      ]
+    },
+    {
+      "reference": "COC5",
+      "pads": [
+        "PAC501",
+        "PAC502"
+      ]
+    },
+    {
+      "reference": "COC6",
+      "pads": [
+        "PAC601",
+        "PAC602"
+      ]
+    },
+    {
+      "reference": "COC7",
+      "pads": [
+        "PAC701",
+        "PAC702"
+      ]
+    },
+    {
+      "reference": "COC8",
+      "pads": [
+        "PAC801",
+        "PAC802"
+      ]
+    },
+    {
+      "reference": "COC9",
+      "pads": [
+        "PAC901",
+        "PAC902"
+      ]
+    },
+    {
+      "reference": "COC10",
+      "pads": [
+        "PAC1001",
+        "PAC1002"
+      ]
+    },
+    {
+      "reference": "COC11",
+      "pads": [
+        "PAC1101",
+        "PAC1102"
+      ]
+    },
+    {
+      "reference": "COC12",
+      "pads": [
+        "PAC1201",
+        "PAC1202"
+      ]
+    },
+    {
+      "reference": "COC13",
+      "pads": [
+        "PAC1301",
+        "PAC1302"
+      ]
+    },
+    {
+      "reference": "COC14",
+      "pads": [
+        "PAC1401",
+        "PAC1402"
+      ]
+    },
+    {
+      "reference": "COC15",
+      "pads": [
+        "PAC1501",
+        "PAC1502"
+      ]
+    },
+    {
+      "reference": "COC16",
+      "pads": [
+        "PAC1601",
+        "PAC1602"
+      ]
+    },
+    {
+      "reference": "COC17",
+      "pads": [
+        "PAC1701",
+        "PAC1702"
+      ]
+    },
+    {
+      "reference": "COC18",
+      "pads": [
+        "PAC1801",
+        "PAC1802"
+      ]
+    },
+    {
+      "reference": "COCOM0",
+      "pads": [
+        "PACOM001"
+      ]
+    },
+    {
+      "reference": "COCOM1",
+      "pads": [
+        "PACOM101"
+      ]
+    },
+    {
+      "reference": "COCOM2",
+      "pads": [
+        "PACOM201"
+      ]
+    },
+    {
+      "reference": "COCOM3",
+      "pads": [
+        "PACOM301"
+      ]
+    },
+    {
+      "reference": "COD1",
+      "pads": [
+        "PAD101",
+        "PAD102"
+      ]
+    },
+    {
+      "reference": "COF1",
+      "pads": [
+        "PAF101",
+        "PAF102"
+      ]
+    },
+    {
+      "reference": "COGND",
+      "pads": [
+        "PAGND01"
+      ]
+    },
+    {
+      "reference": "COICP",
+      "pads": [
+        "PAICP01",
+        "PAICP02",
+        "PAICP03",
+        "PAICP04"
+      ]
+    },
+    {
+      "reference": "COL1",
+      "pads": [
+        "PAL101",
+        "PAL102"
+      ]
+    },
+    {
+      "reference": "COLCD",
+      "pads": [
+        "PALCD01",
+        "PALCD02",
+        "PALCD03",
+        "PALCD04",
+        "PALCD05",
+        "PALCD06",
+        "PALCD07",
+        "PALCD08",
+        "PALCD09",
+        "PALCD010",
+        "PALCD011",
+        "PALCD012",
+        "PALCD013",
+        "PALCD014",
+        "PALCD015",
+        "PALCD016"
+      ]
+    },
+    {
+      "reference": "COLEDR",
+      "pads": [
+        "PALEDR01",
+        "PALEDR02"
+      ]
+    },
+    {
+      "reference": "COLEDW",
+      "pads": [
+        "PALEDW01",
+        "PALEDW02"
+      ]
+    },
+    {
+      "reference": "COLEDY",
+      "pads": [
+        "PALEDY01",
+        "PALEDY02"
+      ]
+    },
+    {
+      "reference": "COMK",
+      "pads": [
+        "PAMK01"
+      ]
+    },
+    {
+      "reference": "CONTC",
+      "pads": [
+        "PANTC01",
+        "PANTC02"
+      ]
+    },
+    {
+      "reference": "CONTC1",
+      "pads": [
+        "PANTC101"
+      ]
+    },
+    {
+      "reference": "CONTC2",
+      "pads": [
+        "PANTC201"
+      ]
+    },
+    {
+      "reference": "COPCTL",
+      "pads": [
+        "PAPCTL01"
+      ]
+    },
+    {
+      "reference": "COR",
+      "pads": [
+        "PAR01"
+      ]
+    },
+    {
+      "reference": "COR1",
+      "pads": [
+        "PAR101",
+        "PAR102"
+      ]
+    },
+    {
+      "reference": "COR2",
+      "pads": [
+        "PAR201",
+        "PAR202"
+      ]
+    },
+    {
+      "reference": "COR3",
+      "pads": [
+        "PAR301",
+        "PAR302"
+      ]
+    },
+    {
+      "reference": "COR4",
+      "pads": [
+        "PAR401",
+        "PAR402"
+      ]
+    },
+    {
+      "reference": "COR5",
+      "pads": [
+        "PAR501",
+        "PAR502"
+      ]
+    },
+    {
+      "reference": "COR6",
+      "pads": [
+        "PAR601",
+        "PAR602"
+      ]
+    },
+    {
+      "reference": "COR7",
+      "pads": [
+        "PAR701",
+        "PAR702"
+      ]
+    },
+    {
+      "reference": "COR8",
+      "pads": [
+        "PAR801",
+        "PAR802"
+      ]
+    },
+    {
+      "reference": "COR9",
+      "pads": [
+        "PAR901",
+        "PAR902"
+      ]
+    },
+    {
+      "reference": "COR10",
+      "pads": [
+        "PAR1001",
+        "PAR1002"
+      ]
+    },
+    {
+      "reference": "COR11",
+      "pads": [
+        "PAR1101",
+        "PAR1102"
+      ]
+    },
+    {
+      "reference": "COR12",
+      "pads": [
+        "PAR1201",
+        "PAR1202"
+      ]
+    },
+    {
+      "reference": "COR13",
+      "pads": [
+        "PAR1301",
+        "PAR1302"
+      ]
+    },
+    {
+      "reference": "COR14",
+      "pads": [
+        "PAR1401",
+        "PAR1402"
+      ]
+    },
+    {
+      "reference": "COR15",
+      "pads": [
+        "PAR1501",
+        "PAR1502"
+      ]
+    },
+    {
+      "reference": "COR16",
+      "pads": [
+        "PAR1601",
+        "PAR1602"
+      ]
+    },
+    {
+      "reference": "COR17",
+      "pads": [
+        "PAR1701",
+        "PAR1702"
+      ]
+    },
+    {
+      "reference": "COS1",
+      "pads": [
+        "PAS101"
+      ]
+    },
+    {
+      "reference": "COS2",
+      "pads": [
+        "PAS201"
+      ]
+    },
+    {
+      "reference": "COSEG0",
+      "pads": [
+        "PASEG001"
+      ]
+    },
+    {
+      "reference": "COSEG1",
+      "pads": [
+        "PASEG101"
+      ]
+    },
+    {
+      "reference": "COSEG2",
+      "pads": [
+        "PASEG201"
+      ]
+    },
+    {
+      "reference": "COSEG3",
+      "pads": [
+        "PASEG301"
+      ]
+    },
+    {
+      "reference": "COSEG4",
+      "pads": [
+        "PASEG401"
+      ]
+    },
+    {
+      "reference": "COSEG5",
+      "pads": [
+        "PASEG501"
+      ]
+    },
+    {
+      "reference": "COSEG6",
+      "pads": [
+        "PASEG601"
+      ]
+    },
+    {
+      "reference": "COSEG7",
+      "pads": [
+        "PASEG701"
+      ]
+    },
+    {
+      "reference": "COSEG8",
+      "pads": [
+        "PASEG801"
+      ]
+    },
+    {
+      "reference": "COSEG9",
+      "pads": [
+        "PASEG901"
+      ]
+    },
+    {
+      "reference": "COSEG10",
+      "pads": [
+        "PASEG1001"
+      ]
+    },
+    {
+      "reference": "COSEG11",
+      "pads": [
+        "PASEG1101"
+      ]
+    },
+    {
+      "reference": "COSENSOR",
+      "pads": [
+        "PASENSOR01",
+        "PASENSOR02",
+        "PASENSOR03"
+      ]
+    },
+    {
+      "reference": "COTX",
+      "pads": [
+        "PATX01"
+      ]
+    },
+    {
+      "reference": "COU1",
+      "pads": [
+        "PAU101",
+        "PAU102",
+        "PAU103",
+        "PAU104",
+        "PAU105"
+      ]
+    },
+    {
+      "reference": "COU2",
+      "pads": [
+        "PAU201",
+        "PAU202",
+        "PAU203",
+        "PAU204",
+        "PAU205",
+        "PAU206",
+        "PAU207",
+        "PAU208",
+        "PAU209",
+        "PAU2010",
+        "PAU2011",
+        "PAU2012",
+        "PAU2013",
+        "PAU2014",
+        "PAU2015",
+        "PAU2016",
+        "PAU2017",
+        "PAU2018",
+        "PAU2019",
+        "PAU2020",
+        "PAU2021",
+        "PAU2022",
+        "PAU2023",
+        "PAU2024",
+        "PAU2025",
+        "PAU2026",
+        "PAU2027",
+        "PAU2028",
+        "PAU2029",
+        "PAU2030",
+        "PAU2031",
+        "PAU2032",
+        "PAU2033",
+        "PAU2034",
+        "PAU2035",
+        "PAU2036",
+        "PAU2037",
+        "PAU2038",
+        "PAU2039",
+        "PAU2040",
+        "PAU2041",
+        "PAU2042",
+        "PAU2043",
+        "PAU2044",
+        "PAU2045",
+        "PAU2046",
+        "PAU2047",
+        "PAU2048"
+      ]
+    },
+    {
+      "reference": "COVBAT",
+      "pads": [
+        "PAVBAT01"
+      ]
+    },
+    {
+      "reference": "COW",
+      "pads": [
+        "PAW01"
+      ]
+    },
+    {
+      "reference": "COY",
+      "pads": [
+        "PAY01"
+      ]
+    },
+    {
+      "reference": "COB1",
+      "pads": [
+        "PAB101",
+        "PAB102"
+      ]
+    },
+    {
+      "reference": "COB2",
+      "pads": [
+        "PAB201",
+        "PAB202"
+      ]
+    },
+    {
+      "reference": "COB3",
+      "pads": [
+        "PAB301",
+        "PAB302",
+        "PAB303",
+        "PAB304",
+        "PAB305",
+        "PAB306"
+      ]
+    },
+    {
+      "reference": "COB01",
+      "pads": [
+        "PAB0101"
+      ]
+    },
+    {
+      "reference": "COB02",
+      "pads": [
+        "PAB0201"
+      ]
+    },
+    {
+      "reference": "COBAT",
+      "pads": [
+        "PABAT01",
+        "PABAT02"
+      ]
+    },
+    {
+      "reference": "COBUZZER",
+      "pads": [
+        "PABUZZER01",
+        "PABUZZER02"
+      ]
+    },
+    {
+      "reference": "COBZ",
+      "pads": [
+        "PABZ01"
+      ]
+    },
+    {
+      "reference": "COC1",
+      "pads": [
+        "PAC101",
+        "PAC102"
+      ]
+    },
+    {
+      "reference": "COC2",
+      "pads": [
+        "PAC201",
+        "PAC202"
+      ]
+    },
+    {
+      "reference": "COC3",
+      "pads": [
+        "PAC301",
+        "PAC302"
+      ]
+    },
+    {
+      "reference": "COC4",
+      "pads": [
+        "PAC401",
+        "PAC402"
+      ]
+    },
+    {
+      "reference": "COC5",
+      "pads": [
+        "PAC501",
+        "PAC502"
+      ]
+    },
+    {
+      "reference": "COC6",
+      "pads": [
+        "PAC601",
+        "PAC602"
+      ]
+    },
+    {
+      "reference": "COC7",
+      "pads": [
+        "PAC701",
+        "PAC702"
+      ]
+    },
+    {
+      "reference": "COC8",
+      "pads": [
+        "PAC801",
+        "PAC802"
+      ]
+    },
+    {
+      "reference": "COC9",
+      "pads": [
+        "PAC901",
+        "PAC902"
+      ]
+    },
+    {
+      "reference": "COC10",
+      "pads": [
+        "PAC1001",
+        "PAC1002"
+      ]
+    },
+    {
+      "reference": "COC11",
+      "pads": [
+        "PAC1101",
+        "PAC1102"
+      ]
+    },
+    {
+      "reference": "COC12",
+      "pads": [
+        "PAC1201",
+        "PAC1202"
+      ]
+    },
+    {
+      "reference": "COC13",
+      "pads": [
+        "PAC1301",
+        "PAC1302"
+      ]
+    },
+    {
+      "reference": "COC14",
+      "pads": [
+        "PAC1401",
+        "PAC1402"
+      ]
+    },
+    {
+      "reference": "COC15",
+      "pads": [
+        "PAC1501",
+        "PAC1502"
+      ]
+    },
+    {
+      "reference": "COC16",
+      "pads": [
+        "PAC1601",
+        "PAC1602"
+      ]
+    },
+    {
+      "reference": "COC17",
+      "pads": [
+        "PAC1701",
+        "PAC1702"
+      ]
+    },
+    {
+      "reference": "COC18",
+      "pads": [
+        "PAC1801",
+        "PAC1802"
+      ]
+    },
+    {
+      "reference": "COCOM0",
+      "pads": [
+        "PACOM001"
+      ]
+    },
+    {
+      "reference": "COCOM1",
+      "pads": [
+        "PACOM101"
+      ]
+    },
+    {
+      "reference": "COCOM2",
+      "pads": [
+        "PACOM201"
+      ]
+    },
+    {
+      "reference": "COCOM3",
+      "pads": [
+        "PACOM301"
+      ]
+    },
+    {
+      "reference": "COD1",
+      "pads": [
+        "PAD101",
+        "PAD102"
+      ]
+    },
+    {
+      "reference": "COF1",
+      "pads": [
+        "PAF101",
+        "PAF102"
+      ]
+    },
+    {
+      "reference": "COGND",
+      "pads": [
+        "PAGND01"
+      ]
+    },
+    {
+      "reference": "COICP",
+      "pads": [
+        "PAICP01",
+        "PAICP02",
+        "PAICP03",
+        "PAICP04"
+      ]
+    },
+    {
+      "reference": "CO10101",
+      "pads": [
+        "PA1010101"
+      ]
+    },
+    {
+      "reference": "CO20101",
+      "pads": [
+        "PA2010101"
+      ]
+    },
+    {
+      "reference": "CO30101",
+      "pads": [
+        "PA3010101"
+      ]
+    },
+    {
+      "reference": "CO40101",
+      "pads": [
+        "PA4010101"
+      ]
+    },
+    {
+      "designator": "COB1",
+      "pads": [
+        "PAB101",
+        "PAB102"
+      ]
+    },
+    {
+      "designator": "COB2",
+      "pads": [
+        "PAB201",
+        "PAB202"
+      ]
+    },
+    {
+      "designator": "COB3",
+      "pads": [
+        "PAB301",
+        "PAB302",
+        "PAB303",
+        "PAB304",
+        "PAB305",
+        "PAB306"
+      ]
+    },
+    {
+      "designator": "COB01",
+      "pads": [
+        "PAB0101"
+      ]
+    },
+    {
+      "designator": "COB02",
+      "pads": [
+        "PAB0201"
+      ]
+    },
+    {
+      "designator": "COBAT",
+      "pads": [
+        "PABAT01",
+        "PABAT02"
+      ]
+    },
+    {
+      "designator": "COBUZZER",
+      "pads": [
+        "PABUZZER01",
+        "PABUZZER02"
+      ]
+    },
+    {
+      "designator": "COBZ",
+      "pads": [
+        "PABZ01"
+      ]
+    },
+    {
+      "designator": "CO10101",
+      "pads": [
+        "PA1010101"
+      ]
+    },
+    {
+      "designator": "CO20101",
+      "pads": [
+        "PA2010101"
+      ]
+    },
+    {
+      "designator": "CO30101",
+      "pads": [
+        "PA3010101"
+      ]
+    },
+    {
+      "designator": "CO40101",
+      "pads": [
+        "PA4010101"
+      ]
+    },
+    {
+      "designator": "COC1",
+      "pads": [
+        "PAC101",
+        "PAC102"
+      ]
+    },
+    {
+      "designator": "COC2",
+      "pads": [
+        "PAC201",
+        "PAC202"
+      ]
+    },
+    {
+      "designator": "COC3",
+      "pads": [
+        "PAC301",
+        "PAC302"
+      ]
+    },
+    {
+      "designator": "COC4",
+      "pads": [
+        "PAC401",
+        "PAC402"
+      ]
+    },
+    {
+      "designator": "COC5",
+      "pads": [
+        "PAC501",
+        "PAC502"
+      ]
+    },
+    {
+      "designator": "COC6",
+      "pads": [
+        "PAC601",
+        "PAC602"
+      ]
+    },
+    {
+      "designator": "COC7",
+      "pads": [
+        "PAC701",
+        "PAC702"
+      ]
+    },
+    {
+      "designator": "COC8",
+      "pads": [
+        "PAC801",
+        "PAC802"
+      ]
+    },
+    {
+      "designator": "COC9",
+      "pads": [
+        "PAC901",
+        "PAC902"
+      ]
+    },
+    {
+      "designator": "COC10",
+      "pads": [
+        "PAC1001",
+        "PAC1002"
+      ]
+    },
+    {
+      "designator": "COC11",
+      "pads": [
+        "PAC1101",
+        "PAC1102"
+      ]
+    },
+    {
+      "designator": "COC12",
+      "pads": [
+        "PAC1201",
+        "PAC1202"
+      ]
+    },
+    {
+      "designator": "COC13",
+      "pads": [
+        "PAC1301",
+        "PAC1302"
+      ]
+    },
+    {
+      "designator": "COC14",
+      "pads": [
+        "PAC1401",
+        "PAC1402"
+      ]
+    },
+    {
+      "designator": "COC15",
+      "pads": [
+        "PAC1501",
+        "PAC1502"
+      ]
+    },
+    {
+      "designator": "COC16",
+      "pads": [
+        "PAC1601",
+        "PAC1602"
+      ]
+    },
+    {
+      "designator": "COC17",
+      "pads": [
+        "PAC1701",
+        "PAC1702"
+      ]
+    },
+    {
+      "designator": "COC18",
+      "pads": [
+        "PAC1801",
+        "PAC1802"
+      ]
+    },
+    {
+      "designator": "COCOM0",
+      "pads": [
+        "PACOM001"
+      ]
+    },
+    {
+      "designator": "COCOM1",
+      "pads": [
+        "PACOM101"
+      ]
+    },
+    {
+      "designator": "COCOM2",
+      "pads": [
+        "PACOM201"
+      ]
+    },
+    {
+      "designator": "COCOM3",
+      "pads": [
+        "PACOM301"
+      ]
+    },
+    {
+      "designator": "COD1",
+      "pads": [
+        "PAD101",
+        "PAD102"
+      ]
+    },
+    {
+      "designator": "COF1",
+      "pads": [
+        "PAF101",
+        "PAF102"
+      ]
+    },
+    {
+      "designator": "COGND",
+      "pads": [
+        "PAGND01"
+      ]
+    },
+    {
+      "designator": "COICP",
+      "pads": [
+        "PAICP01",
+        "PAICP02",
+        "PAICP03",
+        "PAICP04"
+      ]
+    },
+    {
+      "name": "PCB",
+      "description": "环氧树脂板",
+      "material": "环氧树脂",
+      "attributes": [
+        {
+          "name": "板厚",
+          "value": "1.0±0.1",
+          "unit": "mm"
+        },
+        {
+          "name": "RoHS合规",
+          "value": "符合RoHS 2.0"
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-HFMP01 V1.0",
+      "type": "PCB物料清单/原理图文档编号"
+    },
+    {
+      "id": "PT9L-HFXS01 V1.0",
+      "type": "原理图图纸编号"
+    },
+    {
+      "id": "BH67F2762",
+      "type": "MCU型号"
+    },
+    {
+      "id": "SR1833",
+      "type": "电源芯片型号"
+    },
+    {
+      "id": "PAICP01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAICP02",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAICP03",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAICP04",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAL101",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAL102",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COL1",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PALCD01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD02",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD03",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD04",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD05",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD06",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD07",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD08",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD09",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD010",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD011",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD012",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD013",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD014",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD015",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALCD016",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COLCD",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PALEDR01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALEDR02",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COLEDR",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PALEDW01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALEDW02",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COLEDW",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PALEDY01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PALEDY02",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COLEDY",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAMK01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COMK",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PANTC01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PANTC02",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "CONTC",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PANTC101",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "CONTC1",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PANTC201",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "CONTC2",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAPCTL01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COPCTL",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR01",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR101",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR102",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR1",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR201",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR202",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR2",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR301",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR302",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR3",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR401",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR402",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR4",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR501",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR502",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR5",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR601",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR602",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR6",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR701",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR702",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR7",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR801",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR802",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR8",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR901",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR902",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR9",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1001",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1002",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR10",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1101",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1102",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR11",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1201",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1202",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR12",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1301",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1302",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR13",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1401",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1402",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR14",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1501",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1502",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR15",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1601",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1602",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR16",
+      "context": "column/group identifier"
+    },
+    {
+      "id": "PAR1701",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "PAR1702",
+      "context": "component/item identifier"
+    },
+    {
+      "id": "COR17",
+      "context": "column/group identifier"
+    },
+    "PAR1701",
+    "PAR1702",
+    "PAS101",
+    "COS1",
+    "PAS201",
+    "COS2",
+    "PASEG001",
+    "COSEG0",
+    "PASEG101",
+    "COSEG1",
+    "PASEG201",
+    "COSEG2",
+    "PASEG301",
+    "COSEG3",
+    "PASEG401",
+    "COSEG4",
+    "PASEG501",
+    "COSEG5",
+    "PASEG601",
+    "COSEG6",
+    "PASEG701",
+    "COSEG7",
+    "PASEG801",
+    "COSEG8",
+    "PASEG901",
+    "COSEG9",
+    "PASEG1001",
+    "COSEG10",
+    "PASEG1101",
+    "COSEG11",
+    "PASENSOR01",
+    "PASENSOR02",
+    "PASENSOR03",
+    "COSENSOR",
+    "PATX01",
+    "COTX",
+    "PAU101",
+    "PAU102",
+    "PAU103",
+    "PAU104",
+    "PAU105",
+    "COU1",
+    "PAU201",
+    "PAU202",
+    "PAU203",
+    "PAU204",
+    "PAU205",
+    "PAU206",
+    "PAU207",
+    "PAU208",
+    "PAU209",
+    "PAU2010",
+    "PAU2011",
+    "PAU2012",
+    "PAU2013",
+    "PAU2014",
+    "PAU2015",
+    "PAU2016",
+    "PAU2017",
+    "PAU2018",
+    "PAU2019",
+    "PAU2020",
+    "PAU2021",
+    "PAU2022",
+    "PAU2023",
+    "PAU2024",
+    "PAU2025",
+    "PAU2026",
+    "PAU2027",
+    "PAU2028",
+    "PAU2029",
+    "PAU2030",
+    "PAU2031",
+    "PAU2032",
+    "PAU2033",
+    "PAU2034",
+    "PAU2035",
+    "PAU2036",
+    "PAU2037",
+    "PAU2038",
+    "PAU2039",
+    "PAU2040",
+    "PAU2041",
+    "PAU2042",
+    "PAU2043",
+    "PAU2044",
+    "PAU2045",
+    "PAU2046",
+    "PAU2047",
+    "PAU2048",
+    "COU2",
+    "PAU2034",
+    "PAU2035",
+    "PAU2036",
+    "PAU2037",
+    "PAU2038",
+    "PAU2039",
+    "PAU2040",
+    "PAU2041",
+    "PAU2042",
+    "PAU2043",
+    "PAU2044",
+    "PAU2045",
+    "PAU2046",
+    "PAU2047",
+    "PAU2048",
+    "PAU201",
+    "PAU202",
+    "PAU203",
+    "PAU204",
+    "PAU205",
+    "PAU206",
+    "PAU207",
+    "PAU208",
+    "PAU209",
+    "PAU2010",
+    "PAU2011",
+    "PAU2012",
+    "PAU2013",
+    "PAU2014",
+    "PAU2015",
+    "PAU2016",
+    "PAU2017",
+    "PAU2018",
+    "PAU2019",
+    "PAU2020",
+    "PAU2021",
+    "PAU2022",
+    "PAU2023",
+    "PAU2024",
+    "PAU2025",
+    "PAU2026",
+    "PAU2027",
+    "PAU2028",
+    "PAU2029",
+    "PAU2030",
+    "PAU2031",
+    "PAU2032",
+    "PAU2033",
+    "PAVBAT01",
+    "COVBAT",
+    "PAW01",
+    "COW",
+    "PAY01",
+    "COY",
+    "PAICP01",
+    "PAICP02",
+    "PAICP03",
+    "PAICP04",
+    "PAL101",
+    "PAL102",
+    "COL1",
+    "PALCD01",
+    "PALCD02",
+    "PALCD03",
+    "PALCD04",
+    "PALCD05",
+    "PALCD06",
+    "PALCD07",
+    "PALCD08",
+    "PALCD09",
+    "PALCD010",
+    "PALCD011",
+    "PALCD012",
+    "PALCD013",
+    "PALCD014",
+    "PALCD015",
+    "PALCD016",
+    "COLCD",
+    "PALEDR01",
+    "PALEDR02",
+    "COLEDR",
+    "PALEDW01",
+    "PALEDW02",
+    "COLEDW",
+    "PALEDY01",
+    "PALEDY02",
+    "COLEDY",
+    "PAMK01",
+    "COMK",
+    "PANTC01",
+    "PANTC02",
+    "CONTC",
+    "PANTC101",
+    "CONTC1",
+    "PANTC201",
+    "CONTC2",
+    "PAPCTL01",
+    "COPCTL",
+    "PAR01",
+    "COR",
+    "PAR101",
+    "PAR102",
+    "COR1",
+    "PAR201",
+    "PAR202",
+    "COR2",
+    "PAR301",
+    "PAR302",
+    "COR3",
+    "PAR401",
+    "PAR402",
+    "COR4",
+    "PAR501",
+    "PAR502",
+    "COR5",
+    "PAR601",
+    "PAR602",
+    "COR6",
+    "PAR701",
+    "PAR702",
+    "COR7",
+    "PAR801",
+    "PAR802",
+    "COR8",
+    "PAR901",
+    "PAR902",
+    "COR9",
+    "PAR1001",
+    "PAR1002",
+    "COR10",
+    "PAR1101",
+    "PAR1102",
+    "COR11",
+    "PAR1201",
+    "PAR1202",
+    "COR12",
+    "PAR1301",
+    "PAR1302",
+    "COR13",
+    "PAR1401",
+    "PAR1402",
+    "COR14",
+    "PAR1501",
+    "PAR1502",
+    "COR15",
+    "PAR1601",
+    "PAR1602",
+    "COR16",
+    "PAR1701",
+    "PAR1702",
+    "COR17",
+    "PAR1701",
+    "PAR1702",
+    "PAS101",
+    "COS1",
+    "PAS201",
+    "COS2",
+    "PASEG001",
+    "COSEG0",
+    "PASEG101",
+    "COSEG1",
+    "PASEG201",
+    "COSEG2",
+    "PASEG301",
+    "COSEG3",
+    "PASEG401",
+    "COSEG4",
+    "PASEG501",
+    "COSEG5",
+    "PASEG601",
+    "COSEG6",
+    "PASEG701",
+    "COSEG7",
+    "PASEG801",
+    "COSEG8",
+    "PASEG901",
+    "COSEG9",
+    "PASEG1001",
+    "COSEG10",
+    "PASEG1101",
+    "COSEG11",
+    "PASENSOR01",
+    "PASENSOR02",
+    "PASENSOR03",
+    "COSENSOR",
+    "PATX01",
+    "COTX",
+    "PAU101",
+    "PAU102",
+    "PAU103",
+    "PAU104",
+    "PAU105",
+    "COU1",
+    "PAU201",
+    "PAU202",
+    "PAU203",
+    "PAU204",
+    "PAU205",
+    "PAU206",
+    "PAU207",
+    "PAU208",
+    "PAU209",
+    "PAU2010",
+    "PAU2011",
+    "PAU2012",
+    "PAU2013",
+    "PAU2014",
+    "PAU2015",
+    "PAU2016",
+    "PAU2017",
+    "PAU2018",
+    "PAU2019",
+    "PAU2020",
+    "PAU2021",
+    "PAU2022",
+    "PAU2023",
+    "PAU2024",
+    "PAU2025",
+    "PAU2026",
+    "PAU2027",
+    "PAU2028",
+    "PAU2029",
+    "PAU2030",
+    "PAU2031",
+    "PAU2032",
+    "PAU2033",
+    "PAU2034",
+    "PAU2035",
+    "PAU2036",
+    "PAU2037",
+    "PAU2038",
+    "PAU2039",
+    "PAU2040",
+    "PAU2041",
+    "PAU2042",
+    "PAU2043",
+    "PAU2044",
+    "PAU2045",
+    "PAU2046",
+    "PAU2047",
+    "PAU2048",
+    "COU2",
+    {
+      "id": "PAU2034",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2035",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2036",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2037",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2038",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2039",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2040",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2041",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2042",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2043",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2044",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2045",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2046",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2047",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2048",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU201",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU202",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU203",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU204",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU205",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU206",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU207",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU208",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU209",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2010",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2011",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2012",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2013",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2014",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2015",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2016",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2017",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2018",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2019",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2020",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2021",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2022",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2023",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2024",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2025",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2026",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2027",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2028",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2029",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2030",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2031",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2032",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAU2033",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAVBAT01",
+      "context": "identifier list"
+    },
+    {
+      "id": "COVBAT",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAW01",
+      "context": "identifier list"
+    },
+    {
+      "id": "COW",
+      "context": "identifier list"
+    },
+    {
+      "id": "PAY01",
+      "context": "identifier list"
+    },
+    {
+      "id": "COY",
+      "context": "identifier list"
+    }
+  ],
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "version": "V1.0"
+    },
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "pcb_number": "PT9L-HFMP01 V1.0"
+    },
+    {
+      "name": "红外体温计",
+      "model": "PT9L-HFMP01 V1.0",
+      "pcb_id": "PT9L"
+    },
+    {
+      "name": "红外体温计",
+      "model": "PT9L-HFMP01 V1.0",
+      "pcb_number": "PT9L",
+      "board_type": "双面板",
+      "material": "FR4",
+      "color": "绿油",
+      "surface_treatment": "喷锡",
+      "via_window": "所有过孔不开窗"
+    },
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "pcb_number": "PT9L-HFMP01 V1.0",
+      "version": "V1.0"
+    },
+    {
+      "name": "红外体温计",
+      "model": "PT9L-HFMP01 V1.0",
+      "pcb_number": "PT9L"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "电源控制逻辑：DO_PCTL低电平时3.3V OFF，DO_PCTL高电平时3.3V ON。LED控制：低电平LED亮，高电平LED灭。蜂鸣器工作频率：4kHz。升压芯片U1(SR1833)将电池电压VBAT升压后提供3.3V给系统。",
+      "topic_tags": [
+        "电源控制",
+        "LED控制",
+        "蜂鸣器",
+        "升压电路"
+      ],
+      "related_subjects": [
+        "U1",
+        "SR1833",
+        "DO_PCTL",
+        "BUZZER",
+        "LEDR",
+        "LEDW",
+        "LEDY"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "MCU(BH67F2762)通过模拟输入AI_AN0~AI_AN4采集传感器信号及NTC温度信号，通过LCD段码驱动接口（COM0-COM3, SEG0-SEG11）驱动LCD显示，通过SPI接口（SDI/SDO/SCS/SCK）与红外传感器通信，通过ICP接口（ICPDA/ICPCK）进行在线编程。低电压检测通过AI_LVD（R1/R2分压VBAT）实现。NTC温度检测通过R15上拉至3.3V与NTC分压后接AI_NTC实现。",
+      "topic_tags": [
+        "MCU",
+        "ADC",
+        "LCD驱动",
+        "SPI",
+        "ICP编程",
+        "LVD",
+        "NTC温度检测"
+      ],
+      "related_subjects": [
+        "U2",
+        "BH67F2762",
+        "NTC",
+        "LCD",
+        "SENSOR",
+        "ICP",
+        "R1",
+        "R2",
+        "R15"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "文档清单包含以下层文件：PT9L-HFXS01 V1.0（原理图），PT9L-HFMP01 V1.0（PCB），含Top Layer层、Top Overlay层、Bottom Layer层、Bottom Overlay层、Drill Layer层、拼板示意图（顶层）、拼板示意图（底层）、尺寸图，均为V1.0版本。",
+      "topic_tags": [
+        "文档清单",
+        "PCB层叠",
+        "版本管理"
+      ],
+      "related_subjects": [
+        "PT9L-HFMP01 V1.0",
+        "PT9L-HFXS01 V1.0"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "PCB文件包含两个层的布局信息：Page 3为Top Layer（顶层铜箔层），Page 4为Top Overlay（顶层丝印层）。两页内容的元器件位号与焊盘标注完全一致，均属于同一PCB设计文件PT9L-HFMP01 V1.0，版本V1.0，共7页，产品为红外体温计，型号PT9L。",
+      "topic_tags": [
+        "PCB",
+        "Top Layer",
+        "Top Overlay",
+        "红外体温计",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "PT9L-HFMP01 V1.0",
+        "红外体温计",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PCB中主要功能模块识别：SENSOR（红外传感器，3引脚）、LCD（液晶显示，16引脚）、U2（主控芯片，48引脚）、U1（5引脚IC）、NTC/NTC1/NTC2（温度补偿传感器）、BUZZER（蜂鸣器）、BAT/VBAT（电池接口）、LEDR/LEDW/LEDY（红/白/黄LED指示灯）、S1/S2（按键开关）、ICP（在线编程接口，4引脚）、LCD的SEG0-SEG11和COM0-COM3（段码显示驱动信号）、TX（发射/串口）、PCTL（电源控制）、BZ（压电蜂鸣器或晶振）、Y（晶振）、F1（保险丝）、D1（二极管）、L1（电感）、R1-R17（电阻）、C1-C18（电容）、MK（麦克风或标记点）、GND（接地点）、W（跳线/测试点）。",
+      "topic_tags": [
+        "传感器",
+        "LCD",
+        "MCU",
+        "NTC",
+        "蜂鸣器",
+        "电池",
+        "LED",
+        "按键",
+        "ICP编程接口",
+        "段码显示"
+      ],
+      "related_subjects": [
+        "SENSOR",
+        "LCD",
+        "U2",
+        "U1",
+        "NTC",
+        "BUZZER",
+        "BAT",
+        "LEDR",
+        "LEDW",
+        "LEDY",
+        "ICP",
+        "SEG",
+        "COM"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "本文件为红外体温计（产品型号PT9L-HFMP01 V1.0，PCB编号PT9L）的PCB底层（Bottom Layer）及底层丝印层（Bottom Overlay）布局图，版本V1.0，共7页，当前为第3页和第4页。文件包含所有底层焊盘编号（PAxx）及元器件外框编号（COxx），涵盖电容（C1-C18）、电阻（R1-R17）、电感（L1）、二极管（D1）、LED（LEDR/LEDW/LEDY）、LCD显示屏、传感器（SENSOR）、NTC热敏电阻（NTC/NTC1/NTC2）、蜂鸣器（BUZZER）、电池连接器（BAT/VBAT）、开关（S1/S2）、IC芯片（U1/U2）、ICP编程接口、LCD段码（SEG0-SEG11）及公共端（COM0-COM3）等元器件的布局信息。",
+      "topic_tags": [
+        "PCB布局",
+        "底层",
+        "红外体温计",
+        "元器件",
+        "焊盘"
+      ],
+      "related_subjects": [
+        "PT9L-HFMP01 V1.0",
+        "红外体温计",
+        "Bottom Layer",
+        "Bottom Overlay"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "PCB板基本规格：产品名称：红外体温计；产品型号：PT9L-HFMP01 V1.0；PCB编号：PT9L；板型：双面板；材质：FR4；阻焊颜色：绿油；表面处理：喷锡；所有过孔不开窗。Drill Layer钻孔尺寸规格包括：0.38±0.1mm、1.2±0.1mm、1.1±0.1mm、2.1±0.1mm、3.1±0.1mm、0.8±0.1mm。",
+      "topic_tags": [
+        "PCB",
+        "双面板",
+        "FR4",
+        "红外体温计",
+        "钻孔",
+        "表面处理"
+      ],
+      "related_subjects": [
+        "PT9L-HFMP01 V1.0",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PCB网表包含的主要功能模块（根据元器件参考标号推断）：电池连接器(COBAT)、蜂鸣器(COBUZZER)、LCD显示接口(COLCD，16pin)、红色LED(COLEDR)、白色LED(COLEDW)、黄色LED(COLEDY)、传感器接口(COSENSOR，3pin)、ICP编程接口(COICP，4pin)、电感(COL1)、电容组(COC1~COC18共18个)、电阻组(COR~COR17共18个)、按键(COS1、COS2)、段码显示驱动信号(COSEG0~COSEG11共12路)、COM驱动信号(COCOM0~COCOM3共4路)、主控芯片U2(48pin)、U1(5pin)、电源控制(COPCTL)、VBAT电源(COVBAT)、TX发送(COTX)。",
+      "topic_tags": [
+        "PCB网表",
+        "功能模块",
+        "LCD",
+        "传感器",
+        "蜂鸣器",
+        "ICP",
+        "主控芯片"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计",
+        "COU2",
+        "COLCD",
+        "COSENSOR",
+        "COBUZZER"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "本页为红外体温计（产品型号：PT9L）PCB编号PT9L-HFMP01 V1.0的拼板示意图（顶层），版本V1.0，第7页。图中包含大量PCB焊盘标识，涵盖电池（COBAT）、蜂鸣器（COBUZZER）、电容（COC1~COC18）、连接器（COCOM0~COCOM3）、二极管（COD1）、保险丝（COF1）、接地（COGND）、ICP编程接口（COICP）等多类元器件的拼板重复排布（每种元器件在拼板中出现约10次），反映出该PCB为多拼板设计。",
+      "topic_tags": [
+        "PCB拼板",
+        "红外体温计",
+        "顶层布局",
+        "元器件标识",
+        "焊盘"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT9L-HFMP01 V1.0",
+        "COBAT",
+        "COBUZZER",
+        "COICP",
+        "COGND"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "本文件片段为一张大型矩阵或追溯表（Traceability Matrix）的内容，包含大量结构化标识符。标识符命名规律如下：PA前缀表示某类条目（如PAICP=ICP类条目，PAL=L类条目，PALCD=LCD类条目，PALEDR=EDR类条目，PALEDW=EDW类条目，PALEDY=EDY类条目，PAMK=MK类条目，PANTC=NTC类条目，PAPCTL=PCTL类条目，PAR=R类条目），CO前缀（如COL1、COLCD、COLEDR、COLEDW、COLEDY、COMK、CONTC、CONTC1、CONTC2、COPCTL、COR、COR1~COR17）可能代表列标题或分组标识。PAR系列从PAR01延伸至PAR1702，涵盖至少17个编号组（COR1~COR17），每组包含两个子条目（如PAR101/PAR102，PAR201/PAR202，…，PAR1701/PAR1702）。整体结构疑似需求-设计-测试追溯矩阵，各标识符在矩阵行列中反复出现，体现双向追溯关系。",
+      "topic_tags": [
+        "traceability matrix",
+        "identifier",
+        "requirement",
+        "component",
+        "cross-reference"
+      ],
+      "related_subjects": [
+        "PAICP01",
+        "PAICP02",
+        "PAICP03",
+        "PAICP04",
+        "PAL101",
+        "PAL102",
+        "PALCD01-016",
+        "PALEDR01",
+        "PALEDR02",
+        "PALEDW01",
+        "PALEDW02",
+        "PALEDY01",
+        "PALEDY02",
+        "PAMK01",
+        "PANTC01",
+        "PANTC02",
+        "PANTC101",
+        "PANTC201",
+        "PAPCTL01",
+        "PAR01",
+        "PAR101-PAR1702"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "本文件片段为医疗器械DHF文档中的标识符追踪矩阵或需求/组件映射表，包含大量重复出现的标识符编号，涵盖以下分组：PAR17xx（需求组）、PAS1xx/PAS2xx（子系统组）、COS1/COS2（组件组）、PASEG0xx至PASEG11xx（分段需求组，共12段）、COSEG0至COSEG11（分段组件）、PASENSOR01-03/COSENSOR（传感器相关）、PATX01/COTX（TX相关）、PAU1xx/COU1（单元1需求，共5项）、PAU2xx/COU2（单元2需求，共48项）。每组标识符在矩阵中多次重复出现，推测为追踪矩阵中行/列交叉引用结构，表示各需求与组件之间的映射关系。",
+      "topic_tags": [
+        "标识符",
+        "追踪矩阵",
+        "需求映射",
+        "组件映射",
+        "DHF"
+      ],
+      "related_subjects": [
+        "PAR1701",
+        "PAR1702",
+        "PAS101",
+        "PAS201",
+        "PASEG001",
+        "PASENSOR01",
+        "PATX01",
+        "PAU101",
+        "PAU201",
+        "COS1",
+        "COS2",
+        "COSEG0",
+        "COSENSOR",
+        "COTX",
+        "COU1",
+        "COU2"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文件片段为标识符列表，包含以下系列编号：PAU201至PAU2048系列（重复出现两次），PAVBAT01与COVBAT系列（PAVBAT01重复出现多次），PAW01与COW系列（PAW01重复出现多次），PAY01与COY系列（PAY01重复出现多次）。这些标识符疑为追溯矩阵或需求/测试用例映射表中的行/列标识，具体含义及其关联关系需结合上下文判断。",
+      "topic_tags": [
+        "标识符列表",
+        "追溯矩阵",
+        "需求编号",
+        "测试用例编号"
+      ],
+      "related_subjects": [
+        "PAU2034",
+        "PAVBAT01",
+        "PAW01",
+        "PAY01",
+        "COVBAT",
+        "COW",
+        "COY"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "本页为红外体温计PCB拼板示意图（底层），PCB编号PT9L，版本V1.0（PT9L-HFMP01 V1.0）。拼板包含多个单元（至少10拼），底层焊盘网络涵盖：电池座(COBAT)、蜂鸣器(COBUZZER)、按键(COB1/COB2/COB3)、电容(COC1~COC18)、二极管(COD1)、保险丝(COF1)、接地焊盘(COGND)、ICP编程接口(COICP，4PIN)、通信接口(COCOM0~COCOM3)、以及多组连接器焊盘(CO10101~CO40101, COB01, COB02, COBZ)等元器件的底层焊盘分布。",
+      "topic_tags": [
+        "PCB拼板",
+        "底层",
+        "红外体温计",
+        "焊盘网络",
+        "元器件布局"
+      ],
+      "related_subjects": [
+        "PT9L-HFMP01 V1.0",
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "本文件片段包含大量结构化标识符序列，呈现出矩阵/追溯表格式的排列规律。标识符前缀分组如下：PAICP（01-04）、PAL1（01-02）与COL1、PALCD（01-016）与COLCD、PALEDR（01-02）与COLEDR、PALEDW（01-02）与COLEDW、PALEDY（01-02）与COLEDY、PAMK（01）与COMK、PANTC（01-02）与CONTC、PANTC1（01）与CONTC1、PANTC2（01）与CONTC2、PAPCTL（01）与COPCTL、PAR（01）与COR、PAR1至PAR17系列（每组含01/02两个子项）与对应的COR1至COR17。各组标识符在多行中重复出现，疑为追溯矩阵（Traceability Matrix）中的行列交叉引用关系，表明各需求/设计项目之间的关联覆盖情况。PA前缀标识符可能代表产品需求或设计属性条目，CO前缀标识符可能代表对应的配置/组件或列标题项。",
+      "topic_tags": [
+        "追溯矩阵",
+        "标识符",
+        "需求覆盖",
+        "设计项",
+        "组件映射"
+      ],
+      "related_subjects": [
+        "PAICP系列",
+        "PALCD系列",
+        "PAR系列",
+        "PALEDR系列",
+        "PALEDW系列",
+        "PALEDY系列",
+        "PANTC系列",
+        "PAPCTL系列"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "本文件片段为需求/测试追溯矩阵或覆盖矩阵的标识符列表，包含多组需求标识符（PAR系列）、规格标识符（PAS系列）、段落/分段需求标识符（PASEG系列，编号0-11共12组）、传感器需求标识符（PASENSOR系列，含01/02/03三条）、发射器需求标识符（PATX系列）以及用户需求标识符（PAU1系列含5条、PAU2系列含48条），每组标识符与对应的覆盖/组件标识符（COS1、COS2、COSEG0-COSEG11、COSENSOR、COTX、COU1、COU2）关联，体现了多对多的追溯覆盖关系。各标识符在矩阵中被重复引用（约10次），表明每条需求均被多个测试用例或验证活动所覆盖。",
+      "topic_tags": [
+        "追溯矩阵",
+        "需求覆盖",
+        "标识符",
+        "PAR",
+        "PAS",
+        "PASEG",
+        "PASENSOR",
+        "PATX",
+        "PAU",
+        "COS",
+        "COSEG",
+        "COSENSOR",
+        "COTX",
+        "COU"
+      ],
+      "related_subjects": [
+        "PAR1701",
+        "PAR1702",
+        "PAS101",
+        "PAS201",
+        "PASEG001",
+        "PASENSOR01",
+        "PATX01",
+        "PAU101",
+        "PAU201",
+        "COS1",
+        "COS2",
+        "COSEG0",
+        "COSENSOR",
+        "COTX",
+        "COU1",
+        "COU2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "PCB技术要求：1. TH.=1.0±0.1（板厚公差要求）；2. 产品符合RoHS 2.0（环保有害物质限制指令）。材料为环氧树脂板。",
+      "topic_tags": [
+        "PCB",
+        "环氧树脂板",
+        "板厚",
+        "RoHS",
+        "技术要求"
+      ],
+      "related_subjects": [
+        "PCB",
+        "RoHS 2.0"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文件包含大量组件标识符列表（PAU系列、PAVBAT01、COVBAT、PAW01、COW、PAY01、COY等），这些标识符重复出现，可能对应PCB上的元器件位号或装配清单中的零件编号，具体对应关系未在本片段中说明。",
+      "topic_tags": [
+        "元器件位号",
+        "PAU系列",
+        "PAVBAT01",
+        "PAW01",
+        "PAY01",
+        "装配清单"
+      ],
+      "related_subjects": [
+        "PCB",
+        "BOM"
+      ]
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "PCB钻孔层尺寸规范",
+      "description": "Drill Layer孔径规格",
+      "values": [
+        "0.38±0.1mm",
+        "1.2±0.1mm",
+        "1.1±0.1mm",
+        "2.1±0.1mm",
+        "3.1±0.1mm",
+        "0.8±0.1mm"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "PCB-REQ-001",
+      "description": "PCB板厚TH.=1.0±0.1 mm",
+      "category": "dimensional"
+    },
+    {
+      "id": "PCB-REQ-002",
+      "description": "产品符合RoHS 2.0标准",
+      "category": "regulatory_compliance"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "有害物质限制指令，产品需符合RoHS 2.0要求"
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/图纸/PT9L-HFMP01 V1.0-带原理图.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "拼板示意图(底层)",
+      "to": "V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "U1",
+      "to": "电源控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SR1833",
+      "to": "电源控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DO_PCTL",
+      "to": "电源控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BUZZER",
+      "to": "电源控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LEDR",
+      "to": "电源控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LEDW",
+      "to": "电源控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LEDY",
+      "to": "电源控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "U2",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BH67F2762",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "NTC",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SENSOR",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ICP",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R1",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R2",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "R15",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "文档清单",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFXS01 V1.0",
+      "to": "文档清单",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PCB",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PCB",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PCB",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SENSOR",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "U2",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "U1",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "NTC",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BUZZER",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BAT",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LEDR",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LEDW",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LEDY",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ICP",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SEG",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COM",
+      "to": "传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PCB布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PCB布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Bottom Layer",
+      "to": "PCB布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Bottom Overlay",
+      "to": "PCB布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PCB网表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PCB网表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COU2",
+      "to": "PCB网表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COLCD",
+      "to": "PCB网表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COSENSOR",
+      "to": "PCB网表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COBUZZER",
+      "to": "PCB网表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "PCB拼板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PCB拼板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COBAT",
+      "to": "PCB拼板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COBUZZER",
+      "to": "PCB拼板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COICP",
+      "to": "PCB拼板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COGND",
+      "to": "PCB拼板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAICP01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAICP02",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAICP03",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAICP04",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAL101",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAL102",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALCD01-016",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDR01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDR02",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDW01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDW02",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDY01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDY02",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAMK01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PANTC01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PANTC02",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PANTC101",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PANTC201",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAPCTL01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAR01",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAR101-PAR1702",
+      "to": "traceability matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAR1701",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAR1702",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAS101",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAS201",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PASEG001",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PASENSOR01",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PATX01",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAU101",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAU201",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COS1",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COS2",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COSEG0",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COSENSOR",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COTX",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COU1",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COU2",
+      "to": "标识符",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAU2034",
+      "to": "标识符列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAVBAT01",
+      "to": "标识符列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAW01",
+      "to": "标识符列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAY01",
+      "to": "标识符列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COVBAT",
+      "to": "标识符列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COW",
+      "to": "标识符列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COY",
+      "to": "标识符列表",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PCB拼板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAICP系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALCD系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAR系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDR系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDW系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PALEDY系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PANTC系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAPCTL系列",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAR1701",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAR1702",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAS101",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAS201",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PASEG001",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PASENSOR01",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PATX01",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAU101",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PAU201",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COS1",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COS2",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COSEG0",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COSENSOR",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COTX",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COU1",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "COU2",
+      "to": "追溯矩阵",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PCB",
+      "to": "PCB",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RoHS 2.0",
+      "to": "PCB",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PCB",
+      "to": "元器件位号",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BOM",
+      "to": "元器件位号",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "U1",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "U2",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "D1",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "F1",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "L1",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "C1",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "C2",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "C3",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "C4",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "C5",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "R1",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "R2",
+      "properties": {
+        "detail_type": "component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "U1",
+      "to": "SR1833",
+      "properties": {
+        "detail_type": "part_number"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "U2",
+      "to": "BH67F2762",
+      "properties": {
+        "detail_type": "part_number"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PT9L-HFMP01 V1.0",
+      "properties": {
+        "detail_type": "pcb_document"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PT9L-HFXS01 V1.0",
+      "properties": {
+        "detail_type": "schematic_document"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PAICP01",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PAICP02",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PAICP03",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PAICP04",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PAL101",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PAL102",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "COL1",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD01",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD02",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD03",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD04",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD05",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD06",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD07",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD08",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD09",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD010",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD011",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD012",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD013",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "PALCD014",
+      "properties": {
+        "detail_type": "identifier"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-HFMP01 V1.0",
+      "to": "V1.0",
+      "properties": {
+        "change_description": "初始版本"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "PCB板厚",
+      "attribute": "厚度",
+      "value": "1.0",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "",
+      "raw_text": "PCB板厚TH.=1.0±0.1 mm"
+    },
+    {
+      "subject": "PCB钻孔孔径",
+      "attribute": "孔径规格1",
+      "value": "0.38",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "Drill Layer",
+      "raw_text": "Drill Layer孔径规格 0.38±0.1mm"
+    },
+    {
+      "subject": "PCB钻孔孔径",
+      "attribute": "孔径规格2",
+      "value": "1.2",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "Drill Layer",
+      "raw_text": "Drill Layer孔径规格 1.2±0.1mm"
+    },
+    {
+      "subject": "PCB钻孔孔径",
+      "attribute": "孔径规格3",
+      "value": "1.1",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "Drill Layer",
+      "raw_text": "Drill Layer孔径规格 1.1±0.1mm"
+    },
+    {
+      "subject": "PCB钻孔孔径",
+      "attribute": "孔径规格4",
+      "value": "2.1",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "Drill Layer",
+      "raw_text": "Drill Layer孔径规格 2.1±0.1mm"
+    },
+    {
+      "subject": "PCB钻孔孔径",
+      "attribute": "孔径规格5",
+      "value": "3.1",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "Drill Layer",
+      "raw_text": "Drill Layer孔径规格 3.1±0.1mm"
+    },
+    {
+      "subject": "PCB钻孔孔径",
+      "attribute": "孔径规格6",
+      "value": "0.8",
+      "unit": "mm",
+      "tolerance": "±0.1mm",
+      "condition": "Drill Layer",
+      "raw_text": "Drill Layer孔径规格 0.8±0.1mm"
+    },
+    {
+      "subject": "MCU主控芯片",
+      "attribute": "引脚数量",
+      "value": "48",
+      "unit": "pin",
+      "tolerance": "",
+      "condition": "U2 BH67F2762",
+      "raw_text": "MCU主控芯片 BH67F2762，pin_count: 48"
+    },
+    {
+      "subject": "电感L1",
+      "attribute": "电感量",
+      "value": "10",
+      "unit": "uH",
+      "tolerance": "",
+      "condition": "U1 SR1833升压模块外围",
+      "raw_text": "L1 电感 10uH"
+    },
+    {
+      "subject": "电解电容C1",
+      "attribute": "容值",
+      "value": "100",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "耐压16V",
+      "raw_text": "C1 电解电容 100uF/16V"
+    },
+    {
+      "subject": "电解电容C1",
+      "attribute": "耐压值",
+      "value": "16",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "C1 电解电容 100uF/16V"
+    },
+    {
+      "subject": "电容C2",
+      "attribute": "容值",
+      "value": "22",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C2",
+      "raw_text": "C2 电容 22uF"
+    },
+    {
+      "subject": "电容C3",
+      "attribute": "容值",
+      "value": "22",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C3",
+      "raw_text": "C3 电容 22uF"
+    },
+    {
+      "subject": "电容C4",
+      "attribute": "容值",
+      "value": "22",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C4",
+      "raw_text": "C4 电容 22uF"
+    },
+    {
+      "subject": "旁路电容C5",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C5旁路电容",
+      "raw_text": "C5 旁路电容 0.1uF"
+    },
+    {
+      "subject": "旁路电容C6",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C6旁路电容",
+      "raw_text": "C6 旁路电容 0.1uF"
+    },
+    {
+      "subject": "电容C7",
+      "attribute": "容值",
+      "value": "10",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C7",
+      "raw_text": "C7 电容 10uF"
+    },
+    {
+      "subject": "旁路电容C8",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C8旁路电容",
+      "raw_text": "C8 旁路电容 0.1uF"
+    },
+    {
+      "subject": "电容C9",
+      "attribute": "容值",
+      "value": "4.7",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C9",
+      "raw_text": "C9 电容 4.7uF"
+    },
+    {
+      "subject": "电容C10",
+      "attribute": "容值",
+      "value": "1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C10",
+      "raw_text": "C10 电容 1uF"
+    },
+    {
+      "subject": "旁路电容C11",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C11旁路电容",
+      "raw_text": "C11 旁路电容 0.1uF"
+    },
+    {
+      "subject": "电容C12",
+      "attribute": "容值",
+      "value": "1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C12",
+      "raw_text": "C12 电容 1uF"
+    },
+    {
+      "subject": "可选电容C13",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C13可选装配",
+      "raw_text": "C13 可选电容 NC/0.1uF"
+    },
+    {
+      "subject": "可选电容C14",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C14可选装配",
+      "raw_text": "C14 可选电容 NC/0.1uF"
+    },
+    {
+      "subject": "电容C15",
+      "attribute": "容值",
+      "value": "56",
+      "unit": "pF",
+      "tolerance": "",
+      "condition": "C15",
+      "raw_text": "C15 电容 56pF"
+    },
+    {
+      "subject": "旁路电容C16",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C16旁路电容",
+      "raw_text": "C16 旁路电容 0.1uF"
+    },
+    {
+      "subject": "旁路电容C17",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C17旁路电容",
+      "raw_text": "C17 旁路电容 0.1uF"
+    },
+    {
+      "subject": "旁路电容C18",
+      "attribute": "容值",
+      "value": "0.1",
+      "unit": "uF",
+      "tolerance": "",
+      "condition": "C18旁路电容",
+      "raw_text": "C18 旁路电容 0.1uF"
+    },
+    {
+      "subject": "分压电阻R1",
+      "attribute": "阻值",
+      "value": "200",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "电池电压分压",
+      "raw_text": "R1 电阻，电池电压分压 200k"
+    },
+    {
+      "subject": "分压电阻R2",
+      "attribute": "阻值",
+      "value": "100",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "电池电压分压",
+      "raw_text": "R2 电阻，电池电压分压 100k"
+    },
+    {
+      "subject": "限流电阻R5",
+      "attribute": "阻值",
+      "value": "120",
+      "unit": "Ω",
+      "tolerance": "",
+      "condition": "LED红灯限流",
+      "raw_text": "R5 LED限流电阻（红灯）120"
+    },
+    {
+      "subject": "限流电阻R6",
+      "attribute": "阻值",
+      "value": "39",
+      "unit": "Ω",
+      "tolerance": "",
+      "condition": "LED白灯限流",
+      "raw_text": "R6 LED限流电阻（白灯）39"
+    },
+    {
+      "subject": "限流电阻R7",
+      "attribute": "阻值",
+      "value": "120",
+      "unit": "Ω",
+      "tolerance": "",
+      "condition": "LED黄灯限流",
+      "raw_text": "R7 LED限流电阻（黄灯）120"
+    },
+    {
+      "subject": "电阻R8",
+      "attribute": "阻值",
+      "value": "100",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "R8",
+      "raw_text": "R8 电阻 100k"
+    },
+    {
+      "subject": "NTC分压电阻R10",
+      "attribute": "阻值",
+      "value": "100",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "NTC分压",
+      "raw_text": "R10 电阻，NTC分压 100K"
+    },
+    {
+      "subject": "电阻R11",
+      "attribute": "阻值",
+      "value": "300",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "R11",
+      "raw_text": "R11 电阻 300K"
+    },
+    {
+      "subject": "电阻R12",
+      "attribute": "阻值",
+      "value": "1",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "R12",
+      "raw_text": "R12 电阻 1k"
+    },
+    {
+      "subject": "电阻R13",
+      "attribute": "阻值",
+      "value": "1",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "R13",
+      "raw_text": "R13 电阻 1k"
+    },
+    {
+      "subject": "电阻R14",
+      "attribute": "阻值",
+      "value": "1",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "R14",
+      "raw_text": "R14 电阻 1k"
+    },
+    {
+      "subject": "NTC上拉电阻R15",
+      "attribute": "阻值",
+      "value": "10",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "NTC上拉",
+      "raw_text": "R15 电阻，NTC上拉 10k"
+    },
+    {
+      "subject": "可选电阻R16",
+      "attribute": "阻值",
+      "value": "10",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "R16可选装配",
+      "raw_text": "R16 可选电阻 NC/10k"
+    },
+    {
+      "subject": "可选电阻R17",
+      "attribute": "阻值",
+      "value": "10",
+      "unit": "kΩ",
+      "tolerance": "",
+      "condition": "R17可选装配",
+      "raw_text": "R17 可选电阻 NC/10k"
+    }
+  ]
+}

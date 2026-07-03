@@ -1,0 +1,159 @@
+{
+  "document": {
+    "title": "设计确认计划评审表",
+    "doc_type": "评审检查表/评审记录",
+    "version": "V1.0"
+  },
+  "review_records": [
+    {
+      "review_id": "PT9L-QJPB01 V1.0",
+      "stage": "设计确认计划评审",
+      "date": null,
+      "conclusion": "本次评审通过"
+    }
+  ],
+  "review_items": [
+    {
+      "seq": "1",
+      "category": "确认内容",
+      "content": "规定的确认内容是否恰当合理、有无缺失",
+      "actual_situation": "规定的确认内容恰当合理、无缺失",
+      "conclusion": "通过",
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "2",
+      "category": "确认时间",
+      "content": "安排的确认活动的时间是否合理",
+      "actual_situation": "安排的确认活动的时间合理",
+      "conclusion": "通过",
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "3",
+      "category": "确认方法",
+      "content": "规定的确认方法是否明确、合理",
+      "actual_situation": "规定的确认方法明确、合理",
+      "conclusion": "通过",
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "4",
+      "category": "人员职责",
+      "content": "安排的工作人员的职责和权限是否清晰",
+      "actual_situation": "安排的工作人员的职责和权限清晰",
+      "conclusion": "通过",
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "5",
+      "category": "资源",
+      "content": "安排的资源是否充足",
+      "actual_situation": "安排的资源充足",
+      "conclusion": "通过",
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "6",
+      "category": "技术接口",
+      "content": "组织技术接口是否恰当",
+      "actual_situation": "组织技术接口恰当",
+      "conclusion": "通过",
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "7",
+      "category": "接收准则",
+      "content": "规定的接收准则是否合理",
+      "actual_situation": "规定的接收准则合理",
+      "conclusion": "通过",
+      "improvement": null,
+      "note": null
+    }
+  ],
+  "persons": [
+    {
+      "name": "侯广伟",
+      "title": "技术负责人/项目负责人/结构主管/硬件主管/软件主管"
+    },
+    {
+      "name": "王艳红",
+      "title": "认证工程师"
+    },
+    {
+      "name": "赵一平",
+      "title": "客户代表"
+    },
+    {
+      "name": "高克俭",
+      "title": "具有医学背景人员"
+    },
+    {
+      "name": "王迪龙",
+      "title": "对本阶段不负直接责任的人员"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-QJPB01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "接收准则：如果评审内容中，各项的回答都是肯定的，则评审通过，否则，评审不通过。",
+      "topic_tags": [
+        "接收准则",
+        "评审通过条件",
+        "设计确认计划"
+      ],
+      "related_subjects": [
+        "review_records",
+        "review_items"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人员职责说明：技术负责人——从产品的相关视角评审确认活动的正确性、完整性；项目负责人——组织设计确认评审，并形成评审记录；结构主管/结构工程师——结构相关确认的审核与评审；硬件主管/硬件工程师——硬件相关确认的审核与评审；软件主管/软件工程师——软件相关确认的审核与评审；客户代表——从客户的视角评审确认活动的正确性、完整性；具有医学背景人员——从医护的视角评审确认活动的正确性、完整性；对本阶段不负直接责任的人员——从不同的视角评审确认活动的正确性、完整性，以保持评审的独立性；认证工程师——从认证和风险的视角评审确认活动的正确性、完整性。",
+      "topic_tags": [
+        "人员职责",
+        "评审角色",
+        "设计确认计划评审"
+      ],
+      "related_subjects": [
+        "persons",
+        "review_records"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评审结论选项（均未勾选）：□确认计划适当、完整、可行，按计划进行可保证使用需求或预期目的符合性确认，评审通过，可开始确认活动；□确认计划有严重缺陷，按计划进行不可保证使用需求或预期目的符合性确认，评审不通过。",
+      "topic_tags": [
+        "评审结论",
+        "确认计划",
+        "评审通过",
+        "评审不通过"
+      ],
+      "related_subjects": [
+        "review_records"
+      ]
+    }
+  ]
+}

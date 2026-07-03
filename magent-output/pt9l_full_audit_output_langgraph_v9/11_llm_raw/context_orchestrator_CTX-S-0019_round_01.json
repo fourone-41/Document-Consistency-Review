@@ -1,0 +1,68 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "两份风险管理计划文件的文档编号差异：F0017（IFT-FXJH01）与 F0021（PT9L-FXJH01）是否构成文档控制不符合项，还是存在合理的产品线区分或版本替代关系",
+  "agent_input": {
+    "claim": "PT9L 产品的有效风险管理计划文件编号为 IFT-FXJH01，而非预期的 PT9L-FXJH01；语料库中未发现遗留前缀注册表、过渡记录或等效映射文件，原始评估认定为文档控制不符合项（P1）。",
+    "context_summary": "语料库中存在两份独立文件：\n1. F0017（rel_path: 03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable）：文件头部 DN 字段为 IFT-FXJH01，产品名称为 Infrared Forehead Thermometer，版本日期 2024.2.2，起草人 Wang Di，批准人 Hou Guangwei。文件名前缀无产品型号标识。\n2. F0021（rel_path: 03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable）：文件标题含 PT9L-- 前缀，但 DN 字段为 PT9L-FXJH01，产品名称同为 Infrared Forehead Thermometer，版本日期 2024.1.9，起草人与批准人均为 Hou Guangwei。\n关键差异：F0021 的 DN 字段（PT9L-FXJH01）与文件名中嵌入的文档编号（IFT-FXJH01）不一致；F0017 的 DN 字段与文件名一致（均为 IFT-FXJH01）但无 PT9L 产品型号关联标识。两份文件版本日期不同（F0021 早于 F0017），内容结构相同（均遵循 ISO 14971:2019）。未发现任何遗留前缀注册表、文档等效映射或过渡记录。",
+    "evidence": [
+      {
+        "evidence_id": "REG-030",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "field": "文件标题",
+        "actual_text": "# PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "note": "文件名含 PT9L-- 前缀，但标题中文档编号仍为 IFT-FXJH01"
+      },
+      {
+        "evidence_id": "F0021-DN",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "field": "DN 字段",
+        "actual_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "note": "文件内部 DN 字段为 PT9L-FXJH01，与文件名标题中的 IFT-FXJH01 不一致"
+      },
+      {
+        "evidence_id": "F0021-version",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 22,
+        "field": "版本历史",
+        "actual_text": "| 1 | 2024.1.9 | Originated | V1.0 | Hou Guangwei | Hou Guangwei |",
+        "note": "PT9L 版本起源日期 2024.1.9，早于 F0017 的 2024.2.2"
+      },
+      {
+        "evidence_id": "REG-014",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "field": "文件标题",
+        "actual_text": "# Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "note": "无产品型号前缀，DN 字段与标题一致均为 IFT-FXJH01"
+      },
+      {
+        "evidence_id": "F0017-DN",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "field": "DN 字段",
+        "actual_text": "DN ： IFT -FXJH01 V 1 .0 Risk Management Plan",
+        "note": "文件内部 DN 字段为 IFT-FXJH01，产品名称为 Infrared Forehead Thermometer（IFT），无 PT9L 关联"
+      },
+      {
+        "evidence_id": "F0017-version",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 22,
+        "field": "版本历史",
+        "actual_text": "| 1 | 2024.2.2 | Originated | V1.0 | Wang Di | Hou Guangwei |",
+        "note": "IFT 版本起源日期 2024.2.2，晚于 F0021"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": "请重点核查以下三个文档控制问题：\n1. F0021 文件名标题中嵌入的编号（IFT-FXJH01）与其内部 DN 字段（PT9L-FXJH01）是否构成文件内部不一致；\n2. F0017（IFT-FXJH01）是否与 PT9L 产品存在任何正式关联（如 DHF 清单引用、适用性声明、共用文件声明）；\n3. DHF 清单（F0006: PT9L-DHF清单）中对风险管理计划的引用编号是 IFT-FXJH01 还是 PT9L-FXJH01，以确定哪份文件被正式纳入 PT9L 技术文档。若 DHF 清单引用 IFT-FXJH01 且无等效声明，则 confirm 不符合项；若引用 PT9L-FXJH01（即 F0021），则 F0021 文件名标题中的 IFT-FXJH01 为文件命名错误，不符合项性质需重新定性。"
+  }
+}
+```

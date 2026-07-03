@@ -1,0 +1,110 @@
+```json
+{
+  "assigned_agent": "Software Agent",
+  "review_focus": "核查软件确认（Validation）闭环证据是否存在：①recovered_context中是否出现任何软件确认报告、确认测试执行记录或确认结论文件；②SW-010检查表的确认计划评审结论是否已填写；③F0099子程序测试记录的实质内容是否属于确认（Validation）活动而非仅为验证（Verification）；④如仍无确认执行报告证据，请维持P1严重性并明确标注闭环缺失；⑤严格区分软件验证（Verification，IEC 62304第5.5/5.6节）与软件确认（Validation，IEC 62304第5.8节），两者不可互相替代。",
+  "agent_input": {
+    "claim": "证据目录中未见独立的软件确认（Validation）执行报告，仅有确认计划描述，软件确认闭环无法从现有证据核实。",
+    "context_summary": "本轮补充证据共覆盖以下内容：①软件质量策划文件（F0048，SW-003）仅描述'本软件质量策划在软件生命周期策划部分中包含了软件确认计划相关内容'，属策划层面描述，无执行证据；②软件质量策划评审检查表（F0051，SW-010）检查项3（软件生命周期及软件确认计划）的通过/不通过结论栏完全为空，未勾选任何选项，无法确认确认计划已通过评审；③子程序测试记录（F0099，SW-130/131/132）仅提供封皮页，文件编号PT9L-RZCL01V1.0，无实质内容页，且该文件属于子程序级验证（Verification，对应IEC 62304第5.5/5.6节），不构成系统级软件确认（Validation，对应IEC 62304第5.8节）证据。recovered_context的gap分析（RCV-001）明确列出软件确认计划独立正文、确认测试用例/规程、确认测试执行记录、软件确认报告、确认评审/批准记录五类文件均为缺失或仅部分存在。RCV-002引用YY/T 0664-2020第5.8节及《医疗器械软件注册审查指导原则（2022年修订版）》，要求软件确认报告作为独立文件纳入DHF。RCV-003明确说明当前所有测试记录均属验证范畴，确认活动证据完全缺失。RCV-004建议在'11 T1样机\\测试计划及测试记录E0 23.11\\'（封皮以外文件）、'07 软件设计方案E0 23.11\\'（含确认报告关键词文件）、DHF根目录文件清单、软件确认报告*、系统测试报告*、整机测试*等路径继续检索。",
+    "evidence": [
+      {
+        "evidence_id": "SW-003",
+        "doc_id": "F0048",
+        "rel_path": "07 软件设计方案E0 23.11\\质量策划E0 23.11\\1 质量策划E0 23.11.via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "本计划作为软件部分的设计和开发策划的结束，识别了必要的任务、阶段，规定了人员职责、必要的资源支持、相关评审要求、各阶段接收准则、软件配置管理要求以及异常报告和解决程序等内容。本软件质量策划在软件生命周期策划部分中包含了软件确认计划相关内容。",
+        "evidence_type": "计划描述",
+        "gap_note": "仅描述'包含了软件确认计划相关内容'，属于策划层面描述，无确认执行证据",
+        "verified": true
+      },
+      {
+        "evidence_id": "SW-010",
+        "doc_id": "F0051",
+        "rel_path": "07 软件设计方案E0 23.11\\质量策划E0 23.11\\软件质量策划评审检查表E0  23.11.via_xlsx.clean.md",
+        "line": 18,
+        "source_text": "| 3 | 软件生命周期及软件确认计划 | 是否按软件生命周期拟制了软件确认计划 |  | □通过 □不通过 □不适用 |  |",
+        "evidence_type": "评审检查表",
+        "gap_note": "检查项结论栏为空（□通过 □不通过 □不适用 均未勾选），无法确认确认计划已通过评审",
+        "verified": true
+      },
+      {
+        "evidence_id": "SW-130",
+        "doc_id": "F0099",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\子程序测试记录-封皮E0 23.11.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# 子程序测试记录-封皮E0 23.11",
+        "evidence_type": "测试记录封皮",
+        "gap_note": "仅为封皮页，属于子程序级测试（Verification范畴），不构成系统级软件确认（Validation）证据",
+        "verified": true
+      },
+      {
+        "evidence_id": "SW-131",
+        "doc_id": "F0099",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\子程序测试记录-封皮E0 23.11.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "文件编号： PT9L -RZCL0 1V1.0 子程序测试记录",
+        "evidence_type": "测试记录封皮",
+        "gap_note": "文件编号信息，内容页缺失，无法评估测试范围和结论",
+        "verified": true
+      },
+      {
+        "evidence_id": "SW-132",
+        "doc_id": "F0099",
+        "rel_path": "11 T1样机\\测试计划及测试记录E0 23.11\\子程序测试记录-封皮E0 23.11.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**子程序测试记录**",
+        "evidence_type": "测试记录封皮",
+        "gap_note": "标题行，无实质内容",
+        "verified": true
+      },
+      {
+        "evidence_id": "RCV-001",
+        "context_type": "gap_analysis",
+        "description": "软件确认闭环所需证据清单（基于IEC 62304 / YY/T 0664要求）",
+        "required_documents": [
+          {
+            "doc_type": "软件确认计划（Software Validation Plan）",
+            "status": "部分存在——仅有策划文件中的描述性引用，未见独立计划文件正文",
+            "reference_evidence": "SW-003"
+          },
+          {
+            "doc_type": "软件确认测试用例/规程（Validation Test Cases/Procedures）",
+            "status": "缺失——当前证据包中未见任何确认测试用例文件",
+            "reference_evidence": null
+          },
+          {
+            "doc_type": "软件确认测试执行记录（Validation Test Execution Records）",
+            "status": "缺失——F0099仅为子程序级验证记录封皮，不属于确认执行记录",
+            "reference_evidence": "SW-130, SW-131, SW-132"
+          },
+          {
+            "doc_type": "软件确认报告（Software Validation Report）",
+            "status": "缺失——证据目录中未见独立确认报告文件",
+            "reference_evidence": null
+          },
+          {
+            "doc_type": "软件确认评审记录/批准记录",
+            "status": "缺失——SW-010检查表结论栏为空，无批准证据",
+            "reference_evidence": "SW-010"
+          }
+        ]
+      },
+      {
+        "evidence_id": "RCV-002",
+        "context_type": "regulatory_reference",
+        "description": "适用法规要求说明",
+        "content": "根据YY/T 0664-2020（等同IEC 62304:2006+AMD1:2015）第5.8节，软件确认活动应产生软件确认报告，记录确认活动的结果，包括：确认测试的执行结果、发现的问题及处置、确认结论。仅有确认计划而无执行报告，不满足软件生命周期过程闭环要求。同时根据《医疗器械软件注册审查指导原则（2022年修订版）》，软件确认报告应作为独立文件纳入DHF。"
+      },
+      {
+        "evidence_id": "RCV-003",
+        "context_type": "distinction_note",
+        "description": "验证（Verification）与确认（Validation）区分说明",
+        "content": "子程序测试记录（F0099）属于软件验证（Verification）活动，对应IEC 62304第5.5/5.6节（软件单元实现与集成测试）。软件确认（Validation）对应IEC 62304第5.8节，需在整机/系统层面证明软件满足预期用途和用户需求，两者不可互相替代。当前证据包中的测试记录均属验证范畴，确认活动证据完全缺失。"
+      },
+      {
+        "evidence_id": "RCV-004",
+        "context_type": "search_recommendation",
+        "description": "建议下一轮检索的文件路径模式",
+        "suggested_paths": [
+          "11 T1样机\\测试计划及测试记录E0 23.11\\（除封皮外的其他测试记录文件）",
+          "07 软件设计方案E0 23.11\\（含'确认报告'或'validation report'关键词的文件）",
+          "（DHF根目录）\\文件清单 或 目录

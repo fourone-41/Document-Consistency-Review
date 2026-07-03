@@ -1,0 +1,232 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "total_pages": 181,
+    "current_pages": "135-136",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+  },
+  "products": [
+    {
+      "model": "PT9L",
+      "description": "Medical electrical equipment under test"
+    },
+    {
+      "model": "TH-75",
+      "description": "Referenced model number in RM results table"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "11.1.1a",
+      "test_name": "Excessive temperatures in ME EQUIPMENT",
+      "model": "PT9L",
+      "test_ambient_temperature_C": 21.5,
+      "verdict": "P",
+      "measurements": [
+        {
+          "thermocouple_no": 1,
+          "location": "Test corner",
+          "max_allowable_temp_C": 90,
+          "max_calculated_temp_at_40C_C": 40.07,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 2,
+          "location": "PCB",
+          "max_allowable_temp_C": 105,
+          "max_calculated_temp_at_40C_C": 41.21,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 3,
+          "location": "U1",
+          "max_allowable_temp_C": 105,
+          "max_calculated_temp_at_40C_C": 41.38,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 4,
+          "location": "U2",
+          "max_allowable_temp_C": 105,
+          "max_calculated_temp_at_40C_C": 41.15,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 5,
+          "location": "NTC1",
+          "max_allowable_temp_C": 105,
+          "max_calculated_temp_at_40C_C": 41.06,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 6,
+          "location": "NTC2",
+          "max_allowable_temp_C": 105,
+          "max_calculated_temp_at_40C_C": 41.06,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 7,
+          "location": "Enclosure",
+          "max_allowable_temp_C": 71,
+          "max_calculated_temp_at_40C_C": 40.48,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 8,
+          "location": "Battery",
+          "max_allowable_temp_C": 71,
+          "max_calculated_temp_at_40C_C": 41.46,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 9,
+          "location": "PCB near the battery",
+          "max_allowable_temp_C": 71,
+          "max_calculated_temp_at_40C_C": 41.07,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 10,
+          "location": "button",
+          "max_allowable_temp_C": 71,
+          "max_calculated_temp_at_40C_C": 40.66,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 11,
+          "location": "Inner wiring",
+          "max_allowable_temp_C": 80,
+          "max_calculated_temp_at_40C_C": 41.08,
+          "verdict": "P"
+        },
+        {
+          "thermocouple_no": 12,
+          "location": "The probe",
+          "max_allowable_temp_C": 43,
+          "max_calculated_temp_at_40C_C": 40.53,
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "section": "10.2",
+      "test_name": "RM RESULTS TABLE: Alpha, beta, gamma, neutron & other particle radiation",
+      "verdict": "N/A",
+      "referenced_standard_clause": "ISO 14971",
+      "clauses_evaluated": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "section": "10.5",
+      "test_name": "RM RESULTS TABLE: Other visible electromagnetic radiation",
+      "verdict": "N/A",
+      "referenced_standard_clause": "ISO 14971",
+      "clauses_evaluated": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "section": "10.6",
+      "test_name": "RM RESULTS TABLE: RISK associated with infrared radiation other than emitted by lasers and LEDs",
+      "verdict": "N/A",
+      "referenced_standard_clause": "ISO 14971",
+      "clauses_evaluated": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "section": "10.7",
+      "test_name": "RM RESULTS TABLE: RISK associated with ultraviolet radiation other than emitted by lasers and LEDs",
+      "verdict": "N/A",
+      "referenced_standard_clause": "ISO 14971",
+      "clauses_evaluated": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC60601-1",
+      "version": "2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "standard": "EN60601-1",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "standard": "ISO 14971",
+      "context": "Risk Management Framework referenced in RM Results Tables"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-02"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Temperature test results for model PT9L under IEC60601-1 clause 11.1.1a (Excessive temperatures in ME EQUIPMENT). Test ambient: 21.5°C. All 12 thermocouple measurement points passed (P). Maximum calculated temperatures at 40°C reference ranged from 40.07°C (Test corner) to 41.46°C (Battery). All measured temperatures were well below their respective maximum allowable limits as defined in IEC60601-1 Tables 22, 23, or 24.",
+      "topic_tags": [
+        "temperature test",
+        "IEC60601-1",
+        "PT9L",
+        "thermocouple",
+        "excessive temperature",
+        "safety"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-02",
+        "11.1.1a"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Risk Management Results Tables for sections 10.2 (Alpha, beta, gamma, neutron & other particle radiation), 10.5 (Other visible electromagnetic radiation), 10.6 (Infrared radiation other than emitted by lasers and LEDs), and 10.7 (Ultraviolet radiation other than emitted by lasers and LEDs) are all marked N/A, indicating these radiation hazard categories are not applicable to the device under test.",
+      "topic_tags": [
+        "risk management",
+        "ISO 14971",
+        "radiation",
+        "N/A",
+        "scope"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-02",
+        "ISO 14971",
+        "PT9L"
+      ]
+    }
+  ]
+}

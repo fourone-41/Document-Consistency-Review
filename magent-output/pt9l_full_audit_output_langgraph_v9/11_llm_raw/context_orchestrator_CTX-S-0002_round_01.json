@@ -1,0 +1,63 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "文件标题与内容中的产品型号标识混用问题：文件名前缀为 PT9L，但文件标题行与文档编号均含 PT2L（美亚）-UETR01 V1.0，需判断该文件是否为 PT2L 文件被错误归入 PT9L DHF，或属于命名错误/模板复用未更新",
+  "agent_input": {
+    "claim": "一份归档于 PT9L 设计确认文件夹（F0245/F0246）下的可用性检查清单，其文件名前缀为 PT9L，但文件标题行（H1）及内部文档编号均标注为 'PT2L（美亚）-UETR01 V1.0'，同时文档正文第1页明确记载 Model name: PT9L、Project number: 30000078、Conclusion: Pass，存在产品标识不一致的情况，疑似 PT2L 文件被放入 PT9L DHF 而未重新标识，或模板复用时文档编号未更新。",
+    "context_summary": "补证阶段已读取文件：18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md。关键矛盾点如下：\n1. 文件名与 H1 标题：'PT9L Checklist of ... PT2L（美亚）-UETR01 V1.0' —— 文件名前缀 PT9L，但括号内型号为 PT2L（美亚）；\n2. 文档编号行（line 16）：'DN:PT9L-UETR01 V1.0' —— 文档编号前缀为 PT9L；\n3. 正文第1页内容（line 30-38）：Product/project name: Infrared Forehead Thermometer，Model name: PT9L，Project number: 30000078，Conclusion: Pass —— 正文内容明确指向 PT9L；\n4. 源 PDF 路径：02_RnD_DHF/PT9L DHF-历史文件/设计确认/ —— 归档路径属于 PT9L DHF；\n5. 文件标准覆盖：EN 60601-1-6:2010+A1:2015+A2:2021（可用性标准），检查结果全部为 P（Pass）。\n综合来看，文档编号（DN）和正文内容均指向 PT9L，但文件标题/文件名中嵌入了 'PT2L（美亚）' 字样，疑为模板复用时标题行未同步更新，而非将 PT2L 文件错误归入 PT9L DHF。但此判断需要 Product Identity Agent 结合 PT2L 和 PT9L 的产品标识体系、文档编号规则进行核实。",
+    "evidence": [
+      {
+        "evidence_id": "SCOUT-139",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 3,
+        "content": "# PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0",
+        "significance": "H1 标题行同时含 PT9L 前缀与 PT2L（美亚）型号，是标识混用的核心证据"
+      },
+      {
+        "evidence_id": "SCOUT-140-inline",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 16,
+        "content": "DN:PT9L-UETR01 V1.0",
+        "significance": "文档编号（DN）前缀为 PT9L，与标题中 PT2L 不一致，支持模板复用未更新标题的假设"
+      },
+      {
+        "evidence_id": "SCOUT-141-inline",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 30,
+        "content": "Product/project name：Infrared Forehead Thermometer / Model name: PT9L / Project number: 30000078 / Conclusion: Pass",
+        "significance": "正文内容明确记载 Model name 为 PT9L，Project number 30000078，结论 Pass，正文产品标识指向 PT9L"
+      },
+      {
+        "evidence_id": "SCOUT-142",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 113,
+        "content": "源 PDF：02_RnD_DHF/PT9L DHF-历史文件/设计确认/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf",
+        "significance": "归档路径属于 PT9L DHF-历史文件，进一步确认文件归属于 PT9L 项目"
+      },
+      {
+        "evidence_id": "SCOUT-143",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 96,
+        "content": "IEC 60601-1-6 checklist 全部条款结果为 P（Pass），包括 4.0 General requirements、4.2 USABILITY ENGINEERING PROCESS、5 ME EQUIPMENT ACCOMPANYING DOCUMENTS",
+        "significance": "可用性检查清单内容完整，结论通过，但产品标识混用问题独立于合规结论存在"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "analysis_guidance": {
+      "hypothesis_A": "模板复用未更新：PT9L 团队以 PT2L（美亚）的可用性检查清单为模板，更新了正文内容（Model name、Project number、DN 编号）但遗漏更新文件标题行中的 PT2L（美亚）字样，导致标题与正文不一致。若此假设成立，应 confirm 存在文档控制缺陷（标题未更新），但不构成错误归档。",
+      "hypothesis_B": "错误归档：该文件实为 PT2L（美亚）的可用性检查清单，被错误放入 PT9L DHF，正文中的 PT9L 信息为后续篡改或填写错误。若此假设成立，应 confirm 存在严重的 DHF 完整性问题。",
+      "key_questions": [
+        "PT2L（美亚）项目是否存在独立的 UETR01 V1.0 文件，其文档编号格式是否为 PT2L-UETR01 V1.0？",
+        "PT9L 项目的文档编号体系中，UETR01 是否为可用性工程文件的标准编号后缀？",
+        "PT9L DHF 中是否存在另一份标题和内容均一致标注 PT9L 的可用性检查清单（即是否存在重复文件）？",
+        "Project number 30000078 是否唯一对应 PT9L 项目，还是 PT2L（美亚）也使用该项目编号？"
+      ]
+    }
+  }
+}
+```

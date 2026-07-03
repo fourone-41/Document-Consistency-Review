@@ -1,0 +1,517 @@
+{
+  "document": {
+    "title": "设计验证报告-性能规格部分（EN1060-1项）",
+    "doc_type": "设计验证报告"
+  },
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "温度显示范围",
+      "condition": "T1阶段",
+      "expected_value": "32.0℃～42.9℃",
+      "actual_result": "参见《PT9L红外体温计检测报告 V1.0》中第6项测试结果",
+      "pass_criteria": "全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第6项的要求"
+    },
+    {
+      "test_id": "2",
+      "item": "显示分辨力",
+      "condition": "T1阶段",
+      "expected_value": "0.1℃",
+      "actual_result": "参见《PT9L红外体温计检测报告 V1.0》中第7项测试结果",
+      "pass_criteria": "全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第7项的要求"
+    },
+    {
+      "test_id": "3",
+      "item": "测量误差",
+      "condition": "T1阶段",
+      "expected_value": "≥35℃且≤42℃：±0.2℃，其它：±0.3℃",
+      "actual_result": "参见《PT9L红外体温计检测报告 V1.0》中第8项测试结果",
+      "pass_criteria": "全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第8项的要求"
+    },
+    {
+      "test_id": "4",
+      "item": "工作环境",
+      "condition": "T1阶段",
+      "expected_value": "温度：10℃～40℃；相对湿度：不窄于15-95%RH，不结露；大气压力：70kPa～106kPa",
+      "actual_result": "参见《PT9L红外体温计检测报告 V1.0》中第15，16项测试结果",
+      "pass_criteria": "全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第15，16项的要求"
+    },
+    {
+      "test_id": "5",
+      "item": "存储环境",
+      "condition": "T1阶段",
+      "expected_value": "温度：-20.0℃―55.0℃；相对湿度：不窄于15-95%RH，不结露；大气压力：70kPa～106kPa",
+      "actual_result": "参见《PT9L红外体温计检测报告 V1.0》中第17，18项测试结果",
+      "pass_criteria": "全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第17，18项的要求"
+    },
+    {
+      "test_id": "6",
+      "item": "产品寿命",
+      "condition": "T1阶段",
+      "expected_value": "五年或10000次",
+      "actual_result": "参见《整机寿命测试报告》",
+      "pass_criteria": "全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第19项的要求"
+    },
+    {
+      "test_id": "7",
+      "item": "电池使用寿命",
+      "condition": "T1阶段",
+      "expected_value": "测量使用次数不低于1000次",
+      "actual_result": "参见《PT9L电池使用寿命测试报告 V1.0》",
+      "pass_criteria": "全部测试结果均需符合《PT9L红外体温计产品检验标准V1.0》中第20项的要求"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "1",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "2",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "3",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "4",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "5",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "6",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "7",
+      "conclusion": "合格"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "验证计划文件编号",
+      "value": "PT9L-YZXN01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "1.本设计验证计划需批准后方能使用执行。2.存档并归入设计历史文档（DHF）。",
+      "topic_tags": [
+        "验证计划",
+        "审批要求",
+        "DHF归档"
+      ],
+      "related_subjects": [
+        "设计验证报告",
+        "PT9L红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "验证阶段：T1；验证依据：PT9L设计验证计划-性能规格部分（文件编号：PT9L-YZXN01 V1.0）。各测试项目验证方法均参见《PT9L红外体温计产品检验标准V1.0》对应条款，测试结果参见《PT9L红外体温计检测报告 V1.0》对应条款。产品寿命测试结果参见《整机寿命测试报告》，电池使用寿命测试结果参见《PT9L电池使用寿命测试报告 V1.0》。",
+      "topic_tags": [
+        "验证阶段",
+        "T1",
+        "验证依据",
+        "检测报告"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "PT9L-YZXN01 V1.0",
+        "PT9L红外体温计产品检验标准V1.0"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/设计验证报告E0 23.11/性能规格部分（一）EN1060-1项.via_xlsx.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证报告",
+      "to": "验证计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "验证计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "验证阶段",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-YZXN01 V1.0",
+      "to": "验证阶段",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计产品检验标准V1.0",
+      "to": "验证阶段",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "1",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "2",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "3",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "6",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "7",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "1",
+      "to": "1",
+      "properties": {
+        "report_section": "第6项",
+        "report_name": "PT9L红外体温计检测报告 V1.0"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "2",
+      "to": "2",
+      "properties": {
+        "report_section": "第7项",
+        "report_name": "PT9L红外体温计检测报告 V1.0"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "3",
+      "to": "3",
+      "properties": {
+        "report_section": "第8项",
+        "report_name": "PT9L红外体温计检测报告 V1.0"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "4",
+      "to": "4",
+      "properties": {
+        "report_section": "第15,16项",
+        "report_name": "PT9L红外体温计检测报告 V1.0"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "5",
+      "to": "5",
+      "properties": {
+        "report_section": "第17,18项",
+        "report_name": "PT9L红外体温计检测报告 V1.0"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "6",
+      "to": "6",
+      "properties": {
+        "report_name": "整机寿命测试报告"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "7",
+      "to": "7",
+      "properties": {
+        "report_name": "PT9L电池使用寿命测试报告 V1.0"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "2",
+      "to": "2",
+      "properties": {
+        "report_name": "PT9L红外体温计检测报告 V1.0",
+        "section": "第7项"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "3",
+      "to": "3",
+      "properties": {
+        "report_name": "PT9L红外体温计检测报告 V1.0",
+        "section": "第8项"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4",
+      "to": "4",
+      "properties": {
+        "report_name": "PT9L红外体温计检测报告 V1.0",
+        "section": "第15,16项"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5",
+      "to": "5",
+      "properties": {
+        "report_name": "PT9L红外体温计检测报告 V1.0",
+        "section": "第17,18项"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "6",
+      "to": "6",
+      "properties": {
+        "report_name": "整机寿命测试报告"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "7",
+      "to": "7",
+      "properties": {
+        "report_name": "PT9L电池使用寿命测试报告 V1.0"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "1",
+      "to": "1",
+      "properties": {
+        "measurement": "温度显示范围",
+        "value": "32.0℃～42.9℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "2",
+      "to": "2",
+      "properties": {
+        "measurement": "显示分辨力",
+        "value": "0.1℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "3",
+      "to": "3",
+      "properties": {
+        "measurement": "测量误差",
+        "value": "≥35℃且≤42℃：±0.2℃，其它：±0.3℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "4",
+      "to": "4",
+      "properties": {
+        "measurement": "工作环境温度",
+        "value": "10℃～40℃",
+        "humidity": "15-95%RH",
+        "pressure": "70kPa～106kPa"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "5",
+      "to": "5",
+      "properties": {
+        "measurement": "存储环境温度",
+        "value": "-20.0℃～55.0℃",
+        "humidity": "15-95%RH",
+        "pressure": "70kPa～106kPa"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "6",
+      "to": "6",
+      "properties": {
+        "measurement": "产品寿命",
+        "value": "五年或10000次"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "7",
+      "to": "7",
+      "properties": {
+        "measurement": "电池使用寿命",
+        "value": "不低于1000次"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "温度显示范围",
+      "attribute": "范围",
+      "value": "32.0～42.9",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "温度显示范围：32.0℃～42.9℃"
+    },
+    {
+      "subject": "显示分辨力",
+      "attribute": "分辨率",
+      "value": "0.1",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "显示分辨力：0.1℃"
+    },
+    {
+      "subject": "测量误差",
+      "attribute": "允差",
+      "value": "±0.2",
+      "unit": "℃",
+      "tolerance": "±0.2℃",
+      "condition": "35℃≤测量值≤42℃",
+      "raw_text": "测量误差：≥35℃且≤42℃：±0.2℃，其它：±0.3℃"
+    },
+    {
+      "subject": "测量误差",
+      "attribute": "允差",
+      "value": "±0.3",
+      "unit": "℃",
+      "tolerance": "±0.3℃",
+      "condition": "测量值<35℃或>42℃",
+      "raw_text": "测量误差：≥35℃且≤42℃：±0.2℃，其它：±0.3℃"
+    },
+    {
+      "subject": "工作环境温度",
+      "attribute": "范围",
+      "value": "10～40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "工作环境温度：10℃～40℃"
+    },
+    {
+      "subject": "工作环境湿度",
+      "attribute": "范围",
+      "value": "15～95",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "T1阶段，不结露",
+      "raw_text": "工作环境相对湿度：不窄于15-95%RH，不结露"
+    },
+    {
+      "subject": "工作环境气压",
+      "attribute": "范围",
+      "value": "70～106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "工作环境大气压力：70kPa～106kPa"
+    },
+    {
+      "subject": "存储环境温度",
+      "attribute": "范围",
+      "value": "-20.0～55.0",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "存储环境温度：-20.0℃―55.0℃"
+    },
+    {
+      "subject": "存储环境湿度",
+      "attribute": "范围",
+      "value": "15～95",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "T1阶段，不结露",
+      "raw_text": "存储环境相对湿度：不窄于15-95%RH，不结露"
+    },
+    {
+      "subject": "存储环境气压",
+      "attribute": "范围",
+      "value": "70～106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "存储环境大气压力：70kPa～106kPa"
+    },
+    {
+      "subject": "产品寿命",
+      "attribute": "使用年限",
+      "value": "5",
+      "unit": "年",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "产品寿命：五年或10000次"
+    },
+    {
+      "subject": "产品寿命",
+      "attribute": "测量次数",
+      "value": "10000",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "产品寿命：五年或10000次"
+    },
+    {
+      "subject": "电池使用寿命",
+      "attribute": "测量次数下限",
+      "value": "1000",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "T1阶段",
+      "raw_text": "电池使用寿命：测量使用次数不低于1000次"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "title": "IEC 60601-1 Test Report including US National Differences",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "total_pages": 182,
+    "current_pages": "157-159",
+    "attachment": "ATTACHMENT 1: US NATIONAL DIFFERENCES"
+  },
+  "tests": [
+    {
+      "clause": "15.5.2",
+      "name": "Transformer dielectric strength after humidity preconditioning",
+      "reference_clause": "5.7",
+      "verdict": "N/A",
+      "parameters": [
+        "Test voltage applied between primary & secondary windings",
+        "Test voltage applied between primary winding & frame",
+        "Test voltage applied between secondary winding & frame",
+        "Test voltage (V)",
+        "Test frequency (Hz)",
+        "Breakdown Yes/No",
+        "Deterioration Yes/No"
+      ],
+      "supplementary_info": "Tests conducted under the conditions of 11.1, in ME EQUIPMENT or under simulated conditions on the bench. See Clause 15.5.2 for test parameters & other details."
+    },
+    {
+      "clause": "16.6.1",
+      "name": "Leakage Currents in ME System - Touch Current Measurements",
+      "verdict": "N/A",
+      "measurements": [
+        {
+          "condition": "Normal Condition",
+          "allowable_touch_current_uA": 100
+        },
+        {
+          "condition": "Interruption of Protective Earth Conductor",
+          "allowable_touch_current_uA": 500
+        }
+      ]
+    },
+    {
+      "clause": "15.4.3.2",
+      "name": "Batteries connected with incorrect polarity",
+      "test_type": "Additional/Special test",
+      "result": "No operating, no hazard",
+      "verdict": "P"
+    },
+    {
+      "clause": "15.4.3.5",
+      "name": "Protective device and Two Means of Operator Protection be provided",
+      "test_type": "Additional/Special test",
+      "result": "No hazard",
+      "verdict": "P"
+    }
+  ],
+  "review_items": [
+    {
+      "clause": "16.1",
+      "name": "General requirements for ME Systems",
+      "standard_reference": "ISO 14971",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6"
+      ]
+    },
+    {
+      "clause": "16.9.1",
+      "name": "Connection terminals and connectors",
+      "standard_reference": "ISO 14971",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "17",
+      "name": "Electromagnetic compatibility of ME equipment and ME systems",
+      "standard_reference": "ISO 14971",
+      "verdict": "N/E",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "id": "EN60601-1",
+      "full_reference": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "AAMI/ANSI ES60601-1",
+      "full_reference": "AAMI/ANSI ES60601-1:2005/(R)2012 And A1:2012, C1:2009/(R)2012 And A2:2010/(R)2012",
+      "description": "US National Differences standard"
+    },
+    {
+      "id": "ISO 14971",
+      "description": "Risk management standard referenced in RM Results Tables"
+    },
+    {
+      "id": "NFPA 70",
+      "description": "NEC - National Electrical Code, referenced in US National Differences"
+    },
+    {
+      "id": "NFPA 99",
+      "description": "Referenced for medical gas cylinder color coding requirements"
+    },
+    {
+      "id": "IEC 60364-4-41",
+      "description": "Referenced for protective measures in US National Differences clause 4.10.2"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "US National Differences - Clause 4.8b: Replacement: where there was no relevant IEC/ISO standard, the relevant US ANSI standard applied. When no relevant US ANSI standard existed, the requirements of this standard applied. Result: Replaced. See appended table 8.10 in main report. Verdict: P.",
+      "topic_tags": [
+        "US national differences",
+        "ANSI standard",
+        "IEC/ISO",
+        "replacement clause"
+      ],
+      "related_subjects": [
+        "AAMI/ANSI ES60601-1",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "US National Differences - Clause 4.10.2: Replacement: Rated voltage not exceeding 250V dc or single phase ac, or 600V poly-phase ac for ME EQUIPMENT and ME SYSTEMS up to 4kVA. Rated voltage not exceeding 600V for all other ME EQUIPMENT and ME SYSTEMS. Addition: The protective measures as described in IEC 60364-4-41 and the NEC. Result for device: Internally powered. Verdict: N/A for all sub-items.",
+      "topic_tags": [
+        "rated voltage",
+        "internally powered",
+        "US national differences",
+        "NEC",
+        "IEC 60364-4-41"
+      ],
+      "related_subjects": [
+        "AAMI/ANSI ES60601-1",
+        "IEC60601-1 clause 4.10.2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "US National Differences - Clause 6.6: Addition: To comply with NFPA 70, X-Ray systems are classified as long time operation (> 5 min) or momentary operation (< 5 sec). Result: Not an X-Ray system. Verdict: N/A.",
+      "topic_tags": [
+        "NFPA 70",
+        "X-Ray",
+        "long time operation",
+        "momentary operation",
+        "US national differences"
+      ],
+      "related_subjects": [
+        "NFPA 70",
+        "IEC60601-1 clause 6.6"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "US National Differences - Clause 7.2.11: Addition: To comply with NFPA 70, X-Ray systems are marked as long time operation or momentary operation. Verdict: N/A.",
+      "topic_tags": [
+        "NFPA 70",
+        "X-Ray",
+        "marking",
+        "US national differences"
+      ],
+      "related_subjects": [
+        "NFPA 70",
+        "IEC60601-1 clause 7.2.11"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "US National Differences - Clause 7.2.22: New Sub-clause: Colors of medical gas cylinders. To comply with NFPA 99: Cylinders containing medical gases and their connection points are colored in accordance with the requirements of NFPA 99. Result: No medical gas cylinders. Verdict: N/A.",
+      "topic_tags": [
+        "NFPA 99",
+        "medical gas cylinders",
+        "color coding",
+        "US national differences"
+      ],
+      "related_subjects": [
+        "NFPA 99",
+        "IEC60601-1 clause 7.2.22"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "US National Differences - Clause 8.2: Addition: All FIXED ME EQUIPMENT & PERMANENTLY INSTALLED ME EQUIPMENT are CLASS I ME EQUIPMENT. Result: Portable equipment. Verdict: N/A.",
+      "topic_tags": [
+        "fixed equipment",
+        "permanently installed",
+        "Class I",
+        "portable equipment",
+        "US national differences"
+      ],
+      "related_subjects": [
+        "AAMI/ANSI ES60601-1",
+        "IEC60601-1 clause 8.2"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "End of IEC 60601-1 Test Report section. Report continues with Attachment 1: US National Differences and Attachment 2: Photo Documentation.",
+      "topic_tags": [
+        "report structure",
+        "attachments",
+        "photo documentation"
+      ],
+      "related_subjects": [
+        "ETX2023-07-078-02"
+      ]
+    }
+  ]
+}

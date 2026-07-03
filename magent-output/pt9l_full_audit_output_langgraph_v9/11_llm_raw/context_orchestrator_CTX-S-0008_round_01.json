@@ -1,0 +1,60 @@
+```json
+{
+  "assigned_agent": "Hardware Agent",
+  "review_focus": "验证 F0178 总装图中 T-Z1-P10 是否同时对应光板（bare board）和 PCB 组件两个不同物料，以及 EBOM（PT9L-EBOM01）中主板 PCB（PT9L-HFMP01，item 24）与传感器板 PCB（PT9C-CNTP01，item 2/传感器板）的图号体系是否与总装图 item 08 和 item 11 一致，从而判断 T-Z1-P10 双重指向是否构成真实 BOM 完整性缺陷",
+  "agent_input": {
+    "claim": "In the PT9L total-assembly drawing (F0178), part number T-Z1-P10 is assigned to the sensor PCB (item 11), yet the same drawing also lists a separate unnamed PCB at item 08, and the annotation flags that T-Z1-P10 simultaneously refers to both a bare board and a PCB assembly; this dual-use of one part number for two distinct items is a BOM integrity defect.",
+    "context_summary": "1. F0178（PT9L-总装图-v1.0-20240627.pdf.md）第 7 行注释明确写道：'BOM 中 T-Z1-P10 同时指导光板和 PCB（一图号两零件）⚠️ 新疑点 → 见 §6'，该注释由读图 Agent 生成，并非原始图纸文字，需区分。\n2. EBOM（F0096 / F0157，PT9L-EBOM01 V1.0）中可识别两块 PCB：主板 PCB 图号 PT9L-HFMP01 V1.0（料号 K011800008686570696，序号 24，1拼10）；传感器板 PCB 图号 PT9C-CNTP01 V1.0（料号 K0118000084609A1106，序号 2，传感器板子节）。两者图号不同，料号不同，未见 T-Z1-P10 字样出现在 EBOM 表格行中。\n3. T-Z1-P10 仅出现在总装图 F0178 的 BOM 栏（读图报告 §6 引用），EBOM 原始表格中未直接检索到该编号，存在总装图图号体系与 EBOM 料号体系不一致的可能。\n4. 总装图 item 08 对应物料身份尚未从原始 PDF 正文（§2–§5 BOM 表）中提取，现有证据仅有读图 Agent 的摘要注释，缺少原始 BOM 表格行级证据。\n5. 上一轮 context_recovery LLM 输出解析失败（JSONDecodeError），本轮直接基于已有证据包进行分配。",
+    "evidence": [
+      {
+        "evidence_id": "HW-091",
+        "doc_id": "F0178",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT9L-总装图-v1.0-20240627.pdf.md",
+        "line": 7,
+        "actual_text": "> **重大发现**：BOM 中 **T-Z1-P10 同时指导光板和 PCB**（一图号两零件）⚠️ 新疑点 → 见 §6",
+        "note": "读图 Agent 生成的注释，非原始图纸文字；需核查 §6 原文及总装图 BOM 表格原始行"
+      },
+      {
+        "evidence_id": "HW-040",
+        "doc_id": "F0096",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "actual_text": "| 24 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "note": "主板 PCB，图号 PT9L-HFMP01，非 T-Z1-P10"
+      },
+      {
+        "evidence_id": "HW-041",
+        "doc_id": "F0096",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 50,
+        "actual_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+        "note": "传感器板 PCB，图号 PT9C-CNTP01，非 T-Z1-P10"
+      },
+      {
+        "evidence_id": "HW-077",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "actual_text": "| 24 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "note": "与 F0096 一致，设计输出清单一版本"
+      },
+      {
+        "evidence_id": "HW-078",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 50,
+        "actual_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+        "note": "与 F0096 一致，设计输出清单一版本"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "priority_actions": [
+      "读取 F0178 §6 原始段落，提取 T-Z1-P10 在总装图 BOM 表中的完整行（item 编号、名称、数量、备注）",
+      "确认总装图 item 08 的图号/料号，判断是否与 T-Z1-P10 存在交叉引用",
+      "确认总装图 item 11 的图号/料号，验证是否确为 T-Z1-P10",
+      "检查 T-Z1-P10 在 EBOM 及其他设计文件中是否有独立定义（光板图号 vs 组件图号的命名规则）",
+      "对比总装图图号体系（T-Z1-Pxx）与 EBOM 图号体系（PT9L-HFMPxx / PT9C-CNTPxx）的映射关系，判断是否为两套并行编号系统导致的表观冲突"
+    ]
+  }
+}
+```

@@ -1,0 +1,88 @@
+```json
+{
+  "context_summary": "本轮已收集到三条直接相关证据：SCOUT-073（F0018主范围风险评估报告第93行）和SCOUT-041（F0019风险控制验证报告第85行）均明确出现'PT3SBT'型号字样；SCOUT-054（F0022）为PT9L专属风险评估报告但仅获取到文件头注释行，正文内容尚未提取。核心问题在于：F0018是否应描述PT9L而非PT3SBT，以及PT9L与PT3SBT的型号关系（是否为同一产品族、是否存在型号映射或变更记录）尚无证据支撑。仍缺：①F0022正文中PT9L的预期用途描述；②DHF封面页/产品规格文件中PT9L与PT3SBT的型号对应关系；③F0018文件标题页/封面中标注的适用型号范围；④变更控制记录或型号命名规则文件。",
+  "evidence_gaps": [
+    "F0022（PT9L专属风险评估报告）正文内容未提取，无法确认PT9L在其专属文件中的预期用途描述是否与F0018一致或存在差异",
+    "F0018文件封面/标题页缺失，无法确认该报告的'适用型号'字段填写的是PT3SBT还是PT9L或两者均有",
+    "F0019文件封面/标题页缺失，无法确认风险控制验证报告的适用型号范围",
+    "缺少DHF主文件（如设计历史文件索引、产品规格书或设计输入文件）中关于PT9L与PT3SBT型号关系的说明（是否为同一平台不同SKU、是否存在型号变更/重命名记录）",
+    "缺少变更控制记录（ECO/DCO），无法判断PT3SBT是否为PT9L的前身型号或曾用名",
+    "缺少标签/IFU文件中的型号标注，以确认市售产品实际型号",
+    "缺少F0018报告中除第93行之外的其他关键章节（如文件范围章节、适用产品章节）的内容，以判断PT3SBT出现是否为局部笔误还是系统性错误",
+    "缺少同DHF中其他文件（如设计验证报告、设计确认报告）对PT9L/PT3SBT型号的引用情况，以判断型号混用是否为系统性问题"
+  ],
+  "additional_search_queries": [
+    "F0022 PT9L 预期用途 intended use 第2行至第200行全文",
+    "F0018 封面 标题 适用型号 model number scope applicable",
+    "F0019 封面 标题 适用型号 model number scope applicable",
+    "PT9L PT3SBT 型号 对应 关系 命名 变更 ECO DCO",
+    "DHF 设计历史文件 产品规格 PT9L PT3SBT model specification",
+    "IFU 标签 label PT9L PT3SBT 型号标注",
+    "设计输入 design input PT9L PT3SBT",
+    "F0018 第1行至第92行 文件范围 scope applicable products"
+  ],
+  "agent_instruction": "请基于以下证据包对claim（F0018中预期用途描述使用PT3SBT而非PT9L构成法规文件型号错误）进行复审。审查要点：\n1. 确认F0018（主范围风险评估报告）第93行确实出现PT3SBT字样（已由SCOUT-073证实），但需进一步核查F0018封面/标题页的适用型号字段；\n2. 核查F0022（PT9L专属风险评估报告）正文，确认PT9L是否有独立且正确的预期用途描述，若有则说明F0018中的PT3SBT并非覆盖PT9L的唯一文件；\n3. 重点判断PT3SBT与PT9L是否为同一产品的不同命名（如蓝牙版与非蓝牙版、不同市场SKU），若两者为不同产品则F0018中出现PT3SBT构成实质性型号错误；若PT9L是PT3SBT的升级/重命名版本且存在变更记录，则可能为文件未同步更新问题；\n4. 注意F0019（SCOUT-041）同样出现PT3SBT，需判断风险控制验证报告与风险评估报告是否存在系统性型号混用；\n5. 在缺少型号关系证据的情况下，建议将此项标记为'probable_issue_pending_confirmation'而非直接裁决，并要求申请人提供PT9L与PT3SBT的型号对应说明文件。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "SCOUT-073",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 93,
+        "source_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "analysis_note": "F0018主范围风险评估报告第93行明确出现PT3SBT型号，为claim的直接证据。该句结构为'通用描述+PT3SBT蓝牙功能补充'，PT3SBT出现在蓝牙功能描述中，需判断是否为刻意区分蓝牙型号还是型号错误。"
+      },
+      {
+        "evidence_id": "SCOUT-041",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 85,
+        "source_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "analysis_note": "F0019风险控制验证报告第85行出现与F0018完全相同的PT3SBT描述，表明两份文件使用了相同的预期用途模板文本，PT3SBT型号在风险文件体系中存在系统性出现，而非单一文件笔误。"
+      },
+      {
+        "evidence_id": "SCOUT-054",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 1,
+        "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFMM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "analysis_note": "F0022文件路径包含'PT9L'前缀，表明存在PT9L专属风险评估报告，但当前仅获取到文件头注释，正文内容缺失。该文件的存在本身说明PT9L与PT3SBT可能为不同产品（各有独立风险评估报告），这是判断F0018型号错误性质的关键证据，需优先补充。"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [],
+    "recovered_context": [
+      {
+        "context_id": "RCV-001",
+        "context_type": "structural_inference",
+        "description": "文件命名结构分析",
+        "content": "F0022文件路径为'PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530'，而F0018路径为'Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530'，两者使用相同的报告编号IFT-FXPJ01，F0022仅在文件名前增加'PT9L--'前缀。这一命名模式提示：F0022可能是F0018针对PT9L型号的专属版本或衍生版本，而非完全独立的报告。若两者报告编号相同，则可能存在版本管理问题。",
+        "relevance": "有助于判断PT9L与PT3SBT的文件体系关系，以及F0018中PT3SBT出现是否构成覆盖范围错误"
+      },
+      {
+        "context_id": "RCV-002",
+        "context_type": "text_pattern_analysis",
+        "description": "PT3SBT在预期用途描述中的语法位置分析",
+        "content": "在F0018和F0019中，PT3SBT均出现在预期用途描述的最后一句：'And PT3SBT can transmit the temperature to a smart device with Bluetooth.'该句为独立补充句，专门描述蓝牙传输功能，与前文通用描述并列。这一语法结构表明：PT3SBT可能特指具有蓝牙功能的型号变体，而非泛指所有型号。若PT9L为蓝牙版型号，则该句应使用PT9L；若PT9L为非蓝牙版而PT3SBT为蓝牙版，则该句在PT9L的文件中出现PT3SBT属于型号混用。",
+        "relevance": "直接关联claim的核心判断：PT3SBT出现是否为型号错误取决于PT9L是否具备蓝牙功能"
+      },
+      {
+        "context_id": "RCV-003",
+        "context_type": "missing_evidence_flag",
+        "description": "关键缺失证据清单",
+        "content": "以下证据对最终裁决至关重要但当前缺失：(1) F0018封面页适用型号字段；(2) F0022正文预期用途章节；(3) PT9L产品规格书中的蓝牙功能说明；(4) DHF型号对应表或产品家族文件。在上述证据补充前，建议审查Agent不作最终裁决。",
+        "relevance": "指导下一轮检索优先级"
+      }
+    ]
+  }
+}
+```

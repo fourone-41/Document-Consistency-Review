@@ -1,0 +1,935 @@
+{
+  "document": {
+    "title": "【早期版】上盖（T-Z1-P01 V1.0，2021-07-16）2D 图读图",
+    "drawing_no": "T-Z1-P01",
+    "edition": "V1.0",
+    "date": "2021-07-16",
+    "source_file": "早期图纸/上盖20210727.pdf",
+    "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/早期图纸/上盖20210727.pdf",
+    "page_size": "A4 竖向（595×842 pt）",
+    "text_chars": 166,
+    "classification": "早期版历史归档",
+    "skill_tag": "SKILL_2D_Drawing_Reading 精简版",
+    "generated_date": "2026-06-02"
+  },
+  "products": [
+    {
+      "name": "上盖",
+      "part_no": "T-Z1-P01",
+      "model_no": "T-Z1",
+      "version": "V1.0",
+      "brand": "andon iHealth",
+      "material": "ABS（白色）",
+      "surface_finish": "PANTONE Cool Gray 8U + 拉伸版纹路设计文件",
+      "scale": "1:1",
+      "tolerance_level": "LEVEL B"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0",
+      "drawing_no": "T-Z1-P01",
+      "change_description": "制版制作",
+      "date": "2021-07-16"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-1",
+      "description": "整件外形宽",
+      "dimension": "34.1 ± 0.05 mm",
+      "view": "主视图水平向",
+      "dimension_no": "①",
+      "tolerance_level": "A级"
+    },
+    {
+      "id": "DI-2",
+      "description": "壳体总高",
+      "dimension": "11.5 ± 0.05 mm",
+      "view": "SECTION A-A 顶部",
+      "dimension_no": "②",
+      "tolerance_level": "A级"
+    },
+    {
+      "id": "DI-3",
+      "description": "底部某段长（早期版特有尺寸，Level B 中段范围）",
+      "dimension": "19.6 ± 0.2 mm",
+      "view": "主视图底部",
+      "dimension_no": "③",
+      "tolerance_level": "B级",
+      "note": "V1.0特有，V2.0/V3.0中是否保留待确认"
+    },
+    {
+      "id": "DI-4",
+      "description": "总长",
+      "dimension": "Ø130.1 ± 0.1 mm"
+    },
+    {
+      "id": "DI-5",
+      "description": "外径特征",
+      "dimension": "Ø13.9 ± 0.05 mm"
+    },
+    {
+      "id": "DI-6",
+      "description": "传感器孔",
+      "dimension": "Ø9.9 ± 0.05 mm"
+    },
+    {
+      "id": "DI-7",
+      "description": "LCD 内腔宽",
+      "dimension": "22.2 ± 0.05 mm"
+    },
+    {
+      "id": "DI-8",
+      "description": "尺寸特征",
+      "dimension": "34.9 ± 0.05 mm"
+    },
+    {
+      "id": "DI-9",
+      "description": "尺寸特征",
+      "dimension": "30 ± 0.05 mm"
+    },
+    {
+      "id": "DI-10",
+      "description": "圆形特征",
+      "dimension": "Ø21.5 mm"
+    },
+    {
+      "id": "DI-11",
+      "description": "螺柱孔（多处）",
+      "dimension": "4.4 ± 0.05 mm"
+    },
+    {
+      "id": "DI-12",
+      "description": "尺寸特征",
+      "dimension": "2.5 ± 0.05 mm"
+    },
+    {
+      "id": "DI-13",
+      "description": "圆形特征",
+      "dimension": "Ø0.8 mm"
+    },
+    {
+      "id": "DI-14",
+      "description": "DETAIL D 细节尺寸",
+      "dimension": "1.2 ± 0.03 mm",
+      "view": "DETAIL D SCALE 5:1",
+      "tolerance_level": "Level A"
+    },
+    {
+      "id": "DI-15",
+      "description": "DETAIL D 细节尺寸",
+      "dimension": "0.8 ± 0.03 mm",
+      "view": "DETAIL D SCALE 5:1",
+      "tolerance_level": "Level A"
+    },
+    {
+      "id": "DI-16",
+      "description": "底部凸出特征（B级，与19.6±0.2配套）",
+      "dimension": "13.4 ± 0.2 mm",
+      "tolerance_level": "B级"
+    },
+    {
+      "id": "DI-ref-1",
+      "description": "参考尺寸（无公差标注）",
+      "dimensions_list": [
+        "38.7",
+        "26.5",
+        "19",
+        "1.5",
+        "5",
+        "1",
+        "21.2",
+        "24.2",
+        "26.7",
+        "2.1",
+        "3.2",
+        "11.2",
+        "11",
+        "1.4"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "category": "检验要求"
+    },
+    {
+      "id": "REQ-2",
+      "description": "材质为 ABS（白色），产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象",
+      "category": "材料与外观要求"
+    },
+    {
+      "id": "REQ-3",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "category": "装配要求"
+    },
+    {
+      "id": "REQ-4",
+      "description": "产品符合 RoHS 2.0",
+      "category": "法规合规要求"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 有害物质限制指令"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "T-Z1-P01"
+    },
+    {
+      "type": "型号",
+      "value": "T-Z1"
+    },
+    {
+      "type": "颜色规范",
+      "value": "PANTONE Cool Gray 8U"
+    },
+    {
+      "type": "公差等级",
+      "value": "LEVEL B"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "现版（V2.0/V3.0）是否仍保留 PANTONE Cool Gray 8U 颜色规范",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-2",
+      "description": "拉伸版纹路设计是否仍生产（V1.0 特有，工业设计关键特征）",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-3",
+      "description": "V1.0 ③ 19.6±0.2 在 V2.0/V3.0 是否仍存在但移到无编号项",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-4",
+      "description": "是否曾经做过 V2.0 的中间版（V1.0→V2.0→V3.0），还是直接 V1.0→V3.0",
+      "priority": "C级待确认"
+    },
+    {
+      "id": "C-5",
+      "description": "V1.0 是否本就不含 LOGO（如是，则 V2.0 = 回到 V1.0 状态）",
+      "priority": "C级待确认"
+    }
+  ],
+  "components": [
+    {
+      "name": "上盖",
+      "part_no": "T-Z1-P01",
+      "version_history": [
+        {
+          "version": "V1.0",
+          "date": "2021-07-16",
+          "file": "早期图纸/上盖20210727.pdf",
+          "logo": "待确认",
+          "surface": "PANTONE Cool Gray 8U + 拉伸版纹路",
+          "special_dimensions": [
+            "19.6±0.2（③编号）"
+          ]
+        },
+        {
+          "version": "V2.0",
+          "date": "2024-11-04",
+          "file": "设计输出清单二/图纸/T-Z1-上盖-v2.0-20241104.pdf.md",
+          "logo": "取消",
+          "surface": "待复核"
+        },
+        {
+          "version": "V3.0",
+          "date": "2024-06-27",
+          "file": "图纸/T-Z1-上盖-v3.0-20240627.pdf.md",
+          "logo": "含",
+          "surface": "待复核"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "V1.0 特有表面处理：PANTONE Cool Gray 8U + 拉伸版纹路设计文件。该项为 V1.0 特有，后版可能取消。拉伸版纹路被认定为工业设计关键特征，是否在 V2.0/V3.0 继续生产需工程师确认。",
+      "topic_tags": [
+        "表面处理",
+        "PANTONE",
+        "纹路设计",
+        "工业设计",
+        "版本差异"
+      ],
+      "related_subjects": [
+        "T-Z1-P01",
+        "V1.0",
+        "V2.0",
+        "V3.0"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文档为 T-Z1-P01 上盖的最初版 V1.0（2021-07-16）的早期版历史归档读图分析。现版见 V3.0（2024-06-27，含LOGO）和 V2.0（2024-11-04，LOGO取消）。本文档属于 SKILL_2D_Drawing_Reading 精简版，用于早期版历史归档目的。",
+      "topic_tags": [
+        "历史归档",
+        "早期版",
+        "版本对比",
+        "读图"
+      ],
+      "related_subjects": [
+        "T-Z1-P01 V1.0",
+        "T-Z1-P01 V2.0",
+        "T-Z1-P01 V3.0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "关键尺寸分级说明：编号①②③为 A 级重要尺寸（IQC必测）；DETAIL D SCALE 5:1 中 1.2±0.03 / 0.8±0.03 为 Level A 高精度尺寸；19.6±0.2 与 13.4±0.2 为 Level B 中段范围公差，属底部特征配套表达。未标注尺寸以样板为准，品质部检验以结构签板和组装实配为准。",
+      "topic_tags": [
+        "尺寸分级",
+        "公差",
+        "IQC",
+        "检验规则",
+        "Level A",
+        "Level B"
+      ],
+      "related_subjects": [
+        "关键尺寸",
+        "技术要求",
+        "检验要求"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "V1.0 与现版（V2.0/V3.0）主要差异对比：几何主尺寸 Ø130.1×34.1×11.5 三版一致；V1.0 含 LOGO 状态待复核，V3.0 含 LOGO，V2.0 取消 LOGO；V1.0 有编号尺寸③（19.6±0.2）共三个编号尺寸，V2.0/V3.0 仅有编号①②两个；表面处理 V1.0 特有 PANTONE Cool Gray 8U + 拉伸版纹路，V2.0/V3.0 需复核是否保留。版本演进路径（V1.0→V2.0→V3.0 或 V1.0→V3.0）待工程师确认。",
+      "topic_tags": [
+        "版本差异",
+        "设计演进",
+        "LOGO",
+        "表面处理",
+        "尺寸变更"
+      ],
+      "related_subjects": [
+        "T-Z1-P01 V1.0",
+        "T-Z1-P01 V2.0",
+        "T-Z1-P01 V3.0"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/早期图纸/上盖20210727.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "【早期版】上盖（T-Z1-P01 V1.0，2021-07-16）2D 图读图",
+      "to": "V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "表面处理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V1.0",
+      "to": "表面处理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V2.0",
+      "to": "表面处理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V3.0",
+      "to": "表面处理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01 V1.0",
+      "to": "历史归档",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01 V2.0",
+      "to": "历史归档",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01 V3.0",
+      "to": "历史归档",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "关键尺寸",
+      "to": "尺寸分级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "技术要求",
+      "to": "尺寸分级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "检验要求",
+      "to": "尺寸分级",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01 V1.0",
+      "to": "版本差异",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01 V2.0",
+      "to": "版本差异",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01 V3.0",
+      "to": "版本差异",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-8",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-9",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-10",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-12",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-13",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-14",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-15",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-16",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "DI-ref-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P01",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-1",
+      "to": "REQ-1",
+      "properties": {
+        "note": "编号①为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-2",
+      "to": "REQ-1",
+      "properties": {
+        "note": "编号②为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-3",
+      "to": "REQ-1",
+      "properties": {
+        "note": "编号③为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-14",
+      "to": "REQ-1",
+      "properties": {
+        "note": "DETAIL D Level A高精度尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "DI-15",
+      "to": "REQ-1",
+      "properties": {
+        "note": "DETAIL D Level A高精度尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-1",
+      "to": "REQ-2",
+      "properties": {
+        "note": "外形宽受ABS材质及外观要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-2",
+      "to": "REQ-2",
+      "properties": {
+        "note": "壳体总高受ABS材质及外观要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-3",
+      "to": "REQ-2",
+      "properties": {
+        "note": "底部段长受ABS材质及外观要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-1",
+      "to": "REQ-3",
+      "properties": {
+        "note": "整件外形宽需满足装配要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-4",
+      "to": "REQ-3",
+      "properties": {
+        "note": "总长需满足装配要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-6",
+      "to": "REQ-3",
+      "properties": {
+        "note": "传感器孔需满足装配要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-7",
+      "to": "REQ-3",
+      "properties": {
+        "note": "LCD内腔宽需满足装配要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-11",
+      "to": "REQ-3",
+      "properties": {
+        "note": "螺柱孔需满足装配要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-3",
+      "to": "REQ-3",
+      "properties": {
+        "note": "底部段长需满足装配要求"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-16",
+      "to": "REQ-3",
+      "properties": {
+        "note": "底部凸出特征需满足装配要求"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-4",
+      "to": "RoHS 2.0",
+      "properties": {
+        "note": "REQ-4合规要求直接来源于RoHS 2.0法规"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-1",
+      "to": "REQ-4",
+      "properties": {
+        "note": "产品尺寸特征受RoHS 2.0合规要求约束（材料选用）"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-14",
+      "to": "REQ-1",
+      "properties": {
+        "note": "Level A高精度尺寸须IQC测量"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "DI-15",
+      "to": "REQ-1",
+      "properties": {
+        "note": "Level A高精度尺寸须IQC测量"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P01",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P01",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P01",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P01",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P01",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P01",
+      "to": "V1.0",
+      "properties": {
+        "change_description": "制版制作",
+        "date": "2021-07-16"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "整件外形宽",
+      "attribute": "尺寸",
+      "value": "34.1",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "主视图水平向，公差A级，IQC测量",
+      "raw_text": "整件外形宽 34.1 ± 0.05 mm，编号①，A级"
+    },
+    {
+      "subject": "壳体总高",
+      "attribute": "尺寸",
+      "value": "11.5",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "SECTION A-A 顶部，公差A级，IQC测量",
+      "raw_text": "壳体总高 11.5 ± 0.05 mm，编号②，A级"
+    },
+    {
+      "subject": "底部段长",
+      "attribute": "尺寸",
+      "value": "19.6",
+      "unit": "mm",
+      "tolerance": "±0.2",
+      "condition": "主视图底部，公差B级，V1.0特有，V2.0/V3.0待确认",
+      "raw_text": "底部某段长 19.6 ± 0.2 mm，编号③，B级，V1.0特有"
+    },
+    {
+      "subject": "总长",
+      "attribute": "直径/长度",
+      "value": "130.1",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "IQC测量",
+      "raw_text": "总长 Ø130.1 ± 0.1 mm"
+    },
+    {
+      "subject": "外径特征",
+      "attribute": "外径",
+      "value": "13.9",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC测量",
+      "raw_text": "外径特征 Ø13.9 ± 0.05 mm"
+    },
+    {
+      "subject": "传感器孔",
+      "attribute": "孔径",
+      "value": "9.9",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC测量",
+      "raw_text": "传感器孔 Ø9.9 ± 0.05 mm"
+    },
+    {
+      "subject": "LCD内腔宽",
+      "attribute": "尺寸",
+      "value": "22.2",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC测量",
+      "raw_text": "LCD 内腔宽 22.2 ± 0.05 mm"
+    },
+    {
+      "subject": "尺寸特征",
+      "attribute": "尺寸",
+      "value": "34.9",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC测量",
+      "raw_text": "尺寸特征 34.9 ± 0.05 mm"
+    },
+    {
+      "subject": "尺寸特征",
+      "attribute": "尺寸",
+      "value": "30",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC测量",
+      "raw_text": "尺寸特征 30 ± 0.05 mm"
+    },
+    {
+      "subject": "圆形特征",
+      "attribute": "直径",
+      "value": "21.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "无公差标注，IQC测量",
+      "raw_text": "圆形特征 Ø21.5 mm"
+    },
+    {
+      "subject": "螺柱孔",
+      "attribute": "孔径",
+      "value": "4.4",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "多处，IQC测量",
+      "raw_text": "螺柱孔（多处）4.4 ± 0.05 mm"
+    },
+    {
+      "subject": "尺寸特征",
+      "attribute": "尺寸",
+      "value": "2.5",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "IQC测量",
+      "raw_text": "尺寸特征 2.5 ± 0.05 mm"
+    },
+    {
+      "subject": "圆形特征",
+      "attribute": "直径",
+      "value": "0.8",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "无公差标注，IQC测量",
+      "raw_text": "圆形特征 Ø0.8 mm"
+    },
+    {
+      "subject": "细节尺寸D-1",
+      "attribute": "尺寸",
+      "value": "1.2",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "DETAIL D SCALE 5:1，Level A",
+      "raw_text": "DETAIL D 细节尺寸 1.2 ± 0.03 mm，Level A"
+    },
+    {
+      "subject": "细节尺寸D-2",
+      "attribute": "尺寸",
+      "value": "0.8",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "DETAIL D SCALE 5:1，Level A",
+      "raw_text": "DETAIL D 细节尺寸 0.8 ± 0.03 mm，Level A"
+    },
+    {
+      "subject": "底部凸出特征",
+      "attribute": "尺寸",
+      "value": "13.4",
+      "unit": "mm",
+      "tolerance": "±0.2",
+      "condition": "公差B级，与19.6±0.2配套",
+      "raw_text": "底部凸出特征 13.4 ± 0.2 mm，B级，与19.6±0.2配套"
+    },
+    {
+      "subject": "外壳材质",
+      "attribute": "材料类型",
+      "value": "ABS（白色）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良",
+      "raw_text": "材质为 ABS（白色），产品外观良好、无拉伤，变形，批锋，熔接痕，气纹，顶白，缺胶，缩水等不良现象"
+    },
+    {
+      "subject": "法规合规",
+      "attribute": "符合标准",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "产品符合 RoHS 2.0"
+    },
+    {
+      "subject": "上盖表面处理",
+      "attribute": "颜色/纹路",
+      "value": "PANTONE Cool Gray 8U + 拉伸版纹路",
+      "unit": "",
+      "tolerance": "",
+      "condition": "V1.0版本",
+      "raw_text": "V1.0：surface PANTONE Cool Gray 8U + 拉伸版纹路"
+    }
+  ]
+}

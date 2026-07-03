@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "decision": "confirm",
+  "severity": "P2",
+  "error_type": "document_title_not_updated_from_template",
+  "claim": "F0245 (filed under PT9L DHF '18 设计确认') carries a title and filename containing 'PT2L（美亚）-UETR01 V1.0' while all internal controlled fields (DN: PT9L-UETR01 V1.0, Model name: PT9L, Project number: 30000078) consistently identify the document as a PT9L record. The root cause is a template copy from the PT2L（美亚）usability engineering checklist where the title/filename header was not updated to reflect the PT9L product identity. This constitutes a document control nonconformity: the official document title does not match the document number and product scope, and the version history date field is blank, indicating the document may never have been formally released under a controlled revision.",
+  "reason": "All available internal evidence converges on PT9L identity: DN field, Model name field, Project number, product description (Infrared Forehead Thermometer), archive path (PT9L DHF-历史文件/设计确认/), and approver chain are all PT9L-consistent. The sole anomaly is the title line and filename retaining 'PT2L（美亚）-UETR01 V1.0', which is a classic symptom of template reuse without title-line synchronization. The blank Version Date in the version history table is an additional document control deficiency indicating the document was not properly finalized under the document control procedure. While F0006 DHF checklist registration and the existence of an independent PT2L（美亚）UETR01 file were not retrieved, the internal evidence is sufficient to confirm a real controlled-document issue: a PT9L compliance record bears a non-PT9L document title, violating document identification requirements. The missing F0006 data would only further characterize severity (e.g., whether the document is formally registered), not negate the confirmed title/DN mismatch. Severity remains P2 given the compliance record (EN 60601-1-6 usability checklist) is directly referenced in design confirmation activities and the title error could cause traceability failures during regulatory audit."
+}
+```

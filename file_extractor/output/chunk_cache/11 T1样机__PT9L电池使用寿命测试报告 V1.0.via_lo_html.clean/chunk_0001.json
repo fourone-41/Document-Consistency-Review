@@ -1,0 +1,132 @@
+{
+  "document": {
+    "title": "PT9L电池使用寿命测试报告",
+    "doc_type": "测试报告",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "动态功耗测试",
+      "item": "动态功耗测量",
+      "condition": "使用两节七号干电池供电，串入万用表电流档，模拟一次用户测量过程，从按键唤醒到自动进入待机，重复几轮取平均值",
+      "expected_value": "满足设计输入要求",
+      "actual_result": "平均值12.7mA；连续工作时间：1000mAh*0.6/12.7mA=47.24h",
+      "pass_criteria": "满足设计输入的要求",
+      "environment": "温度22℃；湿度55%"
+    },
+    {
+      "test_id": "静态功耗测试",
+      "item": "静态功耗测量",
+      "condition": "使用两节七号干电池供电，串入万用表电流档，模拟一次用户测量过程，从按键唤醒到自动进入待机后开始测量，重复几轮取平均值",
+      "expected_value": "满足设计输入要求",
+      "actual_result": "平均值8.1uA；待机时间：1000mAh*1000*0.6/8.1uA/24/30=102.88月",
+      "pass_criteria": "满足设计输入要求",
+      "environment": "温度22℃；湿度55%"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-BLTR01 V1.0",
+      "conclusion": "此测试方法是模拟人体测试，通过测试不同状态的功耗推算出连续工作时间（47.24h）和待机时间（102.88月），满足设计输入的要求。"
+    }
+  ],
+  "test_measurements": [
+    {
+      "test_point": "动态功耗-1",
+      "reading": 12.1,
+      "unit": "mA",
+      "reference_value": "平均值12.7mA",
+      "condition": "动态功耗测量"
+    },
+    {
+      "test_point": "动态功耗-2",
+      "reading": 12.8,
+      "unit": "mA",
+      "reference_value": "平均值12.7mA",
+      "condition": "动态功耗测量"
+    },
+    {
+      "test_point": "动态功耗-3",
+      "reading": 13.2,
+      "unit": "mA",
+      "reference_value": "平均值12.7mA",
+      "condition": "动态功耗测量"
+    },
+    {
+      "test_point": "静态功耗-1",
+      "reading": 8.4,
+      "unit": "uA",
+      "reference_value": "平均值8.1uA",
+      "condition": "静态功耗测量"
+    },
+    {
+      "test_point": "静态功耗-2",
+      "reading": 8.2,
+      "unit": "uA",
+      "reference_value": "平均值8.1uA",
+      "condition": "静态功耗测量"
+    },
+    {
+      "test_point": "静态功耗-3",
+      "reading": 7.8,
+      "unit": "uA",
+      "reference_value": "平均值8.1uA",
+      "condition": "静态功耗测量"
+    }
+  ],
+  "persons": [
+    {
+      "title": "硬件工程师（编制）"
+    },
+    {
+      "title": "硬件主管（审核）"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-BLTR01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L整机",
+      "product_id": "PT9L"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "实验方法-动态功耗：1. 被测试PT9L使用两节七号干电池供电，串入万用表电流档，记录万用表实际测量值；2. 模拟一次用户测量过程，从按键唤醒到自动进入待机，重复几轮，取平均值。实验方法-静态功耗：1. 被测试PT9L使用两节七号干电池供电，串入万用表电流档，记录万用表实际测量值；2. 模拟一次用户测量过程，从按键唤醒到自动进入待机后，开始测量，重复几轮，取平均值。",
+      "topic_tags": [
+        "动态功耗",
+        "静态功耗",
+        "测试方法",
+        "万用表",
+        "电流测量"
+      ],
+      "related_subjects": [
+        "PT9L整机",
+        "七号干电池",
+        "PT9L-BLTR01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "测试使用电池：两节七号干电池（3V/1000mAh）；样机阶段：T1样机。连续工作时间：1000mAh*0.6/12.7mA=47.24h，满足设计输入的要求。待机时间：1000mAh*1000*0.6/8.1uA/24/30=102.88月，满足设计输入要求。",
+      "topic_tags": [
+        "电池寿命",
+        "连续工作时间",
+        "待机时间",
+        "设计输入",
+        "T1样机"
+      ],
+      "related_subjects": [
+        "PT9L整机",
+        "七号干电池",
+        "动态功耗",
+        "静态功耗"
+      ]
+    }
+  ]
+}

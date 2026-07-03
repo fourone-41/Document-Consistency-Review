@@ -1,0 +1,38 @@
+```json
+{
+  "agent": "Challenge Agent",
+  "summary": "对5条Hardware/DMR findings进行证据核查与压制审查。LLM-0081和LLM-0082的核心冲突有直接文本证据支撑，但严重度和表述需审视。LLM-0083属于测试标准比设计输入更严格的情形，实际风险方向与claim描述存在偏差，需修订。LLM-0084和LLM-0085均依赖'证据目录中未见'作为缺失证明，存在典型的absence-of-evidence推断风险，需降级或补充上下文。",
+  "decisions": [
+    {
+      "finding_id": "LLM-0081",
+      "decision": "revise",
+      "reason": "核心冲突有直接证据支撑：ABOM(F0094)列PT3-P10，PT3-P10图纸注释明确说明PT9L实际装配以PT5-M02+PT5-M03为准且PT3-P10'不一定'进入量产BOM，总装图BOM亦列PT3-P10——三处文件之间存在真实的未解决矛盾，finding可保留。但'no authoritative resolution document is present in the supplied evidence'属于证据目录局限性声明而非确认缺陷，严重度P2偏高：该冲突影响的是BOM准确性与可追溯性，尚无证据表明已导致错误装配或安全风险；建议降为P3并将表述从'unresolved conflict'修订为'BOM条目与图纸注释不一致，需ECO或BOM修订确认最终物料选用'，同时删除'no authoritative resolution document'的绝对化表述。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0082",
+      "decision": "revise",
+      "reason": "直接证据（F0178第7行）明确标注'T-Z1-P10同时指导光板和PCB（一图号两零件）'，属于文件自身标注的疑点，finding有据可查。但claim中'a separate unnamed PCB appears as item 08'仅凭HW-094一条证据，item 08是否确为PCB类零件尚不明确；且EBOM使用PT9L-HFMP01/PT9C-CNTP01与总装图T-Z1-P10不一致，finding将此解读为'ambiguous part-number assignment'合理，但'without a cross-reference table'属于推断。建议保留核心问题（一图号两零件），删除item 08为'unnamed PCB'的未经充分证实的表述，并注明EBOM与总装图编号体系差异需交叉引用表或ECO说明，严重度P2维持合理但可考虑降为P3（无证据表明已造成错误采购或装配）。此处建议revise至P2保留，要求删除item 08相关未证实内容。",
+      "revised_severity": "P2"
+    },
+    {
+      "finding_id": "LLM-0083",
+      "decision": "revise",
+      "reason": "证据核查确认：设计输入和检验标准均规定35–42°C范围±0.2°C、其他温度±0.3°C；软件测试计划在30°C和45°C处使用±0.2°C。事实描述准确。但finding的风险逻辑存在方向性偏差：测试标准比设计输入更严格（±0.2°C严于±0.3°C），这意味着通过该测试的产品必然满足设计输入要求，不存在'测试记录显示失败但实际不是不符合项'的患者安全风险——该场景只会导致过度拒收，而非漏检。真正的问题是：若产品在30°C/45°C处仅能满足±0.3°C而非±0.2°C，测试会拒收但设计输入允许，可能造成不必要的返工或误判。Claim中'if the device fails at ±0.2°C but passes at ±0.3°C, the test record would show a failure that is not actually a non-conformance'描述方向正确但未突出这是过度拒收风险而非安全漏洞。建议修订claim，明确风险为'测试准则严于设计输入可能导致合格品被误判为不合格，且缺乏书面依据说明该加严是有意的产品策略'，严重度从P3维持，但措辞需去除暗示安全风险的表述。",
+      "revised_severity": "P3"
+    },
+    {
+      "finding_id": "LLM-0084",
+      "decision": "needs_more_context",
+      "reason": "证据显示设计输出清单一的提交/审核日期字段为空白占位符（'年 月 日'），这一事实有直接文本支撑。但finding的核心结论'formal sign-off chain cannot be confirmed as complete'完全依赖'证据目录中未见替代审批文件'——这是典型的absence-of-evidence推断。设计审批记录可能以独立签批页、纸质签字、OA流程记录等形式存在于本次提供的电子文件目录之外。Finding未区分'文件未提供'与'文件不存在'。在医疗器械DHF审查中，空白日期字段是真实的文件控制问题，但P1严重度要求有更强的证据支撑（如明确的法规条款映射或已知的审批缺失）。建议人工核查：①原始纸质或OA签批记录是否存在；②是否有设计评审会议纪要；在获得核查结果前维持needs_more_context，不应直接升级为P1不符合项。",
+      "revised_severity": "P1"
+    },
+    {
+      "finding_id": "LLM-0085",
+      "decision": "needs_more_context",
+      "reason": "Finding完全基于'140条证据目录中未见PT9L-SJSC01或含设计转换/转移字样的文件'。这是纯粹的absence-of-evidence推断，不能等同于文件不存在。设计转换记录可能：①存在于未纳入本次电子证据包的文件夹；②以不同文件名或编号存在（如生产准备评审记录、首件确认记录等）；③嵌入工艺说明或EBOM的附属文件中。Finding引用的两条证据（工艺说明首页、EBOM首行）仅证明这两份文件存在，并不能证明转换记录缺失。P1严重度在无直接缺失证据的情况下过高。建议：在人工确认证据包范围是否覆盖全部DHF文件、以及是否存在任何形式的设计转换记录之前，维持needs_more_context；若人工核查确认缺失则升级为P1。",
+      "revised_severity": "P1"
+    }
+  ]
+}
+```

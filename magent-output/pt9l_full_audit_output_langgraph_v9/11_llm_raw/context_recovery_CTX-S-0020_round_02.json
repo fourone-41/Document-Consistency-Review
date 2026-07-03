@@ -1,0 +1,154 @@
+```json
+{
+  "context_summary": "本轮已从 F0013 文件中提取到直接文本证据，确认该文件存在双重不符合项：文件标题/文件名标注为 PT2L（美亚），但文件内部第6行 DN 字段明确写有 'PT9L-FXJH01 V1.0 Risk Management Plan'，第14行 Product model 字段亦明确写有 'PT9L'。这两处内部字段与文件所属产品线（PT2L）形成直接矛盾，构成产品身份不匹配（product-identity mismatch）和文件编号分配错误（document-number assignment error）两项独立不符合项的实物证据。当前证据已足以支持 claim 的核心事实，但仍缺少：①PT9L 系列对应的正式文件清单或文件索引，以确认 PT9L-FXJH01 V1.0 是否已在 PT9L 产品下独立存档；②PT2L 产品线应有的正确 DN 编号规则或文件编号规范，以证明编号分配错误的规范依据；③任何 CAPA/NCR 记录或变更历史，说明该错误是否已被识别或处理。",
+  "evidence_gaps": [
+    "PT9L 产品线的文件索引或文件清单（确认 PT9L-FXJH01 V1.0 是否在 PT9L 下独立存档，排除同一文件被双重归属的可能）",
+    "PT2L 产品线的文件编号规范或 DN 命名规则文件（提供'编号分配错误'的规范性判断依据）",
+    "F0013 的文件变更历史、版本记录或 ECO/CAPA 记录（确认该不符合项是否已被识别、是否存在未关闭的纠正措施）",
+    "PT2L 产品线对应的正确风险管理计划文件（用于对比，确认 PT2L 是否拥有独立且正确的 RMP，或 F0013 是唯一的 RMP）",
+    "项目编号 30000078 的归属记录（该项目号在文件内部出现，需确认其属于 PT9L 还是 PT2L 项目，进一步佐证身份错误）"
+  ],
+  "additional_search_queries": [
+    "PT9L FXJH01 Risk Management Plan 文件索引 OR 文件清单 OR document list",
+    "PT2L FXJH01 文件编号 OR DN编号规则 OR document numbering",
+    "30000078 项目编号 PT2L OR PT9L",
+    "PT2L Risk Management Plan CAPA OR NCR OR 不符合 OR 变更记录",
+    "FXJH01 PT2L 风险管理计划 正确版本 OR 最新版本"
+  ],
+  "agent_instruction": "已从 F0013 文件内部提取到关键矛盾证据（DN字段=PT9L-FXJH01，Product model=PT9L，但文件归属为PT2L产品线），双重不符合项的事实层面已有直接文本支撑。请 Regulatory Agent 在评审时重点关注以下两点：第一，产品身份不匹配（NC-1）：文件内部 Product model 字段（line 14）明确标注 PT9L，与文件所属产品线 PT2L 不符，属于独立不符合项，需单独 CAPA；第二，文件编号分配错误（NC-2）：DN 字段（line 6）使用 PT9L-FXJH01 编号体系，若 PT2L 有独立编号规范则构成编号分配错误，需单独 CAPA。两项 NC 共享同一根本原因（文件创建时错误复用了 PT9L 模板且未更新产品信息），但纠正措施必须分别处理：NC-1 需更正文件内容中的产品标识字段，NC-2 需重新分配符合 PT2L 规范的 DN 编号并更新文件控制系统。建议进一步检索 PT9L 文件索引和 PT2L 编号规范以完善证据链。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "REG-CRA-001",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "field": "DN (Document Number)",
+        "actual_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "significance": "文件内部 DN 字段明确标注 PT9L 编号体系，与文件归属产品线 PT2L 不符，构成文件编号分配错误（NC-2）的直接证据",
+        "nc_type": "document_number_assignment_error",
+        "verified": true
+      },
+      {
+        "evidence_id": "REG-CRA-002",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 14,
+        "field": "Product model",
+        "actual_text": "Product model： PT9L",
+        "significance": "文件内部 Product model 字段明确标注 PT9L，与文件所属产品线 PT2L 直接矛盾，构成产品身份不匹配（NC-1）的直接证据",
+        "nc_type": "product_identity_mismatch",
+        "verified": true
+      },
+      {
+        "evidence_id": "REG-CRA-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 12,
+        "field": "Product name",
+        "actual_text": "Product name: Infrared Forehead Thermometer",
+        "significance": "产品名称为通用名称，无法区分 PT2L 与 PT9L，不能作为产品身份的澄清依据，反而强化了身份字段依赖 Product model 字段的必要性",
+        "nc_type": "supporting_context",
+        "verified": true
+      },
+      {
+        "evidence_id": "REG-CRA-004",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 16,
+        "field": "Project number",
+        "actual_text": "Project number： 30000078",
+        "significance": "项目编号 30000078 归属待核实；若该项目号属于 PT9L 项目，则进一步佐证整份文件为 PT9L 文件被错误归入 PT2L 文件体系",
+        "nc_type": "supporting_context_pending_verification",
+        "verified": false
+      },
+      {
+        "evidence_id": "REG-CRA-005",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "field": "文件标题（文件名层）",
+        "actual_text": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+        "significance": "文件标题（及文件名）标注 PT2L，与内部 DN 字段（PT9L）和 Product model 字段（PT9L）形成内外矛盾，是双重不符合项共同根本原因（模板复用未更新）的外部表现",
+        "nc_type": "root_cause_indicator",
+        "verified": true
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter": "ISO标准适用性",
+        "value": "ISO 14971:2019, EN ISO 14971:2019, EN ISO 14971:2019/A11:2021",
+        "doc_id": "F0013",
+        "line": 48,
+        "note": "风险管理计划所引用的标准本身无误，不构成不符合项，但在 CAPA 执行后需确认更正后文件仍正确引用上述标准"
+      },
+      {
+        "parameter": "风险接受准则结构",
+        "value": "三级分类：Not acceptable / Control as much as possible / Acceptable",
+        "doc_id": "F0013",
+        "line": 121,
+        "note": "风险接受准则内容本身适用于通用红外额温计产品，但其适用性需在产品身份更正后重新确认是否符合 PT2L 的具体设计要求"
+      }
+    ],
+    "page_context": [
+      {
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line_start": 1,
+        "line_end": 22,
+        "section": "文件封面页（Cover Page）",
+        "key_fields_extracted": {
+          "document_title_external": "V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+          "DN_internal": "PT9L-FXJH01 V1.0 Risk Management Plan",
+          "product_name": "Infrared Forehead Thermometer",
+          "product_model_internal": "PT9L",
+          "project_number": "30000078",
+          "version": "V1.0"
+        },
+        "contradiction_confirmed": true,
+        "contradiction_description": "外部文件名/标题标注 PT2L，内部 DN 字段与 Product model 字段均标注 PT9L，三字段不一致，双重不符合项在封面页即可确认"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "context_type": "nonconformance_factual_basis",
+        "title": "NC-1：产品身份不匹配（Product Identity Mismatch）直接证据",
+        "description": "F0013 文件内部 Product model 字段（line 14）明确标注 'PT9L'，而该文件按文件名及归档路径属于 PT2L 产品线（路径含'2L风险改'，文件名含'PT2L美亚'）。两者直接矛盾，构成独立不符合项 NC-1。",
+        "evidence_refs": ["REG-CRA-002", "REG-CRA-005"],
+        "confidence": "HIGH",
+        "requires_further_search": false
+      },
+      {
+        "context_id": "RC-002",
+        "context_type": "nonconformance_factual_basis",
+        "title": "NC-2：文件编号分配错误（Document Number Assignment Error）直接证据",
+        "description": "F0013 文件内部 DN 字段（line 6）标注 'PT9L-FXJH01 V1.0'，使用 PT9L 编号体系，与文件归属产品线 PT2L 不符。若 PT2L 产品线有独立的 DN 编号规范（待核实），则构成独立不符合项 NC-2。",
+        "evidence_refs": ["REG-CRA-001", "REG-CRA-005"],
+        "confidence": "HIGH",
+        "requires_further_search": true,
+        "pending_verification": "需检索 PT2L 文件编号规范或 PT9L 文件索引以确认编号体系独立性"
+      },
+      {
+        "context_id": "RC-003",
+        "context_type": "root_cause_analysis_support",
+        "title": "共同根本原因指示：模板复用未更新",
+        "description": "文件封面页同时存在外部标注 PT2L（文件名/标题）与内部标注 PT9L（DN字段、Product model字段）的矛盾，最符合奥卡姆剃刀原则的解释是：文件创建时以 PT9L 的 RMP 为模板，更新了文件名和标题，但未同步更新内部 DN 字段和 Product model 字段。NC-1 与 NC-2 共享此根本原因，但需分别采取纠正措施。",
+        "evidence_refs": ["REG-CRA-001", "REG-CRA-002", "REG-CRA-003", "REG-CRA-005"],
+        "confidence": "HIGH",
+        "requires_further_search": false
+      },
+      {
+        "context_id": "RC-004",
+        "context_type": "pending_verification_item",
+        "title": "项目编号 30000078 归属待核实",
+        "description": "文件内部 Project number 字段标注 30000078（line 16）。若该项目号在项目管理系统中归属于 PT9L 项目，则进一步佐证整份文件为 PT9L 文件被错误归入 PT2L 体系；若归属于 PT2L，则说明项目编号已正确分配但产品型号字段未更新。两种情形均不影响 NC-1 和 NC-2 的成立，但影响根本原因的精确描述。",
+        "evidence_refs": ["REG-CRA-004"],
+        "confidence": "PENDING",
+        "requires_further_search": true,
+        "search_query": "30000078 项目编号 PT2L OR PT9L"
+      }
+    ]
+  }
+}
+```

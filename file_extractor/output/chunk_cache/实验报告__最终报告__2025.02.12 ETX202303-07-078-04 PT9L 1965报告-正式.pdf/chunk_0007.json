@@ -1,0 +1,312 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-04",
+    "total_pages": 22,
+    "current_pages": "16-17"
+  },
+  "requirements": [
+    {
+      "id": "7.2.4",
+      "description": "The instruction manual shall specify whether the probe cover is intended for single use or multiple use. If multiple use is allowed, cleaning instructions and criteria for determining when a probe cover should be discarded shall be specified. Cleaning instructions shall be adequate to prevent cross-contamination between patients.",
+      "result": "N/A"
+    },
+    {
+      "id": "7.2.5",
+      "description": "The instruction manual shall inform the user of differences in the accuracy of measurements obtained with IR thermometers versus contact thermometers (mercury-in-glass and electronic thermometers). Such differences shall include description of anticipated error sources associated with disposable or reusable probe covers and sleeves, operators' technique, anatomical variations, earwax buildups, subject cooperation, etc. The instruction manual shall conspicuously include the statement: 'ASTM laboratory accuracy requirements in the display range of 37 to 39 °C (98 to 102 °F) for IR thermometers is ± 0.2 °C (±0.4 °F), whereas for mercury-in-glass and electronic thermometers, the requirement per ASTM Standards E667-86 and E1112-86 is ± 0.1 °C (±0.2 °F).'",
+      "reference": "See 'Safety precautions' of User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.3",
+      "description": "Service and Repair Manual",
+      "reference": "See 'Maintenance' of User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.3.1",
+      "description": "A detailed service manual shall be made available if user service or repair is permitted by the manufacturer.",
+      "reference": "See 'Maintenance' of User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.3.2",
+      "description": "A service manual shall disclose values of instrumentation or combined site offsets, or both.",
+      "reference": "See 'Maintenance' of User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.3.3",
+      "description": "A service manual shall provide a method of arriving at unadjusted readings from temperatures displayed in an adjusted mode.",
+      "reference": "See 'Calibration' of User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.4",
+      "description": "Accuracy Determination — A manufacturer shall make available upon request specific instructions for tests to determine the laboratory error, clinical bias, and clinical repeatability of an IR thermometer. When describing how clinical tests are performed, the manufacturer shall disclose the profile of subject groups tested, including age and febrile status. A detailed procedure for taking reference temperatures also shall be disclosed.",
+      "reference": "See 'Temperature reading hints' of User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "5.6.1",
+      "description": "TABLE: Operating Temperature Range",
+      "result": "P"
+    }
+  ],
+  "tests": [
+    {
+      "id": "5.6.1",
+      "name": "Operating Temperature Range Test",
+      "result": "P",
+      "parameters": {
+        "displayed_output_range": "32°C - 42.9°C",
+        "ambient_conditions": "21-22°C, 50%-52%RH",
+        "total_uncertainty_of_reference_temperature_source": "0.06°C"
+      },
+      "test_data": [
+        {
+          "target_temp_c": 33,
+          "condition_no": 1,
+          "ambient": "16°C 45%RH",
+          "T_BB": 32.87,
+          "readings": [
+            32.8,
+            32.9,
+            32.9,
+            32.9,
+            32.9,
+            32.9
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 33,
+          "condition_no": 2,
+          "ambient": "16°C 93%RH",
+          "T_BB": 32.87,
+          "readings": [
+            32.8,
+            32.9,
+            32.9,
+            32.9,
+            32.9,
+            32.8
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 33,
+          "condition_no": 3,
+          "ambient": "25°C 50%RH",
+          "T_BB": 32.87,
+          "readings": [
+            32.8,
+            32.7,
+            32.8,
+            32.7,
+            32.7,
+            32.7
+          ],
+          "delta_c": 0.2
+        },
+        {
+          "target_temp_c": 33,
+          "condition_no": 4,
+          "ambient": "39°C 20%RH",
+          "T_BB": 32.87,
+          "readings": [
+            33.0,
+            33.0,
+            33.0,
+            33.0,
+            33.0,
+            33.0
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 33,
+          "condition_no": 5,
+          "ambient": "39°C 80%RH",
+          "T_BB": 32.82,
+          "readings": [
+            33.0,
+            33.0,
+            33.0,
+            33.0,
+            33.0,
+            33.0
+          ],
+          "delta_c": 0.2
+        },
+        {
+          "target_temp_c": 37,
+          "condition_no": 1,
+          "ambient": "16°C 45%RH",
+          "T_BB": 32.87,
+          "readings": [
+            36.9,
+            36.9,
+            36.9,
+            36.8,
+            36.8,
+            36.9
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 37,
+          "condition_no": 2,
+          "ambient": "16°C 93%RH",
+          "T_BB": 32.87,
+          "readings": [
+            36.9,
+            36.9,
+            36.8,
+            36.9,
+            36.8,
+            36.8
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 37,
+          "condition_no": 3,
+          "ambient": "25°C 50%RH",
+          "T_BB": 36.91,
+          "readings": [
+            36.9,
+            36.8,
+            36.8,
+            36.8,
+            36.9,
+            36.9
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 37,
+          "condition_no": 4,
+          "ambient": "39.5°C 20%RH",
+          "T_BB": 36.85,
+          "readings": [
+            36.9,
+            36.9,
+            36.9,
+            36.9,
+            37.0,
+            37.0
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 37,
+          "condition_no": 5,
+          "ambient": "39.5°C 85%RH",
+          "T_BB": 37.0,
+          "readings": [
+            37.1,
+            37.1,
+            37.2,
+            37.2,
+            37.2,
+            37.2
+          ],
+          "delta_c": 0.2
+        },
+        {
+          "target_temp_c": 42,
+          "condition_no": 1,
+          "ambient": "16°C 45%RH",
+          "T_BB": 41.87,
+          "readings": [
+            41.9,
+            41.9,
+            41.8,
+            41.8,
+            41.8,
+            41.9
+          ],
+          "delta_c": 0.1
+        },
+        {
+          "target_temp_c": 42,
+          "condition_no": 2,
+          "ambient": "16°C 93%RH",
+          "T_BB": 41.88,
+          "readings": [
+            41.9,
+            41.8,
+            41.8,
+            41.8,
+            41.8,
+            41.9
+          ],
+          "delta_c": 0.1
+        }
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "id": "ASTM E667-86",
+      "description": "ASTM Standard for mercury-in-glass thermometers accuracy requirement: ± 0.1 °C (±0.2 °F)"
+    },
+    {
+      "id": "ASTM E1112-86",
+      "description": "ASTM Standard for electronic thermometers accuracy requirement: ± 0.1 °C (±0.2 °F)"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "description": "IR thermometer for measuring body temperature via auditory canal (tympanic/ear), with display range 32°C to 42.9°C"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ASTM laboratory accuracy requirements in the display range of 37 to 39 °C (98 to 102 °F) for IR thermometers is ± 0.2 °C (±0.4 °F), whereas for mercury-in-glass and electronic thermometers, the requirement per ASTM Standards E667-86 and E1112-86 is ± 0.1 °C (±0.2 °F).",
+      "topic_tags": [
+        "accuracy",
+        "IR thermometer",
+        "ASTM",
+        "mercury thermometer",
+        "electronic thermometer"
+      ],
+      "related_subjects": [
+        "7.2.5",
+        "ASTM E667-86",
+        "ASTM E1112-86"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Section 8 Keywords: auditory canal; body temperature; ear; fever; infrared; medical instrument; temperature; thermometer; tympanic",
+      "topic_tags": [
+        "keywords",
+        "auditory canal",
+        "tympanic",
+        "infrared",
+        "thermometer",
+        "fever"
+      ],
+      "related_subjects": [
+        "intended_use_items"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Instruction manual shall inform user of anticipated error sources associated with disposable or reusable probe covers and sleeves, operators' technique, anatomical variations, earwax buildups, subject cooperation when comparing IR thermometers to contact thermometers.",
+      "topic_tags": [
+        "error sources",
+        "probe cover",
+        "operator technique",
+        "earwax",
+        "anatomical variation",
+        "IR thermometer"
+      ],
+      "related_subjects": [
+        "7.2.5"
+      ]
+    }
+  ]
+}

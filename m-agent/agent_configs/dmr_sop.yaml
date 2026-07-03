@@ -1,0 +1,39 @@
+agent_id: dmr_sop
+display_name: DMR/SOP Agent
+node_name: dmr_agent
+role: DMR/SOP Agent
+goal: Check design output lists, EBOM, ABOM, BOM, drawings, assembly instructions, process instructions, trial production, packaging, labels, and transfer records.
+system_prompt: Review DMR/SOP consistency using only supplied evidence IDs.
+retrieval_strategy:
+  prefix: DMR
+  patterns:
+    - "design output|EBOM|ABOM|BOM|component list|assembly|work instruction|process|trial production|drawing|material|PT3|PT5|PT9L"
+  rel_contains:
+    - "12 "
+    - "13 "
+    - "14"
+    - "15"
+    - "16"
+    - "17"
+  max_hits: 140
+input_schema:
+  required_fields:
+    - project_profile
+    - mandatory_audit_matrix
+    - evidence_catalog
+    - candidate_discovery_inputs
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - findings
+  agent: DMR/SOP Agent
+  summary: string
+  review_notes: []
+  findings:
+    - finding_type: snake_case
+      severity: P1/P2/P3
+      claim: reviewable conclusion
+      rationale: evidence-based reason
+      evidence_ids: []
+      challenge_questions: []

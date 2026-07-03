@@ -1,0 +1,454 @@
+{
+  "document": {
+    "title": "硬件设计方案评审检查表",
+    "doc_type": "评审检查表",
+    "version": "E0 23.11"
+  },
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "review_items": [
+    {
+      "seq": "1",
+      "category": "电源部分",
+      "content": "电源 - 供电方式",
+      "actual_situation": "电池（2×AAA）",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "2",
+      "category": "电源部分",
+      "content": "电源 - 输入部分",
+      "actual_situation": "电压：2.6-3V 电容：100uF",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "3",
+      "category": "电源部分",
+      "content": "电源 - 输入部分",
+      "actual_situation": "二极管：有 电感：无",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "4",
+      "category": "电源部分",
+      "content": "电源 - 输出部分VDD",
+      "actual_situation": "电压：3.3V 电容：10uF",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "5",
+      "category": "电源部分",
+      "content": "电源 - 输出部分VDD",
+      "actual_situation": "电流评估：150mA",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "6",
+      "category": "电源部分",
+      "content": "电源 - 电源类型",
+      "actual_situation": "升压芯片：SR1833",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "7",
+      "category": "电源部分",
+      "content": "电源防反接",
+      "actual_situation": "自恢复保险和二极管",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "8",
+      "category": "电源部分",
+      "content": "低电检测",
+      "actual_situation": "MCU的PA1端口以A/D方式采集电池电压",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "9",
+      "category": "模拟部分",
+      "content": "传感器单元 - 类型",
+      "actual_situation": "温度传感器",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "10",
+      "category": "模拟部分",
+      "content": "传感器单元 - 驱动方式",
+      "actual_situation": "连接到MCU的AN0~AN3端口进行模拟电压采样",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "11",
+      "category": "模拟部分",
+      "content": "LCD - 数量",
+      "actual_situation": "个数：1",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "12",
+      "category": "模拟部分",
+      "content": "LCD - 驱动",
+      "actual_situation": "SEG口：12个 COM口：4个",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "13",
+      "category": "模拟部分",
+      "content": "LCD - 背光",
+      "actual_situation": "三色背光灯",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "14",
+      "category": "MCU部分",
+      "content": "时钟晶振",
+      "actual_situation": "芯片内置",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "15",
+      "category": "MCU部分",
+      "content": "主晶振",
+      "actual_situation": "芯片内置",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "16",
+      "category": "MCU部分",
+      "content": "存储器",
+      "actual_situation": "无",
+      "conclusion": "不适用"
+    },
+    {
+      "seq": "17",
+      "category": "MCU部分",
+      "content": "复位电路",
+      "actual_situation": "复位电容100nF",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "18",
+      "category": "MCU部分",
+      "content": "按键",
+      "actual_situation": "2个机械按键",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "19",
+      "category": "MCU部分",
+      "content": "MCU程序烧写",
+      "actual_situation": "合泰官方烧写器",
+      "conclusion": "通过"
+    },
+    {
+      "seq": "20",
+      "category": "MCU部分",
+      "content": "振动电机",
+      "actual_situation": "DC 3V 转速12000rpm",
+      "conclusion": "不适用"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "硬件设计方案核心参数汇总：电源采用2×AAA电池供电，输入电压2.6-3V，通过升压芯片SR1833升压至3.3V输出，输出电流评估150mA，输入端配置100uF滤波电容，输出端配置10uF滤波电容；防反接采用自恢复保险和二极管；低电检测通过MCU的PA1端口以A/D方式采集电池电压。传感器为温度传感器，连接至MCU的AN0~AN3端口进行模拟电压采样。LCD显示屏1个，SEG口12个，COM口4个，配备三色背光灯。MCU时钟晶振与主晶振均为芯片内置，无外部存储器，复位电容100nF，配备2个机械按键，程序烧写使用合泰官方烧写器。振动电机规格DC 3V、转速12000rpm（标注为不适用）。",
+      "topic_tags": [
+        "硬件设计",
+        "电源设计",
+        "传感器",
+        "LCD",
+        "MCU",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计",
+        "项目编号30000078"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "06 硬件设计方案E0 23.11/硬件设计方案评审检查表E0 23.11.via_xlsx.clean.md",
+    "doc_type": "review_checklist"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "8",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "9",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "10",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "11",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "12",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "13",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "14",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "15",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "16",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "17",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "18",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "19",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "硬件设计方案评审检查表",
+      "to": "20",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "硬件设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "硬件设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "项目编号30000078",
+      "to": "硬件设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "2",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "3",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "7",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "9",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "10",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "11",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "12",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "13",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "14",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "15",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "16",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "17",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "18",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "19",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "20",
+      "to": "fragment_design_rationale_1",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "硬件设计方案评审检查表",
+      "to": "PT9L",
+      "properties": {
+        "project_id": "30000078",
+        "version": "E0 23.11"
+      }
+    }
+  ],
+  "_claims": []
+}

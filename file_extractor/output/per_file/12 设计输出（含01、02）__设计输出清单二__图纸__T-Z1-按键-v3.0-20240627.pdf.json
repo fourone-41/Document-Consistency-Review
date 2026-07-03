@@ -1,0 +1,1172 @@
+{
+  "document": {
+    "title": "按键（T-Z1-P05 V3.0）2D 图读图报告",
+    "drawing_no": "T-Z1-P05",
+    "edition": "V3.0",
+    "source_file": "T-Z1-按键-v3.0-20240627.pdf",
+    "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/T-Z1-按键-v3.0-20240627.pdf",
+    "report_date": "2026-06-02",
+    "scale": "2:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "brand": "andon iHealth",
+    "format": "A4 横向",
+    "dpi": "150 DPI 概览 + 300 DPI 分块"
+  },
+  "products": [
+    {
+      "name": "按键",
+      "part_no": "T-Z1-P05",
+      "model_no": "T-Z1",
+      "edition": "V3.0",
+      "material": "ABS（白色）",
+      "surface_treatment": "无（ABS 白色素材）",
+      "type": "ABS 注塑件",
+      "description": "双联按键（大键 Ø13.7 + 小键 Ø9.71）+ 中央 H 形弹性连接桥",
+      "overall_dimensions": "26 × 30.2 mm"
+    }
+  ],
+  "components": [
+    {
+      "name": "大按键",
+      "diameter": "Ø13.7",
+      "tolerance": "±0.05",
+      "description": "大按键外径，可能是开机键或测量键"
+    },
+    {
+      "name": "小按键",
+      "diameter": "Ø9.71",
+      "tolerance": "±0.05",
+      "description": "小按键外径，可能是测温键或开机键"
+    },
+    {
+      "name": "H形弹性连接桥",
+      "description": "中央连接大小按键的 H 形结构，含弹性变形区"
+    },
+    {
+      "name": "定位孔",
+      "count": 2,
+      "diameter": "Ø2.5",
+      "tolerance": "±0.05",
+      "prefix": "2-",
+      "description": "中央桥处两个孔，用于装配定位（柱配合）或螺柱避空"
+    },
+    {
+      "name": "大孔（弹性梁避空槽）",
+      "count": 2,
+      "diameter": "Ø4.5",
+      "tolerance": "Level B",
+      "prefix": "2-",
+      "description": "俯视图中央两侧两个大孔，可能是弹性梁的避空槽/减薄区"
+    },
+    {
+      "name": "薄壁（上，弹性变形区）",
+      "index": "①",
+      "value": "0.7",
+      "tolerance": "±0.03",
+      "precision_level": "Level A",
+      "location": "SECTION A-A 上部",
+      "description": "按键弹性变形关键尺寸，过厚→按不下，过薄→断裂"
+    },
+    {
+      "name": "薄壁（下，弹性变形区）",
+      "index": "②",
+      "value": "0.7",
+      "tolerance": "±0.03",
+      "precision_level": "Level A",
+      "location": "SECTION A-A 下部",
+      "description": "与①同值不同位置，按键弹性变形关键尺寸"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "DI-02",
+      "description": "材质为 ABS（白色）；产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-03",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准；品质部检验结构时，请以结构签板和组装（实配）为准",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "DI-04",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求第4条"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "type": "尺寸要求",
+      "description": "薄壁尺寸①② 0.7±0.03 mm，Level A 精度（模具能力关键项）",
+      "criticality": "关键"
+    },
+    {
+      "id": "REQ-02",
+      "type": "尺寸要求",
+      "description": "2处定位孔 Ø2.5±0.05 mm",
+      "criticality": "IQC 重点"
+    },
+    {
+      "id": "REQ-03",
+      "type": "材料要求",
+      "description": "材质为 ABS 白色"
+    },
+    {
+      "id": "REQ-04",
+      "type": "外观要求",
+      "description": "产品外观良好、无拉伤、变形、批锋、熔接痕、气纹、顶白、缺胶、缩水等不良现象"
+    },
+    {
+      "id": "REQ-05",
+      "type": "装配要求",
+      "description": "须试装产品，并能顺利装入产品，未标注尺寸以样板为准"
+    },
+    {
+      "id": "REQ-06",
+      "type": "法规要求",
+      "description": "产品符合 RoHS 2.0"
+    },
+    {
+      "id": "REQ-07",
+      "type": "通用公差",
+      "description": "尺寸 <5 mm: ±0.1；5–15 mm: ±0.1；15–50 mm: ±0.1；50–100 mm: ±0.2；>100 mm: ±0.2%；角度: ±0.5°（Level B）"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品须符合 RoHS 2.0 有害物质限制指令"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "T-Z1-P05"
+    },
+    {
+      "type": "版本",
+      "value": "V3.0"
+    },
+    {
+      "type": "型号",
+      "value": "T-Z1"
+    },
+    {
+      "type": "源文件",
+      "value": "T-Z1-按键-v3.0-20240627.pdf"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-01",
+      "type": "IQC 尺寸检验",
+      "description": "带编号尺寸①②③需 IQC 测量：①②薄壁 0.7±0.03，③ 2-Ø2.5±0.05 定位孔",
+      "items": [
+        "①薄壁 0.7±0.03",
+        "②薄壁 0.7±0.03",
+        "③ 2-Ø2.5±0.05"
+      ]
+    },
+    {
+      "id": "TEST-02",
+      "type": "装配测试",
+      "description": "须试装产品，并能顺利装入，配合件为主壳体下盖 T-Z1-P02"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "level": "C",
+      "description": "大键 Ø13.7 + 小键 Ø9.71 分别对应什么功能（开机？测量？）",
+      "required_source": "产品定义 + UI"
+    },
+    {
+      "id": "C-2",
+      "level": "C",
+      "description": "弹性梁的运动量 / 按压行程 / 复位力",
+      "required_source": "3D 模型 + 工程师"
+    },
+    {
+      "id": "C-3",
+      "level": "C",
+      "description": "①② 0.7±0.03 薄壁的疲劳寿命（按压次数）",
+      "required_source": "寿命测试报告"
+    },
+    {
+      "id": "C-4",
+      "level": "C",
+      "description": "V3.0 相对 V2.0 / V1.0 的主要变更（推测涉及手感或装配性）",
+      "required_source": "修改记录 / 工程师"
+    },
+    {
+      "id": "C-5",
+      "level": "C",
+      "description": "与下盖 T-Z1-P02 按键开口的极限公差链",
+      "required_source": "T-Z1-P02 图纸"
+    },
+    {
+      "id": "C-6",
+      "level": "C",
+      "description": "是否需要二次喷涂（Surf dispose 空白）",
+      "required_source": "BOM / 工程师"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "①② 0.7±0.03 薄壁：是按键按压时弹性变形的关键尺寸（Level A 精度 = 模具能力关键项），过厚→按不下、过薄→断裂。整件：26 × 30.2 mm 外形，按键正面 Ø13.7 + Ø9.71（一大一小，可能是开机键 + 测温键）。",
+      "topic_tags": [
+        "弹性变形",
+        "薄壁",
+        "按键",
+        "Level A精度",
+        "模具"
+      ],
+      "related_subjects": [
+        "T-Z1-P05",
+        "SECTION A-A",
+        "①薄壁",
+        "②薄壁"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Edition V3.0 当前版：T-Z1 系列按键已迭代到第 3 版，意味着结构稳定性 / 手感 / 装配性经过 2 次重大修订。",
+      "topic_tags": [
+        "版本迭代",
+        "V3.0",
+        "结构稳定性",
+        "手感",
+        "装配性"
+      ],
+      "related_subjects": [
+        "T-Z1-P05",
+        "V3.0",
+        "修改记录"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "零件类型：ABS 注塑件，双联按键（大键 Ø13.7 + 小键 Ø9.71）+ 中央 H 形弹性连接桥。2-Ø2.5 定位孔：中央桥处两个孔，应该是装配定位（柱配合）或螺柱避空。2-Ø4.5 大孔：俯视图中央两侧两个大孔，可能是弹性梁的避空槽 / 减薄区。配合方=主壳体下盖 T-Z1-P02 上的按键开口。",
+      "topic_tags": [
+        "装配约束",
+        "定位孔",
+        "弹性梁",
+        "配合件",
+        "H形连接桥"
+      ],
+      "related_subjects": [
+        "T-Z1-P02",
+        "T-Z1-P05",
+        "Ø2.5定位孔",
+        "Ø4.5大孔"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "品质部检验结构时，请以结构签板和组装（实配）为准；未标注尺寸以样板为准。Surf dispose 空白（ABS 白色素材，无二次表面处理信息）。",
+      "topic_tags": [
+        "检验基准",
+        "样板",
+        "签板",
+        "表面处理"
+      ],
+      "related_subjects": [
+        "IQC",
+        "T-Z1-P05",
+        "装配测试"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "视图说明：①俯视图（中部，双圆按键 + 中央 H 形连接桥形态）+ ②立体外观图（右上）+ ③侧视图（左中，含 Ø13.7 大圆 + Ø9.71 小圆）+ ④ SECTION A-A 截面（右下，弹性结构剖面）。Scale 2:1（小件放大）。带 andon iHealth logo。",
+      "topic_tags": [
+        "视图布局",
+        "剖面",
+        "俯视图",
+        "侧视图",
+        "SECTION A-A"
+      ],
+      "related_subjects": [
+        "T-Z1-P05",
+        "Ø13.7",
+        "Ø9.71"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/T-Z1-按键-v3.0-20240627.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "弹性变形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SECTION A-A",
+      "to": "弹性变形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "①薄壁",
+      "to": "弹性变形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "②薄壁",
+      "to": "弹性变形",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "版本迭代",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V3.0",
+      "to": "版本迭代",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "修改记录",
+      "to": "版本迭代",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P02",
+      "to": "装配约束",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "装配约束",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Ø2.5定位孔",
+      "to": "装配约束",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Ø4.5大孔",
+      "to": "装配约束",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC",
+      "to": "检验基准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "检验基准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "装配测试",
+      "to": "检验基准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "视图布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Ø13.7",
+      "to": "视图布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Ø9.71",
+      "to": "视图布局",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "大按键",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "小按键",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "H形弹性连接桥",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "定位孔",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "大孔（弹性梁避空槽）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "薄壁（上，弹性变形区）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "薄壁（下，弹性变形区）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "DI-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "DI-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "DI-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "DI-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "REQ-07",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "TEST-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "TEST-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P05",
+      "to": "C-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "薄壁（上，弹性变形区）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "薄壁（下，弹性变形区）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-02",
+      "to": "定位孔",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-01",
+      "to": "薄壁（上，弹性变形区）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-01",
+      "to": "薄壁（下，弹性变形区）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TEST-01",
+      "to": "定位孔",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-01",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-01",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-02",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-02",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-03",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-04",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-01",
+      "to": "DI-01",
+      "properties": {
+        "note": "薄壁尺寸①②带编号为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-02",
+      "to": "DI-01",
+      "properties": {
+        "note": "定位孔带编号为重要尺寸，需IQC测量"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-03",
+      "to": "DI-02",
+      "properties": {
+        "note": "材质ABS白色来源于技术要求第2条"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-04",
+      "to": "DI-02",
+      "properties": {
+        "note": "外观要求来源于技术要求第2条"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-05",
+      "to": "DI-03",
+      "properties": {
+        "note": "装配要求来源于技术要求第3条"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-06",
+      "to": "DI-04",
+      "properties": {
+        "note": "RoHS 2.0要求来源于技术要求第4条"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-01",
+      "to": "REQ-01",
+      "properties": {
+        "note": "IQC尺寸检验派生自薄壁尺寸关键要求"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-01",
+      "to": "REQ-02",
+      "properties": {
+        "note": "IQC尺寸检验派生自定位孔尺寸要求"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-01",
+      "to": "DI-01",
+      "properties": {
+        "note": "IQC测量直接来源于技术要求第1条带编号尺寸"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-02",
+      "to": "REQ-05",
+      "properties": {
+        "note": "装配测试派生自装配要求"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-02",
+      "to": "DI-03",
+      "properties": {
+        "note": "试装要求来源于技术要求第3条"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "薄壁（上，弹性变形区）",
+      "to": "REQ-01",
+      "properties": {
+        "note": "薄壁尺寸①受0.7±0.03 Level A精度约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "薄壁（下，弹性变形区）",
+      "to": "REQ-01",
+      "properties": {
+        "note": "薄壁尺寸②受0.7±0.03 Level A精度约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "定位孔",
+      "to": "REQ-02",
+      "properties": {
+        "note": "定位孔受Ø2.5±0.05尺寸要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "按键",
+      "to": "REQ-03",
+      "properties": {
+        "note": "产品材质受ABS白色材料要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "按键",
+      "to": "REQ-04",
+      "properties": {
+        "note": "产品外观受外观良好要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "按键",
+      "to": "REQ-05",
+      "properties": {
+        "note": "产品装配受试装配合要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "按键",
+      "to": "REQ-06",
+      "properties": {
+        "note": "产品受RoHS 2.0法规约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "按键",
+      "to": "REQ-07",
+      "properties": {
+        "note": "未标注尺寸受Level B通用公差约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "大孔（弹性梁避空槽）",
+      "to": "REQ-07",
+      "properties": {
+        "note": "Ø4.5大孔公差受Level B通用公差约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TEST-01",
+      "to": "REQ-01",
+      "properties": {
+        "note": "IQC检验受薄壁关键尺寸精度约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TEST-01",
+      "to": "REQ-02",
+      "properties": {
+        "note": "IQC检验受定位孔尺寸公差约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "按键",
+      "to": "RoHS 2.0",
+      "properties": {
+        "note": "产品直接受RoHS 2.0指令约束"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "TEST-01",
+      "properties": {
+        "note": "薄壁尺寸①② 0.7±0.03 mm 通过 IQC 尺寸检验验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-02",
+      "to": "TEST-01",
+      "properties": {
+        "note": "2处定位孔 Ø2.5±0.05 mm 通过 IQC 尺寸检验验证"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-05",
+      "to": "TEST-02",
+      "properties": {
+        "note": "装配要求通过装配测试验证"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "薄壁（上，弹性变形区）",
+      "to": "REQ-01",
+      "properties": {
+        "value": "0.7",
+        "tolerance": "±0.03",
+        "unit": "mm",
+        "precision_level": "Level A"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "薄壁（下，弹性变形区）",
+      "to": "REQ-01",
+      "properties": {
+        "value": "0.7",
+        "tolerance": "±0.03",
+        "unit": "mm",
+        "precision_level": "Level A"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "定位孔",
+      "to": "REQ-02",
+      "properties": {
+        "value": "Ø2.5",
+        "tolerance": "±0.05",
+        "unit": "mm",
+        "count": 2
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "大按键",
+      "to": "按键",
+      "properties": {
+        "value": "Ø13.7",
+        "tolerance": "±0.05",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "小按键",
+      "to": "按键",
+      "properties": {
+        "value": "Ø9.71",
+        "tolerance": "±0.05",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "大孔（弹性梁避空槽）",
+      "to": "按键",
+      "properties": {
+        "value": "Ø4.5",
+        "tolerance": "Level B",
+        "unit": "mm",
+        "count": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-01",
+      "to": "TEST-01",
+      "properties": {
+        "note": "带编号重要尺寸需 IQC 测量"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "DI-03",
+      "to": "TEST-02",
+      "properties": {
+        "note": "须试装产品通过装配测试验证"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P05",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P05",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P05",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P05",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P05",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P05",
+      "to": "C-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P05",
+      "to": "V3.0",
+      "properties": {
+        "description": "当前版本，已历经2次重大修订，涉及结构稳定性/手感/装配性"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-4",
+      "to": "T-Z1-P05",
+      "properties": {
+        "note": "V3.0相对V2.0/V1.0的主要变更审查",
+        "required_source": "修改记录 / 工程师"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-1",
+      "to": "T-Z1-P05",
+      "properties": {
+        "note": "大键小键功能定义审查",
+        "required_source": "产品定义 + UI"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-2",
+      "to": "T-Z1-P05",
+      "properties": {
+        "note": "弹性梁运动量/按压行程/复位力审查",
+        "required_source": "3D 模型 + 工程师"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-3",
+      "to": "T-Z1-P05",
+      "properties": {
+        "note": "薄壁疲劳寿命审查",
+        "required_source": "寿命测试报告"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-5",
+      "to": "T-Z1-P05",
+      "properties": {
+        "note": "与下盖T-Z1-P02极限公差链审查",
+        "required_source": "T-Z1-P02 图纸"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "C-6",
+      "to": "T-Z1-P05",
+      "properties": {
+        "note": "二次喷涂需求审查",
+        "required_source": "BOM / 工程师"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "薄壁尺寸①",
+      "attribute": "尺寸规格",
+      "value": "0.7",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "SECTION A-A 上部，弹性变形区，Level A 精度",
+      "raw_text": "薄壁尺寸①② 0.7±0.03 mm，Level A 精度（模具能力关键项）"
+    },
+    {
+      "subject": "薄壁尺寸②",
+      "attribute": "尺寸规格",
+      "value": "0.7",
+      "unit": "mm",
+      "tolerance": "±0.03",
+      "condition": "SECTION A-A 下部，弹性变形区，Level A 精度",
+      "raw_text": "薄壁尺寸①② 0.7±0.03 mm，Level A 精度（模具能力关键项）"
+    },
+    {
+      "subject": "定位孔",
+      "attribute": "孔径",
+      "value": "2.5",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "2处定位孔，IQC重点检验",
+      "raw_text": "2处定位孔 Ø2.5±0.05 mm"
+    },
+    {
+      "subject": "产品材质",
+      "attribute": "材料类型",
+      "value": "ABS 白色",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "材质为 ABS 白色"
+    },
+    {
+      "subject": "RoHS合规",
+      "attribute": "法规符合性",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "产品符合 RoHS 2.0"
+    },
+    {
+      "subject": "通用公差（<5mm）",
+      "attribute": "尺寸公差",
+      "value": "±0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "尺寸 <5 mm，Level B",
+      "raw_text": "尺寸 <5 mm: ±0.1（Level B）"
+    },
+    {
+      "subject": "通用公差（5–15mm）",
+      "attribute": "尺寸公差",
+      "value": "±0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "尺寸 5–15 mm，Level B",
+      "raw_text": "5–15 mm: ±0.1（Level B）"
+    },
+    {
+      "subject": "通用公差（15–50mm）",
+      "attribute": "尺寸公差",
+      "value": "±0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "尺寸 15–50 mm，Level B",
+      "raw_text": "15–50 mm: ±0.1（Level B）"
+    },
+    {
+      "subject": "通用公差（50–100mm）",
+      "attribute": "尺寸公差",
+      "value": "±0.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "尺寸 50–100 mm，Level B",
+      "raw_text": "50–100 mm: ±0.2（Level B）"
+    },
+    {
+      "subject": "通用公差（>100mm）",
+      "attribute": "尺寸公差",
+      "value": "±0.2",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "尺寸 >100 mm，Level B",
+      "raw_text": ">100 mm: ±0.2%（Level B）"
+    },
+    {
+      "subject": "角度公差",
+      "attribute": "角度公差",
+      "value": "±0.5",
+      "unit": "°",
+      "tolerance": "",
+      "condition": "Level B",
+      "raw_text": "角度: ±0.5°（Level B）"
+    },
+    {
+      "subject": "大按键",
+      "attribute": "外径",
+      "value": "13.7",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "",
+      "raw_text": "大按键外径 Ø13.7±0.05，可能是开机键或测量键"
+    },
+    {
+      "subject": "小按键",
+      "attribute": "外径",
+      "value": "9.71",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "",
+      "raw_text": "小按键外径 Ø9.71±0.05，可能是测温键或开机键"
+    },
+    {
+      "subject": "定位孔数量",
+      "attribute": "数量",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "H形弹性连接桥中央桥处，用于装配定位",
+      "raw_text": "中央桥处两个孔，用于装配定位（柱配合）或螺柱避空"
+    },
+    {
+      "subject": "弹性梁避空槽",
+      "attribute": "孔径",
+      "value": "4.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "共2处，Level B精度，俯视图中央两侧",
+      "raw_text": "俯视图中央两侧两个大孔 Ø4.5，Level B，可能是弹性梁的避空槽/减薄区"
+    },
+    {
+      "subject": "弹性梁避空槽",
+      "attribute": "数量",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "Level B",
+      "raw_text": "俯视图中央两侧两个大孔，可能是弹性梁的避空槽/减薄区"
+    }
+  ]
+}

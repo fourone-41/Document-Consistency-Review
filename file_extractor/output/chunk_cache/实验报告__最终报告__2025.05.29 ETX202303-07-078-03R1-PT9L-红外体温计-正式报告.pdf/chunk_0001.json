@@ -1,0 +1,143 @@
+{
+  "document": {
+    "doc_id": "ETX202303-07-078-03R1",
+    "title": "红外体温计正式测试报告",
+    "doc_type": "Test Report",
+    "version": "R1",
+    "date": "2025-05-29",
+    "total_pages": 21,
+    "language": [
+      "zh",
+      "en"
+    ]
+  },
+  "products": [
+    {
+      "name": "红外体温计（Infrared No-Touch Forehead Thermometer）",
+      "classification": "Hand-held ME equipment",
+      "device_type": "Equipment",
+      "mode_of_operation": "Continuous",
+      "supply_connection": "Internally powered",
+      "accessories": "N/A"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "description": "The Infrared No-Touch Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by healthcare providers.",
+      "application_location": "Forehead skin surface",
+      "patient_population": "People of all ages",
+      "use_environment": [
+        "Household environment",
+        "Healthcare provider settings"
+      ],
+      "measurement_type": "Intermittent measurement of body temperature"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "EN ISO 80601-2-56:2017/A1:2020",
+      "full_name": "EN ISO 80601-2-56:2017/A1:2020 - Clinical thermometers for body temperature measurement",
+      "role": "Primary test standard"
+    },
+    {
+      "id": "ISO 80601-2-56:2017+A1:2018",
+      "full_name": "ISO 80601-2-56:2017+A1:2018 - Clinical thermometers for body temperature measurement",
+      "role": "Primary test standard"
+    },
+    {
+      "id": "IEC 60601-1:2005",
+      "full_name": "IEC 60601-1:2005 - Medical electrical equipment general requirements",
+      "role": "Companion standard, used together with ISO 80601-2-56"
+    }
+  ],
+  "tests": [
+    {
+      "test_name": "EN ISO 80601-2-56:2017/A1:2020 全项评估",
+      "standard": "EN ISO 80601-2-56:2017/A1:2020 / ISO 80601-2-56:2017+A1:2018",
+      "overall_result": "Pass",
+      "verdict_codes": {
+        "N/A": "Test case does not apply to the test object",
+        "P": "Test object does meet the requirement",
+        "N/E": "Test object was not evaluated for the requirement"
+      },
+      "exclusions": [
+        {
+          "clause": "201.11.7",
+          "description": "Biocompatibility of ME EQUIPMENT and ME is not evaluated in this report."
+        },
+        {
+          "clause": "201.17",
+          "description": "Electromagnetic compatibility of ME EQUIPMENT and ME SYSTEMS is not evaluated in this report."
+        },
+        {
+          "clause": "201.102",
+          "description": "CLINICAL ACCURACY VALIDATION is not evaluated in this report."
+        },
+        {
+          "clause": "202",
+          "description": "Electromagnetic disturbances - Requirements and tests is not evaluated in this report."
+        },
+        {
+          "clause": "206",
+          "description": "Usability is not evaluated in this report."
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Report Number",
+      "value": "ETX202303-07-078-03R1"
+    },
+    {
+      "type": "File Reference",
+      "value": "ETX202303-07-078-03R1-PT9L"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Condition of acceptability:\n1) 201.11.7 Biocompatibility of ME EQUIPMENT and ME is not evaluated in this report.\n2) 201.17 Electromagnetic compatibility of ME EQUIPMENT and ME SYSTEMS is not evaluated in this report.\n3) 201.102 CLINICAL ACCURACY VALIDATION is not evaluated in this report.\n4) 202 Electromagnetic disturbances - Requirements and tests is not evaluated in this report.\n5) 206 Usability is not evaluated in this report.",
+      "topic_tags": [
+        "acceptability conditions",
+        "exclusions",
+        "biocompatibility",
+        "EMC",
+        "clinical accuracy",
+        "usability"
+      ],
+      "related_subjects": [
+        "EN ISO 80601-2-56:2017/A1:2020",
+        "ETX202303-07-078-03R1"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The tests results presented in this report relate only to the object tested. This report shall not be reproduced except in full without the written approval of the testing laboratory. List of test equipment must be kept on file and available for review. This Test Report Form is intended for the investigation of clinical thermometers for body temperature measurement in accordance with EN ISO 80601-2-56:2017/A1:2020/ISO 80601-2-56:2017+A1:2018. It can only be used together with IEC 60601-1:2005. Additional test data and/or information provided in the attachments to this report. Throughout this report a comma/point is used as the decimal separator.",
+      "topic_tags": [
+        "report scope",
+        "disclaimer",
+        "reproducibility restriction",
+        "decimal separator",
+        "test equipment records"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-03R1",
+        "IEC 60601-1:2005"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The artwork below may be only a draft. The use of certification marks on a product must be authorized by the respective NCBs that own these marks.",
+      "topic_tags": [
+        "certification marks",
+        "NCB authorization",
+        "marking plate"
+      ],
+      "related_subjects": [
+        "红外体温计",
+        "ETX202303-07-078-03R1"
+      ]
+    }
+  ]
+}

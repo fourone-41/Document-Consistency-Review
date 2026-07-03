@@ -1,0 +1,226 @@
+{
+  "document": {
+    "title": "PT9L EMC 型式试验报告（英文）",
+    "report_number": "ETX202303-07-078-01",
+    "date": "2024-08-15",
+    "total_pages": 30,
+    "fragment_pages": "13-14"
+  },
+  "tests": [
+    {
+      "test_name": "Electrostatic Discharge (ESD) Immunity Test",
+      "test_id": "6.2",
+      "standard_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "IEC 61000-4-2",
+      "test_date": "2024-07-29",
+      "environmental_conditions": {
+        "temperature": "28℃",
+        "humidity": "44%",
+        "pressure": "101kPa"
+      },
+      "power_supply": "DC 3V",
+      "test_parameters": {
+        "air_discharge_voltages": "±2, 4, 8, 15kV",
+        "contact_discharge_voltage": "±8kV",
+        "vcp_hcp_voltage": "±8kV",
+        "polarity": "Positive / Negative",
+        "number_of_discharges": "Minimum 10 times at each test point",
+        "discharge_mode": "Single Discharge",
+        "discharge_period": "1 second minimum"
+      },
+      "test_mode": "Mode 1, Mode 2",
+      "test_points": {
+        "air_discharge_points": [
+          {
+            "point": "A1",
+            "description": "Insulated enclosure/seams (Key-press, nonmetallic enclosure, LCD display, seams, cables)",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A2",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A3",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A4",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A5",
+            "results": {
+              "2kV_pos": "ND",
+              "2kV_neg": "ND",
+              "4kV_pos": "ND",
+              "4kV_neg": "ND",
+              "8kV_pos": "ND",
+              "8kV_neg": "ND",
+              "15kV_pos": "ND",
+              "15kV_neg": "ND",
+              "interval_s": 1,
+              "overall_result": "A (Accept)"
+            }
+          },
+          {
+            "point": "A6",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          }
+        ],
+        "contact_discharge_points": [
+          {
+            "point": "C1",
+            "description": "Accessible metal parts of the enclosure (metallic part of the cuff)",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          },
+          {
+            "point": "C2",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          },
+          {
+            "point": "C3",
+            "results": {
+              "overall_result": "Non-test (-)"
+            }
+          }
+        ]
+      },
+      "legend": {
+        "√": "Pass",
+        "×": "Fail",
+        "ND": "No Discharge",
+        "-": "Non-test"
+      }
+    },
+    {
+      "test_name": "Radiated RF EM Fields Immunity Test",
+      "pass_fail_criteria_description": "Same as ESD criteria (referenced in immunity table)",
+      "means_of_monitoring": "Visual"
+    },
+    {
+      "test_name": "Proximity Fields from RF Wireless Communications Immunity Test",
+      "means_of_monitoring": "Visual"
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "IMM-CRIT-ESD",
+      "description": "During ESD immunity test, EUT is tested in UE1 mode. Basic safety performance: Measurement accuracy ±0.2℃ at 35.0℃~42.0℃, other ranges ±0.3℃. EUT working condition visually inspected, set at 37℃. Temperature continuously measured and compared with blackbody temperature. Display accuracy shall not exceed ±0.2℃.",
+      "test_name": "Electrostatic Discharges",
+      "means_of_monitoring": "Visual"
+    },
+    {
+      "requirement_id": "IMM-CRIT-NOTE1",
+      "description": "Specific, detailed immunity pass/fail criteria shall be based on applicable part two standards or risk management, for immunity with regard to EM disturbances. These pass/fail criteria shall be included in the risk management file.",
+      "source": "IEC 60601-1-2:2014+A1:2020 Note 1"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-01"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L",
+      "type": "EUT (Equipment Under Test)",
+      "description": "Temperature measurement device (thermometer)"
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Medical electrical equipment EMC requirements"
+    },
+    {
+      "standard": "IEC 61000-4-2",
+      "description": "Electrostatic discharge immunity test method"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ESD Test Setup Procedure: (1) Contact discharge was applied only to conductive surfaces of the EUT. Air discharge was applied only to non-conducted surfaces of the EUT. (2) The EUT was put on a 0.8m high wooden table for table-top equipment or 0.1m high for floor standing equipment standing on the ground reference plane (GRP). (3) A horizontal coupling plane (HCP) 1.6m by 0.8m in size was placed on the table, and the EUT with its cables were isolated from the HCP by an insulating support thicker than 0.5mm. The VCP 0.5m by 0.5m in size while HCP were constructed from the same material type and thickness as that of the GRP, and connected to the GRP via a 470kΩ resistor at each end. The distance between EUT and any of the other metallic surfaces except the GRP, HCP and VCP was greater than 1m. (4) During the contact discharges, the tip of the discharge electrode touched the EUT before the discharge switch is operated. During the air discharges, the round discharge tip was approached as fast as possible to touch the EUT. (5) After each discharge, the ESD generator was removed from the EUT, the generator is then retriggered for a new single discharge. For ungrounded product, a discharge cable with two resistances was used after each discharge to remove remnant electrostatic voltage. 10 times of each polarity single discharge were applied to HCP and VCP.",
+      "topic_tags": [
+        "ESD",
+        "test setup",
+        "HCP",
+        "VCP",
+        "GRP",
+        "IEC 61000-4-2",
+        "discharge procedure"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-01",
+        "ESD Immunity Test"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Immunity Pass/Fail Criteria Note: Specific, detailed immunity pass/fail criteria shall be based on applicable part two standards or risk management, for immunity with regard to EM disturbances. These pass/fail criteria shall be included in the risk management file.",
+      "topic_tags": [
+        "pass/fail criteria",
+        "risk management",
+        "EMC",
+        "immunity"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-2:2014+A1:2020",
+        "risk management file"
+      ]
+    }
+  ]
+}

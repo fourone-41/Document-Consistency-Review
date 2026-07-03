@@ -1,0 +1,325 @@
+{
+  "document": {
+    "report_no": "ETX2023-07-078-02",
+    "page_range": "118-120 of 182",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 with amendments",
+      "description": "Medical electrical equipment - General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 with amendments",
+      "description": "European version of IEC 60601-1"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.6.4",
+      "name": "Impedance and current-carrying capability of PROTECTIVE EARTH CONNECTIONS",
+      "result": "N/A",
+      "notes": [
+        "PERMANENTLY INSTALLED ME EQUIPMENT, impedance between PROTECTIVE EARTH TERMINAL and a PROTECTIVELY EARTHED part - Limit 100 mΩ",
+        "ME EQUIPMENT with an APPLIANCE INLET, impedance between earth pin in the APPLIANCE INLET and a PROTECTIVELY EARTHED part - Limit 100 mΩ",
+        "ME EQUIPMENT with an APPLIANCE INLET, impedance between earth pin in the protective earth pin on the DETACHABLE POWER SUPPLY CORD and a PROTECTIVELY EARTHED part - Limit 200 mΩ",
+        "ME EQUIPMENT with a non-DETACHABLE POWER SUPPLY CORD, impedance between the protective earth pin in the MAINS PLUG and a PROTECTIVELY EARTHED part - Limit 200 mΩ"
+      ]
+    },
+    {
+      "clause": "8.7",
+      "name": "Leakage Current",
+      "sub_tests": [
+        {
+          "figure": "Fig. 13",
+          "type": "Earth Leakage (ER)",
+          "supply_voltage_V": null,
+          "supply_frequency_Hz": null,
+          "measured_max_value_uA": null,
+          "result": "N/A"
+        },
+        {
+          "figure": "Fig. 14",
+          "type": "Touch Current (TC) - frequency weighted",
+          "maximum_allowed": "100 µA NC; 500 µA SFC",
+          "conditions": [
+            {
+              "condition": "NC(B): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 1.46,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(B): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            },
+            {
+              "condition": "NC(A): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 1.22,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(A): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            }
+          ]
+        },
+        {
+          "figure": "Fig. 14",
+          "type": "Touch Current (TC) - Non-frequency weighted",
+          "maximum_allowed": "10 mA",
+          "conditions": [
+            {
+              "condition": "NC(B): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 22.34,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(B): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            },
+            {
+              "condition": "NC(A): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 31.66,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(A): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            }
+          ]
+        },
+        {
+          "figure": "Fig. 15",
+          "type": "Patient Leakage Current (P) - frequency weighted",
+          "maximum_allowed": "Type B or BF AP: 10 µA NC; 50 µA SFC (d.c. current); 100 µA NC; 500 µA SFC (a.c.) | Type CF AP: 10 µA NC; 50 µA SFC (d.c. or a.c. current)",
+          "conditions": [
+            {
+              "condition": "NC(B): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": "≤1",
+              "result": "P"
+            },
+            {
+              "condition": "SFC(B): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            },
+            {
+              "condition": "NC(A): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": "≤1",
+              "result": "P"
+            },
+            {
+              "condition": "SFC(A): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            }
+          ]
+        },
+        {
+          "figure": "Fig. 15",
+          "type": "Patient Leakage Current (P) - Non-frequency weighted",
+          "maximum_allowed": "100 µA NC; 500 µA SFC",
+          "conditions": [
+            {
+              "condition": "NC(B): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 11.39,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(B): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            },
+            {
+              "condition": "NC(A): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 9.23,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(A): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            }
+          ]
+        },
+        {
+          "figure": "Fig. 16",
+          "type": "Patient leakage current with mains on the F-type applied parts (PM) - frequency weighted",
+          "maximum_allowed": "Type B or BF AP: 10 µA NC; 50 µA SFC (d.c. current); 100 µA NC; 500 µA SFC (a.c.) | Type CF AP: 10 µA NC; 50 µA SFC (d.c. or a.c. current)",
+          "conditions": [
+            {
+              "condition": "NC(B): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 5.05,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(B): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            },
+            {
+              "condition": "NC(A): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 4.54,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(A): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            }
+          ]
+        },
+        {
+          "figure": "Fig. 16",
+          "type": "Patient leakage current with mains on the F-type applied parts (PM) - Non-frequency weighted",
+          "maximum_allowed": "100 µA NC; 500 µA SFC",
+          "conditions": [
+            {
+              "condition": "NC(B): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 14.71,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(B): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            },
+            {
+              "condition": "NC(A): supplied by battery",
+              "supply_voltage_V": 3,
+              "supply_frequency": "DC",
+              "measured_max_value_uA": 17.01,
+              "result": "P"
+            },
+            {
+              "condition": "SFC(A): supplied by battery",
+              "supply_voltage_V": null,
+              "supply_frequency": null,
+              "measured_max_value_uA": null,
+              "result": "N/A"
+            }
+          ]
+        },
+        {
+          "figure": "Fig. 17",
+          "type": "Patient leakage current with external voltage on Signal Input/Output part (SIP/SOP)",
+          "result": "N/A"
+        },
+        {
+          "figure": "Fig. 18",
+          "type": "Patient leakage current with external voltage on metal Accessible Part that is not Protectively Earthed",
+          "result": "N/A"
+        },
+        {
+          "figure": "Fig. 19",
+          "type": "Patient Auxiliary Current",
+          "result": "N/A"
+        },
+        {
+          "figure": "Fig. 15 and 20",
+          "type": "Total Patient Leakage Current with all AP of same type connected together",
+          "result": "N/A"
+        },
+        {
+          "figure": "Fig. 17 and 20",
+          "type": "Total Patient Leakage Current with all AP of same type connected together with external voltage on SIP/SOP",
+          "result": "N/A"
+        },
+        {
+          "figure": "Fig. 16 and 20",
+          "type": "Total Patient Leakage Current with all AP of same type connected together with external voltage on F-type AP",
+          "result": "N/A"
+        },
+        {
+          "figure": "Fig. 18 and 20",
+          "type": "Total Patient Leakage Current with all AP of same type connected together with external voltage on metal Accessible Part not Protectively Earthed",
+          "result": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Protective Earth Connection impedance limits per IEC60601-1 clause 8.6.4: PERMANENTLY INSTALLED ME EQUIPMENT, impedance between PROTECTIVE EARTH TERMINAL and a PROTECTIVELY EARTHED part - Limit 100 mΩ; ME EQUIPMENT with an APPLIANCE INLET, impedance between earth pin in the APPLIANCE INLET and a PROTECTIVELY EARTHED part - Limit 100 mΩ; ME EQUIPMENT with an APPLIANCE INLET, impedance between earth pin in the protective earth pin on the DETACHABLE POWER SUPPLY CORD and a PROTECTIVELY EARTHED part - Limit 200 mΩ; ME EQUIPMENT with a non-DETACHABLE POWER SUPPLY CORD, impedance between the protective earth pin in the MAINS PLUG and a PROTECTIVELY EARTHED part - Limit 200 mΩ.",
+      "topic_tags": [
+        "protective earth",
+        "impedance",
+        "IEC60601-1",
+        "8.6.4",
+        "safety"
+      ],
+      "related_subjects": [
+        "8.6.4",
+        "ETX2023-07-078-02"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Leakage current maximum allowed values per IEC60601-1 clause 8.7: Touch Current (TC) frequency weighted: 100 µA NC; 500 µA SFC. Touch Current (TC) non-frequency weighted: 10 mA. Patient Leakage Current frequency weighted - Type B or BF AP: 10 µA NC; 50 µA SFC (d.c. current); 100 µA NC; 500 µA SFC (a.c.); Type CF AP: 10 µA NC; 50 µA SFC (d.c. or a.c. current). Patient Leakage Current non-frequency weighted: 100 µA NC; 500 µA SFC.",
+      "topic_tags": [
+        "leakage current",
+        "touch current",
+        "patient leakage",
+        "IEC60601-1",
+        "8.7",
+        "safety limits"
+      ],
+      "related_subjects": [
+        "8.7",
+        "ETX2023-07-078-02",
+        "applied parts"
+      ]
+    }
+  ]
+}

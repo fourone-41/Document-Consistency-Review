@@ -1,0 +1,119 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-01",
+    "title": "PT9L EMC 型式试验报告（英文）",
+    "date": "2024-08-15",
+    "total_pages": 30,
+    "current_pages": "19-20"
+  },
+  "tests": [
+    {
+      "test_id": "6.5",
+      "test_name": "Electrical Fast Transient / Burst (EFT)",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "sections": [
+        "6.5.1",
+        "6.5.2"
+      ],
+      "result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.6",
+      "test_name": "Surge",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "test_level": "N/A",
+      "polarity": "N/A",
+      "generator_source_impedance": "N/A",
+      "trigger_mode": "N/A",
+      "no_of_surges": "N/A",
+      "sections": [
+        "6.6.1",
+        "6.6.2"
+      ],
+      "result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.7",
+      "test_name": "Conducted Immunity 0.15 MHz to 80 MHz",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "frequency_range": "N/A",
+      "test_level": "N/A",
+      "modulation": "N/A",
+      "dwell_time": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "scope": "EMC requirements for medical electrical equipment",
+      "applied_to": [
+        "6.5 EFT",
+        "6.6 Surge",
+        "6.7 Conducted Immunity"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "EFT Test Setup (6.5.1): The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The GRP shall project beyond the EUT and the clamp by at least 0.1m on all sides. The distance between the EUT and any other metallic surface except the GRP was greater than 0.5m. All cables to the EUT was placed on the insulation support 0.1m above GRP. Cables not subject to EFT was routed as far as possible from cable under test to minimize coupling between cables. The length of signal and power cable between the EUT and EFT generator was 0.5m. If the cable is a non-detachable supply cable more than 0.5m, the excess length shall be folded to avoid a flat coil and situated at a distance of 0.1m above the GRP. The EUT was conducted the below specified level voltage test for line to neutral or line to neutral to earth (for clamp coupling is for the signal line), 120 seconds duration. If the equipment contains identical ports, only one was tested; multiconductor cables were tested as a single cable. Interface ports intended by the manufacturer to be connected to data cables not longer than 3m did not be tested. During the test, the EUT was tested with the hand-held parts terminated with artificial hand.",
+      "topic_tags": [
+        "EFT",
+        "test setup",
+        "GRP",
+        "cable routing",
+        "insulating support",
+        "artificial hand"
+      ],
+      "related_subjects": [
+        "6.5.1",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Surge Test Setup (6.6.1): The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The 1.2/50 µs surge was to be applied to the EUT power supply terminals via the capacitive coupling network. Decoupling networks were required in order to avoid possible adverse effects on equipment not under test that may be powered by the same lines and to provide sufficient decoupling impedance to the surge wave. The power cord between the EUT and the coupling/decoupling network shall not exceed 2m in length. The EUT was conducted 1kV test voltage for line to line and line to neutral, and 2kV test voltage for line to earth and neutral to earth, five positive pulses and five negative pulses each at 90° and 270° for AC power ports and five positive pulses and five negative surge pulses for DC power ports. The test levels were applied with a 2Ω generator source impedance for power supply terminals and 40Ω output impedance for interconnection lines. Tests were done at repetition rate 1 per minute.",
+      "topic_tags": [
+        "Surge",
+        "test setup",
+        "1.2/50 µs",
+        "capacitive coupling",
+        "decoupling network",
+        "GRP",
+        "1kV",
+        "2kV"
+      ],
+      "related_subjects": [
+        "6.6.1",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For tests 6.5 (EFT) and 6.6 (Surge), the EUT is powered by batteries and therefore these clauses do not apply. All test parameters for 6.6 (Surge) and 6.7 (Conducted Immunity 0.15 MHz to 80 MHz) are listed as N/A.",
+      "topic_tags": [
+        "battery powered",
+        "not applicable",
+        "EFT",
+        "Surge",
+        "Conducted Immunity"
+      ],
+      "related_subjects": [
+        "6.5.2",
+        "6.6.2",
+        "6.7",
+        "EUT"
+      ]
+    }
+  ]
+}

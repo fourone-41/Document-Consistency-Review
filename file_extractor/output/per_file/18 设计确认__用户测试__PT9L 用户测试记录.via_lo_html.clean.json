@@ -1,0 +1,348 @@
+{
+  "document": {
+    "title": "PT9L 用户测试记录",
+    "doc_type": "用户现场测试记录",
+    "version": "V1.0"
+  },
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RYCL01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": "2024.05.15"
+    }
+  ],
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "起草人"
+    },
+    {
+      "name": "侯广伟",
+      "title": "审核人"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "操作-1",
+      "item": "安装电池",
+      "expected_value": "电池安装完毕后，LCD全显，且蜂鸣器\"滴\"一下",
+      "pass_criteria": "正常/异常"
+    },
+    {
+      "test_id": "操作-2",
+      "item": "在婴儿模式测量体温",
+      "expected_value": "待机状态下，用户按键测量额温，LCD能显示体温数据",
+      "pass_criteria": "正常/异常"
+    },
+    {
+      "test_id": "操作-3",
+      "item": "在成人模式测量体温",
+      "expected_value": "显示婴儿体温数据状态下，用户短按设置按键，切换到成人模式，短按测量键测量额温，LCD能显示体温数据",
+      "pass_criteria": "正常/异常"
+    },
+    {
+      "test_id": "操作-4",
+      "item": "在物温模式测量物温",
+      "expected_value": "显示成人体温数据状态下，用户短按设置按键，切换到物温模式，短按测量键测量恒温物体物温，LCD能显示物温数据",
+      "pass_criteria": "正常/异常"
+    },
+    {
+      "test_id": "操作-5",
+      "item": "关机",
+      "expected_value": "测量结束后，不对体温计操作，等待自动关机",
+      "pass_criteria": "正常/异常；关机时间感受：较长/合理/较短"
+    },
+    {
+      "test_id": "性能-1",
+      "item": "准确性测试",
+      "condition": "1. 提供经过校验的体温计，用户测量体温3次；2. 提供经过校验的水银体温计，用户测量腋温1次",
+      "pass_criteria": "记录测量数据，与校验体温计/水银体温计比对"
+    },
+    {
+      "test_id": "性能-2",
+      "item": "重复性测试",
+      "condition": "用户测量体温，连续测量10次",
+      "pass_criteria": "记录10次测量值；用户主观评价：很准/一般/不准"
+    },
+    {
+      "test_id": "其他-1",
+      "item": "体温计的LCD显示",
+      "expected_value": "LCD亮度适宜，显示内容明确易懂",
+      "pass_criteria": "亮度：刺眼/很好/一般/太暗；内容：内容明确/能懂/看不懂"
+    },
+    {
+      "test_id": "其他-2",
+      "item": "体温计的反应速度",
+      "expected_value": "反应迅速，测量过程快，简单易用",
+      "pass_criteria": "很迅速/一般/慢"
+    },
+    {
+      "test_id": "其他-3",
+      "item": "需要改进的部分",
+      "pass_criteria": "用户填写改进建议"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "用户现场测试记录统计表记录每位受试用户的用户编号、用户类别（专业技术人员/普通用户）、软件版本（国内/美版/欧版）、测试人及备注，共12个用户槽位。文件清单包括：《受试用户信息记录表》、《用户现场测试记录表》、《用户现场测试问卷调查表》。",
+      "topic_tags": [
+        "用户测试统计",
+        "受试用户",
+        "软件版本",
+        "测试记录"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "受试用户信息记录表收集以下信息：受试用户编号、受试用户类别（专业技术人员/普通用户）、姓名、性别（男/女）、年龄、软件版本（国内/美版/欧版）、教育程度（初中/高中/大学）。",
+      "topic_tags": [
+        "受试用户信息",
+        "用户分类",
+        "教育程度"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "用户测试"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "风险评估：是否发现新的风险——□未发现 □有新风险，解决方案（待填写）。",
+      "topic_tags": [
+        "风险评估",
+        "新风险",
+        "解决方案"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "用户现场测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "用户现场测试问卷调查表（受试用户编号待填写），问卷内容共8项：1. 用户说明书可读性（5级量表：非常容易至非常困难）；2. 标签（彩包装、机身标识）的可读性（5级量表）；3. LCD显示内容是否易懂（5级量表）；4. LCD显示是否清楚（5级量表：非常清楚至非常不清楚）；5. 安装电池是否容易（5级量表）；6. 按键的易用性（5级量表）；7. 用户说明书和产品随机文件中是否容易找到提供售后服务信息（5级量表）；8. 是否提供了用户说明书和产品随机文件以外的材料（是/否）。",
+      "topic_tags": [
+        "问卷调查",
+        "可用性评估",
+        "LCD显示",
+        "说明书",
+        "按键",
+        "售后服务"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计",
+        "用户测试"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "18 设计确认/用户测试/PT9L 用户测试记录.via_lo_html.clean.md",
+    "doc_type": "design_validation"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L 用户测试记录",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "用户测试统计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "用户测试统计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "受试用户信息",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "用户测试",
+      "to": "受试用户信息",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "风险评估",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "用户现场测试",
+      "to": "风险评估",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "问卷调查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "问卷调查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "用户测试",
+      "to": "问卷调查",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RYCL01 V1.0",
+      "properties": {
+        "role": "起草人",
+        "date": "2024.05.15"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RYCL01 V1.0",
+      "properties": {
+        "role": "审核人"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RYCL01 V1.0",
+      "to": "1",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "王迪",
+        "date": "2024.05.15"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "电池安装",
+      "attribute": "LCD反应",
+      "value": "全显",
+      "unit": "",
+      "tolerance": "",
+      "condition": "电池安装完毕后",
+      "raw_text": "电池安装完毕后，LCD全显，且蜂鸣器\"滴\"一下"
+    },
+    {
+      "subject": "蜂鸣器",
+      "attribute": "响应次数",
+      "value": "1",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "电池安装完毕后",
+      "raw_text": "电池安装完毕后，LCD全显，且蜂鸣器\"滴\"一下"
+    },
+    {
+      "subject": "婴儿模式测温",
+      "attribute": "测量方式",
+      "value": "额温",
+      "unit": "",
+      "tolerance": "",
+      "condition": "待机状态下按键测量",
+      "raw_text": "待机状态下，用户按键测量额温，LCD能显示体温数据"
+    },
+    {
+      "subject": "测量模式切换",
+      "attribute": "操作方式",
+      "value": "短按设置按键",
+      "unit": "",
+      "tolerance": "",
+      "condition": "从婴儿模式切换至成人模式",
+      "raw_text": "用户短按设置按键，切换到成人模式，短按测量键测量额温"
+    },
+    {
+      "subject": "成人模式测温",
+      "attribute": "测量方式",
+      "value": "额温",
+      "unit": "",
+      "tolerance": "",
+      "condition": "成人模式下短按测量键",
+      "raw_text": "切换到成人模式，短按测量键测量额温，LCD能显示体温数据"
+    },
+    {
+      "subject": "物温模式测温",
+      "attribute": "测量对象",
+      "value": "恒温物体",
+      "unit": "",
+      "tolerance": "",
+      "condition": "切换至物温模式后短按测量键",
+      "raw_text": "切换到物温模式，短按测量键测量恒温物体物温，LCD能显示物温数据"
+    },
+    {
+      "subject": "自动关机",
+      "attribute": "触发条件",
+      "value": "测量结束后无操作",
+      "unit": "",
+      "tolerance": "",
+      "condition": "测量结束后",
+      "raw_text": "测量结束后，不对体温计操作，等待自动关机"
+    },
+    {
+      "subject": "准确性测试",
+      "attribute": "重复测量次数（校验体温计）",
+      "value": "3",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "提供经过校验的体温计",
+      "raw_text": "提供经过校验的体温计，用户测量体温3次"
+    },
+    {
+      "subject": "准确性测试",
+      "attribute": "重复测量次数（水银体温计）",
+      "value": "1",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "提供经过校验的水银体温计，测量腋温",
+      "raw_text": "提供经过校验的水银体温计，用户测量腋温1次"
+    },
+    {
+      "subject": "重复性测试",
+      "attribute": "连续测量次数",
+      "value": "10",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "用户连续测量体温",
+      "raw_text": "用户测量体温，连续测量10次"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "summary": "本轮对6个cluster共进行裁决。MC-CLUSTER-0009：硬件设计方案E0的MD文件为自动生成的读图报告模板，标题栏关键字段（图号、零件名、材料、表面处理、比例、公差）均标注"待填"，属于正式Stage 06文件中未完成填写的受控质量问题，confirm P1。MC-CLUSTER-0010：软件质量策划评审检查表中存在"模板修改记录"Sheet，为Excel模板结构性sheet，内容为空行，属于模板未实例化的受控问题，confirm P2。MC-CLUSTER-0012：软件需求规格文件末尾出现"第0页/共5页 模板版本：I"，为模板页码占位符未替换，属于正式文件中模板残留，confirm P2。MC-CLUSTER-0013：DFMEA文件中FMEA编号含"XXXX"占位符（KD-XXXX-PDFM01、KD-XXXX-ODFM01），且产品型号为KD-5915L而非PT9L，存在编号未受控且型号不符问题，confirm P1。MC-CLUSTER-0018：文件名含PT3SBT，但内容中同时包含PT2L和PT9L的标签检查报告模板，且签署日期均为空白，属于标签审核表模板未完成实例化及签署缺失问题，confirm P1。MC-CLUSTER-0024：primary_scope为false，为Stage 11软件文件底稿中的模板修改记录Sheet，与MC-CLUSTER-0010内容高度重复，属于草稿/底稿范围，dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0009",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "unfilled_template_fields_in_controlled_document",
+      "claim": "硬件设计方案E0读图报告（Stage 06正式文件）标题栏中Drawing NO.、Part name、Pro material、Surf dispose、Scale、Tolerance等关键字段均为"待填"占位符，文件头注释亦明确标注"自动生成模板+待填"，属于正式受控文件中关键设计信息未填写的实质性质量问题。",
+      "reason": "该文件位于Stage 06主审范围（primary_scope=true），路径为正式硬件设计方案目录。文件头HTML注释明确写明"2026-05-14 自动生成模板+待填"，说明该MD文件是由工具自动生成的读图报告，但标题栏A级字段（图号、零件名、材料、表面处理、比例、公差）均未填写实际内容，仅保留"（待填）"占位符。这些字段是工程图纸标题栏的核心受控信息，缺失将导致DHF中硬件设计证据链不完整，无法追溯具体零件的图号与规格。虽然注释提示"见右下标题栏"，但MD文件作为受控文档副本本身应包含完整信息，不能以"参见原PDF"为由留空。构成P1级受控文件信息缺失问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0010",
+      "decision": "confirm",
+      "severity": "P2",
+      "error_type": "empty_template_sheet_in_controlled_document",
+      "claim": "软件质量策划评审检查表（Stage 07正式文件）中存在名为"模板修改记录"的Sheet，内容为空白行，属于Excel模板结构未实例化、修改记录未填写的受控文件质量问题。",
+      "reason": "该文件位于Stage 07主审范围（primary_scope=true），为软件质量策划评审检查表的正式受控版本。"模板修改记录"Sheet包含修改日期、修改人、修改内容三列表头，但所有数据行均为空白，说明该Sheet为模板原始结构，从未被实际填写。受控文件的修改记录是版本管理的重要组成部分，空白修改记录表明文件版本变更历史未被记录，影响文件受控完整性。定为P2级，因其影响版本追溯但不直接影响设计输出内容。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0012",
+      "decision": "confirm",
+      "severity": "P2",
+      "error_type": "template_placeholder_not_replaced_in_formal_document",
+      "claim": "软件需求规格文件（Stage 07正式文件）中出现"第0页/共5页 模板版本：I"字样，为模板页码占位符及模板版本标识未替换，属于正式文件中模板残留问题。",
+      "reason": "该文件位于Stage 07主审范围（primary_scope=true），为软件需求规格说明书的正式受控版本。"第0页/共5页"是明显的模板占位符（正式文件页码不应为0），"模板版本：I"是模板管理标识，均应在文件正式化时替换为实际内容。这些残留标识表明文件可能未经完整的模板实例化处理即进入受控状态，影响文件的正式性和可信度。定为P2级，因其属于格式/标识问题，不直接影响需求内容本身，但影响文件受控状态的判断。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0013",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "unfilled_document_number_placeholder_and_wrong_model_number",
+      "claim": "Stage 11 DFMEA文件中FMEA编号含"XXXX"占位符（KD-XXXX-PDFM01 V1.0、KD-XXXX-ODFM01 V1.0），且产品型号字段填写为KD-5915L而非PT9L，存在文件编号未受控及型号不符的双重质量问题。",
+      "reason": "该文件位于Stage 11主审范围（primary_scope=true），为结构类FMEA正式文件。FMEA编号中的"XXXX"是明确的占位符，表明文件编号未被正式分配，违反受控文件编号唯一性要求。同时，产品型号字段填写为KD-5915L，而本DHF/DMR审查对象为PT9L，型号不符可能意味着该FMEA文件是从其他产品模板复制而来且未完成适配，或存在错误引用。FMEA编号未受控直接影响设计风险分析的可追溯性，型号不符影响证据链的归属确认，两者叠加构成P1级问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0018",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "unsigned_label_review_template_with_wrong_model_reference",
+      "claim": "PT3SBT标签审核表（Stage 11正式文件）中包含PT2L（美亚）和PT9L的标签检查报告模板，所有Sheet的拟制、审核、检查签署日期均为空白（"年月日"占位符），且文件名含PT3SBT与内容型号不一致，属于标签审核文件未完成签署及型号标识混乱的受控质量问题。",
+      "reason": "该文件位于Stage 11主审范围（primary_scope=true），文件名为PT3SBT标签审核表，但内容中Sheet"标签报告模板-美"对应PT2L（美亚），Sheet"标签报告模板-美(2)"、"标签报告模板-简版"、"标签报告模板-欧美"对应PT9L，文件名与部分内容型号不一致，存在型号混用风险。更关键的是，所有Sheet中的拟制、审核、检查签署日期均为"年月日"空白占位符，表明标签审核活动从未被正式签署确认。标签审核表是医疗器械上市前的重要合规文件，签署缺失意味着审核活动无法被证明已实际执行，构成P1级受控合规问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0024",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "draft_template_sheet_outside_primary_scope",
+      "claim": "该候选位于Stage 11软件文件底稿目录（primary_scope=false），内容与MC-CLUSTER-0010高度重复，属于草稿/底稿范围的模板结构，不构成正式受控文件的独立质量问题。",
+      "reason": "该cluster的primary_scope明确标注为false，文件路径为"11 T1样机\\软件文件底稿\\..."，属于底稿目录而非正式受控文件目录。内容（"模板修改记录"Sheet空白）与MC-CLUSTER-0010（Stage 07正式文件中的同名Sheet）高度重复，正式文件问题已在MC-CLUSTER-0010中confirm处理。底稿文件中的模板结构残留属于工作过程文件的正常状态，不影响PT9L正式DHF/DMR的证据链完整性，予以dismiss。"
+    }
+  ]
+}
+```

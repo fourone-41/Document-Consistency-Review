@@ -1,0 +1,134 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-01",
+    "title": "型式试验报告（Type Test Report）",
+    "total_pages": 30,
+    "status": "Draft"
+  },
+  "tests": [
+    {
+      "test_id": "5.1",
+      "test_name": "Conducted Emissions at Mains Terminals",
+      "note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "5.2",
+      "test_name": "Radiated Emissions, 30MHz to 1GHz",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "CISPR11",
+      "test_date": "2024-07-05",
+      "temperature": "28℃",
+      "humidity": "52%",
+      "power_supply": "DC 3V",
+      "frequency_range": "30 MHz to 1 GHz",
+      "test_site": "3m Semi-anechoic chamber",
+      "class": "Group 1, Class B",
+      "detector": "Peak for pre-scan (120 kHz resolution bandwidth)",
+      "test_modes": [
+        "Mode1",
+        "Mode2"
+      ],
+      "limits": [
+        {
+          "frequency_range_MHz": "30 to 230",
+          "quasi_peak_limit_dBuV_m": 40
+        },
+        {
+          "frequency_range_MHz": "230 to 1000",
+          "quasi_peak_limit_dBuV_m": 47
+        }
+      ],
+      "procedure_notes": [
+        "Radiated emission test conducted in a semi-anechoic chamber.",
+        "Tabletop EUT placed on a non-metallic table 0.8m above ground reference plane; floor-standing EUT placed on horizontal ground reference plane separated by 0.1m insulation.",
+        "Pre-scan performed in spectrum mode with peak detector before final measurements.",
+        "EUT rotated 360° at each frequency; antenna raised and lowered from 1 to 4 meters; measurements performed for both horizontal and vertical antenna polarization.",
+        "Level = Read Level + Antenna Factor + Cable Loss – Preamp Factor"
+      ],
+      "figures": [
+        {
+          "figure_no": 1,
+          "description": "Measurement results of radiated emission, Mode 1"
+        },
+        {
+          "figure_no": 2,
+          "description": "Measurement results of radiated emission, Mode 2"
+        }
+      ]
+    },
+    {
+      "test_id": "6",
+      "test_name": "Electromagnetic Susceptibility Test Results",
+      "test_requirement": "IEC 60601-1-2",
+      "section": "6.1 Performance Criteria Description"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "description": "Medical electrical equipment – Electromagnetic disturbances"
+    },
+    {
+      "id": "CISPR11",
+      "description": "Test method for radiated emissions"
+    }
+  ],
+  "requirements": [
+    {
+      "req_id": "5.1-limit",
+      "description": "Conducted emissions limit at mains terminals",
+      "details": [
+        {
+          "frequency_range_MHz": "0.15 to 0.50",
+          "quasi_peak_dBuV": "66-56",
+          "average_dBuV": "56-46"
+        },
+        {
+          "frequency_range_MHz": "0.50 to 5",
+          "quasi_peak_dBuV": "56",
+          "average_dBuV": "46"
+        },
+        {
+          "frequency_range_MHz": "5 to 30",
+          "quasi_peak_dBuV": "60",
+          "average_dBuV": "50"
+        }
+      ],
+      "note": "The lower limit is applicable at the transition frequency."
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Performance Criteria Description in IEC 60601-1-2: Examples of test failures include: malfunction; non-operation when operation is required; unwanted operation when no operation is required; deviation from normal operation that poses an unacceptable RISK to the PATIENT or OPERATOR; component failures; change in programmable parameters; reset to factory defaults (MANUFACTURER's presets); change of operating mode; a FALSE POSITIVE ALARM CONDITION; a FALSE NEGATIVE ALARM CONDITION (failure to alarm); cessation or interruption of any intended operation, even if accompanied by an ALARM signal; initiation of any unintended operation, including unintended or uncontrolled motion, even if accompanied by an ALARM signal; error of a displayed numerical value sufficiently large to affect diagnosis or treatment; noise on a waveform in which the noise would interfere with diagnosis, treatment or monitoring; artefact or distortion in an image in which the artefact would interfere with diagnosis, treatment or monitoring; failure of automatic diagnosis or treatment ME EQUIPMENT or ME SYSTEM to diagnose or treat, even if accompanied by an ALARM signal.",
+      "topic_tags": [
+        "EMC",
+        "performance criteria",
+        "pass/fail",
+        "alarm",
+        "susceptibility",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "6.1",
+        "Electromagnetic Susceptibility Test Results",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Examples of performance during and after the applied testing stimulus required to pass the test: for a mammography system, the compression full release and associated command remains fully operational; for ULTRASOUND DIAGNOSTIC EQUIPMENT, the probe heating, dissipative power and temperature shall remain within specifications; safety-related functions perform as intended; false operation of alarms, 'fail safe' modes and similar functions do not occur. NOTE: This might require performing the test twice – once to ensure the functions occur as expected and again to ensure they do not occur falsely.",
+      "topic_tags": [
+        "pass criteria",
+        "safety function",
+        "alarm",
+        "EMC susceptibility",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "6.1",
+        "Electromagnetic Susceptibility Test Results"
+      ]
+    }
+  ]
+}

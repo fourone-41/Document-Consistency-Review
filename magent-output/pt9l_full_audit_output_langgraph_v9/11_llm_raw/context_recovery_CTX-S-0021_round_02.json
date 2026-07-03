@@ -1,0 +1,151 @@
+```json
+{
+  "context_summary": "第2轮已确认文档IFT-FXPJ01 V2.0（F0018）存在，获取了封面、版本历史及完整目录结构。关键发现：目录第3.4节专门处理IEC 60601-1-2（电磁兼容，含无线设备要求），第4节为风险分析主体表格（第16-28页）。但截至本轮，尚未读取任何实质性风险条目内容，无法验证或反驳'PT9L风险评估链中不存在任何Bluetooth特定危害条目'的claim。仍需直接读取第3.4节（IEC 60601-1-2附加问题，第13-15页）和第4节风险分析表（第16-28页）的实际内容，以及验证报告IFT-FXYS01 V2.0和风险管理报告IFT-FXGB01 V2.0中的对应内容。",
+  "evidence_gaps": [
+    "F0018第3.4节（IEC 60601-1-2附加问题，第13-15页）实际内容未读取——该节是Bluetooth/无线传输危害最可能被识别或遗漏的位置",
+    "F0018第4节风险分析表（第16-28页）实际条目内容未读取——需逐行确认是否存在任何含'Bluetooth'、'wireless'、'BT'、'RF'、'无线'、'蓝牙'关键词的危害/危险情况/伤害条目",
+    "F0018第3.2节（ISO/TR 24971:2020附录A问题清单，第5-7页）实际内容未读取——需确认Q&A中是否涉及无线数据传输安全性问题",
+    "F0018第3.3节（IEC 60601-1问题清单，第8-12页）实际内容未读取——需确认是否有与无线功能相关的问题被标记",
+    "验证报告IFT-FXYS01 V2.0（PT9L-FXYS01）文档尚未定位和读取——需确认其中是否存在Bluetooth相关验证条目或对应风险控制措施的验证记录",
+    "风险管理报告IFT-FXGB01 V2.0 / PT9L-FXGB01 V1.0文档尚未定位和读取——需确认残余风险评估和整体风险获益分析中是否涉及Bluetooth",
+    "项目档案中PT9L产品描述/预期用途文档尚未核查——需确认Bluetooth功能的官方描述范围，以判断风险评估覆盖义务边界",
+    "IEC 60601-1-2:2014+A1:2020对无线发射设备的强制性风险评估要求条款尚未与F0018第3.4节内容交叉比对"
+  ],
+  "additional_search_queries": [
+    "Bluetooth OR bluetooth OR BT OR 蓝牙 doc_id:F0018 section:3.4 lines:13-15",
+    "wireless OR radio OR RF OR 无线 OR 射频 doc_id:F0018 section:4 lines:16-28",
+    "hazard OR hazardous situation OR harm OR 危害 OR 危险情况 OR 伤害 doc_id:F0018 lines:400-900",
+    "IFT-FXYS01 OR PT9L-FXYS01 OR Verification Report corpus_wide",
+    "IFT-FXGB01 OR PT9L-FXGB01 OR Risk Management Report corpus_wide",
+    "Bluetooth OR wireless OR 蓝牙 OR 无线 path:03风险分析 corpus_wide",
+    "IEC 60601-1-2 OR EMC OR electromagnetic OR 电磁 doc_id:F0018 lines:700-1000",
+    "data transmission OR temperature data OR smart device OR app OR 数据传输 OR 智能设备 doc_id:F0018",
+    "PT9L OR IFT-FXPJ01 OR IFT-FXYS01 OR IFT-FXGB01 path:03风险分析 all_docs",
+    "risk control OR mitigation OR 风险控制 OR 缓解措施 doc_id:F0018 lines:400-600"
+  ],
+  "agent_instruction": "【Risk Traceability Agent 审查指令 — 第2轮上下文补充】\n\n当前claim（P0级）：PT9L风险评估链（IFT-FXPJ01 V2.0、IFT-FXYS01 V2.0、IFT-FXGB01 V2.0/V1.0）中不存在任何Bluetooth特定危害、危险情况或伤害条目，尽管PT9L通过Bluetooth向智能设备传输体温数据。\n\n已确认：文档F0018（IFT-FXPJ01 V2.0）存在，目录结构完整，第3.4节（IEC 60601-1-2附加问题）和第4节（风险分析表）是核心待验证区域。\n\n【本轮必须执行的操作】：\n\n1. 读取F0018第3.4节全文（约第13-15页，对应文档行约350-500行）：逐字检查IEC 60601-1-2附加问题清单中是否有任何问题涉及Bluetooth、无线传输、RF发射、数据安全或无线干扰；记录每个问题的编号、问题文本和回答状态（Yes/No/N/A）。\n\n2. 读取F0018第4节风险分析表全文（约第16-28页，对应文档行约500-900行）：对每一行风险条目，提取：危害(Hazard)、危险情况(Hazardous Situation)、伤害(Harm)、风险控制措施、残余风险等级；特别标记任何含'Bluetooth'/'BT'/'wireless'/'RF'/'无线'/'蓝牙'/'data'/'transmission'关键词的条目；若完全不存在上述关键词，明确记录'confirmed_absent'。\n\n3. 在语料库中全局搜索文档IFT-FXYS01（验证报告）和IFT-FXGB01（风险管理报告）：定位其doc_id和rel_path；读取其中与Bluetooth/无线功能相关的所有条目；特别检查验证报告中是否有针对无线数据传输功能的验证记录。\n\n4. 在语料库中搜索PT9L产品规格/预期用途文档：确认Bluetooth功能是否在官方文档中被明确描述为产品特性，以确立风险评估覆盖义务。\n\n【判定标准】：\n- 若上述所有文档中均无Bluetooth相关风险条目 → claim成立，构成ISO 14971合规缺口，需上报\n- 若存在任何Bluetooth相关条目（即使措辞不同，如'wireless communication hazard'）→ claim不成立，提供具体证据\n- 若文档存在但相关页面无法读取 → 记录为'evidence_inaccessible'，说明具体障碍\n\n【输出要求】：对每个检查点给出明确的found/not_found/inaccessible结论，附原文引用（含行号）。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "RISK-037",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "actual_text": "# Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-038",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N ： IFT-FXPJ01 V2.0 Risk Assessment Report",
+        "actual_text": "D N ： IFT-FXPJ01 V2.0 Risk Assessment Report",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-039",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Assessment Report**",
+        "actual_text": "**Risk Assessment Report**",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-040",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 23,
+        "source_text": "| 2 | 2024.5.30 | 1. Question list has been updated according to Annex A of ISO/TR 24971:2020<br>2. Content of risk control measures has been reworded to better describe the development control process | V2.0 | Wang Di | Hou Guangwei |",
+        "actual_text": "| 2 | 2024.5.30 | 1. Question list has been updated according to Annex A of ISO/TR 24971:2020<br>2. Content of risk control measures has been reworded to better describe the development control process | V2.0 | Wang Di | Hou Guangwei |",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-041",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 4",
+        "actual_text": "1.2 Introduction on implementation of the risk management plan 4",
+        "verified": true,
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "context_id": "PC-001",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "target_page_range": "13-15",
+        "target_line_range_estimate": "350-500",
+        "section": "3.4 Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1",
+        "read_status": "NOT_YET_READ",
+        "priority": "CRITICAL",
+        "rationale": "IEC 60601-1-2是电磁兼容标准，其附加问题清单是Bluetooth/无线传输危害识别的首要位置。若此节未提及Bluetooth，则构成关键遗漏证据。"
+      },
+      {
+        "context_id": "PC-002",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "target_page_range": "16-28",
+        "target_line_range_estimate": "500-900",
+        "section": "4. Risk analysis, risk evaluation and PRM",
+        "read_status": "NOT_YET_READ",
+        "priority": "CRITICAL",
+        "rationale": "风险分析主体表格，需全文扫描确认是否存在任何Bluetooth/wireless相关危害条目。"
+      },
+      {
+        "context_id": "PC-003",
+        "doc_id": "UNKNOWN_PENDING_SEARCH",
+        "rel_path": "03 风险分析\\[待搜索] IFT-FXYS01 OR PT9L-FXYS01 Verification Report",
+        "target_page_range": "ALL",
+        "target_line_range_estimate": "ALL",
+        "section": "Bluetooth/wireless verification entries",
+        "read_status": "DOC_NOT_YET_LOCATED",
+        "priority": "HIGH",
+        "rationale": "验证报告需确认是否存在针对Bluetooth功能的风险控制措施验证记录。"
+      },
+      {
+        "context_id": "PC-004",
+        "doc_id": "UNKNOWN_PENDING_SEARCH",
+        "rel_path": "03 风险分析\\[待搜索] IFT-FXGB01 OR PT9L-FXGB01 Risk Management Report",
+        "target_page_range": "ALL",
+        "target_line_range_estimate": "ALL",
+        "section": "Overall residual risk / benefit-risk analysis",
+        "read_status": "DOC_NOT_YET_LOCATED",
+        "priority": "HIGH",
+        "rationale": "风险管理报告需确认整体残余风险评估中是否涵盖Bluetooth相关风险。"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "lines_covered": "1-75",
+        "section": "封面页 / 版本历史表 / 目录",
+        "content": "文档元数据：产品名称 Infrared Forehead Thermometer，文档编号 IFT-FXPJ01 V2.0，日期 2024.5.30，起草人 Wang Di，批准人 Hou Guangwei。目录结构：第3节含 ISO/TR 24971:2020 附录A问题清单（3.2）、IEC 60601-1问题清单（3.3）、IEC 60601-1-2附加问题（3.4，第13-15页）；第4节为风险分析表（第16-28页）；第5节为风险管理结论（第28页）。",
+        "relevance_to_claim": "仅确认文档存在及结构，尚未触及任何风险条目内容，无法支持或反驳Bluetooth危害缺失的claim",
+        "coverage_status": "partial_cover_only_metadata_and_toc"
+      },
+      {
+        "context_id": "RC-002",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "lines_covered": "40-75",
+        "section": "Contents（目录）",
+        "content": "目录条目：Signification of Abbreviations 3 / 1. Overview 4 / 1.1 Introduction of product 4 / 1.2 Introduction on implementation of the risk management plan 4 / 1.3 Risk management group 4 / 2. Criteria for risk evaluation 4 / 3. Identify medical device characteristics that could impact on safety and intended use 4 / 3.1 Bibliography 4 / 3.2 Questions from Annex A of ISO/TR 24971:2020 5 / 3.3 Questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2 8 / 3.4: Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1: 13 / 4. Risk analysis, risk evaluation and PRM 16 / 5. Risk Management Conclusion 28 / Signature of the risk management group 29",
+        "relevance_to_claim": "目录显示第3.4节专门处理IEC 60601-1-2（电磁兼容，含无线设备要求），是Bluetooth危害最可能被识别的章节；第4节是风险分析主体表格。两节均为下一轮必须读取的核心区域。",
+        "coverage_status": "toc_only_content_not_yet_read"
+      }
+    ]
+  }
+}
+```

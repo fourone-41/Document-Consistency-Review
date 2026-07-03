@@ -1,0 +1,100 @@
+```json
+{
+  "context_summary": "本轮已确认三条核心证据：REG-023显示ISO 80601-2-56:2017/Amd1:2018在设计输入汇总表中被标记为'是'（适用，国际版本）；REG-024显示EN ISO 80601-2-56:2017+A1:2018（欧盟版本）在同一表格中被标记为'否'（不适用），且备注栏为空，无任何不适用理由；REG-071显示产品说明书（PT9L操作指南）中明确列出了ISO 80601-2-56:2017+A1:2018 / EN ISO 80601-2-56:2017/A1:2020作为适用标准。page_context中F0255（临床评价报告废案）和F0467（ISO 80601-2-56测试报告草稿）的实际文本内容均为空，无法提取有效信息。仍缺失的关键证据包括：①EN ISO 80601-2-56被标记'否'的正式书面理由；②欧盟市场准入范围声明或CE技术文件中的标准适用性声明；③F0467测试报告的实际内容（测试标准版本、测试范围、是否覆盖EN版本要求）；④风险管理文件中与该标准相关的风险控制措施记录；⑤设计输出或验证计划中对欧盟版本标准的处理说明。",
+  "evidence_gaps": [
+    "EN ISO 80601-2-56:2017+A1:2018被标记'否'的正式书面不适用理由（设计输入汇总表备注栏为空）",
+    "F0467测试报告（ETX202303-07-078-03）的实际文本内容为空，无法确认测试所依据的标准版本是ISO版还是EN版，以及是否覆盖EN版本的附加要求",
+    "F0255临床评价报告废案的实际内容为空，无法判断其与欧盟版本标准适用性的关联",
+    "CE技术文件（Technical Documentation）或欧盟符合性声明（DoC）中对EN ISO 80601-2-56:2017+A1:2018适用性的明确声明",
+    "风险管理文件（ISO 14971风险评估报告）中是否存在与EN ISO 80601-2-56相关的风险控制措施及其验证记录",
+    "设计验证/确认计划（DVP）中对欧盟版本标准测试要求的覆盖说明",
+    "产品预期市场范围文件（是否包含欧盟/CE市场），用于判断EN版本标准是否应强制适用",
+    "EN ISO 80601-2-56:2017+A1:2018与ISO 80601-2-56:2017/Amd1:2018之间的技术差异分析（EN版本是否含有欧盟特有的ZA/ZB/ZZ附录要求）",
+    "设计评审记录中是否讨论过欧盟版本标准的适用性决策"
+  ],
+  "additional_search_queries": [
+    "EN ISO 80601-2-56 不适用 理由 欧盟",
+    "ETX202303-07-078-03 测试报告 标准版本 EN ISO",
+    "CE技术文件 符合性声明 DoC EN ISO 80601",
+    "风险管理报告 ISO 14971 体温计 EN 80601",
+    "设计验证计划 DVP PT9L 欧盟标准",
+    "预期市场 CE marking PT9L 欧盟",
+    "设计评审记录 标准适用性 EN ISO 80601-2-56",
+    "ZA附录 EN ISO 80601-2-56 欧盟特有要求",
+    "设计输入 标准清单 不适用 理由说明",
+    "PT9L 欧盟注册 CE认证 技术文件"
+  ],
+  "agent_instruction": "请作为Regulatory Agent对以下P1级闭环断裂风险进行复审。核心问题：设计输入汇总表（F0031, REG-024）中EN ISO 80601-2-56:2017+A1:2018（欧盟版本）被标记为'否'（不适用），备注栏无任何理由说明；而同一文件中ISO 80601-2-56:2017/Amd1:2018（国际版本）被标记为'是'（REG-023），且产品说明书（REG-071）明确列出了EN ISO 80601-2-56:2017/A1:2020作为适用标准。请重点审查：①EN版本与ISO版本的技术差异是否足以支撑'不适用'判断（特别是EN版本的ZA/ZB/ZZ规范性附录是否含有欧盟特有的基本要求映射）；②若产品预期进入欧盟市场，EN版本标准通常为MDR/IVDR下的协调标准，标记'否'需有充分的技术或法规依据；③说明书中列出EN版本标准与设计输入中排除EN版本标准之间的矛盾是否构成DHF内部一致性缺陷；④F0467测试报告（草稿）内容为空，无法确认测试覆盖范围，这是一个额外的证据缺口。在缺乏不适用理由文件、CE技术文件和有效测试报告内容的情况下，请评估该项是否构成欧盟法规闭环断裂，并给出风险等级建议。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "REG-023",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 133,
+        "source_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 |  | 国际 | ■是 □否 |  |",
+        "verified": true,
+        "annotation": "ISO国际版本在设计输入汇总表中被标记为适用（■是），与欧盟版本形成对比",
+        "actual_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 |  | 国际 | ■是 □否 |  |"
+      },
+      {
+        "evidence_id": "REG-024",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 134,
+        "source_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | ISO 80601-2-56:2017/Amd1:2018 | 欧盟 | □是 ■否 |  |",
+        "verified": true,
+        "annotation": "欧盟版本EN ISO 80601-2-56:2017+A1:2018被标记为不适用（■否），备注栏为空，无不适用理由，构成核心争议点",
+        "actual_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | ISO 80601-2-56:2017/Amd1:2018 | 欧盟 | □是 ■否 |  |"
+      },
+      {
+        "evidence_id": "REG-071",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 510,
+        "source_text": "ISO 80601-2-56:2017+A1:2018/ EN ISO 80601-2-56:2017/A1:2020 (Medical Electrical Equipment -- Part 2-56: Particular Requirements For The Basic Safety And Essential Performance Of clinical thermometers for body temperature measurement).",
+        "verified": true,
+        "annotation": "产品说明书（2024年版）明确列出EN ISO 80601-2-56:2017/A1:2020为适用标准，与设计输入中'否'的标记存在直接矛盾，且说明书中EN版本修正案版本号为A1:2020，与设计输入表中A1:2018存在版本差异",
+        "actual_text": "ISO 80601-2-56:2017+A1:2018/ EN ISO 80601-2-56:2017/A1:2020 (Medical Electrical Equipment -- Part 2-56: Particular Requirements For The Basic Safety And Essential Performance Of clinical thermometers for body temperature measurement)."
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0467",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf.md",
+        "annotation": "该测试报告文件名明确包含'ISO 80601-2-56'，但所有检索到的行内容均为空，无法确认测试所依据的具体标准版本（ISO版或EN版）及测试覆盖范围，构成证据缺口",
+        "content_status": "empty_content",
+        "lines_retrieved": [1, 3, 10, 12, 44, 134, 144, 197, 237]
+      },
+      {
+        "doc_id": "F0255",
+        "rel_path": "18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md",
+        "annotation": "文件名含'中国版本不适用'，可能暗示该文件专门针对中国市场版本，与欧盟版本标准适用性问题相关性待确认，但检索到的内容为空",
+        "content_status": "empty_content",
+        "lines_retrieved": [1, 2, 92]
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "contradiction_analysis",
+        "description": "设计输入与说明书之间的标准适用性矛盾",
+        "detail": "设计输入汇总表（F0031, 2021年11月）将EN ISO 80601-2-56:2017+A1:2018标记为不适用；而产品说明书（F0083, 2024年8月）明确列出EN ISO 80601-2-56:2017/A1:2020为适用标准。两者之间存在：①适用性判断矛盾（否 vs 适用）；②版本差异（A1:2018 vs A1:2020）；③时间跨度约3年，期间可能发生了标准更新或市场策略变更，但无相应的设计变更记录可见。"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "regulatory_context",
+        "description": "EN版本与ISO版本的法规意义差异",
+        "detail": "EN ISO 80601-2-56是欧盟协调标准（Harmonised Standard），在欧盟官方公报（OJ）中发布，符合该标准可推定符合MDR 2017/745的相关基本安全和性能要求（GSPR）。EN版本通常包含规范性附录ZA/ZB/ZZ，将标准条款映射至MDR基本要求。若产品预期进入欧盟市场，将EN版本标记为'不适用'需要有充分的技术理由或替代合规路径说明，否则构成CE技术文件的合规性缺口。"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "evidence_gap_summary",
+        "description": "关键缺失证据汇总",
+        "detail": "当前证据包无法回答以下关键问题：①EN版本被排除的正式决策依据是什么；②产品是否有CE认证意图或已获CE认证；③F0467测试报告实际测试了哪个版本的标准；④是否存在设计变更记录解释从2021年'否'到2024年说明书列出EN版本的转变；⑤风险管理文件是否覆盖了EN版本特有的要求。"
+      }
+    ]
+  }
+}
+```

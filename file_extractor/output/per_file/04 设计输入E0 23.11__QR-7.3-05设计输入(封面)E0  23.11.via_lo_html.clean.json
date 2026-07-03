@@ -1,0 +1,184 @@
+{
+  "document": {
+    "title": "设计输入",
+    "doc_type": "设计输入",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_id": "30000078",
+      "model": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-SJSR01 V1.0"
+    },
+    {
+      "id_type": "表号",
+      "value": "QR-7.3-05/E0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "设计输入-通用要求部分文件编号",
+      "value": "PT9L-SRTY01 V1.0"
+    },
+    {
+      "id_type": "设计输入-功能规格部分文件编号",
+      "value": "PT9L-SRGN01 V1.0"
+    },
+    {
+      "id_type": "设计输入-性能规格部分文件编号",
+      "value": "PT9L-SRXN01 V1.0"
+    },
+    {
+      "id_type": "设计输入-组件规格部分文件编号",
+      "value": "PT9L-SRZJ01 V1.0"
+    },
+    {
+      "id_type": "设计输入-法规标准清单文件编号",
+      "value": "PT9L-FGBZ01 V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本设计输入文件包括以下子文件：\n■设计输入－通用要求部分 文件编号：PT9L-SRTY01 V1.0\n■设计输入－功能规格部分 文件编号：PT9L-SRGN01 V1.0\n■设计输入－性能规格部分 文件编号：PT9L-SRXN01 V1.0\n■设计输入－组件规格部分 文件编号：PT9L-SRZJ01 V1.0\n■设计输入－法规标准清单 文件编号：PT9L-FGBZ01 V1.0",
+      "topic_tags": [
+        "设计输入",
+        "文件组成",
+        "子文件清单",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L-SRTY01",
+        "PT9L-SRGN01",
+        "PT9L-SRXN01",
+        "PT9L-SRZJ01",
+        "PT9L-FGBZ01"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "04 设计输入E0 23.11/QR-7.3-05设计输入(封面)E0  23.11.via_lo_html.clean.md",
+    "doc_type": "design_input"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SRTY01",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SRGN01",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SRXN01",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SRZJ01",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FGBZ01",
+      "to": "设计输入",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRTY01 V1.0",
+      "properties": {
+        "sub_file_name": "设计输入－通用要求部分"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRGN01 V1.0",
+      "properties": {
+        "sub_file_name": "设计输入－功能规格部分"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRXN01 V1.0",
+      "properties": {
+        "sub_file_name": "设计输入－性能规格部分"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRZJ01 V1.0",
+      "properties": {
+        "sub_file_name": "设计输入－组件规格部分"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-FGBZ01 V1.0",
+      "properties": {
+        "sub_file_name": "设计输入－法规标准清单"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRTY01 V1.0",
+      "properties": {
+        "detail_type": "通用要求"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRGN01 V1.0",
+      "properties": {
+        "detail_type": "功能规格"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRXN01 V1.0",
+      "properties": {
+        "detail_type": "性能规格"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-SRZJ01 V1.0",
+      "properties": {
+        "detail_type": "组件规格"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SJSR01 V1.0",
+      "to": "PT9L-FGBZ01 V1.0",
+      "properties": {
+        "detail_type": "法规标准清单"
+      }
+    }
+  ],
+  "_claims": []
+}

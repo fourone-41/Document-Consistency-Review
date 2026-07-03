@@ -1,0 +1,169 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-04",
+    "title": "PT9L红外体温计 ASTM E 1965-98 2023 Test Report",
+    "total_pages": 22,
+    "status": "DRAFT",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/草稿/ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf"
+  },
+  "products": [
+    {
+      "name": "PT9L红外体温计",
+      "type": "Infrared Thermometer"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "ASTM E1965-98",
+      "description": "Standard Specification for Infrared Thermometers for Intermittent Determination of Patient Temperature"
+    }
+  ],
+  "tests": [
+    {
+      "section": "5.6.5",
+      "name": "Cleaning and Disinfection",
+      "result": "P",
+      "blackbody_temperature_setpoint_celsius": 37,
+      "ambient_conditions": "22-23°C, 50-52%RH",
+      "reference_source_uncertainty_celsius": 0.06,
+      "measurements": [
+        {
+          "condition": "37℃",
+          "T_BB_celsius": 36.92,
+          "T_j_readings_celsius": [
+            36.9,
+            36.9,
+            37.0,
+            37.0
+          ],
+          "equation_result_celsius": 37.0,
+          "delta_celsius": 0.1
+        }
+      ]
+    },
+    {
+      "section": "5.6.7",
+      "name": "Electrostatic Discharge",
+      "result": "P",
+      "blackbody_temperature_setpoint_celsius": 37,
+      "ambient_conditions": "22-23°C, 52-54%RH",
+      "reference_source_uncertainty_celsius": 0.06,
+      "measurements": [
+        {
+          "condition": "After ESD",
+          "T_BB_celsius": 36.92,
+          "T_j_readings_celsius": [
+            36.8,
+            36.8,
+            36.8,
+            36.8
+          ],
+          "equation_result_celsius": 36.8,
+          "delta_celsius": 0.1
+        }
+      ]
+    },
+    {
+      "section": "5.7",
+      "name": "Low Power Supply Operation",
+      "result": "P",
+      "blackbody_temperature_setpoint_celsius": 37,
+      "ambient_conditions": "22-23°C, 48-50%RH",
+      "reference_source_uncertainty_celsius": 0.06,
+      "power_supply_voltage_V": 2.5,
+      "measurements": [
+        {
+          "condition": "37",
+          "T_BB_celsius": 36.9,
+          "T_j_readings_celsius": [
+            36.7,
+            36.8,
+            36.9,
+            36.8
+          ],
+          "equation_result_celsius": 36.8,
+          "delta_celsius": 0.1
+        }
+      ]
+    },
+    {
+      "section": "5.6 (Storage -20°C)",
+      "name": "Storage Condition -20°C",
+      "blackbody_temperature_setpoint_celsius": 37,
+      "ambient_conditions": "21-22°C, 50-54%RH",
+      "reference_source_uncertainty_celsius": 0.06,
+      "measurements": [
+        {
+          "storage_condition": "-20°C",
+          "T_BB_celsius": 36.91,
+          "T_j_readings_celsius": [
+            36.8,
+            36.8,
+            36.8,
+            36.9
+          ],
+          "equation_result_celsius": 36.8,
+          "delta_celsius": 0.1
+        }
+      ]
+    },
+    {
+      "section": "5.6 (Storage 50°C/80%RH)",
+      "name": "Storage Condition 50°C 80%RH",
+      "blackbody_temperature_setpoint_celsius": 37,
+      "ambient_conditions": "21-22°C, 50-54%RH",
+      "reference_source_uncertainty_celsius": 0.06,
+      "measurements": [
+        {
+          "storage_condition": "50°C, 80%RH",
+          "T_BB_celsius": 36.87,
+          "T_j_readings_celsius": [
+            36.8,
+            36.8,
+            36.8,
+            36.9
+          ],
+          "equation_result_celsius": 36.9,
+          "delta_celsius": 0.1
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Individual measurement error formula: δj = |tj - tBB|, where tj = displayed or calculated value of unadjusted temperature, tBB = true temperature of the blackbody, j = sequential number of a reading, | | = signifies taking an absolute value. The largest δj is a measure of the laboratory error of a system.",
+      "topic_tags": [
+        "measurement error",
+        "blackbody",
+        "temperature accuracy",
+        "ASTM E1965"
+      ],
+      "related_subjects": [
+        "5.6.5 Cleaning and Disinfection",
+        "5.6.7 Electrostatic Discharge",
+        "5.7 Low Power Supply Operation",
+        "PT9L红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Document status is DRAFT (marked as 'D R A F T' throughout). The attachment file 1 contains photos of the EUT (Equipment Under Test) on page 22.",
+      "topic_tags": [
+        "draft",
+        "EUT photos",
+        "attachment"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-04",
+        "PT9L红外体温计"
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-04"
+    }
+  ]
+}

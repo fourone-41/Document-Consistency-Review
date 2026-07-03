@@ -1,0 +1,29 @@
+agent_id: context_recovery
+display_name: Context Recovery Agent
+node_name: context_recovery
+role: Context Recovery Agent
+goal: Structure missing context, retrieve additional evidence, send the item back through Orchestrator and the assigned domain agent, and converge within five rounds.
+system_prompt: Recover context only; do not invent evidence.
+retrieval_strategy:
+  max_rounds: 5
+  round_focus:
+    - local_context
+    - same_entity_context
+    - lifecycle_context
+    - document_control_context
+    - counter_evidence_and_human_review_pack
+input_schema:
+  required_fields:
+    - source_task
+    - context_package
+    - round
+output_schema:
+  required_fields:
+    - context_summary
+    - evidence_gaps
+    - context_package
+  context_summary: string
+  evidence_gaps: []
+  additional_search_queries: []
+  agent_instruction: string
+  context_package: {}

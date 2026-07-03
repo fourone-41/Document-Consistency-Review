@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "DMR/SOP Agent",
+  "decision": "confirm",
+  "severity": "P1",
+  "error_type": "missing_design_transfer_record",
+  "claim": "No design transfer record (PT9L-SJSC01 or equivalent) is present in the supplied evidence catalog, leaving the formal design-to-production transfer step unverifiable from the DHF package.",
+  "reason": "After two rounds of context recovery, no document with identifier containing 'SJSC' or semantically equivalent to a formal design transfer record has been located in the evidence package. The recovered context confirms only two PT9L design output documents: (1) PT9L-GYSM01 V1.0 工艺说明 (F0155) — a process description document, not a design transfer record; (2) PT9L-EBOM01 V1.0 机芯类组件清单 (F0157) — a component BOM, also a design output artifact rather than a transfer record. The DHF index file (F0006) and development plan files (F0005, F0007) were indexed but their body content was not returned in either recovery round, preventing direct confirmation of SJSC01 listing. However, no file path, document number, or index entry containing 'SJSC', '设计转产', '转产记录', or 'design transfer' has appeared across all retrieved evidence. Under 21 CFR Part 820.30(h) and ISO 13485:2016 §7.3.8, a formal design transfer procedure must be documented to ensure design outputs are translated into production specifications; the existing 工艺说明 and EBOM, while necessary design outputs, do not individually or collectively constitute a standalone design transfer record that documents the controlled handoff from design to manufacturing. The gap is substantiated by the absence of any SJSC-coded or equivalently scoped transfer document across all indexed paths. Claim is confirmed at P1."
+}
+```

@@ -1,0 +1,263 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Record",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "77-78 of 181"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_name": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "General requirements for basic safety and essential performance of medical electrical equipment"
+    },
+    {
+      "id": "IEC62304",
+      "full_name": "IEC 62304",
+      "description": "Medical device software lifecycle processes",
+      "clauses_referenced": [
+        "4.3",
+        "5",
+        "7",
+        "8",
+        "9"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "clause": "13.2.13.3-a2",
+      "name": "Tests on ME EQUIPMENT containing heating parts",
+      "description": "Tests conducted at prescribed voltage with motor & heating parts operated simultaneously to produce the least favourable condition",
+      "result": "No heating parts",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3-a3",
+      "name": "Consecutive tests when more tests applicable to same ME EQUIPMENT",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3-b1",
+      "name": "Motor running overload protection - remote/automatic control with no redundant protection",
+      "result": "Not intended to be remotely or automatically controlled",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3-b2",
+      "name": "Motor running overload protection - continuous operation while unattended",
+      "result": "Not continuous operation while unattended",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3",
+      "name": "Motor winding temperature during steady period vs Table 27 limits",
+      "description": "Maximum temperature measured must not exceed Table 27 (Insulation Class, Maximum temperature measured C)",
+      "result": "See above",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3",
+      "name": "Motor removed from ME EQUIPMENT and tested separately",
+      "description": "Applied when load could not be changed in appropriate steps",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3",
+      "name": "Running overload test for motors operating at 42.4 V peak a.c./60 V d.c. or less",
+      "description": "Performed only when examination and review of design indicated possibility of an overload",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3",
+      "name": "Test not conducted where electronic drive circuits maintained constant drive current",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3",
+      "name": "Test not conducted based on other justifications",
+      "result": "Not applicable",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3-c",
+      "name": "3-phase motors operated with one phase disconnected",
+      "description": "ME EQUIPMENT with 3-phase motors operated with normal load, connected to 3-phase SUPPLY MAINS with one phase disconnected, periods of operation per 13.2.10",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.4",
+      "name": "ME EQUIPMENT rated for NON-CONTINUOUS OPERATION",
+      "description": "ME EQUIPMENT (other than HAND-HELD) operated under normal load and at RATED voltage or at upper limit of RATED voltage range until increase in temperature was 5°C in one hour, or a protective device operated",
+      "result": "Continuous operation",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.4",
+      "name": "Load-reducing device in NORMAL USE - test continued with idle running",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.4",
+      "name": "Motor winding temperatures vs 13.2.10 limits",
+      "result": "Continuous operation",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "14",
+      "name": "PROGRAMMABLE ELECTRICAL MEDICAL SYSTEMS (PEMS) - General",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.1",
+      "name": "Requirements of clause 14 applicability - PESS with no BASIC SAFETY or ESSENTIAL PERFORMANCE",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.1",
+      "name": "RISK MANAGEMENT showed failure of PESS does not lead to unacceptable RISK",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.1",
+      "name": "Requirements of 14.13 not applied to PEMS intended for IT NETWORK",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "14.1",
+      "name": "Software development process for Software Classification per IEC 62304 Clause 4.3",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.1",
+      "name": "Software development process per IEC 62304 Clause 5",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.1",
+      "name": "Software risk management process per IEC 62304 Clause 7",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.1",
+      "name": "Configuration Management per IEC 62304 Clause 8",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.1",
+      "name": "Software Problem Resolution per IEC 62304 Clause 9",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.2",
+      "name": "Documents required by Clause 14 reviewed, approved, issued and revised per formal document control process",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.3",
+      "name": "RISK MANAGEMENT plan includes reference to PEMS VALIDATION plan",
+      "result": "See Risk Management files provided by manufacturer.",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.4",
+      "name": "PEMS DEVELOPMENT LIFE-CYCLE with defined milestones documented",
+      "result": "See Software design solutions DN:PT9L-RJFA 01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.4",
+      "name": "At each milestone, activities and VERIFICATION methods defined",
+      "result": "See Software design solutions DN:PT9L-RJFA 01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.4",
+      "name": "Each activity with inputs/outputs defined; milestone identifies RISK MANAGEMENT activities",
+      "result": "See Software design solutions DN:PT9L-RJFA 01 V1.0",
+      "verdict": "P"
+    },
+    {
+      "clause": "14.4",
+      "name": "PEMS DEVELOPMENT LIFE-CYCLE tailored with plans detailing activities, milestones, and schedules",
+      "result": "See software Attachment DN: PT9L-XMJD01 V1.0",
+      "verdict": "P"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "DN:PT9L-RJFA 01 V1.0",
+      "type": "document_number",
+      "description": "Software design solutions document"
+    },
+    {
+      "id": "DN:PT9L-XMJD01 V1.0",
+      "type": "document_number",
+      "description": "Software Attachment / PEMS development life-cycle plan"
+    }
+  ],
+  "software_items": [
+    {
+      "name": "PESS (Programmable Electronic Sub-System)",
+      "description": "Software component assessed under IEC60601-1 Clause 14 and IEC62304",
+      "processes": [
+        "Software Classification (IEC62304 Clause 4.3)",
+        "Software Development (IEC62304 Clause 5)",
+        "Software Risk Management (IEC62304 Clause 7)",
+        "Configuration Management (IEC62304 Clause 8)",
+        "Software Problem Resolution (IEC62304 Clause 9)"
+      ],
+      "related_documents": [
+        "DN:PT9L-RJFA 01 V1.0",
+        "DN:PT9L-XMJD01 V1.0"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Motor running overload protection test (Clause 13.2.13.3-b) applies when: (1) motor is intended to be remotely or automatically controlled by a single control device with no redundant protection, or (2) it is likely to be subjected to CONTINUOUS OPERATION while unattended. Both conditions are N/A for this equipment as it is not intended for remote/automatic control and is not for continuous unattended operation.",
+      "topic_tags": [
+        "motor",
+        "overload protection",
+        "13.2.13.3",
+        "N/A justification"
+      ],
+      "related_subjects": [
+        "13.2.13.3",
+        "ME EQUIPMENT"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 13.2.13.4 (NON-CONTINUOUS OPERATION) is declared N/A for this equipment because it is rated for continuous operation. The clause requires ME EQUIPMENT (other than HAND-HELD) to be operated under normal load at RATED voltage until temperature increase is 5°C in one hour or a protective device operates.",
+      "topic_tags": [
+        "non-continuous operation",
+        "13.2.13.4",
+        "temperature rise",
+        "N/A justification"
+      ],
+      "related_subjects": [
+        "13.2.13.4",
+        "ME EQUIPMENT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For PEMS (Clause 14), the RISK MANAGEMENT plan required by 4.2.2 must include reference to the PEMS VALIDATION plan. The PEMS DEVELOPMENT LIFE-CYCLE must document defined milestones, with each milestone specifying: activities to be completed, VERIFICATION methods, activity inputs/outputs, and RISK MANAGEMENT activities that must be completed before that milestone. The life-cycle must be tailored for specific development by plans detailing activities, milestones and schedules.",
+      "topic_tags": [
+        "PEMS",
+        "development lifecycle",
+        "milestones",
+        "risk management",
+        "IEC62304",
+        "clause 14"
+      ],
+      "related_subjects": [
+        "DN:PT9L-RJFA 01 V1.0",
+        "DN:PT9L-XMJD01 V1.0",
+        "PESS"
+      ]
+    }
+  ]
+}

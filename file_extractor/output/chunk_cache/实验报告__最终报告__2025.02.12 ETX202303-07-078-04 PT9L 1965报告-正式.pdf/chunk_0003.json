@@ -1,0 +1,254 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-04",
+    "total_pages": 22,
+    "current_pages": "6-7"
+  },
+  "requirements": [
+    {
+      "id": "5.6.5",
+      "description": "Cleaning and Disinfection—Instrument performance shall not be degraded by using the manufacturer's recommended procedures for cleaning and disinfection provided in the instruction manual.",
+      "reference": "TABLE 5.6.5",
+      "result": "P"
+    },
+    {
+      "id": "5.6.6",
+      "description": "Electromagnetic Immunity—An IR thermometer that is intended for professional use shall meet the accuracy requirements of 5.3 or 5.4, or both, for temperature ranges of 6.3.2, during and after exposure to electromagnetic interference.",
+      "notes": "Not for professional use",
+      "result": "N/A"
+    },
+    {
+      "id": "5.6.7",
+      "description": "Electrostatic Discharge—An IR thermometer shall meet the accuracy requirements of 5.3 and 5.4, or both, for temperature ranges of 6.3.2, after 5 s after being subjected to electrostatic discharge.",
+      "reference": "TABLE 5.6.7",
+      "result": "P"
+    },
+    {
+      "id": "5.7",
+      "description": "Low Power Supply Operation—The instrument shall operate at power supply voltage lower by no less than 0.1 V than that required for indication of low power supply sign as specified by 5.8.3.",
+      "reference": "TABLE 5.7",
+      "result": "P"
+    },
+    {
+      "id": "5.8",
+      "description": "Display and Human Interface",
+      "result": "P"
+    },
+    {
+      "id": "5.8.1",
+      "description": "Resolution—The resolution of a display shall be 0.1 °C (0.1 °F).",
+      "result": "P"
+    },
+    {
+      "id": "5.8.2",
+      "description": "Modes",
+      "result": "P"
+    },
+    {
+      "id": "5.8.2.1",
+      "description": "An IR thermometer shall indicate in what mode the instrument is set.",
+      "notes": "Adjusted mode",
+      "result": "P"
+    },
+    {
+      "id": "5.8.2.2",
+      "description": "Unadjusted Mode—The unadjusted mode shall be accessible by the user either by setting the instrument into that mode directly or by a conversion technique from adjusted mode.",
+      "notes": "CAL mode",
+      "result": "P"
+    },
+    {
+      "id": "5.8.2.3",
+      "description": "The adjusted mode sets an IR thermometer to represent a reference body site, such as core, oral, rectal, etc.",
+      "notes": "Adjusted mode, reference body site: oral",
+      "result": "P"
+    },
+    {
+      "id": "5.8.3",
+      "description": "Warning Signs—The instrument shall have means to inform the operator when the following are outside the operating ranges specified by the manufacturer: power supply, subject temperature, and ambient temperature.",
+      "notes": "Low power supply: 2.7V; Outside the operating temperature range and ambient temperature show '---'",
+      "result": "P"
+    },
+    {
+      "id": "5.9",
+      "description": "Construction"
+    },
+    {
+      "id": "5.9.1",
+      "description": "Housing Materials—All materials that may come in contact with the operator or a subject shall be nontoxic.",
+      "notes": "See Biocompatibility test report provided by manufacturer",
+      "result": "N/E"
+    },
+    {
+      "id": "5.9.2",
+      "description": "Probe Covers",
+      "result": "N/A"
+    },
+    {
+      "id": "5.9.2.1",
+      "description": "To provide a sanitary barrier between a subject and the probe, a probe cover that comes in contact with a subject.",
+      "notes": "No probe cover used",
+      "result": "N/A"
+    },
+    {
+      "id": "5.9.2.2",
+      "description": "A probe and a probe cover of the system shall have shape and dimensions that prevent injury to a subject of any age.",
+      "result": "N/A"
+    },
+    {
+      "id": "5.9.2.3",
+      "description": "A probe cover shall not increase laboratory errors whose limits are set in 5.3.1.",
+      "result": "N/A"
+    },
+    {
+      "id": "5.10",
+      "description": "Labeling and Marking (Instruments and Accessories)",
+      "result": "P"
+    },
+    {
+      "id": "5.10.1",
+      "description": "Thermometer and Accessories",
+      "result": "P"
+    },
+    {
+      "id": "5.10.1.1",
+      "description": "A thermometer shall clearly indicate the units of its temperature scale.",
+      "notes": "See 'Instruction for Use' of the User's Manual",
+      "result": "P"
+    },
+    {
+      "id": "5.10.1.2",
+      "description": "An IR thermometer housing shall be clearly marked with the trade name or type of the device, or both, model designation, name of the manufacturer or distributor, and lot number or serial number.",
+      "notes": "See marking plate",
+      "result": "P"
+    },
+    {
+      "id": "5.10.1.3",
+      "description": "An IR thermometer intended for professional use shall be conspicuously labelled with an indication of the unadjusted or adjusted mode(s), or both, that correspond to the temperature value(s) capable of being displayed by the instrument.",
+      "notes": "Non-professional use",
+      "result": "N/A"
+    },
+    {
+      "id": "5.10.2",
+      "description": "Probe Covers Package",
+      "notes": "No Probe Covers used",
+      "result": "N/A"
+    },
+    {
+      "id": "5.10.2.1",
+      "description": "The package shall state the name and type of the enclosed products, name of the manufacturer or distributor, lot number or serial number, and expiration date (if the probe covers have limited shelf life).",
+      "result": "N/A"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TABLE 5.6.5",
+      "related_requirement": "5.6.5",
+      "description": "Cleaning and Disinfection test"
+    },
+    {
+      "id": "TABLE 5.6.7",
+      "related_requirement": "5.6.7",
+      "description": "Electrostatic Discharge test"
+    },
+    {
+      "id": "TABLE 5.7",
+      "related_requirement": "5.7",
+      "description": "Low Power Supply Operation test"
+    }
+  ],
+  "functions": [
+    {
+      "name": "Adjusted Mode Display",
+      "description": "IR thermometer indicates adjusted mode, referenced to oral body site"
+    },
+    {
+      "name": "Unadjusted Mode (CAL mode)",
+      "description": "Accessible by the user by setting instrument directly or via conversion from adjusted mode"
+    },
+    {
+      "name": "Warning Signs",
+      "description": "Low power supply warning at 2.7V; outside operating temperature range and ambient temperature displays '---'"
+    },
+    {
+      "name": "Display Resolution",
+      "description": "0.1 °C (0.1 °F)"
+    }
+  ],
+  "components": [
+    {
+      "name": "Probe Cover",
+      "notes": "Not used in this product"
+    },
+    {
+      "name": "Housing",
+      "notes": "Marked with trade name, model designation, manufacturer/distributor name, lot/serial number"
+    },
+    {
+      "name": "Display",
+      "notes": "Resolution 0.1 °C / 0.1 °F"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "An IR thermometer that is intended for professional use shall meet the accuracy requirements of 5.3 or 5.4, or both, for temperature ranges of 6.3.2, during and after exposure to electromagnetic interference. This requirement is not applicable as the device is not intended for professional use.",
+      "topic_tags": [
+        "electromagnetic immunity",
+        "professional use",
+        "accuracy",
+        "N/A"
+      ],
+      "related_subjects": [
+        "5.6.6",
+        "5.3",
+        "5.4",
+        "6.3.2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Labeling requirement 5.10.1.3: An IR thermometer intended for professional use shall be conspicuously labelled with an indication of the unadjusted or adjusted mode(s). Such labeling is optional for IR thermometers that display only one mode and are intended for non-professional use. However, the instruction manual for both professional and non-professional use IR thermometers shall specify the body site(s) used to reference the adjusted temperature value(s) displayed. This clause is N/A as the device is for non-professional use.",
+      "topic_tags": [
+        "labeling",
+        "professional use",
+        "non-professional use",
+        "adjusted mode",
+        "instruction manual",
+        "body site"
+      ],
+      "related_subjects": [
+        "5.10.1.3",
+        "7.2.1.3",
+        "5.8.2.3"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Housing Materials requirement (5.9.1): All materials that may come in contact with the operator or a subject shall be nontoxic. Compliance evidence referenced to Biocompatibility test report provided by manufacturer. Result marked N/E (Not Evaluated in this report).",
+      "topic_tags": [
+        "biocompatibility",
+        "housing materials",
+        "nontoxic",
+        "N/E"
+      ],
+      "related_subjects": [
+        "5.9.1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Warning Signs specification (5.8.3): The instrument shall have means to inform the operator when the following are outside the operating ranges specified by the manufacturer: power supply, subject temperature, and ambient temperature. Implementation: Low power supply warning threshold is 2.7V; outside the operating temperature range and ambient temperature are indicated by displaying '---'.",
+      "topic_tags": [
+        "warning signs",
+        "low power supply",
+        "operating range",
+        "ambient temperature",
+        "subject temperature"
+      ],
+      "related_subjects": [
+        "5.8.3",
+        "5.7"
+      ]
+    }
+  ]
+}

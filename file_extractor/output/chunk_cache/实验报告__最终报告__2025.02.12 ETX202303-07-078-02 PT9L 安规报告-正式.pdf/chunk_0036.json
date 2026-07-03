@@ -1,0 +1,170 @@
+{
+  "document": {
+    "title": "安规报告 ETX202303-07-078-02 PT9L",
+    "file_reference": "2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式",
+    "total_pages": 181,
+    "current_pages": "75-76"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "name": "IEC60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "医用电气设备安全通用要求"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "13.1.3",
+      "requirement": "单一故障条件下基于8.7.3的漏电流限值未超标",
+      "result": null,
+      "verdict": "P"
+    },
+    {
+      "clause": "13.1.3",
+      "requirement": "8.4.2中可触及部件（含应用部分）的电压限值未超标",
+      "result": null,
+      "verdict": "P"
+    },
+    {
+      "clause": "13.1.4",
+      "requirement": "ME设备符合9.1至9.8特定机械危害要求",
+      "result": "Refer 9.1-9.8",
+      "verdict": "P"
+    },
+    {
+      "clause": "13.2",
+      "requirement": "单一故障条件（SINGLE FAULT CONDITIONS）",
+      "result": null,
+      "verdict": "P"
+    },
+    {
+      "clause": "13.2.1",
+      "requirement": "在13.2.2至13.2.13单一故障条件施加期间，8.1a)中正常条件以最不利组合施加",
+      "result": "See appended Table 13.2",
+      "verdict": "P"
+    },
+    {
+      "clause": "13.2.2–13.2.12",
+      "requirement": "ME设备符合13.2.2至13.2.12要求；适用条款：13.2.2, 13.2.5, 13.2.15",
+      "result": "See appended Table 13.2; 13.2.2, 13.2.5, 13.2.15 are applicable.",
+      "verdict": "P"
+    },
+    {
+      "clause": "13.2.13",
+      "requirement": "ME设备在13.2.13.2至13.2.13.4测试后及冷却至测试环境温度±3℃内保持安全",
+      "result": "Tests of 13.2.13.2 to 13.2.13.4 do not applied to this equipment",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13",
+      "requirement": "依据8.8.3对电机绝缘进行合规检查或介电强度测试",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13",
+      "requirement": "热塑性材料绝缘（作为保护手段）按8.8.4.1 a)在13.2.13.2至13.2.13.4测试温度基础上+25℃进行球压测试",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.2",
+      "requirement": "带加热元件的ME设备测试",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.2 a1)",
+      "requirement": "温控ME设备（含嵌入式、无人值守或电容并联温控触点）满足13.2.13.2 b)和c)测试",
+      "result": "No heating elements",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.2 a2)",
+      "requirement": "额定非连续运行的带加热元件ME设备满足13.2.13.2 b)和c)测试",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.2 a3)",
+      "requirement": "其他带加热元件ME设备满足13.2.13.2 b)测试",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.2 b)",
+      "requirement": "带加热元件的ME设备按条款11.1在无充分散热条件下测试，供电电压设为额定值的90%或110%（取最不利值）",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.2 c)",
+      "requirement": "ME设备加热部分在额定供电电压110%及11.1条件下运行测试，包括：1)禁用正常条件下限温控制（保留热断路器）；2)多控制器时依次禁用；3)以额定占空比运行直至热稳定，不受额定运行时间限制",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3",
+      "requirement": "带电机的ME设备测试",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3 a1)",
+      "requirement": "ME设备电机部分按13.2.8-13.2.10、13.2.13.3 b)、c)及13.2.13.4检查合规",
+      "result": "No motor",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "13.2.13.3 a1)",
+      "requirement": "电路中42.4V峰值交流/60V直流及以下的电机用单层粗棉布覆盖以判定13.2.9和13.2.10合规性，测试期间不应点燃",
+      "result": "No use such method",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "fire ENCLOSURE (11.3)",
+      "requirement": "零件和组件完全包含在符合11.3的防火外壳内，通过设计文件审查验证",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "THERMAL CUT-OUTS / OVER-CURRENT RELEASES",
+      "requirement": "本条款测试后，热断路器和过流脱扣器的设置未发生足以影响其安全功能的改变",
+      "result": null,
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "单一故障条件测试（13.2.13.2）中，当多项测试适用于同一ME设备时，测试须连续执行。加热周期在加热元件或非自复位热断路器的故意薄弱部件断裂、或在热稳定前电流被中断且无自动恢复可能时停止。若中断由加热元件或故意薄弱部件断裂引起，须在第二个样品上重复测试。两个样品均须满足13.1.2要求，第二个样品中加热元件或故意薄弱部件的开路本身不被视为失效。",
+      "topic_tags": [
+        "单一故障条件",
+        "加热元件",
+        "热断路器",
+        "13.2.13.2",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "13.2.13.2",
+        "13.1.2",
+        "THERMAL CUT-OUT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "13.2.13.2 b)测试中，电流未中断时，ME设备在热稳定建立后立即关闭并冷却至室温；非连续运行设备的测试持续时间等于额定运行时间。",
+      "topic_tags": [
+        "热稳定",
+        "非连续运行",
+        "额定运行时间",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "13.2.13.2 b)",
+        "THERMAL STABILITY",
+        "RATED operating time"
+      ]
+    }
+  ]
+}

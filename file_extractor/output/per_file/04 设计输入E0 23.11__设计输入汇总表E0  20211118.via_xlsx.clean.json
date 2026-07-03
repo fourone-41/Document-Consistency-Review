@@ -1,8 +1,521 @@
 {
   "document": {
     "title": "设计输入-法规标准清单（欧美）",
-    "doc_type": "设计输入"
+    "doc_type": "设计输入",
+    "version": "20211118"
   },
+  "design_inputs": [
+    {
+      "di_id": "GEN-01",
+      "category": "产品型号",
+      "description": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "di_id": "GEN-02",
+      "category": "销售地区及认证",
+      "description": "销售地区及认证",
+      "value": "FDA（美国）"
+    },
+    {
+      "di_id": "GEN-03",
+      "category": "外形和重量要求",
+      "description": "外形和重量要求",
+      "value": "详见《设计输入-组件规格部分》中的相关要求"
+    },
+    {
+      "di_id": "GEN-04",
+      "category": "包装要求",
+      "description": "包装要求",
+      "value": "详见《设计输入-组件规格部分》中的相关要求"
+    },
+    {
+      "di_id": "GEN-05",
+      "category": "包装列表",
+      "description": "包装列表",
+      "value": "详见《设计输入-组件规格部分》中的相关要求"
+    },
+    {
+      "di_id": "GEN-06",
+      "category": "产品寿命",
+      "description": "产品寿命",
+      "value": "详见《设计输入-性能规格部分》中的相关要求"
+    },
+    {
+      "di_id": "GEN-07",
+      "category": "风险管理",
+      "description": "风险管理，参见风险管理计划最新版本，按照《设计输入-法规标准清单》的相关标准进行风险管理"
+    },
+    {
+      "di_id": "GEN-08",
+      "category": "电气安全",
+      "description": "电气安全，详见《设计输入-法规标准清单》中的相关标准"
+    },
+    {
+      "di_id": "GEN-09",
+      "category": "环保",
+      "description": "环保要求，需满足加州RoHS"
+    },
+    {
+      "di_id": "GEN-10",
+      "category": "消毒要求",
+      "description": "说明书中按照风险分析的结论添加消毒方面的要求"
+    },
+    {
+      "di_id": "GEN-11",
+      "category": "易用性",
+      "description": "详见《设计输入-法规标准清单》中的相关标准"
+    },
+    {
+      "di_id": "GEN-12",
+      "category": "专利",
+      "description": "需要规避的专利技术：无"
+    },
+    {
+      "di_id": "GEN-13",
+      "category": "测量和监视设备",
+      "description": "无与新增测量监视设备配合的要求"
+    },
+    {
+      "di_id": "GEN-14a",
+      "category": "生产过程要求",
+      "description": "工装要求、机芯检测：能正确检测LCD端口连接线通断、按键端口连接线通断、低电压检测端口连接线通断；能查看待机态和工作态电流。机芯调试：能对测温模块进行检测；能实现对机芯的自检查看。"
+    },
+    {
+      "di_id": "GEN-14b",
+      "category": "生产过程要求",
+      "description": "工厂态要求：机芯检测态能检验LCD与PCB连接、按键与PCB连接、待机态和工作态电流；机芯调试态能显示测温模块测量值、设定蜂鸣提示音开关、设定测量单位。"
+    },
+    {
+      "di_id": "GEN-15",
+      "category": "防误用注意信息",
+      "description": "用户说明书上必须指明本产品禁忌症"
+    },
+    {
+      "di_id": "GEN-16",
+      "category": "客户特殊要求",
+      "description": "无客户特殊要求"
+    },
+    {
+      "di_id": "GEN-17",
+      "category": "电磁兼容性",
+      "description": "详见《设计输入-法规标准清单》中的相关标准"
+    },
+    {
+      "di_id": "GEN-18",
+      "category": "生物相容性",
+      "description": "详见《设计输入-法规标准清单》中的相关标准"
+    },
+    {
+      "di_id": "GEN-19",
+      "category": "防尘防水",
+      "description": "应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备）"
+    },
+    {
+      "di_id": "GEN-20",
+      "category": "电池",
+      "description": "电池要求：无特殊要求"
+    },
+    {
+      "di_id": "FUNC-01",
+      "category": "测量原理",
+      "description": "测量原理",
+      "value": "红外非接触式"
+    },
+    {
+      "di_id": "FUNC-02",
+      "category": "测量位置",
+      "description": "测量位置",
+      "value": "额面"
+    },
+    {
+      "di_id": "FUNC-03",
+      "category": "检测项目",
+      "description": "检测项目",
+      "value": "人体体温、物温"
+    },
+    {
+      "di_id": "FUNC-04",
+      "category": "分类指示方式",
+      "description": "分类指示方式",
+      "value": "屏幕选择"
+    },
+    {
+      "di_id": "FUNC-05",
+      "category": "按键描述",
+      "description": "按键数量及类型",
+      "value": "3个按键：开机测量键、设置键、静音键"
+    },
+    {
+      "di_id": "FUNC-06",
+      "category": "LCD型式",
+      "description": "LCD型式及背光",
+      "value": "段码式，有背光：白橙红"
+    },
+    {
+      "di_id": "FUNC-07",
+      "category": "壳体变色",
+      "description": "壳体变色",
+      "value": "No"
+    },
+    {
+      "di_id": "FUNC-08",
+      "category": "位置检测",
+      "description": "位置检测",
+      "value": "No"
+    },
+    {
+      "di_id": "FUNC-09",
+      "category": "PC Link",
+      "description": "PC Link",
+      "value": "No"
+    },
+    {
+      "di_id": "FUNC-10",
+      "category": "低电压检出",
+      "description": "低电压检出",
+      "value": "双阶段"
+    },
+    {
+      "di_id": "FUNC-11",
+      "category": "错误分类显示",
+      "description": "错误种类2种：1、超出工作环境温度；2、超过量程"
+    },
+    {
+      "di_id": "FUNC-12",
+      "category": "自动关机时间",
+      "description": "自动关机时间",
+      "value": "15",
+      "unit": "秒",
+      "condition": "常规"
+    },
+    {
+      "di_id": "FUNC-13",
+      "category": "温度显示单位",
+      "description": "温度显示单位",
+      "value": "℃和℉"
+    },
+    {
+      "di_id": "FUNC-14",
+      "category": "提示功能",
+      "description": "提示功能",
+      "value": "蜂鸣"
+    },
+    {
+      "di_id": "PERF-01",
+      "category": "温度显示范围",
+      "description": "温度显示范围",
+      "value": "32.0～42.9",
+      "unit": "℃"
+    },
+    {
+      "di_id": "PERF-02",
+      "category": "显示分辨率",
+      "description": "显示分辨率",
+      "value": "0.1",
+      "unit": "℃"
+    },
+    {
+      "di_id": "PERF-03",
+      "category": "测量误差",
+      "description": "测量误差",
+      "value": "±0.2℃（35℃～42℃），±0.3℃（其他范围）",
+      "unit": "℃",
+      "tolerance": "±0.2℃ (35℃≤T≤42℃); ±0.3℃ (其他)"
+    },
+    {
+      "di_id": "PERF-04",
+      "category": "工作环境",
+      "description": "工作环境温度",
+      "value": "10～40",
+      "unit": "℃"
+    },
+    {
+      "di_id": "PERF-04b",
+      "category": "工作环境",
+      "description": "工作环境相对湿度",
+      "value": "15～95",
+      "unit": "%RH",
+      "condition": "不结露"
+    },
+    {
+      "di_id": "PERF-04c",
+      "category": "工作环境",
+      "description": "工作环境大气压力",
+      "value": "70～106",
+      "unit": "kPa"
+    },
+    {
+      "di_id": "PERF-05",
+      "category": "存储环境",
+      "description": "存储环境温度",
+      "value": "-20.0～55.0",
+      "unit": "℃"
+    },
+    {
+      "di_id": "PERF-05b",
+      "category": "存储环境",
+      "description": "存储环境相对湿度",
+      "value": "15～95",
+      "unit": "%RH",
+      "condition": "不结露"
+    },
+    {
+      "di_id": "PERF-05c",
+      "category": "存储环境",
+      "description": "存储环境大气压力",
+      "value": "70～106",
+      "unit": "kPa"
+    },
+    {
+      "di_id": "PERF-06",
+      "category": "产品寿命",
+      "description": "产品寿命",
+      "value": "五年或10000次"
+    },
+    {
+      "di_id": "PERF-07",
+      "category": "电池寿命",
+      "description": "电池寿命（测量使用次数）",
+      "value": "不低于1000次"
+    },
+    {
+      "di_id": "COMP-01",
+      "category": "表面处理",
+      "description": "上盖表面处理",
+      "value": "细火花纹"
+    },
+    {
+      "di_id": "COMP-02",
+      "category": "表面处理",
+      "description": "下盖表面处理",
+      "value": "细火花纹"
+    },
+    {
+      "di_id": "COMP-03",
+      "category": "表面处理",
+      "description": "电池盖表面处理",
+      "value": "细火花纹"
+    },
+    {
+      "di_id": "COMP-04",
+      "category": "颜色要求",
+      "description": "上盖颜色",
+      "value": "白色"
+    },
+    {
+      "di_id": "COMP-05",
+      "category": "颜色要求",
+      "description": "下盖颜色",
+      "value": "白色"
+    },
+    {
+      "di_id": "COMP-06",
+      "category": "颜色要求",
+      "description": "电池盖颜色",
+      "value": "白色"
+    },
+    {
+      "di_id": "COMP-07",
+      "category": "按键",
+      "description": "按键形式",
+      "value": "注塑按键"
+    },
+    {
+      "di_id": "COMP-08",
+      "category": "按键",
+      "description": "按键表面处理",
+      "value": "细火花纹"
+    },
+    {
+      "di_id": "COMP-09",
+      "category": "透镜",
+      "description": "透镜形式",
+      "value": "模切透镜"
+    },
+    {
+      "di_id": "COMP-10",
+      "category": "透镜",
+      "description": "透镜表面处理",
+      "value": "不适用"
+    },
+    {
+      "di_id": "COMP-11",
+      "category": "外形和重量要求",
+      "description": "整机外形尺寸",
+      "value": "130.8x34.8x38",
+      "unit": "mm",
+      "tolerance": "±0.5mm"
+    },
+    {
+      "di_id": "COMP-12",
+      "category": "外形和重量要求",
+      "description": "整机重量",
+      "value": "约80",
+      "unit": "g"
+    },
+    {
+      "di_id": "COMP-13",
+      "category": "包装要求",
+      "description": "包装执行规范",
+      "value": "按照《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》执行"
+    },
+    {
+      "di_id": "COMP-14",
+      "category": "包装要求",
+      "description": "整箱重量",
+      "value": "7.1",
+      "unit": "kg",
+      "tolerance": "±5%"
+    },
+    {
+      "di_id": "COMP-15",
+      "category": "包装要求",
+      "description": "外箱尺寸",
+      "value": "322.5x231x352",
+      "unit": "mm",
+      "tolerance": "±10%"
+    },
+    {
+      "di_id": "COMP-16",
+      "category": "包装要求",
+      "description": "外箱表面",
+      "value": "不允许外箱使用金属钉钉合"
+    },
+    {
+      "di_id": "COMP-17",
+      "category": "包装列表",
+      "description": "彩包装内容物：红外体温计主机、说明书（150x50mm±1mm）、纸浆盒、电池（2×AAA Size）"
+    }
+  ],
+  "markets": [
+    {
+      "region": "欧洲",
+      "certification": "CE",
+      "selected": false
+    },
+    {
+      "region": "美国",
+      "certification": "FDA",
+      "selected": true
+    },
+    {
+      "region": "中国",
+      "certification": "CFDA",
+      "selected": false
+    },
+    {
+      "region": "美国",
+      "certification": "FDA",
+      "selected": true
+    }
+  ],
+  "functions": [
+    {
+      "name": "测量原理",
+      "value": "红外非接触式"
+    },
+    {
+      "name": "测量位置",
+      "value": "额面"
+    },
+    {
+      "name": "检测项目",
+      "value": "人体体温、物温"
+    },
+    {
+      "name": "分类指示方式",
+      "value": "屏幕选择"
+    },
+    {
+      "name": "按键",
+      "value": "3个按键：开机测量键、设置键、静音键"
+    },
+    {
+      "name": "LCD型式",
+      "value": "段码式，有背光（白橙红）"
+    },
+    {
+      "name": "低电压检出",
+      "value": "双阶段"
+    },
+    {
+      "name": "错误分类显示",
+      "value": "2种：超出工作环境温度、超过量程"
+    },
+    {
+      "name": "自动关机时间",
+      "value": "常规15秒"
+    },
+    {
+      "name": "温度显示单位",
+      "value": "℃和℉"
+    },
+    {
+      "name": "提示功能",
+      "value": "蜂鸣"
+    },
+    {
+      "name": "壳体变色",
+      "value": "No"
+    },
+    {
+      "name": "位置检测",
+      "value": "No"
+    },
+    {
+      "name": "PC Link",
+      "value": "No"
+    }
+  ],
+  "components": [
+    {
+      "name": "上盖",
+      "spec": "白色，细火花纹"
+    },
+    {
+      "name": "下盖",
+      "spec": "白色，细火花纹"
+    },
+    {
+      "name": "电池盖",
+      "spec": "白色，细火花纹"
+    },
+    {
+      "name": "按键",
+      "spec": "注塑按键，细火花纹，共3个（开机测量键、设置键、静音键）"
+    },
+    {
+      "name": "透镜",
+      "spec": "模切透镜"
+    },
+    {
+      "name": "LCD",
+      "spec": "段码式，有背光（白橙红）"
+    },
+    {
+      "name": "电池",
+      "spec": "2×AAA Size"
+    },
+    {
+      "name": "说明书",
+      "spec": "150x50mm（±1mm）"
+    },
+    {
+      "name": "外箱",
+      "spec": "322.5x231x352mm（±10%），重量7.1kg±5%，不允许使用金属钉钉合"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
   "products": [
     {
       "product_id": "30000078",
@@ -20,520 +533,416 @@
       "name": "红外体温计"
     }
   ],
-  "design_inputs": [
+  "regulations": [
     {
-      "di_id": "PERF-01",
-      "category": "性能规格",
-      "description": "温度显示范围",
-      "value": "32.0～42.9",
-      "unit": "℃"
+      "std_id": "IEC60529",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "di_id": "PERF-02",
-      "category": "性能规格",
-      "description": "显示分辨率",
-      "value": "0.1",
-      "unit": "℃"
+      "std_id": "ROHS 2011/65/EU",
+      "version": "2011/65/EU, (2015/863/EU)",
+      "region": "欧洲",
+      "applicable": false
     },
     {
-      "di_id": "PERF-03",
-      "category": "性能规格",
-      "description": "测量误差",
-      "value": "±0.2℃（≥35℃且≤42℃）；±0.3℃（其它范围）",
-      "unit": "℃"
+      "std_id": "REACH 1907/2006/EC",
+      "region": "欧洲",
+      "applicable": false
     },
     {
-      "di_id": "PERF-04",
-      "category": "性能规格",
-      "description": "工作环境温度",
-      "value": "10～40",
-      "unit": "℃",
-      "condition": "工作环境"
+      "std_id": "WEEE 2012/19/EU",
+      "region": "欧洲",
+      "applicable": false
     },
     {
-      "di_id": "PERF-05",
-      "category": "性能规格",
-      "description": "工作环境相对湿度",
-      "value": "15～95%RH，不结露",
-      "condition": "工作环境"
+      "std_id": "电池指令 2013/56/EU",
+      "region": "欧洲",
+      "applicable": false
     },
     {
-      "di_id": "PERF-06",
-      "category": "性能规格",
-      "description": "工作环境大气压力",
-      "value": "70～106",
-      "unit": "kPa",
-      "condition": "工作环境"
+      "std_id": "包装指令 2005/20/EC",
+      "region": "欧洲",
+      "applicable": false
     },
     {
-      "di_id": "PERF-07",
-      "category": "性能规格",
-      "description": "存储环境温度",
-      "value": "-20.0～55.0",
-      "unit": "℃",
-      "condition": "存储环境"
+      "std_id": "中国ROHS 2.0",
+      "region": "中国",
+      "applicable": false
     },
     {
-      "di_id": "PERF-08",
-      "category": "性能规格",
-      "description": "存储环境相对湿度",
-      "value": "15～95%RH，不结露",
-      "condition": "存储环境"
+      "std_id": "94/62/EC及(EU)2018/852",
+      "region": "欧洲",
+      "applicable": false
     },
     {
-      "di_id": "PERF-09",
-      "category": "性能规格",
-      "description": "存储环境大气压力",
-      "value": "70～106",
-      "unit": "kPa",
-      "condition": "存储环境"
+      "std_id": "2006/66/EC",
+      "region": "欧洲",
+      "applicable": false
     },
     {
-      "di_id": "PERF-10",
-      "category": "性能规格",
-      "description": "产品寿命",
-      "value": "五年或10000次"
+      "std_id": "加州RoHS",
+      "region": "美国加州",
+      "applicable": true
     },
     {
-      "di_id": "PERF-11",
-      "category": "性能规格",
-      "description": "电池寿命（测量使用次数）",
-      "value": "不低于1000次"
+      "std_id": "TSCA CPSC/CPSIA",
+      "region": "美国",
+      "applicable": false
     },
     {
-      "di_id": "COMP-01",
-      "category": "组件规格",
-      "description": "上盖表面处理",
-      "value": "细火花纹"
+      "std_id": "加州65提案",
+      "region": "美国加州",
+      "applicable": false
     },
     {
-      "di_id": "COMP-02",
-      "category": "组件规格",
-      "description": "下盖表面处理",
-      "value": "细火花纹"
+      "std_id": "GF-30-006 V1.0",
+      "version": "V1.0",
+      "region": "内部",
+      "applicable": true
     },
     {
-      "di_id": "COMP-03",
-      "category": "组件规格",
-      "description": "电池盖表面处理",
-      "value": "细火花纹"
+      "std_id": "ISO 80601-2-56:2017/Amd1:2018",
+      "version": "2017/Amd1:2018",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "di_id": "COMP-04",
-      "category": "组件规格",
-      "description": "上盖颜色",
-      "value": "白色"
+      "std_id": "ASTM E1965-98",
+      "version": "2016",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-05",
-      "category": "组件规格",
-      "description": "下盖颜色",
-      "value": "白色"
+      "std_id": "ASTM E1965-98",
+      "version": "2023",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-06",
-      "category": "组件规格",
-      "description": "电池盖颜色",
-      "value": "白色"
+      "std_id": "ISO 10993-1",
+      "version": "2018",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "di_id": "COMP-07",
-      "category": "组件规格",
-      "description": "按键形式",
-      "value": "注塑按键"
+      "std_id": "ISO 10993-5",
+      "version": "2009",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "di_id": "COMP-08",
-      "category": "组件规格",
-      "description": "按键表面处理",
-      "value": "细火花纹"
+      "std_id": "ISO 10993-10",
+      "version": "2021",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "di_id": "COMP-09",
-      "category": "组件规格",
-      "description": "透镜形式",
-      "value": "模切透镜"
+      "std_id": "ISO 10993-23",
+      "version": "2021",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "di_id": "COMP-10",
-      "category": "组件规格",
-      "description": "透镜表面处理",
-      "value": "不适用"
+      "std_id": "AAMI ANSI ISO 10993-1",
+      "version": "2018",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-11",
-      "category": "组件规格",
-      "description": "整机外形尺寸",
-      "value": "130.8x34.8x38",
-      "unit": "mm",
-      "tolerance": "±0.5mm"
+      "std_id": "AAMI ANSI ISO 10993-5",
+      "version": "2009/(R)2022",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-12",
-      "category": "组件规格",
-      "description": "整机重量",
-      "value": "约80",
-      "unit": "g"
+      "std_id": "AAMI/ANSI/ISO 10993-10",
+      "version": "2010/(R)2014",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-13",
-      "category": "组件规格",
-      "description": "包装执行规范",
-      "value": "按照《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》执行",
-      "source_req_id": "GF-30-006 V1.0"
+      "std_id": "IEC 60601-1",
+      "version": "2005+AMD1:2012",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-14",
-      "category": "组件规格",
-      "description": "整箱重量",
-      "value": "7.1",
-      "unit": "kg",
-      "tolerance": "±5%"
+      "std_id": "IEC 60601-1",
+      "version": "2005+AMD1:2012+AMD2:2020",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-15",
-      "category": "组件规格",
-      "description": "外箱尺寸",
-      "value": "322.5x231x352",
-      "unit": "mm",
-      "tolerance": "±10%"
+      "std_id": "ANSI/AAMI ES60601-1",
+      "version": "2005/A2:2021",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-16",
-      "category": "组件规格",
-      "description": "外箱钉合要求",
-      "value": "不允许外箱使用金属钉钉合"
+      "std_id": "IEC 60601-1-11",
+      "version": "2015+AMD1:2020",
+      "region": "美国",
+      "applicable": true
     },
     {
-      "di_id": "COMP-17",
-      "category": "组件规格",
-      "description": "彩包装内容物",
-      "value": "红外体温计主机、说明书（150x50mm ±1mm）、纸浆盒、电池（2×AAA Size）"
-    }
-  ],
-  "persons": [
-    {
-      "title": "硬件工程师（拟制）"
+      "std_id": "ISO 14971",
+      "version": "2019",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "title": "硬件主管（审核）"
+      "std_id": "ISO 20417",
+      "version": "2021",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "title": "结构工程师（拟制）"
+      "std_id": "21CFR 801 Labeling",
+      "version": null,
+      "region": "FDA地区",
+      "applicable": true
     },
     {
-      "title": "结构主管（审核）"
-    }
-  ],
-  "identifiers": [
-    {
-      "id_type": "项目编号",
-      "value": "30000078"
+      "std_id": "ISO 15223-1",
+      "version": "2021",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "id_type": "产品型号",
-      "value": "PT9L"
+      "std_id": "IEC 60601-1-6",
+      "version": "2010+AMD1:2013+AMD2:2020",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "id_type": "包装规范文件号",
-      "value": "GF-30-006 V1.0"
-    }
-  ],
-  "components": [
-    {
-      "name": "电池",
-      "spec": "2×AAA Size"
+      "std_id": "IEC 62366-1",
+      "version": "2015",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "name": "说明书",
-      "spec": "150x50mm（±1mm）"
+      "std_id": "ISO 80601-2-56:2017/Amd1:2018",
+      "region": "国际",
+      "applicable": true
     },
     {
-      "name": "纸浆盒",
-      "spec": null
+      "std_id": "EN ISO 80601-2-56:2017+A1:2018",
+      "region": "欧盟",
+      "applicable": false
+    },
+    {
+      "std_id": "EN 12470-3:2000+A1:2009",
+      "region": "欧盟",
+      "applicable": false
+    },
+    {
+      "std_id": "EN 12470-5:2003",
+      "region": "欧盟",
+      "applicable": false
+    },
+    {
+      "std_id": "ASTM E1965-98:2016",
+      "region": "美国",
+      "applicable": true
+    },
+    {
+      "std_id": "ASTM E1965-98:2023",
+      "region": "美国",
+      "applicable": true
+    },
+    {
+      "std_id": "GB/T 21416:2008",
+      "region": "中国",
+      "applicable": false
+    },
+    {
+      "std_id": "GB 21417.1-2008",
+      "region": "中国",
+      "applicable": false
+    },
+    {
+      "std_id": "JJG 1164-2019",
+      "region": "中国",
+      "applicable": false
+    },
+    {
+      "std_id": "JJG 1162-2019",
+      "region": "中国",
+      "applicable": false
+    },
+    {
+      "std_id": "MDR 2017/745",
+      "region": "欧盟",
+      "applicable": false
+    },
+    {
+      "std_id": "MDD 93/42/EEC",
+      "region": "欧盟",
+      "applicable": false
+    },
+    {
+      "std_id": "GB/T 16886.1-2022",
+      "version": "ISO 10993-1:2018",
+      "region": "中国",
+      "applicable": true
+    },
+    {
+      "std_id": "GB/T 16886.5-2017",
+      "version": "ISO 10993-5:2009",
+      "region": "中国",
+      "applicable": true
+    },
+    {
+      "std_id": "GB/T 16886.10-2017",
+      "version": "ISO 10993-10:2010",
+      "region": "中国",
+      "applicable": true
+    },
+    {
+      "std_id": "GB/T 16886.23-2023",
+      "version": "ISO 10993-23:2021",
+      "region": "中国",
+      "applicable": true
+    },
+    {
+      "std_id": "ISO 10993-1:2018",
+      "region": "国际",
+      "applicable": true
+    },
+    {
+      "std_id": "ISO 10993-5:2009",
+      "region": "国际",
+      "applicable": true
+    },
+    {
+      "std_id": "ISO 10993-10:2021",
+      "region": "国际",
+      "applicable": true
+    },
+    {
+      "std_id": "ISO 10993-23:2021",
+      "region": "国际",
+      "applicable": true
     }
   ],
   "semantic_fragments": [
     {
       "fragment_type": "constraint_statement",
-      "content": "测量误差要求：在≥35℃且≤42℃范围内，测量误差为±0.2℃；在其它温度范围内，测量误差为±0.3℃。",
+      "content": "生产过程要求-机芯检测：1、能正确检测LCD端口连接线的通断。2、能正确检测按键端口连接线的通断。3、能正确检测低电压检测端口连接线的通断。4、能查看待机态和工作态电流。机芯调试：1、能对测温模块进行检测。2、能实现对机芯的自检查看。工厂态要求机芯检测态：1.能够检验LCD与PCB的连接。2.能够检验按键与PCB的连接。3.能够检验待机态和工作态电流。机芯调试态：1.能够显示测温模块测量值。2.能够设定蜂鸣提示音开关。3.能够设定测量单位。",
       "topic_tags": [
-        "测量误差",
-        "精度",
-        "体温测量",
-        "性能规格"
+        "生产过程",
+        "机芯检测",
+        "机芯调试",
+        "工厂态",
+        "LCD",
+        "按键",
+        "电流"
       ],
       "related_subjects": [
         "PT9L",
         "红外体温计",
-        "PERF-03"
+        "设计输入-功能规格部分"
       ]
     },
     {
       "fragment_type": "constraint_statement",
-      "content": "彩包装内容物包括：红外体温计主机、说明书（尺寸150x50mm，公差±1mm）、纸浆盒、电池（要求：2×AAA Size）。",
+      "content": "环保要求：需满足以下环保指令或法规（已选中）：加州RoHS。其他未选中项包括：ROHS(2011/65/EU)(2015/863/EU)、REACH(1907/2006/EC)、WEEE(2012/19/EU)、电池指令(2013/56/EU)、包装指令(2005/20/EC)、中国ROHS 2.0、POPs、包装物和包装废弃物指令94/62/EC、2006/66/EC、TSCA CPSC/CPSIA、加州65提案、美国包装法案TPCH、美国电池指令等。",
       "topic_tags": [
-        "包装",
-        "内容物",
-        "附件",
-        "电池"
+        "环保",
+        "RoHS",
+        "加州RoHS",
+        "REACH",
+        "WEEE",
+        "环保法规"
       ],
       "related_subjects": [
         "PT9L",
-        "组件规格",
-        "COMP-17"
+        "设计输入-通用"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "错误分类显示：错误种类2种：1、超出工作环境温度；2、超过量程。",
+      "topic_tags": [
+        "错误显示",
+        "报警",
+        "超温",
+        "超量程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计功能规格部分"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "包装列表（彩包装内容物）：红外体温计主机、说明书（尺寸：150x50mm±1mm）、纸浆盒、电池（要求：2×AAA Size）。",
+      "topic_tags": [
+        "包装",
+        "包装列表",
+        "说明书",
+        "电池",
+        "AAA"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "设计输入-组件规格部分"
       ]
     },
     {
       "fragment_type": "scope_limitation",
-      "content": "法规标准清单完整列表（超出20条限制部分）：生物相容性-AAMI ANSI ISO 10993-1：2018（美国，适用）；AAMI ANSI ISO 10993-5:2009/(R)2022（美国，适用）；AAMI/ANSI/ISO 10993-10:2010/(R)2014（美国，适用）；EN ISO 10993-1:2020（欧盟，不适用）；EN ISO 10993-5:2009（欧盟，不适用）；EN ISO 10993-10:2021（欧盟，不适用）；EN ISO 10993-23:2021（欧盟，不适用）。电气安全-IEC 60601-1:2005+AMD1:2012（美国，适用）；IEC 60601-1:2005+AMD1:2012+AMD2:2020（美国，适用）；EN 60601-1:2006/A2:2021（欧盟，不适用）；ANSI/AAMI ES60601-1:2005/A2:2021（美国，适用）；IEC 60601-1-11：2015+AMD1：2020（美国，适用）；EN 60601-1-11:2015+A1:2021（欧盟，不适用）；GB 9706.1-2020（中国，不适用）；YY 9706.111-2021（中国，不适用）。风险-YY/T 0316-2016（中国，不适用）；YY/T 1437-2023（中国，不适用）；YY/T 1473-2023（中国，不适用）；EN ISO 14971:2019（欧盟，不适用）；ISO 14971:2019（国际，适用）。标识-GB/T 191-2008（中国，不适用）；YY/T 0466.1-2016（中国，不适用）；YY/T 0466.1-2023（中国，不适用）；YY/T 0466.2-2015（中国，不适用）；EN 1041:2013（欧盟，不适用）；EN ISO 20417:2021（欧盟，不适用）；ISO 20417:2021（国际，适用）；21CFR 801 Labeling（FDA地区，适用）；EN ISO 15223-1:2021（欧盟，不适用）；ISO 15223-1:2021（国际，适用）。易用性-IEC 60601-1-6：2010+AMD1：2013+AMD2：2020（国际，适用）；EN 60601-1-6:2010/A1:2015（欧盟，不适用）；EN 60601-1-6:2010+A2:2021（欧盟，不适用）；IEC 62366-1：2015（国际，适用）；IEC 62366-1：2015+AMD1：2020（国际，适用）；EN 62366-1:2021（欧盟，不适用）。包装运输-GB/T 6543-2008（中国，不适用）；ISTA 2A:2011（国际，适用）；Directive 94/62/EC（欧盟，不适用）；Model Legislation（美国，适用）。电磁兼容-EN 60601-1-2:2015/A1:2021（欧盟，不适用）；IEC 60601-1-2:2014+AMD1：2020（国际，适用）；FCC Part15（美国，适用）；YY 9706.102-2021（中国，不适用）。软件相关-YY/T 0664-2020（中国，不适用）；GB/T 25000.51-2016（中国，不适用）；EN 62304:2006/A1:2015（欧盟，不适用）；IEC 62304：2006+AMD1：2015（国际，适用）。蓝牙-蓝牙组织BQB认证（国际，不适用）；苹果公司内部协议（美国，不适用）；SRRC认证（中国，不适用）；FCC认证（美国，不适用）。锂电池-GB 31241-2022（中国，不适用）；IEC 62133-1:2017（美国，不适用）；IEC 62133-2:2017+AMD1:2021（美国，不适用）。其他非强制标准-验货标准（企业间，不适用）；客户单独要求（企业间，不适用）。",
+      "content": "法规标准清单适用于产品型号PT9L（红外体温计，项目编号30000078）美国市场。以下标准在本版本中标记为不适用（■否）：EN ISO 80601-2-56:2017+A1:2018（欧盟）、EN 12470-3:2000+A1:2009（欧盟）、EN 12470-5:2003（欧盟）、GB/T 21416:2008（中国）、GB 21417.1-2008（中国）、JJG 1164-2019（中国）、JJG 1162-2019（中国）、MDR 2017/745（欧盟）、MDD 93/42/EEC（欧盟）、GB/T 16886.1-2022（中国）、GB/T 16886.5-2017（中国）、GB/T 16886.10-2017（中国）、GB/T 16886.23-2023（中国）、EN ISO 10993-1:2020（欧盟）、EN ISO 10993-5:2009（欧盟）、EN ISO 10993-10:2021（欧盟）、EN ISO 10993-23:2021（欧盟）、EN 60601-1:2006/A2:2021（欧盟）、EN 60601-1-11:2015+A1:2021（欧盟）、GB 9706.1-2020（中国）、YY 9706.111-2021（中国）、YY/T 0316-2016（中国）、YY/T 1437-2023（中国）、YY/T 1473-2023（中国）、EN ISO 14971:2019（欧盟）、GB/T 191-2008（中国）、YY/T 0466.1-2016（中国）、YY/T 0466.1-2023（中国）、YY/T 0466.2-2015（中国）、EN 1041:2013（欧盟）、EN ISO 20417:2021（欧盟）、EN ISO 15223-1:2021（欧盟）、EN 60601-1-6:2010/A1:2015（欧盟）、EN 60601-1-6:2010+A2:2021（欧盟）、EN 62366-1:2021（欧盟）、IEC 62366-1:2015+AMD1:2020（国际）、GB/T 6543-2008（中国）、Directive 94/62/EC（欧盟）、EN 60601-1-2:2015/A1:2021（欧盟）、YY 9706.102-2021（中国）、YY/T 0664-2020（中国）、GB/T 25000.51-2016（中国）、EN 62304:2006/A1:2015（欧盟）、蓝牙组织BQB认证（国际）、苹果公司内部协议（美国）、SRRC认证（中国）、FCC认证（美国）、GB 31241-2022（中国）、IEC 62133-1:2017（美国）、IEC 62133-2:2017+AMD1:2021（美国）、验货标准、客户单独要求。",
       "topic_tags": [
-        "法规标准清单",
-        "美国市场",
+        "法规标准",
+        "不适用标准",
         "PT9L",
         "红外体温计",
-        "电气安全",
-        "生物相容性",
-        "电磁兼容",
-        "软件",
-        "标识",
-        "风险管理",
-        "易用性",
-        "包装运输"
+        "美国市场"
       ],
       "related_subjects": [
         "PT9L",
         "30000078",
-        "红外体温计",
-        "设计输入"
+        "设计输入-法规标准清单"
       ]
     },
     {
       "fragment_type": "constraint_statement",
-      "content": "法规标准清单（完整，含超出20条部分）：\n生物相容性-美国：AAMI ANSI ISO 10993-1:2018（适用）、AAMI ANSI ISO 10993-5:2009/(R)2022（适用）、AAMI/ANSI/ISO 10993-10:2010/(R)2014（适用）；\n生物相容性-欧盟：EN ISO 10993-1:2020（适用）、EN ISO 10993-5:2009（适用）、EN ISO 10993-10:2021（适用）、EN ISO 10993-23:2021（适用）；\n电气安全：IEC 60601-1:2005+AMD1:2012（美国，适用）、IEC 60601-1:2005+AMD1:2012+AMD2:2020（美国，适用）、EN 60601-1:2006/A2:2021（欧盟，适用）、ANSI/AAMI ES60601-1:2005/A2:2021（美国，适用）、IEC 60601-1-11:2015+AMD1:2020（美国，适用）、EN 60601-1-11:2015+A1:2021（欧盟，适用）、GB 9706.1-2020（中国，适用）、YY 9706.111-2021（中国，适用）；\n风险：YY/T 0316-2016（中国，适用）、YY/T 1437-2023（中国，适用）、YY/T 1473-2023（中国，适用）、EN ISO 14971:2012（欧盟，适用）、ISO 14971:2019（美国，适用）；\n标识：GB/T 191-2008（中国，适用）、YY/T 0466.1-2016（中国，适用）、YY/T 0466.1-2023（中国，不适用）、YY/T 0466.2-2015（中国，适用）、EN 1041:2013（欧盟，适用）、EN ISO 20417:2021（欧盟，适用）、21CFR 801 Labeling（FDA地区，适用）、EN ISO 15223-1:2021（欧盟，适用）、ISO 15223-1:2021（美国，适用）；\n易用性：IEC 60601-1-6:2010+AMD1:2013+AMD2:2020（美国，适用）、EN 60601-1-6:2010/A1:2015（欧盟，适用）、EN 60601-1-6:2010+A2:2021（欧盟，适用）、IEC 62366-1:2015（美国，适用）、IEC 62366-1:2015+AMD1:2020（美国，适用）、EN 62366-1:2021（欧盟，适用）；\n包装运输：GB/T 6543-2008（中国，适用）、ISTA 2A:2011（国际，适用）、Directive 94/62/EC（欧盟，适用）、Model Legislation（美国，适用）；\n电磁兼容：EN 60601-1-2:2015/A1:2021（欧盟，适用）、IEC 60601-1-2:2014+AMD1:2020（美国，适用）、FCC Part15（美国，适用）、YY 9706.102-2021（中国，适用）；\n软件相关：YY/T 0664-2020（中国，适用，等同IEC 62304:2015）、GB/T 25000.51-2016（中国，不适用）、EN 62304:2006/A1:2015（欧盟，适用）、IEC 62304:2006+AMD1:2015（美国，适用）；\n蓝牙：蓝牙组织BQB认证（国际，不适用）、苹果公司内部协议（美国，不适用）、SRRC认证（中国，不适用）、FCC认证（美国，不适用）；\n锂电池：GB 31241-2022（中国，不适用）、IEC 62133-1:2017（美国，不适用）、IEC 62133-2:2017+AMD1:2021（美国，不适用）；\n其他非强制标准：验货标准（企业间，不适用）、客户单独要求（企业间，不适用）。",
+      "content": "适用标准完整列表（美国市场，■是）：行业标准：ISO 80601-2-56:2017/Amd1:2018（国际）、ASTM E1965-98:2016（美国）、ASTM E1965-98:2023（美国）；生物相容性：ISO 10993-1:2018（国际）、ISO 10993-5:2009（国际）、ISO 10993-10:2021（国际）、ISO 10993-23:2021（国际）、AAMI ANSI ISO 10993-1:2018（美国）、AAMI ANSI ISO 10993-5:2009/(R)2022（美国）、AAMI/ANSI/ISO 10993-10:2010/(R)2014（美国）；电气安全：IEC 60601-1:2005+AMD1:2012（美国）、IEC 60601-1:2005+AMD1:2012+AMD2:2020（美国）、ANSI/AAMI ES60601-1:2005/A2:2021（美国）、IEC 60601-1-11:2015+AMD1:2020（美国）；风险：ISO 14971:2019（国际）；标识：ISO 20417:2021（国际）、21CFR 801 Labeling（FDA地区）、ISO 15223-1:2021（国际）；易用性：IEC 60601-1-6:2010+AMD1:2013+AMD2:2020（国际）、IEC 62366-1:2015（国际）；包装运输：ISTA 2A:2011（国际）、Model Legislation（美国）；电磁兼容：IEC 60601-1-2:2014+AMD1:2020（国际）、FCC Part15（美国）；软件相关：IEC 62304:2006+AMD1:2015（国际）。",
+      "topic_tags": [
+        "适用标准",
+        "法规清单",
+        "美国市场",
+        "PT9L",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "30000078",
+        "设计输入-法规标准清单"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "法规标准清单完整列表（超出前20条的部分）：生物相容性-AAMI ANSI ISO 10993-1:2018（美国，适用）、AAMI ANSI ISO 10993-5:2009/(R)2022（美国，适用）、AAMI/ANSI/ISO 10993-10:2010/(R)2014（美国，适用）、EN ISO 10993-1:2020（欧盟，适用）、EN ISO 10993-5:2009（欧盟，适用）、EN ISO 10993-10:2021（欧盟，适用）、EN ISO 10993-23:2021（欧盟，适用）；电气安全-IEC 60601-1:2005+AMD1:2012（美国，适用）、IEC 60601-1:2005+AMD1:2012+AMD2:2020（美国，适用）、EN 60601-1:2006/A2:2021（欧盟，适用）、ANSI/AAMI ES60601-1:2005/A2:2021（美国，适用）、IEC 60601-1-11:2015+AMD1:2020（美国，适用）、EN 60601-1-11:2015+A1:2021（欧盟，适用）、GB 9706.1-2020（中国，适用）、YY 9706.111-2021（中国，适用）；风险-YY/T 0316-2016（中国，适用）、YY/T 1437-2023（中国，适用）、YY/T 1473-2023（中国，适用）、EN ISO 14971:2012等同ISO 14971:2007（欧盟，适用）、ISO 14971:2019（美国，适用）；标识-GB/T 191-2008（中国，适用）、YY/T 0466.1-2016（中国，适用）、YY/T 0466.1-2023（中国，不适用）、YY/T 0466.2-2015（中国，适用）、EN 1041:2013（欧盟，适用）、EN ISO 20417:2021（欧盟，适用）、21CFR 801 Labeling（FDA地区，适用）、EN ISO 15223-1:2021（欧盟，适用）、ISO 15223-1:2021（美国，适用）；易用性-IEC 60601-1-6:2010+AMD1:2013+AMD2:2020（美国，适用）、EN 60601-1-6:2010/A1:2015（欧盟，适用）、EN 60601-1-6:2010+A2:2021（欧盟，适用）、IEC 62366-1:2015（美国，适用）、IEC 62366-1:2015+AMD1:2020（美国，适用）、EN 62366-1:2021（欧盟，适用）；包装运输-GB/T 6543-2008（中国，适用）、ISTA 2A:2011（国际，适用）、Directive 94/62/EC（欧盟，适用）、Model Legislation（美国，适用）；电磁兼容-EN 60601-1-2:2015/A1:2021（欧盟，适用）、IEC 60601-1-2:2014+AMD1:2020（美国，适用）、FCC Part15（美国，适用）、YY 9706.102-2021（中国，适用）；软件相关-YY/T 0664-2020等同IEC 62304:2015（中国，适用）、GB/T 25000.51-2016（中国，不适用）、EN 62304:2006/A1:2015（欧盟，适用）、IEC 62304:2006+AMD1:2015（美国，适用）；蓝牙-蓝牙组织BQB认证（国际，不适用）、苹果公司内部协议（美国，不适用）、SRRC认证（中国，不适用）、FCC认证（美国，不适用）；锂电池-GB 31241-2022（中国，不适用）、IEC 62133-1:2017（美国，不适用）、IEC 62133-2:2017+AMD1:2021（美国，不适用）；其他非强制标准-验货标准（企业间，不适用）、客户单独要求（企业间，不适用）。",
       "topic_tags": [
         "法规标准",
-        "适用标准",
-        "生物相容性",
         "电气安全",
+        "生物相容性",
         "风险管理",
-        "电磁兼容",
-        "软件",
         "标识",
         "易用性",
-        "包装运输"
+        "包装运输",
+        "电磁兼容",
+        "软件",
+        "蓝牙",
+        "锂电池"
       ],
       "related_subjects": [
         "PT9L",
         "红外体温计",
         "30000078"
       ]
-    }
-  ],
-  "regulations": [
-    {
-      "std_id": "ISO 80601-2-56:2017/Amd1:2018",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "EN ISO 80601-2-56:2017+A1:2018",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "EN 12470-3:2000+A1:2009",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "EN 12470-5:2003",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "ASTM E1965-98:2016",
-      "region": "美国",
-      "applicable": true
-    },
-    {
-      "std_id": "ASTM E1965-98:2023",
-      "region": "美国",
-      "applicable": true
-    },
-    {
-      "std_id": "GB/T 21416:2008",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "GB 21417.1-2008",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "JJG 1164-2019",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "JJG 1162-2019",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "MDR 2017/745",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "MDD 93/42/EEC",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "GB/T 16886.1-2022",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "GB/T 16886.5-2017",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "GB/T 16886.10-2017",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "GB/T 16886.23-2023",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "ISO 10993-1:2018",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 10993-5:2009",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 10993-10:2021",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 10993-23:2021",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 80601-2-56:2017/Amd1:2018",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "EN ISO 80601-2-56:2017+A1:2018",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "EN 12470-3:2000+A1:2009",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "EN 12470-5:2003",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "ASTM E1965-98:2016",
-      "region": "美国",
-      "applicable": true
-    },
-    {
-      "std_id": "ASTM E1965-98:2023",
-      "region": "美国",
-      "applicable": true
-    },
-    {
-      "std_id": "GB/T 21416:2008",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "GB 21417.1-2008",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "JJG 1164-2019",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "JJG 1162-2019",
-      "region": "中国",
-      "applicable": false
-    },
-    {
-      "std_id": "MDR 2017/745",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "MDD 93/42/EEC",
-      "region": "欧盟",
-      "applicable": false
-    },
-    {
-      "std_id": "GB/T 16886.1-2022",
-      "version": "ISO 10993-1:2018等同",
-      "region": "中国",
-      "applicable": true
-    },
-    {
-      "std_id": "GB/T 16886.5-2017",
-      "version": "ISO 10993-5:2009等同",
-      "region": "中国",
-      "applicable": true
-    },
-    {
-      "std_id": "GB/T 16886.10-2017",
-      "version": "ISO 10993-10:2010等同",
-      "region": "中国",
-      "applicable": true
-    },
-    {
-      "std_id": "GB/T 16886.23-2023",
-      "version": "ISO 10993-23:2021等同",
-      "region": "中国",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 10993-1:2018",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 10993-5:2009",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 10993-10:2021",
-      "region": "国际",
-      "applicable": true
-    },
-    {
-      "std_id": "ISO 10993-23:2021",
-      "region": "国际",
-      "applicable": true
     }
   ],
   "_meta": {
@@ -544,19 +953,43 @@
     {
       "type": "HAS_DETAIL",
       "from": "PT9L",
-      "to": "测量误差",
+      "to": "生产过程",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "红外体温计",
-      "to": "测量误差",
+      "to": "生产过程",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
-      "from": "PERF-03",
-      "to": "测量误差",
+      "from": "设计输入-功能规格部分",
+      "to": "生产过程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "环保",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计输入-通用",
+      "to": "环保",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "错误显示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计功能规格部分",
+      "to": "错误显示",
       "properties": {}
     },
     {
@@ -567,49 +1000,13 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "组件规格",
-      "to": "包装",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-17",
+      "from": "设计输入-组件规格部分",
       "to": "包装",
       "properties": {}
     },
     {
       "type": "HAS_DETAIL",
       "from": "PT9L",
-      "to": "法规标准清单",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "30000078",
-      "to": "法规标准清单",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "红外体温计",
-      "to": "法规标准清单",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "设计输入",
-      "to": "法规标准清单",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PT9L",
-      "to": "法规标准",
-      "properties": {}
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "红外体温计",
       "to": "法规标准",
       "properties": {}
     },
@@ -620,549 +1017,594 @@
       "properties": {}
     },
     {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "region": "国际",
-        "applicable": true
-      }
+      "type": "HAS_DETAIL",
+      "from": "设计输入-法规标准清单",
+      "to": "法规标准",
+      "properties": {}
     },
     {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "EN ISO 80601-2-56:2017+A1:2018",
-      "properties": {
-        "region": "欧盟",
-        "applicable": false
-      }
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "适用标准",
+      "properties": {}
     },
     {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "EN 12470-3:2000+A1:2009",
-      "properties": {
-        "region": "欧盟",
-        "applicable": false
-      }
+      "type": "HAS_DETAIL",
+      "from": "30000078",
+      "to": "适用标准",
+      "properties": {}
     },
     {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "EN 12470-5:2003",
-      "properties": {
-        "region": "欧盟",
-        "applicable": false
-      }
+      "type": "HAS_DETAIL",
+      "from": "设计输入-法规标准清单",
+      "to": "适用标准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "法规标准",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "region": "美国",
-        "applicable": true
-      }
+      "to": "IEC60529",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "ASTM E1965-98:2023",
-      "properties": {
-        "region": "美国",
-        "applicable": true
-      }
+      "to": "ROHS 2011/65/EU",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "GB/T 21416:2008",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "REACH 1907/2006/EC",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "GB 21417.1-2008",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "WEEE 2012/19/EU",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "JJG 1164-2019",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "电池指令 2013/56/EU",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "JJG 1162-2019",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "包装指令 2005/20/EC",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "MDR 2017/745",
-      "properties": {
-        "region": "欧盟",
-        "applicable": false
-      }
+      "to": "中国ROHS 2.0",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "MDD 93/42/EEC",
-      "properties": {
-        "region": "欧盟",
-        "applicable": false
-      }
+      "to": "94/62/EC及(EU)2018/852",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "GB/T 16886.1-2022",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "2006/66/EC",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "GB/T 16886.5-2017",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "加州RoHS",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "GB/T 16886.10-2017",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "TSCA CPSC/CPSIA",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "GB/T 16886.23-2023",
-      "properties": {
-        "region": "中国",
-        "applicable": false
-      }
+      "to": "加州65提案",
+      "properties": {}
     },
     {
       "type": "LISTS_FILE",
       "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-1:2018",
-      "properties": {
-        "region": "国际",
-        "applicable": true
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-5:2009",
-      "properties": {
-        "region": "国际",
-        "applicable": true
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-10:2021",
-      "properties": {
-        "region": "国际",
-        "applicable": true
-      }
-    },
-    {
-      "type": "LISTS_FILE",
-      "from": "设计输入-法规标准清单（欧美）",
-      "to": "ISO 10993-23:2021",
-      "properties": {
-        "region": "国际",
-        "applicable": true
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-01",
-      "to": "温度显示范围",
-      "properties": {
-        "value": "32.0～42.9",
-        "unit": "℃"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-02",
-      "to": "显示分辨率",
-      "properties": {
-        "value": "0.1",
-        "unit": "℃"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-04",
-      "to": "工作环境温度",
-      "properties": {
-        "value": "10～40",
-        "unit": "℃",
-        "condition": "工作环境"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-05",
-      "to": "工作环境相对湿度",
-      "properties": {
-        "value": "15～95%RH，不结露",
-        "condition": "工作环境"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-06",
-      "to": "工作环境大气压力",
-      "properties": {
-        "value": "70～106",
-        "unit": "kPa",
-        "condition": "工作环境"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-07",
-      "to": "存储环境温度",
-      "properties": {
-        "value": "-20.0～55.0",
-        "unit": "℃",
-        "condition": "存储环境"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-08",
-      "to": "存储环境相对湿度",
-      "properties": {
-        "value": "15～95%RH，不结露",
-        "condition": "存储环境"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-09",
-      "to": "存储环境大气压力",
-      "properties": {
-        "value": "70～106",
-        "unit": "kPa",
-        "condition": "存储环境"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-10",
-      "to": "产品寿命",
-      "properties": {
-        "value": "五年或10000次"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "PERF-11",
-      "to": "电池寿命（测量使用次数）",
-      "properties": {
-        "value": "不低于1000次"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-01",
-      "to": "上盖表面处理",
-      "properties": {
-        "value": "细火花纹"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-02",
-      "to": "下盖表面处理",
-      "properties": {
-        "value": "细火花纹"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-03",
-      "to": "电池盖表面处理",
-      "properties": {
-        "value": "细火花纹"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-04",
-      "to": "上盖颜色",
-      "properties": {
-        "value": "白色"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-05",
-      "to": "下盖颜色",
-      "properties": {
-        "value": "白色"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-06",
-      "to": "电池盖颜色",
-      "properties": {
-        "value": "白色"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-07",
-      "to": "按键形式",
-      "properties": {
-        "value": "注塑按键"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-08",
-      "to": "按键表面处理",
-      "properties": {
-        "value": "细火花纹"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-09",
-      "to": "透镜形式",
-      "properties": {
-        "value": "模切透镜"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-10",
-      "to": "透镜表面处理",
-      "properties": {
-        "value": "不适用"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-11",
-      "to": "整机外形尺寸",
-      "properties": {
-        "value": "130.8x34.8x38",
-        "unit": "mm",
-        "tolerance": "±0.5mm"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-12",
-      "to": "整机重量",
-      "properties": {
-        "value": "约80",
-        "unit": "g"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-13",
-      "to": "包装执行规范",
-      "properties": {
-        "value": "按照《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》执行",
-        "source_req_id": "GF-30-006 V1.0"
-      }
-    },
-    {
-      "type": "HAS_DETAIL",
-      "from": "COMP-14",
-      "to": "整箱重量",
-      "properties": {
-        "value": "7.1",
-        "unit": "kg",
-        "tolerance": "±5%"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-03",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "测量误差要求±0.2℃/±0.3℃源自体温计性能标准"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-01",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "温度显示范围32.0~42.9℃受体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-02",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "显示分辨率0.1℃受体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "reason": "测量误差要求受美国ASTM体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2023",
-      "properties": {
-        "reason": "测量误差要求受美国ASTM体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-01",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "reason": "温度显示范围受美国ASTM体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-01",
-      "to": "ASTM E1965-98:2023",
-      "properties": {
-        "reason": "温度显示范围受美国ASTM体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-02",
-      "to": "ASTM E1965-98:2016",
-      "properties": {
-        "reason": "显示分辨率受美国ASTM体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-02",
-      "to": "ASTM E1965-98:2023",
-      "properties": {
-        "reason": "显示分辨率受美国ASTM体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-04",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "工作环境温度范围受体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-05",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "工作环境相对湿度受体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "PERF-06",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
-      "properties": {
-        "reason": "工作环境大气压力受体温计标准约束"
-      }
-    },
-    {
-      "type": "CONSTRAINED_BY",
-      "from": "COMP-13",
       "to": "GF-30-006 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "ASTM E1965-98",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "ISO 10993-1",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "ISO 10993-5",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "ISO 10993-10",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "ISO 10993-23",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "AAMI ANSI ISO 10993-1",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "AAMI ANSI ISO 10993-5",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "AAMI/ANSI/ISO 10993-10",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "设计输入-法规标准清单（欧美）",
+      "to": "IEC 60601-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-01",
+      "to": "PT9L",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-02",
+      "to": "FDA（美国）",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-03",
+      "to": "设计输入-组件规格部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-04",
+      "to": "设计输入-组件规格部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-05",
+      "to": "设计输入-组件规格部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-06",
+      "to": "设计输入-性能规格部分",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-07",
+      "to": "设计输入-法规标准清单",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-08",
+      "to": "设计输入-法规标准清单",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-09",
+      "to": "加州RoHS",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-11",
+      "to": "设计输入-法规标准清单",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-14a",
+      "to": "机芯检测",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-14b",
+      "to": "工厂态要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-17",
+      "to": "设计输入-法规标准清单",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-18",
+      "to": "设计输入-法规标准清单",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "GEN-19",
+      "to": "IEC60529",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "FUNC-01",
+      "to": "红外非接触式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "FUNC-02",
+      "to": "额面",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "FUNC-03",
+      "to": "人体体温、物温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "FUNC-04",
+      "to": "屏幕选择",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-07",
+      "to": "ISO 14971:2019",
       "properties": {
-        "reason": "包装执行规范直接引用该文件作为约束"
+        "reason": "风险管理按照法规标准清单中的相关标准进行"
       }
     },
     {
-      "type": "DERIVES_FROM",
-      "from": "PERF-03",
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-08",
+      "to": "IEC 60601-1",
+      "properties": {
+        "reason": "电气安全详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-09",
+      "to": "加州RoHS",
+      "properties": {
+        "reason": "环保要求需满足加州RoHS"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-11",
+      "to": "IEC 60601-1-6:2010+AMD1:2013+AMD2:2020",
+      "properties": {
+        "reason": "易用性详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-11",
+      "to": "IEC 62366-1:2015",
+      "properties": {
+        "reason": "易用性详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-17",
+      "to": "IEC 60601-1-2:2014+AMD1:2020",
+      "properties": {
+        "reason": "电磁兼容性详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-17",
+      "to": "FCC Part15",
+      "properties": {
+        "reason": "电磁兼容性详见法规标准清单中的相关标准（美国市场）"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-18",
+      "to": "ISO 10993-1",
+      "properties": {
+        "reason": "生物相容性详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-18",
+      "to": "ISO 10993-5",
+      "properties": {
+        "reason": "生物相容性详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-18",
+      "to": "ISO 10993-10",
+      "properties": {
+        "reason": "生物相容性详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-18",
+      "to": "ISO 10993-23",
+      "properties": {
+        "reason": "生物相容性详见法规标准清单中的相关标准"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-18",
+      "to": "AAMI ANSI ISO 10993-1",
+      "properties": {
+        "reason": "生物相容性详见法规标准清单中的相关标准（美国）"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-18",
+      "to": "AAMI ANSI ISO 10993-5",
+      "properties": {
+        "reason": "生物相容性详见法规标准清单中的相关标准（美国）"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-18",
+      "to": "AAMI/ANSI/ISO 10993-10",
+      "properties": {
+        "reason": "生物相容性详见法规标准清单中的相关标准（美国）"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "GEN-19",
+      "to": "IEC60529",
+      "properties": {
+        "reason": "应符合IEC60529的IP22类测试"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "FUNC-01",
       "to": "ISO 80601-2-56:2017/Amd1:2018",
       "properties": {
-        "reason": "测量误差±0.2℃/±0.3℃的具体数值从体温计国际标准中派生"
+        "reason": "红外非接触式体温计测量原理受行业标准约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "FUNC-01",
+      "to": "ASTM E1965-98",
+      "properties": {
+        "reason": "红外非接触式体温计测量原理受美国行业标准约束"
       }
     },
     {
       "type": "DERIVES_FROM",
-      "from": "PERF-01",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "from": "GEN-07",
+      "to": "ISO 14971:2019",
       "properties": {
-        "reason": "温度显示范围规格从体温计国际标准派生"
+        "reason": "风险管理设计输入派生自ISO 14971风险管理标准要求"
       }
     },
     {
       "type": "DERIVES_FROM",
-      "from": "PERF-02",
-      "to": "ISO 80601-2-56:2017/Amd1:2018",
+      "from": "GEN-08",
+      "to": "IEC 60601-1",
       "properties": {
-        "reason": "显示分辨率要求从体温计国际标准派生"
+        "reason": "电气安全设计输入派生自IEC 60601-1标准要求"
       }
     },
     {
       "type": "DERIVES_FROM",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2016",
+      "from": "GEN-09",
+      "to": "加州RoHS",
       "properties": {
-        "reason": "测量误差规格从美国ASTM体温计标准派生"
+        "reason": "环保设计输入派生自加州RoHS法规要求"
       }
     },
     {
       "type": "DERIVES_FROM",
-      "from": "PERF-03",
-      "to": "ASTM E1965-98:2023",
+      "from": "GEN-18",
+      "to": "ISO 10993-1",
       "properties": {
-        "reason": "测量误差规格从美国ASTM体温计标准派生"
+        "reason": "生物相容性设计输入派生自ISO 10993系列标准"
       }
     },
     {
       "type": "DERIVES_FROM",
-      "from": "COMP-13",
-      "to": "GF-30-006 V1.0",
+      "from": "GEN-19",
+      "to": "IEC60529",
       "properties": {
-        "reason": "包装规格要求从内部包装设计输入规范文件派生"
+        "reason": "防尘防水设计输入派生自IEC60529标准IP22要求"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "GEN-11",
+      "to": "IEC 62366-1:2015",
+      "properties": {
+        "reason": "易用性设计输入派生自IEC 62366-1易用性工程标准"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "ASTM E1965-98_2016",
+      "to": "ASTM E1965-98_2023",
+      "properties": {
+        "std_id": "ASTM E1965-98",
+        "from_version": "2016",
+        "to_version": "2023",
+        "region": "美国"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "IEC 60601-1_2005+AMD1:2012",
+      "to": "IEC 60601-1_2005+AMD1:2012+AMD2:2020",
+      "properties": {
+        "std_id": "IEC 60601-1",
+        "from_version": "2005+AMD1:2012",
+        "to_version": "2005+AMD1:2012+AMD2:2020",
+        "region": "美国"
       }
     }
   ],
   "_claims": [
+    {
+      "subject": "测量原理",
+      "attribute": "类型",
+      "value": "红外非接触式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "测量原理：红外非接触式"
+    },
+    {
+      "subject": "测量位置",
+      "attribute": "部位",
+      "value": "额面",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "测量位置：额面"
+    },
+    {
+      "subject": "检测项目",
+      "attribute": "类型",
+      "value": "人体体温、物温",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "检测项目：人体体温、物温"
+    },
+    {
+      "subject": "按键",
+      "attribute": "数量",
+      "value": "3",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "按键数量及类型：3个按键：开机测量键、设置键、静音键"
+    },
+    {
+      "subject": "按键",
+      "attribute": "类型",
+      "value": "开机测量键、设置键、静音键",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "按键数量及类型：3个按键：开机测量键、设置键、静音键"
+    },
+    {
+      "subject": "LCD型式",
+      "attribute": "显示类型",
+      "value": "段码式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "LCD型式及背光：段码式，有背光：白橙红"
+    },
+    {
+      "subject": "LCD背光",
+      "attribute": "颜色",
+      "value": "白橙红",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "LCD型式及背光：段码式，有背光：白橙红"
+    },
+    {
+      "subject": "低电压检出",
+      "attribute": "阶段数",
+      "value": "双阶段",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "低电压检出：双阶段"
+    },
+    {
+      "subject": "错误分类显示",
+      "attribute": "错误种类数量",
+      "value": "2",
+      "unit": "种",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "错误种类2种：1、超出工作环境温度；2、超过量程"
+    },
+    {
+      "subject": "自动关机时间",
+      "attribute": "时长",
+      "value": "15",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "常规",
+      "raw_text": "自动关机时间：常规15秒"
+    },
+    {
+      "subject": "防护等级",
+      "attribute": "IP等级",
+      "value": "IP22",
+      "unit": "",
+      "tolerance": "",
+      "condition": "手持式、佩戴式或运输中可操作设备",
+      "raw_text": "应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备）"
+    },
     {
       "subject": "温度显示范围",
       "attribute": "范围",
@@ -1170,7 +1612,7 @@
       "unit": "℃",
       "tolerance": "",
       "condition": "",
-      "raw_text": "温度显示范围 32.0～42.9℃"
+      "raw_text": "温度显示范围：32.0～42.9℃"
     },
     {
       "subject": "显示分辨率",
@@ -1179,7 +1621,7 @@
       "unit": "℃",
       "tolerance": "",
       "condition": "",
-      "raw_text": "显示分辨率 0.1℃"
+      "raw_text": "显示分辨率：0.1℃"
     },
     {
       "subject": "测量误差",
@@ -1187,8 +1629,8 @@
       "value": "±0.2",
       "unit": "℃",
       "tolerance": "±0.2℃",
-      "condition": "≥35℃且≤42℃",
-      "raw_text": "测量误差 ±0.2℃（≥35℃且≤42℃）"
+      "condition": "35℃≤T≤42℃",
+      "raw_text": "测量误差：±0.2℃（35℃～42℃），±0.3℃（其他范围）"
     },
     {
       "subject": "测量误差",
@@ -1196,8 +1638,8 @@
       "value": "±0.3",
       "unit": "℃",
       "tolerance": "±0.3℃",
-      "condition": "其它范围（<35℃或>42℃）",
-      "raw_text": "测量误差 ±0.3℃（其它范围）"
+      "condition": "35℃～42℃范围以外",
+      "raw_text": "测量误差：±0.2℃（35℃～42℃），±0.3℃（其他范围）"
     },
     {
       "subject": "工作环境温度",
@@ -1205,107 +1647,35 @@
       "value": "10～40",
       "unit": "℃",
       "tolerance": "",
-      "condition": "工作环境",
-      "raw_text": "工作环境温度 10～40℃"
+      "condition": "",
+      "raw_text": "工作环境温度：10～40℃"
     },
     {
-      "subject": "工作环境相对湿度",
+      "subject": "工作环境湿度",
       "attribute": "范围",
       "value": "15～95",
       "unit": "%RH",
       "tolerance": "",
-      "condition": "工作环境，不结露",
-      "raw_text": "工作环境相对湿度 15～95%RH，不结露"
+      "condition": "不结露",
+      "raw_text": "工作环境相对湿度：15～95%RH，不结露"
     },
     {
-      "subject": "工作环境大气压力",
-      "attribute": "范围",
-      "value": "70～106",
-      "unit": "kPa",
-      "tolerance": "",
-      "condition": "工作环境",
-      "raw_text": "工作环境大气压力 70～106kPa"
-    },
-    {
-      "subject": "存储环境温度",
-      "attribute": "范围",
-      "value": "-20.0～55.0",
-      "unit": "℃",
-      "tolerance": "",
-      "condition": "存储环境",
-      "raw_text": "存储环境温度 -20.0～55.0℃"
-    },
-    {
-      "subject": "存储环境相对湿度",
-      "attribute": "范围",
-      "value": "15～95",
-      "unit": "%RH",
-      "tolerance": "",
-      "condition": "存储环境，不结露",
-      "raw_text": "存储环境相对湿度 15～95%RH，不结露"
-    },
-    {
-      "subject": "存储环境大气压力",
-      "attribute": "范围",
-      "value": "70～106",
-      "unit": "kPa",
-      "tolerance": "",
-      "condition": "存储环境",
-      "raw_text": "存储环境大气压力 70～106kPa"
-    },
-    {
-      "subject": "产品寿命",
-      "attribute": "使用年限",
-      "value": "5",
-      "unit": "年",
+      "subject": "电池",
+      "attribute": "规格",
+      "value": "2×AAA",
+      "unit": "",
       "tolerance": "",
       "condition": "",
-      "raw_text": "产品寿命 五年或10000次"
+      "raw_text": "电池：2×AAA Size"
     },
     {
-      "subject": "产品寿命",
-      "attribute": "使用次数",
-      "value": "10000",
-      "unit": "次",
-      "tolerance": "",
-      "condition": "",
-      "raw_text": "产品寿命 五年或10000次"
-    },
-    {
-      "subject": "电池寿命",
-      "attribute": "测量使用次数",
-      "value": "≥1000",
-      "unit": "次",
-      "tolerance": "",
-      "condition": "",
-      "raw_text": "电池寿命（测量使用次数）不低于1000次"
-    },
-    {
-      "subject": "整机外形尺寸",
+      "subject": "说明书尺寸",
       "attribute": "尺寸",
-      "value": "130.8×34.8×38",
+      "value": "150×50",
       "unit": "mm",
-      "tolerance": "±0.5mm",
+      "tolerance": "±1mm",
       "condition": "",
-      "raw_text": "整机外形尺寸 130.8x34.8x38mm ±0.5mm"
-    },
-    {
-      "subject": "整机重量",
-      "attribute": "重量",
-      "value": "约80",
-      "unit": "g",
-      "tolerance": "",
-      "condition": "",
-      "raw_text": "整机重量 约80g"
-    },
-    {
-      "subject": "整箱重量",
-      "attribute": "重量",
-      "value": "7.1",
-      "unit": "kg",
-      "tolerance": "±5%",
-      "condition": "",
-      "raw_text": "整箱重量 7.1kg ±5%"
+      "raw_text": "说明书：150x50mm（±1mm）"
     },
     {
       "subject": "外箱尺寸",
@@ -1314,25 +1684,25 @@
       "unit": "mm",
       "tolerance": "±10%",
       "condition": "",
-      "raw_text": "外箱尺寸 322.5x231x352mm ±10%"
+      "raw_text": "外箱：322.5x231x352mm（±10%），重量7.1kg±5%，不允许使用金属钉钉合"
     },
     {
-      "subject": "说明书尺寸",
-      "attribute": "尺寸",
-      "value": "150×50",
-      "unit": "mm",
-      "tolerance": "±1mm",
-      "condition": "彩包装内容物",
-      "raw_text": "说明书（150x50mm ±1mm）"
+      "subject": "外箱重量",
+      "attribute": "重量",
+      "value": "7.1",
+      "unit": "kg",
+      "tolerance": "±5%",
+      "condition": "",
+      "raw_text": "外箱：322.5x231x352mm（±10%），重量7.1kg±5%，不允许使用金属钉钉合"
     },
     {
-      "subject": "电池规格",
-      "attribute": "型号数量",
-      "value": "2×AAA",
+      "subject": "外箱装配",
+      "attribute": "约束要求",
+      "value": "不允许使用金属钉钉合",
       "unit": "",
       "tolerance": "",
-      "condition": "彩包装内容物",
-      "raw_text": "电池（2×AAA Size）"
+      "condition": "",
+      "raw_text": "外箱：不允许使用金属钉钉合"
     }
   ]
 }

@@ -1,0 +1,204 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Report",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "total_pages": 182,
+    "current_pages": "10-11"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "type": "international_standard"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "4.10.1",
+      "requirement": "ME EQUIPMENT is suitable for connection to a SUPPLY MAINS, specified to be connected to a separate power supply, can be powered by an INTERNAL ELECTRICAL POWER SOURCE, or a combination of the three",
+      "result_remark": "Internal power supply",
+      "verdict": "P"
+    },
+    {
+      "clause": "4.10.2",
+      "requirement": "Maximum rated voltage for ME EQUIPMENT intended to be connected to SUPPLY MAINS",
+      "result_remark": "",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "description": "250 V for HAND-HELD ME EQUIPMENT",
+          "verdict": "N/A"
+        },
+        {
+          "description": "250 V d.c. or single-phase a.c., or 500 V poly-phase a.c. for ME EQUIPMENT and ME SYSTEMS with a RATED input ≤4 kVA",
+          "verdict": "N/A"
+        },
+        {
+          "description": "500 V for all other ME EQUIPMENT and ME SYSTEMS",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "4.11",
+      "requirement": "Power input",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "description": "Steady-state measured input of ME EQUIPMENT or ME SYSTEM at RATED voltage and at operating settings indicated in instructions for use didn't exceed marked rating by more than 10%",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measurements on ME EQUIPMENT or ME SYSTEM marked with one or more RATED voltage ranges made at both upper and lower limits of the range",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measurements made at a voltage equal to the mean value of the range when each marking of RATED input was related to the mean value of relevant voltage range",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Power input, expressed in volt-amperes, measured with a volt-ampere meter or calculated as the product of steady state current and supply voltage",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "5",
+      "requirement": "GENERAL REQUIREMENTS FOR TESTING ME EQUIPMENT",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.1",
+      "requirement": "TYPE TESTS determined in consideration of Clause 4, in particular 4.2",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "description": "Test not performed when analysis indicated condition being tested was adequately evaluated by other tests or methods",
+          "result_remark": "No other test or methods",
+          "verdict": "N/A"
+        },
+        {
+          "description": "RISK MANAGEMENT FILE identified combinations of simultaneous independent faults that could result in a HAZARDOUS SITUATION",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Testing determined BASIC SAFETY and ESSENTIAL PERFORMANCE were maintained",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "5.2",
+      "requirement": "TYPE TESTS conducted on one representative sample under investigation; multiple samples used simultaneously when validity of results was not significantly affected",
+      "result_remark": "Only one sample used",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.3",
+      "requirement": "Tests conducted within the environmental conditions specified in technical description",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "description": "Temperature and Relative Humidity",
+          "result_remark": "Temperature: 10℃-40℃; Humidity: 15%RH-95%RH",
+          "verdict": "P"
+        },
+        {
+          "description": "Atmospheric Pressure",
+          "result_remark": "700hPa-1060hPa",
+          "verdict": "P"
+        },
+        {
+          "description": "ME EQUIPMENT shielded from other influences that might affect the validity of tests",
+          "result_remark": "Test lab environment under controlled",
+          "verdict": "P"
+        },
+        {
+          "description": "Test conditions modified and results adjusted accordingly when ambient temperature could not be maintained",
+          "result_remark": "Test results of excessive temperature were adjusted to ambient temperature 40℃",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "5.4",
+      "requirement": "ME EQUIPMENT tested under various operating conditions",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "description": "ME EQUIPMENT tested under least favourable working conditions specified in instructions for use",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ME EQUIPMENT with adjustable or controlled operating values adjusted to values least favourable for the relevant test per instructions for use",
+          "verdict": "N/A"
+        },
+        {
+          "description": "When test results influenced by inlet pressure and flow or chemical composition of a cooling liquid, tests performed within the limits in technical description",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Potable water used for cooling",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "5.5",
+      "requirement": "Supply voltage and frequency conditions during tests",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "description": "Supply voltage during tests was the least favourable of the voltages specified in 4.10.2 or voltages marked on ME EQUIPMENT",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ME EQUIPMENT marked with a RATED frequency range tested at the least favourable frequency within the range",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ME EQUIPMENT with more than one RATED voltage, both a.c./d.c. or both external power and INTERNAL ELECTRICAL POWER SOURCE tested in conditions related to 5.4",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ME EQUIPMENT intended for only d.c. supply connection tested with d.c. and influence of polarity considered",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Environmental test conditions: Temperature 10℃-40℃; Relative Humidity 15%RH-95%RH; Atmospheric Pressure 700hPa-1060hPa. Test lab environment under controlled conditions. Test results of excessive temperature were adjusted to ambient temperature 40℃.",
+      "topic_tags": [
+        "environmental conditions",
+        "test environment",
+        "temperature",
+        "humidity",
+        "atmospheric pressure"
+      ],
+      "related_subjects": [
+        "5.3",
+        "IEC60601-1",
+        "TYPE TESTS"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Device is powered by an INTERNAL ELECTRICAL POWER SOURCE only (not connected to SUPPLY MAINS). All clauses related to SUPPLY MAINS connection (4.10.2, 4.11, 5.5) are marked N/A.",
+      "topic_tags": [
+        "internal power supply",
+        "power source",
+        "supply mains",
+        "N/A clauses"
+      ],
+      "related_subjects": [
+        "4.10.1",
+        "4.10.2",
+        "4.11",
+        "5.5"
+      ]
+    }
+  ]
+}

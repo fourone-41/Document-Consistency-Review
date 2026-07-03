@@ -1,0 +1,259 @@
+{
+  "agent": "Candidate Discovery Agent",
+  "summary": "Cross-corpus scan of the PT9L DHF/DMR package reveals 14 candidate consistency issues spanning legacy product residue in active documents, document-number mismatches, unsigned approvals, wrong-product references in BOM and label documents, regulatory applicability conflicts, software diagram contamination, and blood-pressure-specific language appearing in a thermometer DHF.",
+  "review_notes": [
+    "All documents in '2L风险改 - 历史文件' and '原版 - 历史文件' subfolders are acknowledged as historical; PT2L/PT9L cross-contamination within those folders is noted but lower priority than contamination outside them.",
+    "PT3-P10, PT3-M01, PT3-M02 appear in the ABOM as shared/common parts with 'PT3' as the source project; this may be intentional shared-component reuse and requires engineering confirmation rather than automatic rejection.",
+    "The 'PT9C设计确认E0 23.11' document (SW-023) is filed under folder '18 设计确认' without a clear 'historical' or 'draft' marker; its scope relative to PT9L requires clarification.",
+    "Biocompatibility reports are filed under 'PT5' product name; cross-product biocompatibility bridging is common practice but the bridging justification document is not visible in the evidence catalog.",
+    "The draft safety report (VV-086/VV-087/VV-088) carries report number 'ETX2023-07-078-02' (missing '03' segment) while the final report (VV-043) carries 'ETX202303-07-078-02'; this may be a transcription artifact in the draft cover page rather than a separate report."
+  ],
+  "findings": [
+    {
+      "finding_type": "wrong_product_document_number_in_historical_file",
+      "severity": "P1",
+      "claim": "F0013 (PT2L risk management plan) carries the PT9L document number 'PT9L-FXJH01 V1.0' internally while its filename and folder identify it as a PT2L document, creating an irreconcilable document-number conflict within the '2L风险改 - 历史文件' folder.",
+      "rationale": "RISK-007 shows the file title as 'V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0' and RISK-008 shows the internal document number field reads 'DN: PT9L-FXJH01 V1.0 Risk Management Plan'. The same document number PT9L-FXJH01 V1.0 is also used by the legitimate PT9L risk management plan (RISK-056, RISK-002). Two distinct documents—one for PT2L and one for PT9L—share the same controlled document number, which violates document-control uniqueness requirements regardless of folder placement.",
+      "evidence_ids": [
+        "RISK-007",
+        "RISK-008",
+        "RISK-009",
+        "RISK-056",
+        "RISK-002",
+        "REG-003",
+        "REG-004"
+      ],
+      "challenge_questions": [
+        "Was F0013 intentionally assigned document number PT9L-FXJH01 V1.0, or is this a copy-paste error from the PT9L template?",
+        "Which document is the authoritative PT9L-FXJH01 V1.0: F0012/F0021 or F0013?",
+        "Has the document control system been updated to retire or renumber F0013 to avoid the duplicate DN?"
+      ]
+    },
+    {
+      "finding_type": "pt3sbt_label_review_filed_in_pt9l_t1_folder",
+      "severity": "P1",
+      "claim": "A label review document titled 'PT3SBT标签审核表（海外更新）' referencing product model PT2L and PT2L-specific document numbers is filed directly in the PT9L T1 sample folder ('11 T1样机') without any historical or draft designation, suggesting it may be used as a PT9L label compliance record.",
+      "rationale": "SW-007 and SW-008 show the file header reads 'PT2L(美亚)标签检查报告' with product model 'PT2L' and project number '2020-DEV01'. SW-009 through SW-012 show the reviewed label documents are PT2L-SMSP09, PT2L-CBZP07, PT2L-F96, and PT2L-F97—none of which are PT9L document numbers. REG-067 through REG-071 show the compliance checklist references PT2L(美亚)-ZXBQ01 through ZXBQ06 as the basis documents. The file is located at '11 T1样机\\\\PT3SBT标签审核表（海外更新）' with no historical folder marker, placing it in the active T1 sample evidence set.",
+      "evidence_ids": [
+        "SW-007",
+        "SW-008",
+        "SW-009",
+        "SW-010",
+        "SW-011",
+        "SW-012",
+        "REG-067",
+        "REG-068",
+        "REG-069",
+        "REG-070",
+        "REG-071"
+      ],
+      "challenge_questions": [
+        "Is this PT3SBT/PT2L label review document intended to serve as a bridging or equivalence record for PT9L label compliance, and if so, where is the formal bridging justification?",
+        "Should this document be moved to a clearly marked historical or reference folder, or replaced with a PT9L-specific label review?",
+        "Which PT9L label document numbers (PT9L-SMSP01, PT9L-CBZP01, PT9L-F02, etc.) have been formally reviewed against IEC 60601-1 labeling requirements?"
+      ]
+    },
+    {
+      "finding_type": "bp3l_software_diagrams_in_pt9l_active_software_folder",
+      "severity": "P1",
+      "claim": "A document titled 'BP3L 软件图样E0 23.11' containing BP3L software flow diagrams is present in both the main PT9L software design folder ('07 软件设计方案E0 23.11\\\\软件图样E0 23.11') and the PT9L T1 sample subfolder ('11 T1样机\\\\软件文件底稿\\\\软件图样E0 23.11'), neither of which is marked as historical or draft, raising the risk that BP3L software architecture is being used as the PT9L software design record.",
+      "rationale": "SW-001 through SW-006 show F0052 titled 'BP3L 软件图样E0 23.11' residing in '07 软件设计方案E0 23.11\\\\软件图样E0 23.11'. SW-017 through SW-022 show F0131 with the identical title residing in '11 T1样机\\\\软件文件底稿\\\\软件图样E0 23.11'. Both files are flagged excluded_from_primary_scope=false. No PT9L-specific software diagram document is visible in the evidence catalog to replace these BP3L diagrams.",
+      "evidence_ids": [
+        "SW-001",
+        "SW-002",
+        "SW-003",
+        "SW-004",
+        "SW-005",
+        "SW-006",
+        "SW-017",
+        "SW-018",
+        "SW-019",
+        "SW-020",
+        "SW-021",
+        "SW-022"
+      ],
+      "challenge_questions": [
+        "Is there a PT9L-specific software diagram document that supersedes the BP3L diagrams in these folders?",
+        "Were the BP3L software diagrams intentionally retained as the PT9L software design baseline, and if so, is there a formal equivalence or reuse justification?",
+        "Do the BP3L software diagrams accurately reflect the PT9L firmware architecture, including Bluetooth functionality specific to PT9L?"
+      ]
+    },
+    {
+      "finding_type": "pt9c_as_standalone_product_in_clinical_and_user_test_documents",
+      "severity": "P1",
+      "claim": "A clinical evaluation report filed under the PT9L design confirmation folder describes the product as 'PT9C' and 'PT9CL', and a user field test plan is titled 'PT9C V1.0', indicating that PT9C-specific clinical and usability evidence may be substituted for PT9L without a documented equivalence justification.",
+      "rationale": "SW-057 shows F0255 (filed in '18 设计确认\\\\废案与备份') with internal text 'model: PT9CL' and SW-058 shows the body text explicitly states 'PT9C型红外体温计'. SW-059 and SW-060 show the clinical comparison is between PT9C and PT3, not PT9L. SW-061 shows F0260 titled '用户现场测试计划 PT9C V1.0' filed in '18 设计确认\\\\用户测试'. While F0255 is in a '废案与备份' subfolder, F0260 is in the active '用户测试' subfolder with no historical marker.",
+      "evidence_ids": [
+        "SW-057",
+        "SW-058",
+        "SW-059",
+        "SW-060",
+        "SW-061"
+      ],
+      "challenge_questions": [
+        "Is the PT9C user field test plan (F0260) intended to serve as the PT9L usability validation record, and if so, where is the formal equivalence or bridging document?",
+        "What are the design differences between PT9C and PT9L that would affect clinical evaluation conclusions?",
+        "Is there a separate PT9L-specific clinical evaluation report and user test plan, or are the PT9C documents the only records?"
+      ]
+    },
+    {
+      "finding_type": "pt9c_pcb_document_number_in_pt9l_bom",
+      "severity": "P1",
+      "claim": "The PT9L EBOM (PT9L-EBOM01 V1.0) and T1 EBOM (PT9L-T1EB01 V1.0) both list a sensor PCB with drawing number 'PT9C-CNTP01 V1.0', which is a PT9C-prefixed document number appearing in active PT9L production BOMs without any explanatory note or cross-reference justification.",
+      "rationale": "HW-041 and HW-078 show the EBOM entry: 'PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 | 1 | PCB'. HW-043 shows the same entry in the T1 EBOM. SW-015 and SW-016 confirm the same entries. The design output list one (HW-079 through HW-084) lists only PT9L-HFMP01 V1.0 as the main PCB drawing, with no mention of PT9C-CNTP01, suggesting the sensor PCB drawing is not formally listed in the design output index.",
+      "evidence_ids": [
+        "HW-041",
+        "HW-043",
+        "HW-078",
+        "SW-015",
+        "SW-016",
+        "HW-079",
+        "HW-080",
+        "HW-081",
+        "HW-082",
+        "HW-083",
+        "HW-084"
+      ],
+      "challenge_questions": [
+        "Is PT9C-CNTP01 V1.0 the controlled drawing number for the PT9L sensor/connector PCB, or is it a PT9C legacy part number that was carried over without renaming?",
+        "Why does the design output list one not include PT9C-CNTP01 V1.0 as a controlled output document?",
+        "Has the PT9C-CNTP01 PCB been formally qualified and accepted as a PT9L component, and where is that qualification record?"
+      ]
+    },
+    {
+      "finding_type": "pt3sbt_bluetooth_reference_in_pt9l_risk_assessment",
+      "severity": "P1",
+      "claim": "The active PT9L risk assessment report (IFT-FXPJ01 V2.0) and risk control verification report (IFT-FXYS01 V2.0) state that 'PT3SBT can transmit the temperature to a smart device with Bluetooth' in the intended use description, incorrectly attributing PT3SBT's Bluetooth feature to the product under assessment rather than PT9L.",
+      "rationale": "RISK-040 (F0018) and RISK-045 (F0019) both contain the sentence 'PT3SBT can transmit the temperature to a smart device with Bluetooth' in the intended use section. These documents are filed outside any historical folder and carry V2.0 dates of 2024-05-30, making them active records. The PT9L project profile confirms PT9L has Bluetooth, but the intended use statement names PT3SBT rather than PT9L. The same contamination appears in the PT9L-prefixed copies (F0022, F0023) per RISK-061 and RISK-067.",
+      "evidence_ids": [
+        "RISK-040",
+        "RISK-041",
+        "RISK-045",
+        "RISK-046",
+        "RISK-061",
+        "RISK-062",
+        "RISK-067",
+        "RISK-068"
+      ],
+      "challenge_questions": [
+        "Was the intended use section of the V2.0 risk assessment copied from a PT3SBT template without updating the product name?",
+        "Does the risk assessment cover PT9L's Bluetooth functionality specifically, or does it only address PT3SBT's Bluetooth risks?",
+        "Has the risk management team reviewed and accepted this text as accurate for PT9L, or is it an undetected copy error?"
+      ]
+    },
+    {
+      "finding_type": "unsigned_approval_fields_across_all_risk_documents",
+      "severity": "P2",
+      "claim": "All risk management documents across the active, historical, and PT9L-prefixed sets show 'Approved by (Technical Director) Date:' fields with no filled-in signature or date, indicating that none of the risk management documents in the corpus have a verifiable approval record.",
+      "rationale": "REG-001 (F0012), REG-003 (F0013), REG-006 (F0014), REG-012 (F0015), REG-013 (F0016), REG-015 (F0017), REG-019 (F0018), REG-024 (F0019), REG-027 (F0020), REG-031 (F0021), REG-035 (F0022), REG-040 (F0023), REG-043 (F0024), REG-046 (F0025), REG-048 (F0026), REG-054 (F0027), REG-056 (F0028) all show the identical blank approval line. This pattern is consistent across all versions and all product variants, suggesting the approval field was never completed in the digital copies available in the DHF.",
+      "evidence_ids": [
+        "REG-001",
+        "REG-003",
+        "REG-006",
+        "REG-012",
+        "REG-013",
+        "REG-015",
+        "REG-019",
+        "REG-024",
+        "REG-027",
+        "REG-031",
+        "REG-035",
+        "REG-040",
+        "REG-043",
+        "REG-046",
+        "REG-048",
+        "REG-054"
+      ],
+      "challenge_questions": [
+        "Are wet-ink signed originals of these risk documents maintained separately, and are they linked to the DHF?",
+        "Has the document control system captured electronic approval records for these documents that are not reflected in the markdown exports?",
+        "Which version of the risk management documents is considered the approved, controlled version for regulatory submission purposes?"
+      ]
+    },
+    {
+      "finding_type": "en_iso_80601_2_56_and_mdr_applicability_conflict_between_design_input_and_verification",
+      "severity": "P2",
+      "claim": "The draft design input (E0) marks EN ISO 80601-2-56:2017+A1:2018 as 'not applicable' (□是 ■否) and MDR 2017/745 as 'not applicable', but the operation guide filed in the T1 sample folder references IEC 60601-1 EU harmonized standards and WEEE Directive 2012/19/EU, creating an unresolved conflict about whether the product is being designed for EU market compliance.",
+      "rationale": "REG-061 (F0031) shows EN ISO 80601-2-56 marked '□是 ■否' (not applicable) and REG-064 shows MDR 2017/745 marked '□是 ■否'. REG-120 (F0114) and REG-127 (F0121) confirm the same 'not applicable' status in the verification plan and report. However, REG-076 (F0083, the PT9L operation guide) references '2012/19/EU WEEE Directive' and REG-078 references 'IEC 60601-1:2005+A1:2012+A2:2020/EN 60601-1:2006/A2:2021', which are EU-specific harmonized standards. REG-074 also references 'Medical Device Directive (MDD) requirements' for biocompatibility.",
+      "evidence_ids": [
+        "REG-061",
+        "REG-064",
+        "REG-120",
+        "REG-127",
+        "REG-076",
+        "REG-078",
+        "REG-074"
+      ],
+      "challenge_questions": [
+        "Is the PT9L product intended for EU market sale, and if so, why are EN ISO 80601-2-56 and MDR 2017/745 marked as not applicable in the design input?",
+        "The operation guide references EU directives—does this reflect a later decision to pursue CE marking that was not reflected back in the design input documents?",
+        "Is the reference to MDD (Medical Device Directive) in the operation guide an error, given that MDD was replaced by MDR 2017/745?"
+      ]
+    },
+    {
+      "finding_type": "blood_pressure_specific_language_in_thermometer_design_documents",
+      "severity": "P2",
+      "claim": "Multiple PT9L design verification and validation documents contain blood-pressure-specific language ('血压测量', 'blood pressure measurement', '自动血压计') that is inconsistent with the PT9L infrared thermometer product scope, suggesting these documents were adapted from a blood pressure monitor template without complete substitution.",
+      "rationale": "HW-055 (F0114) shows the battery requirement field reads '在充满电后，电池电量至少能进行 次血压测量' (battery sufficient for blood pressure measurements). HW-058 (F0121) shows the same blood pressure language in the verification plan. REG-132 through REG-137 (F0139, software requirements) reference 'IEC/EN 80601-2-30' (the blood pressure monitor standard), '自动血压计的显示' (automatic blood pressure monitor display), '正常状态的最大袖带压力' (maximum cuff pressure), and '袖带' (cuff). REG-066 (F0074, structural FMEA) refers to '血压计的相关法规信息' (blood pressure monitor regulatory information) in the nameplate failure mode description.",
+      "evidence_ids": [
+        "HW-055",
+        "HW-058",
+        "REG-132",
+        "REG-133",
+        "REG-134",
+        "REG-135",
+        "REG-136",
+        "REG-137",
+        "REG-066"
+      ],
+      "challenge_questions": [
+        "Were the software requirements specification and design verification plan adapted from a blood pressure monitor project template, and have all blood-pressure-specific requirements been identified and removed or replaced?",
+        "Does the software requirements specification (F0139) contain any actual PT9L thermometer-specific requirements, or is it entirely blood-pressure-monitor content?",
+        "Has the structural FMEA (F0074) been reviewed to confirm that all failure modes and effects are relevant to the PT9L thermometer rather than a blood pressure monitor?"
+      ]
+    },
+    {
+      "finding_type": "pt9l_usability_checklist_references_pt2l_document_number",
+      "severity": "P2",
+      "claim": "A usability engineering checklist filed in the active PT9L design confirmation folder ('18 设计确认') carries the title 'PT9L Checklist of EN 60601-1-6 ... PT2L(美亚)-UETR01 V1.0', embedding a PT2L document number in what appears to be a PT9L compliance record.",
+      "rationale": "SW-036 (F0245) shows the document title as 'PT9L Checklist of (EN 60601-1-62010+A12015+A22021) PT2L(美亚)-UETR01 V1.0'. SW-041 confirms the source path is '18 设计确认\\\\PT9L Checklist of (EN 60601-1-62010+A12015+A22021) PT2L(美亚)-UETR01 V1.0.pdf' without any historical folder marker. SW-042 and SW-043 show the HTML version with the same title. The document number 'PT2L(美亚)-UETR01 V1.0' is a PT2L product document number, not a PT9L document number.",
+      "evidence_ids": [
+        "SW-036",
+        "SW-037",
+        "SW-038",
+        "SW-039",
+        "SW-040",
+        "SW-041",
+        "SW-042",
+        "SW-043",
+        "SW-044"
+      ],
+      "challenge_questions": [
+        "Is this document a PT9L usability checklist that was created by modifying a PT2L template without updating the document number, or is it a PT2L document incorrectly filed in the PT9L DHF?",
+        "What is the correct PT9L document number for the EN 60601-1-6 usability checklist?",
+        "Has the content of this checklist been verified to reflect PT9L product characteristics rather than PT2L?"
+      ]
+    },
+    {
+      "finding_type": "risk_management_report_version_mismatch_between_filename_and_internal_dn",
+      "severity": "P2",
+      "claim": "The active risk management report filed as 'Attachment 7 04 Risk Management Report IFT-FXGB01 V2.0' carries an internal document number of 'PT9L-FXGB01 V1.0', creating a version inconsistency between the file-level version (V2.0) and the internally declared document number version (V1.0).",
+      "rationale": "RISK-049 shows the file title as 'Attachment 7 04 Risk Management Report IFT-FXGB01 V2.0 20240530-All applicable'. RISK-050 shows the internal DN field reads 'DN: PT9L-FXGB01 V1.0 Risk Management Report'. The same pattern appears in the PT9L-prefixed copy: RISK-073 shows file title 'PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01 V2.0' while RISK-074 shows internal DN 'PT9L-FXGB01 V1.0'. RISK-128 and RISK-129 (design verification report) reference 'PT9L-FXGB01 V1.0' as the risk management report, consistent with the internal DN but inconsistent with the V2.0 filename.",
+      "evidence_ids": [
+        "RISK-049",
+        "RISK-050",
+        "RISK-073",
+        "RISK-074",
+        "RISK-128",
+        "RISK-129",
+        "VV-002",
+        "VV-004"
+      ],
+      "challenge_questions": [
+        "Is PT9L-FXGB01 V1.0 or V2.0 the current controlled version of the risk management report?",
+        "Was the internal document number field updated when the document was revised from V1.0 to V2.0?",
+        "\"The design verification report cites PT9L-FXGB01"
+      ]
+    }
+  ]
+}

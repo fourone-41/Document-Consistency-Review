@@ -1,0 +1,307 @@
+{
+  "document": {
+    "title": "PT1 条码标签（PT1-F07）",
+    "drawing_no": "PT1-F07",
+    "edition": "V1.0",
+    "model_no": "PT1",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance": ".X ±0.3; .XX; .X°",
+    "source_file": "K040800021487620814-图纸-PT1-F07+V1.0.pdf",
+    "created_date": "2026-05-13"
+  },
+  "products": [
+    {
+      "name": "条码标签",
+      "model": "PT1",
+      "drawing_no": "PT1-F07",
+      "material": "80g 不干胶铜版纸，覆膜",
+      "description": "PT1 产品的批次条码标签（一维条码），贴附于包装"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "K04080002148"
+    },
+    {
+      "type": "Drawing NO.",
+      "value": "PT1-F07"
+    },
+    {
+      "type": "源文件编号",
+      "value": "K040800021487620814-图纸-PT1-F07+V1.0.pdf"
+    }
+  ],
+  "components": [
+    {
+      "name": "条码标签",
+      "part_name": "条码标签",
+      "drawing_no": "PT1-F07",
+      "material": "80g 不干胶铜版纸，覆膜",
+      "dimensions": {
+        "width_mm": 40,
+        "height_mm": 15
+      },
+      "print_color": "单黑",
+      "barcode_type": "GS1-128 一维条码",
+      "barcode_ai": "AI (10): 201012011001（批号变量，12位：1-6制造令 / 7-9部件序号 / 10-12批次序列号）",
+      "font": "Myriad Pro 6 pt"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-PT1-F07-01",
+      "description": "本件要求通过 RoHS 测试",
+      "category": "合规要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1-F07-02",
+      "description": "材料：80g 不干胶铜版纸，覆膜",
+      "category": "材料要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1-F07-03",
+      "description": "印刷颜色：单黑",
+      "category": "印刷要求",
+      "priority": "A级"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "限制有害物质指令，本件要求通过 RoHS 测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "条码类型为 GS1-128 一维条码，AI (10) 数据字段为 201012011001，格式为12位批号变量：第1-6位为制造令编号，第7-9位为部件序号，第10-12位为批次序列号。字体使用 Myriad Pro 6 pt。",
+      "topic_tags": [
+        "GS1-128",
+        "一维条码",
+        "批号",
+        "AI(10)",
+        "条码格式"
+      ],
+      "related_subjects": [
+        "条码标签",
+        "PT1-F07",
+        "PT1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "标签外形尺寸：宽（W）40 mm，高（H）15 mm，尺寸公差 .X ±0.3，比例 1:1，单位 mm。材料为80g不干胶铜版纸并覆膜，印刷为单黑色。",
+      "topic_tags": [
+        "标签尺寸",
+        "公差",
+        "材料",
+        "印刷"
+      ],
+      "related_subjects": [
+        "条码标签",
+        "PT1-F07"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/包装/K040800021487620814-图纸-PT1-F07+V1.0.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "条码标签",
+      "to": "GS1-128",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT1-F07",
+      "to": "GS1-128",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT1",
+      "to": "GS1-128",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "条码标签",
+      "to": "标签尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT1-F07",
+      "to": "标签尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT1-F07",
+      "to": "REQ-PT1-F07-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT1-F07",
+      "to": "REQ-PT1-F07-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT1-F07",
+      "to": "REQ-PT1-F07-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "条码标签",
+      "to": "REQ-PT1-F07-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "条码标签",
+      "to": "REQ-PT1-F07-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "条码标签",
+      "to": "REQ-PT1-F07-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "条码标签",
+      "to": "REQ-PT1-F07-01",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "条码标签",
+      "to": "REQ-PT1-F07-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "条码标签",
+      "to": "REQ-PT1-F07-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-PT1-F07-01",
+      "to": "RoHS",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "条码标签",
+      "attribute": "宽度",
+      "value": "40",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "dimensions: width_mm 40"
+    },
+    {
+      "subject": "条码标签",
+      "attribute": "高度",
+      "value": "15",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "dimensions: height_mm 15"
+    },
+    {
+      "subject": "标签材料",
+      "attribute": "规格",
+      "value": "80g 不干胶铜版纸，覆膜",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "材料：80g 不干胶铜版纸，覆膜"
+    },
+    {
+      "subject": "印刷颜色",
+      "attribute": "颜色种类",
+      "value": "单黑",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "印刷颜色：单黑"
+    },
+    {
+      "subject": "条码类型",
+      "attribute": "编码标准",
+      "value": "GS1-128 一维条码",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "barcode_type: GS1-128 一维条码"
+    },
+    {
+      "subject": "条码AI字段",
+      "attribute": "批号位数",
+      "value": "12",
+      "unit": "位",
+      "tolerance": "",
+      "condition": "AI (10)",
+      "raw_text": "AI (10): 201012011001（批号变量，12位：1-6制造令 / 7-9部件序号 / 10-12批次序列号）"
+    },
+    {
+      "subject": "条码AI字段",
+      "attribute": "制造令编码位数",
+      "value": "6",
+      "unit": "位",
+      "tolerance": "",
+      "condition": "批号第1-6位",
+      "raw_text": "1-6制造令"
+    },
+    {
+      "subject": "条码AI字段",
+      "attribute": "部件序号位数",
+      "value": "3",
+      "unit": "位",
+      "tolerance": "",
+      "condition": "批号第7-9位",
+      "raw_text": "7-9部件序号"
+    },
+    {
+      "subject": "条码AI字段",
+      "attribute": "批次序列号位数",
+      "value": "3",
+      "unit": "位",
+      "tolerance": "",
+      "condition": "批号第10-12位",
+      "raw_text": "10-12批次序列号"
+    },
+    {
+      "subject": "标签字体",
+      "attribute": "字号",
+      "value": "6",
+      "unit": "pt",
+      "tolerance": "",
+      "condition": "字体：Myriad Pro",
+      "raw_text": "font: Myriad Pro 6 pt"
+    },
+    {
+      "subject": "RoHS合规",
+      "attribute": "测试要求",
+      "value": "通过RoHS测试",
+      "unit": "",
+      "tolerance": "",
+      "condition": "A级优先级",
+      "raw_text": "本件要求通过 RoHS 测试"
+    }
+  ]
+}

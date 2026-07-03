@@ -1,0 +1,93 @@
+{
+  "document": {
+    "title": "IEC 62366-1:2015+A1:2020 Usability Engineering Test Report",
+    "doc_type": "检测报告/测试报告",
+    "version": "V1.0"
+  },
+  "identifiers": [
+    {
+      "id_type": "文档编号",
+      "value": "PT9L--UETR02 V1.0"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "EN62366-1_5.10",
+      "item": "USER INTERFACE OF UNKNOWN PROVENANCE (UOUP)",
+      "expected_value": "Instead of all the requirements of 5.1 through 5.9, UOUP may be evaluated according to Annex C.",
+      "actual_result": "Not used of unknown provenance",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "EN62366-1_5.9_conclusion",
+      "item": "USABILITY ENGINEERING PROCESS Compliance",
+      "expected_value": "If the USABILITY ENGINEERING PROCESS detailed in this International Standard has been complied with, then the USABILITY of a MEDICAL DEVICE as it relates to SAFETY is presumed to be acceptable, unless there is OBJECTIVE EVIDENCE to the contrary.",
+      "actual_result": "Considered",
+      "pass_criteria": "P"
+    },
+    {
+      "test_id": "AnnexC_C.2.1",
+      "item": "USER SPECIFICATION (UOUP)",
+      "expected_value": "The MANUFACTURER established an application specification as required in 5.1 and shall store this USER SPECIFICATION in the USABILITY ENGINEERING FILE.",
+      "actual_result": "No such condition",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "AnnexC_C.2.2",
+      "item": "Review of POST-PRODUCTION information (UOUP)",
+      "expected_value": "The MANUFACTURER shall review available POST-PRODUCTION information including complaints and field reports for incidents or near incidents.",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "AnnexC_C.2.3",
+      "item": "HAZARDS AND HAZARDOUS SITUATIONS related to USABILITY (UOUP)",
+      "expected_value": "The MANUFACTURER shall review the RISK ANALYSIS and ensure that HAZARDS and HAZARDOUS SITUATIONS associated with USABILITY have been identified and documented.",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "AnnexC_C.2.4",
+      "item": "RISK CONTROL (UOUP)",
+      "expected_value": "The MANUFACTURER shall verify and document that adequate RISK CONTROL measures have been implemented for all identified HAZARDS and HAZARDOUS SITUATIONS and that all RISKS are reduced to an acceptable level.",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "AnnexC_C.2.5",
+      "item": "RESIDUAL RISK evaluation (UOUP)",
+      "expected_value": "Based on new information from C.2.3 and C.2.4, the MANUFACTURER shall re-evaluate overall RESIDUAL RISK according to ISO 14971:2019, 7.3, and document the result in the USABILITY ENGINEERING FILE or RISK MANAGEMENT FILE.",
+      "pass_criteria": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "If new USE ERRORS, HAZARDS, HAZARDOUS SITUATIONS or HAZARD-RELATED USE SCENARIOS are discovered during data analysis: if yes, then the MANUFACTURER shall repeat the activities of Clause 5 as appropriate; if not, the MANUFACTURER shall determine whether further improvement of the USER INTERFACE design as it relates to SAFETY is necessary and practicable. 1) if yes, then the MANUFACTURER shall re-enter the USABILITY ENGINEERING PROCESS at 5.6; 2) if not, then the MANUFACTURER shall: i) document why improvement is not necessary or not practicable; ii) identify the data from the USABILITY ENGINEERING PROCESS needed to determine the RESIDUAL RISK related to use; and iii) evaluate RESIDUAL RISK according to ISO 14971:2019, 7.3.",
+      "topic_tags": [
+        "USE ERROR",
+        "HAZARD",
+        "USABILITY ENGINEERING PROCESS",
+        "RESIDUAL RISK",
+        "ISO 14971",
+        "EN 62366-1"
+      ],
+      "related_subjects": [
+        "IEC 62366-1:2015+A1:2020",
+        "ISO 14971:2019"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Annex C - Evaluation of a USER INTERFACE OF UNKNOWN PROVENANCE (UOUP): C.2.4 states that if the MANUFACTURER determines that changes to any part of the USER INTERFACE are required to reduce RISK to an acceptable level, those changes shall not be considered UOUP and shall be subject to the requirements of 5.1 through 5.9.",
+      "topic_tags": [
+        "UOUP",
+        "USER INTERFACE",
+        "RISK CONTROL",
+        "IEC 62366-1",
+        "Annex C"
+      ],
+      "related_subjects": [
+        "IEC 62366-1:2015+A1:2020",
+        "PT9L--UETR02 V1.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Hardware Agent",
+  "decision": "confirm",
+  "severity": "P2",
+  "error_type": "bom_part_number_dual_use",
+  "claim": "In the PT9L total-assembly drawing (F0178 / PT9L-总装图-v1.0-20240627), part number T-Z1-P10 is annotated as simultaneously referring to a bare board (光板) and a PCB assembly, constituting a single drawing number assigned to two physically and functionally distinct items. The EBOM (F0096 / F0157) corroborates the existence of two separate PCB line items in the same assembly: the main board bare PCB (item 24, K011800008686570696, PT9L-HFMP01 V1.0) and the sensor board bare PCB (item 2 under 传感器板, K0118000084609A1106, PT9C-CNTP01 V1.0), each carrying distinct internal part numbers. The drawing's own annotation explicitly flags T-Z1-P10 as a dual-use number covering both a bare board and a PCB assembly. This is a confirmed BOM integrity defect: one drawing/part number must not identify two distinct controlled items.",
+  "reason": "The primary evidence is the drawing report for F0178 (line 7), which explicitly states '重大发现：BOM 中 T-Z1-P10 同时指导光板和 PCB（一图号两零件）'. This is a self-contained, document-sourced annotation within the controlled drawing file, not an inference. The EBOM evidence (F0096, F0157) confirms that the PT9L assembly contains at least two distinct PCB items (main board PT9L-HFMP01 V1.0 and sensor board PT9C-CNTP01 V1.0) with separate internal part numbers, which is consistent with the drawing's dual-item conflict. Under DHF/DMR document control principles, a single part number or drawing number must uniquely identify one item; assigning T-Z1-P10 to both a bare board and a PCB assembly violates this requirement and creates procurement, traceability, and manufacturing ambiguity. Sufficient controlled-document evidence exists to confirm this defect without further context."
+}
+```

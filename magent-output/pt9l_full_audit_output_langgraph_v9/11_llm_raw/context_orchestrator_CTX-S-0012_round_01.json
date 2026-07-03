@@ -1,0 +1,61 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "PT3-P10双联弹簧图纸及PT1标签图纸归档于PT9L DHF文件夹的产品标识合规性——验证是否存在有效的共用件/借用件文档依据，或属于错误归档",
+  "agent_input": {
+    "claim": "Two drawings archived in the PT9L DHF design output folder carry PT3 or PT1 product identifiers (PT3-P10 dual spring, PT1-F05 label, PT1-F07 outer-carton label) without any documented shared-component or sub-assembly justification linking them to the PT9L DMR.",
+    "context_summary": "补证检索已找到PT3_双联弹簧_REV01.pdf.md的完整标题栏及元数据：Drawing NO.=PT3-P10，Model NO.=PT3，文件路径确认归档于PT9L DHF历史文件/设计输出/设计输出清单二/图纸/。文件内嵌注释（line 6）声明"共用件：PT3项目原件，被PT9L DHF借用归档（外购件/设计参照）"，但该注释为读图报告生成时人工添加，并非原始图纸标题栏或正式DMR文件中的受控声明。PT1-F05及PT1-F07标签图纸的对应证据在本轮补证中未检索到。开发计划相关文件（F0005、F0006、F0007）的page_context内容为空，未能提供PT3/PT1与PT9L共用件关系的正式文件依据。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-129",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 1,
+        "content": "# PT3 双联弹簧 REV01 (V1.0) 2D 图读图报告",
+        "significance": "文件标题确认为PT3产品图纸，归档于PT9L DHF路径下"
+      },
+      {
+        "evidence_id": "DMR-130",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 3,
+        "content": "> **来源 PDF**：`02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf`",
+        "significance": "原始PDF路径确认该图纸物理存储于PT9L DHF文件夹"
+      },
+      {
+        "evidence_id": "DMR-132",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 6,
+        "content": "> **共用件**：**PT3 项目原件**，被 PT9L DHF 借用归档（外购件 / 设计参照）",
+        "significance": "读图报告中的共用件声明——需判断此注释是否来自受控文件或仅为非正式标注"
+      },
+      {
+        "evidence_id": "DMR-133",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 14,
+        "content": "| **Drawing NO.** | **PT3-P10** |",
+        "significance": "图纸编号为PT3-P10，产品标识明确属于PT3项目，非PT9L"
+      },
+      {
+        "evidence_id": "DMR-134",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 17,
+        "content": "| **Model NO.** | **PT3**（注：归档于 PT9L DHF，实为 PT3 项目原件） |",
+        "significance": "Model NO.字段值为PT3，括号内注释再次说明归档情况，但仍为非受控注释"
+      },
+      {
+        "evidence_id": "PAGE-CTX-F0006",
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line": 96,
+        "content": "（内容为空——未能提取）",
+        "significance": "PT9L DHF清单文件未能提供PT3共用件的正式登记记录，是关键缺口"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

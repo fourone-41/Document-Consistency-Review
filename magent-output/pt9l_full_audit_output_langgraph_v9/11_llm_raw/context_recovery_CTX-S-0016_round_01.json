@@ -1,0 +1,204 @@
+```json
+{
+  "context_summary": "本轮已补充了5份历史风险文件（F0012–F0016）的签字页完整局部上下文（第1–47行），确认每份文件的"Approved by (Technical Director) Date:"字段均为空白，无签署人姓名、无日期填写。同时在F0012的版本历史表（第20–22行）中发现关键对比证据：版本历史表第1行记录了"Version Date: 2024.4.16 / Drafter: Wang Di / Approver: Hou Guangwei"，说明文件存在版本历史记录，但正文签字页的Approved by字段仍为空。仍缺失的证据包括：①其余3份文件（F0017及当前DHF中的active文件）的签字页全文；②F0013–F0016是否也存在类似版本历史表及其Approver列填写情况；③page_context中F0017的实际文本内容（当前text字段均为空）；④DHF文件索引或文件控制清单中对这8份文件的受控状态记录。",
+
+  "evidence_gaps": [
+    "F0017（Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable）的签字页实际文本未提取，page_context中text字段全部为空，无法确认其Approved by字段状态",
+    "F0013–F0016的版本历史表（Version History Table）内容未提取，无法确认这些文件的Approver列是否与F0012一样填写了'Hou Guangwei'，从而判断版本历史表与签字页之间是否存在系统性不一致",
+    "claim中提及'eight active and historical risk management documents'，当前仅覆盖5份历史文件（F0012–F0016），另外3份active文件的doc_id及签字页状态尚未确认",
+    "DHF文件控制清单或Document Master List中对上述文件受控状态（controlled/uncontrolled）的记录缺失，无法判断空白签字页是否属于'草稿'状态而非正式受控版本",
+    "F0015（V1.0-3）第63、67、73、163行的page_context text为空，该文件末尾'Signature of the risk management group'章节（第42行提及）的实际签名内容未提取"
+  ],
+
+  "additional_search_queries": [
+    "F0017 'Approved by' OR 'Technical Director' OR 'Date' site:03风险分析 Attachment 7",
+    "F0013 F0014 F0015 F0016 'Version' 'Approver' 'Hou Guangwei' OR 'Wang Di' version history table",
+    "'Signature of the risk management group' F0015 line 163 full text",
+    "DHF PT9L document master list OR document control list OR 'controlled document' OR '受控文件清单'",
+    "03风险分析 active risk management plan OR risk assessment report NOT '2L风险改' 'Approved by' Date",
+    "PT9L FXJH01 OR SGFP OR SGYS OR FXGB 'approved' OR '批准' filetype:md"
+  ],
+
+  "agent_instruction": "请重点执行以下三项补充检索，优先级从高到低：\n1. 【最高优先级】提取F0017（Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md）第1–50行完整文本，特别是签字页（Drafted by / Reviewed by / Approved by）及版本历史表的全部行列内容；\n2. 【高优先级】提取F0013（V1.0-1 PT2L美亚）、F0014（V1.0-2）、F0015（V1.0-3）、F0016（V1.0-4）各自的版本历史表完整行（对应F0012第20–22行的结构），确认Approver列填写情况，并提取F0015第163行附近（Signature of risk management group章节）的完整文本；\n3. 【中优先级】在DHF根目录或文件控制目录下搜索文件控制清单/Document Master List，检索包含'PT9L'或'FXJH01'的受控文件状态记录，以确认这些文件是否以受控版本归档。\n\n注意：F0012版本历史表中已出现'Approver: Hou Guangwei'，这与签字页空白形成直接矛盾，是本次补充检索需要重点核实的关键冲突点，请在检索F0013–F0016版本历史表时同步比对。",
+
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "REG-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "local_context": {
+          "lines_14_to_22": [
+            "14: **Drafted by** *(Regulation Engineer)* Date:",
+            "16: **Reviewed by** *(Certification Engineer)* Date:",
+            "18: **Approved by** *(Technical Director)* Date:",
+            "20: | **No.** | **Version Date** | **Version Description** | **Version** | **Drafter** | **Approver** |",
+            "21: | --- | --- | --- | --- | --- | --- |",
+            "22: | 1 | 2024.4.16 | Originated | V1.0 | Wang Di | Hou Guangwei |"
+          ],
+          "section_heading": "V1.0-1 Risk Management Plan IFT-FXJH01 V1.0",
+          "document_metadata": {
+            "product_name": "Infrared Forehead Thermometer",
+            "doc_number": "PT9L-FXJH01 V1.0",
+            "doc_type": "Risk Management Plan",
+            "version": "V1.0"
+          },
+          "key_finding": "签字页Approved by字段为空白，但版本历史表第1行Approver列填写'Hou Guangwei'，两者存在直接矛盾"
+        }
+      },
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "local_context": {
+          "lines_18_to_24": [
+            "18: **Drafted by** *(Regulation Engineer)* Date:",
+            "20: **Reviewed by** *(Certification Engineer)* Date:",
+            "22: **Approved by** *(Technical Director)* Date:",
+            "24: **Contents**"
+          ],
+          "section_heading": "V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+          "document_metadata": {
+            "product_name": "Infrared Forehead Thermometer",
+            "product_model": "PT9L",
+            "project_number": "30000078",
+            "doc_number": "PT9L-FXJH01 V1.0",
+            "doc_type": "Risk Management Plan",
+            "version": "V1.0"
+          },
+          "key_finding": "签字页Approved by字段为空白；版本历史表内容未提取，待补充检索"
+        }
+      },
+      {
+        "evidence_id": "REG-006",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "local_context": {
+          "lines_18_to_24": [
+            "18: **Drafted by** *(Project Leader)* Date:",
+            "20: **Reviewed by** *(Certification Engineer)* Date:",
+            "22: **Approved by** *(Technical Director)* Date:",
+            "24: **Contents**"
+          ],
+          "section_heading": "Risk Assessment Report (V1.0)",
+          "document_metadata": {
+            "product_name": "Infrared Forehead Thermometer",
+            "product_model": "PT2L",
+            "project_number": "2020-002-WX02",
+            "doc_number": "PT2L(美亚)-SGFP01 V1.0",
+            "doc_type": "Risk Assessment Report",
+            "version": "V1.0"
+          },
+          "key_finding": "签字页Approved by字段为空白；Drafter角色为Project Leader（与F0012/F0013的Regulation Engineer不同）"
+        }
+      },
+      {
+        "evidence_id": "REG-012",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "local_context": {
+          "lines_18_to_44": [
+            "18: **Drafted by** *(Project Leader)* Date:",
+            "20: **Reviewed by** *(Certification Engineer)* Date:",
+            "22: **Approved by** *(Technical Director)* Date:",
+            "24: **Contents**",
+            "42: Signature of the risk management group 18"
+          ],
+          "section_heading": "Verification of risk control measure and residual risk evaluation report (V1.0)",
+          "document_metadata": {
+            "product_name": "Infrared Forehead Thermometer",
+            "product_model": "PT2L",
+            "project_number": "2020-002-WX02",
+            "doc_number": "PT2L(美亚)-SGYS01 V1.0",
+            "doc_type": "Verification of Risk Control Measure and Residual Risk Evaluation Report",
+            "version": "V1.0"
+          },
+          "key_finding": "签字页Approved by字段为空白；目录第42行提及'Signature of the risk management group'章节（第18页），该章节实际内容（第163行附近）未提取，需补充"
+        }
+      },
+      {
+        "evidence_id": "REG-013",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "local_context": {
+          "lines_18_to_24": [
+            "18: **Drafted by** *(Project Leader)* Date:",
+            "20: **Reviewed by** *(Certification Engineer)* Date:",
+            "22: **Approved by** *(Technical Director)* Date:",
+            "24: **Contents**"
+          ],
+          "section_heading": "Risk Management Report (V4.0)",
+          "document_metadata": {
+            "product_name": "Infrared Forehead Thermometer",
+            "product_model": "PT2L",
+            "project_number": "2020-002-WX02",
+            "doc_number": "PT2L-FXGB01 V4.0",
+            "doc_type": "Risk Management Report",
+            "version": "V4.0"
+          },
+          "key_finding": "签字页Approved by字段为空白；版本号为V4.0（非V1.0），说明该文件经历多次修订，但当前版本签字页仍为空"
+        }
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line_start": 1,
+        "retrieval_status": "text_empty_needs_extraction",
+        "note": "F0017为active文件，page_context中text字段为空，需在下一轮提取第1–50行完整内容"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "context_type": "version_history_table_vs_signature_page_conflict",
+        "lines": "20–22",
+        "content": "| **No.** | **Version Date** | **Version Description** | **Version** | **Drafter** | **Approver** |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 2024.4.16 | Originated | V1.0 | Wang Di | Hou Guangwei |",
+        "significance": "版本历史表中Approver列明确填写'Hou Guangwei'，与同一文件签字页'Approved by (Technical Director) Date:'空白字段形成直接矛盾。版本历史表的填写不能替代签字页的正式批准签署，但此矛盾需在审查结论中明确说明，避免将'无签字页'与'无任何批准记录'混淆。"
+      },
+      {
+        "context_id": "RC-002",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "context_type": "version_anomaly",
+        "lines": "9–10",
+        "content": "**Risk Management Report** **(V4.0)**",
+        "significance": "该历史文件版本号为V4.0，而其他历史文件均为V1.0，说明该文件在历史文件目录中存在多版本迭代，但签字页仍为空白，需确认V1.0–V3.0版本是否存在已签署版本。"
+      },
+      {
+        "context_id": "RC-003",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "context_type": "additional_signature_section_reference",
+        "lines": "42",
+        "content": "Signature of the risk management group 18",
+        "significance": "目录显示第18页存在'Signature of the risk management group'章节，该章节可能包含风险管理小组成员的实际签名，与封面签字页性质不同。需提取第163行附近内容以确认该章节是否有实际签名填写，若有则可部分缓解'无任何批准记录'的结论强度。"
+      }
+    ]
+  }
+}
+```

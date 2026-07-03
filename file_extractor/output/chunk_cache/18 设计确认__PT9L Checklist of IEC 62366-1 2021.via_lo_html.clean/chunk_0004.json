@@ -1,0 +1,136 @@
+{
+  "tests": [
+    {
+      "test_id": "5.9",
+      "item": "Perform SUMMATIVE EVALUATION of the USABILITY of the USER INTERFACE",
+      "condition": "Upon completion of the design and implementation of the USER INTERFACE, performed on final or production equivalent USER INTERFACE according to the USER INTERFACE EVALUATION plan",
+      "expected_value": "SUMMATIVE EVALUATION of each HAZARD-RELATED USE SCENARIO selected in 5.5 completed",
+      "actual_result": "See section 9 of Usability Engineering File (document no. CE-PT9L-12)",
+      "pass_criteria": "P"
+    },
+    {
+      "test_id": "5.9-equiv",
+      "item": "SUMMATIVE EVALUATION using equivalent USER INTERFACE data",
+      "condition": "MANUFACTURER may use data from SUMMATIVE EVALUATIONS of products with equivalent USER INTERFACE with technical rationale",
+      "actual_result": "Considered. Such information described in chapter 'Usability validation plan and report' of usability engineering file (document no. CE-PT9L-12, version 1.0)",
+      "pass_criteria": "P"
+    },
+    {
+      "test_id": "5.9-storage",
+      "item": "Storage of SUMMATIVE EVALUATION results in USABILITY ENGINEERING FILE",
+      "actual_result": "Complied",
+      "pass_criteria": "P"
+    },
+    {
+      "test_id": "5.9-acceptability",
+      "item": "USABILITY acceptability presumption upon compliance with USABILITY ENGINEERING PROCESS",
+      "condition": "Unless there is OBJECTIVE EVIDENCE to the contrary",
+      "actual_result": "Considered",
+      "pass_criteria": "P"
+    },
+    {
+      "test_id": "5.10",
+      "item": "USER INTERFACE OF UNKNOWN PROVENANCE",
+      "actual_result": "Not used of unknown provenance",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "C.2.1",
+      "item": "USER SPECIFICATION - UOUP application specification established and stored in USABILITY ENGINEERING FILE",
+      "actual_result": "No such condition",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "C.2.2",
+      "item": "Review of POST-PRODUCTION information for UOUP including complaints and field reports",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "C.2.3",
+      "item": "HAZARDS AND HAZARDOUS SITUATIONS related to USABILITY - Review of RISK ANALYSIS for UOUP",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "C.2.4",
+      "item": "RISK CONTROL - Verify adequate RISK CONTROL measures for UOUP identified HAZARDS and HAZARDOUS SITUATIONS",
+      "pass_criteria": "N/A"
+    },
+    {
+      "test_id": "C.2.5",
+      "item": "RESIDUAL RISK evaluation - Re-evaluate overall RESIDUAL RISK according to ISO 14971:2019, 7.3",
+      "pass_criteria": "N/A"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "document_number",
+      "value": "CE-PT9L-12"
+    },
+    {
+      "id_type": "document_version",
+      "value": "1.0"
+    },
+    {
+      "id_type": "standard_reference",
+      "value": "ISO 14971:2019, 7.3"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The MANUFACTURER shall analyse the data of the SUMMATIVE EVALUATION and shall identify all USE ERRORS and use difficulties that occurred. If a USE ERROR or use difficulty can lead to a HAZARDOUS SITUATION, the root cause of any such USE ERROR or use difficulty shall be determined. The root causes should be determined based on methods including observations of USER performance as well as subjective comments from the USER. If new USE ERRORS, HAZARDS, HAZARDOUS SITUATIONS or HAZARD-RELATED USE SCENARIOS are discovered during this data analysis: if yes, then the MANUFACTURER shall repeat the activities of Clause 5 as appropriate; if not, the MANUFACTURER shall determine whether further improvement of the USER INTERFACE design as it relates to SAFETY is necessary and practicable. 1) if yes, then the MANUFACTURER shall re-enter the USABILITY ENGINEERING PROCESS at 5.6; 2) if not, then the MANUFACTURER shall: 1. document why improvement is not necessary or not practicable; 2. identify the data from the USABILITY ENGINEERING PROCESS needed to determine the RESIDUAL RISK related to use; and 3. RESIDUAL RISK according to ISO 14971:2019, 7.3.",
+      "topic_tags": [
+        "SUMMATIVE EVALUATION",
+        "USE ERROR",
+        "HAZARDOUS SITUATION",
+        "RESIDUAL RISK",
+        "USABILITY ENGINEERING PROCESS",
+        "ROOT CAUSE"
+      ],
+      "related_subjects": [
+        "CE-PT9L-12",
+        "ISO 14971:2019"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "If changes to any part of the USER INTERFACE are required by the MANUFACTURER to reduce RISK to an acceptable level for a UOUP, those changes shall not be considered UOUP and shall be subject to the requirements of 5.1 through 5.9.",
+      "topic_tags": [
+        "UOUP",
+        "USER INTERFACE",
+        "RISK CONTROL",
+        "design change"
+      ],
+      "related_subjects": [
+        "Annex C",
+        "5.1 through 5.9"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Table 5.3 - Usability Engineering File RESULTS TABLE: RISK ANALYSIS. Columns: Document Ref. in usability engineering file, Result - Remarks, Verdict.",
+      "topic_tags": [
+        "RISK ANALYSIS",
+        "USABILITY ENGINEERING FILE",
+        "results table"
+      ],
+      "related_subjects": [
+        "CE-PT9L-12"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Training capability requirement: If training on the specific MEDICAL DEVICE is required for the safe use of the MEDICAL DEVICE by the intended USER, the MANUFACTURER shall design and implement a training capability for the EXPECTED SERVICE LIFE of the MEDICAL DEVICE by doing at least one of the following: provide the materials necessary for training; ensure that the materials necessary for training are available; make the training available; or make training available to the RESPONSIBLE ORGANIZATION that enables it to train its USERS. Result: Training is not required. Verdict: N/A.",
+      "topic_tags": [
+        "training",
+        "EXPECTED SERVICE LIFE",
+        "USER",
+        "RESPONSIBLE ORGANIZATION"
+      ],
+      "related_subjects": [
+        "MEDICAL DEVICE",
+        "USABILITY ENGINEERING PROCESS"
+      ]
+    }
+  ]
+}

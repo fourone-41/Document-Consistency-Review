@@ -1,0 +1,198 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Report",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "66-67 of 182"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 Medical Electrical Equipment General Requirements",
+      "version": "2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 Medical Electrical Equipment General Requirements",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "ISO14971",
+      "name": "ISO 14971 Application of Risk Management to Medical Devices",
+      "clauses": [
+        "4.2",
+        "4.4",
+        "5",
+        "6.2",
+        "6.5"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "clause": "11.1.2",
+      "title": "Temperature of APPLIED PARTS",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.1.2.1",
+      "title": "APPLIED PARTS intended to supply heat to a PATIENT",
+      "result_remark": "Applied parts did not intend to supply heat to a patient.",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "requirement": "Clinical effects determined and documented in the RISK MANAGEMENT FILE (ISO 14971 Cl. 4.2-4.4, 5, 6.2-6.5)",
+          "result_remark": "See above.",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Temperature (hot or cold) of APPLIED PARTS intended to supply heat to a PATIENT disclosed in the instructions for use",
+          "result_remark": "See above.",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "11.1.2.2",
+      "title": "APPLIED PARTS not intended to supply heat to a PATIENT - compliance with Table 24 limits in NORMAL CONDITION and SINGLE FAULT CONDITION",
+      "result_remark": "Not intended to supply heat",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "requirement": "APPLIED PARTS surface temperature exceeds 41°C disclosed in the instruction manual",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Analysis documented in the RISK MANAGEMENT FILE show that APPLIED PART temperatures are not affected by operation of ME EQUIPMENT including SINGLE FAULT CONDITIONS; Measurement of APPLIED PART temperature according to 11.1.3 is not conducted",
+          "result_remark": "Measurement of applied part temperature is conducted",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Surfaces of APPLIED PARTS that are cooled below ambient temperatures evaluated in the RISK MANAGEMENT PROCESS",
+          "result_remark": "No such equipment",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "11.1.3",
+      "title": "Temperature measurement of APPLIED PARTS",
+      "sub_items": [
+        {
+          "requirement": "Measurements not made when engineering judgment and rationale by MANUFACTURER indicated temperature limits could not exceed, as documented in RISK MANAGEMENT FILE",
+          "result_remark": "Temperature measurement test carried out.",
+          "verdict": "P"
+        },
+        {
+          "requirement": "Test corner not used where engineering judgment and rationale by MANUFACTURER indicated test corner will not impact measurements, as documented in RISK MANAGEMENT FILE",
+          "result_remark": "Test corner used.",
+          "verdict": "P"
+        },
+        {
+          "requirement": "Probability of occurrence and duration of contact for parts likely to be touched and for APPLIED PARTS documented in RISK MANAGEMENT FILE",
+          "result_remark": "Risk management file has defined the probability of occurrence",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "11.1.4",
+      "title": "GUARDS preventing contact with hot or cold accessible surfaces removable only with a TOOL",
+      "result_remark": "No such guard",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.2",
+      "title": "Fire prevention",
+      "verdict": "P"
+    },
+    {
+      "clause": "11.2.1",
+      "title": "ENCLOSURE strength and rigidity to prevent fire caused by reasonably foreseeable misuse; met mechanical strength tests for ENCLOSURES in 15.3",
+      "result_remark": "Refer to clause 15.3.2, 15.3.3, 15.3.4, 15.3.6 for detail",
+      "verdict": "P"
+    },
+    {
+      "clause": "11.2.2",
+      "title": "ME equipment and ME systems used in conjunction with OXYGEN RICH ENVIRONMENTS",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11.2.2.1",
+      "title": "RISK of fire in an OXYGEN RICH ENVIRONMENT reduced by means limiting spread of fire under NORMAL or SINGLE FAULT CONDITIONS",
+      "result_remark": "Not used in conjunction with oxygen rich environments.",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "requirement": "Requirements of 13.1.1 applied to oxygen concentrations up to 25% at one atmosphere or partial pressures up to 27.5 kPa for higher atmospheric pressures",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "No sources of ignition discovered in an OXYGEN RICH ENVIRONMENT in NORMAL and SINGLE FAULT CONDITIONS - condition 1: temperature of material raised to its ignition temperature",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "No sources of ignition - condition 2: temperatures affected solder or solder joints causing loosening, short circuiting, or other failures causing sparking or increasing material temperature to its ignition temperature",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "No sources of ignition - condition 3: parts affecting safety cracked or changed outer shape exposing temperatures higher than 300°C or sparks due to overheating",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "No sources of ignition - condition 4: temperatures of parts or components exceeded 300°C, atmosphere was 100% oxygen, contact material solder, and fuel cotton",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Condition 5: sparks provided adequate energy for ignition by exceeding limits of Figs 35 to 37, atmosphere was 100% oxygen, contact material solder, and fuel cotton",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Deviations from worst case limits in 4) and 5) based on lower oxygen concentrations or less flammable fuels justified and documented in RISK MANAGEMENT FILE",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Alternative test did not identify existence of ignition sources at highest voltage or current",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "A safe upper limit determined by dividing upper limit of voltage or current with safety margin factor of three",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 11.1.2.2: APPLIED PARTS surface temperature must not exceed 41°C (or if it does, this must be disclosed in the instruction manual). Conditions for safe contact such as duration or condition of the PATIENT must be documented. Clinical effects with respect to characteristics such as body surface, maturity of PATIENTS, medications being taken, or surface pressure must be documented in the RISK MANAGEMENT FILE. Analysis documented in the RISK MANAGEMENT FILE must show that APPLIED PART temperatures are not affected by operation of ME EQUIPMENT including SINGLE FAULT CONDITIONS.",
+      "topic_tags": [
+        "applied parts",
+        "temperature",
+        "41°C",
+        "single fault condition",
+        "risk management"
+      ],
+      "related_subjects": [
+        "11.1.2.2",
+        "RISK MANAGEMENT FILE",
+        "ISO 14971"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For clause 11.2.2.1 regarding fire prevention in OXYGEN RICH ENVIRONMENTS: Requirements of 13.1.1 apply to oxygen concentrations up to 25% at one atmosphere or partial pressures up to 27.5 kPa for higher atmospheric pressures. The device under test is not used in conjunction with oxygen rich environments, hence all sub-clauses are N/A. Safe upper limits are determined by dividing upper limit of voltage or current with a safety margin factor of three.",
+      "topic_tags": [
+        "fire prevention",
+        "oxygen rich environment",
+        "oxygen concentration",
+        "ignition source",
+        "safety margin"
+      ],
+      "related_subjects": [
+        "11.2.2.1",
+        "13.1.1",
+        "RISK MANAGEMENT FILE"
+      ]
+    }
+  ]
+}

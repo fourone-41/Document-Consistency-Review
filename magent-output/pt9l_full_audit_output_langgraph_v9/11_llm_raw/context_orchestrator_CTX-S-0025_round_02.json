@@ -1,0 +1,61 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "确认PT5样品与PT9L生产件的物料等同性：证据目录中是否存在生物相容性测试报告或PT5样品身份文件，以判断RUN-0006标记的测试样品是否与PT9L生产件实质等同",
+  "agent_input": {
+    "claim": "证据目录中不存在生物相容性测试报告或PT5样品身份文件，无法确认或排除被测样品与PT9L生产件的实质等同性（由RUN-0006标记）。现有补充证据仅覆盖正极弹簧PT5-M02的尺寸图纸（F0190），以及历史风险验证报告（F0015、F0019），均未直接提供样品身份声明或生物相容性测试记录。图纸第5条确认清单第5项明确标注"PT9L实际生产是否仍沿用PT5弹簧（同图同件）——推测同件复用"，属于未经验证的推测，不构成正式物料等同性证明。",
+    "context_summary": "补充证据包：\n1. F0190《正极弹簧PT5-M02.pdf.md》——PT5正极弹簧设计图纸，含IQC重点尺寸（线径Ø0.50±0.03、工作段长7.0±0.30、外径Ø6.50±0.10）、材料规格（镀镍不锈钢线Ø0.5mm）、盐雾测试要求（GB2423.17-2008）及装配关系。图纸注释第5项明确指出"PT9L实际生产是否仍沿用PT5弹簧"为待确认项，推测为同件复用，但无正式文件支撑。\n2. F0015《V1.0-3风险控制措施验证及残余风险评估报告》——历史版本风险文件，页面内容为空，无法提取有效信息。\n3. F0019《Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01 V2.0》——当前版本风险验证报告，页面内容同样为空，无法提取有效信息。\n关键缺口：全部补充证据均未包含：(a)生物相容性测试报告；(b)PT5样品身份声明文件；(c)PT5与PT9L物料等同性的正式变更控制记录或ECO文件。",
+    "evidence": [
+      {
+        "evidence_id": "HW-135",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 49,
+        "content": "| ② | 侧视图 | （无） | **7.0** | ±0.30 | **工作段长**（弹簧紧密段） |",
+        "relevance": "PT5弹簧尺寸规格，可与PT9L生产件规格比对，但不构成样品身份证明"
+      },
+      {
+        "evidence_id": "HW-136",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 75,
+        "content": "| **公差形式** | `±0.03` / `±0.30` / `±0.10` 均对称 ✓ |",
+        "relevance": "PT5弹簧公差体系，供等同性比对参考"
+      },
+      {
+        "evidence_id": "HW-137",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 84,
+        "content": "- **正极弹簧 ↔ PCB / 电池仓盖**：技要 6\"可上锡焊接\" → 焊接固定到 PCB。",
+        "relevance": "PT5弹簧功能特性，供等同性比对参考"
+      },
+      {
+        "evidence_id": "HW-138",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 93,
+        "content": "| 5 | PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件） | 推测同件复用 |",
+        "relevance": "直接相关：图纸本身标注PT5与PT9L等同性为未确认推测项，是核心证据缺口的文件内佐证"
+      },
+      {
+        "evidence_id": "PAGE-F0015",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 1,
+        "content": "（页面内容为空，无法提取）",
+        "relevance": "历史风险验证报告，内容不可用，无法确认是否含生物相容性或样品身份信息"
+      },
+      {
+        "evidence_id": "PAGE-F0019",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 1,
+        "content": "（页面内容为空，无法提取）",
+        "relevance": "当前版本风险验证报告，内容不可用，无法确认是否含生物相容性或样品身份信息"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

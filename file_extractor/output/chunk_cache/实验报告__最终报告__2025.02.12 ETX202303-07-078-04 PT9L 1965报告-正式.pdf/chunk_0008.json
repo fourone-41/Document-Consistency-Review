@@ -1,0 +1,168 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-04",
+    "total_pages": 22,
+    "current_pages": "18-20"
+  },
+  "tests": [
+    {
+      "test_id": "5.6.3",
+      "test_name": "SHOCK",
+      "result": "P",
+      "blackbody_temperature_C": 37,
+      "ambient_conditions": "22-23°C, 50-52%RH",
+      "reference_source_uncertainty_C": 0.06,
+      "test_data": [
+        {
+          "condition": "After shock",
+          "T_BB_C": 36.82,
+          "T_j_readings_C": [
+            36.9,
+            36.8,
+            36.8,
+            36.8,
+            36.8
+          ],
+          "max_delta_C": 0.1
+        }
+      ]
+    },
+    {
+      "test_id": "5.6.4",
+      "test_name": "Storage Conditions",
+      "result": "P",
+      "blackbody_temperature_C": 37,
+      "ambient_conditions": "21-22°C, 50-54%RH",
+      "reference_source_uncertainty_C": 0.06,
+      "test_data": [
+        {
+          "condition": "-20°C",
+          "T_BB_C": 36.91,
+          "T_j_readings_C": [
+            36.8,
+            36.8,
+            36.8,
+            36.9,
+            36.8
+          ],
+          "max_delta_C": 0.1
+        },
+        {
+          "condition": "50°C, 80%RH",
+          "T_BB_C": 36.87,
+          "T_j_readings_C": [
+            36.8,
+            36.8,
+            36.8,
+            36.9,
+            36.9
+          ],
+          "max_delta_C": 0.1
+        }
+      ]
+    },
+    {
+      "test_id": "5.6.5",
+      "test_name": "Cleaning and Disinfection",
+      "result": "P",
+      "blackbody_temperature_C": 37,
+      "ambient_conditions": "22-23°C, 50-52%RH",
+      "reference_source_uncertainty_C": 0.06,
+      "test_data": [
+        {
+          "T_BB_C": 36.92,
+          "T_j_readings_C": [
+            36.9,
+            36.9,
+            37.0,
+            37.0,
+            37.0
+          ],
+          "max_delta_C": 0.1
+        }
+      ]
+    },
+    {
+      "test_id": "5.6.7",
+      "test_name": "Electrostatic Discharge",
+      "result": "P",
+      "blackbody_temperature_C": 37,
+      "ambient_conditions": "22-23°C, 52-54%RH",
+      "reference_source_uncertainty_C": 0.06,
+      "test_data": [
+        {
+          "condition": "After ESD",
+          "T_BB_C": 36.92,
+          "T_j_readings_C": [
+            36.8,
+            36.8,
+            36.8,
+            36.8,
+            36.8
+          ],
+          "max_delta_C": 0.1
+        }
+      ]
+    },
+    {
+      "test_id": "5.7",
+      "test_name": "Low Power Supply Operation",
+      "result": "P",
+      "blackbody_temperature_C": 37,
+      "ambient_conditions": "22-23°C, 48-50%RH",
+      "reference_source_uncertainty_C": 0.06
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Environmental temperature and humidity combination test method: At each blackbody temperature, the tests shall be repeated under the ambient conditions stated in Table 1. Conditions tested include: 25°C/50%RH, 39.5°C/20%RH, 39.5°C/85%RH. Measurement data at blackbody temperature ~42°C showed max delta of 0.1°C across all conditions.",
+      "topic_tags": [
+        "environmental conditions",
+        "temperature humidity",
+        "blackbody",
+        "measurement error"
+      ],
+      "related_subjects": [
+        "5.6.3",
+        "5.6.4",
+        "5.6.5",
+        "5.6.7"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Individual measurement error formula used throughout all test tables: δj = |tj - tBB|, where tj = displayed or calculated value of unadjusted temperature, tBB = true temperature of the blackbody, j = sequential number of a reading, | | = signifies taking an absolute value. The largest δj is a measure of the laboratory error of a system.",
+      "topic_tags": [
+        "measurement error",
+        "delta",
+        "blackbody",
+        "formula",
+        "laboratory error"
+      ],
+      "related_subjects": [
+        "5.6.3",
+        "5.6.4",
+        "5.6.5",
+        "5.6.7",
+        "5.7"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Reference temperature source total uncertainty is consistently 0.06°C across all test conditions (Shock, Storage Conditions, Cleaning and Disinfection, Electrostatic Discharge, Low Power Supply Operation).",
+      "topic_tags": [
+        "reference temperature",
+        "uncertainty",
+        "blackbody"
+      ],
+      "related_subjects": [
+        "5.6.3",
+        "5.6.4",
+        "5.6.5",
+        "5.6.7",
+        "5.7"
+      ]
+    }
+  ]
+}

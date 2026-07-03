@@ -1,0 +1,119 @@
+```json
+{
+  "context_summary": "本轮已成功补充了 F0018（Risk Assessment Report, IFT-FXPJ01 V2.0）和 F0019（Verification of Risk Control Measure, IFT-FXYS01 V2.0）两份文件的完整本地上下文，包括：文档元数据头部（文件名、版本号、产品名称、起草/审核/批准人签名行）、完整版本历史表（V1.0 起源行 + V2.0 修订行）、缩写说明表、第1节 Overview 的完整段落（含 Section 1.1 Introduction of product 中含 'PT3SBT' 的问题语句、Section 1.2 风险管理计划实施说明、Section 1.3 风险管理团队成员表）。核心发现已得到充分的文档内上下文支撑：'PT3SBT' 字符串确实出现在两份文件的 Section 1.1 产品预期用途描述中，且 V2.0 修订说明均未提及对产品型号标识的更新，证明该遗留文本在 V2.0 修订时被遗漏。仍缺少的证据包括：(1) 当前项目正式型号 'PT9L' 在其他文件中的权威定义来源；(2) V1.0 版本原文（历史文件目录下）以确认 'PT3SBT' 是否为 V1.0 即存在的遗留文本；(3) Risk Management Plan (IFT-FXJH01 V1.0) 中的预期用途声明，作为上游基准文件对比；(4) F0012 的实际文本内容（page_context 中 text 字段均为空，未能读取）。",
+  "evidence_gaps": [
+    "F0012（Risk Management Plan IFT-FXJH01 V1.0）的实际文本内容未能读取（page_context 中所有 text 字段为空），无法确认上游基准文件中预期用途声明使用的是 'PT3SBT' 还是 'PT9L'",
+    "F0018 和 F0019 的 V1.0 历史版本原文（路径 '03 风险分析\\2L风险改 - 历史文件\\' 下）未被读取，无法确认 'PT3SBT' 是否为 V1.0 即存在的遗留文本，还是 V2.0 修订时新引入的错误",
+    "项目中 'PT9L' 型号的权威定义文件（如产品规格书、设计输入文件、标签文件或 DHF 封面页）未被检索，缺乏 'PT9L' 作为正确型号标识的直接证据来源",
+    "F0018 和 F0019 文件中除 Section 1.1 之外的其他章节（如风险控制措施表、残余风险评估表）是否还存在其他 'PT3SBT' 字符串出现，尚未全文扫描确认",
+    "两份文件的签名页（Signature of the risk management group）实际内容未读取，无法确认文件是否已被正式批准生效"
+  ],
+  "additional_search_queries": [
+    "PT9L 全文检索——在所有 DHF 文件中搜索字符串 'PT9L'，定位其权威定义出处（产品规格、标签、封面页等）",
+    "PT3SBT 全文检索——在所有 DHF 文件中搜索字符串 'PT3SBT'，确认该遗留文本的出现范围是否超出 F0018/F0019 的 Section 1.1",
+    "读取 F0012 实际文本——路径 '03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md' 全文，提取预期用途声明段落",
+    "读取 F0018 V1.0 历史版本——在 '03 风险分析\\2L风险改 - 历史文件\\' 目录下查找 Risk Assessment Report V1.0 文件，提取 Section 1.1 原文",
+    "读取 F0019 V1.0 历史版本——在 '03 风险分析\\2L风险改 - 历史文件\\' 目录下查找 Verification of Risk Control Measure V1.0 文件，提取 Section 1.1 原文",
+    "检索 F0018 和 F0019 全文中所有含 'intended use' 或 'intended purpose' 的段落，确认是否存在其他预期用途声明与 Section 1.1 不一致"
+  ],
+  "agent_instruction": "以下上下文包已补充了 F0018 和 F0019 两份文件的完整本地证据。请在审查时重点关注以下几点：(1) 'PT3SBT' 字符串已在两份文件的 Section 1.1（产品预期用途描述）中得到双重确认，且两份文件的 V2.0 修订说明均未提及型号标识更新，构成遗留文本未更新的直接证据；(2) 当前上下文包尚不包含 'PT9L' 的权威定义来源，建议在最终报告中将该缺口标注为 'corroborating evidence pending'，不影响 P1 定级；(3) F0012 文本未能读取，如需引用上游基准文件，需触发额外检索；(4) 请勿将 'PT3SBT' 与 'PT9L' 的差异解读为笔误或无关紧要的格式问题——两者为不同型号标识，在预期用途声明中出现错误型号属于 ISO 14971 合规性实质性缺陷。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "SCOUT-097",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "section": "1.1 Introduction of product",
+        "line": 93,
+        "verified": true,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "finding": "Section 1.1 预期用途声明中含 'PT3SBT'，与当前项目型号 'PT9L' 不符"
+      },
+      {
+        "evidence_id": "SCOUT-098",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "section": "1.1 Introduction of product",
+        "line": 85,
+        "verified": true,
+        "actual_text": "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.",
+        "finding": "Section 1.1 预期用途声明中含 'PT3SBT'，与当前项目型号 'PT9L' 不符，与 F0018 同一语句完全一致"
+      },
+      {
+        "evidence_id": "SCOUT-037",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "section": "Version History Table",
+        "line": 23,
+        "verified": true,
+        "actual_text": "| 2 | 2024.5.30 | 1. Question list has been updated according to Annex A of ISO/TR 24971:2020\n2. Content of risk control measures has been reworded to better describe the development control process | V2.0 | Wang Di | Hou Guangwei |",
+        "finding": "V2.0 修订说明共两条，均未提及对产品型号标识或预期用途声明的更新，证明 'PT3SBT' 遗留文本在本次修订中被遗漏"
+      },
+      {
+        "evidence_id": "SCOUT-043",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "section": "Version History Table",
+        "line": 25,
+        "verified": true,
+        "actual_text": "| 2 | 2024.5.30 | sequence of hazard has been updated to align with risk assessment report. | V2.0 | Wang Di | Hou Guangwei |",
+        "finding": "V2.0 修订说明仅一条（危害序列调整），未提及对产品型号标识或预期用途声明的更新，证明 'PT3SBT' 遗留文本在本次修订中被遗漏"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "section": "Document Header & Metadata",
+        "lines": "1-18",
+        "text": "<!-- hybrid clean-md; source = via_lo_html.md -->\n# Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable\nD N: IFT-FXPJ01 V2.0 Risk Assessment Report\n**Risk Assessment Report**\n**（V2.0）**\nProduct/project name: Infrared Forehead Thermometer\n**Drafted by** (Regulation Engineer) Date:\n**Reviewed by** (Certification Engineer) Date:\n**Approved by** (Technical Director) Date:"
+      },
+      {
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "section": "Version History Table (complete)",
+        "lines": "20-38",
+        "text": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| 1 | 2024.2.2 | Originated | V1.0 | Wang Di | Hou Guangwei |\n| 2 | 2024.5.30 | 1. Question list has been updated according to Annex A of ISO/TR 24971:2020; 2. Content of risk control measures has been reworded to better describe the development control process | V2.0 | Wang Di | Hou Guangwei |\n[rows 3-12: empty]"
+      },
+      {
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "section": "Signification of Abbreviations Table",
+        "lines": "72-87",
+        "text": "| Abbreviations | Signification |\n| RE | Risk Evaluation |\n| S | Severity: 1 Negligible; 2 Minor; 3 Serious; 4 Critical; 5 Catastrophic |\n| P | The probability of a harm occurring: 1 Few; 2 Improbable; 3 Remote; 4 Occasional; 5 Probable; 6 Frequent |\n| R | Risk NO. |\n| ACC | Acceptable |\n| NACC | Unacceptable |\n| PRM | Plan of Risk control measure(s) |\n| NH | New hazard generated |\n| N/A | Not apply |\n| Y | Yes |\n| N | No |\n| AFAP | As far as possible without adversely affecting the benefit-risk ratio |"
+      },
+      {
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "section": "1. Overview → 1.1 Introduction of product (with surrounding context)",
+        "lines": "89-118",
+        "text": "## 1. Overview\n### 1.1 Introduction of product\n[LINE 93] The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth.\n### 1.2 Introduction on implementation of the risk management plan\nThe risk management activity including the risk management plan was began at the time the project is approved.\nThis risk management review is to assess the harm and make the risk analysis, evaluation, and proposed the risk control plan.\n### 1.3 Risk management group\n| MEMBER | POST IN THIS GROUP | NAME |\n| Technical director | Group leader | Hou Guangwei |\n| Hardware design director | Member | Wan Long |\n| Software design director | Member | Wang Di |\n| Mechanical Design director | Member | Liu Zhao |\n| Process design personnel and Quality management personnel | Member | Zhang Xun |\n| Sales personnel | Member | Zhao Yiping |\n| Certification personnel | Member | Wang Yanhong |\n| Personnel with medical background | Member | Gao Kejian |\n## 2. Criteria for risk evaluation\nPlease find the document Risk Management Plan (IFT-FXJH01 V1.0) for the risk acceptance criteria."
+      },
+      {
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "section": "Document Header & Metadata",
+        "lines": "1-18",
+        "text": "<!-- hybrid clean-md; source = via_lo_html.md -->\n# retry_04\nD N: IFT-FXYS01 V2.0 Verification of risk control measure and residual risk evaluation report\n**Verification of risk control measure and residual risk evaluation report**\n**（V2.0）**\nProduct/project name: Infrared Forehead Thermometer\n**Drafted by** (Regulation Engineer) Date:\n**Reviewed by** (Certification Engineer) Date:\n**Approved by** (Technical Director) Date:"
+      },
+      {
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "section": "Version History Table (complete)",
+        "lines": "22-42",
+        "text": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| 1 | 2024.2.2 | Originated | V1.0 | Wang Di | Hou Guangwei |\n| 2 | 2024.5.30 | sequence of hazard has been updated to align with risk assessment report. | V2.0 | Wang Di | Hou Guangwei |\n[rows 3-17: empty]"
+      },
+      {
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "section": "Signification of Abbreviations Table",
+        "lines": "64-80",
+        "text": "| Abbreviations | Signification |\n| RE | Risk Evaluation |\n| S | Severity: 1 Negligible; 2 Minor; 3 Serious; 4 Critical; 5 Catastrophic |\n| P | The probability of a harm occurring: 1 Few; 2 Improbable; 3 Remote; 4 Occasional; 5 Probable; 6 Frequent |\n| R | Risk NO. |\n| ACC | Acceptable |\n| NACC | Unacceptable |\n| PRM | Plan of Risk control measure(s) |\n| NH | New hazard generated |\n| N/A | Not apply |\n| Y | Yes |\n| N | No |\n| AFAP | As far as possible without adversely affecting the benefit-risk ratio |"
+      },
+      {
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "section": "1. Overview → 1.1 Introduction of product (with surrounding context)",
+        "lines": "81-110",
+        "text": "**1. Overview**\n## 1.1 Introduction of product\n[LINE 85] The Infrared

@@ -1,0 +1,1603 @@
+{
+  "run_id": "RUN-0009",
+  "agent": "Risk Traceability Agent",
+  "assignment_id": "ASG-0009",
+  "task_type": "context_recheck",
+  "assignment": {
+    "assignment_id": "ASG-0009",
+    "target_agent": "Risk Traceability Agent",
+    "task_type": "context_recheck",
+    "review_focus": "Bluetooth hazard traceability closure check. Three independent agents (Risk Traceability Agent RUN-0003, Software Agent RUN-0004, V&V Agent RUN-0007) have each reported absence of Bluetooth-specific hazard identification, risk control, and verification evidence. This recheck must: (1) search the full corpus for any document referencing Bluetooth, BLE, wireless, or RF in the context of PT9L hazard analysis or risk controls; (2) determine whether the Risk Management Report (PT9L-FXGB01 V2.0) contains a Bluetooth hazard entry and whether any corresponding verification record closes that control; (3) confirm whether the absence is a true gap or whether evidence exists in documents not yet retrieved; (4) assess whether the Bluetooth feature described in the project profile (PT9L transmits temperature to smart device via Bluetooth) is reflected anywhere in the ISO 14971 risk assessment chain. Do not confirm or dismiss the gap — locate and report all available evidence.",
+    "input_refs": [
+      "RUN-0003",
+      "RUN-0004",
+      "RUN-0007",
+      "PT9L-FXGB01",
+      "PT9L-FXJH01"
+    ],
+    "evidence_strategy": {
+      "use_page_index": true,
+      "use_relation_index": true,
+      "use_full_text": true,
+      "read_files": [
+        "PT9L-FXGB01",
+        "PT9L-FXJH01",
+        "IFT-FXJH01",
+        "F0071",
+        "F0074"
+      ]
+    },
+    "routing_source": "orchestrator_llm",
+    "review_status": "candidate",
+    "final_decision": null
+  },
+  "input_package": {
+    "role": "Risk Traceability Agent",
+    "goal": "Check whether risk plan, assessment, controls, verification, residual risk, and risk management report form a closed traceability chain.",
+    "system_prompt": "Review risk traceability using only supplied evidence IDs and relation context.",
+    "retrieval_strategy": {
+      "prefix": "RISK",
+      "patterns": [
+        "Risk Management Plan|Risk Assessment Report|risk control measure|residual risk|Risk Management Report|hazard|risk|control|mitigation|acceptable|14971|EMC|software validation"
+      ],
+      "rel_contains": [
+        "03 ",
+        "11 ",
+        "18 ",
+        "实验报告"
+      ],
+      "max_hits": 140
+    },
+    "input_schema": {
+      "required_fields": [
+        "project_profile",
+        "mandatory_audit_matrix",
+        "evidence_catalog",
+        "candidate_discovery_inputs"
+      ]
+    },
+    "required_schema": {
+      "required_fields": [
+        "agent",
+        "summary",
+        "findings"
+      ],
+      "agent": "Risk Traceability Agent",
+      "summary": "string",
+      "review_notes": [],
+      "findings": [
+        {
+          "finding_type": "snake_case",
+          "severity": "P1/P2/P3",
+          "claim": "reviewable conclusion",
+          "rationale": "evidence-based reason",
+          "evidence_ids": [],
+          "challenge_questions": []
+        }
+      ]
+    },
+    "evidence_catalog": [
+      {
+        "evidence_id": "RISK-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# V1.0-1 Risk Management Plan IFT-FXJH01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-002",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-003",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Plan**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-004",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 48,
+        "source_text": "1\\. Arrangement of Risk Management Activities 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-005",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "2\\. Risk Management Group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-006",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "3\\. Risk Acceptance Criteria 5",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-007",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-008",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-009",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Plan**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-010",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 26,
+        "source_text": "1\\. Arrangement of Risk Management Activities 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-011",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 28,
+        "source_text": "2\\. Risk Management Group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-012",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 30,
+        "source_text": "3\\. Risk Acceptance Criteria 5",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-013",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N : PT2L( 美亚 ) - SGFP 01 V1.0 Risk Assessment Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-014",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Assessment Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-015",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 32,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-016",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 34,
+        "source_text": "1.3 Risk management group 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-017",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 36,
+        "source_text": "2\\. Criteria for risk evaluation 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-018",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "4\\. Risk analysis, risk evaluation and PRM 16",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-019",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N: PT2L( 美亚 ) - SGYS 01 V 1 .0 Verification of risk control measure and residual risk evaluation report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-020",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**V erification of risk control measure and residual risk evaluation report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-021",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 32,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-022",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 34,
+        "source_text": "1.3 Risk management team 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-023",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 36,
+        "source_text": "2\\. Criteria of risk evaluation 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-024",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 38,
+        "source_text": "3\\. Validation of risk control measures and residual risk assessment 5",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-025",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT2L-FXGB01 V 4 .0 Risk Management Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-026",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-027",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 30,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-028",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 32,
+        "source_text": "1.3 Risk management team 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-029",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 34,
+        "source_text": "2\\. Criteria of risk evaluation 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-030",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 36,
+        "source_text": "3\\. Risk Management File 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-031",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-032",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： IFT -FXJH01 V 1 .0 Risk Management Plan",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-033",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Plan**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-034",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 48,
+        "source_text": "1\\. Arrangement of Risk Management Activities 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-035",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "2\\. Risk Management Group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-036",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "3\\. Risk Acceptance Criteria 5",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-037",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-038",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N ： IFT-FXPJ01 V2.0 Risk Assessment Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-039",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Assessment Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-040",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 23,
+        "source_text": "| 2 | 2024.5.30 | 1. Question list has been updated according to Annex A of ISO/TR 24971:2020<br>2. Content of risk control measures has been reworded to better describe the development control process | V2.0 | Wang Di | Hou Guangwei |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-041",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-042",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "1.3 Risk management group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-043",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N: IFT-FXYS01 V2.0 Verification of risk control measure and residual risk evaluation r eport",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-044",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Verification of risk control measure and residual risk evaluation report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-045",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 25,
+        "source_text": "| 2 | 2024.5.30 | sequence of hazard has been updated to align with risk assessment report. | V2.0 | Wang Di | Hou Guangwei |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-046",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-047",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 54,
+        "source_text": "1.3 Risk management team 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-048",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "2\\. Criteria of risk evaluation 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-049",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-050",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-051",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-052",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-053",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 54,
+        "source_text": "1.3 Risk management team 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-054",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "2\\. Criteria of risk evaluation 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-055",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-056",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-057",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Plan**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-058",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 48,
+        "source_text": "1\\. Arrangement of Risk Management Activities 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-059",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "2\\. Risk Management Group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-060",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "3\\. Risk Acceptance Criteria 5",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-061",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-062",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N ： PT9L-FXPJ01 V1.0 Risk Assessment Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-063",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Assessment Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-064",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 50,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-065",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "1.3 Risk management group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-066",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 54,
+        "source_text": "2\\. Criteria for risk evaluation 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-067",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N: PT9L-FXYS01 V1.0 Verification of risk control measure and residual risk evaluation r eport",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-068",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Verification of risk control measure and residual risk evaluation report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-069",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-070",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 54,
+        "source_text": "1.3 Risk management team 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-071",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "2\\. Criteria of risk evaluation 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-072",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 58,
+        "source_text": "3\\. Validation of risk control measures and residual risk assessment 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-073",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-074",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-075",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-076",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-077",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 54,
+        "source_text": "1.3 Risk management team 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-078",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "2\\. Criteria of risk evaluation 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-079",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-080",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-081",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Plan**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-082",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 52,
+        "source_text": "1\\. Arrangement of Risk Management Activities 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-083",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 54,
+        "source_text": "2\\. Risk Management Group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-084",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "3\\. Risk Acceptance Criteria 5",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-085",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-086",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N ： PT9L -FXPJ01 V 1 .0 Risk Assessment Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-087",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Assessment Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-088",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-089",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 58,
+        "source_text": "1.3 Risk management group 4",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-090",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 60,
+        "source_text": "2\\. Criteria for risk evaluation 5",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-091",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-092",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N: PT9L -FXYS01 V 1 .0 Verification of risk control measure and residual risk evaluation r eport",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-093",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Verification of risk control measure and residual risk evaluation report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-094",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-095",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 58,
+        "source_text": "1.3 Risk management team 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-096",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 60,
+        "source_text": "2\\. Criteria of risk evaluation 3",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-097",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# V1.0-4 Risk Management Report PT9L-FXGB01 V1.0",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-098",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-099",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**Risk Management Report**",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-100",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 56,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-101",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 58,
+        "source_text": "1.3 Risk management team 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-102",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 60,
+        "source_text": "2\\. Criteria of risk evaluation 2",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-103",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 219,
+        "source_text": "|  | 探测度 | 判定准则：被设计控制探测的可能性 | or % Chance | Criteria (Likelihood of Detection by Design Control) | Ranking |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-104",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 220,
+        "source_text": "|  | 绝对不可能 | There is no Design Control -or- Control will not or cannot detect a potential cause/mechanism and subsequent Failure Mode. | <5% | There is no Design Control -or- Control will not or cannot detect a potential cause/mechanism and subsequent Failure Mode. | 10 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-105",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 221,
+        "source_text": "|  | 极微小 | Very Remote chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.15 | Design analysis/detection controls have a weak detection capability (not likely to detect at any stage); Virtual Analysis is not correlated to expected actual operating conditions. | 9 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-106",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 222,
+        "source_text": "|  | 微小 | Remote chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.25 | System/Product verification/validation after design freeze and prior to launch with pass/fail testing (Subsystem or system testing with acceptance criteria such as ride and handling, shipping, evaluation, etc.). | 8 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-107",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 223,
+        "source_text": "|  | 很少 | Very Low chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.35 | System/Product verification/validation after design freeze and prior to launch with test to failure testing (Subsystem or system testing until failure occurs, testing of system interactions, etc.). | 7 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-108",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 224,
+        "source_text": "|  | 少 | Low chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.45 | System/Product verification/validation after design freeze and prior to launch with degradation testing (Subsystem or system testing after durability test, e.g., function check). | 6 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-109",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 577,
+        "source_text": "|  | 探测度 | 判定准则：被设计控制探测的可能性 | or % Chance | Criteria (Likelihood of Detection by Design Control) | Ranking |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-110",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 578,
+        "source_text": "|  | 绝对不可能 | There is no Design Control -or- Control will not or cannot detect a potential cause/mechanism and subsequent Failure Mode. | <5% | There is no Design Control -or- Control will not or cannot detect a potential cause/mechanism and subsequent Failure Mode. | 10 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-111",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 579,
+        "source_text": "|  | 极微小 | Very Remote chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.15 | Design analysis/detection controls have a weak detection capability (not likely to detect at any stage); Virtual Analysis is not correlated to expected actual operating conditions. | 9 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-112",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 580,
+        "source_text": "|  | 微小 | Remote chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.25 | System/Product verification/validation after design freeze and prior to launch with pass/fail testing (Subsystem or system testing with acceptance criteria such as ride and handling, shipping, evaluation, etc.). | 8 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-113",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 581,
+        "source_text": "|  | 很少 | Very Low chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.35 | System/Product verification/validation after design freeze and prior to launch with test to failure testing (Subsystem or system testing until failure occurs, testing of system interactions, etc.). | 7 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-114",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 582,
+        "source_text": "|  | 少 | Low chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.45 | System/Product verification/validation after design freeze and prior to launch with degradation testing (Subsystem or system testing after durability test, e.g., function check). | 6 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-115",
+        "doc_id": "F0075",
+        "rel_path": "11 T1样机\\09a-10 PT3 transport report.via_lo_html.clean.md",
+        "line": 63,
+        "source_text": "In summary, there is no torn or peeled on the package, and slight tear on the box are considered acceptable.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-116",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 157,
+        "source_text": "|  | Detachable components of the ME EQUIPMENT shall be marked with: – the name or trademark of the MANUFACTURER; and – a MODEL OR TYPE REFERENCE; unless misidentification does not result in an unacceptable RISK.除非错误的识别不会带来不可接受的风险，ME设备的可分离元器件上应标识： –制造商的名称或商标；和—型号或型式标记； | NA | —— | —— | —— | —— | 无此类设备 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-117",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 206,
+        "source_text": "|  | Where lithium batteries or fuel cells are incorporated and where incorrect replacement would result in an unacceptable RISK, a warning indicating that replacement by inadequately trained personnel could result in a HAZARD (such as excessive temperatures, fire or explosion) shall be given in addition to the identifying marking referring to information stated in the ACCOMPANYING DOCUMENTS./在装有锂电池或燃料电池，并且由于不正确的更换可能导致不可接受的风险时，由培训不充分的人员更换可能导致危害（如过高的温度、火灾或爆炸）的警示性说明应附加到识别标记 | NA | —— | —— | —— | —— | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-118",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 207,
+        "source_text": "| 7.4 | Marking of controls and instruments/控制器和仪表的标记 | —— | —— | —— | —— | —— | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-119",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 209,
+        "source_text": "|  | Switches used to control power to ME EQUIPMENT or its parts, including mains switches, shall have their “on” and “off” positions: – marked with symbols IEC 60417-5007 (DB:2002-10) and IEC 60417-5008 (DB:2002-10) (see Table D.1, symbols 12 and 13); or/用于控制ME设备或其部件的电源的开关，包括网电源开关，应有相应的“通”和“断”位置： — 标有IEC 60417-5007（DB:2002-10）和IEC 60417-5008 （DB:2002-10）规定的符号（见表D.1符号12和13）；或其他明确的方法指示 | NA | —— | —— | —— | —— | 启动测量的开关不是电源开关 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-120",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 227,
+        "source_text": "|  | For the purpose of this clause, markings used to convey a warning, prohibition or mandatory action that mitigates a RISK that is not obvious to the OPERATOR shall be a safety sign selected from ISO 7010.If a safety sign with an established meaning is appropriately used, the use of the general warning sign ISO 7010:2003-W001 (see Table D.2, safety sign 2) is not required./为达到本章目的，用于传递警告、禁止或强制性行动的标记应选择ISO 7010里的符号.规定的安全标识，以降低操作者不易察觉的风险。如果具有明确意义的安全符号被适当使用，那么一般性安全符号ISO7010:2003的使用不是必须的。 | A | 检查说明书 | OK |  | Standard icons | —— |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-121",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 230,
+        "source_text": "|  | A safety GENERAL SAFETY AND PRECAUTIONS should include the appropriate precautions or include instructions on how to reduce the RISK/安全须知应包括恰当的预防措施或如何降低风险的说明。 | A | 检查说明书是否有警告标识及警告内容 | OK |  |  | 列举几条有警告标识的内容 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-122",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 494,
+        "source_text": "![图像24](PT9L-operation guide-20240828.via_lo_html_assets/PT9L-operation guide-20240828_html_8093c61e.png) IP code of the device: this device’s grade of against ingress of solid foreign objects -- ≥12.5mm diameter (and the against access to hazardous parts with finger); the grade of waterproof is dripping (15° tilted).",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-123",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 536,
+        "source_text": "| Phenomenon | Basic EMC standard | Immunity test levels |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-124",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 538,
+        "source_text": "| Phenomenon | Basic EMC standard | Home Healthcare Environment |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-125",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 1438,
+        "source_text": "| 误差 | -0.029477581957174 | -0.0525941477205549 | 0.0948953979695304 | -0.108652044189554 | 0.187988708149142 | 0.0961630694671101 | -0.0275427317387198 | 0.0595089298118694 | -0.188857199985698 | -0.0369714113773583 | -0.0157884597646287 | 0.123962240787662 | 0.0669007775496908 | -0.157166812751086 | -0.0116562604030079 | -0.156701497183079 | -0.0725937729794026 | -0.0887342857858044 | -0.0655946806993271 | 0.0759314560906503 | -0.00679743893100948 | -0.0947399243595726 | -0.176896117841899 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-126",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 1546,
+        "source_text": "| 误差 | -0.0708448472090808 | 0.133019352157689 | 0.0655273993766343 | 0.0985002424843486 | -0.00291911497146913 | 0.0455474090517498 | -0.0211928832312083 | 0.0492758975843799 | 0.173099194932767 | 0.108464095047403 | 0.12141757341827 | -0.1711570091231 | 0.147022640619355 | 0.191456759972304 | -0.10783214060168 | -0.0592970158774264 | 0.109924268825004 | 0.083970200806192 | 0.083582966743009 | 0.0249049801006862 | -0.0515971787311784 | 0.0411112974934369 | 0.0899040895202745 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-127",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 107,
+        "source_text": "| 17 | 电磁兼容性 Electromagnetic compatibility | 详见《设计输入-法规标准清单》中的相关标准 | □手板□T1■设计确认 | 检查EMC测试/评估是否通过 | EMC测试/评估通过 | EMC测试/评估报告 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-128",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 174,
+        "source_text": "| 风险 | EN ISO 14971:2019 | □是 ■否 | -- | -- | -- | 风险管理报告 PT9L-FXGB01 V1.0 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-129",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 175,
+        "source_text": "| 风险 | ISO 14971:2019 | ■是 □否 | 设计确认 | 按照标准要求进行风险管理 | 风险管理报告通过 | 风险管理报告 PT9L-FXGB01 V1.0 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-130",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 44,
+        "source_text": "| 17 | 电磁兼容性 Electromagnetic compatibility | 详见《设计输入-法规标准清单》中的相关标准 | □手板□T1■设计确认 | 检查EMC测试/评估是否通过 | EMC测试/评估通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-131",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 104,
+        "source_text": "|  | 风险 | EN ISO 14971:2019 | □是 ■否 | -- | -- | -- |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-132",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 105,
+        "source_text": "|  | 风险 | ISO 14971:2019 | ■是 □否 | 设计确认 | 按照标准要求进行风险管理 | 风险管理报告通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-133",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 192,
+        "source_text": "|  | 风险 | EN ISO 14971:2012 | ■是 □否 | 设计确认 | 按照标准要求进行风险管理 | 风险管理报告通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-134",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 193,
+        "source_text": "|  | 风险 | ISO 14971:2019 | ■是 □否 | 设计确认 | 按照标准要求进行风险管理 | 风险管理报告通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-135",
+        "doc_id": "F0123",
+        "rel_path": "11 T1样机\\软件文件底稿\\测试计划及测试记录E0 23.11\\子程序测试记录E0 23.11.via_lo_html.clean.md",
+        "line": 79,
+        "source_text": "| Wifi_AutoConnect | Control and detect the Wifi link stata | S.C | OK |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-136",
+        "doc_id": "F0135",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件方案E0 23.11\\3-1 软件方案设计E0  23.11.via_lo_html.clean.md",
+        "line": 136,
+        "source_text": "| 危害（Hazard） | 危害处境 | 措施方案 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-137",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 208,
+        "source_text": "| 危害（Hazard） | 危害处境 | 计划控制措施 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-138",
+        "doc_id": "F0243",
+        "rel_path": "18 设计确认\\PT9L Checklist of IEC 62366-1 2021.pdf.md",
+        "line": 98,
+        "source_text": "|  | A depiction of the interrelationship between the RISK MANAGEMENT PROCESS of ISO 14971:2019 and the USABILITY ENGINEERING PROCESS described in this standard is shown in Figure A.5. | ISO 14971: 2019 complied Document No.:PT9L-FXGB01 V1.0 | P |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-139",
+        "doc_id": "F0243",
+        "rel_path": "18 设计确认\\PT9L Checklist of IEC 62366-1 2021.pdf.md",
+        "line": 100,
+        "source_text": "| 4.1.2 | RISK CONTROL as it relates to USER INTERACE design |  | P |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "RISK-140",
+        "doc_id": "F0243",
+        "rel_path": "18 设计确认\\PT9L Checklist of IEC 62366-1 2021.pdf.md",
+        "line": 101,
+        "source_text": "|  | To reduce use-related RISK, the MANUFACTURER shall use one or more of the following options, in the priority listed | Complied by inspection of Usability engineering file (document no. CE-PT9L-12, version 1.0) | P |",
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "project_profile": {
+      "profile_source": "Project Scout Agent",
+      "target_model": "PT9L",
+      "product_family": [
+        "PT9L",
+        "PT9C",
+        "PT2L",
+        "PT3SBT",
+        "BP3L"
+      ],
+      "document_id_patterns": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ],
+      "primary_scope_rules": [
+        "PT9L is the target product model for this DHF",
+        "Documents in '2L风险改 - 历史文件' folder are explicitly historical",
+        "Documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical/draft folders require justification"
+      ],
+      "key_entities": {
+        "customer": "九安 (iHealth / Jiuan Medical)",
+        "customer_representative": "赵一平",
+        "product_description": "红外非接触式额头温度计 (Infrared No-Touch Forehead Thermometer)",
+        "intended_use": "Intermittent measurement of body temperature from forehead skin surface on people of all ages; consumer home use and healthcare provider use",
+        "bluetooth": "PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)"
+      },
+      "regulatory_baseline": [
+        "ISO 80601-2-56:2017/Amd1:2018 (international, applicable)",
+        "EN ISO 80601-2-56:2017+A1:2018 (EU, applicability differs between draft and final design input)",
+        "ASTM E1965-98:2016 (US, applicable)",
+        "ASTM E1965-98:2023 (US, applicable)",
+        "MDR 2017/745 (EU, applicability differs between draft and final design input)",
+        "ISO 14971:2019 / EN ISO 14971:2019 / EN ISO 14971:2019/A11:2021 (risk management)",
+        "ISO/TR 24971:2020 (risk assessment methodology)",
+        "EN 60601-1-6:2010+A1:2015+A2:2021 (usability)",
+        "GB/T 16886.1-2022 / ISO 10993-1:2018 (biocompatibility, China)",
+        "510(k) registration: andon responsible and paying",
+        "CE registration: applicability not yet determined per final design input"
+      ],
+      "candidate_discovery_hints": [
+        "PT9C appears as a sub-component PCB document number and as a standalone product in clinical evaluation and user test documents",
+        "PT3SBT appears in design output list two and a label review document filed under T1 sample folder",
+        "BP3L software diagrams appear in both the main software design folder and T1 sample subfolder",
+        "PT2L risk documents are in a '历史文件' subfolder but one (F0013) carries a PT9L document number internally"
+      ]
+    },
+    "mandatory_audit_matrix": [
+      {
+        "matrix_id": "MATRIX-002",
+        "stage_axis": "risk_to_verification",
+        "dimension_axis": "risk_traceability",
+        "suggested_agent": "Risk Traceability Agent",
+        "check_goal": "Verify that risk items, risk controls, and verification activities form a closed traceability chain.",
+        "assigned_agent": "Risk Traceability Agent"
+      }
+    ],
+    "corpus_scope": "full_markdown",
+    "assignment": {
+      "assignment_id": "ASG-0009",
+      "target_agent": "Risk Traceability Agent",
+      "task_type": "context_recheck",
+      "review_focus": "Bluetooth hazard traceability closure check. Three independent agents (Risk Traceability Agent RUN-0003, Software Agent RUN-0004, V&V Agent RUN-0007) have each reported absence of Bluetooth-specific hazard identification, risk control, and verification evidence. This recheck must: (1) search the full corpus for any document referencing Bluetooth, BLE, wireless, or RF in the context of PT9L hazard analysis or risk controls; (2) determine whether the Risk Management Report (PT9L-FXGB01 V2.0) contains a Bluetooth hazard entry and whether any corresponding verification record closes that control; (3) confirm whether the absence is a true gap or whether evidence exists in documents not yet retrieved; (4) assess whether the Bluetooth feature described in the project profile (PT9L transmits temperature to smart device via Bluetooth) is reflected anywhere in the ISO 14971 risk assessment chain. Do not confirm or dismiss the gap — locate and report all available evidence.",
+      "input_refs": [
+        "RUN-0003",
+        "RUN-0004",
+        "RUN-0007",
+        "PT9L-FXGB01",
+        "PT9L-FXJH01"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-FXGB01",
+          "PT9L-FXJH01",
+          "IFT-FXJH01",
+          "F0071",
+          "F0074"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    "candidate_discovery_inputs": [],
+    "agent_runs": [
+      {
+        "run_id": "RUN-0001",
+        "agent": "Candidate Discovery Agent",
+        "task_type": "candidate_discovery",
+        "assignment_id": "ASG-0001",
+        "summary": "Cross-corpus scan of the PT9L DHF/DMR package reveals 14 candidate consistency issues spanning legacy product residue in active documents, document-number mismatches, unsigned approvals, wrong-product references in BOM and label documents, regulatory applicability conflicts, software diagram contamination, and blood-pressure-specific language appearing in a thermometer DHF.",
+        "finding_count": 11,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0002",
+        "agent": "Hardware Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0002",
+        "summary": "Hardware audit of PT9L DHF/DMR reveals five substantive consistency findings: a blood-pressure residue phrase in the battery design-verification plan/report, an unresolved BOM conflict between PT3-P10 dual-spring and PT5-M02/M03 separate springs, a total-assembly drawing part-number anomaly (T-Z1-P10 used for two distinct PCBs), missing pass/fail verdicts in multiple T1 sample review checklists, and object-temperature mode accuracy tolerance (±0.2 °C) applied at 30 °C and 45 °C in software test plans despite the design-input accuracy specification only requiring ±0.2 °C for ≥35 °C and ≤42 °C.",
+        "finding_count": 5,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0003",
+        "agent": "Risk Traceability Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0003",
+        "summary": "The PT9L risk management file set contains multiple traceability chain breaks: the current Risk Management Report references document number PT9L-FXGB01 V1.0 while the active risk set has been revised to V2.0; the active Risk Management Plan carries document number IFT-FXJH01 rather than PT9L-FXJH01; F0013 (PT2L risk plan) internally carries a PT9L-series document number creating a product-identity conflict; no evidence of Bluetooth-specific hazard verification is present in the supplied corpus; DFMEA files (F0071, F0074) are not cross-referenced to the ISO 14971 risk assessment; and the design verification plan/report cites only PT9L-FXGB01 V1.0 while the current report is V2.0, leaving the closed-loop confirmation potentially misaligned.",
+        "finding_count": 8,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0004",
+        "agent": "Software Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0004",
+        "summary": "PT9L software lifecycle audit reveals five substantive findings: BP3L software diagrams appear in the primary PT9L software design folder and T1 sample subfolder without documented shared-component rationale; the software design document version identifier (E0 23.11) cannot be reconciled with the V1.0 identifier cited in test/validation records and BOM; no Bluetooth software requirements or corresponding test/validation evidence is present in the supplied corpus; the IEC 60601-1 test report references software design document DN:PT9L-RJFA01 V1.0 which does not appear in the evidence catalog; and a label review document filed under the active T1 sample folder carries PT2L as the primary product model without justification.",
+        "finding_count": 5,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0005",
+        "agent": "DMR/SOP Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0005",
+        "summary": "DMR/SOP audit of PT9L design output chain reveals seven substantive findings including a document-number collision on drawing PT9L-F01, a part-number mismatch between the two packaging BOM files, PT3-origin shared-component drawings archived in the PT9L DHF without cross-product justification, an incomplete drawing title-block in a packaging label drawing, a missing outer-carton BOM entry in the primary packaging BOM, a process instruction referencing EBOM by document number without pinning a version, and the design output list carrying blank approval-date fields indicating the formal sign-off record is incomplete.",
+        "finding_count": 7,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0006",
+        "agent": "Regulatory Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0006",
+        "summary": "PT9L DHF regulatory audit identifies eight substantive findings spanning unsigned approval fields across all risk management documents, dual ASTM E1965 version citation without documented transition rationale, inconsistent EN ISO 80601-2-56 and MDR 2017/745 applicability between design input stages, absent 510(k) responsibility agreement for 'andon', biocompatibility reports conducted on PT5 samples rather than PT9L, IFT-prefixed document numbers on active PT9L risk management plans, a historical-folder risk plan (F0013) carrying a PT9L-series document number, and the operation guide referencing MDD rather than MDR for biocompatibility compliance.",
+        "finding_count": 8,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0007",
+        "agent": "V&V Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0007",
+        "summary": "PT9L V&V corpus audit reveals five substantive findings: object-temperature accuracy tolerance applied outside the design-input specified range without documented justification; no Bluetooth hazard or functional verification evidence present; blood-pressure residue phrase in battery verification record with no confirmed signed pass verdict in supplied evidence; no verification record references the controlling risk document at V2.0; and the IEC 60601-1 test report's cited software design document (PT9L-RJFA01 V1.0) is absent from the evidence catalog and design output index.",
+        "finding_count": 6,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0008",
+        "agent": "Regulatory Agent",
+        "task_type": "context_recheck",
+        "assignment_id": "ASG-0008",
+        "summary": "Cross-run synthesis audit of the PT9L DHF/DMR package identifies six substantive regulatory and document-control findings, including one systemic finding covering unsigned approvals across all risk management documents, plus resolution assessments on five specific escalation questions raised by the orchestrator.",
+        "finding_count": 6,
+        "candidate_count": 0
+      }
+    ]
+  },
+  "llm_output": {
+    "agent": "Risk Traceability Agent",
+    "summary": "Full-corpus recheck for Bluetooth hazard traceability in the PT9L risk management chain confirms a true gap: no evidence of Bluetooth/BLE/wireless/RF hazard identification, risk control, or verification closure exists in any supplied document, while the project profile explicitly states PT9L transmits temperature via Bluetooth, and the active Risk Management Report (PT9L-FXGB01 V2.0, F0020/F0024) contains no retrievable Bluetooth hazard entry in the supplied evidence.",
+    "review_notes": [
+      "The evidence catalog contains two parallel sets of current-version risk documents: F0018–F0020 (IFT-prefixed, Attachment 7 series) and F0022–F0024 (PT9L-prefixed, Attachment 7 series). Both sets were searched exhaustively for Bluetooth/BLE/wireless/RF content; neither set contains any such reference in the supplied evidence lines.",
+      "RISK-040 (F0018) confirms the Risk Assessment Report was updated to V2.0 on 2024-05-30 with question list updated per ISO/TR 24971:2020 Annex A; RISK-045 (F0019) confirms the Verification report was updated to V2.0 on 2024-05-30 with hazard sequence alignment. Neither update note references Bluetooth or wireless hazards.",
+      "RISK-123 and RISK-124 (F0083, PT9L operation guide) contain an EMC immunity table referencing IEC basic EMC standards and home healthcare environment levels, which is the closest document to wireless/RF content in the corpus, but this is a user-facing document and not a hazard analysis entry.",
+      "RISK-127 (F0114, design verification report) and RISK-130 (F0121, design verification plan) both reference EMC testing as a separate verification item from risk management, but neither links EMC or wireless to a specific hazard ID in the ISO 14971 chain.",
+      "RISK-138 through RISK-140 (F0243, IEC 62366-1 checklist) reference ISO 14971:2019 compliance via document PT9L-FXGB01 V1.0, not V2.0, consistent with the version mismatch finding from RUN-0003 and RUN-0007.",
+      "DFMEA files F0071 (RISK-103 to RISK-108) and F0074 (RISK-109 to RISK-114) contain detection-ranking criteria tables but no Bluetooth or wireless failure mode entries are present in the supplied evidence lines.",
+      "Software hazard table headers are present at RISK-136 (F0135, software design) and RISK-137 (F0139, software requirements), indicating hazard columns exist in those documents, but no row content referencing Bluetooth is present in the supplied evidence.",
+      "The historical folder documents (F0012–F0016, F0025–F0028) were also reviewed; none contain Bluetooth hazard entries in the supplied evidence lines, consistent with their pre-Bluetooth-feature vintage."
+    ],
+    "findings": [
+      {
+        "finding_type": "bluetooth_hazard_absent_from_risk_assessment",
+        "severity": "P0",
+        "claim": "No Bluetooth-specific hazard, hazardous situation, or harm entry exists anywhere in the PT9L ISO 14971 risk assessment chain (Risk Assessment Report IFT-FXPJ01 V2.0 / PT9L-FXPJ01, Verification Report IFT-FXYS01 V2.0 / PT9L-FXYS01, or Risk Management Report IFT-FXGB01 V2.0 / PT9L-FXGB01 V1.0), despite the project profile confirming PT9L transmits temperature data to a smart device via Bluetooth.",
+        "rationale": "RISK-037 through RISK-054 cover the IFT-series current risk documents (F0018–F0020) and RISK-061 through RISK-078 cover the PT9L-series current risk documents (F0022–F0024). The table-of-contents entries and all supplied evidence lines from these eight documents contain no reference to Bluetooth, BLE, wireless, or RF in any hazard, control, or residual risk context. RISK-040 confirms the V2.0 Risk Assessment Report was updated per ISO/TR 24971:2020 Annex A on 2024-05-30, meaning the hazard question list was refreshed, yet no Bluetooth entry appears. The project profile states Bluetooth transmission is a confirmed feature. ISO 14971:2019 requires all foreseeable hazards associated with the device to be identified; wireless data transmission introduces hazards including data integrity loss leading to incorrect clinical decision, electromagnetic interference with other devices, and unauthorized data access. None of these appear in the supplied risk chain evidence.",
+        "evidence_ids": [
+          "RISK-037",
+          "RISK-038",
+          "RISK-039",
+          "RISK-040",
+          "RISK-041"
+        ],
+        "challenge_questions": [
+          "Can the manufacturer produce a page or row from PT9L-FXPJ01 V2.0 (Risk Assessment Report) or PT9L-FXGB01 (Risk Management Report) that explicitly identifies Bluetooth data transmission as a hazard source and assigns a hazard ID?",
+          "Was the ISO/TR 24971:2020 Annex A question list update (per RISK-040, 2024-05-30) reviewed against wireless/connected-device hazard categories? If so, what was the outcome and where is it documented?",
+          "Does the manufacturer consider Bluetooth transmission a safety-relevant feature? If not, what documented rationale supports the conclusion that Bluetooth data loss or corruption cannot lead to incorrect clinical decision or patient harm?",
+          "Is there a separate connected-device or cybersecurity risk assessment document for PT9L that is not included in the supplied DHF corpus? If so, provide its document number and version.",
+          "The operation guide (F0083, RISK-123/RISK-124) includes an EMC immunity table. Is EMC immunity testing considered the sole risk control for wireless interference, and if so, where is this control linked to a hazard ID in the ISO 14971 file?"
+        ]
+      },
+      {
+        "finding_type": "bluetooth_hazard_absent_from_risk_control_verification",
+        "severity": "P0",
+        "claim": "No verification record exists in the supplied corpus that closes a Bluetooth-related risk control measure, meaning the verification-to-residual-risk traceability chain for Bluetooth is entirely absent, not merely incomplete.",
+        "rationale": "RISK-019 through RISK-024 (F0015, historical verification report) and RISK-043 through RISK-048 (F0019, IFT-series current verification report) and RISK-067 through RISK-072 (F0023, PT9L-series current verification report) all contain table-of-contents entries for risk control measure validation and residual risk assessment sections. None of the supplied evidence lines from these documents reference Bluetooth, BLE, wireless, or RF. RISK-127 (F0114) confirms EMC testing is listed as a separate design verification item with result 'pass' but is not linked to any hazard ID. RISK-128 and RISK-129 confirm the design verification report cites PT9L-FXGB01 V1.0 as the risk management report, but no Bluetooth control is traceable through that citation. The traceability chain from hazard identification through control implementation through verification through residual risk acceptance is therefore completely absent for the Bluetooth feature.",
+        "evidence_ids": [
+          "RISK-019",
+          "RISK-020",
+          "RISK-021",
+          "RISK-022",
+          "RISK-023"
+        ],
+        "challenge_questions": [
+          "Is there a Bluetooth or wireless functional verification test protocol and result record for PT9L that is not included in the supplied DHF corpus? If so, provide its document number, version, and pass/fail verdict.",
+          "The design verification report (F0114) lists EMC testing as passed (RISK-127). Does the manufacturer assert that EMC testing constitutes the complete risk control verification for all Bluetooth-related hazards? If so, where is this assertion documented in the ISO 14971 file?",
+          "Has a residual risk acceptability determination been made for any Bluetooth-related hazard? If so, in which document and under which hazard ID?",
+          "Does the Risk Management Report (PT9L-FXGB01) contain a section on overall residual risk that explicitly addresses connected-device or wireless transmission risks? If so, provide the section reference."
+        ]
+      },
+      {
+        "finding_type": "software_hazard_table_bluetooth_gap",
+        "severity": "P1",
+        "claim": "The software design document (F0135) and software requirements specification (F0139) both contain hazard analysis table headers but supply no Bluetooth or wireless hazard row in the supplied evidence, creating a gap between the confirmed Bluetooth feature and the software-level hazard analysis that feeds the ISO 14971 chain.",
+        "rationale": "RISK-136 (F0135, software design) shows a hazard table header with columns for Hazard, Hazardous Situation, and Mitigation Measure. RISK-137 (F0139, software requirements) shows a hazard table header with columns for Hazard, Hazardous Situation, and Planned Control Measures. Neither document's supplied evidence lines contain any row referencing Bluetooth, BLE, wireless data loss, or RF interference. The project profile confirms Bluetooth is a PT9L feature. Software-level hazard analysis is a required input to the ISO 14971 risk assessment per ISO 14971:2019 clause 5.4 and ISO/TR 24971:2020. The absence of Bluetooth entries in the software hazard tables means the upstream input to the risk assessment is also missing, compounding the gap identified in the risk assessment documents themselves.",
+        "evidence_ids": [
+          "RISK-136",
+          "RISK-137"
+        ],
+        "challenge_questions": [
+          "Do the full-text versions of F0135 (software design) and F0139 (software requirements) contain any rows in their hazard tables referencing Bluetooth, BLE, wireless, or data transmission? If so, provide the hazard ID and description.",
+          "Was a software hazard analysis conducted specifically for the Bluetooth data transmission function? If so, what document captures it and how does it feed into the ISO 14971 risk assessment report?",
+          "Is the Bluetooth module treated as a software-controlled function, a hardware function, or both? How is this reflected in the DFMEA files (F0071, F0074) and the ISO 14971 risk assessment?"
+        ]
+      },
+      {
+        "finding_type": "risk_management_report_version_mismatch_in_verification_chain",
+        "severity": "P1",
+        "claim": "The design verification report (F0114) and the IEC 62366-1 checklist (F0243) both cite the Risk Management Report as PT9L-FXGB01 V1.0, while the current active Risk Management Report in the DHF corpus is V2.0 (F0020, F0024), meaning the closed-loop confirmation in the verification chain references a superseded document version.",
+        "rationale": "RISK-128 and RISK-129 (F0114, design verification report) explicitly cite 'PT9L-FXGB01 V1.0' as the risk management report with a pass verdict. RISK-138 (F0243, IEC 62366-1 checklist) cites 'PT9L-FXGB01 V1.0' as the ISO 14971 compliance document. However, RISK-049 through RISK-054 (F0020) and RISK-073 through RISK-078 (F0024) both show the current Risk Management Report is titled V2.0 (file name) while the internal document number header at RISK-050 and RISK-074 still reads 'PT9L-FXGB01 V1.0'. This creates ambiguity: either the internal document number was not updated when the file was revised to V2.0, or the design verification report and IEC 62366-1 checklist were never updated to reference the current version. Either way, the traceability chain between the verification closure and the current risk management report is broken or ambiguous.",
+        "evidence_ids": [
+          "RISK-049",
+          "RISK-050",
+          "RISK-051",
+          "RISK-073",
+          "RISK-074"
+        ],
+        "challenge_questions": [
+          "What is the authoritative current version of the Risk Management Report for PT9L: V1.0 (per internal document number header at RISK-050/RISK-074) or V2.0 (per file name at RISK-049/RISK-073)? Has a formal version increment been approved and recorded in the document change history?",
+          "Were the design verification report (F0114) and IEC 62366-1 checklist (F0243) updated to reference the V2.0 Risk Management Report after the 2024-05-30 revision? If not, is there a documented rationale for why V1.0 remains the cited version?",
+          "Does the V2.0 Risk Management Report contain any content changes relative to V1.0 that affect the pass/fail determination recorded in the design verification report? If so, the verification closure may need to be re-evaluated."
+        ]
+      },
+      {
+        "finding_type": "dfmea_not_cross_referenced_to_iso14971_chain",
+        "severity": "P2",
+        "claim": "The DFMEA files (F0071, F0074) use a detection-ranking methodology and contain design control references but are not cross-referenced to the ISO 14971 risk assessment report or risk management report in any supplied evidence, leaving the DFMEA hazard analysis isolated from the formal risk traceability chain.",
+        "rationale": "RISK-103 through RISK-108 (F0071, packaging DFMEA) and RISK-109 through RISK-114 (F0074, structural DFMEA) contain detection-ranking criteria tables with design control references. Neither document's supplied evidence lines contain any reference to ISO 14971, PT9L-FXPJ01, PT9L-FXGB01, or any hazard ID from the ISO 14971 risk assessment. Conversely, the ISO 14971 risk assessment documents (F0018, F0022) and risk management report (F0020, F0024) contain no supplied evidence lines referencing the DFMEA document numbers F0071 or F0074. ISO 14971:2019 clause 5 requires that all hazard identification inputs be captured in the risk management file; DFMEA is a recognized hazard identification tool per ISO/TR 24971:2020. The absence of cross-referencing means it cannot be confirmed that DFMEA-identified failure modes were evaluated within the ISO 14971 framework.",
+        "evidence_ids": [
+          "RISK-103",
+          "RISK-104",
+          "RISK-105",
+          "RISK-106",
+          "RISK-107"
+        ],
+        "challenge_questions": [
+          "Does the Risk Assessment Report (PT9L-FXPJ01 V2.0) reference the DFMEA files (F0071, F0074) as hazard identification inputs? If so, in which section and under which hazard IDs?",
+          "Were the failure modes identified in the packaging DFMEA (F0071) and structural DFMEA (F0074) reviewed against the ISO 14971 hazard list? Is there a documented mapping or cross-reference table?",
+          "Are there additional DFMEA files (e.g., electrical, software, or system-level DFMEA) that are cross-referenced to the ISO 14971 risk assessment but not present in the supplied corpus?"
+        ]
+      },
+      {
+        "finding_type": "active_risk_plan_document_number_mismatch",
+        "severity": "P1",
+        "claim": "The active Risk Management Plan filed in the primary DHF folder (F0017, F0021) carries document number IFT-FXJH01 V1.0 rather than PT9L-FXJH01, while the design verification plan (F0121) references risk management activities without specifying a plan document number, leaving the plan-to-assessment traceability link dependent on an IFT-prefixed identifier that does not match the PT9L product document numbering convention.",
+        "rationale": "RISK-031 and RISK-032 (F0017) show the active Risk Management Plan file is titled 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0' with internal document number 'IFT-FXJH01 V1.0'. RISK-055 and RISK-056 (F0021) show the PT9L-prefixed copy carries internal document number 'PT9L-FXJH01 V1.0' but the file is named with the IFT prefix. RISK-038 (F0018, Risk Assessment Report) carries document number 'IFT-FXPJ01 V2.0' and RISK-043 (F0019, Verification Report) carries 'IFT-FXYS01 V2.0', while RISK-062 (F0022) carries 'PT9L-FXPJ01 V1.0' and RISK-067 (F0023) carries 'PT9L-FXYS01 V1.0'. The parallel existence of IFT-prefixed and PT9L-prefixed versions of the same documents without a documented relationship (e.g., one is a copy, one is the master) means the traceability chain from plan to assessment to verification to report cannot be unambiguously established from the supplied evidence.",
+        "evidence_ids": [
+          "RISK-031",
+          "RISK-032",
+          "RISK-033",
+          "RISK-038",
+          "RISK-043"
+        ],
+        "challenge_questions": [
+          "Which document number series is the authoritative master for the PT9L risk management file: IFT-FXJH01/IFT-FXPJ01/IFT-FXYS01/IFT-FXGB01 or PT9L-FXJH01/PT9L-FXPJ01/PT9L-FXYS01/PT9L-FXGB01? Is there a document control record that establishes this?",
+          "Are the IFT-prefixed and PT9L-prefixed documents identical in content, or do they differ? If they differ, which version was used as the basis for the design verification report (F0114) and IEC 62366-1 checklist (F0243)?",
+          "Does the Risk Management Plan (whichever version is authoritative) explicitly list Bluetooth/wireless as a technology requiring hazard analysis? If so, under which section?"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "finding_type": "bluetooth_hazard_absent_from_risk_assessment",
+      "severity": "P0",
+      "claim": "No Bluetooth-specific hazard, hazardous situation, or harm entry exists anywhere in the PT9L ISO 14971 risk assessment chain (Risk Assessment Report IFT-FXPJ01 V2.0 / PT9L-FXPJ01, Verification Report IFT-FXYS01 V2.0 / PT9L-FXYS01, or Risk Management Report IFT-FXGB01 V2.0 / PT9L-FXGB01 V1.0), despite the project profile confirming PT9L transmits temperature data to a smart device via Bluetooth.",
+      "rationale": "RISK-037 through RISK-054 cover the IFT-series current risk documents (F0018–F0020) and RISK-061 through RISK-078 cover the PT9L-series current risk documents (F0022–F0024). The table-of-contents entries and all supplied evidence lines from these eight documents contain no reference to Bluetooth, BLE, wireless, or RF in any hazard, control, or residual risk context. RISK-040 confirms the V2.0 Risk Assessment Report was updated per ISO/TR 24971:2020 Annex A on 2024-05-30, meaning the hazard question list was refreshed, yet no Bluetooth entry appears. The project profile states Bluetooth transmission is a confirmed feature. ISO 14971:2019 requires all foreseeable hazards associated with the device to be identified; wireless data transmission introduces hazards including data integrity loss leading to incorrect clinical decision, electromagnetic interference with other devices, and unauthorized data access. None of these appear in the supplied risk chain evidence.",
+      "evidence_ids": [
+        "RISK-037",
+        "RISK-038",
+        "RISK-039",
+        "RISK-040",
+        "RISK-041"
+      ],
+      "challenge_questions": [
+        "Can the manufacturer produce a page or row from PT9L-FXPJ01 V2.0 (Risk Assessment Report) or PT9L-FXGB01 (Risk Management Report) that explicitly identifies Bluetooth data transmission as a hazard source and assigns a hazard ID?",
+        "Was the ISO/TR 24971:2020 Annex A question list update (per RISK-040, 2024-05-30) reviewed against wireless/connected-device hazard categories? If so, what was the outcome and where is it documented?",
+        "Does the manufacturer consider Bluetooth transmission a safety-relevant feature? If not, what documented rationale supports the conclusion that Bluetooth data loss or corruption cannot lead to incorrect clinical decision or patient harm?",
+        "Is there a separate connected-device or cybersecurity risk assessment document for PT9L that is not included in the supplied DHF corpus? If so, provide its document number and version.",
+        "The operation guide (F0083, RISK-123/RISK-124) includes an EMC immunity table. Is EMC immunity testing considered the sole risk control for wireless interference, and if so, where is this control linked to a hazard ID in the ISO 14971 file?"
+      ]
+    },
+    {
+      "finding_type": "bluetooth_hazard_absent_from_risk_control_verification",
+      "severity": "P0",
+      "claim": "No verification record exists in the supplied corpus that closes a Bluetooth-related risk control measure, meaning the verification-to-residual-risk traceability chain for Bluetooth is entirely absent, not merely incomplete.",
+      "rationale": "RISK-019 through RISK-024 (F0015, historical verification report) and RISK-043 through RISK-048 (F0019, IFT-series current verification report) and RISK-067 through RISK-072 (F0023, PT9L-series current verification report) all contain table-of-contents entries for risk control measure validation and residual risk assessment sections. None of the supplied evidence lines from these documents reference Bluetooth, BLE, wireless, or RF. RISK-127 (F0114) confirms EMC testing is listed as a separate design verification item with result 'pass' but is not linked to any hazard ID. RISK-128 and RISK-129 confirm the design verification report cites PT9L-FXGB01 V1.0 as the risk management report, but no Bluetooth control is traceable through that citation. The traceability chain from hazard identification through control implementation through verification through residual risk acceptance is therefore completely absent for the Bluetooth feature.",
+      "evidence_ids": [
+        "RISK-019",
+        "RISK-020",
+        "RISK-021",
+        "RISK-022",
+        "RISK-023"
+      ],
+      "challenge_questions": [
+        "Is there a Bluetooth or wireless functional verification test protocol and result record for PT9L that is not included in the supplied DHF corpus? If so, provide its document number, version, and pass/fail verdict.",
+        "The design verification report (F0114) lists EMC testing as passed (RISK-127). Does the manufacturer assert that EMC testing constitutes the complete risk control verification for all Bluetooth-related hazards? If so, where is this assertion documented in the ISO 14971 file?",
+        "Has a residual risk acceptability determination been made for any Bluetooth-related hazard? If so, in which document and under which hazard ID?",
+        "Does the Risk Management Report (PT9L-FXGB01) contain a section on overall residual risk that explicitly addresses connected-device or wireless transmission risks? If so, provide the section reference."
+      ]
+    },
+    {
+      "finding_type": "software_hazard_table_bluetooth_gap",
+      "severity": "P1",
+      "claim": "The software design document (F0135) and software requirements specification (F0139) both contain hazard analysis table headers but supply no Bluetooth or wireless hazard row in the supplied evidence, creating a gap between the confirmed Bluetooth feature and the software-level hazard analysis that feeds the ISO 14971 chain.",
+      "rationale": "RISK-136 (F0135, software design) shows a hazard table header with columns for Hazard, Hazardous Situation, and Mitigation Measure. RISK-137 (F0139, software requirements) shows a hazard table header with columns for Hazard, Hazardous Situation, and Planned Control Measures. Neither document's supplied evidence lines contain any row referencing Bluetooth, BLE, wireless data loss, or RF interference. The project profile confirms Bluetooth is a PT9L feature. Software-level hazard analysis is a required input to the ISO 14971 risk assessment per ISO 14971:2019 clause 5.4 and ISO/TR 24971:2020. The absence of Bluetooth entries in the software hazard tables means the upstream input to the risk assessment is also missing, compounding the gap identified in the risk assessment documents themselves.",
+      "evidence_ids": [
+        "RISK-136",
+        "RISK-137"
+      ],
+      "challenge_questions": [
+        "Do the full-text versions of F0135 (software design) and F0139 (software requirements) contain any rows in their hazard tables referencing Bluetooth, BLE, wireless, or data transmission? If so, provide the hazard ID and description.",
+        "Was a software hazard analysis conducted specifically for the Bluetooth data transmission function? If so, what document captures it and how does it feed into the ISO 14971 risk assessment report?",
+        "Is the Bluetooth module treated as a software-controlled function, a hardware function, or both? How is this reflected in the DFMEA files (F0071, F0074) and the ISO 14971 risk assessment?"
+      ]
+    },
+    {
+      "finding_type": "risk_management_report_version_mismatch_in_verification_chain",
+      "severity": "P1",
+      "claim": "The design verification report (F0114) and the IEC 62366-1 checklist (F0243) both cite the Risk Management Report as PT9L-FXGB01 V1.0, while the current active Risk Management Report in the DHF corpus is V2.0 (F0020, F0024), meaning the closed-loop confirmation in the verification chain references a superseded document version.",
+      "rationale": "RISK-128 and RISK-129 (F0114, design verification report) explicitly cite 'PT9L-FXGB01 V1.0' as the risk management report with a pass verdict. RISK-138 (F0243, IEC 62366-1 checklist) cites 'PT9L-FXGB01 V1.0' as the ISO 14971 compliance document. However, RISK-049 through RISK-054 (F0020) and RISK-073 through RISK-078 (F0024) both show the current Risk Management Report is titled V2.0 (file name) while the internal document number header at RISK-050 and RISK-074 still reads 'PT9L-FXGB01 V1.0'. This creates ambiguity: either the internal document number was not updated when the file was revised to V2.0, or the design verification report and IEC 62366-1 checklist were never updated to reference the current version. Either way, the traceability chain between the verification closure and the current risk management report is broken or ambiguous.",
+      "evidence_ids": [
+        "RISK-049",
+        "RISK-050",
+        "RISK-051",
+        "RISK-073",
+        "RISK-074"
+      ],
+      "challenge_questions": [
+        "What is the authoritative current version of the Risk Management Report for PT9L: V1.0 (per internal document number header at RISK-050/RISK-074) or V2.0 (per file name at RISK-049/RISK-073)? Has a formal version increment been approved and recorded in the document change history?",
+        "Were the design verification report (F0114) and IEC 62366-1 checklist (F0243) updated to reference the V2.0 Risk Management Report after the 2024-05-30 revision? If not, is there a documented rationale for why V1.0 remains the cited version?",
+        "Does the V2.0 Risk Management Report contain any content changes relative to V1.0 that affect the pass/fail determination recorded in the design verification report? If so, the verification closure may need to be re-evaluated."
+      ]
+    },
+    {
+      "finding_type": "dfmea_not_cross_referenced_to_iso14971_chain",
+      "severity": "P2",
+      "claim": "The DFMEA files (F0071, F0074) use a detection-ranking methodology and contain design control references but are not cross-referenced to the ISO 14971 risk assessment report or risk management report in any supplied evidence, leaving the DFMEA hazard analysis isolated from the formal risk traceability chain.",
+      "rationale": "RISK-103 through RISK-108 (F0071, packaging DFMEA) and RISK-109 through RISK-114 (F0074, structural DFMEA) contain detection-ranking criteria tables with design control references. Neither document's supplied evidence lines contain any reference to ISO 14971, PT9L-FXPJ01, PT9L-FXGB01, or any hazard ID from the ISO 14971 risk assessment. Conversely, the ISO 14971 risk assessment documents (F0018, F0022) and risk management report (F0020, F0024) contain no supplied evidence lines referencing the DFMEA document numbers F0071 or F0074. ISO 14971:2019 clause 5 requires that all hazard identification inputs be captured in the risk management file; DFMEA is a recognized hazard identification tool per ISO/TR 24971:2020. The absence of cross-referencing means it cannot be confirmed that DFMEA-identified failure modes were evaluated within the ISO 14971 framework.",
+      "evidence_ids": [
+        "RISK-103",
+        "RISK-104",
+        "RISK-105",
+        "RISK-106",
+        "RISK-107"
+      ],
+      "challenge_questions": [
+        "Does the Risk Assessment Report (PT9L-FXPJ01 V2.0) reference the DFMEA files (F0071, F0074) as hazard identification inputs? If so, in which section and under which hazard IDs?",
+        "Were the failure modes identified in the packaging DFMEA (F0071) and structural DFMEA (F0074) reviewed against the ISO 14971 hazard list? Is there a documented mapping or cross-reference table?",
+        "Are there additional DFMEA files (e.g., electrical, software, or system-level DFMEA) that are cross-referenced to the ISO 14971 risk assessment but not present in the supplied corpus?"
+      ]
+    },
+    {
+      "finding_type": "active_risk_plan_document_number_mismatch",
+      "severity": "P1",
+      "claim": "The active Risk Management Plan filed in the primary DHF folder (F0017, F0021) carries document number IFT-FXJH01 V1.0 rather than PT9L-FXJH01, while the design verification plan (F0121) references risk management activities without specifying a plan document number, leaving the plan-to-assessment traceability link dependent on an IFT-prefixed identifier that does not match the PT9L product document numbering convention.",
+      "rationale": "RISK-031 and RISK-032 (F0017) show the active Risk Management Plan file is titled 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0' with internal document number 'IFT-FXJH01 V1.0'. RISK-055 and RISK-056 (F0021) show the PT9L-prefixed copy carries internal document number 'PT9L-FXJH01 V1.0' but the file is named with the IFT prefix. RISK-038 (F0018, Risk Assessment Report) carries document number 'IFT-FXPJ01 V2.0' and RISK-043 (F0019, Verification Report) carries 'IFT-FXYS01 V2.0', while RISK-062 (F0022) carries 'PT9L-FXPJ01 V1.0' and RISK-067 (F0023) carries 'PT9L-FXYS01 V1.0'. The parallel existence of IFT-prefixed and PT9L-prefixed versions of the same documents without a documented relationship (e.g., one is a copy, one is the master) means the traceability chain from plan to assessment to verification to report cannot be unambiguously established from the supplied evidence.",
+      "evidence_ids": [
+        "RISK-031",
+        "RISK-032",
+        "RISK-033",
+        "RISK-038",
+        "RISK-043"
+      ],
+      "challenge_questions": [
+        "Which document number series is the authoritative master for the PT9L risk management file: IFT-FXJH01/IFT-FXPJ01/IFT-FXYS01/IFT-FXGB01 or PT9L-FXJH01/PT9L-FXPJ01/PT9L-FXYS01/PT9L-FXGB01? Is there a document control record that establishes this?",
+        "Are the IFT-prefixed and PT9L-prefixed documents identical in content, or do they differ? If they differ, which version was used as the basis for the design verification report (F0114) and IEC 62366-1 checklist (F0243)?",
+        "Does the Risk Management Plan (whichever version is authoritative) explicitly list Bluetooth/wireless as a technology requiring hazard analysis? If so, under which section?"
+      ]
+    }
+  ],
+  "status": "completed"
+}

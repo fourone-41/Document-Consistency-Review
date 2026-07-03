@@ -1,0 +1,150 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Report",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "91-92 of 181"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "title": "Medical electrical equipment - Part 1: General requirements for basic safety and essential performance",
+      "version": "IEC60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "16.3",
+      "description": "Instructions for use of ME EQUIPMENT intended to receive its power from other equipment in an ME SYSTEM, describe the other equipment to ensure compliance with these requirements",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.3",
+      "description": "Transient currents restricted to allowable levels for the specified IPS or UPS where the ME SYSTEM is intended to receive power from an IPS or UPS and the ME SYSTEM can draw large transient currents when being switched on/off when operating",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.3",
+      "description": "Technical description and installation instructions specify the actual transient currents where an IPS or UPS is not specified",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.4",
+      "description": "Parts of non-ME EQUIPMENT in PATIENT ENVIRONMENT subject to contact by OPERATOR during maintenance, calibration, after removal of covers, connectors, etc., without use of a TOOL operated at a voltage in 8.4.2 c) supplied from a source separated from SUPPLY MAINS by two MEANS OF OPERATOR PROTECTION",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.5",
+      "description": "Safety measures incorporating a SEPARATION DEVICE applied when FUNCTIONAL CONNECTION between ME EQUIPMENT and other items of an ME SYSTEM or other systems can cause allowable values of LEAKAGE CURRENT to exceed",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.5",
+      "description": "SEPARATION DEVICE has dielectric strength, CREEPAGE and CLEARANCES required for one MEANS OF OPERATOR PROTECTION appropriate for highest voltage occurring across SEPARATION DEVICE during a fault condition",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.5",
+      "description": "WORKING VOLTAGE was highest voltage across SEPARATION DEVICE during a fault condition, but not less than MAXIMUM MAINS VOLTAGE (V)",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.6",
+      "title": "LEAKAGE CURRENTS",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.6.1",
+      "description": "TOUCH CURRENT in NORMAL CONDITION, from or between parts of ME SYSTEM within the PATIENT ENVIRONMENT, did not exceed 100 μA",
+      "limit_value": "100 μA",
+      "condition": "NORMAL CONDITION",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.6.1",
+      "description": "TOUCH CURRENT did not exceed 500 μA in event of interruption of any non-PERMANENTLY INSTALLED PROTECTIVE EARTH CONDUCTOR, from or between parts of ME SYSTEM within PATIENT ENVIRONMENT",
+      "limit_value": "500 μA",
+      "condition": "interruption of any non-PERMANENTLY INSTALLED PROTECTIVE EARTH CONDUCTOR",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "16.6.2",
+      "description": "Current in PROTECTIVE EARTH CONDUCTOR of MULTIPLE SOCKET-OUTLET did not exceed 5 mA",
+      "limit_value": "5 mA",
+      "verdict": "N/A"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "16.6.1",
+      "test_name": "TOUCH CURRENT - Normal Condition",
+      "limit": "100 μA",
+      "condition": "NORMAL CONDITION, from or between parts of ME SYSTEM within the PATIENT ENVIRONMENT",
+      "result": "N/A"
+    },
+    {
+      "clause": "16.6.1",
+      "test_name": "TOUCH CURRENT - Single Fault Condition",
+      "limit": "500 μA",
+      "condition": "interruption of any non-PERMANENTLY INSTALLED PROTECTIVE EARTH CONDUCTOR",
+      "result": "N/A"
+    },
+    {
+      "clause": "16.6.2",
+      "test_name": "Current in PROTECTIVE EARTH CONDUCTOR of MULTIPLE SOCKET-OUTLET",
+      "limit": "5 mA",
+      "result": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Instructions for use of ME SYSTEM (accompanying documents) shall include: specifications and instructions for use as intended by MANUFACTURER and a list of all items forming the ME SYSTEM; instructions for installation, assembly, and modification of ME SYSTEM to ensure continued compliance with this standard; instructions for cleaning and, when applicable, disinfecting and sterilizing each item of equipment or equipment part forming part of the ME SYSTEM; additional safety measures to be applied during installation of ME SYSTEM; identification of parts of ME SYSTEM suitable for use within the PATIENT ENVIRONMENT; additional measures to be applied during preventive maintenance; a warning forbidding placement of MULTIPLE SOCKET-OUTLET, when provided and it is a separate item, on the floor; a warning indicating an additional MULTIPLE SOCKET-OUTLET or extension cord not to be connected to ME SYSTEM; a warning to connect only items that have been specified as part of ME SYSTEM or specified as being compatible with ME SYSTEM; maximum permissible load for any MULTIPLE SOCKET-OUTLET(S) used with ME SYSTEM; instructions indicating MULTIPLE SOCKET-OUTLETS provided with the ME SYSTEM to be used only for supplying power to equipment intended to form part of ME SYSTEM; an explanation indicating RISKS of connecting non-ME EQUIPMENT supplied as a part of ME SYSTEM directly to wall outlet when non-ME EQUIPMENT is intended to be supplied via a MULTIPLE SOCKET-OUTLET with a separating transformer; an explanation indicating RISKS of connecting any equipment supplied as a part of ME SYSTEM to MULTIPLE SOCKET-OUTLET; permissible environmental conditions of use for ME SYSTEM including conditions for transport and storage; instructions to OPERATOR not to, simultaneously, touch parts referred to in 16.4 and PATIENT.",
+      "topic_tags": [
+        "ME SYSTEM",
+        "instructions for use",
+        "MULTIPLE SOCKET-OUTLET",
+        "PATIENT ENVIRONMENT",
+        "safety warnings",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "16.4",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Instructions provided for use by RESPONSIBLE ORGANIZATION shall include: adjustment, cleaning, sterilization, and disinfection PROCEDURES; assembly of ME SYSTEMS and modifications during actual service life shall be evaluated based on the requirements of this standard.",
+      "topic_tags": [
+        "RESPONSIBLE ORGANIZATION",
+        "instructions for use",
+        "sterilization",
+        "disinfection",
+        "ME SYSTEM assembly",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "IEC60601-1",
+        "16.3"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "SEPARATION DEVICE requirements under clause 16.5: Safety measures incorporating a SEPARATION DEVICE shall be applied when FUNCTIONAL CONNECTION between ME EQUIPMENT and other items of an ME SYSTEM or other systems can cause allowable values of LEAKAGE CURRENT to exceed. The SEPARATION DEVICE shall have dielectric strength, CREEPAGE and CLEARANCES required for one MEANS OF OPERATOR PROTECTION appropriate for the highest voltage occurring across the SEPARATION DEVICE during a fault condition. The WORKING VOLTAGE is the highest voltage across the SEPARATION DEVICE during a fault condition, but not less than MAXIMUM MAINS VOLTAGE.",
+      "topic_tags": [
+        "SEPARATION DEVICE",
+        "LEAKAGE CURRENT",
+        "CREEPAGE",
+        "CLEARANCES",
+        "WORKING VOLTAGE",
+        "MEANS OF OPERATOR PROTECTION",
+        "IEC60601-1 clause 16.5"
+      ],
+      "related_subjects": [
+        "16.5",
+        "16.6",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

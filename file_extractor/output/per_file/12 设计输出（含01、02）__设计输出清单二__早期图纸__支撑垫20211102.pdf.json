@@ -1,0 +1,729 @@
+{
+  "document": {
+    "title": "【早期版 V1.0a】支撑垫（T-Z1-P15 V1.0，PMMA，2021-11-02 副本）2D 图读图",
+    "drawing_no": "T-Z1-P15",
+    "edition": "V1.0",
+    "source_file": "早期图纸/支撑垫20211102.pdf",
+    "page_format": "A4 竖向",
+    "skill_category": "SKILL_2D_Drawing_Reading",
+    "version_note": "早期版历史归档精简版",
+    "archive_date": "2026-06-02",
+    "creation_date": "2021-07-15"
+  },
+  "products": [
+    {
+      "name": "支撑垫",
+      "drawing_no": "T-Z1-P15",
+      "edition": "V1.0",
+      "material_title_block": "PMMA（亚克力硬塑料）",
+      "material_tech_req": "聚氨酯（PU）",
+      "color": "黑色",
+      "tolerance_level": "LEVEL B",
+      "note": "标题栏 Pro material 与技术要求材质存在内部矛盾，标题栏 PMMA 为笔误，应为聚氨酯"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "drawing_no",
+      "value": "T-Z1-P15"
+    },
+    {
+      "type": "edition",
+      "value": "V1.0"
+    },
+    {
+      "type": "edition_revised",
+      "value": "V2.0",
+      "file": "支撑垫20220427.pdf",
+      "change": "材质修正为聚氨酯"
+    }
+  ],
+  "revision_records": [
+    {
+      "version": "V1.0a",
+      "date": "2021-11-02",
+      "file": "支撑垫20211102.pdf",
+      "material_title_block": "PMMA",
+      "material_tech_req": "聚氨酯",
+      "note": "标题栏 Pro material 笔误为 PMMA"
+    },
+    {
+      "version": "V1.0b",
+      "date": "2021-11-04",
+      "file": "支撑垫20211104.pdf",
+      "material_title_block": "PMMA",
+      "material_tech_req": "聚氨酯",
+      "note": "与 V1.0a 几何+材料完全相同副本，同一笔误未修正"
+    },
+    {
+      "version": "V1.0c",
+      "date": "2022-04-25",
+      "file": "支撑垫20220425.pdf",
+      "material_title_block": "PMMA",
+      "material_tech_req": "聚氨酯",
+      "note": "与 V1.0a 几何+材料完全相同副本，同一笔误未修正"
+    },
+    {
+      "version": "V2.0",
+      "date": "2022-04-27",
+      "file": "支撑垫20220427.pdf",
+      "material_title_block": "聚氨酯",
+      "note": "标题栏材质修正为聚氨酯，笔误首次更正"
+    },
+    {
+      "version": "现版",
+      "file": "图纸/支撑垫.pdf",
+      "material": "聚氨酯",
+      "note": "当前版本，几何与早期版相同"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-1",
+      "description": "标注厚度不包含背胶",
+      "source": "技术要求第1条"
+    },
+    {
+      "id": "DI-2",
+      "description": "材质：聚氨酯",
+      "source": "技术要求第2条"
+    },
+    {
+      "id": "DI-3",
+      "description": "颜色：黑色",
+      "source": "技术要求第3条"
+    },
+    {
+      "id": "DI-4",
+      "description": "单面背胶，背胶厚度 0.05~0.1mm，背胶牢固，不可出现背胶分离的情况",
+      "source": "技术要求第4条"
+    },
+    {
+      "id": "DI-5",
+      "description": "邵氏硬度：50±5 度",
+      "source": "技术要求第5条"
+    },
+    {
+      "id": "DI-6",
+      "description": "出货排版需要方便生产加工取放",
+      "source": "技术要求第6条"
+    },
+    {
+      "id": "DI-7",
+      "description": "本件要求通过 RoHS 测试",
+      "source": "技术要求第7条"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "type": "dimensional",
+      "parameter": "内弧半径",
+      "value": "R3.25",
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "note": "半圆环内半径"
+    },
+    {
+      "id": "REQ-2",
+      "type": "dimensional",
+      "parameter": "外弧半径",
+      "value": "R5.75",
+      "tolerance": "±0.05",
+      "unit": "mm",
+      "note": "半圆环外半径"
+    },
+    {
+      "id": "REQ-3",
+      "type": "dimensional",
+      "parameter": "厚度",
+      "value": "4",
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "note": "PU 主厚度，不含背胶"
+    },
+    {
+      "id": "REQ-4",
+      "type": "mechanical",
+      "parameter": "邵氏硬度",
+      "value": "50±5",
+      "unit": "度"
+    },
+    {
+      "id": "REQ-5",
+      "type": "adhesive",
+      "parameter": "背胶厚度",
+      "value": "0.05~0.1",
+      "unit": "mm",
+      "note": "单面背胶，需牢固，不可出现背胶分离"
+    },
+    {
+      "id": "REQ-6",
+      "type": "compliance",
+      "parameter": "RoHS",
+      "description": "本件要求通过 RoHS 测试"
+    },
+    {
+      "id": "REQ-7",
+      "type": "general_tolerance",
+      "parameter": "公差等级",
+      "value": "LEVEL B"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-1",
+      "name": "RoHS 测试",
+      "requirement": "通过 RoHS 测试",
+      "source": "技术要求第7条"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "标题栏 Pro material = PMMA 是笔误，应为聚氨酯；早期3个日期副本（2021-11-02 / 2021-11-04 / 2022-04-25）均未修正，直到 V2.0（20220427）才修正为\"聚氨酯\"",
+      "status": "待确认",
+      "priority": "high"
+    },
+    {
+      "id": "C-2",
+      "description": "DHF 是否需要 ECN 标识\"V1.0 标题栏笔误\"",
+      "status": "待确认",
+      "priority": "medium"
+    }
+  ],
+  "open_issues": [
+    {
+      "id": "ISSUE-1",
+      "description": "图纸内部矛盾：标题栏 Pro material = PMMA，技术要求第2条材质 = 聚氨酯，两者不一致",
+      "affected_files": [
+        "支撑垫20211102.pdf",
+        "支撑垫20211104.pdf",
+        "支撑垫20220425.pdf"
+      ],
+      "resolution": "V2.0（20220427）标题栏修正为聚氨酯，问题解决"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "限制有害物质指令，零件需通过 RoHS 测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "早期 V1.0a/b/c（2021-11-02 / 2021-11-04 / 2022-04-25）三个日期副本标题栏 Pro material 均写为 PMMA（亚克力硬塑料），但技术要求中材质明确为聚氨酯（柔性 PU）。两者存在内部矛盾。结论：标题栏 PMMA 为笔误，直到 V2.0（20220427）才修正为聚氨酯。与现版几何尺寸完全相同。",
+      "topic_tags": [
+        "材质矛盾",
+        "PMMA",
+        "聚氨酯",
+        "笔误",
+        "版本差异",
+        "标题栏"
+      ],
+      "related_subjects": [
+        "T-Z1-P15",
+        "V1.0",
+        "V2.0",
+        "支撑垫20220427.pdf"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本文档定位为早期版历史归档（精简版），源文件为 A4 竖向 PDF，文字层 40 字符。同 V1.0 副本包含：支撑垫20211102.pdf、支撑垫20211104.pdf、支撑垫20220425.pdf，三个日期副本几何与材料信息完全相同。后续修订版为 支撑垫20220427.pdf（V2.0，材质改为聚氨酯），现版为 图纸/支撑垫.pdf（聚氨酯）。",
+      "topic_tags": [
+        "早期版",
+        "历史归档",
+        "副本",
+        "版本追溯"
+      ],
+      "related_subjects": [
+        "支撑垫20211102.pdf",
+        "支撑垫20211104.pdf",
+        "支撑垫20220425.pdf",
+        "支撑垫20220427.pdf",
+        "图纸/支撑垫.pdf"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "支撑垫技术要求共7条：(1)标注厚度不包含背胶；(2)材质：聚氨酯；(3)颜色：黑色；(4)单面背胶，背胶厚度 0.05~0.1mm，背胶牢固，不可出现背胶分离的情况；(5)邵氏硬度：50±5 度；(6)出货排版需要方便生产加工取放；(7)本件要求通过 RoHS 测试。",
+      "topic_tags": [
+        "技术要求",
+        "背胶",
+        "邵氏硬度",
+        "RoHS",
+        "聚氨酯",
+        "颜色"
+      ],
+      "related_subjects": [
+        "T-Z1-P15",
+        "支撑垫"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/早期图纸/支撑垫20211102.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "【早期版 V1.0a】支撑垫（T-Z1-P15 V1.0，PMMA，2021-11-02 副本）2D 图读图",
+      "to": "V1.0a",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "【早期版 V1.0a】支撑垫（T-Z1-P15 V1.0，PMMA，2021-11-02 副本）2D 图读图",
+      "to": "V1.0b",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "【早期版 V1.0a】支撑垫（T-Z1-P15 V1.0，PMMA，2021-11-02 副本）2D 图读图",
+      "to": "V1.0c",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "【早期版 V1.0a】支撑垫（T-Z1-P15 V1.0，PMMA，2021-11-02 副本）2D 图读图",
+      "to": "V2.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "【早期版 V1.0a】支撑垫（T-Z1-P15 V1.0，PMMA，2021-11-02 副本）2D 图读图",
+      "to": "现版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "材质矛盾",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V1.0",
+      "to": "材质矛盾",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "V2.0",
+      "to": "材质矛盾",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支撑垫20220427.pdf",
+      "to": "材质矛盾",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支撑垫20211102.pdf",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支撑垫20211104.pdf",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支撑垫20220425.pdf",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支撑垫20220427.pdf",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "图纸/支撑垫.pdf",
+      "to": "早期版",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支撑垫",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "DI-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "DI-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "DI-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "DI-7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "REQ-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "REQ-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "REQ-7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TEST-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "ISSUE-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-6",
+      "to": "TEST-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DI-7",
+      "to": "TEST-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ISSUE-1",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ISSUE-1",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-1",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-3",
+      "to": "DI-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-4",
+      "to": "DI-5",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-5",
+      "to": "DI-4",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-6",
+      "to": "DI-7",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-1",
+      "to": "DI-7",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TEST-1",
+      "to": "REQ-6",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-1",
+      "to": "REQ-7",
+      "properties": {
+        "note": "内弧半径公差受 LEVEL B 公差等级约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-2",
+      "to": "REQ-7",
+      "properties": {
+        "note": "外弧半径公差受 LEVEL B 公差等级约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-3",
+      "to": "REQ-7",
+      "properties": {
+        "note": "厚度公差受 LEVEL B 公差等级约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-5",
+      "to": "DI-4",
+      "properties": {
+        "note": "背胶厚度范围约束来自技术要求第4条"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-4",
+      "to": "DI-5",
+      "properties": {
+        "note": "邵氏硬度值范围由技术要求第5条约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-6",
+      "to": "regulations_RoHS",
+      "properties": {
+        "note": "RoHS合规要求受限制有害物质指令约束"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P15",
+      "to": "V1.0a",
+      "properties": {
+        "date": "2021-11-02",
+        "file": "支撑垫20211102.pdf"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P15",
+      "to": "V1.0b",
+      "properties": {
+        "date": "2021-11-04",
+        "file": "支撑垫20211104.pdf"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P15",
+      "to": "V1.0c",
+      "properties": {
+        "date": "2022-04-25",
+        "file": "支撑垫20220425.pdf"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P15",
+      "to": "V2.0",
+      "properties": {
+        "date": "2022-04-27",
+        "file": "支撑垫20220427.pdf"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "T-Z1-P15",
+      "to": "现版",
+      "properties": {
+        "file": "图纸/支撑垫.pdf"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "内弧半径",
+      "attribute": "尺寸规格",
+      "value": "3.25",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "半圆环内半径",
+      "raw_text": "内弧半径 R3.25 ±0.05 mm，半圆环内半径"
+    },
+    {
+      "subject": "外弧半径",
+      "attribute": "尺寸规格",
+      "value": "5.75",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "半圆环外半径",
+      "raw_text": "外弧半径 R5.75 ±0.05 mm，半圆环外半径"
+    },
+    {
+      "subject": "PU主体厚度",
+      "attribute": "尺寸规格",
+      "value": "4",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "不含背胶",
+      "raw_text": "厚度 4 ±0.1 mm，PU 主厚度，不含背胶"
+    },
+    {
+      "subject": "邵氏硬度",
+      "attribute": "机械性能",
+      "value": "50",
+      "unit": "度",
+      "tolerance": "±5",
+      "condition": "聚氨酯材质",
+      "raw_text": "邵氏硬度：50±5 度"
+    },
+    {
+      "subject": "背胶厚度",
+      "attribute": "尺寸范围",
+      "value": "0.05~0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "单面背胶，不可出现背胶分离",
+      "raw_text": "背胶厚度 0.05~0.1 mm，单面背胶，需牢固，不可出现背胶分离"
+    },
+    {
+      "subject": "RoHS合规",
+      "attribute": "合规要求",
+      "value": "通过",
+      "unit": "",
+      "tolerance": "",
+      "condition": "出货前需完成测试",
+      "raw_text": "本件要求通过 RoHS 测试"
+    },
+    {
+      "subject": "公差等级",
+      "attribute": "通用公差",
+      "value": "LEVEL B",
+      "unit": "",
+      "tolerance": "",
+      "condition": "未单独标注公差的尺寸适用",
+      "raw_text": "公差等级 LEVEL B"
+    },
+    {
+      "subject": "零件材质",
+      "attribute": "材料类型",
+      "value": "聚氨酯（PU）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "材质：聚氨酯"
+    },
+    {
+      "subject": "零件颜色",
+      "attribute": "外观规格",
+      "value": "黑色",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "颜色：黑色"
+    }
+  ]
+}

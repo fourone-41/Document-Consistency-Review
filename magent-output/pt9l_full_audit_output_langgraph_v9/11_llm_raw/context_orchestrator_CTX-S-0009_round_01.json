@@ -1,0 +1,53 @@
+```json
+{
+  "assigned_agent": "Risk Traceability Agent",
+  "review_focus": "验证设计验证报告及IEC 62366-1清单中引用的风险管理报告版本（PT9L-FXGB01 V1.0）与DHF中现行有效版本（V2.0，2024-05-30）之间的版本断链问题，确认闭环验证记录是否覆盖当前风险管理输出",
+  "agent_input": {
+    "claim": "The design verification report and the IEC 62366-1 checklist both cite the Risk Management Report as PT9L-FXGB01 V1.0, but the current active Risk Management Report in the DHF is V2.0 (dated 2024-05-30), meaning the closed-loop verification record does not confirm acceptance of the current risk management output.",
+    "context_summary": "补证证据显示：（1）DHF中存在两份文件名均含"V2.0 20240530"的风险管理报告（F0020、F0024），但两份文件内部正文DN行及标题均写明"PT9L-FXGB01 V1.0 Risk Management Report"，版本历史表显示F0020含V1.0（2024.2.2）和V2.0（2024.5.30）两个版本记录，F0024仅含V1.0（2024.10.22）一个版本记录；（2）设计验证报告（F0114，11 T1样机/设计验证报告E0 23.11）第171-175行多处引用"风险管理报告 PT9L-FXGB01 V1.0"并标注合格，未见任何对V2.0的引用或补充验证记录；（3）page_context中涉及风险控制措施验证报告（F0015历史文件V1.0-3、F0019 V2.0）的文本内容为空，无法从中获取额外闭环信息；（4）文件名与内部版本号存在不一致：文件名标注V2.0但正文DN及封面仍为V1.0，提示文档控制本身存在异常。综合以上，现有证据支持原claim所述版本断链问题确实存在，且无任何证据表明设计验证报告已针对V2.0内容变更进行了重新验证或补充闭环。",
+    "evidence": [
+      {
+        "evidence_id": "RISK-050",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "actual_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "note": "文件名标注V2.0，但内部DN行仍为V1.0；版本历史表记录V2.0于2024.5.30发布（Content Change）"
+      },
+      {
+        "evidence_id": "RISK-074",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 6,
+        "actual_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "note": "文件名标注V2.0，但内部DN行及版本历史表仅含V1.0（2024.10.22），无V2.0版本记录"
+      },
+      {
+        "evidence_id": "RISK-128",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 174,
+        "actual_text": "| 风险 | EN ISO 14971:2019 | □是 ■否 | -- | -- | -- | 风险管理报告 PT9L-FXGB01 V1.0 | 合格 |",
+        "note": "设计验证报告引用V1.0，无V2.0补充验证记录；同文件第171、172、173、175行均同样引用V1.0"
+      },
+      {
+        "evidence_id": "F0020-version-table",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": "20-23",
+        "actual_text": "| 1 | 2024.2.2 | Originated | V1.0 | Wang Di | Hou Guangwei | / | 2 | 2024.5.30 | Content Change | V2.0 | Wang Di | Hou Guangwei |",
+        "note": "版本历史表确认V2.0于2024.5.30因内容变更发布，但设计验证报告未更新引用"
+      },
+      {
+        "evidence_id": "F0024-version-table",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": "20-22",
+        "actual_text": "| 1 | 2024.10.22 | Originated | V1.0 | Hou Guangwei | Hou Guangwei |",
+        "note": "该文件版本历史仅有V1.0，文件名与内容严重不符，疑为文档控制错误"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

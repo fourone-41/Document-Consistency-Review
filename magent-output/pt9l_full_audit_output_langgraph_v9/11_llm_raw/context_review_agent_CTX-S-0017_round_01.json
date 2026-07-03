@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Regulatory Agent",
+  "decision": "confirm",
+  "severity": "P2",
+  "error_type": "document_identity_mismatch",
+  "claim": "Document F0013, filed in the '2L风险改 - 历史文件' folder under the filename 'V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0', internally carries a PT9L-series document number and product model, creating an irreconcilable product-identity conflict in the controlled document record.",
+  "reason": "The recovered evidence is conclusive. The document file is named and folder-filed as a PT2L product risk management plan (filename: 'V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0'), yet the internal document body at lines 6 and 14 explicitly states: 'DN: PT9L-FXJH01 V1.0 Risk Management Plan' and 'Product model: PT9L'. The file-level identity (PT2L) and the internal document number and product model (PT9L) are in direct conflict. This is not a formatting artifact or ambiguous reference — both identifiers appear in controlled metadata fields (document number field and product model field) of the same document. Under ISO 13485 and ISO 14971 document control requirements, a risk management plan must unambiguously identify the product it covers; a mismatch between the filing identity and the internal document number/product model constitutes a controlled document integrity failure. No additional context is needed to reach this conclusion."
+}
+```

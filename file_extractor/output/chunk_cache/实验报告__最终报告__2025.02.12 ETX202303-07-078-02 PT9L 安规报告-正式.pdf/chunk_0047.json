@@ -1,0 +1,235 @@
+{
+  "document": {
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "98-99 of 181",
+    "fragment_index": "47/84"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "eu_equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "IEC60079-0",
+      "context": "pressurized ENCLOSURES alternative compliance"
+    },
+    {
+      "id": "IEC60079-2",
+      "context": "pressurized ENCLOSURES"
+    },
+    {
+      "id": "IEC60079-5",
+      "context": "sand-filled ENCLOSURES"
+    },
+    {
+      "id": "IEC60079-6",
+      "context": "oil immersed equipment"
+    },
+    {
+      "id": "ISO2882",
+      "context": "electrical resistance limits of antistatic materials"
+    },
+    {
+      "id": "ISO1853",
+      "context": "measurement standard for antistatic materials"
+    },
+    {
+      "id": "ISO2878",
+      "context": "measurement standard for antistatic materials"
+    },
+    {
+      "id": "ISO23529",
+      "context": "measurement standard for antistatic materials"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "G.4.3",
+      "description": "Electrostatic charges prevention on CATEGORY AP and APG ME EQUIPMENT",
+      "verdict": "N/A",
+      "sub_tests": [
+        {
+          "description": "Use of antistatic materials with limited electrical resistance per G.4.3 b)",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Provision of electrically conductive paths to conductive floor, protective earth, potential equalization system, or via wheels to antistatic floor",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Electrical resistance limits of aesthetic tubing, mattresses, pads, castor tires complied with ISO 2882 per ISO 1853, ISO 2878, ISO 23529",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "G.4.4",
+      "description": "Corona cannot be produced by components operating at more than 2000 V a.c. or 2400 V d.c. not included in ENCLOSURES complying with G.5.4 or G.5.5",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.5",
+      "description": "Requirements and tests for CATEGORY AP ME EQUIPMENT, parts and components",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.5.1",
+      "description": "ME EQUIPMENT, its parts or components do not ignite FLAMMABLE AESTHETIC MIXTURES WITH AIR under NORMAL USE and CONDITIONS per G.5.2 to G.5.5",
+      "verdict": "N/A",
+      "alternative_compliance": "Compliance with IEC 60079-0 for pressurized (IEC 60079-2), sand-filled (IEC 60079-5), or oil immersed (IEC 60079-6) ENCLOSURES"
+    },
+    {
+      "clause": "G.5.2",
+      "description": "ME EQUIPMENT parts in contact with gas mixtures in NORMAL USE not producing sparks and not resulting in surface temperatures above 150°C (restricted air circulation) or 200°C (unrestricted vertical air circulation) measured at 25°C",
+      "temperature_limit_restricted": "150°C",
+      "temperature_limit_unrestricted": "200°C",
+      "measurement_ambient": "25°C",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.5.3",
+      "description": "ME EQUIPMENT parts producing sparks in NORMAL USE and CONDITIONS complied with temperature requirements of G.5.2 and circuit parameters Umax, Imax",
+      "verdict": "N/A",
+      "sub_tests": [
+        {
+          "description": "Measured Umax ≤ UzR with IzR as in Fig. G.1",
+          "measured_values": "Umax=_V, UzR=_V, IzR=_A",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measured Umax ≤ Uc with Cmax as in Fig. G.2",
+          "measured_values": "Umax=_V, Uc=_V, Cmax=_F",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measured Imax ≤ IzR with UzR as in Fig G.1",
+          "measured_values": "Imax=_A, IzR=_A, UzR=_V",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Measured Imax ≤ IzL with Lmax and Umax ≤24V as in Fig G.3",
+          "measured_values": "Imax=_A, IzL=_A, Lmax=_mH",
+          "limit_voltage": "24V",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Combinations of currents and voltages within limitations IzR·UzR ≤ 50W extrapolated from Fig G.1; no extrapolation above 42V",
+          "limit": "IzR·UzR ≤ 50W",
+          "extrapolation_voltage_limit": "42V",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Combinations of capacitances and voltages within limitations C/2·U² ≤ 1.2mJ extrapolated from Fig G.2; no extrapolation above 242V",
+          "limit": "C/2·U² ≤ 1.2mJ",
+          "extrapolation_voltage_limit": "242V",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Combinations of currents and inductances within limitations L/2·I² ≤ 0.3mJ extrapolated from Fig G.3; no extrapolation for inductances larger than 900mH",
+          "limit": "L/2·I² ≤ 0.3mJ",
+          "extrapolation_inductance_limit": "900mH",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Umax determined using actual resistance R when equivalent resistance R < 8000Ω",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Umax is highest supply voltage in circuit with sparking contact open, considering MAINS VOLTAGE variations per 4.10",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Imax is highest current in circuit with sparking contact closed, considering MAINS VOLTAGE variations per 4.10",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Cmax and Lmax taken as values at component producing sparks",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Peak value considered when a.c. supplied",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Equivalent circuit calculated for complicated circuits to determine equivalent Cmax, Lmax, Umax, Imax as d.c. or a.c. peak values",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "implicit (page 98, row 1)",
+      "description": "Short circuiting conductor(s) to conductive part without explosive gasses where insulation contacts part with FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN or NITROUS OXIDE, ignitable gases, or oxygen did not result in loss of integrity, unacceptable temperature, or HAZARDOUS SITUATION",
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For CATEGORY AP ME EQUIPMENT: electrostatic charges shall be prevented by a combination of appropriate measures including use of antistatic materials with limited electrical resistance, and provision of electrically conductive paths from ME EQUIPMENT or its parts to a conductive floor, protective earth or potential equalization system, or via wheels to an antistatic floor of medical room. Electrical resistance limits of aesthetic tubing, mattresses and pads, castor tires, and other antistatic material shall comply with ISO 2882 based on measurements according to ISO 1853, ISO 2878 and ISO 23529.",
+      "topic_tags": [
+        "antistatic",
+        "CATEGORY AP",
+        "electrostatic",
+        "ISO 2882",
+        "ISO 1853",
+        "ISO 2878",
+        "ISO 23529"
+      ],
+      "related_subjects": [
+        "G.4.3",
+        "CATEGORY AP ME EQUIPMENT"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Corona cannot be produced by components or parts of ME EQUIPMENT operating at more than 2000 V a.c. or 2400 V d.c. and not included in ENCLOSURES complying with G.5.4 or G.5.5.",
+      "topic_tags": [
+        "corona",
+        "high voltage",
+        "ENCLOSURE",
+        "2000V",
+        "2400V"
+      ],
+      "related_subjects": [
+        "G.4.4",
+        "G.5.4",
+        "G.5.5"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For CATEGORY AP ME EQUIPMENT: parts in contact with gas mixtures in NORMAL USE and CONDITIONS shall not produce sparks and shall not result in surface temperatures above 150°C in case of restricted or 200°C in case of unrestricted vertical air circulation, measured at 25°C ambient temperature, to comply with G.5.1.",
+      "topic_tags": [
+        "CATEGORY AP",
+        "surface temperature",
+        "spark",
+        "flammable mixture",
+        "150°C",
+        "200°C"
+      ],
+      "related_subjects": [
+        "G.5.2",
+        "G.5.1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For circuits producing sparks under G.5.3, energy limitations apply: combinations of currents and voltages within IzR·UzR ≤ 50W (no extrapolation above 42V); combinations of capacitances and voltages within C/2·U² ≤ 1.2mJ (no extrapolation above 242V); combinations of currents and inductances within L/2·I² ≤ 0.3mJ (no extrapolation for inductances > 900mH). When equivalent resistance R < 8000Ω, Umax shall be determined using actual resistance. For a.c. supply, peak values shall be considered. For complicated circuits, an equivalent circuit shall be calculated to determine equivalent Cmax, Lmax, Umax, Imax.",
+      "topic_tags": [
+        "spark",
+        "energy limitation",
+        "inductance",
+        "capacitance",
+        "CATEGORY AP",
+        "circuit analysis"
+      ],
+      "related_subjects": [
+        "G.5.3",
+        "Fig G.1",
+        "Fig G.2",
+        "Fig G.3"
+      ]
+    }
+  ]
+}

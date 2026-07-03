@@ -1,0 +1,176 @@
+{
+  "document": {
+    "report_no": "ETX2023-07-078-02",
+    "page_range": "163-164 of 182",
+    "standard": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+    "fragment_index": "75/84"
+  },
+  "tests": [
+    {
+      "clause": "4.1",
+      "title": "General Requirements – Supply Mains",
+      "description": "Characteristics of supply mains; home healthcare environment voltage limits; DC supply mains rated range and dip tests",
+      "result": "Non-life-supporting ME equipment; No such DC supply mains",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "4.2.1",
+      "title": "Environmental conditions of transport and storage between uses",
+      "description": "ME equipment operated within specified normal use after transport/storage in specified environmental conditions",
+      "conditions": {
+        "temperature_range": "-20°C to +55°C",
+        "humidity_range": "15%RH to 95%RH",
+        "sub_ranges": [
+          {
+            "label": "A",
+            "temperature": "-25°C to +5°C"
+          },
+          {
+            "label": "R",
+            "temperature": "+5°C to +35°C",
+            "humidity": "non-condensing up to 90% RH"
+          },
+          {
+            "label": "D",
+            "temperature": ">35°C to 70°C",
+            "vapour_pressure": "up to 50 hPa"
+          }
+        ]
+      },
+      "verdict": "P",
+      "notes": [
+        "Not intended to be transported or stored in a carrying case between uses",
+        "Restricted range marking requirements: N/A"
+      ]
+    },
+    {
+      "clause": "4.2.2",
+      "title": "Environmental transport and storage test",
+      "steps": [
+        {
+          "step": "a",
+          "description": "ME equipment prepared for transportation or storage according to instructions for use",
+          "detail": "Removal of batteries",
+          "verdict": "P"
+        },
+        {
+          "step": "b",
+          "description": "ME equipment exposed to lowest specified environmental transport and storage conditions",
+          "condition": "-20°C",
+          "verdict": "P"
+        },
+        {
+          "step": "b-duration",
+          "description": "At least 16 h or thermal stability for at least 2 h",
+          "detail": "2h",
+          "verdict": "P"
+        },
+        {
+          "step": "c",
+          "description": "ME equipment exposed to 34°C ±4°C and 90% -0%/+6% RH until equilibrium, held at least 2 h; transition from low to high temperature made slowly for non-condensing environment",
+          "condition": "34°C, 90%RH, 2h",
+          "verdict": "P"
+        },
+        {
+          "step": "d",
+          "description": "ME equipment exposed to highest specified environmental transport and storage conditions, not requiring water vapour pressure greater than 50 hPa",
+          "condition": "55°C, 33%RH, 2h",
+          "verdict": "P"
+        },
+        {
+          "step": "d-duration",
+          "description": "At least 16 h or thermal stability for at least 2 h",
+          "verdict": "P"
+        },
+        {
+          "step": "e",
+          "description": "ME equipment allowed to return and stabilize at operating conditions of normal use",
+          "verdict": "P"
+        },
+        {
+          "step": "f",
+          "description": "ME equipment evaluated to specifications; basic safety and essential performance verified",
+          "result": "Provide basic safety and essential performance",
+          "verdict": "P"
+        }
+      ],
+      "overall_verdict": "P"
+    },
+    {
+      "clause": "4.2.3.1",
+      "title": "Environmental operating conditions – Continuous operating conditions",
+      "description": "Instructions for use indicate permissible environmental operating conditions",
+      "conditions": {
+        "temperature": "10°C – 40°C",
+        "humidity": "15%RH – 90%RH",
+        "atmospheric_pressure": "700 hPa – 1060 hPa"
+      },
+      "reference": "Described in 'Product specifications' of User's Manual",
+      "verdict": "P"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60601-1-11:2015 + A1:2020",
+      "title": "Medical electrical equipment – Requirements for ME equipment and ME systems used in home healthcare environments",
+      "harmonized_standard": "EN 60601-1-11:2015 + A1:2021"
+    },
+    {
+      "id": "ISO 15223-1:2012",
+      "title": "Medical devices – Symbols to be used with medical device labels",
+      "referenced_symbols": [
+        "5.3.5 (ISO 7000-0534) – temperature range",
+        "5.3.6 (ISO 7000-0533) – temperature range",
+        "5.3.7 (ISO 7000-0632) – temperature range",
+        "5.3.8 (ISO 7000-2620) – humidity range",
+        "5.3.9 (ISO 7000-2621) – atmospheric pressure range"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "For ME equipment or ME systems intended to actively keep alive or resuscitate a patient, Supply Mains in the home healthcare environment did not exceed 110% or was not below 80% of nominal voltage between any of the conductors of the system or between any of these conductors and earth. Verdict: N/A because the equipment is Non-life-supporting ME equipment.",
+      "topic_tags": [
+        "supply mains",
+        "home healthcare",
+        "life-supporting",
+        "voltage limits"
+      ],
+      "related_subjects": [
+        "4.1",
+        "IEC 60601-1-11"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "DC supply mains requirements: Rated range of nominal voltage shall include at least 12.4V to 15.1V for 12V DC supply mains; at least 24.8V to 30.3V for 24V DC supply mains. Equipment shall maintain basic safety and essential performance during and following a 30s dip to 10V from 12V DC supply mains and to 20V from 24V DC supply mains. Verdict: N/A – No such supply mains applicable to this equipment.",
+      "topic_tags": [
+        "DC supply mains",
+        "12V",
+        "24V",
+        "voltage dip",
+        "basic safety",
+        "essential performance"
+      ],
+      "related_subjects": [
+        "4.1",
+        "IEC 60601-1-11"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Where ME equipment used different marking for conditions of transport and storage between uses, continuous operating conditions and transient operating conditions, markings shall be accompanied by supplementary markings except where the respective applicability was obvious. Verdict: N/A.",
+      "topic_tags": [
+        "marking",
+        "transport conditions",
+        "operating conditions",
+        "supplementary markings"
+      ],
+      "related_subjects": [
+        "4.2.1",
+        "ISO 15223-1"
+      ]
+    }
+  ]
+}

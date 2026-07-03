@@ -1,0 +1,52 @@
+{
+  "profile_source": "Project Scout Agent",
+  "target_model": "PT9L",
+  "product_family": [
+    "PT9L",
+    "PT9C",
+    "PT2L",
+    "PT3SBT",
+    "BP3L"
+  ],
+  "document_id_patterns": [
+    "PT9L-KHXQ01",
+    "PT9L-KXPS01",
+    "PT9L-FXJH01",
+    "PT9L-FXGB01",
+    "PT9L-EBOM01",
+    "PT9L-T1EB01",
+    "PT9L-SJSC01",
+    "PT9C-CNTP01"
+  ],
+  "primary_scope_rules": [
+    "PT9L is the target product model for this DHF",
+    "Documents in '2L风险改 - 历史文件' folder are explicitly historical",
+    "Documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical/draft folders require justification"
+  ],
+  "key_entities": {
+    "customer": "九安 (iHealth / Jiuan Medical)",
+    "customer_representative": "赵一平",
+    "product_description": "红外非接触式额头温度计 (Infrared No-Touch Forehead Thermometer)",
+    "intended_use": "Intermittent measurement of body temperature from forehead skin surface on people of all ages; consumer home use and healthcare provider use",
+    "bluetooth": "PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)"
+  },
+  "regulatory_baseline": [
+    "ISO 80601-2-56:2017/Amd1:2018 (international, applicable)",
+    "EN ISO 80601-2-56:2017+A1:2018 (EU, applicability differs between draft and final design input)",
+    "ASTM E1965-98:2016 (US, applicable)",
+    "ASTM E1965-98:2023 (US, applicable)",
+    "MDR 2017/745 (EU, applicability differs between draft and final design input)",
+    "ISO 14971:2019 / EN ISO 14971:2019 / EN ISO 14971:2019/A11:2021 (risk management)",
+    "ISO/TR 24971:2020 (risk assessment methodology)",
+    "EN 60601-1-6:2010+A1:2015+A2:2021 (usability)",
+    "GB/T 16886.1-2022 / ISO 10993-1:2018 (biocompatibility, China)",
+    "510(k) registration: andon responsible and paying",
+    "CE registration: applicability not yet determined per final design input"
+  ],
+  "candidate_discovery_hints": [
+    "PT9C appears as a sub-component PCB document number and as a standalone product in clinical evaluation and user test documents",
+    "PT3SBT appears in design output list two and a label review document filed under T1 sample folder",
+    "BP3L software diagrams appear in both the main software design folder and T1 sample subfolder",
+    "PT2L risk documents are in a '历史文件' subfolder but one (F0013) carries a PT9L document number internally"
+  ]
+}

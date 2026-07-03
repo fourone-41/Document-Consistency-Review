@@ -1,0 +1,224 @@
+{
+  "document": {
+    "title": "IEC60601-1 Test Checklist",
+    "standard_references": [
+      "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    ],
+    "page_range": "102-103",
+    "total_pages": 182
+  },
+  "tests": [
+    {
+      "clause": "G (General)",
+      "name": "Temperature limit check (90°C) for sparks in NORMAL USE and SINGLE FAULT CONDITIONS",
+      "parameters": [
+        "Temperature limit: 90°C",
+        "U_max, I_max, C_max, L_max"
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G (General)",
+      "name": "Measured U_max ≤ U_zR with I as in Fig. G.4",
+      "measurements": [
+        "U_max = V",
+        "U_zR = V",
+        "I_zR = A"
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G (General)",
+      "name": "Measured U_max ≤ U_zC with C as in Fig. G.5",
+      "measurements": [
+        "U_max = V",
+        "U_C = V",
+        "C_max"
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G (General)",
+      "name": "Measured I_max ≤ I_zR with U_zR as in Fig G.4",
+      "measurements": [
+        "I_max = A",
+        "I_zR = A",
+        "U_zR = V"
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G (General)",
+      "name": "Measured I_max ≤ I_zL with L and U_max ≤ 24V as in Fig G.6",
+      "measurements": [
+        "I_max = A",
+        "I_zL = A",
+        "L_max = mH"
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G (General)",
+      "name": "Temperature measurements in accordance with 11.1",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G (General)",
+      "name": "U_max, I_max, R, L_max and C_max determined together with application of Figs G.4-G.6",
+      "measurements": [
+        "U_max = V",
+        "I_max = A",
+        "R =",
+        "L_max = mH",
+        "C_max = F"
+      ],
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.4",
+      "name": "ME EQUIPMENT heating FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN OR NITROUS OXIDE - non-SELF-RESETTING THERMAL CUT-OUT compliance with 15.4.2.1",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.4",
+      "name": "Current-carrying part of heating element not in direct contact with FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN OR NITROUS OXIDE",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.7",
+      "name": "Test apparatus for flammable mixtures - in accordance with Clause G.7 and Fig G.7",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "L.1",
+      "name": "BASIC, SUPPLEMENTARY, DOUBLE, and REINFORCED INSULATION in wound components without interleaved insulation - round winding wires 0.05mm to 5.00mm diameter",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "L.2",
+      "name": "Wire construction - overlap of spirally wrapped layers adequate during manufacture",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "L.2",
+      "name": "Wire construction - layers of spirally wrapped wire insulation secured to maintain overlap",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "L.3",
+      "name": "Type Test - wire subjected to tests L.3.1 to L.3.4 at specified temperature and relative humidity",
+      "measurements": [
+        "Temperature (°C): —"
+      ],
+      "verdict": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "type": "international_standard",
+      "description": "Medical electrical equipment - General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "type": "european_standard",
+      "description": "Medical electrical equipment - General requirements for basic safety and essential performance (EU harmonized)"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "U_max was the highest no-load voltage occurring in the circuit under investigation, taking into consideration mains voltage variations as in 4.10. I_max was the highest current flowing in the circuit under investigation, taking into account MAINS VOLTAGE variations as in 4.10. C_max and L_max are values occurring in relevant circuit.",
+      "topic_tags": [
+        "U_max",
+        "I_max",
+        "mains voltage",
+        "circuit",
+        "IEC60601-1",
+        "Annex G"
+      ],
+      "related_subjects": [
+        "Fig G.4",
+        "Fig G.5",
+        "Fig G.6",
+        "Clause 4.10"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "U_max additionally determined with actual resistance R when equivalent resistance R in Fig G.5 was less than 8000. Peak value taken into consideration when a.c. supplied. An equivalent circuit calculated to determine max capacitance, inductance, and U_max and I_max, either as d.c. or a.c. peak values in case of a complicated circuit.",
+      "topic_tags": [
+        "U_max",
+        "resistance",
+        "peak value",
+        "AC",
+        "equivalent circuit",
+        "IEC60601-1",
+        "Annex G"
+      ],
+      "related_subjects": [
+        "Fig G.5",
+        "Fig G.4",
+        "Fig G.6"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "When energy produced in an inductance or capacitance in a circuit is limited by voltage or current-limiting devices, two independent components applied, to obtain the required limitation even when a first fault (short or open circuit) in one of these components. Above requirement not applied to transformers complying with this standard. Above requirement not applied to wire-wound current-limiting resistors provided with a protection against unwinding of the wire in case of rupture.",
+      "topic_tags": [
+        "inductance",
+        "capacitance",
+        "current-limiting",
+        "fault condition",
+        "transformer",
+        "wire-wound resistor",
+        "IEC60601-1",
+        "Annex G"
+      ],
+      "related_subjects": [
+        "Clause G",
+        "SINGLE FAULT CONDITIONS"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Compliance verified by examination of CATEGORY APG ME EQUIPMENT, parts, and components, or by temperature measurements made in accordance with 11.1, or by U_max, I_max, R, L_max and C_max determined together with application of Figs G.4-G.6. Alternatively, compliance verified by comparison with design data.",
+      "topic_tags": [
+        "compliance verification",
+        "CATEGORY APG",
+        "ME EQUIPMENT",
+        "temperature measurement",
+        "design data",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "Clause 11.1",
+        "Fig G.4",
+        "Fig G.5",
+        "Fig G.6"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "ANNEX L: INSULATED WINDING WIRES FOR USE WITHOUT INTERLEAVED INSULATION. BASIC, SUPPLEMENTARY, DOUBLE, and REINFORCED INSULATION in wound components without interleaved insulation complied with this Annex covering round winding wires between 0.05 mm and 5.00 mm diameters. Wire construction: Overlap of layers when wire is insulated with two or more spirally wrapped layers of tape is adequate to ensure continued overlap during manufacture of wound component. Layers of spirally wrapped wire insulation are sufficiently secured to maintain the overlap.",
+      "topic_tags": [
+        "insulated winding wire",
+        "wound component",
+        "BASIC insulation",
+        "SUPPLEMENTARY insulation",
+        "DOUBLE insulation",
+        "REINFORCED insulation",
+        "wire construction",
+        "IEC60601-1",
+        "Annex L"
+      ],
+      "related_subjects": [
+        "Annex L",
+        "L.1",
+        "L.2",
+        "L.3"
+      ]
+    }
+  ]
+}

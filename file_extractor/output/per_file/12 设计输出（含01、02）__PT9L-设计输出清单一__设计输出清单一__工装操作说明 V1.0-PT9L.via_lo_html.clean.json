@@ -1,0 +1,645 @@
+{
+  "document": {
+    "title": "工装操作说明",
+    "version": "V1.0",
+    "document_number": "PT9L-GZSM01 V1.0",
+    "product_name": "红外体温计",
+    "product_model": "PT9L",
+    "project_number": "30000078"
+  },
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "project_number": "30000078"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "document_number",
+      "value": "PT9L-GZSM01 V1.0"
+    },
+    {
+      "type": "project_number",
+      "value": "30000078"
+    },
+    {
+      "type": "fixture_id",
+      "value": "PT9L-CESHI"
+    },
+    {
+      "type": "fixture_id",
+      "value": "PT9L-SHAOXIE"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": 1,
+      "date": "",
+      "description": "起草",
+      "version": "V1.0",
+      "author": "万龙",
+      "approver": "侯广伟"
+    }
+  ],
+  "persons": [
+    {
+      "name": "万龙",
+      "role": "编制"
+    },
+    {
+      "name": "侯广伟",
+      "role": "批准"
+    }
+  ],
+  "components": [
+    {
+      "name": "机芯检测工装",
+      "identifier": "PT9L-CESHI",
+      "type": "fixture"
+    },
+    {
+      "name": "烧写工装",
+      "identifier": "PT9L-SHAOXIE",
+      "type": "fixture"
+    },
+    {
+      "name": "合泰Gang-Writer8-8烧写器",
+      "type": "tool",
+      "description": "需事先下载好要烧写的程序"
+    },
+    {
+      "name": "J-LINK",
+      "type": "tool"
+    },
+    {
+      "name": "直流稳压电源",
+      "type": "tool"
+    },
+    {
+      "name": "主MCU",
+      "type": "chip"
+    },
+    {
+      "name": "LED灯D1",
+      "type": "indicator"
+    },
+    {
+      "name": "LED灯D2",
+      "type": "indicator"
+    },
+    {
+      "name": "LCD显示屏",
+      "type": "display"
+    },
+    {
+      "name": "按键B1",
+      "type": "button"
+    },
+    {
+      "name": "开关B1",
+      "type": "switch"
+    },
+    {
+      "name": "ICP端子",
+      "type": "connector"
+    },
+    {
+      "name": "外部NTC",
+      "type": "sensor"
+    },
+    {
+      "name": "红外传感器",
+      "type": "sensor"
+    }
+  ],
+  "plan_tasks": [
+    {
+      "task_name": "芯片烧写",
+      "task_type": "manufacturing_operation",
+      "steps": [
+        {
+          "step": 1,
+          "action": "工装准备：使用杜邦线连接工装ICP端子和合泰烧写器烧写端口",
+          "detail": "工装ICP'V'脚连烧写器VDD1脚；工装ICP'D'脚连烧写器ICPDA1脚；工装ICP'C'脚连烧写器ICPCK1脚；工装ICP'G'脚连烧写器GND1脚"
+        },
+        {
+          "step": 2,
+          "action": "合泰烧写器上电",
+          "expected_result": "烧写器的STATUS灯亮"
+        },
+        {
+          "step": 3,
+          "action": "烧写主MCU",
+          "expected_result": "1.按下烧写器烧写键，ICP1灯闪烁；2.ICP1灯点亮则烧写成功；3.ICP1灯熄灭则烧写失败"
+        },
+        {
+          "step": 4,
+          "action": "更换主板，重复步骤3操作"
+        }
+      ]
+    },
+    {
+      "task_name": "机芯检测",
+      "task_type": "inspection_operation",
+      "steps": [
+        {
+          "step": 1,
+          "action": "工装准备：直流稳压电源调成5V输出，分正负极接入工装的电源端子"
+        },
+        {
+          "step": 2,
+          "action": "把待测主板压入工装夹具，拨动开关B1工装上电",
+          "expected_result": "上电后D1和D2全亮，屏幕显示CB1，然后显示软件版本号，2s后进入休眠，两个LED灯熄灭，显示黑屏；操作人员查看休眠电流应小于50uA；按下按键B1唤醒后两个LED点亮，LCD全显，再次按下按键保存，CB1完成；若自检未通过屏幕显示Er1"
+        },
+        {
+          "step": 3,
+          "action": "测试都通过，机芯为良品，更换机芯，重复步骤2"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "test_name": "机芯自检",
+      "test_type": "functional_check",
+      "items": [
+        {
+          "item": "休眠电流",
+          "acceptance_criteria": "小于50uA"
+        },
+        {
+          "item": "电池电压",
+          "acceptance_criteria": "2.7V到3.3V之间"
+        },
+        {
+          "item": "红外传感器测温",
+          "acceptance_criteria": "10℃到40℃之间"
+        },
+        {
+          "item": "外部NTC贴片情况",
+          "acceptance_criteria": "程序自动检测通过"
+        }
+      ],
+      "pass_indicator": "LCD显示CB1完成",
+      "fail_indicator": "LCD显示Er1错误提示，按下按键循环显示两个测量结果"
+    },
+    {
+      "test_name": "MCU烧写验证",
+      "test_type": "programming_check",
+      "pass_indicator": "烧写器ICP1灯点亮",
+      "fail_indicator": "烧写器ICP1灯熄灭"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "机芯检测程序自动检测电池电压、外部NTC、红外传感器的贴片情况，应该满足如下条件：a. 电池电压在2.7V到3.3V之间；b. 红外传感器测温应在10℃到40℃之间。否则，LCD会显示Er1错误提示，此时按下按键会循环显示上面两个测量结果供查找问题。",
+      "topic_tags": [
+        "机芯检测",
+        "自检逻辑",
+        "错误提示",
+        "Er1",
+        "电池电压",
+        "红外传感器",
+        "NTC"
+      ],
+      "related_subjects": [
+        "PT9L-CESHI",
+        "机芯检测",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "机芯检测工装上电后流程：上电后两个LED灯D1和D2全亮，屏幕显示CB1，然后显示软件版本号，2s后进入休眠，两个LED灯熄灭，显示黑屏，操作人员查看休眠电流，应小于50uA；按下按键B1唤醒，两个LED点亮，LCD全显，再次按下按键保存，CB1完成。",
+      "topic_tags": [
+        "机芯检测",
+        "上电流程",
+        "休眠电流",
+        "LCD",
+        "LED",
+        "CB1"
+      ],
+      "related_subjects": [
+        "PT9L-CESHI",
+        "机芯检测"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "芯片烧写工装接线约束：工装ICP'V'脚连烧写器VDD1脚；工装ICP'D'脚连烧写器ICPDA1脚；工装ICP'C'脚连烧写器ICPCK1脚；工装ICP'G'脚连烧写器GND1脚。",
+      "topic_tags": [
+        "芯片烧写",
+        "ICP接线",
+        "烧写工装",
+        "合泰烧写器"
+      ],
+      "related_subjects": [
+        "PT9L-SHAOXIE",
+        "合泰Gang-Writer8-8烧写器"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/工装操作说明 V1.0-PT9L.via_lo_html.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "工装操作说明",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-CESHI",
+      "to": "机芯检测",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "机芯检测",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "机芯检测",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-SHAOXIE",
+      "to": "芯片烧写",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "合泰Gang-Writer8-8烧写器",
+      "to": "芯片烧写",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "机芯自检",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MCU烧写验证",
+      "to": "PT9L-SHAOXIE",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯自检",
+      "to": "休眠电流",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯自检",
+      "to": "电池电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯自检",
+      "to": "红外传感器测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯自检",
+      "to": "外部NTC贴片情况",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "芯片烧写",
+      "to": "ICP端子",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "芯片烧写",
+      "to": "合泰Gang-Writer8-8烧写器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "直流稳压电源",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "LED灯D1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "LED灯D2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "LCD显示屏",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "按键B1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "机芯检测",
+      "to": "开关B1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-GZSM01 V1.0",
+      "to": "万龙",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-GZSM01 V1.0",
+      "to": "侯广伟",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PT9L-CESHI",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "PT9L-SHAOXIE",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "机芯检测",
+      "to": "机芯自检",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "主MCU",
+      "to": "MCU烧写验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "机芯自检",
+      "to": "休眠电流",
+      "properties": {
+        "acceptance_criteria": "小于50uA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "机芯自检",
+      "to": "电池电压",
+      "properties": {
+        "acceptance_criteria": "2.7V到3.3V之间"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "机芯自检",
+      "to": "红外传感器测温",
+      "properties": {
+        "acceptance_criteria": "10℃到40℃之间"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "机芯检测",
+      "to": "休眠电流",
+      "properties": {
+        "acceptance_criteria": "小于50uA"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "直流稳压电源",
+      "to": "机芯检测",
+      "properties": {
+        "value": "5V",
+        "description": "直流稳压电源调成5V输出"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "芯片烧写",
+      "to": "PT9L-SHAOXIE",
+      "properties": {
+        "reason": "芯片烧写任务依赖烧写工装PT9L-SHAOXIE进行操作"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "芯片烧写",
+      "to": "合泰Gang-Writer8-8烧写器",
+      "properties": {
+        "reason": "芯片烧写任务依赖合泰Gang-Writer8-8烧写器执行烧写"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "芯片烧写",
+      "to": "ICP端子",
+      "properties": {
+        "reason": "芯片烧写需要通过ICP端子连接烧写器"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯检测",
+      "to": "PT9L-CESHI",
+      "properties": {
+        "reason": "机芯检测任务依赖机芯检测工装PT9L-CESHI"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯检测",
+      "to": "直流稳压电源",
+      "properties": {
+        "reason": "机芯检测需要直流稳压电源提供5V电源输入"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯自检",
+      "to": "红外传感器",
+      "properties": {
+        "reason": "机芯自检检测项目包含红外传感器测温"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯自检",
+      "to": "外部NTC",
+      "properties": {
+        "reason": "机芯自检检测项目包含外部NTC贴片情况"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯自检",
+      "to": "LCD显示屏",
+      "properties": {
+        "reason": "机芯自检结果通过LCD显示屏显示CB1或Er1"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯自检",
+      "to": "按键B1",
+      "properties": {
+        "reason": "机芯自检流程依赖按键B1进行唤醒和保存操作"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯自检",
+      "to": "LED灯D1",
+      "properties": {
+        "reason": "机芯自检上电流程依赖LED灯D1状态指示"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "机芯自检",
+      "to": "LED灯D2",
+      "properties": {
+        "reason": "机芯自检上电流程依赖LED灯D2状态指示"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "MCU烧写验证",
+      "to": "合泰Gang-Writer8-8烧写器",
+      "properties": {
+        "reason": "MCU烧写验证通过烧写器ICP1灯状态判断结果"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "MCU烧写验证",
+      "to": "主MCU",
+      "properties": {
+        "reason": "MCU烧写验证的对象是主MCU"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "PT9L-SHAOXIE",
+      "to": "ICP端子",
+      "properties": {
+        "reason": "烧写工装通过ICP端子与烧写器连接"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "PT9L-CESHI",
+      "to": "开关B1",
+      "properties": {
+        "reason": "机芯检测工装上电依赖拨动开关B1"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "万龙",
+      "to": "PT9L-GZSM01 V1.0",
+      "properties": {
+        "role": "编制",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-GZSM01 V1.0",
+      "properties": {
+        "role": "批准",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-GZSM01 V1.0",
+      "to": "1",
+      "properties": {
+        "seq": 1,
+        "version": "V1.0",
+        "description": "起草",
+        "author": "万龙",
+        "approver": "侯广伟",
+        "date": ""
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "休眠电流",
+      "attribute": "上限值",
+      "value": "50",
+      "unit": "uA",
+      "tolerance": "",
+      "condition": "机芯自检",
+      "raw_text": "休眠电流小于50uA"
+    },
+    {
+      "subject": "电池电压",
+      "attribute": "范围",
+      "value": "2.7~3.3",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "机芯自检",
+      "raw_text": "电池电压2.7V到3.3V之间"
+    },
+    {
+      "subject": "红外传感器测温",
+      "attribute": "范围",
+      "value": "10~40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "机芯自检",
+      "raw_text": "红外传感器测温10℃到40℃之间"
+    },
+    {
+      "subject": "红外传感器",
+      "attribute": "测量原理",
+      "value": "红外非接触式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "红外传感器"
+    },
+    {
+      "subject": "外部NTC",
+      "attribute": "检测方式",
+      "value": "程序自动检测",
+      "unit": "",
+      "tolerance": "",
+      "condition": "机芯自检",
+      "raw_text": "外部NTC贴片情况：程序自动检测通过"
+    }
+  ]
+}

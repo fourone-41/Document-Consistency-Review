@@ -1,0 +1,219 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-01",
+    "title": "型式试验报告（英文草稿）",
+    "total_pages": 30,
+    "current_pages": "18-19"
+  },
+  "tests": [
+    {
+      "test_id": "6.4.2",
+      "test_name": "Proximity Fields from RF Wireless Communications Equipment - Test Result",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "result": "PASS",
+      "test_modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "antenna_polarizations": [
+        "Horizontal",
+        "Vertical"
+      ],
+      "eut_faces": [
+        "Front",
+        "Rear",
+        "Left",
+        "Right"
+      ],
+      "test_frequencies": [
+        {
+          "frequency_mhz": 385,
+          "band_mhz": "380-390",
+          "level": 27,
+          "modulation": "Pulse modulation 18Hz"
+        },
+        {
+          "frequency_mhz": 450,
+          "band_mhz": "430-470",
+          "level": 28,
+          "modulation": "Pulse modulation 18Hz"
+        },
+        {
+          "frequency_mhz": 710,
+          "band_mhz": "704-787",
+          "level": 9,
+          "modulation": "Pulse modulation 217Hz"
+        },
+        {
+          "frequency_mhz": 745,
+          "band_mhz": "704-787",
+          "level": 9,
+          "modulation": "Pulse modulation 217Hz"
+        },
+        {
+          "frequency_mhz": 780,
+          "band_mhz": "704-787",
+          "level": 9,
+          "modulation": "Pulse modulation 217Hz"
+        },
+        {
+          "frequency_mhz": 810,
+          "band_mhz": "800-960",
+          "level": 28,
+          "modulation": "Pulse modulation 18Hz"
+        },
+        {
+          "frequency_mhz": 870,
+          "band_mhz": "800-960",
+          "level": 28,
+          "modulation": "Pulse modulation 18Hz"
+        },
+        {
+          "frequency_mhz": 930,
+          "band_mhz": "800-960",
+          "level": 28,
+          "modulation": "Pulse modulation 18Hz"
+        },
+        {
+          "frequency_mhz": 1720,
+          "band_mhz": "1700-1990",
+          "level": 28,
+          "modulation": "Pulse modulation 217Hz"
+        },
+        {
+          "frequency_mhz": 1845,
+          "band_mhz": "1700-1990",
+          "level": 28,
+          "modulation": "Pulse modulation 217Hz"
+        },
+        {
+          "frequency_mhz": 1970,
+          "band_mhz": "1700-1990",
+          "level": 28,
+          "modulation": "Pulse modulation 217Hz"
+        },
+        {
+          "frequency_mhz": 2450,
+          "band_mhz": "2400-2570",
+          "level": 28,
+          "modulation": "Pulse modulation 217Hz"
+        },
+        {
+          "frequency_mhz": 5240,
+          "band_mhz": "5100-5800",
+          "level": 9,
+          "modulation": null
+        },
+        {
+          "frequency_mhz": 5500,
+          "band_mhz": "5100-5800",
+          "level": 9,
+          "modulation": null
+        },
+        {
+          "frequency_mhz": 5785,
+          "band_mhz": "5100-5800",
+          "level": 9,
+          "modulation": null
+        }
+      ],
+      "remarks": "A: EUT tested in UE1 mode; temperature sensor collection point aligned with blackbody set at 37°C; temperature continuously measured and compared; display accuracy does not exceed ±0.2°C. EUT operates as intended, no disturbance of function. Meets requirements of clause 6.1. Tests against top side and bottom side are only for adaptor."
+    },
+    {
+      "test_id": "6.5",
+      "test_name": "Electrical Fast Transients (EFT)",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_humidity": "N/A",
+      "power_supply": "N/A",
+      "test_level": "N/A",
+      "polarity": "N/A",
+      "repetition_frequency": "N/A",
+      "burst_duration": "N/A",
+      "test_duration": "N/A",
+      "result": "N/A",
+      "notes": "EUT is powered by batteries and does not apply to this clause."
+    },
+    {
+      "test_id": "6.6",
+      "test_name": "Surge",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_humidity": "N/A",
+      "power_supply": "N/A",
+      "test_level": "N/A",
+      "polarity": "N/A",
+      "generator_source_impedance": "N/A",
+      "trigger_mode": "N/A",
+      "number_of_surges": "N/A",
+      "result": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "name": "Medical electrical equipment - Electromagnetic disturbances",
+      "applicable_clauses": [
+        "6.1",
+        "6.4",
+        "6.5",
+        "6.6"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "6.5.1 EFT Test Setup and Procedure: The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The GRP shall project beyond the EUT and the clamp by at least 0.1m on all sides. The distance between the EUT and any other metallic surface except the GRP was greater than 0.5m. All cables to the EUT were placed on the insulation support 0.1m above GRP. Cables not subject to EFT were routed as far as possible from cable under test to minimize coupling. The length of signal and power cable between the EUT and EFT generator was 0.5m. If the cable is a non-detachable supply cable more than 0.5m, the excess length shall be folded to avoid a flat coil and situated at 0.1m above the GRP. The EUT was conducted the below specified level voltage test for line to neutral or line to neutral to earth (for clamp coupling is for the signal line), 120 seconds duration. If the equipment contains identical ports, only one was tested; multiconductor cables tested as a single cable; cables did not be split or divided into groups of conductors; interface ports intended to be connected to data cables not longer than 3m did not be tested. During the test, the EUT was tested with the hand-held parts terminated with artificial hand.",
+      "topic_tags": [
+        "EFT",
+        "test setup",
+        "GRP",
+        "ground reference plane",
+        "cable routing",
+        "IEC 60601-1-2"
+      ],
+      "related_subjects": [
+        "6.5",
+        "Electrical Fast Transients",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "6.5.2 Test Results Note: The EUT is powered by batteries, and does not apply to this clause (EFT).",
+      "topic_tags": [
+        "EFT",
+        "battery powered",
+        "not applicable",
+        "exemption"
+      ],
+      "related_subjects": [
+        "6.5",
+        "Electrical Fast Transients",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "RF Wireless Communications Equipment immunity test result remark: During and after test, The EUT is tested in UE1 mode, the collection point of the temperature sensor is aligned with the blackbody, which is set at 37°C. The temperature is continuously measured and compared with the blackbody temperature. The accuracy of the display temperature of the EUT does not exceed ±0.2°C. During and after test, the EUT could operate as intended and no disturbance of function. The EUT could meet the requirements of clause 6.1. Tests against top side and bottom side are only for adaptor.",
+      "topic_tags": [
+        "RF immunity",
+        "UE1 mode",
+        "temperature sensor",
+        "blackbody",
+        "accuracy",
+        "±0.2°C",
+        "37°C"
+      ],
+      "related_subjects": [
+        "6.4.2",
+        "temperature measurement",
+        "EUT",
+        "immunity"
+      ]
+    }
+  ]
+}

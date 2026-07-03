@@ -1,0 +1,53 @@
+```json
+{
+  "assigned_agent": "DMR/SOP Agent",
+  "review_focus": "SMT工艺说明中引用EBOM时使用'按照最新版本执行'而非锁定版本号，是否构成DMR冻结记录缺失及变更控制风险",
+  "agent_input": {
+    "claim": "The SMT process instruction directs operators to reference the EBOM 'PT9L-EBOM01 (按照最新版本执行)' without specifying a locked version, which means the process instruction does not constitute a frozen DMR record and could silently pick up future BOM revisions without a formal change-control event.",
+    "context_summary": "工艺说明-PT9L（F0154，第16行）SMT贴片工序明确写明：'元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)'，未锁定具体版本号。现存档的机芯类组件清单文件编号为'PT9L-EBOM01 V1.0'（F0157），文件头部及表格均显示版本为V1.0，包含主板与传感器板全部物料清单。工艺说明本身亦对PT9L-SMTW01及PT9L-GZSM01均采用相同的'按照最新版本执行'表述。目前DMR文件集中仅发现V1.0版本的EBOM，无证据显示存在多版本或版本升级记录。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-021",
+        "doc_id": "F0154",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\工艺说明-PT9L.via_xlsx.clean.md",
+        "line": 16,
+        "source_text": "|  | SMT | 贴片 | --- | 1、主板SMT加工参考"PT9L SMT加工说明 PT9L-SMTW01"(按照最新版本执行)； 2、元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)；",
+        "relevance": "直接证据：工艺说明SMT工序引用EBOM时未锁定版本"
+      },
+      {
+        "evidence_id": "DMR-032",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 2,
+        "source_text": "# 机芯类组件清单PT9L-EBOM01 V1.0",
+        "relevance": "现存EBOM文件版本为V1.0，与工艺说明中引用的文件编号PT9L-EBOM01对应"
+      },
+      {
+        "evidence_id": "DMR-033",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 8,
+        "source_text": "| 文件编号：PT9L-EBOM01 V1.0 PT9L机芯类【组件清单】 |",
+        "relevance": "EBOM表头确认文件编号与版本号"
+      },
+      {
+        "evidence_id": "DMR-034",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 12,
+        "source_text": "| 机芯类 |  | V1.0 |  | 年 月 日 年 月 日 年 月 日 |",
+        "relevance": "EBOM版本控制行显示V1.0，拟制/审核/批准日期栏为空白"
+      },
+      {
+        "evidence_id": "DMR-035",
+        "doc_id": "F0157",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "source_text": "| 24 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "relevance": "EBOM内部物料条目引用PCB规格PT9L-HFMP01 V1.0，说明EBOM本身已锁定下级文件版本，但上层工艺说明未锁定EBOM版本"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

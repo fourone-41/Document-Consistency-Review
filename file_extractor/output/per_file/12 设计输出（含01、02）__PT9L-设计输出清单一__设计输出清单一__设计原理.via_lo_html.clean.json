@@ -1,0 +1,350 @@
+{
+  "document": {
+    "title": "设计原理",
+    "doc_id": "PT9L-SJYL01",
+    "version": "V1.0",
+    "total_pages": 1
+  },
+  "products": [
+    {
+      "name": "PT9L红外体温计",
+      "model": "PT9L",
+      "description": "一款快速测量体温的产品，具有简单易用、测量迅速、数据准确的特点"
+    }
+  ],
+  "components": [
+    {
+      "name": "MCU",
+      "specifications": "16K Flash，1K RAM；一路SPI；一路UART；一路I2C；8通道ADC；28个GPIO；CPU频率4MHz",
+      "function": "满足PT9L的控制需要"
+    },
+    {
+      "name": "电源",
+      "specifications": "2节AAA七号电池，电池容量3V 1000mAh",
+      "function": "供电，具有低电压提示功能"
+    },
+    {
+      "name": "温度传感器",
+      "type": "红外温度传感器",
+      "function": "利用红外测温原理采集人体温度信息，并转化成电信号"
+    },
+    {
+      "name": "LCD驱动",
+      "function": "由主控制芯片直接驱动LCD"
+    },
+    {
+      "name": "按键",
+      "quantity": 2,
+      "function": "用于进入测量、单位设置、测量模式设置等功能"
+    }
+  ],
+  "functions": [
+    {
+      "name": "体温测量",
+      "description": "快速测量人体体温"
+    },
+    {
+      "name": "低电压提示",
+      "description": "电池电压不足时给出提示"
+    },
+    {
+      "name": "单位设置",
+      "description": "通过按键进行温度单位设置"
+    },
+    {
+      "name": "测量模式设置",
+      "description": "通过按键进行测量模式设置"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "PT9L红外体温计是一款快速测量体温的产品。具有简单易用、测量迅速、数据准确的特点。温度传感器利用红外测温原理采集人体温度信息，并转化成电信号。LCD由主控制芯片直接驱动。采用2个按键，用于进入测量、单位设置、测量模式设置等功能。",
+      "topic_tags": [
+        "红外测温",
+        "工作原理",
+        "系统架构",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "MCU",
+        "温度传感器",
+        "LCD驱动",
+        "按键",
+        "电源"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "MCU性能：16K Flash，1K RAM；一路SPI；一路UART；一路I2C；8通道ADC；28个GPIO；CPU频率4MHz；可满足PT9L的控制需要。",
+      "topic_tags": [
+        "MCU",
+        "处理器",
+        "硬件配置",
+        "接口"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计",
+        "LCD驱动",
+        "温度传感器"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/PT9L-设计输出清单一/设计输出清单一/设计原理.via_lo_html.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "MCU",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "温度传感器",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD驱动",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "按键",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电源",
+      "to": "红外测温",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LCD驱动",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "温度传感器",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "电源",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "温度传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "LCD驱动",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "按键",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "体温测量",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "低电压提示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "单位设置",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L红外体温计",
+      "to": "测量模式设置",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MCU",
+      "to": "working_principle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "MCU",
+      "to": "design_rationale",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电源",
+      "to": "低电压提示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "按键",
+      "to": "单位设置",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "按键",
+      "to": "测量模式设置",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "温度传感器",
+      "to": "体温测量",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "MCU存储",
+      "attribute": "Flash容量",
+      "value": "16",
+      "unit": "K",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "16K Flash"
+    },
+    {
+      "subject": "MCU存储",
+      "attribute": "RAM容量",
+      "value": "1",
+      "unit": "K",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "1K RAM"
+    },
+    {
+      "subject": "MCU接口",
+      "attribute": "SPI数量",
+      "value": "1",
+      "unit": "路",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "一路SPI"
+    },
+    {
+      "subject": "MCU接口",
+      "attribute": "UART数量",
+      "value": "1",
+      "unit": "路",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "一路UART"
+    },
+    {
+      "subject": "MCU接口",
+      "attribute": "I2C数量",
+      "value": "1",
+      "unit": "路",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "一路I2C"
+    },
+    {
+      "subject": "MCU ADC",
+      "attribute": "通道数量",
+      "value": "8",
+      "unit": "通道",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "8通道ADC"
+    },
+    {
+      "subject": "MCU GPIO",
+      "attribute": "引脚数量",
+      "value": "28",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "28个GPIO"
+    },
+    {
+      "subject": "MCU频率",
+      "attribute": "CPU主频",
+      "value": "4",
+      "unit": "MHz",
+      "tolerance": "",
+      "condition": "MCU规格",
+      "raw_text": "CPU频率4MHz"
+    },
+    {
+      "subject": "电源电池",
+      "attribute": "节数",
+      "value": "2",
+      "unit": "节",
+      "tolerance": "",
+      "condition": "AAA七号电池",
+      "raw_text": "2节AAA七号电池"
+    },
+    {
+      "subject": "电源电压",
+      "attribute": "额定电压",
+      "value": "3",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "2节AAA电池",
+      "raw_text": "电池容量3V 1000mAh"
+    },
+    {
+      "subject": "电源容量",
+      "attribute": "额定容量",
+      "value": "1000",
+      "unit": "mAh",
+      "tolerance": "",
+      "condition": "2节AAA电池",
+      "raw_text": "电池容量3V 1000mAh"
+    },
+    {
+      "subject": "温度传感器",
+      "attribute": "测量原理",
+      "value": "红外非接触式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "体温测量",
+      "raw_text": "利用红外测温原理采集人体温度信息，并转化成电信号"
+    },
+    {
+      "subject": "按键",
+      "attribute": "数量",
+      "value": "2",
+      "unit": "个",
+      "tolerance": "",
+      "condition": "整机配置",
+      "raw_text": "按键数量2，用于进入测量、单位设置、测量模式设置等功能"
+    }
+  ]
+}

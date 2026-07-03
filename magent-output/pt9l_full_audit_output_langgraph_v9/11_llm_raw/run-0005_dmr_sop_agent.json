@@ -1,0 +1,101 @@
+```json
+{
+  "agent": "DMR/SOP Agent",
+  "summary": "DMR/SOP audit of PT9L design output chain reveals seven substantive findings including a document-number collision on drawing PT9L-F01, a part-number mismatch between the two packaging BOM files, PT3-origin shared-component drawings archived in the PT9L DHF without cross-product justification, an incomplete drawing title-block in a packaging label drawing, a missing outer-carton BOM entry in the primary packaging BOM, a process instruction referencing EBOM by document number without pinning a version, and the design output list carrying blank approval-date fields indicating the formal sign-off record is incomplete.",
+  "review_notes": [
+    "EBOM PT9L-EBOM01 V1.0 (DMR-032 to DMR-037) is internally consistent: PCB line item PT9L-HFMP01 V1.0 matches the schematic drawing reference in the design output list (DMR-044 to DMR-048) and the SMT process instruction (DMR-021).",
+    "Process instruction PT9L-GYSM01 V1.0 (DMR-024, DMR-025) covers all major assembly steps (SMT, probe wire soldering, probe bracket assembly, firmware flash, functional test) and each step cites the relevant downstream document.",
+    "Tooling document PT9L-GZSM01 (DMR-026 to DMR-031) is consistent with the process instruction references to PT9L-CESHI and PT9L-SHAOXIE fixtures.",
+    "Packaging drawing PT9L-CBZP01 is at V2.0 in the drawing file (DMR-077) while the BOM entries in both packaging BOM files list it as V1.0 or without version; this version delta is noted but the drawing number itself is consistent.",
+    "Firmware target-code confirmation sheet PT9L-MBSC01 V1.0 (DMR-038, DMR-039) is present and references PT9L, consistent with the process instruction burn step (DMR-022).",
+    "Product defect definition PT9L (DMR-008 to DMR-010) and maintenance guide (DMR-006, DMR-007) are present and reference PT9L consistently.",
+    "Supplier drawing 75CEE0 (DMR-117 to DMR-122) is identified as an external supplier document; its presence in the DHF is noted but the functional role of the brass heat-sink sleeve in the PT9L assembly is not confirmed by any BOM line item in the supplied EBOM evidence."
+  ],
+  "findings": [
+    {
+      "finding_type": "drawing_number_collision",
+      "severity": "P1",
+      "claim": "Drawing number PT9L-F01 is assigned to two distinct physical items — the outer carton and the product appearance drawing — creating an unresolvable document-control conflict in the DMR.",
+      "rationale": "The outer-carton drawing file (DMR-068) declares Drawing NO. PT9L-F01 for the shipping carton. The product appearance drawing file (DMR-138) also declares Drawing NO. PT9L-F01 for the ABS-body exterior, with an explicit auditor warning '⚠️ 与外箱 PT9L-F01 同号但不同件'. Two released drawings sharing the same document number violates document-control requirements and makes unambiguous BOM or process-instruction citation impossible.",
+      "evidence_ids": ["DMR-068", "DMR-138"],
+      "challenge_questions": [
+        "Which of the two PT9L-F01 drawings is the formally released version in the document-control system, and what is the ECO or revision history for each?",
+        "Has a corrective action been initiated to assign a unique drawing number to one of the two items, and if so what is the new number and its release status?",
+        "Are there any BOM lines, work instructions, or inspection records that cite PT9L-F01 — and if so, which physical item do they intend to reference?"
+      ]
+    },
+    {
+      "finding_type": "packaging_bom_part_number_mismatch",
+      "severity": "P1",
+      "claim": "The two packaging BOM documents for the PT9L US version carry different document numbers for the same BOM (PT9L-PBOM01 vs. PT9L-PB0M1) and the instruction-manual part number differs between them (PT9L-SMSPO1 vs. PT9L-SMSP01), indicating at least one file is either a draft or an uncorrected transcription error that has not been reconciled in the DMR.",
+      "rationale": "DMR-049 (F0161) shows the BOM header as 'PT9L-P BOM01 V1.0' and the manual part number as 'PT9L-SMSPO1' (letter O in place of digit 0). DMR-056 and DMR-057 (F0162) show the header as 'PT9L-PB0M1 V1.0' (digit 0 in place of letter O in BOM) and the manual part number as 'PT9L-SMSP01' (correct). The drawing for the manual (DMR-089) uses PT9L-SMSP01 V1.0. The two BOM files therefore cannot both be the released DMR record; one contains a typographic corruption that has propagated into the document number itself.",
+      "evidence_ids": ["DMR-049", "DMR-052", "DMR-053", "DMR-056", "DMR-057", "DMR-060", "DMR-089"],
+      "challenge_questions": [
+        "Which of the two packaging BOM files (F0161 or F0162) is the formally released DMR record, and what is its controlled document number?",
+        "Has the typographic discrepancy in the manual part number (SMSPO1 vs. SMSP01) been identified and corrected in the document-control system?",
+        "Is there a single master packaging BOM that supersedes both files, and if so what is its document ID and version?"
+      ]
+    },
+    {
+      "finding_type": "cross_product_drawing_without_justification",
+      "severity": "P2",
+      "claim": "Two drawings archived in the PT9L DHF design output folder carry PT3 or PT1 product identifiers (PT3-P10 dual spring, PT1-F05 label, PT1-F07 outer-carton label) without any documented shared-component or sub-assembly justification linking them to the PT9L DMR.",
+      "rationale": "DMR-133 and DMR-134 (F0176) show Drawing NO. PT3-P10 with Model NO. PT3, explicitly noted as 'PT3 项目原件' borrowed into the PT9L DHF. DMR-091 (F0168) shows Drawing NO. PT1-F05 and DMR-094, DMR-115 (F0169, F0173) show Drawing NO. PT1-F07, both referencing PT1 not PT9L. No evidence in the supplied corpus provides a formal shared-component declaration, design-change notice, or sub-assembly justification that authorises these PT3/PT1 drawings as controlled PT9L DMR outputs. The assignment brief specifically flags PT3SBT references requiring justification.",
+      "evidence_ids": ["DMR-129", "DMR-130", "DMR-132", "DMR-133", "DMR-134", "DMR-090", "DMR-091", "DMR-093", "DMR-094", "DMR-114", "DMR-115"],
+      "challenge_questions": [
+        "Is there a formal shared-component or common-part declaration that authorises PT3-P10 (dual spring) as a controlled component of the PT9L assembly, and where is it filed in the DMR?",
+        "Are PT1-F05 and PT1-F07 label drawings intentionally shared between PT1 and PT9L product lines, and if so is there a released cross-reference document or ECO that records this decision?",
+        "Do the PT9L EBOM or ABOM contain line items that explicitly cite PT3-P10, PT1-F05, or PT1-F07 part numbers, and if not, why are these drawings present in the PT9L design output folder?"
+      ]
+    },
+    {
+      "finding_type": "incomplete_drawing_title_block",
+      "severity": "P2",
+      "claim": "The packaging label drawing filed as T040800073941030093-PT3-F21 has an incomplete title block with Drawing NO. and Pro material fields marked as '待填' (to be filled), meaning this drawing has been archived in the PT9L DHF in an unfinished state and cannot serve as a controlled DMR output.",
+      "rationale": "DMR-112 shows Drawing NO. as '（待填 - 见右下标题栏）' and DMR-113 shows Pro material as '（待填）'. A drawing with unfilled mandatory title-block fields does not meet the minimum requirements for a released design output document. The file name contains 'PT3-F21', further suggesting it may be a PT3-origin document that was never completed for PT9L use.",
+      "evidence_ids": ["DMR-108", "DMR-109", "DMR-110", "DMR-112", "DMR-113"],
+      "challenge_questions": [
+        "Has this drawing ever been formally released with a complete title block, and if so what is the released document number and version?",
+        "Is PT3-F21 a PT3-origin drawing that was intended to be adapted for PT9L, and if so what is the current status of that adaptation?",
+        "Which BOM line item in the PT9L packaging BOM corresponds to this drawing, and how is the component currently controlled in production without a complete drawing?"
+      ]
+    },
+    {
+      "finding_type": "missing_outer_carton_in_primary_packaging_bom",
+      "severity": "P2",
+      "claim": "The outer carton (PT9L-F01) is present as a drawing in the design output folder but does not appear as a line item in either of the two packaging BOM files, leaving the outer carton uncontrolled in the released packaging BOM.",
+      "rationale": "DMR-066 to DMR-071 (F0164) document the outer carton drawing PT9L-F01 V1.0. The packaging BOM in F0161 (DMR-050 to DMR-054) lists five items: colour box, paper tray, manual, protective film, and nameplate. The packaging BOM in F0162 (DMR-058 to DMR-060) lists the same five items. Neither BOM contains a line item for the outer carton or references drawing PT9L-F01 (carton). An outer carton is a required packaging component for shipping and regulatory labelling purposes; its absence from the BOM means it is not subject to incoming inspection or version control through the DMR.",
+      "evidence_ids": ["DMR-050", "DMR-051", "DMR-052", "DMR-053", "DMR-054", "DMR-055", "DMR-058", "DMR-059", "DMR-060", "DMR-066", "DMR-068", "DMR-069"],
+      "challenge_questions": [
+        "Is the outer carton PT9L-F01 controlled under a separate shipping BOM or master BOM that was not included in the supplied evidence, and if so what is that document's ID and version?",
+        "Has the outer carton ever been subject to incoming inspection, and if so what inspection criteria and acceptance records exist?",
+        "Given the drawing-number collision finding (PT9L-F01 used for both carton and appearance drawing), how does the production team distinguish which PT9L-F01 is referenced in any given context?"
+      ]
+    },
+    {
+      "finding_type": "process_instruction_bom_version_not_pinned",
+      "severity": "P2",
+      "claim": "The SMT process instruction directs operators to reference the EBOM 'PT9L-EBOM01 (按照最新版本执行)' without specifying a locked version, which means the process instruction does not constitute a frozen DMR record and could silently pick up future BOM revisions without a formal change-control event.",
+      "rationale": "DMR-021 (F0154, line 16) states: '元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)'. The phrase '按照最新版本执行' (execute per the latest version) means the process instruction is not tied to a specific released BOM version. In a controlled DMR, each process document must reference a specific document version so that the manufacturing record is reproducible and auditable. The current EBOM is at V1.0 (DMR-032 to DMR-035), but if a V2.0 is released the process instruction would automatically adopt it without a formal process-change review.",
+      "evidence_ids": ["DMR-021", "DMR-032", "DMR-033", "DMR-034", "DMR-035"],
+      "challenge_questions": [
+        "Is there a document-control procedure that requires process instructions to cite a specific BOM version rather than 'latest version', and if so why was this instruction approved without a pinned version?",
+        "When the EBOM is revised, what change-control mechanism ensures the process instruction is reviewed and updated before the new BOM version is used in production?",
+        "Are there any production records (travellers, batch records) that capture which specific EBOM version was used for each production lot?"
+      ]
+    },
+    {
+      "finding_type": "design_output_list_approval_fields_blank",
+      "severity": "P2",
+      "claim": "The Design Output List One (PT9L-SJSC01 equivalent) carries blank submission and review date fields, indicating the formal design-output approval sign-off has not been recorded, which means the DHF-to-DMR transfer cannot be confirmed as complete.",
+      "rationale": "DMR-043 (F0160, line 10) shows: '提交: 年 月 日 审核: 年 月 日' — both the submission date and review date fields are unfilled placeholders. A design output list with blank approval dates does not constitute a formally approved design transfer record. Under 21 CFR 820.30(d) and ISO 13485 §7.3.4, design outputs must be reviewed and approved before release. The blank fields mean there is no documented evidence that the design output package was formally accepted as the basis for the DMR.",
+      "evidence_ids": ["DMR-043", "DMR-044", "DMR-045", "DMR-046", "DMR-047", "DMR-048"],
+      "challenge_questions": [
+        "Is there a separate design transfer record or design review meeting minutes that captures the formal approval of Design Output List One, and if so what is its document ID and date?",
+        "Were the blank date fields an artefact of the document template that was subsequently completed in a controlled system, or does the production DMR record also carry blank approval dates?",
+        "What is the formal design-freeze date for PT9L, and is it traceable to a signed design output approval record?"
+      ]
+    }
+  ]
+}
+```

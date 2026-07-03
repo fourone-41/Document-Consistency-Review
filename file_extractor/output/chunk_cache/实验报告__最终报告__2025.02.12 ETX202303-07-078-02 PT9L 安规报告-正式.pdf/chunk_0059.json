@@ -1,0 +1,274 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "total_pages": 181,
+    "current_pages": "123-125",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "name": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "ISO14971",
+      "name": "ISO 14971",
+      "context": "Risk Management"
+    },
+    {
+      "id": "UL746",
+      "name": "UL746",
+      "context": "Non-metallic enclosure flame class standard"
+    },
+    {
+      "id": "UL796",
+      "name": "UL796",
+      "context": "PCB standard"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.9.3.2",
+      "name": "Thermal cycling tests on one sample of insulating compound forming solid insulation between conductive parts",
+      "verdict": "N/A",
+      "sequences": [
+        {
+          "seq": 1,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        },
+        {
+          "seq": 2,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        },
+        {
+          "seq": 3,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        },
+        {
+          "seq": 4,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        }
+      ],
+      "dielectric_test_voltage": "V = Test voltage in 8.8.3 times 1.6",
+      "notes": "T1 = 10 °C above the maximum temperature of relevant part determined per 11.1.1, or 85 °C, the higher of the two. 10 °C not added to T1 when temperature measured by an embedded thermocouple. Used gradual transition from one temperature to another."
+    },
+    {
+      "clause": "8.9.3.4",
+      "name": "Thermal cycling tests on one sample of cemented joint",
+      "verdict": "N/A",
+      "sequences": [
+        {
+          "seq": 1,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        },
+        {
+          "seq": 2,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        },
+        {
+          "seq": 3,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        },
+        {
+          "seq": 4,
+          "steps": [
+            "68 h at T1 ±2 °C",
+            "1 h at 25 °C ±2 °C",
+            "2 h at 0 °C ±2 °C",
+            "1 or more h at 25 °C ±2 °C"
+          ]
+        }
+      ],
+      "dielectric_test_voltage": "V = Test voltage in 8.8.3 times 1.6",
+      "notes": "T1 = 10 °C above the maximum temperature of relevant part determined per 11.1.1, or 85 °C, the higher of the two. 10 °C not added to T1 when temperature measured by an embedded thermocouple. Used gradual transition from one temperature to another."
+    },
+    {
+      "clause": "8.10",
+      "name": "List of critical components",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.10.1",
+      "name": "RM RESULTS TABLE: Fixing of components",
+      "verdict": "P"
+    }
+  ],
+  "components": [
+    {
+      "name": "Non-metallic enclosure",
+      "manufacturer": "LG CHEM HUIZHOU PETROCHEMICAL CO LTD",
+      "type_model": "ABS",
+      "technical_data": "Flame Class: HB at least; 60°C",
+      "standard": "UL746",
+      "certificate_mark": "UL E476284"
+    },
+    {
+      "name": "PCB",
+      "manufacturer": "Longyan Jinshiyu Electronics Co.",
+      "type_model": "PT9L-HFMP01 V1.0",
+      "technical_data": "FR-4",
+      "standard": "UL796",
+      "certificate_mark": "UL E348782"
+    },
+    {
+      "name": "Boost chip",
+      "manufacturer": "Wuxi LinearPower Technology Co., Ltd",
+      "type_model": "XT1933SR G",
+      "technical_data": "Vout=3.3V Imax=1A",
+      "standard": null,
+      "certificate_mark": null
+    },
+    {
+      "name": "Internally insulated wires",
+      "manufacturer": "Tianjin Yaxun Technology Co.",
+      "type_model": "7×Φ0.8mm×50mm",
+      "technical_data": null,
+      "standard": null,
+      "certificate_mark": "UL E328945"
+    },
+    {
+      "name": "Positive temperature coefficient devices",
+      "manufacturer": "Bourns, Inc",
+      "type_model": "MF-MSMF050",
+      "technical_data": "Vmax=15V Itrip=1A",
+      "standard": "20170525-E174545",
+      "certificate_mark": null
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-FXGB01 V1.0",
+      "type": "document_number",
+      "description": "Risk Management Report DN"
+    },
+    {
+      "id": "PT9L-HFMP01 V1.0",
+      "type": "part_number",
+      "description": "PCB part number"
+    },
+    {
+      "id": "UL E476284",
+      "type": "certificate",
+      "description": "UL certificate for Non-metallic enclosure (LG CHEM ABS)"
+    },
+    {
+      "id": "UL E348782",
+      "type": "certificate",
+      "description": "UL certificate for PCB (Longyan Jinshiyu FR-4)"
+    },
+    {
+      "id": "UL E328945",
+      "type": "certificate",
+      "description": "UL certificate for Internally insulated wires (Tianjin Yaxun)"
+    },
+    {
+      "id": "20170525-E174545",
+      "type": "certificate",
+      "description": "Certificate for Bourns PTC device MF-MSMF050"
+    }
+  ],
+  "review_items": [
+    {
+      "clause": "5.2",
+      "standard": "ISO 14971",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Intended use and identification of characteristics related to safety issue analysed and recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.3",
+      "standard": "ISO 14971",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Hazard analysis recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "5.4",
+      "standard": "ISO 14971",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Risk estimation recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "6",
+      "standard": "ISO 14971",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Risk evaluation recorded",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.2",
+      "standard": "ISO 14971",
+      "document_ref": "Risk Management Report DN: PT9L-FXGB01 V1.0",
+      "result": "Risk control option analysis recorded",
+      "verdict": "P"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "T1 = 10 °C above the maximum temperature of relevant part determined per 11.1.1, or 85 °C, the higher of the two. 10 °C not added to T1 when temperature measured by an embedded thermocouple. Used gradual transition from one temperature to another.",
+      "topic_tags": [
+        "thermal cycling",
+        "T1 temperature",
+        "insulation test",
+        "IEC60601-1 8.9.3"
+      ],
+      "related_subjects": [
+        "8.9.3.2",
+        "8.9.3.4",
+        "thermal cycling test"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Supplementary information for critical components: 1) An asterisk indicates a mark which assures the agreed level of surveillance. See Licenses and Certificates of Conformity for verification. 2) The alternative components used the same construction & relevant reference as the type of the component in the floating circuit of the sample, no additional tests were needed for conformity verification.",
+      "topic_tags": [
+        "critical components",
+        "alternative components",
+        "surveillance mark",
+        "conformity"
+      ],
+      "related_subjects": [
+        "8.10",
+        "components list"
+      ]
+    }
+  ]
+}

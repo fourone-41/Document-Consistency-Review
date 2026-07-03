@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "decision": "confirm",
+  "severity": "P1",
+  "error_type": "product_identity_and_document_number_mismatch",
+  "claim": "F0013（PT2L 风险管理计划）内部携带 PT9L 系列文件编号，代表两项独立不符合项——产品身份不匹配（NC-1：内部 Product model 字段标注 PT9L，与文件归属产品线 PT2L 矛盾）和文件编号分配错误（NC-2：内部 DN 字段使用 PT9L-FXJH01 编号体系，与 PT2L 产品线不符）——两项 NC 共享同一根本原因（模板复用未更新），但需分别采取纠正措施。",
+  "reason": "两项不符合项均已获得来自 F0013 封面页的直接文本证据支撑，置信度为 HIGH，足以确认 claim 成立。NC-1 证据：line 14 Product model 字段明确标注 'PT9L'，而文件归档路径含 '2L风险改'、文件名含 'PT2L美亚'，内外矛盾无歧义（REG-CRA-002、REG-CRA-005）。NC-2 证据：line 6 DN 字段明确标注 'PT9L-FXJH01 V1.0 Risk Management Plan'，与文件所属 PT2L 产品线不符（REG-CRA-001、REG-CRA-005）；即便 PT2L 与 PT9L 编号规范的独立性尚待正式文件核实，DN 字段与文件归属产品线之间的不一致本身已构成可识别的文件控制错误，不依赖规范文件的存在性即可成立。共同根本原因（模板复用未更新）由封面页三字段同时存在 PT2L（外部标题/文件名）与 PT9L（内部 DN、Product model）的矛盾所支撑，符合奥卡姆剃刀原则（RC-003）。剩余未核实项（项目编号 30000078 归属、PT9L 文件索引、PT2L 编号规范文件、F0013 变更历史/CAPA 记录、PT2L 独立 RMP 存在性）均属于根本原因精确描述和 CAPA 优先级评估的补充信息，不影响两项 NC 事实层面的成立判断。依据决策规则，现有受控文件层面的证据已足以证明真实的文件控制问题，应予确认。"
+}
+```

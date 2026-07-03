@@ -1,0 +1,226 @@
+{
+  "document": {
+    "title": "PT9L 安规报告（正式）",
+    "report_no": "ETX202303-07-078-02",
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/最终报告/2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式.pdf",
+    "total_pages": 182,
+    "current_fragment_pages": "181-182"
+  },
+  "tests": [
+    {
+      "test_id": "10.1.3d",
+      "test_name": "Free fall test",
+      "standard_reference": "IEC 60068-2-31:2008, Procedure 1",
+      "applicable_standard": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+      "verdict": "N/A",
+      "scope": "Portable and mobile ME equipment, parts, and mounting accessories (with carrying case if intended)",
+      "conditions": [
+        {
+          "condition": "mass ≤ 1 kg",
+          "fall_height_m": 0.25
+        },
+        {
+          "condition": "mass > 1 kg and ≤ 10 kg",
+          "fall_height_m": 0.1
+        },
+        {
+          "condition": "mass > 10 kg and ≤ 50 kg",
+          "fall_height_m": 0.05
+        },
+        {
+          "condition": "mass > 50 kg",
+          "fall_height_m": 0.01
+        }
+      ],
+      "test_cases": [
+        {
+          "fall_height_m": 0.25,
+          "mass_kg": "≤ 1",
+          "fall_no": 1,
+          "result": null
+        },
+        {
+          "fall_height_m": 0.25,
+          "mass_kg": "≤ 1",
+          "fall_no": 2,
+          "result": null
+        },
+        {
+          "fall_height_m": 0.1,
+          "mass_kg": "> 1 & ≤ 10",
+          "fall_no": 1,
+          "result": null
+        },
+        {
+          "fall_height_m": 0.1,
+          "mass_kg": "> 1 & ≤ 10",
+          "fall_no": 2,
+          "result": null
+        },
+        {
+          "fall_height_m": 0.05,
+          "mass_kg": "> 10 & ≤ 50",
+          "fall_no": 1,
+          "result": null
+        },
+        {
+          "fall_height_m": 0.05,
+          "mass_kg": "> 10 & ≤ 50",
+          "fall_no": 2,
+          "result": null
+        },
+        {
+          "fall_height_m": 0.01,
+          "mass_kg": "> 50",
+          "fall_no": 1,
+          "result": null
+        },
+        {
+          "fall_height_m": 0.01,
+          "mass_kg": "> 50",
+          "fall_no": 2,
+          "result": null
+        }
+      ],
+      "notes": "Represents Class 7M2 as described in IEC/TR 60721-4-7:2001"
+    },
+    {
+      "test_id": "11.0",
+      "test_name": "Protection Against Strangulation and Asphyxiation - Risk Management Results Table",
+      "applicable_standard": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+      "verdict": "N/A",
+      "risk_management_clauses_reviewed": [
+        {
+          "clause": "ISO 14971 §4.3",
+          "document_ref": null,
+          "result": null
+        },
+        {
+          "clause": "ISO 14971 §4.4",
+          "document_ref": null,
+          "result": null
+        },
+        {
+          "clause": "ISO 14971 §5",
+          "document_ref": null,
+          "result": null
+        },
+        {
+          "clause": "ISO 14971 §6.2",
+          "document_ref": null,
+          "result": null
+        },
+        {
+          "clause": "ISO 14971 §6.3",
+          "document_ref": null,
+          "result": null
+        },
+        {
+          "clause": "ISO 14971 §6.4",
+          "document_ref": null,
+          "result": null
+        },
+        {
+          "clause": "ISO 14971 §6.5",
+          "document_ref": null,
+          "result": null
+        },
+        {
+          "clause": "ISO 14971 §6.6",
+          "document_ref": null,
+          "result": null
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "model": "PT9L",
+      "sample_id": "YP2407017",
+      "lot": "KE04"
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "equivalent": "EN 60601-1-11:2015 + A1:2021",
+      "subject": "Requirements for ME equipment and ME systems used in home healthcare environments"
+    },
+    {
+      "standard": "IEC 60068-2-31:2008",
+      "subject": "Environmental testing – Free fall test"
+    },
+    {
+      "standard": "IEC/TR 60721-4-7:2001",
+      "subject": "Classification of environmental conditions – Portable and non-stationary use (Class 7M1, 7M2)"
+    },
+    {
+      "standard": "ISO 14971",
+      "subject": "Medical devices – Application of risk management"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-02"
+    },
+    {
+      "type": "sample_id",
+      "value": "YP2407017"
+    },
+    {
+      "type": "lot_number",
+      "value": "KE04"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Free fall test (IEC 60068-2-31:2008 Procedure 1) is marked N/A for clause 10.1.3d under IEC 60601-1-11. The test matrix covers four mass ranges with prescribed fall heights (0.25 m, 0.1 m, 0.05 m, 0.01 m) and two fall repetitions each. No actual results are recorded, indicating the test was not performed or was deemed not applicable for this product configuration. The supplementary note specifies this represents Class 7M2 per IEC/TR 60721-4-7:2001.",
+      "topic_tags": [
+        "free fall",
+        "IEC 60068-2-31",
+        "portable equipment",
+        "N/A",
+        "Class 7M2"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-02",
+        "IEC 60601-1-11"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Risk Management Results Table for Protection Against Strangulation and Asphyxiation (clause 11.0) is marked N/A. The table references ISO 14971 clauses 4.3, 4.4, 5, 6.2, 6.3, 6.4, 6.5, and 6.6, with columns for Document Ref in RMF (Document No. & paragraph), Result-Remarks, and Verdict. All fields are blank, indicating this risk category was deemed not applicable to the PT9L device.",
+      "topic_tags": [
+        "strangulation",
+        "asphyxiation",
+        "risk management",
+        "ISO 14971",
+        "N/A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-02",
+        "IEC 60601-1-11"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ATTACHMENT 3: Photo Documentation – Sample YP2407017, Lot KE04. This attachment contains photographic evidence associated with the safety test report ETX202303-07-078-02 for the PT9L device. The original page image is referenced at _assets/2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式/page_182.png.",
+      "topic_tags": [
+        "photo documentation",
+        "sample",
+        "lot",
+        "attachment"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "YP2407017",
+        "KE04",
+        "ETX202303-07-078-02"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "total_pages": 182,
+    "page_range": "176-178"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+      "description": "Requirements for ME equipment and ME systems used in home healthcare environments"
+    },
+    {
+      "id": "IEC 60601-1-8:2006",
+      "name": "IEC 60601-1-8:2006 + AMD1:2012",
+      "description": "Alarm systems for ME equipment and ME systems"
+    },
+    {
+      "id": "ISO 14971",
+      "name": "ISO 14971",
+      "description": "Application of risk management to medical devices"
+    },
+    {
+      "id": "IEC 60068-2-27:2008",
+      "name": "IEC 60068-2-27:2008",
+      "description": "Environmental testing - Shock test"
+    },
+    {
+      "id": "IEC 60068-2-64:2008",
+      "name": "IEC 60068-2-64:2008",
+      "description": "Environmental testing - Broad-band random vibration test"
+    },
+    {
+      "id": "IEC TR 60721-4-7:2001",
+      "name": "IEC TR 60721-4-7:2001",
+      "description": "Classification of environmental conditions - Portable and non-stationary use"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-FXPJ01 V1.0",
+      "type": "document_number",
+      "description": "Risk Assessment Report"
+    },
+    {
+      "id": "ETX2023-07-078-02",
+      "type": "report_number",
+      "description": "Test Report Number"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "13.2",
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "Auditory alarm signal volume reduction test for life-sustaining ME equipment",
+      "result": "See attached IEC 60601-1-8 Report",
+      "verdict": "N/E"
+    },
+    {
+      "clause": "4.2.3.1",
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "RM RESULTS TABLE: Environmental operating conditions - Continuous operating conditions",
+      "verdict": "N/A",
+      "supplementary_info": "No more restricted range"
+    },
+    {
+      "clause": "7.4.1",
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "RM RESULTS TABLE: Additional requirements for warning and safety notices",
+      "verdict": "P",
+      "risk_management_items": [
+        {
+          "iso14971_clause": "5.2",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "All hazards associated with the device have been identified.",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "5.3",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "All hazards associated with the device have been identified.",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "5.4",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risks of each hazardous situation are estimated",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "6",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "The risk acceptability for each hazardous situation has been estimated and documented",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "7.2",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Solutions for reduction of the unacceptable risk to acceptable levels, where required, have been implemented, taking into account the available options and their priority.",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "7.4.5",
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "RM RESULTS TABLE: Additional requirements for operating instructions",
+      "verdict": "P",
+      "risk_management_items": [
+        {
+          "iso14971_clause": "5.3",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "All hazards associated with the device have been identified.",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "5.4",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Risks of each hazardous situation are estimated",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "6",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "The risk acceptability for each hazardous situation has been estimated and documented",
+          "verdict": "P"
+        },
+        {
+          "iso14971_clause": "7.2",
+          "document_ref": "Risk Assessment Report DN: PT9L-FXPJ01 V1.0",
+          "result": "Solutions for reduction of the unacceptable risk to acceptable levels, where required, have been implemented, taking into account the available options and their priority.",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "8.4",
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "RM RESULTS TABLE: Additional requirements for interruption of power supply / supply mains to ME Equipment and ME Systems",
+      "verdict": "N/A",
+      "supplementary_info": "Not life supporting ME equipment or ME system"
+    },
+    {
+      "clause": "10.1.2a",
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "Shock test (IEC 60068-2-27:2008)",
+      "verdict": "P",
+      "test_conditions": {
+        "peak_acceleration": "150 m/s2 (15 g)",
+        "duration": "11 ms",
+        "pulse_shape": "half-sine",
+        "number_of_shocks": "3 shocks per direction per axis (18 total)",
+        "class": "Class 7M1 as described in IEC TR 60721-4-7:2001"
+      },
+      "test_results": [
+        {
+          "direction": "+",
+          "axis": "X",
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "direction": "-",
+          "axis": "X",
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "direction": "+",
+          "axis": "Y",
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "direction": "-",
+          "axis": "Y",
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "direction": "+",
+          "axis": "Z",
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "direction": "-",
+          "axis": "Z",
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "10.1.2b",
+      "standard": "IEC 60601-1-11:2015 + A1:2020",
+      "name": "Broad-band random vibration test (IEC 60068-2-64:2008)",
+      "verdict": "P",
+      "test_conditions": {
+        "acceleration_amplitude_1": "10 Hz to 100 Hz: 1.0 (m/s²)²/Hz",
+        "acceleration_amplitude_2": "100 Hz to 200 Hz: -3 dB per octave",
+        "acceleration_amplitude_3": "200 Hz to 2000 Hz: 0.5 (m/s²)²/Hz",
+        "duration": "30 min per perpendicular axis (3 total)"
+      },
+      "test_results": [
+        {
+          "axis": "X",
+          "amplitude_profile": 1,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "X",
+          "amplitude_profile": 1,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "X",
+          "amplitude_profile": 1,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "Y",
+          "amplitude_profile": 2,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "Y",
+          "amplitude_profile": 2,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "Y",
+          "amplitude_profile": 2,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "Z",
+          "amplitude_profile": 3,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "Z",
+          "amplitude_profile": 3,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        },
+        {
+          "axis": "Z",
+          "amplitude_profile": 3,
+          "basic_safety_maintained": "Yes",
+          "verdict": "P"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 13.2: For ME equipment and ME systems intended to actively keep alive or resuscitate a patient, reducing the auditory alarm signal volume below audible levels was not possible, except when the alarm system was connected to a distributed alarm system that included generation of auditory alarm signals per IEC 60601-1-8:2006 and IEC 60601-1-8:2006/AMD1:2012. Result: See attached IEC 60601-1-8 Report. Verdict: N/E.",
+      "topic_tags": [
+        "alarm system",
+        "auditory alarm",
+        "life support",
+        "IEC 60601-1-8",
+        "distributed alarm system"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015",
+        "IEC 60601-1-8:2006"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 8.4 RM RESULTS TABLE for interruption of power supply is marked N/A with supplementary information: Not life supporting ME equipment or ME system. This means the requirements for power supply interruption for life-supporting equipment do not apply.",
+      "topic_tags": [
+        "power supply interruption",
+        "life support",
+        "N/A",
+        "risk management"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015",
+        "ISO 14971"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Shock test conditions per IEC 60068-2-27:2008 (Clause 10.1.2a): Peak acceleration 150 m/s² (15 g), Duration 11 ms, Pulse shape half-sine, Number of shocks 3 per direction per axis (18 total). This represents Class 7M1 as described in IEC TR 60721-4-7:2001. All six directions (+X, -X, +Y, -Y, +Z, -Z) passed with basic safety and essential performance maintained.",
+      "topic_tags": [
+        "shock test",
+        "mechanical test",
+        "Class 7M1",
+        "IEC 60068-2-27",
+        "environmental test"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015",
+        "IEC TR 60721-4-7:2001"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Broad-band random vibration test per IEC 60068-2-64:2008 (Clause 10.1.2b): Acceleration amplitude profile: 10 Hz to 100 Hz at 1.0 (m/s²)²/Hz; 100 Hz to 200 Hz at -3 dB per octave; 200 Hz to 2000 Hz at 0.5 (m/s²)²/Hz. Duration: 30 min per perpendicular axis (3 total). All three axes (X, Y, Z) tested with 3 runs each, all passed with basic safety and essential performance maintained.",
+      "topic_tags": [
+        "vibration test",
+        "random vibration",
+        "mechanical test",
+        "IEC 60068-2-64",
+        "environmental test"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11:2015"
+      ]
+    }
+  ]
+}

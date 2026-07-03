@@ -1,0 +1,141 @@
+{
+  "document": {
+    "report_number": "ETX2023-07-078-02",
+    "total_pages": 182,
+    "current_pages": "179-180"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-11:2015+A1:2020",
+      "name": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+      "description": "Requirements for ME equipment used in home healthcare environments"
+    },
+    {
+      "id": "IEC 60068-2-27:2008",
+      "name": "IEC 60068-2-27:2008",
+      "description": "Environmental testing - Shock test"
+    },
+    {
+      "id": "IEC 60068-2-64:2008",
+      "name": "IEC 60068-2-64:2008",
+      "description": "Environmental testing - Vibration, broad-band random"
+    },
+    {
+      "id": "IEC/TR 60721-4-7:2001",
+      "name": "IEC/TR 60721-4-7:2001",
+      "description": "Classification of environmental conditions - Portable and non-stationary use"
+    }
+  ],
+  "tests": [
+    {
+      "id": "10.1.3a1",
+      "name": "Shock test - Test Type 1 (non-hand-held equipment)",
+      "standard_reference": "IEC 60068-2-27:2008",
+      "verdict": "N/A",
+      "parameters": {
+        "peak_acceleration": "150 m/s2 (15 g)",
+        "duration": "11 ms",
+        "pulse_shape": "half-sine",
+        "number_of_shocks": "3 shocks per direction per axis (18 total)"
+      },
+      "notes": "Represents Class 7M2 as described in IEC/TR 60721-4-7:2001",
+      "applies_to": "Other than hand-held equipment, parts, and mounting accessories"
+    },
+    {
+      "id": "10.1.3a2",
+      "name": "Shock test - Test Type 2 (non-hand-held equipment)",
+      "standard_reference": "IEC 60068-2-27:2008",
+      "verdict": "N/A",
+      "parameters": {
+        "peak_acceleration": "300 m/s2 (15 g)",
+        "duration": "6 ms",
+        "pulse_shape": "half-sine",
+        "number_of_shocks": "3 shocks per direction per axis (18 total)"
+      },
+      "applies_to": "Other than hand-held ME equipment, parts, and mounting accessories"
+    },
+    {
+      "id": "10.1.3b1",
+      "name": "Shock test - Test Type 1 (hand-held equipment)",
+      "standard_reference": "IEC 60068-2-27:2008",
+      "verdict": "N/A",
+      "parameters": {
+        "peak_acceleration": "300 m/s2 (30 g)",
+        "duration": "11 ms",
+        "pulse_shape": "half-sine",
+        "number_of_shocks": "3 shocks per direction per axis (18 total)"
+      },
+      "notes": "Represents Class 7M3 as described in IEC/TR 60721-4-7:2001 (Test Type 1)",
+      "applies_to": "Hand-held ME equipment, parts, and mounting accessories"
+    },
+    {
+      "id": "10.1.3c",
+      "name": "Broad-band random vibration test",
+      "standard_reference": "IEC 60068-2-64:2008",
+      "verdict": "N/A",
+      "parameters": {
+        "acceleration_amplitude_1": "10 Hz to 100 Hz: 1.0 (m/s2)2/Hz",
+        "acceleration_amplitude_2": "100 Hz to 200 Hz: -3 dB per octave",
+        "acceleration_amplitude_3": "200 Hz to 2000 Hz: 0.5 (m/s2)2/Hz",
+        "duration": "30 min per perpendicular axis (3 total)"
+      },
+      "applies_to": "ME equipment, parts, and mounting accessories",
+      "axes_tested": [
+        {
+          "perpendicular_axis": 1,
+          "acceleration_amplitude": 1
+        },
+        {
+          "perpendicular_axis": 2,
+          "acceleration_amplitude": 1
+        },
+        {
+          "perpendicular_axis": 3,
+          "acceleration_amplitude": 1
+        },
+        {
+          "perpendicular_axis": 1,
+          "acceleration_amplitude": 2
+        },
+        {
+          "perpendicular_axis": 2,
+          "acceleration_amplitude": 2
+        },
+        {
+          "perpendicular_axis": 3,
+          "acceleration_amplitude": 2
+        },
+        {
+          "perpendicular_axis": 1,
+          "acceleration_amplitude": 3
+        },
+        {
+          "perpendicular_axis": 2,
+          "acceleration_amplitude": 3
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For all shock and vibration tests under clauses 10.1.3a1, 10.1.3a2, 10.1.3b1, and 10.1.3c, the assessment criterion is whether basic safety and essential performance is maintained (Yes/No) for each direction/axis combination. All listed test clauses are marked N/A for this report.",
+      "topic_tags": [
+        "shock test",
+        "vibration test",
+        "basic safety",
+        "essential performance",
+        "N/A"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11",
+        "IEC 60068-2-27",
+        "IEC 60068-2-64",
+        "10.1.3a1",
+        "10.1.3a2",
+        "10.1.3b1",
+        "10.1.3c"
+      ]
+    }
+  ]
+}

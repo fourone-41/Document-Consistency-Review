@@ -1,0 +1,91 @@
+{
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "组装间隙",
+      "expected_value": "A面≤0.1mm；B面≤0.1mm；C面≤0.1mm；D面不影响组装及功能即可；E面不影响组装及功能即可",
+      "instrument": "塞尺",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "2",
+      "item": "段差",
+      "expected_value": "A面≤0.1mm；B面≤0.1mm；C面≤0.1mm；D面不影响组装及功能即可；E面不影响组装及功能即可",
+      "instrument": "塞尺",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "3",
+      "item": "脏污、指纹",
+      "expected_value": "A面不允许；B面不允许；C面不允许；D面不允许；E面不影响组装及功能即可",
+      "instrument": "目视",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "4",
+      "item": "无感划伤/划痕线状缺陷",
+      "expected_value": "A面不允许；B面划伤不允许，划痕L≤2mm W≤0.1mm 同一平面N≤1；C面划伤不允许，划痕L≤3mm W≤0.1mm 同一平面N≤2 DS≥20mm；D面划伤L≤3mm W≤0.1mm，划痕L≤10mm W≤0.3mm 同一平面总N≤2 DS≥20mm；E面不影响组装及功能即可",
+      "instrument": "菲林卡",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "5",
+      "item": "异色点/凹凸点点状缺陷",
+      "expected_value": "A面不允许；B面D≤0.20mm 同一平面N≤1；C面D≤0.30mm 同一平面N≤2 DS≥20mm；D面D≤0.30mm 同一平面N≤2 DS忽略；E面不影响组装及功能即可",
+      "instrument": "菲林卡",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "6",
+      "item": "同色点",
+      "expected_value": "A面不允许；B面D≤0.30mm 同一平面N≤1；C面D≤0.30mm 同一平面N≤2 DS≥20mm；D面D≤0.40mm 同一平面N≤2 DS忽略；E面不影响组装及功能即可",
+      "instrument": "菲林卡",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "7",
+      "item": "顶凸/顶白",
+      "expected_value": "A面不允许；B面不允许；C面不允许；D面不影响组装及功能即可；E面不影响组装及功能即可",
+      "instrument": "目视",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "8",
+      "item": "缩水、凹陷",
+      "expected_value": "A面不允许；B面不允许；C面不允许；D面不允许；E面不影响组装及功能即可",
+      "instrument": "目视",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "9",
+      "item": "产品本体或装配后翘曲/变形",
+      "expected_value": "A面不允许；B面不允许；C面目测不明显/参照限度样本；D面目测不明显/参照限度样本；E面不影响组装及功能即可",
+      "pass_criteria": "MI"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外观检验项目按面别（A面、B面、C面、D面、E面）分级管控，检验工具包括塞尺、目视、菲林卡。各面别缺陷判定标准如下：1.组装间隙：A/B/C面≤0.1mm，D/E面不影响组装及功能即可；2.段差：A/B/C面≤0.1mm，D/E面不影响组装及功能即可；3.脏污、指纹：A/B/C/D面不允许，E面不影响组装及功能即可；4.无感划伤/划痕线状缺陷：A面不允许，B面划伤不允许划痕L≤2mm W≤0.1mm N≤1，C面划伤不允许划痕L≤3mm W≤0.1mm N≤2 DS≥20mm，D面划伤L≤3mm W≤0.1mm划痕L≤10mm W≤0.3mm N≤2 DS≥20mm，E面不影响组装及功能即可；5.异色点/凹凸点：A面不允许，B面D≤0.20mm N≤1，C面D≤0.30mm N≤2 DS≥20mm，D面D≤0.30mm N≤2 DS忽略，E面不影响组装及功能即可；6.同色点：A面不允许，B面D≤0.30mm N≤1，C面D≤0.30mm N≤2 DS≥20mm，D面D≤0.40mm N≤2 DS忽略，E面不影响组装及功能即可；7.顶凸/顶白：A/B/C面不允许，D/E面不影响组装及功能即可；8.缩水、凹陷：A/B/C/D面不允许，E面不影响组装及功能即可；9.产品本体或装配后翘曲/变形：A/B面不允许，C/D面目测不明显/参照限度样本，E面不影响组装及功能即可。",
+      "topic_tags": [
+        "外观检验",
+        "面别分级",
+        "缺陷判定",
+        "塞尺",
+        "菲林卡",
+        "组装间隙",
+        "段差",
+        "划痕",
+        "异色点",
+        "同色点",
+        "顶凸",
+        "缩水",
+        "翘曲"
+      ],
+      "related_subjects": [
+        "外观检验标准",
+        "MI判定等级"
+      ]
+    }
+  ]
+}

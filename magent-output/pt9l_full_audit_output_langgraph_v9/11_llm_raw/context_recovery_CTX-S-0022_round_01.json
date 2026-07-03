@@ -1,0 +1,157 @@
+```json
+{
+  "context_summary": "本轮已补充了 F0015（V1.0-3 Verification of risk control measure and residual risk evaluation report）的封面页与目录区域（第1-61行），确认该文件结构完整，包含：封面签字栏、缩略语表、目录（含第3节"Validation of risk control measures and residual risk assessment"第5-17页、第4节"Residual risk evaluation and conclusion"第17页）。但当前已读内容仅覆盖封面与目录，**第3节正文表格（第5-17页对应的 Markdown 行）尚未读取**，无法判断该验证报告中是否存在任何与 Bluetooth 相关的风险控制措施验证记录。page_context 中的 F0440（IEC 62366-1 可用性检查表）内容为空，未提供有效信息。核心缺口：F0015 第3节正文表格行（约 line 60 之后至文档末尾）完全未读，Bluetooth 关键词是否出现于该验证表中完全未知。",
+  "evidence_gaps": [
+    "F0015 第3节正文表格（'Validation of risk control measures and residual risk assessment'，文档 line ~62 至末尾）未读取，无法确认是否存在 Bluetooth 相关验证行",
+    "F0015 第4节'Residual risk evaluation and conclusion'正文内容未读取，无法确认 Bluetooth 残余风险结论",
+    "F0015 签字栏日期字段为空白（Drafted/Reviewed/Approved by 均无日期），文件完成状态不明",
+    "F0440（IEC 62366-1 Checklist）page_context 内容全部为空，未能提供可用性维度的 Bluetooth 相关验证证据",
+    "尚未检索同目录下是否存在 V1.1 或更高版本的验证报告（历史文件夹外的当前版本文件）",
+    "尚未检索主风险分析文件夹（非'历史文件'子目录）中是否存在包含 Bluetooth 风险项的风险控制验证记录",
+    "尚未检索 Bluetooth 专项测试报告、EMC/RF 测试报告或设计验证报告中是否包含风险控制关闭记录",
+    "尚未确认风险分析主文件（FMEA 或 Risk Analysis Table）中 Bluetooth 风险项的 Risk ID，以便在验证报告中做交叉追溯"
+  ],
+  "additional_search_queries": [
+    "F0015 line 62 至文档末尾全文（第3节与第4节正文表格，检索关键词：Bluetooth、蓝牙、wireless、BT、RF、electromagnetic）",
+    "03 风险分析\\（非历史文件子目录）中所有验证报告文件，关键词：Bluetooth 蓝牙 wireless",
+    "文件名含 'Verification' 且版本号高于 V1.0 的文件（如 V1.1、V2.0），关键词：Bluetooth 蓝牙",
+    "风险分析主表（Risk Analysis / FMEA）中含 Bluetooth 蓝牙 wireless 的风险条目及其 Risk ID",
+    "Bluetooth 测试报告、RF 测试报告、EMC 报告中含 risk control、verification、residual risk 的段落",
+    "F0440 IEC 62366-1 Checklist 正文内容（line 92、182 附近完整表格行），关键词：Bluetooth wireless"
+  ],
+  "agent_instruction": "请执行以下优先级排序的补充检索，目标是确认 F0015 验证报告正文表格中是否存在 Bluetooth 相关验证记录，并追溯完整的 Bluetooth 风险控制验证链：\n\n【P0 - 立即执行】\n1. 读取 F0015 从 line 62 至文档末尾的全部内容，重点扫描第3节验证表格中所有行，搜索关键词：Bluetooth、蓝牙、BT、wireless、RF、electromagnetic、radio。记录每一个匹配行的完整表格行（含 Risk ID、Hazard、Control Measure、Verification Method、Result、Residual Risk 等所有列）。\n2. 如第3节表格中存在 Bluetooth 相关行，提取该行全部列值并作为 recovered_context 返回；如不存在，明确记录"F0015 第3节验证表格中无 Bluetooth 相关条目"。\n\n【P1 - 次优先】\n3. 检索'03 风险分析'目录（排除'历史文件'子目录）中所有文件，查找包含 Bluetooth/蓝牙 的验证记录或风险控制关闭证据。\n4. 检索风险分析主表（FMEA/Risk Analysis Table），提取所有 Bluetooth 相关风险条目的 Risk ID、Hazard Description、Control Measure、Verification Status。\n\n【P2 - 补充】\n5. 读取 F0440 IEC 62366-1 Checklist 的实际正文内容（当前 page_context 为空），确认是否涉及 Bluetooth 可用性风险验证。\n6. 检索是否存在独立的 Bluetooth/RF/EMC 测试报告，确认其中是否包含风险控制验证关闭声明。\n\n返回时请在 recovered_context 中为每条证据标注：doc_id、rel_path、line_no、完整原文、以及该证据对'Bluetooth 验证链是否存在'这一问题的直接回答（存在/不存在/不确定）。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "RISK-019",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 6,
+        "source_text": "D N: PT2L( 美亚 ) - SGYS 01 V 1 .0 Verification of risk control measure and residual risk evaluation report",
+        "context_note": "封面页文件编号行，确认文件版本为 V1.0，产品为 PT2L 红外额温计，项目编号 2020-002-WX02"
+      },
+      {
+        "evidence_id": "RISK-020",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 8,
+        "source_text": "**V erification of risk control measure and residual risk evaluation report**",
+        "context_note": "文件标题行，确认文件类型为风险控制措施验证与残余风险评价报告"
+      },
+      {
+        "evidence_id": "RISK-021",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 32,
+        "source_text": "1.2 Introduction on implementation of the risk management plan 3",
+        "context_note": "目录条目，确认第1.2节存在"
+      },
+      {
+        "evidence_id": "RISK-022",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 34,
+        "source_text": "1.3 Risk management team 3",
+        "context_note": "目录条目，确认第1.3节存在"
+      },
+      {
+        "evidence_id": "RISK-023",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 36,
+        "source_text": "2\\. Criteria of risk evaluation 4",
+        "context_note": "目录条目，确认第2节风险评价准则存在"
+      },
+      {
+        "evidence_id": "RISK-024-NEW",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 38,
+        "source_text": "3\\. Validation of risk control measures and residual risk assessment 5",
+        "context_note": "【本轮新增】目录条目，确认第3节验证表格位于第5-17页，对应正文行尚未读取，是 Bluetooth 验证记录的关键待查区域"
+      },
+      {
+        "evidence_id": "RISK-025-NEW",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 40,
+        "source_text": "4\\. esidual risk evaluation and conclusion 17",
+        "context_note": "【本轮新增】目录条目（'R'字母缺失，疑为 OCR 错误，应为'Residual risk evaluation and conclusion'），第4节残余风险结论位于第17页，正文行尚未读取"
+      },
+      {
+        "evidence_id": "RISK-026-NEW",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 42,
+        "source_text": "Signature of the risk management group 18",
+        "context_note": "【本轮新增】目录条目，签字页位于第18页"
+      },
+      {
+        "evidence_id": "RISK-027-NEW",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Drafted by** *(* *P* *roject* *L* *eader)* Date:",
+        "context_note": "【本轮新增】封面签字栏，Drafted by 日期字段为空，文件完成状态存疑"
+      },
+      {
+        "evidence_id": "RISK-028-NEW",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 20,
+        "source_text": "**Reviewed by** *(Certification Engineer)* Date:",
+        "context_note": "【本轮新增】封面签字栏，Reviewed by 日期字段为空"
+      },
+      {
+        "evidence_id": "RISK-029-NEW",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "context_note": "【本轮新增】封面签字栏，Approved by 日期字段为空，三处签字均无日期，文件可能为草稿或模板状态"
+      },
+      {
+        "evidence_id": "RISK-030-NEW",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 46,
+        "source_text": "| **Abbreviations** | **Signification** |\n| RE | Risk Evaluation |\n| S | Severity: 1 negligible；2 minor；3 Serious；4 Critical；5 Catastrophic |\n| P | The probability of a harm occurring: 6 Frequent; 5 Probable; 4 Occasional; 3 Remote; 2 Improbable; 1 Few |\n| R | Risk NO. |\n| ACC | Acceptable |\n| NACC | Unacceptable |\n| PRM | Plan of Risk control measure(s) |\n| NH | New hazard generated |\n| N/A | Not apply |\n| Y | Yes |\n| N | No |\n| AFAP | As far as possible without adversely affecting the benefit-risk ratio |",
+        "context_note": "【本轮新增】缩略语表完整内容，确认风险评价矩阵使用 S×P 二维评分，严重度1-5级，概率1-6级，含 ACC/NACC 判定列和 PRM 计划列"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0440",
+        "rel_path": "历史记录\\给实验室\\可用性\\Infrared forehead thermometer 09a-2 Checklist of IEC 62366-1 2021.via_lo_html.clean.md",
+        "line_start": 1,
+        "title": "IEC 62366-1 可用性工程检查表",
+        "text": "内容为空，需重新读取正文行以获取 Bluetooth 相关可用性验证信息",
+        "context_note": "【本轮标注】page_context 返回内容为空，该文件正文未被成功提取，需在下一轮单独读取"
+      }
+    ],
+    "recovered_context": [
+      {
+        "recovery_id": "RC-001",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "lines_covered": "1-61",
+        "finding": "封面与目录区域已完整读取。文件为 PT2L 红外额温计 V1.0 风险控制验证报告，项目编号 2020-002-WX02。三处签字栏日期均为空。目录结构确认第3节（验证表格，第5-17页）和第4节（残余风险结论，第17页）存在，但正文内容尚未读取。在已读取的第1-61行中，未发现任何 Bluetooth 或蓝牙相关文字。",
+        "bluetooth_evidence_found": false,
+        "bluetooth_evidence_absent_confirmed": false,
+        "reason": "已读区域（封面+目录+缩略语表）不包含风险验证正文表格，Bluetooth 验证记录应位于第3节正文（line 62 之后），尚未读取，无法得出最终结论"
+      },
+      {
+        "recovery_id": "RC-002",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "lines_covered": "N/A",
+        "finding": "文件位于'历史文件'子目录，版本为 V1.0，签字栏为空。需确认是否存在更高版本（V1.1+）或当前有效版本的同类文件位于'03 风险分析'主目录中。历史文件版本的验证记录可能不代表最终批准状态。",
+        "bluetooth_evidence_found": false,
+        "bluetooth_evidence_absent_confirmed": false,
+        "reason": "文件版本与批准状态存疑，需检索当前有效版本"
+      }
+    ]
+  }
+}
+```

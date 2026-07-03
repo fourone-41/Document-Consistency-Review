@@ -1,0 +1,141 @@
+{
+  "document": {
+    "title": "T-Z1-按键-v3.0-20240627（嵌套副本·portrait旋转版）",
+    "file_name": "T-Z1-按键-v3.0-20240627.pdf",
+    "version": "v3.0",
+    "date": "2024-06-27",
+    "generated_date": "2026-06-02",
+    "status": "自动识别为主目录主图的装订方向旋转副本，无设计内容差异",
+    "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/设计输出清单二/图纸/T-Z1-按键-v3.0-20240627.pdf",
+    "doc_type": "工程图纸（嵌套归档副本）",
+    "product": "PT9L",
+    "authority": "主图（B组）为权威版本，本副本（E组）为DHF归档双份保险用途"
+  },
+  "products": [
+    {
+      "name": "T-Z1-按键",
+      "version": "v3.0",
+      "project": "PT9L"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "T-Z1-按键-v3.0-20240627",
+      "type": "图纸编号",
+      "description": "按键零件图纸"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本副本（嵌套E组）与主图（B组）设计内容完全一致，仅PDF装订方向不同。主要差异：PDF mediabox为A3 portrait（595×841 pt）vs 主图A3 landscape（841×595 pt）；装订方向为纵向（短边在上下）vs 横向（短边在左右）；视图布局与主图整体逆时针旋转90°；标题栏内容、技术要求、尺寸/公差/几何、修订记录块均与主图逐字/逐条/逐项一致。",
+      "topic_tags": [
+        "装订方向",
+        "PDF格式",
+        "A3 portrait",
+        "A3 landscape",
+        "旋转副本",
+        "归档"
+      ],
+      "related_subjects": [
+        "T-Z1-按键-v3.0-20240627.pdf",
+        "主图B组",
+        "嵌套E组"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "自动校验记录（2026-06-02）：1. PDF文件hash与主图字节级不同（差≤200字节，属PDF元数据/CreationDate、/ModDate、/Producer重导出差异，与几何无关）。2. 150 DPI overview PNG像素diff：旋转90°后比对，差异4–12%均来自旋转重采样的字体抗锯齿噪声（max灰度差=255只出现在单像素粒度的文字边缘），未发现任何尺寸数值、技要文字、几何线条的内容性差异。3. 代表性视觉抽样（人/AI双重核验）：T-Z1-上盖-v3.0与本目录保护盖逐张overview对比，4个视图、所有标注、所有标题栏字段、所有技要条目逐字相同。4. 判定：E组14张为DHF归档双份保险用途，权威版本以主目录主图（B组）为准。",
+      "topic_tags": [
+        "自动校验",
+        "像素diff",
+        "hash比对",
+        "DHF归档",
+        "双份保险",
+        "内容一致性"
+      ],
+      "related_subjects": [
+        "T-Z1-按键-v3.0-20240627.pdf",
+        "主图B组",
+        "嵌套E组"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "若ECN后嵌套副本被单独修订（与主图脱钩），请在审核5188站标\"不好\"并在意见中注明发现的具体差异，自动触发本副本\"升级为独立详读\"。本简本不重复主图内容。如需详查标题栏、技要、IQC尺寸表、未编号默认公差、自动校验、装配链、3D确认清单，请打开主图md。",
+      "topic_tags": [
+        "ECN",
+        "变更控制",
+        "副本与主图脱钩",
+        "审核流程",
+        "升级独立详读"
+      ],
+      "related_subjects": [
+        "T-Z1-按键-v3.0-20240627.pdf",
+        "主图B组",
+        "审核5188"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/设计输出清单二/图纸/T-Z1-按键-v3.0-20240627.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-按键-v3.0-20240627.pdf",
+      "to": "装订方向",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主图B组",
+      "to": "装订方向",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "嵌套E组",
+      "to": "装订方向",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-按键-v3.0-20240627.pdf",
+      "to": "自动校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主图B组",
+      "to": "自动校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "嵌套E组",
+      "to": "自动校验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-按键-v3.0-20240627.pdf",
+      "to": "ECN",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "主图B组",
+      "to": "ECN",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "审核5188",
+      "to": "ECN",
+      "properties": {}
+    }
+  ],
+  "_claims": []
+}

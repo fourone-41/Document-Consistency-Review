@@ -1,0 +1,174 @@
+```json
+{
+  "context_summary": "第3轮检索聚焦生命周期上下游证据链。当前已获取的证据仅覆盖PT5正极弹簧图纸（F0190，PT5-M02），提供了材料规格（镀镍不锈钢Φ0.5mm）、关键尺寸（线径/工作段长/外径）、盐雾测试要求（GB2423.17-2008）及装配关系推断。风险验证文件（F0015、F0019）的page_context条目全部为空文本，未能提取任何实质内容。核心缺口依然存在：①无生物相容性测试报告（ISO 10993系列）；②无PT5样品身份文件（批次号/供应商/材料证书）；③无PT5→PT9L零件复用的正式设计变更或等同性声明；④无RUN-0006所指向的具体检验批次记录；⑤BOM-to-process-to-inspection链断裂——图纸存在但IQC验收记录、过程检验记录、成品检验记录均未出现；⑥风险控制验证报告（F0015/F0019）内容为空，无法确认生物相容性风险是否已被识别并关闭。",
+  "evidence_gaps": [
+    "生物相容性测试报告（ISO 10993-1/-5/-10）：当前证据目录中完全缺失，无法确认PT5弹簧材料（镀镍不锈钢）对PT9L生产件的适用性",
+    "PT5样品身份文件：无批次号、供应商名称、材料合格证（CoC）或进料检验（IQC）报告，无法证明送测样品与PT9L量产件材料等同",
+    "PT5→PT9L零件复用的正式等同性声明或设计变更记录（ECO/ECN）：图纸注释仅为'推测同件复用'，缺乏受控文件支撑",
+    "RUN-0006所指向的具体生产批次检验记录（批次号、检验日期、检验员、结果）",
+    "IQC进料检验规程及实测记录（针对PT5-M02弹簧的线径/弹力/盐雾等关键参数的实测数据）",
+    "过程检验记录（焊接工序验收、装配工序检验）",
+    "成品检验/出货检验记录（含弹力≥0.5kgf的实测验收数据）",
+    "风险控制验证报告F0015和F0019的实质内容（当前page_context全部为空，无法确认生物相容性风险条目是否存在及关闭状态）",
+    "BOM受控版本（含PT5-M02料号、版本号、供应商编码），用于追溯送测件与量产件的物料一致性",
+    "负极弹簧PT5-M03对应的生物相容性及样品身份证据（正负极弹簧均为患者接触路径上的导电件）",
+    "设计输出清单（设计输出清单一/二的索引文件），用于确认PT5-M02是否在PT9L设计输出范围内受控"
+  ],
+  "additional_search_queries": [
+    "生物相容性 ISO 10993 PT5 PT9L 弹簧 镀镍",
+    "biocompatibility test report spring PT5 PT9L nickel plated",
+    "RUN-0006 批次 检验 弹簧 样品",
+    "PT5-M02 IQC 进料检验 验收记录",
+    "PT9L BOM 物料清单 弹簧 料号",
+    "设计变更 ECO ECN PT5 PT9L 弹簧 复用 等同",
+    "F0015 风险控制验证 生物相容性 弹簧",
+    "F0019 Verification risk control biocompatibility spring",
+    "正极弹簧 PT5-M02 供应商 材料证书 CoC",
+    "设计输出清单 PT9L 弹簧 版本",
+    "负极弹簧 PT5-M03 生物相容性",
+    "盐雾测试 GB2423.17 PT5 弹簧 实测报告",
+    "弹力 0.5kgf 验收 实测 PT5 PT9L"
+  ],
+  "agent_instruction": "Hardware Agent：当前P1缺口（CTX-S-0025）在第3轮检索后仍未关闭。以下是精确审查指令：\n\n【核心问题】无法确认PT9L量产件与生物相容性测试所用PT5样品的材料等同性，RUN-0006标记的风险未被证据覆盖。\n\n【必须查找的文件类型及优先级】\n\nP1-A（最高优先）：生物相容性测试报告\n- 搜索关键词：'ISO 10993'、'生物相容性'、'细胞毒性'、'致敏'、'biocompatibility'、'cytotoxicity'\n- 预期文件位置：'09 测试报告'、'10 临床'、'验证报告'相关目录\n- 需确认：报告中是否明确列出PT5弹簧（或PT9L弹簧）作为测试样品，材料描述是否与PT5-M02图纸一致（镀镍不锈钢Φ0.5mm）\n\nP1-B（最高优先）：样品身份文件\n- 搜索关键词：'样品清单'、'sample list'、'测试样品'、'批次'、'lot number'、'供应商'、'材料证书'\n- 需确认：送测样品的料号、批次、供应商是否与PT9L量产BOM一致\n\nP1-C：PT5→PT9L等同性/复用声明\n- 搜索关键词：'设计变更'、'ECO'、'ECN'、'等同性'、'沿用'、'PT5'、'PT9L'\n- 需确认：是否存在受控文件正式声明PT5弹簧在PT9L中复用，且该声明经过设计评审批准\n\nP2-A：RUN-0006关联记录\n- 直接搜索'RUN-0006'，获取该运行记录的完整内容，确认其标记的具体问题描述\n\nP2-B：F0015和F0019实质内容\n- 当前page_context为空，需重新提取这两份风险验证报告的完整文本，特别关注是否有弹簧/材料/生物相容性相关条目及其验证状态（open/closed）\n\nP2-C：IQC及检验记录\n- 搜索'IQC'、'进料检验'、'PT5-M02'、'弹簧检验'，获取实测数据\n\n【判断规则】\n- 若找到生物相容性报告且样品身份可追溯至PT9L量产件：gap可关闭，输出confirmed\n- 若找到报告但样品身份无法追溯：gap升级，需标记为material_equivalence_unverified\n- 若F0015/F0019中存在生物相容性条目但状态为open：gap升级为active_risk\n- 若所有搜索均无结果：维持needs_more_context，建议升级为DHF completeness finding",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "HW-135",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 49,
+        "source_text": "| ② | 侧视图 | （无） | **7.0** | ±0.30 | **工作段长**（弹簧紧密段） |",
+        "verified": true,
+        "lifecycle_role": "design_output_dimension_spec",
+        "relevance_to_gap": "提供PT5-M02关键尺寸规格，可作为材料等同性比对基准，但不能替代样品身份文件"
+      },
+      {
+        "evidence_id": "HW-136",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 75,
+        "source_text": "| **公差形式** | `±0.03` / `±0.30` / `±0.10` 均对称 ✓ |",
+        "verified": true,
+        "lifecycle_role": "design_output_tolerance_verification",
+        "relevance_to_gap": "公差体系完整，可用于IQC验收标准比对，但无实测数据"
+      },
+      {
+        "evidence_id": "HW-137",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 84,
+        "source_text": "- **正极弹簧 ↔ PCB / 电池仓盖**：技要 6\"可上锡焊接\" → 焊接固定到 PCB。",
+        "verified": true,
+        "lifecycle_role": "design_output_assembly_interface",
+        "relevance_to_gap": "确认弹簧为焊接件，焊接材料（锡）亦为潜在生物相容性关注点，需在测试报告中覆盖"
+      },
+      {
+        "evidence_id": "HW-138",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 93,
+        "source_text": "| 1 | 电池槽 / PCB 焊盘的实际配合（焊点位置、焊盘大小） | 工程师释义 |",
+        "verified": true,
+        "lifecycle_role": "design_output_open_item",
+        "relevance_to_gap": "图纸本身标注了未关闭的工程确认项，说明PT5→PT9L复用问题在设计文件层面已被识别但未正式关闭"
+      },
+      {
+        "evidence_id": "HW-138-ext",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 97,
+        "source_text": "| 5 | PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件） | 推测同件复用 |",
+        "verified": true,
+        "lifecycle_role": "design_output_open_item_critical",
+        "relevance_to_gap": "直接证据：图纸工程师确认清单第5项明确标注PT9L复用PT5弹簧为'推测'而非受控结论，这是gap存在的文件内证据，支持RUN-0006的标记合理性"
+      },
+      {
+        "evidence_id": "HW-138-material",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 30,
+        "source_text": "2. 材料：镀镍不锈钢线 Φ0.5 / 不锈钢线 Φ0.5 mm + Ni 镀层；",
+        "verified": true,
+        "lifecycle_role": "design_output_material_spec",
+        "relevance_to_gap": "明确材料为镀镍不锈钢，镍为已知致敏原（ISO 10993-10关注点），生物相容性测试必须覆盖此材料，当前无测试报告证明已完成"
+      },
+      {
+        "evidence_id": "HW-138-salt",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 35,
+        "source_text": "7. 符合 **GB2423.17-2008** 盐雾测试：5% 盐水 / 35° / 24H 后无生锈；",
+        "verified": true,
+        "lifecycle_role": "design_output_corrosion_requirement",
+        "relevance_to_gap": "盐雾测试要求存在于图纸，但仅为腐蚀性要求，不等同于ISO 10993生物相容性测试，两者不可互相替代"
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter": "弹簧材料",
+        "value": "镀镍不锈钢线 Φ0.5mm（不锈钢线 + Ni 镀层）",
+        "source_doc": "F0190",
+        "lifecycle_stage": "design_output",
+        "biocompatibility_relevance": "镍（Ni）为ISO 10993-10致敏性测试重点关注元素，镀层完整性直接影响镍离子释放量，需有浸提液测试数据支撑"
+      },
+      {
+        "parameter": "弹簧自由高",
+        "value": "11.7mm（默认公差）",
+        "source_doc": "F0190",
+        "lifecycle_stage": "design_output",
+        "biocompatibility_relevance": "尺寸参数，用于样品等同性比对"
+      },
+      {
+        "parameter": "弹力要求",
+        "value": "压缩5.0mm时 ≥0.5kgf",
+        "source_doc": "F0190",
+        "lifecycle_stage": "design_output",
+        "biocompatibility_relevance": "功能参数，IQC验收关键项，需实测记录"
+      },
+      {
+        "parameter": "盐雾测试要求",
+        "value": "GB2423.17-2008，5%盐水/35°C/24H无生锈",
+        "source_doc": "F0190",
+        "lifecycle_stage": "design_output",
+        "biocompatibility_relevance": "腐蚀性要求，与生物相容性测试不等同，不能替代ISO 10993报告"
+      },
+      {
+        "parameter": "PT9L复用PT5弹簧状态",
+        "value": "推测同件复用（工程师确认清单第5项，未正式关闭）",
+        "source_doc": "F0190",
+        "lifecycle_stage": "design_output_open_item",
+        "biocompatibility_relevance": "关键：复用关系未经受控文件确认，导致无法判断生物相容性测试样品是否代表PT9L量产件"
+      }
+    ],
+    "page_context": [
+      {
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "retrieval_status": "empty_content",
+        "lifecycle_role": "risk_control_verification_historical",
+        "gap_relevance": "该文件为风险控制措施验证报告历史版本，若包含生物相容性风险条目，可提供risk-to-control-to-verification链证据。当前内容为空，需重新提取"
+      },
+      {
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "retrieval_status": "empty_content",
+        "lifecycle_role": "risk_control_verification_current_v2",
+        "gap_relevance": "该文件为当前版本风险控制验证报告（V2.0，2024年），是risk-to-control-to-verification链的关键节点。内容为空是重大检索失败，必须重新提取全文"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_type": "lifecycle_chain_analysis",
+        "chain_name": "BOM-to-Process-to-Inspection（PT5弹簧）",
+        "chain_status": "断裂",
+        "chain_nodes": [
+          {
+            "node": "设计输出（图纸PT5-M02）",
+            "status": "存在",
+            "doc_id": "F0190",
+            "evidence_id": "HW-135~HW-138-salt"
+          },
+          {
+            "node": "BOM受控版本（PT5-M02料号/版本/供应商）",
+            "status": "缺失",
+            "doc_id": null,

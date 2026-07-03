@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "summary": "本轮共审查 6 个 cluster（MC-CLUSTER-0053/0054/0057/0063/0065/0072）。所有候选均位于"历史记录"或"实验报告\\草稿"等非正式主审范围，且命中的 XXX/模板/待填均属于：①AI 辅助读图脚本自动生成的 .md 中间工作文件（非受控文件本身）；②历史草稿/T1样机阶段 FMEA 中的占位编号；③软件需求规格历史版本页脚的模板版本标注；④实验报告草稿目录下的读图框架文件。上述情形均不构成 PT9L 正式 DHF/DMR 受控文件的质量问题，全部裁决为 dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0053",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "non_controlled_working_file_placeholder",
+      "claim": "历史记录包装文件目录下的 .md 读图报告中的 XXX 均属脚本自动生成的中间工作文件占位符，不影响正式受控文件",
+      "reason": "所有 24 个候选（MF-0310～MF-0333）均来自"历史记录\\9.3包装文件"目录下的 .md 文件，这些文件是 AI 读图脚本对 PDF 图纸进行视觉解析时自动生成的中间报告，文件头明确标注"自动生成模板 + 待填"或"脚本生成框架"。文件名中的 XXXXXXX 是文件命名中对序列号的脱敏/占位处理，属于工作过程产物而非受控文件本身。primary_scope 为 false，stage 为历史记录，不在 PT9L 正式 DHF/DMR 主审范围内，不构成受控质量问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0054",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "non_controlled_working_file_placeholder",
+      "claim": "历史记录包装文件目录下 .md 读图报告中的"模板"及"待填"字样均属脚本自动生成框架的占位内容，不影响正式受控文件",
+      "reason": "36 个候选（MF-0334～MF-0351、MF-0424～MF-0441）均来自"历史记录\\9.3包装文件"目录下的 .md 读图报告，文件头注释明确为"2026-05-14 自动生成模板 + 待填"，标题栏字段（Drawing NO.、Part name、Edition 等）的"待填"是脚本生成框架等待视觉读图后回填的占位符，不是正式文件字段缺失。"模板修改记录"Sheet 名称是 Excel 原始 Sheet 名的直接转换，属于历史草稿文件结构的如实记录。primary_scope 为 false，stage 为历史记录，不构成受控质量问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0057",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "draft_historical_placeholder_identifier",
+      "claim": "历史草稿 T1 样机阶段 DFMEA 中的 KD-XXXX 编号属于草稿阶段占位编号，不影响正式受控文件",
+      "reason": "MF-0354 和 MF-0363 均来自"历史记录\\PT9LDHF-草稿\\T1样机\\05 DFMEA E0 23.11"目录，文件为 T1 样机 E0 阶段的 DFMEA 草稿。FMEA 编号"KD-XXXX-PDFM01 V1.0"和"KD-XXXX-ODFM01 V1.0"中的 XXXX 是草稿阶段尚未分配正式编号时的占位符，属于历史草稿文件的正常状态。primary_scope 为 false，stage 为历史记录，该草稿不在 PT9L 正式 DHF/DMR 主审范围内，不构成受控质量问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0063",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "template_sheet_name_in_historical_draft",
+      "claim": "历史草稿质量策划检查表中的"模板修改记录"Sheet 名称是 Excel 原始结构的如实转换，不构成受控问题",
+      "reason": "MF-0373 来自"历史记录\\PT9LDHF-草稿\\T1样机\\质量策划E0 23.11"目录，"模板修改记录"是该 Excel 文件中一个 Sheet 的原始名称，在 .md 转换时被如实保留为章节标题，其内容为空白修改记录表格，属于文件模板自带的版本管理 Sheet。这是历史草稿文件的正常组成部分，不是正式受控文件中的质量缺陷。primary_scope 为 false，stage 为历史记录，不构成受控质量问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0065",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "template_version_footer_in_historical_document",
+      "claim": "历史版软件需求规格文件页脚的"模板版本：I"是文件模板版本标注，属于合理的文件管理信息，不构成受控问题",
+      "reason": "MF-0382、MF-0423、MF-0442 分别来自三个历史记录目录（PT9LDHF-草稿\\T1样机、PT9L认证注册、给实验室），均为软件需求规格 E0 版本的历史文件。"第 0 页 / 共 5 页 模板版本：I"是文件页脚中对所用文件模板版本的标注，是标准的文件管理实践，不属于待填空白或质量缺陷。primary_scope 为 false，stage 为历史记录，不构成受控质量问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0072",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "non_controlled_working_file_placeholder",
+      "claim": "实验报告草稿目录下的 .md 读图报告中的"模板"及"待填"字样属于脚本自动生成框架的占位内容，不影响正式受控文件",
+      "reason": "9 个候选（MF-0472～MF-0480）均来自"实验报告\\草稿"目录下的 .md 读图报告，文件头注释明确为"2026-05-14 自动生成模板 + 待填"，标题栏字段的"待填"是脚本生成框架等待视觉读图后回填的占位符。该文件位于草稿子目录，不是正式提交的实验报告，primary_scope 为 false，不在 PT9L 正式 DHF/DMR 主审范围内，不构成受控质量问题。"
+    }
+  ]
+}
+```

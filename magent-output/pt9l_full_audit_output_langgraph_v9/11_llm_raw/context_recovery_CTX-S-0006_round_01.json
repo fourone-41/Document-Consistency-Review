@@ -1,0 +1,156 @@
+```json
+{
+  "context_summary": "本轮已补充了 F0245 文件的完整本地上下文：第1页封面（DN:PT9L-UETR01 V1.0、Model name: PT9L、Project number: 30000078、Conclusion: Pass）、第2页版本历史表（唯一条目 V1.0，起草人 Wang Di，批准人 Cong Ming，版本日期空白）、第3页 IEC 60601-1-6 合规检查表（全部条款结果为 P）及文件来源路径。核心矛盾已清晰：文件标题与文件名均含 'PT2L（美亚）-UETR01 V1.0'，但文件正文内部的 DN 字段、Model name 字段、Project number 字段均指向 PT9L（DN:PT9L-UETR01 V1.0，Model name: PT9L，Project number: 30000078）。仍缺少：①PT2L（美亚）产品的对应 UETR01 文件以供比对；②PT9L DHF清单中对该文件的登记条目（确认其是否被正式纳入 PT9L DHF）；③版本历史表中版本日期为空的原因；④是否存在一份独立的 PT2L（美亚）-UETR01 V1.0 文件作为模板来源。",
+  "evidence_gaps": [
+    "PT2L（美亚）产品的 UETR01 原始文件（用于判断本文件是否从 PT2L 模板复制而来，标题未更新）",
+    "PT9L DHF 清单（F0006）中对该 UETR01 文件的登记条目及文件编号字段内容",
+    "版本历史表中 Version Date 字段为空的原因（是否为未完成文件）",
+    "文件夹 '18 设计确认' 内其他文件的文件名列表（判断是否存在同名 PT9L 版本或重复文件）",
+    "PT9L DHF 历史文件目录结构（确认该文件是否属于历史归档而非当前有效版本）",
+    "是否存在 DN:PT2L-UETR01 V1.0 的独立文件（区分模板复用 vs 错误归档）"
+  ],
+  "additional_search_queries": [
+    "PT2L 美亚 UETR01",
+    "PT9L DHF清单 UETR01",
+    "PT9L-UETR01",
+    "18 设计确认 文件列表",
+    "PT9L DHF 历史文件 设计确认",
+    "30000078 PT2L",
+    "DN:PT2L-UETR01"
+  ],
+  "agent_instruction": "以下上下文包已补全 F0245 文件的全部三页内容。核心发现：文件标题/文件名含 'PT2L（美亚）-UETR01 V1.0'，但正文 DN 字段为 'PT9L-UETR01 V1.0'，Model name 为 'PT9L'，Project number 为 '30000078'。请重点核查：(1) F0006（PT9L-DHF清单）中是否登记了该文件及其文件编号；(2) 是否存在独立的 PT2L（美亚）UETR01 文件；(3) '18 设计确认' 文件夹内是否存在另一份正确命名的 PT9L UETR01 文件。这将决定该问题是'模板标题未更新'还是'错误文件归档至 PT9L DHF'。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "SW-036",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 3,
+        "field": "document_title",
+        "source_text": "# PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0",
+        "note": "文件标题同时含 PT9L 和 PT2L（美亚），是核心矛盾所在"
+      },
+      {
+        "evidence_id": "SW-036-DN",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 16,
+        "field": "document_number",
+        "source_text": "DN:PT9L-UETR01 V1.0",
+        "note": "正文 DN 字段明确为 PT9L-UETR01 V1.0，与标题中 PT2L 矛盾"
+      },
+      {
+        "evidence_id": "SW-036-MODEL",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 34,
+        "field": "model_name",
+        "source_text": "Model name: PT9L",
+        "note": "正文 Model name 字段为 PT9L，支持该文件实质内容属于 PT9L"
+      },
+      {
+        "evidence_id": "SW-036-PROJ",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 37,
+        "field": "project_number",
+        "source_text": "Project number: 30000078",
+        "note": "项目编号 30000078，需与 PT9L 和 PT2L 项目编号交叉比对"
+      },
+      {
+        "evidence_id": "SW-036-CONCLUSION",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 39,
+        "field": "conclusion",
+        "source_text": "Conclusion(Pass/Fail):Pass",
+        "note": "整体结论为 Pass"
+      },
+      {
+        "evidence_id": "SW-038",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 56,
+        "field": "version_history_header",
+        "source_text": "Version History",
+        "note": "版本历史表位于第2页，DN 行再次确认为 PT9L-UETR01 V1.0"
+      },
+      {
+        "evidence_id": "SW-039",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 59,
+        "field": "version_history_table",
+        "source_text": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| --- | --- | --- | --- | --- | --- |\n| 1 |  | Original | V1.0 | Wang Di | Cong Ming |",
+        "note": "唯一版本条目：V1.0，Original，起草人 Wang Di，批准人 Cong Ming，版本日期为空（异常）"
+      },
+      {
+        "evidence_id": "SW-040",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 88,
+        "field": "page3_checklist",
+        "source_text": "| IEC 60601-1-6 |  |  |  |\n| Clause | Requirement + Test | Compliance method | Result |\n| 4.0 | General requirements |  | P |\n| 4.1 | Conditions for application to ME EQUIPMENT |  |  |\n|  | The ME EQUIPMENT shall provide adequate USABLITY... | Compliance with 4.2 and other clauses | P |\n| 4.2 | USABILITY ENGINEERING PROCESS for ME EQUIPMENT |  |  |\n|  | A USABILITY ENGINEERING PROCESS complying with IEC 62366-1:2015+A1:2020... | USABILITY ENGINEERING PROCESS has been performed... | P |\n| 5 | ME EQUIPMENT ACCOMPANYING DOCUMENTS |  | P |\n|  | The instructions for use include a brief description... | Inspect the instruction for use | P |\n|  | The same information shall also be included in the technical description... | Inspect the instruction for use | P |\n|  | The instructions for use contain a summary of the USE SPECIFICATION... | Inspect the instruction for use | P |",
+        "note": "第3页合规检查表，所有条款结果均为 P（Pass），产品描述为 Infrared Forehead Thermometer"
+      },
+      {
+        "evidence_id": "SW-040-SOURCE",
+        "doc_id": "F0245",
+        "rel_path": "18 设计确认\\PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+        "line": 113,
+        "field": "source_pdf_path",
+        "source_text": "源 PDF：`02_RnD_DHF/PT9L DHF-历史文件/设计确认/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf`",
+        "note": "源 PDF 路径位于 'PT9L DHF-历史文件/设计确认'，表明该文件被归档于 PT9L 历史 DHF 下"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "note": "PT9L DHF 清单，需检索其中 UETR01 相关登记条目及文件编号字段",
+        "retrieval_priority": "high"
+      },
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "note": "PT9L 开发计划，可能包含项目编号 30000078 的确认信息",
+        "retrieval_priority": "medium"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "structural_finding",
+        "description": "文件内部标识与标题/文件名的完整对比",
+        "content": {
+          "file_name": "PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf",
+          "file_title_line3": "PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0",
+          "internal_DN": "PT9L-UETR01 V1.0",
+          "internal_model_name": "PT9L",
+          "internal_project_number": "30000078",
+          "internal_product_description": "Infrared Forehead Thermometer",
+          "internal_conclusion": "Pass",
+          "version_history_date": "[空白]",
+          "drafter": "Wang Di",
+          "approver": "Cong Ming",
+          "archive_path": "02_RnD_DHF/PT9L DHF-历史文件/设计确认/",
+          "conflict_summary": "标题与文件名含 PT2L（美亚），但 DN、Model name、Project number 均指向 PT9L；最可能原因：从 PT2L 模板复制后正文字段已更新，但标题行未同步修改"
+        }
+      },
+      {
+        "context_id": "RC-002",
+        "type": "gap_analysis",
+        "description": "仍需验证的关键问题",
+        "open_questions": [
+          "Project number 30000078 是否为 PT9L 的官方项目编号（需与 F0005/F0007 交叉验证）",
+          "PT2L（美亚）是否有独立的 UETR01 文件，其 DN 是否为 PT2L-UETR01 V1.0",
+          "F0006 DHF 清单中该文件的登记状态（是否标注为历史文件或已废止）",
+          "版本日期空白是否意味着该文件从未正式发布",
+          "'18 设计确认' 文件夹内是否存在另一份正确命名的 PT9L UETR01 文件（排除重复归档）"
+        ]
+      }
+    ]
+  }
+}
+```

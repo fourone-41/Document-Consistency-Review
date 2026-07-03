@@ -1,0 +1,286 @@
+{
+  "document": {
+    "title": "负极弹簧 PT5-M03 V1.0 2D 图读图报告",
+    "doc_number": "PT5-M03",
+    "version": "V1.0",
+    "edition": "A",
+    "source_file": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/负极弹簧PT5-M03.pdf",
+    "created_date": "2026-06-02",
+    "design_date": "2019-07-15",
+    "scale": "2:1",
+    "unit": "mm",
+    "tolerance_level": "B",
+    "phase": "A（量产管控）",
+    "company": "iHealth"
+  },
+  "products": [
+    {
+      "name": "负极弹簧",
+      "part_number": "PT5-M03",
+      "version": "V1.0",
+      "applicable_projects": [
+        "PT5 耳温计",
+        "PT9L"
+      ],
+      "description": "PT5 / PT9L 共用电池负极弹簧",
+      "material": "不锈钢线 0.5 mm",
+      "plating": "内层盐雾标准 ≥8.5%，连续 24H，外部色泽白色或浅金色"
+    }
+  ],
+  "components": [
+    {
+      "name": "负极弹簧",
+      "part_number": "PT5-M03",
+      "material": "不锈钢线 0.5 mm，电流 5104 拉",
+      "shared_with": [
+        "PT5",
+        "PT9L"
+      ]
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "DI-01",
+      "description": "材料：不锈钢线 0.5 mm，电流 5104 拉"
+    },
+    {
+      "id": "DI-02",
+      "description": "镀层：盐雾标准内层 ≥8.5%，时间连续 24H，外部色泽白色或浅金色"
+    },
+    {
+      "id": "DI-03",
+      "description": "总圈数 N = 4 ±0.25"
+    },
+    {
+      "id": "DI-04",
+      "description": "表面良好，弹簧、零件表面不能有色斑，不能有色泽倾斜等现象"
+    },
+    {
+      "id": "DI-05",
+      "description": "符合 RoHS 标准"
+    },
+    {
+      "id": "DI-06",
+      "description": "标识序号 = 重点尺寸"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "type": "material",
+      "description": "材料：不锈钢线 0.5 mm，电流 5104 拉"
+    },
+    {
+      "id": "REQ-02",
+      "type": "surface_treatment",
+      "description": "盐雾标准内层 ≥8.5%，时间连续 24H，外部色泽白色或浅金色"
+    },
+    {
+      "id": "REQ-03",
+      "type": "dimensional",
+      "description": "总圈数 N = 4 ±0.25"
+    },
+    {
+      "id": "REQ-04",
+      "type": "appearance",
+      "description": "表面良好，弹簧、零件表面不能有色斑，不能有色泽倾斜等现象"
+    },
+    {
+      "id": "REQ-05",
+      "type": "regulatory",
+      "description": "符合 RoHS 标准"
+    },
+    {
+      "id": "REQ-06",
+      "type": "dimensional",
+      "parameter": "线径",
+      "symbol": "Ø",
+      "nominal": 0.5,
+      "tolerance": "±0.03",
+      "unit": "mm",
+      "iqc_index": "①"
+    },
+    {
+      "id": "REQ-07",
+      "type": "dimensional",
+      "parameter": "弹簧外径",
+      "symbol": "Ø",
+      "nominal": 6.5,
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "iqc_index": "②"
+    },
+    {
+      "id": "REQ-08",
+      "type": "dimensional",
+      "parameter": "自由高",
+      "nominal": 11.7,
+      "tolerance": "默认B级",
+      "unit": "mm"
+    },
+    {
+      "id": "REQ-09",
+      "type": "dimensional",
+      "parameter": "主体高（不含挂钩）",
+      "nominal": 9.9,
+      "tolerance": "默认B级",
+      "unit": "mm"
+    },
+    {
+      "id": "REQ-10",
+      "type": "dimensional",
+      "parameter": "主体中段",
+      "nominal": 8.4,
+      "tolerance": "默认B级",
+      "unit": "mm"
+    },
+    {
+      "id": "REQ-11",
+      "type": "dimensional",
+      "parameter": "底厚",
+      "nominal": 1.0,
+      "tolerance": "默认B级",
+      "unit": "mm"
+    },
+    {
+      "id": "REQ-12",
+      "type": "dimensional",
+      "parameter": "挂钩展开宽",
+      "nominal": 5.4,
+      "tolerance": "默认B级",
+      "unit": "mm"
+    },
+    {
+      "id": "REQ-13",
+      "type": "dimensional",
+      "parameter": "挂钩中段",
+      "nominal": 3.8,
+      "tolerance": "默认B级",
+      "unit": "mm"
+    },
+    {
+      "id": "REQ-14",
+      "type": "dimensional",
+      "parameter": "挂钩末端",
+      "nominal": 1.8,
+      "tolerance": "默认B级",
+      "unit": "mm"
+    },
+    {
+      "id": "REQ-15",
+      "type": "durability",
+      "description": "寿命要求 10⁴ 次（见早期 wiki 章节 §2.4）",
+      "source": "wiki/drawings/pt9l-drawings.md §2.4"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "有害物质限制标准",
+      "applicable_to": "PT5-M03 负极弹簧"
+    }
+  ],
+  "persons": [
+    {
+      "name": "刘钊",
+      "role": "设计",
+      "signature_date": "190715"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "PT5-M03"
+    },
+    {
+      "type": "IQC重点尺寸编号",
+      "values": [
+        "①",
+        "②"
+      ]
+    }
+  ],
+  "review_items": [
+    {
+      "id": "RV-01",
+      "description": "\"电流 5104 拉\" 技要第 1 条意义释义（材料牌号？工艺参数？）",
+      "status": "待工程师确认"
+    },
+    {
+      "id": "RV-02",
+      "description": "总圈数 4±0.25 + 外径 6.50 + 线径 0.50 → 自由高公差链合成",
+      "status": "待确认"
+    },
+    {
+      "id": "RV-03",
+      "description": "与电池负极接触方式（弹片 / 平按）",
+      "status": "推测平按弹片，待确认"
+    },
+    {
+      "id": "RV-04",
+      "description": "寿命 10⁴ 次的测试方法（往复压缩？）",
+      "status": "待确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "与正极的区别：负极未声明可上锡焊接（正极弹簧技要第 6 条明确\"上锡型接\"，负极无此条）。负极亦未声明弹力 ≥0.5 kgf @5 mm 压缩要求（正极弹簧技要第 5 条有此要求，负极无此条）。",
+      "topic_tags": [
+        "负极弹簧",
+        "焊接",
+        "弹力",
+        "与正极差异"
+      ],
+      "related_subjects": [
+        "PT5-M02",
+        "PT5-M03"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "负极弹簧 PT5-M03 与正极弹簧 PT5-M02 几何差异对照：线径 Ø 0.50±0.03 相同；外径 Ø 6.50±0.10 相同；自由高 11.7 相同；总圈数负极明示 N=4±0.25，正极未明示；工作段长正极 7.0±0.30，负极未明示；螺距正极 2.30，负极未明示；正极有挂钩 Z 形 90° 弯折，负极无明示 90°；挂钩展开宽正极 5.3，负极 5.4，差 0.1 mm；盐雾标准正极 GB2423.17-2008 5%/35°/24H，负极内层 ≥8.5%/24H。",
+      "topic_tags": [
+        "正负极弹簧对比",
+        "几何差异",
+        "PT5-M02",
+        "PT5-M03"
+      ],
+      "related_subjects": [
+        "PT5-M02",
+        "PT5-M03",
+        "PT5 耳温计",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "PT5-M03 负极弹簧为 PT5 耳温计与 PT9L 共用件，设计日期 2019-07-15，PT9L 项目沿用。关联文件：正极弹簧 PT5-M02、PT3 双联弹簧 REV01、wiki/drawings/pt9l-drawings.md §2.4。",
+      "topic_tags": [
+        "共用件",
+        "PT5",
+        "PT9L",
+        "关联文件"
+      ],
+      "related_subjects": [
+        "PT5-M02",
+        "PT3双联弹簧REV01",
+        "pt9l-drawings.md"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "自动校验结果：DPI 检查 overview 150 + blocks 300 通过；编号连续性 ① ② 完整通过；公差形式 ±0.03 / ±0.1 / ±0.25（总圈数）均对称通过；Φ ↔ ① 视觉确认：① 0.5 线径径向引出 Ø 通过，② 6.5 径向引出 Ø 通过；与正极几何对照：自由高 / 线径 / 外径全同；挂钩中末段同；唯挂钩展开宽 5.4 vs 5.3（差 0.1 mm，可能为挂钩形状细节差异）。",
+      "topic_tags": [
+        "自动校验",
+        "DPI",
+        "尺寸确认",
+        "公差"
+      ],
+      "related_subjects": [
+        "PT5-M03",
+        "PT5-M02"
+      ]
+    }
+  ]
+}

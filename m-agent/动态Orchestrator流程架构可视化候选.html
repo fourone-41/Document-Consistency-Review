@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>动态 Orchestrator 多智能体 DHF/DMR 一致性审查流程架构候选版</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #667085;
+      --line: #c8d0da;
+      --panel: #ffffff;
+      --soft: #f6f8fb;
+      --blue: #2563eb;
+      --teal: #0f766e;
+      --green: #15803d;
+      --amber: #b45309;
+      --red: #b91c1c;
+      --violet: #6d28d9;
+      --shadow: 0 16px 36px rgba(15, 23, 42, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: #eef2f7;
+      line-height: 1.55;
+    }
+
+    header {
+      background: #101828;
+      color: #fff;
+      padding: 28px 36px 24px;
+      border-bottom: 4px solid #38bdf8;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3vw, 42px);
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    header p {
+      margin: 0;
+      color: #d0d5dd;
+      max-width: 1120px;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      color: #111827;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: -8px 0 18px;
+      font-size: 14px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      background: var(--soft);
+      border: 1px solid #dce4ef;
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 92px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1.1;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.25fr 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .stage {
+      border: 1px solid #d6dee8;
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfe;
+      position: relative;
+      min-height: 196px;
+    }
+
+    .stage::after {
+      content: "→";
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .stage:last-child::after { display: none; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 13px;
+      margin-right: 6px;
+    }
+
+    .b { background: var(--blue); }
+    .t { background: var(--teal); }
+    .v { background: var(--violet); }
+    .a { background: var(--amber); }
+    .g { background: var(--green); }
+    .r { background: var(--red); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      border: 1px solid #d6dee8;
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: #fff;
+      color: #344054;
+      font-size: 12px;
+    }
+
+    .dispatch-board {
+      border: 1px solid #d8e1ec;
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .dispatch-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, .95fr) 76px minmax(300px, 1.08fr) 76px minmax(300px, 1.22fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .dispatch-stack,
+    .agent-pool,
+    .hub-card,
+    .handoff,
+    .closure-card {
+      border-radius: 8px;
+    }
+
+    .dispatch-stack,
+    .agent-pool {
+      border: 1px solid #d8e1ec;
+      background: #fff;
+      padding: 14px;
+    }
+
+    .stack-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .stack-title h3 {
+      margin: 0;
+    }
+
+    .stack-title span {
+      border: 1px solid #d8e1ec;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 3px 8px;
+      white-space: nowrap;
+    }
+
+    .mini-node {
+      border: 1px solid #d2dbe7;
+      background: #fbfcfe;
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      padding: 11px 12px;
+      margin-bottom: 10px;
+    }
+
+    .mini-node:last-child {
+      margin-bottom: 0;
+    }
+
+    .mini-node b {
+      display: block;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .mini-node p,
+    .agent-card p,
+    .closure-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .mini-node.teal { border-left-color: var(--teal); }
+    .mini-node.violet { border-left-color: var(--violet); }
+    .mini-node.amber { border-left-color: var(--amber); }
+    .mini-node.green { border-left-color: var(--green); }
+
+    .handoff {
+      align-self: center;
+      min-height: 112px;
+      border: 1px dashed #94a3b8;
+      background: #ffffff;
+      color: #475467;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      gap: 8px;
+    }
+
+    .handoff strong {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .handoff span {
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .hub-card {
+      border: 1px solid #4c1d95;
+      background: #1f2937;
+      color: #fff;
+      padding: 18px;
+      box-shadow: 0 18px 34px rgba(15, 23, 42, .18);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hub-kicker {
+      color: #c4b5fd;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .hub-card h3 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .hub-card p {
+      color: #d0d5dd;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .hub-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .hub-actions span {
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .08);
+      text-align: center;
+      padding: 8px 6px;
+      color: #f8fafc;
+      font-size: 12px;
+    }
+
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .agent-card {
+      min-height: 94px;
+      border: 1px solid #d2dbe7;
+      border-top: 4px solid var(--blue);
+      background: #fbfcfe;
+      border-radius: 8px;
+      padding: 11px;
+    }
+
+    .agent-card b {
+      display: block;
+      color: #111827;
+      margin-bottom: 5px;
+    }
+
+    .agent-card.discovery { border-top-color: var(--violet); }
+    .agent-card.regulatory { border-top-color: var(--teal); }
+    .agent-card.hardware { border-top-color: var(--amber); }
+    .agent-card.software { border-top-color: var(--blue); }
+    .agent-card.risk { border-top-color: var(--red); }
+    .agent-card.vv { border-top-color: var(--green); }
+    .agent-card.dmr { border-top-color: #475467; }
+
+    .dispatch-closure {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .closure-card {
+      position: relative;
+      border: 1px solid #d2dbe7;
+      background: #fff;
+      padding: 13px;
+      min-height: 112px;
+    }
+
+    .closure-card::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 42px;
+      color: #64748b;
+      font-weight: 800;
+    }
+
+    .closure-card:last-child::after {
+      display: none;
+    }
+
+    .closure-card b {
+      display: block;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .closure-card.gate { border-top: 4px solid var(--green); }
+    .closure-card.challenge { border-top: 4px solid var(--red); }
+    .closure-card.recovery { border-top: 4px solid var(--amber); }
+    .closure-card.report { border-top: 4px solid var(--blue); }
+
+    .loop-note {
+      margin-top: 12px;
+      border: 1px solid #fde68a;
+      background: #fffbeb;
+      color: #92400e;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      border: 1px solid #d8e1ec;
+      background: #fbfcfe;
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 170px;
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #d9e1ea;
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f3f6fa;
+      color: #111827;
+    }
+
+    code {
+      background: #eef2f7;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      margin: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .flow, .pipeline, .dispatch-grid, .dispatch-closure { grid-template-columns: 1fr; }
+      .stage::after, .closure-card::after { display: none; }
+      .handoff { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>动态 Orchestrator 多智能体 DHF/DMR 一致性审查流程架构</h1>
+    <p>候选版：保留旧版可视化的深色页头、指标卡、分层泳道和闭环步骤风格，但内容改为当前动态 Orchestrator 调度、route_plan、agent_runs[] 与 Context Recovery 回流架构。</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>运行概览</h2>
+      <p class="subtitle">本页展示当前代码结构，不是历史结果统计页；数字代表结构性对象而非某次跑批结论。</p>
+      <div class="metrics">
+        <div class="metric"><strong>1</strong><span>Project Scout 初始画像 Agent</span></div>
+        <div class="metric"><strong>1+</strong><span>Orchestrator LLM 调度轮次</span></div>
+        <div class="metric"><strong>N</strong><span>按 route_plan 动态派发的 Agent</span></div>
+        <div class="metric"><strong>agent_runs[]</strong><span>统一运行主线</span></div>
+        <div class="metric"><strong>3</strong><span>continue / stop / human_review</span></div>
+        <div class="metric"><strong>0</strong><span>旧输出缓存读取</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>五段主流程</h2>
+      <div class="flow">
+        <div class="stage">
+          <h3><span class="tag b">1</span>证据底座</h3>
+          <p>构建 Manifest、PageIndex、参数索引、RelationIndex 和 evidence catalog。</p>
+          <div class="chips">
+            <span class="chip">Manifest</span>
+            <span class="chip">PageIndex</span>
+            <span class="chip">RelationIndex</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag t">2</span>项目画像</h3>
+          <p>Project Scout Agent 调用 LLM，识别目标型号、主范围、法规基线和关键实体。</p>
+          <div class="chips">
+            <span class="chip">project_profile</span>
+            <span class="chip">scope hints</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag v">3</span>动态调度</h3>
+          <p>Orchestrator LLM 读取 routing policy、已有 agent_runs 和候选结果，生成 route_plan。</p>
+          <div class="chips">
+            <span class="chip">route_plan</span>
+            <span class="chip">assignments</span>
+            <span class="chip">policy guardrails</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag a">4</span>按需审查</h3>
+          <p>只有被 Orchestrator 派到的 Candidate Discovery 或领域 Agent 才真实调用 LLM。</p>
+          <div class="chips">
+            <span class="chip">candidate_discovery</span>
+            <span class="chip">domain_review</span>
+            <span class="chip">context_recheck</span>
+          </div>
+        </div>
+        <div class="stage">
+          <h3><span class="tag g">5</span>闭环输出</h3>
+          <p>Evidence Gate、Challenge、Context Recovery 和 Report 节点完成证据核验、反审和报告汇总。</p>
+          <div class="chips">
+            <span class="chip">Evidence Gate</span>
+            <span class="chip">Challenge</span>
+            <span class="chip">Reports</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>LangGraph 节点与动态调度关系</h2>
+      <p class="subtitle">图上突出“谁给 Orchestrator 提供判断依据、Orchestrator 如何派发、结果如何回流”。</p>
+      <div class="dispatch-board">
+        <div class="dispatch-grid">
+          <div class="dispatch-stack">
+            <div class="stack-title">
+              <h3>输入依据</h3>
+              <span>shared state</span>
+            </div>
+            <div class="mini-node">
+              <b>bootstrap</b>
+              <p>准备文档清单、页面索引、参数和关系证据。</p>
+            </div>
+            <div class="mini-node teal">
+              <b>scout_agent</b>
+              <p>建立项目画像，供调度中枢判断审查重点。</p>
+            </div>
+            <div class="mini-node violet">
+              <b>routing.yaml</b>
+              <p>作为调度政策包交给 Orchestrator 阅读。</p>
+            </div>
+            <div class="mini-node green">
+              <b>agent_runs[]</b>
+              <p>记录每次真实 Agent 调用，下一轮继续读取。</p>
+            </div>
+          </div>
+
+          <div class="handoff">
+            <strong>→</strong>
+            <span>画像 / 策略 / 运行记录进入调度上下文</span>
+          </div>
+
+          <div class="hub-card">
+            <div>
+              <div class="hub-kicker">Scheduling Center</div>
+              <h3>Orchestrator LLM</h3>
+              <p>每一轮真实调用大模型，读取项目画像、调度政策、候选结果和 agent_runs[]，生成本轮 route_plan。</p>
+            </div>
+            <div class="hub-actions">
+              <span>continue</span>
+              <span>stop</span>
+              <span>human_review</span>
+            </div>
+          </div>
+
+          <div class="handoff">
+            <strong>→</strong>
+            <span>route_plan 拆成任务包，只派发需要运行的 Agent</span>
+          </div>
+
+          <div class="agent-pool">
+            <div class="stack-title">
+              <h3>按需 Agent 池</h3>
+              <span>LLM on dispatch</span>
+            </div>
+            <div class="agent-grid">
+              <div class="agent-card discovery"><b>Candidate Discovery</b><p>提出候选假设，不直接定性。</p></div>
+              <div class="agent-card regulatory"><b>Regulatory</b><p>法规、标准、受控文件一致性。</p></div>
+              <div class="agent-card hardware"><b>Hardware</b><p>硬件参数、BOM、设计输出。</p></div>
+              <div class="agent-card software"><b>Software</b><p>软件需求、版本、配置项。</p></div>
+              <div class="agent-card risk"><b>Risk</b><p>危害、风险控制和残余风险。</p></div>
+              <div class="agent-card vv"><b>V&amp;V</b><p>验证确认、测试证据和覆盖。</p></div>
+              <div class="agent-card dmr"><b>DMR</b><p>生产记录、SOP 和放行证据。</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dispatch-closure">
+          <div class="closure-card gate">
+            <b>Evidence Gate</b>
+            <p>核验 finding 的证据路径、行号和可追溯性。</p>
+          </div>
+          <div class="closure-card challenge">
+            <b>Challenge Agent</b>
+            <p>反向质疑，输出 keep / revise / drop / needs_more_context。</p>
+          </div>
+          <div class="closure-card recovery">
+            <b>Context Recovery</b>
+            <p>补充缺失上下文，形成新的回流任务。</p>
+          </div>
+          <div class="closure-card report">
+            <b>Report</b>
+            <p>从 agent_runs[]、证据核验和裁决结果生成最终报告。</p>
+          </div>
+        </div>
+
+        <div class="loop-note">
+          当 Challenge 输出 needs_more_context 时，Context Recovery 补证后回到 Orchestrator；Orchestrator 再根据新的上下文重新决定下一轮派发。
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Orchestrator 动态调度闭环</h2>
+      <p class="subtitle">每一轮都由 Orchestrator LLM 判断是否继续，而不是由固定代码路线决定。</p>
+      <div class="pipeline">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>读取黑板</h3>
+          <p>读取 project_profile、routing policy、候选结果和已有 agent_runs。</p>
+          <div class="chips"><span class="chip">blackboard state</span></div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>生成 route_plan</h3>
+          <p>输出 decision、reason 和 assignments。</p>
+          <div class="chips"><span class="chip">continue / stop / human_review</span></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>执行派发</h3>
+          <p>Python 校验 Agent 名称和 task_type，然后真实调用被派到的 LLM Agent。</p>
+          <div class="chips"><span class="chip">no cache read</span></div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>记录运行</h3>
+          <p>每次 Agent 调用追加到 agent_runs[]，供下一轮 Orchestrator 读取。</p>
+          <div class="chips"><span class="chip">RUN-0001</span><span class="chip">RUN-0002</span></div>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <h3>进入闭环</h3>
+          <p>当 Orchestrator 输出 stop 或 human_review，进入 Evidence Gate 与后续报告链路。</p>
+          <div class="chips"><span class="chip">review closure</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>route_plan 示例</h2>
+      <pre>{
+  "decision": "continue",
+  "reason": "Need focused DMR/SOP review for unresolved product-scope candidates.",
+  "assignments": [
+    {
+      "assignment_id": "ASG-001-0001",
+      "target_agent": "DMR/SOP Agent",
+      "task_type": "domain_review",
+      "review_focus": "Review BOM, process, packaging, and label consistency.",
+      "input_refs": [],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": []
+      }
+    }
+  ]
+}</pre>
+    </section>
+
+    <section>
+      <h2>Agent 与工具职责</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>对象</th>
+            <th>职责</th>
+            <th>输入</th>
+            <th>输出</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Orchestrator</td><td>动态任务规划和派发</td><td>routing policy、project_profile、agent_runs</td><td>route_plan</td></tr>
+          <tr><td>Candidate Discovery</td><td>提出候选假设</td><td>任务包、证据样本、已有运行摘要</td><td>candidate_discovery_results</td></tr>
+          <tr><td>Domain Agents</td><td>专业复审</td><td>assignment、证据目录、候选输入</td><td>findings</td></tr>
+          <tr><td>Evidence Gate</td><td>证据核验</td><td>findings、文件路径、行号</td><td>verified / failed</td></tr>
+          <tr><td>Challenge Agent</td><td>反向质疑</td><td>finding、证据、理由</td><td>keep / revise / drop / needs_more_context</td></tr>
+          <tr><td>Context Recovery</td><td>补上下文并回流</td><td>待补证项、PageIndex、文件上下文</td><td>补证包和回流任务</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>关键输出文件</h2>
+      <div class="chips">
+        <span class="chip">10_task_packages/orchestrator_route_plans.json</span>
+        <span class="chip">10_task_packages/orchestrator_route_plan_cycle_001.json</span>
+        <span class="chip">05_agent_notes/agent_runs.jsonl</span>
+        <span class="chip">05_agent_notes/agent_runs/*.json</span>
+        <span class="chip">07_findings/semantic_findings_llm_challenged.jsonl</span>
+        <span class="chip">08_reports/PT9L_full_audit_report_langgraph.md</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

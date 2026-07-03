@@ -1,0 +1,82 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": [
+    "确认 PT9L-FXJH01 V1.0 是否在 PT9L 产品线下独立存档，排除同一文件被双重归属的可能",
+    "检索 PT2L 产品线的文件编号规范或 DN 命名规则，提供'编号分配错误'的规范性判断依据",
+    "查询项目编号 30000078 的归属记录（PT2L 还是 PT9L）",
+    "检索 F0013 的文件变更历史、版本记录或 ECO/CAPA 记录，确认该不符合项是否已被识别或存在未关闭纠正措施",
+    "确认 PT2L 产品线是否拥有独立且正确的风险管理计划文件，或 F0013 是否为唯一的 RMP"
+  ],
+  "agent_input": {
+    "claim": "F0013（PT2L 风险管理计划）内部携带 PT9L 系列文件编号，代表两项独立不符合项——产品身份不匹配（NC-1：内部 Product model 字段标注 PT9L，与文件归属产品线 PT2L 矛盾）和文件编号分配错误（NC-2：内部 DN 字段使用 PT9L-FXJH01 编号体系，与 PT2L 产品线不符）——两项 NC 共享同一根本原因（模板复用未更新），但需分别采取纠正措施。",
+    "context_summary": "第二轮补充检索已从 F0013 封面页提取到直接文本证据：line 6 DN 字段明确写有 'PT9L-FXJH01 V1.0 Risk Management Plan'，line 14 Product model 字段明确写有 'PT9L'，而文件名及归档路径均标注 PT2L（路径含'2L风险改'，文件名含'PT2L美亚'）。NC-1 和 NC-2 的事实层面已有高置信度直接证据支撑。当前仍缺少：①PT9L 文件索引（确认 PT9L-FXJH01 V1.0 是否在 PT9L 下独立存档）；②PT2L 文件编号规范（提供 NC-2 的规范性判断依据）；③项目编号 30000078 的归属记录；④F0013 的变更历史或 CAPA/NCR 记录；⑤PT2L 正确 RMP 文件（用于对比）。上述缺口不影响 NC-1 成立，但对 NC-2 的规范性定性及根本原因精确描述仍有待补全。",
+    "evidence": [
+      {
+        "evidence_id": "REG-CRA-001",
+        "doc_id": "F0013",
+        "line": 6,
+        "field": "DN (Document Number)",
+        "actual_text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan",
+        "significance": "文件内部 DN 字段明确标注 PT9L 编号体系，与文件归属产品线 PT2L 不符，构成文件编号分配错误（NC-2）的直接证据",
+        "nc_type": "document_number_assignment_error",
+        "verified": true
+      },
+      {
+        "evidence_id": "REG-CRA-002",
+        "doc_id": "F0013",
+        "line": 14,
+        "field": "Product model",
+        "actual_text": "Product model： PT9L",
+        "significance": "文件内部 Product model 字段明确标注 PT9L，与文件所属产品线 PT2L 直接矛盾，构成产品身份不匹配（NC-1）的直接证据",
+        "nc_type": "product_identity_mismatch",
+        "verified": true
+      },
+      {
+        "evidence_id": "REG-CRA-003",
+        "doc_id": "F0013",
+        "line": 12,
+        "field": "Product name",
+        "actual_text": "Product name: Infrared Forehead Thermometer",
+        "significance": "产品名称为通用名称，无法区分 PT2L 与 PT9L，强化了身份字段依赖 Product model 字段的必要性",
+        "nc_type": "supporting_context",
+        "verified": true
+      },
+      {
+        "evidence_id": "REG-CRA-004",
+        "doc_id": "F0013",
+        "line": 16,
+        "field": "Project number",
+        "actual_text": "Project number： 30000078",
+        "significance": "项目编号 30000078 归属待核实；若属于 PT9L 项目则进一步佐证整份文件为 PT9L 文件被错误归入 PT2L 体系",
+        "nc_type": "supporting_context_pending_verification",
+        "verified": false
+      },
+      {
+        "evidence_id": "REG-CRA-005",
+        "doc_id": "F0013",
+        "line": 2,
+        "field": "文件标题（文件名层）",
+        "actual_text": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+        "significance": "文件标题及文件名标注 PT2L，与内部 DN 字段（PT9L）和 Product model 字段（PT9L）形成内外矛盾，是双重不符合项共同根本原因（模板复用未更新）的外部表现",
+        "nc_type": "root_cause_indicator",
+        "verified": true
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "search_queries_to_execute": [
+      "PT9L FXJH01 Risk Management Plan 文件索引 OR 文件清单 OR document list",
+      "PT2L FXJH01 文件编号 OR DN编号规则 OR document numbering convention",
+      "30000078 项目编号 PT2L OR PT9L",
+      "PT2L Risk Management Plan CAPA OR NCR OR 不符合 OR 变更记录",
+      "FXJH01 PT2L 风险管理计划 正确版本 OR 最新版本"
+    ],
+    "agent_instructions": {
+      "primary_task": "Document Control Agent 负责检索文件控制系统中与 PT9L 文件索引、PT2L 编号规范、项目编号归属及 F0013 变更历史相关的所有记录，以补全当前证据链中的规范性判断依据和变更追溯依据。",
+      "nc1_status": "NC-1（产品身份不匹配）事实证据已充分（HIGH confidence），Document Control Agent 需重点确认 PT2L 是否存在独立正确的 RMP，以评估 F0013 是否为 PT2L 唯一的 RMP（影响 CAPA 优先级）。",
+      "nc2_status": "NC-2（文件编号分配错误）事实证据已充分，但规范性定性依赖 PT2L 编号规范的存在性。Document Control Agent 需检索 PT2L DN 命名规则文件，若规范存在则 NC-2 成立；若 PT2L 与 PT9L 共用编号体系则需重新评估 NC-2 的定性。",
+      "do_not_decide": "Document Control Agent 不得自行裁定 NC-1 或 NC-2 是否成立，仅负责提供文件控制层面的证据和记录，最终裁定由 Regulatory Agent 执行。"
+    }
+  }
+}
+```

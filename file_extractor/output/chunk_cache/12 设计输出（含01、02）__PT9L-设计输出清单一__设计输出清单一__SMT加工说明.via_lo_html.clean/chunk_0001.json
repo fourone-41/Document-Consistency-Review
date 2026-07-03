@@ -1,0 +1,85 @@
+{
+  "document": {
+    "title": "SMT加工说明",
+    "document_number": "PT 9 L -SMTW01",
+    "version": "V1.0",
+    "total_pages": 2,
+    "current_page": 2
+  },
+  "products": [
+    {
+      "name": "PT9L",
+      "pcb_part_number": "PT9L-HFMP01",
+      "pcb_version": "V1.0",
+      "description": "PCB拼板",
+      "panel_count": "1拼10",
+      "panel_size": "179.4mm×128mm",
+      "board_thickness": "1mm",
+      "surface_finish": "喷锡工艺"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "description": "按无铅工艺加工",
+      "category": "manufacturing_process"
+    },
+    {
+      "id": "REQ-002",
+      "description": "钢网不开孔位置：LCD（外接导电条）、BUZZER（蜂鸣器焊接处）、BAT（电池簧焊接处）",
+      "category": "smt_stencil"
+    },
+    {
+      "id": "REQ-003",
+      "description": "依温度曲线进行回流焊加工",
+      "category": "soldering_process"
+    }
+  ],
+  "components": [
+    {
+      "reference_designator": "LCD",
+      "description": "外接导电条",
+      "note": "钢网不开孔"
+    },
+    {
+      "reference_designator": "BUZZER",
+      "description": "蜂鸣器焊接处",
+      "note": "钢网不开孔"
+    },
+    {
+      "reference_designator": "BAT",
+      "description": "电池簧焊接处",
+      "note": "钢网不开孔"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "document_number",
+      "value": "PT 9 L -SMTW01 V1.0"
+    },
+    {
+      "type": "pcb_part_number",
+      "value": "PT9L-HFMP01 V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "SMT加工说明：1、按无铅工艺加工；2、SMT钢网不开孔部位包括：LCD（外接导电条）、BUZZER（蜂鸣器焊接处）、BAT（电池簧焊接处）；回流焊依指定温度曲线进行。PCB板规格：PT9L-HFMP01 V1.0拼板，1拼10，拼板尺寸179.4mm×128mm，板厚1mm，喷锡工艺。",
+      "topic_tags": [
+        "SMT",
+        "无铅工艺",
+        "钢网",
+        "回流焊",
+        "温度曲线",
+        "PCB"
+      ],
+      "related_subjects": [
+        "PT9L-HFMP01",
+        "LCD",
+        "BUZZER",
+        "BAT"
+      ]
+    }
+  ]
+}

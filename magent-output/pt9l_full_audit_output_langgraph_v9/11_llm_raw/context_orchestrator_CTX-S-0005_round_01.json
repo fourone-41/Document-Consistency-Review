@@ -1,0 +1,69 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "验证风险管理文件集（历史文件及PT9L前缀文件）中'Approved by (Technical Director) Date:'字段是否均为空白，同时核查版本历史表中是否存在已填写的审批人姓名（如Hou Guangwei），以判断签字页空白是否构成真实的审批记录缺失",
+  "agent_input": {
+    "claim": "All risk management documents across the active, historical, and PT9L-prefixed sets show 'Approved by (Technical Director) Date:' fields with no filled-in signature or date, indicating that none of the risk management documents in the corpus have a verifiable approval record.",
+    "context_summary": "补证轮次已成功读取5份历史风险管理文件（F0012–F0016），均位于'03 风险分析\\2L风险改 - 历史文件\\'目录下，涵盖Risk Management Plan（IFT版与PT2L美亚版）、Risk Assessment Report、Verification of risk control measure report、Risk Management Report。每份文件封面页均存在'Approved by (Technical Director) Date:'字段，且字段内容为空（无签名、无日期）。但关键反证：F0012（IFT版Risk Management Plan）的版本历史表第22行明确记录'Approver: Hou Guangwei'，版本日期2024.4.16，版本V1.0。此外，page_context中引用了F0017（Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable），该文件属于active set，其具体内容（line 68、80、101、103）未在补证包中展开，需进一步核查其签字页状态。原始claim将'签字页字段为空'等同于'无可验证审批记录'，但版本历史表中的Approver姓名构成潜在反证，需由Document Control Agent判断该记录是否满足审批可验证性要求。",
+    "evidence": [
+      {
+        "evidence_id": "REG-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 18,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "note": "封面签字字段为空；但同文件line 22版本历史表记录Approver: Hou Guangwei，Version Date: 2024.4.16"
+      },
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "note": "封面签字字段为空；DN标注PT9L-FXJH01 V1.0，Product model PT9L"
+      },
+      {
+        "evidence_id": "REG-006",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "note": "封面签字字段为空；Product model PT2L，Project 2020-002-WX02"
+      },
+      {
+        "evidence_id": "REG-012",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "note": "封面签字字段为空；文件末尾含'Signature of the risk management group'章节，需核查该章节内容"
+      },
+      {
+        "evidence_id": "REG-013",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "note": "封面签字字段为空；Product model PT2L，V4.0版本"
+      },
+      {
+        "evidence_id": "REG-ACTIVE-001",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": "68, 80, 101, 103",
+        "actual_text": "[未展开，page_context text字段为空]",
+        "note": "属于active set文件，签字页内容未在补证包中提供，需Agent读取核查"
+      },
+      {
+        "evidence_id": "COUNTER-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "actual_text": "| 1 | 2024.4.16 | Originated | V1.0 | Wang Di | Hou Guangwei |",
+        "note": "版本历史表中Approver列填写'Hou Guangwei'，与封面签字页空白形成矛盾，需判断是否构成可验证审批记录"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

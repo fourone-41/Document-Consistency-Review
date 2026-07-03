@@ -1,0 +1,288 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-01",
+    "title": "Type Test Report (EMC)",
+    "product_model": "PT9L",
+    "total_pages": 30,
+    "fragment_pages": "5-7"
+  },
+  "products": [
+    {
+      "name": "PT9L",
+      "description": "Temperature measurement device powered by internal battery, capable of continuous temperature measurement with accuracy ±0.2℃",
+      "model": "PT9L"
+    }
+  ],
+  "tests": [
+    {
+      "name": "Conducted Emissions on Mains Terminals",
+      "frequency_range": "150 kHz to 30 MHz",
+      "standard": "IEC 60601-1-2:2014+A1:2020",
+      "method": "N/A",
+      "date": "N/A",
+      "result": "N/A",
+      "class_severity": "N/A",
+      "detector": "N/A",
+      "power_supply": "N/A"
+    },
+    {
+      "name": "Radiated Emission",
+      "frequency_range": "30MHz-1000MHz",
+      "measurement_uncertainty": "3.9dB",
+      "u_cispr": "6.3dB"
+    },
+    {
+      "name": "Radiated Emission",
+      "frequency_range": "1GHz-6GHz",
+      "measurement_uncertainty": "5.1dB",
+      "u_cispr": "5.2dB"
+    },
+    {
+      "name": "Conducted Emission at mains port using AMN",
+      "frequency_range": "150kHz-30MHz",
+      "measurement_uncertainty": "3.2dB",
+      "u_cispr": "3.4dB"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "IEC 60601-1-2:2014+A1:2020",
+      "context": "Test Requirement for Conducted Emissions on Mains Terminals"
+    },
+    {
+      "name": "CISPR 16-4-2",
+      "context": "Measurement Uncertainty calculation standard"
+    }
+  ],
+  "components": [
+    {
+      "name": "BDB Series Precision Temperature Controllers & Blackbody Radiation Source",
+      "manufacturer": "Beijing Boda Changzheng Technology Development Co., LTD",
+      "model": "BDB15",
+      "role": "Support/Auxiliary Equipment for immunity test (blackbody set to 37℃)"
+    },
+    {
+      "name": "Test receiver",
+      "manufacturer": "Agilent",
+      "model": "N9038A-508",
+      "serial_number": "MY54130074",
+      "calibration_date": "2024-01-08",
+      "calibration_due": "2025-01-07",
+      "item_number": 1,
+      "category": "Emission test equipment"
+    },
+    {
+      "name": "Low Noise Amplifier",
+      "manufacturer": "SONOMA",
+      "model": "310N",
+      "serial_number": "344218",
+      "calibration_date": "2024-01-08",
+      "calibration_due": "2026-01-07",
+      "item_number": 2,
+      "category": "Emission test equipment"
+    },
+    {
+      "name": "BiConiLog Antenna",
+      "manufacturer": "ETS-Lindgren",
+      "model": "3142E",
+      "serial_number": "166231",
+      "calibration_date": "2024-05-11",
+      "calibration_due": "2027-05-10",
+      "item_number": 3,
+      "category": "Emission test equipment"
+    },
+    {
+      "name": "ESD simulator",
+      "manufacturer": "EMTEST",
+      "model": "Dito",
+      "serial_number": "P1420134242",
+      "calibration_date": "2024-04-28",
+      "calibration_due": "2025-04-27",
+      "item_number": 1,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Signal generator",
+      "manufacturer": "Agilent",
+      "model": "N5171B-506",
+      "serial_number": "MY53050921",
+      "calibration_date": "2024-01-06",
+      "calibration_due": "2025-01-05",
+      "item_number": 1,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "RF power amplifier",
+      "manufacturer": "Milmega",
+      "model": "80RF1000-250",
+      "serial_number": "1066643",
+      "calibration_date": "2024-01-08",
+      "calibration_due": "2027-01-07",
+      "item_number": 2,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Directional coupler",
+      "manufacturer": "Werlatone(HDC)",
+      "model": "C5982-12",
+      "serial_number": "106464",
+      "calibration_date": "NA",
+      "item_number": 3,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "RF power amplifier",
+      "manufacturer": "Milmega",
+      "model": "AS0827-55",
+      "serial_number": "1066644",
+      "calibration_date": "2023-12-28",
+      "calibration_due": "2026-12-27",
+      "item_number": 4,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Directional coupler",
+      "manufacturer": "Werlatone(HDC)",
+      "model": "C6148-12",
+      "serial_number": "106400",
+      "calibration_date": "NA",
+      "item_number": 5,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Power meter",
+      "manufacturer": "Agilent",
+      "model": "N1914A",
+      "serial_number": "MY54466075",
+      "calibration_date": "2024-01-06",
+      "calibration_due": "2025-01-05",
+      "item_number": 6,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Power sensor (2 set)",
+      "manufacturer": "Agilent",
+      "model": "E9304A",
+      "serial_number": "MY54370020/MY54370019",
+      "calibration_date": "2024-01-06",
+      "calibration_due": "2025-01-05",
+      "item_number": 7,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Isotropic field probe",
+      "manufacturer": "ETS-Lindgren",
+      "model": "HI6105-USB",
+      "serial_number": "168988",
+      "calibration_date": "2022-01-06",
+      "calibration_due": "2025-01-05",
+      "item_number": 8,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Log periodic antenna",
+      "manufacturer": "Schwarzbeck",
+      "model": "STLP9128D",
+      "serial_number": "9128D088",
+      "calibration_date": "NA",
+      "item_number": 9,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Log periodic antenna",
+      "manufacturer": "Schwarzbeck",
+      "model": "STLP9149",
+      "serial_number": "9149-465",
+      "calibration_date": "NA",
+      "item_number": 10,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "RF power amplifier",
+      "manufacturer": "BONN",
+      "model": "BLMA 2060-100S",
+      "serial_number": "1610981",
+      "calibration_date": "2023-01-14",
+      "calibration_due": "2026-01-13",
+      "item_number": 11,
+      "category": "Immunity test equipment"
+    },
+    {
+      "name": "Semi-anechoic chamber",
+      "manufacturer": "TDK",
+      "model": "SAC-3",
+      "serial_number": "N/A",
+      "calibration_date": "2024-01-05",
+      "calibration_due": "2029-01-04",
+      "item_number": 1,
+      "category": "Test facility"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Mode 1 - Battery power Standby mode: Install battery to the EUT and keep the EUT in standby state. Mode 2 - Battery power Test mode: PT9L is powered by the internal battery. Hold down the power button to install the battery and set PT9L in UE1 mode. During the radiation disturbance test, PT9L detects the air and carries out continuous measurement. During the immunity test, the temperature sensor detection is point to the blackbody, and the blackbody is set to 37℃. The temperature is continuously measured and compared with the blackbody temperature. The measurement accuracy is ±0.2℃.",
+      "topic_tags": [
+        "EUT operation mode",
+        "battery power",
+        "standby",
+        "test mode",
+        "continuous measurement",
+        "temperature accuracy",
+        "blackbody"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "BDB15",
+        "immunity test",
+        "radiation disturbance test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Emission: The equipment under test (EUT) was configured to measure its highest possible emission level. The test conditions were adapted accordingly in reference to the instructions for use. Immunity: The equipment under test (EUT) was configured to have its highest possible susceptibility against the tested phenomena. The test conditions were adapted accordingly in reference to the instructions for use.",
+      "topic_tags": [
+        "EMC",
+        "emission",
+        "immunity",
+        "EUT configuration",
+        "worst case"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "EMC test",
+        "IEC 60601-1-2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Measurement Uncertainty according to CISPR 16-4-2. The measurement uncertainty represents an expanded uncertainty expressed at approximately the 95% confidence level using a coverage factor of k=2. Conducted Emission at mains port using AMN (150kHz-30MHz): 3.2dB (U_cispr 3.4dB). Radiated Emission (30MHz-1000MHz): 3.9dB (U_cispr 6.3dB). Radiated Emission (1GHz-6GHz): 5.1dB (U_cispr 5.2dB).",
+      "topic_tags": [
+        "measurement uncertainty",
+        "CISPR 16-4-2",
+        "confidence level",
+        "coverage factor",
+        "k=2"
+      ],
+      "related_subjects": [
+        "conducted emission",
+        "radiated emission",
+        "EMC test"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Modification/Retest record: None. Countermeasures to achieve EMC Compliance: None.",
+      "topic_tags": [
+        "modification",
+        "retest",
+        "EMC compliance",
+        "countermeasures"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-01",
+        "PT9L"
+      ]
+    }
+  ]
+}

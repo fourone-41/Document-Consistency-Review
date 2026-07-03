@@ -1,0 +1,1648 @@
+{
+  "run_id": "RUN-0006",
+  "agent": "Regulatory Agent",
+  "assignment_id": "ASG-0006",
+  "task_type": "domain_review",
+  "assignment": {
+    "assignment_id": "ASG-0006",
+    "target_agent": "Regulatory Agent",
+    "task_type": "domain_review",
+    "review_focus": "MATRIX-005 — Document control and regulatory completeness across all PT9L DHF/DMR stages. Verify: (1) controlled status, current revision level, and approval signatures for all documents matching PT9L document ID patterns (PT9L-KHXQ01, PT9L-KXPS01, PT9L-FXJH01, PT9L-FXGB01, PT9L-EBOM01, PT9L-T1EB01, PT9L-SJSC01) and PT9C-CNTP01; (2) whether the regulatory standard list is consistent between the draft design input and the final design input — specifically the applicability status of EN ISO 80601-2-56:2017+A1:2018, MDR 2017/745, and CE registration; (3) whether ASTM E1965-98:2016 and ASTM E1965-98:2023 are both cited and whether the transition between versions is documented; (4) whether the 510(k) registration responsibility assignment to 'andon' is documented in the DHF with a formal agreement or design transfer record; (5) whether PT9C-CNTP01 is a controlled PT9L DHF document or a standalone PT9C document incorrectly included, and whether its document-control record reflects the correct product scope.",
+    "input_refs": [
+      "PT9L-KHXQ01",
+      "PT9L-KXPS01",
+      "PT9L-FXJH01",
+      "PT9L-FXGB01",
+      "PT9L-EBOM01",
+      "PT9L-T1EB01",
+      "PT9L-SJSC01",
+      "PT9C-CNTP01"
+    ],
+    "evidence_strategy": {
+      "use_page_index": true,
+      "use_relation_index": true,
+      "use_full_text": true,
+      "read_files": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ]
+    },
+    "routing_source": "orchestrator_llm",
+    "review_status": "candidate",
+    "final_decision": null
+  },
+  "input_package": {
+    "role": "Regulatory Agent",
+    "goal": "Check regulatory baseline, standards applicability, formal reports, controlled status, version history, review signatures, and document-control completeness.",
+    "system_prompt": "Review regulatory and document-control consistency using only supplied evidence IDs.",
+    "retrieval_strategy": {
+      "prefix": "REG",
+      "patterns": [
+        "80601|E1965|60601|62304|0664|14971|62366|10993|16886|MDR|FDA|controlled|approved|applicable"
+      ],
+      "rel_contains": [
+        "04 ",
+        "03 ",
+        "11 ",
+        "18 ",
+        "实验报告"
+      ],
+      "max_hits": 140
+    },
+    "input_schema": {
+      "required_fields": [
+        "project_profile",
+        "mandatory_audit_matrix",
+        "evidence_catalog",
+        "candidate_discovery_inputs"
+      ]
+    },
+    "required_schema": {
+      "required_fields": [
+        "agent",
+        "summary",
+        "findings"
+      ],
+      "agent": "Regulatory Agent",
+      "summary": "string",
+      "review_notes": [],
+      "findings": [
+        {
+          "finding_type": "snake_case",
+          "severity": "P1/P2/P3",
+          "claim": "reviewable conclusion",
+          "rationale": "evidence-based reason",
+          "evidence_ids": [],
+          "challenge_questions": []
+        }
+      ]
+    },
+    "evidence_catalog": [
+      {
+        "evidence_id": "REG-001",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-002",
+        "doc_id": "F0012",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 70,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-004",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 48,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-005",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 121,
+        "source_text": "Control as much as possible: The risk needs to be controlled by control measures.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-006",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-007",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 44,
+        "source_text": "3.3 Questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2 8",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-008",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 46,
+        "source_text": "3.4: Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1: 13",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-009",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 48,
+        "source_text": "3 .5 Questions from IEC 60601-1-11:2015+A1:2020 15",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-010",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 115,
+        "source_text": "| Safety | IEC 60601-1: 2005+AMD1: 2012+AMD2:2020 edition 3.2<br>IEC 60601-1-11:2015+A1:2020 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-011",
+        "doc_id": "F0014",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-2 Risk Assessment Report .via_lo_html.clean.md",
+        "line": 116,
+        "source_text": "| EMC | IEC 60601-1-2:2014+A1:2020 edition 4.1: |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-012",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-013",
+        "doc_id": "F0016",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-4 Risk Management Report .via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-014",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-015",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-016",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 70,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-017",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 139,
+        "source_text": "![图片 17](Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html_assets/Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable_html_6867d9cc.png) ![图片 18](Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html_assets/Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable_html_c315eba2.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-018",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-019",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-020",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 62,
+        "source_text": "3.3 Questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2 8",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-021",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 64,
+        "source_text": "3.4: Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1: 13",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-022",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 97,
+        "source_text": "The risk management activity including the risk management plan was began at the time the project is approved.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-023",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 137,
+        "source_text": "| **A.2.8** | Is the medical device supplied sterile or intended to be sterilized by the user, or are other microbiological controls applicable? | No, the device is non-sterile. | N/A |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-024",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-025",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 205,
+        "source_text": "In summary, all individual risks are acceptable after implementation of risk control measures. According to ISO 14971:2019 setion 7.4 \"Benefit-risk analysis If a residual risk is not judged acceptable using the criteria established in the risk management plan and further risk control is not practicable, the manufacturer may gather and review data and literature to determine if the benefits of the intended use outweigh this residual risk. \"So there is no need to do a risk benefit analysis for above risks.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-026",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-027",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-028",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 82,
+        "source_text": "The risk management activity including the risk management plan was began at the time the project is approved.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-029",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 159,
+        "source_text": "The risk management process has been implemented according to the criteria established in the risk management plan standards,the risk team have considered the efficiency and safety of the product,and think that all the identified risks have been controlled as far as possible.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-030",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-031",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-032",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 70,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-033",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 139,
+        "source_text": "![图片 17](PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html_assets/PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable_html_6867d9cc.png) ![图片 18](PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html_assets/PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable_html_c315eba2.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-034",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-035",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-036",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 62,
+        "source_text": ".3 Questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2 8",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-037",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 64,
+        "source_text": "3.4: Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1: 13",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-038",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 97,
+        "source_text": "The risk management activity including the risk management plan was began at the time the project is approved.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-039",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 137,
+        "source_text": "| **A.2.8** | Is the medical device supplied sterile or intended to be sterilized by the user, or are other microbiological controls applicable? | No, the device is non-sterile. | N/A |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-040",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-041",
+        "doc_id": "F0023",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 205,
+        "source_text": "In summary, all individual risks are acceptable after implementation of risk control measures. According to ISO 14971:2019 setion 7.4 \"Benefit-risk analysis If a residual risk is not judged acceptable using the criteria established in the risk management plan and further risk control is not practicable, the manufacturer may gather and review data and literature to determine if the benefits of the intended use outweigh this residual risk. \"So there is no need to do a risk benefit analysis for above risks.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-042",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 2,
+        "source_text": "# PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-043",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 18,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-044",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 82,
+        "source_text": "The risk management activity including the risk management plan was began at the time the project is approved.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-045",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 155,
+        "source_text": "The risk management process has been implemented according to the criteria established in the risk management plan standards,the risk team have considered the efficiency and safety of the product,and think that all the identified risks have been controlled as far as possible.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-046",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-047",
+        "doc_id": "F0025",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-1 Risk Management Plan PT9L-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 74,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-048",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-049",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 68,
+        "source_text": ".3 Questions from IEC 60601-1:2005+AMD1:2012+AMD2:2020 Edition 3.2 9",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-050",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 70,
+        "source_text": "3.4: Additional questions arising from IEC 60601-1-2:2014+A1:2020 edition 4.1: 14",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-051",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 103,
+        "source_text": "The risk management activity including the risk management plan was began at the time the project is approved.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-052",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 138,
+        "source_text": "| Safety | IEC 60601-1: 2005+AMD1: 2012+AMD2:2020 edition 3.2<br>IEC 60601-1-11:2015+A1:2020 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-053",
+        "doc_id": "F0026",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-2 Risk Assessment Report PT9L-FXPJ01 V1.0.via_lo_html.clean.md",
+        "line": 139,
+        "source_text": "| EMC | IEC 60601-1-2:2014+A1:2020 edition 4.1: |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-054",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-055",
+        "doc_id": "F0027",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report PT9L-FXYS01 V1.0.via_lo_html.clean.md",
+        "line": 215,
+        "source_text": "In summary, all individual risks are acceptable after implementation of risk control measures. According to ISO 14971:2019 setion 7.4 \"Benefit-risk analysis If a residual risk is not judged acceptable using the criteria established in the risk management plan and further risk control is not practicable, the manufacturer may gather and review data and literature to determine if the benefits of the intended use outweigh this residual risk. \"So there is no need to do a risk benefit analysis for above risks.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-056",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-057",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 86,
+        "source_text": "The risk management activity including the risk management plan was began at the time the project is approved.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-058",
+        "doc_id": "F0028",
+        "rel_path": "03 风险分析\\原版 - 历史文件\\V1.0-4 Risk Management Report PT9L-FXGB01 V1.0.via_lo_html.clean.md",
+        "line": 163,
+        "source_text": "The risk management process has been implemented according to the criteria established in the risk management plan standards,the risk team have considered the efficiency and safety of the product,and think that all the identified risks have been controlled as far as possible.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-059",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 22,
+        "source_text": "| 2 | 销售地区及认证 Intended markets and certification | 要求符合如下认证体系要求： □ CE 对应地区： 欧洲 ■ FDA 对应地区：美国 □ CFDA 对应地区：中国 □ 其他 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-060",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 133,
+        "source_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 |  | 国际 | ■是 □否 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-061",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 134,
+        "source_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | ISO 80601-2-56:2017/Amd1:2018 | 欧盟 | □是 ■否 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-062",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 137,
+        "source_text": "| 行业标准 | ASTM E1965-98：2016 |  | 美国 | ■是 □否 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-063",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 138,
+        "source_text": "| 行业标准 | ASTM E1965-98：2023 |  | 美国 | ■是 □否 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-064",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 143,
+        "source_text": "| 欧盟指令 | MDR 2017/745 |  | 欧盟 | □是 ■否 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-065",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 22,
+        "source_text": "|  | 铭牌 | 给用户关于机器的信息 | 铭牌印刷内容容易被擦拭掉 | 用户无法识别体温计的相关法规信息 用户误用 | 4 | C | 铭牌未覆膜 | 2 |  | 依IEC60601-1 电气安全通用要求中7标记耐久性要求 对铭牌进行试验 | 2 | 16 |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-066",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 22,
+        "source_text": "|  | 铭牌 | 给用户关于机器的信息 | 铭牌印刷内容容易被擦拭掉 | 用户无法识别血压计的相关法规信息 用户误用 | 4 | C | 铭牌未覆膜 | 2 |  | 依IEC60601-1:2005 电气安全通用要求中7.1.3 标记耐久性要求 对铭牌进行试验 | 2 | 16 |  |  |  |  |  |  |  |  |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-067",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 22,
+        "source_text": "| IEC 60601-1 | A |  | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | PT2L(美亚)-ZXBQ01 V1.0 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-068",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 23,
+        "source_text": "| IEC 60601-1-2 | A |  | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | PT2L(美亚)-ZXBQ02 V1.0 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-069",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 24,
+        "source_text": "| IEC 60601-1-11：2015+AMD1：2020 | A |  | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | PT2L(美亚)-ZXBQ03 V1.0 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-070",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 25,
+        "source_text": "| ISO 80601-2-56: 2017/AC:2018 | A |  | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | PT2L(美亚)-ZXBQ05 V1.0 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-071",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 26,
+        "source_text": "| ASTM E1965-98：2023 | A |  | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | PT2L(美亚)-ZXBQ06 V1.0 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-072",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 52,
+        "source_text": "| IEC 60601-1 | A |  | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail | ▉Pass □Fail |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-073",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 134,
+        "source_text": "(14) This infrared thermometer meets requirements established in ISO 80601-2-56:2017+A1:2018 and ASTM Standard(E1965-98) except of clause 5.2.2. It displays subject’s temperature over a range of 89.6℉~109.2℉(32℃-42.9℃). Full responsibility for the conformance of this product to the standard is assumed.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-074",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 162,
+        "source_text": "(8) The materials (ABS, TPU, PMMA, PC) of expect contact with patient have passed the ISO 10993-5 and ISO 10993-10 standards test, no toxicity, allergy and irritation reaction. They are in compliance with the Medical Device Directive (MDD) requirements. Based on the current science and technology, other potential allergic reactions are unknown.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-075",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 450,
+        "source_text": "Note 1. The cleaning steps above has been validated according to the FDA Guidance, “Reprocessing Medical Devices in Health Care Settings: Validation Methods and Labeling”.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-076",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 466,
+        "source_text": "D ![图片 19](PT9L-operation guide-20240828.via_lo_html_assets/PT9L-operation guide-20240828_html_857c1433.png) ispose of batteries in accordance with the regulation applicable at the place of operation. Dispose of batteries at public collection point in the EU countries – 2012/19/EU WEEE Directive.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-077",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 484,
+        "source_text": "![对象1](PT9L-operation guide-20240828.via_lo_html_assets/PT9L-operation guide-20240828_html_37342f69.gif) The batteries and electronic instruments must be disposed of in accordance with the locally applicable regulation, not with domestic waste.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-078",
+        "doc_id": "F0083",
+        "rel_path": "11 T1样机\\PT9L-operation guide-20240828.via_lo_html.clean.md",
+        "line": 506,
+        "source_text": "IEC 60601-1:2005+A1:2012+A2:2020/ EN 60601-1:2006/A2:2021 (Medical electrical equipment - Part 1: General requirements for basic safety and essential performance).",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-079",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 64,
+        "source_text": "| 误差 | -0.175144013491156 | 0.0788235454859958 | 0.177694567660545 | -0.0752036521148653 | 0.0799636736699156 | 0.0687258917830746 | 0.15720544212585 | 0.0792798146495954 | 0.083838145187066 | -0.0149937427706348 | -0.108220186035666 | 0.0194249286797898 | -0.0499616911272511 | 0.109679988590898 | 0.0281831979529485 | 0.146927256500419 | 0.160378722813014 | -0.00061527857056376 | 0.0890470203382421 | -0.107777474931154 | 0.00296220296523586 | -0.13517250592453 | -0.0633229606648058 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-080",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 138,
+        "source_text": "| 误差 | 0.0776333319170845 | 0.0855238090411419 | -0.198761693051132 | -0.161285257367929 | 0.125449278618035 | 0.0962860011920057 | 0.0226687754620087 | -0.177014167294857 | -0.175853567073929 | 0.0254196237130486 | -0.0357604182423472 | -0.0484254481739441 | 0.19011042024934 | 0.11990818316886 | -0.163771889317474 | 0.142063087681507 | -0.04340713532563 | 0.046459795261697 | 0.190391809746117 | 0.149875198833954 | -0.0751887540685416 | 0.178867576505816 | -0.0346961395270213 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-081",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 167,
+        "source_text": "| 误差 | -0.0616138408215576 | -0.109937747862205 | 0.00338722309624018 | 0.019220558502667 | -0.156090831795375 | 0.124251797685666 | -0.125420361972928 | -0.0942883454900354 | -0.0134836538584224 | -0.145595062522929 | -0.106044430482555 | 0.199576066583184 | -0.136168558108693 | 0.0234726537545669 | 0.165900991899697 | 0.144366594322051 | -0.00598214492036675 | -0.138655940335852 | 0.0757774620300964 | 0.180560635172284 | 0.171624293891341 | -0.198156192938441 | 0.122870370218443 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-082",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 260,
+        "source_text": "| 误差 | -0.194345107240949 | -0.19313973065929 | -0.0632272788980828 | 0.00550093035039367 | -0.150498720059687 | 0.107806662886304 | -0.152648220664624 | -0.108430323589083 | 0.144888690813097 | -0.103364713289196 | -0.0837488078879431 | 0.037178704190687 | -0.140501837230254 | -0.166823802058126 | 0.0689703149925407 | 0.0757269127380553 | -0.149762314479062 | -0.122768293384368 | -0.0238266820596991 | 0.0816580672576919 | -0.0107930036663504 | 0.0755687862167917 | -0.182585025830441 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-083",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 270,
+        "source_text": "| 误差 | 0.0964223934697301 | -0.154809330594318 | -0.08023810879412 | -0.15885737407207 | 0.000281075987238921 | 0.0648397100034614 | -0.061384414605179 | -0.0476525172021525 | 0.118376077867339 | -0.00874822762921923 | 0.135267459010379 | -0.115270345177258 | 0.191846640606641 | 0.152194800270273 | 0.0235239730806853 | -0.0431068247766788 | 0.147245575089435 | -0.026418636782104 | -0.156952500127069 | -0.0476621089572262 | 0.130551437319639 | 0.0690807342891233 | -0.0425546878977627 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-084",
+        "doc_id": "F0086",
+        "rel_path": "11 T1样机\\PT9L产品寿命测试数据-共55页 一定要双面打印！！！.via_xlsx.clean.md",
+        "line": 313,
+        "source_text": "| 屏显 | 37.0568428964944 | 37.0145298206816 | 36.8662693502906 | 36.9865344548925 | 37.0131858040142 | 37.1688955066494 | 36.9962919548615 | 36.9312868533896 | 36.9443801654797 | 36.9736211549456 | 37.018973992392 | 36.9857990828953 | 36.9594954959118 | 36.8465247612326 | 37.1572681291726 | 36.861186486708 | 37.0305274033304 | 36.9872169227241 | 37.1961584849301 | 37.0785090089699 | 37.1544891625125 | 37.0722165075521 | 37.0598981229063 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-085",
+        "doc_id": "F0090",
+        "rel_path": "11 T1样机\\PT9L红外体温计产品检验标准 V1.0.doc.md",
+        "line": 680,
+        "source_text": "具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目。</td>",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-086",
+        "doc_id": "F0090",
+        "rel_path": "11 T1样机\\PT9L红外体温计产品检验标准 V1.0.doc.md",
+        "line": 695,
+        "source_text": "具体操作详见IEC60601-1-2020/GB9706.1-2020相关条目。       </td>",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-087",
+        "doc_id": "F0091",
+        "rel_path": "11 T1样机\\PT9L红外体温计检测报告 V1.0-附件-性能测试数据.via_xlsx.clean.md",
+        "line": 114,
+        "source_text": "| 2号机 | 41.8981692258009 | 41.8202148075888 | 41.8689790421514 | 41.9328383565171 | 41.9284124671276 | 42.1099369170709 | 42.1842331148636 | 42.1132272885255 | 42.0361571701577 | 41.8370749802872 | 42.0℃ |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-088",
+        "doc_id": "F0104",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激1-SDWH-M201905262-4.pdf.md",
+        "line": 25,
+        "source_text": "参照 GB/T 16886.10-2017",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-089",
+        "doc_id": "F0104",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激1-SDWH-M201905262-4.pdf.md",
+        "line": 144,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-090",
+        "doc_id": "F0104",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激1-SDWH-M201905262-4.pdf.md",
+        "line": 148,
+        "source_text": "依据 GB/T 16886.10-2017 医疗器械的生物学评价 第 10 部分：刺激与皮肤致敏试验，该试验系统用新西兰兔来检测试验样品浸提液与试验系统直接接触引起的皮肤刺激反应，评价样品潜在的皮肤刺激反应。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-091",
+        "doc_id": "F0104",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激1-SDWH-M201905262-4.pdf.md",
+        "line": 172,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-092",
+        "doc_id": "F0104",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激1-SDWH-M201905262-4.pdf.md",
+        "line": 173,
+        "source_text": "GB/T 16886.12-2017 医疗器械生物学评价 第 12 部分：样品制备与参照材料",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-093",
+        "doc_id": "F0104",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激1-SDWH-M201905262-4.pdf.md",
+        "line": 174,
+        "source_text": "GB/T 16886.2-2011 医疗器械生物学评价 第 2 部分：动物福利要求",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-094",
+        "doc_id": "F0105",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激2-SDWH-M201905262-5.pdf.md",
+        "line": 25,
+        "source_text": "参照 GB/T 16886.10-2017",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-095",
+        "doc_id": "F0105",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激2-SDWH-M201905262-5.pdf.md",
+        "line": 144,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-096",
+        "doc_id": "F0105",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激2-SDWH-M201905262-5.pdf.md",
+        "line": 148,
+        "source_text": "依据 GB/T 16886.10-2017 医疗器械的生物学评价 第 10 部分：刺激与皮肤致敏试验，该试验系统用新西兰兔来检测试验样品浸提液与试验系统直接接触引起的皮肤刺激反应，评价样品潜在的皮肤刺激反应。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-097",
+        "doc_id": "F0105",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激2-SDWH-M201905262-5.pdf.md",
+        "line": 172,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-098",
+        "doc_id": "F0105",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激2-SDWH-M201905262-5.pdf.md",
+        "line": 173,
+        "source_text": "GB/T 16886.12-2017 医疗器械生物学评价 第 12 部分：样品制备与参照材料",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-099",
+        "doc_id": "F0105",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤刺激2-SDWH-M201905262-5.pdf.md",
+        "line": 174,
+        "source_text": "GB/T 16886.2-2011 医疗器械生物学评价 第 2 部分：动物福利要求",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-100",
+        "doc_id": "F0106",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏1-SDWH-M201905262-2.pdf.md",
+        "line": 25,
+        "source_text": "参照 GB/T 16886.10-2017",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-101",
+        "doc_id": "F0106",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏1-SDWH-M201905262-2.pdf.md",
+        "line": 149,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-102",
+        "doc_id": "F0106",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏1-SDWH-M201905262-2.pdf.md",
+        "line": 153,
+        "source_text": "依据 GB/T 16886.10-2017 医疗器械的生物学评价 第 10 部分：刺激与皮肤致敏试验，采用豚鼠最大剂量试验，评价样品潜在的皮肤致敏反应。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-103",
+        "doc_id": "F0106",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏1-SDWH-M201905262-2.pdf.md",
+        "line": 177,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-104",
+        "doc_id": "F0106",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏1-SDWH-M201905262-2.pdf.md",
+        "line": 178,
+        "source_text": "GB/T 16886.12-2017 医疗器械生物学评价 第 12 部分：样品制备与参照材料",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-105",
+        "doc_id": "F0106",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏1-SDWH-M201905262-2.pdf.md",
+        "line": 179,
+        "source_text": "GB/T 16886.2-2011 医疗器械生物学评价 第 2 部分：动物福利要求",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-106",
+        "doc_id": "F0107",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏2-SDWH-M201905262-3.pdf.md",
+        "line": 25,
+        "source_text": "参照 GB/T 16886.10-2017",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-107",
+        "doc_id": "F0107",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏2-SDWH-M201905262-3.pdf.md",
+        "line": 149,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-108",
+        "doc_id": "F0107",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏2-SDWH-M201905262-3.pdf.md",
+        "line": 153,
+        "source_text": "依据 GB/T 16886.10-2017 医疗器械的生物学评价 第 10 部分：刺激与皮肤致敏试验，采用豚鼠最大剂量试验，评价样品潜在的皮肤致敏反应。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-109",
+        "doc_id": "F0107",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏2-SDWH-M201905262-3.pdf.md",
+        "line": 177,
+        "source_text": "GB/T 16886.10-2017 医疗器械生物学评价 第 10 部分：刺激与皮肤致敏试验",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-110",
+        "doc_id": "F0107",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏2-SDWH-M201905262-3.pdf.md",
+        "line": 178,
+        "source_text": "GB/T 16886.12-2017 医疗器械生物学评价 第 12 部分：样品制备与参照材料",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-111",
+        "doc_id": "F0107",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-皮肤致敏2-SDWH-M201905262-3.pdf.md",
+        "line": 179,
+        "source_text": "GB/T 16886.2-2011 医疗器械生物学评价 第 2 部分：动物福利要求",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-112",
+        "doc_id": "F0108",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-细胞毒性-SDWH-M201905262-1.pdf.md",
+        "line": 19,
+        "source_text": "参照 GB/T 16886.5-2017 MTT",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-113",
+        "doc_id": "F0108",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-细胞毒性-SDWH-M201905262-1.pdf.md",
+        "line": 122,
+        "source_text": "- **GB/T 16886.5-2017** 医疗器械的生物学评价 第5部分: 细胞毒性测试 - 体外法",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-114",
+        "doc_id": "F0108",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-细胞毒性-SDWH-M201905262-1.pdf.md",
+        "line": 125,
+        "source_text": "- 依据 **GB/T 16886.5-2017** 医疗器械的生物学评价 第5部分: 细胞毒性测试 - 体外法，采用 **MTT 法**，评价样品潜在的细胞毒性。",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-115",
+        "doc_id": "F0108",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-细胞毒性-SDWH-M201905262-1.pdf.md",
+        "line": 145,
+        "source_text": "- **GB/T 16886.5-2017** 医疗器械的生物学评价 第5部分：细胞毒性测试 - 体外法",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-116",
+        "doc_id": "F0108",
+        "rel_path": "11 T1样机\\生物相容性\\同PT5生物相容性报告\\PT5-生物相容性-细胞毒性-SDWH-M201905262-1.pdf.md",
+        "line": 146,
+        "source_text": "- **GB/T 16886.12-2017** 医疗器械的生物学评价 第12部分：样品制备与参照材料",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-117",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 34,
+        "source_text": "| 2 | 销售地区及认证 Intended markets and certification | 要求符合如下认证体系要求： □ CE 对应地区： 欧洲 ■ FDA 对应地区：美国 □ CFDA 对应地区：中国 □ 其他 | □手板□T1■设计确认 | -- | -- | -- | -- |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-118",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 90,
+        "source_text": "| 2 | 销售地区及认证 Intended markets and certification | 要求符合如下认证体系要求： □ CE 对应地区： 欧洲 ■ FDA 对应地区：美国 □ CFDA 对应地区：中国 □ 其他 | □手板□T1■设计确认 | 检查是否符合相关国家的标注及法规 | 符合相关的标准及法规要求 | 标准及法规检查清单 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-119",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 136,
+        "source_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-120",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 137,
+        "source_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | □是 ■否 | -- | -- | -- | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-121",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 140,
+        "source_text": "| 行业标准 | ASTM E1965-98：2016 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-122",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 141,
+        "source_text": "| 行业标准 | ASTM E1965-98：2023 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-123",
+        "doc_id": "F0117",
+        "rel_path": "11 T1样机\\设计验证计划E0\\xingneng.via_xlsx.clean.md",
+        "line": 26,
+        "source_text": "| Clause NO.条款号 | Description, Requirement 描述或要求 |  | Applicable适用性 | 验证阶段 | 验证方法 | Comments 备注 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-124",
+        "doc_id": "F0117",
+        "rel_path": "11 T1样机\\设计验证计划E0\\xingneng.via_xlsx.clean.md",
+        "line": 28,
+        "source_text": "| Clause NO.条款号 | Description, Requirement 描述或要求 |  | Applicable适用性 | 验证阶段 | 验证方法 | Comments 备注 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-125",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 27,
+        "source_text": "| 2 | 销售地区及认证 Intended markets and certification | 要求符合如下认证体系要求： □ CE 对应地区： 欧洲 ■ FDA 对应地区：美国 □ CFDA 对应地区：中国 □ 其他 | □手板□T1■设计确认 | 检查是否符合相关国家的标注及法规 | 符合相关的标准及法规要求 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-126",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 66,
+        "source_text": "|  | 行业标准 | ISO 80601-2-56:2017/Amd1:2018 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-127",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 67,
+        "source_text": "|  | 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | □是 ■否 | -- | -- | -- |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-128",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 70,
+        "source_text": "|  | 行业标准 | ASTM E1965-98：2016 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-129",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 71,
+        "source_text": "|  | 行业标准 | ASTM E1965-98：2023 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-130",
+        "doc_id": "F0121",
+        "rel_path": "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 76,
+        "source_text": "|  | 欧盟指令 | MDR 2017/745 | □是 ■否 | -- | -- | -- |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-131",
+        "doc_id": "F0124",
+        "rel_path": "11 T1样机\\软件文件底稿\\测试计划及测试记录E0 23.11\\软件测试计划E0 23.11.via_lo_html.clean.md",
+        "line": 302,
+        "source_text": "oid waitdata(void) ｜ load a data to BUFDATA，并产生20ms的定时 ｜ S",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-132",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 123,
+        "source_text": "| 1 | 《PT9L设计输入-性能规格部分（三）IEC/EN 80601-2-30 》<br>(PT9L-SRXN01 V1.0) | 201.12.3.101 | 警报系统 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-133",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 125,
+        "source_text": "| 2 | 《PT9L设计输入-性能规格部分（三）IEC/EN 80601-2-30 》<br>(PT9L-SRXN01 V1.0) | 201.12.1.101 | 测量和显示范围 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-134",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 127,
+        "source_text": "| 3 | 《PT9L设计输入-性能规格部分（三）IEC/EN 80601-2-30 》<br>(PT9L-SRXN01 V1.0) | 201.7.2.<br>101 | 自动血压计的显示 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-135",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 130,
+        "source_text": "| 6 | 《PT9L设计输入-性能规格部分（三）IEC/EN 80601-2-30 》<br>(PT9L-SRXN01 V1.0) | 201.12.1.104 | 正常状态的最大袖带压力 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-136",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 133,
+        "source_text": "| 8 | 《PT9L设计输入-性能规格部分（三）IEC/EN 80601-2-30》<br>(PT9L-SRXN01 V1.0) | 201.11.8.103 | 内部电源 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-137",
+        "doc_id": "F0139",
+        "rel_path": "11 T1样机\\软件文件底稿\\软件需求E0 23.11\\2-1 软件需求规格E0 23.11.via_lo_html.clean.md",
+        "line": 135,
+        "source_text": "| 9 | 《PT9L设计输入-性能规格部分（三）IEC/EN 80601-2-30 》<br>(PT9L-SRXN01 V1.0) | 201.106 | 临床精度 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-138",
+        "doc_id": "F0143",
+        "rel_path": "11 T1样机\\运输\\冷热循环.pdf.md",
+        "line": 77,
+        "source_text": "**批准 (Approved by)**：（手写签字，见原图）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-139",
+        "doc_id": "F0144",
+        "rel_path": "11 T1样机\\运输\\抗压测试.pdf.md",
+        "line": 79,
+        "source_text": "**批准 (Approved by)**：（手写签字，见原图）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "REG-140",
+        "doc_id": "F0145",
+        "rel_path": "11 T1样机\\运输\\模拟运输.pdf.md",
+        "line": 77,
+        "source_text": "**批准 (Approved by)**：（手写签字，见原图）",
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "project_profile": {
+      "profile_source": "Project Scout Agent",
+      "target_model": "PT9L",
+      "product_family": [
+        "PT9L",
+        "PT9C",
+        "PT2L",
+        "PT3SBT",
+        "BP3L"
+      ],
+      "document_id_patterns": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ],
+      "primary_scope_rules": [
+        "PT9L is the target product model for this DHF",
+        "Documents in '2L风险改 - 历史文件' folder are explicitly historical",
+        "Documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical/draft folders require justification"
+      ],
+      "key_entities": {
+        "customer": "九安 (iHealth / Jiuan Medical)",
+        "customer_representative": "赵一平",
+        "product_description": "红外非接触式额头温度计 (Infrared No-Touch Forehead Thermometer)",
+        "intended_use": "Intermittent measurement of body temperature from forehead skin surface on people of all ages; consumer home use and healthcare provider use",
+        "bluetooth": "PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)"
+      },
+      "regulatory_baseline": [
+        "ISO 80601-2-56:2017/Amd1:2018 (international, applicable)",
+        "EN ISO 80601-2-56:2017+A1:2018 (EU, applicability differs between draft and final design input)",
+        "ASTM E1965-98:2016 (US, applicable)",
+        "ASTM E1965-98:2023 (US, applicable)",
+        "MDR 2017/745 (EU, applicability differs between draft and final design input)",
+        "ISO 14971:2019 / EN ISO 14971:2019 / EN ISO 14971:2019/A11:2021 (risk management)",
+        "ISO/TR 24971:2020 (risk assessment methodology)",
+        "EN 60601-1-6:2010+A1:2015+A2:2021 (usability)",
+        "GB/T 16886.1-2022 / ISO 10993-1:2018 (biocompatibility, China)",
+        "510(k) registration: andon responsible and paying",
+        "CE registration: applicability not yet determined per final design input"
+      ],
+      "candidate_discovery_hints": [
+        "PT9C appears as a sub-component PCB document number and as a standalone product in clinical evaluation and user test documents",
+        "PT3SBT appears in design output list two and a label review document filed under T1 sample folder",
+        "BP3L software diagrams appear in both the main software design folder and T1 sample subfolder",
+        "PT2L risk documents are in a '历史文件' subfolder but one (F0013) carries a PT9L document number internally"
+      ]
+    },
+    "mandatory_audit_matrix": [
+      {
+        "matrix_id": "MATRIX-005",
+        "stage_axis": "all_stages",
+        "dimension_axis": "document_control",
+        "suggested_agent": "Regulatory Agent",
+        "check_goal": "Verify controlled status, version history, review signatures, and document-control completeness across all stages.",
+        "assigned_agent": "Regulatory Agent"
+      }
+    ],
+    "corpus_scope": "full_markdown",
+    "assignment": {
+      "assignment_id": "ASG-0006",
+      "target_agent": "Regulatory Agent",
+      "task_type": "domain_review",
+      "review_focus": "MATRIX-005 — Document control and regulatory completeness across all PT9L DHF/DMR stages. Verify: (1) controlled status, current revision level, and approval signatures for all documents matching PT9L document ID patterns (PT9L-KHXQ01, PT9L-KXPS01, PT9L-FXJH01, PT9L-FXGB01, PT9L-EBOM01, PT9L-T1EB01, PT9L-SJSC01) and PT9C-CNTP01; (2) whether the regulatory standard list is consistent between the draft design input and the final design input — specifically the applicability status of EN ISO 80601-2-56:2017+A1:2018, MDR 2017/745, and CE registration; (3) whether ASTM E1965-98:2016 and ASTM E1965-98:2023 are both cited and whether the transition between versions is documented; (4) whether the 510(k) registration responsibility assignment to 'andon' is documented in the DHF with a formal agreement or design transfer record; (5) whether PT9C-CNTP01 is a controlled PT9L DHF document or a standalone PT9C document incorrectly included, and whether its document-control record reflects the correct product scope.",
+      "input_refs": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-KHXQ01",
+          "PT9L-KXPS01",
+          "PT9L-FXJH01",
+          "PT9L-FXGB01",
+          "PT9L-EBOM01",
+          "PT9L-T1EB01",
+          "PT9L-SJSC01",
+          "PT9C-CNTP01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    "candidate_discovery_inputs": [],
+    "agent_runs": [
+      {
+        "run_id": "RUN-0001",
+        "agent": "Candidate Discovery Agent",
+        "task_type": "candidate_discovery",
+        "assignment_id": "ASG-0001",
+        "summary": "Cross-corpus scan of the PT9L DHF/DMR package reveals 14 candidate consistency issues spanning legacy product residue in active documents, document-number mismatches, unsigned approvals, wrong-product references in BOM and label documents, regulatory applicability conflicts, software diagram contamination, and blood-pressure-specific language appearing in a thermometer DHF.",
+        "finding_count": 11,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0002",
+        "agent": "Hardware Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0002",
+        "summary": "Hardware audit of PT9L DHF/DMR reveals five substantive consistency findings: a blood-pressure residue phrase in the battery design-verification plan/report, an unresolved BOM conflict between PT3-P10 dual-spring and PT5-M02/M03 separate springs, a total-assembly drawing part-number anomaly (T-Z1-P10 used for two distinct PCBs), missing pass/fail verdicts in multiple T1 sample review checklists, and object-temperature mode accuracy tolerance (±0.2 °C) applied at 30 °C and 45 °C in software test plans despite the design-input accuracy specification only requiring ±0.2 °C for ≥35 °C and ≤42 °C.",
+        "finding_count": 5,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0003",
+        "agent": "Risk Traceability Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0003",
+        "summary": "The PT9L risk management file set contains multiple traceability chain breaks: the current Risk Management Report references document number PT9L-FXGB01 V1.0 while the active risk set has been revised to V2.0; the active Risk Management Plan carries document number IFT-FXJH01 rather than PT9L-FXJH01; F0013 (PT2L risk plan) internally carries a PT9L-series document number creating a product-identity conflict; no evidence of Bluetooth-specific hazard verification is present in the supplied corpus; DFMEA files (F0071, F0074) are not cross-referenced to the ISO 14971 risk assessment; and the design verification plan/report cites only PT9L-FXGB01 V1.0 while the current report is V2.0, leaving the closed-loop confirmation potentially misaligned.",
+        "finding_count": 8,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0004",
+        "agent": "Software Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0004",
+        "summary": "PT9L software lifecycle audit reveals five substantive findings: BP3L software diagrams appear in the primary PT9L software design folder and T1 sample subfolder without documented shared-component rationale; the software design document version identifier (E0 23.11) cannot be reconciled with the V1.0 identifier cited in test/validation records and BOM; no Bluetooth software requirements or corresponding test/validation evidence is present in the supplied corpus; the IEC 60601-1 test report references software design document DN:PT9L-RJFA01 V1.0 which does not appear in the evidence catalog; and a label review document filed under the active T1 sample folder carries PT2L as the primary product model without justification.",
+        "finding_count": 5,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0005",
+        "agent": "DMR/SOP Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0005",
+        "summary": "DMR/SOP audit of PT9L design output chain reveals seven substantive findings including a document-number collision on drawing PT9L-F01, a part-number mismatch between the two packaging BOM files, PT3-origin shared-component drawings archived in the PT9L DHF without cross-product justification, an incomplete drawing title-block in a packaging label drawing, a missing outer-carton BOM entry in the primary packaging BOM, a process instruction referencing EBOM by document number without pinning a version, and the design output list carrying blank approval-date fields indicating the formal sign-off record is incomplete.",
+        "finding_count": 7,
+        "candidate_count": 0
+      }
+    ]
+  },
+  "llm_output": {
+    "agent": "Regulatory Agent",
+    "summary": "PT9L DHF regulatory audit identifies eight substantive findings spanning unsigned approval fields across all risk management documents, dual ASTM E1965 version citation without documented transition rationale, inconsistent EN ISO 80601-2-56 and MDR 2017/745 applicability between design input stages, absent 510(k) responsibility agreement for 'andon', biocompatibility reports conducted on PT5 samples rather than PT9L, IFT-prefixed document numbers on active PT9L risk management plans, a historical-folder risk plan (F0013) carrying a PT9L-series document number, and the operation guide referencing MDD rather than MDR for biocompatibility compliance.",
+    "review_notes": [
+      "ISO 14971:2019, EN ISO 14971:2019, and EN ISO 14971:2019/A11:2021 are consistently cited as the governing risk management standards across all active risk documents (REG-002, REG-004, REG-016, REG-032, REG-047).",
+      "IEC 60601-1:2005+AMD1:2012+AMD2:2020 Ed.3.2 and IEC 60601-1-2:2014+A1:2020 Ed.4.1 are consistently cited in both the historical and active risk assessment reports (REG-007, REG-008, REG-010, REG-011, REG-020, REG-021, REG-036, REG-037, REG-049, REG-050, REG-052, REG-053).",
+      "IEC 60601-1-11:2015+A1:2020 is consistently cited for home healthcare environment applicability (REG-009, REG-010, REG-052).",
+      "Transport test reports (cold-hot cycle, compression, simulated transport) carry handwritten approval signatures per REG-138, REG-139, REG-140, which is consistent with physical test records.",
+      "The design verification plan and report both mark CE (EN ISO 80601-2-56) and MDR 2017/745 as not applicable (REG-120, REG-121, REG-127, REG-130), which is internally consistent between plan and report.",
+      "GB/T 16886 series (Parts 2, 5, 10, 12) are consistently cited across all five biocompatibility test reports (REG-088 through REG-116).",
+      "DFMEA files reference IEC 60601-1 marking durability requirements (REG-065, REG-066), indicating some traceability to the applicable safety standard."
+    ],
+    "findings": [
+      {
+        "finding_type": "unsigned_approval_fields_across_risk_management_file",
+        "severity": "P1",
+        "claim": "All eight active and historical risk management documents in the PT9L DHF carry approval fields with no recorded date or named approver, rendering none of the risk management documents demonstrably approved under a controlled document system.",
+        "rationale": "Every risk management document in the evidence catalog — Risk Management Plans (REG-001, REG-003, REG-015, REG-031, REG-046), Risk Assessment Reports (REG-006, REG-019, REG-035, REG-048), Verification of Risk Control Measures reports (REG-012, REG-024, REG-040, REG-054), and Risk Management Reports (REG-013, REG-027, REG-043, REG-056) — shows the approval field as 'Approved by (Technical Director) Date:' with no actual signature, name, or date populated. ISO 14971:2019 requires that the risk management file be maintained under a controlled document system with defined responsibilities. Blank approval fields across all documents indicate that formal approval has not been recorded in the DHF corpus.",
+        "evidence_ids": [
+          "REG-001",
+          "REG-003",
+          "REG-006",
+          "REG-012",
+          "REG-013"
+        ],
+        "challenge_questions": [
+          "Can the manufacturer produce signed paper originals or a document management system audit trail showing dated approvals for each of these risk management documents?",
+          "What is the document control procedure that governs approval of risk management file documents, and does it permit electronic or wet-ink signatures outside the document body?",
+          "If approvals exist only on physical originals, why are the digital DHF copies not updated to reflect the approved status, version, and date?"
+        ]
+      },
+      {
+        "finding_type": "ift_prefixed_document_numbers_on_active_pt9l_risk_management_plan",
+        "severity": "P1",
+        "claim": "The active PT9L Risk Management Plan (F0017) and its PT9L-prefixed counterpart (F0021) both carry document number IFT-FXJH01 rather than PT9L-FXJH01, creating a product-identity mismatch in the controlled document numbering system.",
+        "rationale": "REG-014 shows the active Risk Management Plan file title as 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable' and REG-030 shows the PT9L-prefixed version as 'PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable'. Both carry document number IFT-FXJH01, not PT9L-FXJH01 as required by the project document ID pattern. The project profile identifies PT9L-FXJH01 as the correct document number for the PT9L Risk Management Plan. An IFT-prefixed document number suggests the document originated for a different product (IFT) and was repurposed without a formal document number change, undermining traceability and controlled status.",
+        "evidence_ids": [
+          "REG-014",
+          "REG-015",
+          "REG-030",
+          "REG-031"
+        ],
+        "challenge_questions": [
+          "What product does the 'IFT' prefix designate, and is there a formal change record showing this document was re-scoped from IFT to PT9L?",
+          "Has a document number change request been raised to assign PT9L-FXJH01 to this plan, and if so, where is that record in the DHF?",
+          "Does the document control system treat IFT-FXJH01 and PT9L-FXJH01 as the same document or as separate controlled items?"
+        ]
+      },
+      {
+        "finding_type": "pt2l_risk_plan_carrying_pt9l_series_document_number",
+        "severity": "P1",
+        "claim": "Document F0013, filed in the '2L风险改 - 历史文件' folder and titled as a PT2L Risk Management Plan, internally carries a PT9L-series document number, creating an irreconcilable product-identity conflict in the controlled document record.",
+        "rationale": "REG-003 shows the approval field of F0013 (rel_path: '03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0') and REG-004 shows its risk management standard citation. The project profile primary scope rules note that F0013 'carries a PT9L document number internally' despite being a PT2L-titled document in a historical folder. A document that is simultaneously identified as PT2L in its title and PT9L in its internal document number cannot be unambiguously assigned to either product's controlled document system, and its presence in the DHF corpus without a formal cross-reference or obsolescence notice creates a traceability gap.",
+        "evidence_ids": [
+          "REG-003",
+          "REG-004",
+          "REG-005"
+        ],
+        "challenge_questions": [
+          "What is the internal document number shown on F0013, and does it match PT9L-FXJH01 or another PT9L-series identifier?",
+          "Has F0013 been formally superseded or obsoleted in the document control system, and is there a change notice linking it to the current PT9L risk management plan?",
+          "Why does a PT2L historical document carry a PT9L document number — was this a copy-paste error during document creation, and has it been corrected in the current controlled version?"
+        ]
+      },
+      {
+        "finding_type": "dual_astm_e1965_version_citation_without_transition_documentation",
+        "severity": "P2",
+        "claim": "Both ASTM E1965-98:2016 and ASTM E1965-98:2023 are listed as applicable standards in the design input and design verification plan/report without any documented rationale for citing two versions simultaneously or a transition plan specifying which version governs conformance testing.",
+        "rationale": "REG-062 and REG-063 show both ASTM E1965-98:2016 and ASTM E1965-98:2023 marked as applicable (■是) in the design input. REG-128 and REG-129 repeat this dual applicability in the design verification plan, and REG-121 and REG-122 confirm both versions are listed as passed in the design verification report. REG-071 shows the label review references ASTM E1965-98:2023. REG-073 (operation guide) cites 'ASTM Standard(E1965-98)' without specifying a year. No evidence in the corpus documents why two editions of the same standard are simultaneously applicable, which edition takes precedence for 510(k) submission, or whether a formal standard transition assessment was conducted when the 2023 edition superseded the 2016 edition.",
+        "evidence_ids": [
+          "REG-062",
+          "REG-063",
+          "REG-071",
+          "REG-073",
+          "REG-121"
+        ],
+        "challenge_questions": [
+          "What is the substantive technical difference between ASTM E1965-98:2016 and ASTM E1965-98:2023, and has a gap analysis been performed to confirm the device meets both editions?",
+          "Which edition of ASTM E1965-98 will be cited in the 510(k) submission, and is there a formal decision record in the DHF?",
+          "The operation guide (REG-073) omits the edition year for ASTM E1965-98 — will this be corrected before market release to specify the governing edition?"
+        ]
+      },
+      {
+        "finding_type": "en_iso_80601_2_56_and_mdr_applicability_inconsistency_between_design_input_stages",
+        "severity": "P2",
+        "claim": "The applicability of EN ISO 80601-2-56:2017+A1:2018 and MDR 2017/745 differs between the draft design input (F0031) and the final design verification plan/report (F0121/F0114), and no formal design change or regulatory strategy document in the DHF explains this change in scope.",
+        "rationale": "REG-061 shows EN ISO 80601-2-56:2017+A1:2018 marked as not applicable (□是 ■否) in the design input F0031, while REG-064 shows MDR 2017/745 also marked as not applicable. REG-127 and REG-130 confirm the same not-applicable status in the design verification plan. However, the project profile regulatory baseline notes that 'applicability differs between draft and final design input' for both standards, and REG-059 shows the design input marks only FDA/US as the target market (■FDA, □CE). The label review document (REG-067 through REG-072) filed under the active T1 sample folder references IEC 60601-1-11 and ISO 80601-2-56:2017/AC:2018 as applicable for what appears to be a PT2L/PT3SBT product, creating ambiguity about whether CE/EU scope was reconsidered during T1 sampling. No formal regulatory strategy document or design change notice documenting the decision to exclude EU scope is present in the evidence catalog.",
+        "evidence_ids": [
+          "REG-059",
+          "REG-061",
+          "REG-064",
+          "REG-067",
+          "REG-068"
+        ],
+        "challenge_questions": [
+          "Is there a formal regulatory strategy document or design change notice in the DHF that records the decision to exclude CE marking and MDR 2017/745 from the PT9L scope?",
+          "The label review document (F0082) filed under the T1 sample folder references IEC 60601-1-11 and ISO 80601-2-56 as applicable — does this document apply to PT9L, PT2L, or PT3SBT, and if PT9L, does it contradict the not-applicable determination for EU standards?",
+          "If EU market entry is planned in the future, is there a documented plan for when and how MDR 2017/745 compliance will be established?"
+        ]
+      },
+      {
+        "finding_type": "510k_registration_responsibility_assignment_undocumented_in_dhf",
+        "severity": "P2",
+        "claim": "The project profile records that 510(k) registration responsibility is assigned to 'andon' as the responsible and paying party, but no formal agreement, design transfer record, or regulatory responsibility document evidencing this assignment is present in the supplied DHF evidence catalog.",
+        "rationale": "The project profile states '510(k) registration: andon responsible and paying' as part of the regulatory baseline. None of the 140 evidence items in the catalog reference a contract, memorandum of understanding, design transfer agreement, or regulatory filing responsibility document between the manufacturer and 'andon'. Under 21 CFR Part 807, the 510(k) submitter must be the legal manufacturer or their authorized representative, and the DHF should contain documentation establishing who holds this responsibility and under what terms. The absence of any such record in the DHF corpus means the regulatory submission chain cannot be verified from the design history file alone.",
+        "evidence_ids": [
+          "REG-059",
+          "REG-117",
+          "REG-118",
+          "REG-125"
+        ],
+        "challenge_questions": [
+          "Where in the DHF or quality management system is the formal agreement or contract with 'andon' that assigns 510(k) submission responsibility?",
+          "Is 'andon' the legal manufacturer, the US agent, or a contract regulatory affairs organization, and is this distinction documented?",
+          "Has the design transfer to 'andon' for 510(k) purposes been completed under a formal design transfer procedure, and is there a design transfer record in the DHF?"
+        ]
+      },
+      {
+        "finding_type": "biocompatibility_reports_conducted_on_pt5_samples_not_pt9l",
+        "severity": "P2",
+        "claim": "All five biocompatibility test reports in the DHF were conducted on PT5 product samples, not PT9L samples, and no bridging justification or material equivalence assessment is present in the evidence catalog to support their applicability to PT9L.",
+        "rationale": "REG-088 through REG-116 cover five biocompatibility reports (cytotoxicity, two skin irritation, two skin sensitization) all filed under the path '11 T1样机\\生物相容性\\同PT5生物相容性报告\\' with report IDs prefixed 'PT5-'. The operation guide (REG-074) states that materials ABS, TPU, PMMA, PC have passed ISO 10993-5 and ISO 10993-10, but the cited reports are for PT5. ISO 10993-1:2018 requires that biocompatibility evaluation be conducted on the actual device or on materials demonstrated to be equivalent. No material equivalence assessment, bridging study, or formal justification document linking PT5 biocompatibility data to PT9L is present in the evidence catalog.",
+        "evidence_ids": [
+          "REG-074",
+          "REG-088",
+          "REG-089",
+          "REG-090",
+          "REG-091"
+        ],
+        "challenge_questions": [
+          "Is there a formal material equivalence assessment or biocompatibility bridging document in the DHF that demonstrates PT9L uses the same materials (ABS, TPU, PMMA, PC) in the same patient-contact configuration as PT5?",
+          "Were any material changes made between PT5 and PT9L that could affect biocompatibility, such as changes in colorants, surface treatments, or contact duration?",
+          "For the 510(k) submission, will new biocompatibility testing on PT9L samples be conducted, or will the PT5 data be submitted with a bridging rationale?"
+        ]
+      },
+      {
+        "finding_type": "operation_guide_references_mdd_instead_of_mdr_for_biocompatibility_compliance",
+        "severity": "P3",
+        "claim": "The PT9L operation guide states that patient-contact materials comply with 'Medical Device Directive (MDD) requirements', but MDD 93/42/EEC has been repealed and replaced by MDR 2017/745, making this a regulatory reference to a superseded directive.",
+        "rationale": "REG-074 states: 'They are in compliance with the Medical Device Directive (MDD) requirements.' MDR 2017/745 fully replaced MDD 93/42/EEC with effect from 26 May 2021. Referencing MDD in a document dated 20240828 (per REG-073 file name) is factually incorrect and could mislead notified bodies, regulators, or users about the applicable EU regulatory framework. This is compounded by the fact that the design input marks CE/MDR as not applicable (REG-064), making the MDD reference in the IFU internally inconsistent with the regulatory scope decision.",
+        "evidence_ids": [
+          "REG-074",
+          "REG-064",
+          "REG-076"
+        ],
+        "challenge_questions": [
+          "Will the MDD reference in the operation guide be corrected to either remove the EU regulatory claim or update it to reference MDR 2017/745 before market release?",
+          "Given that the design input marks CE as not applicable, why does the operation guide contain any EU directive compliance statement for biocompatibility?",
+          "Is the WEEE Directive reference (REG-076) in the same operation guide also inconsistent with the decision to exclude EU market scope?"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "finding_type": "unsigned_approval_fields_across_risk_management_file",
+      "severity": "P1",
+      "claim": "All eight active and historical risk management documents in the PT9L DHF carry approval fields with no recorded date or named approver, rendering none of the risk management documents demonstrably approved under a controlled document system.",
+      "rationale": "Every risk management document in the evidence catalog — Risk Management Plans (REG-001, REG-003, REG-015, REG-031, REG-046), Risk Assessment Reports (REG-006, REG-019, REG-035, REG-048), Verification of Risk Control Measures reports (REG-012, REG-024, REG-040, REG-054), and Risk Management Reports (REG-013, REG-027, REG-043, REG-056) — shows the approval field as 'Approved by (Technical Director) Date:' with no actual signature, name, or date populated. ISO 14971:2019 requires that the risk management file be maintained under a controlled document system with defined responsibilities. Blank approval fields across all documents indicate that formal approval has not been recorded in the DHF corpus.",
+      "evidence_ids": [
+        "REG-001",
+        "REG-003",
+        "REG-006",
+        "REG-012",
+        "REG-013"
+      ],
+      "challenge_questions": [
+        "Can the manufacturer produce signed paper originals or a document management system audit trail showing dated approvals for each of these risk management documents?",
+        "What is the document control procedure that governs approval of risk management file documents, and does it permit electronic or wet-ink signatures outside the document body?",
+        "If approvals exist only on physical originals, why are the digital DHF copies not updated to reflect the approved status, version, and date?"
+      ]
+    },
+    {
+      "finding_type": "ift_prefixed_document_numbers_on_active_pt9l_risk_management_plan",
+      "severity": "P1",
+      "claim": "The active PT9L Risk Management Plan (F0017) and its PT9L-prefixed counterpart (F0021) both carry document number IFT-FXJH01 rather than PT9L-FXJH01, creating a product-identity mismatch in the controlled document numbering system.",
+      "rationale": "REG-014 shows the active Risk Management Plan file title as 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable' and REG-030 shows the PT9L-prefixed version as 'PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable'. Both carry document number IFT-FXJH01, not PT9L-FXJH01 as required by the project document ID pattern. The project profile identifies PT9L-FXJH01 as the correct document number for the PT9L Risk Management Plan. An IFT-prefixed document number suggests the document originated for a different product (IFT) and was repurposed without a formal document number change, undermining traceability and controlled status.",
+      "evidence_ids": [
+        "REG-014",
+        "REG-015",
+        "REG-030",
+        "REG-031"
+      ],
+      "challenge_questions": [
+        "What product does the 'IFT' prefix designate, and is there a formal change record showing this document was re-scoped from IFT to PT9L?",
+        "Has a document number change request been raised to assign PT9L-FXJH01 to this plan, and if so, where is that record in the DHF?",
+        "Does the document control system treat IFT-FXJH01 and PT9L-FXJH01 as the same document or as separate controlled items?"
+      ]
+    },
+    {
+      "finding_type": "pt2l_risk_plan_carrying_pt9l_series_document_number",
+      "severity": "P1",
+      "claim": "Document F0013, filed in the '2L风险改 - 历史文件' folder and titled as a PT2L Risk Management Plan, internally carries a PT9L-series document number, creating an irreconcilable product-identity conflict in the controlled document record.",
+      "rationale": "REG-003 shows the approval field of F0013 (rel_path: '03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0') and REG-004 shows its risk management standard citation. The project profile primary scope rules note that F0013 'carries a PT9L document number internally' despite being a PT2L-titled document in a historical folder. A document that is simultaneously identified as PT2L in its title and PT9L in its internal document number cannot be unambiguously assigned to either product's controlled document system, and its presence in the DHF corpus without a formal cross-reference or obsolescence notice creates a traceability gap.",
+      "evidence_ids": [
+        "REG-003",
+        "REG-004",
+        "REG-005"
+      ],
+      "challenge_questions": [
+        "What is the internal document number shown on F0013, and does it match PT9L-FXJH01 or another PT9L-series identifier?",
+        "Has F0013 been formally superseded or obsoleted in the document control system, and is there a change notice linking it to the current PT9L risk management plan?",
+        "Why does a PT2L historical document carry a PT9L document number — was this a copy-paste error during document creation, and has it been corrected in the current controlled version?"
+      ]
+    },
+    {
+      "finding_type": "dual_astm_e1965_version_citation_without_transition_documentation",
+      "severity": "P2",
+      "claim": "Both ASTM E1965-98:2016 and ASTM E1965-98:2023 are listed as applicable standards in the design input and design verification plan/report without any documented rationale for citing two versions simultaneously or a transition plan specifying which version governs conformance testing.",
+      "rationale": "REG-062 and REG-063 show both ASTM E1965-98:2016 and ASTM E1965-98:2023 marked as applicable (■是) in the design input. REG-128 and REG-129 repeat this dual applicability in the design verification plan, and REG-121 and REG-122 confirm both versions are listed as passed in the design verification report. REG-071 shows the label review references ASTM E1965-98:2023. REG-073 (operation guide) cites 'ASTM Standard(E1965-98)' without specifying a year. No evidence in the corpus documents why two editions of the same standard are simultaneously applicable, which edition takes precedence for 510(k) submission, or whether a formal standard transition assessment was conducted when the 2023 edition superseded the 2016 edition.",
+      "evidence_ids": [
+        "REG-062",
+        "REG-063",
+        "REG-071",
+        "REG-073",
+        "REG-121"
+      ],
+      "challenge_questions": [
+        "What is the substantive technical difference between ASTM E1965-98:2016 and ASTM E1965-98:2023, and has a gap analysis been performed to confirm the device meets both editions?",
+        "Which edition of ASTM E1965-98 will be cited in the 510(k) submission, and is there a formal decision record in the DHF?",
+        "The operation guide (REG-073) omits the edition year for ASTM E1965-98 — will this be corrected before market release to specify the governing edition?"
+      ]
+    },
+    {
+      "finding_type": "en_iso_80601_2_56_and_mdr_applicability_inconsistency_between_design_input_stages",
+      "severity": "P2",
+      "claim": "The applicability of EN ISO 80601-2-56:2017+A1:2018 and MDR 2017/745 differs between the draft design input (F0031) and the final design verification plan/report (F0121/F0114), and no formal design change or regulatory strategy document in the DHF explains this change in scope.",
+      "rationale": "REG-061 shows EN ISO 80601-2-56:2017+A1:2018 marked as not applicable (□是 ■否) in the design input F0031, while REG-064 shows MDR 2017/745 also marked as not applicable. REG-127 and REG-130 confirm the same not-applicable status in the design verification plan. However, the project profile regulatory baseline notes that 'applicability differs between draft and final design input' for both standards, and REG-059 shows the design input marks only FDA/US as the target market (■FDA, □CE). The label review document (REG-067 through REG-072) filed under the active T1 sample folder references IEC 60601-1-11 and ISO 80601-2-56:2017/AC:2018 as applicable for what appears to be a PT2L/PT3SBT product, creating ambiguity about whether CE/EU scope was reconsidered during T1 sampling. No formal regulatory strategy document or design change notice documenting the decision to exclude EU scope is present in the evidence catalog.",
+      "evidence_ids": [
+        "REG-059",
+        "REG-061",
+        "REG-064",
+        "REG-067",
+        "REG-068"
+      ],
+      "challenge_questions": [
+        "Is there a formal regulatory strategy document or design change notice in the DHF that records the decision to exclude CE marking and MDR 2017/745 from the PT9L scope?",
+        "The label review document (F0082) filed under the T1 sample folder references IEC 60601-1-11 and ISO 80601-2-56 as applicable — does this document apply to PT9L, PT2L, or PT3SBT, and if PT9L, does it contradict the not-applicable determination for EU standards?",
+        "If EU market entry is planned in the future, is there a documented plan for when and how MDR 2017/745 compliance will be established?"
+      ]
+    },
+    {
+      "finding_type": "510k_registration_responsibility_assignment_undocumented_in_dhf",
+      "severity": "P2",
+      "claim": "The project profile records that 510(k) registration responsibility is assigned to 'andon' as the responsible and paying party, but no formal agreement, design transfer record, or regulatory responsibility document evidencing this assignment is present in the supplied DHF evidence catalog.",
+      "rationale": "The project profile states '510(k) registration: andon responsible and paying' as part of the regulatory baseline. None of the 140 evidence items in the catalog reference a contract, memorandum of understanding, design transfer agreement, or regulatory filing responsibility document between the manufacturer and 'andon'. Under 21 CFR Part 807, the 510(k) submitter must be the legal manufacturer or their authorized representative, and the DHF should contain documentation establishing who holds this responsibility and under what terms. The absence of any such record in the DHF corpus means the regulatory submission chain cannot be verified from the design history file alone.",
+      "evidence_ids": [
+        "REG-059",
+        "REG-117",
+        "REG-118",
+        "REG-125"
+      ],
+      "challenge_questions": [
+        "Where in the DHF or quality management system is the formal agreement or contract with 'andon' that assigns 510(k) submission responsibility?",
+        "Is 'andon' the legal manufacturer, the US agent, or a contract regulatory affairs organization, and is this distinction documented?",
+        "Has the design transfer to 'andon' for 510(k) purposes been completed under a formal design transfer procedure, and is there a design transfer record in the DHF?"
+      ]
+    },
+    {
+      "finding_type": "biocompatibility_reports_conducted_on_pt5_samples_not_pt9l",
+      "severity": "P2",
+      "claim": "All five biocompatibility test reports in the DHF were conducted on PT5 product samples, not PT9L samples, and no bridging justification or material equivalence assessment is present in the evidence catalog to support their applicability to PT9L.",
+      "rationale": "REG-088 through REG-116 cover five biocompatibility reports (cytotoxicity, two skin irritation, two skin sensitization) all filed under the path '11 T1样机\\生物相容性\\同PT5生物相容性报告\\' with report IDs prefixed 'PT5-'. The operation guide (REG-074) states that materials ABS, TPU, PMMA, PC have passed ISO 10993-5 and ISO 10993-10, but the cited reports are for PT5. ISO 10993-1:2018 requires that biocompatibility evaluation be conducted on the actual device or on materials demonstrated to be equivalent. No material equivalence assessment, bridging study, or formal justification document linking PT5 biocompatibility data to PT9L is present in the evidence catalog.",
+      "evidence_ids": [
+        "REG-074",
+        "REG-088",
+        "REG-089",
+        "REG-090",
+        "REG-091"
+      ],
+      "challenge_questions": [
+        "Is there a formal material equivalence assessment or biocompatibility bridging document in the DHF that demonstrates PT9L uses the same materials (ABS, TPU, PMMA, PC) in the same patient-contact configuration as PT5?",
+        "Were any material changes made between PT5 and PT9L that could affect biocompatibility, such as changes in colorants, surface treatments, or contact duration?",
+        "For the 510(k) submission, will new biocompatibility testing on PT9L samples be conducted, or will the PT5 data be submitted with a bridging rationale?"
+      ]
+    },
+    {
+      "finding_type": "operation_guide_references_mdd_instead_of_mdr_for_biocompatibility_compliance",
+      "severity": "P3",
+      "claim": "The PT9L operation guide states that patient-contact materials comply with 'Medical Device Directive (MDD) requirements', but MDD 93/42/EEC has been repealed and replaced by MDR 2017/745, making this a regulatory reference to a superseded directive.",
+      "rationale": "REG-074 states: 'They are in compliance with the Medical Device Directive (MDD) requirements.' MDR 2017/745 fully replaced MDD 93/42/EEC with effect from 26 May 2021. Referencing MDD in a document dated 20240828 (per REG-073 file name) is factually incorrect and could mislead notified bodies, regulators, or users about the applicable EU regulatory framework. This is compounded by the fact that the design input marks CE/MDR as not applicable (REG-064), making the MDD reference in the IFU internally inconsistent with the regulatory scope decision.",
+      "evidence_ids": [
+        "REG-074",
+        "REG-064",
+        "REG-076"
+      ],
+      "challenge_questions": [
+        "Will the MDD reference in the operation guide be corrected to either remove the EU regulatory claim or update it to reference MDR 2017/745 before market release?",
+        "Given that the design input marks CE as not applicable, why does the operation guide contain any EU directive compliance statement for biocompatibility?",
+        "Is the WEEE Directive reference (REG-076) in the same operation guide also inconsistent with the decision to exclude EU market scope?"
+      ]
+    }
+  ],
+  "status": "completed"
+}

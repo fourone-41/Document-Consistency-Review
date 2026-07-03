@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Hardware Agent",
+  "summary": "对6个硬件参数对齐候选进行二轮复审。MC-CLUSTER-0085（电池/时间值）、MC-CLUSTER-0086（电池/百分比）、MC-CLUSTER-0087（测量范围/时间值）、MC-CLUSTER-0088（工作环境/温度容差）、MC-CLUSTER-0090（测量范围/湿度百分比）均属于正式主审范围文件中多场景、多参数的正常并列列举，各数值对应不同测试条件或规格项目，无实质不一致；MC-CLUSTER-0089来源于历史记录草稿目录，primary_scope为false，属于废案/草稿范围，应dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0085",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "multi_context_value_aggregation",
+      "claim": "电池/时间值列举（1s、10s、15s、2s、3秒、30分钟、48h、5年）为安规报告中不同测试条款的正常多值并列，无实质不一致。",
+      "reason": "证据来源为正式安规报告（ETX202303-07-078-02），近邻上下文显示该行为IEC标准8.4.3条款表格，涉及插头断开后1秒电压测量等多个独立测试场景。各时间值分属不同测试条款（如1s对应插头断开测量、48h对应耐久测试、5年对应电池寿命等），属于同一报告内多条款参数的正常汇聚，不构成同一参数的矛盾冲突，误报，dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0086",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "multi_context_value_aggregation",
+      "claim": "电池/百分比列举（0%、10%、100%、110%、20%、50%、70%、75%）为可用性工程文件中任务成功率统计数据，非电池参数规格冲突。",
+      "reason": "证据来源为Stage 18可用性工程文件（PT9L usability engineering file），近邻上下文明确显示这些百分比值均为用户任务成功率统计（如0/30=0%），与电池规格参数无关。该候选系将任务成功率百分比误归类为电池百分比参数，属于分类误报，dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0087",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "multi_context_value_aggregation",
+      "claim": "测量范围/时间值列举（060h、1.5s、1060h、2h、24h、4h、48h、5s）为标签审核表中IEC标准多条款测试时间的正常并列，无实质不一致。",
+      "reason": "证据来源为Stage 11 PT3SBT标签审核表（海外更新版），近邻上下文显示该区域为IEC 60601-1第4.2.3条环境操作条件测试程序，涉及热稳态至少2h、至少6h等多个独立测试步骤的时间要求。各时间值对应不同测试条款，属于多条款参数正常汇聚，不构成同一参数的矛盾冲突，误报，dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0088",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "multi_context_value_aggregation",
+      "claim": "工作环境/温度容差列举（±0.02℃至±2℃）为装配说明中标定工序温度要求与测量精度规格的正常多值并列，无实质不一致。",
+      "reason": "证据来源为Stage 12设计输出装配说明V1.0-PT9L，近邻上下文显示该区域为CB3常温标定工序，涉及恒温房温度要求（23.0±2.0℃）及各测量精度等级规格。不同容差值对应不同测试条件（标定环境温度控制、传感器精度等级、测量准确度规格等），属于多场景参数正常汇聚，不构成同一参数的矛盾冲突，误报，dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0089",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "out_of_scope_draft_historical_record",
+      "claim": "该候选来源于历史记录草稿目录，primary_scope为false，属于废案/草稿范围，不影响PT9L正式DHF/DMR证据链。",
+      "reason": "证据来源为"历史记录\\PT9LDHF-草稿\\设计确认\\7.临床评价报告"，cluster元数据明确标注primary_scope=false，stage为"历史记录"。该文件为草稿历史版本，不属于正式主审范围。近邻上下文中百分比值（15%、85%等）为湿度范围参数，与measurement_accuracy分类不符，存在分类误报。综合两点理由，dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0090",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "multi_context_value_aggregation",
+      "claim": "测量范围/湿度百分比列举（-95%、10%、15%、3%、55%、70%、90%、93%）为1965报告中不同标准条款湿度范围的正常并列，无实质不一致。",
+      "reason": "证据来源为正式外部测试报告（ETX202303-07-078-04 PT9L 1965报告），近邻上下文显示第5.6.2条明确规定工作湿度范围为up to 95%（noncondensing），设备实际工作湿度为15%-95%RH，符合标准要求且通过（P）。其余百分比值（如3%、55%等）分属其他测试条款的湿度参数或测试点，属于多条款参数正常汇聚。-95%疑为解析负号误读（应为"up to 95%"中的95%），不构成实质参数冲突，误报，dismiss。"
+    }
+  ]
+}
+```

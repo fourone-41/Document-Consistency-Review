@@ -1,25 +1,25 @@
 # 跨文档关系分析报告
 
-> 生成时间：2026-06-12 09:21
+> 生成时间：2026-06-17 13:49
 
-> 发现的跨文档关系总数：379
+> 发现的跨文档关系总数：401
 
 
 ## 总览
 
 | # | 关系类型 | 依据标准 | 发现数 | 高置信 | 中置信 | 低置信 |
 |---|---------|---------|:------:|:------:|:------:|:------:|
-| 1 | 需求 → 设计输入 追溯 | ISO 13485 7.3.3 | 44 | 0 | 44 | 0 |
+| 1 | 需求 → 设计输入 追溯 | ISO 13485 7.3.3 | 45 | 0 | 45 | 0 |
 | 2 | 设计输入 → 测试 验证 | ISO 13485 7.3.6 | 17 | 0 | 17 | 0 |
 | 3 | 风险 → 控制措施 缓解 | ISO 14971 7.1 | 90 | 90 | 0 | 0 |
-| 4 | 控制措施 → 测试 验证 | ISO 14971 8 | 39 | 0 | 39 | 0 |
-| 5 | 需求 → 测试 覆盖 | ISO 13485 7.3.6/7.3.7 | 30 | 0 | 30 | 0 |
-| 6 | 软件项 → 测试 验证 | IEC 62304 5.7 | 24 | 0 | 24 | 0 |
+| 4 | 控制措施 → 测试 验证 | ISO 14971 8 | 30 | 0 | 30 | 0 |
+| 5 | 需求 → 测试 覆盖 | ISO 13485 7.3.6/7.3.7 | 31 | 0 | 31 | 0 |
+| 6 | 软件项 → 测试 验证 | IEC 62304 5.7 | 16 | 0 | 16 | 0 |
 | 7 | 计划任务 → 文档 产出 | ISO 13485 7.3.2 | 5 | 0 | 5 | 0 |
 | 8 | DHF清单条目 → 文档 对应 | DHF Process | 15 | 9 | 6 | 0 |
-| 9 | 法规标准 → 需求 实现 | ISO 13485 7.1 | 35 | 0 | 35 | 0 |
-| 10 | 法规标准 → 设计输入 实现 | ISO 13485 7.3.3 | 35 | 0 | 35 | 0 |
-| 11 | 功能 → 测试 验证 | ISO 13485 7.3.6 | 44 | 0 | 44 | 0 |
+| 9 | 法规标准 → 需求 实现 | ISO 13485 7.1 | 5 | 0 | 5 | 0 |
+| 10 | 法规标准 → 设计输入 实现 | ISO 13485 7.3.3 | 100 | 0 | 100 | 0 |
+| 11 | 功能 → 测试 验证 | ISO 13485 7.3.6 | 46 | 0 | 46 | 0 |
 | 12 | 人员跨文档身份识别 | Process | 1 | 1 | 0 | 0 |
 
 
@@ -61,7 +61,7 @@
 | PERF-09 | PERF-09 | 中 |
 | PERF-10 | PERF-10 | 中 |
 
-*... 还有 14 条*
+*... 还有 15 条*
 
 
 
@@ -140,39 +140,36 @@
 
 | 源节点 (控制措施) | 目标节点 (测试) | 置信度 |
 |---------------------------------------------|---------------------------------------------|--------|
-| The live parts can't be touched | TEST-11: 静态电流 | 中 |
-| The live parts can't be touched | TEST-12: 工作电流 | 中 |
 | The power control temperature | TEST-15: 低温工作试验 | 中 |
 | The power control temperature | TEST-16: 高温工作试验 | 中 |
 | Applied part don't generate heat | TEST-15: 低温工作试验 | 中 |
 | Applied part don't generate heat | TEST-16: 高温工作试验 | 中 |
 | Thick enclosure design | TEST-13: 裸机跌落测试 | 中 |
-| Thick enclosure design | TEST-14: 带包装振动 | 中 |
 | Temperature measurement circuit design | TEST-6: 温度显示范围及超温提示功能 | 中 |
-| Temperature measurement circuit design | TEST-7: 显示分辨率 | 中 |
 | Temperature measurement circuit design | TEST-8: 常温精度测试 | 中 |
-| Control by circuit | TEST-5: 自动关机 | 中 |
-| Control by circuit | TEST-2: 提示音开关 | 中 |
+| Control by circuit | TEST-9: 低电压提示功能 | 中 |
 | Low-voltage check | TEST-9: 低电压提示功能 | 中 |
 | Device shall be in accordance with the requ | TEST-15: 低温工作试验 | 中 |
 | Device shall be in accordance with the requ | TEST-16: 高温工作试验 | 中 |
 | Explain storage and use environment in oper | TEST-17: 低温存储试验 | 中 |
 | Explain storage and use environment in oper | TEST-18: 高温存储试验 | 中 |
-| Creepage distance and electrical clearance  | TEST-11: 静态电流 | 中 |
-| Creepage distance and electrical clearance  | TEST-12: 工作电流 | 中 |
-| Floating ground design | TEST-11: 静态电流 | 中 |
-| Floating ground design | TEST-12: 工作电流 | 中 |
 | Temperature measurement circuit design; Sof | TEST-6: 温度显示范围及超温提示功能 | 中 |
-| Temperature measurement circuit design; Sof | TEST-7: 显示分辨率 | 中 |
 | Temperature measurement circuit design; Sof | TEST-8: 常温精度测试 | 中 |
 | Durability design | TEST-19: 产品寿命 | 中 |
-| Durability design | TEST-20: 电池寿命 | 中 |
-| Software control | TEST-5: 自动关机 | 中 |
+| Battery storehouse marks battery type; Anti | TEST-9: 低电压提示功能 | 中 |
+| Control the size of detachable components;  | TEST-13: 裸机跌落测试 | 中 |
+| Memory function design | TEST-5: 自动关机 | 中 |
+| Software control | TEST-1: 上电自检功能 | 中 |
+| Software control | TEST-2: 提示音开关 | 中 |
 | Algorithm control | TEST-6: 温度显示范围及超温提示功能 | 中 |
 | Algorithm control | TEST-7: 显示分辨率 | 中 |
-
-*... 还有 9 条*
-
+| Algorithm control | TEST-8: 常温精度测试 | 中 |
+| Explain in operation guide; Software design | TEST-3: 测量单位切换 | 中 |
+| Explain in operation guide; Software design | TEST-4: 测量模式切换 | 中 |
+| Software design | TEST-9: 低电压提示功能 | 中 |
+| Software design | TEST-10: 背光灯 | 中 |
+| Software design for wireless coexistence; L | TEST-11: 静态电流 | 中 |
+| Software design for wireless coexistence; L | TEST-12: 工作电流 | 中 |
 
 
 ## 需求 → 测试 覆盖
@@ -210,8 +207,11 @@
 | FUNC-11 | TEST-6: 温度显示范围及超温提示功能 | 中 |
 | FUNC-12 | TEST-5: 自动关机 | 中 |
 | FUNC-13 | TEST-3: 测量单位切换 | 中 |
-| FUNC-14 | TEST-1: 上电自检功能 | 中 |
 | FUNC-14 | TEST-2: 提示音开关 | 中 |
+| REQ-07 | TEST-13: 裸机跌落测试 | 中 |
+
+*... 还有 1 条*
+
 
 
 ## 软件项 → 测试 验证
@@ -233,16 +233,8 @@
 | BH67F2762 | TEST-10: 背光灯 | 中 |
 | BH67F2762 | TEST-11: 静态电流 | 中 |
 | BH67F2762 | TEST-12: 工作电流 | 中 |
-| BH67F2762 | TEST-15: 低温工作试验 | 中 |
-| BH67F2762 | TEST-16: 高温工作试验 | 中 |
-| BH67F2762 | TEST-20: 电池寿命 | 中 |
-| RAM | TEST-1: 上电自检功能 | 中 |
-| RAM | TEST-8: 常温精度测试 | 中 |
-| RAM | TEST-15: 低温工作试验 | 中 |
-| RAM | TEST-16: 高温工作试验 | 中 |
 | ROM | TEST-1: 上电自检功能 | 中 |
-| ROM | TEST-15: 低温工作试验 | 中 |
-| ROM | TEST-16: 高温工作试验 | 中 |
+| EEPROM | TEST-2: 提示音开关 | 中 |
 | EEPROM | TEST-3: 测量单位切换 | 中 |
 | EEPROM | TEST-4: 测量模式切换 | 中 |
 
@@ -297,6 +289,15 @@
 | 加州65提案  | REQ-10-2 | 中 |
 | 电池指令  | REQ-10-3 | 中 |
 | 包装指令  | REQ-10-4 | 中 |
+
+
+## 法规标准 → 设计输入 实现
+
+**依据标准**：ISO 13485 7.3.3  
+**关系含义**：法规要求应体现在设计输入中
+
+| 源节点 (法规标准) | 目标节点 (设计输入) | 置信度 |
+|---------------------------------------------|---------------------------------------------|--------|
 | ISO 80601-2-56:2017/Amd1:2018  | PERF-01 | 中 |
 | ISO 80601-2-56:2017/Amd1:2018  | PERF-02 | 中 |
 | ISO 80601-2-56:2017/Amd1:2018  | PERF-03 | 中 |
@@ -312,60 +313,23 @@
 | EN 12470-3:2000+A1:2009  | PERF-01 | 中 |
 | EN 12470-3:2000+A1:2009  | PERF-02 | 中 |
 | EN 12470-3:2000+A1:2009  | PERF-03 | 中 |
+| EN 12470-3:2000+A1:2009  | PERF-04 | 中 |
+| EN 12470-3:2000+A1:2009  | PERF-05 | 中 |
 | EN 12470-5:2003  | PERF-01 | 中 |
 | EN 12470-5:2003  | PERF-02 | 中 |
 | EN 12470-5:2003  | PERF-03 | 中 |
+| EN 12470-5:2003  | PERF-04 | 中 |
+| EN 12470-5:2003  | PERF-05 | 中 |
 | ASTM E1965-98:2016  | PERF-01 | 中 |
 | ASTM E1965-98:2016  | PERF-02 | 中 |
 | ASTM E1965-98:2016  | PERF-03 | 中 |
+| ASTM E1965-98:2016  | PERF-04 | 中 |
+| ASTM E1965-98:2016  | PERF-05 | 中 |
 | ASTM E1965-98:2023  | PERF-01 | 中 |
 | ASTM E1965-98:2023  | PERF-02 | 中 |
 | ASTM E1965-98:2023  | PERF-03 | 中 |
-| GB/T 21416:2008  | PERF-01 | 中 |
 
-*... 还有 5 条*
-
-
-
-## 法规标准 → 设计输入 实现
-
-**依据标准**：ISO 13485 7.3.3  
-**关系含义**：法规要求应体现在设计输入中
-
-| 源节点 (法规标准) | 目标节点 (设计输入) | 置信度 |
-|---------------------------------------------|---------------------------------------------|--------|
-| EN 12470-3:2000+A1:2009  | PERF-04 | 中 |
-| EN 12470-3:2000+A1:2009  | PERF-05 | 中 |
-| EN 12470-3:2000+A1:2009  | PERF-06 | 中 |
-| EN 12470-5:2003  | PERF-04 | 中 |
-| EN 12470-5:2003  | PERF-05 | 中 |
-| EN 12470-5:2003  | PERF-06 | 中 |
-| ASTM E1965-98:2016  | PERF-04 | 中 |
-| ASTM E1965-98:2016  | PERF-05 | 中 |
-| ASTM E1965-98:2016  | PERF-06 | 中 |
-| ASTM E1965-98:2023  | PERF-04 | 中 |
-| ASTM E1965-98:2023  | PERF-05 | 中 |
-| ASTM E1965-98:2023  | PERF-06 | 中 |
-| GB/T 21416:2008  | PERF-04 | 中 |
-| GB/T 21416:2008  | PERF-05 | 中 |
-| GB/T 21416:2008  | PERF-06 | 中 |
-| GB 21417.1-2008  | PERF-04 | 中 |
-| GB 21417.1-2008  | PERF-05 | 中 |
-| GB 21417.1-2008  | PERF-06 | 中 |
-| JJG 1164-2019  | PERF-01 | 中 |
-| JJG 1164-2019  | PERF-02 | 中 |
-| JJG 1164-2019  | PERF-03 | 中 |
-| JJG 1164-2019  | PERF-04 | 中 |
-| JJG 1164-2019  | PERF-05 | 中 |
-| JJG 1164-2019  | PERF-06 | 中 |
-| JJG 1162-2019  | PERF-01 | 中 |
-| JJG 1162-2019  | PERF-02 | 中 |
-| JJG 1162-2019  | PERF-03 | 中 |
-| JJG 1162-2019  | PERF-04 | 中 |
-| JJG 1162-2019  | PERF-05 | 中 |
-| JJG 1162-2019  | PERF-06 | 中 |
-
-*... 还有 5 条*
+*... 还有 70 条*
 
 
 
@@ -379,22 +343,24 @@
 | 红外非接触式测量 | TEST-8: 常温精度测试 | 中 |
 | 红外非接触式测量 | TEST-15: 低温工作试验 | 中 |
 | 红外非接触式测量 | TEST-16: 高温工作试验 | 中 |
-| 红外非接触式测量 | TEST-17: 低温存储试验 | 中 |
-| 红外非接触式测量 | TEST-18: 高温存储试验 | 中 |
 | 额面测量 | TEST-8: 常温精度测试 | 中 |
 | 人体体温检测 | TEST-6: 温度显示范围及超温提示功能 | 中 |
-| 人体体温检测 | TEST-7: 显示分辨率 | 中 |
 | 人体体温检测 | TEST-8: 常温精度测试 | 中 |
+| 人体体温检测 | TEST-15: 低温工作试验 | 中 |
+| 人体体温检测 | TEST-16: 高温工作试验 | 中 |
 | 物温检测 | TEST-4: 测量模式切换 | 中 |
 | 物温检测 | TEST-8: 常温精度测试 | 中 |
 | 屏幕选择分类指示 | TEST-4: 测量模式切换 | 中 |
 | 开机测量键 | TEST-3: 测量单位切换 | 中 |
+| 开机测量键 | TEST-4: 测量模式切换 | 中 |
 | 设置键 | TEST-4: 测量模式切换 | 中 |
 | 静音键 | TEST-2: 提示音开关 | 中 |
 | 段码LCD显示 | TEST-1: 上电自检功能 | 中 |
 | 段码LCD显示 | TEST-6: 温度显示范围及超温提示功能 | 中 |
+| 段码LCD显示 | TEST-7: 显示分辨率 | 中 |
 | LCD背光 | TEST-10: 背光灯 | 中 |
 | 壳体变色 | TEST-10: 背光灯 | 中 |
+| 位置检测 | TEST-8: 常温精度测试 | 中 |
 | 低电压双阶段检出 | TEST-9: 低电压提示功能 | 中 |
 | 错误种类显示 | TEST-6: 温度显示范围及超温提示功能 | 中 |
 | 自动关机 | TEST-5: 自动关机 | 中 |
@@ -402,12 +368,10 @@
 | 华氏度显示 | TEST-3: 测量单位切换 | 中 |
 | 蜂鸣提示 | TEST-1: 上电自检功能 | 中 |
 | 蜂鸣提示 | TEST-2: 提示音开关 | 中 |
-| 蜂鸣提示 | TEST-3: 测量单位切换 | 中 |
 | 初始化功能 | TEST-1: 上电自检功能 | 中 |
 | 关机功能 | TEST-5: 自动关机 | 中 |
-| 关机功能 | TEST-9: 低电压提示功能 | 中 |
 
-*... 还有 14 条*
+*... 还有 16 条*
 
 
 
@@ -425,11 +389,11 @@
 
 | 追溯链 | 已覆盖 | 总数 | 覆盖率 |
 |--------|:------:|:----:|:------:|
-| 需求 → 设计输入 | 44 | 50 | 88% |
-| 需求 → 测试 | 30 | 50 | 60% |
+| 需求 → 设计输入 | 45 | 50 | 90% |
+| 需求 → 测试 | 31 | 50 | 62% |
 | 设计输入 → 测试 | 17 | 28 | 60% |
-| 法规 → 需求 | 35 | 45 | 77% |
-| 功能 → 测试 | 44 | 29 | 151% |
+| 法规 → 需求 | 5 | 45 | 11% |
+| 功能 → 测试 | 46 | 29 | 158% |
 
 
 ## 节点统计

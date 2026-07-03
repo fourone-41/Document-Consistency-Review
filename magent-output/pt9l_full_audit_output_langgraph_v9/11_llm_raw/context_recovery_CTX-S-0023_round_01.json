@@ -1,0 +1,168 @@
+```json
+{
+  "context_summary": "本轮已补充了 F0071（包装类FMEA）探测度(D)评分表的完整局部上下文，包括：第215行节标题"## Sheet: 探测度(D)"、第217-226行完整表头与10级探测度评分行（绝对不可能→中上），以及紧邻的频度(O)评分表（第195-213行）。文档元数据确认路径为"11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md"，doc_id=F0071，版本标识为"E0 23.11"。当前证据仅覆盖评分准则页，尚未触及：①DFMEA主体失效模式分析表（含设计控制列的实际填写内容）；②F0074文件的任何内容；③ISO 14971风险评估报告或风险管理报告（任何doc_id）；④F0072封面页中可能存在的文件关联声明或参考文件列表；⑤F0073硬件类FMEA的主体内容。核心缺口：在所有已供证据中，均未发现任何指向ISO 14971风险评估报告或风险管理报告的交叉引用字段、文件编号引用或追溯链接。",
+
+  "evidence_gaps": [
+    "F0071主体FMEA分析表（Sheet: FMEA或类似命名）中"设计控制"列的实际填写内容——需确认该列是否引用了ISO 14971风险条目编号或风险管理报告文件编号",
+    "F0074文件（另一份DFMEA）的任何内容，包括封面、参考文件列表、主体分析表及评分准则页",
+    "F0072封面页（潜在设计失效模式及后果分析封面E0 20220620）的完整正文——封面通常包含"参考文件"或"相关文件"栏，可能记录与ISO 14971报告的关联",
+    "ISO 14971风险评估报告或风险管理报告本身（任何doc_id），需确认其是否反向引用了F0071/F0074的DFMEA条目",
+    "F0073硬件类FMEA主体分析表中"设计控制"列的实际填写内容，作为同批次DFMEA的对照样本",
+    "F0071文件第1-95行（主体FMEA分析表区域）的完整内容，当前page_context显示line_start=1、2、6、96等节点但text字段为空，需要实际文本",
+    "F0071文件第96-178行区域的完整内容（page_context显示line_start=96和179两个节点，内容未提取）",
+    "项目文件索引或DHF目录文件，用于确认ISO 14971风险管理文件的doc_id及其与DFMEA文件的声明关联关系"
+  ],
+
+  "additional_search_queries": [
+    "F0071 line:1-95 FMEA主体分析表 设计控制列 全文提取",
+    "F0072 封面 参考文件 相关文件 ISO 14971 风险管理",
+    "F0074 全文 DFMEA 设计控制 ISO 14971",
+    "F0073 硬件类FMEA 主体分析表 设计控制列 line:1-95",
+    "ISO 14971 风险评估报告 风险管理报告 doc_id 全文检索",
+    "DHF目录 文件清单 DFMEA 风险管理 追溯 cross-reference",
+    "风险管理报告 FMEA 交叉引用 F0071 F0074",
+    "11 T1样机 风险管理 ISO14971 hazard analysis"
+  ],
+
+  "agent_instruction": "请按以下优先级执行多文件局部上下文扩展，目标是找到DFMEA（F0071、F0074）与ISO 14971风险评估/风险管理报告之间存在或缺失的交叉引用证据：\n\n【优先级1 - 必须执行】\n① 提取 F0071（包装类FMEA）第1-95行完整文本：这是主体FMEA分析表区域，需要逐行检查"设计控制（预防）"列和"设计控制（探测）"列的实际填写内容，重点标记任何包含"ISO 14971"、"风险管理"、"RM-"、"RA-"、"HAZ-"等字样的单元格。\n② 提取 F0071 第96-178行完整文本（page_context中line_start=96和179之间的区域）。\n③ 提取 F0072（封面文件）全文：封面文件通常包含"参考文件编号"、"相关文件"、"适用标准"等字段，是发现ISO 14971关联声明的最高概率位置。\n\n【优先级2 - 应执行】\n④ 提取 F0074 全文（若文件存在于证据库中），执行与F0071相同的检查逻辑。\n⑤ 提取 F0073（硬件类FMEA）第1-95行，作为同批次对照，检查其设计控制列是否有不同的引用模式。\n\n【优先级3 - 条件执行】\n⑥ 在全文索引中搜索包含"ISO 14971"或"风险管理报告"或"risk management report"的所有文档，返回doc_id列表及命中行。\n⑦ 搜索任何DHF目录或文件清单文档，提取其中列出的风险管理类文件与DFMEA文件的关联描述。\n\n【输出要求】\n- 对每个提取的文本块，明确标注：doc_id、rel_path、行号范围、是否发现ISO 14971交叉引用（是/否/不确定）\n- 若在任何位置发现交叉引用，完整引用该行原文\n- 若确认所有DFMEA文件均无ISO 14971交叉引用字段，明确记录"已穷举检查，确认缺失"",
+
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "RISK-103",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 219,
+        "source_text": "|  | 探测度 | 判定准则：被设计控制探测的可能性 | or % Chance | Criteria (Likelihood of Detection by Design Control) | Ranking |",
+        "context_role": "section_header_row",
+        "section_heading": "## Sheet: 探测度(D)（line 215）",
+        "table_position": "表头行，6列表格，列定义：[空白, 探测度等级名称, 中文判定准则, 概率值/百分比, 英文判定准则, 排名数值]"
+      },
+      {
+        "evidence_id": "RISK-104",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 220,
+        "source_text": "|  | 绝对不可能 | There is no Design Control -or- Control will not or cannot detect a potential cause/mechanism and subsequent Failure Mode. | <5% | There is no Design Control -or- Control will not or cannot detect a potential cause/mechanism and subsequent Failure Mode. | 10 |",
+        "context_role": "detection_ranking_row",
+        "ranking_value": 10,
+        "detection_level": "绝对不可能",
+        "note": "最高风险等级行，明确描述'无设计控制'场景，无ISO 14971引用"
+      },
+      {
+        "evidence_id": "RISK-104-EXT",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line_range": "224-226",
+        "source_text": "|  | 少 | Low chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.45 | System/Product verification/validation after design freeze and prior to launch with degradation testing (Subsystem or system testing after durability test, e.g., function check). | 6 |\n|  | 中等 | Moderate chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.55 | System/Product validation (reliability testing, development or validation tests) prior to design freeze using pass/fail testing (e.g., acceptance criteria for performance, function checks, etc.). | 5 |\n|  | 中上 | Moderate High chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.65 | System/Product validation (reliability testing, ...",
+        "context_role": "detection_ranking_continuation",
+        "note": "探测度表延续行（Ranking 6、5、中上），内容为通用FMEA评分准则，无文件交叉引用字段"
+      },
+      {
+        "evidence_id": "RISK-FREQ-TABLE",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line_range": "195-213",
+        "source_text": "## Sheet: 频度(O)\n\n|  | 失效发生的可能性 | 判定准则 | 可能的失效率 | PPM level | 级别 |\n| --- | --- | --- | --- | --- | --- |\n|  | 很高 | 持续性发生的失效 | ≥10% | 100000 | 10 |\n|  | 很高 | 持续性发生的失效 | 0.05 | 50000 | 9 |\n|  | 高 | 反复发生的失效 | 0.02 | 20000 | 8 |\n|  | 高 | 反复发生的失效 | 0.01 | 10000 | 7 |\n|  | 中等 | 偶尔发生的失效 | 0.005 | 2000 | 6 |\n|  | 中等 | 偶尔发生的失效 | 0.002 | 500 | 5 |\n|  | 中等 | 偶尔发生的失效 | 0.001 | 100 | 4 |\n|  | 低 | 相对很少发生的失效 | 500ppm | 10 | 3 |\n|  | 低 | 相对很少发生的失效 | 100ppm | 1 | 2 |\n|  | 极低 | 失效不太可能发生 | ＜10ppm |  | 1 |",
+        "context_role": "adjacent_section_upstream",
+        "section_heading": "## Sheet: 频度(O)（line 195）",
+        "note": "探测度表的紧邻上游节，为频度(O)10级评分表，同样无ISO 14971引用，确认评分准则页整体不含风险管理文件交叉引用"
+      },
+      {
+        "evidence_id": "RISK-F0072-META",
+        "doc_id": "F0072",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\潜在设计失效模式及后果分析（设计FMEA）封面E0 20220620.doc.md",
+        "line_start": 1,
+        "source_text": "[page_context text字段为空，内容未提取]",
+        "context_role": "cover_page_unread",
+        "note": "F0072封面文件存在于page_context索引中但text为空，是发现参考文件声明的高优先级目标，需在下一轮提取全文"
+      },
+      {
+        "evidence_id": "RISK-F0073-META",
+        "doc_id": "F0073",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\硬件类 FMEA E0 23.11.via_xlsx.clean.md",
+        "line_start": 1,
+        "source_text": "[page_context text字段为空，内容未提取]",
+        "context_role": "hardware_fmea_unread",
+        "note": "F0073硬件类FMEA存在于page_context索引中但text为空，需提取主体分析表作为对照"
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter": "DFMEA_detection_ranking_scale",
+        "doc_id": "F0071",
+        "value": "1-10整数，10=绝对不可能探测，1=几乎确定可探测",
+        "source_lines": "219-226+",
+        "note": "F0071采用标准10级探测度量表，与AIAG DFMEA方法论一致，非ISO 14971概率分级体系"
+      },
+      {
+        "parameter": "DFMEA_occurrence_ranking_scale",
+        "doc_id": "F0071",
+        "value": "1-10整数，10=≥10%失效率，1=<10ppm",
+        "source_lines": "199-209",
+        "note": "频度量表同样为AIAG体系，与ISO 14971的概率估计方法存在方法论差异，需确认是否有映射文件"
+      },
+      {
+        "parameter": "document_version",
+        "doc_id": "F0071",
+        "value": "E0 23.11",
+        "source": "文件路径及文件名",
+        "note": "版本E0，日期标识23.11（2023年11月），为T1样机阶段文件"
+      },
+      {
+        "parameter": "iso14971_crossref_in_scoring_tables",
+        "doc_id": "F0071",
+        "value": "未发现",
+        "checked_lines": "195-226",
+        "note": "在已读取的评分准则页（频度表+探测度表）中，无任何ISO 14971、风险管理报告、RM编号的引用"
+      }
+    ],
+    "page_context": [
+      {
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "document_type": "DFMEA - 包装类",
+        "version": "E0 23.11",
+        "stage": "T1样机",
+        "known_sheets": [
+          {"sheet_name": "频度(O)", "line_start": 195, "status": "已读取，完整"},
+          {"sheet_name": "探测度(D)", "line_start": 215, "status": "已读取，部分（至line 226+）"},
+          {"sheet_name": "FMEA主体分析表（推测）", "line_start": "1-94", "status": "未读取，高优先级"},
+          {"sheet_name": "未知节（line 96-178）", "line_start": 96, "status": "未读取"}
+        ],
+        "iso14971_reference_found": false,
+        "risk_management_reference_found": false
+      },
+      {
+        "doc_id": "F0072",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\潜在设计失效模式及后果分析（设计FMEA）封面E0 20220620.doc.md",
+        "document_type": "DFMEA封面页",
+        "version": "E0 20220620",
+        "stage": "T1样机",
+        "status": "索引已知，内容未提取",
+        "priority": "高——封面页最可能包含参考文件列表"
+      },
+      {
+        "doc_id": "F0073",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\硬件类 FMEA E0 23.11.via_xlsx.clean.md",
+        "document_type": "DFMEA - 硬件类",
+        "version": "E0 23.11",
+        "stage": "T1样机",
+        "status": "索引已知，内容未提取",
+        "priority": "中——作为同批次对照样本"
+      },
+      {
+        "doc_id": "F0074",
+        "rel_path": "未知",
+        "document_type": "DFMEA（claim中提及）",
+        "status": "文件存在性未经page_context确认，需在全文索引中检索",
+        "priority": "高——claim直接点名"
+      }
+    ],
+    "recovered_context": [
+      {
+        "recovery_id": "RC-001",
+        "type": "full_section_reconstruction",
+        "doc_id": "F0071",
+        "section": "Sheet: 探测度(D) — 完整表格（lines 215-226+）",
+        "content": "## Sheet: 探测度(D)\n\n| 列1 | 探测度 | 判定准则：被设计控制探测的可能性 | or

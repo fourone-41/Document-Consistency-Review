@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Product Identity Agent",
+  "decision": "confirm",
+  "severity": "P3",
+  "error_type": "document_title_product_identifier_mismatch",
+  "claim": "Document F0242 titled 'PT9C设计确认E0 23.11' is filed in the PT9L DHF '18 设计确认' folder. The document title contains 'PT9C' instead of 'PT9L', constituting a document naming error. However, the document body (line 12) explicitly states product model 'PT9L' and the intended use (line 13) describes 'PT9L红外体温计', confirming the document substantively belongs to the PT9L product. An identical draft copy exists under '历史记录\\PT9LDHF-草稿\\设计确认\\' (F0388), further corroborating PT9L project ownership. The document is a valid PT9L design confirmation record but carries an incorrect product identifier in its title, which is a document control nonconformity requiring a title correction or formal errata.",
+  "reason": "The recovered context package provides sufficient evidence to confirm a real controlled-document issue. Three independent evidence points converge: (1) F0242 is physically located in the PT9L DHF formal folder '18 设计确认'; (2) the document body unambiguously identifies the product as PT9L in both the product model field (line 12: '产品型号 | PT9L') and the intended use description (line 13: 'PT9L红外体温计'); (3) the same document exists as a PT9L DHF draft (F0388) under '历史记录\\PT9LDHF-草稿\\设计确认\\', confirming continuous PT9L project association. The title 'PT9C设计确认E0 23.11' retaining 'PT9C' is a legacy naming error — most likely the document was created by copying a PT9C template and the filename/title was never updated to reflect PT9L. The document content is substantively valid for PT9L and should be retained in the PT9L DHF, but the title mismatch violates document control requirements (title must unambiguously identify the applicable product). A document change notice or re-issuance with corrected title is required."
+}
+```

@@ -1,0 +1,210 @@
+```json
+{
+  "context_summary": "本轮已确认六个文件的路径与主范围归属：F0017/F0018/F0020（无PT9L前缀）和F0021/F0022（有PT9L前缀）均在主范围内（excluded_from_primary_scope=false）。但所有证据的actual_text均为HTML注释元数据行，未提取到任何文件内容（版本号、文件编号、批准日期、修订历史、文件控制状态等）。F0019（无前缀）和F0023（有PT9L前缀）的对应关系尚未在证据中出现。两套文件是否内容完全相同、哪套为受控版本、PT9L前缀的含义及其与产品型号/项目代号的关联，均无法从现有证据判断。仍缺：各文件正文内容（尤其是封面页、版本控制表、文件编号字段）、文件索引/目录清单、DHF主文件清单中对这两套文件的引用说明。",
+  "evidence_gaps": [
+    "F0017、F0018、F0020、F0021、F0022 正文内容未提取，无法比对版本号、文件编号、批准签署信息是否一致或存在差异",
+    "F0019（03 风险分析\\Attachment 7 03 ...无前缀版本）是否存在及其内容未确认",
+    "F0023（PT9L--Attachment 7 04 Risk Management Report对应文件）是否存在及其内容未确认",
+    "PT9L前缀的含义未明确：是否代表特定产品型号、项目代号、变更批次或受控标识",
+    "DHF/DMR主文件清单（Document Master List或Design History File Index）中是否对两套文件均有登记，或仅登记其中一套",
+    "文件控制程序或SOP中关于PT9L前缀命名规则的说明",
+    "两套文件的修订历史（Revision History）页内容，用于判断哪套版本更新或为当前受控版本",
+    "风险管理计划（F0017/F0021）中是否有交叉引用指向另一套文件",
+    "ECO/变更控制记录中是否有关于这两套文件并存的说明或废止记录",
+    "文件夹目录结构中是否存在其他子文件夹（如Archive、Superseded）可能说明其中一套已被归档"
+  ],
+  "additional_search_queries": [
+    "F0017 封面页 版本号 文件编号 批准日期",
+    "F0021 封面页 版本号 文件编号 批准日期",
+    "F0018 Revision History 修订历史",
+    "F0022 Revision History 修订历史",
+    "F0019 Attachment 7 03 风险分析",
+    "F0023 PT9L Attachment 7 04 Risk Management Report",
+    "PT9L 含义 产品型号 项目代号 命名规则",
+    "DHF Document Master List 文件清单 风险分析",
+    "Design History File Index 03 风险分析",
+    "文件控制程序 PT9L 前缀 命名",
+    "ECO 变更控制 风险文件 F0017 F0021",
+    "IFT-FXJH01 IFT-FXPJ01 IFT-FXGB01 文件编号 受控状态"
+  ],
+  "agent_instruction": "请对以下问题进行复审，不得直接裁决受控版本归属，需基于补充证据包中的内容进行分析：\n1. 提取F0017与F0021封面页及Revision History页的实际文本，逐字段比对文件编号、版本号、批准日期、批准人签名是否相同或存在差异；\n2. 提取F0018与F0022、F0020与F0023（如存在）的相同字段进行比对；\n3. 查找DHF主文件清单或文件索引，确认两套文件是否均被登记为有效受控文件，或其中一套已被标注为废止/归档；\n4. 查找PT9L前缀的命名规则定义，判断其是否为受控标识、产品变型标识或其他含义；\n5. 如发现任一套文件在主文件清单中缺失登记，或Revision History显示版本不一致，应标记为高风险不一致项；\n6. 输出结论时须区分：（a）内容完全相同仅命名不同、（b）内容存在实质差异、（c）受控状态可明确判断、（d）受控状态仍无法判断，分别对应不同严重程度建议。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "SCOUT-024",
+        "doc_id": "F0017",
+        "rel_path": "03 风险分析\\Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 1,
+        "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "note": "仅元数据行，正文内容未提取，版本号V1.0 20240202来自文件名推断，需从正文封面页验证"
+      },
+      {
+        "evidence_id": "SCOUT-048",
+        "doc_id": "F0021",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202-All applicable.via_lo_html.clean.md",
+        "line": 1,
+        "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "note": "与F0017文件名除PT9L前缀外完全相同，是否内容一致需正文比对确认"
+      },
+      {
+        "evidence_id": "SCOUT-030",
+        "doc_id": "F0018",
+        "rel_path": "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 1,
+        "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "note": "版本号V2.0 20240530来自文件名推断，需正文验证"
+      },
+      {
+        "evidence_id": "SCOUT-054",
+        "doc_id": "F0022",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md",
+        "line": 1,
+        "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "note": "与F0018文件名除PT9L前缀外完全相同，是否内容一致需正文比对确认"
+      },
+      {
+        "evidence_id": "SCOUT-042",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 1,
+        "source_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "excluded_from_primary_scope": false,
+        "verified": true,
+        "actual_text": "<!-- hybrid clean-md; source = via_lo_html.md; 规整表=GFM，多段大格=标题/段落，无 HTML 标签/无合并记号 -->",
+        "note": "对应PT9L版本F0023是否存在尚未确认"
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter_id": "PARAM-CTX-001",
+        "parameter_name": "文件命名对照表",
+        "description": "两套风险文件的文件名对照关系（基于现有证据推断）",
+        "value": {
+          "pairs": [
+            {
+              "no_prefix_doc_id": "F0017",
+              "no_prefix_filename": "Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202",
+              "pt9l_prefix_doc_id": "F0021",
+              "pt9l_prefix_filename": "PT9L--Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0 20240202",
+              "version_from_filename": "V1.0",
+              "date_from_filename": "20240202"
+            },
+            {
+              "no_prefix_doc_id": "F0018",
+              "no_prefix_filename": "Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530",
+              "pt9l_prefix_doc_id": "F0022",
+              "pt9l_prefix_filename": "PT9L--Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530",
+              "version_from_filename": "V2.0",
+              "date_from_filename": "20240530"
+            },
+            {
+              "no_prefix_doc_id": "F0019",
+              "no_prefix_filename": "Attachment 7 03 [未确认]",
+              "pt9l_prefix_doc_id": "[未确认]",
+              "pt9l_prefix_filename": "[未确认]",
+              "version_from_filename": "[未确认]",
+              "date_from_filename": "[未确认]"
+            },
+            {
+              "no_prefix_doc_id": "F0020",
+              "no_prefix_filename": "Attachment 7 04 Risk Management Report IFT-FXGB01 V2.0 20240530",
+              "pt9l_prefix_doc_id": "F0023（推测）",
+              "pt9l_prefix_filename": "PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01 V2.0 20240530（推测）",
+              "version_from_filename": "V2.0",
+              "date_from_filename": "20240530"
+            }
+          ],
+          "observation": "文件名中版本号和日期在有无PT9L前缀的对应文件间表面一致，但正文内容未经验证"
+        }
+      },
+      {
+        "parameter_id": "PARAM-CTX-002",
+        "parameter_name": "PT9L前缀含义假设",
+        "description": "基于命名模式的假设，需通过文件控制程序或命名规则文件验证",
+        "value": {
+          "hypothesis_1": "PT9L为产品型号代号，表示该套文件专属于PT9L型号产品",
+          "hypothesis_2": "PT9L为项目代号，无前缀版本为通用版本，有前缀版本为项目定制版本",
+          "hypothesis_3": "PT9L前缀为文件受控标识的一部分，表示已通过特定审批流程",
+          "hypothesis_4": "两套文件内容完全相同，PT9L前缀版本为无前缀版本的副本或镜像，存在文件管理混乱",
+          "verification_needed": true
+        }
+      }
+    ],
+    "page_context": [
+      {
+        "page_context_id": "PAGE-CTX-001",
+        "doc_id": "F0017",
+        "target_pages": ["封面页", "第2页（Revision History）", "第3页（文件控制信息）"],
+        "retrieval_reason": "需要提取文件编号、版本号、批准日期、批准人、文件状态等受控信息，与F0021对应页面进行逐字段比对",
+        "content_available": false,
+        "note": "当前证据仅有第1行元数据注释，正文内容需重新检索"
+      },
+      {
+        "page_context_id": "PAGE-CTX-002",
+        "doc_id": "F0021",
+        "target_pages": ["封面页", "第2页（Revision History）", "第3页（文件控制信息）"],
+        "retrieval_reason": "与F0017对应页面进行比对，判断两套文件是否存在实质性内容差异",
+        "content_available": false,
+        "note": "当前证据仅有第1行元数据注释，正文内容需重新检索"
+      },
+      {
+        "page_context_id": "PAGE-CTX-003",
+        "doc_id": "F0018",
+        "target_pages": ["封面页", "Revision History页"],
+        "retrieval_reason": "验证文件名中V2.0 20240530与正文版本信息是否一致",
+        "content_available": false,
+        "note": "正文内容需重新检索"
+      },
+      {
+        "page_context_id": "PAGE-CTX-004",
+        "doc_id": "F0022",
+        "target_pages": ["封面页", "Revision History页"],
+        "retrieval_reason": "与F0018对应页面比对",
+        "content_available": false,
+        "note": "正文内容需重新检索"
+      },
+      {
+        "page_context_id": "PAGE-CTX-005",
+        "doc_id": "DHF_INDEX_OR_MASTER_LIST",
+        "target_pages": ["文件清单页", "风险分析文件夹索引页"],
+        "retrieval_reason": "确认DHF主文件清单是否同时登记两套文件，或仅登记其中一套为有效受控版本",
+        "content_available": false,
+        "note": "需在DHF根目录或文件控制文件夹中检索Document Master List或Design History File Index"
+      }
+    ],
+    "recovered_context": [
+      {
+        "recovered_id": "REC-001",
+        "type": "structural_observation",
+        "description": "两套文件均在主范围内（excluded_from_primary_scope=false）的确认",
+        "evidence_basis": ["SCOUT-024", "SCOUT-048", "SCOUT-030", "SCOUT-054", "SCOUT-042"],
+        "implication": "两套文件均被系统识别为需审查的有效文件，不存在一套已被系统性排除的情况，双套并存问题确实存在",
+        "confidence": "high"
+      },
+      {
+        "recovered_id": "REC-002",
+        "type": "naming_pattern_analysis",
+        "description": "文件名分析：PT9L前缀版本与无前缀版本在文件名中的版本号和日期字段完全相同（V1.0/20240202 或 V2.0/20240530），仅前缀不同",
+        "evidence_basis": ["SCOUT-024", "SCOUT-048", "SCOUT-030", "SCOUT-054", "SCOUT-042"],
+        "implication": "文件名层面无法区分哪套为受控版本；若正文内容也完全相同，则为冗余副本问题；若正文存在差异，则为严重版本控制问题",
+        "confidence": "medium",
+        "caveat": "仅基于文件名推断，正文内容未经验证"
+      },
+      {
+        "recovered_id": "REC-003",
+        "type": "missing_file_flag",
+        "description": "F0019（Attachment 7 03，推测为FMEA或类似文件）在当前证据中未出现，其PT9L前缀对应版本（推测F0023）也未确认",
+        "evidence_basis": [],
+        "implication": "双套文件问题的完整

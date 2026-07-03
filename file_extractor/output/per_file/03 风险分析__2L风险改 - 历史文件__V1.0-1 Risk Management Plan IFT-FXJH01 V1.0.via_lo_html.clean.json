@@ -1,0 +1,654 @@
+{
+  "document": {
+    "title": "Risk Management Plan",
+    "doc_type": "Risk Management Plan",
+    "version": "V1.0"
+  },
+  "revision_records": [
+    {
+      "seq": 1,
+      "version": "V1.0",
+      "change_description": "Originated",
+      "author": "Wang Di",
+      "date": "2024.4.16"
+    }
+  ],
+  "persons": [
+    {
+      "name": "Wang Di",
+      "title": "Drafter"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Approver"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Document Number",
+      "value": "PT9L-FXJH01 V1.0"
+    },
+    {
+      "id_type": "Document ID",
+      "value": "IFT-FXJH01"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "IFT-FXJH01",
+      "name": "Infrared Forehead Thermometer"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan covers the whole life-cycle of the medical device across the following phases: (1) Initial development: document intended use and reasonably foreseeable misuse, identify characteristics related to safety, identify hazards and hazardous situations, estimate risks, evaluate risks, draft risk control measures plan. Output: Report of risk assessment. (2) Prototype phase (Design verification): verify implementation and effectiveness of risk control measures, assess residual risk, make benefit-risk analysis, evaluate risks arising from risk control measures, review completeness of risk control. Output: Report of verification of risk control measure and residual risk evaluation. (3) Design validation: overall residual risk evaluation, form the risk management report. Output: Report of risk management. (4) Design change: identify hazards from design change, evaluate and assess risks, draft and verify risk control measures plan, assess residual risk, benefit-risk analysis, overall residual risk evaluation after design change. Outputs: Record of risk evaluation, Report of verification of risk control measure and residual risk evaluation in design change, Report of Risk Management in design change. (5) Production and post-production activities: collect production and post-production information, assess for new or previously unidentified hazards, analyze risks and make control plans if necessary, track implementation of risk control measures. Reference: Risk Management Control Regulation (QI-7.3-22) section 4.11.1. Output: Report of Post-market Risk Management.",
+      "topic_tags": [
+        "risk management lifecycle",
+        "ISO 14971",
+        "risk management phases",
+        "design verification",
+        "design validation",
+        "post-market"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "Infrared Forehead Thermometer",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "The risk management plan references and requires compliance with ISO 14971:2019, EN ISO 14971:2019, and EN ISO 14971:2019/A11:2021 for all risk management activities throughout the product lifecycle.",
+      "topic_tags": [
+        "ISO 14971",
+        "regulatory standard",
+        "EN ISO 14971",
+        "A11:2021"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk Management Group: The specific personnel may vary from different projects, but the risk assessment team generally includes the following members (specialties listed in table, specific names not populated in this fragment).",
+      "topic_tags": [
+        "risk management group",
+        "team composition",
+        "specialty"
+      ],
+      "related_subjects": [
+        "Risk Management Plan"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Personnel qualification requirements:\n- Chief engineer: Mechano-electronic related specialities, more than three years work experience.\n- Product manager: Mechano-electronic related specialities, more than three years design experience.\n- Project manager: Mechano-electronic related specialities, more than one year design experience.\n- Hardware design director: Mechano-electronic related specialities, more than one year design experience.\n- Software design director: Mechano-electronic related specialities, more than one year design experience.\n- Mechanical design director: Mechano-electronic related specialities, more than one year design experience.\n- Hardware design personnel: Mechano-electronic related specialities, more than one year design experience.\n- Software design personnel: Mechano-electronic related specialities, more than one year design experience.\n- Mechanical design personnel: Mechano-electronic related specialities, more than one year design experience.\n- Process design personnel: Electrics or mechanics or other related engineering specialities, more than one year design experience.\n- Quality management personnel: Electrics or mechanics or other related engineering specialities, more than one year design experience.\n- Sales personnel: No special requirement. Familiar with handling of customer complaints process.\n- Certification personnel: Biomedicine or mechano-electronic or other related specialities, more than two years work experience.\n- Personnel with medical background: Biology or clinical medicine or other medical related specialities, more than three years clinical experience.",
+      "topic_tags": [
+        "personnel qualification",
+        "team requirements",
+        "design experience",
+        "risk management team"
+      ],
+      "related_subjects": [
+        "Risk Management Plan",
+        "IFT-FXJH01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Severity Classification for hazards:\n- Catastrophic (Class S=5): Result in patient death.\n- Critical (Class S=4): Result in permanent impairment or life-threatening injury.\n- Serious (Class S=3): Result in injury or impairment requiring professional medical intervention.\n- Minor (Class S=2): Result in temporary injury or impairment not requiring professional medical intervention.\n- Negligible (Class S=1): Inconvenience or temporary discomfort.",
+      "topic_tags": [
+        "severity",
+        "hazard classification",
+        "risk acceptance criteria"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Section 3.1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Semiquantitative Probability Classification for hazards:\n- Frequent (Class P=6): probability ≥10^-3.\n- Probable (Class P=5): probability <10^-3 and ≥10^-4.\n- Occasional (Class P=4): probability <10^-4 and ≥10^-5.\n- Remote (Class P=3): probability <10^-5 and ≥10^-6.\n- Improbable (Class P=2): probability <10^-6 and ≥10^-8.\n- Few (Class P=1): probability <10^-8.",
+      "topic_tags": [
+        "probability",
+        "hazard classification",
+        "risk acceptance criteria",
+        "semiquantitative"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Section 3.2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Risk Acceptance Criteria (Section 3.3): A risk matrix is defined with Probability Classes (1–6) on one axis and Severity Classes (1–5) on the other axis. Two zones are defined:\n- Not acceptable: Unacceptable risk. Risk control measures are required.\n- Acceptable: Insignificant/negligible risk. No risk control measures are required.\n\nThe manufacturer shall reduce the risk as far as possible using one or more of the following risk control options in the priority order listed:\n(a) Eliminate or reduce risks as far as possible through safe design and manufacture;\n(b) Where appropriate, take adequate protection measures, including alarms if necessary, in relation to risks that cannot be eliminated;\n(c) Provide information for safety (warnings/precautions/contra-indications) and, where appropriate, training to users.",
+      "topic_tags": [
+        "risk matrix",
+        "risk acceptance",
+        "risk control",
+        "ALARP",
+        "risk reduction"
+      ],
+      "related_subjects": [
+        "Risk Acceptance Criteria",
+        "Section 3.3",
+        "Risk Controls"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Residual Risk Acceptance Criteria (Section 4.1 - For Single Residual Risk): When a risk falls in the 'Not acceptable' area, risk control measures must be taken. After taking measures, the risk becomes a residual risk. If this residual risk still falls in the 'Not acceptable' area per the criteria in Section 3.3, a risk-benefit analysis must be conducted. This residual risk will be acceptable when there are reasonable reasons to support that the benefits outweigh the risks.",
+      "topic_tags": [
+        "residual risk",
+        "risk-benefit analysis",
+        "risk acceptance",
+        "risk control"
+      ],
+      "related_subjects": [
+        "Section 3.3 Risk Acceptance Criteria",
+        "Section 4 Residual Risk"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For Overall Residual Risk:\n1. The benefits related to the intended use of the medical device are weighed against the overall residual risk. Benefits can be described by their magnitude or extent, the probability of experiencing the benefit within the intended patient populations, and the duration and frequency of the benefit. The evaluation may take into account knowledge of the intended medical indication, the generally acknowledged state of the art in technology and medicine, and the availability of alternative medical devices or treatments.\n2. Visual representations of the residual risks can be useful. Each individual residual risk can be shown in a risk matrix as shown in section 3.3. If more than 1/2 of the risks are in the higher severity regions or in the higher probability regions of the risk matrix, or clusters of risks are borderline, then the distribution of the risks can indicate that the overall residual risk might not be acceptable, even if each individual risk has been judged acceptable.\n3. Overall risk-benefit analysis: when the benefits outweigh the overall residual risks, the overall residual risks are acceptable.\n4. If the overall residual risks are acceptable after evaluation, then the significant residual risks shall be notified to the users and involve the information in the accompanying documents. If the overall residual risks are not acceptable after evaluation, then additional risk control measures shall be taken, or the modification to the medical devices may be required.",
+      "topic_tags": [
+        "overall residual risk",
+        "risk-benefit analysis",
+        "risk matrix",
+        "risk acceptability",
+        "residual risk notification"
+      ],
+      "related_subjects": [
+        "risk analysis report",
+        "risk control",
+        "accompanying documents",
+        "risk matrix"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk Control Measures Verification Criteria: We verify the risk control measures of the initial risks and the residual risks in accordance with the document Verification in Design and Development Control Procedure.",
+      "topic_tags": [
+        "risk control verification",
+        "design and development control",
+        "verification criteria",
+        "residual risk"
+      ],
+      "related_subjects": [
+        "Design and Development Control Procedure",
+        "risk control measures",
+        "verification"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "03 风险分析/2L风险改 - 历史文件/V1.0-1 Risk Management Plan IFT-FXJH01 V1.0.via_lo_html.clean.md",
+    "doc_type": "risk_analysis"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "Risk Management Plan",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "risk management lifecycle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "ISO 14971",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "ISO 14971",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "risk management group",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "personnel qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "personnel qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "severity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Section 3.1",
+      "to": "severity",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "probability",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Section 3.2",
+      "to": "probability",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "risk matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Section 3.3",
+      "to": "risk matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Controls",
+      "to": "risk matrix",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Section 3.3 Risk Acceptance Criteria",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Section 4 Residual Risk",
+      "to": "residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk analysis report",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk control",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "accompanying documents",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk matrix",
+      "to": "overall residual risk",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Design and Development Control Procedure",
+      "to": "risk control verification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "risk control measures",
+      "to": "risk control verification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "verification",
+      "to": "risk control verification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IFT-FXJH01",
+      "to": "behavioral_spec_risk_management_lifecycle",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "topic": "risk management lifecycle"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_risk_management_lifecycle",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "topic": "risk management phases"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_statement_iso14971",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "topic": "ISO 14971 compliance"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_risk_management_group",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "topic": "risk management group team composition"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "constraint_statement_personnel_qualification",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "topic": "personnel qualification requirements"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "constraint_statement_severity_classification",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "topic": "severity classification",
+        "section": "3.1"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "constraint_statement_probability_classification",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "topic": "semiquantitative probability classification",
+        "section": "3.2"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "constraint_statement_risk_matrix",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "topic": "risk matrix and acceptance criteria",
+        "section": "3.3"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Acceptance Criteria",
+      "to": "constraint_statement_residual_risk_acceptance",
+      "properties": {
+        "fragment_type": "constraint_statement",
+        "topic": "residual risk acceptance criteria",
+        "section": "4.1"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_overall_residual_risk",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "topic": "overall residual risk evaluation"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management Plan",
+      "to": "behavioral_spec_risk_control_verification",
+      "properties": {
+        "fragment_type": "behavioral_spec",
+        "topic": "risk control measures verification criteria"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXJH01 V1.0",
+      "to": "revision_record_1",
+      "properties": {
+        "seq": 1,
+        "version": "V1.0",
+        "change_description": "Originated"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IFT-FXJH01",
+      "to": "ISO 14971:2019",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "All risk management activities for the Infrared Forehead Thermometer must comply with ISO 14971:2019"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IFT-FXJH01",
+      "to": "EN ISO 14971:2019",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "All risk management activities for the Infrared Forehead Thermometer must comply with EN ISO 14971:2019"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "IFT-FXJH01",
+      "to": "EN ISO 14971:2019/A11:2021",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "All risk management activities for the Infrared Forehead Thermometer must comply with EN ISO 14971:2019/A11:2021"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "ISO 14971:2019",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "The risk management plan requires compliance with ISO 14971:2019 for all risk management activities"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "EN ISO 14971:2019",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "The risk management plan requires compliance with EN ISO 14971:2019 for all risk management activities"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "EN ISO 14971:2019/A11:2021",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "The risk management plan requires compliance with EN ISO 14971:2019/A11:2021 for all risk management activities"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "Personnel Qualification Requirements",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "Risk management team members must meet defined qualification requirements by specialty and years of experience"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "Severity Classification",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "Hazard severity must be classified per the five-class severity scale (S=1 to S=5)"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "Semiquantitative Probability Classification",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "Hazard occurrence probability must be classified per the six-class probability scale (P=1 to P=6)"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "Risk Acceptance Criteria Section 3.3",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "Risk acceptability is constrained by the risk matrix and two-zone (acceptable/not acceptable) criteria defined in Section 3.3"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Management Plan",
+      "to": "Residual Risk Acceptance Criteria Section 4.1",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "Residual risk evaluation must follow the criteria in Section 4.1, including risk-benefit analysis when residual risk remains in the not-acceptable zone"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Control Measures Verification",
+      "to": "Verification in Design and Development Control Procedure",
+      "properties": {
+        "source_fragment": "behavioral_spec",
+        "description": "Verification of risk control measures for initial and residual risks must be conducted in accordance with the Design and Development Control Procedure"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Production and Post-production Risk Management",
+      "to": "Risk Management Control Regulation QI-7.3-22 section 4.11.1",
+      "properties": {
+        "source_fragment": "behavioral_spec",
+        "description": "Post-production risk management activities must follow Risk Management Control Regulation QI-7.3-22 section 4.11.1"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Overall Residual Risk Evaluation",
+      "to": "Risk Acceptance Criteria Section 3.3",
+      "properties": {
+        "source_fragment": "behavioral_spec",
+        "description": "Overall residual risk evaluation uses the risk matrix defined in Section 3.3 as a visual and analytical constraint"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Risk Control Measures",
+      "to": "Risk Acceptance Criteria Section 3.3",
+      "properties": {
+        "source_fragment": "constraint_statement",
+        "description": "Risk control measures are required when risk falls in the not-acceptable zone as defined by the criteria in Section 3.3, and must follow the priority order: safe design, protection measures, information for safety"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Wang Di",
+      "to": "IFT-FXJH01",
+      "properties": {
+        "role": "Drafter",
+        "document": "Risk Management Plan V1.0"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Hou Guangwei",
+      "to": "IFT-FXJH01",
+      "properties": {
+        "role": "Approver",
+        "document": "Risk Management Plan V1.0"
+      }
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "IFT-FXJH01",
+      "to": "Risk Acceptance Criteria",
+      "properties": {
+        "description": "Risks are mitigated by applying risk control measures and acceptance criteria defined in Section 3.3"
+      }
+    },
+    {
+      "type": "MITIGATED_BY",
+      "from": "IFT-FXJH01",
+      "to": "Risk Controls",
+      "properties": {
+        "description": "Risks mitigated through safe design and manufacture, protection measures, and safety information/training per priority order defined in Section 3.3"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Wang Di",
+      "to": "Risk Management Plan",
+      "properties": {
+        "role": "Drafter"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Hou Guangwei",
+      "to": "Risk Management Plan",
+      "properties": {
+        "role": "Approver"
+      }
+    },
+    {
+      "type": "PRODUCES",
+      "from": "Risk Management Plan",
+      "to": "IFT-FXJH01",
+      "properties": {
+        "doc_type": "Risk Management Plan",
+        "version": "V1.0"
+      }
+    }
+  ],
+  "_claims": []
+}

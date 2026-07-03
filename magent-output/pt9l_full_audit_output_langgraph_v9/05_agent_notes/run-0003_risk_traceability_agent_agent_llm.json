@@ -1,0 +1,157 @@
+{
+  "agent": "Risk Traceability Agent",
+  "summary": "The PT9L risk management file set contains multiple traceability chain breaks: the current Risk Management Report references document number PT9L-FXGB01 V1.0 while the active risk set has been revised to V2.0; the active Risk Management Plan carries document number IFT-FXJH01 rather than PT9L-FXJH01; F0013 (PT2L risk plan) internally carries a PT9L-series document number creating a product-identity conflict; no evidence of Bluetooth-specific hazard verification is present in the supplied corpus; DFMEA files (F0071, F0074) are not cross-referenced to the ISO 14971 risk assessment; and the design verification plan/report cites only PT9L-FXGB01 V1.0 while the current report is V2.0, leaving the closed-loop confirmation potentially misaligned.",
+  "review_notes": [
+    "The four-document risk chain structure (Plan → Assessment → Control Verification → Report) is present for both the IFT product line (F0017–F0020) and the PT9L product line (F0021–F0024), which is a positive structural observation.",
+    "Version history entries in F0018 (RISK-040) and F0019 (RISK-045) confirm that the V2.0 revisions were made on 2024-05-30 and are traceable to named authors (Wang Di / Hou Guangwei), indicating a functioning change-control process for those documents.",
+    "The design verification plan (F0121) and report (F0114) both include ISO 14971:2019 as an applicable standard and reference the risk management report as the expected output, which is structurally correct.",
+    "Software design documents (F0135, F0139) contain hazard and control measure tables, indicating that software-level hazard analysis was initiated, though its linkage to the ISO 14971 risk assessment report is not confirmed by the supplied evidence.",
+    "The IEC 62366-1 checklist (F0243) cross-references ISO 14971:2019 and document PT9L-FXGB01 V1.0, providing partial usability-to-risk linkage."
+  ],
+  "findings": [
+    {
+      "finding_type": "document_version_mismatch_in_closed_loop_record",
+      "severity": "P1",
+      "claim": "The design verification report and the IEC 62366-1 checklist both cite the Risk Management Report as PT9L-FXGB01 V1.0, but the current active Risk Management Report in the DHF is V2.0 (dated 2024-05-30), meaning the closed-loop verification record does not confirm acceptance of the current risk management output.",
+      "rationale": "RISK-128 and RISK-129 (F0114, design verification report) reference 'PT9L-FXGB01 V1.0' as the risk management report that passed. RISK-138 (F0243, IEC 62366-1 checklist) also cites 'PT9L-FXGB01 V1.0'. However, RISK-049 and RISK-073 show that the active Risk Management Report files are titled V2.0 (20240530). The V2.0 report supersedes V1.0, but no updated design verification record or checklist citing V2.0 is present in the supplied evidence, leaving the traceability chain open at the verification closure step.",
+      "evidence_ids": [
+        "RISK-049",
+        "RISK-050",
+        "RISK-073",
+        "RISK-074",
+        "RISK-128"
+      ],
+      "challenge_questions": [
+        "Has the design verification report (F0114) been updated to reference PT9L-FXGB01 V2.0, and if so, where is that updated record?",
+        "What specific risk items or controls changed between V1.0 and V2.0 of the Risk Management Report, and were those changes re-verified?",
+        "Does the IEC 62366-1 checklist (F0243) have a V2 revision that references the V2.0 Risk Management Report?"
+      ]
+    },
+    {
+      "finding_type": "risk_management_plan_document_number_mismatch",
+      "severity": "P1",
+      "claim": "The active Risk Management Plan filed under the PT9L DHF (F0017, F0021) carries document number IFT-FXJH01 V1.0, not PT9L-FXJH01, creating an ambiguity about whether the plan governing the PT9L risk file is the PT9L-specific plan or an IFT-product plan.",
+      "rationale": "RISK-032 (F0017) shows the document number as 'IFT-FXJH01 V1.0 Risk Management Plan'. RISK-056 (F0021) shows 'PT9L-FXJH01 V1.0 Risk Management Plan' for the PT9L-prefixed copy. However, the Risk Assessment Report (F0022, RISK-062) carries 'PT9L-FXPJ01 V1.0' and the Verification report (F0023, RISK-067) carries 'PT9L-FXYS01 V1.0', while the Risk Management Report (F0024, RISK-074) carries 'PT9L-FXGB01 V1.0'. The plan document number inconsistency (IFT vs PT9L prefix) means the downstream documents reference a plan that may not be formally identified as the PT9L plan, breaking the traceability chain at its first link.",
+      "evidence_ids": [
+        "RISK-031",
+        "RISK-032",
+        "RISK-055",
+        "RISK-056",
+        "RISK-062"
+      ],
+      "challenge_questions": [
+        "Is IFT-FXJH01 the same document as PT9L-FXJH01, or are these two distinct plans? If the same, which document number is the controlled identifier?",
+        "Do the Risk Assessment Report and Verification Report explicitly cite the plan by document number, and if so, which number do they cite?",
+        "Has a formal equivalence or supersession record been created to link IFT-FXJH01 to PT9L-FXJH01?"
+      ]
+    },
+    {
+      "finding_type": "cross_product_document_identity_conflict",
+      "severity": "P1",
+      "claim": "Document F0013, filed in the '2L风险改 - 历史文件' folder and titled as a PT2L risk management plan, internally carries the document number PT9L-FXJH01 V1.0, creating an unresolved product-identity conflict that could cause PT2L-specific risk items or acceptance criteria to be attributed to PT9L.",
+      "rationale": "RISK-007 shows the file title as 'V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0', indicating a PT2L product. However, RISK-008 shows the internal document number as 'PT9L-FXJH01 V1.0 Risk Management Plan', which is the same document number used for the PT9L plan. This means the same document number exists in two files with different product identities. Any risk item, acceptance criterion, or control measure derived from the PT2L plan that was carried forward under the PT9L document number has not been re-evaluated under PT9L-specific conditions per the project profile's primary scope rules.",
+      "evidence_ids": [
+        "RISK-007",
+        "RISK-008",
+        "RISK-009",
+        "RISK-010",
+        "RISK-011"
+      ],
+      "challenge_questions": [
+        "Were the risk acceptance criteria in F0013 (PT2L plan with PT9L document number) reviewed and confirmed as applicable to PT9L before being adopted?",
+        "Are there any hazards or risk control measures in F0013 that are specific to PT2L hardware or intended use that differ from PT9L?",
+        "What is the formal disposition of F0013 — is it superseded, withdrawn, or still considered a controlled document?"
+      ]
+    },
+    {
+      "finding_type": "bluetooth_hazard_verification_gap",
+      "severity": "P1",
+      "claim": "The project profile confirms PT9L transmits temperature data via Bluetooth, yet no evidence in the supplied corpus demonstrates that Bluetooth-related hazards (e.g., data integrity failure, unauthorized access, transmission error leading to incorrect clinical decision) have been identified in the risk assessment, assigned control measures, or verified through a documented test or validation activity.",
+      "rationale": "The Risk Management Report (F0024/F0020, RISK-073–RISK-078) and Risk Assessment Report (F0022, RISK-061–RISK-066) are present in the corpus but their content sections covering specific hazard entries are not supplied beyond table-of-contents lines. The design verification plan (F0121, RISK-130–RISK-134) and report (F0114, RISK-127–RISK-129) reference EMC testing and risk management report passage but contain no explicit Bluetooth data-integrity or cybersecurity hazard verification entry. The software test record (F0123, RISK-135) references WiFi auto-connect state detection but no Bluetooth transmission accuracy or failure-mode test. No evidence ID in the corpus links a Bluetooth hazard to a control measure and a closed verification record.",
+      "evidence_ids": [
+        "RISK-073",
+        "RISK-074",
+        "RISK-075",
+        "RISK-123",
+        "RISK-124"
+      ],
+      "challenge_questions": [
+        "In the Risk Assessment Report (PT9L-FXPJ01), is there a hazard entry specifically addressing Bluetooth transmission failure or data corruption, and what is its risk control measure reference?",
+        "Is there a software validation or integration test record that verifies Bluetooth data transmission accuracy and failure handling for PT9L?",
+        "Has a cybersecurity risk assessment been conducted for the Bluetooth feature, and is it referenced in the Risk Management Report?"
+      ]
+    },
+    {
+      "finding_type": "dfmea_not_linked_to_iso14971_risk_file",
+      "severity": "P2",
+      "claim": "The DFMEA files (F0071 packaging FMEA, F0074 structural FMEA) use a detection-ranking methodology but are not cross-referenced to the ISO 14971 risk assessment report or risk control verification report, leaving FMEA-identified failure modes potentially outside the closed ISO 14971 traceability chain.",
+      "rationale": "RISK-103 through RISK-114 show that F0071 and F0074 contain detailed DFMEA detection-ranking tables with design control criteria. However, none of the ISO 14971 risk documents in the corpus (F0018/F0022 Risk Assessment, F0019/F0023 Verification Report, F0020/F0024 Risk Management Report) contain evidence IDs that reference the DFMEA document numbers or cross-link FMEA failure modes to ISO 14971 hazard IDs. ISO 14971:2019 requires that all hazard identification inputs be documented; DFMEA is a recognized input method, but the linkage must be explicit.",
+      "evidence_ids": [
+        "RISK-103",
+        "RISK-104",
+        "RISK-105",
+        "RISK-109",
+        "RISK-110"
+      ],
+      "challenge_questions": [
+        "Does the Risk Assessment Report (PT9L-FXPJ01 V2.0) explicitly reference the DFMEA files as hazard identification inputs?",
+        "Are any DFMEA RPN-high items mapped to specific hazard IDs in the ISO 14971 risk assessment table?",
+        "Has a reconciliation been performed to confirm that all DFMEA failure modes with safety implications have corresponding entries in the ISO 14971 risk file?"
+      ]
+    },
+    {
+      "finding_type": "risk_management_report_version_inconsistency_across_product_lines",
+      "severity": "P2",
+      "claim": "The Risk Management Report document number PT9L-FXGB01 is used in both the PT9L-specific file (F0024, V1.0 internally) and the IFT-prefixed file (F0020, also V1.0 internally), while both are filed as V2.0 documents dated 2024-05-30, creating ambiguity about which report is the authoritative PT9L risk management closure document.",
+      "rationale": "RISK-050 (F0020) shows internal document number 'PT9L-FXGB01 V1.0' in a file titled 'IFT-FXGB01 V2.0'. RISK-074 (F0024) shows internal document number 'PT9L-FXGB01 V1.0' in a file titled 'PT9L--...IFT-FXGB01 V2.0'. Both files carry the same internal document number and version (V1.0) despite being filed as V2.0. The design verification report (RISK-128, RISK-129) cites 'PT9L-FXGB01 V1.0' as the passing document, which matches the internal number but not the file version. This version labeling inconsistency undermines confidence in which document represents the final approved risk management closure.",
+      "evidence_ids": [
+        "RISK-049",
+        "RISK-050",
+        "RISK-051",
+        "RISK-073",
+        "RISK-074"
+      ],
+      "challenge_questions": [
+        "Is PT9L-FXGB01 V1.0 (internal number) the same as the V2.0 file version, or does V2.0 represent a new controlled revision that should carry a new internal document number?",
+        "Which of F0020 and F0024 is the authoritative PT9L Risk Management Report, and has the other been formally superseded or withdrawn?",
+        "Does the document control system reconcile the internal document number version with the file revision version?"
+      ]
+    },
+    {
+      "finding_type": "software_hazard_table_not_traced_to_risk_control_verification",
+      "severity": "P2",
+      "claim": "Software design documents (F0135, F0139) contain hazard and control measure tables, but no evidence in the corpus links these software-level hazards to specific entries in the ISO 14971 risk assessment report or to closed verification records confirming the software controls were implemented and effective.",
+      "rationale": "RISK-136 (F0135, software design) and RISK-137 (F0139, software requirements) both show hazard tables with columns for hazard, hazardous situation, and planned control measures. These are consistent with IEC 62304 / ISO 14971 software safety requirements. However, the Verification of Risk Control Measures report (F0019/F0023) and the Risk Management Report (F0020/F0024) do not have evidence IDs in the corpus that explicitly reference these software hazard table entries or confirm their verification status. The software test record (F0123, RISK-135) covers functional tests but does not reference hazard IDs.",
+      "evidence_ids": [
+        "RISK-136",
+        "RISK-137",
+        "RISK-135",
+        "RISK-043",
+        "RISK-044"
+      ],
+      "challenge_questions": [
+        "Are the hazard IDs in F0135 and F0139 software hazard tables mapped to corresponding hazard IDs in the ISO 14971 Risk Assessment Report?",
+        "Does the Verification of Risk Control Measures report (IFT-FXYS01 V2.0 or PT9L-FXYS01 V1.0) include a section specifically addressing software risk controls?",
+        "Is there a software-level residual risk evaluation that feeds into the overall residual risk acceptability conclusion in the Risk Management Report?"
+      ]
+    },
+    {
+      "finding_type": "historical_folder_documents_not_formally_superseded",
+      "severity": "P3",
+      "claim": "Multiple risk documents in the '2L风险改 - 历史文件' and '原版 - 历史文件' folders (F0012–F0016, F0025–F0028) remain in the DHF without explicit supersession records linking them to the current active documents, creating a risk that an auditor or reviewer could rely on outdated risk acceptance criteria or control measures.",
+      "rationale": "RISK-001 through RISK-030 cover F0012–F0016 (2L historical folder) and RISK-079 through RISK-102 cover F0025–F0028 (原版 historical folder). These documents include Risk Management Plans, Assessment Reports, Verification Reports, and Risk Management Reports at V1.0. The folder naming convention ('历史文件' = historical files) implies supersession, but no evidence ID in the corpus shows a formal change notice, supersession record, or document status field marking these as obsolete. ISO 14971:2019 requires the risk management file to be maintained and controlled; uncontrolled historical documents in the same DHF folder structure create traceability ambiguity.",
+      "evidence_ids": [
+        "RISK-001",
+        "RISK-007",
+        "RISK-013",
+        "RISK-019",
+        "RISK-025"
+      ],
+      "challenge_questions": [
+        "Is there a document control record (e.g., ECO or change notice) that formally obsoletes the documents in the '历史文件' folders and identifies their replacement documents?",
+        "Are the historical documents accessible to risk management team members in a way that could cause confusion with current controlled versions?",
+        "Do the current active risk documents (F0017–F0024) contain explicit statements identifying which prior documents they supersede?"
+      ]
+    }
+  ]
+}

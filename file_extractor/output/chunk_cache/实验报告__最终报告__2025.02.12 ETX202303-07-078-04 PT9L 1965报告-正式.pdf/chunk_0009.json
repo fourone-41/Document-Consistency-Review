@@ -1,0 +1,61 @@
+{
+  "document": {
+    "title": "Test Report ETX202303-07-078-04",
+    "report_no": "ETX202303-07-078-04",
+    "total_pages": 22,
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/最终报告/2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf"
+  },
+  "tests": [
+    {
+      "test_name": "Temperature Measurement Accuracy Test (Blackbody)",
+      "test_condition": "Power supply voltage: 2.5V; Blackbody setting temperature: 37°C",
+      "measurements": [
+        {
+          "blackbody_temp_TBB": 37,
+          "readings_Tj": [
+            36.9,
+            36.7,
+            36.8,
+            36.9,
+            36.8
+          ],
+          "average": 36.8,
+          "max_error_delta": 0.1
+        }
+      ],
+      "error_formula": "δ = |tj - tBB|, where tj = displayed or calculated value of unadjusted temperature, tBB = true temperature of the blackbody, j = sequential number of a reading",
+      "error_description": "The largest δj is a measure of the laboratory error of a system."
+    }
+  ],
+  "products": [
+    {
+      "name": "EUT (Equipment Under Test)",
+      "model": "PT9L",
+      "report_reference": "ETX202303-07-078-04"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-04"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Individual measurement error formula: δ = |tj - tBB|, where tj is the displayed or calculated value of unadjusted temperature, tBB is the true temperature of the blackbody, j is the sequential number of a reading, and || signifies taking an absolute value. The largest δj is a measure of the laboratory error of a system. At blackbody setting temperature of 37°C and power supply voltage of 2.5V, the measured readings were 36.90, 36.7, 36.8, 36.9, 36.8°C with an average of 36.8°C and maximum error δ = 0.1°C.",
+      "topic_tags": [
+        "temperature measurement",
+        "blackbody",
+        "measurement error",
+        "accuracy",
+        "thermal"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "ETX202303-07-078-04",
+        "blackbody calibration"
+      ]
+    }
+  ]
+}

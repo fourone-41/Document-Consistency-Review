@@ -1,0 +1,125 @@
+{
+  "document": {
+    "title": "PT1 外箱条码标签（PT1-F07）",
+    "document_number": "PT1-F07",
+    "version": "V1.0",
+    "drawing_number": "K04080002148",
+    "source_file": "外箱条码标签-PT1-F07 V1.0.pdf",
+    "created_date": "2026-05-13",
+    "doc_type": "2D Drawing / Label Specification"
+  },
+  "products": [
+    {
+      "model": "PT1",
+      "part_name": "条码标签",
+      "drawing_no": "PT1-F07",
+      "edition": "V1.0"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Drawing NO.",
+      "value": "PT1-F07"
+    },
+    {
+      "type": "图号",
+      "value": "K04080002148"
+    },
+    {
+      "type": "Model NO.",
+      "value": "PT1"
+    },
+    {
+      "type": "AI(10) 批号变量",
+      "value": "201012011001（示例值，12位：1-6制造令 / 7-9部件序号 / 10-12批次序列号）"
+    }
+  ],
+  "components": [
+    {
+      "name": "条码标签",
+      "material": "80g 不干胶铜版纸，覆膜",
+      "dimensions": {
+        "width_mm": 40,
+        "height_mm": 15,
+        "scale": "1:1",
+        "units": "mm"
+      },
+      "tolerance": ".X ±0.3; .XX; .X°",
+      "barcode_type": "GS1-128 一维条码",
+      "print_color": "单黑",
+      "font": "Myriad Pro 6 pt"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-PT1F07-001",
+      "description": "本件要求通过 RoHS 测试",
+      "category": "合规要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1F07-002",
+      "description": "材料说明：80g 不干胶铜版纸，覆膜",
+      "category": "材料要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1F07-003",
+      "description": "印刷颜色：单黑",
+      "category": "印刷要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1F07-004",
+      "description": "条码类型为 GS1-128 一维条码，AI(10) 编码批号变量12位，结构：1-6位制造令 / 7-9位部件序号 / 10-12位批次序列号",
+      "category": "条码编码要求",
+      "priority": "A级"
+    },
+    {
+      "id": "REQ-PT1F07-005",
+      "description": "标签外形尺寸：宽40mm × 高15mm，比例1:1",
+      "category": "尺寸要求",
+      "priority": "A级"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "限制危害物质指令，本件要求通过RoHS测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "条码标签印刷内容规格：条码类型为GS1-128一维条码；AI(10) 字段为批号变量，共12位，编码结构为：第1-6位为制造令编号，第7-9位为部件序号，第10-12位为批次序列号；字体使用 Myriad Pro 6 pt；印刷颜色为单黑。标签贴附于PT1产品外箱包装。",
+      "topic_tags": [
+        "GS1-128",
+        "一维条码",
+        "批号",
+        "AI(10)",
+        "条码标签",
+        "外箱标签"
+      ],
+      "related_subjects": [
+        "PT1-F07",
+        "PT1",
+        "K04080002148"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "标签外形尺寸宽40mm、高15mm，公差要求：.X ±0.3；材料为80g不干胶铜版纸覆膜；比例1:1；单位mm。",
+      "topic_tags": [
+        "尺寸公差",
+        "不干胶",
+        "铜版纸",
+        "覆膜",
+        "标签规格"
+      ],
+      "related_subjects": [
+        "PT1-F07",
+        "条码标签"
+      ]
+    }
+  ]
+}

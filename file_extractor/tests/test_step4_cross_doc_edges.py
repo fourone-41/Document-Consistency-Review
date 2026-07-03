@@ -159,7 +159,6 @@ def test_discover_open_candidates_merges_and_dedupes_all_layers(
          "candidate_targets": [node_c], "target_type": "tests"},  # 指向不同节点，应保留为独立候选
     ]
     mock_verify.return_value = [
-        {"from": node_a, "to": node_b, "type": "VERIFIED_BY", "discovery_layer": "bridge"},
         {"from": node_a, "to": node_c, "type": "VERIFIED_BY", "discovery_layer": "graph_pattern"},
     ]
 
@@ -168,9 +167,37 @@ def test_discover_open_candidates_merges_and_dedupes_all_layers(
     )
 
     assert len(result) == 2
-    # 验证函数应收到去重后的候选：(a,b) 桥接+向量召回重复算1对，(a,c) 图模式单独1对，共2对，不是3对
+    assert result[0]["discovery_layer"] == "bridge"
+    assert result[0]["type"] == "SEMANTICALLY_RELATED"
+    # bridge/embedding 直接输出；验证函数只收到 graph_pattern 候选。
     verify_call_candidates = mock_verify.call_args.args[0]
-    assert len(verify_call_candidates) == 2
+    assert len(verify_call_candidates) == 1
+    assert verify_call_candidates[0] == (node_a, node_c, "graph_pattern")
+
+
+@patch("step4_cross_doc_edges.er.rank_candidate_pairs_by_embedding")
+def test_select_graph_pattern_candidates_recall_first_does_not_require_embedding_rank(mock_rank):
+    from_node_a = {"control_id": "CM-01", "measure": "防反接结构"}
+    from_node_b = {"control_id": "CM-02", "measure": "软件异常处理"}
+    candidates = []
+    for i in range(8):
+        candidates.append({
+            "from": from_node_a if i < 6 else from_node_b,
+            "to": {"test_id": f"T-{i}", "item": f"测试项{i}"},
+            "expected_relation": ("MITIGATED_BY", "VERIFIED_BY"),
+            "pattern_frequency": 12,
+        })
+
+    selected = s4._select_graph_pattern_candidates_recall_first(
+        candidates,
+        budget=4,
+        per_from_node=1,
+    )
+
+    mock_rank.assert_not_called()
+    assert len(selected) == 4
+    selected_from_ids = {item[0].get("control_id") for item in selected}
+    assert selected_from_ids == {"CM-01", "CM-02"}
 
 
 @patch("step4_cross_doc_edges.verify_candidates_open_llm")

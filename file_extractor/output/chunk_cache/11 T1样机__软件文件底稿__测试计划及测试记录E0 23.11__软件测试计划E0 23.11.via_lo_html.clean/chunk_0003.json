@@ -1,0 +1,272 @@
+{
+  "document": {
+    "title": "软件测试计划",
+    "doc_type": "测试报告/测试计划"
+  },
+  "tests": [
+    {
+      "test_id": "Bpm_Cmd_Decete-1",
+      "item": "上位机发送请求电量命令，用串口查看单片机回复命令",
+      "expected_value": "上位机发送请求电量命令：B0 07 00 19 A1 20 00 00 00 DA；单片机发送：A0 07 00 1A A1 20 41 00 00 1C",
+      "pass_criteria": "单片机回复命令与预期值一致"
+    },
+    {
+      "test_id": "Bpm_Cmd_Decete-2",
+      "item": "上位机发送开始测量命令，查看单片机回复信息和相关变量值：press_speed_set.PressFastV、press_speed_set.PressLowVA、press_speed_set.PressLowVP、press_speed_set.PressTurn、sameperson、run_mode",
+      "expected_value": "上位机发送：B0 0C 00 29 A1 31 00 55 4B 29 29 1B 1B 1E 41；单片机发送：A0 04 00 2A A1 31 FC；press_speed_set.PressFastV=0x0400；press_speed_set.PressLowVA=0x0029；press_speed_set.PressLowVP=0x001B；press_speed_set.PressTurn=0x019A；run_mode=MODE_test",
+      "pass_criteria": "各变量值与预期一致"
+    },
+    {
+      "test_id": "Bpm_Cmd_Decete-3",
+      "item": "上位机发送请求停止测量命令，用串口查看单片机回复命令并查看run_mode的值",
+      "expected_value": "上位机发送数据：B0 07 00 4D A1 37 00 00 00 25；单片机发送：A0 04 00 4E A1 37 26；run_mode=MODE_sleep",
+      "pass_criteria": "单片机回复及run_mode值与预期一致"
+    },
+    {
+      "test_id": "Command_Detect-1",
+      "item": "向单片机发送FF CC B0 0C 00 23 A1 31 00 00 4B 00 29 00 1B 1E A2 FF 0D，查看Moptr、Commandlng的值",
+      "expected_value": "Moptr=6；Commandlng=0x0C",
+      "pass_criteria": "Moptr和Commandlng值与预期一致"
+    },
+    {
+      "test_id": "calbuf-1",
+      "item": "计算buffer中从a所指向的数据向前的n个点的平均值",
+      "condition": "Buffer[]={1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1021,1019,1017,1015,1013,1011,1009,1007,1005}；a=7；n=8",
+      "expected_value": "1005",
+      "pass_criteria": "返回值等于1005"
+    },
+    {
+      "test_id": "adapt_pre_4096-1",
+      "item": "将buffer中optr所指向的数据转为4096格式，验证转化是否正确",
+      "condition": "Buffer[]={2283,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1021,1019,1017,1015,1013,1011,1009,1007,1005}；optr=0；zerohl=1300；spanhl=4023",
+      "expected_value": "Buffer[0]=1001；其他数据不变",
+      "pass_criteria": "Buffer[0]正确转化为1001，其余数据不变"
+    },
+    {
+      "test_id": "Find_Systolic-1",
+      "item": "高压计算（Calculate Systolic）",
+      "condition": "Bp队列的心跳起始压力bpp={2053,1964,1888,1810,1740,1678,1616,1556,1500,1455,1407,1360,1314,1269,1227,1189,1153,1121,1089,1055}；心跳强度bpv={13,15,15,16,17,21,28,29,28,40,40,42,41,38,34,30,23,17,14,12}；MAXBPP=1360；MAXBPV=42",
+      "expected_value": "108",
+      "pass_criteria": "计算结果等于108"
+    },
+    {
+      "test_id": "Find_Diastolic-1",
+      "item": "低压计算（Calculate Diastolic）",
+      "condition": "Bp队列的心跳起始压力bpp={2053,1964,1888,1810,1740,1678,1616,1556,1500,1455,1407,1360,1314,1269,1227,1189,1153,1121,1089,1055}；心跳强度bpv={13,15,15,16,17,21,28,29,28,40,40,42,41,38,34,30,23,17,14,12}；MAXBPP=1360；MAXBPV=42",
+      "expected_value": "75",
+      "pass_criteria": "计算结果等于75"
+    },
+    {
+      "test_id": "search_zero-1",
+      "item": "搜索稳定零点，cnt20s=1001时run_mode值",
+      "condition": "cnt20s=1001",
+      "expected_value": "run_mode=MODE_er0",
+      "pass_criteria": "run_mode值等于MODE_er0"
+    },
+    {
+      "test_id": "search_zero-2",
+      "item": "搜索稳定零点，cnt20s=25时run_mode值",
+      "condition": "cnt20s=25",
+      "expected_value": "run_mode=MODE_test",
+      "pass_criteria": "run_mode值等于MODE_test"
+    },
+    {
+      "test_id": "BATDECT-1",
+      "item": "采样电池电压，外接电源电压4V时ad_value值",
+      "condition": "将外接电源电压调为4V，运行程序",
+      "expected_value": "ad_value=758",
+      "pass_criteria": "ad_value等于758"
+    },
+    {
+      "test_id": "UART6transmit-1",
+      "item": "通过串口向外发送数据，验证发送内容是否正确",
+      "condition": "data[0]=0xA0, data[1]=0x05, data[2]=0x00, data[3]=0x00, data[4]=0xFF, data[5]=0x91, data[6]=0x06",
+      "expected_value": "发出0xA0,0x05,0x00,0x00,0xFF,0x91,0x06,0x96",
+      "pass_criteria": "单片机实际发出数据与预期一致"
+    },
+    {
+      "test_id": "isr_INTTM010-1",
+      "item": "压力采集中断的周期",
+      "expected_value": "20ms",
+      "pass_criteria": "中断周期等于20ms"
+    },
+    {
+      "test_id": "isr_INTTM010-2",
+      "item": "实际采样值和BUF中数据是否一致",
+      "expected_value": "1451",
+      "pass_criteria": "实际采样值与BUF中数据一致且等于1451"
+    },
+    {
+      "test_id": "isr_INTSR6-1",
+      "item": "通过串口向单片机发送数据，查看recivebuf.arraybuf[]中是否存储了该命令",
+      "condition": "通过串口向单片机发送0xB0,0x05,0x00,0x00,0xFF,0x91,0x06,0x96",
+      "expected_value": "存储了命令0xB0,0x05,0x00,0x00,0xFF,0x91,0x06,0x96",
+      "pass_criteria": "recivebuf.arraybuf[]中正确存储所发送命令"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "系统测试计划注释：测试结果用如下符号标明：测试通过：OK；不通过：NG；如测试不通过，还要注明原因。按键描述：KS1为复位键。功能描述：全自动臂式、带BLE蓝牙功能。",
+      "topic_tags": [
+        "测试结果标记",
+        "按键",
+        "蓝牙",
+        "全自动臂式血压计"
+      ],
+      "related_subjects": [
+        "系统测试计划",
+        "血压计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "关机态：不与手机蓝牙连接，机器处于关机态，此时灯不亮。",
+      "topic_tags": [
+        "关机态",
+        "蓝牙",
+        "指示灯"
+      ],
+      "related_subjects": [
+        "血压计状态机"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "加压态操作流程：1.将血压计袖带捆绑于胳膊；2.开启手机APP，将手机与血压计通过蓝牙建立连接，认证通过后绿色指示灯点亮；3.进入设置画面，显示当前电量；4.按APP中\"开始测量\"，血压计进入测量态。加压过程：搜索零点时屏幕左侧水银柱示数为零；机器找到稳定零点后关闭电磁阀、启动泵；机器加压后APP显示当前袖带内压力；加压时可点击APP界面暂停图标停止测量。",
+      "topic_tags": [
+        "加压态",
+        "蓝牙连接",
+        "零点搜索",
+        "电磁阀",
+        "泵",
+        "袖带压力"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "压力平台控制：PT9L为上气测量机器，当找到高压后或高压长时间未找到时，自动停止加压。若绑在弹性圆柱体（或接在500CC双口气缸）上则加压到190mmHg（+/-3mmHg）（不记忆加压平台），停止加压。",
+      "topic_tags": [
+        "压力平台",
+        "高压检测",
+        "190mmHg",
+        "加压控制"
+      ],
+      "related_subjects": [
+        "血压计",
+        "气动系统"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "加压过程中的泵气速度判断：打气过慢：压力<30mmHg时，<2mmHg/4S；压力>30mmHg时，<3mmHg/4S。打气过快：压力上升>75mmHg/0.32S。测试方法：打气过慢检测：将袖带平展，开机，自动加压，5s后泵应停转且电磁阀放气，屏幕显示\"测量时气动系统泄露或袖带太松\"，点击\"确认\"，APP回到开始测量界面。打气过快检测：将气路堵塞，开机，加压，泵启动后应马上停转且电磁阀放气，屏幕显示\"测量时气动系统已锁住或袖带太紧\"，点击\"确认\"，APP回到开始测量界面。",
+      "topic_tags": [
+        "泵气速度",
+        "打气过慢",
+        "打气过快",
+        "气动系统泄露",
+        "袖带太松",
+        "袖带太紧"
+      ],
+      "related_subjects": [
+        "气动系统",
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "加压测量态：1.机器加压到30mmHg后进入测量态，加压速度约为5~6mmHg/S，APP中显示当前袖带内压力；2.如果检测到心跳，屏幕会随着心跳闪烁心跳符号；3.在加压过程中短按复位按键，停止测量，APP退回到开始测量界面；4.在加压过程中点击APP中暂停图标，血压计停止测量；加压过程中关闭APP，血压计停止测量；加压过程中关闭IOS设备蓝牙，血压计停止测量，绿灯熄灭。",
+      "topic_tags": [
+        "测量态",
+        "30mmHg",
+        "加压速度",
+        "心跳检测",
+        "复位按键",
+        "蓝牙断连"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP",
+        "指示灯"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "结果显示态：血压测量完毕后，血压计停泵放气，屏幕显示此次的测量结果。按返回键可以再次回到\"开始测量\"界面，点击\"开始测量\"启动新的测量。",
+      "topic_tags": [
+        "结果显示",
+        "停泵放气",
+        "测量结果"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——点击返回：1.在血压计浮零过程中点击APP界面暂停图标退出测量界面，退出后血压计不加压，再次点击\"开始测量\"后正常进行测量；2.在血压计测量过程中点击APP界面暂停图标退出测量界面，血压计立即关泵开阀，再次点击\"开始测量\"后正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "暂停图标",
+        "浮零",
+        "关泵开阀"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——点击HOME：1.在血压计浮零过程中点击HOME键离开APP界面，退出后血压计不加压，再次打开APP点击\"开始测量\"后正常进行测量；2.在测量过程中点击HOME键离开APP界面，1S后血压计关泵开阀，再次打开APP点击\"开始测量\"后血压计正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "HOME键",
+        "浮零",
+        "关泵开阀"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——短按复位按键：1.在血压计浮零过程中短按复位按键，APP 1s后回到开始测量界面，血压计随之绿灯亮起，再次点击\"开始测量\"，血压计正常进行测量；2.在测量过程中短按复位按键，血压计关泵开阀，APP 1s后回到开始测量界面，血压计随之绿灯亮起，再次点击\"开始测量\"，血压计正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "复位按键",
+        "绿灯",
+        "关泵开阀"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP",
+        "指示灯"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "中断测量测试——关闭IOS设备蓝牙：1.认证通过后绿灯点亮，上拉菜单关闭IOS设备蓝牙，血压计绿灯熄灭，APP处于无设备连接界面，打开蓝牙后APP重新与血压计建立连接，绿灯点亮，APP转入开始测量界面，可正常进行测量；2.在血压计浮零过程中关闭IOS设备蓝牙，血压计5s后停止测量，绿灯熄灭，APP处于无设备连接界面，打开蓝牙后APP重新与血压计建立连接，绿灯点亮，APP转入开始测量界面，可正常进行测量。",
+      "topic_tags": [
+        "中断测量",
+        "蓝牙断连",
+        "IOS设备",
+        "绿灯",
+        "重新连接"
+      ],
+      "related_subjects": [
+        "血压计状态机",
+        "APP",
+        "蓝牙",
+        "指示灯"
+      ]
+    }
+  ]
+}

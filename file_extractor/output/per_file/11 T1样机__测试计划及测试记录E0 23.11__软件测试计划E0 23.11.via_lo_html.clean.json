@@ -1,0 +1,2221 @@
+{
+  "document": {
+    "title": "体温计功能测试报告",
+    "doc_type": "测试报告",
+    "version": "V1.0"
+  },
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "软件工程师/测试人/更改人"
+    },
+    {
+      "name": "侯广伟",
+      "title": "软件主管/审核人/批准人"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RJCJ01 V1.0"
+    },
+    {
+      "id_type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "DJS10005"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "DJS06046"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "DJS01002"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "RPZ03003"
+    },
+    {
+      "id_type": "测试设备管制编号",
+      "value": "RJS05001"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "01",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪",
+      "date": "2024年03月4日"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "单元测试/子程序测试",
+      "item": "验证单元的内部结构以及单元实现的功能",
+      "condition": "编码和调试之后；测试设备：稳压电源(DJS10005)、万用表(DJS06046)、示波器(DJS01002)",
+      "pass_criteria": "测试子程序是否按预期运行",
+      "instrument": "稳压电源、万用表、示波器"
+    },
+    {
+      "test_id": "系统测试",
+      "item": "确认系统工作的版本满足需求，测试整机功能是否正常",
+      "condition": "在单元测试完成之后；测试设备：稳压电源(DJS10005)、万用表(DJS06046)、恒温槽(RPZ03003)、黑体辐射源(RJS05001)",
+      "pass_criteria": "测试整机功能是否正常",
+      "instrument": "稳压电源、万用表、恒温槽、黑体辐射源"
+    },
+    {
+      "test_id": "vUserGPIOInit-PA-PAPU",
+      "item": "GPIO端口初始化 - 端口PA PAPU",
+      "expected_value": "0x0F",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PA-PAC",
+      "item": "GPIO端口初始化 - 端口PA PAC",
+      "expected_value": "0x0F",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PA-PA",
+      "item": "GPIO端口初始化 - 端口PA PA",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PB-PBPU",
+      "item": "GPIO端口初始化 - 端口PB PBPU",
+      "expected_value": "0xBF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PB-PBC",
+      "item": "GPIO端口初始化 - 端口PB PBC",
+      "expected_value": "0xBF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PB-PB",
+      "item": "GPIO端口初始化 - 端口PB PB",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PC-PCPU",
+      "item": "GPIO端口初始化 - 端口PC PCPU",
+      "expected_value": "0xA2",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PC-PCC",
+      "item": "GPIO端口初始化 - 端口PC PCC",
+      "expected_value": "0xA2",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PC-PC",
+      "item": "GPIO端口初始化 - 端口PC PC",
+      "expected_value": "0x40",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PD-PDPU",
+      "item": "GPIO端口初始化 - 端口PD PDPU",
+      "expected_value": "0xFE",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PD-PDC",
+      "item": "GPIO端口初始化 - 端口PD PDC",
+      "expected_value": "0xFE",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PD-PC",
+      "item": "GPIO端口初始化 - 端口PD PC",
+      "expected_value": "0x04",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PE-PEPU",
+      "item": "GPIO端口初始化 - 端口PE PEPU",
+      "expected_value": "0xFF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PE-PPEC",
+      "item": "GPIO端口初始化 - 端口PE PPEC",
+      "expected_value": "0xFF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIOInit-PE-PE",
+      "item": "GPIO端口初始化 - 端口PE PE",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PA-PAPU",
+      "item": "GPIO端口Sleep模式设定 - 端口PA PAPU",
+      "expected_value": "0x97",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PA-PAC",
+      "item": "GPIO端口Sleep模式设定 - 端口PA PAC",
+      "expected_value": "0x9F",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PA-PA",
+      "item": "GPIO端口Sleep模式设定 - 端口PA PA",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PB-PBPU",
+      "item": "GPIO端口Sleep模式设定 - 端口PB PBPU",
+      "expected_value": "0xFF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PB-PBC",
+      "item": "GPIO端口Sleep模式设定 - 端口PB PBC",
+      "expected_value": "0xFF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PB-PB",
+      "item": "GPIO端口Sleep模式设定 - 端口PB PB",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PC-PCPU",
+      "item": "GPIO端口Sleep模式设定 - 端口PC PCPU",
+      "expected_value": "0xBF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PC-PCC",
+      "item": "GPIO端口Sleep模式设定 - 端口PC PCC",
+      "expected_value": "0xBF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PC-PC",
+      "item": "GPIO端口Sleep模式设定 - 端口PC PC",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PD-PDPU",
+      "item": "GPIO端口Sleep模式设定 - 端口PD PDPU",
+      "expected_value": "0xFA",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PD-PDC",
+      "item": "GPIO端口Sleep模式设定 - 端口PD PDC",
+      "expected_value": "0xFA",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PD-PC",
+      "item": "GPIO端口Sleep模式设定 - 端口PD PC",
+      "expected_value": "0x04",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PE-PEPU",
+      "item": "GPIO端口Sleep模式设定 - 端口PE PEPU",
+      "expected_value": "0xFF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PE-PPEC",
+      "item": "GPIO端口Sleep模式设定 - 端口PE PPEC",
+      "expected_value": "0xFF",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "vUserGPIODeinit-PE-PE",
+      "item": "GPIO端口Sleep模式设定 - 端口PE PE",
+      "expected_value": "0x00",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "LCD-Display-1",
+      "item": "LCD显示数据 - Fun_LcdDisplay",
+      "condition": "u16DisValue=123; u8MeasureMode=LCD_OBJECT_MODE; u8Point=LCD_POINT_ON; u8Mute=LCD_MUTE_ON; u8BatLow=LCD_BATLABEL_ON_MODE",
+      "expected_value": "12.3℃，显示低电符号、静音图标、物温模式图标",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "LCD-Display-2",
+      "item": "LCD显示数据 - Fun_LcdDisplay",
+      "condition": "u16DisValue=123; u8MeasureMode=LCD_OBJECT_MODE; u8Point=LCD_POINT_OFF; u8Mute=LCD_MUTE_OFF; u8BatLow=LCD_BATLABEL_OFF_MODE",
+      "expected_value": "123℃，不显示低电符号、静音图标和物温模式图标",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "Beep-SHORT",
+      "item": "蜂鸣器驱动 - BeepWork",
+      "condition": "mode = BEEP_SHORT",
+      "expected_value": "短鸣200ms",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "Beep-LONG",
+      "item": "蜂鸣器驱动 - BeepWork",
+      "condition": "mode = BEEP_LONG",
+      "expected_value": "长鸣500ms",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "Beep-SHORT2_2",
+      "item": "蜂鸣器驱动 - BeepWork",
+      "condition": "mode = BEEP_SHORT2_2",
+      "expected_value": "开关各70ms，再延时200ms，重复2次",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "Beep-SHORT4",
+      "item": "蜂鸣器驱动 - BeepWork",
+      "condition": "mode = BEEP_SHORT4",
+      "expected_value": "开关各70ms重复4次",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "Arith-1",
+      "item": "计算人体温度 - UserArithCompute",
+      "condition": "envirT=25.9, ntcT=33.1",
+      "expected_value": "3630",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "Arith-2",
+      "item": "计算人体温度 - UserArithCompute",
+      "condition": "envirT=24.9, ntcT=32.4",
+      "expected_value": "3610",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "Arith-3",
+      "item": "计算人体温度 - UserArithCompute",
+      "condition": "envirT=26.4, ntcT=27.3",
+      "expected_value": "3330",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "NTC-Temp-1",
+      "item": "获取NTC温度 - GetExNTC_Temp",
+      "condition": "将NTC置于25℃环境中静置30min",
+      "expected_value": "25±1℃",
+      "pass_criteria": "实测值在25±1℃范围内"
+    },
+    {
+      "test_id": "NTC-Temp-2",
+      "item": "获取NTC温度 - GetExNTC_Temp",
+      "condition": "将NTC置于16℃环境中静置30min",
+      "expected_value": "16±1℃",
+      "pass_criteria": "实测值在16±1℃范围内"
+    },
+    {
+      "test_id": "Bat-1",
+      "item": "检测电池电值 - GetBatValue",
+      "condition": "输入供电电压3V",
+      "expected_value": "300±20",
+      "pass_criteria": "实测值在300±20范围内"
+    },
+    {
+      "test_id": "Bat-2",
+      "item": "检测电池电值 - GetBatValue",
+      "condition": "输入供电电压2.6V",
+      "expected_value": "260±20",
+      "pass_criteria": "实测值在260±20范围内"
+    },
+    {
+      "test_id": "EEPROM-Write-1",
+      "item": "片内EEPROM字节写 - vUserEEpromWrite",
+      "condition": "u8addr=0x10; u8data=0x55",
+      "expected_value": "能够将0x55写入0x10地址",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "EEPROM-Read-1",
+      "item": "片内EEPROM字节读 - UserEEpromRead",
+      "condition": "u8addr=0x10",
+      "expected_value": "返回0x55",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "MeasureMode-1",
+      "item": "设置测量模式 - Fun_UserMeasureModeSet",
+      "condition": "设置测量模式为儿童模式",
+      "expected_value": "测量模式为儿童模式",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "MeasureMode-2",
+      "item": "设置测量模式 - Fun_UserMeasureModeSet",
+      "condition": "设置测量模式为成年模式",
+      "expected_value": "测量模式为成年模式",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "MeasureMode-3",
+      "item": "设置测量模式 - Fun_UserMeasureModeSet",
+      "condition": "设置测量模式为物温模式",
+      "expected_value": "测量模式为物温模式",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "MeasureUnit-1",
+      "item": "单位切换 - Fun_UserMeasureUnitSet",
+      "condition": "设置测量模式为℃模式",
+      "expected_value": "测量模式为℃模式",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "MeasureUnit-2",
+      "item": "单位切换 - Fun_UserMeasureUnitSet",
+      "condition": "设置测量模式为℉模式",
+      "expected_value": "测量模式为℉模式",
+      "pass_criteria": "实测值与预期值一致"
+    },
+    {
+      "test_id": "SYS-Init-1",
+      "item": "系统测试-初始化功能",
+      "condition": "初次使用，给体温计上电",
+      "expected_value": "体温计开机：蜂鸣器长鸣，LCD全显示3秒后，接着关机进入休眠状态",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-Init-2",
+      "item": "系统测试-初始化功能",
+      "condition": "在关机态，按一下测试按键，使体温计开机",
+      "expected_value": "体温计开机：LCD能够正常显示，能够正常唤醒",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-PowerOff-1",
+      "item": "系统测试-关机功能",
+      "condition": "体温测量结束后，无动作",
+      "expected_value": "体温计在15秒后自动关机",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-PowerOff-2",
+      "item": "系统测试-关机功能",
+      "condition": "模式设置结束后，无动作",
+      "expected_value": "体温计在15秒后自动关机",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-1",
+      "item": "系统测试-LCD显示功能",
+      "condition": "首次上电",
+      "expected_value": "LCD会全屏显示3s",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-2",
+      "item": "系统测试-LCD显示功能",
+      "condition": "常温下将体温计对准34℃黑体，温度模式为人体模式下，短按测量按键",
+      "expected_value": "1秒内结束，显示人体温度36.2℃左右，同时人体图标点亮",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-3",
+      "item": "系统测试-LCD显示功能",
+      "condition": "将体温计放置5℃或42℃环境温度下静置1H，再开机",
+      "expected_value": "LCD显示Err图标闪烁15秒后关机",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-Measure-1",
+      "item": "系统测试-LCD显示/测量功能",
+      "condition": "选中物温模式，常温下将体温计对准30℃黑体，按下测量按键",
+      "expected_value": "LCD显示30±0.2℃，背光为白色，单次长鸣500ms",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-Measure-2",
+      "item": "系统测试-LCD显示/测量功能",
+      "condition": "选中物温模式，常温下将体温计对准45℃黑体，按下测量按键",
+      "expected_value": "LCD显示45±0.2℃，背光为白色，单次长鸣500ms",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-Measure-3",
+      "item": "系统测试-LCD显示/测量功能",
+      "condition": "选中人体模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣500ms",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-Measure-4",
+      "item": "系统测试-LCD显示/测量功能",
+      "condition": "选中人体模式，常温下将体温计对准37℃黑体，按下测量按键",
+      "expected_value": "LCD显示38.2左右，背光为橙色，连续短鸣4次",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-Measure-5",
+      "item": "系统测试-LCD显示/测量功能",
+      "condition": "选中人体模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-Measure-6",
+      "item": "系统测试-LCD显示/测量功能",
+      "condition": "选中人体模式，常温下将体温计对准25℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-LCD-Measure-7",
+      "item": "系统测试-LCD显示/测量功能",
+      "condition": "选中人体模式，常温下将体温计对准40℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为红色，没有蜂鸣",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-Beep-1",
+      "item": "系统测试-蜂鸣器提示功能",
+      "condition": "首次上电",
+      "expected_value": "蜂鸣器长鸣，LCD保持全显3S",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-Beep-2",
+      "item": "系统测试-蜂鸣器提示功能",
+      "condition": "短按测量按键",
+      "expected_value": "蜂鸣器三次短鸣，提示测量未完成，LCD显示'---℃'",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-Beep-3",
+      "item": "系统测试-蜂鸣器提示功能",
+      "condition": "常温下将体温计对准34℃黑体，按下测量按键3S以上",
+      "expected_value": "蜂鸣器长鸣，提示测量完成，LCD显示测量结果",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-Beep-4",
+      "item": "系统测试-蜂鸣器提示功能",
+      "condition": "常温下将体温计对准25℃黑体，按下测量按键3S以上",
+      "expected_value": "蜂鸣器三次短鸣，提示测量结果异常，LCD显示'---℃'",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-Beep-5",
+      "item": "系统测试-蜂鸣器提示功能",
+      "condition": "常温下将体温计对准40℃黑体，按下测量按键3S以上",
+      "expected_value": "蜂鸣器三次短鸣，提示测量结果异常，LCD显示'---℃'",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-BatDetect-1",
+      "item": "系统测试-低电压检测功能",
+      "condition": "将电压调到3.0V，开机",
+      "expected_value": "LCD不会提示低电压，实心电池图标常亮",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-BatDetect-2a",
+      "item": "系统测试-低电压检测功能",
+      "condition": "将电压调到2.65V，开机",
+      "expected_value": "LCD提示低电压，空心电池图标常亮",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-BatDetect-2b",
+      "item": "系统测试-低电压检测功能",
+      "condition": "不断电，将电压调到2.8V，按测量键",
+      "expected_value": "LCD显示，空心电池图标常亮",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-BatDetect-2c",
+      "item": "系统测试-低电压检测功能",
+      "condition": "保持电压2.8V，重新上电",
+      "expected_value": "LCD不会提示低电压，实心电池图标常亮",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-BatDetect-3a",
+      "item": "系统测试-低电压检测功能",
+      "condition": "将电压调到2.45V，开机",
+      "expected_value": "空心电池图标闪烁15秒后关机",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-BatDetect-3b",
+      "item": "系统测试-低电压检测功能",
+      "condition": "不断电，将电压调到2.8V，按测量键",
+      "expected_value": "空心电池图标闪烁15秒后关机",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-BatDetect-3c",
+      "item": "系统测试-低电压检测功能",
+      "condition": "保持电压2.8V，重新上电",
+      "expected_value": "LCD不会提示低电压，实心电池图标常亮",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-ModeSet-1",
+      "item": "系统测试-测量模式设置功能",
+      "condition": "在测量界面，短按设置按键",
+      "expected_value": "切换模式图标",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "SYS-ModeSet-2",
+      "item": "系统测试-测量模式设置功能",
+      "condition": "按下测量按键",
+      "expected_value": "在之前选定的模式下，完成一次测量",
+      "pass_criteria": "输出符合预期描述"
+    },
+    {
+      "test_id": "7-1",
+      "item": "单位切换功能 - 关机时长按测量按键8s以上",
+      "condition": "关机时，长按测量按键8s以上",
+      "expected_value": "当前的单位图标，闪烁显示",
+      "pass_criteria": "当前的单位图标闪烁显示",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "7-1b",
+      "item": "单位切换功能 - 短按测量按键",
+      "condition": "短按测量按键",
+      "expected_value": "蜂鸣器短鸣，被选择的单位图标，闪烁显示",
+      "pass_criteria": "蜂鸣器短鸣，被选择的单位图标闪烁显示",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "7-2",
+      "item": "单位切换功能 - 长按2秒测量按键",
+      "condition": "长按2秒测量按键",
+      "expected_value": "蜂鸣器短鸣，LCD显示选定的单位图标",
+      "pass_criteria": "蜂鸣器短鸣，LCD显示选定的单位图标",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "7-3",
+      "item": "单位切换功能 - 超过2S没有按键操作",
+      "condition": "超过2S没有按键操作",
+      "expected_value": "体温计进入关机状态",
+      "pass_criteria": "体温计进入关机状态",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "8-1",
+      "item": "测量功能 - 物温模式37℃黑体",
+      "condition": "选中物温模式，常温下将体温计对准37℃黑体，按下测量按键",
+      "expected_value": "LCD显示37±0.2℃，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示37±0.2℃，背光为白色，单次长鸣500ms",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "8-2a",
+      "item": "测量功能 - 成人体温模式35℃黑体",
+      "condition": "选中成人体温模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示36.5左右，背光为白色，单次长鸣500ms",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "8-2b",
+      "item": "测量功能 - 成人体温模式36.5℃黑体",
+      "condition": "选中成人体温模式，常温下将体温计对准36.5℃黑体，按下测量按键",
+      "expected_value": "LCD显示37.7左右，背光为橙色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示37.7左右，背光为橙色，连续短鸣4次"
+    },
+    {
+      "test_id": "8-2c",
+      "item": "测量功能 - 成人体温模式38℃黑体",
+      "condition": "选中成人体温模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示39.2左右，背光为红色，连续短鸣4次"
+    },
+    {
+      "test_id": "8-3a",
+      "item": "测量功能 - 婴儿体温模式35℃黑体",
+      "condition": "选中婴儿体温模式，常温下将体温计对准35℃黑体，按下测量按键",
+      "expected_value": "LCD显示36.5左右，背光为白色，单次长鸣，500ms",
+      "pass_criteria": "LCD显示36.5左右，背光为白色，单次长鸣500ms"
+    },
+    {
+      "test_id": "8-3b",
+      "item": "测量功能 - 婴儿模式38℃黑体",
+      "condition": "选中婴儿模式，常温下将体温计对准38℃黑体，按下测量按键",
+      "expected_value": "LCD显示39.2左右，背光为红色，连续短鸣4次，滴滴滴滴",
+      "pass_criteria": "LCD显示39.2左右，背光为红色，连续短鸣4次"
+    },
+    {
+      "test_id": "8-4a",
+      "item": "测量功能 - 成人体温模式25℃黑体（低于下限）",
+      "condition": "选中成人体温模式，常温下将体温计对准25℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光为白色，无蜂鸣"
+    },
+    {
+      "test_id": "8-4b",
+      "item": "测量功能 - 成人体温模式40℃黑体（高于上限）",
+      "condition": "选中成人体温模式，常温下将体温计对准40℃黑体，按下测量按键",
+      "expected_value": "LCD显示---℃，背光为白色，没有蜂鸣",
+      "pass_criteria": "LCD显示---℃，背光为白色，无蜂鸣"
+    },
+    {
+      "test_id": "9-1",
+      "item": "错误检测功能 - 工作温度低于下限",
+      "condition": "将体温计放置5℃环境温度下静置1H",
+      "expected_value": "LCD显示\"Err\" 图标闪烁15秒后关机",
+      "pass_criteria": "LCD显示Err图标闪烁15秒后关机",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "9-2",
+      "item": "错误检测功能 - 工作温度高于上限",
+      "condition": "将体温计放置42℃环境温度下静置1H",
+      "expected_value": "LCD显示\"Err\" 图标闪烁15秒后关机",
+      "pass_criteria": "LCD显示Err图标闪烁15秒后关机",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-1",
+      "item": "记忆功能 - 物温模式测量记录",
+      "condition": "体温计物温模式下，对准35℃黑体测量",
+      "expected_value": "LCD显示测试完成的结果，并记录",
+      "pass_criteria": "LCD显示测试完成的结果并记录",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-2",
+      "item": "记忆功能 - 进入记忆浏览模式",
+      "condition": "在关机态，长按设置键3秒，进入记忆浏览模式",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录（显示当前测量模式、测量数值和测量记录数）",
+      "pass_criteria": "LCD正确显示当前测量模式、测量数值和测量记录数",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-3",
+      "item": "记忆功能 - 短按设置按键显示下一条记录",
+      "condition": "短按设置按键",
+      "expected_value": "LCD显示下一条记忆结果",
+      "pass_criteria": "LCD显示测试完成的记忆结果",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-4",
+      "item": "记忆功能 - 体温模式测量记录",
+      "condition": "切换到体温模式，对准35℃黑体测量",
+      "expected_value": "LCD显示测试完成的结果，并记录",
+      "pass_criteria": "LCD显示测试完成的结果并记录",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-5",
+      "item": "记忆功能 - 体温模式下进入记忆浏览模式",
+      "condition": "在关机态，长按设置键3秒，进入记忆浏览模式",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录",
+      "pass_criteria": "LCD正确显示当前测量模式、测量数值和测量记录数",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-6",
+      "item": "记忆功能 - 短按设置按键显示下一条记录（体温模式）",
+      "condition": "短按设置按键显示下一条记录",
+      "expected_value": "LCD显示测试完成的记忆结果，并记录",
+      "pass_criteria": "LCD显示测试完成的记忆结果",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-7",
+      "item": "记忆功能 - 清空记忆",
+      "condition": "在关机态时，长按测量键和设置键8s",
+      "expected_value": "开始自动清除记忆，全部记录被清空",
+      "pass_criteria": "记忆结果清空",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "10-8",
+      "item": "记忆功能 - 清空后查看记忆",
+      "condition": "进行清空记忆操作后，进入记忆查看界面",
+      "expected_value": "记忆结果为空",
+      "pass_criteria": "记忆结果为空",
+      "instrument": "I，O"
+    },
+    {
+      "test_id": "3-3",
+      "item": "设置功能 - 超时关机",
+      "condition": "设置时超过15S没有按键操作",
+      "expected_value": "体温计进入关机状态",
+      "pass_criteria": "体温计进入关机状态"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "软件系统名称：PT9L红外体温计软件。开发项目功能：PT9L红外体温计是基于红外技术测量人体额面温度的体温计。测量时利用红外测温探头测量额面温度进而计算出人体内核的温度。电源采用两节7号电池。用于儿童及成人在正常或发烧状态下的体温测量。",
+      "topic_tags": [
+        "红外体温计",
+        "额面温度",
+        "人体内核温度",
+        "预期用途",
+        "适用人群"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "软件测试计划"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "软件功能：1.MCU系统初始化，配置相关模块的模式和功能设置；2.测量人体表面温度，计算出人体内核的温度（通过AD采集接口）；3.片内EEPROM标定参数数据读取；4.AD采集、判断电池电压状态（通过AD采集端口）；5.LCD显示（通过数据端口）。输入：红外传感器信号输入、电池电量采集信号输入、按键触发信号输入、EEPROM数据读取。输出：蜂鸣器驱动信号、LCD显示信号输出。",
+      "topic_tags": [
+        "MCU",
+        "AD采集",
+        "EEPROM",
+        "LCD显示",
+        "红外传感器",
+        "软件功能"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "软件测试计划"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测试方法缩写字母说明：S：模拟软件单步执行，观察程序执行的结果；C：输入不同值，确认软件的输出是否和人工计算的一致；O：执行软件，观察硬件的响应；I：改变硬件的输入，确认软件的响应。",
+      "topic_tags": [
+        "测试方法",
+        "单步执行",
+        "输入验证",
+        "硬件响应"
+      ],
+      "related_subjects": [
+        "单元测试",
+        "系统测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "针对当前项目，编译环境可以通过词法分析、语法分析、控制流、数据流分析等方法检查代码，所以我们使用编译环境来实现代码的静态分析。编译环境在执行编译、链接、生成目标代码时，不能出现报错，不能出现影响代码安全性、有效性的警告，要保证目标代码可以正常生成。然后进行单元测试/子程序测试及系统测试实现代码的动态分析。",
+      "topic_tags": [
+        "静态分析",
+        "动态分析",
+        "编译环境",
+        "代码安全性",
+        "单元测试",
+        "系统测试"
+      ],
+      "related_subjects": [
+        "软件测试计划",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "子程序测试设计：针对单元测试的测试内容的测试设计考虑，测试各个不同的输入引起的不同的输出。控制方式为人工输入。输入参见附录一中表格栏目\"测试输入和预期输出\"中\"测试项目\"一栏；输出参见附录一中表格栏目\"测试输入和预期输出\"中\"预期值\"一栏；过程参见附录一中表格栏目\"测试输入和预期输出\"中\"测试方法\"一栏。",
+      "topic_tags": [
+        "子程序测试",
+        "测试设计",
+        "人工输入",
+        "预期输出"
+      ],
+      "related_subjects": [
+        "单元测试/子程序测试",
+        "附录一"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "系统测试设计考虑：控制方式为人工输入，测试各个不同的输入引起的不同的输出。输入、输出及过程分别参见附录二、附件三表格中的\"测试输入\"、\"测试输出\"、\"测试方法\"一栏。",
+      "topic_tags": [
+        "系统测试",
+        "人工输入",
+        "测试设计"
+      ],
+      "related_subjects": [
+        "SYS-Init",
+        "SYS-PowerOff",
+        "SYS-LCD",
+        "SYS-Beep",
+        "SYS-BatDetect",
+        "SYS-ModeSet"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评价准则：测试结果应完全符合\"预期值\"栏或\"测试输出\"中对测试结果的描述。测试通过符号：OK；不通过：NG；如测试不通过，还要注明原因。",
+      "topic_tags": [
+        "评价准则",
+        "通过准则",
+        "测试判定"
+      ],
+      "related_subjects": [
+        "所有测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "初始化功能SRS要求：1. 在上电后或者关机态，按按键，体温计能开机并打开LCD显示；2. MCU系统功能初始化，配置相关模块和功能设置。",
+      "topic_tags": [
+        "初始化",
+        "上电",
+        "LCD",
+        "MCU"
+      ],
+      "related_subjects": [
+        "SYS-Init-1",
+        "SYS-Init-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "关机功能SRS要求：1. 测量结束后不管是否测量成功，如果没有按键按下，机器会在15秒后自动关机；2. 模式设置界面，设置完成后，没有按键按下，机器会在15秒后自动关机。",
+      "topic_tags": [
+        "关机",
+        "自动关机",
+        "15秒超时"
+      ],
+      "related_subjects": [
+        "SYS-PowerOff-1",
+        "SYS-PowerOff-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "LCD显示功能SRS要求：1. 首次上电后，LCD全屏显示3秒；2. 在测量完成后，LCD显示测量值；3. LCD能显示相关错误信息；4. 结合体温结果给出发烧提示。",
+      "topic_tags": [
+        "LCD显示",
+        "全屏",
+        "测量值",
+        "错误信息",
+        "发烧提示"
+      ],
+      "related_subjects": [
+        "SYS-LCD-1",
+        "SYS-LCD-2",
+        "SYS-LCD-3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "蜂鸣器提示功能SRS要求：1. 在首次上电时，蜂鸣器长鸣；2. LCD显示测量结果时，根据不同的结果给出不同的响应。",
+      "topic_tags": [
+        "蜂鸣器",
+        "上电提示",
+        "测量结果响应"
+      ],
+      "related_subjects": [
+        "SYS-Beep-1",
+        "SYS-Beep-2",
+        "SYS-Beep-3",
+        "SYS-Beep-4",
+        "SYS-Beep-5"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "低电压检测功能SRS要求：1. 如果电源电压2.5V–2.7V时，上电后，LCD能提示低电压并保存提示状态，直至下次重新上电后再检测；2. 如果电源电压小于2.5V时，LCD提示超低电压后关机，一直保存此状态，直至下次重新上电后再检测。",
+      "topic_tags": [
+        "低电压",
+        "电池检测",
+        "超低电压",
+        "关机保护"
+      ],
+      "related_subjects": [
+        "SYS-BatDetect-1",
+        "SYS-BatDetect-2a",
+        "SYS-BatDetect-2b",
+        "SYS-BatDetect-2c",
+        "SYS-BatDetect-3a",
+        "SYS-BatDetect-3b",
+        "SYS-BatDetect-3c"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测量模式设置功能SRS要求：1. 在测量状态下，短按设置按键选择测量模式；2. 按下测量按键自动确认当前选择；3. 模式选择完成后，15s没有操作，进入关机状态。",
+      "topic_tags": [
+        "测量模式",
+        "模式切换",
+        "按键确认",
+        "15秒超时"
+      ],
+      "related_subjects": [
+        "SYS-ModeSet-1",
+        "SYS-ModeSet-2"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "产品功能描述：红外传感器测量体温。系统测试针对此功能进行附录二的完整系统级验证。",
+      "topic_tags": [
+        "红外传感器",
+        "体温测量",
+        "系统测试"
+      ],
+      "related_subjects": [
+        "所有SYS测试项"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人体体温测量过程中的其他情况测试（状态-操作交叉矩阵）：A2全显状态下，B1-B5所有按键操作均无反应；A3关机状态下，B1短按唤醒测量并显示结果，B2长按2秒完成深度测量/长按8秒进入单位切换模式，B3无反应，B4进入记忆查询模式，B5无反应；A4显示测量结果状态下，B1显示测量结果，B2长按2秒完成深度测量/长按8秒进入单位切换模式，B3切换测量模式，B4进入记忆查询模式，B5显示静音图标；A5模式设置界面状态下，B1退出模式设置界面并保存之前的模式进入测量，B2长按2秒完成深度测量/长按8秒进入单位切换模式，B3切换模式选择，B4进入记忆查询模式，B5显示静音图标。",
+      "topic_tags": [
+        "体温计",
+        "状态机",
+        "按键操作",
+        "测量模式",
+        "静音",
+        "记忆查询"
+      ],
+      "related_subjects": [
+        "测量功能",
+        "单位切换功能",
+        "记忆功能",
+        "模式设置"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "测量功能说明：1. 测量结束后蜂鸣器提示，且LCD显示测量结果；2. 测量结果低于显示下限，LCD显示\"---℃\"；3. 测量结果高于显示上限，LCD显示\"---℃\"。",
+      "topic_tags": [
+        "测量功能",
+        "蜂鸣器",
+        "LCD显示",
+        "显示上下限"
+      ],
+      "related_subjects": [
+        "测量功能测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "错误检测功能说明：1. 工作温度低于温度下限；2. 工作温度高于温度上限。工作温度范围为5℃至42℃，超出范围时LCD显示\"Err\"图标闪烁15秒后关机。",
+      "topic_tags": [
+        "错误检测",
+        "工作温度",
+        "Err显示",
+        "关机"
+      ],
+      "related_subjects": [
+        "错误检测功能测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "记忆功能说明：1. 完成测量后，进入记忆查询界面查询；2. 切换测试模式后，再次进入查询；3. 清空记忆，查看是否有效。记忆查询通过在关机态长按设置键3秒进入记忆浏览模式，可短按设置按键切换显示下一条记录，包含当前测量模式、测量数值和测量记录数。在关机态长按测量键和设置键8秒后清空全部记录。",
+      "topic_tags": [
+        "记忆功能",
+        "记忆查询",
+        "清空记忆",
+        "测量模式",
+        "记录数"
+      ],
+      "related_subjects": [
+        "记忆功能测试"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "单位切换功能说明：通过测量按键切换摄氏度和华氏度单位。在关机时长按测量按键8秒以上进入单位切换模式，单位图标闪烁显示；短按测量按键蜂鸣器短鸣并切换选中单位；长按2秒测量按键确认选择，蜂鸣器短鸣，LCD显示选定单位图标；超过2秒无按键操作体温计进入关机状态。",
+      "topic_tags": [
+        "单位切换",
+        "摄氏度",
+        "华氏度",
+        "按键操作"
+      ],
+      "related_subjects": [
+        "单位切换功能测试"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/测试计划及测试记录E0 23.11/软件测试计划E0 23.11.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "体温计功能测试报告",
+      "to": "01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件测试计划",
+      "to": "红外体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件测试计划",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "单元测试",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "系统测试",
+      "to": "测试方法",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件测试计划",
+      "to": "静态分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "静态分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "单元测试/子程序测试",
+      "to": "子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "附录一",
+      "to": "子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Init",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-PowerOff",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-LCD",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Beep",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-ModeSet",
+      "to": "系统测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "所有测试项",
+      "to": "评价准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Init-1",
+      "to": "初始化",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Init-2",
+      "to": "初始化",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-PowerOff-1",
+      "to": "关机",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-PowerOff-2",
+      "to": "关机",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-LCD-1",
+      "to": "LCD显示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-LCD-2",
+      "to": "LCD显示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-LCD-3",
+      "to": "LCD显示",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Beep-1",
+      "to": "蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Beep-2",
+      "to": "蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Beep-3",
+      "to": "蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Beep-4",
+      "to": "蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-Beep-5",
+      "to": "蜂鸣器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect-1",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect-2a",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect-2b",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect-2c",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect-3a",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect-3b",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-BatDetect-3c",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-ModeSet-1",
+      "to": "测量模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SYS-ModeSet-2",
+      "to": "测量模式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "所有SYS测试项",
+      "to": "红外传感器",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "单位切换功能",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "记忆功能",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "模式设置",
+      "to": "体温计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测量功能测试",
+      "to": "测量功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "错误检测功能测试",
+      "to": "错误检测",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "记忆功能测试",
+      "to": "记忆功能",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "单位切换功能测试",
+      "to": "单位切换",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PA-PAPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PA-PAC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PA-PA",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PB-PBPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PB-PBC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PB-PB",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PC-PCPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PC-PCC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PC-PC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PD-PDPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PD-PDC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PD-PC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PE-PEPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PE-PPEC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIOInit-PE-PE",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PA-PAPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PA-PAC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PA-PA",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PB-PBPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PB-PBC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PB-PB",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PC-PCPU",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "vUserGPIODeinit-PC-PCC",
+      "to": "单元测试/子程序测试",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "单元测试/子程序测试",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "系统测试",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PA-PAPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PA-PAC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PA-PA",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PB-PBPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PB-PBC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PB-PB",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PC-PCPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PC-PCC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PC-PC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PD-PDPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PD-PDC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PD-PC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PE-PEPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PE-PPEC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIOInit-PE-PE",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PA-PAPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PA-PAC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PA-PA",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PB-PBPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PB-PBC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PB-PB",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PC-PCPU",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "vUserGPIODeinit-PC-PCC",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PA-PAPU",
+      "to": "vUserGPIOInit-PA-PAPU",
+      "properties": {
+        "expected_value": "0x0F"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PA-PAC",
+      "to": "vUserGPIOInit-PA-PAC",
+      "properties": {
+        "expected_value": "0x0F"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PA-PA",
+      "to": "vUserGPIOInit-PA-PA",
+      "properties": {
+        "expected_value": "0x00"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PB-PBPU",
+      "to": "vUserGPIOInit-PB-PBPU",
+      "properties": {
+        "expected_value": "0xBF"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PB-PBC",
+      "to": "vUserGPIOInit-PB-PBC",
+      "properties": {
+        "expected_value": "0xBF"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PB-PB",
+      "to": "vUserGPIOInit-PB-PB",
+      "properties": {
+        "expected_value": "0x00"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PC-PCPU",
+      "to": "vUserGPIOInit-PC-PCPU",
+      "properties": {
+        "expected_value": "0xA2"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PC-PCC",
+      "to": "vUserGPIOInit-PC-PCC",
+      "properties": {
+        "expected_value": "0xA2"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PC-PC",
+      "to": "vUserGPIOInit-PC-PC",
+      "properties": {
+        "expected_value": "0x40"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PD-PDPU",
+      "to": "vUserGPIOInit-PD-PDPU",
+      "properties": {
+        "expected_value": "0xFE"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PD-PDC",
+      "to": "vUserGPIOInit-PD-PDC",
+      "properties": {
+        "expected_value": "0xFE"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PD-PC",
+      "to": "vUserGPIOInit-PD-PC",
+      "properties": {
+        "expected_value": "0x04"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PE-PEPU",
+      "to": "vUserGPIOInit-PE-PEPU",
+      "properties": {
+        "expected_value": "0xFF"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PE-PPEC",
+      "to": "vUserGPIOInit-PE-PPEC",
+      "properties": {
+        "expected_value": "0xFF"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIOInit-PE-PE",
+      "to": "vUserGPIOInit-PE-PE",
+      "properties": {
+        "expected_value": "0x00"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PA-PAPU",
+      "to": "vUserGPIODeinit-PA-PAPU",
+      "properties": {
+        "expected_value": "0x97"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PA-PAC",
+      "to": "vUserGPIODeinit-PA-PAC",
+      "properties": {
+        "expected_value": "0x9F"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PA-PA",
+      "to": "vUserGPIODeinit-PA-PA",
+      "properties": {
+        "expected_value": "0x00"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PB-PBPU",
+      "to": "vUserGPIODeinit-PB-PBPU",
+      "properties": {
+        "expected_value": "0xFF"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PB-PBC",
+      "to": "vUserGPIODeinit-PB-PBC",
+      "properties": {
+        "expected_value": "0xFF"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PB-PB",
+      "to": "vUserGPIODeinit-PB-PB",
+      "properties": {
+        "expected_value": "0x00"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PC-PCPU",
+      "to": "vUserGPIODeinit-PC-PCPU",
+      "properties": {
+        "expected_value": "0xBF"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "vUserGPIODeinit-PC-PCC",
+      "to": "vUserGPIODeinit-PC-PCC",
+      "properties": {
+        "expected_value": "0xBF"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {
+        "role": "测试人/更改人",
+        "date": "2024年03月4日"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RJCJ01 V1.0",
+      "properties": {
+        "role": "审核人/批准人"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RJCJ01 V1.0",
+      "to": "01",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "起草",
+        "author": "王迪",
+        "date": "2024年03月4日"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "GPIO端口PA PAPU",
+      "attribute": "初始化预期值",
+      "value": "0x0F",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PA PAPU，预期值0x0F"
+    },
+    {
+      "subject": "GPIO端口PA PAC",
+      "attribute": "初始化预期值",
+      "value": "0x0F",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PA PAC，预期值0x0F"
+    },
+    {
+      "subject": "GPIO端口PA PA",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PA PA，预期值0x00"
+    },
+    {
+      "subject": "GPIO端口PB PBPU",
+      "attribute": "初始化预期值",
+      "value": "0xBF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PB PBPU，预期值0xBF"
+    },
+    {
+      "subject": "GPIO端口PB PBC",
+      "attribute": "初始化预期值",
+      "value": "0xBF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PB PBC，预期值0xBF"
+    },
+    {
+      "subject": "GPIO端口PB PB",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PB PB，预期值0x00"
+    },
+    {
+      "subject": "GPIO端口PC PCPU",
+      "attribute": "初始化预期值",
+      "value": "0xA2",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PC PCPU，预期值0xA2"
+    },
+    {
+      "subject": "GPIO端口PC PCC",
+      "attribute": "初始化预期值",
+      "value": "0xA2",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PC PCC，预期值0xA2"
+    },
+    {
+      "subject": "GPIO端口PC PC",
+      "attribute": "初始化预期值",
+      "value": "0x40",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PC PC，预期值0x40"
+    },
+    {
+      "subject": "GPIO端口PD PDPU",
+      "attribute": "初始化预期值",
+      "value": "0xFE",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PD PDPU，预期值0xFE"
+    },
+    {
+      "subject": "GPIO端口PD PDC",
+      "attribute": "初始化预期值",
+      "value": "0xFE",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PD PDC，预期值0xFE"
+    },
+    {
+      "subject": "GPIO端口PD PC",
+      "attribute": "初始化预期值",
+      "value": "0x04",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PD PC，预期值0x04"
+    },
+    {
+      "subject": "GPIO端口PE PEPU",
+      "attribute": "初始化预期值",
+      "value": "0xFF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PE PEPU，预期值0xFF"
+    },
+    {
+      "subject": "GPIO端口PE PPEC",
+      "attribute": "初始化预期值",
+      "value": "0xFF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PE PPEC，预期值0xFF"
+    },
+    {
+      "subject": "GPIO端口PE PE",
+      "attribute": "初始化预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口初始化",
+      "raw_text": "GPIO端口初始化 - 端口PE PE，预期值0x00"
+    },
+    {
+      "subject": "GPIO端口PA PAPU",
+      "attribute": "Sleep模式预期值",
+      "value": "0x97",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PA PAPU，预期值0x97"
+    },
+    {
+      "subject": "GPIO端口PA PAC",
+      "attribute": "Sleep模式预期值",
+      "value": "0x9F",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PA PAC，预期值0x9F"
+    },
+    {
+      "subject": "GPIO端口PA PA",
+      "attribute": "Sleep模式预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PA PA，预期值0x00"
+    },
+    {
+      "subject": "GPIO端口PB PBPU",
+      "attribute": "Sleep模式预期值",
+      "value": "0xFF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PB PBPU，预期值0xFF"
+    },
+    {
+      "subject": "GPIO端口PB PBC",
+      "attribute": "Sleep模式预期值",
+      "value": "0xFF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PB PBC，预期值0xFF"
+    },
+    {
+      "subject": "GPIO端口PB PB",
+      "attribute": "Sleep模式预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PB PB，预期值0x00"
+    },
+    {
+      "subject": "GPIO端口PC PCPU",
+      "attribute": "Sleep模式预期值",
+      "value": "0xBF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PC PCPU，预期值0xBF"
+    },
+    {
+      "subject": "GPIO端口PC PCC",
+      "attribute": "Sleep模式预期值",
+      "value": "0xBF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PC PCC，预期值0xBF"
+    },
+    {
+      "subject": "GPIO端口PC PC",
+      "attribute": "Sleep模式预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PC PC，预期值0x00"
+    },
+    {
+      "subject": "GPIO端口PD PDPU",
+      "attribute": "Sleep模式预期值",
+      "value": "0xFA",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PD PDPU，预期值0xFA"
+    },
+    {
+      "subject": "GPIO端口PD PDC",
+      "attribute": "Sleep模式预期值",
+      "value": "0xFA",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PD PDC，预期值0xFA"
+    },
+    {
+      "subject": "GPIO端口PD PC",
+      "attribute": "Sleep模式预期值",
+      "value": "0x04",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PD PC，预期值0x04"
+    },
+    {
+      "subject": "GPIO端口PE PEPU",
+      "attribute": "Sleep模式预期值",
+      "value": "0xFF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PE PEPU，预期值0xFF"
+    },
+    {
+      "subject": "GPIO端口PE PPEC",
+      "attribute": "Sleep模式预期值",
+      "value": "0xFF",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PE PPEC，预期值0xFF"
+    },
+    {
+      "subject": "GPIO端口PE PE",
+      "attribute": "Sleep模式预期值",
+      "value": "0x00",
+      "unit": "",
+      "tolerance": "",
+      "condition": "GPIO端口Sleep模式设定",
+      "raw_text": "GPIO端口Sleep模式设定 - 端口PE PE，预期值0x00"
+    },
+    {
+      "subject": "LCD显示值",
+      "attribute": "显示内容",
+      "value": "12.3℃，显示低电符号、静音图标、物温模式图标",
+      "unit": "",
+      "tolerance": "",
+      "condition": "u16DisValue=123; u8MeasureMode=LCD_OBJECT_MODE; u8Point=LCD_POINT_ON; u8Mute=LCD_MUTE_ON; u8BatLow=LCD_BATLABEL_ON_MODE",
+      "raw_text": "LCD显示数据 - Fun_LcdDisplay，预期值12.3℃，显示低电符号、静音图标、物温模式图标"
+    },
+    {
+      "subject": "LCD显示值",
+      "attribute": "显示内容",
+      "value": "123℃，不显示低电符号、静音图标和物温模式图标",
+      "unit": "",
+      "tolerance": "",
+      "condition": "u16DisValue=123; u8MeasureMode=LCD_OBJECT_MODE; u8Point=LCD_POINT_OFF; u8Mute=LCD_MUTE_OFF; u8BatLow=LCD_BATLABEL_OFF_MODE",
+      "raw_text": "LCD显示数据 - Fun_LcdDisplay，预期值123℃，不显示低电符号、静音图标和物温模式图标"
+    },
+    {
+      "subject": "蜂鸣器短鸣",
+      "attribute": "持续时长",
+      "value": "200",
+      "unit": "ms",
+      "tolerance": "",
+      "condition": "mode = BEEP_SHORT",
+      "raw_text": "蜂鸣器驱动 - BeepWork，mode=BEEP_SHORT，短鸣200ms"
+    },
+    {
+      "subject": "蜂鸣器长鸣",
+      "attribute": "持续时长",
+      "value": "500",
+      "unit": "ms",
+      "tolerance": "",
+      "condition": "mode = BEEP_LONG",
+      "raw_text": "蜂鸣器驱动 - BeepWork，mode=BEEP_LONG，长鸣500ms"
+    },
+    {
+      "subject": "蜂鸣器SHORT2_2",
+      "attribute": "开关周期时长",
+      "value": "70",
+      "unit": "ms",
+      "tolerance": "",
+      "condition": "mode = BEEP_SHORT2_2",
+      "raw_text": "蜂鸣器驱动 - BeepWork，mode=BEEP_SHORT2_2，开关各70ms"
+    },
+    {
+      "subject": "蜂鸣器SHORT2_2",
+      "attribute": "延时时长",
+      "value": "200",
+      "unit": "ms",
+      "tolerance": "",
+      "condition": "mode = BEEP_SHORT2_2",
+      "raw_text": "蜂鸣器驱动 - BeepWork，mode=BEEP_SHORT2_2，再延时200ms，重复2次"
+    },
+    {
+      "subject": "蜂鸣器SHORT2_2",
+      "attribute": "重复次数",
+      "value": "2",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "mode = BEEP_SHORT2_2",
+      "raw_text": "蜂鸣器驱动 - BeepWork，mode=BEEP_SHORT2_2，重复2次"
+    },
+    {
+      "subject": "蜂鸣器SHORT4",
+      "attribute": "开关周期时长",
+      "value": "70",
+      "unit": "ms",
+      "tolerance": "",
+      "condition": "mode = BEEP_SHORT4",
+      "raw_text": "蜂鸣器驱动 - BeepWork，mode=BEEP_SHORT4，开关各70ms重复4次"
+    },
+    {
+      "subject": "蜂鸣器SHORT4",
+      "attribute": "重复次数",
+      "value": "4",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "mode = BEEP_SHORT4",
+      "raw_text": "蜂鸣器驱动 - BeepWork，mode=BEEP_SHORT4，开关各70ms重复4次"
+    },
+    {
+      "subject": "人体温度计算",
+      "attribute": "计算输出值",
+      "value": "3630",
+      "unit": "",
+      "tolerance": "",
+      "condition": "envirT=25.9, ntcT=33.1",
+      "raw_text": "计算人体温度 - UserArithCompute，envirT=25.9，ntcT=33.1，预期值3630"
+    },
+    {
+      "subject": "人体温度计算",
+      "attribute": "计算输出值",
+      "value": "3610",
+      "unit": "",
+      "tolerance": "",
+      "condition": "envirT=24.9, ntcT=32.4",
+      "raw_text": "计算人体温度 - UserArithCompute，envirT=24.9，ntcT=32.4，预期值3610"
+    }
+  ]
+}

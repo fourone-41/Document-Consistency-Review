@@ -2,18 +2,10 @@
   "document": {
     "title": "立项批准书",
     "doc_type": "立项批准书",
-    "dhf_stage": "E0",
+    "dhf_stage": "立项",
     "version": "V1.0",
     "date": null
   },
-  "products": [
-    {
-      "product_id": "30000078",
-      "model": "PT9L",
-      "name": "红外体温计",
-      "region": null
-    }
-  ],
   "identifiers": [
     {
       "id_type": "文件编号",
@@ -24,8 +16,20 @@
       "value": "30000078"
     },
     {
-      "id_type": "附件文件编号",
+      "id_type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "客户需求书文件编号",
       "value": "PT9L-KHXQ01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "model": "PT9L",
+      "name": "红外体温计",
+      "region": null
     }
   ],
   "intended_use_items": [
@@ -46,23 +50,6 @@
       "content": "测量部位：额头3cm内"
     }
   ],
-  "persons": [
-    {
-      "name": null,
-      "title": "编制（项目负责人）",
-      "signed": false
-    },
-    {
-      "name": null,
-      "title": "审核（技术负责人）",
-      "signed": false
-    },
-    {
-      "name": null,
-      "title": "批准人",
-      "signed": false
-    }
-  ],
   "semantic_fragments": [
     {
       "fragment_type": "scope_limitation",
@@ -72,27 +59,33 @@
         "非接触式",
         "额头测温",
         "体温计",
-        "家庭使用",
-        "医疗保健"
+        "所有年龄段",
+        "家庭环境",
+        "医疗保健提供者"
       ],
       "related_subjects": [
         "PT9L",
-        "intended_use_items"
+        "红外体温计",
+        "设计输入",
+        "设计验证",
+        "设计确认"
       ]
     },
     {
-      "fragment_type": "constraint_statement",
-      "content": "PT9L红外体温计是公司自主研发的新产品。项目类型：新产品开发。形成设计开发计划的时间要求：1个月内。",
+      "fragment_type": "design_rationale",
+      "content": "PT9L红外体温计是公司自主研发的新产品。项目类型：新产品自主研发。来自于市场或客户的要求详见附录《PT9L 客户需求书 文件编号：PT9L-KHXQ01 V1.0》。形成设计开发计划的时间要求：1个月内。",
       "topic_tags": [
         "项目类型",
-        "自主研发",
         "新产品",
+        "自主研发",
+        "客户需求",
         "设计开发计划",
         "时间要求"
       ],
       "related_subjects": [
         "PT9L",
-        "30000078"
+        "立项批准书",
+        "PT9L-KHXQ01 V1.0"
       ]
     }
   ],
@@ -109,7 +102,25 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "intended_use_items",
+      "from": "红外体温计",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计输入",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计确认",
       "to": "预期用途",
       "properties": {}
     },
@@ -121,32 +132,62 @@
     },
     {
       "type": "HAS_DETAIL",
-      "from": "30000078",
+      "from": "立项批准书",
       "to": "项目类型",
       "properties": {}
     },
     {
-      "type": "COVERS",
-      "from": "scope_limitation_fragment_1",
+      "type": "HAS_DETAIL",
+      "from": "PT9L-KHXQ01 V1.0",
+      "to": "项目类型",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
       "to": "intended_use_seq_1",
       "properties": {}
     },
     {
-      "type": "COVERS",
-      "from": "scope_limitation_fragment_1",
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
       "to": "intended_use_seq_2",
       "properties": {}
     },
     {
-      "type": "COVERS",
-      "from": "scope_limitation_fragment_1",
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
       "to": "intended_use_seq_3",
       "properties": {}
     },
     {
-      "type": "COVERS",
-      "from": "scope_limitation_fragment_1",
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
       "to": "intended_use_seq_4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "design_rationale",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-01",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-01",
+      "to": "design_rationale",
       "properties": {}
     }
   ],

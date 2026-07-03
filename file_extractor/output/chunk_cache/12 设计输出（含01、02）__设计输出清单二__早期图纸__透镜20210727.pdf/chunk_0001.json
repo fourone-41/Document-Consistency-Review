@@ -1,0 +1,256 @@
+{
+  "document": {
+    "title": "透镜（T-Z1-P09 V1.0）2D图读图",
+    "document_number": "T-Z1-P09",
+    "version": "V1.0",
+    "date": "2021-07-15",
+    "status": "早期版（推测为当前生产用最新版）",
+    "source_file": "早期图纸/透镜20210727.pdf",
+    "page_format": "A4竖向",
+    "scale": "1:1",
+    "tolerance_level": "LEVEL B",
+    "notes": "本仓库图纸目录未发现现版透镜图纸，本图可能就是当前生产用的最新版（V1.0沿用至今）"
+  },
+  "products": [
+    {
+      "name": "透镜",
+      "part_number": "T-Z1-P09",
+      "version": "V1.0",
+      "material": "PMMA（透明亚克力）",
+      "overall_dimensions": "25.8mm × 41.8mm × 1.0mm（PMMA主厚，不含背胶）",
+      "assembled_thickness": "1.1~1.2mm（含3M背胶）",
+      "corner_radius": "R12.9",
+      "description": "LCD上方保护视窗，带银色丝印边框及3M背胶"
+    }
+  ],
+  "components": [
+    {
+      "name": "透镜本体",
+      "material": "透明PMMA",
+      "thickness": "1.0mm",
+      "dimensions": "25.8mm × 41.8mm"
+    },
+    {
+      "name": "3M背胶",
+      "description": "粘贴在上盖LCD窗口内侧，背胶变形边距0.2mm×0.2mm",
+      "thickness": "0.1~0.2mm",
+      "notes": "具体3M型号待确认（影响耐温/耐酒精/耐UV）"
+    },
+    {
+      "name": "银色丝印层",
+      "description": "印刷面，丝印区域颜色为PANTONE Silver 1007C 50%（金属银色印刷）",
+      "notes": "遮挡液晶外形（22×31.50mm）以外的内腔结构"
+    },
+    {
+      "name": "上盖",
+      "part_number": "T-Z1-上盖",
+      "version": "v3.0",
+      "source_file": "../图纸/T-Z1-上盖-v3.0-20240627.pdf",
+      "description": "配合件，LCD窗口22.2×26.5mm"
+    },
+    {
+      "name": "液晶",
+      "part_number": "PT9L-液晶",
+      "source_file": "../图纸/PT9L-液晶-20240627.pdf",
+      "dimensions": "22.00mm × 31.50mm"
+    },
+    {
+      "name": "斑马条",
+      "dimensions": "22mm × 4.25mm"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "category": "材料",
+      "description": "材质：透明PMMA"
+    },
+    {
+      "id": "REQ-2",
+      "category": "外观",
+      "description": "毛刺、飞边不大于0.1mm"
+    },
+    {
+      "id": "REQ-3",
+      "category": "外观/结构",
+      "description": "厚度含背胶，不允许气泡、划痕及保护膜"
+    },
+    {
+      "id": "REQ-4",
+      "category": "背胶质量",
+      "description": "要求背胶平面，均匀，无缺胶，无破气，与板特粘贴牢固"
+    },
+    {
+      "id": "REQ-5",
+      "category": "外观",
+      "description": "透感且上表面有保护膜"
+    },
+    {
+      "id": "REQ-6",
+      "category": "硬度",
+      "description": "内外表面抛光保硬度不小于4H"
+    },
+    {
+      "id": "REQ-7",
+      "category": "法规符合性",
+      "description": "本件要求通过RoHS 2.0测试"
+    },
+    {
+      "id": "REQ-8",
+      "category": "印刷",
+      "description": "印刷面：丝印区域颜色为PANTONE Silver 1007C 50%（金属银色印刷）"
+    },
+    {
+      "id": "REQ-9",
+      "category": "厚度",
+      "description": "印刷后，背胶3M背胶，粘胶后产品整体厚度1.1~1.2mm之间"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "尺寸",
+      "parameter": "透镜水平向总长",
+      "dimension_id": "①",
+      "value": 25.8,
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "grade": "A级",
+      "view": "正面顶部水平向"
+    },
+    {
+      "category": "尺寸",
+      "parameter": "透镜竖向总长",
+      "dimension_id": "②",
+      "value": 41.8,
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "grade": "A级",
+      "view": "正面右侧竖向"
+    },
+    {
+      "category": "尺寸",
+      "parameter": "视区边距",
+      "values": [
+        "3.9mm",
+        "8.4mm"
+      ],
+      "description": "视区到边距"
+    },
+    {
+      "category": "尺寸",
+      "parameter": "PMMA主厚（不含背胶）",
+      "value": 1.0,
+      "unit": "mm"
+    },
+    {
+      "category": "尺寸",
+      "parameter": "圆角",
+      "value": "R12.9mm"
+    },
+    {
+      "category": "尺寸",
+      "parameter": "3M背胶变形边距",
+      "value": "0.2mm × 0.2mm",
+      "view": "背面"
+    },
+    {
+      "category": "配合尺寸",
+      "parameter": "整体配合厚度",
+      "value": "1.1~1.2mm",
+      "formula": "1.0mm（PMMA）+ 0.1~0.2mm（3M背胶）"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "有害物质限制指令，本件要求通过RoHS 2.0测试"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "grade": "待确认",
+      "description": "现版图纸目录未发现\"透镜.pdf\"——本早期V1.0是否就是当前生产版？"
+    },
+    {
+      "id": "C-2",
+      "grade": "待确认",
+      "description": "PANTONE Silver 1007C 50%是否仍是当前色卡（与上盖LOGO取消是否相关）"
+    },
+    {
+      "id": "C-3",
+      "grade": "待确认",
+      "description": "3M背胶具体型号（影响耐温/耐酒精/耐UV）"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "T-Z1-P09"
+    },
+    {
+      "type": "颜色标准",
+      "value": "PANTONE Silver 1007C 50%"
+    },
+    {
+      "type": "材料标准",
+      "value": "PMMA"
+    },
+    {
+      "type": "法规",
+      "value": "RoHS 2.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "透镜关键技术特征：PMMA透明+4H抛光，高硬度透明材料，作为LCD上方保护视窗；PANTONE Silver 1007C 50%银色丝印作为装饰边框（产品工业设计的重要外观特征）；3M背胶粘贴在上盖LCD窗口内侧；整体外形25.8×41.8mm与上盖LCD窗口（22.2×26.5）相配（覆盖留边）。",
+      "topic_tags": [
+        "PMMA",
+        "4H抛光",
+        "银色丝印",
+        "3M背胶",
+        "LCD保护视窗",
+        "工业设计"
+      ],
+      "related_subjects": [
+        "透镜",
+        "上盖",
+        "液晶",
+        "T-Z1-P09"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "装配链推断（B级）：透镜25.8×41.8mm贴在上盖LCD窗口外侧（22.2内腔+周边贴附区）；上盖窗口内侧对应液晶22.00×31.50mm+斑马条22×4.25mm+主板焊盘；透镜的银色边框遮挡液晶外形（22×31.50mm）以外的内腔结构。",
+      "topic_tags": [
+        "装配链",
+        "LCD窗口",
+        "银色边框遮挡",
+        "斑马条",
+        "主板焊盘"
+      ],
+      "related_subjects": [
+        "透镜",
+        "上盖",
+        "液晶",
+        "斑马条"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "文档定位说明：本文档为T-Z1-P09初版V1.0的早期版读图归档，源文件为\"早期图纸/透镜20210727.pdf\"（A4竖向，文字层167字符）。本仓库图纸目录未发现\"透镜\"对应的现版图纸，本图可能就是当前生产用的最新版（同V1.0沿用至今）。如有ECN修订请补到../图纸/目录。",
+      "topic_tags": [
+        "早期版",
+        "版本管理",
+        "ECN",
+        "归档",
+        "V1.0"
+      ],
+      "related_subjects": [
+        "T-Z1-P09",
+        "图纸目录"
+      ]
+    }
+  ]
+}

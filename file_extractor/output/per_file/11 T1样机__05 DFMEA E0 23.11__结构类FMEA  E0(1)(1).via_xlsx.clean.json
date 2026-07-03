@@ -1,0 +1,1311 @@
+{
+  "document": {
+    "title": "探测度(D) 判定准则表",
+    "doc_type": "检测报告/测试报告-评级准则",
+    "version": "V1.0"
+  },
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "当前文件片段为结构类FMEA文档的开头部分，仅包含文档标题及hybrid clean-md格式说明，尚未呈现具体的FMEA分析内容（如失效模式、失效影响、严重度、发生率、可检测性等）。",
+      "topic_tags": [
+        "FMEA",
+        "结构类",
+        "失效模式分析"
+      ],
+      "related_subjects": [
+        "结构类FMEA"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "文档格式说明：hybrid clean-md（excel）：每个Sheet的表用GFM重建（合并格按rowspan向下继承、满行说明铺成段落）；保留全部文字、复选框与图片；不保留HTML表格标签。涉及严格行列/签字仍回查.via_xlsx.md。",
+      "topic_tags": [
+        "文档格式",
+        "GFM",
+        "Excel转换",
+        "hybrid clean-md"
+      ],
+      "related_subjects": [
+        "结构类FMEA  E0(1)(1)"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "包装类FMEA分析，产品型号KD-5915L，FMEA小组由硬件工程师、硬件主管、结构工程师、结构主管组成。各失效模式分析如下：\n1. 电池：功能-给血压计供电；失效模式-电池无法装入电池仓；失效结果-用户无法测量；S=8，分类B；原因-电池的尺寸超出设计要求；O=3；探测-实际装配；D=5；RPN=120；拟采取措施-尺寸检验；措施后S=8，O=3，D=2，RPN=48；检查方式-检查尺寸检测报告。\n2. 彩包装：功能-包装血压计；失效模式-腕枕无法装入彩包装或腕枕装入彩包装后晃动量太大；失效结果-生产人员无法包装；S=4，分类C；原因-彩包装的尺寸设计不合理；O=2；探测-实际装配；D=2；RPN=16。\n3. 彩包装：失效模式-彩包装支撑强度不够；失效结果-彩包装褶皱或破损；S=4，分类C；原因-彩包装的材质强度不够；O=3；探测-跌落试验、运输试验；D=2；RPN=24。\n4. 彩包装：失效模式-标识不清楚、内容不全面；失效结果-用户误用；S=9，分类A；原因-说明书印刷油墨质量不好、未完全符合法规要求；O=4；探测-目测检查、法规符合性检查；D=5；RPN=180；拟采取措施-标识内容及可识别度检验；措施后S=9，O=4，D=1，RPN=36；检查方式-检查检验记录。\n5. 铭牌：功能-给用户关于机器的信息；失效模式-铭牌在运输过程中脱落；失效结果-用户无法识别血压计的相关法规信息、用户误用；S=4，分类C；原因-铭牌背胶强度不够；O=3；探测-跌落试验、运输试验；D=2；RPN=24。\n6. 铭牌：失效模式-铭牌印刷内容容易被擦拭掉；失效结果-用户无法识别血压计的相关法规信息、用户误用；S=4，分类C；原因-铭牌未覆膜；O=2；探测-依IEC60601-1:2005电气安全通用要求中7.1.3标记耐久性要求对铭牌进行试验；D=2；RPN=16。\n7. 铭牌：失效模式-标识不清楚、内容不全面；失效结果-用户无法识别血压计的相关法规信息、用户误用；S=9，分类A；原因-印刷油墨质量不好、未完全符合法规要求；O=4；探测-目测检查、法规符合性检查；D=5；RPN=180；拟采取措施-铭牌内容及可识别度检验；措施后S=9，O=4，D=1，RPN=36；检查方式-检查检验记录。\n8. 说明书：功能-给用户关于机器使用的信息；失效模式-说明书印刷不够清楚；失效结果-用户无法识别血压计使用的相关信息；S=4，分类C；原因-说明书印刷油墨质量不好；O=2；探测-实际使用；D=1；RPN=8。\n9. 说明书：失效模式-标识不清楚、内容不全面；失效结果-用户误用；S=9，分类A；原因-说明书印刷油墨质量不好、未完全符合法规要求；O=4；探测-目测检查、法规符合性检查；D=5；RPN=180；拟采取措施-说明书内容及可识别度检验；措施后S=9，O=4，D=1，RPN=36；检查方式-检查检验记录。\n10. 内包装袋：功能-装入血压计整机；失效模式-内包装袋破裂；失效结果-内包装袋强度不够；S=4，分类C；原因-1.布料壁厚不足 2.使用材料强度不够；O=2；探测-跌落试验、运输试验；D=2；RPN=16。\n11. 外箱：功能-包装彩包装；失效模式-彩包装无法装入外箱或彩包装装入外箱后晃动量太大；失效结果-生产人员无法包装；S=4，分类C；原因-外箱尺寸设计不合理；O=2；探测-实际装配；D=2；RPN=16。\n12. 外箱：失效模式-外箱支撑强度不够；失效结果-外箱褶皱或破损；S=4，分类C；原因-外箱的材质强度不够；O=2；探测-跌落试验、运输试验；D=1；RPN=8。\n13. 外箱标签：功能-包装彩包装；失效模式-外箱标签印刷不够清楚；失效结果-用户无法识别机器包装的相关信息；S=4，分类C；原因-外箱标签印刷油墨质量不好；O=2；探测-实际使用；D=1；RPN=8。\n14. 健康问答：功能-提示用户健康方面知识；失效模式-印刷不够清楚；失效结果-用户无法识别健康方面提示信息。\n15. 信誉卡：功能-给用户关于信誉信息；失效模式-印刷不够清楚；失效结果-用户无法识别信誉卡信息。\n16. 售后服务卡：功能-给用户关于售后服务信息；失效模式-印刷不够清楚；失效结果-用户无法识别售后服务信息。\n17. 防漏液标签：功能-提示用户长时间不用卸下电池；失效模式-印刷不够清楚；失效结果-用户无法识别电池使用的注意事项信息。\n18. 塑料袋：功能-包装整机；失效模式-塑料袋破损；失效结果-生产人员无法包装。\n19. 封口签：功能-粘合彩包装；失效模式-封口签翘起；失效结果-影响外观。\n20. 合格证：功能-提供机器合格的信息；失效模式-标签印刷不够清楚、在运输过程中丢失；失效结果-用户无法识别相关信息；S=4，分类C；原因-标签印刷油墨质量不好，背胶强度不够；O=3；探测-实际使用、跌落试验、运输试验；D=2；RPN=24。",
+      "topic_tags": [
+        "FMEA",
+        "包装类",
+        "失效模式",
+        "风险分析",
+        "血压计",
+        "KD-5915L",
+        "RPN",
+        "严重度",
+        "频度",
+        "探测度"
+      ],
+      "related_subjects": [
+        "KD-5915L",
+        "KD-XXXX-PDFM01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "辅料类Design FMEA分析内容（产品型号KD-5915L，FMEA编号KD-XXXX-ODFM01 V1.0，版本V1.0）：\n1. 袖带总成-气插嘴：功能为连接气路，失效模式为袖带接嘴与气嘴、气管连接漏气，失效结果为不能正常测量，严重度S=8，分类C，失效原因：气插嘴装配深度不够/气插嘴配合不够紧密，频度O=3，探测方式：型式试验，探测度D=2，RPN=48，无后续措施记录。\n2. 袖带总成-气囊（条目1）：功能为充气后感应信号，失效模式为气囊漏气，失效结果为无法实现测量功能，S=8，分类C，失效原因：气囊热合不好，O=3，探测方式：跌落试验、运输试验，D=2，RPN=48，拟采取措施：气囊耐压力测试，措施后S=8，O=3，D=1，RPN=24，检查项目：检查产品检验标准的气囊耐压力检验项目。\n3. 袖带总成-气囊（条目2）：同上，S=8，分类C，O=3，D=2，RPN=48，无后续措施记录。\n4. 袖带总成-标识：功能为提示用户合适的臂围，失效模式为用户使用了不合适臂围的腕带，失效结果为测量不准，S=8，分类B，失效原因：无标识/标识印刷不清楚/标识脱落，O=3，探测方式：目测检查、跌落试验、运输试验，D=3，RPN=72，拟采取措施：目测检验袖带标识，措施后S=8，O=3，D=2，RPN=48，检查项目：检查产品检验标准的袖带标识检验项目。\n5. 气芯总成：功能为控制放气速度，失效模式为气芯总成气嘴堵塞，失效结果为不能正常测量，S=9，分类B，失效原因：气嘴中间有异物，O=3，探测方式：功能检验，D=3，RPN=81，拟采取措施：慢速放气测试，措施后S=9，O=3，D=2，RPN=54，检查项目：检查产品检验标准的气芯放气速度检验项目。\n6. 气路胶管（条目1）：功能为连接气路，失效模式为气路胶管与迷宫、电磁阀、泵、二通漏气或脱落，失效结果为不能正常测量，S=8，分类C，失效原因：胶管与迷宫、电磁阀、泵、二通的配合强度不够，O=2，探测方式：跌落试验、运输试验、气密性试验，D=2，RPN=32，无后续措施记录。\n7. 气路胶管（条目2）：功能为连接气路，失效模式为气路胶管漏气，失效结果为不能正常测量，S=8，分类C，失效原因：胶管漏气，O=3，探测方式：跌落试验、运输试验、气密性试验，D=2，RPN=48，无后续措施记录。\n8. 胶带：功能为固定锅仔片，失效模式为锅仔片脱落，失效结果为不能正常开启，S=8，分类C，失效原因：胶带粘性不足，O=2，探测方式：功能检验，D=2，RPN=32，无后续措施记录。",
+      "topic_tags": [
+        "FMEA",
+        "辅料类",
+        "袖带总成",
+        "气芯总成",
+        "气路胶管",
+        "胶带",
+        "失效模式",
+        "RPN",
+        "风险分析"
+      ],
+      "related_subjects": [
+        "KD-5915L",
+        "KD-XXXX-ODFM01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "FMEA小组成员构成：硬件工程师、硬件主管、结构工程师、结构主管。成员姓名、签名及日期均未填写。措施执行检查结果栏设有检查人员签名和审核人员签名，均未填写。",
+      "topic_tags": [
+        "FMEA小组",
+        "硬件工程师",
+        "硬件主管",
+        "结构工程师",
+        "结构主管",
+        "签名"
+      ],
+      "related_subjects": [
+        "KD-XXXX-ODFM01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "总装类FMEA分析，产品型号PT9L，FMEA小组：丛明、侯广伟、万龙、刘钊。各部件失效模式分析如下：\n1. 下盖（固定及保护内部元件，支撑外形）：\n   - 完整度被破坏/碎裂 → 不能正常测量，S=9，O=1，D=2，RPN=18；原因：壳体壁厚不足/材料强度不够；控制：严控注塑工艺、注塑件外观检查、跌落/运输试验\n   - 外壳漏电流 → 患者/操作者触及带电部件，S=9，分类B，O=3，D=3，RPN=81；措施：漏电流、电介质强度测试，措施后RPN=27\n   - 上盖未固定住 → 上盖与下盖脱开，S=5，O=2，D=2，RPN=20；原因：固定结构设计不合理\n2. 上盖（固定及保护内部元件，支撑外形）：\n   - 完整度被破坏/碎裂 → 不能正常测量，S=9，O=1，D=2，RPN=18\n   - 外壳漏电流 → 患者/操作者触及带电部件，S=9，分类B，O=3，D=3，RPN=81；措施后RPN=27\n   - 下盖未固定住 → 上盖与下盖脱开，S=5，O=2，D=2，RPN=20\n3. 电池盖（与下配合后固定电池）：\n   - 完整度被破坏/碎裂 → 无法遮挡电池，S=5，O=1，D=2，RPN=10\n   - 电池盖与下盖配合松，非常容易脱落 → 使用过程中电池盖脱落，S=8，分类B，O=3，D=3，RPN=72；措施：拉力测试，措施后RPN=24\n4. 透镜（与上盖粘贴固定，支撑外形，印刷后优化显示效果）：\n   - 透镜断差大，易划手 → 顾客对外观不满，S=8，分类B，O=5，D=2，RPN=80；措施：来料管控，措施后RPN=30\n   - 印刷不良，显示效果差 → 顾客对外观不满，S=8，分类C，O=5，D=1，RPN=40\n5. 保护盖（保护探头）：\n   - 配合不紧 → 无法起到保护作用，S=8，分类B，O=5，D=2，RPN=80；措施：来料管控，措施后RPN=30\n6. 开关帽（控制按键）：\n   - 按键动作不良 → 功能不良，S=9，分类B，O=5，D=2，RPN=90；措施：对成品进行100%按键复测，措施后RPN=45\n7. 支架（固定传感器）：\n   - 传感器与支架同心度差 → 影响准确度，S=9，分类B，O=5，D=2，RPN=90；措施：对成品进行100%黑体复测，措施后RPN=45\n8. 压块（固定波导管）：\n   - 波导管固定偏差 → 影响准确度，S=9，分类B，O=5，D=2，RPN=90；措施：对成品进行100%黑体复测，措施后RPN=45\n9. 压块（固定传感器PCB）：\n   - 传感器PCB固定不良 → 影响准确度，S=9，分类B，O=5，D=2，RPN=90；措施：对成品进行100%黑体复测，措施后RPN=45\n10. 正极弹簧/负极弹簧/双联簧（连接电路，固定电池）：\n    - 弹簧脱落/电池容易脱落 → 不能正常测量，S=8，分类C，O=3，D=2，RPN=48\n11. 自攻螺钉（固定PCB）：\n    - 螺钉连接强度不够 → PCB跌落后散落，S=9，分类C，O=1，D=2，RPN=18\n12. 连接线（连接电路）：\n    - 连接线焊接后脱落或折断 → 不能正常测量，S=9，分类C，O=1，D=2，RPN=18\n13. 保护膜（防尘进入机器）：\n    - 保护膜破损 → 顾客满意度下降，S=5，分类C，O=3，D=3，RPN=45",
+      "topic_tags": [
+        "FMEA",
+        "总装",
+        "失效模式",
+        "RPN",
+        "PT9L",
+        "风险分析",
+        "漏电流",
+        "黑体测试",
+        "跌落试验"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT9L-ADFM01",
+        "下盖",
+        "上盖",
+        "电池盖",
+        "透镜",
+        "保护盖",
+        "开关帽",
+        "支架",
+        "压块",
+        "弹簧",
+        "连接线"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "严重度(S)评级准则：无警告的严重危害（级别10）：潜在失效模式影响血压计的安全运行和/或包含不符合法规情形，失效发生时无预警，会危及使用者；有警告的严重危害（级别9）：潜在失效模式影响血压计的安全运行和/或包含不符合法规情形，失效发生时有预警，会危及使用者；很高（级别8）：血压计无法运行，丧失基本功能，顾客很不满意；高（级别7）：血压计能运行，但性能下降，顾客很不满意；中等（级别6）：血压计能运行，但丧失部分功能，顾客不满意；低（级别5）：血压计能运行，但部分功能性能下降，顾客有些不满意；很低（级别4）：装配/外观或其他小细节不符合要求，多数顾客（超过75%）发现有缺陷；轻微（级别3）：装配/外观或其他小细节不符合要求，多数顾客（大约50%）发现有缺陷；很轻微（级别2）：装配/外观或其他小细节不符合要求，多数顾客（少于25%）发现有缺陷；无（级别1）：无可识别的影响。",
+      "topic_tags": [
+        "严重度",
+        "FMEA",
+        "风险评估",
+        "血压计",
+        "安全危害"
+      ],
+      "related_subjects": [
+        "FMEA分析",
+        "风险管理",
+        "血压计"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "频度(O)评级准则：很高（级别10）：持续性发生的失效，可能失效率≥10%，PPM=100000；很高（级别9）：持续性发生的失效，可能失效率0.05，PPM=50000；高（级别8）：反复发生的失效，可能失效率0.02，PPM=20000；高（级别7）：反复发生的失效，可能失效率0.01，PPM=10000；中等（级别6）：偶尔发生的失效，可能失效率0.005，PPM=2000；中等（级别5）：偶尔发生的失效，可能失效率0.002，PPM=500；中等（级别4）：偶尔发生的失效，可能失效率0.001，PPM=100；低（级别3）：相对很少发生的失效，可能失效率500ppm，PPM=10；低（级别2）：相对很少发生的失效，可能失效率100ppm，PPM=1；极低（级别1）：失效不太可能发生，可能失效率＜10ppm。",
+      "topic_tags": [
+        "频度",
+        "FMEA",
+        "风险评估",
+        "失效率",
+        "PPM"
+      ],
+      "related_subjects": [
+        "FMEA分析",
+        "风险管理",
+        "血压计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "探测度(D)判定准则表，描述设计控制探测潜在原因/机制及后续失效模式的可能性等级，共10级：\n1. 绝对不可能（Ranking 10，<5%）：没有设计控制，或控制无法探测潜在原因/机制及后续失效模式。\n2. 极微小（Ranking 9，0.15）：设计控制探测能力极弱（在任何阶段均不可能探测到）；虚拟分析与预期实际工作条件不相关。\n3. 微小（Ranking 8，0.25）：设计冻结后、发布前的系统/产品验证/确认，采用通过/失败测试（如乘坐与操控、运输、评估等子系统或系统测试）。\n4. 很少（Ranking 7，0.35）：设计冻结后、发布前的系统/产品验证/确认，采用失效测试（子系统或系统测试直至发生失效，系统交互测试等）。\n5. 少（Ranking 6，0.45）：设计冻结后、发布前的系统/产品验证/确认，采用退化测试（耐久性测试后的子系统或系统测试，如功能检查）。\n6. 中等（Ranking 5，0.55）：设计冻结前的系统/产品确认（可靠性测试、开发或确认测试），采用通过/失败测试（如性能验收准则、功能检查等）。\n7. 中上（Ranking 4，0.65）：设计冻结前的系统/产品确认，采用失效测试（如直到泄漏、屈服、开裂等）。\n8. 高（Ranking 3，0.75）：设计冻结前的系统/产品确认，采用退化测试（如数据趋势、前后值对比等）。\n9. 很高（Ranking 2，0.85）：设计分析/探测控制具有强探测能力；虚拟分析与设计冻结前的实际或扩展工作条件高度相关。\n10. 几乎肯定（Ranking 1，>95%）：失效原因或失效模式完全通过设计方案预防而无法发生（如经验证的设计标准、最佳实践或通用材料等）。",
+      "topic_tags": [
+        "探测度",
+        "DFMEA",
+        "设计控制",
+        "失效模式",
+        "评级准则",
+        "Detection Ranking"
+      ],
+      "related_subjects": [
+        "DFMEA",
+        "风险分析",
+        "设计验证",
+        "设计确认"
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "FMEA编号",
+      "value": "KD-XXXX-PDFM01 V1.0"
+    },
+    {
+      "id_type": "FMEA版本",
+      "value": "V1.0"
+    },
+    {
+      "id_type": "FMEA编号",
+      "value": "KD-XXXX-ODFM01 V1.0"
+    },
+    {
+      "id_type": "FMEA编号",
+      "value": "PT9L-ADFM01"
+    },
+    {
+      "id_type": "FMEA版本",
+      "value": "V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "KD-5915L",
+      "name": "血压计"
+    },
+    {
+      "product_id": "KD-5915L",
+      "name": "辅料类（袖带总成、气芯总成、气路胶管、胶带）"
+    },
+    {
+      "name": "PT9L",
+      "product_id": "PT9L"
+    }
+  ],
+  "persons": [
+    {
+      "title": "硬件工程师"
+    },
+    {
+      "title": "硬件主管"
+    },
+    {
+      "title": "结构工程师"
+    },
+    {
+      "title": "结构主管"
+    },
+    {
+      "name": "万龙",
+      "title": "硬件工程师"
+    },
+    {
+      "name": "侯广伟",
+      "title": "硬件主管/结构主管"
+    },
+    {
+      "name": "刘钊",
+      "title": "结构工程师"
+    },
+    {
+      "name": "丛明",
+      "title": "FMEA小组成员"
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/05 DFMEA E0 23.11/结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "结构类FMEA",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "结构类FMEA  E0(1)(1)",
+      "to": "文档格式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "KD-5915L",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "KD-XXXX-PDFM01",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "KD-XXXX-ODFM01",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "KD-XXXX-ODFM01",
+      "to": "FMEA小组",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-ADFM01",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "下盖",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "上盖",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "电池盖",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透镜",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护盖",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "开关帽",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支架",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "压块",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "弹簧",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "连接线",
+      "to": "FMEA",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "FMEA分析",
+      "to": "严重度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险管理",
+      "to": "严重度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计",
+      "to": "严重度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "FMEA分析",
+      "to": "频度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险管理",
+      "to": "频度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "血压计",
+      "to": "频度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DFMEA",
+      "to": "探测度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险分析",
+      "to": "探测度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计验证",
+      "to": "探测度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计确认",
+      "to": "探测度",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "KD-5915L",
+      "to": "KD-XXXX-PDFM01 V1.0",
+      "properties": {
+        "fmea_type": "包装类FMEA"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "KD-5915L",
+      "to": "KD-XXXX-ODFM01 V1.0",
+      "properties": {
+        "fmea_type": "辅料类FMEA"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "PT9L",
+      "to": "PT9L-ADFM01",
+      "properties": {
+        "fmea_type": "总装类FMEA"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "电池无法装入电池仓",
+      "to": "尺寸检验",
+      "properties": {
+        "product": "KD-5915L",
+        "D_before": 5,
+        "D_after": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "标识不清楚、内容不全面（彩包装）",
+      "to": "目测检查、法规符合性检查",
+      "properties": {
+        "product": "KD-5915L",
+        "D_before": 5,
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "铭牌印刷内容容易被擦拭掉",
+      "to": "依IEC60601-1:2005中7.1.3标记耐久性要求试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "标识不清楚、内容不全面（铭牌）",
+      "to": "目测检查、法规符合性检查",
+      "properties": {
+        "product": "KD-5915L",
+        "D_before": 5,
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "标识不清楚、内容不全面（说明书）",
+      "to": "目测检查、法规符合性检查",
+      "properties": {
+        "product": "KD-5915L",
+        "D_before": 5,
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "彩包装支撑强度不够",
+      "to": "跌落试验、运输试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "铭牌在运输过程中脱落",
+      "to": "跌落试验、运输试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "内包装袋破裂",
+      "to": "跌落试验、运输试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "外箱支撑强度不够",
+      "to": "跌落试验、运输试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "合格证失效模式",
+      "to": "实际使用、跌落试验、运输试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "袖带接嘴与气嘴、气管连接漏气",
+      "to": "型式试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "气囊漏气",
+      "to": "跌落试验、运输试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D_before": 2,
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "气囊漏气",
+      "to": "气囊耐压力测试",
+      "properties": {
+        "product": "KD-5915L",
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "用户使用了不合适臂围的腕带",
+      "to": "目测检查、跌落试验、运输试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D_before": 3,
+        "D_after": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "气芯总成气嘴堵塞",
+      "to": "功能检验",
+      "properties": {
+        "product": "KD-5915L",
+        "D_before": 3
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "气芯总成气嘴堵塞",
+      "to": "慢速放气测试",
+      "properties": {
+        "product": "KD-5915L",
+        "D_after": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "气路胶管与迷宫、电磁阀、泵、二通漏气或脱落",
+      "to": "跌落试验、运输试验、气密性试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "气路胶管漏气",
+      "to": "跌落试验、运输试验、气密性试验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "锅仔片脱落",
+      "to": "功能检验",
+      "properties": {
+        "product": "KD-5915L",
+        "D": 2
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "外壳漏电流（下盖）",
+      "to": "漏电流、电介质强度测试",
+      "properties": {
+        "product": "PT9L",
+        "D_before": 3,
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "外壳漏电流（上盖）",
+      "to": "漏电流、电介质强度测试",
+      "properties": {
+        "product": "PT9L",
+        "D_before": 3,
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "电池盖与下盖配合松非常容易脱落",
+      "to": "拉力测试",
+      "properties": {
+        "product": "PT9L",
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "传感器与支架同心度差",
+      "to": "100%黑体复测",
+      "properties": {
+        "product": "PT9L",
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "波导管固定偏差",
+      "to": "100%黑体复测",
+      "properties": {
+        "product": "PT9L",
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "传感器PCB固定不良",
+      "to": "100%黑体复测",
+      "properties": {
+        "product": "PT9L",
+        "D_after": 1
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "按键动作不良",
+      "to": "100%按键复测",
+      "properties": {
+        "product": "PT9L",
+        "D_after": 1
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "电池无法装入电池仓",
+      "to": "RPN=120",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 5,
+        "RPN": 120,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "电池无法装入电池仓",
+      "to": "RPN=48",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 2,
+        "RPN": 48,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "彩包装：腕枕无法装入或晃动量太大",
+      "to": "RPN=16",
+      "properties": {
+        "S": 4,
+        "O": 2,
+        "D": 2,
+        "RPN": 16
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "彩包装支撑强度不够",
+      "to": "RPN=24",
+      "properties": {
+        "S": 4,
+        "O": 3,
+        "D": 2,
+        "RPN": 24
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "标识不清楚内容不全面（彩包装）",
+      "to": "RPN=180",
+      "properties": {
+        "S": 9,
+        "O": 4,
+        "D": 5,
+        "RPN": 180,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "标识不清楚内容不全面（彩包装）",
+      "to": "RPN=36",
+      "properties": {
+        "S": 9,
+        "O": 4,
+        "D": 1,
+        "RPN": 36,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "铭牌在运输过程中脱落",
+      "to": "RPN=24",
+      "properties": {
+        "S": 4,
+        "O": 3,
+        "D": 2,
+        "RPN": 24
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "铭牌印刷内容容易被擦拭掉",
+      "to": "RPN=16",
+      "properties": {
+        "S": 4,
+        "O": 2,
+        "D": 2,
+        "RPN": 16
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "标识不清楚内容不全面（铭牌）",
+      "to": "RPN=180",
+      "properties": {
+        "S": 9,
+        "O": 4,
+        "D": 5,
+        "RPN": 180,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "标识不清楚内容不全面（铭牌）",
+      "to": "RPN=36",
+      "properties": {
+        "S": 9,
+        "O": 4,
+        "D": 1,
+        "RPN": 36,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "说明书印刷不够清楚",
+      "to": "RPN=8",
+      "properties": {
+        "S": 4,
+        "O": 2,
+        "D": 1,
+        "RPN": 8
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "标识不清楚内容不全面（说明书）",
+      "to": "RPN=180",
+      "properties": {
+        "S": 9,
+        "O": 4,
+        "D": 5,
+        "RPN": 180,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "标识不清楚内容不全面（说明书）",
+      "to": "RPN=36",
+      "properties": {
+        "S": 9,
+        "O": 4,
+        "D": 1,
+        "RPN": 36,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "内包装袋破裂",
+      "to": "RPN=16",
+      "properties": {
+        "S": 4,
+        "O": 2,
+        "D": 2,
+        "RPN": 16
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "彩包装无法装入外箱或晃动量太大",
+      "to": "RPN=16",
+      "properties": {
+        "S": 4,
+        "O": 2,
+        "D": 2,
+        "RPN": 16
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "外箱支撑强度不够",
+      "to": "RPN=8",
+      "properties": {
+        "S": 4,
+        "O": 2,
+        "D": 1,
+        "RPN": 8
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "外箱标签印刷不够清楚",
+      "to": "RPN=8",
+      "properties": {
+        "S": 4,
+        "O": 2,
+        "D": 1,
+        "RPN": 8
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "合格证失效模式",
+      "to": "RPN=24",
+      "properties": {
+        "S": 4,
+        "O": 3,
+        "D": 2,
+        "RPN": 24
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "袖带接嘴与气嘴气管连接漏气",
+      "to": "RPN=48",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 2,
+        "RPN": 48
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "气囊漏气",
+      "to": "RPN=48",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 2,
+        "RPN": 48,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "气囊漏气",
+      "to": "RPN=24",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 1,
+        "RPN": 24,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "用户使用了不合适臂围的腕带",
+      "to": "RPN=72",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 3,
+        "RPN": 72,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "用户使用了不合适臂围的腕带",
+      "to": "RPN=48",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 2,
+        "RPN": 48,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "气芯总成气嘴堵塞",
+      "to": "RPN=81",
+      "properties": {
+        "S": 9,
+        "O": 3,
+        "D": 3,
+        "RPN": 81,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "气芯总成气嘴堵塞",
+      "to": "RPN=54",
+      "properties": {
+        "S": 9,
+        "O": 3,
+        "D": 2,
+        "RPN": 54,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "气路胶管与迷宫电磁阀泵二通漏气或脱落",
+      "to": "RPN=32",
+      "properties": {
+        "S": 8,
+        "O": 2,
+        "D": 2,
+        "RPN": 32
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "气路胶管漏气",
+      "to": "RPN=48",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 2,
+        "RPN": 48
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "锅仔片脱落",
+      "to": "RPN=32",
+      "properties": {
+        "S": 8,
+        "O": 2,
+        "D": 2,
+        "RPN": 32
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "下盖完整度被破坏碎裂",
+      "to": "RPN=18",
+      "properties": {
+        "S": 9,
+        "O": 1,
+        "D": 2,
+        "RPN": 18
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "外壳漏电流（下盖）",
+      "to": "RPN=81",
+      "properties": {
+        "S": 9,
+        "O": 3,
+        "D": 3,
+        "RPN": 81,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "外壳漏电流（下盖）",
+      "to": "RPN=27",
+      "properties": {
+        "S": 9,
+        "O": 3,
+        "D": 1,
+        "RPN": 27,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "上盖未固定住",
+      "to": "RPN=20",
+      "properties": {
+        "S": 5,
+        "O": 2,
+        "D": 2,
+        "RPN": 20
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "上盖完整度被破坏碎裂",
+      "to": "RPN=18",
+      "properties": {
+        "S": 9,
+        "O": 1,
+        "D": 2,
+        "RPN": 18
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "外壳漏电流（上盖）",
+      "to": "RPN=81",
+      "properties": {
+        "S": 9,
+        "O": 3,
+        "D": 3,
+        "RPN": 81,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "外壳漏电流（上盖）",
+      "to": "RPN=27",
+      "properties": {
+        "S": 9,
+        "O": 3,
+        "D": 1,
+        "RPN": 27,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "电池盖完整度被破坏碎裂",
+      "to": "RPN=10",
+      "properties": {
+        "S": 5,
+        "O": 1,
+        "D": 2,
+        "RPN": 10
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "电池盖与下盖配合松非常容易脱落",
+      "to": "RPN=72",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 3,
+        "RPN": 72,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "电池盖与下盖配合松非常容易脱落",
+      "to": "RPN=24",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 1,
+        "RPN": 24,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "透镜断差大易划手",
+      "to": "RPN=80",
+      "properties": {
+        "S": 8,
+        "O": 5,
+        "D": 2,
+        "RPN": 80,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "透镜断差大易划手",
+      "to": "RPN=30",
+      "properties": {
+        "S": 8,
+        "O": 5,
+        "D": 1,
+        "RPN": 30,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "透镜印刷不良显示效果差",
+      "to": "RPN=40",
+      "properties": {
+        "S": 8,
+        "O": 5,
+        "D": 1,
+        "RPN": 40
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "保护盖配合不紧",
+      "to": "RPN=80",
+      "properties": {
+        "S": 8,
+        "O": 5,
+        "D": 2,
+        "RPN": 80,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "保护盖配合不紧",
+      "to": "RPN=30",
+      "properties": {
+        "S": 8,
+        "O": 5,
+        "D": 1,
+        "RPN": 30,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "按键动作不良",
+      "to": "RPN=90",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 2,
+        "RPN": 90,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "按键动作不良",
+      "to": "RPN=45",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 1,
+        "RPN": 45,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "传感器与支架同心度差",
+      "to": "RPN=90",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 2,
+        "RPN": 90,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "传感器与支架同心度差",
+      "to": "RPN=45",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 1,
+        "RPN": 45,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "波导管固定偏差",
+      "to": "RPN=90",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 2,
+        "RPN": 90,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "波导管固定偏差",
+      "to": "RPN=45",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 1,
+        "RPN": 45,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "传感器PCB固定不良",
+      "to": "RPN=90",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 2,
+        "RPN": 90,
+        "phase": "before"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "传感器PCB固定不良",
+      "to": "RPN=45",
+      "properties": {
+        "S": 9,
+        "O": 5,
+        "D": 1,
+        "RPN": 45,
+        "phase": "after"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "弹簧脱落电池容易脱落",
+      "to": "RPN=48",
+      "properties": {
+        "S": 8,
+        "O": 3,
+        "D": 2,
+        "RPN": 48
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "螺钉连接强度不够",
+      "to": "RPN=18",
+      "properties": {
+        "S": 9,
+        "O": 1,
+        "D": 2,
+        "RPN": 18
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "连接线焊接后脱落或折断",
+      "to": "RPN=18",
+      "properties": {
+        "S": 9,
+        "O": 1,
+        "D": 2,
+        "RPN": 18
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "保护膜破损",
+      "to": "RPN=45",
+      "properties": {
+        "S": 5,
+        "O": 3,
+        "D": 3,
+        "RPN": 45
+      }
+    }
+  ],
+  "_claims": []
+}

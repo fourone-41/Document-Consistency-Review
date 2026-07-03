@@ -1,0 +1,76 @@
+```json
+{
+  "agent": "Software Agent",
+  "summary": "PT9L software lifecycle audit reveals five substantive findings: BP3L software diagrams appear in the primary PT9L software design folder and T1 sample subfolder without documented shared-component rationale; the software design document version identifier (E0 23.11) cannot be reconciled with the V1.0 identifier cited in test/validation records and BOM; no Bluetooth software requirements or corresponding test/validation evidence is present in the supplied corpus; the IEC 60601-1 test report references software design document DN:PT9L-RJFA01 V1.0 which does not appear in the evidence catalog; and a label review document filed under the active T1 sample folder carries PT2L as the primary product model without justification.",
+  "review_notes": [
+    "SW-023 (PT9C设计确认E0 23.11) is scoped to PT9C; its presence in folder 18 is noted but may be a legitimate sub-component design confirmation — no software-specific inconsistency is independently raised here beyond what is already flagged by the Risk Traceability Agent.",
+    "SW-057 through SW-060 (clinical evaluation report referencing PT9CL/PT9C) are filed in a '废案与备份' (obsolete/backup) subfolder; this reduces but does not eliminate concern about residual product-model contamination.",
+    "SW-024 through SW-035 and SW-045 through SW-056 (IEC 62366-1 checklist and usability engineering file) consistently reference document CE-PT9L-12 version 1.0 and PT9L-SMSY01 version 1.0, which is internally consistent across both PDF and HTML renditions.",
+    "SW-050/SW-055/SW-056 show 'Software Design personnel: Wang Di' listed in the usability engineering file; this is noted as a personnel record observation with no inconsistency detected within the supplied evidence.",
+    "SW-062/SW-063 confirm that the IEC 60601-1 test report records a unique version identifier as 'P' (pass) for instructions for use, which is consistent with SW-013/SW-014 showing Version 1.0 in the PT9L operation guide."
+  ],
+  "findings": [
+    {
+      "finding_type": "legacy_artifact_in_active_design_folder",
+      "severity": "P1",
+      "claim": "BP3L software diagrams are present in both the primary PT9L software design folder (folder 07) and the T1 sample subfolder (folder 11) without any documented rationale establishing BP3L as a shared or reused software component of PT9L.",
+      "rationale": "SW-001 through SW-006 show 'BP3L 软件图样E0 23.11' residing in '07 软件设计方案E0 23.11\\软件图样E0 23.11', which is the primary PT9L software design folder. SW-017 through SW-022 show the same titled document residing in '11 T1样机\\软件文件底稿\\软件图样E0 23.11'. The document title explicitly names BP3L — a different product model — as the subject. No evidence in the catalog establishes a documented shared-component relationship, a software reuse justification, or a configuration management record linking BP3L software to PT9L. The project profile confirms BP3L is a separate product family member and that cross-product references outside clearly marked historical folders require justification.",
+      "evidence_ids": ["SW-001", "SW-002", "SW-003", "SW-004", "SW-005", "SW-006", "SW-017", "SW-018", "SW-019", "SW-020", "SW-021", "SW-022"],
+      "challenge_questions": [
+        "Is BP3L a software component or sub-assembly of PT9L, and if so, where is the documented rationale (e.g., software reuse record, configuration item list) that establishes this relationship?",
+        "Why does the BP3L software diagram appear in both the primary software design folder (07) and the T1 sample subfolder (11) — are these two separate controlled copies, and if so, which is the authoritative version?",
+        "Has a software configuration management plan been established for PT9L that explicitly lists BP3L software diagrams as controlled inputs, and can that document be produced?"
+      ]
+    },
+    {
+      "finding_type": "software_version_identifier_inconsistency",
+      "severity": "P1",
+      "claim": "The software design documents use version identifier 'E0 23.11' while the operation guide, BOM, and IEC 60601-1 test report all use 'V1.0', and no version mapping or equivalence record is present in the supplied evidence to reconcile these two identifiers.",
+      "rationale": "SW-001 and SW-017 title the software diagram as 'BP3L 软件图样E0 23.11', using the 'E0 23.11' versioning scheme. SW-013 states 'Version 1.0' and SW-014 states 'Software version: V1.0' in the PT9L operation guide (F0083). SW-015 and SW-016 reference 'PT9C-CNTP01 V1.0' in the BOM, using the V-series scheme. SW-064 through SW-067 in the IEC 60601-1 test report cite 'Software design solutions DN:PT9L-RJFA01 V1.0' as the evidence for PEMS development lifecycle compliance. No document in the catalog maps 'E0 23.11' to 'V1.0' or explains whether these are parallel versioning schemes for different artifact types or a genuine mismatch. IEC 62304 and IEC 60601-1 clause 14 require that software version identifiers be unambiguous and traceable across lifecycle artifacts.",
+      "evidence_ids": ["SW-001", "SW-013", "SW-014", "SW-015", "SW-016", "SW-017", "SW-064", "SW-065", "SW-066", "SW-067"],
+      "challenge_questions": [
+        "What is the relationship between the 'E0 23.11' version designation used in the software diagram and the 'V1.0' designation used in the operation guide and test report — are these the same software release?",
+        "Is there a software version control table or release note that maps document revision codes (e.g., E0) to software version numbers (e.g., V1.0)?",
+        "Does the released BOM (PT9L-EBOM01 V1.0 and PT9L-T1EB01 V1.0) reference the software version that was validated, and can the traceability from BOM software version to validated software version be demonstrated?"
+      ]
+    },
+    {
+      "finding_type": "missing_software_design_document_in_evidence",
+      "severity": "P1",
+      "claim": "The IEC 60601-1 test report cites 'Software design solutions DN:PT9L-RJFA01 V1.0' as the primary evidence for PEMS development lifecycle compliance, but this document does not appear anywhere in the supplied evidence catalog, creating an unverifiable traceability link.",
+      "rationale": "SW-064, SW-065, SW-066, and SW-067 all reference 'PT9L-RJFA01 V1.0' as the software design solutions document supporting PEMS lifecycle compliance under IEC 60601-1 clause 14. No evidence item in the catalog corresponds to document number PT9L-RJFA01. The project profile lists expected document ID patterns (PT9L-KHXQ01, PT9L-KXPS01, PT9L-FXJH01, PT9L-FXGB01, PT9L-EBOM01, PT9L-T1EB01, PT9L-SJSC01, PT9C-CNTP01) but PT9L-RJFA01 is absent. Without this document, the audit cannot confirm that the PEMS development lifecycle milestones, verification methods, and risk management integration cited as passing in the test report are actually documented.",
+      "evidence_ids": ["SW-064", "SW-065", "SW-066", "SW-067"],
+      "challenge_questions": [
+        "Can document PT9L-RJFA01 V1.0 ('Software design solutions') be produced for audit review?",
+        "Is PT9L-RJFA01 the same document as the software design plan referenced elsewhere in the DHF, or is it a separate artifact?",
+        "If PT9L-RJFA01 V1.0 has been superseded, which version was current at the time the IEC 60601-1 test report was issued, and has the test report been updated to reflect the current version?"
+      ]
+    },
+    {
+      "finding_type": "bluetooth_software_requirements_not_traced",
+      "severity": "P2",
+      "claim": "The project profile confirms PT9L includes Bluetooth functionality, but no Bluetooth-specific software requirements, software design elements, test cases, or validation evidence appear in the supplied software lifecycle evidence, leaving the Bluetooth software sub-system without a demonstrable traceability chain.",
+      "rationale": "The project profile states 'PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)'. SW-001 through SW-022 cover BP3L software diagrams with no Bluetooth-specific content identifiable from the source text. SW-013 and SW-014 describe the operation guide at Version 1.0 with no Bluetooth software version or test reference visible. SW-064 through SW-067 reference the PEMS development lifecycle document PT9L-RJFA01 V1.0 but provide no Bluetooth-specific test or validation line items. SW-026 through SW-035 (IEC 62366-1 checklist) and SW-045 through SW-056 (usability engineering file) address usability but contain no Bluetooth software requirement traceability. No software test record, software validation record, or traceability matrix entry for Bluetooth is present in any supplied evidence item.",
+      "evidence_ids": ["SW-013", "SW-014", "SW-026", "SW-032", "SW-033", "SW-034", "SW-035", "SW-054", "SW-064", "SW-065", "SW-066", "SW-067"],
+      "challenge_questions": [
+        "Where are the software requirements for the Bluetooth communication sub-system documented, and what document number and version do they carry?",
+        "What software test cases cover Bluetooth data transmission accuracy, connection reliability, and security, and have these tests been executed and recorded?",
+        "Is the Bluetooth module treated as a SOUP (software of unknown provenance) or OTS component under IEC 62304, and if so, where is the SOUP evaluation record?",
+        "Has the Bluetooth software been included in the software validation summary, and can the validation record be produced?"
+      ]
+    },
+    {
+      "finding_type": "wrong_product_model_in_active_t1_label_document",
+      "severity": "P2",
+      "claim": "A label review document filed in the active T1 sample folder (folder 11) carries PT2L as the primary product model in its title, product model field, and all label part numbers, with no annotation or justification explaining its inclusion in the PT9L DHF.",
+      "rationale": "SW-007 shows the document title as 'PT2L(美亚)标签检查报告'. SW-008 explicitly states '产品型号：PT2L 项目编号：2020-DEV01'. SW-009 through SW-012 list label part numbers PT2L-SMSP09, PT2L-CBZP07, PT2L-F96, and PT2L-F97 — all carrying the PT2L prefix. The file path is '11 T1样机\\PT3SBT标签审核表（海外更新）', which is the active T1 sample folder, not a folder marked as historical or obsolete. The project profile states that documents referencing PT2L outside clearly marked historical/draft folders require justification. No justification is present in the supplied evidence.",
+      "evidence_ids": ["SW-007", "SW-008", "SW-009", "SW-010", "SW-011", "SW-012"],
+      "challenge_questions": [
+        "Why is a PT2L label review document (project number 2020-DEV01) filed in the PT9L T1 sample folder, and what is the intended relationship between PT2L labels and PT9L?",
+        "Is PT2L a market variant of PT9L sharing the same label artwork, and if so, where is the variant management record that authorizes shared label documentation?",
+        "Should this document be removed from the PT9L DHF, or does it require a cross-reference annotation to explain its relevance to PT9L?"
+      ]
+    }
+  ]
+}
+```

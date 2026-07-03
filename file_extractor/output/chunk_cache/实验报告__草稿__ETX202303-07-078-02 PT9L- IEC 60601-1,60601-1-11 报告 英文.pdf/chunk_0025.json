@@ -1,0 +1,153 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Record",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "52-53 of 182"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 Medical Electrical Equipment - General Requirements for Basic Safety and Essential Performance",
+      "amendments": [
+        "AMD1:2012",
+        "AMD2:2020"
+      ]
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 European version with corrigenda and amendments"
+    },
+    {
+      "id": "ISO 13857:2008",
+      "name": "Safety of machinery - Safety distances to prevent hazard zones being reached by upper and lower limbs"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "9.2.2.3",
+      "requirement": "A TRAPPING ZONE considered not to present a MECHANICAL HAZARD when distances separating OPERATOR, PATIENT, and others from TRAPPING ZONES exceeded values in ISO 13857:2008. Distances measured from expected positions of OPERATOR, PATIENT, and others near EQUIPMENT in NORMAL USE or under foreseeable misuse.",
+      "result": "See above",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.2.4",
+      "requirement": "GUARDS and other RISK CONTROL measures",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.2.4.1",
+      "requirement": "A TRAPPING ZONE considered not to present a MECHANICAL HAZARD when GUARDS or other RISK CONTROL measures are of robust construction, not easy to bypass or render non-operational, and did not introduce additional unacceptable RISK based on results of applicable tests in 15.3 for ENCLOSURES.",
+      "result": "No trapping zone.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.2.4.2",
+      "requirement": "FIXED GUARDS held in place by systems that can only be dismantled with a TOOL",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.2.4.3",
+      "requirement": "Movable GUARDS that can be opened without a TOOL remained attached when GUARD was open; associated with an interlock preventing relevant moving parts from starting to move while TRAPPING ZONE is accessible, and stops movement when the GUARD is opened; absence or failure of one of their components prevents starting, and stops moving parts; Movable GUARDS complied with any applicable tests.",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.2.4.4",
+      "requirement": "Other RISK CONTROL designed and incorporated into the control system stops movement if a TRAPPING ZONE is reached and motion has started; SINGLE FAULT CONDITIONS have a second RISK CONTROL, or ME EQUIPMENT is SINGLE FAULT SAFE.",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.2.5",
+      "requirement": "Continuous activation used as a RISK CONTROL, where impractical to make the TRAPPING ZONE inaccessible: a) movement was in OPERATOR'S field of view; b) movement of ME EQUIPMENT or its parts was possible only by continuous activation of control by OPERATOR as long as OPERATOR response to deactivate device relied upon to prevent HARM; c) a second RISK CONTROL provided for SINGLE FAULT CONDITION of continuous activation system, or the continuous activation system is SINGLE FAULT SAFE.",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.2.6",
+      "requirement": "Speed of movement(s) positioning parts of ME EQUIPMENT or PATIENT, when contact with ME EQUIPMENT could result in an unacceptable RISK, limited to allow OPERATOR control of the movement. Over travel (stopping distance) of such movement occurring after operation of a control to stop movement, did not result in an unacceptable RISK.",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.3",
+      "requirement": "Other MECHANICAL HAZARDS associated with moving parts",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.3.1",
+      "requirement": "Controls positioned, recessed, or protected by other means so that they cannot be accidentally actuated; unless for the intended PATIENT, the USABILITY ENGINEERING PROCESS concludes otherwise (e.g. PATIENT with special needs), or activation does not result in an unacceptable RISK.",
+      "result": "No moving parts.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.3.2",
+      "requirement": "Over travel past range limits of the ME EQUIPMENT prevented. Over travel means provided with mechanical strength to withstand loading in NORMAL CONDITION and reasonably foreseeable misuse.",
+      "result": "No such part. See above.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.2.4",
+      "requirement": "Emergency stopping devices: Where necessary to have one or more emergency stopping device(s), emergency stopping device complied with all the following: a) Emergency stopping device reduced RISK to an acceptable level; b) Proximity and response of OPERATOR to actuate emergency stopping device could be relied upon to prevent HARM; c) Emergency stopping device actuator was readily accessible to OPERATOR; d) Emergency stopping device(s) are not part of normal operation of ME EQUIPMENT; e) Emergency switching operation or stopping means neither introduced further HAZARD nor interfered with operation necessary to remove original MECHANICAL HAZARD; f) Emergency stopping device was able to break full load of relevant circuit, including possible stalled motor currents and the like.",
+      "result": "No emergency stopping devices need.",
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 9.2.2.5 Continuous Activation: Continuous activation used as a RISK CONTROL measure where it is impractical to make the TRAPPING ZONE inaccessible must comply with: (a) movement was in OPERATOR's field of view; (b) movement of ME EQUIPMENT or its parts was possible only by continuous activation of control by OPERATOR as long as OPERATOR response to deactivate device relied upon to prevent HARM; (c) a second RISK CONTROL provided for SINGLE FAULT CONDITION of continuous activation system, or the continuous activation system is SINGLE FAULT SAFE.",
+      "topic_tags": [
+        "continuous activation",
+        "risk control",
+        "trapping zone",
+        "single fault",
+        "mechanical hazard"
+      ],
+      "related_subjects": [
+        "9.2.2.5",
+        "IEC60601-1",
+        "OPERATOR",
+        "TRAPPING ZONE"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 9.2.4 Emergency Stopping Devices: Where necessary to have one or more emergency stopping devices, the devices must: reduce RISK to acceptable level; allow OPERATOR proximity and response to prevent HARM; be readily accessible to OPERATOR; not be part of normal operation; neither introduce further HAZARD nor interfere with operation necessary to remove original MECHANICAL HAZARD; be able to break full load of relevant circuit including possible stalled motor currents.",
+      "topic_tags": [
+        "emergency stop",
+        "risk control",
+        "mechanical hazard",
+        "operator safety",
+        "stalled motor"
+      ],
+      "related_subjects": [
+        "9.2.4",
+        "IEC60601-1",
+        "OPERATOR",
+        "ME EQUIPMENT"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "All clauses from 9.2.2.3 through 9.2.4 are marked N/A (Not Applicable) for the device under test. Key rationale notes include: No trapping zone (9.2.2.4.1), No moving parts (9.2.3.1), No such part (9.2.3.2), No emergency stopping devices needed (9.2.4).",
+      "topic_tags": [
+        "N/A",
+        "not applicable",
+        "no moving parts",
+        "no trapping zone",
+        "no emergency stop"
+      ],
+      "related_subjects": [
+        "9.2.2.3",
+        "9.2.2.4",
+        "9.2.3",
+        "9.2.4",
+        "mechanical hazard"
+      ]
+    }
+  ]
+}

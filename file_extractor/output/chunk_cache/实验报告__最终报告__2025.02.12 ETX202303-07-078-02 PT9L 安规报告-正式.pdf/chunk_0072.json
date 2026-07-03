@@ -1,0 +1,113 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_info": "第156页/共182页 (Page 156 of 181)"
+  },
+  "tests": [
+    {
+      "clause": "15.5.1.2",
+      "name": "Transformer short circuit test",
+      "result": "N/A",
+      "description": "Short-circuit applied at end of windings or at the first point that could be short circuited under SINGLE FAULT CONDITION",
+      "parameters": [
+        {
+          "name": "Primary voltage",
+          "value": "most adverse value from 90% to 110% of RATED voltage (V)"
+        },
+        {
+          "name": "RATED input frequency",
+          "unit": "Hz"
+        }
+      ],
+      "measured_items": [
+        "Winding tested",
+        "Class of insulation (A, B, E, F, or H)",
+        "Type of protective device (fuse, circuit breaker) / Ratings",
+        "Protective device operated (Yes/No)",
+        "Time to THERMAL STABILITY (when protective device did not operate) (Min)",
+        "Maximum allowed temp from Table 31 (°C)",
+        "Maximum winding temp measured (°C)",
+        "Ambient (°C)"
+      ]
+    },
+    {
+      "clause": "15.5.1.3",
+      "name": "Transformer overload test",
+      "result": "N/A",
+      "description": "Conducted only when protective device under short-circuit test operated",
+      "parameters": [
+        {
+          "name": "Primary voltage",
+          "value": "most adverse value between 90% to 110% of RATED voltage (V)"
+        },
+        {
+          "name": "RATED input frequency",
+          "unit": "Hz"
+        },
+        {
+          "name": "Test current just below minimum current that would activate protective device & achieve THERMAL STABILITY under method a)",
+          "unit": "A"
+        },
+        {
+          "name": "Test current based on Table 32 when protective device that operated under method a) is external to transformer and was shunted",
+          "unit": "A"
+        }
+      ],
+      "measured_items": [
+        "Winding tested",
+        "Class of insulation (A, B, E, F, H)",
+        "Type of protective device used (fuse, circuit breaker) / Ratings",
+        "Maximum allowed temp from Table 31 (°C)",
+        "Maximum winding temp measured (°C)",
+        "Ambient (°C)"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Supplementary information for 15.5.1.2: Primary voltage is the most adverse value from 90% to 110% of RATED voltage. Loads on other windings between no load and their NORMAL USE load. Short-circuit applied at end of windings or at the first point that could be short circuited under SINGLE FAULT CONDITION.",
+      "topic_tags": [
+        "transformer",
+        "short circuit test",
+        "single fault condition",
+        "RATED voltage",
+        "THERMAL STABILITY"
+      ],
+      "related_subjects": [
+        "15.5.1.2",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Supplementary information for 15.5.1.3: Loads on other windings between no load and their NORMAL USE load. Time durations: IEC 60127-1 fuse: 30 min at current from Table 32. Non IEC 60127-1 fuse: 30 min at the current based on characteristics supplied by fuse manufacturer, specifically, 30 min clearing-time current. When no 30 min clearing-time current data available, test current from Table 32 used until THERMAL STABILITY achieved. Other types of protective devices: until THERMAL STABILITY achieved at a current just below minimum current operating the protective device in a). This portion concluded at specified time or when a second protective device opened.",
+      "topic_tags": [
+        "transformer overload test",
+        "protective device",
+        "fuse",
+        "circuit breaker",
+        "THERMAL STABILITY",
+        "Table 32",
+        "IEC 60127-1"
+      ],
+      "related_subjects": [
+        "15.5.1.3",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Supplementary information for control knob gripping diameter: Gripping diameter (d) is the maximum width of a control knob regardless of its shape (e.g. control knob with pointer).",
+      "topic_tags": [
+        "control knob",
+        "gripping diameter",
+        "mechanical design"
+      ],
+      "related_subjects": [
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

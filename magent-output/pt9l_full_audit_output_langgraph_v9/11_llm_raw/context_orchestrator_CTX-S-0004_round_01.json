@@ -1,0 +1,45 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "文档 F0242（PT9C设计确认E0 23.11）归档于 PT9L DHF 的'18 设计确认'文件夹，标题含'PT9C'而非'PT9L'；但文档内容第12行明确记载产品型号为 PT9L。需判断：该文档是否为 PT9L 产品的有效设计确认文件，标题中'PT9C'是否为命名错误或历史遗留，以及该文档是否应被纳入 PT9L DHF 正式范围。",
+  "agent_input": {
+    "claim": "A design confirmation document titled 'PT9C设计确认E0 23.11' (F0242) is filed in the PT9L DHF design confirmation folder ('18 设计确认'), with no PT9L identifier in the document title.",
+    "context_summary": "补证上下文摘要：文档 F0242 路径为 '18 设计确认\\PT9C设计确认E0 23.11.via_xlsx.clean.md'，标题行（line 2）为 '# PT9C设计确认E0 23.11'，标题中产品型号为 PT9C。然而文档正文 Sheet '设计确认计划' 第12行明确填写'产品型号：PT9L'，预期用途描述亦为'PT9L红外体温计'。同一文档还存在于 '历史记录\\PT9LDHF-草稿\\设计确认\\' 路径下（F0388），说明该文档曾作为 PT9L DHF 草稿使用。文档归档位置（18 设计确认）属于 PT9L DHF 正式文件夹。",
+    "evidence": [
+      {
+        "evidence_id": "SCOUT-138",
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 2,
+        "content": "# PT9C设计确认E0  23.11",
+        "note": "文档标题含 PT9C，不含 PT9L"
+      },
+      {
+        "evidence_id": "SCOUT-138-L12",
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 12,
+        "content": "| 产品型号 | PT9L |",
+        "note": "文档正文产品型号字段明确填写 PT9L"
+      },
+      {
+        "evidence_id": "SCOUT-138-L13",
+        "doc_id": "F0242",
+        "rel_path": "18 设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 13,
+        "content": "| 预期用途 | PT9L红外体温计是一款采用红外测温传感器采集温度信息的产品。具有简单易用、测量迅速、数据准确的特点。适用于儿童及成人家用测量，医院测量。 |",
+        "note": "预期用途描述明确指向 PT9L 产品"
+      },
+      {
+        "evidence_id": "F0388-draft",
+        "doc_id": "F0388",
+        "rel_path": "历史记录\\PT9LDHF-草稿\\设计确认\\PT9C设计确认E0  23.11.via_xlsx.clean.md",
+        "line": 2,
+        "content": "# PT9C设计确认E0  23.11",
+        "note": "同名文档存在于 PT9L DHF 草稿历史记录路径，进一步佐证该文档属于 PT9L 项目"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

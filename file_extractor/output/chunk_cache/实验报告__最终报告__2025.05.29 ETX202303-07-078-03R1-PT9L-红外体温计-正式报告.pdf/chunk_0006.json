@@ -1,0 +1,301 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-03R1",
+    "total_pages": 21,
+    "current_pages": "15-17"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-8:2006+A1:2012",
+      "title": "General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems",
+      "clause": "208",
+      "applicability": "N/A"
+    },
+    {
+      "id": "IEC 60601-1-11:2015",
+      "title": "Requirements for medical electrical equipment and medical electrical systems used in the home healthcare environment",
+      "clause": "211",
+      "applicability": "P"
+    },
+    {
+      "id": "IEC 60601-1-12:2014",
+      "title": "Requirements for medical electrical equipment and medical electrical systems intended for use in the emergency medical services environment",
+      "clause": "212",
+      "applicability": "N/A"
+    },
+    {
+      "id": "IEC 60601-1:2005+A1:2012",
+      "clause": "15.3",
+      "applicability": "referenced"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "208.6.1.2",
+      "title": "Determination of ALARM CONDITIONS and assignment of priority",
+      "description": "Amendment: A CLINICAL THERMOMETER need not have a PHYSIOLOGICAL ALARM CONDITION.",
+      "result": "N/A"
+    },
+    {
+      "id": "211.4.2.3.1",
+      "title": "Continuous operating conditions",
+      "description": "Amendment (replace the first dash with): a temperature range of at least +15°C to +40°C",
+      "reference": "See electrical safety report ETX202303-07-078-02",
+      "result": "P"
+    },
+    {
+      "id": "211.10.1.1",
+      "title": "General requirements for mechanical strength",
+      "description": "The tests of IEC 60601-1-11:2015, Clause 10 and IEC 60601-1:2005+A1:2012, 15.3 shall be performed on the same sample of the CLINICAL THERMOMETER after the cleaning and disinfection PROCEDURES.",
+      "reference": "See appended Table 211.10.1.1",
+      "result": "P"
+    },
+    {
+      "id": "212.10.1.1",
+      "title": "General requirements for mechanical strength (emergency medical services)",
+      "description": "The tests of IEC 60601-1-12:2014, Clause 10 and IEC 60601-1:2005+A1:2012, 15.3 shall be performed on the same sample of the CLINICAL THERMOMETER after the cleaning and disinfection PROCEDURES of 201.11.6.6 have been performed unless there are no cleaning and disinfection PROCEDURES specified in the instructions for use. If more than one PROCEDURE is specified in the instructions for use, each PROCEDURE shall be so tested.",
+      "result": "N/A"
+    },
+    {
+      "id": "201.101.2",
+      "title": "Laboratory accuracy",
+      "result": "P"
+    }
+  ],
+  "tests": [
+    {
+      "id": "201.101.2_accuracy",
+      "name": "Laboratory Accuracy Test",
+      "description": "Temperature accuracy verification across rated output range under various ambient conditions",
+      "parameters": {
+        "rated_output_range_C": "32.0 to 42.9",
+        "rated_extended_output_range": "N/A",
+        "ambient_temperature_C": "10 to 40",
+        "ambient_humidity_percent_rH": "15 to 95"
+      },
+      "result": "P",
+      "test_data": [
+        {
+          "test_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 1,
+          "ambient": "25°C, 55%RH",
+          "TRTS_C": 37.0,
+          "TTUT_C": 36.8,
+          "TRCT_C": 36.9,
+          "equation_C": -0.1
+        },
+        {
+          "test_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 2,
+          "ambient": "39.5°C, 90%RH",
+          "TRTS_C": 37.0,
+          "TTUT_C": 37.2,
+          "TRCT_C": 37.11,
+          "equation_C": 0.1
+        },
+        {
+          "test_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 3,
+          "ambient": "10.5°C, 90%RH",
+          "TRTS_C": 37.0,
+          "TTUT_C": 37.0,
+          "TRCT_C": 36.96,
+          "equation_C": 0.0
+        },
+        {
+          "test_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 4,
+          "ambient": "39.5°C, 20%RH",
+          "TRTS_C": 37.0,
+          "TTUT_C": 36.9,
+          "TRCT_C": 36.9,
+          "equation_C": 0.0
+        },
+        {
+          "test_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 5,
+          "ambient": "10.5°C, 20%RH",
+          "TRTS_C": 37.0,
+          "TTUT_C": 36.9,
+          "TRCT_C": 36.9,
+          "equation_C": 0.0
+        },
+        {
+          "test_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 1,
+          "ambient": "25°C, 55%RH",
+          "TRTS_C": 42.0,
+          "TTUT_C": 41.8,
+          "TRCT_C": 41.88,
+          "equation_C": -0.1
+        },
+        {
+          "test_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 2,
+          "ambient": "39.5°C, 90%RH",
+          "TRTS_C": 42.0,
+          "TTUT_C": 42.0,
+          "TRCT_C": 42.04,
+          "equation_C": -0.0
+        },
+        {
+          "test_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 3,
+          "ambient": "10.5°C, 90%RH",
+          "TRTS_C": 42.0,
+          "TTUT_C": 42.0,
+          "TRCT_C": 41.95,
+          "equation_C": 0.1
+        },
+        {
+          "test_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 4,
+          "ambient": "39.5°C, 20%RH",
+          "TRTS_C": 42.0,
+          "TTUT_C": 41.8,
+          "TRCT_C": 41.86,
+          "equation_C": -0.1
+        },
+        {
+          "test_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 5,
+          "ambient": "10.5°C, 20%RH",
+          "TRTS_C": 42.0,
+          "TTUT_C": 41.8,
+          "TRCT_C": 41.95,
+          "equation_C": -0.2
+        },
+        {
+          "test_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 1,
+          "ambient": "25°C, 55%RH",
+          "TRTS_C": 33.0,
+          "TTUT_C": 32.9,
+          "TRCT_C": 32.9,
+          "equation_C": 0.0
+        },
+        {
+          "test_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 2,
+          "ambient": "39.5°C, 90%RH",
+          "TRTS_C": 33.0,
+          "TTUT_C": 32.9,
+          "TRCT_C": 34.82,
+          "equation_C": 0.1
+        },
+        {
+          "test_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 3,
+          "ambient": "10.5°C, 90%RH",
+          "TRTS_C": 33.0,
+          "TTUT_C": 32.9,
+          "TRCT_C": 32.88,
+          "equation_C": 0.0
+        },
+        {
+          "test_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 4,
+          "ambient": "39.5°C, 20%RH",
+          "TRTS_C": 33.0,
+          "TTUT_C": 33.0,
+          "TRCT_C": 32.91,
+          "equation_C": 0.1
+        },
+        {
+          "test_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 5,
+          "ambient": "10.5°C, 20%RH",
+          "TRTS_C": 33.0,
+          "TTUT_C": 32.9,
+          "TRCT_C": 32.89,
+          "equation_C": 0.0
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_number",
+      "value": "ETX202303-07-078-03R1"
+    },
+    {
+      "type": "referenced_report",
+      "value": "ETX202303-07-078-02",
+      "description": "Electrical safety report"
+    }
+  ],
+  "products": [
+    {
+      "name": "CLINICAL THERMOMETER",
+      "rated_output_range_C": "32.0 to 42.9",
+      "rated_extended_output_range": "N/A",
+      "operating_temperature_range_C": "10 to 40",
+      "operating_humidity_range_percent_rH": "15 to 95"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 208.6.1.2 Amendment: A CLINICAL THERMOMETER need not have a PHYSIOLOGICAL ALARM CONDITION. This is an amendment added prior to the compliance check for IEC 60601-1-8:2006+A1:2012.",
+      "topic_tags": [
+        "alarm condition",
+        "physiological alarm",
+        "clinical thermometer",
+        "IEC 60601-1-8"
+      ],
+      "related_subjects": [
+        "208.6.1.2",
+        "IEC 60601-1-8:2006+A1:2012"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 211.10.1.1: The tests of IEC 60601-1-11:2015, Clause 10 and IEC 60601-1:2005+A1:2012, 15.3 shall be performed on the same sample of the CLINICAL THERMOMETER after the cleaning and disinfection PROCEDURES. This requirement applies to the home healthcare environment.",
+      "topic_tags": [
+        "mechanical strength",
+        "cleaning",
+        "disinfection",
+        "home healthcare",
+        "IEC 60601-1-11"
+      ],
+      "related_subjects": [
+        "211.10.1.1",
+        "IEC 60601-1-11:2015",
+        "IEC 60601-1:2005+A1:2012"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Clause 212.10.1.1 Amendment: The tests of IEC 60601-1-12:2014, Clause 10 and IEC 60601-1:2005+A1:2012, 15.3 shall be performed on the same sample of the CLINICAL THERMOMETER after the cleaning and disinfection PROCEDURES of 201.11.6.6 of this document have been performed unless there are no cleaning and disinfection PROCEDURES specified in the instructions for use. If more than one PROCEDURE is specified in the instructions for use, each PROCEDURE shall be so tested. A separate sample of the CLINICAL THERMOMETER [text truncated]. This requirement applies to the emergency medical services environment.",
+      "topic_tags": [
+        "mechanical strength",
+        "cleaning",
+        "disinfection",
+        "emergency medical services",
+        "IEC 60601-1-12"
+      ],
+      "related_subjects": [
+        "212.10.1.1",
+        "IEC 60601-1-12:2014",
+        "IEC 60601-1:2005+A1:2012",
+        "201.11.6.6"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Laboratory accuracy test data (201.101.2): The clinical thermometer was tested at three temperature points (midpoint 37.0°C, upper limit 42.0°C, lower limit 33.0°C) of the rated output range (32.0°C to 42.9°C) under five combinations of ambient conditions (25°C/55%RH, 39.5°C/90%RH, 10.5°C/90%RH, 39.5°C/20%RH, 10.5°C/20%RH). All equation values (deviations) were within ±0.2°C. The RATED EXTENDED OUTPUT RANGE is N/A for this device.",
+      "topic_tags": [
+        "laboratory accuracy",
+        "temperature accuracy",
+        "ambient conditions",
+        "rated output range",
+        "clinical thermometer"
+      ],
+      "related_subjects": [
+        "201.101.2",
+        "CLINICAL THERMOMETER",
+        "ETX202303-07-078-03R1"
+      ]
+    }
+  ]
+}

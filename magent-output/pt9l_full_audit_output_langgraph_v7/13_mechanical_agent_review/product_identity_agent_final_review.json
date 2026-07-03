@@ -1,0 +1,111 @@
+{
+  "agent": "Product Identity Agent",
+  "summary": "Product Identity Agent 完成 9 个未决机械候选 cluster 的补证据最终裁决。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0011",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "document_title_model_mismatch_vs_document_number",
+      "claim": "Stage 07正式软件设计方案目录下的软件图样文件，文件名及标题标注为\"BP3L 软件图样E0 23.11\"，但文件内部编号明确为PT9L-RJTY01 V1.0，文件名与产品编号存在直接矛盾，构成正式DHF软件设计文件的产品身份标识缺陷。",
+      "reason": "该文件位于\"07 软件设计方案E0 23.11\\\\软件图样E0 23.11\"目录下，primary_scope=true，属于PT9L正式DHF受控范围。文件标题（# BP3L 软件图样E0 23.11）与文件内部编号（PT9L-RJTY01 V1.0）直接矛盾：标题指向BP3L型号，编号指向PT9L。这一矛盾在文件本身内部即可确认，无需额外证据。软件图样是软件设计历史文件的核心受控文件，文件名与编号不一致将导致文件溯源、版本控制及审计追踪混乱，直接影响PT9L软件DHF的完整性和可信度。该问题不属于合理引用或共用件说明，而是文件标识本身存在的实质性受控缺陷，足以构成可确认错误。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0014",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "fmea_product_model_number_mismatch",
+      "claim": "Stage 11 T1样机目录下的结构类DFMEA文件封面产品型号标注为KD-5915L，与PT9L不一致，该文件作为PT9L正式DHF的DFMEA受控文件存在产品型号身份污染，影响风险分析证据链有效性。",
+      "reason": "文件《结构类FMEA E0(1)(1)》位于\"11 T1样机\\\\05 DFMEA E0 23.11\"目录下，primary_scope=true，属于PT9L正式DHF受控范围。文件封面第13行明确标注\"产品型号：KD-5915L\"，而非PT9L。KD-5915L与PT9L是不同的型号标识，现有证据中无任何适用性声明、OEM关系说明或正式转换记录可解释该差异。DFMEA是医疗器械DHF中风险管理的核心文件，封面产品型号错误直接导致该风险分析文件的产品归属不明确，构成正式DHF文件的产品身份污染。\"血压计\"作为品类词在FMEA正文中的使用属于正常功能描述，不影响封面型号标注错误这一实质性缺陷的认定。当前证据已足以确认该错误，无需进一步补查。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0025",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "auxiliary_scope_document_not_in_formal_dhf",
+      "claim": "MC-CLUSTER-0025所有候选均位于auxiliary范围（软件文件底稿），不属于PT9L正式DHF受控文件，且同一文件的正式DHF问题已由MC-CLUSTER-0011覆盖，本cluster不构成独立的正式错误。",
+      "reason": "MC-CLUSTER-0025的8个候选（MF-0118至MF-0125）全部来自\"11 T1样机\\\\软件文件底稿\\\\软件图样E0 23.11\"目录，primary_scope=false，candidate_scope_counts显示primary=0、auxiliary=8，属于辅助/草稿范围而非正式DHF受控目录。软件文件底稿属于工作过程文件，不等同于正式受控的DHF文件。同一BP3L软件图样文件在正式DHF目录（Stage 07）中的产品身份标识问题已由MC-CLUSTER-0011 confirm覆盖。本cluster在辅助范围内的相同问题不构成独立的正式DHF错误，当前证据不能证明这是正式受控文件层面的实质错误，依据最终裁决政策应选择dismiss。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0030",
+      "decision": "confirm",
+      "severity": "P2",
+      "error_type": "cross_model_component_reference_uncontrolled",
+      "claim": "PT9L正式BOM（PT9L-EBOM01 V1.0）中传感器板PCB一行图号归属PT9C-CNTP01 V1.0，无任何共用件受控说明或设计转换记录支撑，构成跨型号零件引用未受控缺陷。",
+      "reason": "MF-0142位于Stage 12 primary_scope=true的PT9L机芯类组件清单（PT9L-EBOM01 V1.0）中，传感器板PCB明确标注图号PT9C-CNTP01 V1.0，型号归属为PT9C而非PT9L。同一BOM中主板PCB使用PT9L-HFMP01 V1.0，形成明显对比。在整个证据集（same_term_file_samples共76条，涵盖primary和auxiliary范围）中，未发现任何共用件清单、ECO或设计转换受控文件说明该PCB为PT9L/PT9C正式共用件。按最终裁决政策，当前证据已足以证明正式DHF/DMR文件中存在跨型号零件引用缺乏受控说明的实质缺陷，不需要进一步补查即可confirm。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0031",
+      "decision": "confirm",
+      "severity": "P2",
+      "error_type": "cross_model_component_reference_uncontrolled",
+      "claim": "PT9L设计输出清单一（Stage 12正式文件）中接口板PCB图（序号3，共8个图层/视图）全部归属PT9C-CNTP01 V1.0，与同文件主板PCB归属PT9L-HFMP01 V1.0形成明显对比，且无任何共用件受控说明，构成设计输出清单产品身份污染。",
+      "reason": "MF-0143至MF-0150均位于Stage 12 primary_scope=true的设计输出清单一中，序号3接口板PCB图的全部8个图层均引用PT9C-CNTP01 V1.0。同文件序号2主板PCB图使用PT9L-HFMP01 V1.0，序号4起后续文件均使用PT9L编号，接口板PCB图号归属PT9C形成孤立异常。在所有76条同词证据中未发现任何共用件受控文件、ECO或设计转换说明。设计输出清单是DHF核心受控文件，其中出现异型号图号且无受控说明，属于可确认的产品身份文件缺陷。与MC-CLUSTER-0030指向同一物理零件（接口板PCB），两者互相印证，进一步支持confirm。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0032",
+      "decision": "confirm",
+      "severity": "P2",
+      "error_type": "cross_model_component_reference_uncontrolled",
+      "claim": "PT9L设计输出清单二及总装/包装BOM中多个零件（防拆签PT3-F21、压块PT3-M01、金属套PT3-M03、双联弹簧PT3-P10等）图号归属列明确标注为PT3，且无任何共用件受控说明，构成正式DHF/DMR文件中跨型号零件引用未受控缺陷。",
+      "reason": "MF-0151等证据位于Stage 12 primary_scope=true的PT9L设计输出清单二及总装/包装BOM中，BOM型号归属列明确填写PT3（如防拆签PT3-F21归属PT3、外箱条码标签PT1-F07归属PT1），说明这些零件系从其他型号沿用。MF-0172/MF-0173/MF-0175/MF-0176等读图报告进一步确认PT3-M01（压块）、PT3-M03（金属套）在PT9L BOM中以PT3图号入账，且读图报告中明确标注\"iHealth内部是否有压块独立图（带PT3-M01图号）补归档——推测无\"，直接指向归档缺失风险。在所有87条同词证据中未发现任何共用件清单或受控转换文件。正式BOM中多处跨型号引用且无受控说明，属于可确认的产品身份文件缺陷。读图报告文件本身属于对共用件图纸的正当引用，不单独构成污染，但BOM中的跨型号引用缺陷已足以confirm。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0033",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "cross_model_component_reference_unverified",
+      "claim": "PT9L正式BOM中引用PT3型号零件属于跨型号共用件合理引用，当前证据不构成可确认错误",
+      "reason": "MF-0152、MF-0197、MF-0198、MF-0199均位于Stage 12 primary_scope=true的PT9L包装BOM及总装类组件清单中，零件图号归属标注为PT3（PT3-F21防拆签、PT3-P10双联弹簧、PT3-M02金属套、PT3-M01压块）。但观察同一BOM文件，其中同样存在PT5-M03、PT5-M02、T-Z1-P10、T-Z1-P12等多个其他型号前缀的共用件引用，说明该BOM的编制惯例是直接保留零件原始型号归属编号，属于多型号平台共用件的常规引用方式。同时same_term_file_samples中显示Stage 12设计输出清单二目录下存在PT3零件对应图纸文件（如PT3_双联弹簧_REV01.pdf、T040800073941030093-PT3-F21.pdf），说明这些零件的设计输出图纸已纳入PT9L DHF设计输出清单二，具备受控依据。当前证据不能证明存在缺少共用件受控说明的正式文件受控缺陷，属于共用件/历史来源合理引用，不构成产品身份污染。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0047",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "cross_model_reference_unverified",
+      "claim": "DHF清单中PT9C标注位于来源/参考列，当前证据不能证明构成产品身份污染",
+      "reason": "MF-0277位于PT9L-DHF清单-常规.via_xlsx.clean.md第92行，该行文件编号为PT9L-SJSC01 V1.0，文件名称为\"设计输出清单一\"，均为PT9L前缀，产品身份明确。PT9C出现在该行第7列（位于文件编号列之后、\"是\"完成标记列之前），结合上下文其他行该列均为空白，该列最可能为\"参考来源\"或\"转化自\"备注列，表示该设计输出清单一的内容参考或转化自PT9C对应文件，属于合理的历史来源标注。文件本身编号、名称均为PT9L，不存在将PT9C文件误标为PT9L受控文件的情形。same_term_scope_counts显示PT9C在primary范围仅19处，大量命中集中在历史记录（51处），进一步支持PT9C为历史来源参考的判断。当前证据不能证明该标注构成产品身份污染或文件受控缺陷。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0069",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "wrong_model_number_in_controlled_document",
+      "claim": "PT9C可追溯性分析报告位于历史记录辅助范围，primary_scope=false，当前证据不能证明已被正式纳入PT9L DHF证据链",
+      "reason": "所有7个候选（MF-0444至MF-0451）均来自\"历史记录\\给实验室\\软件开发逻辑\\可追溯性分析报告.via_lo_html.clean.md\"，primary_scope=false，属于auxiliary历史记录范围。该文件封面明确标注产品型号PT9C、文件编号PT9C-ZSFB01，整体为PT9C产品的软件可追溯性分析报告，与PT9L无直接关联。路径\"历史记录\\给实验室\"表明该文件为历史存档或曾提交给实验室的参考资料，并非PT9L正式DHF受控文件。当前证据中无任何primary_scope=true的文件引用或索引该PT9C可追溯性分析报告作为PT9L软件证据，亦无证据证明该文件已被正式提交监管机构作为PT9L的软件开发证据。该cluster属于辅助/历史范围文件，当前证据不构成可确认的PT9L DHF/DMR正式错误。",
+      "review_round": "second_round_enriched_final"
+    }
+  ],
+  "batch_summaries": [
+    {
+      "batch_no": 1,
+      "summary": "对MC-CLUSTER-0011、MC-CLUSTER-0014、MC-CLUSTER-0025三个第一轮needs_more_context集群进行最终裁决。MC-CLUSTER-0011：Stage 07正式软件设计方案目录下存在文件名/标题为BP3L但文件编号为PT9L-RJTY01的软件图样，文件名与编号直接矛盾，属于正式DHF受控文件的产品身份标识缺陷，confirm。MC-CLUSTER-0014：Stage 11 DFMEA文件封面产品型号标注KD-5915L而非PT9L，属于正式DHF风险分析文件的产品型号身份污染，confirm。MC-CLUSTER-0025：所有候选均位于auxiliary范围（软件文件底稿），primary_scope=false，属于辅助/草稿目录，与MC-CLUSTER-0011已覆盖同一文件的正式DHF问题，dismiss。",
+      "decision_counts": {
+        "confirm": 2,
+        "dismiss": 1
+      }
+    },
+    {
+      "batch_no": 2,
+      "summary": "对MC-CLUSTER-0030、MC-CLUSTER-0031、MC-CLUSTER-0032三个第一轮needs_more_context集群进行最终裁决。MC-CLUSTER-0030和MC-CLUSTER-0031均涉及PT9L正式DHF/DMR文件（BOM及设计输出清单一）中接口板PCB图号归属PT9C-CNTP01 V1.0，且无任何共用件受控说明证据，构成可确认的跨型号产品身份污染。MC-CLUSTER-0032涉及PT9L正式BOM中引用PT3型号零件（防拆签PT3-F21、压块PT3-M01、金属套PT3-M03等），BOM中明确标注型号归属列为PT3，且无共用件受控文件证据，同样构成可确认错误；其中读图报告文件本身属于对该共用件图纸的正当引用，但BOM中的跨型号引用缺乏受控说明是实质缺陷。",
+      "decision_counts": {
+        "confirm": 3
+      }
+    },
+    {
+      "batch_no": 3,
+      "summary": "对MC-CLUSTER-0033、MC-CLUSTER-0047、MC-CLUSTER-0069三个第一轮needs_more_context cluster进行最终裁决。MC-CLUSTER-0033中PT3零件在PT9L正式BOM中以跨型号共用件形式引用，同目录下存在PT3零件图纸及设计输出清单，且同BOM中亦存在PT5、T-Z1等多型号共用件引用，属于行业常见共用件做法，当前证据不能证明缺少受控说明构成正式错误；MC-CLUSTER-0047中PT9C出现在DHF清单某列，结合上下文该列位置与备注/来源列一致，且文件编号仍为PT9L前缀，当前证据不能证明构成产品身份污染；MC-CLUSTER-0069文件整体属于PT9C产品文件，位于auxiliary历史记录路径，primary_scope=false，无证据证明该文件已被正式纳入PT9L DHF证据链，当前证据不构成可确认错误。",
+      "decision_counts": {
+        "dismiss": 3
+      }
+    }
+  ]
+}

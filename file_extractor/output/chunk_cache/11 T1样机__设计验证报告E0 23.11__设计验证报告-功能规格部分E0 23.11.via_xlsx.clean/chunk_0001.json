@@ -1,0 +1,346 @@
+{
+  "document": {
+    "title": "设计验证报告-功能规格部分E0 23.11",
+    "doc_type": "设计验证报告",
+    "version": "E0 23.11"
+  },
+  "tests": [
+    {
+      "test_id": "功能-1",
+      "item": "测量原理",
+      "condition": "T1阶段",
+      "expected_value": "红外非接触式",
+      "actual_result": "按照《软件测试计划(V1.0)》第1,8项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第1,8项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-2",
+      "item": "测量位置",
+      "condition": "T1阶段",
+      "expected_value": "额面",
+      "actual_result": "按照《软件测试计划(V1.0)》第1,8项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第1,8项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-3",
+      "item": "检测项目",
+      "condition": "T1阶段",
+      "expected_value": "人体体温、物温",
+      "actual_result": "按照《软件测试计划(V1.0)》第6,8项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第6,8项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-4",
+      "item": "分类指示方式",
+      "condition": "T1阶段",
+      "expected_value": "屏幕选择",
+      "actual_result": "按照《软件测试计划(V1.0)》第6,8项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第6,8项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-5",
+      "item": "按键描述",
+      "condition": "T1阶段",
+      "expected_value": "3个按键：开机测量键、设置键、静音键",
+      "actual_result": "按照《软件测试计划(V1.0)》第4,6,7项测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第4,6,7项测试合格"
+    },
+    {
+      "test_id": "功能-6a",
+      "item": "LCD型式",
+      "condition": "T1阶段",
+      "expected_value": "段码式",
+      "actual_result": "按照《软件测试计划(V1.0)》第3项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第3项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-6b",
+      "item": "LCD背光",
+      "condition": "T1阶段",
+      "expected_value": "有背光：白橙红",
+      "actual_result": "按照《软件测试计划(V1.0)》第8项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第8项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-10",
+      "item": "低电压检出",
+      "condition": "T1阶段",
+      "expected_value": "双阶段",
+      "actual_result": "按照《软件测试计划(V1.0)》第5项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第5项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-11",
+      "item": "错误分类显示",
+      "condition": "T1阶段",
+      "expected_value": "错误种类：2种（1、超出工作环境温度 2、超过量程）",
+      "actual_result": "按照《软件测试计划(V1.0)》第9项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第9项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-12",
+      "item": "自动关机时间",
+      "condition": "T1阶段",
+      "expected_value": "常规为15秒",
+      "actual_result": "按照《软件测试计划(V1.0)》第9项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第9项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-13",
+      "item": "温度显示单位",
+      "condition": "T1阶段",
+      "expected_value": "℃和℉",
+      "actual_result": "按照《软件测试计划(V1.0)》第7项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第7项进行测试测试合格"
+    },
+    {
+      "test_id": "功能-14",
+      "item": "提示功能",
+      "condition": "T1阶段",
+      "expected_value": "蜂鸣",
+      "actual_result": "按照《软件测试计划(V1.0)》第4项进行测试测试合格",
+      "pass_criteria": "按照《软件测试计划(V1.0)》第4项进行测试测试合格"
+    },
+    {
+      "test_id": "组件-1",
+      "item": "表面处理-上盖",
+      "condition": "T1阶段",
+      "expected_value": "细火花纹",
+      "actual_result": "上盖表面为细火花纹（麻面）",
+      "pass_criteria": "上盖表面为细火花纹（麻面）",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-2",
+      "item": "表面处理-下盖",
+      "condition": "T1阶段",
+      "expected_value": "细火花纹",
+      "actual_result": "下盖表面为细火花纹（麻面）",
+      "pass_criteria": "下盖表面为细火花纹（麻面）",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-3",
+      "item": "表面处理-电池盖",
+      "condition": "T1阶段",
+      "expected_value": "细火花纹",
+      "actual_result": "电池盖表面为细火花纹（麻面）",
+      "pass_criteria": "电池盖表面为细火花纹（麻面）",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-4",
+      "item": "颜色要求-上盖",
+      "condition": "T1阶段",
+      "expected_value": "白色",
+      "actual_result": "上盖白色",
+      "pass_criteria": "上盖白色",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-5",
+      "item": "颜色要求-下盖",
+      "condition": "T1阶段",
+      "expected_value": "白色",
+      "actual_result": "下盖白色",
+      "pass_criteria": "下盖白色",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-6",
+      "item": "颜色要求-电池盖",
+      "condition": "T1阶段",
+      "expected_value": "白色",
+      "actual_result": "电池盖白色",
+      "pass_criteria": "电池盖白色",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-7",
+      "item": "按键形式",
+      "condition": "T1阶段",
+      "expected_value": "注塑按键",
+      "actual_result": "开始键为注塑按键",
+      "pass_criteria": "开始键为注塑按键",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-8",
+      "item": "按键表面处理",
+      "condition": "T1阶段",
+      "expected_value": "细火花纹",
+      "actual_result": "开始键表面为细火花纹（麻面）",
+      "pass_criteria": "开始键表面为细火花纹（麻面）",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-9",
+      "item": "透镜形式",
+      "condition": "T1阶段",
+      "expected_value": "模切透镜",
+      "actual_result": "透镜为模切透镜",
+      "pass_criteria": "透镜为模切透镜",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-11",
+      "item": "整机外形尺寸",
+      "condition": "T1阶段",
+      "expected_value": "130.8x34.8x38mm（公差±0.5mm）",
+      "actual_result": "整机外形尺寸：130.8x34.8x38mm（公差±0.5mm）",
+      "pass_criteria": "整机外形尺寸：130.8x34.8x38mm（公差±0.5mm）",
+      "instrument": "卡尺"
+    },
+    {
+      "test_id": "组件-12",
+      "item": "整机重量",
+      "condition": "T1阶段",
+      "expected_value": "约80g",
+      "actual_result": "整机重量：约80g",
+      "pass_criteria": "整机重量：约80g",
+      "instrument": "电子秤"
+    },
+    {
+      "test_id": "组件-13",
+      "item": "包装执行规范",
+      "condition": "T1阶段",
+      "expected_value": "符合《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》",
+      "actual_result": "符合《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》",
+      "pass_criteria": "符合《运输包装用瓦楞纸箱设计输入要求 GF-30-006 V1.0》",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-14",
+      "item": "整箱重量",
+      "condition": "T1阶段",
+      "expected_value": "7.1kg±5%",
+      "actual_result": "整箱重量：7.1kg±5%",
+      "pass_criteria": "整箱重量：7.1kg±5%",
+      "instrument": "电子秤"
+    },
+    {
+      "test_id": "组件-15",
+      "item": "外箱尺寸",
+      "condition": "T1阶段",
+      "expected_value": "322.5x231x352mm（±10%）",
+      "actual_result": "外箱尺寸:322.5x231x352mm（±10%）",
+      "pass_criteria": "外箱尺寸:322.5x231x352mm（±10%）",
+      "instrument": "米尺"
+    },
+    {
+      "test_id": "组件-16",
+      "item": "外箱表面-金属钉",
+      "condition": "T1阶段",
+      "expected_value": "不允许外箱使用金属钉钉合",
+      "actual_result": "无钉",
+      "pass_criteria": "无钉",
+      "instrument": "目测"
+    },
+    {
+      "test_id": "组件-17",
+      "item": "彩包装内容物",
+      "condition": "T1阶段",
+      "expected_value": "红外体温计主机、说明书（150x50mm±1mm）、纸浆盒、电池（2×AAA Size）",
+      "actual_result": "红外体温计主机、说明书尺寸：150x50mm（±1mm）、纸浆盒、电池（2×AAA Size）",
+      "pass_criteria": "红外体温计主机、说明书尺寸：150x50mm（±1mm）、纸浆盒、电池（2×AAA Size）",
+      "instrument": "目测/直尺"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "功能验证",
+      "conclusion": "所有功能规格验证项目均合格（测量原理、测量位置、检测项目、分类指示方式、按键描述、LCD型式及背光、低电压检出、错误分类显示、自动关机时间、温度显示单位、提示功能）"
+    },
+    {
+      "report_id": "组件验证",
+      "conclusion": "所有组件规格验证项目均合格（表面处理、颜色要求、按键、透镜、外形尺寸、重量、包装要求及内容物）"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "验证计划文件编号（功能）",
+      "value": "PT9L-YZGN01 V1.0"
+    },
+    {
+      "id_type": "验证计划文件编号（组件）",
+      "value": "PT9L-YZZJ01 V1.0"
+    },
+    {
+      "id_type": "包装规范文件编号",
+      "value": "GF-30-006 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "设计验证报告-功能规格部分：阶段T1，验证依据为PT9L设计验证计划-功能规格部分（PT9L-YZGN01 V1.0）。验证记录参考文件为《PT9L软件系统测试记录(V1.0)》。本报告需审核后方能生效，并存档至设计历史文档（DHF）。",
+      "topic_tags": [
+        "功能验证",
+        "T1阶段",
+        "软件测试",
+        "DHF"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "软件测试计划",
+        "PT9L软件系统测试记录"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "设计验证报告-组件规格部分：阶段T1，验证依据为PT9L设计验证计划-组件规格部分（PT9L-YZZJ01 V1.0）。本报告需审核后方能生效，并存档至设计历史文档（DHF）。",
+      "topic_tags": [
+        "组件验证",
+        "T1阶段",
+        "结构验证",
+        "DHF"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "PT9L-YZZJ01"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "壳体变色（No）、位置检测（No）、PC Link（No）三项功能标记为不适用，验证阶段均标注为不适用，验证方法、判定准则、验证记录和结论均为空（——）。",
+      "topic_tags": [
+        "不适用项",
+        "壳体变色",
+        "位置检测",
+        "PC Link"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "功能规格验证"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "错误分类显示共2种错误：1、超出工作环境温度；2、超过量程。",
+      "topic_tags": [
+        "错误显示",
+        "错误分类",
+        "超出工作环境温度",
+        "超过量程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "功能规格验证"
+      ]
+    }
+  ]
+}

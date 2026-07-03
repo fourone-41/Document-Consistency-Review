@@ -1,0 +1,149 @@
+{
+  "document": {
+    "title": "IEC60601-1 Compliance Test Report",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "total_pages": 182
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "eu_equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "Medical electrical equipment - General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "IEC60529",
+      "description": "Degrees of protection provided by enclosures (IP Code)"
+    },
+    {
+      "id": "IEC60417-5333",
+      "description": "Symbol for TYPE BF APPLIED PARTS (Symbol 20 of Table D.1, 2002-10)"
+    },
+    {
+      "id": "IEC60417-5840",
+      "description": "Symbol for TYPE B APPLIED PARTS (Symbol 19 of Table D.1, 2002-10)"
+    },
+    {
+      "id": "IEC60417-5172",
+      "description": "Symbol for CLASS II ME EQUIPMENT (Symbol 9 of Table D.1, 2003-02)"
+    },
+    {
+      "id": "ISO7010-M002",
+      "description": "Safety sign referenced in clause 7.2.5 for connection point identification"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "7.2.4",
+      "requirement": "ACCESSORIES marked with name or trademark and contact information of their MANUFACTURER, including model/type reference, serial/lot/batch identifier, date of manufacture or use-by date; markings applied to individual packaging when not practical to apply to ACCESSORIES",
+      "result": "No such parts.",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.5",
+      "requirement": "ME EQUIPMENT intended to receive power from other electrical equipment in an ME SYSTEM: manufacturer name/trademark and type reference, or SAFETY SIGN ISO 7010-M002, or special connector style not commonly available on market",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.6",
+      "requirement": "Connection to the Supply Mains - markings for rated supply voltage(s), nature of supply, type of current, rated supply frequency, symbols per Table D.1; permanently installed ME EQUIPMENT marking inside or outside adjacent to SUPPLY MAINS connection",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.7",
+      "requirement": "RATED input in amps or volt-amps (A, VA); RATED input in watts when power factor exceeds 0.9; input at mean value of range; marking for long-time and momentary volt-ampere ratings; marked input including RATED and marked output",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.8.1",
+      "requirement": "MULTIPLE SOCKET-OUTLETS integral with ME EQUIPMENT - see 16.9.2.1 b)",
+      "result": "No socket-outlet",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.8.2",
+      "requirement": "Output connectors marked (except for MULTIPLE SOCKET-OUTLETS or connectors for specified ACCESSORIES): Rated Voltage (V), Rated Current (A), Rated Power (W), Output Frequency (Hz)",
+      "result": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.9",
+      "requirement": "ME EQUIPMENT or its parts marked with IP environmental Code per IEC 60529 according to classification in 6.3 (Table D.3, Code 2); marking optional for ME EQUIPMENT or parts rated IPX0",
+      "result": "Classified IP22",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.2.10",
+      "requirement": "Degrees of protection against electric shock for all APPLIED PARTS marked with relevant symbols per 6.2",
+      "result": "Type BF applied part",
+      "verdict": "P"
+    },
+    {
+      "clause": "7.2.10",
+      "requirement": "TYPE B APPLIED PARTS with symbol 19 of Table D.1 (IEC 60417-5840, 2002-10), not applied so as to give impression of being inscribed within a square",
+      "result": "No type B applied part",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "7.2.10",
+      "requirement": "TYPE BF APPLIED PARTS with symbol 20 of Table D.1 (IEC 60417-5333, 2002-10)",
+      "result": "Symbol 20 used",
+      "verdict": "P"
+    }
+  ],
+  "products": [
+    {
+      "attribute": "IP_rating",
+      "value": "IP22",
+      "clause_reference": "7.2.9"
+    },
+    {
+      "attribute": "applied_part_type",
+      "value": "Type BF",
+      "clause_reference": "7.2.10",
+      "symbol_used": "Symbol 20 of Table D.1 (IEC 60417-5333, 2002-10)"
+    },
+    {
+      "attribute": "socket_outlet",
+      "value": "None",
+      "clause_reference": "7.2.8.1"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 7.2.6 specifies that for non-permanently installed ME EQUIPMENT, supply mains connection markings must appear on the outside of the part containing the SUPPLY MAINS connection and adjacent to the connection point. For PERMANENTLY INSTALLED ME EQUIPMENT, the NOMINAL supply voltage or range is marked inside or outside the ME EQUIPMENT, preferably adjacent to the SUPPLY MAINS connection. Required markings include: rated supply voltage(s) or rated voltage range(s) with hyphen between min and max (V, V-V); multiple rated voltages separated by slash (V/V); nature of supply (phases, type of current); symbols 1-5 of Table D.1 (IEC 60417-5032, 5032-1, 5032-2, 5031, 5033, 2002-10); rated supply frequency or rated frequency range in Hz; Symbol 9 of Table D.1 (IEC 60417-5172, 2003-02) for CLASS II ME EQUIPMENT.",
+      "topic_tags": [
+        "supply mains",
+        "marking",
+        "rated voltage",
+        "frequency",
+        "CLASS II",
+        "IEC60601-1 clause 7.2.6"
+      ],
+      "related_subjects": [
+        "7.2.6",
+        "IEC60417-5172",
+        "Table D.1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 7.2.7 specifies RATED input marking requirements: input in amps or volt-amps (A, VA); in watts when power factor exceeds 0.9 (A, VA, W); for voltage ranges greater than ±10% of mean, rated input provided for upper and lower limits; when range limits do not differ by more than 10% from mean value, input at mean value of range is marked; marking includes long-time and most relevant momentary volt-ampere ratings, each plainly identified in ACCOMPANYING DOCUMENTS; marked input of ME EQUIPMENT provided with means for connection of supply conductors of other electrical equipment includes rated and marked output of such means.",
+      "topic_tags": [
+        "rated input",
+        "marking",
+        "volt-ampere",
+        "power factor",
+        "voltage range",
+        "IEC60601-1 clause 7.2.7"
+      ],
+      "related_subjects": [
+        "7.2.7"
+      ]
+    }
+  ]
+}

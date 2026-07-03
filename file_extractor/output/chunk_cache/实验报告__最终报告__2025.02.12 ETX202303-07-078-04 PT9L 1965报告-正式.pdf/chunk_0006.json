@@ -1,0 +1,214 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-04",
+    "total_pages": 22,
+    "current_pages": "14-15"
+  },
+  "requirements": [
+    {
+      "id": "6.5.3.1",
+      "description": "The probe of the electrostatic discharge device shall touch one of the electrically conductive parts on the device.",
+      "result": "P"
+    },
+    {
+      "id": "6.5.3.2",
+      "description": "The level of discharge shall be 2, 4, and 6 kV.",
+      "result": "P"
+    },
+    {
+      "id": "6.5.4",
+      "description": "After electrostatic discharge, the IR thermometer shall be tested according to the procedures of 6.3.2 and 6.3.3.",
+      "result": "P"
+    },
+    {
+      "id": "7",
+      "description": "Documentation",
+      "result": "P"
+    },
+    {
+      "id": "7.1",
+      "description": "Identification"
+    },
+    {
+      "id": "7.1.1",
+      "description": "Producers and distributors may include a statement of compliance in conjunction with their name and address on product labels or associated printed materials. Suggested statement: 'This infrared thermometer meets requirements established in ASTM Standard (E1965-98). Full responsibility for the conformance of this product to the standard is assumed by (name and address of producer or distributor).' In the event one or more provisions are not met, a cautionary statement shall be included.",
+      "verification_evidence": "See User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.1.2",
+      "description": "The IR thermometer shall be identified as intended for professional or consumer use, or both, as applicable.",
+      "verification_evidence": "Consumer use.",
+      "result": "P"
+    },
+    {
+      "id": "7.2",
+      "description": "Instruction Manual",
+      "result": "P"
+    },
+    {
+      "id": "7.2.1",
+      "description": "An instruction manual shall be provided and contain the system specifications including, but not limited to, specified items.",
+      "verification_evidence": "See 'Product specifications' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.1.1",
+      "description": "Displayed temperature range.",
+      "verification_evidence": "See 'Product specifications' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.1.2",
+      "description": "Maximum laboratory error.",
+      "verification_evidence": "See 'Product specifications' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.1.3",
+      "description": "Body site(s) used as a reference for adjusting the displayed temperature value.",
+      "verification_evidence": "See 'Product specifications' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.1.4",
+      "description": "Applicable subject categories for each display mode.",
+      "verification_evidence": "See 'Product specifications' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.1.5",
+      "description": "Required period of recalibration or reverification, if applicable.",
+      "verification_evidence": "No such part.",
+      "result": "N/A"
+    },
+    {
+      "id": "7.2.1.6",
+      "description": "Environmental characteristics (operating and storage).",
+      "verification_evidence": "See 'Product specifications' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.1.7",
+      "description": "Statement informing that clinical accuracy characteristics and procedures are available from the manufacturer on request.",
+      "verification_evidence": "See 'Product specifications' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.2",
+      "description": "The instruction manual shall contain adequate instructions for use with sufficient detail for training in the operation, application, care, and biological and physical cleaning of the instrument and accessories. The instruction manual shall include warnings if performance may be adversely affected.",
+      "verification_evidence": "See 'Maintenance' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.2.1",
+      "description": "Warning for operation outside of the manufacturer-specified subject temperature range.",
+      "verification_evidence": "See 'Safety precautions' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.2.2",
+      "description": "Warning for operation outside of the manufacturer-specified operating temperature and humidity ranges.",
+      "verification_evidence": "See 'Safety precautions' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.2.3",
+      "description": "Warning for storage outside of the manufacturer-specified ambient temperature and humidity ranges.",
+      "verification_evidence": "See 'Safety precautions' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.2.4",
+      "description": "Warning for mechanical shock.",
+      "verification_evidence": "See 'Safety precautions' of User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.2.5",
+      "description": "Warning for manufacturer-defined soiled or damaged infrared optical components.",
+      "verification_evidence": "See 'Safety precautions' of the User's Manual.",
+      "result": "P"
+    },
+    {
+      "id": "7.2.2.6",
+      "description": "Warning for absent, defective, or soiled probe cover (if applicable).",
+      "verification_evidence": "No probe cover used.",
+      "result": "N/A"
+    },
+    {
+      "id": "7.2.2.7",
+      "description": "Warning for use of unspecified probe covers.",
+      "result": "N/A"
+    },
+    {
+      "id": "7.2.3",
+      "description": "The instruction manual shall indicate the type and availability of a blackbody recommended for verifying laboratory or clinical accuracy, if only such type is required by the manufacturer as addressed in 6.1.3.3.",
+      "result": "N/A"
+    }
+  ],
+  "tests": [
+    {
+      "id": "ESD_test",
+      "description": "Electrostatic discharge test",
+      "parameters": {
+        "discharge_levels_kV": [
+          2,
+          4,
+          6
+        ]
+      },
+      "procedure_references": [
+        "6.3.2",
+        "6.3.3"
+      ],
+      "result": "P"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "ASTM E1965-98",
+      "description": "Standard specification for infrared thermometers for intermittent determination of patient temperature",
+      "relevance": "Compliance standard referenced in product labeling and documentation requirements"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "description": "IR thermometer identified for consumer use.",
+      "clause": "7.1.2"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "In order that purchasers may identify products conforming to requirements of this specification, producers and distributors may include a statement of compliance in conjunction with their name and address on product labels or associated printed materials, or both, such as invoices, sales literature, and the like. The following statement is suggested: 'This infrared thermometer meets requirements established in ASTM Standard (E1965-98). Full responsibility for the conformance of this product to the standard is assumed by (name and address of producer or distributor).' In the event one or more provisions of this standard are not met, a cautionary statement shall be included.",
+      "topic_tags": [
+        "labeling",
+        "compliance statement",
+        "ASTM E1965-98",
+        "identification"
+      ],
+      "related_subjects": [
+        "7.1.1",
+        "ASTM E1965-98",
+        "User's Manual"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The instruction manual shall contain adequate instructions for use with sufficient detail for training in the operation, application, care, and biological and physical cleaning of the instrument and accessories. The instruction manual shall include warnings if performance of the instrument may be adversely affected should one or more of specified conditions occur (operation outside subject temperature range, operation outside operating temperature and humidity ranges, storage outside ambient temperature and humidity ranges, mechanical shock, soiled or damaged infrared optical components, absent/defective/soiled probe cover, use of unspecified probe covers).",
+      "topic_tags": [
+        "instruction manual",
+        "warnings",
+        "safety precautions",
+        "operating conditions",
+        "maintenance"
+      ],
+      "related_subjects": [
+        "7.2.2",
+        "User's Manual",
+        "Safety precautions"
+      ]
+    }
+  ]
+}

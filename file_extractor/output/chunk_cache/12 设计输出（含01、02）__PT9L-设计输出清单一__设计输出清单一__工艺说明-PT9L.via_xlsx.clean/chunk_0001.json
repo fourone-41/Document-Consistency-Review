@@ -1,0 +1,450 @@
+{
+  "document": {
+    "title": "工艺说明-PT9L",
+    "doc_id": null,
+    "product": "PT9L",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "name": "PT9L",
+      "type": "体温计/红外测温设备"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-SMTW01",
+      "description": "PT9L SMT加工说明"
+    },
+    {
+      "id": "PT9L-EBOM01",
+      "description": "PT9L机芯类组件清单"
+    },
+    {
+      "id": "PT9L-SHAOXIE",
+      "description": "PT9L烧写工装"
+    },
+    {
+      "id": "PT9L-GZSM01",
+      "description": "PT9L工装操作说明"
+    },
+    {
+      "id": "PT9L-CESHI",
+      "description": "PT9L检测工装"
+    },
+    {
+      "id": "PT9L-ZPSM01",
+      "description": "PT9L装配说明"
+    },
+    {
+      "id": "PT9L-JYBZ01",
+      "description": "PT9L产品检验标准"
+    }
+  ],
+  "plan_tasks": [
+    {
+      "task_name": "探头组装",
+      "process": "组装探头板",
+      "level": "关键工序",
+      "purpose": "压合传感器",
+      "equipment": [
+        "传感器冲压模具",
+        "气动压力机"
+      ],
+      "instructions": "1.左手持1PCS温度传感器，右手使用偏口钳将传感器凸点减掉；2、将温度传感器装入散热金属套；3、将散热金属套，装入压块；4、将安装好的探头，装入传感器压合工装内；5、盖上传感器压合工装上盖；6、将压合工装放置气动压合工装指定位置；7、双手同时压下气动压合工装上的两个按钮；8、取出压合完成的传感器。",
+      "inspection_requirements": [
+        "不得用手触摸传感器镜片",
+        "剪点到位",
+        "外观无破损、脏污等不良",
+        "拿取传感器时，不得抓取传感器腿，以免造成传感器腿粘连、弯曲影响传感器板装配",
+        "探头放置平稳",
+        "压合后高度：14.1±0.1mm",
+        "传感器、散热套无松动现象",
+        "设备压力调节0.6±0.05MPa，时间调节在3±1秒"
+      ]
+    },
+    {
+      "task_name": "涂抹硅脂",
+      "process": "组装探头板",
+      "level": "关键工序",
+      "purpose": "使传感器导热均匀",
+      "equipment": [
+        "自动涂硅脂机"
+      ],
+      "instructions": "把组装好的探头放入自动涂硅脂机，由机器自动涂抹硅脂",
+      "inspection_requirements": [
+        "涂抹均匀，不得涂抹到传感器脚"
+      ]
+    },
+    {
+      "task_name": "焊探头到PCB",
+      "process": "组装探头板",
+      "level": "关键工序",
+      "purpose": "焊温度传感器板",
+      "equipment": [
+        "焊锡：无铅，符合ROHS",
+        "恒温电烙铁：最高温度满足元器件焊接温度"
+      ],
+      "instructions": "1、把涂抹好硅脂的传感器探头插入传感器板，探头金脚插入传感器板的4脚位置；2、焊探头脚到PCB上；3、剪脚。",
+      "inspection_requirements": [
+        "插装到位",
+        "焊点饱满圆润，无漏焊、虚焊、脱焊、立碑、桥接、拉尖等不良缺陷"
+      ]
+    },
+    {
+      "task_name": "导线焊到探头板上",
+      "process": "探头板焊线",
+      "level": "重要",
+      "purpose": "导线焊到探头板上",
+      "equipment": [
+        "焊锡：无铅，符合ROHS",
+        "恒温电烙铁：最高温度满足元器件焊接温度"
+      ],
+      "instructions": "依次将红、白、黑线焊接到相应标识位置上。",
+      "inspection_requirements": [
+        "红线焊在PCB丝印\"1\"位置",
+        "白线焊在PCB丝印\"2\"位置",
+        "黑线焊在PCB丝印\"3\"位置"
+      ]
+    },
+    {
+      "task_name": "探头支架组装",
+      "process": "组装探头支架",
+      "level": "重要",
+      "purpose": "组装探头支架",
+      "equipment": [
+        "电动螺丝起子，扭力要求：1.8±0.2kgf.cm"
+      ],
+      "instructions": "1、将焊接完成的探头装入支架内；2、将装有探头的支架放置在工装治具内；3、将螺钉打入PCB螺钉定位孔内。",
+      "inspection_requirements": [
+        "检验探头焊点，无虚焊、漏焊、连焊现象",
+        "探头放置平稳无虚位，晃动现象",
+        "螺钉安装到位"
+      ]
+    },
+    {
+      "task_name": "探头涂三防漆",
+      "process": "涂三防漆",
+      "level": "重要",
+      "purpose": "探头涂三防漆",
+      "equipment": [
+        "毛刷",
+        "三防漆"
+      ],
+      "instructions": "使用毛刷将传感器板表面涂抹三防漆",
+      "inspection_requirements": [
+        "三防漆涂抹均匀，不得粘连到其他部件",
+        "三防漆涂抹必须完全覆盖传感器的四个焊点"
+      ]
+    },
+    {
+      "task_name": "贴片",
+      "process": "SMT",
+      "level": "关键工序",
+      "purpose": "贴片元器件",
+      "equipment": [],
+      "instructions": "1、主板SMT加工参考\"PT9L SMT加工说明 PT9L-SMTW01\"(按照最新版本执行)；2、元件使用参考 PT9L机芯类组件清单 PT9L-EBOM01 (按照最新版本执行)。",
+      "inspection_requirements": [
+        "焊接元器件正确，PCB板上相应贴片元件需与BOM中元器件名称规格一一对应，带极性元器件焊接方向正确",
+        "元器件不能有缺口、破裂和烫伤，元器件焊接高度不影响装配，PCB板不能有破损、变形、翘曲，表面清洁、无焊料小圆球",
+        "焊点要表面润湿、完整、连续和圆滑，焊料量适中，焊点位置准确，无漏焊、虚焊、脱焊、立碑、桥接、拉尖等不良缺陷"
+      ]
+    },
+    {
+      "task_name": "主板程序烧写",
+      "process": "烧写",
+      "level": "关键工序",
+      "purpose": "主板程序烧写",
+      "equipment": [
+        "PT9L烧写工装PT9L-SHAOXIE",
+        "合泰Gang-Writer8-8烧写器",
+        "静电手腕带"
+      ],
+      "instructions": "参考\"PT9L工装操作说明 PT9L-GZSM01\"(按照最新版本执行)。",
+      "inspection_requirements": [
+        "参考\"PT9L工装操作说明 PT9L-GZSM01\"(按照最新版本执行)"
+      ]
+    },
+    {
+      "task_name": "主板贴片检测",
+      "process": "检测",
+      "level": "关键工序",
+      "purpose": "检测贴片的元件功能、性能、虚焊、连焊",
+      "equipment": [
+        "PT9L检测工装PT9L-CESHI",
+        "电源：输出电压5±0.1V，最大输出电流500mA，电流指示精度0.01mA",
+        "静电手腕带"
+      ],
+      "instructions": "1、上电后两个LED灯D1和D2全亮，屏幕显示CB1，然后显示软件版本号，2s后进入休眠，两个LED灯熄灭，显示黑屏，操作人员查看休眠电流，应小于50uA；2、按下按键B1唤醒，两个LED点亮，LCD全显，再次按下按键保存，CB1完成；3、若自检未通过，屏幕显示Er1。",
+      "inspection_requirements": [
+        "电池电压在2.7V到3.3V之间",
+        "红外传感器测温应在10℃到40℃之间",
+        "休眠电流应小于50uA",
+        "自检失败时LCD显示Er1错误提示"
+      ]
+    },
+    {
+      "task_name": "在主板上焊接蜂鸣器",
+      "process": "焊接",
+      "level": "重要",
+      "purpose": "往主板上焊接蜂鸣器",
+      "equipment": [
+        "焊锡：无铅，符合ROHS",
+        "恒温电烙铁：最高温度满足元器件焊接温度"
+      ],
+      "instructions": "1、将蜂鸣器放置在工装制具内；2、将PCB放置工装内，使蜂鸣器两个管脚穿过PCB\"BUZZER\"位置的两个过孔；3、将蜂鸣器与PCB焊接在一起。",
+      "inspection_requirements": [
+        "放置平稳",
+        "蜂鸣器本体紧贴PCB",
+        "焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊"
+      ]
+    },
+    {
+      "task_name": "在主板上焊接电池正负极弹簧",
+      "process": "焊接",
+      "level": "重要",
+      "purpose": "在主板上焊接电池正负极弹簧",
+      "equipment": [
+        "焊锡：无铅，符合ROHS",
+        "恒温电烙铁：最高温度满足元器件焊接温度"
+      ],
+      "instructions": "1、将正负极簧放置在工装制具内；2、将PCB放置工装内，使正负极簧两个管脚分别穿过PCB\"+\"\"-\"位置的过孔；3、将正负极簧与PCB焊接在一起。",
+      "inspection_requirements": [
+        "放置平稳",
+        "正负极簧本体紧贴PCB",
+        "焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊"
+      ]
+    },
+    {
+      "task_name": "连接主板和传感器探头组件",
+      "process": "焊接",
+      "level": "重要",
+      "purpose": "连接主板和传感器探头组件",
+      "equipment": [
+        "焊锡：无铅，符合ROHS",
+        "恒温电烙铁：最高温度满足元器件焊接温度"
+      ],
+      "instructions": "1、焊接在主板PCB上SENSOR位置；2、焊接温度不超过380℃，时间不超过3秒；3、SENSOR的\"1、2、3\"焊盘分别对应红、白、黑色导线。",
+      "inspection_requirements": [
+        "焊点圆滑饱满，不可出现拉尖、连焊、虚焊、漏焊，高度不超过3.0mm",
+        "焊点强度垂直拉力要求在100N以上"
+      ]
+    },
+    {
+      "task_name": "进入装配工序",
+      "process": "装配",
+      "level": "重要",
+      "purpose": null,
+      "equipment": [],
+      "instructions": "见PT9L装配说明 PT9L-ZPSM01 (按照最新版本执行)",
+      "inspection_requirements": [
+        "见PT9L装配说明 PT9L-ZPSM01 (按照最新版本执行)"
+      ]
+    },
+    {
+      "task_name": "整机检验",
+      "process": "整机检验",
+      "level": "重要",
+      "purpose": null,
+      "equipment": [],
+      "instructions": "见PT9L装配说明 PT9L-ZPSM01 (按照最新版本执行)",
+      "inspection_requirements": [
+        "见PT9L装配说明 PT9L-ZPSM01 (按照最新版本执行)"
+      ]
+    },
+    {
+      "task_name": "进入包装工序",
+      "process": "包装",
+      "level": "重要",
+      "purpose": null,
+      "equipment": [],
+      "instructions": "见PT9L装配说明 PT9L-ZPSM01 (按照最新版本执行)",
+      "inspection_requirements": [
+        "见PT9L装配说明 PT9L-ZPSM01 (按照最新版本执行)"
+      ]
+    },
+    {
+      "task_name": "出货检验",
+      "process": "出货检验",
+      "level": "重要",
+      "purpose": null,
+      "equipment": [],
+      "instructions": "见\"PT9L产品检验标准 PT9L-JYBZ01\"(按照最新版本执行)",
+      "inspection_requirements": [
+        "检验项目见\"PT9L产品检验标准 PT9L-JYBZ01\"(按照最新版本执行)"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "name": "温度传感器",
+      "description": "红外温度传感器，含探头镜片和传感器腿"
+    },
+    {
+      "name": "散热金属套",
+      "description": "用于传感器散热，与传感器压合组装"
+    },
+    {
+      "name": "传感器板（PCB）",
+      "description": "探头板，含丝印1/2/3焊盘，4脚位置"
+    },
+    {
+      "name": "蜂鸣器",
+      "description": "焊接在主板PCB BUZZER位置，两个管脚穿过过孔"
+    },
+    {
+      "name": "电池正负极弹簧",
+      "description": "焊接在主板PCB +/- 位置"
+    },
+    {
+      "name": "主板PCB",
+      "description": "含SENSOR、BUZZER、+/-等焊盘位置，LED D1/D2，按键B1，LCD"
+    },
+    {
+      "name": "探头支架",
+      "description": "用于固定探头组件，通过螺钉安装"
+    },
+    {
+      "name": "红线",
+      "description": "连接探头板丝印\"1\"位置导线"
+    },
+    {
+      "name": "白线",
+      "description": "连接探头板丝印\"2\"位置导线"
+    },
+    {
+      "name": "黑线",
+      "description": "连接探头板丝印\"3\"位置导线"
+    },
+    {
+      "name": "硅脂",
+      "description": "涂抹于传感器探头，使传感器导热均匀"
+    },
+    {
+      "name": "三防漆",
+      "description": "涂抹于传感器板表面，需完全覆盖传感器四个焊点"
+    }
+  ],
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "description": "压合后探头高度：14.1±0.1mm",
+      "process": "探头组装",
+      "level": "关键工序"
+    },
+    {
+      "req_id": "R-002",
+      "description": "设备压力调节0.6±0.05MPa，时间调节在3±1秒",
+      "process": "探头组装",
+      "level": "关键工序"
+    },
+    {
+      "req_id": "R-003",
+      "description": "电动螺丝起子扭力要求：1.8±0.2kgf.cm",
+      "process": "探头支架组装",
+      "level": "重要"
+    },
+    {
+      "req_id": "R-004",
+      "description": "检测工装电源输出电压5±0.1V，最大输出电流500mA，电流指示精度0.01mA",
+      "process": "主板贴片检测",
+      "level": "关键工序"
+    },
+    {
+      "req_id": "R-005",
+      "description": "休眠电流应小于50uA",
+      "process": "主板贴片检测",
+      "level": "关键工序"
+    },
+    {
+      "req_id": "R-006",
+      "description": "电池电压检测范围：2.7V到3.3V之间",
+      "process": "主板贴片检测",
+      "level": "关键工序"
+    },
+    {
+      "req_id": "R-007",
+      "description": "红外传感器测温范围：10℃到40℃之间",
+      "process": "主板贴片检测",
+      "level": "关键工序"
+    },
+    {
+      "req_id": "R-008",
+      "description": "焊接温度不超过380℃，时间不超过3秒（主板与传感器探头连接焊接）",
+      "process": "连接主板和传感器探头组件",
+      "level": "重要"
+    },
+    {
+      "req_id": "R-009",
+      "description": "焊点高度不超过3.0mm（主板与传感器探头连接焊点）",
+      "process": "连接主板和传感器探头组件",
+      "level": "重要"
+    },
+    {
+      "req_id": "R-010",
+      "description": "焊点强度垂直拉力要求在100N以上（主板与传感器探头连接焊点）",
+      "process": "连接主板和传感器探头组件",
+      "level": "重要"
+    },
+    {
+      "req_id": "R-011",
+      "description": "焊锡：无铅，符合ROHS（适用所有焊接工序）",
+      "process": "所有焊接工序",
+      "level": "关键/重要"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "ROHS",
+      "description": "无铅焊锡符合ROHS有害物质限制指令"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "主板贴片检测流程：上电后两个LED灯D1和D2全亮，屏幕显示CB1，然后显示软件版本号，2s后进入休眠，两个LED灯熄灭，显示黑屏，操作人员查看休眠电流，应小于50uA；按下按键B1唤醒，两个LED点亮，LCD全显，再次按下按键保存，CB1完成；若自检未通过，屏幕显示Er1。程序自动检测电池电压，外部NTC，红外传感器的贴片情况：电池电压在2.7V到3.3V之间；红外传感器测温应在10℃到40℃之间。否则，LCD会显示Er1错误提示，此时按下按键会循环显示上面两个测量结果供查找问题。",
+      "topic_tags": [
+        "自检流程",
+        "检测工序",
+        "LED",
+        "LCD",
+        "休眠电流",
+        "电池电压",
+        "红外传感器",
+        "NTC",
+        "Er1"
+      ],
+      "related_subjects": [
+        "主板贴片检测",
+        "PT9L-CESHI",
+        "PT9L-GZSM01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "SENSOR的\"1、2、3\"焊盘分别对应红、白、黑色导线。探头板导线颜色与PCB丝印的对应关系：红线焊在PCB丝印\"1\"位置，白线焊在PCB丝印\"2\"位置，黑线焊在PCB丝印\"3\"位置。主板SENSOR\"1、2、3\"焊盘同样对应红、白、黑色导线。",
+      "topic_tags": [
+        "导线颜色",
+        "PCB丝印",
+        "SENSOR焊盘",
+        "连接定义"
+      ],
+      "related_subjects": [
+        "导线焊到探头板上",
+        "连接主板和传感器探头组件"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "三防漆涂抹要求：涂抹均匀，不得粘连到其他部件；三防漆涂抹必须完全覆盖传感器的四个焊点。",
+      "topic_tags": [
+        "三防漆",
+        "覆盖焊点",
+        "防护"
+      ],
+      "related_subjects": [
+        "探头涂三防漆"
+      ]
+    }
+  ]
+}

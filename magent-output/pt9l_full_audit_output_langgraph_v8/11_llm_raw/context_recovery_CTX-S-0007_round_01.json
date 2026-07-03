@@ -1,0 +1,122 @@
+```json
+{
+  "context_summary": "本轮已确认：F0096和F0097两份机芯BOM中均同时存在PT9L专用PCB（PT9L-HFMP01 V1.0，料号K011800008686570696）和旧型号PT9C的PCB（PT9C-CNTP01 V1.0，料号K0118000084609A1106），两者在BOM中均标注为有效状态（√，C类），无任何废弃/参考/替代标注。page_context中F0005/F0006/F0007的命中行均为空内容，未能提供有效的风险管控或设计变更说明。仍缺失的关键证据包括：①PT9C-CNTP01在PT9L项目中的设计意图说明（是否为兼容件、参考件或遗留错误）；②风险管理文件中对该混用场景的识别与控制措施；③ECO/设计变更记录说明PT9C物料的处置状态；④装配工艺文件或作业指导书中是否有区分说明。",
+  "evidence_gaps": [
+    "缺少PT9C-CNTP01 V1.0在PT9L项目BOM中存在的设计意图说明文件（如设计说明书、兼容性分析报告）",
+    "缺少风险管理计划或风险评估报告（FMEA/风险清单）中对'BOM混用旧型号PCB导致错误装配'风险的识别与控制措施记录",
+    "缺少ECO（工程变更通知）或设计变更记录，说明PT9C-CNTP01是否已被正式废弃、替代或保留为参考件",
+    "缺少装配工艺文件（SOP/作业指导书）中对PT9L-HFMP01与PT9C-CNTP01的区分使用说明或防错措施",
+    "缺少BOM版本历史或变更日志，无法判断PT9C-CNTP01是否为历史遗留未清理条目",
+    "缺少PT9C与PT9L机芯的硬件兼容性分析，无法评估若误装PT9C-CNTP01的实际危害程度",
+    "F0005、F0006、F0007中命中行内容为空，无法从开发计划或DHF清单中获取相关设计决策依据"
+  ],
+  "additional_search_queries": [
+    "PT9C-CNTP01 废弃 OR 替代 OR 参考件 OR obsolete",
+    "PT9L 风险管理 OR FMEA OR 风险评估 OR 风险清单",
+    "ECO OR 工程变更 OR 设计变更 PT9C OR PT9L PCB",
+    "PT9L 装配工艺 OR 作业指导书 OR SOP PCB",
+    "PT9L-HFMP01 PT9C-CNTP01 兼容 OR 互换 OR 差异",
+    "BOM变更记录 OR BOM版本历史 PT9L",
+    "K0118000084609A1106 废弃 OR 状态 OR 用途",
+    "PT9L 机芯 设计说明 OR 硬件设计报告"
+  ],
+  "agent_instruction": "Hardware Agent 复审指令：本任务为P1级别问题，需重点核查以下内容。已确认F0096和F0097两份BOM中PT9C-CNTP01 V1.0（料号K0118000084609A1106）与PT9L-HFMP01 V1.0（料号K011800008686570696）同时以有效状态（√/C）并存，无任何废弃或参考标注。复审时请重点判断：1）是否存在任何文件（ECO、设计说明、风险管理文件、工艺文件）对PT9C-CNTP01在PT9L项目中的存在给出合理解释或控制措施；2）若无上述文件，则应判定该BOM存在真实的错误装配风险，且风险未受控；3）请特别注意两个料号的物理/电气兼容性——若PT9C-CNTP01与PT9L机芯不兼容，则错误装配后果可能为功能失效或安全事故，需升级处理；4）请检索风险管理文件（FMEA、风险清单）确认该风险是否已被识别；5）最终裁决需基于证据链完整性，若关键控制文件缺失，应维持或升级问题严重性评级。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "HW-098",
+        "doc_id": "F0096",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "source_text": "| 24 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "note": "PT9L专用PCB，有效状态，F0096 BOM第24行",
+        "excluded_from_primary_scope": false,
+        "verified": true
+      },
+      {
+        "evidence_id": "HW-099",
+        "doc_id": "F0096",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-EBOM01 V1.0.via_xlsx.clean.md",
+        "line": 50,
+        "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+        "note": "旧型号PT9C PCB，有效状态，F0096 BOM第2行，无废弃/参考标注",
+        "excluded_from_primary_scope": false,
+        "verified": true
+      },
+      {
+        "evidence_id": "HW-100",
+        "doc_id": "F0097",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-T1EB01 V1.0.via_xlsx.clean.md",
+        "line": 43,
+        "source_text": "| 21 | PCB | K011800008686570696 | FR4 | PT9L-HFMP01 V1.0 |  | 1拼10 | 1 | PCB | √ | C |  |  |",
+        "note": "PT9L专用PCB，有效状态，F0097 BOM第21行",
+        "excluded_from_primary_scope": false,
+        "verified": true
+      },
+      {
+        "evidence_id": "HW-101",
+        "doc_id": "F0097",
+        "rel_path": "11 T1样机\\机芯类组件清单PT9L-T1EB01 V1.0.via_xlsx.clean.md",
+        "line": 50,
+        "source_text": "| 2 | PCB | K0118000084609A1106 | FR4 | PT9C-CNTP01 V1.0 |  |  | 1 | PCB | √ | C |  |  |",
+        "note": "旧型号PT9C PCB，有效状态，F0097 BOM第2行，无废弃/参考标注",
+        "excluded_from_primary_scope": false,
+        "verified": true
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9L开发计划",
+        "text": "[内容为空，未能提供有效设计决策依据]",
+        "retrieval_note": "命中行内容为空，无法从开发计划获取PT9C物料处置说明"
+      },
+      {
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9L DHF清单",
+        "text": "[内容为空，未能提供有效设计决策依据]",
+        "retrieval_note": "命中行内容为空，无法从DHF清单获取相关文件索引"
+      },
+      {
+        "doc_id": "F0007",
+        "rel_path": "02 开发计划E0 23.11\\PT9L.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "PT9L项目文件",
+        "text": "[内容为空，未能提供有效设计决策依据]",
+        "retrieval_note": "命中行内容为空"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "gap_analysis",
+        "description": "BOM状态字段分析",
+        "content": "F0096和F0097中PT9C-CNTP01 V1.0的BOM状态列均为'√'和'C'，与PT9L-HFMP01 V1.0的状态标注完全相同，无任何区分标记（如'废弃'、'参考'、'禁用'、'OBS'等）。两个PCB料号不同（K011800008686570696 vs K0118000084609A1106），型号前缀不同（PT9L vs PT9C），表明为不同产品平台的物料，同时出现在PT9L机芯BOM中存在设计管控异常。"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "risk_assessment",
+        "description": "错误装配风险初步评估",
+        "content": "两份BOM（F0096 PT9L-EBOM01 V1.0 和 F0097 PT9L-T1EB01 V1.0）均存在相同问题，说明非单一文件录入错误，而是系统性BOM管理问题。PT9C-CNTP01为旧型号PCB，若在PT9L机芯中被误装，可能导致：①电气接口不匹配导致功能失效；②机械尺寸不符导致装配干涉；③软件/固件不兼容导致设备异常。具体危害程度需结合硬件兼容性分析文件确认。"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "missing_control_evidence",
+        "description": "风险控制证据缺失说明",
+        "content": "当前证据包中未发现以下任何控制措施文件：①风险管理文件（FMEA/风险清单）中对该混用风险的识别；②ECO或设计变更通知说明PT9C-CNTP01的处置决定；③装配工艺文件中的防错措施；④BOM审批记录中对该条目的说明。上述文件的缺失是维持'needs_more_context'状态的主要原因，需在下一轮检索中重点补充。"
+      },
+      {
+        "context_id": "RC-004",
+        "type": "cross_doc_consistency",
+        "description": "跨文档一致性分析",
+        "content": "F0096（PT9L-EBOM01 V1.0）和F0097（PT9L-T1EB01 V1.0）为同一项目的两个BOM版本（分别为EBOM和T1样机BOM），两者在相同行位置（line 43/50附近）均出现相同的双PCB问题，高度一致，排除单次录入错误的可能性。这表明该问题在BOM创建或迁移过程中被系统性引入，需追溯BOM来源和审批流程。"
+      }
+    ]
+  }
+}
+```

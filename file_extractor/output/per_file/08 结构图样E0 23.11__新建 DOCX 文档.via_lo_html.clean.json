@@ -1,0 +1,222 @@
+{
+  "document": {
+    "title": "新建 DOCX 文档",
+    "description": "结构图样与硬件图样评审记录",
+    "related_documents": [
+      {
+        "doc_number": "PT9L-JGTY01 V1.0",
+        "doc_name": "结构图样"
+      },
+      {
+        "doc_number": "PT9L-YJTY01 V1.0",
+        "doc_name": "硬件图样"
+      }
+    ]
+  },
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "project_number": "30000078"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件编号",
+      "value": "PT9L-JGTY01 V1.0",
+      "context": "结构图样"
+    },
+    {
+      "type": "文件编号",
+      "value": "PT9L-YJTY01 V1.0",
+      "context": "硬件图样"
+    },
+    {
+      "type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "review_items": [
+    {
+      "document": "PT9L-JGTY01 V1.0",
+      "document_name": "结构图样",
+      "result": "评审通过，直接进入下一阶段",
+      "selected_option": "☑ 评审通过，直接进入下一阶段",
+      "options": [
+        "评审通过，直接进入下一阶段",
+        "评审通过，完成评审记录中的修改后进入下一阶段",
+        "评审基本通过，需补充资料，重新提交批准",
+        "评审未通过，重新整理后提交再次评审"
+      ],
+      "roles": [
+        {
+          "role": "设计",
+          "title": "结构工程师"
+        },
+        {
+          "role": "审核",
+          "title": "结构主管"
+        },
+        {
+          "role": "批准",
+          "title": "技术负责人"
+        }
+      ]
+    },
+    {
+      "document": "PT9L-YJTY01 V1.0",
+      "document_name": "硬件图样",
+      "result": "评审通过，直接进入下一阶段",
+      "selected_option": "☑ 评审通过，直接进入下一阶段",
+      "options": [
+        "评审通过，直接进入下一阶段",
+        "评审通过，完成评审记录中的修改后进入下一阶段",
+        "评审基本通过，需补充资料，重新提交批准",
+        "评审未通过，重新整理后提交再次评审"
+      ],
+      "roles": [
+        {
+          "role": "设计",
+          "title": "硬件工程师"
+        },
+        {
+          "role": "审核",
+          "title": "硬件主管"
+        },
+        {
+          "role": "批准",
+          "title": "技术负责人"
+        }
+      ]
+    }
+  ],
+  "persons": [
+    {
+      "role": "设计",
+      "title": "结构工程师",
+      "context": "结构图样 PT9L-JGTY01 V1.0"
+    },
+    {
+      "role": "审核",
+      "title": "结构主管",
+      "context": "结构图样 PT9L-JGTY01 V1.0"
+    },
+    {
+      "role": "批准",
+      "title": "技术负责人",
+      "context": "结构图样 PT9L-JGTY01 V1.0"
+    },
+    {
+      "role": "设计",
+      "title": "硬件工程师",
+      "context": "硬件图样 PT9L-YJTY01 V1.0"
+    },
+    {
+      "role": "审核",
+      "title": "硬件主管",
+      "context": "硬件图样 PT9L-YJTY01 V1.0"
+    },
+    {
+      "role": "批准",
+      "title": "技术负责人",
+      "context": "硬件图样 PT9L-YJTY01 V1.0"
+    }
+  ],
+  "_meta": {
+    "source_file": "08 结构图样E0 23.11/新建 DOCX 文档.via_lo_html.clean.md",
+    "doc_type": "general"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-JGTY01 V1.0",
+      "to": "PT9L-JGTY01 V1.0_review_item",
+      "properties": {
+        "document_name": "结构图样",
+        "result": "评审通过，直接进入下一阶段"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-YJTY01 V1.0",
+      "to": "PT9L-YJTY01 V1.0_review_item",
+      "properties": {
+        "document_name": "硬件图样",
+        "result": "评审通过，直接进入下一阶段"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "结构主管",
+      "to": "PT9L-JGTY01 V1.0",
+      "properties": {
+        "role": "审核",
+        "context": "结构图样 PT9L-JGTY01 V1.0"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "硬件主管",
+      "to": "PT9L-YJTY01 V1.0",
+      "properties": {
+        "role": "审核",
+        "context": "硬件图样 PT9L-YJTY01 V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "结构工程师",
+      "to": "PT9L-JGTY01 V1.0",
+      "properties": {
+        "role": "设计",
+        "context": "结构图样 PT9L-JGTY01 V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "结构主管",
+      "to": "PT9L-JGTY01 V1.0",
+      "properties": {
+        "role": "审核",
+        "context": "结构图样 PT9L-JGTY01 V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "技术负责人",
+      "to": "PT9L-JGTY01 V1.0",
+      "properties": {
+        "role": "批准",
+        "context": "结构图样 PT9L-JGTY01 V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "硬件工程师",
+      "to": "PT9L-YJTY01 V1.0",
+      "properties": {
+        "role": "设计",
+        "context": "硬件图样 PT9L-YJTY01 V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "硬件主管",
+      "to": "PT9L-YJTY01 V1.0",
+      "properties": {
+        "role": "审核",
+        "context": "硬件图样 PT9L-YJTY01 V1.0"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "技术负责人",
+      "to": "PT9L-YJTY01 V1.0",
+      "properties": {
+        "role": "批准",
+        "context": "硬件图样 PT9L-YJTY01 V1.0"
+      }
+    }
+  ],
+  "_claims": []
+}

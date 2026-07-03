@@ -1,0 +1,431 @@
+{
+  "document": {
+    "title": "PT9L-HFMP01 原理图",
+    "document_number": "PT9L-HFMP01 V1.0",
+    "version": "V1.0",
+    "product_model": "PT9L",
+    "product_name": "红外体温计",
+    "schematic_number": "PT9L-HFXS01 V1.0",
+    "total_pages": 1
+  },
+  "revision_records": [
+    {
+      "version": "V1.0",
+      "change_description": "初始版本"
+    }
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SR1833",
+      "description": "电源控制芯片/升压模块",
+      "pins": [
+        "CE(4)",
+        "VOUT(1)",
+        "LX(2)",
+        "PCTL(5)",
+        "BAT(3)"
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "BH67F2762",
+      "description": "MCU主控芯片",
+      "pin_count": 48,
+      "pins": [
+        "AVSS/VREFN(1)",
+        "VCM(2)",
+        "AN0(3)",
+        "AN1(4)",
+        "AN2(5)",
+        "AN3(6)",
+        "LNOPO(7)",
+        "PE5/COM0(8)",
+        "PE4/COM1(9)",
+        "PE3/COM2(10)",
+        "PE2/COM3(11)",
+        "SEG39/COM4(12)",
+        "SEG38/COM5(13)",
+        "PLCD(14)",
+        "VMAX(15)",
+        "PE1/SEG34(16)",
+        "PE0/SEG33(17)",
+        "PD7/SEG32(18)",
+        "PD6/SEG31(19)",
+        "PD5/SEG30(20)",
+        "PD4/SEG29(21)",
+        "PD3/SEG28(22)",
+        "PD2/SEG27(23)",
+        "PD1/SEG26(24)",
+        "PD0/SEG25(25)",
+        "PC7/SEG24(26)",
+        "PC6/SEG23(27)",
+        "PC5/SEG22(28)",
+        "PC4/SEG21(29)",
+        "PC3/SEG20(30)",
+        "PC2/SEG19(31)",
+        "PC1/SEG9(32)",
+        "PA2/ICPCK(33)",
+        "PA0/ICPDA(34)",
+        "PB6/VDDIO(35)",
+        "PA7/SDI(36)",
+        "PA6/SDO(37)",
+        "PA5/SCS(38)",
+        "PA4/SCK(39)",
+        "PA3/AN7(40)",
+        "PA1/INT0/AN6(41)",
+        "PB5/INT2/AN5(42)",
+        "PB4/INT3/AN4(43)",
+        "PB3/PTPI/OPIP(44)",
+        "PB2/INT1/LVDIN(45)",
+        "VSS(46)",
+        "VDD/VIN(47)",
+        "VOREG/VREFP(48)"
+      ]
+    },
+    {
+      "reference": "D1",
+      "part_number": "SS15",
+      "description": "肖特基二极管"
+    },
+    {
+      "reference": "F1",
+      "part_number": "MF-MSMF050",
+      "description": "自恢复保险丝"
+    },
+    {
+      "reference": "L1",
+      "value": "10uH",
+      "description": "电感"
+    },
+    {
+      "reference": "C1",
+      "value": "100uF/16V",
+      "description": "电解电容"
+    },
+    {
+      "reference": "C2",
+      "value": "22uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C3",
+      "value": "22uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C4",
+      "value": "22uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C5",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C6",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C7",
+      "value": "10uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C8",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C9",
+      "value": "4.7uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C10",
+      "value": "1uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C11",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C12",
+      "value": "1uF",
+      "description": "电容"
+    },
+    {
+      "reference": "C13",
+      "value": "NC/0.1uF",
+      "description": "可选电容"
+    },
+    {
+      "reference": "C14",
+      "value": "NC/0.1uF",
+      "description": "可选电容"
+    },
+    {
+      "reference": "C15",
+      "value": "56pF",
+      "description": "电容"
+    },
+    {
+      "reference": "C16",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C17",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "C18",
+      "value": "0.1uF",
+      "description": "旁路电容"
+    },
+    {
+      "reference": "R1",
+      "value": "200k",
+      "description": "电阻，电池电压分压"
+    },
+    {
+      "reference": "R2",
+      "value": "100k",
+      "description": "电阻，电池电压分压"
+    },
+    {
+      "reference": "R3",
+      "value": "0",
+      "description": "0欧电阻/跳线"
+    },
+    {
+      "reference": "R4",
+      "value": "0",
+      "description": "0欧电阻/跳线"
+    },
+    {
+      "reference": "R5",
+      "value": "120",
+      "description": "LED限流电阻（红灯）"
+    },
+    {
+      "reference": "R6",
+      "value": "39",
+      "description": "LED限流电阻（白灯）"
+    },
+    {
+      "reference": "R7",
+      "value": "120",
+      "description": "LED限流电阻（黄灯）"
+    },
+    {
+      "reference": "R8",
+      "value": "100k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R9",
+      "value": "0",
+      "description": "0欧电阻/跳线"
+    },
+    {
+      "reference": "R10",
+      "value": "100K",
+      "description": "电阻，NTC分压"
+    },
+    {
+      "reference": "R11",
+      "value": "300K",
+      "description": "电阻"
+    },
+    {
+      "reference": "R12",
+      "value": "1k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R13",
+      "value": "1k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R14",
+      "value": "1k",
+      "description": "电阻"
+    },
+    {
+      "reference": "R15",
+      "value": "10k",
+      "description": "电阻，NTC上拉"
+    },
+    {
+      "reference": "R16",
+      "value": "NC/10k",
+      "description": "可选电阻"
+    },
+    {
+      "reference": "R17",
+      "value": "NC/10k",
+      "description": "可选电阻"
+    },
+    {
+      "reference": "NTC",
+      "value": "10k",
+      "description": "NTC热敏电阻，温度检测"
+    },
+    {
+      "reference": "S1",
+      "description": "MUTE KEY 按键"
+    },
+    {
+      "reference": "S2",
+      "description": "KEY 按键"
+    },
+    {
+      "reference": "LEDR",
+      "description": "红色LED"
+    },
+    {
+      "reference": "LEDW",
+      "description": "白色LED"
+    },
+    {
+      "reference": "LEDY",
+      "description": "黄色LED"
+    },
+    {
+      "reference": "BUZZER",
+      "description": "蜂鸣器，频率4kHz"
+    },
+    {
+      "reference": "LCD",
+      "description": "LCD显示屏，16引脚",
+      "pins": [
+        "LCD_COM0",
+        "LCD_COM1",
+        "LCD_COM2",
+        "LCD_COM3",
+        "LCD_S0",
+        "LCD_S1",
+        "LCD_S2",
+        "LCD_S3",
+        "LCD_S4",
+        "LCD_S5",
+        "LCD_S6",
+        "LCD_S7",
+        "LCD_S8",
+        "LCD_S9",
+        "LCD_S10",
+        "LCD_S11"
+      ]
+    },
+    {
+      "reference": "SENSOR",
+      "description": "红外传感器，4引脚（TX, VTP+, NTC-, VTP-等）"
+    },
+    {
+      "reference": "ICP",
+      "description": "在线编程接口，4引脚（ICPDA, ICPCK, GND, 3.3V）"
+    },
+    {
+      "reference": "B1",
+      "description": "电池负极接口1"
+    },
+    {
+      "reference": "B2",
+      "description": "电池负极接口2"
+    },
+    {
+      "reference": "B3",
+      "description": "电池接口MK（多引脚）"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "PT9L-HFMP01 V1.0",
+      "type": "PCB物料清单/原理图文档编号"
+    },
+    {
+      "id": "PT9L-HFXS01 V1.0",
+      "type": "原理图图纸编号"
+    },
+    {
+      "id": "BH67F2762",
+      "type": "MCU型号"
+    },
+    {
+      "id": "SR1833",
+      "type": "电源芯片型号"
+    }
+  ],
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "version": "V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "电源控制逻辑：DO_PCTL低电平时3.3V OFF，DO_PCTL高电平时3.3V ON。LED控制：低电平LED亮，高电平LED灭。蜂鸣器工作频率：4kHz。升压芯片U1(SR1833)将电池电压VBAT升压后提供3.3V给系统。",
+      "topic_tags": [
+        "电源控制",
+        "LED控制",
+        "蜂鸣器",
+        "升压电路"
+      ],
+      "related_subjects": [
+        "U1",
+        "SR1833",
+        "DO_PCTL",
+        "BUZZER",
+        "LEDR",
+        "LEDW",
+        "LEDY"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "MCU(BH67F2762)通过模拟输入AI_AN0~AI_AN4采集传感器信号及NTC温度信号，通过LCD段码驱动接口（COM0-COM3, SEG0-SEG11）驱动LCD显示，通过SPI接口（SDI/SDO/SCS/SCK）与红外传感器通信，通过ICP接口（ICPDA/ICPCK）进行在线编程。低电压检测通过AI_LVD（R1/R2分压VBAT）实现。NTC温度检测通过R15上拉至3.3V与NTC分压后接AI_NTC实现。",
+      "topic_tags": [
+        "MCU",
+        "ADC",
+        "LCD驱动",
+        "SPI",
+        "ICP编程",
+        "LVD",
+        "NTC温度检测"
+      ],
+      "related_subjects": [
+        "U2",
+        "BH67F2762",
+        "NTC",
+        "LCD",
+        "SENSOR",
+        "ICP",
+        "R1",
+        "R2",
+        "R15"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "文档清单包含以下层文件：PT9L-HFXS01 V1.0（原理图），PT9L-HFMP01 V1.0（PCB），含Top Layer层、Top Overlay层、Bottom Layer层、Bottom Overlay层、Drill Layer层、拼板示意图（顶层）、拼板示意图（底层）、尺寸图，均为V1.0版本。",
+      "topic_tags": [
+        "文档清单",
+        "PCB层叠",
+        "版本管理"
+      ],
+      "related_subjects": [
+        "PT9L-HFMP01 V1.0",
+        "PT9L-HFXS01 V1.0"
+      ]
+    }
+  ]
+}

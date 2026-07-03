@@ -1,0 +1,3029 @@
+{
+  "document": {
+    "title": "Clinical accuracy report - iHealth PT9L Infrared No-Touch Forehead Thermometer",
+    "doc_type": "Clinical Study Report / Test Report",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "PT9L-RLTB01",
+      "item": "Clinical accuracy and repeatability of Infrared No-Touch Forehead Thermometer",
+      "condition": "Temperature: 23±2℃, Humidity: 55±10%; Three consecutive measurements per subject with interval ≤1 min; total ≥90 subjects across three age groups",
+      "expected_value": "No significant difference between DUT and RCT (p>0.05); meets ASTM E1965-98 requirements",
+      "actual_result": "Group A: Sr=0.07, △cb=-0.05℃, σ△cb=0.13, LA=0.25, p=0.83>0.05, 95%CI=[-0.09,-0.01]; Group B: Sr=0.07, △cb=-0.04℃, σ△cb=0.10, LA=0.19, p=0.87>0.05, 95%CI=[-0.08,-0.01]; Group C: Sr=0.08, △cb=-0.04℃, σ△cb=0.11, LA=0.23, p=0.88>0.05, 95%CI=[-0.07,-0.01]",
+      "pass_criteria": "p>0.05 (no significant difference between DUT and reference clinical thermometer); conforms to ASTM E1965-98",
+      "environment": "Temperature: 23±2℃, Humidity: 55±10%"
+    },
+    {
+      "test_id": "clinical_accuracy_PT9L_vs_RCT",
+      "item": "Clinical Accuracy - PT9L vs RCT (Reference Clinical Thermometer)",
+      "actual_result": "Clinical bias △cb = -0.04, Standard deviation σ△cb = 0.11, Limits of agreement LA = 0.23, Uncertainty = 0.11",
+      "instrument": "PT9L, RCT"
+    },
+    {
+      "test_id": "clinical_accuracy_PT9L_vs_Braun",
+      "item": "Clinical Accuracy - PT9L vs Braun",
+      "actual_result": "Clinical bias △cb = -0.13, Standard deviation σ△cb = 0.06, Limits of agreement LA = 0.12, Uncertainty = 0.06",
+      "instrument": "PT9L, Braun"
+    },
+    {
+      "test_id": "repeatability",
+      "item": "Repeatability",
+      "actual_result": "Sr = 0.08"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-RLTB01 V1.0",
+      "conclusion": "There was no significant difference between the infrared thermometer and the oral temperature in different age groups. In all groups p>0.05, confirming no significant difference between the two groups of data. Total 130 subjects tested (Group A: 40, Group B: 40, Group C: 50; 67 female/63 male; 56 febrile/74 afebrile)."
+    }
+  ],
+  "test_measurements": [
+    {
+      "machine_no": "DUT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - ti1",
+      "reading": 38.4,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "DUT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - ti2",
+      "reading": 38.5,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "DUT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - ti3",
+      "reading": 38.4,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "RCT (Subject No.1)",
+      "test_point": "Group A, Subject 1 - tRi (oral temperature)",
+      "reading": 38.5,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "Braun (Subject No.1)",
+      "test_point": "Group A, Subject 1 - Braun forehead temperature",
+      "reading": 38.5,
+      "unit": "℃",
+      "condition": "Male, 2 months old"
+    },
+    {
+      "machine_no": "Group A - No.2",
+      "test_point": "DUT ti1",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "F, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.2",
+      "test_point": "DUT ti2",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "F, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.2",
+      "test_point": "DUT ti3",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "F, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.2",
+      "test_point": "RCT",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "F, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.2",
+      "test_point": "Braun",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "F, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.3",
+      "test_point": "DUT ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.3",
+      "test_point": "DUT ti2",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.3",
+      "test_point": "DUT ti3",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.3",
+      "test_point": "RCT",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.3",
+      "test_point": "Braun",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.4",
+      "test_point": "DUT ti1",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.4",
+      "test_point": "RCT",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.4",
+      "test_point": "Braun",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.5",
+      "test_point": "DUT ti1",
+      "reading": 37.3,
+      "unit": "°C",
+      "condition": "M, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.5",
+      "test_point": "RCT",
+      "reading": 37.4,
+      "unit": "°C",
+      "condition": "M, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.5",
+      "test_point": "Braun",
+      "reading": 37.5,
+      "unit": "°C",
+      "condition": "M, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.6",
+      "test_point": "DUT ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "F, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.6",
+      "test_point": "RCT",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "F, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.6",
+      "test_point": "Braun",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "F, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.7",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.7",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.7",
+      "test_point": "Braun",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.8",
+      "test_point": "DUT ti1",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "F, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.8",
+      "test_point": "RCT",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "F, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.8",
+      "test_point": "Braun",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "F, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.9",
+      "test_point": "DUT ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.9",
+      "test_point": "RCT",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.9",
+      "test_point": "Braun",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.10",
+      "test_point": "DUT ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.10",
+      "test_point": "RCT",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.10",
+      "test_point": "Braun",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.11",
+      "test_point": "DUT ti1",
+      "reading": 38.3,
+      "unit": "°C",
+      "condition": "M, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.11",
+      "test_point": "RCT",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "M, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.11",
+      "test_point": "Braun",
+      "reading": 38.4,
+      "unit": "°C",
+      "condition": "M, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.12",
+      "test_point": "DUT ti1",
+      "reading": 38.5,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.12",
+      "test_point": "RCT",
+      "reading": 38.4,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.12",
+      "test_point": "Braun",
+      "reading": 38.6,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.13",
+      "test_point": "DUT ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.13",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.13",
+      "test_point": "Braun",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group A - No.14",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.14",
+      "test_point": "RCT",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.14",
+      "test_point": "Braun",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.15",
+      "test_point": "DUT ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.15",
+      "test_point": "RCT",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.15",
+      "test_point": "Braun",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group A - No.16",
+      "test_point": "DUT ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "F, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.16",
+      "test_point": "RCT",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "F, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.16",
+      "test_point": "Braun",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "F, Age 1"
+    },
+    {
+      "machine_no": "Group A - No.17",
+      "test_point": "DUT ti1",
+      "reading": 38.9,
+      "unit": "°C",
+      "condition": "F, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.17",
+      "test_point": "RCT",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "F, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.17",
+      "test_point": "Braun",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "F, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.18",
+      "test_point": "DUT ti1",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.18",
+      "test_point": "RCT",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.18",
+      "test_point": "Braun",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.19",
+      "test_point": "DUT ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.19",
+      "test_point": "RCT",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.19",
+      "test_point": "Braun",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group A - No.20",
+      "test_point": "DUT ti1",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.20",
+      "test_point": "RCT",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.20",
+      "test_point": "Braun",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "M, Age 0.5"
+    },
+    {
+      "machine_no": "Group A - No.21",
+      "test_point": "DUT ti1",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.21",
+      "test_point": "RCT",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.21",
+      "test_point": "Braun",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.22",
+      "test_point": "DUT ti1",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.22",
+      "test_point": "RCT",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.22",
+      "test_point": "Braun",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.23",
+      "test_point": "DUT ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group A - No.23",
+      "test_point": "RCT",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group A - No.23",
+      "test_point": "Braun",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group A - No.24",
+      "test_point": "DUT ti1",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "F, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.24",
+      "test_point": "RCT",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "F, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.24",
+      "test_point": "Braun",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "F, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.25",
+      "test_point": "DUT ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.25",
+      "test_point": "RCT",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.25",
+      "test_point": "Braun",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.26",
+      "test_point": "DUT ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.26",
+      "test_point": "RCT",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.26",
+      "test_point": "Braun",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.27",
+      "test_point": "DUT ti1",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.27",
+      "test_point": "RCT",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.27",
+      "test_point": "Braun",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.28",
+      "test_point": "DUT ti1",
+      "reading": 38.3,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group A - No.28",
+      "test_point": "RCT",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group A - No.28",
+      "test_point": "Braun",
+      "reading": 38.5,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group A - No.29",
+      "test_point": "DUT ti1",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "F, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.29",
+      "test_point": "RCT",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "F, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.29",
+      "test_point": "Braun",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.30",
+      "test_point": "DUT ti1",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.30",
+      "test_point": "RCT",
+      "reading": 38.9,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.30",
+      "test_point": "Braun",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.31",
+      "test_point": "DUT ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.31",
+      "test_point": "RCT",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.31",
+      "test_point": "Braun",
+      "reading": 38.3,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.32",
+      "test_point": "DUT ti1",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group A - No.32",
+      "test_point": "RCT",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group A - No.32",
+      "test_point": "Braun",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group A - No.33",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "F, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.33",
+      "test_point": "RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.33",
+      "test_point": "Braun",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.34",
+      "test_point": "DUT ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "M, Age 6"
+    },
+    {
+      "machine_no": "Group A - No.34",
+      "test_point": "RCT",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "M, Age 6"
+    },
+    {
+      "machine_no": "Group A - No.34",
+      "test_point": "Braun",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "M, Age 6"
+    },
+    {
+      "machine_no": "Group A - No.35",
+      "test_point": "DUT ti1",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group A - No.35",
+      "test_point": "RCT",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group A - No.35",
+      "test_point": "Braun",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group A - No.36",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.36",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.36",
+      "test_point": "Braun",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group A - No.37",
+      "test_point": "DUT ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "F, Age 11"
+    },
+    {
+      "machine_no": "Group A - No.37",
+      "test_point": "RCT",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "F, Age 11"
+    },
+    {
+      "machine_no": "Group A - No.37",
+      "test_point": "Braun",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 11"
+    },
+    {
+      "machine_no": "Group A - No.38",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.38",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.38",
+      "test_point": "Braun",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group A - No.39",
+      "test_point": "DUT ti1",
+      "reading": 35.5,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.39",
+      "test_point": "RCT",
+      "reading": 35.7,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.39",
+      "test_point": "Braun",
+      "reading": 35.6,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group A - No.40",
+      "test_point": "DUT ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.40",
+      "test_point": "RCT",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group A - No.40",
+      "test_point": "Braun",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "M, Age 10"
+    },
+    {
+      "machine_no": "Group B - No.1",
+      "test_point": "DUT ti1",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.1",
+      "test_point": "RCT",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.1",
+      "test_point": "Braun",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.2",
+      "test_point": "DUT ti1",
+      "reading": 38.9,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.2",
+      "test_point": "RCT",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.2",
+      "test_point": "Braun",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.3",
+      "test_point": "DUT ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.3",
+      "test_point": "RCT",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.3",
+      "test_point": "Braun",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.4",
+      "test_point": "DUT ti1",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.4",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.4",
+      "test_point": "Braun",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.5",
+      "test_point": "DUT ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.5",
+      "test_point": "RCT",
+      "reading": 35.8,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.5",
+      "test_point": "Braun",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.6",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.6",
+      "test_point": "RCT",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.6",
+      "test_point": "Braun",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.7",
+      "test_point": "DUT ti1",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.7",
+      "test_point": "RCT",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.7",
+      "test_point": "Braun",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.8",
+      "test_point": "DUT ti1",
+      "reading": 35.8,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.8",
+      "test_point": "RCT",
+      "reading": 35.9,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.8",
+      "test_point": "Braun",
+      "reading": 35.9,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.9",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.9",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.9",
+      "test_point": "Braun",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.10",
+      "test_point": "DUT ti1",
+      "reading": 35.9,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.10",
+      "test_point": "RCT",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.10",
+      "test_point": "Braun",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.11",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.11",
+      "test_point": "RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.11",
+      "test_point": "Braun",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.12",
+      "test_point": "DUT ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "F, Age 2.5"
+    },
+    {
+      "machine_no": "Group B - No.12",
+      "test_point": "DUT ti2",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "F, Age 2.5"
+    },
+    {
+      "machine_no": "Group B - No.12",
+      "test_point": "DUT ti3",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "F, Age 2.5"
+    },
+    {
+      "machine_no": "Group B - No.12",
+      "test_point": "RCT",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "F, Age 2.5"
+    },
+    {
+      "machine_no": "Group B - No.13",
+      "test_point": "DUT ti1",
+      "reading": 38.3,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.13",
+      "test_point": "RCT",
+      "reading": 38.6,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.14",
+      "test_point": "DUT ti1",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.14",
+      "test_point": "RCT",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.15",
+      "test_point": "DUT ti1",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.15",
+      "test_point": "RCT",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.16",
+      "test_point": "DUT ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.16",
+      "test_point": "RCT",
+      "reading": 38.4,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.17",
+      "test_point": "DUT ti1",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.17",
+      "test_point": "RCT",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "M, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.18",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.18",
+      "test_point": "RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.19",
+      "test_point": "DUT ti1",
+      "reading": 35.7,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.19",
+      "test_point": "RCT",
+      "reading": 35.8,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.20",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.20",
+      "test_point": "RCT",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.21",
+      "test_point": "DUT ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.21",
+      "test_point": "RCT",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.22",
+      "test_point": "DUT ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.22",
+      "test_point": "RCT",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.23",
+      "test_point": "DUT ti1",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.23",
+      "test_point": "RCT",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.24",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.24",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.25",
+      "test_point": "DUT ti1",
+      "reading": 35.5,
+      "unit": "°C",
+      "condition": "M, Age 2.5"
+    },
+    {
+      "machine_no": "Group B - No.25",
+      "test_point": "RCT",
+      "reading": 35.6,
+      "unit": "°C",
+      "condition": "M, Age 2.5"
+    },
+    {
+      "machine_no": "Group B - No.26",
+      "test_point": "DUT ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "F, Age 3.5"
+    },
+    {
+      "machine_no": "Group B - No.26",
+      "test_point": "RCT",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "F, Age 3.5"
+    },
+    {
+      "machine_no": "Group B - No.27",
+      "test_point": "DUT ti1",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "F, Age 4.5"
+    },
+    {
+      "machine_no": "Group B - No.27",
+      "test_point": "RCT",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "F, Age 4.5"
+    },
+    {
+      "machine_no": "Group B - No.28",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "F, Age 4.5"
+    },
+    {
+      "machine_no": "Group B - No.28",
+      "test_point": "RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 4.5"
+    },
+    {
+      "machine_no": "Group B - No.29",
+      "test_point": "DUT ti1",
+      "reading": 37.0,
+      "unit": "°C",
+      "condition": "M, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.29",
+      "test_point": "RCT",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "M, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.30",
+      "test_point": "DUT ti1",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group B - No.30",
+      "test_point": "RCT",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group B - No.31",
+      "test_point": "DUT ti1",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.31",
+      "test_point": "RCT",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "F, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.32",
+      "test_point": "DUT ti1",
+      "reading": 36.9,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.32",
+      "test_point": "RCT",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "M, Age 3"
+    },
+    {
+      "machine_no": "Group B - No.33",
+      "test_point": "DUT ti1",
+      "reading": 37.1,
+      "unit": "°C",
+      "condition": "M, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.33",
+      "test_point": "RCT",
+      "reading": 37.3,
+      "unit": "°C",
+      "condition": "M, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.34",
+      "test_point": "DUT ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.34",
+      "test_point": "RCT",
+      "reading": 38.3,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.35",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.35",
+      "test_point": "RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 5"
+    },
+    {
+      "machine_no": "Group B - No.36",
+      "test_point": "DUT ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.36",
+      "test_point": "RCT",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "F, Age 4"
+    },
+    {
+      "machine_no": "Group B - No.37",
+      "test_point": "DUT ti1",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group B - No.37",
+      "test_point": "RCT",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group B - No.38",
+      "test_point": "DUT ti1",
+      "reading": 39.5,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group B - No.38",
+      "test_point": "RCT",
+      "reading": 39.7,
+      "unit": "°C",
+      "condition": "M, Age 1.5"
+    },
+    {
+      "machine_no": "Group B - No.39",
+      "test_point": "DUT ti1",
+      "reading": 36.5,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.39",
+      "test_point": "RCT",
+      "reading": 36.6,
+      "unit": "°C",
+      "condition": "F, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.40",
+      "test_point": "DUT ti1",
+      "reading": 37.7,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group B - No.40",
+      "test_point": "RCT",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "M, Age 2"
+    },
+    {
+      "machine_no": "Group C - No.1",
+      "test_point": "DUT ti1",
+      "reading": 38.8,
+      "unit": "°C",
+      "condition": "F, Age 18"
+    },
+    {
+      "machine_no": "Group C - No.1",
+      "test_point": "RCT",
+      "reading": 38.7,
+      "unit": "°C",
+      "condition": "F, Age 18"
+    },
+    {
+      "machine_no": "Group C - No.1",
+      "test_point": "Braun",
+      "reading": 38.9,
+      "unit": "°C",
+      "condition": "F, Age 18"
+    },
+    {
+      "machine_no": "Group C - No.2",
+      "test_point": "DUT ti1",
+      "reading": 37.2,
+      "unit": "°C",
+      "condition": "M, Age 15"
+    },
+    {
+      "machine_no": "Group C - No.2",
+      "test_point": "RCT",
+      "reading": 37.4,
+      "unit": "°C",
+      "condition": "M, Age 15"
+    },
+    {
+      "machine_no": "Group C - No.2",
+      "test_point": "Braun",
+      "reading": 37.3,
+      "unit": "°C",
+      "condition": "M, Age 15"
+    },
+    {
+      "machine_no": "Group C - No.3",
+      "test_point": "DUT ti1",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "M, Age 30"
+    },
+    {
+      "machine_no": "Group C - No.3",
+      "test_point": "RCT",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 30"
+    },
+    {
+      "machine_no": "Group C - No.3",
+      "test_point": "Braun",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "M, Age 30"
+    },
+    {
+      "machine_no": "Group C - No.4",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "M, Age 80"
+    },
+    {
+      "machine_no": "Group C - No.4",
+      "test_point": "RCT",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "M, Age 80"
+    },
+    {
+      "machine_no": "Group C - No.4",
+      "test_point": "Braun",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "M, Age 80"
+    },
+    {
+      "machine_no": "Group C - No.5",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 25"
+    },
+    {
+      "machine_no": "Group C - No.5",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 25"
+    },
+    {
+      "machine_no": "Group C - No.5",
+      "test_point": "Braun",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 25"
+    },
+    {
+      "machine_no": "Group C - No.6",
+      "test_point": "DUT ti1",
+      "reading": 35.9,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group C - No.6",
+      "test_point": "RCT",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group C - No.6",
+      "test_point": "Braun",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "F, Age 7"
+    },
+    {
+      "machine_no": "Group C - No.7",
+      "test_point": "DUT ti1",
+      "reading": 36.7,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group C - No.7",
+      "test_point": "RCT",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group C - No.7",
+      "test_point": "Braun",
+      "reading": 36.8,
+      "unit": "°C",
+      "condition": "F, Age 8"
+    },
+    {
+      "machine_no": "Group C - No.8",
+      "test_point": "DUT ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "M, Age 6"
+    },
+    {
+      "machine_no": "Group C - No.8",
+      "test_point": "RCT",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "M, Age 6"
+    },
+    {
+      "machine_no": "Group C - No.8",
+      "test_point": "Braun",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "M, Age 6"
+    },
+    {
+      "machine_no": "Group C - No.9",
+      "test_point": "DUT ti1",
+      "reading": 38.3,
+      "unit": "°C",
+      "condition": "F, Age 30"
+    },
+    {
+      "machine_no": "Group C - No.9",
+      "test_point": "RCT",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 30"
+    },
+    {
+      "machine_no": "Group C - No.9",
+      "test_point": "Braun",
+      "reading": 38.4,
+      "unit": "°C",
+      "condition": "F, Age 30"
+    },
+    {
+      "machine_no": "Group C - No.10",
+      "test_point": "DUT ti1",
+      "reading": 38.0,
+      "unit": "°C",
+      "condition": "F, Age 88"
+    },
+    {
+      "machine_no": "Group C - No.10",
+      "test_point": "RCT",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "F, Age 88"
+    },
+    {
+      "machine_no": "Group C - No.10",
+      "test_point": "Braun",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 88"
+    },
+    {
+      "machine_no": "Group C - No.11",
+      "test_point": "DUT ti1",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "F, Age 78"
+    },
+    {
+      "machine_no": "Group C - No.11",
+      "test_point": "RCT",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "F, Age 78"
+    },
+    {
+      "machine_no": "Group C - No.11",
+      "test_point": "Braun",
+      "reading": 39.1,
+      "unit": "°C",
+      "condition": "F, Age 78"
+    },
+    {
+      "machine_no": "Group C - No.12",
+      "test_point": "DUT ti1",
+      "reading": 38.2,
+      "unit": "°C",
+      "condition": "F, Age 45"
+    },
+    {
+      "machine_no": "Group C - No.12",
+      "test_point": "RCT",
+      "reading": 38.1,
+      "unit": "°C",
+      "condition": "F, Age 45"
+    },
+    {
+      "machine_no": "Group C - No.12",
+      "test_point": "Braun",
+      "reading": 38.4,
+      "unit": "°C",
+      "condition": "F, Age 45"
+    },
+    {
+      "machine_no": "Group C - No.13",
+      "test_point": "DUT ti1",
+      "reading": 39.3,
+      "unit": "°C",
+      "condition": "M, Age 60"
+    },
+    {
+      "machine_no": "Group C - No.13",
+      "test_point": "RCT",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 60"
+    },
+    {
+      "machine_no": "Group C - No.13",
+      "test_point": "Braun",
+      "reading": 39.4,
+      "unit": "°C",
+      "condition": "M, Age 60"
+    },
+    {
+      "machine_no": "Group C - No.14",
+      "test_point": "DUT ti1",
+      "reading": 36.2,
+      "unit": "°C",
+      "condition": "F, Age 51"
+    },
+    {
+      "machine_no": "Group C - No.14",
+      "test_point": "RCT",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "F, Age 51"
+    },
+    {
+      "machine_no": "Group C - No.14",
+      "test_point": "Braun",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 51"
+    },
+    {
+      "machine_no": "Group C - No.15",
+      "test_point": "DUT ti1",
+      "reading": 35.7,
+      "unit": "°C",
+      "condition": "M, Age 72"
+    },
+    {
+      "machine_no": "Group C - No.15",
+      "test_point": "RCT",
+      "reading": 35.8,
+      "unit": "°C",
+      "condition": "M, Age 72"
+    },
+    {
+      "machine_no": "Group C - No.15",
+      "test_point": "Braun",
+      "reading": 35.8,
+      "unit": "°C",
+      "condition": "M, Age 72"
+    },
+    {
+      "machine_no": "Group C - No.16",
+      "test_point": "DUT ti1",
+      "reading": 39.5,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group C - No.16",
+      "test_point": "RCT",
+      "reading": 39.5,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group C - No.16",
+      "test_point": "Braun",
+      "reading": 39.6,
+      "unit": "°C",
+      "condition": "M, Age 9"
+    },
+    {
+      "machine_no": "Group C - No.17",
+      "test_point": "DUT ti1",
+      "reading": 37.8,
+      "unit": "°C",
+      "condition": "M, Age 21"
+    },
+    {
+      "machine_no": "Group C - No.17",
+      "test_point": "RCT",
+      "reading": 37.6,
+      "unit": "°C",
+      "condition": "M, Age 21"
+    },
+    {
+      "machine_no": "Group C - No.17",
+      "test_point": "Braun",
+      "reading": 37.9,
+      "unit": "°C",
+      "condition": "M, Age 21"
+    },
+    {
+      "machine_no": "Group C - No.18",
+      "test_point": "DUT ti1",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "M, Age 15"
+    },
+    {
+      "machine_no": "Group C - No.18",
+      "test_point": "RCT",
+      "reading": 39.0,
+      "unit": "°C",
+      "condition": "M, Age 15"
+    },
+    {
+      "machine_no": "Group C - No.18",
+      "test_point": "Braun",
+      "reading": 39.2,
+      "unit": "°C",
+      "condition": "M, Age 15"
+    },
+    {
+      "machine_no": "Group C - No.19",
+      "test_point": "DUT ti1",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 63"
+    },
+    {
+      "machine_no": "Group C - No.19",
+      "test_point": "RCT",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 63"
+    },
+    {
+      "machine_no": "Group C - No.19",
+      "test_point": "Braun",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "F, Age 63"
+    },
+    {
+      "machine_no": "Group C - No.20",
+      "test_point": "DUT ti1",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "F, Age 45"
+    },
+    {
+      "machine_no": "Group C - No.20",
+      "test_point": "RCT",
+      "reading": 36.0,
+      "unit": "°C",
+      "condition": "F, Age 45"
+    },
+    {
+      "machine_no": "Group C - No.20",
+      "test_point": "Braun",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "F, Age 45"
+    },
+    {
+      "machine_no": "Group C - No.21",
+      "test_point": "DUT ti1",
+      "reading": 36.3,
+      "unit": "°C",
+      "condition": "M, Age 32"
+    },
+    {
+      "machine_no": "Group C - No.21",
+      "test_point": "RCT",
+      "reading": 36.1,
+      "unit": "°C",
+      "condition": "M, Age 32"
+    },
+    {
+      "machine_no": "Group C - No.21",
+      "test_point": "Braun",
+      "reading": 36.4,
+      "unit": "°C",
+      "condition": "M, Age 32"
+    },
+    {
+      "machine_no": "22",
+      "test_point": "Subject 22, F, Age 17",
+      "reading": "37.9 / 38 / 37.9",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=37.9(diff 0), Braun=38.1(diff -0.2)"
+    },
+    {
+      "machine_no": "23",
+      "test_point": "Subject 23, F, Age 19",
+      "reading": "38.6 / 38.6 / 38.6",
+      "unit": "°C",
+      "condition": "SD=0.000, Var=0.000; RCT=38.7(diff -0.1), Braun=38.7(diff -0.1)"
+    },
+    {
+      "machine_no": "24",
+      "test_point": "Subject 24, F, Age 81",
+      "reading": "36.1 / 36.3 / 36.1",
+      "unit": "°C",
+      "condition": "SD=0.115, Var=0.013; RCT=36.2(diff -0.1), Braun=36.2(diff -0.1)"
+    },
+    {
+      "machine_no": "25",
+      "test_point": "Subject 25, M, Age 88",
+      "reading": "35.8 / 35.9 / 35.8",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=35.9(diff -0.1), Braun=36.0(diff -0.2)"
+    },
+    {
+      "machine_no": "26",
+      "test_point": "Subject 26, M, Age 63",
+      "reading": "36.3 / 36.2 / 36.2",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=36.4(diff -0.1), Braun=36.4(diff -0.1)"
+    },
+    {
+      "machine_no": "27",
+      "test_point": "Subject 27, F, Age 71",
+      "reading": "35.9 / 36.0 / 35.8",
+      "unit": "°C",
+      "condition": "SD=0.100, Var=0.010; RCT=36.0(diff -0.1), Braun=36.0(diff -0.1)"
+    },
+    {
+      "machine_no": "28",
+      "test_point": "Subject 28, M, Age 19",
+      "reading": "36.2 / 36.2 / 36.1",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=36.2(diff 0), Braun=36.4(diff -0.2)"
+    },
+    {
+      "machine_no": "29",
+      "test_point": "Subject 29, M, Age 6",
+      "reading": "37.1 / 37.0 / 37.2",
+      "unit": "°C",
+      "condition": "SD=0.100, Var=0.010; RCT=37.0(diff 0.1), Braun=37.3(diff -0.2)"
+    },
+    {
+      "machine_no": "30",
+      "test_point": "Subject 30, M, Age 8",
+      "reading": "38.3 / 38.2 / 38.2",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=38.2(diff 0.1), Braun=38.3(diff 0)"
+    },
+    {
+      "machine_no": "31",
+      "test_point": "Subject 31, F, Age 32",
+      "reading": "38.1 / 38.0 / 37.9",
+      "unit": "°C",
+      "condition": "SD=0.100, Var=0.010; RCT=38.1(diff 0), Braun=38.2(diff -0.1)"
+    },
+    {
+      "machine_no": "32",
+      "test_point": "Subject 32, F, Age 45",
+      "reading": "39.0 / 39.0 / 39.0",
+      "unit": "°C",
+      "condition": "SD=0.000, Var=0.000; RCT=38.9(diff 0.1), Braun=39.1(diff -0.1)"
+    },
+    {
+      "machine_no": "33",
+      "test_point": "Subject 33, M, Age 20",
+      "reading": "38.2 / 38.0 / 38.1",
+      "unit": "°C",
+      "condition": "SD=0.100, Var=0.010; RCT=38.1(diff 0.1), Braun=38.3(diff -0.1)"
+    },
+    {
+      "machine_no": "34",
+      "test_point": "Subject 34, M, Age 66",
+      "reading": "39.3 / 39.1 / 39.1",
+      "unit": "°C",
+      "condition": "SD=0.115, Var=0.013; RCT=39.2(diff 0.1), Braun=39.3(diff 0)"
+    },
+    {
+      "machine_no": "35",
+      "test_point": "Subject 35, F, Age 84",
+      "reading": "36.2 / 36.1 / 36.3",
+      "unit": "°C",
+      "condition": "SD=0.100, Var=0.010; RCT=36.3(diff -0.1), Braun=36.3(diff -0.1)"
+    },
+    {
+      "machine_no": "36",
+      "test_point": "Subject 36, F, Age 55",
+      "reading": "35.7 / 35.7 / 35.6",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=35.8(diff -0.1), Braun=35.9(diff -0.2)"
+    },
+    {
+      "machine_no": "37",
+      "test_point": "Subject 37, M, Age 76",
+      "reading": "36.3 / 36.4 / 36.4",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=36.5(diff -0.2), Braun=36.6(diff -0.3)"
+    },
+    {
+      "machine_no": "38",
+      "test_point": "Subject 38, F, Age 48",
+      "reading": "36.0 / 35.9 / 36.0",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=36.1(diff -0.1), Braun=36.1(diff -0.1)"
+    },
+    {
+      "machine_no": "39",
+      "test_point": "Subject 39, F, Age 36",
+      "reading": "37.8 / 37.8 / 37.9",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=38.0(diff -0.2), Braun=37.9(diff -0.1)"
+    },
+    {
+      "machine_no": "40",
+      "test_point": "Subject 40, M, Age 76",
+      "reading": "39.1 / 39.1 / 39.2",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=39.3(diff -0.2), Braun=39.2(diff -0.1)"
+    },
+    {
+      "machine_no": "41",
+      "test_point": "Subject 41, F, Age 35",
+      "reading": "37.7 / 37.7 / 37.7",
+      "unit": "°C",
+      "condition": "SD=0.000, Var=0.000; RCT=37.7(diff 0), Braun=37.8(diff -0.1)"
+    },
+    {
+      "machine_no": "42",
+      "test_point": "Subject 42, F, Age 83",
+      "reading": "36.0 / 36.0 / 36.1",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=36.2(diff -0.2), Braun=36.2(diff -0.2)"
+    },
+    {
+      "machine_no": "43",
+      "test_point": "Subject 43, M, Age 32",
+      "reading": "36.7 / 36.6 / 36.5",
+      "unit": "°C",
+      "condition": "SD=0.100, Var=0.010; RCT=36.7(diff 0), Braun=36.8(diff -0.1)"
+    },
+    {
+      "machine_no": "44",
+      "test_point": "Subject 44, F, Age 76",
+      "reading": "35.5 / 35.7 / 35.5",
+      "unit": "°C",
+      "condition": "SD=0.115, Var=0.013; RCT=35.7(diff -0.2), Braun=35.6(diff -0.1)"
+    },
+    {
+      "machine_no": "45",
+      "test_point": "Subject 45, M, Age 29",
+      "reading": "36.3 / 36.2 / 36.3",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=36.3(diff 0), Braun=36.5(diff -0.2)"
+    },
+    {
+      "machine_no": "46",
+      "test_point": "Subject 46, M, Age 87",
+      "reading": "35.5 / 35.7 / 35.5",
+      "unit": "°C",
+      "condition": "SD=0.115, Var=0.013; RCT=35.7(diff -0.2), Braun=35.6(diff -0.1)"
+    },
+    {
+      "machine_no": "47",
+      "test_point": "Subject 47, M, Age 11",
+      "reading": "36.9 / 36.8 / 36.9",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=37.0(diff -0.1), Braun=37.1(diff -0.2)"
+    },
+    {
+      "machine_no": "48",
+      "test_point": "Subject 48, F, Age 13",
+      "reading": "36.7 / 36.8 / 36.8",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=36.9(diff -0.2), Braun=36.9(diff -0.2)"
+    },
+    {
+      "machine_no": "49",
+      "test_point": "Subject 49, F, Age 36",
+      "reading": "39.1 / 39.2 / 39.2",
+      "unit": "°C",
+      "condition": "SD=0.058, Var=0.003; RCT=39.3(diff -0.2), Braun=39.2(diff -0.1)"
+    },
+    {
+      "machine_no": "50",
+      "test_point": "Subject 50, M, Age 31",
+      "reading": "38.1 / 37.9 / 37.9",
+      "unit": "°C",
+      "condition": "SD=0.115, Var=0.013; RCT=38.0(diff 0.1), Braun=38.3(diff -0.2)"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Document Number",
+      "value": "PT9L-RLTB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "iHealth PT9L Infrared No-Touch Forehead Thermometer"
+    },
+    {
+      "name": "PT9L"
+    },
+    {
+      "name": "Braun thermometer"
+    },
+    {
+      "name": "RCT (Reference Clinical Thermometer)"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Intended use: The Infrared No-Touch Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by healthcare providers.",
+      "topic_tags": [
+        "intended use",
+        "forehead thermometer",
+        "body temperature",
+        "consumer",
+        "healthcare"
+      ],
+      "related_subjects": [
+        "iHealth PT9L",
+        "PT9L-RLTB01"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "The iHealth PT9L Infrared No-Touch Forehead Thermometer is hand-held, reusable, battery operated device, which can measure human body temperature on the skin temperature on one's forehead. Its operation is based on measuring the natural thermal radiation from the central forehead. Put the probe of the thermometer is onto the skin of a patient's central forehead. Pressing the activation button to start the measurement of proposed infrared radiation. The electrical signal read out from the detector is fed to the circuit for amplification and calculation. The final measured temperature will be appeared on a LCD display.",
+      "topic_tags": [
+        "working principle",
+        "infrared radiation",
+        "forehead",
+        "LCD display",
+        "battery operated"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Contraindications: It is not recommended for people whose measuring part has local lesions, such as inflammation, trauma, postoperative, etc.",
+      "topic_tags": [
+        "contraindications",
+        "exclusion",
+        "inflammation",
+        "trauma",
+        "postoperative"
+      ],
+      "related_subjects": [
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Subject participation criteria: 1. A total number of subjects is no less than 90. 2. Within each age group both afebrile and febrile subjects were represented by nearly equal numbers. 3. Oral temperature of 37.5℃ or higher is considered as febrile subjects. 4. Subject groups: Group A – infants, 0-12 months old: no less than 30 subjects; Group B – children, 1-5 years old: no less than 35 subjects; Group C – adults, older than 5 years old: no less than 35 subjects. 5. Exclusion criteria: Subjects with medical conditions which might affect clinical accuracy validation results such as inflammation at the measuring site; Subjects who have taken antipyretics in the preceding 120 min.",
+      "topic_tags": [
+        "subject criteria",
+        "febrile",
+        "afebrile",
+        "age group",
+        "exclusion criteria",
+        "antipyretics"
+      ],
+      "related_subjects": [
+        "PT9L-RLTB01",
+        "clinical accuracy study"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test method: Step 1: Sequence the Participants and sign Serial numbers for them according to participant time. Step 2: Using a water bath to verify the laboratory accuracy of the reference thermometer. Step 3: The supervisor takes the DUT, prepares to take measurement for the first subject. Step 4: Perform three consecutive measurement procedures with the time interval no more than 1 min between each reading. And record the test results. Step 5: Take one measurement with the RCT to get oral temperature, and record the test results. Step 6: Take one measurement with the Braun thermometer to get forehead temperature, and record the test results. Step 7: Repeat steps 3 to 6 to complete all the measurements of the participants. Note: participants signed with odd numbers were measured with DUT first and then with RCT and Braun thermometer; participants signed with even numbers were measured with RCT and Braun thermometer first and then with DUT. Step 8: Using a water bath to verify the laboratory accuracy of the reference thermometer again.",
+      "topic_tags": [
+        "test method",
+        "measurement procedure",
+        "water bath",
+        "reference thermometer",
+        "DUT",
+        "RCT",
+        "Braun"
+      ],
+      "related_subjects": [
+        "PT9L-RLTB01",
+        "clinical accuracy study",
+        "iHealth PT9L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Reference clinical thermometer: An electronic thermometer is used as reference clinical thermometer for the forehead mode thermometer. A water bath is used to verify the laboratory accuracy of the reference thermometer before and after the test.",
+      "topic_tags": [
+        "reference thermometer",
+        "water bath",
+        "laboratory accuracy",
+        "electronic thermometer"
+      ],
+      "related_subjects": [
+        "PT9L-RLTB01",
+        "RCT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group A statistical summary (PT9L vs RCT and Braun): Repeatability Sr=0.07°C. PT9L vs RCT: Clinical bias Δcb=-0.05°C, Standard deviation σΔcb=0.13°C, Limits of agreement LA=0.25°C, Uncertainty=0.13°C. PT9L vs Braun: Clinical bias Δcb=-0.12°C, Standard deviation σΔcb=0.06°C, Limits of agreement LA=0.12°C, Uncertainty=0.06°C.",
+      "topic_tags": [
+        "clinical bias",
+        "repeatability",
+        "limits of agreement",
+        "uncertainty",
+        "PT9L",
+        "RCT",
+        "Braun",
+        "Group A"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "RCT",
+        "Braun thermometer",
+        "clinical accuracy test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group A measurement data table with 40 subjects (rows 2-40): Each row records subject gender (F/M), age (years), three DUT measurements (ti1, ti2, ti3), standard deviation σj and σj², RCT reference temperature tRi, difference Δcb1=ti1-RCT, Braun reference temperature, difference Δcb2=ti1-Braun, and repeatability differences D1=ti2-ti1, D2=ti3-ti2, D3=ti1-ti3.",
+      "topic_tags": [
+        "clinical study",
+        "Group A",
+        "temperature measurement",
+        "repeatability",
+        "DUT",
+        "RCT",
+        "Braun",
+        "pediatric"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "clinical accuracy",
+        "RCT",
+        "Braun thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group B measurement data table with 11 subjects (rows 1-11): Each row records subject gender (F/M), age (years), three DUT measurements (ti1, ti2, ti3), standard deviation σj and σj², RCT reference temperature tRi, difference Δcb1=ti1-RCT, Braun reference temperature, difference Δcb2=ti1-Braun, and repeatability differences D1=ti2-ti1, D2=ti3-ti2, D3=ti1-ti3.",
+      "topic_tags": [
+        "clinical study",
+        "Group B",
+        "temperature measurement",
+        "repeatability",
+        "DUT",
+        "RCT",
+        "Braun",
+        "pediatric"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "clinical accuracy",
+        "RCT",
+        "Braun thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group B statistical summary (PT9L vs RCT and PT9L vs Braun): Repeatability Sr=0.07°C. PT9L vs RCT: Clinical bias △cb=-0.04°C, Standard deviation σ△cb=0.1°C, Limits of agreement LA=0.19°C, Uncertainty=0.1°C. PT9L vs Braun: Clinical bias △cb=-0.14°C, Standard deviation σ△cb=0.06°C, Limits of agreement LA=0.12°C, Uncertainty=0.06°C.",
+      "topic_tags": [
+        "临床偏差",
+        "重复性",
+        "一致性限",
+        "不确定度",
+        "PT9L",
+        "RCT",
+        "Braun"
+      ],
+      "related_subjects": [
+        "Group B clinical accuracy test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group B measurement data table (subjects No.12-40, pediatric population, age range 1.5-5 years): Each subject measured 3 times with DUT (ti1, ti2, ti3), compared against RCT and Braun reference thermometers. Individual differences (△cb1=ti1-RCT, △cb2=ti1-Braun) and repeatability differences (D1=ti2-ti1, D2=ti3-ti2, D3=ti1-ti3) recorded per subject. All DUT readings range from 35.5°C to 39.5°C.",
+      "topic_tags": [
+        "临床试验",
+        "儿童受试者",
+        "体温测量",
+        "DUT",
+        "对比测量"
+      ],
+      "related_subjects": [
+        "Group B clinical accuracy test",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Group C measurement data table (subjects No.1-21, mixed age population including pediatric age 6-9 years, adolescent 15-21 years, adult 25-88 years): Each subject measured 3 times with DUT (ti1, ti2, ti3), compared against RCT and Braun reference thermometers. Individual differences (△cb1=ti1-RCT, △cb2=ti1-Braun) and repeatability differences (D1=ti2-ti1, D2=ti3-ti2, D3=ti1-ti3) recorded per subject. DUT readings range from 35.7°C to 39.5°C.",
+      "topic_tags": [
+        "临床试验",
+        "混合年龄受试者",
+        "体温测量",
+        "DUT",
+        "老年人",
+        "成人",
+        "对比测量"
+      ],
+      "related_subjects": [
+        "Group C clinical accuracy test",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clinical accuracy data table for 50 subjects comparing PT9L against RCT and Braun reference thermometers. Columns include subject number, gender, age, three PT9L measurements, standard deviation, variance, RCT reference value and difference, Braun reference value and difference, and inter-measurement differences. Summary statistics: Repeatability Sr=0.08°C. PT9L vs RCT: Clinical bias △cb=-0.04, Standard deviation σ△cb=0.11, Limits of agreement LA=0.23, Uncertainty=0.11. PT9L vs Braun: Clinical bias △cb=-0.13, Standard deviation σ△cb=0.06, Limits of agreement LA=0.12, Uncertainty=0.06.",
+      "topic_tags": [
+        "clinical accuracy",
+        "repeatability",
+        "clinical bias",
+        "limits of agreement",
+        "uncertainty",
+        "temperature measurement"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "RCT",
+        "Braun",
+        "clinical validation"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "18 设计确认/废案与备份/Clinical study report.via_lo_html.clean.md",
+    "doc_type": "design_validation"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "intended use",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "intended use",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "working principle",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "contraindications",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "subject criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clinical accuracy study",
+      "to": "subject criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "test method",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clinical accuracy study",
+      "to": "test method",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth PT9L",
+      "to": "test method",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "reference thermometer",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RCT",
+      "to": "reference thermometer",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RCT",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Braun thermometer",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clinical accuracy test",
+      "to": "clinical bias",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clinical accuracy",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RCT",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Braun thermometer",
+      "to": "clinical study",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group B clinical accuracy test",
+      "to": "临床偏差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group B clinical accuracy test",
+      "to": "临床试验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "临床试验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Group C clinical accuracy test",
+      "to": "临床试验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "clinical accuracy",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "RCT",
+      "to": "clinical accuracy",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Braun",
+      "to": "clinical accuracy",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "clinical validation",
+      "to": "clinical accuracy",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "PT9L-RLTB01",
+      "to": "PT9L-RLTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "clinical_accuracy_PT9L_vs_RCT",
+      "to": "PT9L-RLTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "clinical_accuracy_PT9L_vs_Braun",
+      "to": "PT9L-RLTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "repeatability",
+      "to": "PT9L-RLTB01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "clinical_accuracy_PT9L_vs_RCT",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "clinical_accuracy_PT9L_vs_Braun",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "repeatability",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01 V1.0",
+      "to": "clinical_accuracy_PT9L_vs_RCT",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01 V1.0",
+      "to": "clinical_accuracy_PT9L_vs_Braun",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01 V1.0",
+      "to": "repeatability",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "DUT (Subject No.1)",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "Group A - No.2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "Group A - No.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "Group A - No.4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "Group A - No.5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "Group A - No.6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RLTB01",
+      "to": "Group A - No.7",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "临床测试环境温度",
+      "attribute": "范围",
+      "value": "23",
+      "unit": "℃",
+      "tolerance": "±2℃",
+      "condition": "临床准确性与重复性测试",
+      "raw_text": "Temperature: 23±2℃, Humidity: 55±10%"
+    },
+    {
+      "subject": "临床测试环境湿度",
+      "attribute": "范围",
+      "value": "55",
+      "unit": "%",
+      "tolerance": "±10%",
+      "condition": "临床准确性与重复性测试",
+      "raw_text": "Temperature: 23±2℃, Humidity: 55±10%"
+    },
+    {
+      "subject": "临床测试受试者",
+      "attribute": "数量",
+      "value": "≥90",
+      "unit": "人",
+      "tolerance": "",
+      "condition": "三个年龄组",
+      "raw_text": "total ≥90 subjects across three age groups"
+    },
+    {
+      "subject": "连续测量间隔",
+      "attribute": "阈值",
+      "value": "≤1",
+      "unit": "min",
+      "tolerance": "",
+      "condition": "每位受试者连续三次测量",
+      "raw_text": "Three consecutive measurements per subject with interval ≤1 min"
+    },
+    {
+      "subject": "统计显著性",
+      "attribute": "判定阈值",
+      "value": ">0.05",
+      "unit": "",
+      "tolerance": "",
+      "condition": "DUT与参考体温计对比",
+      "raw_text": "p>0.05 (no significant difference between DUT and reference clinical thermometer)"
+    },
+    {
+      "subject": "临床偏差（A组）",
+      "attribute": "值",
+      "value": "-0.05",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，A组",
+      "raw_text": "Group A: △cb=-0.05℃"
+    },
+    {
+      "subject": "临床偏差标准差（A组）",
+      "attribute": "值",
+      "value": "0.13",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，A组",
+      "raw_text": "Group A: σ△cb=0.13"
+    },
+    {
+      "subject": "一致性限（A组）",
+      "attribute": "值",
+      "value": "0.25",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，A组",
+      "raw_text": "Group A: LA=0.25"
+    },
+    {
+      "subject": "p值（A组）",
+      "attribute": "值",
+      "value": "0.83",
+      "unit": "",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，A组",
+      "raw_text": "Group A: p=0.83>0.05"
+    },
+    {
+      "subject": "95%置信区间（A组）",
+      "attribute": "范围",
+      "value": "[-0.09, -0.01]",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，A组",
+      "raw_text": "Group A: 95%CI=[-0.09,-0.01]"
+    },
+    {
+      "subject": "重复性标准差（A组）",
+      "attribute": "值",
+      "value": "0.07",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，A组",
+      "raw_text": "Group A: Sr=0.07"
+    },
+    {
+      "subject": "临床偏差（B组）",
+      "attribute": "值",
+      "value": "-0.04",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，B组",
+      "raw_text": "Group B: △cb=-0.04℃"
+    },
+    {
+      "subject": "临床偏差标准差（B组）",
+      "attribute": "值",
+      "value": "0.10",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，B组",
+      "raw_text": "Group B: σ△cb=0.10"
+    },
+    {
+      "subject": "一致性限（B组）",
+      "attribute": "值",
+      "value": "0.19",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，B组",
+      "raw_text": "Group B: LA=0.19"
+    },
+    {
+      "subject": "p值（B组）",
+      "attribute": "值",
+      "value": "0.87",
+      "unit": "",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，B组",
+      "raw_text": "Group B: p=0.87>0.05"
+    },
+    {
+      "subject": "95%置信区间（B组）",
+      "attribute": "范围",
+      "value": "[-0.08, -0.01]",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，B组",
+      "raw_text": "Group B: 95%CI=[-0.08,-0.01]"
+    },
+    {
+      "subject": "重复性标准差（B组）",
+      "attribute": "值",
+      "value": "0.07",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，B组",
+      "raw_text": "Group B: Sr=0.07"
+    },
+    {
+      "subject": "临床偏差（C组）",
+      "attribute": "值",
+      "value": "-0.04",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，C组",
+      "raw_text": "Group C: △cb=-0.04℃"
+    },
+    {
+      "subject": "临床偏差标准差（C组）",
+      "attribute": "值",
+      "value": "0.11",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，C组",
+      "raw_text": "Group C: σ△cb=0.11"
+    },
+    {
+      "subject": "一致性限（C组）",
+      "attribute": "值",
+      "value": "0.23",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，C组",
+      "raw_text": "Group C: LA=0.23"
+    },
+    {
+      "subject": "p值（C组）",
+      "attribute": "值",
+      "value": "0.88",
+      "unit": "",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，C组",
+      "raw_text": "Group C: p=0.88>0.05"
+    },
+    {
+      "subject": "95%置信区间（C组）",
+      "attribute": "范围",
+      "value": "[-0.07, -0.01]",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，C组",
+      "raw_text": "Group C: 95%CI=[-0.07,-0.01]"
+    },
+    {
+      "subject": "重复性标准差（C组）",
+      "attribute": "值",
+      "value": "0.08",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，C组",
+      "raw_text": "Group C: Sr=0.08"
+    },
+    {
+      "subject": "临床偏差（综合）",
+      "attribute": "值",
+      "value": "-0.04",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，综合结果",
+      "raw_text": "Clinical bias △cb = -0.04"
+    },
+    {
+      "subject": "临床偏差标准差（综合）",
+      "attribute": "值",
+      "value": "0.11",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，综合结果",
+      "raw_text": "Standard deviation σ△cb = 0.11"
+    },
+    {
+      "subject": "一致性限（综合）",
+      "attribute": "值",
+      "value": "0.23",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，综合结果",
+      "raw_text": "Limits of agreement LA = 0.23"
+    },
+    {
+      "subject": "测量不确定度（综合）",
+      "attribute": "值",
+      "value": "0.11",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs RCT，综合结果",
+      "raw_text": "Uncertainty = 0.11"
+    },
+    {
+      "subject": "临床偏差（vs Braun）",
+      "attribute": "值",
+      "value": "-0.13",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs Braun",
+      "raw_text": "Clinical bias △cb = -0.13"
+    },
+    {
+      "subject": "临床偏差标准差（vs Braun）",
+      "attribute": "值",
+      "value": "0.06",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs Braun",
+      "raw_text": "Standard deviation σ△cb = 0.06"
+    },
+    {
+      "subject": "一致性限（vs Braun）",
+      "attribute": "值",
+      "value": "0.12",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs Braun",
+      "raw_text": "Limits of agreement LA = 0.12"
+    },
+    {
+      "subject": "测量不确定度（vs Braun）",
+      "attribute": "值",
+      "value": "0.06",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "PT9L vs Braun",
+      "raw_text": "Uncertainty = 0.06"
+    },
+    {
+      "subject": "重复性标准差",
+      "attribute": "值",
+      "value": "0.08",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "重复性测试",
+      "raw_text": "Sr = 0.08"
+    },
+    {
+      "subject": "测量原理",
+      "attribute": "类型",
+      "value": "红外非接触额式",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "Infrared No-Touch Forehead Thermometer"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+```json
+{
+  "agent": "Product Identity Agent",
+  "summary": "本轮共审查5个cluster（MC-CLUSTER-0062、0064、0066、0067、0069），均位于"历史记录"路径下的草稿或参考文件，primary_scope均为false。综合判断：所有命中均属于历史草稿、同品种对比引用或旧型号参考文件，不构成PT9L正式DHF/DMR的产品身份污染。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0062",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_draft_reference",
+      "claim": "\"血压计\"命中位于历史草稿路径下的设计验证计划E0，属于草稿阶段遗留的异类品类Sheet标题，不影响PT9L正式DHF/DMR产品身份。",
+      "reason": "证据文件路径为"历史记录\\PT9LDHF-草稿\\T1样机\\设计验证计划E0"，primary_scope=false，属于草稿阶段文件。命中内容为Sheet标题"血压计法规标准清单"，系模板复用或历史遗留的异类品类标签，未进入正式受控文件范围，不构成PT9L正式DHF/DMR的产品身份污染，予以驳回。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0064",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_draft_reference",
+      "claim": "\"BP3L\"命中均位于历史草稿路径下的软件图样E0文件，文件编号虽含PT9L前缀但文件标题为BP3L，属于历史草稿/旧型号遗留文件，不影响PT9L正式DHF/DMR产品身份。",
+      "reason": "所有8个候选均来自"历史记录\\PT9LDHF-草稿\\T1样机\\软件图样E0 23.11\\BP3L 软件图样E0 23.11"，primary_scope=false。文件标题明确为"BP3L 软件图样E0"，属于旧型号BP3L的草稿阶段软件图样，虽文件编号内含PT9L-RJTY01字样（可能为模板编号复用），但整体文件归属于历史草稿范围，未进入PT9L正式受控DHF/DMR，不构成产品身份污染，予以驳回。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0066",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "legitimate_predicate_device_reference",
+      "claim": "\"PT3\"命中位于历史草稿路径下的临床评价报告，作为PT9L的同品种医疗器械被合理引用，属于临床评价方法论中的合规对比引用，不构成产品身份污染。",
+      "reason": "证据文件路径为"历史记录\\PT9LDHF-草稿\\设计确认\\7.临床评价报告"，primary_scope=false。PT3在文件中明确标注为"同品种医疗器械"，与PT9L（申报医疗器械）进行等效性比较，符合临床评价路径中同品种对比的合规做法。该引用为方法论性质的合理引用，不代表PT9L文件身份被PT3污染，予以驳回。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0067",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "legitimate_predicate_device_reference",
+      "claim": "\"TH30F\"命中位于历史草稿路径下的临床评价报告，作为同品种医疗器械的临床数据来源被合理引用，属于临床评价中的合规数据溯源，不构成PT9L产品身份污染。",
+      "reason": "所有候选均来自"历史记录\\PT9LDHF-草稿\\设计确认\\7.临床评价报告"，primary_scope=false。TH30F为昆山热映光电有限公司的同品种医疗器械，在文件中作为临床试验数据来源被引用，用于支持PT9L通过同品种路径的临床评价。该引用为临床评价方法论中的标准做法，属于合理的历史数据溯源引用，不构成产品身份污染，予以驳回。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0069",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "wrong_model_number_in_controlled_document",
+      "claim": "\"PT9C\"命中位于"历史记录\\给实验室"路径下的可追溯性分析报告，该文件产品型号明确标注为PT9C而非PT9L，文件编号体系全部使用PT9C前缀，存在将PT9C文件误纳入PT9L DHF证据链的产品身份污染风险。",
+      "reason": "证据文件路径为"历史记录\\给实验室\\软件开发逻辑\\可追溯性分析报告"，虽primary_scope=false，但该文件被归入PT9L DHF相关历史记录目录下，且文件封面明确写明"产品型号/版本：PT9C 项目编号：30000034"，文件编号PT9C-ZSFB01，内部所有引用文档编号均为PT9C-RJXQ01、PT9C-RJFA01、PT9C-RJTY01、PT9C-RJGJ01、PT9C-RJCJ01等PT9C系列。该文件整体属于PT9C产品的软件可追溯性分析报告，与PT9L无直接关联。若该文件被作为PT9L软件开发证据提交给实验室或监管机构，将构成实质性的产品身份混淆，影响PT9L软件证据链的完整性与合规性，需确认并要求澄清该文件是否已被正式引用或提交，以及PT9L对应的可追溯性分析报告是否存在。"
+    }
+  ]
+}
+```

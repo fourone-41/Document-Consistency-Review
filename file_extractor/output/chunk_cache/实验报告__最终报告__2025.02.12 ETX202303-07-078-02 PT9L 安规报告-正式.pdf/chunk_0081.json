@@ -1,0 +1,231 @@
+{
+  "document": {
+    "report_number": "ETX202303-07-078-02",
+    "page_range": "174-175 of 181",
+    "fragment_index": "81/84"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-11:2015+A1:2020",
+      "name": "IEC 60601-1-11:2015 + A1:2020 / EN 60601-1-11:2015 + A1:2021",
+      "description": "Requirements for ME equipment used in home healthcare environments"
+    },
+    {
+      "id": "IEC 60068-2-27:2008",
+      "name": "IEC 60068-2-27:2008",
+      "description": "Shock tests standard"
+    },
+    {
+      "id": "IEC 60068-2-64:2008",
+      "name": "IEC 60068-2-64:2008",
+      "description": "Broad-band random vibration tests standard"
+    },
+    {
+      "id": "IEC 60068-2-31:2008",
+      "name": "IEC 60068-2-31:2008",
+      "description": "Free fall tests standard, procedure 1"
+    },
+    {
+      "id": "CISPR 11:2009",
+      "name": "CISPR 11:2009",
+      "description": "Electromagnetic emissions classification standard"
+    },
+    {
+      "id": "IEC 60601-1-8:2006",
+      "name": "IEC 60601-1-8:2006 and IEC 60601-1-8:2006/AMD1:2012",
+      "description": "Alarm systems requirements for ME equipment and ME systems"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "10.1.1",
+      "name": "Mechanical Strength Test",
+      "description": "Additions to Table 28 Mechanical strength test of the base standard; conducted per Table 1 (non-transit-operable) and Table 2 (transit-operable)",
+      "verdict": "P"
+    },
+    {
+      "clause": "10.1.2",
+      "name": "Mechanical Strength - Non-Transit-Operable",
+      "description": "ME equipment subjected to mechanical stress from normal use including pushing, impact, dropping and rough handling",
+      "reference": "See Appended Table 10.1.2",
+      "verdict": "P"
+    },
+    {
+      "clause": "10.1.2a",
+      "name": "Shock Tests (Non-Transit-Operable)",
+      "description": "Shock tests conducted in accordance with IEC 60068-2-27:2008",
+      "reference": "See Appended Table 10.1.2a",
+      "verdict": "P"
+    },
+    {
+      "clause": "10.1.2b",
+      "name": "Broad-Band Random Vibration Tests (Non-Transit-Operable)",
+      "description": "Broad-band random vibration tests conducted in accordance with IEC 60068-2-64:2008",
+      "reference": "See Appended Table 10.1.2b",
+      "verdict": "P"
+    },
+    {
+      "clause": "10.1.3",
+      "name": "Mechanical Strength - Transit-Operable",
+      "description": "Pushing, impact, dropping, rough handling, and rigorous conditions of patient movement; transportation by trolleys, carts, road vehicles, trains, ships, aircraft",
+      "result_remark": "Not transit-operable equipment",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.1.3a",
+      "name": "Shock Tests - Non-Hand-Held Transit-Operable",
+      "description": "IEC 60068-2-27:2008 Type 1 and Type 2",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.1.3b",
+      "name": "Shock Tests - Hand-Held Transit-Operable",
+      "description": "IEC 60068-2-27:2008 Type 1 and Type 2",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.1.3c",
+      "name": "Broad-Band Random Vibration Test - Transit-Operable",
+      "description": "IEC 60068-2-64:2008",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.1.3d",
+      "name": "Free Fall Tests - Portable and Mobile ME Equipment",
+      "description": "IEC 60068-2-31:2008, procedure 1",
+      "verdict": "N/A"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "10.1.2",
+      "description": "ME equipment maintained basic safety and essential performance after mechanical tests",
+      "verdict": "P"
+    },
+    {
+      "clause": "10.2",
+      "description": "Controls of ME equipment intended for use by a lay operator that can affect basic safety or essential performance shall be protected from accidental or unauthorized changes or adjustments",
+      "result_remark": "No controls",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.2",
+      "description": "Operator-adjustable controls used for calibration include a means to prevent unintentional changes from the intended position",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "11",
+      "description": "Means provided to control the risk of strangulation and asphyxiation of the patient and others to an acceptable level",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "12",
+      "description": "ME equipment and ME systems intended for home healthcare environment are Class B according to CISPR 11:2009",
+      "result_remark": "Described in chapter 'ELECTROMAGNETIC COMPATIBILITY INFORMATION' of operation guide",
+      "verdict": "P"
+    },
+    {
+      "clause": "13.1",
+      "description": "Each high priority and medium priority alarm condition causes generation of auditory alarm signals per IEC 60601-1-8:2006 and IEC 60601-1-8:2006/AMD1:2012",
+      "result_remark": "See attached IEC 60601-1-8 Report",
+      "verdict": "N/E"
+    }
+  ],
+  "review_items": [
+    {
+      "clause": "usability",
+      "topic": "Usability Engineering",
+      "description": "Manufacturer's usability engineering process included the least capable intended lay operator or lay responsible organization",
+      "result_remark": "Usability was evaluated in the Usability test report",
+      "verdict": "P"
+    },
+    {
+      "clause": "usability",
+      "topic": "Usability Engineering File",
+      "description": "Usability engineering file inspected for compliance",
+      "result_remark": "Usability test report",
+      "verdict": "P"
+    },
+    {
+      "clause": "11",
+      "topic": "Strangulation/Asphyxiation Risk",
+      "description": "Equipment and risk management file inspected",
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Particular emphasis placed on the limited training of a lay operator with respect to the ability to intervene and maintain basic safety and essential performance. The manufacturer's usability engineering process included the least capable intended lay operator or lay responsible organization. Usability was evaluated in the Usability test report. Verdict: P.",
+      "topic_tags": [
+        "usability",
+        "lay operator",
+        "basic safety",
+        "essential performance"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11",
+        "Usability test report"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "ME equipment intended for non-transit-operable use displayed adequate mechanical strength when subjected to mechanical stress caused by normal use, including pushing, impact, dropping and rough handling. This requirement is not applicable to fixed and stationary ME equipment. ME equipment maintained basic safety and essential performance after mechanical tests. Operator-re-settable protective devices that can be reset without the use of a tool were, optionally, reset prior to the evaluation of basic safety and essential performance (N/A).",
+      "topic_tags": [
+        "mechanical strength",
+        "non-transit-operable",
+        "basic safety",
+        "essential performance"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 Clause 10.1.2",
+        "IEC 60068-2-27:2008",
+        "IEC 60068-2-64:2008"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "ME equipment and ME systems intended for home healthcare environment are Class B according to CISPR 11:2009. This is described in the chapter 'ELECTROMAGNETIC COMPATIBILITY INFORMATION' of the operation guide. Verdict: P under Clause 12 of IEC 60601-1-11:2015+A1:2020.",
+      "topic_tags": [
+        "EMC",
+        "Class B",
+        "home healthcare",
+        "CISPR 11"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 Clause 12",
+        "CISPR 11:2009",
+        "operation guide"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Section 11 Protection Against Strangulation or Asphyxiation is marked N/A throughout, indicating the equipment does not present risks of strangulation or asphyxiation to patients and others.",
+      "topic_tags": [
+        "strangulation",
+        "asphyxiation",
+        "N/A",
+        "risk management"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 Clause 11"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 13.1: Each high priority and medium priority alarm condition causes generation of auditory alarm signals per IEC 60601-1-8:2006 and IEC 60601-1-8:2006/AMD1:2012, except when equipment is connected to a distributed alarm system intended for confirmed delivery of alarm conditions including the generation of auditory alarm signals. Result: See attached IEC 60601-1-8 Report. Verdict: N/E.",
+      "topic_tags": [
+        "alarm system",
+        "auditory alarm",
+        "high priority",
+        "medium priority",
+        "distributed alarm"
+      ],
+      "related_subjects": [
+        "IEC 60601-1-11 Clause 13.1",
+        "IEC 60601-1-8:2006",
+        "IEC 60601-1-8:2006/AMD1:2012"
+      ]
+    }
+  ]
+}

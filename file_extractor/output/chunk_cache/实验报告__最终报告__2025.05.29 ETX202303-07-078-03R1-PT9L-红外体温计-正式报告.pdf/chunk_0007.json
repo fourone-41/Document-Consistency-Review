@@ -1,0 +1,149 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-03R1",
+    "title": "PT9L 红外体温计 正式报告",
+    "total_pages": 21,
+    "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/实验报告/最终报告/2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告.pdf"
+  },
+  "tests": [
+    {
+      "clause": "201.11.6.6",
+      "test_name": "Cleaning and disinfection of ME EQUIPMENT and ME SYSTEM",
+      "verdict": "P",
+      "sub_items": [
+        {
+          "iso_14971_clause": "4.2",
+          "document_ref": "Risk Management Report (file No.: PT9L-FXGB01 V1.0)",
+          "result": "Intended use and identification of characteristics related to cleaning analyzed and recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "4.3",
+          "document_ref": "Risk Management Report (file No.: PT9L-FXGB01 V1.0)",
+          "result": "Hazard analysis recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "4.4",
+          "document_ref": "Risk Management Report (file No.: PT9L-FXGB01 V1.0)",
+          "result": "Risk estimation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "5",
+          "document_ref": "Risk Management Report (file No.: PT9L-FXGB01 V1.0)",
+          "result": "Risk evaluation recorded",
+          "verdict": "P"
+        },
+        {
+          "iso_14971_clause": "6.4",
+          "document_ref": "Risk Management Report (file No.: PT9L-FXGB01 V1.0)",
+          "result": "Residual risk evaluated",
+          "verdict": "P"
+        }
+      ]
+    },
+    {
+      "clause": "201.11.6.6 / 201.12.1.101",
+      "test_name": "Cleaning and disinfection - Marking Label",
+      "verdict": "P",
+      "requirement": "When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE",
+      "results_observed": [
+        "The CLINICAL THERMOMETER shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source",
+        "The CLINICAL THERMOMETER shows '- - -°F' or '- - -℃' when output temperature outside the rated extended output range"
+      ],
+      "remarks": "Y"
+    },
+    {
+      "clause": "211.10.1.1 / 201.12.1.101",
+      "test_name": "General requirements for mechanical strength",
+      "verdict": "P",
+      "requirement": "When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE",
+      "results_observed": [
+        "The CLINICAL THERMOMETER shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source",
+        "The CLINICAL THERMOMETER shows '- - -°F' or '- - -℃' when output temperature outside the rated extended output range"
+      ],
+      "remarks": "Y"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "report_no",
+      "value": "ETX202303-07-078-03R1"
+    },
+    {
+      "type": "risk_management_report_file_no",
+      "value": "PT9L-FXGB01 V1.0"
+    },
+    {
+      "type": "product_model",
+      "value": "PT9L"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L 红外体温计",
+      "type": "CLINICAL THERMOMETER",
+      "description": "infrared clinical thermometer"
+    }
+  ],
+  "regulations": [
+    {
+      "standard": "ISO 14971",
+      "clauses_referenced": [
+        "4.2",
+        "4.3",
+        "4.4",
+        "5",
+        "6.4"
+      ],
+      "context": "Risk Management File referenced in cleaning and disinfection test"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Combination of upper and lower limits of environmental temperature and humidity ranges for testing: 1) Midpoint of humidity and ambient temperature; 2) Upper limit of humidity + upper limit of ambient temperature; 3) Upper limit of humidity + lower limit of ambient temperature; 4) Lower limit of humidity + upper limit of ambient temperature; 5) Lower limit of humidity + lower limit of ambient temperature.",
+      "topic_tags": [
+        "environmental conditions",
+        "temperature",
+        "humidity",
+        "test combinations"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-03R1",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Temperature measurement abbreviations used in the report: TRTS – Measured temperature of REFERENCE TEMPERATURE SOURCE; TTUT – Measured temperature of CLINICAL THERMOMETER under test; TRCT – Measured temperature of REFERENCE CLINICAL THERMOMETER. Note: reference temperature source and reference clinical thermometer are same one thermometer.",
+      "topic_tags": [
+        "temperature measurement",
+        "reference temperature source",
+        "clinical thermometer",
+        "abbreviations"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-03R1",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Alarm and output behavior requirement (Clause 201.12.1.101): When the CLINICAL THERMOMETER is not capable of indicating a temperature within the LABORATORY ACCURACY, it shall provide a TECHNICAL ALARM CONDITION or it shall not provide an OUTPUT TEMPERATURE. Verified behavior: (1) Shows 'LOW POWER REMINDER' symbol when low voltage of the internal electrical power source; (2) Shows '- - -°F' or '- - -℃' when output temperature is outside the rated extended output range.",
+      "topic_tags": [
+        "alarm condition",
+        "low power",
+        "output temperature",
+        "clinical thermometer",
+        "safety"
+      ],
+      "related_subjects": [
+        "201.12.1.101",
+        "PT9L",
+        "ETX202303-07-078-03R1"
+      ]
+    }
+  ]
+}

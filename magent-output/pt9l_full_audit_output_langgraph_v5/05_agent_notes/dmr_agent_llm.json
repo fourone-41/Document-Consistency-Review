@@ -1,0 +1,156 @@
+{
+  "agent": "DMR/SOP Agent",
+  "summary": "PT9L设计输出清单整体型号标识一致，但存在PT3旧型号图纸混入DHF、两份包装BOM文件编号不一致、外观图与外箱图纸编号冲突、供应商原图未完成内部图号映射等4类一致性风险，需在制造转移前完成闭环。",
+  "review_notes": [
+    "正向闭环：EBOM（DMR-041）中PCB型号PT9L-HFMP01 V1.0与SMT加工说明（DMR-001）、设计输出清单一（DMR-053/054）、图纸（DMR-018）四处完全一致，PCB版本链闭环良好。",
+    "正向闭环：工艺说明（DMR-025/026）明确引用PT9L-EBOM01和PT9L-SMTW01最新版本执行，与EBOM文件编号（DMR-038）对应，交叉引用规范。",
+    "正向闭环：目标代码确认单（DMR-044/045）MCU型号BH67F2762与工装操作说明（DMR-033/034）烧写工装PT9L-SHAOXIE一致，固件烧写链路可追溯。",
+    "观察：F0168（PT1-F05）和F0169/F0173（PT1-F07）两份图纸文件名含'PT1'前缀，但证据目录中无法确认其是否属于PT9L包装BOM范围，建议人工核查是否为遗留文件。",
+    "观察：散热器金属套图纸（DMR-118）为外购供应商图号GXT-001/天津小泉，尚未完成内部T-Z1标准图号映射，制造转移前需确认图号管理策略。",
+    "观察：设计输出清单一提交/审核日期字段为空（DMR-051），表明该清单可能尚未完成正式审批，建议确认签署状态。"
+  ],
+  "findings": [
+    {
+      "finding_type": "legacy_model_drawing_in_dhf",
+      "severity": "P1",
+      "claim": "PT9L DHF设计输出清单二中归档了型号为PT3的双联弹簧图纸（Drawing NO. PT3-P10，Model NO. PT3），该图纸属于PT3项目原件，非PT9L设计输出，存在法规/验证闭环风险。",
+      "rationale": "DMR-133/134明确标注Drawing NO.为PT3-P10、Model NO.为PT3，DMR-132注明为'PT3项目原件，被PT9L DHF借用归档'。若该件实际用于PT9L，则PT9L EBOM中应有对应物料编码及图号，但当前证据中EBOM（DMR-037至DMR-042）未见PT3-P10条目，形成验证闭环断裂。",
+      "evidence_ids": [
+        "DMR-130",
+        "DMR-131",
+        "DMR-132",
+        "DMR-133",
+        "DMR-134"
+      ],
+      "challenge_questions": [
+        "PT3双联弹簧（PT3-P10）是否实际用于PT9L产品？若是，为何EBOM中未见对应条目？",
+        "该图纸是以'共用件'形式引用还是直接复制归档？是否有跨项目共用件管理程序支撑？",
+        "若PT9L不使用该弹簧，为何将其归档于PT9L设计输出清单二？是否需要从DHF中移除？"
+      ]
+    },
+    {
+      "finding_type": "packaging_bom_document_number_inconsistency",
+      "severity": "P1",
+      "claim": "两份包装BOM文件（F0161和F0162）均声称是PT9L包装BOM（美版），但文件编号不一致：F0161为PT9L-PBOM01 V1.0，F0162为PT9L-PB0M1 V1.0（字母O与数字0混用），构成受控文件唯一性风险。",
+      "rationale": "DMR-055显示F0161文件编号为'PT9L-P BOM01 V1.0'，DMR-062/063显示F0162文件编号为'PT9L-PB0M1 V1.0'（B后为数字0非字母O）。两份文件物料条目高度重叠（DMR-057/058对比DMR-065/066），但编号不同，无法确定哪份为受控版本，可能导致生产现场使用错误版本。",
+      "evidence_ids": [
+        "DMR-055",
+        "DMR-062",
+        "DMR-063",
+        "DMR-057",
+        "DMR-058"
+      ],
+      "challenge_questions": [
+        "F0161与F0162哪份是当前受控版本？另一份是否已作废并标注废止状态？",
+        "两份文件的物料条目是否完全一致？F0162中未列出的条目（如保护膜PT9L-P10）是否为有意删减？",
+        "文件编号中字母O与数字0混用是否为OCR识别误差，还是原始文件本身存在此问题？"
+      ]
+    },
+    {
+      "finding_type": "drawing_number_collision",
+      "severity": "P1",
+      "claim": "外观图（F0177）与外箱图纸（F0164）的Drawing NO.均为PT9L-F01，但两者为不同物件，图号冲突将导致图纸管理混乱和制造转移错误风险。",
+      "rationale": "DMR-138明确标注外观图Drawing NO.为'PT9L-F01（⚠️与外箱PT9L-F01同号但不同件）'，DMR-075显示外箱图纸Drawing NO.同为PT9L-F01。同一图号对应两个不同物件，违反图纸唯一性原则，在制造现场可能引发错误领用或装配。",
+      "evidence_ids": [
+        "DMR-138",
+        "DMR-075",
+        "DMR-076",
+        "DMR-077"
+      ],
+      "challenge_questions": [
+        "外观图PT9L-F01与外箱图纸PT9L-F01是否已在图纸管理系统中区分（如通过版本号或子编号）？",
+        "哪份图纸的PT9L-F01编号是正确的？另一份是否需要重新编号并更新所有引用文件？",
+        "包装BOM（DMR-065）中引用的PT9L-F01指向哪份图纸？"
+      ]
+    },
+    {
+      "finding_type": "supplier_drawing_internal_number_not_mapped",
+      "severity": "P2",
+      "claim": "散热器金属套图纸（75CEE0-Model.pdf）为外购供应商图号（GXT-001/天津小泉），尚未完成内部标准图号映射，制造转移资料中图号体系不统一。",
+      "rationale": "DMR-118说明该图为外购供应商图纸，DMR-123提出'是否需要换为本厂标准化的T-Z1-Pxx图号'的待确认问题。若制造转移时仍使用供应商图号，则与PT9L内部BOM/工艺说明的图号体系不一致，影响变更控制和可追溯性。",
+      "evidence_ids": [
+        "DMR-118",
+        "DMR-119",
+        "DMR-120",
+        "DMR-121",
+        "DMR-122"
+      ],
+      "challenge_questions": [
+        "散热器金属套是否已在PT9L EBOM中以内部物料编码登记？对应的图号是GXT-001还是已分配内部图号？",
+        "供应商图纸是否经过设计评审并纳入受控文件体系？是否有供应商图纸接受记录？",
+        "2m跌落要求（DMR-121）是否已在PT9L整机验证计划中独立覆盖？"
+      ]
+    },
+    {
+      "finding_type": "assembly_drawing_pt3_m01_bom_traceability_gap",
+      "severity": "P2",
+      "claim": "散热器压块图纸（FDIR-V14）在PT9L总装图BOM中以PT3-M01入账，图号前缀为PT3而非PT9L，与PT9L项目图号命名规范不符，存在物料可追溯性风险。",
+      "rationale": "DMR-126明确指出'本件在PT9L BOM中以PT3-M01入账'，DMR-125显示该图纸路径在PT9L DHF历史文件中。PT3-M01前缀暗示该件源自PT3项目，若PT9L与PT3的压块规格存在差异而未经变更控制，则验证数据可能不适用于PT9L。",
+      "evidence_ids": [
+        "DMR-124",
+        "DMR-125",
+        "DMR-126",
+        "DMR-127",
+        "DMR-128"
+      ],
+      "challenge_questions": [
+        "PT9L使用的散热器压块与PT3项目的PT3-M01是否为完全相同规格？是否有设计差异评估记录？",
+        "PT3-M01的验证数据（含2m跌落）是否可直接适用于PT9L，还是需要重新验证？",
+        "是否应为PT9L版本的压块分配独立的PT9L-Mxx图号以避免混淆？"
+      ]
+    },
+    {
+      "finding_type": "packaging_bom_missing_items",
+      "severity": "P2",
+      "claim": "F0162包装BOM（受控文件PT9L-PB0M1 V1.0）中仅列出彩包装和纸托2项，而F0161包装BOM列出4项（含说明书PT9L-SMSPO1和保护膜PT9L-P10），两份BOM物料条目数量不一致，存在漏料风险。",
+      "rationale": "DMR-065/066显示F0162仅有彩包装和纸托2条记录；DMR-057至DMR-060显示F0161有4条记录，多出说明书（DMR-059）和保护膜（DMR-060）。说明书属于A级重要度，若制造现场依据F0162配料将导致说明书漏装，影响产品合规性。",
+      "evidence_ids": [
+        "DMR-057",
+        "DMR-058",
+        "DMR-059",
+        "DMR-060",
+        "DMR-065"
+      ],
+      "challenge_questions": [
+        "F0162包装BOM是否为完整版本？说明书和保护膜是否被有意排除在外？",
+        "生产现场实际使用哪份包装BOM进行配料？是否有SOP指向具体文件编号？",
+        "说明书PT9L-SMSPO1（DMR-059）与图纸PT9L-SMSP01（DMR-095）编号中'O'与'0'是否为同一文件的录入差异？"
+      ]
+    },
+    {
+      "finding_type": "appearance_drawing_color_spec_incomplete",
+      "severity": "P2",
+      "claim": "外观图（PT9L-F01 V1.0）仅标注上盖白色，未标注Cool Gray 8U装饰色规格，与彩包装图（DMR-082）描述的橙/白双色外观存在潜在不一致，外观验收标准不完整。",
+      "rationale": "DMR-140指出外观图'只标了上盖白色，未提Cool Gray 8U上盖装饰'，且注明'高概率取消，待工程师确认'。若外观图颜色规格未最终确认，则产品缺陷定义（DMR-013）中的外观缺陷等级评价缺乏完整基准，影响出货检验。",
+      "evidence_ids": [
+        "DMR-136",
+        "DMR-137",
+        "DMR-138",
+        "DMR-139",
+        "DMR-140"
+      ],
+      "challenge_questions": [
+        "Cool Gray 8U上盖装饰是否已正式取消？取消决定是否有设计变更单（ECO）支撑？",
+        "外观图当前版本V1.0是否为最终受控版本？是否需要出具V1.1以明确颜色规格？",
+        "产品缺陷定义（F0151）中的外观缺陷判定标准是否已与最终外观图版本同步更新？"
+      ]
+    },
+    {
+      "finding_type": "smt_process_pcb_spec_board_thickness_not_in_ebom",
+      "severity": "P3",
+      "claim": "SMT加工说明规定PCB板厚1mm、喷锡工艺（DMR-002），但EBOM（DMR-041）中PCB条目仅记录规格为PT9L-HFMP01 V1.0，未明确板厚和表面处理工艺，工艺参数可追溯性不完整。",
+      "rationale": "DMR-002规定板厚1mm和喷锡工艺，DMR-041 EBOM中PCB规格列仅填写图号，无板厚/表面处理字段。若PCB供应商变更或图纸修订，EBOM无法独立约束工艺参数，需依赖SMT加工说明交叉核对，增加变更控制风险。",
+      "evidence_ids": [
+        "DMR-001",
+        "DMR-002",
+        "DMR-003",
+        "DMR-041"
+      ],
+      "challenge_questions": [
+        "PCB图纸PT9L-HFMP01 V1.0是否已在图纸中明确标注板厚1mm和喷锡工艺？",
+        "EBOM规格列是否应补充板厚和表面处理信息，或通过图纸引用方式完整约束？",
+        "无铅工艺要求（DMR-003）是否在EBOM的ROHS字段中得到体现？"
+      ]
+    }
+  ]
+}

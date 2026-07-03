@@ -1,0 +1,392 @@
+{
+  "document": {
+    "title": "Checklist of EN 60601-1-6:2010+A1:2015+A2:2021",
+    "doc_type": "检测报告/合规检查清单",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "4.0",
+      "item": "General requirements",
+      "pass_criteria": "P",
+      "actual_result": "P"
+    },
+    {
+      "test_id": "4.1",
+      "item": "Conditions for application to ME EQUIPMENT - The ME EQUIPMENT shall provide adequate USABILITY such that the RISks resulting from NORMAL USE, i.e. CORRECT USE and USE ERROR, are acceptable.",
+      "condition": "Compliance with 4.2 and other clauses and subclauses of this collateral standard",
+      "pass_criteria": "P",
+      "actual_result": "P"
+    },
+    {
+      "test_id": "4.2",
+      "item": "USABILITY ENGINEERING PROCESS for ME EQUIPMENT - A USABILITY ENGINEERING PROCESS complying with IEC 62366-1:2015+A1:2020 shall be performed except planning for and execution of production and POST-PRODUCTION monitoring and maintenance of the USABILITY ENGINEERING PROCESS",
+      "condition": "USABILITY ENGINEERING PROCESS has been performed, please see the inspection of the USABILITY ENGINEERING file",
+      "pass_criteria": "P",
+      "actual_result": "P"
+    },
+    {
+      "test_id": "5",
+      "item": "ME EQUIPMENT ACCOMPANYING DOCUMENTS",
+      "pass_criteria": "P",
+      "actual_result": "P"
+    },
+    {
+      "test_id": "5.1",
+      "item": "The instructions for use include a brief description of the ME EQUIPMENT, its physical operating principles and significant physical and performance characteristics relevant to its use.",
+      "condition": "Inspect the instruction for use to include information required",
+      "pass_criteria": "P",
+      "actual_result": "P"
+    },
+    {
+      "test_id": "5.2",
+      "item": "The same information shall also be included in the technical description, if this is provided as a separate document.",
+      "condition": "Inspect the instruction for use to include information required",
+      "pass_criteria": "P",
+      "actual_result": "P"
+    },
+    {
+      "test_id": "5.3",
+      "item": "The instructions for use contain a summary of the USE SPECIFICATION as specified in IEC 62366-1:2015+A1:2020, 5.1.",
+      "condition": "Inspect the instruction for use to include use specification as specified in IEC 62366-1.",
+      "pass_criteria": "P",
+      "actual_result": "P"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "PT9L-UETR01 V1.0",
+      "conclusion": "Pass"
+    }
+  ],
+  "persons": [
+    {
+      "name": "Wang Di",
+      "title": "Drafter"
+    },
+    {
+      "name": "Cong Ming",
+      "title": "Approver"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "Document Number",
+      "value": "PT9L-UETR01 V1.0"
+    },
+    {
+      "id_type": "Project Number",
+      "value": "30000078"
+    },
+    {
+      "id_type": "Standard",
+      "value": "EN 60601-1-6:2010+A1:2015+A2:2021"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "Infrared Forehead Thermometer"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "Original",
+      "author": "Wang Di"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "A USABILITY ENGINEERING PROCESS complying with IEC 62366-1:2015+A1:2020 shall be performed except: - the planning for and execution of production and POST-PRODUCTION monitoring in the context of applying the USABILITY ENGINEERING PROCESS within the framework of ISO 14971, and - maintenance of the USABILITY ENGINEERING PROCESS.",
+      "topic_tags": [
+        "可用性工程过程",
+        "IEC 62366-1",
+        "ISO 14971",
+        "生产后监控"
+      ],
+      "related_subjects": [
+        "4.2",
+        "EN 60601-1-6"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The instructions for use contain a summary of the USE SPECIFICATION as specified in IEC 62366-1:2015+A1:2020, 5.1. The instructions for use include a brief description of the ME EQUIPMENT, its physical operating principles and significant physical and performance characteristics relevant to its use.",
+      "topic_tags": [
+        "使用说明书",
+        "使用规范",
+        "IEC 62366-1",
+        "ME设备随附文件"
+      ],
+      "related_subjects": [
+        "5",
+        "IEC 62366-1:2015+A1:2020"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "18 设计确认/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf.md",
+    "doc_type": "design_validation"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "Checklist of EN 60601-1-6:2010+A1:2015+A2:2021",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.2",
+      "to": "可用性工程过程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EN 60601-1-6",
+      "to": "可用性工程过程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5",
+      "to": "使用说明书",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 62366-1:2015+A1:2020",
+      "to": "使用说明书",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4.0",
+      "to": "PT9L-UETR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4.1",
+      "to": "PT9L-UETR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "4.2",
+      "to": "PT9L-UETR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5",
+      "to": "PT9L-UETR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5.1",
+      "to": "PT9L-UETR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5.2",
+      "to": "PT9L-UETR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5.3",
+      "to": "PT9L-UETR01 V1.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.0",
+      "to": "4.1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.0",
+      "to": "4.2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5",
+      "to": "5.1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5",
+      "to": "5.2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5",
+      "to": "5.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "4.2",
+      "to": "scope_limitation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5",
+      "to": "behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "4.1",
+      "to": "EN 60601-1-6:2010+A1:2015+A2:2021",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "4.2",
+      "to": "IEC 62366-1:2015+A1:2020",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "4.2",
+      "to": "EN 60601-1-6:2010+A1:2015+A2:2021",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "5.3",
+      "to": "IEC 62366-1:2015+A1:2020",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT9L",
+      "to": "EN 60601-1-6:2010+A1:2015+A2:2021",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "EN 60601-1-6:2010+A1:2015+A2:2021",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "Wang Di",
+      "properties": {
+        "role": "Drafter"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "Cong Ming",
+      "properties": {
+        "role": "Approver"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "4.0",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "4.1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "4.2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "5.1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "5.2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "5.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-UETR01 V1.0",
+      "to": "1",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "Original",
+        "author": "Wang Di"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "可用性工程过程",
+      "attribute": "符合标准",
+      "value": "IEC 62366-1:2015+A1:2020",
+      "unit": "",
+      "tolerance": "",
+      "condition": "排除生产计划执行及上市后监控维护部分",
+      "raw_text": "A USABILITY ENGINEERING PROCESS complying with IEC 62366-1:2015+A1:2020 shall be performed except planning for and execution of production and POST-PRODUCTION monitoring and maintenance"
+    },
+    {
+      "subject": "使用说明书",
+      "attribute": "包含内容要求",
+      "value": "设备简要描述、物理工作原理及与使用相关的重要物理和性能特性",
+      "unit": "",
+      "tolerance": "",
+      "condition": "检查使用说明书",
+      "raw_text": "The instructions for use include a brief description of the ME EQUIPMENT, its physical operating principles and significant physical and performance characteristics relevant to its use."
+    },
+    {
+      "subject": "技术说明书",
+      "attribute": "包含内容要求",
+      "value": "与使用说明书相同的信息",
+      "unit": "",
+      "tolerance": "",
+      "condition": "若作为独立文件提供时适用",
+      "raw_text": "The same information shall also be included in the technical description, if this is provided as a separate document."
+    },
+    {
+      "subject": "使用说明书",
+      "attribute": "使用规范摘要",
+      "value": "符合IEC 62366-1:2015+A1:2020第5.1条规定",
+      "unit": "",
+      "tolerance": "",
+      "condition": "检查使用说明书中使用规范内容",
+      "raw_text": "The instructions for use contain a summary of the USE SPECIFICATION as specified in IEC 62366-1:2015+A1:2020, 5.1."
+    }
+  ]
+}

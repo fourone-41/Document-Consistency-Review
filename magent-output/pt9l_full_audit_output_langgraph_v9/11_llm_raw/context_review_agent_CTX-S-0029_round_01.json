@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "DMR/SOP Agent",
+  "decision": "confirm",
+  "severity": "P3",
+  "error_type": "cross_product_shared_component_not_justified",
+  "claim": "Two drawings originating from the PT3 project are archived in the PT9L DHF design output folder without any cross-product shared-component justification document in the supplied evidence catalog: (1) PT3_双联弹簧_REV01 (Drawing NO. PT3-P10, Model NO. PT3), explicitly annotated in its own document header as 'PT3项目原件，被PT9L DHF借用归档（外购件/设计参照）'; (2) FDIR-V14_散热器压块_REV01_0714, a Famidoc supplier drawing dated 2017-06-28 with iHealth approval 2017-07-14, mapped to PT3-M01 in the PT9L BOM (总装图序号13). Both drawings carry PT3-origin identifiers (PT3-P10, FDIR-V14, PT3-M01) and are physically stored under the PT9L DHF design output path. The recovered evidence confirms their presence and PT3 origin but contains no cross-product shared-component justification document, design transfer record, or formal reuse authorization linking these PT3 components to the PT9L DHF.",
+  "reason": "The recovered context package provides direct, verified evidence (DMR-126 through DMR-133 and associated full-text excerpts) confirming both drawings are PT3-origin artifacts archived in the PT9L DHF folder. PT3_双联弹簧_REV01 is self-labeled as a PT3 original borrowed into PT9L DHF. FDIR-V14_散热器压块_REV01_0714 carries a Famidoc product number (FDIR-V14) referencing a different product line (体温计/thermometer) and is mapped to PT3-M01 in the PT9L BOM without any iHealth internal drawing bearing the PT3-M01 number (the document itself notes '推测无'). No cross-product shared-component justification, design reuse authorization, or formal transfer document appears anywhere in the evidence catalog. Under 21 CFR Part 820.30(j) and ISO 13485:2016 §4.2.3/§7.3.3, design outputs incorporated into a DHF from another product project require documented justification for reuse. The gap is real and confirmed by the recovered evidence."
+}
+```

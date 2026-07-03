@@ -1,0 +1,243 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-03",
+    "total_pages": 21,
+    "fragment_pages": "15-17"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1-8:2006+A1:2012",
+      "clause": "208",
+      "title": "General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems",
+      "applicability": "N/A"
+    },
+    {
+      "id": "IEC 60601-1-8:2006+A1:2012",
+      "clause": "208.6.1.2",
+      "title": "Determination of ALARM CONDITIONS and assignment of priority",
+      "amendment": "A CLINICAL THERMOMETER need not have a PHYSIOLOGICAL ALARM CONDITION.",
+      "applicability": "N/A"
+    },
+    {
+      "id": "IEC 60601-1-11:2015",
+      "clause": "211",
+      "title": "Requirements for medical electrical equipment and medical electrical systems used in the home healthcare environment",
+      "applicability": "P"
+    },
+    {
+      "id": "IEC 60601-1-11:2015",
+      "clause": "211.4.2.3.1",
+      "title": "Continuous operating conditions",
+      "amendment": "Temperature range of at least +15°C to +40°C",
+      "reference": "See electrical safety report ETX202303-07-003-04",
+      "applicability": "P"
+    },
+    {
+      "id": "IEC 60601-1-11:2015",
+      "clause": "211.10.1.1",
+      "title": "General requirements for mechanical strength",
+      "amendment": "Tests of IEC 60601-1-11:2015 Clause 10 and IEC 60601-1:2005+A1:2012 15.3 shall be performed on the same sample after cleaning and disinfection procedures",
+      "reference": "See appended Table 211.10.1.1",
+      "applicability": "P"
+    },
+    {
+      "id": "IEC 60601-1-12:2014",
+      "clause": "212",
+      "title": "Requirements for medical electrical equipment and medical electrical systems intended for use in the emergency medical services environment",
+      "applicability": "N/A"
+    },
+    {
+      "id": "IEC 60601-1-12:2014",
+      "clause": "212.10.1.1",
+      "title": "General requirements for mechanical strength",
+      "amendment": "Tests of IEC 60601-1-12:2014 Clause 10 and IEC 60601-1:2005+A1:2012 15.3 shall be performed on the same sample after cleaning and disinfection procedures of 201.11.6.6",
+      "applicability": "N/A"
+    }
+  ],
+  "tests": [
+    {
+      "id": "201.101.2",
+      "name": "Laboratory accuracy",
+      "result": "P",
+      "parameters": {
+        "rated_output_range_celsius": "32.0°C to 42.9°C",
+        "rated_extended_output_range": "N/A",
+        "ambient_conditions": "10°C to 40°C, 15%-95% RH"
+      },
+      "test_data": [
+        {
+          "measurement_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 1,
+          "ambient": "25℃, 55%RH",
+          "TRTS_celsius": 37.0,
+          "TTUT_celsius": 36.8,
+          "TRCT_celsius": 36.9,
+          "equation_celsius": -0.1
+        },
+        {
+          "measurement_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 2,
+          "ambient": "39.5℃, 90%RH",
+          "TRTS_celsius": 37.0,
+          "TTUT_celsius": 37.2,
+          "TRCT_celsius": 37.11,
+          "equation_celsius": 0.1
+        },
+        {
+          "measurement_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 3,
+          "ambient": "10.5℃, 90%RH",
+          "TRTS_celsius": 37.0,
+          "TTUT_celsius": 37.0,
+          "TRCT_celsius": 36.96,
+          "equation_celsius": 0.0
+        },
+        {
+          "measurement_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 4,
+          "ambient": "39.5℃, 20%RH",
+          "TRTS_celsius": 37.0,
+          "TTUT_celsius": 36.9,
+          "TRCT_celsius": 36.9,
+          "equation_celsius": 0.0
+        },
+        {
+          "measurement_point": "Midpoint of RATED OUTPUT RANGE",
+          "combination": 5,
+          "ambient": "10.5℃, 20%RH",
+          "TRTS_celsius": 37.0,
+          "TTUT_celsius": 36.9,
+          "TRCT_celsius": 36.9,
+          "equation_celsius": 0.0
+        },
+        {
+          "measurement_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 1,
+          "ambient": "25℃, 55%RH",
+          "TRTS_celsius": 42.0,
+          "TTUT_celsius": 41.8,
+          "TRCT_celsius": 41.88,
+          "equation_celsius": -0.1
+        },
+        {
+          "measurement_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 2,
+          "ambient": "39.5℃, 90%RH",
+          "TRTS_celsius": 42.0,
+          "TTUT_celsius": 42.0,
+          "TRCT_celsius": 42.04,
+          "equation_celsius": -0.0
+        },
+        {
+          "measurement_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 3,
+          "ambient": "10.5℃, 90%RH",
+          "TRTS_celsius": 42.0,
+          "TTUT_celsius": 42.0,
+          "TRCT_celsius": 41.95,
+          "equation_celsius": 0.1
+        },
+        {
+          "measurement_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 4,
+          "ambient": "39.5℃, 20%RH",
+          "TRTS_celsius": 42.0,
+          "TTUT_celsius": 41.8,
+          "TRCT_celsius": 41.86,
+          "equation_celsius": -0.1
+        },
+        {
+          "measurement_point": "Upper limit of RATED OUTPUT RANGE",
+          "combination": 5,
+          "ambient": "10.5℃, 20%RH",
+          "TRTS_celsius": 42.0,
+          "TTUT_celsius": 41.8,
+          "TRCT_celsius": 41.95,
+          "equation_celsius": -0.2
+        },
+        {
+          "measurement_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 1,
+          "ambient": "25℃, 55%RH",
+          "TRTS_celsius": 33.0,
+          "TTUT_celsius": 32.9,
+          "TRCT_celsius": 32.9,
+          "equation_celsius": 0.0
+        },
+        {
+          "measurement_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 2,
+          "ambient": "39.5℃, 90%RH",
+          "TRTS_celsius": 33.0,
+          "TTUT_celsius": 32.9,
+          "TRCT_celsius": 34.82,
+          "equation_celsius": 0.1
+        },
+        {
+          "measurement_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 3,
+          "ambient": "10.5℃, 90%RH",
+          "TRTS_celsius": 33.0,
+          "TTUT_celsius": 32.9,
+          "TRCT_celsius": 32.88,
+          "equation_celsius": 0.0
+        },
+        {
+          "measurement_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 4,
+          "ambient": "39.5℃, 20%RH",
+          "TRTS_celsius": 33.0,
+          "TTUT_celsius": 33.0,
+          "TRCT_celsius": 32.91,
+          "equation_celsius": 0.1
+        },
+        {
+          "measurement_point": "Lower limit of RATED OUTPUT RANGE",
+          "combination": 5,
+          "ambient": "10.5℃, 20%RH",
+          "TRTS_celsius": 33.0,
+          "TTUT_celsius": 32.9,
+          "TRCT_celsius": 32.89,
+          "equation_celsius": 0.0
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clause 212.10.1.1 Amendment: The tests of IEC 60601-1-12:2014 Clause 10 and IEC 60601-1:2005+A1:2012 15.3 shall be performed on the same sample of the CLINICAL THERMOMETER after the cleaning and disinfection PROCEDURES of 201.11.6.6 of this document have been performed unless there are no cleaning and disinfection PROCEDURES specified in the instructions for use. If more than one PROCEDURE is specified in the instructions for use, each PROCEDURE shall be so tested.",
+      "topic_tags": [
+        "mechanical strength",
+        "cleaning",
+        "disinfection",
+        "clinical thermometer",
+        "IEC 60601-1-12",
+        "emergency medical services"
+      ],
+      "related_subjects": [
+        "212.10.1.1",
+        "IEC 60601-1-12:2014",
+        "201.11.6.6"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Laboratory accuracy test supplementary information for combination conditions: 1. Midpoint of humidity and ambient temperature (25℃, 55%RH); 2. Upper limit of humidity + upper limit of ambient temperature (39.5℃, 90%RH); 3. Upper limit of humidity + lower limit of ambient temperature (10.5℃, 90%RH); 4. Lower limit of humidity + upper limit of ambient temperature (39.5℃, 20%RH); 5. Lower limit of humidity + lower limit of ambient temperature (10.5℃, 20%RH). TRTS – Measured temperature of REFERENCE TEMPERATURE SOURCE; TTUT – Measured temperature of CLINICAL THERMOMETER under test; TRCT – Measured temperature of REFERENCE CLINICAL THERMOMETER. Note: reference temperature source and reference clinical thermometer are the same one thermometer.",
+      "topic_tags": [
+        "laboratory accuracy",
+        "temperature measurement",
+        "humidity",
+        "TRTS",
+        "TTUT",
+        "TRCT",
+        "reference thermometer",
+        "clinical thermometer"
+      ],
+      "related_subjects": [
+        "201.101.2",
+        "ETX202303-07-078-03"
+      ]
+    }
+  ]
+}

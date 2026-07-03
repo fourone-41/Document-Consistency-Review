@@ -1,0 +1,168 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "total_pages": 181,
+    "current_pages": "160-162",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "attachments": [
+      "ATTACHMENT 1",
+      "ATTACHMENT 2"
+    ]
+  },
+  "products": [
+    {
+      "sample_id": "YP2407008",
+      "lot": "KE04"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.6.1",
+      "requirement": "To comply with NFPA 99, the enclosure of X-ray ME EQUIPMENT operating over 600 Vac, 850Vdc MAINS VOLTAGE, or containing voltages up to 50 V peak and enclosed in protectively earthed enclosure as well as connections to X-ray tubes and other high voltage components that include high voltage shielded cables are PROTECTIVELY EARTHED.",
+      "result_remark": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.6.1",
+      "requirement": "To comply with NFPA 99, non-current carrying conductive parts of X-Ray ME EQUIPMENT likely to become energized are PROTECTIVELY EARTHED.",
+      "result_remark": null,
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.7.3 d",
+      "requirement": "EARTH LEAKAGE CURRENT values are not higher than the stated values",
+      "result_remark": "No protection earth connection.",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "condition": "NORMAL CONDITION",
+          "limit": "5 mA",
+          "verdict": "N/A"
+        },
+        {
+          "condition": "SINGLE FAULT CONDITION",
+          "limit": "10 mA",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.11",
+      "requirement": "Addition prior to the first paragraph: a) To comply with the NEC",
+      "sub_items": [
+        {
+          "requirement": "PERMANENTLY CONNECTED ME EQUIPMENT provided with field wiring provision in accordance with NEC",
+          "result_remark": "Portable equipment",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Exception: Fixed and stationary X-ray ME EQUIPMENT supplied from a branch circuit rated at 30 A or less",
+          "result_remark": null,
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "ME EQUIPMENT that is not strictly portable but obviously is intended to be stationary, may be acceptable if provided with a length of attached hard service flexible cord such as Type S, or the equivalent, for supply connection",
+          "result_remark": null,
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Installation of connecting cords between EQUIPMENT parts comply with NEC",
+          "result_remark": null,
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Cable used as external interconnection between units - Exposed to abuse: Type SJT, SJTO, SJO, ST, SO, STO, or equivalent, or similar multiple-conductor appliance-wiring material",
+          "result_remark": "No external interconnection cable used",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Cable not exposed to abuse: Type SPT-2, SP-2, or SPE-2, or equivalent or Type SVr, SVRO, SVE, or equivalent or similar multiple-conductor appliance wiring material",
+          "result_remark": null,
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Assembly of insulated wires each with a nominal insulation thickness of 0.8 mm (1/32 inch) or more",
+          "result_remark": null,
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Receptacles provided as part of ME EQUIPMENT and ME SYSTEMS for use in the patient care areas of pediatric wards, rooms, or areas are listed tamper resistant or employ a listed tamper resistant cover in accordance with NEC",
+          "result_remark": null,
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "For ME EQUIPMENT provided with NEMA configuration non-locking plug types 120 V/15 A, 125 V/20 A, 250 V/15 A, 250 V/20 A 'Hospital Grade' mains plug is provided and the POWER SUPPLY CORD is marked",
+          "result_remark": null,
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.11.3.2",
+      "requirement": "The flexible cord is a type acceptable for the particular application, and it is acceptable for use at a voltage not less than the rated voltage of the appliance, and has an ampacity as in NEC, not less than the current rating of the appliance",
+      "result_remark": "Internally powered",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.3",
+      "requirement": "To comply with NFPA 99, for X-Ray ME EQUIPMENT with an attachment plug, the current rating on a hospital grade plug is 2X the maximum input current of the equipment",
+      "result_remark": null,
+      "verdict": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "IEC 60601-1",
+      "version": "IEC60601-1:2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "name": "EN 60601-1",
+      "version": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "name": "NFPA 99",
+      "description": "Referenced for protective earthing and hospital grade plug requirements"
+    },
+    {
+      "name": "NEC",
+      "description": "National Electrical Code, referenced for wiring, cord, and receptacle requirements"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Multiple clauses under IEC 60601-1 sections 8.6.1, 8.7.3d, 8.11, 8.11.3.2, 8.11.3.3 are all marked N/A. Reasons include: equipment is portable (8.11), no protection earth connection (8.7.3d), internally powered (8.11.3.2), and no external interconnection cable used (8.11 cable type requirements). These clauses relate to NFPA 99 and NEC compliance requirements for X-ray ME equipment earthing, leakage current, and wiring.",
+      "topic_tags": [
+        "N/A",
+        "NFPA 99",
+        "NEC",
+        "portable equipment",
+        "internally powered",
+        "protective earth",
+        "earth leakage current"
+      ],
+      "related_subjects": [
+        "8.6.1",
+        "8.7.3d",
+        "8.11",
+        "8.11.3.2",
+        "8.11.3.3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "ATTACHMENT 2: Photo Documentation. Sample: YP2407008, Lot: KE04. This attachment contains photo documentation associated with report ETX202303-07-078-02, tested to IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021.",
+      "topic_tags": [
+        "photo documentation",
+        "sample",
+        "lot",
+        "attachment"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-02",
+        "YP2407008",
+        "KE04"
+      ]
+    }
+  ]
+}

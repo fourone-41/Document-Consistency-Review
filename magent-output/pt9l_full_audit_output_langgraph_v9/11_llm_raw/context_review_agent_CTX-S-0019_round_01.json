@@ -1,0 +1,10 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "decision": "confirm",
+  "severity": "P1",
+  "error_type": "document_number_inconsistency",
+  "claim": "PT9L 产品的风险管理计划存在两项文档控制不符合项：（1）F0021 文件名标题中嵌入的编号为 IFT-FXJH01，而其内部 DN 字段为 PT9L-FXJH01，文件名与文件内容之间存在直接不一致；（2）F0017（DN: IFT-FXJH01）与 PT9L 产品之间无任何正式关联声明、DHF 引用或等效映射，且语料库中未发现任何遗留前缀注册表或过渡记录。综合两项证据，确认为文档控制不符合项。",
+  "reason": "基于已恢复的证据包，可作出以下确定性判断：\n\n1. F0021 内部不一致（已确认）：F0021 的文件名标题（REG-030, line 2）明确包含 'IFT-FXJH01'，而同一文件的 DN 字段（F0021-DN, line 6）记录为 'PT9L-FXJH01 V1.0 Risk Management Plan'。同一受控文件的文件名与内部 DN 字段不一致，构成独立的文档控制不符合项，无论 DHF 清单引用哪个编号均成立。\n\n2. F0017 与 PT9L 产品无正式关联（已确认）：F0017 的 DN 字段（F0017-DN, line 6）为 'IFT-FXJH01'，产品名称为 'Infrared Forehead Thermometer'，无任何 PT9L 型号标识。文件名无产品型号前缀（REG-014）。起草人为 Wang Di（F0017-version），与 F0021 的 Hou Guangwei 不同，两份文件系独立起草，非同一文件的不同版本。语料库中未发现任何将 IFT-FXJH01 与 PT9L 产品关联的 DHF 清单引用、适用性声明或共用文件声明。\n\n3. DHF 清单（F0006）内容未能从 context_package 中获取实质性文本（page_context 中 F0006 条目的 text 字段均为空），但这一缺失本身即支持 confirm 而非 dismiss：若存在正式关联声明，应可在语料库中检索到；缺失等效于无正式关联证据。\n\n4. 版本时序分析：F0021（2024.1.9）早于 F0017（2024.2.2），排除 F0017 是 F0021 的修订替代版本的可能性；两份文件均为 V1.0，不存在版本继承关系。\n\n综上，两项不符合项均有直接证据支撑，无需额外上下文即可确认：F0021 存在文件名与 DN 字段不一致；F0017 与 PT9L 产品无正式文档关联。原始 P1 严重性评级维持不变。"
+}
+```

@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Regulatory Agent",
+  "summary": "本轮共审查6个cluster（MC-CLUSTER-0002至MC-CLUSTER-0007）。MC-CLUSTER-0002至MC-CLUSTER-0005均涉及PT2L型号，文件路径明确标注"2L风险改 - 历史文件"，属于历史/前代型号的风险管理文件，不属于PT9L正式DHF/DMR主审范围，予以dismiss。MC-CLUSTER-0006与MC-CLUSTER-0007涉及PT3SBT，出现在primary_scope=true的正式风险评估与风险控制验证文件中，但PT3SBT仅作为产品型号变体在产品描述段落中被合理引用（描述蓝牙功能差异），并非错误混入或遗漏受控，属于合理引用，予以dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0002",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险管理计划属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为"03 风险分析\\2L风险改 - 历史文件"，文件标题及文档编号均为PT2L美亚-FXJH01 V1.0，属于前代型号PT2L的历史风险管理计划。primary_scope=false已标注非主审范围。该文件不构成PT9L DHF/DMR的合规证据缺陷，属于历史/前代型号文件范围，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0003",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险评估报告属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为"03 风险分析\\2L风险改 - 历史文件"，文件标题及文档编号均为PT2L(美亚)-SGFP01 V1.0，产品型号字段明确记录为PT2L，项目编号2020-002-WX02亦为PT2L项目。primary_scope=false已标注非主审范围。所有候选均为PT2L历史风险评估文件的正常内容，不构成PT9L合规缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0004",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险控制验证报告属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为"03 风险分析\\2L风险改 - 历史文件"，文件标题及文档编号均为PT2L(美亚)-SGYS01 V1.0，产品型号字段明确记录为PT2L。文件中引用的型式试验报告、说明书、易用性报告、临床评估报告、软件确认报告等均为PT2L(美亚)系列文件编号，属于PT2L历史项目内部交叉引用，合理且自洽。primary_scope=false已标注非主审范围，不构成PT9L合规缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0005",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_file_out_of_scope",
+      "claim": "PT2L风险管理报告属于历史文件，不影响PT9L正式DHF/DMR证据链",
+      "reason": "文件路径明确为"03 风险分析\\2L风险改 - 历史文件"，文件标题及文档编号均为PT2L-FXGB01 V4.0，产品型号字段明确记录为PT2L，项目编号2020-002-WX02为PT2L项目。文件内容完整描述了PT2L设计变更（MCU替换、结构优化、软件适配）的风险管理活动，属于PT2L历史项目的完整风险管理报告。primary_scope=false已标注非主审范围，不构成PT9L合规缺陷，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0006",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "reasonable_variant_reference",
+      "claim": "PT3SBT在正式风险评估文件中属于产品型号变体的合理引用，不构成合规缺陷",
+      "reason": "文件为正式风险评估报告IFT-FXPJ01 V2.0（primary_scope=true），PT3SBT出现在产品介绍段落（1.1节），用于说明该型号具备蓝牙传输功能的差异化特性（"PT3SBT can transmit the temperature to a smart device with Bluetooth"），属于产品族系内型号变体的功能描述性引用。该引用方式在多型号共用风险文件中属于合理做法，不存在型号混淆、证据链断裂或受控文件错误标注问题。两个候选（MF-0026、MF-0027）指向同一行同一文本，内容完全一致，无额外风险信号，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0007",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "reasonable_variant_reference",
+      "claim": "PT3SBT在正式风险控制验证文件中属于产品型号变体的合理引用，不构成合规缺陷",
+      "reason": "文件为正式风险控制验证报告IFT-FXYS01 V2.0（primary_scope=true），PT3SBT同样出现在产品介绍段落（1.1节），描述蓝牙功能变体，与MC-CLUSTER-0006情形一致，属于产品族系内型号变体的功能描述性引用。两个候选（MF-0028、MF-0029）指向同一行同一文本，内容完全一致。该引用不影响风险控制验证的完整性与受控状态，不构成PT9L合规证据缺陷，予以dismiss。"
+    }
+  ]
+}
+```

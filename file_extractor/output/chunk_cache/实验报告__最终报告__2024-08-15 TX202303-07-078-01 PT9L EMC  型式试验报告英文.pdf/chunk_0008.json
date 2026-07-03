@@ -1,0 +1,109 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-01",
+    "total_pages": 29,
+    "current_pages": "20-21 of 29"
+  },
+  "tests": [
+    {
+      "test_id": "6.7",
+      "test_name": "Conducted RF Immunity (Clamp Injection)",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "frequency_range": "150 kHz to 80 MHz",
+      "modulation": "80% amplitude modulated with 1 kHz sine wave",
+      "frequency_step": "not exceed 1% of preceding frequency value",
+      "dwell_time": "not less than 0.5 s",
+      "eut_height": "0.1 m above ground reference plane",
+      "cable_height": "at least 30 mm above ground reference plane",
+      "coupling_device_distance": "between 0.1 m and 0.3 m from EUT",
+      "ae_cable_height": "between 30 mm and 50 mm above ground reference plane",
+      "test_result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.8",
+      "test_name": "Voltage Dips and Interruptions",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "test_level": "N/A",
+      "no_of_dips_interruptions": "N/A",
+      "test_result_note": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_id": "6.9",
+      "test_name": "Power Frequency Magnetic Field Immunity",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "N/A",
+      "test_date": "N/A",
+      "temperature_and_humidity": "N/A",
+      "power_supply": "N/A",
+      "field_frequency": "N/A",
+      "face_under_test": "N/A",
+      "test_level": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "IEC 60601-1-2:2014+A1:2020",
+      "applicable_to": [
+        "6.7 Conducted RF Immunity",
+        "6.8 Voltage Dips and Interruptions",
+        "6.9 Power Frequency Magnetic Field Immunity"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test Setup and Procedure for Conducted RF Immunity (6.7.1): The EUT was placed on an insulating support of 0.1m height above a ground reference plane, arranged and connected to satisfy its functional requirement. All cables exiting the EUT was supported at a height of at least 30 mm above the ground reference plane. The coupling and decoupling devices were required, they were located between 0.1m and 0.3m from the EUT. Each AE, used with clamp injection, shall be placed on an insulating support 0.1m above the ground reference plane. A decoupling network shall be installed on each cable between the EUT and AE except the cable under test. The frequency range was swept from 150 kHz to 80 MHz, using the signal levels established during the setting process, and with the disturbance signal 80% amplitude modulated with a 1kHz sine wave. Where the frequency was swept incrementally, the step size do not exceed 1% of the preceding frequency value. The dwell time at each frequency was not less than 0.5 s. During the test, the EUT was tested with the hand-held parts terminated with artificial hand.",
+      "topic_tags": [
+        "conducted RF immunity",
+        "clamp injection",
+        "test setup",
+        "frequency sweep",
+        "amplitude modulation",
+        "decoupling network"
+      ],
+      "related_subjects": [
+        "6.7",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test Setup and Procedure for Voltage Dips and Interruptions (6.8.1): The EUT was placed on a ground reference plane (GRP) insulated by an insulating support 0.1m thick and the GRP was placed on a 0.8m high wooden table for table-top equipment. For floor standing equipment, the EUT was placed on a 0.1m high wooden support above the GRP. The test was performed with the EUT connected to the test generator with the shortest power supply cable as specified by the EUT manufacturer. The EUT was tested for each selected combination of test level and duration with a sequence of three dips/interruptions with intervals of 10 s minimum. Each representative mode of operation was tested. For EUT with more than one power cord, each power cord was tested individually.",
+      "topic_tags": [
+        "voltage dips",
+        "interruptions",
+        "test setup",
+        "ground reference plane",
+        "power cord"
+      ],
+      "related_subjects": [
+        "6.8",
+        "IEC 60601-1-2:2014+A1:2020",
+        "EUT"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Both Voltage Dips and Interruptions (6.8) and Conducted RF Immunity via clamp injection (6.7) test results note that the EUT is powered by batteries and therefore these clauses do not apply.",
+      "topic_tags": [
+        "battery powered",
+        "N/A",
+        "exemption",
+        "voltage dips",
+        "conducted RF"
+      ],
+      "related_subjects": [
+        "6.7",
+        "6.8",
+        "EUT",
+        "power supply"
+      ]
+    }
+  ]
+}

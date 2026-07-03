@@ -1,0 +1,40 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "核查结构类FMEA主范围文件（F0074）中出现"血压计"品类描述是否属于文件复用/模板污染，还是该DHF包本身存在产品身份混淆——即PT9L红外体温计项目的结构FMEA文件中是否错误引用了血压计相关法规信息，导致验证闭环失效",
+  "agent_input": {
+    "claim": "结构类FMEA主范围文件中出现\"血压计\"品类描述，与PT9L红外体温计品类不符，构成法规/验证闭环污染风险",
+    "context_summary": "补证第1轮LLM解析失败，但context_package中已包含有效证据：REG-032（F0074，结构类FMEA E0文件第22行）明确出现"用户无法识别血压计的相关法规信息"字样，且该证据excluded_from_primary_scope=false、verified=true，说明该行确实存在于主范围文件中。此外page_context中F0002、F0035、F0271均为血压计相关文件（客户需求书、结构设计方案评审检查表），路径中含"血压计"字样，与PT9结构DHF路径并存，提示DHF包内可能存在血压计与体温计文件混存或模板复用未清理的情况。",
+    "evidence": [
+      {
+        "evidence_id": "REG-032",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 22,
+        "source_text": "|  | 铭牌 | 给用户关于机器的信息 | 铭牌印刷内容容易被擦拭掉 | 用户无法识别血压计的相关法规信息 用户误用 | 4 | C | 铭牌未覆膜 | 2 |  | 依IEC60601-1:2005 电气安全通用要求中7.1.3 标记耐久性要求 对铭牌进行试验 | 2 | 16 |  |  |  |  |  |  |  |  |  |",
+        "note": "verified=true，excluded_from_primary_scope=false，该行在PT9L结构FMEA主文件中出现血压计品类描述"
+      },
+      {
+        "evidence_id": "PAGE-F0002",
+        "doc_id": "F0002",
+        "rel_path": "01 立项批准书E0 23.11\\客户需求书E0-血压计 23.6.via_xlsx.clean.md",
+        "note": "文件名含"血压计"，存在于PT9L DHF包立项批准书目录下，需确认是否为误放文件"
+      },
+      {
+        "evidence_id": "PAGE-F0035",
+        "doc_id": "F0035",
+        "rel_path": "05 结构设计方案E0 23.11\\结构设计方案评审检查表-血压计E0 23.11.via_xlsx.clean.md",
+        "note": "文件名含"血压计"，存在于PT9L结构设计方案目录下，需确认是否为模板复用未更新"
+      },
+      {
+        "evidence_id": "PAGE-F0271",
+        "doc_id": "F0271",
+        "rel_path": "PT9结构DHF\\5E0版结构方案阶段 23.11\\结构设计方案评审检查表-血压计E0 23.11.via_xlsx.clean.md",
+        "note": "路径明确含PT9结构DHF，但文件名仍为血压计，需判断是否为同一模板文件的两处引用"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": "请重点判断以下三点：1）F0074结构FMEA中"血压计"描述是否为模板复用残留（即原血压计FMEA模板未将品类名称替换为PT9L红外体温计），还是文件本身就属于血压计产品；2）F0002、F0035、F0271等血压计命名文件是否被错误纳入PT9L DHF包，构成产品身份混淆；3）上述情况是否导致IEC60601-1验证引用对象错误，形成法规/验证闭环污染。请给出confirm/dismiss/needs_more_context之一，并说明理由。"
+  }
+}
+```

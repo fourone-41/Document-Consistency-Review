@@ -1,0 +1,101 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "确认 F0006（PT9L-DHF清单）第90-105行中风险管理报告的官方登记条目指向 F0020 还是 F0024（或两者均登记）；核查 F0024 与 F0020 正文内容是否实质相同；确认 PT9L-- 命名前缀在 DHF 文件体系中的规范含义及权威文件指定规则",
+  "agent_input": {
+    "claim": "文件编号 PT9L-FXGB01 同时出现在两份文件中：F0020（文件名前缀 IFT-FXGB01，版本历史含 V1.0/2024-02-02 和 V2.0/2024-05-30，起草人 Wang Di）与 F0024（文件名前缀 PT9L--，版本历史仅含 V1.0/2024-10-22，起草人 Hou Guangwei）。两份文件内部 DN 字段完全相同（PT9L-FXGB01 V1.0），外部文件名均标注 V2.0 20240530，造成无法通过 DN 或文件名区分哪份为 PT9L 风险管理关闭文件的权威版本。",
+    "context_summary": "已补充两份文件头部局部上下文：F0020 版本历史两行（V1.0 起源 2024-02-02，V2.0 内容变更 2024-05-30，起草人 Wang Di，批准人 Hou Guangwei）；F0024 版本历史仅一行（V1.0 起源 2024-10-22，起草人与批准人均为 Hou Guangwei，无 V2.0 记录）。两份文件封面 DN 字段、封面版本声明、产品名称完全相同。F0024 文件名在 IFT 命名基础上叠加 PT9L-- 前缀，但文件名中 IFT-FXGB01 V2.0 20240530 部分未随内部版本历史更新。关键缺口：F0006 DHF清单第96行内容为空（未读取），F0005/F0007 开发计划引用行内容为空，两份文件正文风险评估章节及结论章节均未读取，无关系索引或 DHF 主索引明确标注权威文件。",
+    "evidence": [
+      {
+        "evidence_id": "RISK-049",
+        "doc_id": "F0020",
+        "line": 2,
+        "actual_text": "# Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "note": "F0020 文件名标题行，前缀 IFT-FXGB01，外部版本 V2.0，日期 20240530"
+      },
+      {
+        "evidence_id": "RISK-050",
+        "doc_id": "F0020",
+        "line": 6,
+        "actual_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "note": "F0020 内部 DN 字段，编号 PT9L-FXGB01，内部版本 V1.0，与文件名 V2.0 不一致"
+      },
+      {
+        "evidence_id": "RISK-050-ext-version-table",
+        "doc_id": "F0020",
+        "line_range": "20-23",
+        "actual_text": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| 1 | 2024.2.2 | Originated | V1.0 | Wang Di | Hou Guangwei |\n| 2 | 2024.5.30 | Content Change | V2.0 | Wang Di | Hou Guangwei |",
+        "note": "F0020 版本历史：V1.0 起源 2024-02-02，V2.0 内容变更 2024-05-30"
+      },
+      {
+        "evidence_id": "RISK-073",
+        "doc_id": "F0024",
+        "line": 2,
+        "actual_text": "# PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable",
+        "note": "F0024 文件名标题行，前缀 PT9L--，外部版本仍标注 V2.0 20240530，与 F0020 文件名仅差前缀"
+      },
+      {
+        "evidence_id": "RISK-074",
+        "doc_id": "F0024",
+        "line": 6,
+        "actual_text": "DN ： PT9L -FXGB01 V 1 .0 Risk Management Report",
+        "note": "F0024 内部 DN 字段与 F0020 完全相同，均为 PT9L-FXGB01 V1.0"
+      },
+      {
+        "evidence_id": "RISK-074-ext-version-table",
+        "doc_id": "F0024",
+        "line_range": "20-22",
+        "actual_text": "| No. | Version Date | Version Description | Version | Drafter | Approver |\n| 1 | 2024.10.22 | Originated | V1.0 | Hou Guangwei | Hou Guangwei |",
+        "note": "F0024 版本历史：仅 V1.0，起源 2024-10-22，起草人与批准人均为 Hou Guangwei，无 V2.0 记录，日期晚于 F0020 的 V2.0"
+      },
+      {
+        "evidence_id": "PAGE-CTX-F0006-L96",
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "line_start": 96,
+        "actual_text": "",
+        "note": "DHF清单第96行内容为空，疑为风险管理报告登记行，需读取第90-105行完整内容以确认登记的是 F0020 还是 F0024"
+      },
+      {
+        "evidence_id": "PAGE-CTX-F0005-L54",
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "line_start": 54,
+        "actual_text": "",
+        "note": "开发计划第54行内容为空，疑为风险管理相关任务行，需读取"
+      },
+      {
+        "evidence_id": "PAGE-CTX-F0007-L63",
+        "doc_id": "F0007",
+        "rel_path": "02 开发计划E0 23.11\\PT9L.via_xlsx.clean.md",
+        "line_start": 63,
+        "actual_text": "",
+        "note": "另一版本开发计划第63行内容为空，需读取"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "priority_actions": [
+      {
+        "action_id": "PA-1",
+        "priority": "最高",
+        "description": "读取 F0006（PT9L-DHF清单）第90-105行完整内容，确认 DHF 官方登记的风险管理报告条目指向 F0020、F0024 还是两者均登记，以及登记的文件编号、版本号、文件名是否与 F0020 或 F0024 一致"
+      },
+      {
+        "action_id": "PA-2",
+        "priority": "高",
+        "description": "读取 F0024 正文风险评估章节及风险可接受性结论章节，与 F0020 对应章节进行逐段比对，判断两份文件正文内容是否实质相同（若相同则 F0024 极可能是 F0020 的 PT9L 专属重命名副本）"
+      },
+      {
+        "action_id": "PA-3",
+        "priority": "高",
+        "description": "读取 F0005 第50-60行、F0007 第59-68行完整内容，确认开发计划中风险管理报告任务行引用的文件编号及文件名"
+      },
+      {
+        "action_id": "PA-4",
+        "priority": "中",
+        "description": "检索 relation index 或 DHF master index 中 FXGB01 相关条目，确认是否有明确标注权威文件的记录；同时确认 PT9L-- 命名前缀在该 DHF 文件体系中的规范定义（是否为型号专属适配版本的标准命名规则）"
+      }
+    ]
+  }
+}
+```

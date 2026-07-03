@@ -1,0 +1,53 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "确认两份图纸（PT3_双联弹簧_REV01 / FDIR-V14_散热器压块_REV01_0714）归档于 PT9L DHF 的跨产品共用件合规性：是否存在正式的 shared-component 授权文件，以及 PT3 项目来源图纸在 PT9L DHF 中的产品身份映射是否有文件支撑",
+  "agent_input": {
+    "claim": "Two drawings originating from the PT3 project (PT3_双联弹簧_REV01, drawing number PT3-P10, model PT3; and FDIR-V14_散热器压块_REV01_0714, mapped to PT3-M01 in the PT9L BOM) are archived in the PT9L DHF design output folder without any cross-product shared-component justification document in the supplied evidence catalog.",
+    "context_summary": "补证上下文已成功检索，核心发现如下：\n\n1. PT3_双联弹簧_REV01（F0176）：图纸标题栏明确标注 Drawing NO. = PT3-P10、Model NO. = PT3。文件元数据注记"共用件：PT3 项目原件，被 PT9L DHF 借用归档（外购件 / 设计参照）"。该注记为读图报告生成时的推断性标注，并非正式授权文件。\n\n2. FDIR-V14_散热器压块_REV01_0714（F0175）：供应商图号 FDIR-V14，设计日期 2017-06-28，iHealth 审批 2017-07-14，早于 PT9L 项目立项。PT9L 总装图 BOM 编号 13 将本件以 PT3-M01 入账（"压块"），BOM 编号 14 为配合件 PT3-M03。文件内部亦有待确认项："iHealth 内部是否有'压块'独立图（带 PT3-M01 图号）补归档——推测无"。\n\n3. 两份图纸均物理存放于 PT9L DHF 设计输出清单二/图纸目录下，均带有 PT3 系列图号或产品号，均无在证据目录中可见的跨产品共用件正式授权文件（如 Design Transfer Agreement、Shared Component Justification、或 DHF Cross-Reference Note）。\n\n4. 补证检索未发现任何专门的 shared-component justification 文档；page_context 中的 PT3 相关文件（运输报告、标签审核表）与本问题无直接关联。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-132",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 6,
+        "source_text": "> **共用件**：**PT3 项目原件**，被 PT9L DHF 借用归档（外购件 / 设计参照）",
+        "note": "此为读图报告推断性注记，非正式授权文件"
+      },
+      {
+        "evidence_id": "DMR-133",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 14,
+        "source_text": "| **Drawing NO.** | **PT3-P10** |",
+        "note": "图纸图号明确为 PT3 项目编号，Model NO. = PT3"
+      },
+      {
+        "evidence_id": "DMR-126",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 28,
+        "source_text": "**iHealth 内部图号映射**：根据 [总装图 BOM](PT9L-总装图-v1.0-20240627.pdf.md) 编号 13，本件在 PT9L BOM 中以 **PT3-M01** 入账（\"压块\"）。",
+        "note": "供应商图号 FDIR-V14 与 iHealth 内部 BOM 号 PT3-M01 的映射关系仅见于读图报告，无独立授权文件"
+      },
+      {
+        "evidence_id": "DMR-127",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 98,
+        "source_text": "- **PT9L BOM 中位置**：[总装图序号 13 (PT3-M01)](PT9L-总装图-v1.0-20240627.pdf.md)",
+        "note": "BOM 映射存在但无跨产品共用件正式说明文件"
+      },
+      {
+        "evidence_id": "DMR-128",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 99,
+        "source_text": "- **配合 75CEE0 在 BOM 中位置**：序号 14 (PT3-M03)",
+        "note": "配合件亦为 PT3 系列编号，进一步确认跨产品使用范围"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

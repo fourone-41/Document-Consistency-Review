@@ -1,0 +1,917 @@
+{
+  "document": {
+    "title": "PT9L 外箱图纸 F01",
+    "document_number": "K04010001435",
+    "drawing_number": "PT9L-F01",
+    "edition": "V1.0",
+    "revision_date": "2026-05-11",
+    "scale": "1:1",
+    "units": "mm",
+    "source_file": "K040100014357620814-图纸-PT9L-F01+V1.0.pdf",
+    "file_size": "4972 KB"
+  },
+  "products": [
+    {
+      "name": "外箱",
+      "model": "PT9L",
+      "part_name": "外箱",
+      "drawing_number": "PT9L-F01",
+      "document_number": "K04010001435",
+      "box_type_code": "0201",
+      "standard": "GB/T 6543-2008",
+      "box_style": "上下摇盖型（0201开槽型纸箱）"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "K04010001435"
+    },
+    {
+      "type": "Drawing NO.",
+      "value": "PT9L-F01"
+    },
+    {
+      "type": "EAN/UPC 条码",
+      "value": "(01)10850044118707"
+    },
+    {
+      "type": "Model NO.",
+      "value": "PT9L"
+    }
+  ],
+  "components": [
+    {
+      "name": "外箱（双瓦楞纸箱）",
+      "material": "190g牛皮面纸 + 170g(A)楞 + 80g芯纸 + 130g(B)楞 + 200g牛皮里纸",
+      "structure": "五层双瓦楞（A楞+B楞）",
+      "estimated_wall_thickness_mm": "6~7",
+      "connection_method": "粘合剂（不得使用金属钉钉线）",
+      "print_color": "黑色"
+    },
+    {
+      "name": "粘接条（glue flap）",
+      "width_mm": 40
+    },
+    {
+      "name": "长面板",
+      "width_mm": 322.5,
+      "count": 2
+    },
+    {
+      "name": "短面板",
+      "width_mm": 231,
+      "count": 2
+    },
+    {
+      "name": "上摇盖",
+      "height_mm": 115.5
+    },
+    {
+      "name": "下摇盖",
+      "height_mm": 115.5
+    }
+  ],
+  "design_inputs": [
+    {
+      "description": "外径整体尺寸（长×宽×高）",
+      "value": "322.5 × 231 × 352 mm",
+      "tolerance": "±5 mm",
+      "source": "技术要求第1条"
+    },
+    {
+      "description": "展开图总长（横向）",
+      "value": "1147 mm",
+      "note": "4面板+粘接条之和：40+322.5+231+322.5+231=1147"
+    },
+    {
+      "description": "展开图总宽（纵向）",
+      "value": "583 mm",
+      "note": "上摇盖+箱体高+下摇盖：115.5+352+115.5=583"
+    },
+    {
+      "description": "推算内尺寸（B级，需工程师确认）",
+      "value": "约308.5 × 217 × 338 mm",
+      "note": "基于双瓦楞壁厚约6~7mm推算"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "TR-1",
+      "description": "标注尺寸为外径尺寸：322.5×231×352 mm，公差±5 mm"
+    },
+    {
+      "id": "TR-2",
+      "description": "箱型代号0201（GB/T 6543-2008），上下摇盖"
+    },
+    {
+      "id": "TR-3",
+      "description": "材质：190g牛皮面纸+170g(A)楞+80g芯纸+130g(B)楞+200g牛皮里纸"
+    },
+    {
+      "id": "TR-4",
+      "description": "箱体连接使用粘合剂，不得使用金属钉钉线"
+    },
+    {
+      "id": "TR-5",
+      "description": "印刷颜色为黑色"
+    },
+    {
+      "id": "TR-6",
+      "description": "本件要求通过RoHS测试"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "GB/T 6543-2008",
+      "description": "瓦楞纸箱国家标准，箱型代号0201依据此标准"
+    },
+    {
+      "name": "RoHS",
+      "description": "有害物质限制要求，外箱需通过RoHS测试"
+    }
+  ],
+  "tests": [
+    {
+      "name": "RoHS测试",
+      "requirement": "外箱需通过RoHS有害物质限制测试",
+      "source": "技术要求第6条"
+    },
+    {
+      "name": "IQC来料检验",
+      "items": [
+        "双瓦楞实际厚度实测（影响内尺寸）",
+        "印刷套色精度",
+        "实际RoHS报告"
+      ]
+    }
+  ],
+  "markets": [
+    {
+      "region": "美国",
+      "manufacturer": "iHealth Labs, Inc.",
+      "address": "Sunnyvale, CA, USA"
+    },
+    {
+      "region": "欧洲",
+      "manufacturer": "iHealthLabs Europe SAS",
+      "address": "法国"
+    }
+  ],
+  "revision_records": [
+    {
+      "date": "2026-05-11",
+      "description": "新生成读图报告（之前没有同名md），已嵌入6块视觉块图供对照",
+      "edition": "V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "展开图尺寸自洽验证：总长1147mm = 粘接条40mm + 面板1(322.5mm) + 面板2(231mm) + 面板3(322.5mm) + 面板4(231mm) = 1147mm ✓；总宽583mm = 上摇盖115.5mm + 箱体高352mm + 下摇盖115.5mm = 583mm ✓。上下摇盖高115.5mm约为箱体高352mm的1/3，符合0201摇盖比例。",
+      "topic_tags": [
+        "展开图",
+        "尺寸自洽",
+        "0201纸箱",
+        "摇盖比例"
+      ],
+      "related_subjects": [
+        "PT9L-F01",
+        "外箱",
+        "展开图尺寸"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "内尺寸推算（B级，需工程师确认）：外径322.5×231×352mm；双瓦楞总壁厚约6mm（A楞~5mm + B楞~3mm，叠加后约7mm）→ 内尺寸约≈308.5×217×338mm。可装入PT9L主机数需结合PT9L包装彩盒外尺寸（F02/F03/F04系列）反算。",
+      "topic_tags": [
+        "内尺寸",
+        "壁厚",
+        "双瓦楞",
+        "装箱配比"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "F02",
+        "F03",
+        "F04",
+        "F05"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "印刷区内容：每个面板上印有「andon」「iHealth」「iHealth®」商标；国际运输/仓储标识图标（朝上↑↑、玻璃易碎、避水、堆码层数、温度/湿度范围等）；产品标签（型号PT9L、电源4.5V DC等）；制造商信息（iHealth Labs, Inc.美国Sunnyvale + iHealthLabs Europe SAS法国地址）；EAN/UPC条码(01)10850044118707；净重N.W.: 0.4kg(14.1lb)、毛重G.W.: 1.1kg(15.8lb)；仓储湿度≤95%RH；尺寸标注322.5×231×352mm（12.7×9.1×13.9inch）。",
+      "topic_tags": [
+        "印刷内容",
+        "标签",
+        "条码",
+        "重量",
+        "湿度",
+        "商标"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "iHealth Labs",
+        "EAN/UPC",
+        "运输标识"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Skill自动检查结果说明：包装类图纸大量自动检查项不适用，是预期内的——skill主要面向模具/结构件2D工程图。编号连续性检查（Step 6.1）不适用（包装展开图无①②③编号体系）；角度反推（Step 6.2）不适用（无角度尺寸）；配合关系（Step 6.5）不适用（外箱与产品PT9L主机有内尺寸约束，但非「装配配合」）；圆视图/Φ标注（Step 6.6）不适用。",
+      "topic_tags": [
+        "读图流程",
+        "适用性",
+        "包装图纸",
+        "自动检查"
+      ],
+      "related_subjects": [
+        "PT9L-F01",
+        "SKILL_2D_Drawing_Reading"
+      ]
+    },
+    {
+      "fragment_type": "open_issue",
+      "content": "工程师确认清单（C级）：① 双瓦楞实际厚度需IQC实测，影响内尺寸计算；② 印刷套色精度/实际RoHS报告需来料检验确认；③ 与PT9L彩盒（F02/F03/F04）及隔板（F05）的装箱配比与摆放方位需装箱工艺图（C级）。",
+      "topic_tags": [
+        "待确认项",
+        "IQC",
+        "RoHS",
+        "装箱工艺",
+        "内尺寸"
+      ],
+      "related_subjects": [
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "PT9L"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "K040100014357620814-图纸-PT9L-F01+V1.0.pdf.md",
+    "doc_type": "general"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F01",
+      "to": "展开图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外箱",
+      "to": "展开图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "展开图尺寸",
+      "to": "展开图",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "内尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F02",
+      "to": "内尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F03",
+      "to": "内尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F04",
+      "to": "内尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F05",
+      "to": "内尺寸",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "印刷内容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "iHealth Labs",
+      "to": "印刷内容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EAN/UPC",
+      "to": "印刷内容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "运输标识",
+      "to": "印刷内容",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F01",
+      "to": "读图流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "SKILL_2D_Drawing_Reading",
+      "to": "读图流程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F02",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F03",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F04",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "F05",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "待确认项",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "PT9L",
+      "properties": {
+        "relation": "document_covers_product"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "TR-1",
+      "properties": {
+        "relation": "product_has_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "TR-2",
+      "properties": {
+        "relation": "product_has_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "TR-3",
+      "properties": {
+        "relation": "product_has_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "TR-4",
+      "properties": {
+        "relation": "product_has_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "TR-5",
+      "properties": {
+        "relation": "product_has_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "TR-6",
+      "properties": {
+        "relation": "product_has_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "外箱（双瓦楞纸箱）",
+      "properties": {
+        "relation": "product_has_component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "粘接条（glue flap）",
+      "properties": {
+        "relation": "product_has_component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "长面板",
+      "properties": {
+        "relation": "product_has_component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "短面板",
+      "properties": {
+        "relation": "product_has_component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "上摇盖",
+      "properties": {
+        "relation": "product_has_component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "下摇盖",
+      "properties": {
+        "relation": "product_has_component"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-1",
+      "to": "外径整体尺寸（长×宽×高）",
+      "properties": {
+        "relation": "requirement_has_design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-2",
+      "to": "GB/T 6543-2008",
+      "properties": {
+        "relation": "requirement_references_regulation"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-3",
+      "to": "外箱（双瓦楞纸箱）",
+      "properties": {
+        "relation": "requirement_specifies_material"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-6",
+      "to": "RoHS测试",
+      "properties": {
+        "relation": "requirement_has_test"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "展开图总长（横向）",
+      "properties": {
+        "relation": "document_has_design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "展开图总宽（纵向）",
+      "properties": {
+        "relation": "document_has_design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "推算内尺寸（B级，需工程师确认）",
+      "properties": {
+        "relation": "document_has_design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "RoHS测试",
+      "properties": {
+        "relation": "product_has_test"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "IQC来料检验",
+      "properties": {
+        "relation": "product_has_test"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "GB/T 6543-2008",
+      "properties": {
+        "relation": "product_references_regulation"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "RoHS",
+      "properties": {
+        "relation": "product_references_regulation"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "design_rationale",
+      "properties": {
+        "relation": "document_has_semantic_fragment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "constraint_statement",
+      "properties": {
+        "relation": "document_has_semantic_fragment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "behavioral_spec",
+      "properties": {
+        "relation": "document_has_semantic_fragment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "scope_limitation",
+      "properties": {
+        "relation": "document_has_semantic_fragment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "open_issue",
+      "properties": {
+        "relation": "document_has_semantic_fragment"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "美国",
+      "properties": {
+        "relation": "product_has_market"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "欧洲",
+      "properties": {
+        "relation": "product_has_market"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04010001435",
+      "to": "V1.0",
+      "properties": {
+        "relation": "document_has_revision_record"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外箱（双瓦楞纸箱）",
+      "to": "TR-4",
+      "properties": {
+        "relation": "component_has_requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外箱（双瓦楞纸箱）",
+      "to": "TR-5",
+      "properties": {
+        "relation": "component_has_requirement"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TR-1",
+      "to": "GB/T 6543-2008",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TR-2",
+      "to": "GB/T 6543-2008",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "TR-6",
+      "to": "RoHS",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "外箱",
+      "to": "GB/T 6543-2008",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "外箱",
+      "to": "RoHS",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TR-1",
+      "to": "design_inputs[外径整体尺寸（长×宽×高）]",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "design_inputs[展开图总长（横向）]",
+      "to": "TR-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "design_inputs[展开图总宽（纵向）]",
+      "to": "TR-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "design_inputs[推算内尺寸（B级，需工程师确认）]",
+      "to": "TR-1",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "design_inputs[推算内尺寸（B级，需工程师确认）]",
+      "to": "TR-3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "RoHS测试",
+      "to": "TR-6",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "RoHS测试",
+      "to": "RoHS",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "外箱（双瓦楞纸箱）",
+      "to": "TR-3",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "外箱（双瓦楞纸箱）",
+      "to": "TR-4",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "外箱（双瓦楞纸箱）",
+      "to": "TR-5",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "TR-6",
+      "to": "RoHS测试",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "TR-3",
+      "to": "IQC来料检验",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "TR-5",
+      "to": "IQC来料检验",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "K04010001435",
+      "to": "2026-05-11_V1.0",
+      "properties": {
+        "date": "2026-05-11",
+        "edition": "V1.0",
+        "description": "新生成读图报告（之前没有同名md），已嵌入6块视觉块图供对照"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "外箱外径尺寸",
+      "attribute": "长×宽×高",
+      "value": "322.5 × 231 × 352",
+      "unit": "mm",
+      "tolerance": "±5 mm",
+      "condition": "外径整体尺寸",
+      "raw_text": "标注尺寸为外径尺寸：322.5×231×352 mm，公差±5 mm"
+    },
+    {
+      "subject": "外箱推算内尺寸",
+      "attribute": "长×宽×高",
+      "value": "约308.5 × 217 × 338",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "基于双瓦楞壁厚约6~7mm推算，B级，需工程师确认",
+      "raw_text": "推算内尺寸（B级，需工程师确认）：约308.5 × 217 × 338 mm，基于双瓦楞壁厚约6~7mm推算"
+    },
+    {
+      "subject": "展开图总长",
+      "attribute": "横向展开尺寸",
+      "value": "1147",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "4面板+粘接条之和：40+322.5+231+322.5+231",
+      "raw_text": "展开图总长（横向）：1147 mm，4面板+粘接条之和：40+322.5+231+322.5+231=1147"
+    },
+    {
+      "subject": "展开图总宽",
+      "attribute": "纵向展开尺寸",
+      "value": "583",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "上摇盖+箱体高+下摇盖：115.5+352+115.5",
+      "raw_text": "展开图总宽（纵向）：583 mm，上摇盖+箱体高+下摇盖：115.5+352+115.5=583"
+    },
+    {
+      "subject": "双瓦楞壁厚",
+      "attribute": "估算厚度",
+      "value": "6~7",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "五层双瓦楞（A楞+B楞）结构",
+      "raw_text": "五层双瓦楞（A楞+B楞），estimated_wall_thickness_mm: 6~7"
+    },
+    {
+      "subject": "面纸克重",
+      "attribute": "克重（牛皮面纸）",
+      "value": "190",
+      "unit": "g/m²",
+      "tolerance": "",
+      "condition": "外箱最外层面纸",
+      "raw_text": "材质：190g牛皮面纸+170g(A)楞+80g芯纸+130g(B)楞+200g牛皮里纸"
+    },
+    {
+      "subject": "A楞纸克重",
+      "attribute": "克重",
+      "value": "170",
+      "unit": "g/m²",
+      "tolerance": "",
+      "condition": "外箱A楞（外层瓦楞）",
+      "raw_text": "材质：190g牛皮面纸+170g(A)楞+80g芯纸+130g(B)楞+200g牛皮里纸"
+    },
+    {
+      "subject": "芯纸克重",
+      "attribute": "克重",
+      "value": "80",
+      "unit": "g/m²",
+      "tolerance": "",
+      "condition": "外箱中间夹层芯纸",
+      "raw_text": "材质：190g牛皮面纸+170g(A)楞+80g芯纸+130g(B)楞+200g牛皮里纸"
+    },
+    {
+      "subject": "B楞纸克重",
+      "attribute": "克重",
+      "value": "130",
+      "unit": "g/m²",
+      "tolerance": "",
+      "condition": "外箱B楞（内层瓦楞）",
+      "raw_text": "材质：190g牛皮面纸+170g(A)楞+80g芯纸+130g(B)楞+200g牛皮里纸"
+    },
+    {
+      "subject": "里纸克重",
+      "attribute": "克重（牛皮里纸）",
+      "value": "200",
+      "unit": "g/m²",
+      "tolerance": "",
+      "condition": "外箱最内层里纸",
+      "raw_text": "材质：190g牛皮面纸+170g(A)楞+80g芯纸+130g(B)楞+200g牛皮里纸"
+    },
+    {
+      "subject": "粘接条宽度",
+      "attribute": "宽度",
+      "value": "40",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "箱体粘接连接处",
+      "raw_text": "粘接条（glue flap），width_mm: 40"
+    },
+    {
+      "subject": "长面板宽度",
+      "attribute": "面板宽度",
+      "value": "322.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "共2片",
+      "raw_text": "长面板，width_mm: 322.5，count: 2"
+    },
+    {
+      "subject": "短面板宽度",
+      "attribute": "面板宽度",
+      "value": "231",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "共2片",
+      "raw_text": "短面板，width_mm: 231，count: 2"
+    },
+    {
+      "subject": "上摇盖高度",
+      "attribute": "高度",
+      "value": "115.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "上摇盖展开高度",
+      "raw_text": "上摇盖，height_mm: 115.5"
+    },
+    {
+      "subject": "下摇盖高度",
+      "attribute": "高度",
+      "value": "115.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "下摇盖展开高度",
+      "raw_text": "下摇盖，height_mm: 115.5"
+    },
+    {
+      "subject": "印刷颜色",
+      "attribute": "颜色规格",
+      "value": "黑色",
+      "unit": "",
+      "tolerance": "",
+      "condition": "外箱印刷",
+      "raw_text": "印刷颜色为黑色"
+    },
+    {
+      "subject": "有害物质合规",
+      "attribute": "RoHS测试要求",
+      "value": "需通过",
+      "unit": "",
+      "tolerance": "",
+      "condition": "外箱整体",
+      "raw_text": "本件要求通过RoHS测试；外箱需通过RoHS有害物质限制测试"
+    }
+  ]
+}

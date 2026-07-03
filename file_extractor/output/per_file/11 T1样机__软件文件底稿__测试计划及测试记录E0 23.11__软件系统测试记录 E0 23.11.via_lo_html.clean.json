@@ -1,0 +1,947 @@
+{
+  "document": {
+    "title": "血压计测试报告",
+    "doc_type": "测试报告",
+    "version": "V1.0"
+  },
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RXCL01 V1.0"
+    },
+    {
+      "id_type": "软件版本",
+      "value": "BPM-N78F0485-V0.278-20150714"
+    },
+    {
+      "id_type": "硬件版本",
+      "value": "PT9L-NBMP01 V1.2"
+    },
+    {
+      "id_type": "算法验证报告文件编号",
+      "value": "PT9L-RSYB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "全自动臂式血压计（带BLE蓝牙功能）"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "关机态",
+      "condition": "不与手机蓝牙连接，机器处于关机态",
+      "expected_value": "灯不亮",
+      "instrument": "直流稳压电源DJS10005"
+    },
+    {
+      "test_id": "2.1",
+      "item": "加压态-加压前的操作",
+      "condition": "将血压计袖带捆绑于胳膊，开启手机APP，通过蓝牙建立连接",
+      "expected_value": "认证通过后绿色指示灯点亮；进入设置画面显示当前电量；按APP\"开始测量\"后血压计进入测量态"
+    },
+    {
+      "test_id": "2.2",
+      "item": "加压态-加压过程",
+      "condition": "机器自动加压",
+      "expected_value": "搜索零点时屏幕左侧水银柱示数为零；找到稳定零点后关闭电磁阀启动泵；APP中显示当前袖带内压力；点击暂停图标可停止测量"
+    },
+    {
+      "test_id": "2.3",
+      "item": "压力平台控制",
+      "condition": "绑在弹性圆柱体或接在500CC双口气缸上",
+      "expected_value": "加压到190mmHg（±3mmHg）后自动停止加压（不记忆加压平台）"
+    },
+    {
+      "test_id": "2.4",
+      "item": "加压过程中的泵气速度判断",
+      "condition": "打气过慢：压力<30mmHg时<2mmHg/4S；压力>30mmHg时<3mmHg/4S；打气过快：压力上升>75mmHg/0.32S",
+      "expected_value": "打气过慢：5s后泵停转且电磁阀放气，屏幕显示\"测量时气动系统泄露或袖带太松\"；打气过快：泵启动后马上停转且电磁阀放气，屏幕显示\"测量时气动系统已锁住或袖带太紧\"",
+      "pass_criteria": "每项测试均测试通过"
+    },
+    {
+      "test_id": "3",
+      "item": "加压测量态",
+      "condition": "机器加压到30mmHg后进入测量态",
+      "expected_value": "加压速度约5~6mmHg/S；检测到心跳时屏幕闪烁心跳符号；短按复位按键停止测量；关闭APP或蓝牙时血压计停止测量绿灯熄灭"
+    },
+    {
+      "test_id": "4",
+      "item": "结果显示态",
+      "condition": "血压测量完毕后",
+      "expected_value": "屏幕显示测量结果；按返回键可回到\"开始测量\"界面"
+    },
+    {
+      "test_id": "5.1",
+      "item": "中断测量测试-点击返回",
+      "condition": "血压计浮零过程中或测量过程中点击APP暂停图标",
+      "expected_value": "浮零过程中退出后血压计不加压；测量过程中血压计立即关泵开阀；再次点击\"开始测量\"后正常进行测量"
+    },
+    {
+      "test_id": "5.2",
+      "item": "中断测量测试-点击HOME",
+      "condition": "血压计浮零过程中或测量过程中点击HOME键",
+      "expected_value": "浮零过程中退出后血压计不加压；测量过程中1S后血压计关泵开阀；再次打开APP点击\"开始测量\"后正常进行测量"
+    },
+    {
+      "test_id": "5.3",
+      "item": "中断测量测试-短按复位按键",
+      "condition": "血压计浮零过程中或测量过程中短按复位按键",
+      "expected_value": "浮零过程中APP 1s后回到开始测量界面绿灯亮起；测量过程中血压计关泵开阀APP 1s后回到开始测量界面绿灯亮起；再次点击\"开始测量\"正常测量"
+    },
+    {
+      "test_id": "5.4",
+      "item": "中断测量测试-关闭ISO设备蓝牙",
+      "condition": "待机/浮零/测量过程中关闭iOS设备蓝牙",
+      "expected_value": "血压计绿灯熄灭，APP处于无设备连接界面；浮零/测量过程中血压计5s后停止测量；打开蓝牙后APP重新连接，绿灯点亮，可正常测量"
+    },
+    {
+      "test_id": "5.5",
+      "item": "中断测量测试-退出APP",
+      "condition": "待机/浮零/测量过程中双击HOME键将APP在后台任务中关闭",
+      "expected_value": "待机时血压计不加压绿灯熄灭；浮零/测量过程中血压计立即停止测量绿灯熄灭；重新打开APP建立蓝牙连接后可正常测量"
+    },
+    {
+      "test_id": "6",
+      "item": "算法验证",
+      "condition": "参见《PT9L软件算法验证报告V1.0》（文件编号：PT9L-RSYB01 V1.0）",
+      "pass_criteria": "参照PT9L-RSYB01 V1.0验证通过"
+    },
+    {
+      "test_id": "7.1",
+      "item": "调试态-进入方式",
+      "condition": "A、机芯工装上电后短按S1键；B、整机测试工装调到标定状态（SW1=0,SW2=0,SW3=1，工装显示\"2 7\"）插到机器上",
+      "expected_value": "进入标定状态"
+    },
+    {
+      "test_id": "7.2",
+      "item": "调试态-压力采样值显示",
+      "condition": "进入调试态后，不给传感器施加气压",
+      "expected_value": "液晶高低压位置显示当前压力采样值；心率处显示16点采样值最大最小差值（00~03）；心形标志显示说明压力稳定；压力采样值应在1300~2500之间"
+    },
+    {
+      "test_id": "7.3",
+      "item": "调试态-零点存储",
+      "condition": "传感器通大气，机内值介于1300~2500之间，短按工装\"MEM\"键",
+      "expected_value": "寻找到四次稳定机内值后液晶显示当前存储零点值，\"心率\"处显示\"SA\"，2s后回到压力值显示状态，心形标志显示表示已标定零点"
+    },
+    {
+      "test_id": "7.4",
+      "item": "调试态-满度存储",
+      "condition": "零点已标定，给传感器通300mmHg稳定压力，短按\"MEM\"",
+      "expected_value": "满度值在3000~6000之间时液晶显示当前满度值和\"SA\"，2s后显示\"下箭头\"提示放气；满度值<3000显示\"SP LO\"；>6000显示\"SP HI\""
+    },
+    {
+      "test_id": "7.5a",
+      "item": "功能测试态-上气性能测试",
+      "condition": "SW1=0,SW2=0,SW3=0，工装显示\"2 8\"，将工装插入机器",
+      "expected_value": "加压速度合格则液晶显示\"Er F\"；速度不合格显示\"Er E\"；按工装\"START\"键放气或一分钟后自动放气后显示放气时间（单位0.1S）"
+    },
+    {
+      "test_id": "7.5b",
+      "item": "功能测试态-动压测试",
+      "condition": "SW1=0,SW2=1,SW3=0，工装液晶右上角显示\"2 C\"，连接机器、袖带、动压仪，整机为待机态",
+      "expected_value": "液晶屏显示程序号\"0278\"证明机器接口正常；测量完毕液晶显示结果"
+    },
+    {
+      "test_id": "8",
+      "item": "静压态",
+      "condition": "SW1=1,SW2=0,SW3=0，工装液晶右上角显示\"2 9\"，工装插在机器上进入静压态",
+      "expected_value": "各标准静压值在合格范围内",
+      "pass_criteria": "0mmHg：0~2mmHg；60mmHg：60±3mmHg；90mmHg：90±3mmHg；150mmHg：150±3mmHg；210mmHg：210±3mmHg；240mmHg：240±3mmHg",
+      "instrument": "直流稳压电源DJS10005，万用表DJS06046，恒温槽RPZ03003，黑体辐射源RJS05001"
+    },
+    {
+      "test_id": "9",
+      "item": "低电压测试",
+      "condition": "低电压接收标准为3.3+0.1V以下；打开底盖，将电池卸下，连上电源",
+      "expected_value": "允许低电压检测的状态为：按机器上的RESET键重新启动芯片；蓝牙连接后；测量态；整机测试。Smt态和调试态不检测低电压。",
+      "pass_criteria": "3.3V以下红灯闪烁；恢复3.8V后或连接充电线，机器正常使用"
+    },
+    {
+      "test_id": "9-1",
+      "item": "低电压测试-复位键状态",
+      "condition": "按下复位键，3S内将电压调到3.3V以下",
+      "expected_value": "机器上红灯闪烁；将电压调到3.8V按下复位键，或连接充电线，启动APP，机器正常使用"
+    },
+    {
+      "test_id": "9-2",
+      "item": "低电压测试-蓝牙连接状态",
+      "condition": "打开应用程序，通过蓝牙与血压计建立连接，将电压调到3.3V以下",
+      "expected_value": "机器上红灯闪烁，红灯停止闪烁后蓝牙连接断开；将电压调到3.8V按下复位键，或连接充电线，启动APP，建立蓝牙连接，机器正常使用"
+    },
+    {
+      "test_id": "9-3",
+      "item": "低电压测试-浮零过程中",
+      "condition": "打开应用程序，通过蓝牙连接，点击开始测量，不断挤压袖带使机器处于浮零过程中，将电压调到3.3V以下",
+      "expected_value": "机器上红灯闪烁，蓝牙连接断开；将电压调到3.8V按下复位键，或连接充电线，启动APP，建立蓝牙连接，机器正常使用"
+    },
+    {
+      "test_id": "9-4",
+      "item": "低电压测试-打气过程中",
+      "condition": "打开应用程序，通过蓝牙连接，点击开始测量，在打气的过程中将电压调到3.3V以下",
+      "expected_value": "血压计停泵放气，红灯闪烁，蓝牙连接断开；将电压调到3.8V按下复位键，启动APP，建立蓝牙连接，机器正常使用"
+    },
+    {
+      "test_id": "10-1",
+      "item": "错误显示测试-搜索零点错误",
+      "condition": "启动软件通过蓝牙连接血压计后，按开始测量键开始测量",
+      "expected_value": "如果30S未搜索到稳定的零点，则停泵放气，退到\"开始测量界面\""
+    },
+    {
+      "test_id": "10-2",
+      "item": "错误显示测试-高压未检出或心跳小于4次",
+      "condition": "加压测量时，当加压完毕，而未测出结果，错误原因是高压未检出或心跳小于4次",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为01，红灯点亮10s"
+    },
+    {
+      "test_id": "10-3",
+      "item": "错误显示测试-低压未检出或高低压差为负值",
+      "condition": "加压测量时，当加压完毕，而未测出结果，低压未检出或高低压差为负值",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为02，红灯点亮10s"
+    },
+    {
+      "test_id": "10-4",
+      "item": "错误显示测试-气路堵塞",
+      "condition": "全自动加压时，若气路堵塞使加压过快",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为03，红灯点亮10s"
+    },
+    {
+      "test_id": "10-5",
+      "item": "错误显示测试-气路漏气",
+      "condition": "全自动加压时，若袖带过松而使加压过慢",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为04，红灯点亮10s"
+    },
+    {
+      "test_id": "10-6",
+      "item": "错误显示测试-压力大于297mmHg超过1.5s",
+      "condition": "在泵上气性能测试过程中，加压至295mmHg后停泵进入阀放气速度检测，进入阀放气检测后维持当前压力60s，在维持压力的60s内，若袖带内压力大于297mmHg时间超过1.5s",
+      "expected_value": "停泵放气，查看工装串口发送数据，错误代码应为05，红灯点亮10s"
+    },
+    {
+      "test_id": "10-7",
+      "item": "错误显示测试-压力大于15mmHg的时间超过3分钟",
+      "condition": "在加压/测量时如果袖带内的压力在15mmHg以上的时间达2min40s",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为06，红灯点亮10s"
+    },
+    {
+      "test_id": "10-8",
+      "item": "错误显示测试-EEPROM访问错误",
+      "condition": "打开APP建立蓝牙连接，如果在使用中出现EEPROM访问错误",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为07，红灯点亮10s"
+    },
+    {
+      "test_id": "10-9",
+      "item": "错误显示测试-3备份的内容校验出错",
+      "condition": "从血压计上电开始，如果在使用中检测到3备份内容出错；测试方法：将EEPROM内三备份区域的内容打乱，重新焊接好上电",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为08，红灯点亮10s；血压计报错"
+    },
+    {
+      "test_id": "10-10",
+      "item": "错误显示测试-满度错误",
+      "condition": "打开APP建立蓝牙连接，如果检测到满度不在3000到6000之内",
+      "expected_value": "停泵放气，查看串口发送数据，错误代码应为0A，红灯点亮10s"
+    },
+    {
+      "test_id": "10-11",
+      "item": "错误显示测试-连接异常",
+      "condition": "打开APP建立蓝牙连接，点击开始测量后，把单片机通讯的串口RX端与地短接，单片机与APP通讯异常",
+      "expected_value": "绿灯灭，红灯亮10秒；查看串口发送数据，错误代码应为0C，红灯点亮10s"
+    },
+    {
+      "test_id": "10-12",
+      "item": "错误显示测试-低电压",
+      "condition": "除了关机态、调试态、smt态，其它状态都会进行低电检测，若出现低电",
+      "expected_value": "红灯闪10s后血压计关机；查看串口发送数据，错误代码应为0D，红灯点亮10s"
+    },
+    {
+      "test_id": "11",
+      "item": "灯状态检测",
+      "condition": "灯一共有8种状态",
+      "expected_value": "1.无蓝牙连接不充电：绿灯灭红灯灭；2.无蓝牙连接充电未充满：绿灯闪红灯灭；3.无蓝牙连接充电已充满：绿灯常亮红灯灭；4.蓝牙连接充电已充满：绿灯常亮红灯灭；5.蓝牙连接充电未充满：绿灯常亮红灯灭；6.蓝牙连接不充电：绿灯常亮红灯灭；7.低电压状态：红灯闪绿灯灭；8.异常：红灯亮绿灯灭"
+    },
+    {
+      "test_id": "12",
+      "item": "异常状态处理",
+      "condition": "无论在任何时候（包括未知的各种死机状态）",
+      "expected_value": "按下机器上的按键都会重启单片机（停泵、开阀）"
+    },
+    {
+      "test_id": "13",
+      "item": "通过USB为血压计充电",
+      "condition": "血压计电池电压在3.8V±0.1V，通过直流电源给机器充电",
+      "expected_value": "电源电流应在520±50mA范围内"
+    }
+  ],
+  "test_measurements": [
+    {
+      "test_point": "静压0mmHg",
+      "reference_value": "0",
+      "unit": "mmHg",
+      "condition": "合格范围：0~2mmHg"
+    },
+    {
+      "test_point": "静压60mmHg",
+      "reference_value": "60",
+      "unit": "mmHg",
+      "condition": "合格范围：60±3mmHg"
+    },
+    {
+      "test_point": "静压90mmHg",
+      "reference_value": "90",
+      "unit": "mmHg",
+      "condition": "合格范围：90±3mmHg"
+    },
+    {
+      "test_point": "静压150mmHg",
+      "reference_value": "150",
+      "unit": "mmHg",
+      "condition": "合格范围：150±3mmHg"
+    },
+    {
+      "test_point": "静压210mmHg",
+      "reference_value": "210",
+      "unit": "mmHg",
+      "condition": "合格范围：210±3mmHg"
+    },
+    {
+      "test_point": "静压240mmHg",
+      "reference_value": "240",
+      "unit": "mmHg",
+      "condition": "合格范围：240±3mmHg"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "软件测试说明：软件版本BPM-N78F0485-V0.278-20150714，目标机型PT9L。PT9L的设计输入V1.0要求该软件支持：测温过程中检测体温，将测量中的数据及测量结果通过LCD显示。按照测试大纲的要求，逐项测试，如果测试通过，BPM-N78F0485-V0.278-20150714版软件可以定版。接收标准：按照测试大纲的要求，逐项测试，每项测试均测试通过。",
+      "topic_tags": [
+        "软件测试",
+        "接收标准",
+        "软件版本",
+        "定版"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "BPM-N78F0485-V0.278-20150714"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "功能描述：全自动臂式、带BLE蓝牙功能。按键描述：KS1复位键。测试结果符号说明：测试通过：OK；不通过：NG；如测试不通过，还要注明原因。",
+      "topic_tags": [
+        "功能描述",
+        "蓝牙",
+        "按键",
+        "测试符号"
+      ],
+      "related_subjects": [
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "低电压测试说明：允许低电压检测的状态为：按机器上的RESET键重新启动芯片；蓝牙连接后；测量态；整机测试。Smt态和调试态不检测低电压。低电压接收标准为3.3+0.1V以下。",
+      "topic_tags": [
+        "低电压",
+        "检测状态",
+        "RESET",
+        "蓝牙连接",
+        "测量态"
+      ],
+      "related_subjects": [
+        "测试项目9"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "灯状态定义（共8种）：1.与手机无蓝牙连接，不充电：绿灯灭、红灯灭；2.与手机无蓝牙连接，充电并且未充满：绿灯闪，红灯灭；3.与手机无蓝牙连接，充电并且充满：绿灯常亮，红灯灭；4.与手机建立蓝牙连接，充电并且充满：绿灯常亮、红灯灭；5.与手机建立蓝牙连接，充电并且未充满：绿灯常亮、红灯灭；6.与手机建立蓝牙连接，不充电：绿灯常亮、红灯灭；7.低电压状态：红灯闪、绿灯灭；8.异常：红灯亮、绿灯灭。",
+      "topic_tags": [
+        "灯状态",
+        "蓝牙连接",
+        "充电",
+        "低电压",
+        "异常指示"
+      ],
+      "related_subjects": [
+        "测试项目11"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "错误代码汇总：高压未检出或心跳小于4次→错误代码01；低压未检出或高低压差为负值→错误代码02；气路堵塞→错误代码03；气路漏气→错误代码04；压力大于297mmHg超过1.5s→错误代码05；压力大于15mmHg时间超过3分钟（2min40s触发）→错误代码06；EEPROM访问错误→错误代码07；3备份内容校验出错→错误代码08；满度错误（满度不在3000到6000之内）→错误代码0A；连接异常（串口RX端与地短接）→错误代码0C；低电压→错误代码0D。各错误均触发停泵放气，红灯点亮10s。",
+      "topic_tags": [
+        "错误代码",
+        "错误处理",
+        "停泵放气",
+        "红灯",
+        "串口"
+      ],
+      "related_subjects": [
+        "测试项目10"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "11 T1样机/软件文件底稿/测试计划及测试记录E0 23.11/软件系统测试记录 E0 23.11.via_lo_html.clean.md",
+    "doc_type": "t1_prototype"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "软件测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPM-N78F0485-V0.278-20150714",
+      "to": "软件测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "功能描述",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试项目9",
+      "to": "低电压",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试项目11",
+      "to": "灯状态",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "测试项目10",
+      "to": "错误代码",
+      "properties": {}
+    },
+    {
+      "type": "DESCRIBES_SOFTWARE",
+      "from": "PT9L-RXCL01 V1.0",
+      "to": "BPM-N78F0485-V0.278-20150714",
+      "properties": {
+        "doc_type": "测试报告",
+        "version": "V1.0"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "1",
+      "to": "直流稳压电源DJS10005",
+      "properties": {
+        "detail_type": "instrument"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "2.3",
+      "to": "2.3_expected",
+      "properties": {
+        "detail_type": "expected_value",
+        "content": "加压到190mmHg（±3mmHg）后自动停止加压（不记忆加压平台）"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "2.4",
+      "to": "2.4_pass_criteria",
+      "properties": {
+        "detail_type": "pass_criteria",
+        "content": "每项测试均测试通过"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "6",
+      "to": "PT9L-RSYB01 V1.0",
+      "properties": {
+        "detail_type": "reference_document",
+        "content": "参照PT9L-RSYB01 V1.0验证通过"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "静压0mmHg",
+      "properties": {
+        "detail_type": "test_measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "静压60mmHg",
+      "properties": {
+        "detail_type": "test_measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "静压90mmHg",
+      "properties": {
+        "detail_type": "test_measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "静压150mmHg",
+      "properties": {
+        "detail_type": "test_measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "静压210mmHg",
+      "properties": {
+        "detail_type": "test_measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "静压240mmHg",
+      "properties": {
+        "detail_type": "test_measurement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "8",
+      "to": "直流稳压电源DJS10005",
+      "properties": {
+        "detail_type": "instrument"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "9",
+      "to": "9-1",
+      "properties": {
+        "detail_type": "sub_test"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "9",
+      "to": "9-2",
+      "properties": {
+        "detail_type": "sub_test"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "9",
+      "to": "9-3",
+      "properties": {
+        "detail_type": "sub_test"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "9",
+      "to": "9-4",
+      "properties": {
+        "detail_type": "sub_test"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "BPM-N78F0485-V0.278-20150714",
+      "to": "scope_limitation_fragment",
+      "properties": {
+        "detail_type": "scope_limitation",
+        "content": "软件版本BPM-N78F0485-V0.278-20150714，目标机型PT9L"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_functional",
+      "properties": {
+        "detail_type": "behavioral_spec",
+        "content": "全自动臂式、带BLE蓝牙功能。按键描述：KS1复位键。测试结果符号说明。"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "9",
+      "to": "behavioral_spec_low_voltage",
+      "properties": {
+        "detail_type": "behavioral_spec",
+        "content": "允许低电压检测的状态说明及接收标准"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_led_states",
+      "properties": {
+        "detail_type": "behavioral_spec",
+        "content": "灯状态定义共8种"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "behavioral_spec_error_codes",
+      "properties": {
+        "detail_type": "behavioral_spec",
+        "content": "错误代码汇总"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "静压0mmHg",
+      "to": "8",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "静压60mmHg",
+      "to": "8",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "静压90mmHg",
+      "to": "8",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "静压150mmHg",
+      "to": "8",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "静压210mmHg",
+      "to": "8",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "静压240mmHg",
+      "to": "8",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "8",
+      "to": "静压0mmHg",
+      "properties": {
+        "reference_value": "0",
+        "unit": "mmHg",
+        "condition": "合格范围：0~2mmHg"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "8",
+      "to": "静压60mmHg",
+      "properties": {
+        "reference_value": "60",
+        "unit": "mmHg",
+        "condition": "合格范围：60±3mmHg"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "8",
+      "to": "静压90mmHg",
+      "properties": {
+        "reference_value": "90",
+        "unit": "mmHg",
+        "condition": "合格范围：90±3mmHg"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "8",
+      "to": "静压150mmHg",
+      "properties": {
+        "reference_value": "150",
+        "unit": "mmHg",
+        "condition": "合格范围：150±3mmHg"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "8",
+      "to": "静压210mmHg",
+      "properties": {
+        "reference_value": "210",
+        "unit": "mmHg",
+        "condition": "合格范围：210±3mmHg"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "8",
+      "to": "静压240mmHg",
+      "properties": {
+        "reference_value": "240",
+        "unit": "mmHg",
+        "condition": "合格范围：240±3mmHg"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "压力平台",
+      "attribute": "目标值",
+      "value": "190",
+      "unit": "mmHg",
+      "tolerance": "±3mmHg",
+      "condition": "绑在弹性圆柱体或接在500CC双口气缸上",
+      "raw_text": "加压到190mmHg（±3mmHg）后自动停止加压"
+    },
+    {
+      "subject": "泵气速度（过慢低压）",
+      "attribute": "阈值",
+      "value": "2",
+      "unit": "mmHg/4S",
+      "tolerance": "",
+      "condition": "压力<30mmHg时",
+      "raw_text": "打气过慢：压力<30mmHg时<2mmHg/4S"
+    },
+    {
+      "subject": "泵气速度（过慢高压）",
+      "attribute": "阈值",
+      "value": "3",
+      "unit": "mmHg/4S",
+      "tolerance": "",
+      "condition": "压力>30mmHg时",
+      "raw_text": "打气过慢：压力>30mmHg时<3mmHg/4S"
+    },
+    {
+      "subject": "泵气速度（过快）",
+      "attribute": "阈值",
+      "value": "75",
+      "unit": "mmHg/0.32S",
+      "tolerance": "",
+      "condition": "泵启动后",
+      "raw_text": "打气过快：压力上升>75mmHg/0.32S"
+    },
+    {
+      "subject": "加压速度",
+      "attribute": "目标值",
+      "value": "5~6",
+      "unit": "mmHg/S",
+      "tolerance": "",
+      "condition": "机器加压到30mmHg后进入测量态",
+      "raw_text": "加压速度约5~6mmHg/S"
+    },
+    {
+      "subject": "压力采样值",
+      "attribute": "合格范围",
+      "value": "1300~2500",
+      "unit": "",
+      "tolerance": "",
+      "condition": "进入调试态，不给传感器施加气压",
+      "raw_text": "压力采样值应在1300~2500之间"
+    },
+    {
+      "subject": "满度采样值",
+      "attribute": "合格范围",
+      "value": "3000~6000",
+      "unit": "",
+      "tolerance": "",
+      "condition": "给传感器通300mmHg稳定压力，短按MEM",
+      "raw_text": "满度值在3000~6000之间时液晶显示当前满度值和\"SA\""
+    },
+    {
+      "subject": "静压精度（0mmHg）",
+      "attribute": "允差范围",
+      "value": "0~2",
+      "unit": "mmHg",
+      "tolerance": "",
+      "condition": "静压态，标准值0mmHg",
+      "raw_text": "0mmHg：0~2mmHg"
+    },
+    {
+      "subject": "静压精度（60mmHg）",
+      "attribute": "允差",
+      "value": "60",
+      "unit": "mmHg",
+      "tolerance": "±3mmHg",
+      "condition": "静压态，标准值60mmHg",
+      "raw_text": "60mmHg：60±3mmHg"
+    },
+    {
+      "subject": "静压精度（90mmHg）",
+      "attribute": "允差",
+      "value": "90",
+      "unit": "mmHg",
+      "tolerance": "±3mmHg",
+      "condition": "静压态，标准值90mmHg",
+      "raw_text": "90mmHg：90±3mmHg"
+    },
+    {
+      "subject": "静压精度（150mmHg）",
+      "attribute": "允差",
+      "value": "150",
+      "unit": "mmHg",
+      "tolerance": "±3mmHg",
+      "condition": "静压态，标准值150mmHg",
+      "raw_text": "150mmHg：150±3mmHg"
+    },
+    {
+      "subject": "静压精度（210mmHg）",
+      "attribute": "允差",
+      "value": "210",
+      "unit": "mmHg",
+      "tolerance": "±3mmHg",
+      "condition": "静压态，标准值210mmHg",
+      "raw_text": "210mmHg：210±3mmHg"
+    },
+    {
+      "subject": "静压精度（240mmHg）",
+      "attribute": "允差",
+      "value": "240",
+      "unit": "mmHg",
+      "tolerance": "±3mmHg",
+      "condition": "静压态，标准值240mmHg",
+      "raw_text": "240mmHg：240±3mmHg"
+    },
+    {
+      "subject": "低电压阈值",
+      "attribute": "触发电压",
+      "value": "3.3",
+      "unit": "V",
+      "tolerance": "+0.1V",
+      "condition": "低电压接收标准",
+      "raw_text": "低电压接收标准为3.3+0.1V以下；3.3V以下红灯闪烁"
+    },
+    {
+      "subject": "低电压恢复电压",
+      "attribute": "恢复阈值",
+      "value": "3.8",
+      "unit": "V",
+      "tolerance": "",
+      "condition": "低电压后恢复正常使用",
+      "raw_text": "恢复3.8V后或连接充电线，机器正常使用"
+    },
+    {
+      "subject": "零点搜索超时",
+      "attribute": "超时时长",
+      "value": "30",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "启动测量后搜索稳定零点",
+      "raw_text": "如果30S未搜索到稳定的零点，则停泵放气"
+    },
+    {
+      "subject": "超压保护压力",
+      "attribute": "触发阈值",
+      "value": "297",
+      "unit": "mmHg",
+      "tolerance": "",
+      "condition": "阀放气检测阶段",
+      "raw_text": "若袖带内压力大于297mmHg时间超过1.5s"
+    },
+    {
+      "subject": "超压持续时间",
+      "attribute": "触发时长",
+      "value": "1.5",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "袖带内压力大于297mmHg",
+      "raw_text": "若袖带内压力大于297mmHg时间超过1.5s，停泵放气，错误代码应为05"
+    },
+    {
+      "subject": "高压持续超时",
+      "attribute": "触发时长",
+      "value": "3",
+      "unit": "min",
+      "tolerance": "",
+      "condition": "袖带内压力在15mmHg以上（2min40s触发警告）",
+      "raw_text": "袖带内的压力在15mmHg以上的时间达2min40s，停泵放气，错误代码应为06"
+    },
+    {
+      "subject": "高压持续压力阈值",
+      "attribute": "触发压力",
+      "value": "15",
+      "unit": "mmHg",
+      "tolerance": "",
+      "condition": "加压/测量过程中",
+      "raw_text": "在加压/测量时如果袖带内的压力在15mmHg以上的时间达2min40s"
+    },
+    {
+      "subject": "蓝牙断开停测延时",
+      "attribute": "延迟时长",
+      "value": "5",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "待机/浮零/测量过程中关闭iOS设备蓝牙",
+      "raw_text": "浮零/测量过程中血压计5s后停止测量"
+    },
+    {
+      "subject": "HOME键停测延时",
+      "attribute": "延迟时长",
+      "value": "1",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "测量过程中点击HOME键",
+      "raw_text": "测量过程中1S后血压计关泵开阀"
+    },
+    {
+      "subject": "充电电流",
+      "attribute": "额定范围",
+      "value": "520",
+      "unit": "mA",
+      "tolerance": "±50mA",
+      "condition": "电池电压3.8V±0.1V，通过直流电源充电",
+      "raw_text": "电源电流应在520±50mA范围内"
+    },
+    {
+      "subject": "电池电压",
+      "attribute": "充电初始值",
+      "value": "3.8",
+      "unit": "V",
+      "tolerance": "±0.1V",
+      "condition": "通过直流电源给机器充电测试",
+      "raw_text": "血压计电池电压在3.8V±0.1V，通过直流电源给机器充电"
+    },
+    {
+      "subject": "心跳检测次数",
+      "attribute": "最低要求",
+      "value": "4",
+      "unit": "次",
+      "tolerance": "",
+      "condition": "加压测量完毕判断结果时",
+      "raw_text": "错误原因是高压未检出或心跳小于4次，错误代码应为01"
+    },
+    {
+      "subject": "错误红灯持续时间",
+      "attribute": "点亮时长",
+      "value": "10",
+      "unit": "S",
+      "tolerance": "",
+      "condition": "各类错误发生后",
+      "raw_text": "红灯点亮10s（多处错误处理均为10s）"
+    },
+    {
+      "subject": "调试态采样差值",
+      "attribute": "合格范围",
+      "value": "00~03",
+      "unit": "",
+      "tolerance": "",
+      "condition": "进入调试态，不给传感器施加气压，16点采样值最大最小差值",
+      "raw_text": "心率处显示16点采样值最大最小差值（00~03）"
+    }
+  ]
+}

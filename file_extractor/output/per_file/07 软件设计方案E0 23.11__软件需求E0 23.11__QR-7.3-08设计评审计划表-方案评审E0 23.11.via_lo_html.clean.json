@@ -1,0 +1,308 @@
+{
+  "document": {
+    "title": "设计评审计划表",
+    "doc_type": "评审计划表",
+    "version": "V1.0"
+  },
+  "review_records": [
+    {
+      "review_id": "QR-7.3-08/E0",
+      "stage": "方案规划-软件需求规格书评审",
+      "date": null,
+      "conclusion": null
+    }
+  ],
+  "review_items": [
+    {
+      "seq": "1",
+      "category": "软件需求规格评估",
+      "content": "对软件需求规格的评估：评审内容见附表（文件编号：PT9L-RXPB01 V1.0）",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "2",
+      "category": "问题纠正",
+      "content": "评估出的问题、原因及采取的纠正措施、负责人、完成日期",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "3",
+      "category": "设计更改",
+      "content": "在本阶段进行的设计更改，如设计更改需求评审中确定其未影响预期用途及设计输入，即只影响设计输出的设计更改，本次评审时需评估设计更改的适宜性及是否引起了新的问题",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    },
+    {
+      "seq": "4",
+      "category": "设计进度",
+      "content": "对设计进度的评估",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": null
+    }
+  ],
+  "persons": [
+    {
+      "name": "侯广伟",
+      "title": "技术负责人/软件主管"
+    },
+    {
+      "name": "王迪",
+      "title": "软件工程师"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RXPJ01 V1.0"
+    },
+    {
+      "id_type": "表号",
+      "value": "QR-7.3-08/E0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "附表文件编号",
+      "value": "PT9L-RXPB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "接收准则：1. 软件需求规格评审内容表中，所有条目需识别其适用性，适用的条目需评估其是否通过；2. 对评估出的问题，需在评审记录中明确产生问题的原因以及采取的纠正措施、负责人和完成日期；3. 如有设计更改，则更改解决了原有问题，且没有引起新的问题，如有新的问题，需追踪直至解决；4. 设计进度符合项目进度表的时间要求，或者更新项目进度表并得到批准。",
+      "topic_tags": [
+        "接收准则",
+        "软件需求规格",
+        "设计更改",
+        "设计进度",
+        "问题追踪"
+      ],
+      "related_subjects": [
+        "PT9L-RXPB01 V1.0",
+        "软件需求规格书评审",
+        "项目进度表"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "人员职责：技术负责人：对软件需求规格询问信息、提出问题等，对其可行性、合理性等进行评审；软件主管：对软件需求规格询问信息、提出问题等，对其可行性、合理性及项目进度等进行评审；软件工程师：主持软件需求规格评审，解答问题和/或承诺改进软件需求规格，并形成评审记录。",
+      "topic_tags": [
+        "人员职责",
+        "技术负责人",
+        "软件主管",
+        "软件工程师",
+        "评审职责"
+      ],
+      "related_subjects": [
+        "侯广伟",
+        "王迪",
+        "软件需求规格书评审"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "07 软件设计方案E0 23.11/软件需求E0 23.11/QR-7.3-08设计评审计划表-方案评审E0 23.11.via_lo_html.clean.md",
+    "doc_type": "review_checklist"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "设计评审计划表",
+      "to": "4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPB01 V1.0",
+      "to": "接收准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件需求规格书评审",
+      "to": "接收准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "项目进度表",
+      "to": "接收准则",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "侯广伟",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "王迪",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "软件需求规格书评审",
+      "to": "人员职责",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "QR-7.3-08/E0",
+      "to": "seq_1",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "QR-7.3-08/E0",
+      "to": "seq_2",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "QR-7.3-08/E0",
+      "to": "seq_3",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "QR-7.3-08/E0",
+      "to": "seq_4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "seq_1",
+      "to": "PT9L-RXPB01 V1.0",
+      "properties": {
+        "relation": "附表文件编号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "侯广伟",
+      "properties": {
+        "role": "技术负责人/软件主管"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "王迪",
+      "properties": {
+        "role": "软件工程师"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "PT9L-RXPJ01 V1.0",
+      "properties": {
+        "id_type": "文件编号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "30000078",
+      "properties": {
+        "id_type": "项目编号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "QR-7.3-08/E0",
+      "to": "PT9L",
+      "properties": {
+        "product_name": "红外体温计"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "侯广伟",
+      "to": "QR-7.3-08/E0",
+      "properties": {
+        "role": "技术负责人/软件主管"
+      }
+    },
+    {
+      "type": "REVIEWS",
+      "from": "王迪",
+      "to": "QR-7.3-08/E0",
+      "properties": {
+        "role": "软件工程师"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "1",
+      "properties": {
+        "category": "软件需求规格评估"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "2",
+      "properties": {
+        "category": "问题纠正"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "3",
+      "properties": {
+        "category": "设计更改"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "QR-7.3-08/E0",
+      "to": "4",
+      "properties": {
+        "category": "设计进度"
+      }
+    }
+  ],
+  "_claims": []
+}

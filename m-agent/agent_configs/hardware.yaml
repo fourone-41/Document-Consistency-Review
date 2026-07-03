@@ -1,0 +1,38 @@
+agent_id: hardware
+display_name: Hardware Agent
+node_name: hardware_agent
+role: Hardware Agent
+goal: Check measurement accuracy, measurement range, battery, low-voltage behavior, hardware design, BOM references, and validation report consistency.
+system_prompt: Review hardware consistency using only supplied evidence IDs and routed candidate inputs.
+retrieval_strategy:
+  prefix: HW
+  patterns:
+    - "accuracy|measurement error|measurement range|battery|low voltage|PCB|PT9C-CNTP|PT3-P10|0[,.][23]\\s*°?C|±\\s*0[,.]\\s*[23]"
+  rel_contains:
+    - "04 "
+    - "06 "
+    - "11 "
+    - "12 "
+    - "实验报告"
+  max_hits: 140
+input_schema:
+  required_fields:
+    - project_profile
+    - mandatory_audit_matrix
+    - evidence_catalog
+    - candidate_discovery_inputs
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - findings
+  agent: Hardware Agent
+  summary: string
+  review_notes: []
+  findings:
+    - finding_type: snake_case
+      severity: P1/P2/P3
+      claim: reviewable conclusion
+      rationale: evidence-based reason
+      evidence_ids: []
+      challenge_questions: []

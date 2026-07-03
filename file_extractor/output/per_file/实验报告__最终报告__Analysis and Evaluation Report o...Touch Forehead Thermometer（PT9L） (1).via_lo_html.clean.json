@@ -1,0 +1,1080 @@
+{
+  "document": {
+    "title": "Analysis and Evaluation Report of Infrared No-Touch Forehead Thermometer (PT9L)",
+    "document_type": "Expected Life Analysis and Evaluation Report",
+    "product_name": "Infrared No-Touch Forehead Thermometer",
+    "model": "PT9L",
+    "completion_date": "July 12, 2024",
+    "issuing_organization": "ANDON HEALTH CO., LTD.",
+    "department": "Research and Development Department",
+    "fragment": "2/2",
+    "conclusion": "The Expected Life of the product can reach 5 years under the operating conditions in the user manual. The expected life is reflected in the device label and user manual."
+  },
+  "products": [
+    {
+      "name": "Infrared No-Touch Forehead Thermometer",
+      "model": "PT9L",
+      "lot_no": "KE04",
+      "expected_life": "5 years",
+      "intended_environment": "Home indoor room temperature environment"
+    },
+    {
+      "name": "Infrared No-Touch Forehead Thermometer",
+      "model": "PT9L"
+    }
+  ],
+  "components": [
+    {
+      "name": "Plastic casing"
+    },
+    {
+      "name": "IR temperature sensor"
+    },
+    {
+      "name": "MCU"
+    },
+    {
+      "name": "LCD display screen"
+    },
+    {
+      "name": "Buzzer"
+    },
+    {
+      "name": "Batteries"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "description": "Measure human body temperature by receiving the infrared energy of the human body forehead",
+      "use_environment": "Home indoor environment",
+      "user_type": "Home users"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "description": "Expected Life is 5 years",
+      "category": "Lifetime"
+    },
+    {
+      "id": "REQ-02",
+      "description": "Operating temperature: 10℃ ~ 40℃",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-03",
+      "description": "Operating relative humidity: 15%RH ~ 95%RH, non-condensing",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-04",
+      "description": "Operating atmospheric pressure: 70 kPa ~ 106 kPa",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-05",
+      "description": "Transportation and storage temperature: -20℃ ~ 55℃",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-06",
+      "description": "Transportation and storage relative humidity: 15%RH ~ 95%RH, non-condensing",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-07",
+      "description": "Transportation and storage atmospheric pressure: 70 kPa ~ 106 kPa",
+      "category": "Environmental"
+    },
+    {
+      "id": "REQ-08",
+      "description": "Reliability target: 90% reliability at 90% confidence level",
+      "category": "Reliability"
+    },
+    {
+      "id": "REQ-LIFE-001",
+      "description": "Expected Life of 5 years",
+      "value": "5 years / 30.5 hours operational time",
+      "confidence_level": "90%",
+      "reliability": "90%"
+    }
+  ],
+  "tests": [
+    {
+      "test_name": "Accelerated Life Testing",
+      "test_type": "Accelerated Life Test",
+      "method_reference": "IEC 62506:2013 Methods for product accelerated testing",
+      "acceleration_model": "Arrhenius model (temperature and humidity as acceleration stress)",
+      "acceleration_factor": "AF = 16.058",
+      "acceleration_formula": "Weibull Distribution and Binomial Distribution Synthesis formula",
+      "parameters": {
+        "Ts_normal_temperature_K": 298,
+        "Tu_accelerated_temperature_K": 313,
+        "normal_temperature_C": 25,
+        "accelerated_temperature_C": 40,
+        "normal_humidity_RH": "50%",
+        "accelerated_humidity_RH": "95%",
+        "activation_energy_Ea_eV": 0.8,
+        "boltzmann_constant_k": "8.62e-5 eV/K",
+        "humidity_acceleration_constant_n": 2,
+        "weibull_beta": 1.5,
+        "sample_quantity": 1
+      },
+      "sample": {
+        "name": "Infrared No-Touch Forehead Thermometer",
+        "model": "PT9L",
+        "lot_no": "KE04",
+        "quantity": 1
+      },
+      "annual_use_time_h": 6.1,
+      "five_year_use_time_h": 30.5,
+      "report_reference": "Annex I – Accelerated life testing report"
+    },
+    {
+      "test_id": "5.2.3",
+      "test_name": "Accelerated Aging Test (Damp Heat, Steady State)",
+      "standard": "IEC 60068-2-78:2012 Environmental Testing-Part 2: Test Method Test Cab: Damp heat, steady state",
+      "conditions": {
+        "temperature": "40℃",
+        "humidity": "95% RH"
+      },
+      "start_time": "12:10, July 10, 2024",
+      "end_time": "02:58, July 11, 2024",
+      "total_duration_hours": 14.8,
+      "steps": [
+        {
+          "step_id": "5.2.3.1",
+          "description": "Before the test, the basic performance of the Infrared No-Touch Forehead Thermometer is tested, and the test results are qualified."
+        },
+        {
+          "step_id": "5.2.3.2",
+          "description": "Place the Infrared No-Touch Forehead Thermometer in the temperature alternating chamber. Allow the Infrared No-Touch Forehead Thermometer to continuously measure in normal measurement mode."
+        },
+        {
+          "step_id": "5.2.3.3",
+          "description": "Adjust the temperature alternating chamber to 40℃ and 95% RH per IEC 60068-2-78:2012; record test time after temperature and humidity are stable."
+        },
+        {
+          "step_id": "5.2.3.4",
+          "description": "After the acceleration time from the normal work to the fifth year, test the basic performance of the prototype, and all the test results are qualified. See Annex II."
+        }
+      ],
+      "result": "Pass"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "Operating Frequency",
+      "description": "365 working days per year, 3 times per day = 1095 times per year"
+    },
+    {
+      "category": "Service Time per Operation",
+      "description": "Each operation (startup, measurement, auto shutdown) takes 20 seconds"
+    },
+    {
+      "category": "Annual Use Time",
+      "description": "365 × 3 × 20 / 3600 ≈ 6.1 hours per year; 5-year total: 30.5 hours"
+    },
+    {
+      "category": "Verification Environment",
+      "description": "Application environment: 25℃, 50% RH; Accelerated environment: 40℃, 95% RH"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "Guiding Principles for Technical Review of the Expected Life Registration of Active Medical Devices",
+      "type": "Regulatory Guidance"
+    },
+    {
+      "name": "IEC 62506:2013",
+      "full_name": "Methods for product accelerated testing",
+      "type": "International Standard"
+    },
+    {
+      "id": "IEC 60068-2-78:2012",
+      "title": "Environmental Testing-Part 2: Test Method Test Cab: Damp heat, steady state"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Product Model",
+      "value": "PT9L"
+    },
+    {
+      "type": "Lot Number",
+      "value": "KE04"
+    },
+    {
+      "id": "ETX202303-07-078-05",
+      "type": "Test Report",
+      "description": "Annex I: Test Report"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The product mainly uses the environment for the home environment, which is the high-tech Infrared No-Touch Forehead Thermometer to measure the human body temperature by receiving the infrared energy of the human body forehead. The Expected Life is 5 years. The product mainly consists of a plastic casing, IR temperature sensor, MCU, LCD display screen, buzzer and batteries. The host is a critical factor influencing the overall product expected life. The product lifespan is confirmed through accelerated life testing of the entire unit. The evaluation follows the path of direct verification on the product.",
+      "topic_tags": [
+        "evaluation path",
+        "product composition",
+        "expected life",
+        "accelerated testing",
+        "home use"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Accelerated Life Testing",
+        "Expected Life"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Cleaning and Disinfection procedure: The thermometer is designed for home use. If there are multiple users, please clean the device in between uses with the following steps: 1. Use an alcohol swab or tissue moistened with alcohol (70% Isopropyl) to clean the thermometer casing thoroughly, ideally for more than 15 seconds. 2. Allow the thermometer to dry for at least 5 minutes before taking a temperature. 3. After cleaning, if the device is not visually clean when observed with magnification and adequate lighting, please repeat the clean steps above.",
+      "topic_tags": [
+        "cleaning",
+        "disinfection",
+        "70% isopropyl alcohol",
+        "home use",
+        "multiple users"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Intended Use"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Evaluation Method Overview table: Item = Infrared No-Touch Forehead Thermometer; Influencing factors = Frequency, use time, ambient temperature and humidity; Model = PT9L; Attribute = independent research and development; Decomposition relation type = No replaceable parts; During the Expected Life / failure rate = 5 years; Evaluation methodology = Accelerated life testing report (see Annex I); Evaluation completion unit = ANDON HEALTH CO., LTD.; Whether an unacceptable risk occurs during the Expected Life = No (See Risk Analysis Report for details).",
+      "topic_tags": [
+        "evaluation method overview",
+        "no replaceable parts",
+        "risk analysis",
+        "accelerated life testing"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Risk Analysis Report",
+        "Annex I"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Acceleration factor calculation: For electronic products, activation energy Ea = 0.8 eV. Ts = normal temperature 25℃ + 273 = 298K; Tu = high temperature 40℃ + 273 = 313K; k = Boltzmann constant = 8.62×10⁻⁵ eV/K; RHs = 50% RH (normal use); RHu = 95% RH (accelerated stress); n = humidity acceleration rate constant = 2. Calculated AF = 16.058. Test time calculation uses the Weibull Distribution and Binomial Distribution Synthesis formula with β = 1.5 and sample size = 1.",
+      "topic_tags": [
+        "Arrhenius model",
+        "acceleration factor",
+        "Weibull distribution",
+        "Boltzmann constant",
+        "humidity acceleration"
+      ],
+      "related_subjects": [
+        "Accelerated Life Testing",
+        "PT9L",
+        "IEC 62506:2013"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Accelerated aging calculation: TestRunTime = 238.410h. Accelerated testing time for 5 years = TestRunTime / AF = 14.8h. Parameters used: Confidence = 90%, Reliability = 90%, Expected Life = 30.5h.",
+      "topic_tags": [
+        "accelerated aging",
+        "Arrhenius model",
+        "TestRunTime",
+        "acceleration factor",
+        "expected life"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "IEC 60068-2-78:2012",
+        "Accelerated Aging Test"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "In summary, considering the influencing factors of use frequency, use time, environmental temperature and humidity, and the temperature and humidity as accelerated stress, the Arrhenius model is used for accelerated aging test method. After risk analysis, the Expected Life of this product can reach 5 years under the operating conditions in the user manual. The expected life is reflected in the device label and user manual.",
+      "topic_tags": [
+        "Arrhenius model",
+        "accelerated aging",
+        "expected life",
+        "risk analysis",
+        "use frequency",
+        "temperature",
+        "humidity"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "Risk Analysis Report",
+        "user manual",
+        "device label"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Annexes referenced in the report: Annex I: ETX202303-07-078-05 Test Report. Annex II: the Infrared No-Touch Forehead Thermometer performance test report. Annex III: Risk Analysis Report.",
+      "topic_tags": [
+        "annex",
+        "test report",
+        "performance test",
+        "risk analysis"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-05",
+        "PT9L",
+        "Risk Analysis Report"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "实验报告/最终报告/Analysis and Evaluation Report o...Touch Forehead Thermometer（PT9L） (1).via_lo_html.clean.md",
+    "doc_type": "general"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "evaluation path",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Life Testing",
+      "to": "evaluation path",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Expected Life",
+      "to": "evaluation path",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "cleaning",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Intended Use",
+      "to": "cleaning",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "evaluation method overview",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Analysis Report",
+      "to": "evaluation method overview",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Annex I",
+      "to": "evaluation method overview",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Life Testing",
+      "to": "Arrhenius model",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "Arrhenius model",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 62506:2013",
+      "to": "Arrhenius model",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "accelerated aging",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60068-2-78:2012",
+      "to": "accelerated aging",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Aging Test",
+      "to": "accelerated aging",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Analysis Report",
+      "to": "Arrhenius model",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "user manual",
+      "to": "Arrhenius model",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "device label",
+      "to": "Arrhenius model",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-05",
+      "to": "annex",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "annex",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Analysis Report",
+      "to": "annex",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "Plastic casing",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "IR temperature sensor",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "MCU",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "LCD display screen",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "Buzzer",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "Batteries",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "REQ-01",
+      "to": "REQ-LIFE-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Life Testing",
+      "to": "5.2.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5.2.3",
+      "to": "5.2.3.1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5.2.3",
+      "to": "5.2.3.2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5.2.3",
+      "to": "5.2.3.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "5.2.3",
+      "to": "5.2.3.4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Life Testing",
+      "to": "Operating Frequency",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Life Testing",
+      "to": "Service Time per Operation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Life Testing",
+      "to": "Annual Use Time",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Accelerated Life Testing",
+      "to": "Verification Environment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-07",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-08",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "REQ-LIFE-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ETX202303-07-078-05",
+      "to": "Accelerated Life Testing",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 62506:2013",
+      "to": "Accelerated Life Testing",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 60068-2-78:2012",
+      "to": "5.2.3",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-01",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-08",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-04",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-05",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-06",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "REQ-07",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "Accelerated Life Testing",
+      "to": "REQ-LIFE-001",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Accelerated Life Testing",
+      "to": "IEC 62506:2013",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "5.2.3",
+      "to": "IEC 60068-2-78:2012",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "5.2.3",
+      "to": "Accelerated Life Testing",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Accelerated Life Testing",
+      "to": "REQ-02",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "Accelerated Life Testing",
+      "to": "REQ-03",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-01",
+      "to": "Guiding Principles for Technical Review of the Expected Life Registration of Active Medical Devices",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-01",
+      "to": "Accelerated Life Testing",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "Accelerated Life Testing",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-LIFE-001",
+      "to": "5.2.3",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-02",
+      "to": "5.2.3",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "REQ-03",
+      "to": "5.2.3",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "Accelerated Life Testing",
+      "to": "ETX202303-07-078-05",
+      "properties": {
+        "annex": "Annex I"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "5.2.3",
+      "to": "ETX202303-07-078-05",
+      "properties": {
+        "annex": "Annex II"
+      }
+    },
+    {
+      "type": "COVERS",
+      "from": "IEC 62506:2013",
+      "to": "Accelerated Life Testing",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "IEC 60068-2-78:2012",
+      "to": "5.2.3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "Accelerated Life Testing",
+      "to": "REQ-LIFE-001",
+      "properties": {
+        "acceleration_factor": "AF = 16.058",
+        "test_run_time_h": 238.41,
+        "accelerated_test_time_h": 14.8,
+        "five_year_use_time_h": 30.5
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "5.2.3",
+      "to": "REQ-02",
+      "properties": {
+        "temperature": "40℃",
+        "duration_hours": 14.8
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "5.2.3",
+      "to": "REQ-03",
+      "properties": {
+        "humidity": "95% RH",
+        "duration_hours": 14.8
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "PT9L",
+      "to": "REQ-LIFE-001",
+      "properties": {
+        "expected_life": "5 years",
+        "annual_use_time_h": 6.1,
+        "five_year_use_time_h": 30.5
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "ANDON HEALTH CO., LTD.",
+      "to": "Infrared No-Touch Forehead Thermometer",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "Research and Development Department",
+      "to": "Analysis and Evaluation Report of Infrared No-Touch Forehead Thermometer (PT9L)",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "ANDON HEALTH CO., LTD.",
+      "to": "Accelerated Life Testing",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "产品预期寿命",
+      "attribute": "年限",
+      "value": "5",
+      "unit": "years",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "Expected Life is 5 years"
+    },
+    {
+      "subject": "产品预期寿命",
+      "attribute": "累计运行时长",
+      "value": "30.5",
+      "unit": "hours",
+      "tolerance": "",
+      "condition": "5年内",
+      "raw_text": "Expected Life of 5 years / 30.5 hours operational time"
+    },
+    {
+      "subject": "产品预期寿命",
+      "attribute": "可靠性",
+      "value": "90",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "置信度90%",
+      "raw_text": "90% reliability at 90% confidence level"
+    },
+    {
+      "subject": "工作环境温度",
+      "attribute": "范围",
+      "value": "10~40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "正常工作",
+      "raw_text": "Operating temperature: 10℃ ~ 40℃"
+    },
+    {
+      "subject": "工作环境湿度",
+      "attribute": "范围",
+      "value": "15~95",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "非冷凝，正常工作",
+      "raw_text": "Operating relative humidity: 15%RH ~ 95%RH, non-condensing"
+    },
+    {
+      "subject": "工作环境气压",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "正常工作",
+      "raw_text": "Operating atmospheric pressure: 70 kPa ~ 106 kPa"
+    },
+    {
+      "subject": "运输存储温度",
+      "attribute": "范围",
+      "value": "-20~55",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "运输及存储",
+      "raw_text": "Transportation and storage temperature: -20℃ ~ 55℃"
+    },
+    {
+      "subject": "运输存储湿度",
+      "attribute": "范围",
+      "value": "15~95",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "非冷凝，运输及存储",
+      "raw_text": "Transportation and storage relative humidity: 15%RH ~ 95%RH, non-condensing"
+    },
+    {
+      "subject": "运输存储气压",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "运输及存储",
+      "raw_text": "Transportation and storage atmospheric pressure: 70 kPa ~ 106 kPa"
+    },
+    {
+      "subject": "年使用频次",
+      "attribute": "次数",
+      "value": "1095",
+      "unit": "次/年",
+      "tolerance": "",
+      "condition": "每天3次，每年365天",
+      "raw_text": "365 working days per year, 3 times per day = 1095 times per year"
+    },
+    {
+      "subject": "单次操作时长",
+      "attribute": "持续时间",
+      "value": "20",
+      "unit": "s",
+      "tolerance": "",
+      "condition": "含开机、测量、自动关机",
+      "raw_text": "Each operation (startup, measurement, auto shutdown) takes 20 seconds"
+    },
+    {
+      "subject": "年运行时长",
+      "attribute": "时长",
+      "value": "6.1",
+      "unit": "h/年",
+      "tolerance": "",
+      "condition": "365×3×20/3600",
+      "raw_text": "365 × 3 × 20 / 3600 ≈ 6.1 hours per year"
+    },
+    {
+      "subject": "五年累计运行时长",
+      "attribute": "时长",
+      "value": "30.5",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "5年总计",
+      "raw_text": "5-year total: 30.5 hours"
+    },
+    {
+      "subject": "验证正常环境温度",
+      "attribute": "温度值",
+      "value": "25",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "应用环境验证条件",
+      "raw_text": "Application environment: 25℃, 50% RH"
+    },
+    {
+      "subject": "验证正常环境湿度",
+      "attribute": "湿度值",
+      "value": "50",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "应用环境验证条件",
+      "raw_text": "Application environment: 25℃, 50% RH"
+    },
+    {
+      "subject": "验证加速环境温度",
+      "attribute": "温度值",
+      "value": "40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "加速老化验证条件",
+      "raw_text": "Accelerated environment: 40℃, 95% RH"
+    },
+    {
+      "subject": "验证加速环境湿度",
+      "attribute": "湿度值",
+      "value": "95",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "加速老化验证条件",
+      "raw_text": "Accelerated environment: 40℃, 95% RH"
+    },
+    {
+      "subject": "加速因子",
+      "attribute": "数值",
+      "value": "16.058",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Arrhenius模型，温度+湿度双应力",
+      "raw_text": "AF = 16.058"
+    },
+    {
+      "subject": "激活能",
+      "attribute": "数值",
+      "value": "0.8",
+      "unit": "eV",
+      "tolerance": "",
+      "condition": "Arrhenius加速模型参数",
+      "raw_text": "activation_energy_Ea_eV: 0.8"
+    },
+    {
+      "subject": "玻尔兹曼常数",
+      "attribute": "数值",
+      "value": "8.62e-5",
+      "unit": "eV/K",
+      "tolerance": "",
+      "condition": "Arrhenius加速模型参数",
+      "raw_text": "boltzmann_constant_k: 8.62e-5 eV/K"
+    },
+    {
+      "subject": "湿度加速指数",
+      "attribute": "数值",
+      "value": "2",
+      "unit": "",
+      "tolerance": "",
+      "condition": "湿度加速模型参数n",
+      "raw_text": "humidity_acceleration_constant_n: 2"
+    },
+    {
+      "subject": "威布尔形状参数",
+      "attribute": "β值",
+      "value": "1.5",
+      "unit": "",
+      "tolerance": "",
+      "condition": "Weibull分布参数",
+      "raw_text": "weibull_beta: 1.5"
+    },
+    {
+      "subject": "正常工作温度(K)",
+      "attribute": "温度值",
+      "value": "298",
+      "unit": "K",
+      "tolerance": "",
+      "condition": "对应25℃，Arrhenius模型输入",
+      "raw_text": "Ts_normal_temperature_K: 298"
+    },
+    {
+      "subject": "加速测试温度(K)",
+      "attribute": "温度值",
+      "value": "313",
+      "unit": "K",
+      "tolerance": "",
+      "condition": "对应40℃，Arrhenius模型输入",
+      "raw_text": "Tu_accelerated_temperature_K: 313"
+    },
+    {
+      "subject": "加速老化测试温度",
+      "attribute": "设定值",
+      "value": "40",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "IEC 60068-2-78:2012，稳态湿热试验",
+      "raw_text": "temperature: 40℃"
+    },
+    {
+      "subject": "加速老化测试湿度",
+      "attribute": "设定值",
+      "value": "95",
+      "unit": "%RH",
+      "tolerance": "",
+      "condition": "IEC 60068-2-78:2012，稳态湿热试验",
+      "raw_text": "humidity: 95% RH"
+    },
+    {
+      "subject": "加速老化测试时长",
+      "attribute": "持续时间",
+      "value": "14.8",
+      "unit": "h",
+      "tolerance": "",
+      "condition": "IEC 60068-2-78:2012，稳态湿热试验",
+      "raw_text": "total_duration_hours: 14.8"
+    },
+    {
+      "subject": "加速寿命测试样品数量",
+      "attribute": "数量",
+      "value": "1",
+      "unit": "台",
+      "tolerance": "",
+      "condition": "加速寿命测试，PT9L，批次KE04",
+      "raw_text": "sample_quantity: 1"
+    }
+  ]
+}

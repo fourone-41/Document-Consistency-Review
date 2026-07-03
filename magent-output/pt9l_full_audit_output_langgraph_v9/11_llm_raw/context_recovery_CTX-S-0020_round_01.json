@@ -1,0 +1,209 @@
+```json
+{
+  "context_summary": "本轮已从 F0013 文件头部（第1–22行）提取到关键证据：文件名称含"PT2L"，但文件内部第6行 DN 字段明确写为"PT9L-FXJH01 V1.0"，第14行 Product model 字段亦明确写为"PT9L"。这直接证实了 claim 所述的两项不符合项：①产品身份不匹配（文件封面/文件名指向 PT2L，内容指向 PT9L）；②文件编号分配错误（DN 使用 PT9L 系列编号）。当前上下文已覆盖封面页全部字段及目录结构，以及第48行起的风险管理活动安排表和第121行附近的风险接受准则段落。尚未覆盖：文件版本历史/变更记录表、签署页完整日期字段、文件控制编号的完整定义章节、以及同目录下其他 PT2L 或 PT9L 文件的对比证据。",
+  "evidence_gaps": [
+    "文件内部是否存在版本历史表或变更记录（Change History / Revision History），可进一步确认该文件是否由 PT9L 文件直接复制改写而来",
+    "封面页签署日期字段（Drafted by / Reviewed by / Approved by 对应的实际日期）均为空白，无法确认文件是否已正式生效，影响不符合项严重性判断",
+    "文件控制章节（Document Control / Document Number 定义段）是否存在，以确认 PT9L-FXJH01 编号的正式来源与分配规则",
+    "同目录"2L风险改 - 历史文件"下是否存在其他版本文件（如 V1.1、V2.0），以判断该错误是否在后续版本中被纠正",
+    "PT9L 产品对应的正式风险管理计划文件（若存在）的 DN 编号，以确认 PT9L-FXJH01 是否被重复分配给两个不同产品",
+    "项目编号 30000078 在项目台账或 DHF 索引中对应的产品型号，以交叉验证该编号属于 PT2L 还是 PT9L"
+  ],
+  "additional_search_queries": [
+    "PT9L-FXJH01 Risk Management Plan",
+    "PT2L Risk Management Plan document number",
+    "30000078 product model PT2L PT9L",
+    "Revision History Change Record F0013",
+    "03 风险分析 PT9L FXJH01",
+    "Document Control PT2L PT9L FXJH01 version history"
+  ],
+  "agent_instruction": "请重点核查以下两点后出具审查结论：第一，F0013 文件名与路径均含"PT2L"，但文件内部第6行 DN 字段为"PT9L-FXJH01 V1.0"、第14行 Product model 为"PT9L"，两项字段均与文件名所指产品不符，构成可直接引用的书面证据；第二，在出具最终不符合项报告前，需补充检索：①PT9L 产品是否存在独立的正式风险管理计划（若存在则构成编号重复分配）；②项目编号 30000078 的产品归属；③本文件是否存在版本变更记录以判断错误是否已知晓但未纠正。上述补充证据将决定两项不符合项是否需要分别开立 CAPA 还是可合并处理。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "REG-003",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 22,
+        "source_text": "**Approved by** *(Technical Director)* Date:",
+        "verified": true,
+        "actual_text": "**Approved by** *(Technical Director)* Date:",
+        "local_context_lines": {
+          "line_18": "**Drafted by** *(Regulation Engineer)* Date:",
+          "line_19": "",
+          "line_20": "**Reviewed by** *(Certification Engineer)* Date:",
+          "line_21": "",
+          "line_22": "**Approved by** *(Technical Director)* Date:",
+          "line_23": "",
+          "line_24": "**Content s**"
+        },
+        "section_heading": "Cover Page (lines 1–22)",
+        "document_metadata": {
+          "file_title_in_doc": "V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+          "internal_DN_line6": "PT9L-FXJH01 V1.0 Risk Management Plan",
+          "internal_product_model_line14": "PT9L",
+          "internal_product_name_line12": "Infrared Forehead Thermometer",
+          "internal_project_number_line16": "30000078",
+          "all_signature_dates": "blank (not filled)"
+        },
+        "nonconformance_evidence": {
+          "NC1_product_identity_mismatch": {
+            "file_name_product": "PT2L",
+            "internal_product_model": "PT9L",
+            "evidence_lines": [2, 14],
+            "verbatim_line2": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+            "verbatim_line14": "Product model： PT9L"
+          },
+          "NC2_document_number_assignment_error": {
+            "file_name_DN_prefix": "FXJH01 (PT2L context)",
+            "internal_DN": "PT9L-FXJH01 V1.0",
+            "evidence_line": 6,
+            "verbatim_line6": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan"
+          }
+        }
+      },
+      {
+        "evidence_id": "REG-004",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 48,
+        "source_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "verified": true,
+        "actual_text": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+        "section_heading": "# 1. Arrangement of Risk Management Activities (line 46)",
+        "local_context_lines": {
+          "line_46": "# 1. Arrangement of Risk Management Activities",
+          "line_47": "",
+          "line_48": "The risk management process will be conducted in accordance with standard ISO 14971:2019, EN ISO 14971:2019 and EN ISO 14971:2019/A11:2021. The risk management plan for the whole life-cycle of the medical device as shown in the table below:",
+          "line_49": "",
+          "line_50_table_header": "| **Phase** | **Main Job Descriptions** | **Responsibilities and Authorities** | **Requirements on Risk Management Activity Review** | **Output Document** |"
+        },
+        "table_rows_summary": {
+          "row_initial_development": "Output: Report of risk assessment",
+          "row_prototype_design_verification": "Output: Report of verification of risk control measure and residual risk evaluation",
+          "row_design_validation": "Output: Report of risk management",
+          "row_design_change": "Identify hazards from design change, evaluate risks"
+        },
+        "relevance_to_claim": "本节内容本身无产品型号字段，但其所在文件的封面已确认产品型号错误为 PT9L，故本节所有风险管理活动安排实际归属产品存疑"
+      },
+      {
+        "evidence_id": "REG-005",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "line": 121,
+        "source_text": "Control as much as possible: The risk needs to be controlled by control measures.",
+        "verified": true,
+        "actual_text": "Control as much as possible: The risk needs to be controlled by control measures.",
+        "section_heading": "## 3.3 Risk Acceptance Criteria (line 106)",
+        "local_context_lines": {
+          "line_117": "Acceptable / Control as much as possible / Not acceptable (legend)",
+          "line_119": "Not acceptable: Unacceptable risk. Risk control measures are required.",
+          "line_120": "",
+          "line_121": "Control as much as possible: The risk needs to be controlled by control measures.",
+          "line_122": "",
+          "line_123": "Acceptable: Insignificant/negligible risk. No risk control measures are required.",
+          "line_125": "The manufacturer shall reduce the risk as far as possible, so we use one or more of the following risk control options in the priority order listed:",
+          "line_127": "(a) eliminate or reduce risks as far as possible through safe design and manufacture;",
+          "line_129": "(b) where appropriate, take adequate protection measures, including alarms if necessary;",
+          "line_131": "(c) provide information for safety (warnings/precautions/contra-indications) and training."
+        },
+        "relevance_to_claim": "风险接受准则内容本身合规，但其适用产品因封面 NC1/NC2 错误而存疑，不能确认该准则是否已针对 PT2L 产品特性进行定制"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "page_description": "Cover Page",
+        "line_start": 1,
+        "line_end": 22,
+        "key_fields": {
+          "file_heading_line2": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0",
+          "DN_line6": "PT9L-FXJH01 V1.0 Risk Management Plan",
+          "document_title_line8": "Risk Management Plan",
+          "version_line10": "V1.0",
+          "product_name_line12": "Infrared Forehead Thermometer",
+          "product_model_line14": "PT9L",
+          "project_number_line16": "30000078",
+          "drafted_by_line18": "Regulation Engineer — date blank",
+          "reviewed_by_line20": "Certification Engineer — date blank",
+          "approved_by_line22": "Technical Director — date blank"
+        }
+      },
+      {
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "page_description": "Table of Contents",
+        "line_start": 24,
+        "line_end": 45,
+        "sections_listed": [
+          "1. Arrangement of Risk Management Activities",
+          "2. Risk Management Group",
+          "3. Risk Acceptance Criteria (3.1 Severity, 3.2 Probability, 3.3 Criteria)",
+          "4. Residual Risk Acceptance Criteria (4.1 Single, 4.2 Overall)",
+          "5. Risk Control Measures Verification Criteria"
+        ]
+      },
+      {
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "page_description": "Section 1 — Risk Management Activities Table",
+        "line_start": 46,
+        "line_end": 57,
+        "note": "Four lifecycle phases covered: Initial development, Prototype/Design verification, Design validation, Design change"
+      },
+      {
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "page_description": "Section 3.3 Risk Acceptance Criteria + Section 4 Residual Risk",
+        "line_start": 106,
+        "line_end": 143,
+        "note": "Risk matrix 6×5 (Probability × Severity), three zones: Acceptable / Control as much as possible / Not acceptable; Section 4 covers single and overall residual risk criteria"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "identity_mismatch_direct_evidence",
+        "doc_id": "F0013",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0.via_lo_html.clean.md",
+        "description": "文件名/路径含 PT2L，但文件内部封面三处字段均指向 PT9L，构成产品身份不匹配的直接书面证据",
+        "verbatim_evidence": [
+          {"line": 2, "text": "# V1.0-1 Risk Management Plan PT2L美亚-FXJH01 V1.0", "field": "文件标题（文件名来源）"},
+          {"line": 6, "text": "DN ： PT9L -FXJH01 V 1 .0 Risk Management Plan", "field": "Document Number (DN)"},
+          {"line": 12, "text": "Product name: Infrared Forehead Thermometer", "field": "产品名称"},
+          {"line": 14, "text": "Product model： PT9L", "field": "产品型号"},
+          {"line": 16, "text": "Project number： 30000078", "field": "项目编号"}
+        ],
+        "nonconformance_mapping": {
+          "NC1_product_identity_mismatch": {
+            "conflict_pair": ["文件名/路径: PT2L", "内部 Product model: PT9L"],
+            "directly_supports_claim": true
+          },
+          "NC2_document_number_error": {
+            "conflict_pair": ["文件归属产品: PT2L（按文件名）", "DN 前缀: PT9L-FXJH01"],
+            "directly_supports_claim": true
+          }
+        },
+        "shared_root_cause_hypothesis": "该文件极可能由 PT9L 风险管理计划模板直接复制后修改文件名，但未同步更新内部 DN、Product model 等字段，导致两项不符合项共享同一操作失误根因",
+        "gap_remaining": "需检索 PT9L 正式风险管理计划以确认 PT9L-FXJH01 编号是否被重复分配；需确认项目编号 30000078 的产品归属；需查找版本变更记录"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "document_status_observation",
+        "doc_id": "F0013",
+        "description": "封面三处签署栏（Drafted by / Reviewed by / Approved by）日期均为空白，文件可能从未正式批准生效，或为草稿状态。此情况影响不符合项严重性评级：若文件从未生效，风险管理活动可能从未基于此文件执行，但文件本身存在于 DHF 中仍构成文件控制不符合项",
+        "lines_evidence": [18, 20, 22],
+        "impact_on_severity": "需 Regulatory Agent 判断：未签署草稿文件存于 DHF 是否降低或加重 P1 严重性评级"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "directory_context_observation",
+        "description": "文件路径含"2L风险改 - 历史文件"子目录，表明该文件已被标记为历史文件。需确认当前有效版本的 PT2L 风险管理计划是否存在于其他目录，以判断该历史文件的不符合项是否已在现行版本中被纠正",
+        "additional_search_needed": "检索"03 风险分析"目录下不含"历史文件"路径的 PT2L 风险管理计划文件"
+      }
+    ]
+  }
+}
+```

@@ -1,0 +1,16 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "summary": "对MC-CLUSTER-0038进行补证据最终裁决。该cluster涉及设计输出清单二中Sheet名为"PT3参考"的内容，产品型号标注为PT3SBT，提交/审核/批准日期全部空白。综合同文件上下文证据，Sheet名明确标注为"PT3参考"，表明该Sheet在文件结构上被定性为参考性内容而非PT9L正式受控Sheet；同时同文件中PT3SBT相关物料编号（如PT3SBT-P01、PT3SBT-ABOM01等）在正式Sheet中亦有出现，说明PT3SBT作为关联型号在DHF中有合理引用背景。Sheet名"参考"本身即为文件编制者对该Sheet用途的明确标注，属于历史/参考来源说明情形。当前证据不足以证明该Sheet被作为PT9L正式受控设计输出内容纳入，故不构成可确认的正式文件受控错误。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0038",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "reference_sheet_historical_content",
+      "claim": "设计输出清单二中"PT3参考"Sheet为参考性历史内容，签署空白及PT3SBT型号标注不构成PT9L正式受控文件缺陷。",
+      "reason": "Sheet名明确标注为"PT3参考"，文件编制者已通过命名方式将该Sheet定性为参考/历史对比用途，而非PT9L正式设计输出受控Sheet。同文件其他上下文显示PT3SBT相关物料编号（PT3SBT-P01、PT3SBT-P02、PT3SBT-ABOM01、PT3SBT-PBOM01等）在正式Sheet中亦有合理引用，说明PT3SBT作为关联历史型号在DHF中存在合理的参考背景。签署日期空白及产品型号为PT3SBT均与"参考Sheet"的定位一致，属于历史/参考来源说明情形。当前证据不能证明该Sheet被纳入PT9L正式受控设计输出内容，不构成可确认的文件受控质量错误，依据裁决政策应选择dismiss。"
+    }
+  ]
+}
+```

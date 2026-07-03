@@ -1,0 +1,986 @@
+{
+  "document": {
+    "title": "支撑垫 2D图读图报告",
+    "drawing_number": "T-Z1-P15",
+    "edition": "V1.0",
+    "part_name": "支撑垫",
+    "model_number": "T-Z1",
+    "project_number": "K03020002129",
+    "source_file": "支撑垫.pdf",
+    "report_date": "2026-06-02",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "projection_method": "第一角法",
+    "scale": null,
+    "skill_reference": "SKILL_2D_Drawing_Reading.md",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/支撑垫.pdf"
+  },
+  "products": [
+    {
+      "name": "支撑垫",
+      "drawing_number": "T-Z1-P15",
+      "edition": "V1.0",
+      "model": "T-Z1",
+      "material": "聚氨酯（PU）",
+      "color": "黑色",
+      "hardness": "邵氏硬度 50±5°（Shore A）",
+      "surface_treatment": null,
+      "description": "软质背胶贴件，聚氨酯 + 单面背胶，邵氏50°，半圆环形状（径向2.5mm宽×4mm厚）"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "drawing_number",
+      "value": "T-Z1-P15"
+    },
+    {
+      "type": "project_number",
+      "value": "K03020002129"
+    },
+    {
+      "type": "model_number",
+      "value": "T-Z1"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "TR-1",
+      "description": "标注厚度不包含背胶",
+      "category": "尺寸要求",
+      "priority": "关键"
+    },
+    {
+      "id": "TR-2",
+      "description": "材质：聚氨酯",
+      "category": "材料要求"
+    },
+    {
+      "id": "TR-3",
+      "description": "颜色：黑色",
+      "category": "外观要求"
+    },
+    {
+      "id": "TR-4",
+      "description": "单面背胶，背胶厚度 0.05~0.1mm，背胶牢固，不可出现背胶分离的情况",
+      "category": "可靠性要求",
+      "priority": "关键"
+    },
+    {
+      "id": "TR-5",
+      "description": "邵氏硬度：50±5 度",
+      "category": "材料性能要求"
+    },
+    {
+      "id": "TR-6",
+      "description": "出货排版需要方便生产加工取放",
+      "category": "包装/生产要求"
+    },
+    {
+      "id": "TR-7",
+      "description": "本件要求通过 RoHS 测试",
+      "category": "法规符合性要求"
+    }
+  ],
+  "design_inputs": [
+    {
+      "parameter": "PU主体厚度",
+      "value": "4",
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "note": "不含背胶层厚度"
+    },
+    {
+      "parameter": "背胶厚度",
+      "value": "0.05~0.1",
+      "unit": "mm"
+    },
+    {
+      "parameter": "整体厚度（推导）",
+      "value": "4.05~4.2",
+      "unit": "mm",
+      "note": "PU厚度 + 背胶厚度合计"
+    },
+    {
+      "parameter": "内弧半径",
+      "value": "3.25",
+      "tolerance": "±0.05",
+      "unit": "mm"
+    },
+    {
+      "parameter": "外弧半径",
+      "value": "5.75",
+      "tolerance": "±0.05",
+      "unit": "mm"
+    },
+    {
+      "parameter": "径向宽度（推导）",
+      "value": "2.5",
+      "tolerance": "±0.07",
+      "unit": "mm",
+      "note": "R5.75 - R3.25，公差合成"
+    },
+    {
+      "parameter": "邵氏硬度",
+      "value": "50",
+      "tolerance": "±5",
+      "unit": "度（Shore A）"
+    }
+  ],
+  "components": [
+    {
+      "name": "支撑垫",
+      "drawing_number": "T-Z1-P15",
+      "material": "聚氨酯（PU）",
+      "surface": "单面背胶（厚度0.05~0.1mm）",
+      "shape": "半圆环形，内径Ø6.5，外径Ø11.5，180°段",
+      "color": "黑色",
+      "hardness": "邵氏50±5°A"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "有害物质限制指令，本件要求通过RoHS测试",
+      "requirement_id": "TR-7"
+    }
+  ],
+  "tests": [
+    {
+      "name": "RoHS测试",
+      "description": "有害物质限制合规测试，测试报告需归档",
+      "status": "required",
+      "reference": "技术要求第7条"
+    },
+    {
+      "name": "背胶牢固性验证",
+      "description": "验证背胶不出现分离情况",
+      "status": "required",
+      "reference": "技术要求第4条"
+    },
+    {
+      "name": "邵氏硬度测试",
+      "description": "验证邵氏硬度50±5°A",
+      "status": "required",
+      "reference": "技术要求第5条"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "贴在哪个零件上（探头筒外壁？支架背面？PCB周边？）",
+      "confidence_level": "C",
+      "required_source": "3D装配 + BOM"
+    },
+    {
+      "id": "C-2",
+      "description": "半圆环是180°完整段，还是需要切成多段贴附",
+      "confidence_level": "C",
+      "required_source": "工程师 / SOP"
+    },
+    {
+      "id": "C-3",
+      "description": "出货排版方便生产加工取放的具体含义（卷状？片状？载带？）",
+      "confidence_level": "C",
+      "required_source": "包装SPEC"
+    },
+    {
+      "id": "C-4",
+      "description": "背胶类型（3M或国产？）耐温、耐老化SPEC",
+      "confidence_level": "C",
+      "required_source": "材料BOM"
+    },
+    {
+      "id": "C-5",
+      "description": "RoHS测试报告需归档",
+      "confidence_level": "C",
+      "required_source": "实验报告"
+    },
+    {
+      "id": "C-6",
+      "description": "邵氏50°A是否经过样机验证（缓冲性能 vs 弹性回复）",
+      "confidence_level": "C",
+      "required_source": "工程师"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "本件是软质背胶贴件（聚氨酯 + 单面背胶 + 邵氏50°），与T-Z1主壳体注塑件不同，技术要求条目更接近SOP/材料SPEC。视图只有2个：① 半圆环展开图（俯视，呈U形断面，由R3.25内弧 + R5.75外弧 + 两条圆弧端点连线构成）；② 侧视/主视（小矩形，4±0.1厚度）。Scale未标（图面比例自适应）。",
+      "topic_tags": [
+        "软质垫片",
+        "聚氨酯",
+        "背胶",
+        "半圆环",
+        "邵氏硬度"
+      ],
+      "related_subjects": [
+        "T-Z1-P15",
+        "支撑垫",
+        "T-Z1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "厚度说明：第1条最重要，4±0.1厚度是纯PU厚度，不含背胶。整体厚度 = 4±0.1（PU）+ 0.05~0.1（胶层）= 4.05~4.2 mm。第4条：背胶可靠性是关键品质项（\"不可出现背胶分离\"）。第5条：邵氏硬度50±5°（Shore A）= 中等软度，符合典型缓冲/防滑垫材料。",
+      "topic_tags": [
+        "厚度",
+        "背胶可靠性",
+        "邵氏硬度",
+        "关键品质"
+      ],
+      "related_subjects": [
+        "TR-1",
+        "TR-4",
+        "TR-5"
+      ]
+    },
+    {
+      "fragment_type": "assumption",
+      "content": "装配/约束推断（B级）：零件类型为单面背胶PU软质垫片，半圆环形状（径向2.5mm宽×4mm厚），邵氏50°A。形状推断内径Ø6.5 + 外径Ø11.5的半圆环（180°段）。可能用途：① 贴在某圆筒外壁做减震/缓冲/防滑；② 贴在传感器筒/PCB与壳体之间作密封/避震；③ 探头基部柔性支撑。不可推断（C级）：贴附位置、是否全圆环还是半圆段、装配方向。",
+      "topic_tags": [
+        "装配推断",
+        "功能推断",
+        "贴附位置",
+        "缓冲防滑",
+        "探头"
+      ],
+      "related_subjects": [
+        "T-Z1",
+        "PT9L",
+        "C-1",
+        "C-2"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "GENERAL TOLERANCE 表（Level B采用）：尺寸<5 ±0.1；5–15 ±0.1；15–50 ±0.1；50–100 ±0.2；>100 ±0.2%；角度 ±0.5°。本图未使用圆圈编号，所有尺寸均按Level B默认±0.1或显式±0.05/±0.1标注。本件无\"带编号为重要尺寸\"声明，与ABS注塑件标准4条技要不同。",
+      "topic_tags": [
+        "公差",
+        "通用公差",
+        "Level B",
+        "尺寸标注"
+      ],
+      "related_subjects": [
+        "T-Z1-P15",
+        "General Tolerance"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "自动检查结果提示：技要中无\"与X配合\"声明，但形状是圆弧带，强烈提示与某圆柱/锥形零件贴合（推测PT9L探头筒外壁，或下盖某弧形面）。无Φ标注，R标注2处确认（与圆弧视图一致）。本件不走IQC编号尺寸流程，按整件SPEC检验。",
+      "topic_tags": [
+        "配合关系",
+        "圆弧贴合",
+        "PT9L",
+        "IQC"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "T-Z1",
+        "C-1"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/支撑垫.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "软质垫片",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "支撑垫",
+      "to": "软质垫片",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1",
+      "to": "软质垫片",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-1",
+      "to": "厚度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-4",
+      "to": "厚度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-5",
+      "to": "厚度",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-2",
+      "to": "装配推断",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "General Tolerance",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "配合关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1",
+      "to": "配合关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "C-1",
+      "to": "配合关系",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TR-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TR-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TR-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TR-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TR-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TR-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "TR-7",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "T-Z1-P15",
+      "to": "C-6",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-4",
+      "to": "背胶牢固性验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-5",
+      "to": "邵氏硬度测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-7",
+      "to": "RoHS测试",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TR-1",
+      "to": "PU主体厚度",
+      "properties": {
+        "note": "厚度要求(4±0.1mm不含背胶)直接导出自设计输入参数"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TR-4",
+      "to": "背胶厚度",
+      "properties": {
+        "note": "背胶可靠性要求导出自背胶厚度设计输入(0.05~0.1mm)"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "TR-5",
+      "to": "邵氏硬度",
+      "properties": {
+        "note": "邵氏硬度要求50±5°A直接导出自设计输入参数"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "整体厚度（推导）",
+      "to": "PU主体厚度",
+      "properties": {
+        "note": "整体厚度由PU主体厚度推导得出"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "整体厚度（推导）",
+      "to": "背胶厚度",
+      "properties": {
+        "note": "整体厚度由背胶厚度推导得出"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "径向宽度（推导）",
+      "to": "外弧半径",
+      "properties": {
+        "note": "径向宽度由外弧半径R5.75减内弧半径R3.25推导"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "径向宽度（推导）",
+      "to": "内弧半径",
+      "properties": {
+        "note": "径向宽度由外弧半径R5.75减内弧半径R3.25推导"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "RoHS测试",
+      "to": "TR-7",
+      "properties": {
+        "note": "RoHS测试要求直接来源于法规符合性要求TR-7"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "背胶牢固性验证",
+      "to": "TR-4",
+      "properties": {
+        "note": "背胶牢固性验证来源于可靠性要求TR-4"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "邵氏硬度测试",
+      "to": "TR-5",
+      "properties": {
+        "note": "邵氏硬度测试来源于材料性能要求TR-5"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支撑垫",
+      "to": "TR-1",
+      "properties": {
+        "note": "支撑垫尺寸受厚度不含背胶要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支撑垫",
+      "to": "TR-2",
+      "properties": {
+        "note": "支撑垫材质受聚氨酯材料要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支撑垫",
+      "to": "TR-3",
+      "properties": {
+        "note": "支撑垫外观受黑色颜色要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支撑垫",
+      "to": "TR-4",
+      "properties": {
+        "note": "支撑垫背胶受单面背胶可靠性要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支撑垫",
+      "to": "TR-5",
+      "properties": {
+        "note": "支撑垫材料性能受邵氏硬度50±5°A约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支撑垫",
+      "to": "TR-6",
+      "properties": {
+        "note": "支撑垫出货排版受生产加工要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "支撑垫",
+      "to": "TR-7",
+      "properties": {
+        "note": "支撑垫受RoHS法规合规性要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "PU主体厚度",
+      "to": "TR-1",
+      "properties": {
+        "note": "PU主体厚度标注受不含背胶的尺寸要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "背胶厚度",
+      "to": "TR-4",
+      "properties": {
+        "note": "背胶厚度受0.05~0.1mm及不可分离要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "邵氏硬度",
+      "to": "TR-5",
+      "properties": {
+        "note": "邵氏硬度参数受50±5°A材料性能要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "内弧半径",
+      "to": "TR-1",
+      "properties": {
+        "note": "内弧半径受图纸关键尺寸要求约束(±0.05)"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "外弧半径",
+      "to": "TR-1",
+      "properties": {
+        "note": "外弧半径受图纸关键尺寸要求约束(±0.05)"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "TR-7",
+      "to": "RoHS测试",
+      "properties": {
+        "reference": "技术要求第7条"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "TR-4",
+      "to": "背胶牢固性验证",
+      "properties": {
+        "reference": "技术要求第4条"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "TR-5",
+      "to": "邵氏硬度测试",
+      "properties": {
+        "reference": "技术要求第5条"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "RoHS测试",
+      "to": "T-Z1-P15",
+      "properties": {
+        "note": "测试报告需归档，关联图号T-Z1-P15"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "背胶牢固性验证",
+      "to": "T-Z1-P15",
+      "properties": {
+        "note": "关联图号T-Z1-P15"
+      }
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "邵氏硬度测试",
+      "to": "T-Z1-P15",
+      "properties": {
+        "note": "关联图号T-Z1-P15"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "支撑垫",
+      "to": "PU主体厚度",
+      "properties": {
+        "value": "4",
+        "tolerance": "±0.1",
+        "unit": "mm",
+        "note": "不含背胶层厚度"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "支撑垫",
+      "to": "背胶厚度",
+      "properties": {
+        "value": "0.05~0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "支撑垫",
+      "to": "整体厚度（推导）",
+      "properties": {
+        "value": "4.05~4.2",
+        "unit": "mm",
+        "note": "PU厚度 + 背胶厚度合计"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "支撑垫",
+      "to": "内弧半径",
+      "properties": {
+        "value": "3.25",
+        "tolerance": "±0.05",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "支撑垫",
+      "to": "外弧半径",
+      "properties": {
+        "value": "5.75",
+        "tolerance": "±0.05",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "支撑垫",
+      "to": "径向宽度（推导）",
+      "properties": {
+        "value": "2.5",
+        "tolerance": "±0.07",
+        "unit": "mm",
+        "note": "R5.75 - R3.25，公差合成"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "支撑垫",
+      "to": "邵氏硬度",
+      "properties": {
+        "value": "50",
+        "tolerance": "±5",
+        "unit": "度（Shore A）"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P15",
+      "to": "C-6",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P15",
+      "to": "TR-1",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P15",
+      "to": "TR-2",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P15",
+      "to": "TR-3",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P15",
+      "to": "TR-4",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P15",
+      "to": "TR-5",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P15",
+      "to": "TR-6",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P15",
+      "to": "TR-7",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "PU主体厚度",
+      "attribute": "标称值",
+      "value": "4",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "不含背胶层厚度",
+      "raw_text": "PU主体厚度 4±0.1mm，不含背胶层厚度"
+    },
+    {
+      "subject": "背胶厚度",
+      "attribute": "范围",
+      "value": "0.05~0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "单面背胶",
+      "raw_text": "单面背胶，背胶厚度 0.05~0.1mm"
+    },
+    {
+      "subject": "整体厚度",
+      "attribute": "范围（推导）",
+      "value": "4.05~4.2",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "PU厚度+背胶厚度合计",
+      "raw_text": "整体厚度（推导）4.05~4.2mm，PU厚度+背胶厚度合计"
+    },
+    {
+      "subject": "内弧半径",
+      "attribute": "标称值",
+      "value": "3.25",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "",
+      "raw_text": "内弧半径 3.25±0.05mm"
+    },
+    {
+      "subject": "外弧半径",
+      "attribute": "标称值",
+      "value": "5.75",
+      "unit": "mm",
+      "tolerance": "±0.05",
+      "condition": "",
+      "raw_text": "外弧半径 5.75±0.05mm"
+    },
+    {
+      "subject": "径向宽度",
+      "attribute": "标称值（推导）",
+      "value": "2.5",
+      "unit": "mm",
+      "tolerance": "±0.07",
+      "condition": "R5.75-R3.25，公差合成",
+      "raw_text": "径向宽度（推导）2.5±0.07mm，R5.75-R3.25，公差合成"
+    },
+    {
+      "subject": "邵氏硬度",
+      "attribute": "标称值",
+      "value": "50",
+      "unit": "度（Shore A）",
+      "tolerance": "±5",
+      "condition": "聚氨酯材质",
+      "raw_text": "邵氏硬度：50±5度（Shore A）"
+    },
+    {
+      "subject": "内径",
+      "attribute": "标称值",
+      "value": "6.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "半圆环形支撑垫",
+      "raw_text": "半圆环形，内径Ø6.5"
+    },
+    {
+      "subject": "外径",
+      "attribute": "标称值",
+      "value": "11.5",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "半圆环形支撑垫",
+      "raw_text": "半圆环形，外径Ø11.5"
+    },
+    {
+      "subject": "圆弧角度",
+      "attribute": "范围",
+      "value": "180",
+      "unit": "°",
+      "tolerance": "",
+      "condition": "半圆环形支撑垫",
+      "raw_text": "半圆环形，内径Ø6.5，外径Ø11.5，180°段"
+    },
+    {
+      "subject": "材质",
+      "attribute": "类型",
+      "value": "聚氨酯（PU）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "材质：聚氨酯"
+    },
+    {
+      "subject": "颜色",
+      "attribute": "外观",
+      "value": "黑色",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "颜色：黑色"
+    },
+    {
+      "subject": "RoHS合规",
+      "attribute": "符合性要求",
+      "value": "通过",
+      "unit": "",
+      "tolerance": "",
+      "condition": "有害物质限制，测试报告需归档",
+      "raw_text": "本件要求通过RoHS测试"
+    },
+    {
+      "subject": "背胶牢固性",
+      "attribute": "可靠性要求",
+      "value": "不可出现背胶分离",
+      "unit": "",
+      "tolerance": "",
+      "condition": "单面背胶",
+      "raw_text": "背胶牢固，不可出现背胶分离的情况"
+    },
+    {
+      "subject": "标注厚度",
+      "attribute": "计量基准",
+      "value": "不包含背胶",
+      "unit": "",
+      "tolerance": "",
+      "condition": "尺寸标注规则",
+      "raw_text": "标注厚度不包含背胶"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "document": {
+    "title": "软件系统测试记录 E0 23.11",
+    "doc_type": "软件系统测试记录",
+    "version": "V1.0"
+  },
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RXCL01 V1.0"
+    },
+    {
+      "id_type": "软件版本",
+      "value": "BPM-N78F0485-V0.278-20150714"
+    },
+    {
+      "id_type": "硬件版本",
+      "value": "PT9L-NBMP01 V1.2"
+    },
+    {
+      "id_type": "算法验证报告文件编号",
+      "value": "PT9L-RSYB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "全自动臂式血压计（带BLE蓝牙功能）"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "1",
+      "item": "关机态",
+      "condition": "不与手机蓝牙连接，机器处于关机态",
+      "expected_value": "灯不亮",
+      "instrument": "直流稳压电源DJS10005"
+    },
+    {
+      "test_id": "2.1",
+      "item": "加压态-加压前的操作",
+      "condition": "将血压计袖带捆绑于胳膊，开启手机APP，通过蓝牙建立连接",
+      "expected_value": "认证通过后绿色指示灯点亮；进入设置画面显示当前电量；按APP\"开始测量\"后血压计进入测量态"
+    },
+    {
+      "test_id": "2.2",
+      "item": "加压态-加压过程",
+      "condition": "机器自动加压",
+      "expected_value": "搜索零点时屏幕左侧水银柱示数为零；找到稳定零点后关闭电磁阀启动泵；APP中显示当前袖带内压力；点击暂停图标可停止测量"
+    },
+    {
+      "test_id": "2.3",
+      "item": "压力平台控制",
+      "condition": "绑在弹性圆柱体或接在500CC双口气缸上",
+      "expected_value": "加压到190mmHg（±3mmHg）后自动停止加压（不记忆加压平台）"
+    },
+    {
+      "test_id": "2.4",
+      "item": "加压过程中的泵气速度判断",
+      "condition": "打气过慢：压力<30mmHg时<2mmHg/4S；压力>30mmHg时<3mmHg/4S；打气过快：压力上升>75mmHg/0.32S",
+      "expected_value": "打气过慢：5s后泵停转且电磁阀放气，屏幕显示\"测量时气动系统泄露或袖带太松\"；打气过快：泵启动后马上停转且电磁阀放气，屏幕显示\"测量时气动系统已锁住或袖带太紧\"",
+      "pass_criteria": "每项测试均测试通过"
+    },
+    {
+      "test_id": "3",
+      "item": "加压测量态",
+      "condition": "机器加压到30mmHg后进入测量态",
+      "expected_value": "加压速度约5~6mmHg/S；检测到心跳时屏幕闪烁心跳符号；短按复位按键停止测量；关闭APP或蓝牙时血压计停止测量绿灯熄灭"
+    },
+    {
+      "test_id": "4",
+      "item": "结果显示态",
+      "condition": "血压测量完毕后",
+      "expected_value": "屏幕显示测量结果；按返回键可回到\"开始测量\"界面"
+    },
+    {
+      "test_id": "5.1",
+      "item": "中断测量测试-点击返回",
+      "condition": "血压计浮零过程中或测量过程中点击APP暂停图标",
+      "expected_value": "浮零过程中退出后血压计不加压；测量过程中血压计立即关泵开阀；再次点击\"开始测量\"后正常进行测量"
+    },
+    {
+      "test_id": "5.2",
+      "item": "中断测量测试-点击HOME",
+      "condition": "血压计浮零过程中或测量过程中点击HOME键",
+      "expected_value": "浮零过程中退出后血压计不加压；测量过程中1S后血压计关泵开阀；再次打开APP点击\"开始测量\"后正常进行测量"
+    },
+    {
+      "test_id": "5.3",
+      "item": "中断测量测试-短按复位按键",
+      "condition": "血压计浮零过程中或测量过程中短按复位按键",
+      "expected_value": "浮零过程中APP 1s后回到开始测量界面绿灯亮起；测量过程中血压计关泵开阀APP 1s后回到开始测量界面绿灯亮起；再次点击\"开始测量\"正常测量"
+    },
+    {
+      "test_id": "5.4",
+      "item": "中断测量测试-关闭ISO设备蓝牙",
+      "condition": "待机/浮零/测量过程中关闭iOS设备蓝牙",
+      "expected_value": "血压计绿灯熄灭，APP处于无设备连接界面；浮零/测量过程中血压计5s后停止测量；打开蓝牙后APP重新连接，绿灯点亮，可正常测量"
+    },
+    {
+      "test_id": "5.5",
+      "item": "中断测量测试-退出APP",
+      "condition": "待机/浮零/测量过程中双击HOME键将APP在后台任务中关闭",
+      "expected_value": "待机时血压计不加压绿灯熄灭；浮零/测量过程中血压计立即停止测量绿灯熄灭；重新打开APP建立蓝牙连接后可正常测量"
+    },
+    {
+      "test_id": "6",
+      "item": "算法验证",
+      "condition": "参见《PT9L软件算法验证报告V1.0》（文件编号：PT9L-RSYB01 V1.0）",
+      "pass_criteria": "参照PT9L-RSYB01 V1.0验证通过"
+    },
+    {
+      "test_id": "7.1",
+      "item": "调试态-进入方式",
+      "condition": "A、机芯工装上电后短按S1键；B、整机测试工装调到标定状态（SW1=0,SW2=0,SW3=1，工装显示\"2 7\"）插到机器上",
+      "expected_value": "进入标定状态"
+    },
+    {
+      "test_id": "7.2",
+      "item": "调试态-压力采样值显示",
+      "condition": "进入调试态后，不给传感器施加气压",
+      "expected_value": "液晶高低压位置显示当前压力采样值；心率处显示16点采样值最大最小差值（00~03）；心形标志显示说明压力稳定；压力采样值应在1300~2500之间"
+    },
+    {
+      "test_id": "7.3",
+      "item": "调试态-零点存储",
+      "condition": "传感器通大气，机内值介于1300~2500之间，短按工装\"MEM\"键",
+      "expected_value": "寻找到四次稳定机内值后液晶显示当前存储零点值，\"心率\"处显示\"SA\"，2s后回到压力值显示状态，心形标志显示表示已标定零点"
+    },
+    {
+      "test_id": "7.4",
+      "item": "调试态-满度存储",
+      "condition": "零点已标定，给传感器通300mmHg稳定压力，短按\"MEM\"",
+      "expected_value": "满度值在3000~6000之间时液晶显示当前满度值和\"SA\"，2s后显示\"下箭头\"提示放气；满度值<3000显示\"SP LO\"；>6000显示\"SP HI\""
+    },
+    {
+      "test_id": "7.5a",
+      "item": "功能测试态-上气性能测试",
+      "condition": "SW1=0,SW2=0,SW3=0，工装显示\"2 8\"，将工装插入机器",
+      "expected_value": "加压速度合格则液晶显示\"Er F\"；速度不合格显示\"Er E\"；按工装\"START\"键放气或一分钟后自动放气后显示放气时间（单位0.1S）"
+    },
+    {
+      "test_id": "7.5b",
+      "item": "功能测试态-动压测试",
+      "condition": "SW1=0,SW2=1,SW3=0，工装液晶右上角显示\"2 C\"，连接机器、袖带、动压仪，整机为待机态",
+      "expected_value": "液晶屏显示程序号\"0278\"证明机器接口正常；测量完毕液晶显示结果"
+    },
+    {
+      "test_id": "8",
+      "item": "静压态",
+      "condition": "SW1=1,SW2=0,SW3=0，工装液晶右上角显示\"2 9\"，工装插在机器上进入静压态",
+      "expected_value": "各标准静压值在合格范围内",
+      "pass_criteria": "0mmHg：0~2mmHg；60mmHg：60±3mmHg；90mmHg：90±3mmHg；150mmHg：150±3mmHg；210mmHg：210±3mmHg；240mmHg：240±3mmHg",
+      "instrument": "直流稳压电源DJS10005，万用表DJS06046，恒温槽RPZ03003，黑体辐射源RJS05001"
+    }
+  ],
+  "test_measurements": [
+    {
+      "test_point": "静压0mmHg",
+      "reference_value": "0",
+      "unit": "mmHg",
+      "condition": "合格范围：0~2mmHg"
+    },
+    {
+      "test_point": "静压60mmHg",
+      "reference_value": "60",
+      "unit": "mmHg",
+      "condition": "合格范围：60±3mmHg"
+    },
+    {
+      "test_point": "静压90mmHg",
+      "reference_value": "90",
+      "unit": "mmHg",
+      "condition": "合格范围：90±3mmHg"
+    },
+    {
+      "test_point": "静压150mmHg",
+      "reference_value": "150",
+      "unit": "mmHg",
+      "condition": "合格范围：150±3mmHg"
+    },
+    {
+      "test_point": "静压210mmHg",
+      "reference_value": "210",
+      "unit": "mmHg",
+      "condition": "合格范围：210±3mmHg"
+    },
+    {
+      "test_point": "静压240mmHg",
+      "reference_value": "240",
+      "unit": "mmHg",
+      "condition": "合格范围：240±3mmHg"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "软件测试说明：软件版本BPM-N78F0485-V0.278-20150714，目标机型PT9L。PT9L的设计输入V1.0要求该软件支持：测温过程中检测体温，将测量中的数据及测量结果通过LCD显示。按照测试大纲的要求，逐项测试，如果测试通过，BPM-N78F0485-V0.278-20150714版软件可以定版。接收标准：按照测试大纲的要求，逐项测试，每项测试均测试通过。",
+      "topic_tags": [
+        "软件测试",
+        "接收标准",
+        "软件版本",
+        "定版"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "BPM-N78F0485-V0.278-20150714"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "功能描述：全自动臂式、带BLE蓝牙功能。按键描述：KS1复位键。测试结果符号说明：测试通过：OK；不通过：NG；如测试不通过，还要注明原因。",
+      "topic_tags": [
+        "功能描述",
+        "蓝牙",
+        "按键",
+        "测试符号"
+      ],
+      "related_subjects": [
+        "PT9L"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "document": {
+    "title": "IEC 60601-1 / IEC 60601-1-11 Test Report",
+    "doc_id": "ETX202303-07-078-02",
+    "product_code": "PT9L",
+    "total_pages": 182,
+    "current_pages": "38-39"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_ref": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "General requirements for basic safety and essential performance of medical electrical equipment"
+    },
+    {
+      "id": "EN60601-1",
+      "full_ref": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European version of IEC 60601-1"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.8.3",
+      "name": "Dielectric Strength",
+      "result": "See appended Table 8.8.3",
+      "verdict": "P",
+      "description": "Solid insulating materials with a safety function withstood dielectric strength test voltages"
+    },
+    {
+      "clause": "8.8.4",
+      "name": "Insulation other than wire insulation",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.8.4.1",
+      "name": "Resistance to heat",
+      "result": "See appended RM Results; Ball pressure test carried out; See Table 8.8.4.1",
+      "verdict": "P",
+      "sub_tests": [
+        {
+          "description": "ME EQUIPMENT and design documentation examined",
+          "result": "See appended RM Results",
+          "verdict": "P"
+        },
+        {
+          "description": "RISK MANAGEMENT FILE examined in conjunction with resistance to moisture, dielectric strength, and mechanical strength tests",
+          "result": "See appended RM Results",
+          "verdict": "P"
+        },
+        {
+          "description": "Satisfactory evidence of compliance provided by manufacturer for resistance to heat",
+          "result": "Ball pressure test carried out.",
+          "verdict": "P"
+        },
+        {
+          "description": "Tests conducted in absence of satisfactory evidence for resistance to heat",
+          "result": "See test below",
+          "verdict": "P"
+        },
+        {
+          "description": "a) ENCLOSURE and other external parts of insulating material subjected to ball-pressure test using Fig 21 apparatus",
+          "result": "See Table 8.8.4.1",
+          "verdict": "P"
+        },
+        {
+          "description": "b) Parts of insulating material supporting uninsulated parts of MAINS PART subjected to ball-pressure test at 125°C ±2°C or ambient+temperature rise",
+          "result": "No such insulating material",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.8.4.2",
+      "name": "Resistance to environmental stress",
+      "verdict": "P",
+      "description": "Insulating characteristics and mechanical strength of all MEANS OF PROTECTION not likely to be impaired by environmental stresses including deposition of dirt resulting from wear of parts within EQUIPMENT, potentially reducing CREEPAGE and CLEARANCES below 8.9",
+      "sub_tests": [
+        {
+          "description": "Ceramic and similar materials not tightly sintered, and beads alone not used as SUPPLEMENTARY or REINFORCED INSULATION",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Insulating material with embedded heating conductors considered as one MEANS OF PROTECTION but not two MEANS OF PROTECTION",
+          "verdict": "N/A"
+        },
+        {
+          "description": "Parts of natural latex rubber aged in oxygen cylinder at 2.1 MPa ±70 kPa, 70°C ±2°C for 96h, then room temperature for at least 16h; no cracks visible to naked eyes",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.9",
+      "name": "CREEPAGE DISTANCES and AIR CLEARANCES",
+      "verdict": "P"
+    },
+    {
+      "clause": "8.9.1.1",
+      "name": "CREEPAGE DISTANCES and AIR CLEARANCES values",
+      "result": "See insulation diagram.",
+      "verdict": "P",
+      "description": "CREEPAGE DISTANCES and AIR CLEARANCES are to values in Tables 12 to 16 (inclusive), except as specified in Clauses 8.9.1.2 to 8.9.1.15"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "8.8.3",
+      "description": "Solid insulating materials with a safety function shall withstand dielectric strength test voltages"
+    },
+    {
+      "clause": "8.8.4.1",
+      "description": "Resistance to heat retained by all insulation and insulating partition walls during EXPECTED SERVICE LIFE of ME EQUIPMENT"
+    },
+    {
+      "clause": "8.8.4.2",
+      "description": "Insulating characteristics and mechanical strength of all MEANS OF PROTECTION not likely to be impaired by environmental stresses including deposition of dirt resulting from wear of parts within EQUIPMENT, potentially reducing CREEPAGE and CLEARANCES below 8.9"
+    },
+    {
+      "clause": "8.9.1.1",
+      "description": "CREEPAGE DISTANCES and AIR CLEARANCES are to values in Tables 12 to 16 (inclusive); insulation between parts of opposite polarity of MAINS PART on supply mains side of any mains fuse or OVER-CURRENT RELEASE, one MEANS OF OPERATOR PROTECTION to values in Table 13, Table 14 and Table 16"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Finished wire with spirally wrapped or multi-layer extruded insulation complying with Annex L: BASIC INSULATION requires minimum two wrapped layers or one extruded layer; SUPPLEMENTARY INSULATION requires minimum two layers, wrapped or extruded; REINFORCED INSULATION requires minimum three layers, wrapped or extruded. In spirally wrapped insulation with CREEPAGE DISTANCES between layers less than in Table 12 or 16 (Pollution Degree 1), path between layers shall be sealed as a cemented joint in 8.9.3.3 and test voltages of TYPE TESTS in L.3 equal 1.6 times of normal values. All items marked N/A as no spirally wrapped insulation present.",
+      "topic_tags": [
+        "insulation",
+        "wire insulation",
+        "BASIC INSULATION",
+        "SUPPLEMENTARY INSULATION",
+        "REINFORCED INSULATION",
+        "Annex L",
+        "CREEPAGE DISTANCES"
+      ],
+      "related_subjects": [
+        "8.8.3",
+        "8.9.3.3",
+        "Table 12",
+        "Table 16"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Protection against mechanical stress shall be provided where two insulated wires or one bare and one insulated wire are in contact inside wound component, crossing at an angle between 45° and 90° and subject to winding tension. Finished component shall comply with routine dielectric strength tests of 8.8.3. Tests of Annex L not repeated since material data sheets confirm compliance. All items marked N/A.",
+      "topic_tags": [
+        "mechanical stress",
+        "wound component",
+        "dielectric strength",
+        "Annex L"
+      ],
+      "related_subjects": [
+        "8.8.3",
+        "Annex L"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Ball pressure test exemptions: Test not performed on parts of ceramic material, insulating parts of commutators, brush-caps, and similar, and on coil formers not used as REINFORCED INSULATION (N/A).",
+      "topic_tags": [
+        "ball pressure test",
+        "ceramic material",
+        "commutators",
+        "REINFORCED INSULATION",
+        "coil formers"
+      ],
+      "related_subjects": [
+        "8.8.4.1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Insulation between parts of opposite polarity of the MAINS PART on the supply mains side of any mains fuse or OVER-CURRENT RELEASE: one MEANS OF OPERATOR PROTECTION values are to be in accordance with Table 13, Table 14 and Table 16. Verdict: P.",
+      "topic_tags": [
+        "MAINS PART",
+        "CREEPAGE DISTANCES",
+        "AIR CLEARANCES",
+        "Table 13",
+        "Table 14",
+        "Table 16",
+        "MEANS OF OPERATOR PROTECTION"
+      ],
+      "related_subjects": [
+        "8.9.1.1",
+        "Table 13",
+        "Table 14",
+        "Table 16"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-02",
+    "page_range": "132-134 of 181",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 Medical electrical equipment - General requirements for basic safety and essential performance",
+      "version": "2005+AMD1:2012+AMD2:2020"
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 Medical electrical equipment - General requirements for basic safety and essential performance",
+      "version": "2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    },
+    {
+      "id": "ISO14971",
+      "name": "ISO 14971 Medical devices - Application of risk management to medical devices"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "9.7.5",
+      "name": "Pressure vessels",
+      "verdict": "N/A",
+      "parameters": [
+        "Hydraulic, Pneumatic or Suitable Media and Test Pressure",
+        "Vessel Burst",
+        "Permanent Deformation",
+        "Leaks",
+        "Vessel fluid substance"
+      ]
+    },
+    {
+      "clause": "9.7.7",
+      "name": "RM RESULTS TABLE: Pressure-relief device",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "9.8.1",
+      "name": "RM RESULTS TABLE: Hazards associated with support systems - General",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "9.8.2",
+      "name": "RM RESULTS TABLE: Tensile safety factor",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "9.8.3.1",
+      "name": "RM RESULTS TABLE: Strength of patient or operator support or suspension systems - General",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "9.8.3.2",
+      "name": "TABLE: PATIENT support/suspension system - Static forces",
+      "verdict": "N/A",
+      "parameters": [
+        "ME EQUIPMENT part or area",
+        "Position",
+        "Load",
+        "Area"
+      ]
+    },
+    {
+      "clause": "9.8.3.3",
+      "name": "TABLE: Support/Suspension System – Dynamic forces due to loading from persons",
+      "verdict": "N/A",
+      "parameters": [
+        "ME EQUIPMENT part or area",
+        "Position",
+        "Safe Working Load",
+        "Area"
+      ]
+    },
+    {
+      "clause": "9.8.5",
+      "name": "RM RESULTS TABLE: Systems without mechanical protective devices",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ]
+    },
+    {
+      "clause": "10.1.1",
+      "name": "TABLE: Measurement of X-radiation",
+      "verdict": "N/A",
+      "parameters": [
+        "Maximum allowable radiation: 36 pA/kg (5 μSv/h) (0.5 mR/h)",
+        "Surface area under test",
+        "Measured Radiation pA/kg (μSv/h) (mR/h)"
+      ],
+      "notes": "Measurements made at a distance of 5 cm from any surface to which OPERATOR (other than SERVICE PERSONNEL) can gain access without a TOOL, is deliberately provided with means of access, or is instructed to enter regardless of whether or not a TOOL is needed to gain access"
+    },
+    {
+      "clause": "10.1.2",
+      "name": "RM RESULTS TABLE: ME equipment intended to produce diagnostic or therapeutic X-radiation",
+      "verdict": "N/A",
+      "iso14971_clauses": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "6",
+        "7.2",
+        "7.3",
+        "7.4"
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "10.1.1 X-radiation measurement: Maximum allowable radiation is 36 pA/kg (5 μSv/h) (0.5 mR/h). Measurements are made at a distance of 5 cm from any surface to which OPERATOR (other than SERVICE PERSONNEL) can gain access without a TOOL, is deliberately provided with means of access, or is instructed to enter regardless of whether or not a TOOL is needed to gain access.",
+      "topic_tags": [
+        "X-radiation",
+        "radiation measurement",
+        "operator safety",
+        "IEC60601-1",
+        "clause 10.1.1"
+      ],
+      "related_subjects": [
+        "10.1.1",
+        "ETX202303-07-078-02"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Clauses 9.7.5 through 9.8.5 and 10.1.1-10.1.2 are all marked N/A in this report, indicating that the device under test (Report No. ETX202303-07-078-02) does not have pressure vessels, pressure-relief devices, patient/operator support or suspension systems, tensile safety factor requirements, systems without mechanical protective devices, or X-radiation producing components that require evaluation under these clauses of IEC60601-1.",
+      "topic_tags": [
+        "N/A clauses",
+        "risk management",
+        "mechanical safety",
+        "pressure vessel",
+        "X-radiation",
+        "support systems"
+      ],
+      "related_subjects": [
+        "9.7.5",
+        "9.7.7",
+        "9.8.1",
+        "9.8.2",
+        "9.8.3.1",
+        "9.8.3.2",
+        "9.8.3.3",
+        "9.8.5",
+        "10.1.1",
+        "10.1.2"
+      ]
+    }
+  ]
+}

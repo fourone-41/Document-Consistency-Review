@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Document Control Agent",
+  "summary": "本轮对7个cluster进行二轮复审裁决。MC-CLUSTER-0029为Stage 11软件需求草稿底稿中的模板版本标记，非正式受控文件范围，dismiss。MC-CLUSTER-0034为Stage 12正式设计输出清单中PT3包装图纸的自动生成读图报告，标题栏关键字段全部为"待填"占位符，属于正式DHF范围内的实质性文件受控问题，confirm。MC-CLUSTER-0035为Stage 12正式设计输出清单中供应商图纸的"Famidoc模板"描述，属于对图框来源的合理技术描述，非空白/未填问题，dismiss。MC-CLUSTER-0036为Stage 12早期图纸子目录中的ABS模板技术要求标注，路径含"早期图纸"，属历史/草稿范围，primary_scope=false，dismiss。MC-CLUSTER-0038为Stage 12正式设计输出清单二中PT3SBT参考Sheet存在提交/审核/批准日期全部空白，且产品型号为PT3SBT而非PT9L，需进一步确认该Sheet是否为PT9L正式受控内容或仅为参考模板，needs_more_context。MC-CLUSTER-0049为根目录下独立的刻盘模板PDF文件，primary_scope=false，属于工具性模板文件而非DHF/DMR正式文件，dismiss。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0029",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "draft_template_marker",
+      "claim": "该"模板版本：I"标记位于Stage 11软件文件底稿目录，属于草稿/底稿范围，非正式受控文件，不构成DHF/DMR受控质量问题。",
+      "reason": "文件路径为"11 T1样机\\软件文件底稿\\软件需求E0 23.11"，明确标注为底稿（草稿阶段），primary_scope=false。"第 0 页 / 共 5 页 模板版本：I"是文档模板的页脚标记，属于草稿编制过程中的正常模板痕迹，不影响PT9L正式DHF证据链，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0034",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "unfilled_placeholder_in_controlled_drawing_report",
+      "claim": "Stage 12正式设计输出清单二中PT3包装图纸的2D读图报告，标题栏Drawing NO.、Part name、Pro material、Surf dispose、Scale、Tolerance等关键字段全部为"待填"占位符，属于正式DHF文件中实质性空白，构成文件受控质量问题。",
+      "reason": "文件路径位于"12 设计输出（含01、02）\\设计输出清单二\\包装"，primary_scope=true，属于正式DHF设计输出范围。文件头注释"2026-05-14 自动生成模板 + 待填"表明该读图报告为自动生成后未完成填写的状态。标题栏中Drawing NO.、Part name、Pro material、Surf dispose、Scale、Tolerance、Edition、Model NO.等8个关键字段均为"（待填）"占位符，这些字段是图纸可追溯性和设计输出完整性的核心要素。在正式设计输出清单中存在大量未填写的关键字段，直接影响DHF证据链的完整性和可追溯性，构成P1级受控质量问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0035",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "supplier_template_reference_description",
+      "claim": ""Famidoc供应商标准A4横向模板"和"外购件Famidoc模板"是对供应商图纸图框来源的合理技术描述，非空白或未填问题，不构成文件受控质量问题。",
+      "reason": "MF-0170中"标题栏（A 级，外购件 Famidoc 模板）"是对图纸标题栏类型的分类描述；MF-0171中"Famidoc 供应商标准 A4 横向模板"是对图框规格的技术说明，均属于读图报告对图纸属性的合理描述性标注。该图纸（散热器压块）已有完整的零件名称、审批日期（2017-07-14）、公差等级等实质内容，"模板"一词在此语境下指供应商图框标准，非空白占位符，不影响设计输出的完整性，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0036",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_drawing_template_annotation",
+      "claim": ""4条标准ABS模板"标注位于早期图纸子目录，属于历史/草稿范围，primary_scope=false，不构成PT9L正式DHF受控质量问题。",
+      "reason": "文件路径为"12 设计输出（含01、02）\\设计输出清单二\\早期图纸"，primary_scope=false，属于历史早期图纸归档范围。"技术要求（4条标准ABS模板）"是对图纸技术要求章节内容类型的描述性标注，表明该技术要求采用标准ABS材料模板条款，并非空白占位符。早期图纸不在PT9L正式DHF主审范围内，予以dismiss。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0038",
+      "decision": "needs_more_context",
+      "severity": "P1",
+      "error_type": "uncontrolled_reference_sheet_with_missing_signatures",
+      "claim": "设计输出清单二中"PT3参考"Sheet标注产品型号为PT3SBT，提交/审核/批准日期全部空白，需确认该Sheet是否为PT9L正式受控内容或仅为参考用途的历史模板。",
+      "reason": "MF-0211和MF-0226均指向设计输出清单二中Sheet名为"PT3参考"的内容，产品型号明确标注为"PT3SBT"而非PT9L，且提交、审核、批准日期全部为空白（"年 月 日"）。primary_scope=true表明该文件在正式审查范围内。关键疑点：(1) Sheet名"PT3参考"暗示可能是作为参考的历史型号数据，而非PT9L正式设计输出；(2) 若该Sheet作为PT9L设计输出清单二的组成部分被受控，则产品型号错误（PT3SBT）和签署日期全部空白构成P1级受控问题；(3) 若该Sheet仅为参考附录或历史对比数据，则不影响PT9L证据链。需补查：该Excel文件的其他Sheet是否包含PT9L正式内容、该Sheet是否在受控版本索引中被标注为"参考"或"历史"、以及是否有说明文件解释PT3SBT与PT9L的关联关系。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0049",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "standalone_tool_template_outside_dhf_scope",
+      "claim": ""刻盘模板.pdf"为根目录下独立的工具性模板文件，primary_scope=false，不属于DHF/DMR正式文件范围，不构成受控质量问题。",
+      "reason": "文件路径为根目录下的"刻盘模板.pdf.md"，primary_scope=false，未归属于任何DHF/DMR阶段目录。该文件本身即为模板工具文件（刻盘用途），文件名直接标明其为模板性质。MF-0279至MF-0281的证据均为该模板文件的自动转换元数据，不涉及任何PT9L设计输出的实质内容。作为工具性模板文件，其存在不影响PT9L正式DHF/DMR证据链，予以dismiss。"
+    }
+  ]
+}
+```

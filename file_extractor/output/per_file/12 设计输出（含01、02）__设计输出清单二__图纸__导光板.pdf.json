@@ -1,0 +1,1076 @@
+{
+  "document": {
+    "title": "导光板（T-Z1-P10 V1.0）2D 图读图报告",
+    "drawing_no": "T-Z1-P10",
+    "edition": "V1.0",
+    "model_no": "T-Z1",
+    "part_name": "导光板",
+    "scale": "1:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "source_file": "导光板.pdf",
+    "source_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/导光板.pdf",
+    "report_date": "2026-06-02",
+    "skill_ref": "SKILL_2D_Drawing_Reading.md"
+  },
+  "products": [
+    {
+      "name": "导光板组件",
+      "description": "LCD 背光层叠组件，由导光板（PMMA 透明）+ 反射膜 + 透射膜 三层贴合构成，整体作为 IQC 验收对象",
+      "material": "PMMA（透明亚克力）",
+      "model_no": "T-Z1",
+      "drawing_no": "T-Z1-P10",
+      "overall_dimensions": "32.7 × 22 × 2.9 mm（带膜总厚）"
+    }
+  ],
+  "components": [
+    {
+      "name": "反射膜",
+      "description": "最底层，0.1 mm 厚，反射 LED 光线向上",
+      "thickness": "0.1 mm"
+    },
+    {
+      "name": "导光板",
+      "description": "PMMA 透明材质，2.7 mm 厚，导引 LED 侧入光线均匀分布",
+      "material": "PMMA（透明亚克力）",
+      "thickness": "2.7 mm"
+    },
+    {
+      "name": "透射膜",
+      "description": "最上层，0.1 mm 厚，均匀透射光线到 LCD 液晶面，表面有黑色挡光区印刷",
+      "thickness": "0.1 mm"
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "①",
+      "description": "长度方向主尺寸（导光板/反射膜/透射膜 3 个膜共用）",
+      "value": "32.7",
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "②",
+      "description": "宽度方向主尺寸（导光板/反射膜/透射膜 3 个膜共用）",
+      "value": "22",
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "③",
+      "description": "导光板单层厚度（侧视图叠层）",
+      "value": "2.7",
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "derived-总厚",
+      "description": "带膜总厚（反射膜 0.1 + 导光板 2.7 + 透射膜 0.1）",
+      "value": "2.9",
+      "tolerance": "±0.1",
+      "unit": "mm",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "C4.42",
+      "description": "45° 倒角，3 个膜共用，左下角",
+      "value": "4.42",
+      "symbol": "C",
+      "tolerance": "Level B",
+      "unit": "mm",
+      "confidence": "A"
+    },
+    {
+      "id": "dim-13.15",
+      "description": "导光板某分段尺寸（与倒角相关）",
+      "value": "13.15",
+      "tolerance": "Level B ±0.1",
+      "unit": "mm",
+      "confidence": "A"
+    },
+    {
+      "id": "dim-8.9",
+      "description": "反射膜缺口/分段长",
+      "value": "8.9",
+      "tolerance": "Level B ±0.1",
+      "unit": "mm",
+      "confidence": "A"
+    },
+    {
+      "id": "dim-2.2",
+      "description": "反射膜缺口宽",
+      "value": "2.2",
+      "tolerance": "Level B ±0.1",
+      "unit": "mm",
+      "confidence": "A"
+    },
+    {
+      "id": "dim-0.1",
+      "description": "反射膜 / 透射膜各单层厚度",
+      "value": "0.1",
+      "tolerance": "Level B",
+      "unit": "mm",
+      "confidence": "A"
+    },
+    {
+      "id": "dim-3.7",
+      "description": "透射膜上印刷的黑色挡光区宽度",
+      "value": "3.7",
+      "tolerance": "Level B ±0.1",
+      "unit": "mm",
+      "confidence": "A"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "TR-1",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "type": "inspection_requirement"
+    },
+    {
+      "id": "TR-2",
+      "description": "产品符合 RoHS 2.0",
+      "type": "regulatory_requirement"
+    }
+  ],
+  "tests": [
+    {
+      "name": "IQC 验收 - 带编号尺寸测量",
+      "description": "IQC 测量带编号尺寸 ①②③ 及带膜总厚 2.9±0.1，共两道工序：验单层厚 + 验贴合后总厚",
+      "items": [
+        "① 32.7±0.1",
+        "② 22±0.1",
+        "③ 2.7±0.1",
+        "带膜总厚 2.9±0.1"
+      ]
+    },
+    {
+      "name": "RoHS 2.0 符合性测试",
+      "description": "产品需符合 RoHS 2.0，需提供测试报告",
+      "reference": "实验报告"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "drawing_no",
+      "value": "T-Z1-P10"
+    },
+    {
+      "type": "model_no",
+      "value": "T-Z1"
+    },
+    {
+      "type": "edition",
+      "value": "V1.0"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "产品有害物质限制指令，产品需符合",
+      "requirement_ref": "TR-2"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "description": "3 层薄膜贴合方式（光学胶？双面胶？热压？）",
+      "source_required": "SOP / 工艺",
+      "status": "待确认"
+    },
+    {
+      "id": "C-2",
+      "description": "LED 光源入光侧（哪一条边边缘有 LED？）",
+      "source_required": "3D 装配 + PCBA 图",
+      "status": "待确认"
+    },
+    {
+      "id": "C-3",
+      "description": "\"黑色区域 3.7\" 在透射膜的具体位置（哪条边？）",
+      "source_required": "高清复核或 SPEC 图",
+      "status": "待确认"
+    },
+    {
+      "id": "C-4",
+      "description": "与 LCD 液晶（PT9L-液晶-20240627）有效显示区是否匹配",
+      "source_required": "LCD 图",
+      "status": "待确认"
+    },
+    {
+      "id": "C-5",
+      "description": "C4.42 倒角避让的是哪个壳体特征",
+      "source_required": "3D 装配",
+      "status": "待确认"
+    },
+    {
+      "id": "C-6",
+      "description": "RoHS 测试报告（技要 2）",
+      "source_required": "实验报告",
+      "status": "待确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "本图为 LCD 背光层叠组件：导光板（PMMA 透明）+ 反射膜 + 透射膜 三层贴合，整体作为 IQC 验收对象（带膜总厚 2.9±0.1）。图面 3 个并列俯视图（导光板 / 反射膜 / 透射膜）+ 1 个左下层叠侧视图。Scale 1:1。",
+      "topic_tags": [
+        "导光板",
+        "背光组件",
+        "三层贴合",
+        "IQC",
+        "PMMA"
+      ],
+      "related_subjects": [
+        "导光板",
+        "反射膜",
+        "透射膜",
+        "PT9L-液晶-20240627"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "零件类型：LCD 背光导光板组件，由 3 层薄膜贴合：1. 反射膜（0.1 mm，最底层）：反射 LED 光线向上；2. 导光板（PMMA 透明，2.7 mm）：导引 LED 侧入光线均匀分布；3. 透射膜（0.1 mm，最上层）：均匀透射光线到 LCD 液晶面。几何：32.7 × 22 × 2.9 mm，带 C4.42 倒角（避让某结构）。\"黑色区域 3.7\"：透射膜上印刷的黑色挡光区，对应 LCD 边缘装配区或非显示区。配合：与 LCD 液晶屏背面贴合（光学胶或粘片）；外形 32.7×22 与液晶屏有效区匹配。",
+      "topic_tags": [
+        "工作原理",
+        "LED背光",
+        "导光板",
+        "反射膜",
+        "透射膜",
+        "黑色挡光区"
+      ],
+      "related_subjects": [
+        "导光板",
+        "反射膜",
+        "透射膜",
+        "PT9L-液晶-20240627",
+        "LED光源"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "GENERAL TOLERANCE 表（Level B 采用）：尺寸范围 < 5 → ±0.1；5–15 → ±0.1；15–50 → ±0.1；50–100 → ±0.2；> 100 → ±0.2%；ANGULAR → ±0.5°。",
+      "topic_tags": [
+        "通用公差",
+        "Level B",
+        "尺寸公差",
+        "角度公差"
+      ],
+      "related_subjects": [
+        "导光板",
+        "反射膜",
+        "透射膜"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "IQC 验收特异性说明：本图是 3 层贴合组件，IQC 既要验单层厚（① ② ③），又要验贴合后总厚 2.9±0.1，两道工序。配合方=PT9L 液晶屏（与 PT9L-液晶-20240627.pdf 配合，作为 LCD 背光层），需跨件确认液晶有效显示区。",
+      "topic_tags": [
+        "IQC",
+        "两道工序",
+        "贴合总厚",
+        "跨件验证"
+      ],
+      "related_subjects": [
+        "PT9L-液晶-20240627",
+        "IQC验收",
+        "导光板组件"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "技要条目数 2，远少于 ABS 注塑件的 4 条（无\"外观/试装\"条目，因为是光学薄膜贴合件）。派生关键尺寸：侧视图标\"带膜厚度 2.9±0.1\" = 反射膜 0.1 + 导光板 2.7 + 透射膜 0.1 = 2.9 mm 总厚（贴合后整体）。",
+      "topic_tags": [
+        "技术要求",
+        "光学薄膜",
+        "总厚计算",
+        "派生尺寸"
+      ],
+      "related_subjects": [
+        "导光板",
+        "反射膜",
+        "透射膜"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/图纸/导光板.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板",
+      "to": "导光板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "反射膜",
+      "to": "导光板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透射膜",
+      "to": "导光板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-液晶-20240627",
+      "to": "导光板",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "反射膜",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透射膜",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-液晶-20240627",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "LED光源",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板",
+      "to": "通用公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "反射膜",
+      "to": "通用公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透射膜",
+      "to": "通用公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-液晶-20240627",
+      "to": "IQC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IQC验收",
+      "to": "IQC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "IQC",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "反射膜",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透射膜",
+      "to": "技术要求",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "反射膜",
+      "properties": {
+        "role": "底层组件"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "导光板",
+      "properties": {
+        "role": "中层组件"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "透射膜",
+      "properties": {
+        "role": "顶层组件"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "①",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "②",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "③",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "derived-总厚",
+      "properties": {
+        "detail_type": "derived_design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "C4.42",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "dim-13.15",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "dim-3.7",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "反射膜",
+      "to": "dim-8.9",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "反射膜",
+      "to": "dim-2.2",
+      "properties": {
+        "detail_type": "design_input"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "反射膜",
+      "to": "dim-0.1",
+      "properties": {
+        "detail_type": "thickness"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "透射膜",
+      "to": "dim-0.1",
+      "properties": {
+        "detail_type": "thickness"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "TR-1",
+      "properties": {
+        "detail_type": "requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "TR-2",
+      "properties": {
+        "detail_type": "requirement"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "C-1",
+      "properties": {
+        "detail_type": "review_item"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "C-2",
+      "properties": {
+        "detail_type": "review_item"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "C-3",
+      "properties": {
+        "detail_type": "review_item"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "C-4",
+      "properties": {
+        "detail_type": "review_item"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "C-5",
+      "properties": {
+        "detail_type": "review_item"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "导光板组件",
+      "to": "C-6",
+      "properties": {
+        "detail_type": "review_item"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "TR-2",
+      "to": "RoHS 2.0",
+      "properties": {
+        "detail_type": "regulation_ref"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "derived-总厚",
+      "to": "③",
+      "properties": {
+        "rationale": "带膜总厚 2.9 = 反射膜 0.1 + 导光板 2.7 + 透射膜 0.1，导光板单层厚度③是组成部分"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "derived-总厚",
+      "to": "dim-0.1",
+      "properties": {
+        "rationale": "带膜总厚 2.9 = 反射膜 0.1 + 导光板 2.7 + 透射膜 0.1，两层薄膜厚度 dim-0.1 是组成部分"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "dim-13.15",
+      "to": "C4.42",
+      "properties": {
+        "rationale": "dim-13.15 为与倒角 C4.42 相关的分段尺寸，由倒角特征派生"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "①",
+      "to": "TR-1",
+      "properties": {
+        "rationale": "带编号尺寸①需要 IQC 测量，受 TR-1 检验要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "②",
+      "to": "TR-1",
+      "properties": {
+        "rationale": "带编号尺寸②需要 IQC 测量，受 TR-1 检验要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "③",
+      "to": "TR-1",
+      "properties": {
+        "rationale": "带编号尺寸③需要 IQC 测量，受 TR-1 检验要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "derived-总厚",
+      "to": "TR-1",
+      "properties": {
+        "rationale": "带膜总厚 2.9±0.1 需要 IQC 测量，受 TR-1 检验要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "导光板组件",
+      "to": "TR-2",
+      "properties": {
+        "rationale": "产品需符合 RoHS 2.0，受 TR-2 法规要求约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "dim-13.15",
+      "to": "C4.42",
+      "properties": {
+        "rationale": "该分段尺寸受倒角 C4.42 几何约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "①",
+      "to": "②",
+      "properties": {
+        "rationale": "长宽主尺寸共同约束导光板/反射膜/透射膜外形轮廓，互为约束关系"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "dim-8.9",
+      "to": "①",
+      "properties": {
+        "rationale": "反射膜缺口分段长 8.9 受总长 32.7（①）约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "dim-3.7",
+      "to": "②",
+      "properties": {
+        "rationale": "透射膜黑色挡光区宽度 3.7 受总宽 22（②）约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "dim-2.2",
+      "to": "②",
+      "properties": {
+        "rationale": "反射膜缺口宽 2.2 受总宽 22（②）约束"
+      }
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "①",
+      "to": "IQC 验收 - 带编号尺寸测量",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "②",
+      "to": "IQC 验收 - 带编号尺寸测量",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "③",
+      "to": "IQC 验收 - 带编号尺寸测量",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "derived-总厚",
+      "to": "IQC 验收 - 带编号尺寸测量",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "TR-2",
+      "to": "RoHS 2.0 符合性测试",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "导光板组件",
+      "to": "①",
+      "properties": {
+        "description": "长度方向主尺寸",
+        "value": "32.7",
+        "tolerance": "±0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "导光板组件",
+      "to": "②",
+      "properties": {
+        "description": "宽度方向主尺寸",
+        "value": "22",
+        "tolerance": "±0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "导光板组件",
+      "to": "③",
+      "properties": {
+        "description": "导光板单层厚度",
+        "value": "2.7",
+        "tolerance": "±0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "导光板组件",
+      "to": "derived-总厚",
+      "properties": {
+        "description": "带膜总厚",
+        "value": "2.9",
+        "tolerance": "±0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "导光板组件",
+      "to": "C4.42",
+      "properties": {
+        "description": "45°倒角",
+        "value": "4.42",
+        "symbol": "C",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "导光板组件",
+      "to": "dim-13.15",
+      "properties": {
+        "description": "导光板某分段尺寸",
+        "value": "13.15",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "反射膜",
+      "to": "dim-0.1",
+      "properties": {
+        "description": "反射膜单层厚度",
+        "value": "0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "透射膜",
+      "to": "dim-0.1",
+      "properties": {
+        "description": "透射膜单层厚度",
+        "value": "0.1",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "反射膜",
+      "to": "dim-8.9",
+      "properties": {
+        "description": "反射膜缺口/分段长",
+        "value": "8.9",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "反射膜",
+      "to": "dim-2.2",
+      "properties": {
+        "description": "反射膜缺口宽",
+        "value": "2.2",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "透射膜",
+      "to": "dim-3.7",
+      "properties": {
+        "description": "黑色挡光区宽度",
+        "value": "3.7",
+        "unit": "mm"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P10",
+      "to": "C-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P10",
+      "to": "C-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P10",
+      "to": "C-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P10",
+      "to": "C-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P10",
+      "to": "C-5",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "T-Z1-P10",
+      "to": "C-6",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "①",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "②",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "③",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "derived-总厚",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "C4.42",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "dim-13.15",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "dim-8.9",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "dim-2.2",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "dim-0.1",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "dim-3.7",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "TR-1",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "T-Z1-P10",
+      "to": "TR-2",
+      "properties": {}
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "长度主尺寸",
+      "attribute": "尺寸",
+      "value": "32.7",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "导光板/反射膜/透射膜共用，IQC必检",
+      "raw_text": "长度方向主尺寸（导光板/反射膜/透射膜 3 个膜共用），32.7±0.1 mm"
+    },
+    {
+      "subject": "宽度主尺寸",
+      "attribute": "尺寸",
+      "value": "22",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "导光板/反射膜/透射膜共用，IQC必检",
+      "raw_text": "宽度方向主尺寸（导光板/反射膜/透射膜 3 个膜共用），22±0.1 mm"
+    },
+    {
+      "subject": "导光板厚度",
+      "attribute": "单层厚度",
+      "value": "2.7",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "侧视图叠层，IQC必检",
+      "raw_text": "导光板单层厚度（侧视图叠层），2.7±0.1 mm"
+    },
+    {
+      "subject": "带膜总厚",
+      "attribute": "叠合厚度",
+      "value": "2.9",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "反射膜0.1+导光板2.7+透射膜0.1，IQC必检",
+      "raw_text": "带膜总厚（反射膜 0.1 + 导光板 2.7 + 透射膜 0.1），2.9±0.1 mm"
+    },
+    {
+      "subject": "倒角",
+      "attribute": "倒角尺寸",
+      "value": "4.42",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "45°倒角，3个膜共用，左下角",
+      "raw_text": "45° 倒角，3 个膜共用，左下角，C4.42，Level B"
+    },
+    {
+      "subject": "导光板分段尺寸",
+      "attribute": "分段长度",
+      "value": "13.15",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "Level B，与倒角相关",
+      "raw_text": "导光板某分段尺寸（与倒角相关），13.15，Level B ±0.1 mm"
+    },
+    {
+      "subject": "反射膜缺口长",
+      "attribute": "缺口分段长",
+      "value": "8.9",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "Level B",
+      "raw_text": "反射膜缺口/分段长，8.9，Level B ±0.1 mm"
+    },
+    {
+      "subject": "反射膜缺口宽",
+      "attribute": "缺口宽度",
+      "value": "2.2",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "Level B",
+      "raw_text": "反射膜缺口宽，2.2，Level B ±0.1 mm"
+    },
+    {
+      "subject": "反射膜厚度",
+      "attribute": "单层厚度",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "最底层",
+      "raw_text": "反射膜 / 透射膜各单层厚度，0.1 mm，Level B"
+    },
+    {
+      "subject": "透射膜厚度",
+      "attribute": "单层厚度",
+      "value": "0.1",
+      "unit": "mm",
+      "tolerance": "Level B",
+      "condition": "最上层",
+      "raw_text": "反射膜 / 透射膜各单层厚度，0.1 mm，Level B"
+    },
+    {
+      "subject": "挡光区宽度",
+      "attribute": "印刷黑色挡光区宽",
+      "value": "3.7",
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "condition": "Level B，透射膜上表面",
+      "raw_text": "透射膜上印刷的黑色挡光区宽度，3.7，Level B ±0.1 mm"
+    },
+    {
+      "subject": "导光板材质",
+      "attribute": "材料规格",
+      "value": "PMMA（透明亚克力）",
+      "unit": "",
+      "tolerance": "",
+      "condition": "导光板本体",
+      "raw_text": "PMMA 透明材质，2.7 mm 厚，导引 LED 侧入光线均匀分布"
+    },
+    {
+      "subject": "RoHS符合性",
+      "attribute": "法规版本",
+      "value": "RoHS 2.0",
+      "unit": "",
+      "tolerance": "",
+      "condition": "需提供测试报告",
+      "raw_text": "产品符合 RoHS 2.0，需提供实验报告"
+    }
+  ]
+}

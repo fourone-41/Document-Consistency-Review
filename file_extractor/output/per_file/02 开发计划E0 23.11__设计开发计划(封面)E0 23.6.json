@@ -1,0 +1,160 @@
+{
+  "document": {
+    "title": "设计开发计划",
+    "doc_type": "开发计划/项目计划",
+    "version": "V1.0"
+  },
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-KFJH01 V1.0"
+    },
+    {
+      "id_type": "表号",
+      "value": "QR-7.3-04/E0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "设计开发计划表文件编号",
+      "value": "PT9L-KFJB01 V1.0"
+    },
+    {
+      "id_type": "项目组成员名单文件编号",
+      "value": "PT9L-CYMD01 V1.0"
+    },
+    {
+      "id_type": "项目进度表文件编号",
+      "value": "PT9L-XMJD01 V1.0"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "本设计开发计划包括以下文件：\n1. 设计开发计划表（PT9L-KFJB01 V1.0）\n2. 项目组成员名单（PT9L-CYMD01 V1.0）\n3. 项目进度表（PT9L-XMJD01 V1.0）\n以上三个文件均已勾选纳入本计划。",
+      "topic_tags": [
+        "设计开发计划",
+        "包括文件",
+        "红外体温计",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "设计开发计划表",
+        "项目组成员名单",
+        "项目进度表"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评审结论包含三种情形（均未勾选，以受控件签章为准）：\n1. 评审未通过，重新提交文件再次评审；\n2. 评审通过，需按照评审记录进行修改；\n3. 评审通过，文件放行。",
+      "topic_tags": [
+        "评审结论",
+        "设计开发计划",
+        "文件放行"
+      ],
+      "related_subjects": [
+        "设计开发计划",
+        "PT9L-KFJH01 V1.0"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "02 开发计划E0 23.11/设计开发计划(封面)E0 23.6.md",
+    "doc_type": "dev_plan"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计开发计划表",
+      "to": "设计开发计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "项目组成员名单",
+      "to": "设计开发计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "项目进度表",
+      "to": "设计开发计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "设计开发计划",
+      "to": "评审结论",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-KFJH01 V1.0",
+      "to": "评审结论",
+      "properties": {}
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-KFJH01 V1.0",
+      "to": "PT9L-KFJB01 V1.0",
+      "properties": {
+        "sequence": 1,
+        "file_name": "设计开发计划表"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-KFJH01 V1.0",
+      "to": "PT9L-CYMD01 V1.0",
+      "properties": {
+        "sequence": 2,
+        "file_name": "项目组成员名单"
+      }
+    },
+    {
+      "type": "LISTS_FILE",
+      "from": "PT9L-KFJH01 V1.0",
+      "to": "PT9L-XMJD01 V1.0",
+      "properties": {
+        "sequence": 3,
+        "file_name": "项目进度表"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-KFJH01 V1.0",
+      "to": "PT9L-KFJB01 V1.0",
+      "properties": {
+        "detail_type": "设计开发计划表",
+        "id_type": "设计开发计划表文件编号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-KFJH01 V1.0",
+      "to": "PT9L-CYMD01 V1.0",
+      "properties": {
+        "detail_type": "项目组成员名单",
+        "id_type": "项目组成员名单文件编号"
+      }
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-KFJH01 V1.0",
+      "to": "PT9L-XMJD01 V1.0",
+      "properties": {
+        "detail_type": "项目进度表",
+        "id_type": "项目进度表文件编号"
+      }
+    }
+  ],
+  "_claims": []
+}

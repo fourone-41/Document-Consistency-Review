@@ -1,0 +1,158 @@
+{
+  "document": {
+    "title": "PT9L 安规报告",
+    "document_number": "ETX202303-07-078-02",
+    "date": "2025-02-12",
+    "page_range": "63-64 of 181",
+    "format": "IEC 60601-1 compliance checklist"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_citation": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "title": "Medical electrical equipment - General requirements for basic safety and essential performance"
+    },
+    {
+      "id": "ISO7010-W001",
+      "full_citation": "ISO 7010-W001",
+      "title": "Safety sign - Warning sign 001"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "9.8.3",
+      "name": "Patient support/suspension system drop test",
+      "description": "PATIENT support/suspension system set in most unfavourable NORMAL USE position, and a mass equal to SAFE WORKING LOAD simulating PATIENT or OPERATOR dropped from 150 mm above seat area on an area of support/suspension a PATIENT or OPERATOR can sit",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.4.1",
+      "name": "Mechanical protective device examination",
+      "description": "Compliance confirmed by examination of ME EQUIPMENT over travel calculations and evaluation plus functional tests",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.4.3",
+      "name": "Mechanical protective device functional test",
+      "description": "A chain, cable, band, spring, belt, jack screw nut, pneumatic or hydraulic hose, structural part or the like, employed to support a load, defeated by a convenient means causing maximum normal load to fall from most adverse position permitted by construction of ME EQUIPMENT",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.5",
+      "name": "Systems without mechanical protective devices examination",
+      "description": "Examination of ME EQUIPMENT, design documentation and RISK MANAGEMENT FILE confirmed compliance",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.1.1",
+      "name": "X-radiation measurement",
+      "description": "The air kerma did not exceed 5 µGy/h at 5 cm from surface of ME EQUIPMENT including background radiation for ME EQUIPMENT not producing therapeutic/diagnostic X-radiation but producing ionizing radiation",
+      "result_remark": "No X-radiation source",
+      "verdict": "N/A"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "9.8.4",
+      "title": "Systems with MECHANICAL PROTECTIVE DEVICES",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.4.1a",
+      "description": "A MECHANICAL PROTECTIVE DEVICE provided when a support system or its parts impaired by wear have a TENSILE SAFETY FACTOR to values in Table 21, rows 5 and 6, but less than 3 and 4",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.4.1b",
+      "description": "MECHANICAL PROTECTIVE complies with requirements: Designed based on TOTAL LOAD including effects of SAFE WORKING LOAD; Has TENSILE SAFETY FACTORS for all parts not less than Table 21, row 7; Activated before travel produced an unacceptable RISK; Takes into account Clauses 9.2.5 and 9.8.4.3",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.4.2",
+      "description": "Activation of MECHANICAL PROTECTIVE DEVICE is made obvious to OPERATOR when ME EQUIPMENT can still be used after failure of suspension or actuation means; requires use of a TOOL to be reset or replaced",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.4.3",
+      "description": "MECHANICAL PROTECTIVE DEVICE intended to function once: further use not possible until replacement; ACCOMPANYING DOCUMENTS instruct SERVICE PERSONNEL shall be called and MECHANICAL PROTECTIVE DEVICE replaced; ME EQUIPMENT permanently marked with safety sign 2 of Table D.2 (ISO 7010-W001); Marking is adjacent to MECHANICAL PROTECTIVE DEVICE",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "9.8.5",
+      "description": "Systems without MECHANICAL PROTECTIVE DEVICES: support system parts have TENSILE SAFETY FACTORS to values in Table 21, rows 1 and 2, and are not impaired by wear; or parts impaired by wear have TENSILE SAFETY FACTORS to values in Table 21, rows 3 and 4",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10",
+      "title": "PROTECTION AGAINST UNWANTED AND EXCESSIVE RADIATION HAZARDS",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.1",
+      "title": "X-Radiation",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "10.1.1",
+      "description": "Air kerma must not exceed 5 µGy/h at 5 cm from surface of ME EQUIPMENT including background radiation; measured by ionizing chamber radiation monitor with effective area of 10 cm2; ME EQUIPMENT operated at most unfavourable RATED MAINS VOLTAGE with controls adjusted to emit maximum radiation",
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "MECHANICAL PROTECTIVE DEVICE requires use of a TOOL to be reset or replaced. Further use of ME EQUIPMENT not possible until replacement of MECHANICAL PROTECTIVE DEVICE. ACCOMPANYING DOCUMENTS instruct once MECHANICAL PROTECTIVE DEVICE is activated, SERVICE PERSONNEL shall be called, and MECHANICAL PROTECTIVE DEVICE must be replaced before ME EQUIPMENT can be used. ME EQUIPMENT permanently marked with safety sign 2 of Table D.2 (i.e., SAFETY SIGN ISO 7010-W001). Marking is adjacent to MECHANICAL PROTECTIVE DEVICE or its location relative to MECHANICAL PROTECTIVE DEVICE is obvious to service personnel.",
+      "topic_tags": [
+        "mechanical protective device",
+        "safety marking",
+        "service personnel",
+        "reset requirement",
+        "ISO 7010-W001"
+      ],
+      "related_subjects": [
+        "9.8.4.2",
+        "9.8.4.3",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For X-radiation test (10.1.1): Amount of radiation measured by means of an ionizing chamber radiation monitor with an effective area of 10 cm2 or by other instruments producing equal results. ME EQUIPMENT operated as in NORMAL USE at most unfavourable RATED MAINS VOLTAGE and controls adjusted to emit maximum radiation. Annual exposure reduced taking into account the irradiated body part, national regulations, and/or international recommendations for ME EQUIPMENT that has permanent proximity to a PATIENT as part of the INTENDED USE.",
+      "topic_tags": [
+        "X-radiation",
+        "ionizing radiation",
+        "air kerma",
+        "measurement method",
+        "normal use"
+      ],
+      "related_subjects": [
+        "10.1.1",
+        "IEC60601-1",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For mechanical protective device test (9.8.4.3): A chain, cable, band, spring, belt, jack screw nut, pneumatic or hydraulic hose, structural part or the like, employed to support a load, defeated by a convenient means causing maximum normal load to fall from most adverse position permitted by construction of ME EQUIPMENT. Load included SAFE WORKING LOAD in 9.8.3.1 when system was capable of supporting a PATIENT or OPERATOR. No evidence of damage to MECHANICAL PROTECTIVE DEVICE affecting its ability to perform its intended function.",
+      "topic_tags": [
+        "mechanical protective device",
+        "load test",
+        "safe working load",
+        "suspension system",
+        "tensile safety factor"
+      ],
+      "related_subjects": [
+        "9.8.4.3",
+        "9.8.3.1",
+        "IEC60601-1"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L",
+      "document_reference": "ETX202303-07-078-02",
+      "notes": "No X-radiation source confirmed at clause 10.1.1"
+    }
+  ]
+}

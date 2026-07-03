@@ -1,0 +1,170 @@
+{
+  "document": {
+    "title": "PT9L 产品概述、工作原理说明、设计原理",
+    "version": "V1.0",
+    "document_number": "PT9L-CPGS01 V1.0",
+    "project_number": "30000078",
+    "product_model": "PT9L",
+    "product_name": "红外体温计"
+  },
+  "products": [
+    {
+      "name": "PT9L 红外体温计",
+      "model": "PT9L",
+      "description": "一款快速测量体温的产品，具有简单易用、测量迅速、数据准确的特点"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件编号",
+      "value": "PT9L-CPGS01 V1.0",
+      "description": "PT9L 产品概述"
+    },
+    {
+      "type": "文件编号",
+      "value": "PT9L-GZYL01 V1.0",
+      "description": "PT9L 工作原理说明"
+    },
+    {
+      "type": "文件编号",
+      "value": "PT9L-SJYL01 V1.0",
+      "description": "PT9L 设计原理"
+    },
+    {
+      "type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "测量原理",
+      "description": "采用红外测温传感器采集温度信息"
+    },
+    {
+      "category": "测量范围",
+      "description": "32.0℃～42.9℃"
+    },
+    {
+      "category": "准确性",
+      "description": "≥35℃且≤42℃：±0.2℃，其它±0.3℃"
+    },
+    {
+      "category": "电源",
+      "description": "使用两节AAA电池；工作电流最大50mA；待机电流小于20uA"
+    },
+    {
+      "category": "使用温度",
+      "description": "10℃～40℃"
+    },
+    {
+      "category": "使用湿度",
+      "description": "15-95%RH, non-condensing"
+    },
+    {
+      "category": "使用大气压强",
+      "description": "70～106kPa"
+    },
+    {
+      "category": "外形尺寸",
+      "description": "130.8x34.8x38 mm"
+    },
+    {
+      "category": "重量",
+      "description": "约80g（包括电池）"
+    }
+  ],
+  "functions": [
+    {
+      "name": "体温测量",
+      "description": "测量额温，显示温度；工作状态：测量、显示"
+    },
+    {
+      "name": "界面显示",
+      "description": "显示温度、单位℃/℉、低电显示符号、测量失败提示"
+    },
+    {
+      "name": "记忆功能",
+      "description": "无记忆"
+    },
+    {
+      "name": "固件升级",
+      "description": "无"
+    }
+  ],
+  "components": [
+    {
+      "name": "红外测温传感器",
+      "description": "采集温度信息"
+    },
+    {
+      "name": "AAA电池",
+      "quantity": "两节",
+      "description": "设备电源"
+    }
+  ],
+  "persons": [
+    {
+      "role": "更改人",
+      "name": "万龙",
+      "action": "起草"
+    },
+    {
+      "role": "批准人",
+      "name": "侯广伟",
+      "action": "批准"
+    }
+  ],
+  "revision_records": [
+    {
+      "sequence": 1,
+      "version": "V1.0",
+      "description": "起草",
+      "author": "万龙",
+      "approver": "侯广伟"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "测量原理：采用红外测温传感器采集温度信息。技术方案工艺流程：贴片、焊线、组装。操作：对准眉心按键进行测量。工作方式：测量额温，显示温度；工作状态：测量、显示。",
+      "topic_tags": [
+        "红外测温",
+        "工作原理",
+        "操作方式",
+        "工艺流程"
+      ],
+      "related_subjects": [
+        "PT9L 红外体温计",
+        "红外测温传感器"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "界面显示：显示温度、单位℃/℉、低电显示符号、测量失败提示。电源：使用两节AAA电池；工作电流最大50mA；待机电流小于20uA。",
+      "topic_tags": [
+        "显示界面",
+        "电源规格",
+        "工作电流",
+        "待机电流"
+      ],
+      "related_subjects": [
+        "PT9L 红外体温计",
+        "AAA电池"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "使用温度：10℃～40℃；使用湿度：15-95%RH, non-condensing；使用大气压强：70～106kPa。测量范围：32.0℃～42.9℃；准确性：≥35℃且≤42℃：±0.2℃，其它±0.3℃。",
+      "topic_tags": [
+        "环境条件",
+        "使用限制",
+        "测量准确性",
+        "测量范围"
+      ],
+      "related_subjects": [
+        "PT9L 红外体温计",
+        "设计输入"
+      ]
+    }
+  ]
+}

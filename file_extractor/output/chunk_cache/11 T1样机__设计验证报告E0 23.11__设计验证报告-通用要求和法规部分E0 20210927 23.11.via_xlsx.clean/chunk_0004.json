@@ -1,0 +1,78 @@
+{
+  "tests": [
+    {
+      "test_id": "包装运输-ISTA2A",
+      "item": "包装运输",
+      "condition": "ISTA 2A:2011",
+      "expected_value": "按照标准要求进行相应评估或测试",
+      "actual_result": "合格",
+      "pass_criteria": "设计验证报告通过"
+    },
+    {
+      "test_id": "包装运输-ModelLegislation",
+      "item": "包装运输",
+      "condition": "Model Legislation",
+      "expected_value": "按照标准要求进行相应评估或测试",
+      "actual_result": "合格",
+      "pass_criteria": "设计验证报告通过"
+    },
+    {
+      "test_id": "电磁兼容-IEC60601-1-2",
+      "item": "电磁兼容",
+      "condition": "IEC 60601-1-2:2014+AMD1：2020",
+      "expected_value": "按照标准要求进行相应评估或测试",
+      "actual_result": "合格",
+      "pass_criteria": "设计验证报告通过"
+    },
+    {
+      "test_id": "电磁兼容-FCCPart15",
+      "item": "电磁兼容",
+      "condition": "FCC Part15",
+      "expected_value": "按照标准要求进行相应评估或测试",
+      "actual_result": "合格",
+      "pass_criteria": "设计验证报告通过"
+    },
+    {
+      "test_id": "软件相关-IEC62304",
+      "item": "软件相关",
+      "condition": "IEC 62304：2006+AMD1：2015",
+      "expected_value": "按照标准要求进行相应评估或测试",
+      "actual_result": "合格",
+      "pass_criteria": "设计验证报告通过"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "TX202303-07-070",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "ETX202303-07-078-01",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "PT9L-RJQB01 V1.0",
+      "conclusion": "合格"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "设计验证矩阵汇总表（部分）：包装运输类标准包括ISTA 2A:2011（适用，设计确认，报告TX202303-07-070，合格）、Directive 94/62/EC（不适用）、Model Legislation（适用，设计确认，合格）；电磁兼容类标准包括EN 60601-1-2:2015/A1:2021（不适用）、IEC 60601-1-2:2014+AMD1:2020（适用，设计确认，报告ETX202303-07-078-01，合格）、FCC Part15（适用，设计确认，合格）、YY 9706.102-2021（不适用）；软件相关标准包括YY/T 0664-2020（不适用）、GB/T 25000.51-2016（不适用）、EN 62304:2006/A1:2015（不适用）、IEC 62304:2006+AMD1:2015（适用，设计确认，报告PT9L-RJQB01 V1.0，合格）；蓝牙相关认证（蓝牙组织BQB认证、苹果公司内部协议、SRRC认证、FCC认证）均不适用；锂电池相关标准（GB 31241-2022、IEC 62133-1:2017、IEC 62133-2:2017+AMD1:2021）均不适用；其他非强制标准（验货标准、客户单独要求）均不适用。",
+      "topic_tags": [
+        "设计验证",
+        "包装运输",
+        "电磁兼容",
+        "软件",
+        "蓝牙",
+        "锂电池",
+        "标准符合性"
+      ],
+      "related_subjects": [
+        "TX202303-07-070",
+        "ETX202303-07-078-01",
+        "PT9L-RJQB01 V1.0"
+      ]
+    }
+  ]
+}

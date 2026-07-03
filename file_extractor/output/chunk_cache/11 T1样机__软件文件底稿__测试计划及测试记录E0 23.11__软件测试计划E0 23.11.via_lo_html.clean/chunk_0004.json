@@ -1,0 +1,328 @@
+{
+  "document": {
+    "title": "PT9L软件测试报告",
+    "doc_type": "测试报告"
+  },
+  "tests": [
+    {
+      "test_id": "3",
+      "item": "测量过程中关闭蓝牙后重连",
+      "condition": "开启ISO设备蓝牙，启动软件，认证通过，点击开始测量，测量过程中上拉菜单关闭ISO设备蓝牙",
+      "expected_value": "血压计5s后停止测量，绿灯熄灭，APP处于无设备连接界面；打开蓝牙后重新建立连接，绿灯点亮，可正常测量",
+      "pass_criteria": "血压计5s后停止测量，重连后可正常测量"
+    },
+    {
+      "test_id": "5.1",
+      "item": "退出APP-待机状态",
+      "condition": "开启ISO设备蓝牙，启动软件，认证通过，APP进入开始测量界面，双击HOME键关闭APP",
+      "expected_value": "血压计不加压，绿灯熄灭；打开APP后重新建立连接，绿灯点亮，点击开始测量后正常加压测量",
+      "pass_criteria": "关闭APP后血压计停止，重开后可正常测量"
+    },
+    {
+      "test_id": "5.2",
+      "item": "退出APP-浮零过程中",
+      "condition": "点击开始测量同时挤压袖带，在浮零过程中双击HOME键关闭APP",
+      "expected_value": "血压计立即停止测量，绿灯熄灭；打开APP后重新建立连接，绿灯点亮，可正常加压测量",
+      "pass_criteria": "关闭APP后血压计立即停止，重开后可正常测量"
+    },
+    {
+      "test_id": "5.3",
+      "item": "退出APP-测量过程中",
+      "condition": "点击开始测量正常开始测量，测量过程中双击HOME键关闭APP",
+      "expected_value": "血压计立即停止测量，绿灯熄灭；打开APP后重新建立蓝牙连接，绿灯点亮，再次点击开始测量后正常加压测量",
+      "pass_criteria": "关闭APP后血压计立即停止，重开后可正常测量"
+    },
+    {
+      "test_id": "7",
+      "item": "调试态",
+      "condition": "机芯工装上电后短按S1键，或使用整机测试工装SW1=0/SW2=0/SW3=1",
+      "expected_value": "液晶高低压位置显示当前压力采样值，心率处显示16点采样值最大最小差值，差值范围00~03；不施加气压时压力采样值应在1300~2500之间",
+      "pass_criteria": "差值范围00~03，无气压时采样值1300~2500"
+    },
+    {
+      "test_id": "7.3",
+      "item": "零点存储",
+      "condition": "传感器通大气，机内值介于1300~2500之间，短按工装MEM键",
+      "expected_value": "寻找到四次稳定机内值后，液晶显示当前存储的零点值，心率处显示SA，2s后回到压力值显示状态，心形标志显示",
+      "pass_criteria": "机内值在1300~2500范围内方可标定"
+    },
+    {
+      "test_id": "7.4",
+      "item": "满度存储",
+      "condition": "确认零点已标定，给传感器通300mmHg稳定压力，短按MEM键",
+      "expected_value": "满度值在3000~6000之间时液晶显示当前满度值和SA，2s后显示下箭头提示放气；满度值<3000显示SP LO，>6000显示SP HI",
+      "pass_criteria": "满度值在3000~6000范围内"
+    },
+    {
+      "test_id": "8",
+      "item": "静压态测试",
+      "condition": "使用整机测试工装SW1=1/SW2=0/SW3=0，工装液晶右上角显示2 9",
+      "expected_value": "各标准静压点实际测量值在合格范围内",
+      "pass_criteria": "0mmHg：0~2；60mmHg：60±3；90mmHg：90±3；150mmHg：150±3；210mmHg：210±3；240mmHg：240±3；300mmHg：300±3"
+    },
+    {
+      "test_id": "9",
+      "item": "低电压测试",
+      "condition": "低电压接收标准为3.3+0.1V以下",
+      "expected_value": "电压调到3.3V以下时红灯闪烁；调回3.8V按复位键或连接充电线后机器正常使用",
+      "pass_criteria": "低电压时红灯闪烁，恢复电压后正常工作"
+    },
+    {
+      "test_id": "10.1",
+      "item": "搜索零点错误",
+      "condition": "启动软件通过蓝牙连接血压计，按开始测量键开始测量",
+      "expected_value": "如果30S未搜索到稳定的零点，则停泵放气，退到开始测量界面",
+      "pass_criteria": "30S内未找到稳定零点时停止测量并退出"
+    },
+    {
+      "test_id": "10.2",
+      "item": "高压未检出或心跳小于4次错误",
+      "condition": "加压测量，加压完毕未测出结果，错误原因为高压未检出或心跳小于4次",
+      "expected_value": "停泵放气，错误代码为01，红灯点亮10s",
+      "pass_criteria": "错误代码01，红灯亮10s"
+    },
+    {
+      "test_id": "10.3",
+      "item": "低压未检出或高低压差为负值错误",
+      "condition": "加压测量，加压完毕未测出结果，错误原因为低压未检出或高低压差为负值",
+      "expected_value": "停泵放气，错误代码为02，红灯点亮10s",
+      "pass_criteria": "错误代码02，红灯亮10s"
+    },
+    {
+      "test_id": "10.4",
+      "item": "气路堵塞错误",
+      "condition": "全自动加压时气路堵塞使加压过快",
+      "expected_value": "停泵放气，错误代码为03，红灯点亮10s",
+      "pass_criteria": "错误代码03，红灯亮10s"
+    },
+    {
+      "test_id": "10.5",
+      "item": "气路漏气错误",
+      "condition": "全自动加压时袖带过松使加压过慢",
+      "expected_value": "停泵放气，错误代码为04，红灯点亮10s",
+      "pass_criteria": "错误代码04，红灯亮10s"
+    },
+    {
+      "test_id": "10.6",
+      "item": "压力大于297mmHg超过1.5s错误",
+      "condition": "泵上气性能测试过程中，加压至295mmHg后停泵进入阀放气速度检测，维持压力60s内袖带内压力大于297mmHg时间超过1.5s",
+      "expected_value": "停泵放气，错误代码为05，红灯点亮10s",
+      "pass_criteria": "错误代码05，红灯亮10s"
+    },
+    {
+      "test_id": "10.7",
+      "item": "压力大于15mmHg超过3分钟错误",
+      "condition": "加压/测量时袖带内压力在15mmHg以上时间达2min40s",
+      "expected_value": "停泵放气，错误代码为06，红灯点亮10s",
+      "pass_criteria": "错误代码06，红灯亮10s"
+    },
+    {
+      "test_id": "10.8",
+      "item": "EEPROM访问错误",
+      "condition": "打开APP建立蓝牙连接，使用中出现EEPROM访问错误",
+      "expected_value": "停泵放气，错误代码为07，红灯点亮10s",
+      "pass_criteria": "错误代码07，红灯亮10s"
+    },
+    {
+      "test_id": "10.9",
+      "item": "3备份内容校验出错",
+      "condition": "将EEPROM内三备份区域的内容打乱，重新焊接好上电",
+      "expected_value": "停泵放气，错误代码为08，红灯点亮10s",
+      "pass_criteria": "错误代码08，红灯亮10s"
+    },
+    {
+      "test_id": "10.10",
+      "item": "满度错误",
+      "condition": "打开APP建立蓝牙连接，检测到满度不在3000到6000之内",
+      "expected_value": "停泵放气，错误代码为0A，红灯点亮10s",
+      "pass_criteria": "错误代码0A，红灯亮10s"
+    },
+    {
+      "test_id": "10.11",
+      "item": "连接异常错误",
+      "condition": "打开APP建立蓝牙连接，点击开始测量后，把单片机通讯的串口RX端与地短接",
+      "expected_value": "绿灯灭，红灯亮10秒，错误代码为0C",
+      "pass_criteria": "错误代码0C，红灯亮10s"
+    },
+    {
+      "test_id": "10.12",
+      "item": "低电压错误",
+      "condition": "除关机态、调试态、smt态外，其他状态出现低电",
+      "expected_value": "红灯闪10s后血压计关机，错误代码为0D",
+      "pass_criteria": "错误代码0D，红灯亮10s后关机"
+    },
+    {
+      "test_id": "11",
+      "item": "灯状态检测",
+      "condition": "8种不同工作状态",
+      "expected_value": "1.无连接不充电：绿灯灭红灯灭；2.无连接充电未充满：绿灯闪红灯灭；3.无连接充电充满：绿灯常亮红灯灭；4.有连接充电充满：绿灯常亮红灯灭；5.有连接充电未充满：绿灯常亮红灯灭；6.有连接不充电：绿灯常亮红灯灭；7.低电压：红灯闪绿灯灭；8.异常：红灯亮绿灯灭",
+      "pass_criteria": "各状态灯显示符合规定"
+    },
+    {
+      "test_id": "12",
+      "item": "异常状态处理",
+      "condition": "任何时候（包括未知死机状态）按下机器按键",
+      "expected_value": "重启单片机（停泵、开阀）",
+      "pass_criteria": "按键后单片机重启，停泵开阀"
+    },
+    {
+      "test_id": "13",
+      "item": "USB充电测试",
+      "condition": "血压计电池电压在3.8V±0.1V，通过直流电源给机器充电",
+      "expected_value": "电源电流应在520±50mA范围内",
+      "pass_criteria": "充电电流520±50mA"
+    }
+  ],
+  "test_measurements": [
+    {
+      "test_point": "静压0mmHg",
+      "reference_value": "0",
+      "unit": "mmHg",
+      "condition": "标准静压0mmHg，合格范围0~2mmHg"
+    },
+    {
+      "test_point": "静压60mmHg",
+      "reference_value": "60±3",
+      "unit": "mmHg",
+      "condition": "标准静压60mmHg"
+    },
+    {
+      "test_point": "静压90mmHg",
+      "reference_value": "90±3",
+      "unit": "mmHg",
+      "condition": "标准静压90mmHg"
+    },
+    {
+      "test_point": "静压150mmHg",
+      "reference_value": "150±3",
+      "unit": "mmHg",
+      "condition": "标准静压150mmHg"
+    },
+    {
+      "test_point": "静压210mmHg",
+      "reference_value": "210±3",
+      "unit": "mmHg",
+      "condition": "标准静压210mmHg"
+    },
+    {
+      "test_point": "静压240mmHg",
+      "reference_value": "240±3",
+      "unit": "mmHg",
+      "condition": "标准静压240mmHg"
+    },
+    {
+      "test_point": "静压300mmHg",
+      "reference_value": "300±3",
+      "unit": "mmHg",
+      "condition": "标准静压300mmHg"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RSYB01 V1.0"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L血压计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "算法验证：参见《PT9L软件算法验证报告V1.0》（文件编号：PT9L-RSYB01 V1.0）",
+      "topic_tags": [
+        "算法验证",
+        "软件算法",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "PT9L-RSYB01 V1.0"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "调试态进入方式：A、机芯工装上电后，短按S1键；B、将整机测试工装调到标定状态（SW1=0，SW2=0，SW3=1，测试工装显示\"2 7\"），然后插到机器上，即进入标定状态。该状态用于工厂标定零/满点。",
+      "topic_tags": [
+        "调试态",
+        "标定",
+        "工装",
+        "零点",
+        "满点"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "整机测试工装"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "压力采样值显示：进入调试态后，液晶的高低压位置显示当前压力的采样值，心率处显示16点采样值的最大最小差值，差值范围应为（00~03）。心形标志显示说明压力稳定。如果液晶显示\"低电压\"符号和4条\"-\"则说明当前压力采样电路不正常，需检修。当不给传感器施加气压时，压力采样值应在1300到2500之间。如果压力采样值不在此范围内，不可标定，需修整电路。",
+      "topic_tags": [
+        "压力采样",
+        "调试态",
+        "液晶显示",
+        "标定条件"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "调试态"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "上气性能测试态（SW1=0，SW2=0，SW3=0；测试工装显示\"2 8\"）：将工装插入机器进入上气性能测试态，每2S控制泵占空比，缓慢上气，程序自动判断加压速度是否合适，当加压完毕，若速度合格液晶会显示\"Er F\"，否则显示\"Er E\"。按工装上\"START\"键放气，如无按键操作，一分钟后自动放气，而后显示放气时间，单位为0.1S。",
+      "topic_tags": [
+        "上气性能测试",
+        "工装",
+        "加压速度",
+        "放气"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "整机测试工装"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "动压测试：将工装测试功能调整到动压测试态（SW1=0，SW2=1，SW3=0），按工装上RESET键，工装显示工装软件版本号0002约1s后，工装液晶上右上角显示\"2 C\"，将机器、袖带、动压仪连接好，确认整机此时为待机态。将整机测试工装与整机连接起来。当液晶屏显示程序号\"0278\"，则证明机器接口部分正常并正常进入动压测试态。如果液晶屏无变化或是全屏显示则说明机器不良、工装不良或USB线没插好，机器开始测试后在低压处显示当前压力值，机器开始测量，测量完毕液晶显示结果。",
+      "topic_tags": [
+        "动压测试",
+        "工装",
+        "程序号",
+        "袖带"
+      ],
+      "related_subjects": [
+        "PT9L血压计",
+        "整机测试工装",
+        "动压仪"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "低电压检测状态说明：允许低电压检测的状态为：按机器上的RESET键重新启动芯片；蓝牙连接后；测量态；整机测试。Smt态和调试态不检测低电压。低电压接收标准为3.3+0.1V以下。",
+      "topic_tags": [
+        "低电压",
+        "检测状态",
+        "蓝牙",
+        "测量态"
+      ],
+      "related_subjects": [
+        "PT9L血压计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "USB充电规格：血压计电池电压在3.8V±0.1V，通过直流电源给机器充电，电源电流应在520±50mA范围内。",
+      "topic_tags": [
+        "USB充电",
+        "电池电压",
+        "充电电流"
+      ],
+      "related_subjects": [
+        "PT9L血压计"
+      ]
+    }
+  ]
+}

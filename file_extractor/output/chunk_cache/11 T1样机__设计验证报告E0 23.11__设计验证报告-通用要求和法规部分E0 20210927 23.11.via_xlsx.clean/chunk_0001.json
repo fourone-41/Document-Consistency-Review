@@ -1,0 +1,176 @@
+{
+  "document": {
+    "title": "设计验证报告-通用要求和法规部分E0 20210927 23.11",
+    "doc_type": "设计验证报告"
+  },
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "id_type": "验证依据",
+      "value": "PT9L-YZTY01 V1.0"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "起草",
+      "author": "王迪"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "9",
+      "item": "环保 Environment protection",
+      "condition": "设计确认阶段（T1）",
+      "expected_value": "BOM全项均通过测试",
+      "actual_result": "BOM全项均通过测试",
+      "pass_criteria": "BOM全项均通过测试"
+    },
+    {
+      "test_id": "10",
+      "item": "消毒要求 Sterility requirements",
+      "condition": "设计确认阶段（T1）",
+      "expected_value": "说明书中有消毒方面的描述",
+      "actual_result": "说明书中有消毒方面的描述",
+      "pass_criteria": "说明书中有消毒方面的描述"
+    },
+    {
+      "test_id": "15",
+      "item": "防误用注意信息 Information to deter foreseeable misuse",
+      "condition": "设计确认阶段（T1）",
+      "expected_value": "符合设计输入要求",
+      "actual_result": "符合设计输入要求",
+      "pass_criteria": "符合设计输入要求"
+    },
+    {
+      "test_id": "18",
+      "item": "生物相容性 Toxicity and biocompatibility requirement",
+      "condition": "设计确认阶段（T1）",
+      "expected_value": "生物相容性测试/评估通过",
+      "actual_result": "生物相容性测试/评估报告",
+      "pass_criteria": "生物相容性测试/评估通过"
+    },
+    {
+      "test_id": "20",
+      "item": "电池 battery",
+      "condition": "设计确认阶段（T1）",
+      "expected_value": "符合设计输入要求",
+      "actual_result": "电池使用寿命测试报告",
+      "pass_criteria": "符合设计输入要求"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "9",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "10",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "15",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "18",
+      "conclusion": "合格"
+    },
+    {
+      "report_id": "20",
+      "conclusion": "合格"
+    }
+  ],
+  "persons": [
+    {
+      "name": "王迪",
+      "title": "编制"
+    },
+    {
+      "name": "侯广伟",
+      "title": "批准"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "销售地区及认证：要求符合FDA认证体系要求，对应地区：美国。验证阶段：设计确认。",
+      "topic_tags": [
+        "FDA",
+        "认证",
+        "销售地区",
+        "美国"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "风险管理：具体参见风险管理计划最新版本，整个过程按照《设计输入-法规标准清单》的相关标准进行风险管理。验证阶段：设计确认。",
+      "topic_tags": [
+        "风险管理",
+        "法规标准",
+        "设计输入"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "设计输入-法规标准清单"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "防尘防水要求：应符合IEC60529的IP22类测试（属于手持式、佩戴式或运输中可操作设备）。验证阶段：设计确认。",
+      "topic_tags": [
+        "防尘防水",
+        "IP22",
+        "IEC60529"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "生产过程要求（工装要求及机芯检测）：\n1、能正确检测LCD端口连接线的通断。\n2、能正确检测按键端口连接线的通断。\n3、能正确检测低电压检测端口连接线的通断。\n4、能查看待机态和工作态电流。\n机芯调试：\n1、能对测温模块进行检测。\n2、能实现对机芯的自检查看。\n工厂态要求及机芯检测态要求：\n1.能够检验LCD与PCB的连接。\n2.能够检验按键与PCB的连接。\n3.能够检验待机态和工作态电流。\n机芯调试态要求：\n1.能够显示测温模块测量值。\n2.能够设定蜂鸣提示音开关。\n3.能够设定测量单位。",
+      "topic_tags": [
+        "生产过程",
+        "机芯检测",
+        "机芯调试",
+        "工厂态",
+        "LCD",
+        "PCB"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "环保要求：要求满足加州RoHS环保指令。验证阶段：T1阶段。验证方法：检查BOM全项是否通过相关要求。",
+      "topic_tags": [
+        "环保",
+        "加州RoHS",
+        "BOM",
+        "T1"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    }
+  ]
+}

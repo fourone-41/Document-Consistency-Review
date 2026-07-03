@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PT9L 最后一轮审查结果看板</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18212a;
+      --muted: #607080;
+      --line: #d8dee6;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --blue: #1d4ed8;
+      --teal: #0f766e;
+      --red: #b42318;
+      --orange: #c2410c;
+      --green: #15803d;
+      --purple: #6d28d9;
+      --shadow: 0 10px 28px rgba(24, 33, 42, .08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    .shell {
+      width: min(1320px, calc(100vw - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 0 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: #fff;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    main { padding: 26px 0 48px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    section,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    section { margin-top: 18px; padding: 22px; }
+    .panel { padding: 22px; }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .big-number {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .big-number .num {
+      font-size: clamp(56px, 8vw, 96px);
+      line-height: .9;
+      font-weight: 900;
+      color: var(--red);
+    }
+
+    .big-number p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 420px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .summary-card {
+      border: 1px solid var(--line);
+      padding: 14px;
+      min-height: 112px;
+      background: #fff;
+    }
+
+    .summary-card .num {
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 850;
+      margin-bottom: 8px;
+    }
+
+    .summary-card .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .formula {
+      padding: 14px 16px;
+      margin-top: 14px;
+      background: #f9fafb;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 54px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .bar-track {
+      height: 18px;
+      background: #eef2f7;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      background: var(--blue);
+    }
+
+    .bar.p1 { background: var(--red); }
+    .bar.p2 { background: var(--orange); }
+    .bar.p3 { background: var(--green); }
+    .bar.semantic { background: var(--purple); }
+    .bar.mechanical { background: var(--teal); }
+
+    .bar-label,
+    .bar-value {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .bar-value {
+      text-align: right;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .issue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .issue {
+      border: 1px solid var(--line);
+      padding: 14px;
+      background: #fff;
+      min-height: 166px;
+    }
+
+    .issue .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+      background: #fee2e2;
+      color: #991b1b;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .issue p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .pipe-step {
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      min-height: 128px;
+    }
+
+    .pipe-step strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .pipe-step span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .callout {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      font-size: 14px;
+    }
+
+    .paths {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .path {
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      padding: 10px 12px;
+      min-height: 58px;
+    }
+
+    code {
+      overflow-wrap: anywhere;
+      color: #111827;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 13px;
+      padding: 22px 0 36px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .two-col { grid-template-columns: 1fr; }
+      .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .paths { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .shell { width: min(100% - 24px, 1320px); }
+      .topbar { display: block; }
+      .badge { margin-top: 14px; white-space: normal; }
+      section,
+      .panel { padding: 16px; }
+      .summary-grid,
+      .issue-grid,
+      .pipeline { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 90px 1fr 40px; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell topbar">
+      <div>
+        <h1>PT9L 最后一轮审查结果看板</h1>
+        <p class="subtitle">基于 v6 全量 LangGraph + LLM 审查结果，展示确认错误、待复核疑点、严重度、Agent 来源和代表性问题。该页用于快速理解结果构成。</p>
+      </div>
+      <div class="badge">生成时间：2026-06-30 15:36:40</div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="hero-grid">
+      <section class="panel">
+        <h2>当前确认错误总览</h2>
+        <div class="big-number">
+          <div class="num">66</div>
+          <p>当前确认错误总数。口径为：机械复审 confirm cluster 数 21，加上语义 Challenge keep/revise 数 45。</p>
+        </div>
+        <div class="summary-grid">
+          <div class="summary-card"><div class="num">21</div><div class="label">机械确认错误 cluster</div></div>
+          <div class="summary-card"><div class="num">45</div><div class="label">语义确认/修订错误</div></div>
+          <div class="summary-card"><div class="num">52</div><div class="label">待人工补证疑点</div></div>
+          <div class="summary-card"><div class="num">223</div><div class="label">合并 findings 行数</div></div>
+        </div>
+        <div class="formula">公式：确认错误总数 = 机械 confirm cluster 数 21 + 语义 keep/revise 数 45。`merged_findings=223` 是合并行数，不等于确认错误数。</div>
+      </section>
+
+      <section class="panel">
+        <h2>严重度分布</h2>
+        <div class="bar-list">
+          <div class="bar-row"><div class="bar-label">P1 高优先级</div><div class="bar-track"><div class="bar p1" style="width:45.5%"></div></div><div class="bar-value">30</div></div>
+          <div class="bar-row"><div class="bar-label">P2 中优先级</div><div class="bar-track"><div class="bar p2" style="width:36.4%"></div></div><div class="bar-value">24</div></div>
+          <div class="bar-row"><div class="bar-label">P3 低优先级</div><div class="bar-track"><div class="bar p3" style="width:18.2%"></div></div><div class="bar-value">12</div></div>
+        </div>
+        <div class="callout">P1 共 30 项，是当前最需要优先进入整改台账和人工确认的部分。</div>
+      </section>
+    </div>
+
+    <section>
+      <h2>结果从哪里来</h2>
+      <div class="pipeline">
+        <div class="pipe-step"><strong>515 条机械候选</strong><span>高召回扫描旧型号、异类品类、模板残留、数值对齐等。</span></div>
+        <div class="pipe-step"><strong>103 个机械 cluster</strong><span>按问题聚类，避免同一类错误重复计数。</span></div>
+        <div class="pipe-step"><strong>21 类机械确认错误</strong><span>156 条候选行被确认，但汇总按 cluster 计为 21 类。</span></div>
+        <div class="pipe-step"><strong>67 条语义 Finding</strong><span>领域 Agent 输出专业判断，交给 Challenge Agent 复核。</span></div>
+        <div class="pipe-step"><strong>45 条语义确认/修订</strong><span>keep 27 条，revise 18 条，计入当前确认错误。</span></div>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>确认错误来源</h2>
+        <div class="bar-list">
+          <div class="bar-row"><div class="bar-label">语义审查</div><div class="bar-track"><div class="bar semantic" style="width:68.2%"></div></div><div class="bar-value">45</div></div>
+          <div class="bar-row"><div class="bar-label">机械复审</div><div class="bar-track"><div class="bar mechanical" style="width:31.8%"></div></div><div class="bar-value">21</div></div>
+        </div>
+      </div>
+      <div>
+        <h2>待人工补证</h2>
+        <table>
+          <thead><tr><th>类别</th><th>数量</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>机械/数值待复核</td><td>31 类</td><td>全部来自 Hardware Agent 的 parameter_alignment_candidate。</td></tr>
+            <tr><td>语义待补证</td><td>21 条</td><td>Challenge Agent 判定需要更多上下文。</td></tr>
+            <tr><td>已丢弃语义误报</td><td>1 条</td><td>Challenge Agent 判定 drop。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Agent 贡献统计（确认错误）</h2>
+      <table>
+        <thead><tr><th>Agent</th><th>确认错误数</th><th>主要问题方向</th></tr></thead>
+        <tbody>
+          <tr><td>Product Identity Agent</td><td>12</td><td>旧型号、异型号、产品身份污染。</td></tr>
+          <tr><td>Regulatory Agent</td><td>9</td><td>标签、标准、风险报告引用、程序性缺陷。</td></tr>
+          <tr><td>Software Agent</td><td>9</td><td>软件文件空白、模板残留、追溯缺失。</td></tr>
+          <tr><td>Risk Traceability Agent</td><td>8</td><td>风险文件双套、风险-控制-验证断链。</td></tr>
+          <tr><td>Document Control Agent</td><td>7</td><td>待填字段、签署空白、受控文件质量问题。</td></tr>
+          <tr><td>Hardware Agent</td><td>6</td><td>PCB、BOM、参数和硬件输出一致性。</td></tr>
+          <tr><td>V&V Agent</td><td>6</td><td>验证确认报告、外部测试报告证据链。</td></tr>
+          <tr><td>DMR/SOP Agent</td><td>5</td><td>设计输出、BOM、工艺、包装和制造转移。</td></tr>
+          <tr><td>Market & Category Scout Agent</td><td>4</td><td>品类和法规基线识别出的身份风险。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>代表性确认问题</h2>
+      <div class="issue-grid">
+        <article class="issue">
+          <span class="tag">M001 / P1</span>
+          <h3>正式外部测试报告引用 PT9C 风险管理报告</h3>
+          <p>PT9L 的 ISO 14971 符合性验证表引用 `PT9C-FXGB01 V1.0`，导致 PT9L 风险管理合规证据链存在型号归属错误。</p>
+        </article>
+        <article class="issue">
+          <span class="tag">M002 / P1</span>
+          <h3>硬件设计方案读图报告关键字段待填</h3>
+          <p>Stage 06 正式文件标题栏中 Drawing NO.、Part name、Tolerance 等字段为“待填”，属于正式受控文件未完成。</p>
+        </article>
+        <article class="issue">
+          <span class="tag">M003 / P1</span>
+          <h3>软件设计文件残留旧型号 BP3L</h3>
+          <p>软件图样文件标题、文件名和图片资产路径使用旧型号 BP3L，文件主体身份标识未完成型号转换。</p>
+        </article>
+        <article class="issue">
+          <span class="tag">M007 / P1</span>
+          <h3>PT9L 正式 BOM 引用 PT9C PCB 图号</h3>
+          <p>EBOM 和 T1 样机 BOM 中 PCB 图号引用 `PT9C-CNTP01 V1.0`，构成异型号零件编号污染受控 BOM。</p>
+        </article>
+        <article class="issue">
+          <span class="tag">M012 / P2</span>
+          <h3>客户需求书标题为血压计</h3>
+          <p>文件标题和文件名使用“血压计”，内容实际为红外额温计 PT9L，存在产品品类标签与实际产品不符。</p>
+        </article>
+        <article class="issue">
+          <span class="tag">M017 / P1</span>
+          <h3>设计输出清单接口板 PCB 引用 PT9C</h3>
+          <p>正式设计输出清单一中接口板 PCB 图多个图层条目均引用 `PT9C-CNTP01 V1.0`，缺乏共用件声明或跨型号借用评审记录。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>机械复审明细</h2>
+        <table>
+          <thead><tr><th>指标</th><th>数量</th></tr></thead>
+          <tbody>
+            <tr><td>机械候选总数</td><td>515</td></tr>
+            <tr><td>确认候选行</td><td>156</td></tr>
+            <tr><td>驳回候选行</td><td>328</td></tr>
+            <tr><td>待上下文候选行</td><td>31</td></tr>
+            <tr><td>确认 cluster</td><td>21</td></tr>
+            <tr><td>驳回 cluster</td><td>51</td></tr>
+            <tr><td>待上下文 cluster</td><td>31</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h2>语义 Challenge 明细</h2>
+        <table>
+          <thead><tr><th>状态</th><th>数量</th><th>是否计入确认错误</th></tr></thead>
+          <tbody>
+            <tr><td>keep</td><td>27</td><td>是</td></tr>
+            <tr><td>revise</td><td>18</td><td>是</td></tr>
+            <tr><td>needs_more_context</td><td>21</td><td>否</td></tr>
+            <tr><td>drop</td><td>1</td><td>否</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>阅读入口</h2>
+      <div class="paths">
+        <div class="path"><code>pt9l_full_audit_output_langgraph_v6/08_reports/PT9L_当前全部错误汇总.md</code></div>
+        <div class="path"><code>pt9l_full_audit_output_langgraph_v6/08_reports/PT9L_full_audit_report_langgraph.md</code></div>
+        <div class="path"><code>pt9l_full_audit_output_langgraph_v6/08_reports/PT9L_mechanical_cluster_decision_table.md</code></div>
+        <div class="path"><code>pt9l_full_audit_output_langgraph_v6/08_reports/second_round_tasks.md</code></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    口径说明：本页只展示系统当前确认和待复核结果；最终是否作为 DHF/DMR 整改项，仍需质量、法规、研发负责人确认。
+  </footer>
+</body>
+</html>

@@ -1,0 +1,396 @@
+{
+  "document": {
+    "title": "PT9L 纸托（PT9L-F04）展开图",
+    "drawing_no": "PT9L-F04",
+    "edition": "V1.0",
+    "scale": "1:1",
+    "units": "mm",
+    "source_file": "K040500002717620814-图纸-PT9L-F04+V1.0.pdf",
+    "created_date": "2026-05-13",
+    "identifier": "K04050000271"
+  },
+  "products": [
+    {
+      "name": "纸托",
+      "part_name": "纸托",
+      "model_no": "PT9L",
+      "drawing_no": "PT9L-F04",
+      "description": "PT9L 彩包装内部纸托（纸插板），用于固定产品，无印刷，结构为插托折叠型"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "图号",
+      "value": "K04050000271"
+    },
+    {
+      "type": "Drawing NO.",
+      "value": "PT9L-F04"
+    }
+  ],
+  "components": [
+    {
+      "name": "纸托",
+      "material": "350g 白卡纸，覆哑膜",
+      "finish": "覆哑膜",
+      "print": "无印刷",
+      "dimensions": {
+        "length_mm": 157,
+        "width_mm": 57,
+        "depth_mm": 33,
+        "tolerance": "+1 -1"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "type": "regulatory",
+      "description": "本件要求通过 RoHS 测试"
+    },
+    {
+      "id": "REQ-2",
+      "type": "material",
+      "description": "材质为 350g 白卡纸，覆哑膜"
+    },
+    {
+      "id": "REQ-3",
+      "type": "dimensional",
+      "description": "尺寸：57×33×157 mm，公差：+1 -1"
+    },
+    {
+      "id": "REQ-4",
+      "type": "appearance",
+      "description": "印刷颜色：无印刷"
+    }
+  ],
+  "design_inputs": [
+    {
+      "category": "成型尺寸",
+      "parameters": [
+        {
+          "name": "长（L）",
+          "value": 157,
+          "unit": "mm",
+          "tolerance": "+1 -1",
+          "source": "技术要求第3条 + 图面直接标注"
+        },
+        {
+          "name": "宽（W）",
+          "value": 57,
+          "unit": "mm",
+          "tolerance": "+1 -1",
+          "source": "技术要求第3条 + 图面直接标注"
+        },
+        {
+          "name": "深（D）",
+          "value": 33,
+          "unit": "mm",
+          "tolerance": "+1 -1",
+          "source": "技术要求第3条 + 图面直接标注"
+        }
+      ]
+    },
+    {
+      "category": "展开图关键尺寸",
+      "parameters": [
+        {
+          "name": "下部宽度1（侧面折叠宽度）",
+          "value": 33,
+          "unit": "mm"
+        },
+        {
+          "name": "下部宽度2（底面宽度）",
+          "value": 57,
+          "unit": "mm"
+        },
+        {
+          "name": "高度（托体高度）",
+          "value": 157,
+          "unit": "mm"
+        }
+      ]
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "限制有害物质指令，本件须通过 RoHS 测试"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "design_rationale",
+      "content": "PT9L 彩包装内部纸托（纸插板），用于固定产品，无印刷。结构为插托折叠型，展开图见源文件。材质为 350g 白卡纸，覆哑膜，成型尺寸 57×33×157 mm，公差 +1/-1 mm。展开后关键尺寸：侧面折叠宽度 33 mm，底面宽度 57 mm，托体高度 157 mm。",
+      "topic_tags": [
+        "纸托",
+        "包装内托",
+        "插托折叠",
+        "白卡纸",
+        "覆哑膜",
+        "展开图"
+      ],
+      "related_subjects": [
+        "PT9L-F04",
+        "PT9L",
+        "K04050000271"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "图纸公差说明：尺寸标注精度等级 .X / .XX / .X°，成型尺寸整体公差为 +1 -1 mm。比例 1:1，单位 mm。",
+      "topic_tags": [
+        "公差",
+        "尺寸精度",
+        "图纸标注"
+      ],
+      "related_subjects": [
+        "PT9L-F04"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/包装/K040500002717620814-图纸-PT9L-F04+V1.0.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F04",
+      "to": "纸托",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "纸托",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04050000271",
+      "to": "纸托",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F04",
+      "to": "公差",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F04",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F04",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F04",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-F04",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "纸托",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "纸托",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "纸托",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04050000271",
+      "to": "REQ-1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04050000271",
+      "to": "REQ-2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04050000271",
+      "to": "REQ-3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "K04050000271",
+      "to": "REQ-4",
+      "properties": {}
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-3",
+      "to": "PT9L-F04",
+      "properties": {
+        "note": "尺寸要求57×33×157mm直接来源于图面标注"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-2",
+      "to": "PT9L-F04",
+      "properties": {
+        "note": "材质350g白卡纸覆哑膜来源于图纸技术要求"
+      }
+    },
+    {
+      "type": "DERIVES_FROM",
+      "from": "REQ-1",
+      "to": "RoHS",
+      "properties": {
+        "note": "RoHS测试要求来源于限制有害物质指令"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "纸托",
+      "to": "REQ-1",
+      "properties": {
+        "note": "纸托须通过RoHS测试"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "纸托",
+      "to": "REQ-2",
+      "properties": {
+        "note": "纸托材质受350g白卡纸覆哑膜约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "纸托",
+      "to": "REQ-3",
+      "properties": {
+        "note": "纸托成型尺寸受57×33×157mm公差+1-1约束"
+      }
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "纸托",
+      "to": "REQ-4",
+      "properties": {
+        "note": "纸托外观受无印刷要求约束"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "包装纸托长度",
+      "attribute": "成型尺寸",
+      "value": "157",
+      "unit": "mm",
+      "tolerance": "±1",
+      "condition": "成品纸托",
+      "raw_text": "尺寸：57×33×157 mm，公差：+1 -1；长（L）157mm +1 -1"
+    },
+    {
+      "subject": "包装纸托宽度",
+      "attribute": "成型尺寸",
+      "value": "57",
+      "unit": "mm",
+      "tolerance": "±1",
+      "condition": "成品纸托",
+      "raw_text": "尺寸：57×33×157 mm，公差：+1 -1；宽（W）57mm +1 -1"
+    },
+    {
+      "subject": "包装纸托深度",
+      "attribute": "成型尺寸",
+      "value": "33",
+      "unit": "mm",
+      "tolerance": "±1",
+      "condition": "成品纸托",
+      "raw_text": "尺寸：57×33×157 mm，公差：+1 -1；深（D）33mm +1 -1"
+    },
+    {
+      "subject": "纸托材质",
+      "attribute": "纸张克重",
+      "value": "350",
+      "unit": "g/m²",
+      "tolerance": "",
+      "condition": "白卡纸",
+      "raw_text": "材质为 350g 白卡纸，覆哑膜"
+    },
+    {
+      "subject": "纸托表面处理",
+      "attribute": "覆膜工艺",
+      "value": "覆哑膜",
+      "unit": "",
+      "tolerance": "",
+      "condition": "外表面",
+      "raw_text": "材质为 350g 白卡纸，覆哑膜"
+    },
+    {
+      "subject": "纸托印刷",
+      "attribute": "印刷颜色数量",
+      "value": "0",
+      "unit": "色",
+      "tolerance": "",
+      "condition": "全面",
+      "raw_text": "印刷颜色：无印刷"
+    },
+    {
+      "subject": "展开图侧面折叠宽度",
+      "attribute": "展开尺寸",
+      "value": "33",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "展开图下部宽度1",
+      "raw_text": "下部宽度1（侧面折叠宽度）33mm"
+    },
+    {
+      "subject": "展开图底面宽度",
+      "attribute": "展开尺寸",
+      "value": "57",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "展开图下部宽度2",
+      "raw_text": "下部宽度2（底面宽度）57mm"
+    },
+    {
+      "subject": "展开图托体高度",
+      "attribute": "展开尺寸",
+      "value": "157",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "展开图高度",
+      "raw_text": "高度（托体高度）157mm"
+    },
+    {
+      "subject": "RoHS合规性",
+      "attribute": "法规符合性",
+      "value": "通过RoHS测试",
+      "unit": "",
+      "tolerance": "",
+      "condition": "整件产品",
+      "raw_text": "本件要求通过 RoHS 测试"
+    }
+  ]
+}

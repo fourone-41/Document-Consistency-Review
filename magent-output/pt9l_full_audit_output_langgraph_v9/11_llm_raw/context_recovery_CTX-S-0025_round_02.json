@@ -1,0 +1,166 @@
+```json
+{
+  "context_summary": "Round 2 检索在 F0190（正极弹簧PT5-M02 图纸）中找到了 PT5 弹簧的完整几何尺寸、材料规格（镀镍不锈钢线 Φ0.5 mm）、盐雾测试要求（GB2423.17-2008）及装配关系。图纸本身明确标注设计日期 2019-07-15，并在"必查确认清单"第5条中注明"PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件）——推测同件复用"，说明 PT5 与 PT9L 之间的零件同一性尚属推测，未经正式文件确认。风险文件（F0015、F0019）的 page_context 条目均为空文本，未能提取到 RUN-0006 的具体内容。核心缺口仍然存在：① 无生物相容性测试报告；② 无 PT5 样品身份文件（sample-identity document）；③ PT5 图纸与 PT9L 生产件之间的材料等同性未经正式文件桥接；④ RUN-0006 风险条目的原文及其所引用的测试样品批次信息未被检索到。",
+  "evidence_gaps": [
+    "生物相容性测试报告（biocompatibility test report）：语料库中未发现任何针对 PT5 或 PT9L 弹簧的 ISO 10993 系列测试报告或等效文件",
+    "PT5 样品身份文件（sample-identity / sample-traceability document）：无批次号、供应商检验报告（CoC/CoA）或 IQC 验收记录将测试样品与 PT9L 生产件关联",
+    "PT5 ↔ PT9L 材料等同性桥接文件：图纸注释仅为"推测同件复用"，缺少正式的设计变更评估（DCR）或等同性声明",
+    "RUN-0006 风险条目原文：F0015 和 F0019 的 page_context 文本为空，无法确认 RUN-0006 所指向的具体危害、控制措施及验证状态",
+    "负极弹簧 PT5-M03 的对应材料与测试信息：正极图纸引用了负极对应件，但负极弹簧文件未被检索",
+    "设计输出清单（BOM 或物料清单）中 PT5-M02 的正式料号与 PT9L 产品 BOM 的对应关系"
+  ],
+  "additional_search_queries": [
+    "RUN-0006",
+    "生物相容性 PT5 OR PT9L OR 弹簧",
+    "biocompatibility spring PT5 PT9L",
+    "ISO 10993 PT9L",
+    "sample identity PT5 OR PT9L",
+    "负极弹簧PT5-M03",
+    "PT9L BOM 物料清单 弹簧",
+    "设计输出清单 PT9L 弹簧 料号",
+    "IQC 验收 弹簧 PT5 OR PT9L",
+    "材料等同性 PT5 PT9L",
+    "CoC CoA 镀镍不锈钢 弹簧",
+    "风险控制验证 弹簧 接触材料",
+    "Verification risk control biocompatibility spring"
+  ],
+  "agent_instruction": "Hardware Agent：当前 P1 缺口（LLM-0078 / RUN-0006）在两轮检索后仍未闭合。以下是你必须执行的核查步骤：\n\n1. **直接检索 RUN-0006**：在 F0015 和 F0019 全文中定位 'RUN-0006' 字符串，提取该风险条目的危害描述、控制措施编号及验证结论。这两份文件的 page_context 在本轮返回为空，需重新全文读取。\n\n2. **检索生物相容性报告**：在语料库中搜索包含 'ISO 10993'、'生物相容性'、'biocompatibility'、'细胞毒性'、'皮肤刺激' 的文件，重点关注与 PT5 弹簧材料（镀镍不锈钢）相关的测试记录。\n\n3. **检索 PT5-M03（负极弹簧）图纸**：路径推测为 '12 设计输出（含01、02）\\设计输出清单二\\图纸\\负极弹簧PT5-M03.pdf.md'，读取其材料规格，与 PT5-M02 比对，判断两者是否使用相同镀层材料。\n\n4. **检索 PT9L BOM 或设计输出清单**：确认 PT5-M02/M03 料号是否被 PT9L 产品 BOM 正式引用，或是否存在替代料号。\n\n5. **如以上文件均不存在**：在你的分析结论中明确声明"语料库中不存在 PT5/PT9L 生物相容性测试报告及样品身份文件"，并将 RUN-0006 标记为 unresolved，建议升级为设计文件缺失不符合项（nonconformance）。\n\n不得基于图纸材料规格推断生物相容性合规性——材料规格（镀镍不锈钢）不等同于 ISO 10993 测试通过证明。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "HW-135",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 49,
+        "source_text": "| ② | 侧视图 | （无） | **7.0** | ±0.30 | **工作段长**（弹簧紧密段） |",
+        "verified": true,
+        "relevance_note": "PT5-M02 几何尺寸——工作段长 7.0±0.30 mm，为样品同一性比对基准之一"
+      },
+      {
+        "evidence_id": "HW-136",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 75,
+        "source_text": "| **公差形式** | `±0.03` / `±0.30` / `±0.10` 均对称 ✓ |",
+        "verified": true,
+        "relevance_note": "PT5-M02 公差体系完整，可作为 IQC 验收比对基准"
+      },
+      {
+        "evidence_id": "HW-137",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 84,
+        "source_text": "- **正极弹簧 ↔ PCB / 电池仓盖**：技要 6\"可上锡焊接\" → 焊接固定到 PCB。",
+        "verified": true,
+        "relevance_note": "弹簧与 PCB 直接焊接接触，属于间接接触患者路径，生物相容性评估范围需覆盖此接触模式"
+      },
+      {
+        "evidence_id": "HW-138",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 93,
+        "source_text": "| 1 | 电池槽 / PCB 焊盘的实际配合（焊点位置、焊盘大小） | 工程师释义 |",
+        "verified": true,
+        "relevance_note": "配合关系待确认项，与样品身份验证相关"
+      },
+      {
+        "evidence_id": "HW-CRI-001",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 30,
+        "source_text": "2. 材料：镀镍不锈钢线 Φ0.5 / 不锈钢线 Φ0.5 mm + Ni 镀层；",
+        "verified": true,
+        "relevance_note": "【关键材料规格】PT5-M02 弹簧材料为镀镍不锈钢，Ni 镀层是生物相容性评估的核心关注点（镍离子释放风险）。此规格是 RUN-0006 样品等同性判断的物料基准，但本身不构成生物相容性合规证明"
+      },
+      {
+        "evidence_id": "HW-CRI-002",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 97,
+        "source_text": "| 5 | PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件） | 推测同件复用 |",
+        "verified": true,
+        "relevance_note": "【关键缺口证据】图纸自身承认 PT5 与 PT9L 弹簧同一性为"推测"，未经正式文件确认。这直接支持 LLM-0078 的 claim：无法确认测试样品与 PT9L 生产件的材料等同性"
+      },
+      {
+        "evidence_id": "HW-CRI-003",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 111,
+        "source_text": "- **设计日期**：2019-07-15（PT5 项目，PT9L 沿用）",
+        "verified": true,
+        "relevance_note": "图纸元数据注明"PT9L 沿用"，但此为文件注释而非正式等同性声明，不能替代 DCR 或等同性评估报告"
+      }
+    ],
+    "parameter_context": [
+      {
+        "parameter": "弹簧材料",
+        "value": "镀镍不锈钢线 Φ0.5 mm（不锈钢线 + Ni 镀层）",
+        "doc_id": "F0190",
+        "relevance": "生物相容性评估的核心材料参数；Ni 镀层需 ISO 10993-1 分类及相应测试"
+      },
+      {
+        "parameter": "盐雾测试",
+        "value": "GB2423.17-2008，5% 盐水 / 35°C / 24H 后无生锈",
+        "doc_id": "F0190",
+        "relevance": "腐蚀防护验证，与 Ni 镀层完整性相关，但不等同于生物相容性测试"
+      },
+      {
+        "parameter": "弹力",
+        "value": "压缩 5.0 mm 时 ≥ 0.5 kgf",
+        "doc_id": "F0190",
+        "relevance": "功能性参数，实测验收记录缺失（图纸确认清单第2条）"
+      },
+      {
+        "parameter": "设计日期",
+        "value": "2019-07-15",
+        "doc_id": "F0190",
+        "relevance": "PT5 原始设计时间节点，用于判断 PT9L 沿用时是否经过正式变更评估"
+      }
+    ],
+    "page_context": [
+      {
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "status": "empty_text_returned",
+        "note": "本轮检索返回空文本，需 Hardware Agent 重新全文读取以定位 RUN-0006"
+      },
+      {
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "status": "empty_text_returned",
+        "note": "本轮检索返回空文本，需 Hardware Agent 重新全文读取以定位 RUN-0006"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "confirmed_gap",
+        "description": "生物相容性测试报告缺失：两轮检索均未在语料库中发现针对 PT5 或 PT9L 弹簧（镀镍不锈钢材料）的 ISO 10993 系列测试报告。F0190 图纸仅包含 GB2423.17-2008 盐雾测试要求，该测试不覆盖生物相容性评估范围。",
+        "severity": "P1",
+        "action_required": "Hardware Agent 需在语料库中搜索 'ISO 10993'、'生物相容性测试'、'细胞毒性'、'皮肤致敏' 等关键词；若确认不存在，须标记为文件缺失不符合项"
+      },
+      {
+        "context_id": "RC-002",
+        "type": "confirmed_gap",
+        "description": "PT5 样品身份文件缺失：无 CoC（合格证）、CoA（分析证书）、IQC 验收批次记录或供应商测试报告将特定批次 PT5 弹簧样品与 PT9L 生产件关联。图纸确认清单第5条明确标注此关联为"推测"。",
+        "severity": "P1",
+        "action_required": "检索 IQC 验收记录、供应商来料检验报告，关键词：'PT5-M02 IQC'、'弹簧 来料检验'、'PT9L 物料清单'"
+      },
+      {
+        "context_id": "RC-003",
+        "type": "partial_evidence",
+        "description": "PT5-M02 图纸（F0190）已确认材料规格为镀镍不锈钢 Φ0.5 mm，设计日期 2019-07-15，注明 PT9L 沿用。这是目前唯一可用的物料身份基准文件，但不足以证明样品等同性。",
+        "severity": "informational",
+        "action_required": "作为背景信息提供给 Hardware Agent，不得用于推断生物相容性合规"
+      },
+      {
+        "context_id": "RC-004",
+        "type": "confirmed_gap",
+        "description": "RUN-0006 风险条目原文未被检索到：F0015 和 F0019 两份风险验证报告在本轮返回空文本，无法确认 RUN-0006 的危害描述、控制措施及验证状态。",
+        "severity": "P1",
+        "action_required": "Hardware Agent 必须重新全文读取 F0015 和 F0019，搜索 'RUN-0006' 字符串"
+      }
+    ]
+  }
+}
+```

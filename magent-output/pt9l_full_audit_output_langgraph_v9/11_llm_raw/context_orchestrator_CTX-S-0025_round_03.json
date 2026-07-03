@@ -1,0 +1,78 @@
+```json
+{
+  "assigned_agent": "Product Identity Agent",
+  "review_focus": "确认PT5样品与PT9L生产件的物料等同性：证据包中存在PT5-M02正极弹簧图纸（F0190），但缺少生物相容性测试报告及PT5样品身份文件，需判断PT5弹簧件是否与PT9L生产件实质等同（RUN-0006标记）",
+  "agent_input": {
+    "claim": "证据目录中不存在生物相容性测试报告或PT5样品身份文件，无法确认或排除被测样品与PT9L生产件在材料上是否等同（由RUN-0006标记）。",
+    "context_summary": "第3轮补证因LLM输出解析失败（JSONDecodeError: line 169 col 12）未能完成。现有补证内容：(1) F0190《正极弹簧PT5-M02.pdf.md》提供了PT5正极弹簧的完整尺寸规格（线径Ø0.50±0.03、工作段长7.0±0.30、外径Ø6.50±0.10、自由高11.7）、材料规格（镀镍不锈钢线Ø0.5mm+Ni镀层）、技术要求（GB2423.17-2008盐雾测试、弹力≥0.5kgf@5mm压缩、可上锡焊接），以及图纸注释"PT9L实际生产是否仍沿用PT5弹簧（同图同件）——推测同件复用"；(2) F0015、F0019为风险控制措施验证与残余风险评估报告，但page_context中text字段均为空，内容未能提取；(3) 无生物相容性测试报告、无PT5样品批次/身份文件、无BOM明确将PT5-M02列为PT9L正式生产件的记录进入证据包。核心缺口：PT5图纸仅为设计输出，不能替代样品身份文件；材料规格（镀镍不锈钢）与生物相容性合规性之间的链条断裂；PT9L是否沿用PT5件仅为"推测"，无正式变更控制或BOM确认文件。",
+    "evidence": [
+      {
+        "evidence_id": "HW-135",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 49,
+        "content": "| ② | 侧视图 | （无） | **7.0** | ±0.30 | **工作段长**（弹簧紧密段） |",
+        "relevance": "PT5正极弹簧关键尺寸规格，可用于与PT9L生产件图纸比对"
+      },
+      {
+        "evidence_id": "HW-136",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 75,
+        "content": "| **公差形式** | `±0.03` / `±0.30` / `±0.10` 均对称 ✓ |",
+        "relevance": "公差体系完整，可作为等同性比对基准"
+      },
+      {
+        "evidence_id": "HW-137",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 84,
+        "content": "- **正极弹簧 ↔ PCB / 电池仓盖**：技要 6\"可上锡焊接\" → 焊接固定到 PCB。",
+        "relevance": "装配关系描述，辅助确认功能等同性"
+      },
+      {
+        "evidence_id": "HW-138",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 93,
+        "content": "| 1 | 电池槽 / PCB 焊盘的实际配合（焊点位置、焊盘大小） | 工程师释义 |",
+        "relevance": "工程师确认清单条目，表明配合关系尚待正式确认"
+      },
+      {
+        "evidence_id": "HW-F0190-L97",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 97,
+        "content": "| 5 | PT9L 实际生产是否仍沿用 PT5 弹簧（同图同件） | 推测同件复用 |",
+        "relevance": "直接相关：PT5与PT9L等同性为"推测"状态，无正式文件确认，是本任务核心缺口"
+      },
+      {
+        "evidence_id": "HW-F0190-L30",
+        "doc_id": "F0190",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\正极弹簧PT5-M02.pdf.md",
+        "line": 30,
+        "content": "材料：镀镍不锈钢线 Φ0.5 / 不锈钢线 Φ0.5 mm + Ni 镀层",
+        "relevance": "材料规格是生物相容性评估的前提输入，但图纸本身不构成生物相容性测试报告"
+      },
+      {
+        "evidence_id": "PAGE-F0015",
+        "doc_id": "F0015",
+        "rel_path": "03 风险分析\\2L风险改 - 历史文件\\V1.0-3 Verification of risk control measure and residual risk evaluation report .via_lo_html.clean.md",
+        "line": 1,
+        "content": "（页面内容未提取，text为空）",
+        "relevance": "风险控制验证报告，若内容可读则可能包含生物相容性风险控制验证链，当前无法评估"
+      },
+      {
+        "evidence_id": "PAGE-F0019",
+        "doc_id": "F0019",
+        "rel_path": "03 风险分析\\Attachment 7 03 Verification of risk control measure and residual risk evaluation report IFT-FXYS01  V2.0 2024053-All appli.via_lo_html.clean.md",
+        "line": 1,
+        "content": "（页面内容未提取，text为空）",
+        "relevance": "V2.0版本风险控制验证报告，若内容可读则可能包含PT9L生产件生物相容性验证记录，当前无法评估"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": "请基于以上证据，针对以下三个子问题分别给出判断：(1) PT5-M02图纸（F0190）能否作为PT5样品身份文件，证明被测样品与PT9L生产件材料等同？(2) 镀镍不锈钢材料规格是否已有对应的生物相容性测试报告或ISO 10993评估记录在证据包中？(3) PT9L是否有正式BOM、ECO或变更控制文件确认沿用PT5-M02件？如三项均无法从现有证据确认，请输出needs_more_context并列明需补充的具体文件类型。"
+  }
+}
+```

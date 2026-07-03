@@ -1,0 +1,58 @@
+{
+  "agent": "Regulatory Agent",
+  "summary": "Regulatory Agent 完成 4 个未决机械候选 cluster 的补证据最终裁决。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0051",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "legacy_reference_in_historical_draft_only",
+      "claim": "所有含\"与PT3-SMSP33保持一致\"注释的说明书版本均属历史记录阶段草稿，当前证据不能证明正式受控说明书存在该遗留注释",
+      "reason": "MF-0287、MF-0294、MF-0300、MF-0369、MF-0466均位于\"历史记录\"路径下的不同时间节点说明书草稿，MF-0384为历史草稿中的临床评价报告，所有候选primary_scope均为false。\"与PT3-SMSP33保持一致\"属于开发过程中的内部工程备注，出现在历史草稿中属于正常开发迭代现象。same_term_file_samples显示PT3在正式主审范围（primary scope）内大量出现于设计输出清单、图纸、BOM等文件中，说明PT3作为参考型号在项目中被合理使用。当前证据集中无任何正式受控说明书版本（primary_scope=true的说明书文件）包含该注释，无法证明正式DHF/DMR文件存在该缺陷。依据最终裁决政策，当前证据不构成可确认错误，裁决dismiss。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0052",
+      "decision": "dismiss",
+      "severity": "P2",
+      "error_type": "wrong_model_number_in_historical_labeling_draft",
+      "claim": "说明书中PT2L型号错误仅见于历史记录阶段草稿，问题清单已记录该问题，当前证据不能证明正式受控说明书存在该错误",
+      "reason": "MF-0292（8.1版本说明书）和MF-0464（20240821版本说明书）正文中确实存在\"PT2L\"型号错误，MF-0302至MF-0309（8.28问题清单）明确记录了\"PT9L改为PT2L\"的修改意见，说明该问题已在开发过程中被识别并列入修改清单。然而所有10个候选均位于\"历史记录\"路径，primary_scope全部为false，属于非正式受控文件。same_term_file_samples中primary scope文件包含\"18 设计确认\\\\PT9L Checklist of（EN 60601-1-62010+A12015+A22021）PT2L（美亚）-UETR01 V1.0.pdf.md\"，该文件标题中PT2L系指美亚市场型号标识，属于合理引用。问题清单的存在本身说明质量管理流程已识别并跟踪该问题，但无证据证明修改未被执行或正式受控版本仍保留该错误。依据最终裁决政策，当前证据不构成可确认正式错误，裁决dismiss。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0070",
+      "decision": "dismiss",
+      "severity": "P2",
+      "error_type": "predecessor_model_document_in_historical_draft_only",
+      "claim": "可追溯性分析报告为PT9C前代产品文件，归入历史记录路径，当前证据不能证明PT9L正式可追溯性分析报告存在文件编号错误",
+      "reason": "MF-0448唯一候选位于\"历史记录\\\\给实验室\\\\软件开发逻辑\\\\\"路径，primary_scope=false。same_file_term_contexts第8行明确显示文件封面标注\"产品型号/版本：PT9C 项目编号：30000034\"，文件编号为\"PT9C-ZSFB01 V1.0\"，说明该文件本身就是PT9C产品的可追溯性分析报告，被存入历史记录供参考，而非PT9L的正式可追溯性分析报告。same_term_file_samples中primary scope文件\"12 设计输出（含01、02）\\\\PT9L-设计输出清单一\\\\设计输出清单一\\\\设计输出清单一.via_xlsx.clean.md\"包含PT9C引用，说明PT9C作为前代产品在设计输出清单中被合理引用。当前证据集中无任何证据显示PT9L正式可追溯性分析报告（primary_scope=true）存在PT9C文件编号残留。依据最终裁决政策，当前证据不构成可确认正式错误，裁决dismiss。",
+      "review_round": "second_round_enriched_final"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0071",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "cross_model_risk_document_reference",
+      "claim": "PT9L 正式外部测试报告（ETX202303-07-078-03）中，ISO 14971 各条款（4.2、4.3、4.4、5、6.4）的符合性验证唯一引用文件为 PT9C-FXGB01 V1.0，文件前缀与被测型号 PT9L 不符，且在当前 DHF 主审范围内未发现 PT9L 专属风险管理报告或 PT9C-FXGB01 对 PT9L 的适用性桥接声明，构成跨型号风险文件引用缺陷。",
+      "reason": "裁决理由如下：（1）直接证据明确：PT9L 正式外部测试报告（primary_scope=true）中，ISO 14971 条款 4.2、4.3、4.4、5、6.4 的 Document Ref. 全部填写为 PT9C-FXGB01 V1.0，而非任何以 PT9L 为前缀的文件，型号前缀不一致是客观事实。（2）补充证据未能消除疑虑：same_term_file_samples 中列出的 primary 范围文件（设计输出清单、BOM、外部测试报告）及 auxiliary 范围文件（历史草稿、说明书等）均未出现 PT9L-FXGB01 或任何声明 PT9C-FXGB01 适用于 PT9L 的桥接/等效性文件；DHF 清单文件（PT9L-DHF清单-常规.via_xlsx.clean.md）中亦无相关记录。（3）缺乏平台级共用声明：若 PT9C-FXGB01 为平台级风险管理报告且正式声明覆盖 PT9L，则应在 DHF 文件清单或测试报告附件中有明确记载，但当前证据中完全缺失此类说明。（4）合规影响：外部测试报告是正式主审范围的受控文件，其 ISO 14971 符合性验证引用错误型号的风险管理报告，直接导致 PT9L 的风险管理证据链无法闭合，属于实质性合规证据缺陷，而非误报或合理引用。综上，当前证据足以证明正式 DHF 范围内存在跨型号风险文件引用错误，裁决为 confirm，严重级别 P1。",
+      "review_round": "second_round_enriched_final"
+    }
+  ],
+  "batch_summaries": [
+    {
+      "batch_no": 1,
+      "summary": "对MC-CLUSTER-0051、MC-CLUSTER-0052、MC-CLUSTER-0070三个第一轮needs_more_context集群进行最终裁决。MC-CLUSTER-0051所有候选均位于历史记录阶段（primary_scope=false），属于开发过程草稿/历史版本，内部工程备注未出现在正式受控文件中，当前证据不构成可确认错误。MC-CLUSTER-0052中MF-0292（8.1版本）和MF-0464（20240821版本）说明书正文均含PT2L型号错误，问题清单（8.28）已记录该问题待修正，但最新历史版本（20240821）仍保留PT2L错误，且所有候选均为历史记录阶段非正式受控文件，无证据证明正式受控版本存在该错误，当前证据不构成可确认正式错误。MC-CLUSTER-0070唯一候选MF-0448位于历史记录草稿路径，文件封面明确标注产品型号为PT9C，属于PT9C前代产品文件被归入历史记录，primary_scope=false，不构成PT9L正式DHF文件缺陷。",
+      "decision_counts": {
+        "dismiss": 3
+      }
+    },
+    {
+      "batch_no": 2,
+      "summary": "对 MC-CLUSTER-0071 进行补证据最终裁决。该 cluster 涉及 PT9L 正式外部测试报告（ETX202303-07-078-03）中 ISO 14971 符合性验证表格引用了文件编号为 PT9C-FXGB01 V1.0 的风险管理报告，而被测型号为 PT9L。经综合评估：同术语文件样本中未发现任何 PT9L 专属风险管理报告（如 PT9L-FXGB01），亦未发现 PT9C-FXGB01 对 PT9L 的适用性声明或桥接文件；DHF 主审范围内所有 ISO 14971 条款引用均指向 PT9C 文件，构成可确认的跨型号文件引用缺陷，裁决为 confirm。",
+      "decision_counts": {
+        "confirm": 1
+      }
+    }
+  ]
+}

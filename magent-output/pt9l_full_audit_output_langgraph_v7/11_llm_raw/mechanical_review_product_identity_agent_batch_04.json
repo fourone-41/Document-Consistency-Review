@@ -1,0 +1,56 @@
+```json
+{
+  "agent": "Product Identity Agent",
+  "summary": "本轮共审查6个cluster，涉及PT9C、PT2L、PT3、TH30F等异型号词在Stage 18设计确认阶段的命中情况。MC-CLUSTER-0039中PT9C出现在正式设计确认文件标题及用户测试计划中，构成产品身份污染；MC-CLUSTER-0040/0041中PT2L出现在PT9L正式DHF文件名及文件编号中，属于文件命名混用异型号，需进一步核查；MC-CLUSTER-0042、MC-CLUSTER-0044、MC-CLUSTER-0046均位于"废案与备份"子目录，属于历史/废案文件中的合理引用，不构成正式DHF/DMR产品身份污染。",
+  "decisions": [
+    {
+      "cluster_id": "MC-CLUSTER-0039",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "product_identity_contamination_in_formal_dv_document",
+      "claim": "正式设计确认文件及用户测试计划以PT9C命名，与PT9L产品身份不符，构成产品身份污染。",
+      "reason": "MF-0232所在文件路径为'18 设计确认\\PT9C设计确认E0 23.11.via_xlsx.clean.md'，文件标题为'PT9C设计确认E0 23.11'，位于Stage 18正式设计确认目录（非废案/备份），文件内容为设计确认计划，属于正式DHF受控文件范围。MF-0276所在文件'用户现场测试计划 PT9C V1.0'标题含PT9C，但文件编号'PT9L-RYCJ01 V1.0'指向PT9L，说明文件存在标题与编号不一致的产品身份混用问题。两份文件均处于primary_scope=true的正式审查范围，PT9C作为异型号出现在正式设计确认文件标题中，不属于合理引用或历史来源，构成产品身份污染，影响PT9L DHF证据链完整性。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0040",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "product_identity_contamination_in_formal_dv_checklist_filename",
+      "claim": "正式设计确认Checklist文件名中同时出现PT9L与PT2L，文件内容文件编号指向PT9L，但文件名含异型号PT2L，构成文件命名层面的产品身份混用。",
+      "reason": "MF-0233至MF-0237均来自同一文件'PT9L Checklist of (EN 60601-1-6...) PT2L（美亚）-UETR01 V1.0.pdf.md'，位于Stage 18正式设计确认目录（primary_scope=true）。文件标题及文件名中同时含有PT9L和PT2L，文件内部编号'DN:PT9L-UETR01 V1.0'指向PT9L，但文件名中的'PT2L（美亚）'表明该文件可能是针对PT2L美亚市场版本的Checklist被纳入PT9L DHF，或文件命名存在混用。MF-0236显示源PDF路径为'PT9L DHF-历史文件/设计确认/'，说明该文件来自历史文件目录但被纳入正式Stage 18范围。文件名中异型号PT2L的存在影响PT9L正式DHF的产品身份清晰性，需确认该Checklist是否适用于PT9L，属于实质性产品身份问题。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0041",
+      "decision": "confirm",
+      "severity": "P1",
+      "error_type": "product_identity_contamination_in_formal_dv_checklist_filename",
+      "claim": "正式设计确认Checklist（clean版本）文件名含PT2L异型号，与PT9L产品身份不符，与MC-CLUSTER-0040为同一文件的不同转换版本，问题性质相同。",
+      "reason": "MF-0238来自'PT9L Checklist of (EN 60601-1-6...) PT2L（美亚）-UETR01 V1.0.via_lo_html.clean.md'，为MC-CLUSTER-0040所涉PDF文件的LibreOffice HTML转换版本，位于Stage 18正式设计确认目录（primary_scope=true）。文件内部编号'DN: PT9L-UETR01 V1.0'指向PT9L，但文件名含PT2L。与MC-CLUSTER-0040属于同一文件的不同格式版本，产品身份混用问题一致，应与MC-CLUSTER-0040合并处理，但按规则不新增cluster，单独裁决为confirm。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0042",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_reference_in_废案_directory",
+      "claim": "PT3出现在'废案与备份'子目录的临床评价报告中，作为同品种对比产品被合理引用，不构成PT9L正式DHF产品身份污染。",
+      "reason": "所有候选证据（MF-0239、MF-0241、MF-0242、MF-0243、MF-0252）均来自路径'18 设计确认\\废案与备份\\7.临床评价报告.via_lo_html.clean.md'，primary_scope=false，明确位于废案与备份目录。文件内容为临床评价报告，PT3作为同品种医疗器械（同一公司已注册产品）被用于等效性对比，属于临床评价方法论中的合理引用，不代表PT9L正式DHF将PT3混入产品身份。废案目录文件不属于PT9L正式DHF/DMR受控文件范围，不影响PT9L证据链。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0044",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_reference_in_废案_directory",
+      "claim": "TH30F出现在'废案与备份'子目录的临床评价报告及比对测试报告中，作为临床验证对照品被合理引用，不构成PT9L正式DHF产品身份污染。",
+      "reason": "所有候选证据均来自'18 设计确认\\废案与备份\\'目录下的文件（临床评价报告及PT3与TH30F黑体准确性比对测试报告），primary_scope=false。TH30F在文件中作为临床验证的对照品（非接触红外额式体温计）或与PT3进行性能比对的参照型号，属于临床评价数据来源的合理说明，不代表TH30F被纳入PT9L产品身份。废案目录文件不属于PT9L正式DHF/DMR受控范围，不影响PT9L证据链完整性。"
+    },
+    {
+      "cluster_id": "MC-CLUSTER-0046",
+      "decision": "dismiss",
+      "severity": "P3",
+      "error_type": "historical_reference_in_废案_directory",
+      "claim": "PT9C出现在'废案与备份'子目录的临床评价报告中，该报告为PT9C产品的临床评价文件被归入废案目录，不构成PT9L正式DHF产品身份污染。",
+      "reason": "所有候选证据（MF-0254至MF-0259）均来自'18 设计确认\\废案与备份\\PT9L医用电子体温计临床评价报告-中国版本不适用.via_lo_html.clean.md'，primary_scope=false，文件名已标注'中国版本不适用'。文件内容为PT9C型红外体温计的临床评价报告，PT9C作为申报产品出现，PT3作为同品种对比产品。该文件属于历史/废案文件，已被明确标注为不适用版本，归入废案与备份目录，不属于PT9L正式DHF/DMR受控文件范围，不影响PT9L证据链。"
+    }
+  ]
+}
+```

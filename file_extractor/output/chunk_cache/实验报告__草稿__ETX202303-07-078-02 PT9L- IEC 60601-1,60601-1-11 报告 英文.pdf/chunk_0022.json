@@ -1,0 +1,212 @@
+{
+  "document": {
+    "title": "IEC 60601-1 / IEC 60601-1-11 Test Report",
+    "doc_id": "ETX202303-07-078-02 PT9L",
+    "page_range": "46-47 of 182",
+    "standard_references": [
+      "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021"
+    ]
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "name": "IEC 60601-1 Medical Electrical Equipment General Requirements for Basic Safety and Essential Performance",
+      "clauses": [
+        "8.4.2",
+        "8.11.1",
+        "8.11.2",
+        "8.11.3",
+        "8.11.3.1",
+        "8.11.3.2",
+        "8.11.3.3",
+        "8.11.3.4",
+        "8.11.3.5",
+        "16.2",
+        "16.9.2"
+      ]
+    },
+    {
+      "id": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "name": "EN 60601-1 European Standard for Medical Electrical Equipment"
+    },
+    {
+      "id": "IEC61058-1",
+      "name": "IEC 61058-1 Switches for appliances - General requirements",
+      "clauses": [
+        "CREEPAGE",
+        "CLEARANCES"
+      ]
+    },
+    {
+      "id": "IEC60447",
+      "name": "IEC 60447 Man-machine interface - Actuator principles"
+    },
+    {
+      "id": "IEC60245-1:2003",
+      "name": "IEC 60245-1 Rubber insulated cables - Annex A designation 53"
+    },
+    {
+      "id": "IEC60227-1:1993",
+      "name": "IEC 60227-1 Polyvinyl chloride insulated cables - Annex A designation 53"
+    },
+    {
+      "id": "IEC60320-1",
+      "name": "IEC 60320-1 Appliance couplers for household and similar general purposes"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "8.11.1",
+      "description": "Means of isolation from SUPPLY MAINS for PERMANENTLY INSTALLED ME EQUIPMENT",
+      "sub_tests": [
+        {
+          "item": "a",
+          "requirement": "PERMANENTLY INSTALLED ME EQUIPMENT connected to poly-phase SUPPLY MAINS equipped with device not interrupting neutral conductor, provided local installation conditions prevent voltage on neutral conductor from exceeding limits in 8.4.2 c)",
+          "result": "Not permanently installed ME equipment.",
+          "verdict": "N/A"
+        },
+        {
+          "item": "b",
+          "requirement": "PERMANENTLY INSTALLED ME EQUIPMENT provided with means to isolate its circuits electrically from SUPPLY MAINS capable of being locked in off position if reconnection would result in HAZARDOUS SITUATION or any OPERATOR including SERVICE PERSONNEL is unable to view means of isolation from intended position",
+          "result": "Not permanently installed ME equipment.",
+          "verdict": "N/A"
+        },
+        {
+          "item": "b-means",
+          "requirement": "Means of isolation incorporated in ME EQUIPMENT, or if external, described in technical description",
+          "verdict": "N/A"
+        },
+        {
+          "item": "c",
+          "requirement": "SUPPLY MAINS switch used to comply with 8.11.1 a) complies with CREEPAGE and CLEARANCES in IEC 61058-1 for MAINS TRANSIENT VOLTAGE of 4 kV",
+          "verdict": "N/A"
+        },
+        {
+          "item": "d",
+          "requirement": "SUPPLY MAINS switch not incorporated in POWER SUPPLY CORD or external flexible lead",
+          "verdict": "N/A"
+        },
+        {
+          "item": "e",
+          "requirement": "Actuator of SUPPLY MAINS switch used to comply with 8.11.1 a) complies with IEC 60447",
+          "verdict": "N/A"
+        },
+        {
+          "item": "f",
+          "requirement": "Suitable plug device such as APPLIANCE COUPLER or flexible cord with MAINS PLUG used in non-PERMANENTLY INSTALLED ME EQUIPMENT with no SUPPLY MAINS switch to isolate it from SUPPLY MAINS considered to comply with 8.11.1 a)",
+          "verdict": "N/A"
+        },
+        {
+          "item": "g",
+          "requirement": "Fuse or semiconductor device not used as an isolating means",
+          "verdict": "N/A"
+        },
+        {
+          "item": "h",
+          "requirement": "ME EQUIPMENT not provided with device causing disconnection from SUPPLY MAINS by producing short circuit resulting in operation of overcurrent protection device",
+          "verdict": "N/A"
+        },
+        {
+          "item": "i",
+          "requirement": "Parts within ENCLOSURE with circuit > 42.4 V peak a.c. or 60 V d.c. that cannot be disconnected from supply by external switch or plug device accessible at all times is protected against touch even after opening ENCLOSURE by additional covering",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.11.1-warning",
+      "description": "Warning notice for parts exceeding allowable touch voltage",
+      "sub_tests": [
+        {
+          "requirement": "Clear warning notice marked on outside of ME EQUIPMENT to indicate it exceeds allowable touch voltage (symbol 10 of Table D.1 is insufficient)",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "For part that could not be disconnected from supply by external switch or plug device accessible at all times, required cover or warning notice complied with this clause",
+          "verdict": "N/A"
+        },
+        {
+          "requirement": "Standard test finger of Fig 6 applied",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "8.11.2",
+      "description": "MULTIPLE SOCKET-OUTLETS integral with ME EQUIPMENT complied with 16.2 d) second dash and 16.9.2",
+      "result": "No multiple socket-outlets",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3",
+      "description": "POWER SUPPLY CORDS",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.1",
+      "description": "MAINS PLUG not fitted with more than one POWER SUPPLY CORD",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.2",
+      "description": "POWER SUPPLY CORDS are no less robust than ordinary tough rubber sheathed flexible cord (IEC 60245-1:2003, Annex A, designation 53) or ordinary polyvinyl chloride sheathed flexible cord (IEC 60227-1:1993, Annex A, designation 53)",
+      "result": "No power supply cords",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.2-pvc",
+      "description": "Only polyvinyl chloride insulated POWER SUPPLY CORD with appropriate temperature rating used for ME EQUIPMENT having external metal parts with temperature > 75°C touchable by cord in NORMAL USE",
+      "result": "See above",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.3",
+      "description": "NOMINAL cross-sectional area of conductors of POWER SUPPLY CORDS of ME EQUIPMENT is not less than in Table 17 (mm2 Cu)",
+      "result": "See above",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.4",
+      "description": "APPLIANCE COUPLERS complying with IEC 60320-1 are considered to comply with 8.11.3.5 and 8.11.3.6",
+      "result": "See above",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5",
+      "description": "Cord anchorage for APPLIANCE COUPLERS not complying with IEC 60320-1",
+      "sub_tests": [
+        {
+          "item": "a",
+          "requirement": "Conductors of POWER SUPPLY CORD provided with strain relief and insulation protected from abrasion at point of entry to ME EQUIPMENT or MAINS CONNECTOR by cord anchorage",
+          "verdict": "N/A"
+        },
+        {
+          "item": "b",
+          "requirement": "Cord anchorage of POWER SUPPLY CORD is made of and arranged as follows when total insulation failure of POWER SUPPLY CORD caused conductive non-PROTECTIVELY EARTHED ACCESSIBLE PARTS to exceed limits of 8.4: insulating material, or metal insulated from conductive ACCESSIBLE PARTS non-PROTECTIVELY EARTHED by MEANS OF PROTECTION",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "Multiple clauses under IEC 60601-1 section 8.11 (Supply mains isolation, power supply cords, multiple socket-outlets) are marked N/A because the device under test is not permanently installed ME equipment and has no power supply cords, no multiple socket-outlets, and no SUPPLY MAINS switch. The relevant remarks include 'Not permanently installed ME equipment.' and 'No power supply cords.' and 'No multiple socket-outlets.'",
+      "topic_tags": [
+        "N/A clauses",
+        "permanently installed",
+        "power supply cord",
+        "socket outlets",
+        "IEC 60601-1 8.11"
+      ],
+      "related_subjects": [
+        "8.11.1",
+        "8.11.2",
+        "8.11.3",
+        "8.11.3.1",
+        "8.11.3.2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1705 @@
+{
+  "document": {
+    "title": "Usability Test Report - Infrared Forehead Thermometer",
+    "doc_type": "测试报告",
+    "version": "V1.0"
+  },
+  "identifiers": [
+    {
+      "id_type": "Document Number",
+      "value": "CE-PT9L-12"
+    },
+    {
+      "id_type": "Project Number",
+      "value": "30000078"
+    },
+    {
+      "id_type": "Design Input Document Reference",
+      "value": "PT9L-FXGB01 V1.0"
+    },
+    {
+      "id_type": "Product Reference",
+      "value": "PT9L"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "Infrared Forehead Thermometer"
+    },
+    {
+      "name": "Wireless No-Touch Forehead Thermometer (Infrared Forehead Thermometer)"
+    },
+    {
+      "name": "Infrared Forehead Thermometer"
+    },
+    {
+      "name": "Infrared Forehead Thermometer"
+    },
+    {
+      "name": "Infrared Forehead Thermometer"
+    },
+    {
+      "name": "Infrared Forehead Thermometer"
+    },
+    {
+      "name": "Infrared Forehead Thermometer (IFT)"
+    }
+  ],
+  "revision_records": [
+    {
+      "seq": "1",
+      "version": "V1.0",
+      "change_description": "Original",
+      "author": "Wang Di"
+    }
+  ],
+  "persons": [
+    {
+      "name": "Wang Di",
+      "title": "Drafter"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Approver"
+    },
+    {
+      "name": "Cong Ming",
+      "title": "Product manager, Major: Electronic information engineering, more than 10 years relevant experience"
+    },
+    {
+      "name": "Hou Guangwei",
+      "title": "Project manager, Major: Biomedical engineering, more than 10 years relevant experience"
+    },
+    {
+      "name": "Wan Long",
+      "title": "Hardware Design personnel, Major: Biomedical engineering, more than 10 years relevant experience"
+    },
+    {
+      "name": "Wang Di",
+      "title": "Software Design personnel, Major: Electrical engineering and automation, more than 4 years relevant experience"
+    },
+    {
+      "name": "Liu Zhao",
+      "title": "Mechanical design personnel, Major: Mechanical design and manufacturing, more than 5 years design experience"
+    },
+    {
+      "name": "Gao Kejian",
+      "title": "Personnel with medical background, Major: cardiovascular, more than 30 years clinical experience, Professor, be familiar with the usability engineering of blood pressure monitor"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The purpose of Usability Engineering, also known as Human Factors Engineering, for the Infrared Forehead Thermometer is to provide a systematic process to analyze, specify, develop, and evaluate the usability of the device in relation to safety. This process aims to assess and mitigate risks associated with normal use. By considering the specific needs and abilities of users, Usability Engineering enhances the usability, safety, and user experience of the Infrared Forehead Thermometer, reducing the likelihood of errors and optimizing the overall effectiveness.",
+      "topic_tags": [
+        "usability engineering",
+        "human factors",
+        "safety",
+        "risk mitigation",
+        "Infrared Forehead Thermometer"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "CE-PT9L-12"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Usability Engineering File table of contents covers: Executive summary (purpose, usability engineering process, file, tailoring, conclusion), Summary of use specification (intended medical indication, patient population, operator, user profile, use environment, operating principle), Description of user interface (characteristics related to safety, potential use errors), Summary of known use problems, Summary of hazard-related use scenarios, Perform user interface design, Establish user interface evaluation plan (formative and summative), Summary of formative evaluations (usability test: environment, critical tasks, knowledge assessment, data analysis, result), Summative evaluation, Conclusion (modifications, further improvement), Other requirements (personnel qualification, DHF requirement).",
+      "topic_tags": [
+        "usability engineering file",
+        "table of contents",
+        "document structure",
+        "PT9L"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "CE-PT9L-12"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "Implementing a Usability Engineering Program for Infrared Forehead Thermometer. Organizational Roles and Responsibilities: Assign roles and responsibilities within the organization for managing the usability engineering process. Establish General Procedures for Major Usability Engineering Processes: Develop standardized procedures for key usability engineering activities to ensure consistency and effectiveness. Allocate Necessary Resources: Ensure adequate budget allocation for usability engineering activities during project planning cycles.",
+      "topic_tags": [
+        "可用性工程",
+        "组织职责",
+        "资源分配",
+        "红外额温计"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "Usability Engineering"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Effective Usability Engineering Projects and Plans: Develop a customized usability engineering project plan for each product development effort. Define activity timelines, team roles, and responsibilities tailored to the project. Integrate usability engineering into the overall medical device project plan to avoid isolation. Address the need to reduce use error risks and create satisfying medical devices.",
+      "topic_tags": [
+        "可用性工程计划",
+        "项目计划",
+        "团队职责",
+        "使用错误风险"
+      ],
+      "related_subjects": [
+        "Usability Engineering",
+        "Risk Management"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Risk Management as it Relates to Usability Engineering: Integrate usability engineering and risk management efforts. Share documentation of use error hazard analysis between risk management and usability engineering teams. Treat use errors as you would other medical device failures, recognizing that user interface design shortcomings can lead to significant harm.",
+      "topic_tags": [
+        "风险管理",
+        "可用性工程",
+        "使用错误",
+        "危害分析"
+      ],
+      "related_subjects": [
+        "Risk Management",
+        "Usability Engineering",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Risk Analysis: Consider potential use errors in the same manner as other device failures. Prioritize severity of potential harm over probability of use error occurrence. Analyze a wide range of possible use errors, including incorrect actions and omissions. Address factors inducing use errors such as distractions, workload, fatigue, and more.",
+      "topic_tags": [
+        "风险分析",
+        "使用错误",
+        "危害严重性",
+        "诱因分析"
+      ],
+      "related_subjects": [
+        "Risk Management",
+        "Usability Engineering"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Risk Control: Implement safety principles for risk control, including inherent safety by design, protective measures, and information for safety. Prioritize inherent safety by design as the most effective way to prevent use errors and harm. Use built-in protections against use errors, such as physical guards and interlocks. Information for safety serves as a supplement to design risk control measures.",
+      "topic_tags": [
+        "风险控制",
+        "本质安全设计",
+        "防护措施",
+        "安全信息"
+      ],
+      "related_subjects": [
+        "Risk Management",
+        "User Interface Design"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Information for Safety: Consider information for safety as part of the user interface and subject it to the same usability engineering process. Ensure information for safety is perceivable, understandable, and supports correct use. Apply iterative formative and summative evaluation for effective information for safety. Identify to whom and how safety information will be provided, reducing exposure to hazards.",
+      "topic_tags": [
+        "安全信息",
+        "用户界面",
+        "可感知性",
+        "形成性评价",
+        "总结性评价"
+      ],
+      "related_subjects": [
+        "Usability Engineering",
+        "User Interface Design"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Overall Evaluation of Residual Risk: Evaluate residual risk considering all associated risks, including those from device failures and use errors. Implementing this comprehensive usability engineering program with risk analysis ensures the safety of operators using the Infrared Forehead Thermometer and reduces potential harm caused by use errors. Adhering to relevant standards and guidelines is crucial for creating a successful usability engineering and risk management process. Risk control as it relates to user interface design. Information for safety as it related to usability.",
+      "topic_tags": [
+        "残余风险",
+        "综合评估",
+        "操作者安全",
+        "标准符合性",
+        "用户界面设计"
+      ],
+      "related_subjects": [
+        "Risk Management",
+        "Usability Engineering",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The Usability Engineering File is a comprehensive collection of records that documents the entire Usability Engineering Process implemented by the manufacturer. These records serve as a valuable resource for development activities and provide objective evidence for compliance with standards, particularly IEC 62366-1. The records are crucial for demonstrating the safety and effectiveness of the medical device's user interface and its usability for operators.",
+      "topic_tags": [
+        "Usability Engineering File",
+        "IEC 62366-1",
+        "compliance",
+        "user interface",
+        "medical device"
+      ],
+      "related_subjects": [
+        "Usability Engineering Process",
+        "IEC 62366-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The file includes detailed records of all Usability Engineering activities undertaken during the development process. This encompasses various phases such as user interviews, field observations, and usability tests. These records can include written documents, photographs, and videos capturing interactions with prospective users.",
+      "topic_tags": [
+        "usability activities",
+        "user interviews",
+        "field observations",
+        "usability tests",
+        "records"
+      ],
+      "related_subjects": [
+        "Usability Engineering File"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The records within the file offer objective evidence of adherence to IEC 62366-1 standards. They demonstrate how usability considerations were integrated into the development process and provide traceability for compliance assessment.",
+      "topic_tags": [
+        "objective evidence",
+        "IEC 62366-1",
+        "traceability",
+        "compliance"
+      ],
+      "related_subjects": [
+        "Usability Engineering File",
+        "IEC 62366-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The Usability Engineering Process is closely intertwined with other development processes like product realization and risk management. The records generated through usability engineering activities directly contribute to these processes and complement their respective records.",
+      "topic_tags": [
+        "Usability Engineering Process",
+        "product realization",
+        "risk management",
+        "integration"
+      ],
+      "related_subjects": [
+        "Usability Engineering File",
+        "Risk Management File"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Integration with Other Processes: a) User Interface Specification: The User Interface Specification, outlining design and usability guidelines, can be integrated into the product specification of the overall product realization process. This ensures that usability considerations are aligned with the broader product development goals. b) Software User Interface: For software-based user interfaces, the User Interface Specification becomes part of the software requirements specification essential for software development. This alignment ensures that software design meets both functional and usability requirements. c) Usability Evaluation Plan: The Usability Evaluation Plan, detailing how usability will be assessed, can be included within the verification and validation plan of the overall product realization process. This integration ensures that usability evaluation aligns with broader testing efforts. d) Risk Management: Analyses of known use problems and foreseeable use errors become part of the Risk Management File. This integration ensures that risks associated with use errors are managed in alignment with risk management processes.",
+      "topic_tags": [
+        "User Interface Specification",
+        "software requirements",
+        "Usability Evaluation Plan",
+        "verification and validation",
+        "risk management",
+        "use errors"
+      ],
+      "related_subjects": [
+        "Usability Engineering File",
+        "Risk Management File",
+        "software requirements specification",
+        "verification and validation plan"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Tailoring the usability engineering effort for a Infrared Forehead Thermometer is essential to address the specific risks and complexities associated with its use. The level of effort required for usability engineering can vary significantly depending on the nature of the device, its functions, and potential risks. Several considerations should guide the tailoring process:\n\n**Risk Assessment and Severity:** Begin by assessing the potential risks associated with the Infrared Forehead Thermometer's usability. Focus on identifying hazards and their potential causes that could lead to harm. Consider the severity of potential harm when determining the scope of usability engineering efforts. High-severity risks should receive greater attention.\n\n**Device Complexity:** Consider the complexity of the Infrared Forehead Thermometer's functions and user interactions. Devices with more intricate operations may require more extensive usability engineering efforts. The complexity could range from simple devices like lancing devices to more complex ones like haemodialysis equipment.\n\n**Novelty:** For novel devices lacking post-production data, prioritize the severity of potential harm over estimating occurrence probability. This approach helps tailor usability engineering efforts to address worst-case scenarios and focuses on minimizing harm.\n\n**Modification and Change:** When modifying an existing user interface, focus on the changed elements and their effects on device use. If unchanged elements remain unaffected, additional usability engineering effort might not be needed. Changes that do not impact the user interface or use specifications might not necessitate additional effort.\n\n**Previous Records:** If previous usability engineering records are available for an existing user interface, leverage these records to streamline the usability engineering effort. Tailor activities based on the changes made to the user interface and the relevance of previous records.\n\n**User Research and Testing:** Tailor the extent of user research and testing based on device complexity and risks. Research efforts might involve a smaller or larger number of participants. The usability testing scope could vary from involving a comprehensive set of users to specific user groups with distinct responsibilities.\n\n**Summative Evaluation:** Tailor the quantity and complexity of summative evaluations based on the risk assessment. For some cases, a single usability test with a single user group might suffice to assess hazard-related use scenarios. In other instances, multiple sessions with different user groups might be necessary to assess various scenarios.\n\n**Iterative Process:** Good usability engineering practice involves iterative evaluations. If initial summative evaluations indicate modifications are needed, focus subsequent evaluations on those specific elements of the user interface affected by the changes.\n\n**Usability Engineering Plan:** Develop a tailored usability engineering plan that outlines the specific activities, participants, and methods for each phase of usability engineering. This plan ensures that efforts are aligned with the device's characteristics and risks.\n\nBy tailoring the usability engineering effort to the unique characteristics of the Infrared Forehead Thermometer, you can effectively identify, mitigate, and control usability-related risks, ensuring the safety and effectiveness of the device's user interface.",
+      "topic_tags": [
+        "usability engineering",
+        "tailoring",
+        "risk assessment",
+        "infrared forehead thermometer",
+        "summative evaluation",
+        "user testing",
+        "device complexity",
+        "iterative process",
+        "usability engineering plan"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "Usability Engineering Plan",
+        "Risk Assessment",
+        "Summative Evaluation"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The Wireless No-Touch Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead on people of all ages. It can be used by consumers in the household environment and by healthcare providers.",
+      "topic_tags": [
+        "预期用途",
+        "额温枪",
+        "体温测量",
+        "家用",
+        "医疗机构"
+      ],
+      "related_subjects": [
+        "Wireless No-Touch Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Intended patient population and operator: The Infrared Forehead Thermometer is suitable for people of all ages, including lay persons and professionals. Intended part of the body: Aim the thermometer probe at the center of the forehead and keep the probe 1.18 in (3cm) away from the forehead (the optimal distance is about the width of an adult's index finger).",
+      "topic_tags": [
+        "目标人群",
+        "操作者",
+        "使用部位",
+        "额头",
+        "测量距离"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Intended USER PROFILE: 1. Experience: minimum: no special experience needed. 2. Age: people of all ages. 3. Education: several years of intensive reading experience (school). 4. Knowledge: minimum: read and understand 'westernized Arabic' numerals in Arial font, can read temperature values and related prompts, understands hygiene. 5. Language understanding: languages as specified in the instruction. 6. Health: The patient can be an intended operator. All functions of the unit can be used safely by patient. 7. User state: User is OPERATOR: alert, mentally competent.",
+      "topic_tags": [
+        "用户画像",
+        "操作者要求",
+        "知识要求",
+        "语言要求"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "USE ENVIRONMENT: Home use, avoid strong magnetism interference. Environmental temperature for using: 50℉-104℉(10℃-40℃). Environmental humidity for using: 15-95%RH, non-condensing. Environmental temperature for storage: -4℉~131℉（-20℃~55℃）. Environmental humidity for storage: 15-95%RH, non-condensing. Environmental pressure: 70kPa~106kPa. Frequency of use: not specified. Mobility: handheld.",
+      "topic_tags": [
+        "使用环境",
+        "温度范围",
+        "湿度范围",
+        "存储条件",
+        "大气压"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "working_principle",
+      "content": "This product is a high-tech infra-red (IR) thermometer designed to take human body temperature by measuring the energy of IR emitted from the forehead.",
+      "topic_tags": [
+        "工作原理",
+        "红外测温",
+        "体温",
+        "额头辐射"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "User interface characteristics related to safety and potential use errors: a) Switching on/off: easy tactile identification of button location. b) Press button and reading display: button easier to identify and press; display clearly visible under conditions of visibility. c) Changing battery: clear indication of proper polarity and battery type; inserting incorrect battery does not damage device; easy battery interchange for elderly with reduced fine motor control. d) Cleaning: no entrapping contours or crevices; clean with soft, slightly moistened cloth, mild soapy water for extreme soiling. e) Storing: no special conditions required. f) Instructions for use: address water/humidity, temperature, battery type and replacement.",
+      "topic_tags": [
+        "用户界面",
+        "安全特性",
+        "操作功能",
+        "电池更换",
+        "清洁"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "User interface characteristics related to safety: When there is an error, the thermometer will produce a visual alarm. There is no rough surface, sharp angle or sharp edge.",
+      "topic_tags": [
+        "安全特性",
+        "视觉报警",
+        "外观安全",
+        "用户界面"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Potential use errors and safety risks: 1. Cannot install battery or install in wrong polarity → device does not work. 2. Battery depleted → device does not work. 3. Battery capacity too low → device cannot measure correctly. 4. Measurement distance too long → device cannot measure correctly. 5. Target temperature beyond range 89.6℉-109.2℉(32℃-42.9℃) → device cannot measure correctly. 6. Environment temperature exceeds 50℉-104℉(10℃-40℃) or is unstable → device cannot measure correctly. 7. Cannot turn on device → device will not work. 8. Cannot clean probe → probe life reduced, detection results may be inaccurate. 9. Water enters device during cleaning → device may fail to work. 10. Battery not removed when not used for a long time → battery life decreased. 11. Measuring body parts incorrectly → measurement result inaccurate.",
+      "topic_tags": [
+        "使用错误",
+        "风险分析",
+        "危害情景",
+        "电池",
+        "测量距离",
+        "清洁"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "风险管理"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Summary of known use problems - Identifying known or foreseeable hazards: The process follows ISO 14971 RISK MANAGEMENT PROCESS and USABILITY ENGINEERING PROCESS to identify USE ERRORS as potential contributors to HAZARDOUS SITUATIONS. The primary objective is to recognize scenarios where device use could lead to harm by analyzing potential USE ERRORS and their consequences. FDA MAUDE database was searched for adverse events related to Infrared Forehead Thermometer; a few adverse events were found, mostly involving measurement errors. In most cases, no complications resulted and patients were doing well.",
+      "topic_tags": [
+        "已知使用问题",
+        "危害识别",
+        "ISO 14971",
+        "MAUDE数据库",
+        "不良事件",
+        "可用性工程"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "风险管理",
+        "FDA"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Normal USE SCENARIOS: OPERATOR/PATIENT = adult; room temperature; Adequate illumination; Measure the body temperature when the environment is quiet. Worst case USE SCENARIOS: PATIENT = OPERATOR; OPERATOR/PATIENT = adult; Environmental temperature is 40°C, 95%RH; inadequate illumination; Measure body temperature when the environment is unquiet.",
+      "topic_tags": [
+        "use scenario",
+        "normal use",
+        "worst case",
+        "environmental conditions",
+        "operator",
+        "patient"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "Risk Assessment"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "The process of identifying known or foreseeable HAZARDS and HAZARDOUS SITUATIONS in the context of the Infrared Forehead Thermometer project involves various steps and considerations. This activity is an integral part of the RISK MANAGEMENT PROCESS, as outlined in ISO 14971, and is closely linked to the USABILITY ENGINEERING PROCESS. HAZARD-RELATED USE SCENARIOS has been defined as when a USE SCENARIO of Infrared Forehead Thermometer leads to a potentially dangerous situation for operators. Preliminary HAZARD-RELATED USE SCENARIOS that encompass various stages of USER interaction with the Infrared Forehead Thermometer has been identified in section 4 of the risk assessment report, demonstrated as Hazardous situation. These scenarios include details about the sequence of events, conditions, environments, and descriptions of the user interface.",
+      "topic_tags": [
+        "hazard identification",
+        "risk management",
+        "ISO 14971",
+        "usability engineering",
+        "hazardous situation",
+        "use scenario"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "Risk Assessment Report",
+        "ISO 14971"
+      ]
+    },
+    {
+      "fragment_type": "scope_limitation",
+      "content": "The purpose of selecting Hazard-Related Use Scenarios for summative evaluation in the context of a Infrared Forehead Thermometer is to ensure that the evaluation process covers all potential safety-related aspects of the device's user interface. The process involves determining which scenarios to include in the evaluation, considering factors like severity of harm, risks, and other circumstances specific to the device and the manufacturer. The ultimate goal is to demonstrate that users can safely and effectively interact with the Infrared Forehead Thermometer as intended. Given that a Infrared Forehead Thermometer is considered a simple device, and as a mature device, its use is not likely to result in severe harm, so all potential scenarios will be included in the summative evaluation, regardless of the severity of potential harm. This option would provide a comprehensive assessment of the device's user interface under various usage conditions and would likely cover a wide range of potential use errors.",
+      "topic_tags": [
+        "summative evaluation",
+        "hazard-related use scenario",
+        "severity of harm",
+        "user interface",
+        "use error",
+        "simple device",
+        "mature device"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "Usability Engineering",
+        "Risk Management"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "User Interface Specification for Infrared Forehead Thermometer:\n1. Visual Design and Layout: The device and the display should be easily readable, button should be easily understandable, user can complete the measurement with only the device and instruction for use.\n2. Feedback and Indicators: Provide clear visual feedback to confirm device operation, mode, and settings. Indicate battery status.\n3. Safety Features: Incorporate features to prevent accidental changes in settings during use. Implement user lock-out mechanisms to avoid unintended modifications.\n4. Usability Testing: Conduct usability testing with representative users according to EN 62366-1 standard to validate the effectiveness and ease of use. Identify potential use errors and areas for improvement based on user feedback.",
+      "topic_tags": [
+        "用户界面规范",
+        "视觉设计",
+        "安全特性",
+        "可用性测试",
+        "EN 62366-1"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "User Interface Design"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "User Interface Design Process Summary:\n1. General: The user interface design input is conducted to prioritize meeting established user interface requirements from users. The design process is iterative and aims to develop a user interface that permits users to perform all hazard-based use scenarios acceptably.\n2. Develop Conceptual Model(s): Create a conceptual model that describes the general organization of the user interface, refer to the previous generation device, which has been in the EU market.\n3. Design Software and Hardware User Interfaces: The software function of the device is simple, the software user interface is only indication on LCD, this indication should be easy to be understood. The hardware user interface includes main device, probe and wires. Develop concept sketches to explore various hardware design concepts and obtain user feedback.\n4. Develop Detailed Designs: Develop integrated software and hardware user interface designs based on refined concepts. Use iterative development and formative evaluations to refine and improve designs. Create user interface designs that reflect both software and hardware components, ensuring proper integration.\n5. Verify the Design of the User Interface: Verify that the user interface design meets specified user interface requirements. Ensure that verifiable parameters are met without requiring usability tests. Design verification can be part of the product realization process and is essential for quality management.",
+      "topic_tags": [
+        "用户界面设计",
+        "概念模型",
+        "软件界面",
+        "硬件界面",
+        "LCD",
+        "设计验证",
+        "迭代开发"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "DHF",
+        "User Interface Specification"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "User Interface Evaluation Plan:\n1. Plan Development and Scope: User Interface design will be explored, evaluated, and confirmed during device development. The plan is composed of Formative Evaluation (development and exploration) and Summative Evaluation (confirmation).\n2. Synchronization with Development Activities: The User Interface Evaluation activities are synchronized with other development tasks. As this is a mature device, one formative evaluation is conducted during design input stage, and one formative evaluation is conducted with prototype device followed by usability tests. This usability test is also a pre-summative evaluation; if it reveals findings that require design changes, new evaluation will be conducted on changed device.\n3. Resource Allocation: Design development engineer, customer representatives will participate in the formative evaluation; usability test will be conducted on participants representing the end users.",
+      "topic_tags": [
+        "用户界面评估计划",
+        "形成性评估",
+        "总结性评估",
+        "可用性测试",
+        "资源分配"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "Usability Engineering"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Formative Evaluation Plan:\n1. Objective: The objective of the Formative Evaluation is to identify and address any usability issues in the user interface design of the Infrared Forehead Thermometer device to prevent potentially harmful use errors.\n2. Timing and Frequency: Plan to conduct two Formative Evaluations throughout the design and development process. Conduct the initial Formative Evaluation during the design input stage to catch major design flaws. The second Formative Evaluation should be conducted during the design validation stage, focusing on specific areas of improvement.\n3. Evaluation Methods: Consider using a combination of methods—expert reviews and cognitive walkthroughs in the early stage, and usability testing with representative users in the validation stage.\n4. Evaluation Criteria: Define specific evaluation criteria based on usability goals and objectives. Assess the ease of learning and use, efficiency, error rates, and user satisfaction. Identify specific use scenarios and critical tasks to evaluate in each Formative Evaluation.",
+      "topic_tags": [
+        "形成性评估计划",
+        "可用性问题",
+        "评估方法",
+        "专家评审",
+        "认知演练",
+        "评估标准",
+        "使用错误"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "User Interface Evaluation Plan",
+        "EN 62366-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "User Interface Specification development considerations include: gathering requirements from various sources, including relevant standards such as ISO 14971, incorporating identified needs and risks, and providing accompanying documentation and training.",
+      "topic_tags": [
+        "ISO 14971",
+        "用户需求",
+        "风险管理",
+        "培训文档"
+      ],
+      "related_subjects": [
+        "User Interface Specification",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Objective: The objective of the Summative Evaluation is to confirm the safety and effectiveness of the user interface design of the Infrared Forehead Thermometer device.",
+      "topic_tags": [
+        "summative evaluation",
+        "user interface",
+        "safety",
+        "effectiveness"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test Design: Develop a Summative Evaluation plan based on regulatory requirements and guidelines for usability and human factors engineering. Define specific tasks and scenarios that represent typical use cases and potential risks associated with the Infrared Forehead Thermometer device. Determine the appropriate sample size of representative users for testing.",
+      "topic_tags": [
+        "summative evaluation",
+        "test design",
+        "usability",
+        "human factors",
+        "sample size",
+        "use cases"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test Environment: Set up a controlled environment that mimics the intended use environment of the Infrared Forehead Thermometer device. Include appropriate equipment and support materials required for the evaluation.",
+      "topic_tags": [
+        "test environment",
+        "controlled environment",
+        "intended use environment"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Evaluation Metrics: Define relevant evaluation metrics, such as task success rates to complete tasks, error rates, and user satisfaction ratings. Establish acceptance criteria for each metric to determine if the user interface meets usability and safety requirements.",
+      "topic_tags": [
+        "evaluation metrics",
+        "task success rate",
+        "error rate",
+        "user satisfaction",
+        "acceptance criteria",
+        "usability"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Analysis and Reporting: Analyze the data collected during the Summative Evaluation to identify any usability issues, use errors, or concerns related to device safety. Document the findings and recommendations for design improvements or risk mitigation measures.",
+      "topic_tags": [
+        "analysis",
+        "reporting",
+        "usability issues",
+        "use errors",
+        "risk mitigation",
+        "design improvements"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "design_rationale",
+      "content": "Formative evaluations assess user interface designs during development to identify strengths and improvement opportunities. This is a mature device, the previous generation has been marketed in the EU, and the device is for home use. There are two formative evaluations for this device: the first stage is during design input, the second stage is during device validation. In the design input stage, cognitive walkthroughs and interviews from experienced engineers and customer representatives were conducted. The formative evaluation in this stage is input of hazard and hazard situation identified in the risk assessment. The Infrared Forehead Thermometer's user interface has been refined to ensure safety, usability, and alignment with user needs before moving on to summative evaluation. In the design validation stage, usability testing has been conducted on the finished device by representative operators.",
+      "topic_tags": [
+        "formative evaluation",
+        "design input",
+        "design validation",
+        "cognitive walkthrough",
+        "usability test",
+        "risk assessment",
+        "home use",
+        "EU market",
+        "user interface"
+      ],
+      "related_subjects": [
+        "Infrared Forehead Thermometer",
+        "summative evaluation"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "The second time formative evaluation is on prototype stage, this is also a pre-summative evaluation test, if the result is acceptable and no design change needed, the result will be used for summative evaluation.",
+      "topic_tags": [
+        "formative evaluation",
+        "prototype",
+        "pre-summative",
+        "summative evaluation"
+      ],
+      "related_subjects": [
+        "Usability Test",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Test environment and participants: The test was done in two simulated environments (use scenario and worst case use scenario). Both 30 representative operators are tested in the two scenarios. Reading the user manual first, then representative operators are set in the environments and follow the test sequence. Any error or observed bottlenecks are recorded. Operators are also asked if they feel the Infrared Forehead Thermometer easy to operate.\n\nParticipant breakdown:\n1. 30 volunteers in total will enroll in the study, 10 know the device, 20 do not know.\n2. 10 have good willingness and motivation to use a new device.\n3. All have good vision, hearing, and tactile sensitivity.\n4. 10 operate in the canteen room (kitchen nearby, noisy, dim light, high temperature, high humidity).\n5. 10 operate in the office room (cell phones and computers nearby, sometimes quiet, sometimes noisy, good light, workers busy).\n6. 10 operate in the laboratory room (test equipment nearby, good light).\n7. Device and accompanying documents provided; training not required; no additional guidance from study staff.",
+      "topic_tags": [
+        "test environment",
+        "participants",
+        "simulated use",
+        "scenarios",
+        "worst case"
+      ],
+      "related_subjects": [
+        "Usability Test",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Critical Tasks procedure: Study staff provided each participant with a new Infrared Forehead Thermometer with package. Participants were asked to perform treatment without help. Study staff were not allowed to answer any questions related to performance of the test. Study staff notified the subject that they would be quietly observed. Users were expected to: 1. Read the instruction for use; 2. Install batteries; 3. Complete the measure. Participants were observed when performing the steps and all difficulties were noted.",
+      "topic_tags": [
+        "critical tasks",
+        "procedure",
+        "study staff",
+        "instruction for use",
+        "battery installation",
+        "measurement"
+      ],
+      "related_subjects": [
+        "Usability Test",
+        "Task 1",
+        "Task 2",
+        "Task 3"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Knowledge Assessment Questionnaire administered after simulated use.\n\nOperation questions:\n1. Is it easy or difficult to install the batteries?\n2. Is the user manual easy or difficult to read and understand?\n3. Is the panel of the device easily to be recognized?\n\nMaintenance questions:\n1. Do you think the device can be stored under -20°C?\n2. Do you think the device can be used over the temperature 40°C?\n3. Do you think the device can be used under the temperature 5°C?\n4. Do you think the device can be soaked or immersed to clean?\n\nOperation environment questions:\n1. Do you think the device can be used during examination in hospital?\n2. Do you think the device can be disturbed by cell phone or other wireless equipment?\n3. Do you think it can be used during cooking? Driving? Sleeping?\n\nImportant indications understanding questions:\n1. If you have a mercury thermometer, could you use the Infrared Forehead Thermometer?\n2. If your skin is broken, or you lack sensation, do you think you can still use the Infrared Forehead Thermometer?\n3. If anyone who cannot express themselves or cannot operate the device, do you think the device can be used by them?",
+      "topic_tags": [
+        "knowledge assessment",
+        "questionnaire",
+        "operation",
+        "maintenance",
+        "environment",
+        "contraindications"
+      ],
+      "related_subjects": [
+        "Usability Test",
+        "Infrared Forehead Thermometer"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Acceptance criteria for simulated tasks (Table 4-3):\n- Success: The participant completed the step independently, regardless of the amount of time it took. Allowance was made for quick, minor self-corrections within the criteria of success. All specific self-corrections should be documented and reported.\n- Close Call: Any instance of a potential failure that was avoided by the participant's vigilance, including observation of the participant almost failing to complete or incorrectly completing a step, or anecdotal participant comments.\n- Fail: The participant did not complete, or incorrectly completed, the step.\n\nSeparate criteria for knowledge assessment performance outcome score are defined in Table 4-4 (content not shown in this fragment).",
+      "topic_tags": [
+        "acceptance criteria",
+        "performance outcome",
+        "success",
+        "close call",
+        "fail",
+        "simulated task",
+        "knowledge assessment"
+      ],
+      "related_subjects": [
+        "Usability Test",
+        "Data Analysis"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Score definitions for knowledge assessment: 'Correct' means participant gives a correct answer successfully aligning with success criteria; 'Incorrect' means participant gives an incorrect answer; 'Located Information' means participant is able to locate correct answer in labeling; 'Did not Locate Information' means participant is unable to locate correct answer in labeling.",
+      "topic_tags": [
+        "评分标准",
+        "知识评估",
+        "可用性测试"
+      ],
+      "related_subjects": [
+        "Knowledge Assessment",
+        "Usability Test"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Knowledge Assessment - Operation Questions: Q1: Is it easy or difficult to install the batteries? Q2: Is the user manual easy or difficult to read and understanding? Q3: Is the panel of the device easily to be recognized? Results (n=30): Q1: Very difficult 0(0%), Difficult 0(0%), Normal 2(7%), Easy 23(77%), Very easy 5(16%). Q2: Very difficult 0(0%), Difficult 0(0%), Normal 4(13%), Easy 16(53%), Very easy 10(34%). Q3: Very difficult 0(0%), Difficult 0(0%), Normal 5(17%), Easy 12(40%), Very easy 13(43%). Q4: Very difficult 0(0%), Difficult 0(0%), Normal 6(20%), Easy 13(43%), Very easy 11(37%). Q5: Very difficult 0(0%), Difficult 1(3%), Normal 8(27%), Easy 12(40%), Very easy 9(30%). Q6: Very difficult 0(0%), Difficult 0(0%), Normal 8(27%), Easy 14(47%), Very easy 8(26%).",
+      "topic_tags": [
+        "操作评估",
+        "知识评估",
+        "可用性测试",
+        "结果"
+      ],
+      "related_subjects": [
+        "Operation Knowledge Assessment",
+        "Usability Test Results"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Knowledge Assessment - Maintenance Questions: Q1: Do you think the device can be stored under -20°C? Q2: Do you think the device can be used over the temperature 40°C? Q3: Do you think the device can be used under the temperature 5°C? Q4: Do you think the device can be soaked or immersed to clean? Results (n=30): Q1: Yes 0(0%), No 30(100%), No idea 0(0%). Q2: Yes 0(0%), No 30(100%), No idea 0(0%). Q3: Yes 0(0%), No 30(100%), No idea 0(0%). Q4: Yes 0(0%), No 27(90%), No idea 3(10%).",
+      "topic_tags": [
+        "维护评估",
+        "知识评估",
+        "温度存储",
+        "清洁"
+      ],
+      "related_subjects": [
+        "Maintenance Knowledge Assessment",
+        "Usability Test Results"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Knowledge Assessment - Operation Environment Questions: Q1: Do you think the device can be used during examination in hospital? Q2: Do you think the device can be disturbed by cell phone or other wireless equipment? Q3: Do you think it can be used during cooking? Driving? Sleeping? Results (n=30): Q1: Yes 0(0%), No 27(90%), No idea 3(10%). Q2: Yes 3(10%), No 27(90%), No idea 0(0%). Q3: Yes 0(0%), No 26(87%), No idea 4(13%).",
+      "topic_tags": [
+        "操作环境",
+        "知识评估",
+        "电磁干扰",
+        "使用场景"
+      ],
+      "related_subjects": [
+        "Operation Environment Assessment",
+        "Usability Test Results"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Knowledge Assessment - Important Indications Understanding Questions: Q1: If you have a mercury thermometer, could you use the Infrared Forehead Thermometer? Q2: If your skin broken, do you think you can still use the Infrared Forehead Thermometer? Q3: If anyone who can not express themselves or can not operate the device, do you think the device can be used by them? Results (n=30): Q1: Yes 0(0%), No 30(100%), No idea 0(0%). Q2: Yes 0(0%), No 30(100%), No idea 0(0%). Q3: Yes 0(0%), No 30(100%), No idea 0(0%).",
+      "topic_tags": [
+        "重要适应症",
+        "禁忌症理解",
+        "知识评估",
+        "皮肤破损"
+      ],
+      "related_subjects": [
+        "Important Indications Assessment",
+        "Usability Test Results"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Summative evaluation summary: 30 representative operators performed 3 tests each (90 tests total). Key findings: (1) Use error occurred within ±95% scope, device is convenient to use. (2) For maintenance, most users know how to maintain; only 3 needed to check user guide to confirm if device can be soaked or immersed to clean - risk can be avoided by checking user guide. (3) For operation environment, several users checked user manual to confirm where to use; only 3 users thought device could be disturbed by wireless equipment such as cell phone. (4) For important indications, all users could clarify conditions under which the device cannot be used.",
+      "topic_tags": [
+        "可用性评估总结",
+        "风险评估",
+        "用户错误",
+        "汇总评估"
+      ],
+      "related_subjects": [
+        "Summative Usability Evaluation",
+        "Risk Management",
+        "Usability Test"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "The purpose of a summative evaluation is to assess the usability of the Infrared Forehead Thermometer device's user interface for successful task completion related to hazard-related use scenarios.",
+      "topic_tags": [
+        "可用性验证目的",
+        "汇总评估",
+        "危害相关场景"
+      ],
+      "related_subjects": [
+        "Summative Usability Evaluation",
+        "Hazard Analysis"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Further improvement of the USER INTERFACE design as it relates to SAFETY is not necessary and practicable, because We have no customer complain about PT9L.",
+      "topic_tags": [
+        "user interface",
+        "safety",
+        "usability engineering",
+        "further improvement"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "usability engineering file"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Personnel qualification requirement: Usability engineering file should be drafted by software engineer, audited by software director and the person who has clinical background, reviewed by qualified person.",
+      "topic_tags": [
+        "personnel qualification",
+        "usability engineering",
+        "review process",
+        "DHF"
+      ],
+      "related_subjects": [
+        "usability engineering file",
+        "DHF requirement"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "DHF requirement: Design input document should record the medical equipment references the USABILITY ENGINEERING PROCESS. See PT9L-FXGB01 V1.0.",
+      "topic_tags": [
+        "DHF",
+        "design input",
+        "usability engineering process",
+        "medical equipment"
+      ],
+      "related_subjects": [
+        "PT9L-FXGB01 V1.0",
+        "PT9L"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "Task 1",
+      "item": "User Self-Trains",
+      "pass_criteria": "User self-trains on available training labeling",
+      "condition": "Critical Task"
+    },
+    {
+      "test_id": "Task 2-1",
+      "item": "Install battery for the device",
+      "pass_criteria": "User can install the batteries properly only according to instruction for use",
+      "condition": "Critical Task"
+    },
+    {
+      "test_id": "Task 2-2",
+      "item": "Switching on and off (on/off button)",
+      "pass_criteria": "User can power on the device successfully",
+      "condition": "Critical Task"
+    },
+    {
+      "test_id": "Task 3",
+      "item": "Turn on the Device",
+      "pass_criteria": "User can turn on the device",
+      "condition": "Critical Task"
+    },
+    {
+      "test_id": "Task 1",
+      "item": "User Self-Trains",
+      "condition": "User performs self-training",
+      "expected_value": "User successfully performs self-training",
+      "actual_result": "0/30 (0%) use error",
+      "pass_criteria": "No use error"
+    },
+    {
+      "test_id": "Task 2-1",
+      "item": "Install battery for the device",
+      "condition": "Power on procedure",
+      "expected_value": "User installs batteries properly according to instruction for use",
+      "actual_result": "0/30 (0%) use error",
+      "pass_criteria": "No use error"
+    },
+    {
+      "test_id": "Task 2-2",
+      "item": "Switching on and off (on/off button)",
+      "condition": "Power on procedure",
+      "expected_value": "User powers on device successfully",
+      "actual_result": "0/30 (0%) use error",
+      "pass_criteria": "No use error"
+    },
+    {
+      "test_id": "Task 3",
+      "item": "Turn on the Device",
+      "condition": "Treatment task",
+      "expected_value": "User turns on device successfully",
+      "actual_result": "0/30 (0%) use error",
+      "pass_criteria": "No use error"
+    }
+  ],
+  "test_reports": [
+    {
+      "report_id": "Summative Usability Evaluation",
+      "conclusion": "The IFT Infrared Forehead Thermometer can be used properly and easily with the user manual provided to users. No new hazards, hazardous situations, or risk scenarios are discovered, improvements are not necessary. No modification to the original design is required."
+    }
+  ],
+  "_meta": {
+    "source_file": "18 设计确认/PT9L usability engineering file.via_lo_html.clean.md",
+    "doc_type": "design_validation"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVISION",
+      "from": "Usability Test Report - Infrared Forehead Thermometer",
+      "to": "1",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "usability engineering",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CE-PT9L-12",
+      "to": "usability engineering",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "usability engineering file",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CE-PT9L-12",
+      "to": "usability engineering file",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "可用性工程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "可用性工程",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "可用性工程计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "可用性工程计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "风险管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "风险管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "风险管理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "风险分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "风险分析",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "风险控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "User Interface Design",
+      "to": "风险控制",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "安全信息",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "User Interface Design",
+      "to": "安全信息",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "残余风险",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "残余风险",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "残余风险",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering Process",
+      "to": "Usability Engineering File",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 62366-1",
+      "to": "Usability Engineering File",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering File",
+      "to": "usability activities",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering File",
+      "to": "objective evidence",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "IEC 62366-1",
+      "to": "objective evidence",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering File",
+      "to": "Usability Engineering Process",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management File",
+      "to": "Usability Engineering Process",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering File",
+      "to": "User Interface Specification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management File",
+      "to": "User Interface Specification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "software requirements specification",
+      "to": "User Interface Specification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "verification and validation plan",
+      "to": "User Interface Specification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "usability engineering",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering Plan",
+      "to": "usability engineering",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Assessment",
+      "to": "usability engineering",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Summative Evaluation",
+      "to": "usability engineering",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Wireless No-Touch Forehead Thermometer",
+      "to": "预期用途",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "目标人群",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "用户画像",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "使用环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "工作原理",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "用户界面",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "安全特性",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "使用错误",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险管理",
+      "to": "使用错误",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "已知使用问题",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "风险管理",
+      "to": "已知使用问题",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "FDA",
+      "to": "已知使用问题",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "use scenario",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Assessment",
+      "to": "use scenario",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "hazard identification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Assessment Report",
+      "to": "hazard identification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "ISO 14971",
+      "to": "hazard identification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "summative evaluation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "summative evaluation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "summative evaluation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "用户界面规范",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "User Interface Design",
+      "to": "用户界面规范",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "用户界面设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DHF",
+      "to": "用户界面设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "User Interface Specification",
+      "to": "用户界面设计",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "用户界面评估计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Engineering",
+      "to": "用户界面评估计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "形成性评估计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "User Interface Evaluation Plan",
+      "to": "形成性评估计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "EN 62366-1",
+      "to": "形成性评估计划",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "User Interface Specification",
+      "to": "ISO 14971",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "ISO 14971",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "test environment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "evaluation metrics",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "analysis",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "formative evaluation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "summative evaluation",
+      "to": "formative evaluation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test",
+      "to": "formative evaluation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test",
+      "to": "test environment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test",
+      "to": "critical tasks",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Task 1",
+      "to": "critical tasks",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Task 2",
+      "to": "critical tasks",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Task 3",
+      "to": "critical tasks",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test",
+      "to": "knowledge assessment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Infrared Forehead Thermometer",
+      "to": "knowledge assessment",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test",
+      "to": "acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Data Analysis",
+      "to": "acceptance criteria",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Knowledge Assessment",
+      "to": "评分标准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test",
+      "to": "评分标准",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Operation Knowledge Assessment",
+      "to": "操作评估",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test Results",
+      "to": "操作评估",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Maintenance Knowledge Assessment",
+      "to": "维护评估",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test Results",
+      "to": "维护评估",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Operation Environment Assessment",
+      "to": "操作环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test Results",
+      "to": "操作环境",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Important Indications Assessment",
+      "to": "重要适应症",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test Results",
+      "to": "重要适应症",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Summative Usability Evaluation",
+      "to": "可用性评估总结",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Risk Management",
+      "to": "可用性评估总结",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Usability Test",
+      "to": "可用性评估总结",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Summative Usability Evaluation",
+      "to": "可用性验证目的",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "Hazard Analysis",
+      "to": "可用性验证目的",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "user interface",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "usability engineering file",
+      "to": "user interface",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "usability engineering file",
+      "to": "personnel qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "DHF requirement",
+      "to": "personnel qualification",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-FXGB01 V1.0",
+      "to": "DHF",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "DHF",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "Task 1",
+      "to": "Summative Usability Evaluation",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "Task 2-1",
+      "to": "Summative Usability Evaluation",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "Task 2-2",
+      "to": "Summative Usability Evaluation",
+      "properties": {}
+    },
+    {
+      "type": "REPORTED_IN",
+      "from": "Task 3",
+      "to": "Summative Usability Evaluation",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "CE-PT9L-12",
+      "to": "1",
+      "properties": {
+        "version": "V1.0",
+        "change_description": "Original",
+        "author": "Wang Di"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Wang Di",
+      "to": "CE-PT9L-12",
+      "properties": {
+        "role": "Drafter"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "Hou Guangwei",
+      "to": "CE-PT9L-12",
+      "properties": {
+        "role": "Approver"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "用户自训练任务",
+      "attribute": "使用错误率",
+      "value": "0",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "Task 1 / 用户执行自训练（30人测试）",
+      "raw_text": "0/30 (0%) use error"
+    },
+    {
+      "subject": "用户自训练任务",
+      "attribute": "测试人数",
+      "value": "30",
+      "unit": "人",
+      "tolerance": "",
+      "condition": "Task 1 / 用户执行自训练",
+      "raw_text": "0/30 (0%) use error"
+    },
+    {
+      "subject": "电池安装任务",
+      "attribute": "使用错误率",
+      "value": "0",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "Task 2-1 / 上电操作流程（30人测试）",
+      "raw_text": "0/30 (0%) use error"
+    },
+    {
+      "subject": "电池安装任务",
+      "attribute": "测试人数",
+      "value": "30",
+      "unit": "人",
+      "tolerance": "",
+      "condition": "Task 2-1 / 上电操作流程",
+      "raw_text": "0/30 (0%) use error"
+    },
+    {
+      "subject": "开关机操作任务",
+      "attribute": "使用错误率",
+      "value": "0",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "Task 2-2 / 上电操作流程（30人测试）",
+      "raw_text": "0/30 (0%) use error"
+    },
+    {
+      "subject": "开关机操作任务",
+      "attribute": "测试人数",
+      "value": "30",
+      "unit": "人",
+      "tolerance": "",
+      "condition": "Task 2-2 / 上电操作流程",
+      "raw_text": "0/30 (0%) use error"
+    },
+    {
+      "subject": "设备开机任务",
+      "attribute": "使用错误率",
+      "value": "0",
+      "unit": "%",
+      "tolerance": "",
+      "condition": "Task 3 / 治疗任务（30人测试）",
+      "raw_text": "0/30 (0%) use error"
+    },
+    {
+      "subject": "设备开机任务",
+      "attribute": "测试人数",
+      "value": "30",
+      "unit": "人",
+      "tolerance": "",
+      "condition": "Task 3 / 治疗任务",
+      "raw_text": "0/30 (0%) use error"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "document": {
+    "title": "IEC 60601-1 / IEC 60601-1-11 测试报告（英文）",
+    "document_number": "ETX202303-07-078-02",
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020 / EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "101-102",
+    "total_pages": 182
+  },
+  "tests": [
+    {
+      "clause": "G.5.4",
+      "description": "ENCLOSURE restricted breathing test - FLAMMABLE AESTHETIC MIXTURE WITH AIR at high concentration for at least 30 min without pressure difference inside ENCLOSURE",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.5.4 b)",
+      "description": "Gasket or sealing material aging test B-b per IEC 60068-2-2 Clause 15 at 70°C ±2°C for 96 h",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.5.4",
+      "description": "Gas-tightness of ENCLOSURE with flexible cord inlets under bending or pulling stress; internal overpressure of 400 Pa created, 30 pulls per Table G.1 applied in axial and least favourable direction for 1 s each; overpressure not to reduce below 200 Pa",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.5.4",
+      "description": "External surface operating temperature of ENCLOSURE measured at 150°C in 25°C ambient; steady state operating temperature of ENCLOSURE also measured",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6",
+      "description": "CATEGORY APG ME EQUIPMENT, parts and components thereof",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.1",
+      "description": "ME EQUIPMENT, its parts, and components did not ignite FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN OR NITROUS OXIDE under NORMAL USE and SINGLE FAULT CONDITION; CONTINUOUS OPERATION test after thermal steady state (max 3 h) over 10 min in 12.2% ±0.4 ether by volume/oxygen mixture",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.2",
+      "description": "Parts and components of CATEGORY APG ME EQUIPMENT operating in FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN OR NITROUS OXIDE; supplied from source isolated from earth by insulation equal to one MEANS OF PATIENT PROTECTION and from electrical parts by insulation twice the MEANS OF PATIENT PROTECTION",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.3",
+      "description": "Test of G.6.1 waived when: a) no sparks produced and temperatures did not exceed 90°C; b) temperature limit of 90°C not exceeded, sparks produced in NORMAL USE and SINGLE FAULT CONDITIONS, except U_max and I_max complied with requirements taking C_max and L_max into consideration",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.3 b)",
+      "description": "Measured U_max ≤ U_zR with I_zR as in Fig. G.4",
+      "measured_values": {
+        "U_max": "V",
+        "U_zR": "V",
+        "I_zR": "A"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.3 b)",
+      "description": "Measured U_max ≤ U_zC with C_max as in Fig. G.5",
+      "measured_values": {
+        "U_max": "V",
+        "U_c": "V",
+        "C_max": null
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.3 b)",
+      "description": "Measured I_max ≤ I_zR with U_zR as in Fig. G.4",
+      "measured_values": {
+        "I_max": "A",
+        "I_zR": "A",
+        "U_zR": "V"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.3 b)",
+      "description": "Measured I_max ≤ I_zL with L_max and U_max ≤ 24 V as in Fig. G.6",
+      "measured_values": {
+        "I_max": "A",
+        "I_zL": "A",
+        "L_max": "mH"
+      },
+      "verdict": "N/A"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "description": "Medical electrical equipment general requirements for basic safety and essential performance"
+    },
+    {
+      "name": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "description": "European harmonized version of IEC 60601-1"
+    },
+    {
+      "name": "IEC 60068-2-2 Clause 15",
+      "description": "Environmental testing - Test B: Dry heat; aging test B-b at 70°C ±2°C for 96 h"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "For CATEGORY APG ME EQUIPMENT per G.6.3 b): U_max is the highest no-load voltage occurring in the circuit under investigation, taking into consideration mains voltage variations as in 4.10. I_max is the highest current flowing in the circuit under investigation, taking into account MAINS VOLTAGE variations as in 4.10. C_max and L_max are values occurring in the relevant circuit. U_max additionally determined with actual resistance R when equivalent resistance R in Fig G.5 was less than 8000 Ω. Peak value taken into consideration when a.c. supplied. An equivalent circuit calculated to determine max capacitance, inductance, and U_max and I_max, either as d.c. or a.c. peak values in case of a complicated circuit. When energy produced in an inductance or capacitance in a circuit is limited by voltage or current-limiting devices, two independent components applied to obtain the required limitation even when a first fault (short or open circuit) in one of these components occurs. Above requirement not applied to transformers complying with this standard.",
+      "topic_tags": [
+        "APG",
+        "CATEGORY APG",
+        "flammable mixture",
+        "ignition protection",
+        "circuit analysis",
+        "U_max",
+        "I_max",
+        "capacitance",
+        "inductance"
+      ],
+      "related_subjects": [
+        "G.6.1",
+        "G.6.3",
+        "Fig G.4",
+        "Fig G.5",
+        "Fig G.6",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Extrapolation from Figs G.4, G.5, and G.6 was limited to areas indicated in those figures.",
+      "topic_tags": [
+        "extrapolation",
+        "Fig G.4",
+        "Fig G.5",
+        "Fig G.6",
+        "APG",
+        "flammable anesthetic mixture"
+      ],
+      "related_subjects": [
+        "G.6.3 b)",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Tests for gas-tightness waived when examination of ENCLOSURE indicated it is completely sealed or gas-tight without a doubt (100% degree of certainty).",
+      "topic_tags": [
+        "enclosure",
+        "gas-tightness",
+        "waiver",
+        "flammable anesthetic mixture"
+      ],
+      "related_subjects": [
+        "G.5.4",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

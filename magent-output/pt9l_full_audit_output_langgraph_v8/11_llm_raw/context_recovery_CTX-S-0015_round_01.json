@@ -1,0 +1,110 @@
+```json
+{
+  "context_summary": "本轮已收集到F0082文件（PT3SBT标签审核表）中三条含RISK关键词的标注符合性判定证据（RISK-062、RISK-063、RISK-067），确认该文件确实存在于PT9L的T1样机文件夹路径下，且包含风险相关标注要求的符合性判定内容。然而，当前证据仍无法回答以下核心问题：①F0082文件头部是否明确标注适用型号为PT3SBT而非PT9L；②PT9L是否存在独立的标签审核表文件；③F0082的风险判定结论（如NA、OK等）是否与PT9L的实际硬件/标签设计一致；④DHF文件索引或文件管理记录中是否有将F0082纳入PT9L范围的授权说明；⑤PT9L风险管理文件（如风险管理报告、风险控制措施验证记录）是否引用了F0082作为标签风险闭环证据。",
+  "evidence_gaps": [
+    "F0082文件头部元数据（适用型号字段、文件编号、版本号、审批人）未被提取，无法确认该文件是否明确声明适用于PT3SBT而非PT9L",
+    "PT9L专属标签审核表文件是否存在——需检索PT9L文件夹下是否有独立的标签审核表，若存在则F0082为冗余污染，若不存在则F0082可能被有意复用",
+    "F0082中各风险判定结论（NA、OK等）所对应的具体标签条款是否与PT9L产品规格一致，例如PT9L是否有可分离元器件、是否含锂电池等硬件差异",
+    "PT9L风险管理报告或风险控制措施验证记录中是否引用F0082作为标签风险闭环的支撑文件",
+    "DHF文件清单或文件管理计划中是否有将F0082纳入PT9L T1样机文件夹的变更记录或授权说明",
+    "F0082文件的创建/修改时间戳与PT9L T1样机阶段时间节点是否匹配，以判断是否为历史遗留文件误放",
+    "PT3SBT与PT9L的产品差异分析文档（如设计差异说明、型号演进记录），以评估两者标签要求是否可共用"
+  ],
+  "additional_search_queries": [
+    "PT9L 标签审核表",
+    "PT9L label inspection checklist",
+    "F0082 适用型号 PT9L OR PT3SBT 文件头 封面",
+    "PT9L 风险管理报告 标签 风险控制",
+    "PT9L risk management report label marking",
+    "PT9L T1样机 文件清单 DHF index",
+    "PT3SBT PT9L 设计差异 型号演进",
+    "PT9L 风险控制措施验证 标签",
+    "11 T1样机 文件管理 变更记录",
+    "PT9L detachable components lithium battery label"
+  ],
+  "agent_instruction": "请作为Risk Traceability Agent对CTX-S-0015进行复审。核心问题是：F0082（PT3SBT标签审核表）被放置于PT9L的T1样机文件夹，其中包含风险相关标注要求的符合性判定，是否构成对PT9L风险闭环的实质性污染。请基于以下证据包进行判断，重点核查：①F0082文件头部是否明确标注适用型号为PT3SBT；②PT9L是否存在独立的标签审核表；③F0082的风险判定结论（NA/OK）是否与PT9L产品实际硬件特征相符（如是否有可分离元器件、是否含锂电池）；④PT9L风险管理文件是否引用F0082作为标签风险闭环证据。若上述关键信息仍缺失，请在输出中明确标注哪些判断依赖于假设，并给出条件性结论。严重性评级P2需重点关注是否存在风险闭环断裂的实质风险。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "RISK-062",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 157,
+        "source_text": "|  | Detachable components of the ME EQUIPMENT shall be marked with: – the name or trademark of the MANUFACTURER; and – a MODEL OR TYPE REFERENCE; unless misidentification does not result in an unacceptable RISK.除非错误的识别不会带来不可接受的风险，ME设备的可分离元器件上应标识： –制造商的名称或商标；和—型号或型式标记； | NA | —— | —— | —— | —— | 无此类设备 |",
+        "risk_relevance": "该条款判定结论为NA，备注'无此类设备'，若PT9L实际存在可分离元器件则此判定不适用于PT9L，构成风险闭环错误",
+        "excluded_from_primary_scope": false,
+        "verified": true
+      },
+      {
+        "evidence_id": "RISK-063",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 206,
+        "source_text": "|  | Where lithium batteries or fuel cells are incorporated and where incorrect replacement would result in an unacceptable RISK, a warning indicating that replacement by inadequately trained personnel could result in a HAZARD (such as excessive temperatures, fire or explosion) shall be given in addition to the identifying marking referring to information stated in the ACCOMPANYING DOCUMENTS./在装有锂电池或燃料电池，并且由于不正确的更换可能导致不可接受的风险时，由培训不充分的人员更换可能导致危害（如过高的温度、火灾或爆炸）的警示性说明应附加到识别标记 | NA | —— | —— | —— | —— | —— |",
+        "risk_relevance": "锂电池警告标签判定为NA且无备注说明，若PT9L含锂电池则此判定直接导致风险控制措施缺失，属于高危闭环断裂",
+        "excluded_from_primary_scope": false,
+        "verified": true
+      },
+      {
+        "evidence_id": "RISK-067",
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line": 227,
+        "source_text": "|  | For the purpose of this clause, markings used to convey a warning, prohibition or mandatory action that mitigates a RISK that is not obvious to the OPERATOR shall be a safety sign selected from ISO 7010.If a safety sign with an established meaning is appropriately used, the use of the general warning sign ISO 7010:2003-W001 (see Table D.2, safety sign 2) is not required./为达到本章目的，用于传递警告、禁止或强制性行动的标记应选择ISO 7010里的符号.规定的安全标识，以降低操作者不易察觉的风险。如果具有明确意义的安全符号被适当使用，那么一般性安全符号ISO7010:2003的使用不是必须的。 | A | 检查说明书 | OK |  | Standard icons | —— |",
+        "risk_relevance": "该条款判定为OK，引用Standard icons，但未说明是PT3SBT还是PT9L的说明书，若两者说明书不同则此验证结论不可直接适用于PT9L",
+        "excluded_from_primary_scope": false,
+        "verified": true
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line_start": 1,
+        "title": "文件头部（元数据区域）",
+        "text": "【待补充】文件头部内容未被提取，需检索F0082第1-10行以获取适用型号、文件编号、版本、审批信息"
+      },
+      {
+        "doc_id": "F0082",
+        "rel_path": "11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md",
+        "line_start": 2,
+        "title": "文件头部续",
+        "text": "【待补充】同上"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "REC-001",
+        "type": "structural_observation",
+        "description": "文件路径分析",
+        "content": "F0082的rel_path为'11 T1样机\\PT3SBT标签审核表（海外更新）.via_xlsx.clean.md'，文件名中明确包含'PT3SBT'字样，而其所在文件夹'11 T1样机'属于PT9L的DHF目录结构。这一路径本身即构成型号不匹配的直接证据，但尚不能确定该文件是否经过授权复用或误放。"
+      },
+      {
+        "context_id": "REC-002",
+        "type": "risk_judgment_analysis",
+        "description": "风险判定结论的型号依赖性分析",
+        "content": "RISK-062（可分离元器件，判定NA，备注'无此类设备'）和RISK-063（锂电池警告，判定NA，无备注）两条判定结论均依赖于PT3SBT的硬件特征。若PT9L与PT3SBT在可分离元器件和锂电池配置上存在差异，则这两条NA判定直接导致PT9L对应风险控制措施未被验证，构成风险闭环断裂。RISK-067（ISO 7010安全标识，判定OK）同样依赖于具体产品的说明书内容。"
+      },
+      {
+        "context_id": "REC-003",
+        "type": "missing_evidence_flag",
+        "description": "PT9L独立标签审核表缺失确认",
+        "content": "当前检索结果中未发现PT9L专属的标签审核表文件。若PT9L确实没有独立的标签审核表，则F0082是PT9L T1样机阶段唯一的标签风险符合性证据，其型号错误的影响将被放大为整个标签风险闭环的有效性问题。"
+      },
+      {
+        "context_id": "REC-004",
+        "type": "missing_evidence_flag",
+        "description": "PT9L风险管理文件引用关系未确认",
+        "content": "尚未检索到PT9L风险管理报告或风险控制措施验证记录。若PT9L风险管理报告将F0082列为标签风险控制验证的支撑文件，则该引用关系本身即构成风险闭环污染的直接证据；若未引用，则F0082的存在可能仅为文件管理问题而非风险闭环问题。"
+      },
+      {
+        "context_id": "REC-005",
+        "type": "search_gap",
+        "description": "下一步检索优先级",
+        "content": "优先级1：检索PT9L文件夹下是否存在独立标签审核表（关键词：PT9L 标签审核表）；优先级2：检索F0082第1-10行文件头部元数据；优先级3：检索PT9L风险管理报告中对标签风险控制的引用；优先级4：检索PT3SBT与PT9L的产品差异文档以确认硬件配置差异。"
+      }
+    ]
+  }
+}
+```

@@ -1,0 +1,101 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "判断 F0245 文件标题含 'PT2L（美亚）-UETR01 V1.0' 而正文 DN/Model/Project 均指向 PT9L 的根本原因：模板标题未更新 vs 错误文件归档；同时核查 F0006 DHF 清单中该文件的登记状态、'18 设计确认' 文件夹内是否存在正确命名的 PT9L UETR01 版本、以及是否存在独立的 PT2L（美亚）UETR01 文件",
+  "agent_input": {
+    "claim": "A usability engineering checklist filed in the active PT9L design confirmation folder ('18 设计确认') carries the title 'PT9L Checklist of EN 60601-1-6 ... PT2L(美亚)-UETR01 V1.0', embedding a PT2L document number in what appears to be a PT9L compliance record.",
+    "context_summary": "F0245 文件三页内容已完整补充。核心矛盾：文件标题与文件名均含 'PT2L（美亚）-UETR01 V1.0'，但正文 DN 字段为 'PT9L-UETR01 V1.0'，Model name 为 'PT9L'，Project number 为 '30000078'，结论为 Pass，起草人 Wang Di，批准人 Cong Ming，版本日期空白。文件归档路径为 'PT9L DHF-历史文件/设计确认/'。最可能原因为从 PT2L 模板复制后正文字段已更新但标题行未同步修改，但尚未排除错误归档可能。仍缺：①F0006 DHF 清单中该文件登记条目；②是否存在独立 PT2L（美亚）UETR01 文件；③'18 设计确认' 文件夹内是否存在另一份正确命名的 PT9L UETR01 文件；④版本日期空白原因；⑤项目编号 30000078 是否为 PT9L 官方项目编号。",
+    "evidence": [
+      {
+        "evidence_id": "SW-036",
+        "doc_id": "F0245",
+        "field": "document_title",
+        "source_text": "# PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0",
+        "note": "文件标题同时含 PT9L 和 PT2L（美亚），是核心矛盾所在"
+      },
+      {
+        "evidence_id": "SW-036-DN",
+        "doc_id": "F0245",
+        "field": "document_number",
+        "source_text": "DN:PT9L-UETR01 V1.0",
+        "note": "正文 DN 字段明确为 PT9L-UETR01 V1.0，与标题中 PT2L 矛盾"
+      },
+      {
+        "evidence_id": "SW-036-MODEL",
+        "doc_id": "F0245",
+        "field": "model_name",
+        "source_text": "Model name: PT9L",
+        "note": "正文 Model name 字段为 PT9L，支持该文件实质内容属于 PT9L"
+      },
+      {
+        "evidence_id": "SW-036-PROJ",
+        "doc_id": "F0245",
+        "field": "project_number",
+        "source_text": "Project number: 30000078",
+        "note": "项目编号 30000078，需与 PT9L 和 PT2L 项目编号交叉比对以确认归属"
+      },
+      {
+        "evidence_id": "SW-036-CONCLUSION",
+        "doc_id": "F0245",
+        "field": "conclusion",
+        "source_text": "Conclusion(Pass/Fail):Pass",
+        "note": "整体结论为 Pass"
+      },
+      {
+        "evidence_id": "SW-039",
+        "doc_id": "F0245",
+        "field": "version_history_table",
+        "source_text": "| 1 |  | Original | V1.0 | Wang Di | Cong Ming |",
+        "note": "唯一版本条目 V1.0，版本日期为空（异常），需判断是否为未正式发布文件"
+      },
+      {
+        "evidence_id": "SW-040-SOURCE",
+        "doc_id": "F0245",
+        "field": "source_pdf_path",
+        "source_text": "源 PDF：`02_RnD_DHF/PT9L DHF-历史文件/设计确认/PT9L Checklist of （ EN 60601-1-62010+A12015+A22021) PT2L（美亚）-UETR01 V1.0.pdf`",
+        "note": "归档于 PT9L DHF-历史文件/设计确认/ 路径下，非当前有效版本路径"
+      },
+      {
+        "evidence_id": "PAGE-F0006",
+        "doc_id": "F0006",
+        "field": "DHF_checklist_entry",
+        "source_text": "[待检索] PT9L-DHF清单中 UETR01 相关登记条目及文件编号字段",
+        "note": "高优先级：需确认该文件是否被正式纳入 PT9L DHF，登记的文件编号是 PT9L 还是 PT2L"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "retrieval_priorities": [
+      {
+        "priority": 1,
+        "query": "PT9L DHF清单 UETR01",
+        "target_doc": "F0006",
+        "rationale": "确认 DHF 清单中该文件的登记编号字段内容，是判断问题性质的最直接证据"
+      },
+      {
+        "priority": 2,
+        "query": "PT2L 美亚 UETR01",
+        "target_doc": "unknown",
+        "rationale": "确认是否存在独立的 PT2L（美亚）UETR01 文件，区分模板复用 vs 错误归档"
+      },
+      {
+        "priority": 3,
+        "query": "18 设计确认 文件列表 PT9L UETR01",
+        "target_doc": "folder_index",
+        "rationale": "排查 '18 设计确认' 文件夹内是否存在另一份正确命名的 PT9L UETR01 文件"
+      },
+      {
+        "priority": 4,
+        "query": "30000078 PT9L 项目编号",
+        "target_doc": "F0005",
+        "rationale": "交叉验证项目编号 30000078 是否为 PT9L 官方项目编号，辅助确认文件实质归属"
+      },
+      {
+        "priority": 5,
+        "query": "DN:PT2L-UETR01",
+        "target_doc": "unknown",
+        "rationale": "检索是否存在 DN 为 PT2L-UETR01 的独立文件，进一步区分两种假设"
+      }
+    ]
+  }
+}
+```

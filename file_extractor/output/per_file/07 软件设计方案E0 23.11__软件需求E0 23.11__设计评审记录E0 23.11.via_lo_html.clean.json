@@ -1,0 +1,386 @@
+{
+  "document": {
+    "title": "软件需求规格评审记录",
+    "doc_type": "评审记录",
+    "version": "V1.0"
+  },
+  "review_records": [
+    {
+      "review_id": "PT9L-RXPL01",
+      "stage": "软件需求规格评审",
+      "date": null,
+      "conclusion": null
+    }
+  ],
+  "review_items": [
+    {
+      "seq": "一",
+      "category": "对项目进度的评估",
+      "content": "评估本阶段计划评审时间与实际评审时间，判断对整体项目进度有无影响",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "可选项：对整体项目进度无影响；对整体项目进度有影响"
+    },
+    {
+      "seq": "二",
+      "category": "对设计验证的评审",
+      "content": "本阶段是否有设计验证，及对设计验证报告的评估",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "可选项：无；有（设计验证报告文件编号待填）"
+    },
+    {
+      "seq": "三",
+      "category": "对设计更改的评估",
+      "content": "本阶段是否有只影响设计输出的设计更改，及对设计更改适宜性的评估",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "可选项：无；有（设计更改需求评审单文件编号待填）"
+    },
+    {
+      "seq": "四",
+      "category": "对上阶段评审遗留问题追踪",
+      "content": "上阶段评审是否有遗留问题，遗留问题处理追踪情况",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "可选项：上阶段评审无遗留问题；上阶段评审有遗留问题"
+    },
+    {
+      "seq": "五",
+      "category": "本次评审问题记录",
+      "content": "本次评审中发现的问题（D1、D2、D3）记录，包括产生原因、评审意见、解决措施、评审结论及决议结论",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "问题D1、D2、D3均未填写"
+    },
+    {
+      "seq": "六",
+      "category": "评审结论",
+      "content": "评审总体结论",
+      "actual_situation": null,
+      "conclusion": null,
+      "improvement": null,
+      "note": "可选项：评审通过直接进入下一阶段；评审通过完成修改后进入下一阶段；评审基本通过需补充资料；评审未通过"
+    }
+  ],
+  "persons": [
+    {
+      "name": "侯广伟",
+      "title": "技术负责人 / 软件主管，智能产品部"
+    },
+    {
+      "name": "王迪",
+      "title": "软件工程师，智能产品部"
+    }
+  ],
+  "identifiers": [
+    {
+      "id_type": "文件编号",
+      "value": "PT9L-RXPL01 V1.0"
+    },
+    {
+      "id_type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PT9L",
+      "name": "红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "设计验证评估选项：本次设计验证已按验证计划进行并完成，且验证项合格；本次设计验证未按验证计划进行，需重新验证后进行评审；本次设计验证已按验证计划进行但未完成，需验证完成后进行评审；本次设计验证已按验证计划进行并完成，但有不合格项（需填写不合格项A1-A4：不合格项描述、产生原因、处理方法）。",
+      "topic_tags": [
+        "设计验证",
+        "验证评估",
+        "不合格项",
+        "验证计划"
+      ],
+      "related_subjects": [
+        "二．对设计验证的评审"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "设计更改评估选项：本次设计更改未解决原有问题，需要继续设计更改；本次设计更改解决了原有问题，且未产生新的问题；本次设计更改解决了原有问题，但产生了新的问题（问题B1-B3需填写：问题描述、提出者、产生原因、评审意见、解决措施、负责人、完成时间、评审结论、未决问题处理方法、决议结论）。",
+      "topic_tags": [
+        "设计更改",
+        "更改评估",
+        "问题追踪",
+        "决议结论"
+      ],
+      "related_subjects": [
+        "三．对设计更改的评估"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "上阶段遗留问题追踪模板（问题C1、C2）：对应上阶段评审遗留问题编号、提出者、遗留问题处理追踪描述、追踪结论（遗留问题已解决/未解决）；未解决时需填写评审意见、解决措施、负责人、完成时间、评审结论（已有解决措施/无解决措施）、未决问题处理方法、决议结论（已关闭/未关闭）。",
+      "topic_tags": [
+        "遗留问题",
+        "问题追踪",
+        "评审追踪",
+        "决议"
+      ],
+      "related_subjects": [
+        "四．对上阶段评审遗留问题追踪"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "本次评审问题记录模板（问题D1、D2、D3）：问题描述、提出者、产生原因、评审意见（多人签字）、解决措施、负责人、完成时间（年月日或阶段）、评审结论（本问题已有解决措施/无解决措施，无措施时选请示上层决议或其他）、未决问题处理方法、签字日期、决议结论（本问题已关闭/未关闭，未关闭时选下阶段评审追踪或其他）。",
+      "topic_tags": [
+        "评审问题",
+        "问题记录",
+        "解决措施",
+        "决议结论"
+      ],
+      "related_subjects": [
+        "五．本次评审问题记录"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "评审人员签字栏要求：打印前填写职务、部门、姓名，需与评审计划中人员一致。评审地点为二楼会议室。",
+      "topic_tags": [
+        "评审人员",
+        "签字要求",
+        "评审计划"
+      ],
+      "related_subjects": [
+        "七．评审人员签字"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "07 软件设计方案E0 23.11/软件需求E0 23.11/设计评审记录E0 23.11.via_lo_html.clean.md",
+    "doc_type": "review_checklist"
+  },
+  "_edges": [
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件需求规格评审记录",
+      "to": "一",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件需求规格评审记录",
+      "to": "二",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件需求规格评审记录",
+      "to": "三",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件需求规格评审记录",
+      "to": "四",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件需求规格评审记录",
+      "to": "五",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "软件需求规格评审记录",
+      "to": "六",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "二．对设计验证的评审",
+      "to": "设计验证",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三．对设计更改的评估",
+      "to": "设计更改",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "四．对上阶段评审遗留问题追踪",
+      "to": "遗留问题",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "五．本次评审问题记录",
+      "to": "评审问题",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "七．评审人员签字",
+      "to": "评审人员",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPL01",
+      "to": "一",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPL01",
+      "to": "二",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPL01",
+      "to": "三",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPL01",
+      "to": "四",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPL01",
+      "to": "五",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPL01",
+      "to": "六",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "二",
+      "to": "设计验证评估选项behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "三",
+      "to": "设计更改评估选项behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "四",
+      "to": "上阶段遗留问题追踪模板behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "五",
+      "to": "本次评审问题记录模板behavioral_spec",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-RXPL01",
+      "to": "评审人员签字constraint_statement",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "侯广伟",
+      "to": "PT9L-RXPL01",
+      "properties": {}
+    },
+    {
+      "type": "REVIEWS",
+      "from": "王迪",
+      "to": "PT9L-RXPL01",
+      "properties": {}
+    },
+    {
+      "type": "SIGNED",
+      "from": "侯广伟",
+      "to": "PT9L-RXPL01",
+      "properties": {
+        "title": "技术负责人 / 软件主管，智能产品部"
+      }
+    },
+    {
+      "type": "SIGNED",
+      "from": "王迪",
+      "to": "PT9L-RXPL01",
+      "properties": {
+        "title": "软件工程师，智能产品部"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RXPL01",
+      "to": "一",
+      "properties": {
+        "category": "对项目进度的评估"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RXPL01",
+      "to": "二",
+      "properties": {
+        "category": "对设计验证的评审"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RXPL01",
+      "to": "三",
+      "properties": {
+        "category": "对设计更改的评估"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RXPL01",
+      "to": "四",
+      "properties": {
+        "category": "对上阶段评审遗留问题追踪"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RXPL01",
+      "to": "五",
+      "properties": {
+        "category": "本次评审问题记录"
+      }
+    },
+    {
+      "type": "HAS_REVIEW_ITEM",
+      "from": "PT9L-RXPL01",
+      "to": "六",
+      "properties": {
+        "category": "评审结论"
+      }
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-RXPL01",
+      "to": "PT9L-RXPL01 V1.0",
+      "properties": {
+        "version": "V1.0"
+      }
+    }
+  ],
+  "_claims": []
+}

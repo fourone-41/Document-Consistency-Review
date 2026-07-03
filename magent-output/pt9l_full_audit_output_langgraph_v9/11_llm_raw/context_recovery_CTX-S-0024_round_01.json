@@ -1,0 +1,116 @@
+```json
+{
+  "context_summary": "本轮已补充了风险管理报告（F0020/F0024，IFT-FXGB01 V2.0）的完整局部上下文，包括：第1节产品概述、风险管理计划实施说明、风险管理团队成员表、第2节风险评价准则（引用PT9L-FXJH01 V1.0）、第3节风险管理文件清单（F0020列出了V1.0和V2.0系列文件，F0024仅列出V1.0系列文件）、第4节风险管理评审内容。设计验证报告（F0114）的法规标准清单表格已完整展开，确认其验证依据为PT9L-YZBZ01 V1.0，验证记录引用ETX202303-07-078-03/04，但表头及正文均未出现PT9L-FXGB01任何版本的引用。核心缺口仍然存在：设计验证计划/报告中没有任何条目明确引用PT9L-FXGB01（风险管理报告）；F0020的第3节文件清单虽列出了PT9L-FXGB01 V1.0，但未列出V2.0本身（即该报告未自引其V2.0版本号）；F0024的第3节文件清单仅列出V1.0系列，完全缺失V2.0升版记录；两份报告均未包含版本变更说明或变更记录章节；设计验证报告的验证依据栏（PT9L-YZBZ01 V1.0）与风险管理报告之间无交叉引用链接。",
+  "evidence_gaps": [
+    "设计验证计划或报告（含F0114及同目录其他文件）中无任何条目引用PT9L-FXGB01（任何版本），闭环链路断裂",
+    "PT9L-FXGB01 V2.0报告自身（F0020/F0024）未包含版本升级说明、变更记录或变更摘要章节，无法确认V1.0到V2.0新增/修改的风险控制措施内容",
+    "F0024（PT9L--前缀版本）第3节文件清单仅列出V1.0系列（PT9L-FXJH01 V1.0、PT9L-FXPJ01 V1.0、PT9L-FXYS01 V1.0），完全缺失V2.0升版文件（PT9L-FXPJ01 V2.0、PT9L-FXYS01 V2.0），与F0020不一致，两份文件的一致性存疑",
+    "PT9L-FXYS01 V2.0（风险控制措施验证与残余风险评价报告 V2.0）未在语料库中出现，无法确认V2.0风险控制措施的验证活动已完成",
+    "PT9L-FXPJ01 V2.0（风险评估报告 V2.0）未在语料库中出现，无法确认V2.0新增风险项的评估内容",
+    "设计验证报告（F0114）表头验证依据为PT9L-YZBZ01 V1.0，该文件未在语料库中出现，无法确认其是否包含对风险管理报告V2.0的引用要求",
+    "语料库中未发现任何设计变更通知（ECO/DCN）或设计评审记录，确认V2.0升版所触发的验证活动已被识别并跟踪",
+    "F0440（IEC 62366-1可用性检查表）的page_context内容为空，无法判断可用性工程文件是否与风险管理V2.0存在交叉引用"
+  ],
+  "additional_search_queries": [
+    "PT9L-FXGB01 V2.0 版本说明 变更记录 修订历史",
+    "PT9L-FXYS01 V2.0 风险控制措施验证 残余风险",
+    "PT9L-FXPJ01 V2.0 风险评估报告",
+    "PT9L-YZBZ01 V1.0 验证依据 设计验证计划",
+    "设计验证报告 PT9L-FXGB01 风险管理报告 引用",
+    "设计验证计划 风险控制 验证活动 闭环",
+    "ETX202303-07-078 设计验证报告 风险管理",
+    "设计变更 ECO DCN PT9L V2.0 风险管理",
+    "PT9L 设计历史文件 DHF 文件清单 索引",
+    "FXGB01 verification plan traceability risk control"
+  ],
+  "agent_instruction": "当前P1缺口的核心问题是：设计验证计划/报告与风险管理报告PT9L-FXGB01 V2.0之间缺乏可证明的闭环引用链。请重点核查以下内容并给出明确结论：\n1. 在所有设计验证计划和设计验证报告文件中，搜索是否存在对'PT9L-FXGB01'、'风险管理报告'、'FXGB01'的任何版本引用；若存在，请提供完整行号和原文；\n2. 确认PT9L-FXYS01 V2.0是否存在于语料库中，若存在，请提取其验证活动列表及与设计验证报告的交叉引用；\n3. 确认PT9L-FXPJ01 V2.0是否存在于语料库中，若存在，请提取V2.0相较V1.0新增或修改的风险控制措施条目；\n4. 在F0020（IFT-FXGB01 V2.0）中搜索是否存在版本变更章节、修订记录表或封面页，提取完整内容；\n5. 确认F0024与F0020的文件清单差异是否有合理解释（如F0024为旧版存档），并提取两文件的封面/元数据信息；\n6. 搜索PT9L-YZBZ01 V1.0的内容，确认其是否要求验证活动覆盖风险管理报告所列控制措施；\n7. 若以上均无法找到闭环证据，请明确记录为'经穷举检索，语料库中不存在设计验证计划/报告引用PT9L-FXGB01 V2.0的证据'，不得推断或假设存在。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "VV-001",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 84,
+        "source_text": "The risk management plan has defined the acceptance criteria of risk, and has also arranged the risk management review activity. The risk management group is established to ensure the risk management activity of the current project will be implemented effectively according to the risk management plan.",
+        "verified": true
+      },
+      {
+        "evidence_id": "VV-002",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 107,
+        "source_text": "Please find the document *Risk Management Plan* (PT9L-FXJH01 V1.0) for the risk acceptance criteria.",
+        "verified": true
+      },
+      {
+        "evidence_id": "VV-003",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 84,
+        "source_text": "The risk management plan has defined the acceptance criteria of risk, and has also arranged the risk management review activity. The risk management group is established to ensure the risk management activity of the current project will be implemented effectively according to the risk management plan.",
+        "verified": true
+      },
+      {
+        "evidence_id": "VV-004",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 107,
+        "source_text": "Please find the document *Risk Management Plan* (PT9L-FXJH01 V1.0) for the risk acceptance criteria.",
+        "verified": true
+      },
+      {
+        "evidence_id": "VV-010",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 136,
+        "source_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "verified": true
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [],
+    "recovered_context": [
+      {
+        "evidence_id": "RC-001",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "section": "Section 3 - Risk Management File (Document List)",
+        "line_start": 109,
+        "line_end": 122,
+        "source_text": "# 3. Risk Management File\n\nRisk Management Plan DN:PT9L-FXJH01 V1.0\n\nRisk Assessment Report DN::PT9L-FXPJ01 V1.0\n\nVerification of risk control measure and Residual Risk Evaluation Report DN::PT9L-FXYS01 V1.0\n\nRisk Management Report DN::PT9L-FXGB01 V1.0\n\nRisk Assessment Report DN::PT9L-FXPJ01 V2.0\n\nVerification of risk control measure and Residual Risk Evaluation Report DN::PT9L-FXYS01 V2.0",
+        "analytical_note": "F0020（IFT-FXGB01 V2.0）第3节文件清单列出了V1.0和V2.0两个系列文件。关键发现：(1) 列出了PT9L-FXGB01 V1.0作为前序文件，但未将本文件自身（V2.0）列入清单，即该报告未自引其版本号；(2) 列出了PT9L-FXYS01 V2.0和PT9L-FXPJ01 V2.0，表明V2.0升版已触发配套文件更新，但这些文件本身未在语料库中被检索到；(3) 整个文件清单中无任何设计验证计划或设计验证报告的文件编号，证实风险管理文件体系与设计验证文件体系之间缺乏显式交叉引用。"
+      },
+      {
+        "evidence_id": "RC-002",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "section": "Section 3 - Risk Management File (Document List)",
+        "line_start": 109,
+        "line_end": 117,
+        "source_text": "# 3. Risk Management File\n\nRisk Management Plan DN:PT9L-FXJH01 V1.0\n\nRisk Assessment Report DN::PT9L-FXPJ01 V1.0\n\nVerification of risk control measure and Residual Risk Evaluation Report DN::PT9L-FXYS01 V1.0",
+        "analytical_note": "F0024（PT9L--前缀版本，同为IFT-FXGB01 V2.0）第3节文件清单仅列出V1.0系列三份文件，完全缺失PT9L-FXPJ01 V2.0、PT9L-FXYS01 V2.0及PT9L-FXGB01 V1.0。与F0020相比，F0024的文件清单不完整，两份声称为同一文件的版本之间存在实质性内容差异，这本身构成一个额外的合规风险点，需要V&V Agent评估哪份为权威版本。"
+      },
+      {
+        "evidence_id": "RC-003",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "section": "Section 4 - Risk Management Review",
+        "line_start": 123,
+        "line_end": 132,
+        "source_text": "# 4. Risk Management Review\n\n### 4.1 Review of the Risk Management Plan\n\nThe risk management group has checked the completion of the *Risk Management Plan* , and consider that the Risk Management Plan of PT9L has already been accomplished.\n\n### 4.2 About Information on the acceptance of Residual risk.\n\nThe residual risk has been reviewed in V*erification* *of risk control* *measure* *and Residual Risk Evaluation Report* , and the results of the residual risks are accepted.",
+        "analytical_note": "第4节评审结论仅以通用性语言声明残余风险已被接受，引用的是'Verification of risk control measure and Residual Risk Evaluation Report'（即PT9L-FXYS01），但未明确指出引用的是V1.0还是V2.0版本。结合第3节文件清单，F0020中同时列出了V1.0和V2.0，但评审结论未区分版本，无法确认V2.0新增控制措施的验证结论是否已被纳入本次评审。"
+      },
+      {
+        "evidence_id": "RC-004",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "section": "Sheet: 血压计法规标准清单20160719 - 表头元数据",
+        "line_start": 129,
+        "line_end": 135,
+        "source_text": "| 设计验证报告-法规标准清单 |  |  |  |  |  |  |  |\n| 拟制（项目负责人）: 年 月 日 |  | 审核（技术负责人）: 年 月 日 |  |  |  |  |  |\n| 产品型号：PT9L 项目编号：30000078 产品/项目名称：红外体温计 |  |  |  |  |  |  |  |\n| 阶段：设计确认 验证依据：PT9L-YZBZ01 V1.0 |  |  |  |  |  |  |  |\n| 1.本设计验证计划需审核后方能使用执行。 2.存档并归入设计历史文档（DHF）。 3.请根据项目具体实际情况对于验证阶段，方法及判定准则进行相应调整。 |  |  |  |  |  |  |  |\n| 类别 | 标准名称及版本号 | 是否适用 | 验证阶段 | 验证方法 | 判定准则 | 验证记录 | 结论 |",
+        "analytical_note": "设计验证报告（F0114）的表头元数据确认：产品型号PT9L，项目编号30000078，阶段为设计确认，验证依据为PT9L-YZBZ01 V1.0。该表格列出的验证记录列（ETX202303-07-078-03/04）为外部测试报告编号，整个表格结构为法规标准符合性清单，列类别包括行业标准、欧盟指令、生物相容性等，无风险管理报告引用列，无PT9L-FXGB01任何版本的引用。验证依据PT9L-YZBZ01 V1.0本身未在语料库中出现，是下一轮检索的关键目标。"
+      },
+      {
+        "evidence_id": "RC-005",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设

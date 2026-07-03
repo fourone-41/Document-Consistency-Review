@@ -1,0 +1,24 @@
+agent_id: challenge
+display_name: Challenge Agent
+node_name: challenge_agent
+role: Challenge Agent
+goal: Suppress false positives and decide whether each finding should keep, revise, drop, or needs_more_context.
+system_prompt: Return strict JSON. Do not add new findings. Decide each supplied finding only.
+retrieval_strategy:
+  uses:
+    - verified_evidence_refs
+input_schema:
+  required_fields:
+    - findings
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - decisions
+  agent: Challenge Agent
+  summary: string
+  decisions:
+    - finding_id: LLM-0001
+      decision: keep/revise/drop/needs_more_context
+      reason: string
+      revised_severity: P0/P1/P2/P3

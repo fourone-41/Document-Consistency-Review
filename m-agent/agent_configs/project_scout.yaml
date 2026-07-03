@@ -1,0 +1,46 @@
+agent_id: project_scout
+display_name: Project Scout Agent
+node_name: scout_agent
+role: Project Scout Agent
+goal: Confirm PT9L project identity, product category, market and regulatory baseline, and identify suspicious legacy model/category references.
+system_prompt: Return strict JSON using only provided evidence.
+retrieval_strategy:
+  max_hits: 240
+  searches:
+    - prefix: SCOUT
+      patterns:
+        - "PT9L|product model|FDA|CE|MDR|customer need"
+      rel_contains:
+        - "01 "
+        - "04 "
+      max_hits: 60
+    - prefix: SCOUT
+      patterns:
+        - "80601|E1965|60601|62304|0664|14971|62366|10993|16886|MDR"
+      rel_contains:
+        - "04 "
+      max_hits: 100
+    - prefix: SCOUT
+      patterns:
+        - "PT2L|PT9C|BP3L|PT3SBT"
+      rel_contains: []
+      max_hits: 80
+input_schema:
+  required_fields:
+    - corpus_scope
+    - evidence_catalog
+output_schema:
+  required_fields:
+    - project_profile
+    - summary
+    - findings
+  project_profile:
+    target_model: PT9L
+    product_family: []
+    document_id_patterns: []
+    primary_scope_rules: []
+    key_entities: {}
+    regulatory_baseline: []
+    candidate_discovery_hints: []
+  summary: string
+  findings: []

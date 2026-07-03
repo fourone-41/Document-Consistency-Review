@@ -1,0 +1,184 @@
+{
+  "document": {
+    "title": "IEC60601-1 安规测试报告",
+    "document_number": "ETX202303-07-078-02",
+    "product_name": "PT9L",
+    "page_range": "100-101",
+    "total_pages": 181,
+    "report_type": "安全性测试报告（正式）",
+    "date": "2025-02-12"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_title": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "type": "国际标准/欧洲标准"
+    },
+    {
+      "id": "IEC60068-2-2",
+      "full_title": "IEC 60068-2-2 Clause 15 老化测试B-b",
+      "type": "国际标准"
+    }
+  ],
+  "tests": [
+    {
+      "clause": "G.5.4",
+      "name": "External ventilation with internal overpressure（外部通风与内部正压）",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "description": "FLAMMABLE AESTHETIC MIXTURES WITH AIR在ME设备通电前通过通风排出，运行期间通过维持正压防止渗入",
+          "verdict": "N/A"
+        },
+        {
+          "description": "正常条件下ENCLOSURE内部超压最小75 Pa",
+          "verdict": "N/A"
+        },
+        {
+          "description": "即使空气或惰性气体通过正常运行所需开口逸出，潜在点火位置仍维持超压",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ME设备仅在所需最小超压存在足够长时间（至少排出5倍ENCLOSURE体积）后才能通电",
+          "verdict": "N/A"
+        },
+        {
+          "description": "超压持续存在时ME设备可随意或反复通电",
+          "verdict": "N/A"
+        },
+        {
+          "description": "运行期间超压降至50 Pa以下时，点火源自动断电（G.4不适用或符合G.5）",
+          "verdict": "N/A"
+        },
+        {
+          "description": "在25°C环境温度下正常使用和条件下，维持内部超压的ENCLOSURE外表面不超过150°C",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "G.5.5",
+      "name": "ENCLOSURES with restricted breathing（限制呼吸外壳）",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "description": "在无压差情况下被高浓度FLAMMABLE AESTHETIC MIXTURE WITH AIR包围至少30 min，内部不形成可燃麻醉混合物",
+          "verdict": "N/A"
+        },
+        {
+          "description": "用于保持密封性的垫圈或密封材料符合IEC 60068-2-2 Clause 15老化测试B-b（70°C±2°C，96h）",
+          "verdict": "N/A"
+        },
+        {
+          "description": "含软线入口的ENCLOSURE在软线受弯曲或拉力时保持气密性",
+          "verdict": "N/A"
+        },
+        {
+          "description": "软线配备足够锚固件限制应力",
+          "verdict": "N/A"
+        },
+        {
+          "description": "G.5.4 b)测试后，内部超压400 Pa，对每根软线沿轴向和最不利方向施加Table G.1值的30次拉力（每次1s），超压不低于200 Pa",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ENCLOSURE完全密封或无疑气密（100%确定度）时免除测试",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ENCLOSURE外表面工作温度在25°C环境下为150°C",
+          "verdict": "N/A"
+        },
+        {
+          "description": "ENCLOSURE稳态工作温度测量",
+          "verdict": "N/A"
+        }
+      ]
+    },
+    {
+      "clause": "G.6",
+      "name": "CATEGORY APG ME EQUIPMENT, parts and components thereof",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "G.6.1",
+      "name": "APG类ME设备在正常使用和单一故障条件下不点燃FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN OR NITROUS OXIDE",
+      "verdict": "N/A",
+      "test_conditions": "不符合G.6.3的部件在达到热稳态（最多3h）后，在12.2%±0.4%乙醚/氧气体积混合物中进行10 min连续运行测试"
+    },
+    {
+      "clause": "G.6.2",
+      "name": "APG类ME设备中在FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN OR NITROUS OXIDE中工作的零部件的绝缘要求",
+      "verdict": "N/A",
+      "description": "从一个MEANS OF PATIENT PROTECTION等效绝缘的独立接地源供电，并通过两倍MEANS OF PATIENT PROTECTION绝缘与电气零件隔离"
+    },
+    {
+      "clause": "G.6.3",
+      "name": "G.6.1测试豁免条件",
+      "verdict": "N/A",
+      "sub_items": [
+        {
+          "description": "a) 正常使用和正常/单一故障条件下不产生火花且温度不超过90°C",
+          "verdict": "N/A"
+        }
+      ]
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外部通风与内部正压（G.5.4）要求：ME设备及其部件和零件被封闭在具有内部正压外部通风的ENCLOSURE中，须满足以下要求：a) 可能渗入的FLAMMABLE AESTHETIC MIXTURES WITH AIR在设备通电前通过通风排出，运行期间通过维持正压防止此类混合物渗透；b) 正常条件下ENCLOSURE内部超压最低75 Pa，即使空气或惰性气体通过正常运行必要开口逸出仍维持超压，仅在排出5倍ENCLOSURE体积后方可通电；c) 超压降至50 Pa以下时点火源自动断电；d) 维持内部超压的ENCLOSURE外表面在25°C环境正常使用条件下不超过150°C。",
+      "topic_tags": [
+        "内部正压",
+        "外部通风",
+        "可燃麻醉混合物",
+        "超压要求",
+        "G.5.4",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "G.5.4",
+        "IEC60601-1",
+        "CATEGORY AP"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "限制呼吸外壳（G.5.5）要求：a) 在无压差下被高浓度可燃麻醉混合物（空气）包围至少30 min后内部不形成可燃麻醉混合物；b) 密封材料符合IEC 60068-2-2 Clause 15老化测试B-b（70°C±2°C，96h）；c) 含软线入口的ENCLOSURE在弯曲或拉力下保持气密性，软线有足够锚固件；经G.5.4 b)测试后，400 Pa内部超压下对每根软线施加30次拉力，超压不低于200 Pa；ENCLOSURE确定完全密封时可免除测试；外表面工作温度不超过150°C（25°C环境）。",
+      "topic_tags": [
+        "限制呼吸",
+        "外壳气密性",
+        "密封材料",
+        "老化测试",
+        "G.5.5",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "G.5.5",
+        "G.5.4",
+        "IEC60068-2-2",
+        "IEC60601-1"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "CATEGORY APG ME设备（G.6）要求：G.6.1规定设备及其部件在正常使用和单一故障条件下不得点燃FLAMMABLE AESTHETIC MIXTURE WITH OXYGEN OR NITROUS OXIDE；不符合G.6.3的部件须在12.2%±0.4%乙醚体积/氧气混合物中进行热稳态后10 min连续运行测试。G.6.2规定在可燃麻醉混合物（含氧气或氧化亚氮）中工作的部件须从一个MEANS OF PATIENT PROTECTION等效绝缘源供电，并通过两倍MEANS OF PATIENT PROTECTION绝缘与电气部件隔离。G.6.3规定当正常使用及正常/单一故障条件下不产生火花且温度不超过90°C时，G.6.1测试可豁免。",
+      "topic_tags": [
+        "APG类设备",
+        "可燃麻醉混合物",
+        "氧气",
+        "氧化亚氮",
+        "单一故障条件",
+        "G.6",
+        "IEC60601-1"
+      ],
+      "related_subjects": [
+        "G.6.1",
+        "G.6.2",
+        "G.6.3",
+        "CATEGORY APG",
+        "IEC60601-1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+```json
+{
+  "assigned_agent": "DMR/SOP Agent",
+  "review_focus": "核查F0161（美版包装BOM，设计输出清单二）与F0162（PT9L包装BOM）之间保护膜（PT9L-P10，料号K030200025221070216）条目是否存在实质性差异，判断该差异是否属于版本/市场区域设计差异、文件遗漏或BOM不一致缺陷。",
+  "agent_input": {
+    "claim": "F0161包装BOM（美版）列出了保护膜（PT9L-P10，DMR-060），而F0162包装BOM中未见保护膜条目，两份文件物料项目数量不一致。",
+    "context_summary": "补证包已成功检索到以下关键证据：F0161（设计输出清单二，37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md）第21-24行包含4个包装BOM条目，其中第24行（DMR-060）明确列出"保护膜 | K030200025221070216 | PE | PT9L-P10 | 数量1 | 版本C"；F0162（PT9L包装BOM.via_xlsx.clean.md）第14行仅检索到彩包装条目（PT9L-CBZP01），未见保护膜条目。两文件均属PT9L产品设计输出范围，均未被排除在主审范围之外（excluded_from_primary_scope: false）。Context Recovery第1轮因LLM输出解析失败未能产出结论，本轮直接基于已检索证据进行裁决。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-057",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 21,
+        "actual_text": "| 1 | 彩包装 | K040200021397620814 | 350g白卡纸 覆哑膜 |  | PT9L-CBZP01 |  |  | PT9L |  | 1 |  | √ | A |  |  |",
+        "note": "F0161包装BOM第1项：彩包装"
+      },
+      {
+        "evidence_id": "DMR-058",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 22,
+        "actual_text": "| 2 | 纸托 | K040500002717620814 | 350g白卡纸 覆哑膜 |  | PT9L-F04 |  |  | PT9L |  | 1 |  | √ | C |  |  |",
+        "note": "F0161包装BOM第2项：纸托"
+      },
+      {
+        "evidence_id": "DMR-059",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 23,
+        "actual_text": "| 3 | 说明书 | K040700022027620814 | 70g双胶纸 |  | PT9L-SMSPO1 |  |  | PT9L |  | 1 |  | √ | A |  |  |",
+        "note": "F0161包装BOM第3项：说明书"
+      },
+      {
+        "evidence_id": "DMR-060",
+        "doc_id": "F0161",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\37ed31b4835c1e57463e2ca2628ef51.via_xlsx.clean.md",
+        "line": 24,
+        "actual_text": "| 4 | 保护膜 | K030200025221070216 | PE |  | PT9L-P10 |  |  | PT9L |  | 1 |  | √ | C |  |  |",
+        "note": "F0161包装BOM第4项：保护膜（PT9L-P10），此为争议核心条目，F0162中未见对应项"
+      },
+      {
+        "evidence_id": "DMR-065",
+        "doc_id": "F0162",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\PT9L包装BOM.via_xlsx.clean.md",
+        "line": 14,
+        "actual_text": "| 1 | 彩包装 | K040200021397620814 | 350g白卡纸 覆哑膜 | PT9L-CBZP01 | PT9L |  | 1 |  | √ | A |  |",
+        "note": "F0162包装BOM第1项：彩包装，与F0161第1项料号相同，但F0162后续行未检索到保护膜条目"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"],
+    "review_instructions": "请执行以下步骤后给出decision：1）确认F0162完整行数及所有BOM条目，判断保护膜条目是否确实缺失（而非检索截断）；2）核查F0161与F0162的文件标题/适用市场标注，判断两者是否为不同市场版本（如美版vs标准版），若为有意区分的市场差异则可dismiss；3）若两文件均声称覆盖同一产品/市场且保护膜条目确实缺失，则confirm该BOM不一致缺陷（P2）；4）若F0162文件内容不完整或检索不足，则返回needs_more_context并说明需补充的具体内容。"
+  }
+}
+```

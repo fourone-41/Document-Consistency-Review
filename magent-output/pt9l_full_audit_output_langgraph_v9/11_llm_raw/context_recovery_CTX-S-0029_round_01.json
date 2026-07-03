@@ -1,0 +1,160 @@
+```json
+{
+  "context_summary": "本轮已补充了两份图纸的完整本地上下文：(1) FDIR-V14_散热器压块_REV01_0714.pdf.md：标题栏、技术要求、尺寸表、配合分析、装配关系、元数据均已读取，确认该图纸设计日期2017-06-28、供应商Famidoc、iHealth审批2017-07-14，在PT9L总装图BOM中以PT3-M01（序号13）入账；图纸本身无任何PT9L产品标识，仅有FDIR-V14产品号（体温计）。(2) PT3_双联弹簧_REV01.pdf.md：标题栏确认Drawing NO.=PT3-P10、Model NO.=PT3，归档注记为"PT3项目原件，被PT9L DHF借用归档（外购件/设计参照）"，该注记为读图报告生成时的分析性标注，并非原始图纸上的正式共用件声明文件。核心缺口仍然存在：两份图纸均无正式的跨产品共用件批准文件（如ECO/DCO、共用件清单、设计变更通知单），读图报告中的"共用件"标注属于分析推断，不构成合规证据。尚未检索PT9L设计输出清单（目录文件）、PT9L总装图BOM原文、设计变更记录、以及PT9L DHF文件控制范围声明等关键文件。",
+  "evidence_gaps": [
+    "PT9L DHF 设计输出清单（目录/索引文件）中是否明确列出 PT3_双联弹簧_REV01 和 FDIR-V14_散热器压块 为共用件或借用件，及其批准状态",
+    "PT9L 总装图 BOM 原文（PT9L-总装图-v1.0-20240627.pdf.md）中 PT3-M01（序号13）和 PT3-P10 对应行的完整字段：零件号、图号、版次、来源产品、备注列",
+    "iHealth 内部是否存在跨产品共用件批准文件（ECO/DCO、共用件申请单、设计借用通知单），文件编号及批准人",
+    "PT9L DHF 文件控制范围声明或设计输入/输出清单一（清单一与清单二的区别及各自收录范围）",
+    "PT3 项目 DHF 中 PT3-P10（双联弹簧）和 PT3-M01（散热器压块）的原始归档记录，确认其在 PT3 DHF 中的正式状态",
+    "PT9L 设计验证/确认记录中是否包含对上述两个共用件的验证活动（如跌落测试报告引用件号是否为 PT3-M01）",
+    "读图报告中"共用件：PT3项目原件，被PT9L DHF借用归档"这一标注的来源依据——是否有对应的原始文件支撑，还是纯属读图者推断"
+  ],
+  "additional_search_queries": [
+    "PT9L-总装图-v1.0-20240627 PT3-M01 PT3-P10 序号13",
+    "PT9L 设计输出清单 共用件 借用 PT3",
+    "ECO DCO 共用件 PT3 PT9L 设计变更",
+    "PT9L DHF 文件控制 设计输出清单一 清单二 范围",
+    "PT3-P10 双联弹簧 PT9L BOM 序号",
+    "PT9L 设计验证 跌落测试 PT3-M01 散热器压块",
+    "iHealth 共用件申请 借用件 跨产品 审批"
+  ],
+  "agent_instruction": "审查子Agent：已完成第一轮本地上下文扩展，两份图纸的完整内容已确认，但跨产品共用件合规性的核心证据缺口仍未弥合。请重点关注以下发现与待查事项：\n\n【已确认事实】\n1. FDIR-V14_散热器压块_REV01_0714：设计日期2017-06-28，供应商Famidoc，产品号FDIR-V14（体温计），在PT9L总装图BOM序号13以PT3-M01入账。图纸标题栏无PT9L产品标识。\n2. PT3_双联弹簧_REV01：Drawing NO.=PT3-P10，Model NO.=PT3，归档路径在PT9L DHF设计输出清单二/图纸下。读图报告第6行标注"共用件：PT3项目原件，被PT9L DHF借用归档"——此为分析性注记，非正式批准文件。\n\n【核心合规缺口】\n- 两份图纸均无正式跨产品共用件批准文件（ECO/DCO/共用件申请单）出现在已供证据目录中。\n- "共用件"标注仅存在于读图报告元数据区，不构成21 CFR 820.30或ISO 13485 §7.3意义上的设计控制文件。\n\n【下一步必查】\n1. 打开 PT9L-总装图-v1.0-20240627.pdf.md，检索序号13（PT3-M01）和序号14（PT3-M03）完整行，以及是否有"来源"或"备注"列说明共用件来源。\n2. 检索PT9L DHF文件目录/设计输出清单索引，确认是否有共用件清单或借用件批准记录。\n3. 检索关键词"ECO"、"DCO"、"共用件"、"借用"在整个PT9L DHF证据目录中的出现情况。\n4. 若上述均无，则可确认：供证据目录中不存在跨产品共用件正式批准文件，原始claim成立，严重性维持P3。",
+  "context_package": {
+    "same_item_evidence": [
+      {
+        "evidence_id": "DMR-126",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 28,
+        "actual_text": "**iHealth 内部图号映射**：根据 [总装图 BOM](PT9L-总装图-v1.0-20240627.pdf.md) 编号 13，本件在 PT9L BOM 中以 **PT3-M01** 入账（\"压块\"）。",
+        "context_note": "位于§0标题栏表格之后，为读图报告生成的分析性映射注记，非原始图纸字段。原始图纸产品号为FDIR-V14（体温计），设计日期2017-06-28，供应商Famidoc，iHealth审批2017-07-14。"
+      },
+      {
+        "evidence_id": "DMR-127",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 98,
+        "actual_text": "- **PT9L BOM 中位置**：[总装图序号 13 (PT3-M01)](PT9L-总装图-v1.0-20240627.pdf.md)",
+        "context_note": "位于§5装配关系节，为读图报告分析结论。同节还记录：本件↔75CEE0黄铜套紧配合+必须能过2m跌落（强制要求）；本件↔红外传感器组中心Ø3.6通孔为红外光路通道。"
+      },
+      {
+        "evidence_id": "DMR-128",
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "line": 99,
+        "actual_text": "- **配合 75CEE0 在 BOM 中位置**：序号 14 (PT3-M03)",
+        "context_note": "紧接DMR-127，说明配合件75CEE0黄铜套在PT9L BOM中为序号14(PT3-M03)，两件均以PT3-M前缀入账，进一步佐证为PT3系列组件。"
+      },
+      {
+        "evidence_id": "DMR-132",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 6,
+        "actual_text": "> **共用件**：**PT3 项目原件**，被 PT9L DHF 借用归档（外购件 / 设计参照）",
+        "context_note": "位于文件头部元数据区（来源PDF、生成时间、DPI之后），为读图报告生成者添加的分析性标注。原始PDF路径：02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf。此标注不等同于正式共用件批准文件。"
+      },
+      {
+        "evidence_id": "DMR-133",
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "line": 14,
+        "actual_text": "| **Drawing NO.** | **PT3-P10** |",
+        "context_note": "§0标题栏完整内容：Drawing NO.=PT3-P10；Part name=双联弹簧；Edition=V1.0；Model NO.=PT3（注：归档于PT9L DHF，实为PT3项目原件）；Pro material=弹簧钢；Scale=1:1；Units=mm；Tolerance Level=B。供应商LOGO为andon（安东）。技术要求包含GB2423.17-2008盐雾测试（35°、5%盐水、24H无锈）。"
+      }
+    ],
+    "parameter_context": [],
+    "page_context": [
+      {
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "section": "§0 标题栏",
+        "key_fields": {
+          "PART_NAME": "散热器压块",
+          "MATERIAL": "黄铜",
+          "PRODUCTION_NAME": "体温计",
+          "PRODUCTION_NO": "FDIR-V14",
+          "FORM_NO": "QR-12-118",
+          "EDITION": "V1.0",
+          "DESIGN_DATE": "2017-06-28",
+          "IHEALTH_APPROVAL": "2017-07-14",
+          "SUPPLIER": "Famidoc（深圳法米德/厦门法米德医疗器械有限公司）",
+          "TOLERANCE_LEVEL": "B",
+          "CONFIDENTIAL": "蓝印章：机密"
+        },
+        "compliance_note": "标题栏产品号FDIR-V14对应体温计，无PT9L产品标识。PT3-M01为iHealth内部BOM映射，非图纸原始字段。"
+      },
+      {
+        "doc_id": "F0175",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\FDIR-V14_散热器压块_REV01_0714.pdf.md",
+        "section": "§6 必查确认清单（读图报告）",
+        "key_items": [
+          "待确认：FDIR-V14 = PT3-M01？（Famidoc图号 = iHealth内部BOM号）→ 默认推测：是",
+          "待确认：iHealth内部是否有'压块'独立图（带PT3-M01图号）补归档 → 推测无"
+        ],
+        "compliance_note": "读图报告自身已标记FDIR-V14与PT3-M01的等同关系为'推测'，非已确认事实，进一步说明正式映射文件缺失。"
+      },
+      {
+        "doc_id": "F0176",
+        "rel_path": "12 设计输出（含01、02）\\设计输出清单二\\图纸\\PT3_双联弹簧_REV01.pdf.md",
+        "section": "§0 标题栏 + 元数据",
+        "key_fields": {
+          "DRAWING_NO": "PT3-P10",
+          "PART_NAME": "双联弹簧",
+          "MODEL_NO": "PT3",
+          "MATERIAL": "弹簧钢",
+          "EDITION": "V1.0",
+          "SCALE": "1:1",
+          "TOLERANCE_LEVEL": "B",
+          "SUPPLIER_LOGO": "andon（安东）",
+          "SALT_SPRAY_TEST": "GB2423.17-2008，35°，5%盐水，24H无锈"
+        },
+        "archive_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf",
+        "compliance_note": "图纸Model NO.明确为PT3，归档于PT9L DHF设计输出清单二。无PT9L产品标识，无正式共用件批准文件引用。"
+      }
+    ],
+    "recovered_context": [
+      {
+        "context_id": "RC-001",
+        "type": "document_metadata_expansion",
+        "description": "FDIR-V14_散热器压块完整文件元数据",
+        "content": {
+          "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/FDIR-V14_散热器压块_REV01_0714.pdf",
+          "generated": "2026-06-02",
+          "pages": 1,
+          "format": "A4横向 841×595pt",
+          "design_date": "2017-06-28",
+          "ihealth_approval_date": "2017-07-14",
+          "supplier": "Famidoc",
+          "product_id_on_drawing": "FDIR-V14（体温计）",
+          "pt9l_bom_mapping": "PT3-M01（序号13，读图报告分析性映射）",
+          "associated_files": [
+            "75CEE0-Model.pdf.md",
+            "PT9L-总装图-v1.0-20240627.pdf.md",
+            "疑点表§4.1 pt9l-2d-audit-doubts.md#41"
+          ]
+        }
+      },
+      {
+        "context_id": "RC-002",
+        "type": "document_metadata_expansion",
+        "description": "PT3_双联弹簧_REV01完整文件元数据",
+        "content": {
+          "source_pdf": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT3_双联弹簧_REV01.pdf",
+          "generated": "2026-06-02",
+          "drawing_no": "PT3-P10",
+          "model_no": "PT3",
+          "supplier_logo": "andon",
+          "shared_component_note": "PT3项目原件，被PT9L DHF借用归档（外购件/设计参照）——读图报告分析性标注，非正式批准文件",
+          "technical_requirements_summary": "外观无毛刺；重点检测尺寸带编号；未注尺寸以样板为准；RoHS合规；GB2423.17-2008盐雾测试通过"
+        }
+      },
+      {
+        "context_id": "RC-003",
+        "type": "compliance_gap_analysis",
+        "description": "跨产品共用件合规性缺口分析",
+        "finding": "在已供证据目录中，两份图纸的'共用件'或'借用归档'属性均仅体现在读图报告的分析性注记中（PT3_双联弹簧_REV01.pdf.md第6行；FDIR-V14读图报告§6第6条推测），未发现任何正式的跨产品共用件批准文件（ECO/DCO/共用件申请单/设计借用通知单）。PT9L总装图BOM中PT3-M01的入账本身不构成共用件批准，仅说明该零件被纳入PT9L物料清单。",
+        "missing_document_types": [
+          "跨产品共用件批准单（ECO/DCO）",
+          "共用件/借用件申请与审批记录",
+          "PT9L

@@ -1,0 +1,215 @@
+{
+  "document": {
+    "title": "产品维修指南",
+    "document_number": "PT9L-WXZN01 V1.0",
+    "version": "V1.0",
+    "product_model": "PT9L",
+    "project_number": "30000078",
+    "product_name": "红外体温计",
+    "type": "维修指南"
+  },
+  "products": [
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "project_number": "30000078"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "文件编号",
+      "value": "PT9L-WXZN01 V1.0"
+    },
+    {
+      "type": "项目编号",
+      "value": "30000078"
+    }
+  ],
+  "revision_records": [
+    {
+      "sequence": "1",
+      "description": "起草",
+      "version": "V1.0",
+      "author": "万龙",
+      "approver": "侯广伟"
+    }
+  ],
+  "persons": [
+    {
+      "name": "万龙",
+      "role": "编制"
+    },
+    {
+      "name": "侯广伟",
+      "role": "批准"
+    }
+  ],
+  "components": [
+    {
+      "name": "电源弹簧",
+      "description": "正负极弹簧，负责电源连接"
+    },
+    {
+      "name": "稳压片",
+      "description": "稳压电路核心器件"
+    },
+    {
+      "name": "主芯片",
+      "description": "主控芯片，含按键端口、LCD驱动端口、LED驱动端口、低电检测端口、控制端口"
+    },
+    {
+      "name": "按键",
+      "description": "开机按键"
+    },
+    {
+      "name": "LCD",
+      "description": "液晶显示屏"
+    },
+    {
+      "name": "导电胶条",
+      "description": "LCD连接导电件"
+    },
+    {
+      "name": "背光LED",
+      "description": "LCD背光光源"
+    },
+    {
+      "name": "蜂鸣器",
+      "description": "声音提示器件"
+    },
+    {
+      "name": "温度传感器",
+      "description": "测温核心传感器"
+    },
+    {
+      "name": "低电检测电路",
+      "description": "检测电池低电量的电路"
+    },
+    {
+      "name": "LCD驱动芯片",
+      "description": "驱动LCD显示的芯片"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "目的：对产品生产过程中出现的不符合产品检验标准要求并需要进行维修的情况提供借鉴。",
+      "topic_tags": [
+        "维修目的",
+        "不合格品",
+        "生产过程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "维修准备：1. 确认维修时产品不良现象；2. 确保维修不对产品造成破坏或二次损伤。",
+      "topic_tags": [
+        "维修准备",
+        "操作规范",
+        "维修流程"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "产品维修指南"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——开机不良：\n1. 不开机：（1）电源弹簧不良：①正负极簧连；②正负极簧装反；③正负极簧松。（2）稳压电路不良：①电源短路；②稳压片不良。（3）主芯片不良：①主芯片程序错误；②主芯片不良。（4）按键不良：①按键不良；②主芯片按键端口不良。\n2. 无显示或显示不全：见显示不良分析。\n3. 无声音：见蜂鸣器不良分析。",
+      "topic_tags": [
+        "开机不良",
+        "故障分析",
+        "原因分析",
+        "维修"
+      ],
+      "related_subjects": [
+        "电源弹簧",
+        "稳压片",
+        "主芯片",
+        "按键",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——显示不良：\n1. 全显缺段：①LCD不良；②主芯片LCD驱动端口不良；③导电胶条不良。\n2. 显示深浅不一：①LCD不良；②主芯片LCD驱动端口不良。\n3. 背光不亮：①背光LED不良；②主芯片LED驱动端口不良。",
+      "topic_tags": [
+        "显示不良",
+        "LCD故障",
+        "背光故障",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "LCD",
+        "导电胶条",
+        "背光LED",
+        "主芯片",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——蜂鸣器不良：\n1. 不响：①蜂鸣器不良；②主芯片控制端口不良。\n2. 声音小或时断时续：①蜂鸣器不良；②主芯片控制端口不良。",
+      "topic_tags": [
+        "蜂鸣器不良",
+        "声音故障",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "蜂鸣器",
+        "主芯片",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——测温不准：\n测温不准：①温度传感器不良；②温度标定不良。",
+      "topic_tags": [
+        "测温不准",
+        "温度传感器",
+        "温度标定",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "温度传感器",
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——低电压不良：\n1. 开机出电池符号：①低电检测电路不良；②主芯片低电检测端口不良。\n2. 低电压不出电池符号：①主芯片低电检测端口不良；②低电检测电路不良；③LCD驱动芯片端口不良。",
+      "topic_tags": [
+        "低电压不良",
+        "电池符号",
+        "低电检测",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "低电检测电路",
+        "主芯片",
+        "LCD驱动芯片",
+        "PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "PT9L测试不良现象及原因分析——供电、漏电不良：\n1. 供电大：①主芯片端口不良（短路）；②稳压片电路不良；③元器件损坏。\n2. 供电小：①稳压片电路不良；②主芯片端口不良。\n3. 漏电大：①元器件不良；②主芯片端口不良；③稳压片电路不良。",
+      "topic_tags": [
+        "供电不良",
+        "漏电",
+        "电流异常",
+        "故障分析"
+      ],
+      "related_subjects": [
+        "主芯片",
+        "稳压片",
+        "PT9L"
+      ]
+    }
+  ]
+}

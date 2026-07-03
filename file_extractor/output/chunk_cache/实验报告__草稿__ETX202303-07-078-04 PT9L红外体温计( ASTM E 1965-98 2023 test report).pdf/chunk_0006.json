@@ -1,0 +1,246 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-04",
+    "total_pages": 22,
+    "current_pages": "13-14"
+  },
+  "requirements": [
+    {
+      "id": "6.4.2.4",
+      "description": "IR thermometers not capable of producing continuous temperature readings shall have their circuitry modified to allow for continuous monitoring of the IR and reference temperature signals. The peak excursions of the monitored IR and reference temperature signals measured during frequency sweep interval shall be recalculated to represent the corresponding temperature excursions. On request, the manufacturer shall make available the method of the circuit modification.",
+      "status": "N/A"
+    },
+    {
+      "id": "6.4.2.5",
+      "description": "IR thermometers having digital output shall have their signal monitored at the output of the analog-to-digital converter.",
+      "status": "N/A"
+    },
+    {
+      "id": "6.4.2.6",
+      "description": "Non-conductive and dielectric connections (for example, fiber-optic) shall be used between the IR thermometer and all test equipment so as to minimize perturbations of the electromagnetic field.",
+      "status": "N/A"
+    },
+    {
+      "id": "6.4.2.7",
+      "description": "Calculated temperature excursions shall deviate from one another by value no greater than required by 5.6.6.",
+      "status": "N/A"
+    },
+    {
+      "id": "6.5",
+      "description": "Electrostatic Discharge Tests",
+      "status": "P"
+    },
+    {
+      "id": "6.5.1",
+      "description": "The effects of electrostatic discharge on accuracy of an IR thermometer shall be tested in compliance with provisions of standard IEC 1000-4-2: 1995.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.1.1",
+      "description": "The IR thermometer shall be in a 'power on' state when subjected to electrostatic discharge.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.1.2",
+      "description": "Ten air and ten contact discharges shall be applied.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.1.3",
+      "description": "If IR thermometer under test has no exposed electrically conductive parts, only air discharge shall be applied.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.2",
+      "description": "Air Discharge",
+      "status": "P"
+    },
+    {
+      "id": "6.5.2.1",
+      "description": "The discharge shall be aimed at an electrically nonconductive part of the IR thermometer probe with no probe cover attached.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.2.2",
+      "description": "The level of discharge shall be 2, 4, and 8 kV.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.3",
+      "description": "Contact Discharge",
+      "status": "P"
+    },
+    {
+      "id": "6.5.3.1",
+      "description": "The probe of the electrostatic discharge device shall touch one of the electrically conductive parts on the device.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.3.2",
+      "description": "The level of discharge shall be 2, 4, and 6 kV.",
+      "status": "P"
+    },
+    {
+      "id": "6.5.4",
+      "description": "After electrostatic discharge, the IR thermometer shall be tested according to the procedures of 6.3.2 and 6.3.3.",
+      "status": "P"
+    },
+    {
+      "id": "7",
+      "description": "Documentation",
+      "status": "P"
+    },
+    {
+      "id": "7.1",
+      "description": "Identification",
+      "status": null
+    },
+    {
+      "id": "7.1.1",
+      "description": "In order that purchasers may identify products conforming to requirements of this specification, producers and distributors may include a statement of compliance in conjunction with their name and address on product labels or associated printed materials. Suggested statement: 'This infrared thermometer meets requirements established in ASTM Standard (E1965-98). Full responsibility for the conformance of this product to the standard is assumed by (name and address of producer or distributor).' In the event one or more provisions of this standard are not met, a cautionary statement shall be included.",
+      "response": "See User's Manual.",
+      "status": "P"
+    },
+    {
+      "id": "7.1.2",
+      "description": "The IR thermometer shall be identified as intended for professional or consumer use, or both, as applicable.",
+      "response": "Consumer use.",
+      "status": "P"
+    },
+    {
+      "id": "7.2",
+      "description": "Instruction Manual",
+      "status": "P"
+    },
+    {
+      "id": "7.2.1",
+      "description": "Specifications — An instruction manual shall be provided and contain the system specifications including, but not limited to: displayed temperature range, maximum laboratory error, body site(s) used as reference, applicable subject categories for each display mode.",
+      "response": "See 'Product performance' of the User's Manual.",
+      "status": "P"
+    },
+    {
+      "id": "7.2.1.1",
+      "description": "Displayed temperature range.",
+      "response": "See 'Product performance' of the User's Manual.",
+      "status": "P"
+    },
+    {
+      "id": "7.2.1.2",
+      "description": "Maximum laboratory error.",
+      "response": "See 'Product performance' of the User's Manual.",
+      "status": "P"
+    },
+    {
+      "id": "7.2.1.3",
+      "description": "Body site(s) used as a reference for adjusting the displayed temperature value.",
+      "response": "See 'Product performance' of the User's Manual.",
+      "status": "P"
+    },
+    {
+      "id": "7.2.1.4",
+      "description": "Applicable subject categories for each display mode.",
+      "response": "See 'Product performance' of the User's Manual.",
+      "status": "P"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "IEC 1000-4-2: 1995",
+      "description": "Standard for electrostatic discharge testing, referenced in clause 6.5.1"
+    },
+    {
+      "name": "ASTM E1965-98",
+      "description": "Standard specification for infrared thermometers for intermittent determination of patient temperature, referenced in clause 7.1.1"
+    }
+  ],
+  "tests": [
+    {
+      "id": "6.5",
+      "name": "Electrostatic Discharge Tests",
+      "reference_standard": "IEC 1000-4-2: 1995",
+      "conditions": [
+        "IR thermometer shall be in power on state",
+        "Ten air and ten contact discharges shall be applied",
+        "If no exposed electrically conductive parts, only air discharge applied"
+      ],
+      "sub_tests": [
+        {
+          "name": "Air Discharge",
+          "discharge_levels_kV": [
+            2,
+            4,
+            8
+          ],
+          "target": "Electrically nonconductive part of the IR thermometer probe with no probe cover attached"
+        },
+        {
+          "name": "Contact Discharge",
+          "discharge_levels_kV": [
+            2,
+            4,
+            6
+          ],
+          "target": "Electrically conductive parts on the device"
+        }
+      ],
+      "post_test": "Test according to procedures of 6.3.2 and 6.3.3 after ESD"
+    }
+  ],
+  "intended_use_items": [
+    {
+      "use_type": "Consumer use",
+      "reference_clause": "7.1.2"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "In order that purchasers may identify products conforming to requirements of this specification, producers and distributors may include a statement of compliance in conjunction with their name and address on product labels or associated printed materials, or both, such as invoices, sales literature, and the like. The following statement is suggested: 'This infrared thermometer meets requirements established in ASTM Standard (E1965-98). Full responsibility for the conformance of this product to the standard is assumed by (name and address of producer or distributor).' In the event one or more provisions of this standard are not met, a cautionary statement shall be included.",
+      "topic_tags": [
+        "product labeling",
+        "compliance statement",
+        "ASTM E1965-98",
+        "identification"
+      ],
+      "related_subjects": [
+        "7.1.1",
+        "ASTM E1965-98",
+        "User's Manual"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "An instruction manual shall be provided and contain the system specifications including, but not limited to: displayed temperature range, maximum laboratory error, body site(s) used as a reference for adjusting the displayed temperature value, and applicable subject categories for each display mode. Response references 'Product performance' section of the User's Manual.",
+      "topic_tags": [
+        "instruction manual",
+        "system specifications",
+        "temperature range",
+        "laboratory error",
+        "body site",
+        "display mode"
+      ],
+      "related_subjects": [
+        "7.2.1",
+        "7.2.1.1",
+        "7.2.1.2",
+        "7.2.1.3",
+        "7.2.1.4",
+        "User's Manual"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Non-conductive and dielectric connections (for example, fiber-optic) shall be used between the IR thermometer and all test equipment so as to minimize perturbations of the electromagnetic field. (Clause 6.4.2.6, Status: N/A)",
+      "topic_tags": [
+        "EMC",
+        "fiber-optic",
+        "non-conductive connection",
+        "electromagnetic field",
+        "test setup"
+      ],
+      "related_subjects": [
+        "6.4.2.6"
+      ]
+    }
+  ]
+}

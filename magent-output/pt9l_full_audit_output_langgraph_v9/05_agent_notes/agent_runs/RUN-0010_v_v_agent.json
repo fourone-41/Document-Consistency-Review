@@ -1,0 +1,1259 @@
+{
+  "run_id": "RUN-0010",
+  "agent": "V&V Agent",
+  "assignment_id": "ASG-0010",
+  "task_type": "context_recheck",
+  "assignment": {
+    "assignment_id": "ASG-0010",
+    "target_agent": "V&V Agent",
+    "task_type": "context_recheck",
+    "review_focus": "Risk document version alignment in verification records. Risk Traceability Agent (RUN-0003) and V&V Agent (RUN-0007) both flagged that the design verification plan/report cites PT9L-FXGB01 V1.0 while the active risk management report is V2.0. This recheck must: (1) retrieve the design verification plan/report and identify every location where PT9L-FXGB01 is cited, recording the version number cited at each location; (2) retrieve PT9L-FXGB01 V2.0 and identify what changed between V1.0 and V2.0 — specifically whether any risk controls added or modified in V2.0 have corresponding verification activities in the verification plan/report; (3) determine whether any change record, amendment, or addendum to the verification plan/report acknowledges the V2.0 update; (4) assess whether the closed-loop confirmation between risk controls and verification activities is broken by this version mismatch. Do not render a finding verdict — locate and report all available evidence.",
+    "input_refs": [
+      "RUN-0003",
+      "RUN-0007",
+      "PT9L-FXGB01",
+      "PT9L-KXPS01"
+    ],
+    "evidence_strategy": {
+      "use_page_index": true,
+      "use_relation_index": true,
+      "use_full_text": true,
+      "read_files": [
+        "PT9L-FXGB01",
+        "PT9L-KXPS01",
+        "PT9L-KHXQ01"
+      ]
+    },
+    "routing_source": "orchestrator_llm",
+    "review_status": "candidate",
+    "final_decision": null
+  },
+  "input_package": {
+    "role": "V&V Agent",
+    "goal": "Check whether design inputs, verification plans, validation reports, external formal reports, and design confirmation evidence support each other.",
+    "system_prompt": "Review verification and validation consistency using only supplied evidence IDs.",
+    "retrieval_strategy": {
+      "prefix": "VV",
+      "patterns": [
+        "design input|verification plan|verification report|test record|acceptance criteria|formal report|ETX|TX202303|software validation"
+      ],
+      "rel_contains": [
+        "04 ",
+        "11 ",
+        "18 ",
+        "实验报告"
+      ],
+      "max_hits": 140
+    },
+    "input_schema": {
+      "required_fields": [
+        "project_profile",
+        "mandatory_audit_matrix",
+        "evidence_catalog",
+        "candidate_discovery_inputs"
+      ]
+    },
+    "required_schema": {
+      "required_fields": [
+        "agent",
+        "summary",
+        "findings"
+      ],
+      "agent": "V&V Agent",
+      "summary": "string",
+      "review_notes": [],
+      "findings": [
+        {
+          "finding_type": "snake_case",
+          "severity": "P1/P2/P3",
+          "claim": "reviewable conclusion",
+          "rationale": "evidence-based reason",
+          "evidence_ids": [],
+          "challenge_questions": []
+        }
+      ]
+    },
+    "evidence_catalog": [
+      {
+        "evidence_id": "VV-001",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 84,
+        "source_text": "The risk management plan has defined the acceptance criteria of risk, and has also arranged the risk management review activity. The risk management group is established to ensure the risk management activity of the current project will be implemented effectively according to the risk management plan.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-002",
+        "doc_id": "F0020",
+        "rel_path": "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 107,
+        "source_text": "Please find the document *Risk Management Plan* (PT9L-FXJH01 V1.0) for the risk acceptance criteria.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-003",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 84,
+        "source_text": "The risk management plan has defined the acceptance criteria of risk, and has also arranged the risk management review activity. The risk management group is established to ensure the risk management activity of the current project will be implemented effectively according to the risk management plan.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-004",
+        "doc_id": "F0024",
+        "rel_path": "03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md",
+        "line": 107,
+        "source_text": "Please find the document *Risk Management Plan* (PT9L-FXJH01 V1.0) for the risk acceptance criteria.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-005",
+        "doc_id": "F0031",
+        "rel_path": "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 10,
+        "source_text": "Design Input - General part",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-006",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 222,
+        "source_text": "|  | 微小 | Remote chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.25 | System/Product verification/validation after design freeze and prior to launch with pass/fail testing (Subsystem or system testing with acceptance criteria such as ride and handling, shipping, evaluation, etc.). | 8 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-007",
+        "doc_id": "F0071",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\包装类FMEA.via_xlsx.clean.md",
+        "line": 225,
+        "source_text": "|  | 中等 | Moderate chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.55 | System/Product validation (reliability testing, development or validation tests) prior to design freeze using pass/fail testing (e.g., acceptance criteria for performance, function checks, etc.). | 5 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-008",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 580,
+        "source_text": "|  | 微小 | Remote chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.25 | System/Product verification/validation after design freeze and prior to launch with pass/fail testing (Subsystem or system testing with acceptance criteria such as ride and handling, shipping, evaluation, etc.). | 8 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-009",
+        "doc_id": "F0074",
+        "rel_path": "11 T1样机\\05 DFMEA E0 23.11\\结构类FMEA  E0(1)(1).via_xlsx.clean.md",
+        "line": 583,
+        "source_text": "|  | 中等 | Moderate chance the Design Control will detect a potential cause/mechanism and subsequent Failure Mode. | 0.55 | System/Product validation (reliability testing, development or validation tests) prior to design freeze using pass/fail testing (e.g., acceptance criteria for performance, function checks, etc.). | 5 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-010",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 136,
+        "source_text": "| 行业标准 | ISO 80601-2-56:2017/Amd1:2018 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-011",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 137,
+        "source_text": "| 行业标准 | EN ISO 80601-2-56:2017+A1:2018 | □是 ■否 | -- | -- | -- | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-012",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 138,
+        "source_text": "| 行业标准 | EN 12470-3:2000+A1:2009 | □是 ■否 | -- | -- | -- | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-013",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 139,
+        "source_text": "| 行业标准 | EN 12470-5:2003 | □是 ■否 | -- | -- | -- | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-014",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 140,
+        "source_text": "| 行业标准 | ASTM E1965-98：2016 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-015",
+        "doc_id": "F0114",
+        "rel_path": "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md",
+        "line": 141,
+        "source_text": "| 行业标准 | ASTM E1965-98：2023 | ■是 □否 | 设计确认 | 按照标准要求进行相应评估或测试 | 设计验证报告通过 | ETX202303-07-078-03/ETX202303-07-078-04 | 合格 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-016",
+        "doc_id": "F0247",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.pdf.md",
+        "line": 662,
+        "source_text": "The user interface design input is conducted prioritize meeting established user interface requirements",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-017",
+        "doc_id": "F0247",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.pdf.md",
+        "line": 709,
+        "source_text": "a mature device, one formative evaluation is conducted during design input stage, and one",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-018",
+        "doc_id": "F0247",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.pdf.md",
+        "line": 729,
+        "source_text": "Conduct the initial Formative Evaluation during the design input stage, which is early in the process to",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-019",
+        "doc_id": "F0247",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.pdf.md",
+        "line": 774,
+        "source_text": "Establish acceptance criteria for each metric to determine if the user interface meets usability and",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-020",
+        "doc_id": "F0247",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.pdf.md",
+        "line": 789,
+        "source_text": "home use. There are two formative evaluation for this device, the first stage is during design input, the",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-021",
+        "doc_id": "F0247",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.pdf.md",
+        "line": 792,
+        "source_text": "In the design input stage, cognitive walkthroughs and interview from experience engineer and customer",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-022",
+        "doc_id": "F0248",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.via_lo_html.clean.md",
+        "line": 536,
+        "source_text": "The user interface design input is conducted prioritize meeting established user interface requirements from users. The design process is iterative and aims to develop a user interface that permits users to perform all hazard-based use scenarios acceptably.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-023",
+        "doc_id": "F0248",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.via_lo_html.clean.md",
+        "line": 574,
+        "source_text": "The User Interface Evaluation activities are synchronized with other development tasks. As this is a mature device, one formative evaluation is conducted during design input stage, and one formative evaluation is conducted with prototype device followed by usability tests. This usability test is also a pre-summative evaluation, if it reveals findings that require design changes, new evaluation will be conducted on changed device.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-024",
+        "doc_id": "F0248",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.via_lo_html.clean.md",
+        "line": 592,
+        "source_text": "Conduct the initial Formative Evaluation during the design input stage, which is early in the process to catch major design flaws.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-025",
+        "doc_id": "F0248",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.via_lo_html.clean.md",
+        "line": 632,
+        "source_text": "Establish acceptance criteria for each metric to determine if the user interface meets usability and safety requirements.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-026",
+        "doc_id": "F0248",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.via_lo_html.clean.md",
+        "line": 646,
+        "source_text": "This is a mature device, the previous generation has been marketed in the EU, and the device is for home use. There are two formative evaluation for this device, the first stage is during design input, the second stage is during device validation.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-027",
+        "doc_id": "F0248",
+        "rel_path": "18 设计确认\\PT9L usability engineering file.via_lo_html.clean.md",
+        "line": 648,
+        "source_text": "In the design input stage, cognitive walkthroughs and interview from experience engineer and customer representatives.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-028",
+        "doc_id": "F0319",
+        "rel_path": "历史记录\\PT9LDHF-草稿\\04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md",
+        "line": 10,
+        "source_text": "Design Input - General part",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-029",
+        "doc_id": "F0455",
+        "rel_path": "实验报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L）.pdf.md",
+        "line": 3,
+        "source_text": "# Annex I--ETX202303-07-078-05 Test Report（PT9L）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-030",
+        "doc_id": "F0455",
+        "rel_path": "实验报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L）.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/Annex I--ETX202303-07-078-05 Test Report（PT9L）/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-031",
+        "doc_id": "F0455",
+        "rel_path": "实验报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L）.pdf.md",
+        "line": 16,
+        "source_text": "Report No.: ETX202303-07-078-05",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-032",
+        "doc_id": "F0455",
+        "rel_path": "实验报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L）.pdf.md",
+        "line": 28,
+        "source_text": "| Report No ……………….……: | ETX202303-07-078-05 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-033",
+        "doc_id": "F0455",
+        "rel_path": "实验报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L）.pdf.md",
+        "line": 46,
+        "source_text": "Report No.: ETX202303-07-078-05",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-034",
+        "doc_id": "F0455",
+        "rel_path": "实验报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L）.pdf.md",
+        "line": 68,
+        "source_text": "![第 3 页原始整页图](_assets/Annex I--ETX202303-07-078-05 Test Report（PT9L）/page_3.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-035",
+        "doc_id": "F0456",
+        "rel_path": "实验报告\\最终报告\\2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+        "line": 3,
+        "source_text": "# 2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-036",
+        "doc_id": "F0456",
+        "rel_path": "实验报告\\最终报告\\2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-037",
+        "doc_id": "F0456",
+        "rel_path": "实验报告\\最终报告\\2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+        "line": 20,
+        "source_text": "Report No.:ETX202303-07-078-01",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-038",
+        "doc_id": "F0456",
+        "rel_path": "实验报告\\最终报告\\2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+        "line": 49,
+        "source_text": "Report No.:ETX202303-07-078-01",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-039",
+        "doc_id": "F0456",
+        "rel_path": "实验报告\\最终报告\\2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+        "line": 59,
+        "source_text": "![第 4 页原始整页图](_assets/2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文/page_4.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-040",
+        "doc_id": "F0456",
+        "rel_path": "实验报告\\最终报告\\2024-08-15 TX202303-07-078-01 PT9L EMC  型式试验报告英文.pdf.md",
+        "line": 61,
+        "source_text": "Report No.:ETX202303-07-078-01",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-041",
+        "doc_id": "F0457",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式.pdf.md",
+        "line": 3,
+        "source_text": "# 2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-042",
+        "doc_id": "F0457",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-043",
+        "doc_id": "F0457",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式.pdf.md",
+        "line": 21,
+        "source_text": "Report No.: ETX202303-07-078-02",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-044",
+        "doc_id": "F0457",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式.pdf.md",
+        "line": 97,
+        "source_text": "Report No.: ETX202303-07-078-02",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-045",
+        "doc_id": "F0457",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式.pdf.md",
+        "line": 112,
+        "source_text": "Report No.: ETX202303-07-078-02",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-046",
+        "doc_id": "F0457",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-02 PT9L 安规报告-正式.pdf.md",
+        "line": 190,
+        "source_text": "Report No.: ETX202303-07-078-02",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-047",
+        "doc_id": "F0458",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式.pdf.md",
+        "line": 3,
+        "source_text": "# 2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-048",
+        "doc_id": "F0458",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-049",
+        "doc_id": "F0458",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式.pdf.md",
+        "line": 20,
+        "source_text": "Report No.: ETX202303-07-078-03",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-050",
+        "doc_id": "F0458",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式.pdf.md",
+        "line": 116,
+        "source_text": "Report No.: ETX202303-07-078-03",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-051",
+        "doc_id": "F0458",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式.pdf.md",
+        "line": 182,
+        "source_text": "Report No.: ETX202303-07-078-03",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-052",
+        "doc_id": "F0458",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-03 PT9L -2-56 报告-正式.pdf.md",
+        "line": 220,
+        "source_text": "Report No.: ETX202303-07-078-03",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-053",
+        "doc_id": "F0459",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf.md",
+        "line": 3,
+        "source_text": "# 2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-054",
+        "doc_id": "F0459",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-055",
+        "doc_id": "F0459",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf.md",
+        "line": 20,
+        "source_text": "Report No.: ETX202303-07-078-04",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-056",
+        "doc_id": "F0459",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf.md",
+        "line": 116,
+        "source_text": "Report No.: ETX202303-07-078-04",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-057",
+        "doc_id": "F0459",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf.md",
+        "line": 175,
+        "source_text": "Report No.: ETX202303-07-078-04",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-058",
+        "doc_id": "F0459",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-04 PT9L 1965报告-正式.pdf.md",
+        "line": 208,
+        "source_text": "Report No.: ETX202303-07-078-04",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-059",
+        "doc_id": "F0460",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式.pdf.md",
+        "line": 3,
+        "source_text": "# 2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-060",
+        "doc_id": "F0460",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式.pdf.md",
+        "line": 15,
+        "source_text": "![Page 1 Original Full Image](_assets/2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-061",
+        "doc_id": "F0460",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式.pdf.md",
+        "line": 17,
+        "source_text": "**Report No.**: ETX202303-07-078-05",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-062",
+        "doc_id": "F0460",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式.pdf.md",
+        "line": 51,
+        "source_text": "![Page 2 Original Full Image](_assets/2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式/page_2.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-063",
+        "doc_id": "F0460",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式.pdf.md",
+        "line": 53,
+        "source_text": "**Report No.**: ETX202303-07-078-05",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-064",
+        "doc_id": "F0460",
+        "rel_path": "实验报告\\最终报告\\2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式.pdf.md",
+        "line": 65,
+        "source_text": "![Page 3 Original Full Image](_assets/2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式/page_3.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-065",
+        "doc_id": "F0461",
+        "rel_path": "实验报告\\最终报告\\2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告.pdf.md",
+        "line": 3,
+        "source_text": "# 2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-066",
+        "doc_id": "F0461",
+        "rel_path": "实验报告\\最终报告\\2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-067",
+        "doc_id": "F0461",
+        "rel_path": "实验报告\\最终报告\\2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告.pdf.md",
+        "line": 20,
+        "source_text": "Report No.: ETX202303-07-078-03R1",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-068",
+        "doc_id": "F0461",
+        "rel_path": "实验报告\\最终报告\\2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告.pdf.md",
+        "line": 118,
+        "source_text": "Report No.: ETX202303-07-078-03R1",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-069",
+        "doc_id": "F0461",
+        "rel_path": "实验报告\\最终报告\\2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告.pdf.md",
+        "line": 186,
+        "source_text": "Report No.: ETX202303-07-078-03R1",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-070",
+        "doc_id": "F0461",
+        "rel_path": "实验报告\\最终报告\\2025.05.29 ETX202303-07-078-03R1-PT9L-红外体温计-正式报告.pdf.md",
+        "line": 226,
+        "source_text": "Report No.: ETX202303-07-078-03R1",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-071",
+        "doc_id": "F0462",
+        "rel_path": "实验报告\\最终报告\\Analysis and Evaluation Report o...Touch Forehead Thermometer（PT9L） (1).via_lo_html.clean.md",
+        "line": 147,
+        "source_text": "Annex I: ETX202303-07-078-05 Test Report.",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-072",
+        "doc_id": "F0463",
+        "rel_path": "实验报告\\最终报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L） (2).pdf.md",
+        "line": 3,
+        "source_text": "# Annex I--ETX202303-07-078-05 Test Report（PT9L） (2)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-073",
+        "doc_id": "F0463",
+        "rel_path": "实验报告\\最终报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L） (2).pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/Annex I--ETX202303-07-078-05 Test Report（PT9L） (2)/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-074",
+        "doc_id": "F0463",
+        "rel_path": "实验报告\\最终报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L） (2).pdf.md",
+        "line": 16,
+        "source_text": "Report No.: ETX202303-07-078-05",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-075",
+        "doc_id": "F0463",
+        "rel_path": "实验报告\\最终报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L） (2).pdf.md",
+        "line": 28,
+        "source_text": "| Report No ……………….……: | ETX202303-07-078-05 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-076",
+        "doc_id": "F0463",
+        "rel_path": "实验报告\\最终报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L） (2).pdf.md",
+        "line": 46,
+        "source_text": "Report No.: ETX202303-07-078-05",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-077",
+        "doc_id": "F0463",
+        "rel_path": "实验报告\\最终报告\\Annex I--ETX202303-07-078-05 Test Report（PT9L） (2).pdf.md",
+        "line": 68,
+        "source_text": "![第 3 页原始整页图](_assets/Annex I--ETX202303-07-078-05 Test Report（PT9L） (2)/page_3.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-078",
+        "doc_id": "F0465",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-01(PT9L)型式试验报告英文 草稿.pdf.md",
+        "line": 3,
+        "source_text": "# ETX202303-07-078-01(PT9L)型式试验报告英文 草稿",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-079",
+        "doc_id": "F0465",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-01(PT9L)型式试验报告英文 草稿.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/ETX202303-07-078-01(PT9L)型式试验报告英文 草稿/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-080",
+        "doc_id": "F0465",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-01(PT9L)型式试验报告英文 草稿.pdf.md",
+        "line": 16,
+        "source_text": "Report No.:ETX202303-07-078-01",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-081",
+        "doc_id": "F0465",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-01(PT9L)型式试验报告英文 草稿.pdf.md",
+        "line": 19,
+        "source_text": "| TEST REPORT NO.:ETX202303-07-078-01 |  |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-082",
+        "doc_id": "F0465",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-01(PT9L)型式试验报告英文 草稿.pdf.md",
+        "line": 40,
+        "source_text": "Report No.:ETX202303-07-078-01",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-083",
+        "doc_id": "F0465",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-01(PT9L)型式试验报告英文 草稿.pdf.md",
+        "line": 69,
+        "source_text": "Report No.:ETX202303-07-078-01",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-084",
+        "doc_id": "F0466",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文.pdf.md",
+        "line": 3,
+        "source_text": "# ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-085",
+        "doc_id": "F0466",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-086",
+        "doc_id": "F0466",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文.pdf.md",
+        "line": 16,
+        "source_text": "Report No.: ETX2023-07-078-02",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-087",
+        "doc_id": "F0466",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文.pdf.md",
+        "line": 28,
+        "source_text": "| Report No ……………….……: | R D ETX2023-07-078-02 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-088",
+        "doc_id": "F0466",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文.pdf.md",
+        "line": 47,
+        "source_text": "Report No.: ETX2023-07-078-02",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-089",
+        "doc_id": "F0466",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-02 PT9L- IEC 60601-1,60601-1-11 报告 英文.pdf.md",
+        "line": 125,
+        "source_text": "Report No.: ETX2023-07-078-02",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-090",
+        "doc_id": "F0467",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf.md",
+        "line": 3,
+        "source_text": "# ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-091",
+        "doc_id": "F0467",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-092",
+        "doc_id": "F0467",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf.md",
+        "line": 16,
+        "source_text": "Report No.: ETX202303-07-078-03",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-093",
+        "doc_id": "F0467",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf.md",
+        "line": 28,
+        "source_text": "| Report No ……………….……: | R ETX202303-07-078-03 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-094",
+        "doc_id": "F0467",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf.md",
+        "line": 46,
+        "source_text": "Report No.: ETX202303-07-078-03",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-095",
+        "doc_id": "F0467",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-03 PT9L-红外体温计( ISO 80601-2-56 test report）.pdf.md",
+        "line": 146,
+        "source_text": "Report No.: ETX202303-07-078-03",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-096",
+        "doc_id": "F0468",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+        "line": 3,
+        "source_text": "# ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-097",
+        "doc_id": "F0468",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+        "line": 14,
+        "source_text": "![第 1 页原始整页图](_assets/ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report)/page_1.png)",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-098",
+        "doc_id": "F0468",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+        "line": 16,
+        "source_text": "Report No.: ETX202303-07-078-04",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-099",
+        "doc_id": "F0468",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+        "line": 28,
+        "source_text": "| Report No ……………….……: | A ETX202303-07-078-04 |",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-100",
+        "doc_id": "F0468",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+        "line": 46,
+        "source_text": "Report No.: ETX202303-07-078-04",
+        "excluded_from_primary_scope": false
+      },
+      {
+        "evidence_id": "VV-101",
+        "doc_id": "F0468",
+        "rel_path": "实验报告\\草稿\\ETX202303-07-078-04 PT9L红外体温计( ASTM E 1965-98 2023 test report).pdf.md",
+        "line": 144,
+        "source_text": "Report No.: ETX202303-07-078-04",
+        "excluded_from_primary_scope": false
+      }
+    ],
+    "project_profile": {
+      "profile_source": "Project Scout Agent",
+      "target_model": "PT9L",
+      "product_family": [
+        "PT9L",
+        "PT9C",
+        "PT2L",
+        "PT3SBT",
+        "BP3L"
+      ],
+      "document_id_patterns": [
+        "PT9L-KHXQ01",
+        "PT9L-KXPS01",
+        "PT9L-FXJH01",
+        "PT9L-FXGB01",
+        "PT9L-EBOM01",
+        "PT9L-T1EB01",
+        "PT9L-SJSC01",
+        "PT9C-CNTP01"
+      ],
+      "primary_scope_rules": [
+        "PT9L is the target product model for this DHF",
+        "Documents in '2L风险改 - 历史文件' folder are explicitly historical",
+        "Documents referencing PT2L, PT3SBT, BP3L, or PT9C outside clearly marked historical/draft folders require justification"
+      ],
+      "key_entities": {
+        "customer": "九安 (iHealth / Jiuan Medical)",
+        "customer_representative": "赵一平",
+        "product_description": "红外非接触式额头温度计 (Infrared No-Touch Forehead Thermometer)",
+        "intended_use": "Intermittent measurement of body temperature from forehead skin surface on people of all ages; consumer home use and healthcare provider use",
+        "bluetooth": "PT9L can transmit temperature to smart device with Bluetooth (per Risk Management Report)"
+      },
+      "regulatory_baseline": [
+        "ISO 80601-2-56:2017/Amd1:2018 (international, applicable)",
+        "EN ISO 80601-2-56:2017+A1:2018 (EU, applicability differs between draft and final design input)",
+        "ASTM E1965-98:2016 (US, applicable)",
+        "ASTM E1965-98:2023 (US, applicable)",
+        "MDR 2017/745 (EU, applicability differs between draft and final design input)",
+        "ISO 14971:2019 / EN ISO 14971:2019 / EN ISO 14971:2019/A11:2021 (risk management)",
+        "ISO/TR 24971:2020 (risk assessment methodology)",
+        "EN 60601-1-6:2010+A1:2015+A2:2021 (usability)",
+        "GB/T 16886.1-2022 / ISO 10993-1:2018 (biocompatibility, China)",
+        "510(k) registration: andon responsible and paying",
+        "CE registration: applicability not yet determined per final design input"
+      ],
+      "candidate_discovery_hints": [
+        "PT9C appears as a sub-component PCB document number and as a standalone product in clinical evaluation and user test documents",
+        "PT3SBT appears in design output list two and a label review document filed under T1 sample folder",
+        "BP3L software diagrams appear in both the main software design folder and T1 sample subfolder",
+        "PT2L risk documents are in a '历史文件' subfolder but one (F0013) carries a PT9L document number internally"
+      ]
+    },
+    "mandatory_audit_matrix": [],
+    "corpus_scope": "full_markdown",
+    "assignment": {
+      "assignment_id": "ASG-0010",
+      "target_agent": "V&V Agent",
+      "task_type": "context_recheck",
+      "review_focus": "Risk document version alignment in verification records. Risk Traceability Agent (RUN-0003) and V&V Agent (RUN-0007) both flagged that the design verification plan/report cites PT9L-FXGB01 V1.0 while the active risk management report is V2.0. This recheck must: (1) retrieve the design verification plan/report and identify every location where PT9L-FXGB01 is cited, recording the version number cited at each location; (2) retrieve PT9L-FXGB01 V2.0 and identify what changed between V1.0 and V2.0 — specifically whether any risk controls added or modified in V2.0 have corresponding verification activities in the verification plan/report; (3) determine whether any change record, amendment, or addendum to the verification plan/report acknowledges the V2.0 update; (4) assess whether the closed-loop confirmation between risk controls and verification activities is broken by this version mismatch. Do not render a finding verdict — locate and report all available evidence.",
+      "input_refs": [
+        "RUN-0003",
+        "RUN-0007",
+        "PT9L-FXGB01",
+        "PT9L-KXPS01"
+      ],
+      "evidence_strategy": {
+        "use_page_index": true,
+        "use_relation_index": true,
+        "use_full_text": true,
+        "read_files": [
+          "PT9L-FXGB01",
+          "PT9L-KXPS01",
+          "PT9L-KHXQ01"
+        ]
+      },
+      "routing_source": "orchestrator_llm",
+      "review_status": "candidate",
+      "final_decision": null
+    },
+    "candidate_discovery_inputs": [],
+    "agent_runs": [
+      {
+        "run_id": "RUN-0001",
+        "agent": "Candidate Discovery Agent",
+        "task_type": "candidate_discovery",
+        "assignment_id": "ASG-0001",
+        "summary": "Cross-corpus scan of the PT9L DHF/DMR package reveals 14 candidate consistency issues spanning legacy product residue in active documents, document-number mismatches, unsigned approvals, wrong-product references in BOM and label documents, regulatory applicability conflicts, software diagram contamination, and blood-pressure-specific language appearing in a thermometer DHF.",
+        "finding_count": 11,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0002",
+        "agent": "Hardware Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0002",
+        "summary": "Hardware audit of PT9L DHF/DMR reveals five substantive consistency findings: a blood-pressure residue phrase in the battery design-verification plan/report, an unresolved BOM conflict between PT3-P10 dual-spring and PT5-M02/M03 separate springs, a total-assembly drawing part-number anomaly (T-Z1-P10 used for two distinct PCBs), missing pass/fail verdicts in multiple T1 sample review checklists, and object-temperature mode accuracy tolerance (±0.2 °C) applied at 30 °C and 45 °C in software test plans despite the design-input accuracy specification only requiring ±0.2 °C for ≥35 °C and ≤42 °C.",
+        "finding_count": 5,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0003",
+        "agent": "Risk Traceability Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0003",
+        "summary": "The PT9L risk management file set contains multiple traceability chain breaks: the current Risk Management Report references document number PT9L-FXGB01 V1.0 while the active risk set has been revised to V2.0; the active Risk Management Plan carries document number IFT-FXJH01 rather than PT9L-FXJH01; F0013 (PT2L risk plan) internally carries a PT9L-series document number creating a product-identity conflict; no evidence of Bluetooth-specific hazard verification is present in the supplied corpus; DFMEA files (F0071, F0074) are not cross-referenced to the ISO 14971 risk assessment; and the design verification plan/report cites only PT9L-FXGB01 V1.0 while the current report is V2.0, leaving the closed-loop confirmation potentially misaligned.",
+        "finding_count": 8,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0004",
+        "agent": "Software Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0004",
+        "summary": "PT9L software lifecycle audit reveals five substantive findings: BP3L software diagrams appear in the primary PT9L software design folder and T1 sample subfolder without documented shared-component rationale; the software design document version identifier (E0 23.11) cannot be reconciled with the V1.0 identifier cited in test/validation records and BOM; no Bluetooth software requirements or corresponding test/validation evidence is present in the supplied corpus; the IEC 60601-1 test report references software design document DN:PT9L-RJFA01 V1.0 which does not appear in the evidence catalog; and a label review document filed under the active T1 sample folder carries PT2L as the primary product model without justification.",
+        "finding_count": 5,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0005",
+        "agent": "DMR/SOP Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0005",
+        "summary": "DMR/SOP audit of PT9L design output chain reveals seven substantive findings including a document-number collision on drawing PT9L-F01, a part-number mismatch between the two packaging BOM files, PT3-origin shared-component drawings archived in the PT9L DHF without cross-product justification, an incomplete drawing title-block in a packaging label drawing, a missing outer-carton BOM entry in the primary packaging BOM, a process instruction referencing EBOM by document number without pinning a version, and the design output list carrying blank approval-date fields indicating the formal sign-off record is incomplete.",
+        "finding_count": 7,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0006",
+        "agent": "Regulatory Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0006",
+        "summary": "PT9L DHF regulatory audit identifies eight substantive findings spanning unsigned approval fields across all risk management documents, dual ASTM E1965 version citation without documented transition rationale, inconsistent EN ISO 80601-2-56 and MDR 2017/745 applicability between design input stages, absent 510(k) responsibility agreement for 'andon', biocompatibility reports conducted on PT5 samples rather than PT9L, IFT-prefixed document numbers on active PT9L risk management plans, a historical-folder risk plan (F0013) carrying a PT9L-series document number, and the operation guide referencing MDD rather than MDR for biocompatibility compliance.",
+        "finding_count": 8,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0007",
+        "agent": "V&V Agent",
+        "task_type": "domain_review",
+        "assignment_id": "ASG-0007",
+        "summary": "PT9L V&V corpus audit reveals five substantive findings: object-temperature accuracy tolerance applied outside the design-input specified range without documented justification; no Bluetooth hazard or functional verification evidence present; blood-pressure residue phrase in battery verification record with no confirmed signed pass verdict in supplied evidence; no verification record references the controlling risk document at V2.0; and the IEC 60601-1 test report's cited software design document (PT9L-RJFA01 V1.0) is absent from the evidence catalog and design output index.",
+        "finding_count": 6,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0008",
+        "agent": "Regulatory Agent",
+        "task_type": "context_recheck",
+        "assignment_id": "ASG-0008",
+        "summary": "Cross-run synthesis audit of the PT9L DHF/DMR package identifies six substantive regulatory and document-control findings, including one systemic finding covering unsigned approvals across all risk management documents, plus resolution assessments on five specific escalation questions raised by the orchestrator.",
+        "finding_count": 6,
+        "candidate_count": 0
+      },
+      {
+        "run_id": "RUN-0009",
+        "agent": "Risk Traceability Agent",
+        "task_type": "context_recheck",
+        "assignment_id": "ASG-0009",
+        "summary": "Full-corpus recheck for Bluetooth hazard traceability in the PT9L risk management chain confirms a true gap: no evidence of Bluetooth/BLE/wireless/RF hazard identification, risk control, or verification closure exists in any supplied document, while the project profile explicitly states PT9L transmits temperature via Bluetooth, and the active Risk Management Report (PT9L-FXGB01 V2.0, F0020/F0024) contains no retrievable Bluetooth hazard entry in the supplied evidence.",
+        "finding_count": 6,
+        "candidate_count": 0
+      }
+    ]
+  },
+  "llm_output": {
+    "agent": "V&V Agent",
+    "summary": "Context recheck for ASG-0010 confirms that the design verification report (F0114) cites external test reports ETX202303-07-078-03 and ETX202303-07-078-04 as passing evidence for ISO 80601-2-56 and ASTM E1965 compliance, but no version of the verification plan/report in the supplied evidence catalog explicitly cites PT9L-FXGB01 by version number, no change record or addendum acknowledging the V1.0-to-V2.0 risk report update is present, a revised ISO 80601-2-56 test report (ETX202303-07-078-03R1, dated 2025-05-29) exists in the corpus without any corresponding update to the design verification report, and the closed-loop confirmation between risk controls and verification activities cannot be confirmed as complete from the supplied evidence.",
+    "review_notes": [
+      "The design verification report (F0114) is a multi-row matrix document covering regulatory standards; the supplied evidence lines (VV-010 through VV-015) represent only the rows for ISO 80601-2-56:2017/Amd1:2018, EN ISO 80601-2-56:2017+A1:2018, EN 12470-3, EN 12470-5, ASTM E1965-98:2016, and ASTM E1965-98:2023. No other rows from F0114 are present in the evidence catalog, so a complete audit of all verification plan rows is not possible from supplied evidence alone.",
+      "The risk management report exists in two document instances: F0020 (doc_id F0020, path '03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01 V2.0') and F0024 (doc_id F0024, path '03 风险分析\\PT9L--Attachment 7 04 Risk Management Report IFT-FXGB01 V2.0'). Both carry V2.0 in their filenames. The supplied evidence lines for both (VV-001 through VV-004) contain only high-level statements about the risk management plan and acceptance criteria; no line-level content showing what changed between V1.0 and V2.0 is present in the evidence catalog.",
+      "Five final external test reports are present in the corpus: ETX202303-07-078-01 (EMC, F0456), ETX202303-07-078-02 (safety/IEC 60601-1, F0457), ETX202303-07-078-03 (ISO 80601-2-56, F0458), ETX202303-07-078-04 (ASTM E1965, F0459), ETX202303-07-078-05 (aging/老化, F0460). All are dated 2025-02-12 except the EMC report (2024-08-15).",
+      "A revised ISO 80601-2-56 report ETX202303-07-078-03R1 (F0461, dated 2025-05-29) is present in the corpus. This is a later revision of the same test scope as ETX202303-07-078-03. The design verification report (F0114) cites only ETX202303-07-078-03 and ETX202303-07-078-04 for ISO 80601-2-56 compliance; it does not reference the R1 revision.",
+      "Draft versions of reports ETX202303-07-078-01 (F0465), ETX202303-07-078-02 (F0466), ETX202303-07-078-03 (F0467), and ETX202303-07-078-04 (F0468) are present in the '草稿' (draft) subfolder. The draft for ETX202303-07-078-02 (F0466) carries a truncated report number 'ETX2023-07-078-02' (missing '03' segment) in its header lines, which differs from the final report number 'ETX202303-07-078-02'.",
+      "The usability engineering file (F0247/F0248) describes acceptance criteria for usability evaluation and references two formative evaluations and a summative/pre-summative evaluation, but no summative usability test report or completed formative evaluation report is present in the supplied evidence catalog.",
+      "The design input summary table (F0031/F0319) is present in the evidence catalog only as a title line ('Design Input - General part') with no retrievable content rows, so traceability from specific design inputs to verification activities cannot be confirmed from supplied evidence.",
+      "The DFMEA files (F0071, F0074) reference pass/fail acceptance criteria in their detection rating scales but are not cross-referenced to any specific verification test record in the supplied evidence.",
+      "No document identified as the verification plan (PT9L-KXPS01) appears in the evidence catalog by that document number; F0114 is the only verification-related document with retrievable content rows, and it is labeled as a design verification report rather than a plan.",
+      "The analysis and evaluation report (F0462) references 'Annex I: ETX202303-07-078-05 Test Report' as an annex, and two copies of that annex exist in the corpus (F0455 in '实验报告' root and F0463 in '实验报告\\最终报告'). Both carry the same report number ETX202303-07-078-05. The final aging report (F0460) also carries ETX202303-07-078-05. The relationship between the annex copies and the standalone final report is not clarified in the supplied evidence."
+    ],
+    "findings": [
+      {
+        "finding_type": "version_mismatch_unresolved",
+        "severity": "P1",
+        "claim": "The design verification report (F0114) cites external test reports ETX202303-07-078-03 and ETX202303-07-078-04 as the sole evidence of ISO 80601-2-56 and ASTM E1965 compliance, but a revised report ETX202303-07-078-03R1 (dated 2025-05-29) exists in the corpus and is not referenced in F0114, leaving the verification record potentially superseded without documented acknowledgment.",
+        "rationale": "VV-010 and VV-014/VV-015 show F0114 citing ETX202303-07-078-03 and ETX202303-07-078-04 as passing evidence for ISO 80601-2-56:2017/Amd1:2018 and ASTM E1965-98:2016/2023 respectively. VV-067 through VV-070 confirm that ETX202303-07-078-03R1 (F0461) is a formal report dated 2025-05-29, which post-dates the original ETX202303-07-078-03 (F0458, dated 2025-02-12). The existence of an R1 revision implies the original report was superseded or supplemented. No evidence in the catalog shows F0114 being updated to reference ETX202303-07-078-03R1, and no change record or addendum to F0114 is present in the supplied evidence. If ETX202303-07-078-03R1 was issued to correct a test failure or scope gap, the verification closure recorded in F0114 may be based on a superseded report.",
+        "evidence_ids": [
+          "VV-010",
+          "VV-014",
+          "VV-015",
+          "VV-047",
+          "VV-049"
+        ],
+        "challenge_questions": [
+          "What was the reason for issuing ETX202303-07-078-03R1 on 2025-05-29? Was it issued to correct a test failure, address a scope gap, or for administrative reasons?",
+          "Has F0114 (design verification report) been updated to reference ETX202303-07-078-03R1 as the controlling test report for ISO 80601-2-56 compliance? If so, where is that updated version?",
+          "Does ETX202303-07-078-03R1 supersede ETX202303-07-078-03, or are both reports valid and complementary? Is there a supersession statement in either report?",
+          "If ETX202303-07-078-03R1 contains different test results or conclusions from ETX202303-07-078-03, what is the impact on the design verification closure recorded in F0114?"
+        ]
+      },
+      {
+        "finding_type": "risk_control_verification_loop_not_confirmable",
+        "severity": "P1",
+        "claim": "No evidence in the supplied corpus shows the design verification plan or report explicitly citing PT9L-FXGB01 at any version, and no change record or addendum acknowledging the V1.0-to-V2.0 risk report update is present, meaning the closed-loop confirmation between risk controls added or modified in V2.0 and corresponding verification activities cannot be confirmed as complete.",
+        "rationale": "VV-001 and VV-002 (F0020) and VV-003 and VV-004 (F0024) confirm the active risk management report is PT9L-FXGB01 V2.0 (both instances carry V2.0 in their file paths). The supplied evidence lines for F0114 (VV-010 through VV-015) contain no reference to PT9L-FXGB01 at any version; they reference only external test report numbers (ETX202303-07-078-03, ETX202303-07-078-04) and standard identifiers. No document in the evidence catalog identified as a verification plan (PT9L-KXPS01) contains retrievable content. No change record, amendment, or addendum document referencing the V1.0-to-V2.0 transition of PT9L-FXGB01 is present in the evidence catalog. The content of V2.0 that differs from V1.0 cannot be determined from the supplied evidence (VV-001 through VV-004 contain only high-level procedural statements, not risk control tables). Therefore, whether risk controls added or modified in V2.0 have corresponding verification activities is indeterminate from supplied evidence, which itself constitutes a traceability gap.",
+        "evidence_ids": [
+          "VV-001",
+          "VV-002",
+          "VV-003",
+          "VV-004",
+          "VV-010"
+        ],
+        "challenge_questions": [
+          "Does the design verification plan (PT9L-KXPS01) explicitly cite PT9L-FXGB01 and at which version? If it cites V1.0, was it updated when the risk report was revised to V2.0?",
+          "What specific risk controls were added or modified when PT9L-FXGB01 was revised from V1.0 to V2.0? Is there a change summary or revision history table in the V2.0 document?",
+          "Is there a change record, ECO, or design review record that documents the impact of the V1.0-to-V2.0 risk report revision on the verification plan and verification activities?",
+          "For each risk control listed in PT9L-FXGB01 V2.0, is there a corresponding row in the verification plan/report (PT9L-KXPS01 or F0114) that maps the control to a specific test or evaluation? Can that mapping be produced?"
+        ]
+      },
+      {
+        "finding_type": "draft_report_number_discrepancy",
+        "severity": "P2",
+        "claim": "The draft safety report for PT9L (F0466) carries a truncated report number 'ETX2023-07-078-02' in its header, which differs from the final report number 'ETX202303-07-078-02' (F0457), creating a document identity inconsistency that could affect traceability between draft and final test records.",
+        "rationale": "VV-086 and VV-088 and VV-089 show F0466 (draft) carrying 'ETX2023-07-078-02' (missing the '03' segment). VV-043, VV-044, VV-045, VV-046 show F0457 (final) consistently carrying 'ETX202303-07-078-02'. The draft table of contents line (VV-087) shows 'R D ETX2023-07-078-02', suggesting a draft/revision prefix was prepended but the base number was also truncated. While draft-to-final number evolution can be acceptable, the truncation of '03' from the project code segment creates ambiguity about whether the draft and final reports are for the same test scope and whether the draft was formally superseded by the final.",
+        "evidence_ids": [
+          "VV-084",
+          "VV-086",
+          "VV-087",
+          "VV-088",
+          "VV-089"
+        ],
+        "challenge_questions": [
+          "Is the draft report F0466 (ETX2023-07-078-02) formally superseded by the final report F0457 (ETX202303-07-078-02)? Is there a supersession statement or document control record confirming this?",
+          "Was the truncated number 'ETX2023-07-078-02' an intentional draft identifier or a typographic error? Does the lab's document control system treat these as the same report?",
+          "Are any verification records or design review minutes referencing the draft number 'ETX2023-07-078-02' rather than the final number 'ETX202303-07-078-02'?"
+        ]
+      },
+      {
+        "finding_type": "summative_usability_test_evidence_absent",
+        "severity": "P2",
+        "claim": "The usability engineering file (F0247/F0248) describes a summative usability test (also characterized as a pre-summative evaluation) as a required activity, but no summative usability test report or completed formative evaluation report is present in the supplied evidence catalog, leaving the usability validation closure unconfirmed.",
+        "rationale": "VV-023 (F0248) states that one formative evaluation is conducted during design input and one formative evaluation is conducted with prototype device 'followed by usability tests,' and that 'this usability test is also a pre-summative evaluation.' VV-025 (F0248) states acceptance criteria are to be established for each metric. VV-019 (F0247) and VV-025 (F0248) both reference establishing acceptance criteria. VV-026 (F0248) confirms two formative evaluations are planned. No document in the evidence catalog is identified as a completed summative usability test report, a completed formative evaluation report, or a usability test results record for PT9L. The design confirmation folder (18 设计确认) contains only the usability engineering file (F0247/F0248) in the supplied evidence; no test results document from that folder is present.",
+        "evidence_ids": [
+          "VV-016",
+          "VV-017",
+          "VV-018",
+          "VV-019",
+          "VV-020"
+        ],
+        "challenge_questions": [
+          "Has the summative usability test (pre-summative evaluation) described in the usability engineering file been conducted? If so, where is the test report and why is it not in the DHF evidence package?",
+          "Have both formative evaluations described in F0247/F0248 been completed? Are the evaluation reports available and filed in the DHF?",
+          "What are the specific acceptance criteria established per VV-025 for the usability evaluation, and against which test results were they evaluated?",
+          "If the summative usability test has not yet been conducted, what is the current design stage and is the device being submitted for regulatory approval without completed usability validation?"
+        ]
+      },
+      {
+        "finding_type": "duplicate_annex_report_identity_unresolved",
+        "severity": "P3",
+        "claim": "Two copies of a document titled 'Annex I--ETX202303-07-078-05 Test Report (PT9L)' exist in the corpus (F0455 in the root '实验报告' folder and F0463 in '实验报告\\最终报告'), both carrying report number ETX202303-07-078-05, alongside a standalone final aging report (F0460) also carrying ETX202303-07-078-05; the relationship among these three instances is not clarified in the supplied evidence, creating potential ambiguity about which is the controlling test record.",
+        "rationale": "VV-029 through VV-034 (F0455) and VV-072 through VV-077 (F0463) both show documents titled 'Annex I--ETX202303-07-078-05 Test Report (PT9L)' with identical report numbers. VV-059 through VV-064 (F0460) show a standalone document titled '2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式' also carrying ETX202303-07-078-05. VV-071 (F0462) references 'Annex I: ETX202303-07-078-05 Test Report' as an annex to an analysis and evaluation report. Three separate file instances share the same report number. No document in the evidence catalog explains whether F0455 and F0463 are identical copies, whether one supersedes the other, or how the annex copies relate to the standalone final report F0460.",
+        "evidence_ids": [
+          "VV-029",
+          "VV-031",
+          "VV-032",
+          "VV-059",
+          "VV-061"
+        ],
+        "challenge_questions": [
+          "Are F0455 and F0463 identical documents or do they differ in content? If they differ, which is the controlling version and why are both retained in the DHF?",
+          "Is F0460 (standalone aging report) the same document as the annex copies in F0455/F0463, or is it a separate report that happens to share the same report number?",
+          "Which instance of ETX202303-07-078-05 is referenced by the design verification report (F0114) and the analysis/evaluation report (F0462) as the controlling test record?",
+          "Does the document control system for the DHF have a mechanism to prevent duplicate filing of the same report number under different file paths?"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "finding_type": "version_mismatch_unresolved",
+      "severity": "P1",
+      "claim": "The design verification report (F0114) cites external test reports ETX202303-07-078-03 and ETX202303-07-078-04 as the sole evidence of ISO 80601-2-56 and ASTM E1965 compliance, but a revised report ETX202303-07-078-03R1 (dated 2025-05-29) exists in the corpus and is not referenced in F0114, leaving the verification record potentially superseded without documented acknowledgment.",
+      "rationale": "VV-010 and VV-014/VV-015 show F0114 citing ETX202303-07-078-03 and ETX202303-07-078-04 as passing evidence for ISO 80601-2-56:2017/Amd1:2018 and ASTM E1965-98:2016/2023 respectively. VV-067 through VV-070 confirm that ETX202303-07-078-03R1 (F0461) is a formal report dated 2025-05-29, which post-dates the original ETX202303-07-078-03 (F0458, dated 2025-02-12). The existence of an R1 revision implies the original report was superseded or supplemented. No evidence in the catalog shows F0114 being updated to reference ETX202303-07-078-03R1, and no change record or addendum to F0114 is present in the supplied evidence. If ETX202303-07-078-03R1 was issued to correct a test failure or scope gap, the verification closure recorded in F0114 may be based on a superseded report.",
+      "evidence_ids": [
+        "VV-010",
+        "VV-014",
+        "VV-015",
+        "VV-047",
+        "VV-049"
+      ],
+      "challenge_questions": [
+        "What was the reason for issuing ETX202303-07-078-03R1 on 2025-05-29? Was it issued to correct a test failure, address a scope gap, or for administrative reasons?",
+        "Has F0114 (design verification report) been updated to reference ETX202303-07-078-03R1 as the controlling test report for ISO 80601-2-56 compliance? If so, where is that updated version?",
+        "Does ETX202303-07-078-03R1 supersede ETX202303-07-078-03, or are both reports valid and complementary? Is there a supersession statement in either report?",
+        "If ETX202303-07-078-03R1 contains different test results or conclusions from ETX202303-07-078-03, what is the impact on the design verification closure recorded in F0114?"
+      ]
+    },
+    {
+      "finding_type": "risk_control_verification_loop_not_confirmable",
+      "severity": "P1",
+      "claim": "No evidence in the supplied corpus shows the design verification plan or report explicitly citing PT9L-FXGB01 at any version, and no change record or addendum acknowledging the V1.0-to-V2.0 risk report update is present, meaning the closed-loop confirmation between risk controls added or modified in V2.0 and corresponding verification activities cannot be confirmed as complete.",
+      "rationale": "VV-001 and VV-002 (F0020) and VV-003 and VV-004 (F0024) confirm the active risk management report is PT9L-FXGB01 V2.0 (both instances carry V2.0 in their file paths). The supplied evidence lines for F0114 (VV-010 through VV-015) contain no reference to PT9L-FXGB01 at any version; they reference only external test report numbers (ETX202303-07-078-03, ETX202303-07-078-04) and standard identifiers. No document in the evidence catalog identified as a verification plan (PT9L-KXPS01) contains retrievable content. No change record, amendment, or addendum document referencing the V1.0-to-V2.0 transition of PT9L-FXGB01 is present in the evidence catalog. The content of V2.0 that differs from V1.0 cannot be determined from the supplied evidence (VV-001 through VV-004 contain only high-level procedural statements, not risk control tables). Therefore, whether risk controls added or modified in V2.0 have corresponding verification activities is indeterminate from supplied evidence, which itself constitutes a traceability gap.",
+      "evidence_ids": [
+        "VV-001",
+        "VV-002",
+        "VV-003",
+        "VV-004",
+        "VV-010"
+      ],
+      "challenge_questions": [
+        "Does the design verification plan (PT9L-KXPS01) explicitly cite PT9L-FXGB01 and at which version? If it cites V1.0, was it updated when the risk report was revised to V2.0?",
+        "What specific risk controls were added or modified when PT9L-FXGB01 was revised from V1.0 to V2.0? Is there a change summary or revision history table in the V2.0 document?",
+        "Is there a change record, ECO, or design review record that documents the impact of the V1.0-to-V2.0 risk report revision on the verification plan and verification activities?",
+        "For each risk control listed in PT9L-FXGB01 V2.0, is there a corresponding row in the verification plan/report (PT9L-KXPS01 or F0114) that maps the control to a specific test or evaluation? Can that mapping be produced?"
+      ]
+    },
+    {
+      "finding_type": "draft_report_number_discrepancy",
+      "severity": "P2",
+      "claim": "The draft safety report for PT9L (F0466) carries a truncated report number 'ETX2023-07-078-02' in its header, which differs from the final report number 'ETX202303-07-078-02' (F0457), creating a document identity inconsistency that could affect traceability between draft and final test records.",
+      "rationale": "VV-086 and VV-088 and VV-089 show F0466 (draft) carrying 'ETX2023-07-078-02' (missing the '03' segment). VV-043, VV-044, VV-045, VV-046 show F0457 (final) consistently carrying 'ETX202303-07-078-02'. The draft table of contents line (VV-087) shows 'R D ETX2023-07-078-02', suggesting a draft/revision prefix was prepended but the base number was also truncated. While draft-to-final number evolution can be acceptable, the truncation of '03' from the project code segment creates ambiguity about whether the draft and final reports are for the same test scope and whether the draft was formally superseded by the final.",
+      "evidence_ids": [
+        "VV-084",
+        "VV-086",
+        "VV-087",
+        "VV-088",
+        "VV-089"
+      ],
+      "challenge_questions": [
+        "Is the draft report F0466 (ETX2023-07-078-02) formally superseded by the final report F0457 (ETX202303-07-078-02)? Is there a supersession statement or document control record confirming this?",
+        "Was the truncated number 'ETX2023-07-078-02' an intentional draft identifier or a typographic error? Does the lab's document control system treat these as the same report?",
+        "Are any verification records or design review minutes referencing the draft number 'ETX2023-07-078-02' rather than the final number 'ETX202303-07-078-02'?"
+      ]
+    },
+    {
+      "finding_type": "summative_usability_test_evidence_absent",
+      "severity": "P2",
+      "claim": "The usability engineering file (F0247/F0248) describes a summative usability test (also characterized as a pre-summative evaluation) as a required activity, but no summative usability test report or completed formative evaluation report is present in the supplied evidence catalog, leaving the usability validation closure unconfirmed.",
+      "rationale": "VV-023 (F0248) states that one formative evaluation is conducted during design input and one formative evaluation is conducted with prototype device 'followed by usability tests,' and that 'this usability test is also a pre-summative evaluation.' VV-025 (F0248) states acceptance criteria are to be established for each metric. VV-019 (F0247) and VV-025 (F0248) both reference establishing acceptance criteria. VV-026 (F0248) confirms two formative evaluations are planned. No document in the evidence catalog is identified as a completed summative usability test report, a completed formative evaluation report, or a usability test results record for PT9L. The design confirmation folder (18 设计确认) contains only the usability engineering file (F0247/F0248) in the supplied evidence; no test results document from that folder is present.",
+      "evidence_ids": [
+        "VV-016",
+        "VV-017",
+        "VV-018",
+        "VV-019",
+        "VV-020"
+      ],
+      "challenge_questions": [
+        "Has the summative usability test (pre-summative evaluation) described in the usability engineering file been conducted? If so, where is the test report and why is it not in the DHF evidence package?",
+        "Have both formative evaluations described in F0247/F0248 been completed? Are the evaluation reports available and filed in the DHF?",
+        "What are the specific acceptance criteria established per VV-025 for the usability evaluation, and against which test results were they evaluated?",
+        "If the summative usability test has not yet been conducted, what is the current design stage and is the device being submitted for regulatory approval without completed usability validation?"
+      ]
+    },
+    {
+      "finding_type": "duplicate_annex_report_identity_unresolved",
+      "severity": "P3",
+      "claim": "Two copies of a document titled 'Annex I--ETX202303-07-078-05 Test Report (PT9L)' exist in the corpus (F0455 in the root '实验报告' folder and F0463 in '实验报告\\最终报告'), both carrying report number ETX202303-07-078-05, alongside a standalone final aging report (F0460) also carrying ETX202303-07-078-05; the relationship among these three instances is not clarified in the supplied evidence, creating potential ambiguity about which is the controlling test record.",
+      "rationale": "VV-029 through VV-034 (F0455) and VV-072 through VV-077 (F0463) both show documents titled 'Annex I--ETX202303-07-078-05 Test Report (PT9L)' with identical report numbers. VV-059 through VV-064 (F0460) show a standalone document titled '2025.02.12 ETX202303-07-078-05 PT9L 老化报告-正式' also carrying ETX202303-07-078-05. VV-071 (F0462) references 'Annex I: ETX202303-07-078-05 Test Report' as an annex to an analysis and evaluation report. Three separate file instances share the same report number. No document in the evidence catalog explains whether F0455 and F0463 are identical copies, whether one supersedes the other, or how the annex copies relate to the standalone final report F0460.",
+      "evidence_ids": [
+        "VV-029",
+        "VV-031",
+        "VV-032",
+        "VV-059",
+        "VV-061"
+      ],
+      "challenge_questions": [
+        "Are F0455 and F0463 identical documents or do they differ in content? If they differ, which is the controlling version and why are both retained in the DHF?",
+        "Is F0460 (standalone aging report) the same document as the annex copies in F0455/F0463, or is it a separate report that happens to share the same report number?",
+        "Which instance of ETX202303-07-078-05 is referenced by the design verification report (F0114) and the analysis/evaluation report (F0462) as the controlling test record?",
+        "Does the document control system for the DHF have a mechanism to prevent duplicate filing of the same report number under different file paths?"
+      ]
+    }
+  ],
+  "status": "completed"
+}

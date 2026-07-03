@@ -1,0 +1,234 @@
+{
+  "document": {
+    "title": "斑马条（T-Z1-P12 V2.0）2D 图读图报告",
+    "drawing_no": "T-Z1-P12",
+    "edition": "V2.0",
+    "part_name": "斑马条",
+    "model_no": "T-Z1",
+    "scale": "5:1",
+    "units": "mm",
+    "tolerance_level": "SELECT LEVEL B",
+    "source_file": "PT9L-斑马条-v2.0-20240524.pdf",
+    "report_date": "2026-06-02",
+    "file_path": "02_RnD_DHF/PT9L DHF-历史文件/设计输出/设计输出清单二/图纸/PT9L-斑马条-v2.0-20240524.pdf"
+  },
+  "products": [
+    {
+      "name": "斑马条",
+      "model": "T-Z1",
+      "drawing_no": "T-Z1-P12",
+      "version": "V2.0",
+      "material": "导电硅胶（金/银粉填充）与绝缘硅胶交替层叠",
+      "brand": "andon iHealth",
+      "dimensions": "22 × 4.25 × 2 mm",
+      "surface_treatment": null,
+      "compliance": "RoHS 2.0"
+    }
+  ],
+  "components": [
+    {
+      "name": "斑马条",
+      "type": "弹性连接器（Zebra Strip / Elastomeric Connector）",
+      "material": "导电硅胶",
+      "drawing_no": "T-Z1-P12",
+      "version": "V2.0",
+      "dimensions": {
+        "length_mm": 22,
+        "width_mm": 4.25,
+        "thickness_mm": 2
+      },
+      "conduction_direction": "垂直于长度方向（沿厚度方向）",
+      "mating_parts": [
+        "PT9L-液晶（PT9L-L01）",
+        "PCBA"
+      ]
+    }
+  ],
+  "design_inputs": [
+    {
+      "id": "①",
+      "description": "斑马条长度（与液晶 PIN 阵列 15.00 mm + 边距匹配）",
+      "value": 22,
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "view": "主视图水平向",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "②",
+      "description": "斑马条宽度（压缩前）",
+      "value": 4.25,
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "view": "侧视图竖向",
+      "iqc_required": true,
+      "confidence": "A"
+    },
+    {
+      "id": "③",
+      "description": "斑马条厚度（压缩前）",
+      "value": 2,
+      "unit": "mm",
+      "tolerance": "±0.1",
+      "view": "侧视图水平向",
+      "iqc_required": true,
+      "confidence": "A"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "description": "带编号为重要尺寸，需要 IQC 测量",
+      "source": "技术要求第1条",
+      "type": "inspection"
+    },
+    {
+      "id": "REQ-2",
+      "description": "产品符合 RoHS 2.0",
+      "source": "技术要求第2条",
+      "type": "compliance"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS 2.0",
+      "description": "有害物质限制指令",
+      "applicable_to": "斑马条 T-Z1-P12"
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "Drawing NO.",
+      "value": "T-Z1-P12"
+    },
+    {
+      "type": "Model NO.",
+      "value": "T-Z1"
+    },
+    {
+      "type": "Edition",
+      "value": "V2.0"
+    },
+    {
+      "type": "Related Drawing",
+      "value": "PT9L-液晶-20240627.pdf"
+    }
+  ],
+  "tests": [
+    {
+      "id": "IQC-①",
+      "name": "长度尺寸 IQC 测量",
+      "dimension_id": "①",
+      "nominal": 22,
+      "tolerance": "±0.1",
+      "unit": "mm"
+    },
+    {
+      "id": "IQC-②",
+      "name": "宽度尺寸 IQC 测量",
+      "dimension_id": "②",
+      "nominal": 4.25,
+      "tolerance": "±0.1",
+      "unit": "mm"
+    },
+    {
+      "id": "IQC-③",
+      "name": "厚度尺寸 IQC 测量",
+      "dimension_id": "③",
+      "nominal": 2,
+      "tolerance": "±0.1",
+      "unit": "mm"
+    }
+  ],
+  "review_items": [
+    {
+      "id": "C-1",
+      "level": "C",
+      "description": "装配压缩量（10% 还是 20%？影响接触电阻和回弹力）",
+      "required_source": "工程师 / 装配 SOP",
+      "status": "待确认"
+    },
+    {
+      "id": "C-2",
+      "level": "C",
+      "description": "是被上盖压紧还是被独立卡件压紧",
+      "required_source": "3D 装配",
+      "status": "待确认"
+    },
+    {
+      "id": "C-3",
+      "level": "C",
+      "description": "V2.0 相对 V1.0 的变化（材料？尺寸？）",
+      "required_source": "修改记录 / 工程师",
+      "status": "待确认"
+    },
+    {
+      "id": "C-4",
+      "level": "C",
+      "description": "PCBA 焊盘的位置 / 镀金层是否对应",
+      "required_source": "PCBA Gerber + BOM",
+      "status": "待确认"
+    },
+    {
+      "id": "C-5",
+      "level": "C",
+      "description": "工作温度 / 接触电阻 SPEC（与 LCD 的 0–55°C 工作范围匹配）",
+      "required_source": "材料 SPEC",
+      "status": "待确认"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "working_principle",
+      "content": "斑马条（Zebra Strip / Elastomeric Connector）= 由导电硅胶（金/银粉填充）与绝缘硅胶交替条纹层叠而成的弹性连接器，专用于 LCD 段码屏与 PCBA 之间的无焊接电气连接。导电方向为垂直于长度方向（即沿厚度方向），电流从 LCD PIN 沿厚度方向传到 PCBA 焊盘，不沿长度方向短路。装配时被 LCD 与 PCBA 之间的弹性压缩力（推测 10-20% 压缩量）压紧，导电硅胶层与 LCD PIN + PCBA 焊盘做面接触。",
+      "topic_tags": [
+        "斑马条",
+        "导电硅胶",
+        "工作原理",
+        "弹性连接器",
+        "LCD",
+        "PCBA",
+        "无焊接连接"
+      ],
+      "related_subjects": [
+        "PT9L-液晶（PT9L-L01）",
+        "PCBA",
+        "T-Z1-P12"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "装配配合关系：顶部与 PT9L-液晶-20240627 顶部 16 个 PIN（间距 1.0 mm，总长 15.00 mm）接触；底部与 PCBA 上 16 个对应焊盘接触；被上下盖或专用支架/卡扣压紧到固定压缩量。斑马条长度 22 mm > LCD PIN 阵列 15 mm，留有装配偏移容差 (22−15)/2 = 3.5 mm（每边）。",
+      "topic_tags": [
+        "装配配合",
+        "LCD PIN",
+        "PCBA焊盘",
+        "压缩量",
+        "容差",
+        "16PIN"
+      ],
+      "related_subjects": [
+        "PT9L-液晶（PT9L-L01）",
+        "PCBA",
+        "斑马条"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "自动检查结果：DPI 300；编号 ① ② ③ 共 3 个，连续无跳号；无角度；无 n- 前缀；全对称 ±0.1 公差；配合方为 PT9L 液晶（PT9L-L01），液晶 SPEC 表 CONNECTOR TYPE = ZEBRA，同时与 PCBA 上对应 16 个焊盘配合（位置间距对齐 LCD PIN 1.0 mm 间距）；全部为长度/宽度尺寸，无 Φ。",
+      "topic_tags": [
+        "质量检查",
+        "IQC",
+        "配合验证",
+        "公差",
+        "连续性"
+      ],
+      "related_subjects": [
+        "T-Z1-P12",
+        "PT9L-液晶（PT9L-L01）",
+        "PCBA"
+      ]
+    }
+  ]
+}

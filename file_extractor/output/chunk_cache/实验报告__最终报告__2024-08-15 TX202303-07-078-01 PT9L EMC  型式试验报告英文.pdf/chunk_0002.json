@@ -1,0 +1,303 @@
+{
+  "document": {
+    "doc_id": "ETX202303-07-078-01",
+    "doc_type": "EMC型式试验报告",
+    "title": "PT9L EMC 型式试验报告（英文）",
+    "total_pages": 30,
+    "test_date": "2024-07-05",
+    "language": "英文"
+  },
+  "tests": [
+    {
+      "test_name": "Conducted Emissions on Mains Terminals",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "frequency_range": "150 kHz to 30 MHz",
+      "test_date": "N/A",
+      "temperature_humidity": "N/A",
+      "power_supply": "N/A",
+      "class_severity": "N/A",
+      "detector": "N/A",
+      "remark": "The EUT is powered by batteries, and does not apply to this clause."
+    },
+    {
+      "test_name": "Radiated Emissions",
+      "test_requirement": "IEC 60601-1-2:2014+A1:2020",
+      "test_method": "CISPR11",
+      "test_date": "2024-07-05",
+      "temperature_humidity": "28℃ 52%",
+      "power_supply": "DC 3V",
+      "frequency_range": "30 MHz to 1 GHz",
+      "test_site": "3m Semi-anechoic chamber",
+      "class_severity": "Group 1, Class B",
+      "detector": "Peak for pre-scan (120 kHz resolution bandwidth)",
+      "test_mode": "Mode1, Mode2"
+    }
+  ],
+  "regulations": [
+    {
+      "identifier": "IEC 60601-1-2:2014+A1:2020",
+      "description": "EMC requirements for medical electrical equipment"
+    },
+    {
+      "identifier": "CISPR11",
+      "description": "Test method for radiated emissions"
+    },
+    {
+      "identifier": "CISPR 16-4-2",
+      "description": "Measurement uncertainty standard referenced for uncertainty values"
+    }
+  ],
+  "components": [
+    {
+      "category": "Radiated Emission Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "Test receiver",
+          "manufacturer": "Agilent",
+          "model": "N9038A-508",
+          "serial_no": "MY54130074",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 2,
+          "name": "310 Low Noise Amplifier",
+          "manufacturer": "SONOMA",
+          "model": "310N",
+          "serial_no": "344218",
+          "cal_date": "2024-01-08",
+          "cal_due_date": "2026-01-07"
+        },
+        {
+          "item_no": 3,
+          "name": "BiConiLog Antenna",
+          "manufacturer": "ETS-Lindgren",
+          "model": "3142E",
+          "serial_no": "166231",
+          "cal_date": "2024-05-11",
+          "cal_due_date": "2027-05-10"
+        }
+      ]
+    },
+    {
+      "category": "Electrostatic Discharge Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "ESD simulator",
+          "manufacturer": "EMTEST",
+          "model": "Dito",
+          "serial_no": "P1420134242",
+          "cal_date": "2024-04-28",
+          "cal_due_date": "2025-04-27"
+        }
+      ]
+    },
+    {
+      "category": "Radiated RF Electromagnetic Fields Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "Signal generator",
+          "manufacturer": "Agilent",
+          "model": "N5171B-506",
+          "serial_no": "MY53050921",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 2,
+          "name": "RF power amplifier",
+          "manufacturer": "Milmega",
+          "model": "80RF1000-250",
+          "serial_no": "1066643",
+          "cal_date": "2024-01-08",
+          "cal_due_date": "2027-01-07"
+        },
+        {
+          "item_no": 3,
+          "name": "Directional coupler",
+          "manufacturer": "Werlatone(HDC)",
+          "model": "C5982-12",
+          "serial_no": "106464",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 4,
+          "name": "RF power amplifier",
+          "manufacturer": "Milmega",
+          "model": "AS0827-55",
+          "serial_no": "1066644",
+          "cal_date": "2023-12-28",
+          "cal_due_date": "2026-12-27"
+        },
+        {
+          "item_no": 5,
+          "name": "Directional coupler",
+          "manufacturer": "Werlatone(HDC)",
+          "model": "C6148-12",
+          "serial_no": "106400",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 6,
+          "name": "Power meter",
+          "manufacturer": "Agilent",
+          "model": "N1914A",
+          "serial_no": "MY54466075",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 7,
+          "name": "Power sensor (2 set)",
+          "manufacturer": "Agilent",
+          "model": "E9304A",
+          "serial_no": "MY54370020 / MY54370019",
+          "cal_date": "2024-12-30",
+          "cal_due_date": "2025-12-29"
+        },
+        {
+          "item_no": 8,
+          "name": "Isotropic field probe",
+          "manufacturer": "ETS-Lindgren",
+          "model": "HI6105-USB",
+          "serial_no": "168988",
+          "cal_date": "2024-05-24",
+          "cal_due_date": "2025-05-23"
+        },
+        {
+          "item_no": 9,
+          "name": "Log periodic antenna",
+          "manufacturer": "Schwarzbeck",
+          "model": "STLP9128D",
+          "serial_no": "9128D088",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 10,
+          "name": "Log periodic antenna",
+          "manufacturer": "Schwarzbeck",
+          "model": "STLP9149",
+          "serial_no": "9149-465",
+          "cal_date": "NA",
+          "cal_due_date": "NA"
+        },
+        {
+          "item_no": 11,
+          "name": "RF power amplifier",
+          "manufacturer": "BONN",
+          "model": "BLMA 2060-100S",
+          "serial_no": "1610981",
+          "cal_date": "2023-01-14",
+          "cal_due_date": "2026-01-13"
+        }
+      ]
+    },
+    {
+      "category": "Environment Equipment",
+      "items": [
+        {
+          "item_no": 1,
+          "name": "Semi-anechoic chamber",
+          "manufacturer": "TDK",
+          "model": "SAC-3",
+          "serial_no": "N/A",
+          "cal_date": "2024-01-05",
+          "cal_due_date": "2029-01-04"
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "req_id": "Conducted_Emission_Limit",
+      "description": "Conducted emission limits at mains terminals",
+      "details": [
+        {
+          "frequency_range_MHz": "0.15 to 0.50",
+          "quasi_peak_dBuV": "66-56",
+          "average_dBuV": "56-46"
+        },
+        {
+          "frequency_range_MHz": "0.50 to 5",
+          "quasi_peak_dBuV": "56",
+          "average_dBuV": "46"
+        },
+        {
+          "frequency_range_MHz": "5 to 30",
+          "quasi_peak_dBuV": "60",
+          "average_dBuV": "50"
+        }
+      ],
+      "note": "The lower limit is applicable at the transition frequency."
+    },
+    {
+      "req_id": "Radiated_Emission_Limit",
+      "description": "Radiated emission quasi-peak limits for Group 1, Class B",
+      "details": [
+        {
+          "frequency_range_MHz": "30 to 230",
+          "quasi_peak_limit": "40 dB(µV/m)"
+        },
+        {
+          "frequency_range_MHz": "230 to 1000",
+          "quasi_peak_limit": "47 dB(µV/m)"
+        }
+      ],
+      "note": "At transitional frequencies the lower limit applies."
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Measurement Uncertainty per CISPR 16-4-2: Conducted Emission at mains port using AMN (150kHz-30MHz): U=3.2dB, Ucispr=3.4dB; Radiated Emission (30MHz-1000MHz): U=3.9dB, Ucispr=6.3dB; Radiated Emission (1GHz-6GHz): U=5.1dB, Ucispr=5.2dB. The measurement uncertainty represents an expanded uncertainty expressed at approximately the 95% confidence level using a coverage factor of k=2.",
+      "topic_tags": [
+        "measurement uncertainty",
+        "CISPR 16-4-2",
+        "conducted emission",
+        "radiated emission",
+        "coverage factor"
+      ],
+      "related_subjects": [
+        "ETX202303-07-078-01",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Radiated emission test operation: Pre-scan was performed with peak detector on the EUT. Quasi-peak measurements were performed at the frequencies at which maximum peak emission level were detected. During the tests, the EUT were tested at different working modes (Mode1, Mode2) to find the maximum emission results. For radiated emission: Level = Read Level + Antenna Factor + Cable Loss – Preamp Factor.",
+      "topic_tags": [
+        "radiated emission",
+        "pre-scan",
+        "quasi-peak",
+        "peak detector",
+        "EUT operation",
+        "measurement formula"
+      ],
+      "related_subjects": [
+        "Radiated Emissions test",
+        "CISPR11",
+        "ETX202303-07-078-01"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "The EUT is powered by batteries, and does not apply to the Conducted Emissions on Mains Terminals clause (5.1). All related test parameters (test date, temperature, humidity, power supply, frequency range, class/severity, detector) are listed as N/A.",
+      "topic_tags": [
+        "battery-powered",
+        "conducted emission",
+        "not applicable",
+        "EUT"
+      ],
+      "related_subjects": [
+        "Conducted Emissions on Mains Terminals",
+        "IEC 60601-1-2:2014+A1:2020"
+      ]
+    }
+  ]
+}

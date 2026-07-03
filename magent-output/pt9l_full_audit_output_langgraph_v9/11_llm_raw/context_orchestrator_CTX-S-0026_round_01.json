@@ -1,0 +1,39 @@
+```json
+{
+  "assigned_agent": "Document Control Agent",
+  "review_focus": "PT9L-设计输出清单一的提交日期、审核日期、批准日期字段均为空白，且证据目录中不存在独立的审批路由记录、ECO记录或设计评审纪要可作为替代审批证据",
+  "agent_input": {
+    "claim": "The design output list (PT9L-设计输出清单一) carries blank submission date, review date, and approval date fields, and no separate approval routing record, ECO record, or design review minutes exist in the supplied evidence catalog to serve as substitute approval evidence.",
+    "context_summary": "已确认证据 DMR-043（F0160，设计输出清单一.via_xlsx.clean.md 第10-12行）显示：提交栏为"年 月 日"、审核栏为"年 月 日"、批准栏为"年 月 日"，三个日期字段均为空白模板占位符，无实际填写日期。补充检索到的 page_context 文件（F0005 PT9L开发计划、F0006 PT9L-DHF清单、F0007 PT9L计划表）均未提供可解析的文本内容（text字段为空）。上一轮 context_recovery LLM 输出解析失败（JSONDecodeError），未能产出有效补充证据。当前证据包中无 ECO 记录、无审批路由单、无设计评审纪要文件被识别为关联证据。",
+    "evidence": [
+      {
+        "evidence_id": "DMR-043",
+        "doc_id": "F0160",
+        "rel_path": "12 设计输出（含01、02）\\PT9L-设计输出清单一\\设计输出清单一\\设计输出清单一.via_xlsx.clean.md",
+        "line": 10,
+        "actual_text": "产品型号: PT9L 提交部门:智能产品部 提交: 年 月 日 审核: 年 月 日",
+        "note": "第12行补充：批准: 年 月 日 —— 三处日期字段均为空白占位符，无实际日期填写"
+      },
+      {
+        "evidence_id": "PAGE-F0005",
+        "doc_id": "F0005",
+        "rel_path": "02 开发计划E0 23.11\\PT9L - 真实.via_xlsx.clean.md",
+        "note": "text字段为空，无法提取审批相关内容"
+      },
+      {
+        "evidence_id": "PAGE-F0006",
+        "doc_id": "F0006",
+        "rel_path": "02 开发计划E0 23.11\\PT9L-DHF清单 - 真实.via_xlsx.clean.md",
+        "note": "text字段为空，无法确认是否包含审批路由或ECO记录"
+      },
+      {
+        "evidence_id": "PAGE-F0007",
+        "doc_id": "F0007",
+        "rel_path": "02 开发计划E0 23.11\\PT9L.via_xlsx.clean.md",
+        "note": "text字段为空，无法确认是否包含设计评审纪要"
+      }
+    ],
+    "decision_values": ["confirm", "dismiss", "needs_more_context"]
+  }
+}
+```

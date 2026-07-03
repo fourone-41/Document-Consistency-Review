@@ -1,0 +1,1690 @@
+{
+  "document": {
+    "title": "装配说明",
+    "version": "V1.0",
+    "product_code": "PT9L",
+    "source_file": "via_xlsx.md",
+    "format_note": "hybrid clean-md（excel）：每个 Sheet 的表用 GFM 重建（合并格按 rowspan 向下继承、满行说明铺成段落）；保留全部文字、复选框与图片；不保留 HTML 表格标签。",
+    "product_model": "PT9L",
+    "project_number": "30000078",
+    "product_name": "红外体温计",
+    "roles": {
+      "drafter": "结构工程师",
+      "reviewer": "结构主管",
+      "approver": "技术负责人"
+    }
+  },
+  "products": [
+    {
+      "name": "PT9L",
+      "type": "医疗器械"
+    },
+    {
+      "name": "红外体温计",
+      "model": "PT9L",
+      "project_id": "30000078"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "scope_limitation",
+      "content": "hybrid clean-md（excel）：每个 Sheet 的表用 GFM 重建（合并格按 rowspan 向下继承、满行说明铺成段落）；保留全部文字、复选框与图片；不保留 HTML 表格标签/无合并记号。涉及严格行列/签字仍回查 .via_xlsx.md。",
+      "topic_tags": [
+        "文档格式",
+        "GFM",
+        "Excel转换",
+        "合并单元格"
+      ],
+      "related_subjects": [
+        "装配说明V1.0-PT9L"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "CB2性能检查详细流程：1、上电后显示CB2，2s后进入休眠，此时检测休眠电流，应大于1uA且小于20uA；2、按下测量按键唤醒，屏幕全显，白色背光开启，蜂鸣器响，此时检测工作电流，应大于1mA且小于50mA；3、屏幕停止全显并出现静音符号时，把静音开关拨到静音侧，此时屏幕显示静音符号且蜂鸣器停止发声；把静音开关拨到发音侧，屏幕恢复全显，蜂鸣器响；4、按下测量按键，蜂鸣器响声停止，三色LED灯按照白橙红顺序点亮并循环，屏幕循环出现1，2，3数字；5、操作员观察三色LED灯，没问题的话按下设置按键保存，CB2完成；6、若自检未通过，屏幕显示Er2。",
+      "topic_tags": [
+        "CB2",
+        "性能检查",
+        "休眠电流",
+        "工作电流",
+        "静音开关",
+        "三色LED",
+        "自检"
+      ],
+      "related_subjects": [
+        "CB2性能检查",
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "CB3常温标定详细流程：1、上电后显示CB3，1s后显示环温；2、按下按键后显示C30；3、按下按键采集C30，完成后显示C45；4、按下按键采集C45，完成后显示PAS，按键保存，该步工序完成。注意：采集C30后，采集C45的时间间隔不能超过5s；5、标定失败显示Er3。",
+      "topic_tags": [
+        "CB3",
+        "常温标定",
+        "C30",
+        "C45",
+        "PAS",
+        "Er3",
+        "恒温房"
+      ],
+      "related_subjects": [
+        "CB3常温标定",
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "CB4常温性能检查详细流程：1、上电后显示CB4，1s后显示环温，再过1s后显示C10；2、按下按键采集C10，完成后显示C33，失败显示实测温度0.5s，然后显示Er4；3、按下按键采集C33，完成后显示C37，失败显示实测温度0.5s，然后显示Er4；4、按下按键采集C37，完成后显示C41，失败显示实测温度0.5s，然后显示Er4；5、按下按键采集C41，完成后显示PAS，按键保存，该步工序完成。失败显示实测温度0.5s，然后显示Er4。",
+      "topic_tags": [
+        "CB4",
+        "常温性能检查",
+        "C10",
+        "C33",
+        "C37",
+        "C41",
+        "PAS",
+        "Er4",
+        "恒温房"
+      ],
+      "related_subjects": [
+        "CB4常温性能检查",
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "清除记忆操作流程：1.关机状态下，同时长按测量键+设置键8秒钟，屏幕显示图标M和DEL闪烁，此时可以松开按键；2.两秒后M图标消失，此时记忆删除成功；3.待机器黑屏后，取出电池。",
+      "topic_tags": [
+        "清除记忆",
+        "测量键",
+        "设置键",
+        "长按",
+        "内存清除"
+      ],
+      "related_subjects": [
+        "PT9L",
+        "红外体温计",
+        "用户操作"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "外观检查要求：1.检查镜片是否有划伤、脏污、丝印不清，按键是否有卡死、手感差等不良；2.检查产品侧面，是否有断差、批峰、缝隙过大等；3.检查下壳是否有划伤，脏污，弹簧是否有漏装、装反、装不到位，螺丝是否有漏锁、滑牙、未锁到位等，弹簧装不到位等不良；4.检查传感器是否内有物、脏污等，如有脏污需用棉签清洁干净，并将产品放于耳边来回摇动2-3次，检查产品内是否有异物，异响等。",
+      "topic_tags": [
+        "外观检查",
+        "镜片",
+        "按键",
+        "传感器",
+        "异物",
+        "异响"
+      ],
+      "related_subjects": [
+        "外观检查",
+        "PT9L",
+        "红外体温计"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "彩包装整机称重工序：取检验包装完整的成品1台，使用在线检重动态称重学习5次，取5次称重重量平均值的±10g为合格范围。不合格品剔除后由班组长确认检查。单一包装原材料重量＜5g时称重设备不能识别，需由操作员自检和包装过程抽检控制。使用设备型号：HXW-400B型在线检重称。",
+      "topic_tags": [
+        "在线检重",
+        "称重合格标准",
+        "动态称重",
+        "HXW-400B"
+      ],
+      "related_subjects": [
+        "彩包装整机称重"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外箱称重工序合格标准：以首件报样的第一箱成品重量为标准，称重重量±0.1Kg为合格（尾数箱以实际重量为准）。单一包装成品＜0.1Kg的称重设备不能识别，由操作员自检和包装过程抽检控制。检验完成由检验员工填写《检测员工作日报》，由专人填写《修理日报表》。",
+      "topic_tags": [
+        "外箱称重",
+        "合格范围",
+        "尾数箱",
+        "检测员工作日报",
+        "修理日报表"
+      ],
+      "related_subjects": [
+        "外箱摆盘（称重）"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "尾数箱操作规范：成品内箱和外箱需要手写箱号或毛净重标识的尾数箱，将按照尾数箱内产品实际数量或毛净重信息填写或修改（填写或修改信息清晰易辨认），保证尾数箱内产品数量或毛净重信息应与内箱和外箱标识信息一致。",
+      "topic_tags": [
+        "尾数箱",
+        "箱号标识",
+        "毛净重",
+        "内外箱一致性"
+      ],
+      "related_subjects": [
+        "外箱摆盘（称重）"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "外箱入盘及状态标识规范：每完成整盘或尾数盘时，由领班核对成品外箱印刷的唯一性标识与操作作业指导书中外箱图纸印刷内容相同，确认无误后，依据实际生产的评审、机种、控制号等信息与生产计划相对应填写成品状态单标识，确认签字。状态单标识应不少于填写信息内容包括：成品控制号、机种、产品名称、数量、确认人、日期以及备注（评审、国家、类型、其他等），缠绕裹好膜，粘贴好状态单，放置待检区域。",
+      "topic_tags": [
+        "状态单标识",
+        "唯一性标识",
+        "领班核对",
+        "成品控制号",
+        "待检区域"
+      ],
+      "related_subjects": [
+        "外箱摆盘（入盘）"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "彩包装装外箱规范：将包装盒放置到外箱内，方向保持一致，一层6台，4层，一箱放24台成品机器，产品正面朝上。24台包装盒标签与外箱标签内容须一一对应。",
+      "topic_tags": [
+        "装箱数量",
+        "排列方式",
+        "标签一致性",
+        "24台/箱"
+      ],
+      "related_subjects": [
+        "彩包装装外箱"
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "项目编号",
+      "value": "30000078"
+    },
+    {
+      "type": "产品型号",
+      "value": "PT9L"
+    },
+    {
+      "type": "螺钉规格",
+      "value": "ST2.0×5.0-F-H"
+    }
+  ],
+  "components": [
+    {
+      "name": "传感器头"
+    },
+    {
+      "name": "支架下盖"
+    },
+    {
+      "name": "PCB主板"
+    },
+    {
+      "name": "前壳"
+    },
+    {
+      "name": "后壳"
+    },
+    {
+      "name": "电池盖"
+    },
+    {
+      "name": "液晶显示屏"
+    },
+    {
+      "name": "背光"
+    },
+    {
+      "name": "斑马条"
+    },
+    {
+      "name": "NTC探头"
+    },
+    {
+      "name": "NTC线"
+    },
+    {
+      "name": "按键"
+    },
+    {
+      "name": "缓冲垫"
+    },
+    {
+      "name": "透镜"
+    },
+    {
+      "name": "联簧"
+    },
+    {
+      "name": "档位键"
+    },
+    {
+      "name": "蜂鸣器"
+    },
+    {
+      "name": "三色LED灯"
+    },
+    {
+      "name": "极簧"
+    },
+    {
+      "name": "铭牌"
+    },
+    {
+      "name": "序号签"
+    },
+    {
+      "name": "吸塑盒"
+    },
+    {
+      "name": "彩包装"
+    },
+    {
+      "name": "纸托架"
+    },
+    {
+      "name": "说明书"
+    },
+    {
+      "name": "快速指南"
+    },
+    {
+      "name": "电池",
+      "quantity": "2节"
+    }
+  ],
+  "plan_tasks": [
+    {
+      "task_name": "传感器模块和支架组装",
+      "grade": "一般工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "将传感器头的一面朝下装在支架下盖凹槽内",
+      "inspection": "1.传感器头的一面朝下装入；2.检查部件是否有脏污、划伤、变形、批锋等"
+    },
+    {
+      "task_name": "PCB焊接涂抹三防漆",
+      "grade": "一般工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "将前工序探头焊接在PCB主板上，四根线手工焊接；下排摆放不可堆叠，连接线不可缠绕",
+      "inspection": "线焊接牢固，焊点饱满，焊接时间不超过3秒"
+    },
+    {
+      "task_name": "传感器模块与下盖组装",
+      "grade": "一般工序",
+      "equipment": [
+        "打螺钉工装",
+        "电动螺丝刀",
+        "批头",
+        "气枪",
+        "静电环"
+      ],
+      "operation": "拿取探头安装在后壳上，二颗螺钉依数字顺序固定探头",
+      "inspection": "螺钉规格：ST2.0×5.0-F-H；电动螺丝刀扭力标准：1.6kgf.cm±0.2"
+    },
+    {
+      "task_name": "按键组装",
+      "grade": "一般工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "拿取缓冲垫，带有双面胶一侧粘贴在按键内，缓冲垫居中安装，将粘贴缓冲垫后的按键安装在前壳上，并按压图示位置至根部",
+      "inspection": "各零部件需安装到位"
+    },
+    {
+      "task_name": "前壳组装显示屏",
+      "grade": "一般工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "撕下保护膜后，确认液晶良好进行安装，依图示步骤安装斑马条，依图示步骤安装背光",
+      "inspection": "液晶、背光安装方向不可错，不可有杂质、脏污；液晶、背光、保护膜需撕下"
+    },
+    {
+      "task_name": "焊接NTC线",
+      "grade": "一般工序",
+      "equipment": [
+        "静电环",
+        "烙铁"
+      ],
+      "operation": "调节电烙铁温度350℃-380℃，拽动NTC线，将PCB安装在前壳上，NTC线依图示位置顺出，将NTC探头两根连接线分别焊接在PCB上NTC标识位置",
+      "inspection": "线焊接牢固，焊点饱满，焊接时间不超过3秒"
+    },
+    {
+      "task_name": "安装PCB",
+      "grade": "一般工序",
+      "equipment": [
+        "打螺钉工装",
+        "电动螺丝刀",
+        "批头",
+        "静电环"
+      ],
+      "operation": "四颗螺钉依数字顺序固定PCB",
+      "inspection": "螺钉规格：ST2.0×5.0-F-H；电动螺丝刀扭力标准：1.6kgf.cm±0.2；各零部件需安装到位；装配时PCB无损伤；螺丝需紧固PCB"
+    },
+    {
+      "task_name": "上下盖组装",
+      "grade": "一般工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "拿取联簧安装在后壳指定位置，拿取档位键安装在图示位置，套过蜂鸣器，四根焊接后连接线轻微弯曲后合壳",
+      "inspection": "1.各零部件需安装到位；2.不可折叠压线"
+    },
+    {
+      "task_name": "透镜组装",
+      "grade": "一般工序",
+      "equipment": [
+        "静电环",
+        "气枪"
+      ],
+      "operation": "将液晶清理干净，无灰尘脏污后撕下透镜背胶，将透镜粘贴在图示区域",
+      "inspection": "1.透镜安装到位无脏污；2.不可压膜"
+    },
+    {
+      "task_name": "螺丝固定，装电池盖",
+      "grade": "一般工序",
+      "equipment": [
+        "打螺钉工装",
+        "电动螺丝刀",
+        "批头",
+        "静电环"
+      ],
+      "operation": "3颗螺钉依数字顺序固定后壳，最后装上电池盖",
+      "inspection": "电动螺丝刀扭力标准：1.6kgf.cm±0.2；各零部件需安装到位；螺丝需紧固上下壳"
+    },
+    {
+      "task_name": "CB2性能检查",
+      "grade": "关键工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "1.上电后显示CB2，2s后进入休眠，检测休眠电流；2.按下测量按键唤醒，屏幕全显，白色背光开启，蜂鸣器响，检测工作电流；3.检查静音开关功能；4.检查三色LED灯及屏幕循环显示；5.按下设置按键保存；6.自检未通过显示Er2",
+      "inspection": "按步骤操作检验"
+    },
+    {
+      "task_name": "CB3常温标定",
+      "grade": "关键工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "1.上电后显示CB3，1s后显示环温；2.按下按键后显示C30；3.按下按键采集C30，完成后显示C45；4.按下按键采集C45，完成后显示PAS，按键保存；注意：采集C30后，采集C45的时间间隔不能超过5s；5.标定失败显示Er3",
+      "inspection": "恒温房温度：23.0±2.0℃；相对湿度：50%RH±20%RH；大气压强：70~106kPa；恒温水槽精度：±0.02℃；产品显示PAS后转序；初进入恒温房的机器需静置2小时"
+    },
+    {
+      "task_name": "CB4常温性能检查",
+      "grade": "关键工序",
+      "equipment": [
+        "静电环"
+      ],
+      "operation": "1.上电后显示CB4，1s后显示环温，再过1s后显示C10；2.按下按键采集C10，完成后显示C33；3.按下按键采集C33，完成后显示C37；4.按下按键采集C37，完成后显示C41；5.按下按键采集C41，完成后显示PAS，按键保存；失败显示实测温度0.5s后显示Er4",
+      "inspection": "恒温房温度：23.0±2.0℃；相对湿度：50%RH±20%RH；大气压强：70~106kPa；恒温水槽精度：±0.02℃；产品显示PAS后转序；初进入恒温房的机器需静置2小时"
+    },
+    {
+      "task_name": "CB5低温性能检查",
+      "grade": "关键工序",
+      "equipment": [
+        "静电环"
+      ],
+      "inspection": "恒温房温度：16.0±2.0℃；相对湿度：50%RH±20%RH；大气压强：70~106kPa；恒温水槽精度：±0.02℃；产品显示PAS后转序；初进入恒温房的机器需静置2小时"
+    },
+    {
+      "task_name": "包装前功能检查",
+      "grade": "关键工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "1.将测试电池安装到位，查看全显，有无显示缺段、深浅不一等不良现象；2.把探头放在距离手背3cm以内，按下按键，屏幕显示测试温度值；3.测试完毕后不需要把电池取出",
+      "inspection": "确认机器进入用户态并能正常测量；显示的温度应在35℃~37℃之间"
+    },
+    {
+      "task_name": "清除记忆",
+      "grade": "关键工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "1.关机状态下，同时长按测量键+设置键8秒钟，屏幕显示图标M和DEL闪烁，松开按键；2.两秒后M图标消失，记忆删除成功；3.待机器黑屏后，取出电池"
+    },
+    {
+      "task_name": "外观检查",
+      "grade": "关键工序",
+      "equipment": [
+        "酒精",
+        "无尘布",
+        "棉签",
+        "手套"
+      ],
+      "operation": "1.检查完成品外观；2.如有脏污需清洁干净",
+      "inspection": "1.检查镜片是否有划伤、脏污、丝印不清，按键是否有卡死、手感差等不良；2.检查产品侧面是否有断差、批峰、缝隙过大等；3.检查下壳是否有划伤、脏污，弹簧是否有漏装、装反、装不到位，螺丝是否有漏锁、滑牙、未锁到位等；4.检查传感器是否内有物、脏污等，如有脏污需用棉签清洁，并将产品放于耳边来回摇动2-3次检查内部是否有异物、异响"
+    },
+    {
+      "task_name": "粘贴铭牌",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "1.将铭牌贴在主机的背面，保护膜粘贴在透镜上，撕口朝右上方；2.将序号签粘贴在电池仓内",
+      "inspection": "铭牌粘贴后，不能有气泡及翘起现象"
+    },
+    {
+      "task_name": "装电池盖",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "确定电池盖内无电池，电池盖和电池仓内应洁净，极簧、螺钉、机号应齐全且安装到位，不可有翘起脱落现象，将电池盖安装到位",
+      "inspection": "电池盖安装到位"
+    },
+    {
+      "task_name": "取吸塑盒",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "操作员将吸塑盒取出，一个一个分开放置到流水线上",
+      "inspection": "1.吸塑盒不能有破损、褶皱、脏污、变形等缺陷；2.折叠时不能有撕裂、损坏；3.纸托架放置时要保持整齐"
+    },
+    {
+      "task_name": "彩包装装吸塑盒",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "将吸塑盒装入彩包装，吸塑盒位置不要放错",
+      "inspection": "1.吸塑盒不能有破损、褶皱、脏污等缺陷；2.吸塑盒不能有撕裂、损坏；3.吸塑盒放置时要保持整齐"
+    },
+    {
+      "task_name": "吸塑盒装电池",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "操作员将2节电池放入吸塑盒内，电池方向同批保持一致",
+      "inspection": "电池安装到纸板内，保持同批电池方向一致"
+    },
+    {
+      "task_name": "整机装吸塑盒",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "操作员先用气枪将整机透镜处和纸托盒内的异物吹掉，再将整机放入纸托架内，注意安装方向，枪尾放在电池方向",
+      "inspection": "1.整机外观无脏污、破损、划伤、咯伤、杂质、异物、色差、变形、凸起、凹陷、无毛刺、飞边等现象；2.整机放入纸托架，注意安装方向"
+    },
+    {
+      "task_name": "标签装彩包装",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "将标签放入主机上面",
+      "inspection": "标签装入主机上面，位置正确"
+    },
+    {
+      "task_name": "说明书组件",
+      "grade": "一般工序",
+      "equipment": [
+        "手套"
+      ],
+      "operation": "1.说明书、快速指南的正面按顺序以梯度的方式放置好，说明书在上面，快速指南在下面；2.说明书、快速指南放置到装好主机的除尘纸托架的主机表面上",
+      "inspection": "说明书、快速指南放置方向应一致"
+    },
+    {
+      "task_name": "彩包装扣盖",
+      "description": "如图所示将彩包装上盖扣好，上下盖磁铁吸住即可。",
+      "acceptance_criteria": "1.彩包装不能有破损，褶皱，脏污等缺陷 2.折叠时不能有撕裂，损坏。彩包装扣到位。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "彩包装贴标签",
+      "description": "如图所示将标签粘贴到彩包装背面方框位置。",
+      "acceptance_criteria": "标签粘贴的位置应正确，不可有脏污破损手印以及毛屑毛发等。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "彩包装整机称重",
+      "description": "将包装好的整机成品放到流水线上，由在线检重秤称重检查成品包装物料是否齐全，显示称重重量应合格（取检验包装完整的成品1台，使用在线检重动态称重学习5次，取5次称重重量平均值的±10g为合格），不合格剔除，由班组长确认检查，单一包装原材料重量＜5g的称重设备不能识别，由操作员自检和包装过程抽检控制。",
+      "acceptance_criteria": "HXW-400B型在线检重称显示重量应合格，检重称检重产品时应无连包报警现象。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "贴防拆签",
+      "description": "操作员将防拆签粘贴到包装盒左图的红圈位置（扣盖的中间位置）并压平，只可粘贴一层防拆签，粘贴后不可褶皱，无脏污、破损等现象。",
+      "acceptance_criteria": "1.成品重量符合要求。 2.标签粘贴的位置应正确，不可有脏污破损手印以及毛屑毛发等。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "封外箱下盖",
+      "description": "如图所示使用透明胶带粘贴外箱，封箱外观应为工字形，胶带不可翘起。",
+      "acceptance_criteria": "胶带完全粘贴到内箱上，胶带不可翘起。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "彩包装装外箱",
+      "description": "将包装盒放置到外箱内，方向保持一致，一层6台，4层，一箱放24台成品机器。产品正面朝上。",
+      "acceptance_criteria": "1.包装盒中装有机器 2.外箱中装入机器数量正确 3.包装盒表面无划伤、脏污、多料、少料、破损等外观不良 4.包装盒封口签外观正常 5.外箱表面无划伤、脏污、多料、少料、破损等外观不良 6.胶带完全粘贴到外箱上，胶带不可翘起。 7.24台包装盒标签与外箱标签内容一一对应。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "封外箱上盖",
+      "description": "如图所示使用透明胶带粘贴外箱，封箱外观应为工字形，胶带不可翘起遮盖外箱上文字等。",
+      "acceptance_criteria": "封箱胶带完全粘贴到外箱上，胶带不可翘起遮盖外箱上文字等。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "外箱摆盘（称重）",
+      "description": "将封好的外箱放在价格标签秤上称重，显示称重重量应合格（合格重量范围：以首件报样的第一箱成品重量为标准，称重重量±0.1Kg为合格（尾数箱以实际重量为准），单一包装成品＜0.1Kg的称重设备不能识别，由操作员自检和包装过程抽检控制）,检验完成由检验员工填写《检测员工作日报》，由专人填写《修理日报表》。尾数箱操作(成品内箱和外箱需要手写箱号或毛净重标识的尾数箱，将按照尾数箱内产品实际数量或毛净重信息填写或修改（填写或修改信息清晰易辨认），保证尾数箱内产品数量或毛净重信息应与内箱和外箱标识信息一致。",
+      "acceptance_criteria": "价格标签秤显示重量应合格。",
+      "category": "一般工序",
+      "tools": "手套"
+    },
+    {
+      "task_name": "外箱摆盘（入盘）",
+      "description": "如图所示将外箱摆放到塑料地盘上，摆放数量应统一，摆放高度不可超出电梯口高度，每完成整盘或尾数盘时，由领班核对成品外箱印刷的唯一性标识与操作作业指导书中外箱图纸印刷内容相同，确认无误后，依据实际生产的评审、机种、控制号等信息与生产计划相对应填写成品状态单标识，确认签字；状态单标识应不少于填写信息内容包括：成品控制号、机种、产品名称、数量、确认人、日期以及备注（评审、国家、类型、其他等），缠绕裹好膜，粘贴好状态单，放置待检区域。",
+      "acceptance_criteria": "自检:摆放数量应统一，摆放高度不可超出电梯口高度，状态单标识应清晰。",
+      "category": "一般工序",
+      "tools": "手套"
+    }
+  ],
+  "tests": [
+    {
+      "test_name": "CB2性能检查-休眠电流",
+      "criteria": "休眠电流大于1uA且小于20uA"
+    },
+    {
+      "test_name": "CB2性能检查-工作电流",
+      "criteria": "工作电流大于1mA且小于50mA"
+    },
+    {
+      "test_name": "CB3常温标定",
+      "criteria": "标定温度点：C30、C45；失败代码：Er3；环境：温度23.0±2.0℃，湿度50%RH±20%RH，气压70~106kPa，恒温水槽精度±0.02℃"
+    },
+    {
+      "test_name": "CB4常温性能检查",
+      "criteria": "检查温度点：C10、C33、C37、C41；失败代码：Er4；环境：温度23.0±2.0℃，湿度50%RH±20%RH，气压70~106kPa，恒温水槽精度±0.02℃"
+    },
+    {
+      "test_name": "CB5低温性能检查",
+      "criteria": "环境：温度16.0±2.0℃，湿度50%RH±20%RH，气压70~106kPa，恒温水槽精度±0.02℃"
+    },
+    {
+      "test_name": "包装前功能检查",
+      "criteria": "探头放在距离手背3cm以内，屏幕显示温度应在35℃~37℃之间"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-TORQUE-001",
+      "description": "电动螺丝刀扭力标准：1.6kgf.cm±0.2",
+      "category": "工艺要求"
+    },
+    {
+      "id": "REQ-SOLDER-001",
+      "description": "焊接时间不超过3秒，焊点饱满，焊接牢固",
+      "category": "工艺要求"
+    },
+    {
+      "id": "REQ-SOLDER-002",
+      "description": "电烙铁温度350℃-380℃",
+      "category": "工艺要求"
+    },
+    {
+      "id": "REQ-ENV-CB3CB4",
+      "description": "CB3/CB4恒温房环境：温度23.0±2.0℃，相对湿度50%RH±20%RH，大气压强70~106kPa，恒温水槽精度±0.02℃，初进入需静置2小时",
+      "category": "环境要求"
+    },
+    {
+      "id": "REQ-ENV-CB5",
+      "description": "CB5恒温房环境：温度16.0±2.0℃，相对湿度50%RH±20%RH，大气压强70~106kPa，恒温水槽精度±0.02℃，初进入需静置2小时",
+      "category": "环境要求"
+    },
+    {
+      "id": "REQ-SCREW-001",
+      "description": "螺钉规格：ST2.0×5.0-F-H",
+      "category": "零部件规格"
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/设计输出清单二/装配说明V1.0-PT9L.via_xlsx.clean.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "装配说明V1.0-PT9L",
+      "to": "文档格式",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CB2性能检查",
+      "to": "CB2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "CB2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "CB2",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CB3常温标定",
+      "to": "CB3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "CB3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "CB3",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "CB4常温性能检查",
+      "to": "CB4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "CB4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "CB4",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "清除记忆",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "清除记忆",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "用户操作",
+      "to": "清除记忆",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外观检查",
+      "to": "外观检查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L",
+      "to": "外观检查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "红外体温计",
+      "to": "外观检查",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "彩包装整机称重",
+      "to": "在线检重",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外箱摆盘（称重）",
+      "to": "外箱称重",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外箱摆盘（称重）",
+      "to": "尾数箱",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "外箱摆盘（入盘）",
+      "to": "状态单标识",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "彩包装装外箱",
+      "to": "装箱数量",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "CB2性能检查-休眠电流",
+      "to": "CB2性能检查",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "CB2性能检查-工作电流",
+      "to": "CB2性能检查",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "CB3常温标定",
+      "to": "CB3常温标定",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "CB4常温性能检查",
+      "to": "CB4常温性能检查",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "CB5低温性能检查",
+      "to": "CB5低温性能检查",
+      "properties": {}
+    },
+    {
+      "type": "VERIFIED_BY",
+      "from": "包装前功能检查",
+      "to": "包装前功能检查",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-TORQUE-001",
+      "to": "传感器模块与下盖组装",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-TORQUE-001",
+      "to": "安装PCB",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-TORQUE-001",
+      "to": "螺丝固定，装电池盖",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-SOLDER-001",
+      "to": "PCB焊接涂抹三防漆",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-SOLDER-001",
+      "to": "焊接NTC线",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-SOLDER-002",
+      "to": "焊接NTC线",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-ENV-CB3CB4",
+      "to": "CB3常温标定",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-ENV-CB3CB4",
+      "to": "CB4常温性能检查",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-ENV-CB5",
+      "to": "CB5低温性能检查",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-SCREW-001",
+      "to": "传感器模块与下盖组装",
+      "properties": {}
+    },
+    {
+      "type": "COVERS",
+      "from": "REQ-SCREW-001",
+      "to": "安装PCB",
+      "properties": {}
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "CB2性能检查-休眠电流",
+      "to": "CB2性能检查-休眠电流",
+      "properties": {
+        "min": "1uA",
+        "max": "20uA",
+        "parameter": "休眠电流"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "CB2性能检查-工作电流",
+      "to": "CB2性能检查-工作电流",
+      "properties": {
+        "min": "1mA",
+        "max": "50mA",
+        "parameter": "工作电流"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "CB3常温标定",
+      "to": "REQ-ENV-CB3CB4",
+      "properties": {
+        "temperature": "23.0±2.0℃",
+        "humidity": "50%RH±20%RH",
+        "pressure": "70~106kPa",
+        "thermostat_accuracy": "±0.02℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "CB4常温性能检查",
+      "to": "REQ-ENV-CB3CB4",
+      "properties": {
+        "temperature": "23.0±2.0℃",
+        "humidity": "50%RH±20%RH",
+        "pressure": "70~106kPa",
+        "thermostat_accuracy": "±0.02℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "CB5低温性能检查",
+      "to": "REQ-ENV-CB5",
+      "properties": {
+        "temperature": "16.0±2.0℃",
+        "humidity": "50%RH±20%RH",
+        "pressure": "70~106kPa",
+        "thermostat_accuracy": "±0.02℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "包装前功能检查",
+      "to": "包装前功能检查",
+      "properties": {
+        "distance": "距离手背3cm以内",
+        "temperature_range": "35℃~37℃"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-TORQUE-001",
+      "to": "REQ-TORQUE-001",
+      "properties": {
+        "torque": "1.6kgf.cm±0.2"
+      }
+    },
+    {
+      "type": "HAS_MEASUREMENT",
+      "from": "REQ-SOLDER-002",
+      "to": "REQ-SOLDER-002",
+      "properties": {
+        "temperature_min": "350℃",
+        "temperature_max": "380℃"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "PCB焊接涂抹三防漆",
+      "to": "传感器模块和支架组装",
+      "properties": {
+        "reason": "传感器头需先完成组装后才能焊接到PCB主板"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "传感器模块与下盖组装",
+      "to": "PCB焊接涂抹三防漆",
+      "properties": {
+        "reason": "探头焊接完成后才能安装到后壳"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "焊接NTC线",
+      "to": "前壳组装显示屏",
+      "properties": {
+        "reason": "PCB需先安装在前壳后才能焊接NTC线"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "安装PCB",
+      "to": "焊接NTC线",
+      "properties": {
+        "reason": "NTC线焊接完成后才能用螺钉固定PCB"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "上下盖组装",
+      "to": "安装PCB",
+      "properties": {
+        "reason": "PCB固定完成后才能合壳"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "上下盖组装",
+      "to": "传感器模块与下盖组装",
+      "properties": {
+        "reason": "传感器模块安装到后壳后才能合壳"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "透镜组装",
+      "to": "上下盖组装",
+      "properties": {
+        "reason": "合壳完成后才能粘贴透镜"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "螺丝固定，装电池盖",
+      "to": "透镜组装",
+      "properties": {
+        "reason": "透镜组装完成后固定后壳螺丝并装电池盖"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "CB2性能检查",
+      "to": "螺丝固定，装电池盖",
+      "properties": {
+        "reason": "整机组装完成后才能进行性能检查"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "CB3常温标定",
+      "to": "CB2性能检查",
+      "properties": {
+        "reason": "CB2性能检查通过后才能进行常温标定"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "CB4常温性能检查",
+      "to": "CB3常温标定",
+      "properties": {
+        "reason": "CB3常温标定完成后才能进行CB4常温性能检查"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "CB5低温性能检查",
+      "to": "CB4常温性能检查",
+      "properties": {
+        "reason": "CB4常温性能检查完成后才能进行CB5低温性能检查"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "包装前功能检查",
+      "to": "CB5低温性能检查",
+      "properties": {
+        "reason": "所有性能检查完成后才能进行包装前功能检查"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "清除记忆",
+      "to": "包装前功能检查",
+      "properties": {
+        "reason": "包装前功能检查完成后清除记忆"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "外观检查",
+      "to": "清除记忆",
+      "properties": {
+        "reason": "清除记忆后进行外观检查"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "粘贴铭牌",
+      "to": "外观检查",
+      "properties": {
+        "reason": "外观检查通过后粘贴铭牌"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "装电池盖",
+      "to": "粘贴铭牌",
+      "properties": {
+        "reason": "粘贴铭牌后安装电池盖"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "整机装吸塑盒",
+      "to": "装电池盖",
+      "properties": {
+        "reason": "电池盖安装完成后整机放入纸托架"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "彩包装装吸塑盒",
+      "to": "取吸塑盒",
+      "properties": {
+        "reason": "取出吸塑盒后才能装入彩包装"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "吸塑盒装电池",
+      "to": "彩包装装吸塑盒",
+      "properties": {
+        "reason": "吸塑盒装入彩包装后放入电池"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "整机装吸塑盒",
+      "to": "吸塑盒装电池",
+      "properties": {
+        "reason": "电池放入后将整机装入吸塑盒"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "标签装彩包装",
+      "to": "整机装吸塑盒",
+      "properties": {
+        "reason": "整机装入后放入标签"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "说明书组件",
+      "to": "标签装彩包装",
+      "properties": {
+        "reason": "标签放置后再放说明书"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "CB3常温标定",
+      "to": "REQ-ENV-CB3CB4",
+      "properties": {
+        "reason": "CB3标定依赖恒温房环境要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "CB4常温性能检查",
+      "to": "REQ-ENV-CB3CB4",
+      "properties": {
+        "reason": "CB4检查依赖恒温房环境要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "CB5低温性能检查",
+      "to": "REQ-ENV-CB5",
+      "properties": {
+        "reason": "CB5检查依赖低温恒温房环境要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "传感器模块与下盖组装",
+      "to": "REQ-TORQUE-001",
+      "properties": {
+        "reason": "螺钉固定需满足扭力要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "安装PCB",
+      "to": "REQ-TORQUE-001",
+      "properties": {
+        "reason": "PCB螺钉固定需满足扭力要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "螺丝固定，装电池盖",
+      "to": "REQ-TORQUE-001",
+      "properties": {
+        "reason": "后壳螺钉固定需满足扭力要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "PCB焊接涂抹三防漆",
+      "to": "REQ-SOLDER-001",
+      "properties": {
+        "reason": "焊接需满足焊点质量要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "焊接NTC线",
+      "to": "REQ-SOLDER-001",
+      "properties": {
+        "reason": "NTC线焊接需满足焊点质量要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "焊接NTC线",
+      "to": "REQ-SOLDER-002",
+      "properties": {
+        "reason": "NTC线焊接需满足烙铁温度要求"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "传感器模块与下盖组装",
+      "to": "REQ-SCREW-001",
+      "properties": {
+        "reason": "螺钉需符合ST2.0×5.0-F-H规格"
+      }
+    },
+    {
+      "type": "DEPENDS_ON",
+      "from": "安装PCB",
+      "to": "REQ-SCREW-001",
+      "properties": {
+        "reason": "螺钉需符合ST2.0×5.0-F-H规格"
+      }
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "CB2性能检查",
+      "to": "CB2性能检查-休眠电流",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "CB2性能检查",
+      "to": "CB2性能检查-工作电流",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "CB3常温标定",
+      "to": "CB3常温标定",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "CB4常温性能检查",
+      "to": "CB4常温性能检查",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "CB5低温性能检查",
+      "to": "CB5低温性能检查",
+      "properties": {}
+    },
+    {
+      "type": "SCHEDULES",
+      "from": "包装前功能检查",
+      "to": "包装前功能检查",
+      "properties": {}
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构工程师",
+      "to": "传感器模块和支架组装",
+      "properties": {
+        "role": "drafter"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构工程师",
+      "to": "PCB焊接涂抹三防漆",
+      "properties": {
+        "role": "drafter"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构工程师",
+      "to": "CB2性能检查",
+      "properties": {
+        "role": "drafter"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构工程师",
+      "to": "CB3常温标定",
+      "properties": {
+        "role": "drafter"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构工程师",
+      "to": "CB4常温性能检查",
+      "properties": {
+        "role": "drafter"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构工程师",
+      "to": "CB5低温性能检查",
+      "properties": {
+        "role": "drafter"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构主管",
+      "to": "CB2性能检查",
+      "properties": {
+        "role": "reviewer"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构主管",
+      "to": "CB3常温标定",
+      "properties": {
+        "role": "reviewer"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构主管",
+      "to": "CB4常温性能检查",
+      "properties": {
+        "role": "reviewer"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "结构主管",
+      "to": "CB5低温性能检查",
+      "properties": {
+        "role": "reviewer"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "技术负责人",
+      "to": "CB2性能检查",
+      "properties": {
+        "role": "approver"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "技术负责人",
+      "to": "CB3常温标定",
+      "properties": {
+        "role": "approver"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "技术负责人",
+      "to": "CB4常温性能检查",
+      "properties": {
+        "role": "approver"
+      }
+    },
+    {
+      "type": "RESPONSIBLE_FOR",
+      "from": "技术负责人",
+      "to": "CB5低温性能检查",
+      "properties": {
+        "role": "approver"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "电动螺丝刀扭力",
+      "attribute": "标准值",
+      "value": "1.6",
+      "unit": "kgf.cm",
+      "tolerance": "±0.2",
+      "condition": "",
+      "raw_text": "电动螺丝刀扭力标准：1.6kgf.cm±0.2"
+    },
+    {
+      "subject": "焊接时间",
+      "attribute": "上限",
+      "value": "3",
+      "unit": "秒",
+      "tolerance": "",
+      "condition": "焊点饱满，焊接牢固",
+      "raw_text": "焊接时间不超过3秒，焊点饱满，焊接牢固"
+    },
+    {
+      "subject": "电烙铁温度",
+      "attribute": "范围",
+      "value": "350~380",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "焊接作业",
+      "raw_text": "电烙铁温度350℃-380℃"
+    },
+    {
+      "subject": "CB3/CB4恒温房温度",
+      "attribute": "设定值",
+      "value": "23.0",
+      "unit": "℃",
+      "tolerance": "±2.0",
+      "condition": "CB3/CB4恒温房环境",
+      "raw_text": "CB3/CB4恒温房环境：温度23.0±2.0℃"
+    },
+    {
+      "subject": "CB3/CB4恒温房湿度",
+      "attribute": "设定值",
+      "value": "50",
+      "unit": "%RH",
+      "tolerance": "±20%RH",
+      "condition": "CB3/CB4恒温房环境",
+      "raw_text": "CB3/CB4恒温房环境：相对湿度50%RH±20%RH"
+    },
+    {
+      "subject": "CB3/CB4恒温房大气压强",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "CB3/CB4恒温房环境",
+      "raw_text": "CB3/CB4恒温房环境：大气压强70~106kPa"
+    },
+    {
+      "subject": "CB3/CB4恒温水槽精度",
+      "attribute": "精度",
+      "value": "",
+      "unit": "℃",
+      "tolerance": "±0.02",
+      "condition": "CB3/CB4恒温房环境",
+      "raw_text": "CB3/CB4恒温房环境：恒温水槽精度±0.02℃"
+    },
+    {
+      "subject": "CB3/CB4恒温房静置时间",
+      "attribute": "最短时长",
+      "value": "2",
+      "unit": "小时",
+      "tolerance": "",
+      "condition": "初次进入CB3/CB4恒温房",
+      "raw_text": "初进入需静置2小时"
+    },
+    {
+      "subject": "CB5恒温房温度",
+      "attribute": "设定值",
+      "value": "16.0",
+      "unit": "℃",
+      "tolerance": "±2.0",
+      "condition": "CB5恒温房环境",
+      "raw_text": "CB5恒温房环境：温度16.0±2.0℃"
+    },
+    {
+      "subject": "CB5恒温房湿度",
+      "attribute": "设定值",
+      "value": "50",
+      "unit": "%RH",
+      "tolerance": "±20%RH",
+      "condition": "CB5恒温房环境",
+      "raw_text": "CB5恒温房环境：相对湿度50%RH±20%RH"
+    },
+    {
+      "subject": "CB5恒温房大气压强",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "CB5恒温房环境",
+      "raw_text": "CB5恒温房环境：大气压强70~106kPa"
+    },
+    {
+      "subject": "CB5恒温水槽精度",
+      "attribute": "精度",
+      "value": "",
+      "unit": "℃",
+      "tolerance": "±0.02",
+      "condition": "CB5恒温房环境",
+      "raw_text": "CB5恒温房环境：恒温水槽精度±0.02℃"
+    },
+    {
+      "subject": "CB5恒温房静置时间",
+      "attribute": "最短时长",
+      "value": "2",
+      "unit": "小时",
+      "tolerance": "",
+      "condition": "初次进入CB5恒温房",
+      "raw_text": "初进入需静置2小时"
+    },
+    {
+      "subject": "螺钉规格",
+      "attribute": "型号",
+      "value": "ST2.0×5.0-F-H",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "螺钉规格：ST2.0×5.0-F-H"
+    },
+    {
+      "subject": "休眠电流",
+      "attribute": "范围",
+      "value": "1~20",
+      "unit": "uA",
+      "tolerance": "",
+      "condition": "CB2性能检查",
+      "raw_text": "休眠电流大于1uA且小于20uA"
+    },
+    {
+      "subject": "工作电流",
+      "attribute": "范围",
+      "value": "1~50",
+      "unit": "mA",
+      "tolerance": "",
+      "condition": "CB2性能检查",
+      "raw_text": "工作电流大于1mA且小于50mA"
+    },
+    {
+      "subject": "CB3常温标定温度点",
+      "attribute": "标定点",
+      "value": "C30、C45",
+      "unit": "",
+      "tolerance": "",
+      "condition": "CB3常温标定，环境温度23.0±2.0℃",
+      "raw_text": "标定温度点：C30、C45；环境：温度23.0±2.0℃"
+    },
+    {
+      "subject": "CB3标定环境温度",
+      "attribute": "设定值",
+      "value": "23.0",
+      "unit": "℃",
+      "tolerance": "±2.0",
+      "condition": "CB3常温标定",
+      "raw_text": "环境：温度23.0±2.0℃，湿度50%RH±20%RH，气压70~106kPa，恒温水槽精度±0.02℃"
+    },
+    {
+      "subject": "CB3标定环境湿度",
+      "attribute": "设定值",
+      "value": "50",
+      "unit": "%RH",
+      "tolerance": "±20%RH",
+      "condition": "CB3常温标定",
+      "raw_text": "环境：湿度50%RH±20%RH"
+    },
+    {
+      "subject": "CB3标定大气压强",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "CB3常温标定",
+      "raw_text": "气压70~106kPa"
+    },
+    {
+      "subject": "CB3标定恒温水槽精度",
+      "attribute": "精度",
+      "value": "",
+      "unit": "℃",
+      "tolerance": "±0.02",
+      "condition": "CB3常温标定",
+      "raw_text": "恒温水槽精度±0.02℃"
+    },
+    {
+      "subject": "CB4性能检查温度点",
+      "attribute": "检查点",
+      "value": "C10、C33、C37、C41",
+      "unit": "",
+      "tolerance": "",
+      "condition": "CB4常温性能检查",
+      "raw_text": "检查温度点：C10、C33、C37、C41"
+    },
+    {
+      "subject": "CB4检查环境温度",
+      "attribute": "设定值",
+      "value": "23.0",
+      "unit": "℃",
+      "tolerance": "±2.0",
+      "condition": "CB4常温性能检查",
+      "raw_text": "环境：温度23.0±2.0℃"
+    },
+    {
+      "subject": "CB4检查环境湿度",
+      "attribute": "设定值",
+      "value": "50",
+      "unit": "%RH",
+      "tolerance": "±20%RH",
+      "condition": "CB4常温性能检查",
+      "raw_text": "湿度50%RH±20%RH"
+    },
+    {
+      "subject": "CB4检查大气压强",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "CB4常温性能检查",
+      "raw_text": "气压70~106kPa"
+    },
+    {
+      "subject": "CB4检查恒温水槽精度",
+      "attribute": "精度",
+      "value": "",
+      "unit": "℃",
+      "tolerance": "±0.02",
+      "condition": "CB4常温性能检查",
+      "raw_text": "恒温水槽精度±0.02℃"
+    },
+    {
+      "subject": "CB5检查环境温度",
+      "attribute": "设定值",
+      "value": "16.0",
+      "unit": "℃",
+      "tolerance": "±2.0",
+      "condition": "CB5低温性能检查",
+      "raw_text": "环境：温度16.0±2.0℃"
+    },
+    {
+      "subject": "CB5检查环境湿度",
+      "attribute": "设定值",
+      "value": "50",
+      "unit": "%RH",
+      "tolerance": "±20%RH",
+      "condition": "CB5低温性能检查",
+      "raw_text": "湿度50%RH±20%RH"
+    },
+    {
+      "subject": "CB5检查大气压强",
+      "attribute": "范围",
+      "value": "70~106",
+      "unit": "kPa",
+      "tolerance": "",
+      "condition": "CB5低温性能检查",
+      "raw_text": "气压70~106kPa"
+    },
+    {
+      "subject": "CB5检查恒温水槽精度",
+      "attribute": "精度",
+      "value": "",
+      "unit": "℃",
+      "tolerance": "±0.02",
+      "condition": "CB5低温性能检查",
+      "raw_text": "恒温水槽精度±0.02℃"
+    },
+    {
+      "subject": "包装前功能检查测量距离",
+      "attribute": "上限",
+      "value": "3",
+      "unit": "cm",
+      "tolerance": "",
+      "condition": "探头放置于手背，包装前功能检查",
+      "raw_text": "探头放在距离手背3cm以内"
+    },
+    {
+      "subject": "包装前功能检查显示温度",
+      "attribute": "范围",
+      "value": "35~37",
+      "unit": "℃",
+      "tolerance": "",
+      "condition": "探头距手背3cm以内，包装前功能检查",
+      "raw_text": "屏幕显示温度应在35℃~37℃之间"
+    },
+    {
+      "subject": "电池数量",
+      "attribute": "数量",
+      "value": "2",
+      "unit": "节",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "电池，2节"
+    }
+  ]
+}

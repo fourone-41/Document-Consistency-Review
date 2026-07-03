@@ -1,0 +1,186 @@
+{
+  "document": {
+    "report_no": "ETX202303-07-078-03",
+    "total_pages": 21,
+    "current_pages": "7-8"
+  },
+  "regulations": [
+    {
+      "id": "IEC 60601-1:2005+A1:2012",
+      "clauses": [
+        "Clause 8",
+        "Clause 9",
+        "Clause 10",
+        "Clause 11",
+        "11.6.7"
+      ]
+    },
+    {
+      "id": "IEC 60601-1-11:2015",
+      "clauses": [
+        "Clause B"
+      ]
+    },
+    {
+      "id": "ISO 17664:2004",
+      "context": "Instructions for processing and REPROCESSING the CLINICAL THERMOMETER, PROBE and ACCESSORIES"
+    },
+    {
+      "id": "ISO 14937:2009",
+      "context": "Instructions for processing and REPROCESSING the CLINICAL THERMOMETER, PROBE and ACCESSORIES"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "201.7.9.101",
+      "description": "The ACCOMPANYING DOCUMENT includes a description of the correction method to derive unadjusted temperatures from OUTPUT TEMPERATURE measured in the ADJUSTED MODE, except when the CLINICAL THERMOMETER is equipped with a TEST MODE or DIRECT MODE",
+      "result": "P"
+    },
+    {
+      "clause": "201.8",
+      "description": "Protection against electrical HAZARDS from ME EQUIPMENT",
+      "reference": "IEC 60601-1:2005+A1:2012, Clause 8",
+      "result": "P"
+    },
+    {
+      "clause": "201.9",
+      "description": "Protection against mechanical HAZARDS of ME EQUIPMENT and ME SYSTEMS",
+      "reference": "IEC 60601-1:2005+A1:2012, Clause 9",
+      "result": "P"
+    },
+    {
+      "clause": "201.10",
+      "description": "Protection against unwanted and excessive radiation HAZARDS",
+      "reference": "IEC 60601-1:2005+A1:2012, Clause 10",
+      "result": "N/A"
+    },
+    {
+      "clause": "201.11",
+      "description": "Protection against excessive temperatures and other HAZARDS",
+      "reference": "IEC 60601-1:2005+A1:2012, Clause 11 applies except as follows",
+      "result": "P"
+    },
+    {
+      "clause": "201.11.6.6",
+      "description": "Cleaning and disinfection of ME EQUIPMENT and ME SYSTEM",
+      "sub_requirements": [
+        {
+          "description": "The surfaces of the CLINICAL THERMOMETER, PROBE and ACCESSORIES that can become contaminated with body fluids during NORMAL CONDITION or SINGLE FAULT CONDITION shall be designed to allow for cleaning and disinfection or cleaning and sterilization",
+          "reference_doc": "See 'Caution' of the Operation Guide",
+          "result": "P"
+        },
+        {
+          "description": "The CLINICAL THERMOMETER may be dismantled during the decontamination PROCESS",
+          "result": "P"
+        },
+        {
+          "description": "ACCESSORIES not intended for re-use are exempt from this requirement",
+          "result": "N/A"
+        },
+        {
+          "description": "CLINICAL THERMOMETER and PROBE ENCLOSURES shall be designed to allow for surface cleaning and disinfection to reduce to acceptable levels the RISK of infection of OPERATORS, bystanders, or the PATIENT",
+          "reference_doc": "See 'Caution' of the Operation Guide",
+          "result": "P"
+        },
+        {
+          "description": "Instructions for processing and REPROCESSING the CLINICAL THERMOMETER, PROBE and ACCESSORIES shall comply with ISO 17664:2004 and ISO 14937:2009 and shall be disclosed in the instructions for use",
+          "reference_doc": "See 'Caution' of the Operation Guide",
+          "result": "P"
+        },
+        {
+          "description": "Check compliance by inspection of the RISK MANAGEMENT FILE. Clean and disinfect 100 times in accordance with the methods indicated in the instruction for use, including any cooling or drying period. After these PROCEDURES, confirm that BASIC SAFETY and ESSENTIAL PERFORMANCE are maintained.",
+          "reference_doc": "See appended Table 201.11.6.6",
+          "result": "P"
+        }
+      ]
+    },
+    {
+      "clause": "201.11.7",
+      "description": "Biocompatibility of ME EQUIPMENT and ME",
+      "sub_requirements": [
+        {
+          "description": "ACCESSIBLE PARTS of a CLINICAL THERMOMETER, PROBE, its parts or ACCESSORIES that contain phthalates which are classified as carcinogenic, mutagenic or toxic to reproduction shall be marked as containing phthalates on the device itself or on the packaging",
+          "result": "N/E"
+        },
+        {
+          "description": "If INTENDED USE includes treatment of children or treatment of pregnant or nursing women, a specific justification for the use of phthalates shall be included in the RISK MANAGEMENT FILE. Instructions for use shall contain information on RESIDUAL RISKS for these PATIENT groups and appropriate precautionary measures.",
+          "result": "N/E"
+        }
+      ],
+      "result": "N/E"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Instructions provided on nature of maintenance and/or calibration needed to ensure proper function and its frequency. Result: P",
+      "topic_tags": [
+        "maintenance",
+        "calibration",
+        "instructions for use"
+      ],
+      "related_subjects": [
+        "user manual",
+        "clinical thermometer"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "Information about disposal of the clinical thermometer and its components. See chapter 'Maintenance' in user manual. Result: P",
+      "topic_tags": [
+        "disposal",
+        "instructions for use",
+        "user manual"
+      ],
+      "related_subjects": [
+        "clinical thermometer",
+        "components"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "If the CLINICAL THERMOMETER and/or its components are intended for single use only, information on characteristics and technical factors that could pose a RISK is provided in instructions for use. Result: N/A",
+      "topic_tags": [
+        "single use",
+        "risk",
+        "instructions for use"
+      ],
+      "related_subjects": [
+        "clinical thermometer"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Confirm that the MANUFACTURER has evaluated the effects of multiple PROCESS cycles and the effectiveness of those cycles as part of the 100-cycle cleaning/disinfection compliance verification.",
+      "topic_tags": [
+        "reprocessing",
+        "process cycles",
+        "manufacturer evaluation",
+        "risk management"
+      ],
+      "related_subjects": [
+        "201.11.6.6",
+        "RISK MANAGEMENT FILE",
+        "BASIC SAFETY",
+        "ESSENTIAL PERFORMANCE"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "If the INTENDED USE of a CLINICAL THERMOMETER, PROBE, its parts or ACCESSORIES includes treatment of children or treatment of pregnant or nursing women, a specific justification for the use of phthalates shall be included in the RISK MANAGEMENT FILE. The instructions for use shall contain information on RESIDUAL RISKS for these PATIENT groups and, if applicable, on appropriate precautionary measures.",
+      "topic_tags": [
+        "phthalates",
+        "biocompatibility",
+        "children",
+        "pregnant women",
+        "risk management",
+        "residual risk"
+      ],
+      "related_subjects": [
+        "201.11.7",
+        "RISK MANAGEMENT FILE",
+        "instructions for use"
+      ]
+    }
+  ]
+}

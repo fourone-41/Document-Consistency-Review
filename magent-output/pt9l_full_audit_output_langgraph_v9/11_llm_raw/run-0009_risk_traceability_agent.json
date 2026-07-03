@@ -1,0 +1,193 @@
+```json
+{
+  "agent": "Risk Traceability Agent",
+  "summary": "Full-corpus recheck for Bluetooth hazard traceability in the PT9L risk management chain confirms a true gap: no evidence of Bluetooth/BLE/wireless/RF hazard identification, risk control, or verification closure exists in any supplied document, while the project profile explicitly states PT9L transmits temperature via Bluetooth, and the active Risk Management Report (PT9L-FXGB01 V2.0, F0020/F0024) contains no retrievable Bluetooth hazard entry in the supplied evidence.",
+  "review_notes": [
+    "The evidence catalog contains two parallel sets of current-version risk documents: F0018–F0020 (IFT-prefixed, Attachment 7 series) and F0022–F0024 (PT9L-prefixed, Attachment 7 series). Both sets were searched exhaustively for Bluetooth/BLE/wireless/RF content; neither set contains any such reference in the supplied evidence lines.",
+    "RISK-040 (F0018) confirms the Risk Assessment Report was updated to V2.0 on 2024-05-30 with question list updated per ISO/TR 24971:2020 Annex A; RISK-045 (F0019) confirms the Verification report was updated to V2.0 on 2024-05-30 with hazard sequence alignment. Neither update note references Bluetooth or wireless hazards.",
+    "RISK-123 and RISK-124 (F0083, PT9L operation guide) contain an EMC immunity table referencing IEC basic EMC standards and home healthcare environment levels, which is the closest document to wireless/RF content in the corpus, but this is a user-facing document and not a hazard analysis entry.",
+    "RISK-127 (F0114, design verification report) and RISK-130 (F0121, design verification plan) both reference EMC testing as a separate verification item from risk management, but neither links EMC or wireless to a specific hazard ID in the ISO 14971 chain.",
+    "RISK-138 through RISK-140 (F0243, IEC 62366-1 checklist) reference ISO 14971:2019 compliance via document PT9L-FXGB01 V1.0, not V2.0, consistent with the version mismatch finding from RUN-0003 and RUN-0007.",
+    "DFMEA files F0071 (RISK-103 to RISK-108) and F0074 (RISK-109 to RISK-114) contain detection-ranking criteria tables but no Bluetooth or wireless failure mode entries are present in the supplied evidence lines.",
+    "Software hazard table headers are present at RISK-136 (F0135, software design) and RISK-137 (F0139, software requirements), indicating hazard columns exist in those documents, but no row content referencing Bluetooth is present in the supplied evidence.",
+    "The historical folder documents (F0012–F0016, F0025–F0028) were also reviewed; none contain Bluetooth hazard entries in the supplied evidence lines, consistent with their pre-Bluetooth-feature vintage."
+  ],
+  "findings": [
+    {
+      "finding_type": "bluetooth_hazard_absent_from_risk_assessment",
+      "severity": "P0",
+      "claim": "No Bluetooth-specific hazard, hazardous situation, or harm entry exists anywhere in the PT9L ISO 14971 risk assessment chain (Risk Assessment Report IFT-FXPJ01 V2.0 / PT9L-FXPJ01, Verification Report IFT-FXYS01 V2.0 / PT9L-FXYS01, or Risk Management Report IFT-FXGB01 V2.0 / PT9L-FXGB01 V1.0), despite the project profile confirming PT9L transmits temperature data to a smart device via Bluetooth.",
+      "rationale": "RISK-037 through RISK-054 cover the IFT-series current risk documents (F0018–F0020) and RISK-061 through RISK-078 cover the PT9L-series current risk documents (F0022–F0024). The table-of-contents entries and all supplied evidence lines from these eight documents contain no reference to Bluetooth, BLE, wireless, or RF in any hazard, control, or residual risk context. RISK-040 confirms the V2.0 Risk Assessment Report was updated per ISO/TR 24971:2020 Annex A on 2024-05-30, meaning the hazard question list was refreshed, yet no Bluetooth entry appears. The project profile states Bluetooth transmission is a confirmed feature. ISO 14971:2019 requires all foreseeable hazards associated with the device to be identified; wireless data transmission introduces hazards including data integrity loss leading to incorrect clinical decision, electromagnetic interference with other devices, and unauthorized data access. None of these appear in the supplied risk chain evidence.",
+      "evidence_ids": [
+        "RISK-037",
+        "RISK-038",
+        "RISK-039",
+        "RISK-040",
+        "RISK-041",
+        "RISK-042",
+        "RISK-043",
+        "RISK-044",
+        "RISK-045",
+        "RISK-046",
+        "RISK-047",
+        "RISK-048",
+        "RISK-049",
+        "RISK-050",
+        "RISK-051",
+        "RISK-052",
+        "RISK-053",
+        "RISK-054",
+        "RISK-061",
+        "RISK-062",
+        "RISK-063",
+        "RISK-064",
+        "RISK-065",
+        "RISK-066",
+        "RISK-067",
+        "RISK-068",
+        "RISK-069",
+        "RISK-070",
+        "RISK-071",
+        "RISK-072",
+        "RISK-073",
+        "RISK-074",
+        "RISK-075",
+        "RISK-076",
+        "RISK-077",
+        "RISK-078"
+      ],
+      "challenge_questions": [
+        "Can the manufacturer produce a page or row from PT9L-FXPJ01 V2.0 (Risk Assessment Report) or PT9L-FXGB01 (Risk Management Report) that explicitly identifies Bluetooth data transmission as a hazard source and assigns a hazard ID?",
+        "Was the ISO/TR 24971:2020 Annex A question list update (per RISK-040, 2024-05-30) reviewed against wireless/connected-device hazard categories? If so, what was the outcome and where is it documented?",
+        "Does the manufacturer consider Bluetooth transmission a safety-relevant feature? If not, what documented rationale supports the conclusion that Bluetooth data loss or corruption cannot lead to incorrect clinical decision or patient harm?",
+        "Is there a separate connected-device or cybersecurity risk assessment document for PT9L that is not included in the supplied DHF corpus? If so, provide its document number and version.",
+        "The operation guide (F0083, RISK-123/RISK-124) includes an EMC immunity table. Is EMC immunity testing considered the sole risk control for wireless interference, and if so, where is this control linked to a hazard ID in the ISO 14971 file?"
+      ]
+    },
+    {
+      "finding_type": "bluetooth_hazard_absent_from_risk_control_verification",
+      "severity": "P0",
+      "claim": "No verification record exists in the supplied corpus that closes a Bluetooth-related risk control measure, meaning the verification-to-residual-risk traceability chain for Bluetooth is entirely absent, not merely incomplete.",
+      "rationale": "RISK-019 through RISK-024 (F0015, historical verification report) and RISK-043 through RISK-048 (F0019, IFT-series current verification report) and RISK-067 through RISK-072 (F0023, PT9L-series current verification report) all contain table-of-contents entries for risk control measure validation and residual risk assessment sections. None of the supplied evidence lines from these documents reference Bluetooth, BLE, wireless, or RF. RISK-127 (F0114) confirms EMC testing is listed as a separate design verification item with result 'pass' but is not linked to any hazard ID. RISK-128 and RISK-129 confirm the design verification report cites PT9L-FXGB01 V1.0 as the risk management report, but no Bluetooth control is traceable through that citation. The traceability chain from hazard identification through control implementation through verification through residual risk acceptance is therefore completely absent for the Bluetooth feature.",
+      "evidence_ids": [
+        "RISK-019",
+        "RISK-020",
+        "RISK-021",
+        "RISK-022",
+        "RISK-023",
+        "RISK-024",
+        "RISK-043",
+        "RISK-044",
+        "RISK-045",
+        "RISK-046",
+        "RISK-047",
+        "RISK-048",
+        "RISK-067",
+        "RISK-068",
+        "RISK-069",
+        "RISK-070",
+        "RISK-071",
+        "RISK-072",
+        "RISK-127",
+        "RISK-128",
+        "RISK-129"
+      ],
+      "challenge_questions": [
+        "Is there a Bluetooth or wireless functional verification test protocol and result record for PT9L that is not included in the supplied DHF corpus? If so, provide its document number, version, and pass/fail verdict.",
+        "The design verification report (F0114) lists EMC testing as passed (RISK-127). Does the manufacturer assert that EMC testing constitutes the complete risk control verification for all Bluetooth-related hazards? If so, where is this assertion documented in the ISO 14971 file?",
+        "Has a residual risk acceptability determination been made for any Bluetooth-related hazard? If so, in which document and under which hazard ID?",
+        "Does the Risk Management Report (PT9L-FXGB01) contain a section on overall residual risk that explicitly addresses connected-device or wireless transmission risks? If so, provide the section reference."
+      ]
+    },
+    {
+      "finding_type": "software_hazard_table_bluetooth_gap",
+      "severity": "P1",
+      "claim": "The software design document (F0135) and software requirements specification (F0139) both contain hazard analysis table headers but supply no Bluetooth or wireless hazard row in the supplied evidence, creating a gap between the confirmed Bluetooth feature and the software-level hazard analysis that feeds the ISO 14971 chain.",
+      "rationale": "RISK-136 (F0135, software design) shows a hazard table header with columns for Hazard, Hazardous Situation, and Mitigation Measure. RISK-137 (F0139, software requirements) shows a hazard table header with columns for Hazard, Hazardous Situation, and Planned Control Measures. Neither document's supplied evidence lines contain any row referencing Bluetooth, BLE, wireless data loss, or RF interference. The project profile confirms Bluetooth is a PT9L feature. Software-level hazard analysis is a required input to the ISO 14971 risk assessment per ISO 14971:2019 clause 5.4 and ISO/TR 24971:2020. The absence of Bluetooth entries in the software hazard tables means the upstream input to the risk assessment is also missing, compounding the gap identified in the risk assessment documents themselves.",
+      "evidence_ids": [
+        "RISK-136",
+        "RISK-137"
+      ],
+      "challenge_questions": [
+        "Do the full-text versions of F0135 (software design) and F0139 (software requirements) contain any rows in their hazard tables referencing Bluetooth, BLE, wireless, or data transmission? If so, provide the hazard ID and description.",
+        "Was a software hazard analysis conducted specifically for the Bluetooth data transmission function? If so, what document captures it and how does it feed into the ISO 14971 risk assessment report?",
+        "Is the Bluetooth module treated as a software-controlled function, a hardware function, or both? How is this reflected in the DFMEA files (F0071, F0074) and the ISO 14971 risk assessment?"
+      ]
+    },
+    {
+      "finding_type": "risk_management_report_version_mismatch_in_verification_chain",
+      "severity": "P1",
+      "claim": "The design verification report (F0114) and the IEC 62366-1 checklist (F0243) both cite the Risk Management Report as PT9L-FXGB01 V1.0, while the current active Risk Management Report in the DHF corpus is V2.0 (F0020, F0024), meaning the closed-loop confirmation in the verification chain references a superseded document version.",
+      "rationale": "RISK-128 and RISK-129 (F0114, design verification report) explicitly cite 'PT9L-FXGB01 V1.0' as the risk management report with a pass verdict. RISK-138 (F0243, IEC 62366-1 checklist) cites 'PT9L-FXGB01 V1.0' as the ISO 14971 compliance document. However, RISK-049 through RISK-054 (F0020) and RISK-073 through RISK-078 (F0024) both show the current Risk Management Report is titled V2.0 (file name) while the internal document number header at RISK-050 and RISK-074 still reads 'PT9L-FXGB01 V1.0'. This creates ambiguity: either the internal document number was not updated when the file was revised to V2.0, or the design verification report and IEC 62366-1 checklist were never updated to reference the current version. Either way, the traceability chain between the verification closure and the current risk management report is broken or ambiguous.",
+      "evidence_ids": [
+        "RISK-049",
+        "RISK-050",
+        "RISK-051",
+        "RISK-073",
+        "RISK-074",
+        "RISK-075",
+        "RISK-128",
+        "RISK-129",
+        "RISK-138"
+      ],
+      "challenge_questions": [
+        "What is the authoritative current version of the Risk Management Report for PT9L: V1.0 (per internal document number header at RISK-050/RISK-074) or V2.0 (per file name at RISK-049/RISK-073)? Has a formal version increment been approved and recorded in the document change history?",
+        "Were the design verification report (F0114) and IEC 62366-1 checklist (F0243) updated to reference the V2.0 Risk Management Report after the 2024-05-30 revision? If not, is there a documented rationale for why V1.0 remains the cited version?",
+        "Does the V2.0 Risk Management Report contain any content changes relative to V1.0 that affect the pass/fail determination recorded in the design verification report? If so, the verification closure may need to be re-evaluated."
+      ]
+    },
+    {
+      "finding_type": "dfmea_not_cross_referenced_to_iso14971_chain",
+      "severity": "P2",
+      "claim": "The DFMEA files (F0071, F0074) use a detection-ranking methodology and contain design control references but are not cross-referenced to the ISO 14971 risk assessment report or risk management report in any supplied evidence, leaving the DFMEA hazard analysis isolated from the formal risk traceability chain.",
+      "rationale": "RISK-103 through RISK-108 (F0071, packaging DFMEA) and RISK-109 through RISK-114 (F0074, structural DFMEA) contain detection-ranking criteria tables with design control references. Neither document's supplied evidence lines contain any reference to ISO 14971, PT9L-FXPJ01, PT9L-FXGB01, or any hazard ID from the ISO 14971 risk assessment. Conversely, the ISO 14971 risk assessment documents (F0018, F0022) and risk management report (F0020, F0024) contain no supplied evidence lines referencing the DFMEA document numbers F0071 or F0074. ISO 14971:2019 clause 5 requires that all hazard identification inputs be captured in the risk management file; DFMEA is a recognized hazard identification tool per ISO/TR 24971:2020. The absence of cross-referencing means it cannot be confirmed that DFMEA-identified failure modes were evaluated within the ISO 14971 framework.",
+      "evidence_ids": [
+        "RISK-103",
+        "RISK-104",
+        "RISK-105",
+        "RISK-106",
+        "RISK-107",
+        "RISK-108",
+        "RISK-109",
+        "RISK-110",
+        "RISK-111",
+        "RISK-112",
+        "RISK-113",
+        "RISK-114",
+        "RISK-037",
+        "RISK-038",
+        "RISK-061",
+        "RISK-062"
+      ],
+      "challenge_questions": [
+        "Does the Risk Assessment Report (PT9L-FXPJ01 V2.0) reference the DFMEA files (F0071, F0074) as hazard identification inputs? If so, in which section and under which hazard IDs?",
+        "Were the failure modes identified in the packaging DFMEA (F0071) and structural DFMEA (F0074) reviewed against the ISO 14971 hazard list? Is there a documented mapping or cross-reference table?",
+        "Are there additional DFMEA files (e.g., electrical, software, or system-level DFMEA) that are cross-referenced to the ISO 14971 risk assessment but not present in the supplied corpus?"
+      ]
+    },
+    {
+      "finding_type": "active_risk_plan_document_number_mismatch",
+      "severity": "P1",
+      "claim": "The active Risk Management Plan filed in the primary DHF folder (F0017, F0021) carries document number IFT-FXJH01 V1.0 rather than PT9L-FXJH01, while the design verification plan (F0121) references risk management activities without specifying a plan document number, leaving the plan-to-assessment traceability link dependent on an IFT-prefixed identifier that does not match the PT9L product document numbering convention.",
+      "rationale": "RISK-031 and RISK-032 (F0017) show the active Risk Management Plan file is titled 'Attachment 7 01 Risk Management Plan IFT-FXJH01 V1.0' with internal document number 'IFT-FXJH01 V1.0'. RISK-055 and RISK-056 (F0021) show the PT9L-prefixed copy carries internal document number 'PT9L-FXJH01 V1.0' but the file is named with the IFT prefix. RISK-038 (F0018, Risk Assessment Report) carries document number 'IFT-FXPJ01 V2.0' and RISK-043 (F0019, Verification Report) carries 'IFT-FXYS01 V2.0', while RISK-062 (F0022) carries 'PT9L-FXPJ01 V1.0' and RISK-067 (F0023) carries 'PT9L-FXYS01 V1.0'. The parallel existence of IFT-prefixed and PT9L-prefixed versions of the same documents without a documented relationship (e.g., one is a copy, one is the master) means the traceability chain from plan to assessment to verification to report cannot be unambiguously established from the supplied evidence.",
+      "evidence_ids": [
+        "RISK-031",
+        "RISK-032",
+        "RISK-033",
+        "RISK-038",
+        "RISK-043",
+        "RISK-055",
+        "RISK-056",
+        "RISK-057",
+        "RISK-062",
+        "RISK-067"
+      ],
+      "challenge_questions": [
+        "Which document number series is the authoritative master for the PT9L risk management file: IFT-FXJH01/IFT-FXPJ01/IFT-FXYS01/IFT-FXGB01 or PT9L-FXJH01/PT9L-FXPJ01/PT9L-FXYS01/PT9L-FXGB01? Is there a document control record that establishes this?",
+        "Are the IFT-prefixed and PT9L-prefixed documents identical in content, or do they differ? If they differ, which version was used as the basis for the design verification report (F0114) and IEC 62366-1 checklist (F0243)?",
+        "Does the Risk Management Plan (whichever version is authoritative) explicitly list Bluetooth/wireless as a technology requiring hazard analysis? If so, under which section?"
+      ]
+    }
+  ]
+}
+```

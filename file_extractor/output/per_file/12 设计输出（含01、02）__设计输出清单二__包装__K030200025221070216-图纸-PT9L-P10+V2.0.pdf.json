@@ -1,0 +1,294 @@
+{
+  "document": {
+    "title": "PT9L-P10 保护膜图纸",
+    "document_number": "PT9L-P10",
+    "file_name": "K030200025221070216-图纸-PT9L-P10+V2.0.pdf",
+    "version": "V2.0",
+    "scale": "1:1",
+    "units": "mm"
+  },
+  "components": [
+    {
+      "name": "保护膜",
+      "part_name": "保护膜",
+      "model_number": "PT9L",
+      "drawing_number": "PT9L-P10",
+      "material": "0.03mm雾面PP膜+0.05mm网纹PE膜",
+      "pro_material": "PP+PE"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "description": "尺寸：41.8×25.8mm，公差：±0.15mm",
+      "category": "尺寸要求"
+    },
+    {
+      "id": "REQ-002",
+      "description": "制作工艺：印刷+模切",
+      "category": "工艺要求"
+    },
+    {
+      "id": "REQ-003",
+      "description": "色相正确，印迹牢固、套印准确、各色套印不露杂色，套印误差≤0.1mm",
+      "category": "印刷质量要求"
+    },
+    {
+      "id": "REQ-004",
+      "description": "模切走位≤±0.5mm",
+      "category": "模切精度要求"
+    },
+    {
+      "id": "REQ-005",
+      "description": "本件要求通过RoHS测试",
+      "category": "环保合规要求"
+    },
+    {
+      "id": "REQ-006",
+      "description": "颜色：PANTONE 434C",
+      "category": "颜色要求"
+    },
+    {
+      "id": "REQ-007",
+      "description": "纹理方向须选择正确的方向",
+      "category": "纹理要求"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "RoHS",
+      "description": "有害物质限制指令，本件要求通过RoHS测试"
+    }
+  ],
+  "revision_records": [
+    {
+      "edition": "V2.0",
+      "note": "更改记录栏存在，具体更改内容未在文本中列出"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "材质及工艺要求：材质：0.03mm雾面PP膜+0.05mm网纹PE膜；尺寸：41.8×25.8mm，公差：±0.15mm；制作工艺：印刷+模切；工艺要求：色相正确，印迹牢固、套印准确、各色套印不露杂色，套印误差≤0.1mm；模切走位≤±0.5mm；本件要求通过RoHS测试。",
+      "topic_tags": [
+        "材质",
+        "工艺要求",
+        "尺寸公差",
+        "套印误差",
+        "模切",
+        "RoHS"
+      ],
+      "related_subjects": [
+        "保护膜",
+        "PT9L-P10"
+      ]
+    },
+    {
+      "fragment_type": "constraint_statement",
+      "content": "纹理要求：纹理方向须选择正确的方向；颜色：PANTONE 434C。",
+      "topic_tags": [
+        "纹理方向",
+        "颜色",
+        "PANTONE 434C"
+      ],
+      "related_subjects": [
+        "保护膜",
+        "PT9L-P10"
+      ]
+    }
+  ],
+  "_meta": {
+    "source_file": "12 设计输出（含01、02）/设计输出清单二/包装/K030200025221070216-图纸-PT9L-P10+V2.0.pdf.md",
+    "doc_type": "design_output"
+  },
+  "_edges": [
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护膜",
+      "to": "材质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "材质",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "保护膜",
+      "to": "纹理方向",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "纹理方向",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "REQ-004",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "REQ-005",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "REQ-006",
+      "properties": {}
+    },
+    {
+      "type": "HAS_DETAIL",
+      "from": "PT9L-P10",
+      "to": "REQ-007",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护膜",
+      "to": "REQ-001",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护膜",
+      "to": "REQ-002",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护膜",
+      "to": "REQ-003",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护膜",
+      "to": "REQ-004",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护膜",
+      "to": "REQ-005",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护膜",
+      "to": "REQ-006",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "保护膜",
+      "to": "REQ-007",
+      "properties": {}
+    },
+    {
+      "type": "CONSTRAINED_BY",
+      "from": "REQ-005",
+      "to": "RoHS",
+      "properties": {}
+    },
+    {
+      "type": "HAS_REVISION",
+      "from": "PT9L-P10",
+      "to": "V2.0",
+      "properties": {
+        "edition": "V2.0",
+        "note": "更改记录栏存在，具体更改内容未在文本中列出"
+      }
+    }
+  ],
+  "_claims": [
+    {
+      "subject": "标签尺寸",
+      "attribute": "长×宽",
+      "value": "41.8×25.8",
+      "unit": "mm",
+      "tolerance": "±0.15mm",
+      "condition": "",
+      "raw_text": "尺寸：41.8×25.8mm，公差：±0.15mm"
+    },
+    {
+      "subject": "套印误差",
+      "attribute": "允差",
+      "value": "≤0.1",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "各色套印",
+      "raw_text": "套印误差≤0.1mm"
+    },
+    {
+      "subject": "模切走位",
+      "attribute": "允差",
+      "value": "±0.5",
+      "unit": "mm",
+      "tolerance": "±0.5mm",
+      "condition": "",
+      "raw_text": "模切走位≤±0.5mm"
+    },
+    {
+      "subject": "RoHS合规",
+      "attribute": "测试要求",
+      "value": "通过",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "本件要求通过RoHS测试"
+    },
+    {
+      "subject": "印刷颜色",
+      "attribute": "色号",
+      "value": "PANTONE 434C",
+      "unit": "",
+      "tolerance": "",
+      "condition": "",
+      "raw_text": "颜色：PANTONE 434C"
+    },
+    {
+      "subject": "雾面PP膜",
+      "attribute": "厚度",
+      "value": "0.03",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "保护膜材料层",
+      "raw_text": "0.03mm雾面PP膜+0.05mm网纹PE膜"
+    },
+    {
+      "subject": "网纹PE膜",
+      "attribute": "厚度",
+      "value": "0.05",
+      "unit": "mm",
+      "tolerance": "",
+      "condition": "保护膜材料层",
+      "raw_text": "0.03mm雾面PP膜+0.05mm网纹PE膜"
+    }
+  ]
+}

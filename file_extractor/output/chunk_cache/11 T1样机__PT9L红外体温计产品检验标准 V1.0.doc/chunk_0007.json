@@ -1,0 +1,54 @@
+{
+  "document": {
+    "title": "PT9L红外体温计产品检验标准",
+    "doc_type": "检验标准",
+    "version": "V1.0"
+  },
+  "tests": [
+    {
+      "test_id": "3",
+      "item": "说明书 保修卡 快纸",
+      "expected_value": "印刷清晰易读，无脏污折痕、破损等",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "4",
+      "item": "装箱数量",
+      "expected_value": "装箱数量正确，没有漏装、多装问题",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "5",
+      "item": "称重",
+      "expected_value": "带外箱重量",
+      "pass_criteria": "MI"
+    },
+    {
+      "test_id": "6",
+      "item": "装箱列表",
+      "expected_value": "整机一台、说明书、保修卡、快纸、7号电池*2",
+      "pass_criteria": "MI"
+    }
+  ],
+  "products": [
+    {
+      "name": "PT9L红外体温计"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "装箱列表要求包含以下物品：整机一台、说明书、保修卡、快纸、7号电池*2。所有文件资料（说明书、保修卡、快纸）印刷需清晰易读，无脏污、折痕、破损等缺陷。装箱数量需正确，不得有漏装或多装问题。称重检验项目需包含外箱重量。",
+      "topic_tags": [
+        "装箱检验",
+        "包装",
+        "随附文件",
+        "称重",
+        "红外体温计"
+      ],
+      "related_subjects": [
+        "PT9L红外体温计产品检验标准"
+      ]
+    }
+  ]
+}

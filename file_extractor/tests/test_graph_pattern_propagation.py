@@ -40,6 +40,7 @@ def test_find_missing_next_hop_finds_node_without_second_hop():
     cm03_candidates = [m for m in missing if m["from_id"] == "CM-03"]
     assert len(cm03_candidates) == 1
     assert cm03_candidates[0]["expected_relation"] == ("MITIGATED_BY", "VERIFIED_BY")
+    assert cm03_candidates[0]["pattern_frequency"] == 2
     assert len(cm03_candidates[0]["candidate_targets"]) == 3  # 全部 Test 节点作为候选
 
 
@@ -59,3 +60,22 @@ def test_find_missing_next_hop_ignores_low_frequency_patterns():
     missing = gpp.find_missing_next_hop(nodes, edges, min_frequency=3)
 
     assert missing == []
+
+
+def test_find_missing_next_hop_treats_unrelated_outgoing_edge_as_still_missing():
+    edges = [
+        {"type": "MITIGATED_BY", "from_type": "risks", "to_type": "risk_controls", "from_id": "R-01", "to_id": "CM-01"},
+        {"type": "VERIFIED_BY", "from_type": "risk_controls", "to_type": "tests", "from_id": "CM-01", "to_id": "T-01"},
+        {"type": "MITIGATED_BY", "from_type": "risks", "to_type": "risk_controls", "from_id": "R-02", "to_id": "CM-02"},
+        {"type": "VERIFIED_BY", "from_type": "risk_controls", "to_type": "tests", "from_id": "CM-02", "to_id": "T-02"},
+        {"type": "MITIGATED_BY", "from_type": "risks", "to_type": "risk_controls", "from_id": "R-03", "to_id": "CM-03"},
+        {"type": "REFERENCES_DOC", "from_type": "risk_controls", "to_type": "documents", "from_id": "CM-03", "to_id": "D-01"},
+    ]
+    nodes = {
+        "risk_controls": [{"control_id": "CM-03"}],
+        "tests": [{"test_id": "T-01"}],
+    }
+
+    missing = gpp.find_missing_next_hop(nodes, edges, min_frequency=2)
+
+    assert [m["from_id"] for m in missing] == ["CM-03"]

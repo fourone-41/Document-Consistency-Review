@@ -1,0 +1,290 @@
+{
+  "document": {
+    "standard": "IEC60601-1:2005+AMD1:2012+AMD2:2020/EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+    "page_range": "48-49",
+    "total_pages": 182,
+    "fragment_index": "23/84"
+  },
+  "regulations": [
+    {
+      "id": "IEC60601-1",
+      "full_reference": "IEC60601-1:2005+AMD1:2012+AMD2:2020",
+      "european_equivalent": "EN60601-1:2006+AC:2010+A1:2013+A12:2014+AC:2016+A2:2021",
+      "subject": "Medical electrical equipment general requirements for basic safety and essential performance"
+    },
+    {
+      "id": "IEC60335-1",
+      "full_reference": "IEC 60335-1:2001",
+      "clause": "25.14",
+      "subject": "Cord guard test"
+    }
+  ],
+  "requirements": [
+    {
+      "clause": "8.11.3.5",
+      "description": "Metal provided with an insulating lining affixed to cord anchorage, except when it is a flexible bushing forming part of the cord guard in 8.11.3.6, and complying with the requirements for one MEANS OF PROTECTION",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5c",
+      "description": "Cord anchorage prevents cord from being clamped by a screw bearing directly on cord insulation",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5d",
+      "description": "Screws to be operated when replacing POWER SUPPLY CORD do not serve to secure any components other than parts of cord anchorage",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5e",
+      "description": "Conductors of POWER SUPPLY CORD arranged to prevent PROTECTIVE EARTH CONDUCTOR against strain as long as phase conductors are in contact with their terminals when cord anchorage fails",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5f",
+      "description": "Cord anchorage prevents POWER SUPPLY CORD from being pushed into ME EQUIPMENT or MAINS CONNECTOR",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5_pull_test",
+      "description": "Conductors of POWER SUPPLY CORD supplied by a MANUFACTURER disconnected from terminals or from MAINS CONNECTOR and cord subjected 25 times to a pull applied with no jerks, each time for 1 s, on sheath of the value in Table 18",
+      "test_parameters": {
+        "repetitions": 25,
+        "duration_per_rep_seconds": 1,
+        "reference_table": "Table 18"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5_torque_test",
+      "description": "Cord subjected to a torque in Table 18 for 1 min immediately after pull tests",
+      "test_parameters": {
+        "duration_minutes": 1,
+        "reference_table": "Table 18"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5_displacement",
+      "description": "Cord anchorage did not allow cord sheath to be longitudinally displaced by more than 2 mm or conductor ends to move over a distance of more than 1 mm from their connected position",
+      "acceptance_criteria": {
+        "max_sheath_displacement_mm": 2,
+        "max_conductor_movement_mm": 1
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5_creepage",
+      "description": "CREEPAGE and CLEARANCES not reduced below limits in 8.9",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.5_push",
+      "description": "It was not possible to push the cord into ME EQUIPMENT or MAINS CONNECTOR to an extent the cord or internal parts would be damaged",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.6",
+      "description": "POWER SUPPLY CORDS other than for STATIONARY ME EQUIPMENT protected against excessive bending at inlet opening of equipment or of MAINS CONNECTOR by means of an insulating cord guard or by means of an appropriately shaped opening",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.6_cord_guard_test",
+      "description": "Cord guard complied with test of IEC 60335-1:2001, Clause 25.14",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.6_angle_test",
+      "description": "ME EQUIPMENT placed such that axis of cord guard projected at an angle of 45° with cord free from stress, and a mass equal 10 x D² gram attached to the free end of cord",
+      "test_parameters": {
+        "angle_degrees": 45,
+        "mass_grams_formula": "10 x D²"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.6_temperature_test",
+      "description": "Cord guard of temperature-sensitive material tested at 23 °C ±2 °C, and flat cords bent in the plane of least resistance",
+      "test_parameters": {
+        "temperature_celsius": 23,
+        "tolerance_celsius": 2
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.3.6_curvature",
+      "description": "Curvature of the cord radius, immediately after mass attached, was not less than 1.5 x D",
+      "acceptance_criteria": {
+        "min_radius_formula": "1.5 x D"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4",
+      "description": "MAINS TERMINAL DEVICES",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.1",
+      "description": "PERMANENTLY INSTALLED and ME EQUIPMENT with non-DETACHABLE POWER SUPPLY CORD replaceable by SERVICE PERSONNEL provided with MAINS TERMINAL DEVICES ensuring reliable connection",
+      "result_remark": "No mains terminal device",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.1_terminals",
+      "description": "Terminals alone are not used to keep conductors in position, except when barriers are provided such that CREEPAGE and CLEARANCES cannot be reduced below 8.9 if any conductor breaks away",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.1_terminal_components",
+      "description": "Terminals of components other than terminal blocks complying with requirements of this Clause and marked according to 7.3.7 used as terminals intended for external conductors",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.1_screws",
+      "description": "Screws and nuts clamping external conductors do not serve to secure any other component, except they also clamp internal conductors when unlikely to be displaced when fitting the supply conductors",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.2",
+      "description": "Arrangement of MAINS TERMINAL DEVICES",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.2a",
+      "description": "Terminals provided for connection of external cords or POWER SUPPLY CORDS together with PROTECTIVE EARTH TERMINAL grouped to provide convenient means of connection",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.2b",
+      "description": "PROTECTIVE EARTH CONDUCTOR connections complied with 8.6",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.2c",
+      "description": "Marking of MAINS TERMINAL DEVICES complied with 7.3",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.2d",
+      "description": "MAINS TERMINAL DEVICES not accessible without use of a TOOL",
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.2e",
+      "description": "A MEANS OF PROTECTION are not short circuited when one end of a flexible conductor with NOMINAL cross-sectional area is stripped 8 mm and a single free wire is bent in each possible direction",
+      "test_parameters": {
+        "strip_length_mm": 8
+      },
+      "verdict": "N/A"
+    },
+    {
+      "clause": "8.11.4.3",
+      "description": "Internal wiring not subjected to stress and CREEPAGE and CLEARANCES not reduced below 8.9 after fastening and loosening a conductor of largest cross-sectional area 10 times",
+      "test_parameters": {
+        "repetitions": 10
+      },
+      "verdict": "N/A"
+    }
+  ],
+  "tests": [
+    {
+      "id": "pull_test_8.11.3.5",
+      "clause": "8.11.3.5",
+      "name": "Power Supply Cord Pull Test",
+      "parameters": {
+        "repetitions": 25,
+        "duration_per_rep_seconds": 1,
+        "application": "no jerks",
+        "location": "sheath",
+        "force_reference": "Table 18"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "id": "torque_test_8.11.3.5",
+      "clause": "8.11.3.5",
+      "name": "Cord Torque Test",
+      "parameters": {
+        "duration_minutes": 1,
+        "sequence": "immediately after pull tests",
+        "torque_reference": "Table 18"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "id": "cord_guard_test_8.11.3.6",
+      "clause": "8.11.3.6",
+      "name": "Cord Guard Bending Test",
+      "reference_standard": "IEC 60335-1:2001 Clause 25.14",
+      "parameters": {
+        "angle_degrees": 45,
+        "mass_grams_formula": "10 x D²",
+        "temperature_celsius": 23,
+        "temperature_tolerance_celsius": 2,
+        "min_radius_formula": "1.5 x D"
+      },
+      "verdict": "N/A"
+    },
+    {
+      "id": "mains_terminal_fastening_test_8.11.4.3",
+      "clause": "8.11.4.3",
+      "name": "Mains Terminal Device Fastening/Loosening Test",
+      "parameters": {
+        "repetitions": 10,
+        "conductor": "largest cross-sectional area"
+      },
+      "verdict": "N/A"
+    }
+  ],
+  "semantic_fragments": [
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Cord anchorage requirements (8.11.3.5): After pull and torque tests per Table 18, the cord anchorage shall not allow the cord sheath to be longitudinally displaced by more than 2 mm, nor conductor ends to move over a distance of more than 1 mm from their connected position. CREEPAGE and CLEARANCES shall not be reduced below limits in 8.9, and it shall not be possible to push the cord into ME EQUIPMENT or MAINS CONNECTOR to an extent the cord or internal parts would be damaged.",
+      "topic_tags": [
+        "cord anchorage",
+        "power supply cord",
+        "creepage",
+        "clearance",
+        "pull test",
+        "torque test"
+      ],
+      "related_subjects": [
+        "8.11.3.5",
+        "8.9",
+        "Table 18"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "Cord guard requirements (8.11.3.6): POWER SUPPLY CORDS other than for STATIONARY ME EQUIPMENT shall be protected against excessive bending at the inlet opening of equipment or MAINS CONNECTOR by means of an insulating cord guard or appropriately shaped opening. The cord guard shall comply with IEC 60335-1:2001 Clause 25.14, or alternatively: ME EQUIPMENT placed such that axis of cord guard is at 45° with cord free from stress, a mass equal to 10×D² grams attached to free end of cord, tested at 23°C ±2°C for temperature-sensitive materials, with flat cords bent in the plane of least resistance. Curvature of cord radius immediately after mass attachment shall not be less than 1.5×D.",
+      "topic_tags": [
+        "cord guard",
+        "bending protection",
+        "power supply cord",
+        "cord radius",
+        "stationary ME equipment"
+      ],
+      "related_subjects": [
+        "8.11.3.6",
+        "IEC60335-1:2001 Clause 25.14"
+      ]
+    },
+    {
+      "fragment_type": "behavioral_spec",
+      "content": "MAINS TERMINAL DEVICES arrangement requirements (8.11.4.2): (a) Terminals for connection of external cords or POWER SUPPLY CORDS together with PROTECTIVE EARTH TERMINAL shall be grouped to provide convenient means of connection. (b) PROTECTIVE EARTH CONDUCTOR connections shall comply with 8.6. (c) Marking of MAINS TERMINAL DEVICES shall comply with 7.3. (d) MAINS TERMINAL DEVICES shall not be accessible without use of a TOOL. (e) MEANS OF PROTECTION shall not be short-circuited when one end of a flexible conductor with NOMINAL cross-sectional area is stripped 8 mm and a single free wire is bent in each possible direction.",
+      "topic_tags": [
+        "mains terminal device",
+        "protective earth",
+        "marking",
+        "tool access",
+        "means of protection"
+      ],
+      "related_subjects": [
+        "8.11.4.2",
+        "8.6",
+        "7.3"
+      ]
+    }
+  ]
+}
