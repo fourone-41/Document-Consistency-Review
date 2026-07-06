@@ -1,0 +1,75 @@
+corrections:
+  - correction_id: MANUAL-BT-001
+    match_finding_ids:
+      - LLM-0002
+      - LLM-0016
+      - LLM-0038
+      - LLM-0056
+      - LLM-0067
+      - LLM-0069
+    group_title: "人工修正：PT9L无蓝牙功能前提下的风险文件蓝牙/旧型号残留"
+    group_claim: >
+      原报告中“PT9L蓝牙功能缺少专项危害分析与验证关闭证据”的结论以
+      “PT9L具备蓝牙功能”为前提；人工复核后，该前提不足。设计输入、设计验证计划
+      和设计验证报告均将蓝牙相关认证/协议项目标记为不适用。风险文件中出现的
+      “PT9L/PT3SBT can transmit ... Bluetooth”更应归类为风险文件范围冲突、
+      模板残留或旧型号残留，而不是确认PT9L具有蓝牙功能后的验证缺口。
+    group_severity: P1
+    group_rationale: >
+      设计输入与验证文件是确认产品功能边界的优先证据；这些文件明确显示蓝牙项目
+      不适用。风险文件内部又同时出现PT9L蓝牙句子、PT3SBT蓝牙句子以及wireless
+      coexistence条目，说明问题核心是风险文件范围/旧型号残留不一致。原有蓝牙专项
+      危害或软件验证缺口类finding应从“已确认功能缺少验证”修正为“功能前提不足，
+      风险文件存在范围冲突”。
+    root_cause: >
+      Project Scout将风险管理报告中的一句蓝牙描述直接写入项目画像，未要求设计输入、
+      用户说明书、软件需求/方案等权威功能边界文件交叉确认，导致Orchestrator和后续
+      Agent沿着错误功能前提生成多条重复蓝牙缺口finding。
+    impact: >
+      如果不修正，报告会把“PT9L无蓝牙功能”误审成“有蓝牙但缺少验证”，造成整改方向
+      错误。正确整改重点应是修订风险文件中的蓝牙/PT3SBT残留，或补充正式说明为何
+      这些蓝牙内容适用于PT9L。
+    recommended_action: >
+      先确认PT9L最终受控功能范围；若PT9L无蓝牙功能，应删除或修订风险文件中的
+      蓝牙/PT3SBT残留，并在风险文件修订记录中说明范围澄清。后续代码层面应要求
+      Project Scout仅在设计输入、说明书、软件需求/方案等权威来源交叉确认后，才能
+      将某项功能写入project_profile。
+    merge_decision: manual_correction_false_premise
+    manual_correction_note: "用户人工复核确认：PT9L没有蓝牙功能。"
+    manual_evidence_refs:
+      - label: "设计输入：蓝牙BQB认证不适用"
+        rel_path: "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md"
+        line: 201
+        source_text: "| 蓝牙 | 蓝牙组织BQB认证 |  | 国际 | □是 ■否 |  |"
+      - label: "设计输入：蓝牙苹果协议不适用"
+        rel_path: "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md"
+        line: 202
+        source_text: "| 蓝牙 | 苹果公司内部协议 |  | 美国 | □是 ■否 |  |"
+      - label: "设计输入：蓝牙SRRC认证不适用"
+        rel_path: "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md"
+        line: 203
+        source_text: "| 蓝牙 | SRRC认证 |  | 中国 | □是 ■否 |  |"
+      - label: "设计输入：蓝牙FCC认证不适用"
+        rel_path: "04 设计输入E0 23.11\\设计输入汇总表E0  20211118.via_xlsx.clean.md"
+        line: 204
+        source_text: "| 蓝牙 | FCC认证 |  | 美国 | □是 ■否 |  |"
+      - label: "设计验证计划：蓝牙认证均不适用"
+        rel_path: "11 T1样机\\设计验证计划E0\\设计验证计划-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md"
+        line: 134
+        source_text: "|  | 蓝牙 | 蓝牙组织BQB认证 | □是 ■否 | -- | -- | -- |  |"
+      - label: "设计验证报告：蓝牙认证均不适用"
+        rel_path: "11 T1样机\\设计验证报告E0 23.11\\设计验证报告-通用要求和法规部分E0 20210927 23.11.via_xlsx.clean.md"
+        line: 204
+        source_text: "| 蓝牙 | 蓝牙组织BQB认证 | □是 ■否 | -- | -- | -- | —— | —— |"
+      - label: "风险管理报告：出现PT9L蓝牙句子，构成范围冲突来源"
+        rel_path: "03 风险分析\\Attachment 7 04 Risk Management Report IFT-FXGB01  V2.0 20240530-All applicable.via_lo_html.clean.md"
+        line: 78
+        source_text: "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT9L can transmit the temperature to a smart device with Bluetooth."
+      - label: "风险评估报告：出现PT3SBT蓝牙句子，显示旧型号残留"
+        rel_path: "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md"
+        line: 93
+        source_text: "The Infrared Forehead Thermometer is intended for the intermittent measurement of body temperature from the forehead skin surface on people of all ages. It can be used by consumers in the household environment and by health care providers.And PT3SBT can transmit the temperature to a smart device with Bluetooth."
+      - label: "风险评估报告：已有wireless coexistence风险行，反证“风险链完全无蓝牙/无线条目”"
+        rel_path: "03 风险分析\\Attachment 7 02 Risk Assessment Report IFT-FXPJ01 V2.0 20240530--All applicable.via_lo_html.clean.md"
+        line: 382
+        source_text: "| wireless coexistence | Other devices in the same environment send wireless interference | The result data cannot be transferred to the app or results data are delayed | The APP provides display and storage functions. If the app cannot receive the result,the LED of IFT can display the result , when the interference disappears, the next Bluetooth transmission can upload the data lost last time. Therefore, even if the app cannot display the current results, or the app delays the display of the current results, it will not cause harm to the user, but will increase the user's inconvenience. | 3 | 1 | Design control: Depends on software design | R56 |"

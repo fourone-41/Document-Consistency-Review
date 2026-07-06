@@ -15,6 +15,17 @@ orchestrator_policy:
     - Only agents assigned by the Orchestrator are called.
     - Every assigned agent call must invoke the LLM and must not read old agent-output cache.
     - If route planning cannot safely continue, return human_review with a reason.
+  post_processing_nodes:
+    dedup_grouping:
+      node_name: dedup_grouping
+      agent: Dedup/Grouping Agent
+      dispatch_rule: not assigned dynamically by Orchestrator; runs after Context Recovery to group duplicate or overlapping reviewed findings.
+      purpose: Rejudge group-level severity and preserve all original finding IDs under issue groups.
+    report:
+      node_name: report
+      agent: Report Agent
+      dispatch_rule: not assigned dynamically by Orchestrator; runs after Dedup/Grouping to generate Chinese reviewer-facing reports.
+      purpose: Render issue-group-first review pages with original evidence, manual corrections, and human review controls.
   mandatory_coverage:
     instruction: >
       The Orchestrator should ensure these stage-axis and dimension-axis checks

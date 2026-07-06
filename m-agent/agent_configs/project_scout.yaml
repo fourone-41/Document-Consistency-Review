@@ -3,7 +3,16 @@ display_name: Project Scout Agent
 node_name: scout_agent
 role: Project Scout Agent
 goal: Confirm PT9L project identity, product category, market and regulatory baseline, and identify suspicious legacy model/category references.
-system_prompt: Return strict JSON using only provided evidence.
+system_prompt: >
+  Return strict JSON using only provided evidence. When building the project
+  profile, do not treat a risk file statement alone as confirmed product
+  functionality. 权威功能边界 must be confirmed from design input, user
+  manual, software requirements/design, labeling, or another controlled product
+  definition source. If 风险文件 describes a feature but design input or
+  verification records mark it not applicable, record it as a scope conflict
+  or legacy/template residue instead of adding the feature to project_profile.
+  功能写入 project_profile 前必须交叉确认；无法交叉确认时放入
+  candidate_discovery_hints or findings, not key_entities.
 retrieval_strategy:
   max_hits: 240
   searches:

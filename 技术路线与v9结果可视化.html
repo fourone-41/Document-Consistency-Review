@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PT9L DHF/DMR 多智能体一致性审查：技术路线与 v9 结果</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --soft: #f6f8fb;
+      --panel: #ffffff;
+      --line: #d8e0ea;
+      --blue: #1d4ed8;
+      --teal: #0f766e;
+      --green: #15803d;
+      --amber: #b45309;
+      --red: #b91c1c;
+      --violet: #6d28d9;
+      --cyan: #0369a1;
+      --shadow: 0 16px 34px rgba(15, 23, 42, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: #edf2f7;
+      line-height: 1.58;
+    }
+
+    a { color: inherit; }
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: #38bdf8;
+      z-index: 20;
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 34px 38px 28px;
+      border-bottom: 4px solid #38bdf8;
+    }
+
+    .hero {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 24px;
+      align-items: end;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 3.2vw, 46px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 900px;
+      color: #d0d5dd;
+      font-size: 16px;
+    }
+
+    .hero-card {
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 13px;
+      color: #bae6fd;
+      margin-bottom: 8px;
+    }
+
+    .hero-card code {
+      display: block;
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.55;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    nav {
+      position: sticky;
+      top: 4px;
+      z-index: 15;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(15,23,42,.06);
+    }
+
+    nav .nav-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    nav a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      color: #344054;
+      border: 1px solid #d0d5dd;
+      background: #fff;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      color: #111827;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      color: #111827;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 10px; }
+
+    .subtitle {
+      color: var(--muted);
+      margin: -8px 0 18px;
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.kpis {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid #d9e1ea;
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .kpi {
+      min-height: 122px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top: 4px solid var(--blue);
+    }
+
+    .kpi:nth-child(2) { border-top-color: var(--teal); }
+    .kpi:nth-child(3) { border-top-color: var(--amber); }
+    .kpi:nth-child(4) { border-top-color: var(--violet); }
+    .kpi:nth-child(5) { border-top-color: var(--green); }
+    .kpi:nth-child(6) { border-top-color: var(--cyan); }
+
+    .kpi .num {
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .kpi .label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid #d0d5dd;
+      background: #f8fafc;
+      padding: 5px 10px;
+      color: #344054;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .diagram-wrap {
+      background: #f8fafc;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      padding: 10px;
+      overflow-x: auto;
+    }
+
+    .diagram {
+      width: 100%;
+      min-width: 1060px;
+      display: block;
+    }
+
+    .node rect {
+      fill: #fff;
+      stroke: #cbd5e1;
+      stroke-width: 1.5;
+      rx: 8;
+      filter: drop-shadow(0 8px 14px rgba(15, 23, 42, .09));
+    }
+
+    .node text {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      fill: var(--ink);
+      font-size: 14px;
+    }
+
+    .node .small {
+      fill: var(--muted);
+      font-size: 12px;
+    }
+
+    .hub rect {
+      fill: #fff;
+      stroke: var(--violet);
+      stroke-width: 3;
+      filter: drop-shadow(0 16px 24px rgba(109, 40, 217, .15));
+    }
+
+    .hub-title {
+      fill: var(--violet);
+      font-weight: 760;
+      font-size: 19px;
+    }
+
+    .tool rect { fill: #ecfeff; stroke: #99f6e4; }
+    .candidate rect { fill: #fffbeb; stroke: #fde68a; }
+    .agent rect { fill: #eff6ff; stroke: #bfdbfe; }
+    .gate rect { fill: #fff7ed; stroke: #fed7aa; }
+    .recovery rect { fill: #f5f3ff; stroke: #ddd6fe; }
+    .report rect { fill: #f0fdf4; stroke: #bbf7d0; }
+
+    .arrow {
+      stroke: #64748b;
+      stroke-width: 2.4;
+      fill: none;
+      marker-end: url(#arrow);
+    }
+
+    .loop {
+      stroke: var(--violet);
+      stroke-width: 2.6;
+      fill: none;
+      stroke-dasharray: 7 6;
+      marker-end: url(#arrowViolet);
+    }
+
+    .bar-table {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr) 56px;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .bar-track {
+      background: #eef2f6;
+      border-radius: 999px;
+      height: 12px;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--blue);
+    }
+
+    .bar.teal { background: var(--teal); }
+    .bar.green { background: var(--green); }
+    .bar.amber { background: var(--amber); }
+    .bar.violet { background: var(--violet); }
+    .bar.cyan { background: var(--cyan); }
+    .bar.red { background: var(--red); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: #fff;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border-bottom: 1px solid #e4e7ec;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #344054;
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      position: relative;
+      border: 1px solid #d9e1ea;
+      border-top: 4px solid var(--blue);
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 132px;
+    }
+
+    .step:nth-child(2) { border-top-color: var(--teal); }
+    .step:nth-child(3) { border-top-color: var(--violet); }
+    .step:nth-child(4) { border-top-color: var(--amber); }
+    .step:nth-child(5) { border-top-color: var(--green); }
+
+    .step .idx {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+      background: #0f172a;
+      color: #fff;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .callout {
+      border-left: 4px solid var(--amber);
+      background: #fffbeb;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: #3f2d0b;
+    }
+
+    .deliverables a {
+      display: block;
+      text-decoration: none;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      background: #fff;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+
+    .deliverables a strong {
+      display: block;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .deliverables a span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    code {
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      background: #f2f4f7;
+      border: 1px solid #e4e7ec;
+      border-radius: 6px;
+      padding: 1px 5px;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 16px 0 28px;
+    }
+
+    @media (max-width: 1120px) {
+      .hero,
+      .split,
+      .grid.two,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.kpis {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      header { padding: 28px 20px 22px; }
+      main { padding: 16px; }
+      section { padding: 18px; }
+      .grid.kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 116px minmax(0, 1fr) 42px; }
+      nav .nav-inner { padding: 8px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header>
+    <div class="hero">
+      <div>
+        <h1>PT9L DHF/DMR 多智能体一致性审查</h1>
+        <p class="lead">技术路线与 v9 结果可视化汇报。当前主线已经从固定规则扫描，演进为 LangGraph 编排、Orchestrator 动态派发、GPT55 多智能体审查、证据补证闭环和中文人工审阅报告的系统化方案。</p>
+        <div class="tag-row">
+          <span class="tag">主线：m-agent/</span>
+          <span class="tag">模型：GPT55</span>
+          <span class="tag">编排：LangGraph StateGraph</span>
+          <span class="tag">报告：中文 HTML 审阅页</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <strong>当前推荐打开的 v9 结果</strong>
+        <code>magent-output/pt9l_full_audit_output_langgraph_v9/08_reports/grouped-findings-review.html</code>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#overview">核心结论</a>
+      <a href="#route">技术路线</a>
+      <a href="#stack">技术栈</a>
+      <a href="#architecture">调度架构</a>
+      <a href="#v9">v9 统计</a>
+      <a href="#grouping">分组收束</a>
+      <a href="#correction">人工修正</a>
+      <a href="#deliverables">交付物</a>
+      <a href="#risks">边界与后续</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>1. 核心结论</h2>
+      <p class="subtitle">这部分适合作为开场：一句话说明现在做成了什么，以及 v9 结果能看什么。</p>
+      <div class="grid kpis">
+        <div class="card kpi">
+          <div class="num">470</div>
+          <div class="label">进入 v9 审查的 Markdown 文档数</div>
+        </div>
+        <div class="card kpi">
+          <div class="num">98</div>
+          <div class="label">LLM 语义 finding 总数</div>
+        </div>
+        <div class="card kpi">
+          <div class="num">90</div>
+          <div class="label">Challenge 后保留/修订的问题数</div>
+        </div>
+        <div class="card kpi">
+          <div class="num">61</div>
+          <div class="label">Dedup/Grouping 后的问题组数</div>
+        </div>
+        <div class="card kpi">
+          <div class="num">29</div>
+          <div class="label">Context Recovery 补证任务数</div>
+        </div>
+        <div class="card kpi">
+          <div class="num">13</div>
+          <div class="label">Orchestrator 派发后的真实 Agent 运行数</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:16px;">
+        当前 v9 结果不是最终质量结论，而是“带证据、可分组、可人工审阅”的候选审查输出。正式使用前，应在 HTML 报告中逐组确认，并导出人工审阅 JSON。
+      </div>
+    </section>
+
+    <section id="route">
+      <h2>2. 技术路线</h2>
+      <p class="subtitle">核心变化是把“候选发现”和“问题确认”拆开，让工具只取证，让 Agent 和人工复核负责判断。</p>
+      <div class="flow">
+        <div class="step">
+          <span class="idx">1</span>
+          <h3>证据底座</h3>
+          <p>把 PT9L Markdown 文档构造成 Manifest、PageIndex、参数实例、RelationIndex 和全文检索材料。</p>
+        </div>
+        <div class="step">
+          <span class="idx">2</span>
+          <h3>项目画像</h3>
+          <p>Project Scout Agent 建立型号、功能边界和文档范围判断，避免只凭风险文件定义产品功能。</p>
+        </div>
+        <div class="step">
+          <span class="idx">3</span>
+          <h3>动态派发</h3>
+          <p>Orchestrator 读取 routing policy、项目画像、历史 agent_runs 和候选状态，动态生成 route_plan。</p>
+        </div>
+        <div class="step">
+          <span class="idx">4</span>
+          <h3>复审补证</h3>
+          <p>领域 Agent 产出 finding 后，经过 Evidence Gate、Challenge 和最多 5 轮 Context Recovery。</p>
+        </div>
+        <div class="step">
+          <span class="idx">5</span>
+          <h3>分组报告</h3>
+          <p>Dedup/Grouping 将重复 finding 收束为问题组，Report Agent 生成中文可审阅 HTML。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <h2>3. 使用的技术与框架</h2>
+      <p class="subtitle">这里回答“用了什么技术，分别解决什么问题”。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>类别</th>
+            <th>技术/框架</th>
+            <th>用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>主语言</td><td>Python</td><td>主审查脚本、证据处理、Agent 调度和报告生成。</td></tr>
+          <tr><td>流程编排</td><td>LangGraph <code>StateGraph</code></td><td>组织 bootstrap、scout、orchestrator、challenge、context recovery、dedup、report 等节点。</td></tr>
+          <tr><td>大模型调用</td><td>OpenAI-compatible SDK</td><td>调用公司内部 GPT55 API，接口形式兼容 OpenAI SDK。</td></tr>
+          <tr><td>HTTP 客户端</td><td>httpx</td><td>支持 GPT55/OpenAI-compatible 客户端请求配置。</td></tr>
+          <tr><td>配置加载</td><td>PyYAML</td><td>每个 Agent 的角色、检索策略、输入 schema、输出 schema 拆到 YAML。</td></tr>
+          <tr><td>环境变量</td><td>python-dotenv</td><td>从 <code>.env</code> 加载 API Key、base URL、model 等运行配置。</td></tr>
+          <tr><td>中间结果</td><td>JSON / JSONL</td><td>保存 run summary、agent_runs、findings、context recovery、grouping results。</td></tr>
+          <tr><td>报告交互</td><td>静态 HTML + localStorage</td><td>支持人工勾选、备注、本地保存和 JSON 导入/导出。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="architecture">
+      <h2>4. 多智能体调度架构</h2>
+      <p class="subtitle">Orchestrator 是调度中心，Evidence Tools 只是取证能力，Candidate Discovery 只提候选，领域 Agent 和复审链路负责判断。</p>
+      <div class="diagram-wrap">
+        <svg class="diagram" viewBox="0 0 1180 620" role="img" aria-label="PT9L DHF DMR 多智能体动态调度架构图">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#64748b"></path>
+            </marker>
+            <marker id="arrowViolet" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#6d28d9"></path>
+            </marker>
+          </defs>
+
+          <g class="node tool">
+            <rect x="34" y="74" width="222" height="318"></rect>
+            <text x="64" y="112" font-weight="700">Evidence Tools</text>
+            <text x="64" y="145" class="small">PageIndex</text>
+            <text x="64" y="176" class="small">RelationIndex</text>
+            <text x="64" y="207" class="small">Full-text Search</text>
+            <text x="64" y="238" class="small">File Reader</text>
+            <text x="64" y="269" class="small">Parameter Instances</text>
+            <text x="64" y="315" class="small">只取证，不裁决</text>
+          </g>
+
+          <g class="node">
+            <rect x="336" y="36" width="230" height="88"></rect>
+            <text x="364" y="72" font-weight="700">Project Scout Agent</text>
+            <text x="364" y="100" class="small">项目画像与功能边界</text>
+          </g>
+
+          <g class="node hub">
+            <rect x="408" y="198" width="270" height="118"></rect>
+            <text x="448" y="240" class="hub-title">Orchestrator</text>
+            <text x="448" y="270" class="small">动态生成 route_plan</text>
+            <text x="448" y="294" class="small">只派发，不裁决</text>
+          </g>
+
+          <g class="node candidate">
+            <rect x="760" y="42" width="270" height="96"></rect>
+            <text x="794" y="82" font-weight="700">Candidate Discovery Agent</text>
+            <text x="794" y="112" class="small">提出候选假设，不判定成立</text>
+          </g>
+
+          <g class="node agent">
+            <rect x="760" y="190" width="330" height="132"></rect>
+            <text x="794" y="229" font-weight="700">领域 Agent</text>
+            <text x="794" y="259" class="small">Regulatory / Hardware / Software</text>
+            <text x="794" y="286" class="small">Risk / V&V / DMR-SOP</text>
+            <text x="794" y="311" class="small">结合证据工具审查</text>
+          </g>
+
+          <g class="node gate">
+            <rect x="450" y="396" width="230" height="92"></rect>
+            <text x="482" y="434" font-weight="700">Evidence Gate + Challenge</text>
+            <text x="482" y="462" class="small">keep / revise / drop / 补证</text>
+          </g>
+
+          <g class="node recovery">
+            <rect x="140" y="468" width="250" height="92"></rect>
+            <text x="174" y="506" font-weight="700">Context Recovery</text>
+            <text x="174" y="534" class="small">最多 5 轮补证后回流</text>
+          </g>
+
+          <g class="node report">
+            <rect x="760" y="424" width="330" height="112"></rect>
+            <text x="794" y="464" font-weight="700">Dedup/Grouping + Report Agent</text>
+            <text x="794" y="493" class="small">90 条确认问题收束为 61 组</text>
+            <text x="794" y="518" class="small">中文 HTML 人工审阅报告</text>
+          </g>
+
+          <path class="arrow" d="M451 124 L520 198"></path>
+          <path class="arrow" d="M678 240 L760 122"></path>
+          <path class="arrow" d="M760 104 L678 225"></path>
+          <path class="arrow" d="M678 258 L760 258"></path>
+          <path class="arrow" d="M922 322 L664 396"></path>
+          <path class="arrow" d="M680 442 L760 480"></path>
+          <path class="arrow" d="M450 442 L390 506"></path>
+          <path class="loop" d="M265 468 C260 330, 330 260, 408 250"></path>
+          <path class="arrow" d="M256 236 L408 236"></path>
+          <path class="arrow" d="M256 276 L760 276"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="v9">
+      <h2>5. v9 结果统计</h2>
+      <p class="subtitle">v9 是当前建议作为交接基线的结果版本，统计口径来自 run summary、agent_runs、context recovery 和 grouping results。</p>
+      <div class="grid two">
+        <div class="card">
+          <h3>输入与索引规模</h3>
+          <table>
+            <tbody>
+              <tr><td>审查文档数</td><td class="num">470</td></tr>
+              <tr><td>PageIndex 段落数</td><td class="num">4,222</td></tr>
+              <tr><td>参数实例数</td><td class="num">12,168</td></tr>
+              <tr><td>RelationIndex 节点数</td><td class="num">4,000</td></tr>
+              <tr><td>RelationIndex 边数</td><td class="num">189</td></tr>
+              <tr><td>证据工具命中数</td><td class="num">366</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>从 finding 到问题组</h3>
+          <div class="bar-table">
+            <div class="bar-row">
+              <span>语义 finding</span>
+              <div class="bar-track"><div class="bar blue" style="width:100%"></div></div>
+              <strong>98</strong>
+            </div>
+            <div class="bar-row">
+              <span>保留/修订</span>
+              <div class="bar-track"><div class="bar teal" style="width:91.8%"></div></div>
+              <strong>90</strong>
+            </div>
+            <div class="bar-row">
+              <span>分组后</span>
+              <div class="bar-track"><div class="bar violet" style="width:62.2%"></div></div>
+              <strong>61</strong>
+            </div>
+            <div class="bar-row">
+              <span>被驳回</span>
+              <div class="bar-track"><div class="bar red" style="width:8.2%"></div></div>
+              <strong>8</strong>
+            </div>
+          </div>
+          <p class="subtitle" style="margin:14px 0 0;">90 条确认问题收束为 61 个问题组，直接审阅单元减少 29 个，收束比例约 32.2%。</p>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:14px;">
+        <div class="card">
+          <h3>Orchestrator 派发</h3>
+          <table>
+            <tbody>
+              <tr><td>route plan 数</td><td class="num">4</td></tr>
+              <tr><td>继续派发轮次</td><td class="num">3</td></tr>
+              <tr><td>停止派发轮次</td><td class="num">1</td></tr>
+              <tr><td>assignment 数</td><td class="num">13</td></tr>
+              <tr><td>真实 Agent 运行数</td><td class="num">13</td></tr>
+              <tr><td>运行状态 completed</td><td class="num">13</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Challenge 结果</h3>
+          <div class="bar-table">
+            <div class="bar-row">
+              <span>keep</span>
+              <div class="bar-track"><div class="bar green" style="width:56.1%"></div></div>
+              <strong>55</strong>
+            </div>
+            <div class="bar-row">
+              <span>revise</span>
+              <div class="bar-track"><div class="bar amber" style="width:35.7%"></div></div>
+              <strong>35</strong>
+            </div>
+            <div class="bar-row">
+              <span>drop</span>
+              <div class="bar-track"><div class="bar red" style="width:8.2%"></div></div>
+              <strong>8</strong>
+            </div>
+          </div>
+          <p class="subtitle" style="margin:14px 0 0;">全部 98 条 finding 均为 <code>evidence_status=verified</code>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="agents">
+      <h2>6. Agent 运行与输出</h2>
+      <p class="subtitle">只有 Orchestrator 动态派到的 Agent 才真实调用 LLM。v9 共 13 次 Agent 运行，全部完成。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th class="num">运行次数</th>
+            <th class="num">输出 finding 数</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Candidate Discovery Agent</td><td class="num">1</td><td class="num">11</td><td>提出候选假设，不直接确认问题成立。</td></tr>
+          <tr><td>Hardware Agent</td><td class="num">2</td><td class="num">11</td><td>审查硬件参数、BOM、图纸和设计输出。</td></tr>
+          <tr><td>Risk Traceability Agent</td><td class="num">2</td><td class="num">14</td><td>审查风险、危害、风险控制与验证关闭证据。</td></tr>
+          <tr><td>Software Agent</td><td class="num">1</td><td class="num">5</td><td>审查软件需求、软件设计和生命周期一致性。</td></tr>
+          <tr><td>DMR/SOP Agent</td><td class="num">2</td><td class="num">14</td><td>审查 DMR、SOP、BOM、标签和工艺文件。</td></tr>
+          <tr><td>Regulatory Agent</td><td class="num">3</td><td class="num">22</td><td>审查法规、标准、文档控制和适用性声明。</td></tr>
+          <tr><td>V&V Agent</td><td class="num">2</td><td class="num">11</td><td>审查验证确认计划、报告和需求/风险闭环。</td></tr>
+          <tr><td><strong>合计</strong></td><td class="num"><strong>13</strong></td><td class="num"><strong>98</strong></td><td>进入 Challenge 前的语义 finding 总量。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="context">
+      <h2>7. Context Recovery 补证闭环</h2>
+      <p class="subtitle">补证不是简单把 prompt 加长，而是先判断缺口类型，再重新派发给合适 Agent。</p>
+      <div class="grid two">
+        <div class="card">
+          <h3>补证结果</h3>
+          <table>
+            <tbody>
+              <tr><td>补证任务总数</td><td class="num">29</td></tr>
+              <tr><td>最终 confirm</td><td class="num">25</td></tr>
+              <tr><td>最终 dismiss</td><td class="num">4</td></tr>
+              <tr><td>human_review</td><td class="num">0</td></tr>
+              <tr><td>最大允许轮数</td><td class="num">5</td></tr>
+              <tr><td>实际执行最大轮数</td><td class="num">5</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>补证轮数分布</h3>
+          <div class="bar-table">
+            <div class="bar-row"><span>1 轮</span><div class="bar-track"><div class="bar green" style="width:82.8%"></div></div><strong>24</strong></div>
+            <div class="bar-row"><span>2 轮</span><div class="bar-track"><div class="bar teal" style="width:10.3%"></div></div><strong>3</strong></div>
+            <div class="bar-row"><span>3 轮</span><div class="bar-track"><div class="bar amber" style="width:3.4%"></div></div><strong>1</strong></div>
+            <div class="bar-row"><span>5 轮</span><div class="bar-track"><div class="bar violet" style="width:3.4%"></div></div><strong>1</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:14px;">
+        <div class="card">
+          <h3>按缺口类型</h3>
+          <div class="bar-table">
+            <div class="bar-row"><span>产品身份/范围</span><div class="bar-track"><div class="bar blue" style="width:48.3%"></div></div><strong>14</strong></div>
+            <div class="bar-row"><span>风险控制验证</span><div class="bar-track"><div class="bar amber" style="width:37.9%"></div></div><strong>11</strong></div>
+            <div class="bar-row"><span>追溯链条</span><div class="bar-track"><div class="bar teal" style="width:10.3%"></div></div><strong>3</strong></div>
+            <div class="bar-row"><span>相邻上下文</span><div class="bar-track"><div class="bar violet" style="width:3.4%"></div></div><strong>1</strong></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>按目标 Agent</h3>
+          <div class="bar-table">
+            <div class="bar-row"><span>DMR/SOP</span><div class="bar-track"><div class="bar blue" style="width:27.6%"></div></div><strong>8</strong></div>
+            <div class="bar-row"><span>Risk</span><div class="bar-track"><div class="bar amber" style="width:17.2%"></div></div><strong>5</strong></div>
+            <div class="bar-row"><span>Scout</span><div class="bar-track"><div class="bar teal" style="width:13.8%"></div></div><strong>4</strong></div>
+            <div class="bar-row"><span>Regulatory</span><div class="bar-track"><div class="bar green" style="width:13.8%"></div></div><strong>4</strong></div>
+            <div class="bar-row"><span>Hardware</span><div class="bar-track"><div class="bar cyan" style="width:10.3%"></div></div><strong>3</strong></div>
+            <div class="bar-row"><span>其他</span><div class="bar-track"><div class="bar violet" style="width:17.2%"></div></div><strong>5</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="grouping">
+      <h2>8. Dedup/Grouping 收束结果</h2>
+      <p class="subtitle">这一层解决“报告里很多错误看起来重复”的问题，让人工审阅以问题组为主。</p>
+      <div class="grid three">
+        <div class="card">
+          <h3>组级严重等级</h3>
+          <div class="bar-table">
+            <div class="bar-row"><span>P1</span><div class="bar-track"><div class="bar red" style="width:39.3%"></div></div><strong>24</strong></div>
+            <div class="bar-row"><span>P2</span><div class="bar-track"><div class="bar amber" style="width:34.4%"></div></div><strong>21</strong></div>
+            <div class="bar-row"><span>P3</span><div class="bar-track"><div class="bar green" style="width:26.2%"></div></div><strong>16</strong></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>合并决策</h3>
+          <div class="bar-table">
+            <div class="bar-row"><span>单条成组</span><div class="bar-track"><div class="bar blue" style="width:73.8%"></div></div><strong>45</strong></div>
+            <div class="bar-row"><span>相关合并</span><div class="bar-track"><div class="bar teal" style="width:16.4%"></div></div><strong>10</strong></div>
+            <div class="bar-row"><span>重复合并</span><div class="bar-track"><div class="bar amber" style="width:8.2%"></div></div><strong>5</strong></div>
+            <div class="bar-row"><span>人工修正</span><div class="bar-track"><div class="bar violet" style="width:1.6%"></div></div><strong>1</strong></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>每组包含 finding 数</h3>
+          <div class="bar-table">
+            <div class="bar-row"><span>1 条</span><div class="bar-track"><div class="bar green" style="width:75.4%"></div></div><strong>46</strong></div>
+            <div class="bar-row"><span>2 条</span><div class="bar-track"><div class="bar teal" style="width:13.1%"></div></div><strong>8</strong></div>
+            <div class="bar-row"><span>3 条</span><div class="bar-track"><div class="bar amber" style="width:6.6%"></div></div><strong>4</strong></div>
+            <div class="bar-row"><span>4 条</span><div class="bar-track"><div class="bar cyan" style="width:1.6%"></div></div><strong>1</strong></div>
+            <div class="bar-row"><span>6 条</span><div class="bar-track"><div class="bar violet" style="width:3.3%"></div></div><strong>2</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="correction">
+      <h2>9. 人工修正案例：蓝牙问题</h2>
+      <div class="split">
+        <div>
+          <p>v9 中沉淀了一个关键人工修正组：<code>MANUAL-BT-001</code>。原报告曾将部分蓝牙相关描述理解为“PT9L 具备蓝牙功能，但缺少专项危害分析与验证关闭证据”。人工复核后确认，PT9L 实际没有蓝牙功能，设计输入、设计验证计划和设计验证报告均将蓝牙相关项目标记为不适用。</p>
+          <p>因此，正确整改方向不是补蓝牙验证，而是检查风险文件中出现的蓝牙/PT3SBT 相关描述是否属于范围冲突、模板残留或旧型号残留，并修订风险文件或补充正式适用性说明。</p>
+        </div>
+        <div class="callout">
+          这个案例说明系统必须区分“风险文件中的一句描述”和“受控产品定义中的真实功能”。功能边界必须优先来自设计输入、说明书、软件需求/设计、验证计划/报告等权威文件。
+        </div>
+      </div>
+    </section>
+
+    <section id="deliverables">
+      <h2>10. 当前主要交付物</h2>
+      <p class="subtitle">这些入口可以作为交接时的材料清单。</p>
+      <div class="grid two deliverables">
+        <div>
+          <a href="magent-output/pt9l_full_audit_output_langgraph_v9/08_reports/grouped-findings-review.html">
+            <strong>人工审阅主报告</strong>
+            <span>magent-output/pt9l_full_audit_output_langgraph_v9/08_reports/grouped-findings-review.html</span>
+          </a>
+          <a href="magent-output/pt9l_full_audit_output_langgraph_v9/15_dedup_grouping/grouping_results.json">
+            <strong>分组结果 JSON</strong>
+            <span>magent-output/pt9l_full_audit_output_langgraph_v9/15_dedup_grouping/grouping_results.json</span>
+          </a>
+          <a href="magent-output/pt9l_full_audit_output_langgraph_v9/08_reports/run_summary_full_langgraph.json">
+            <strong>v9 运行摘要</strong>
+            <span>magent-output/pt9l_full_audit_output_langgraph_v9/08_reports/run_summary_full_langgraph.json</span>
+          </a>
+        </div>
+        <div>
+          <a href="magent-output/pt9l_full_audit_output_langgraph_v9/05_agent_notes/agent_runs.jsonl">
+            <strong>Agent 运行记录</strong>
+            <span>magent-output/pt9l_full_audit_output_langgraph_v9/05_agent_notes/agent_runs.jsonl</span>
+          </a>
+          <a href="magent-output/pt9l_full_audit_output_langgraph_v9/10_task_packages/orchestrator_route_plans.json">
+            <strong>Orchestrator 路由计划</strong>
+            <span>magent-output/pt9l_full_audit_output_langgraph_v9/10_task_packages/orchestrator_route_plans.json</span>
+          </a>
+          <a href="magent-output/all_output.md">
+            <strong>结果目录索引</strong>
+            <span>magent-output/all_output.md</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="risks">
+      <h2>11. 边界、风险与后续建议</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3>必须人工复核</h3>
+          <p>v9 报告是候选审查输出，不等于正式质量结论。高风险问题需要质量、法规、研发人员确认。</p>
+        </div>
+        <div class="card">
+          <h3>运行成本较高</h3>
+          <p>系统真实调用多个 LLM Agent，并包含 Challenge、Context Recovery 和 Dedup/Grouping，比规则扫描慢。</p>
+        </div>
+        <div class="card">
+          <h3>审阅状态需导出</h3>
+          <p>HTML 页面的人工勾选默认保存在 localStorage，正式交接前必须导出 JSON。</p>
+        </div>
+      </div>
+      <table style="margin-top:14px;">
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>建议事项</th>
+            <th>目的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>P0</td><td>完成 61 个问题组的人工审阅，并导出 <code>human-review-decisions.json</code>。</td><td>形成可交接、可复盘的人工判断结果。</td></tr>
+          <tr><td>P1</td><td>新增“只基于已有 <code>grouping_results.json</code> 重新渲染 HTML”的轻量入口。</td><td>避免每次调样式都重新调用 Dedup LLM。</td></tr>
+          <tr><td>P2</td><td>用人工审阅结果建立 gold set，统计误报和漏报类型。</td><td>持续提升 Project Scout、Challenge 和 Report Correction 规则。</td></tr>
+          <tr><td>P3</td><td>在测试稳定后拆分当前主脚本。</td><td>降低后续维护成本，但不建议为拆而拆。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="footer-note">数据来源：技术路线与v9结果.md、v9 run summary、agent_runs、context recovery results、grouping_results。</p>
+  </main>
+
+  <script>
+    const progress = document.getElementById('progress');
+    function updateProgress() {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progress.style.width = height > 0 ? (scrollTop / height * 100) + '%' : '0%';
+    }
+    document.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  </script>
+</body>
+</html>

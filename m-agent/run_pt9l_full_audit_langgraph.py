@@ -1,12 +1,15 @@
 ﻿from __future__ import annotations
 
 import argparse
+import copy
+import html
 import json
 import os
 import re
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Iterable, TypedDict
 
@@ -117,6 +120,9 @@ class FullAuditState(TypedDict, total=False):
     semantic_findings: list[dict]
     all_findings: list[dict]
     challenge_output: dict
+    grouped_findings: list[dict]
+    dedup_grouping_summary: dict
+    dedup_grouping_output: dict
     summary: dict
 
 
@@ -136,6 +142,7 @@ def ensure_dirs(output_root: Path) -> None:
         "11_llm_raw",
         "12_challenge",
         "14_context_recovery",
+        "15_dedup_grouping",
     ]:
         (output_root / rel).mkdir(parents=True, exist_ok=True)
 
@@ -194,6 +201,13 @@ def load_routing_config() -> dict:
     path = AGENT_CONFIG_ROOT / "routing.yaml"
     if not path.exists():
         raise FileNotFoundError(f"Routing config not found: {path}")
+    return read_yaml(path)
+
+
+def load_report_corrections() -> dict:
+    path = AGENT_CONFIG_ROOT / "report_corrections.yaml"
+    if not path.exists():
+        return {"corrections": []}
     return read_yaml(path)
 
 
@@ -1012,6 +1026,93 @@ def parse_agent_json_relaxed(text: str, agent_name: str) -> dict:
         result["findings"].append(current)
     if not result["summary"] and not result["findings"]:
         raise json.JSONDecodeError("relaxed parser could not recover agent output", text, 0)
+    return result
+
+
+def parse_dedup_grouping_json_relaxed(text: str) -> dict:
+    text = text.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```(?:json)?", "", text).strip()
+        text = re.sub(r"```$", "", text).strip()
+    result: dict[str, Any] = {"agent": "Dedup/Grouping Agent", "summary": "", "groups": []}
+    current: dict[str, Any] | None = None
+    inside_groups = False
+    active_array: str | None = None
+    string_fields = {
+        "group_id",
+        "group_title",
+        "group_claim",
+        "group_severity",
+        "group_rationale",
+        "root_cause",
+        "impact",
+        "recommended_action",
+        "merge_decision",
+        "primary_finding_id",
+    }
+
+    def line_value(line: str) -> str:
+        if ":" not in line:
+            return ""
+        part = line.split(":", 1)[1].strip().rstrip(",")
+        if part.startswith('"') and part.endswith('"'):
+            part = part[1:-1]
+        return part
+
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if active_array == "member_finding_ids":
+            if "]" in line:
+                active_array = None
+            if current is not None:
+                current["member_finding_ids"].extend(re.findall(r'"(LLM-\d+)"', line))
+            continue
+        if re.match(r'"agent"\s*:', line):
+            result["agent"] = line_value(line) or "Dedup/Grouping Agent"
+        elif re.match(r'"summary"\s*:', line):
+            result["summary"] = line_value(line)
+        elif re.match(r'"groups"\s*:\s*\[', line):
+            inside_groups = True
+        elif inside_groups and line.startswith("{") and current is None:
+            current = {
+                "group_id": "",
+                "group_title": "",
+                "group_claim": "",
+                "group_severity": "P2",
+                "group_rationale": "",
+                "root_cause": "",
+                "impact": "",
+                "recommended_action": "",
+                "merge_decision": "merge_related",
+                "member_finding_ids": [],
+                "primary_finding_id": "",
+            }
+        elif line.startswith("}") and current is not None:
+            if current.get("member_finding_ids"):
+                if not current.get("primary_finding_id"):
+                    current["primary_finding_id"] = current["member_finding_ids"][0]
+                result["groups"].append(current)
+            current = None
+            active_array = None
+        elif line.startswith("]") and inside_groups and current is None:
+            inside_groups = False
+        elif current is not None:
+            matched_field = next((field for field in string_fields if re.match(fr'"{field}"\s*:', line)), None)
+            if matched_field:
+                current[matched_field] = line_value(line)
+            elif re.match(r'"member_finding_ids"\s*:', line):
+                current["member_finding_ids"].extend(re.findall(r'"(LLM-\d+)"', line))
+                if "[" in line and "]" not in line:
+                    active_array = "member_finding_ids"
+
+    if current is not None and current.get("member_finding_ids"):
+        if not current.get("primary_finding_id"):
+            current["primary_finding_id"] = current["member_finding_ids"][0]
+        result["groups"].append(current)
+    if not result["summary"] and not result["groups"]:
+        raise json.JSONDecodeError("relaxed parser could not recover dedup grouping output", text, 0)
     return result
 
 
@@ -2690,6 +2791,1171 @@ def build_result_count_summary(
     }
 
 
+SEVERITY_ORDER = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
+
+
+def finding_id(row: dict) -> str:
+    return str(row.get("finding_id") or row.get("id") or "")
+
+
+def non_dropped_findings(rows: list[dict]) -> list[dict]:
+    return [
+        row
+        for row in rows
+        if str(row.get("challenge_status") or row.get("status") or "").lower() not in {"drop", "dropped"}
+    ]
+
+
+def evidence_location_signature(row: dict) -> tuple[tuple[str, str], ...]:
+    refs = row.get("evidence_refs") if isinstance(row.get("evidence_refs"), list) else []
+    locations = []
+    for ref in refs:
+        if not isinstance(ref, dict):
+            continue
+        rel_path = str(ref.get("rel_path") or ref.get("path") or "")
+        line = str(ref.get("line") or "")
+        if rel_path or line:
+            locations.append((rel_path, line))
+    return tuple(sorted(dict.fromkeys(locations)))
+
+
+def finding_file_signature(row: dict) -> set[str]:
+    files = set(str(path) for path in row.get("doc_paths", []) if path)
+    for rel_path, _line in evidence_location_signature(row):
+        if rel_path:
+            files.add(rel_path)
+    return files
+
+
+def normalize_group_text(text: object) -> str:
+    value = str(text or "").lower()
+    value = re.sub(r"[`*_#|>\[\]（）()，。；;：:、,.!?！？\"“”'\\/\s-]+", "", value)
+    return value
+
+
+def char_ngrams(text: object, size: int = 3) -> set[str]:
+    normalized = normalize_group_text(text)
+    if not normalized:
+        return set()
+    if len(normalized) <= size:
+        return {normalized}
+    return {normalized[i : i + size] for i in range(len(normalized) - size + 1)}
+
+
+def text_overlap_score(left: object, right: object) -> float:
+    left_text = normalize_group_text(left)
+    right_text = normalize_group_text(right)
+    if not left_text or not right_text:
+        return 0.0
+    left_grams = char_ngrams(left_text)
+    right_grams = char_ngrams(right_text)
+    dice = 0.0
+    if left_grams and right_grams:
+        dice = 2 * len(left_grams & right_grams) / (len(left_grams) + len(right_grams))
+    return max(dice, SequenceMatcher(None, left_text, right_text).ratio())
+
+
+def build_dedup_candidate_groups(rows: list[dict]) -> list[dict]:
+    findings = non_dropped_findings(rows)
+    by_id = {finding_id(row): row for row in findings if finding_id(row)}
+    parent = {fid: fid for fid in by_id}
+    reasons: dict[tuple[str, str], str] = {}
+
+    def find(fid: str) -> str:
+        while parent[fid] != fid:
+            parent[fid] = parent[parent[fid]]
+            fid = parent[fid]
+        return fid
+
+    def union(left: str, right: str, reason: str) -> None:
+        left_root = find(left)
+        right_root = find(right)
+        if left_root != right_root:
+            parent[right_root] = left_root
+        reasons[tuple(sorted([left, right]))] = reason
+
+    by_location: dict[tuple[tuple[str, str], ...], list[str]] = defaultdict(list)
+    for fid, row in by_id.items():
+        signature = evidence_location_signature(row)
+        if signature:
+            by_location[signature].append(fid)
+    for ids in by_location.values():
+        if len(ids) < 2:
+            continue
+        for idx, left in enumerate(ids):
+            for right in ids[idx + 1 :]:
+                union(left, right, "same_evidence_location")
+
+    ids = list(by_id)
+    for idx, left in enumerate(ids):
+        left_row = by_id[left]
+        left_text = f"{left_row.get('finding_type', '')} {left_row.get('claim', '')}"
+        left_files = finding_file_signature(left_row)
+        for right in ids[idx + 1 :]:
+            if find(left) == find(right):
+                continue
+            right_row = by_id[right]
+            right_text = f"{right_row.get('finding_type', '')} {right_row.get('claim', '')}"
+            score = text_overlap_score(left_text, right_text)
+            shared_files = left_files & finding_file_signature(right_row)
+            if score >= 0.72 or (shared_files and score >= 0.52):
+                union(left, right, "similar_claim_or_same_file")
+
+    grouped_ids: dict[str, list[str]] = defaultdict(list)
+    for fid in ids:
+        grouped_ids[find(fid)].append(fid)
+
+    candidates = []
+    seq = 1
+    for member_ids in grouped_ids.values():
+        if len(member_ids) < 2:
+            continue
+        pair_reasons = [
+            reason
+            for pair, reason in reasons.items()
+            if pair[0] in member_ids and pair[1] in member_ids
+        ]
+        candidate_reason = "same_evidence_location" if "same_evidence_location" in pair_reasons else "similar_claim_or_same_file"
+        recommended_action = (
+            "merge_exact_or_near_duplicate"
+            if candidate_reason == "same_evidence_location"
+            else "ask_dedup_grouping_agent"
+        )
+        candidates.append(
+            {
+                "candidate_group_id": f"DGC-{seq:04d}",
+                "candidate_reason": candidate_reason,
+                "recommended_action": recommended_action,
+                "member_finding_ids": sorted(member_ids),
+                "agents": sorted({str(by_id[fid].get("agent") or "") for fid in member_ids if fid in by_id}),
+                "finding_types": sorted({str(by_id[fid].get("finding_type") or "") for fid in member_ids if fid in by_id}),
+                "claims": [
+                    {
+                        "finding_id": fid,
+                        "claim": by_id[fid].get("claim", ""),
+                        "severity": by_id[fid].get("severity", ""),
+                        "challenge_status": by_id[fid].get("challenge_status", ""),
+                    }
+                    for fid in sorted(member_ids)
+                    if fid in by_id
+                ],
+            }
+        )
+        seq += 1
+    return candidates
+
+
+FINDING_TYPE_PHRASE_CN = {
+    "legacy_model_reference_in_active_risk_assessment": "旧型号引用在现行风险评估中残留",
+    "legacy_model_reference": "旧型号引用",
+}
+
+
+FINDING_TYPE_TERM_CN = {
+    "active": "现行",
+    "absent": "缺失",
+    "annex": "附件",
+    "applicability": "适用性",
+    "approval": "审批",
+    "assessment": "评估",
+    "battery": "电池",
+    "biocompatibility": "生物相容性",
+    "blank": "空白",
+    "blood": "血压",
+    "bluetooth": "蓝牙",
+    "bom": "BOM",
+    "bridge": "桥接",
+    "checklist": "检查表",
+    "closed": "闭环",
+    "closure": "闭环",
+    "conflict": "冲突",
+    "confirmation": "确认",
+    "control": "控制",
+    "currency": "现行性",
+    "design": "设计",
+    "discrepancy": "差异",
+    "document": "文件",
+    "documents": "文件",
+    "draft": "草稿",
+    "drawing": "图纸",
+    "duplicate": "重复",
+    "ebom": "EBOM",
+    "evidence": "证据",
+    "fields": "字段",
+    "file": "文件",
+    "gap": "缺口",
+    "guide": "指南",
+    "hazard": "危害",
+    "historical": "历史",
+    "identity": "身份",
+    "in": "在",
+    "incomplete": "不完整",
+    "inconsistency": "不一致",
+    "instruction": "作业指导",
+    "integrity": "完整性",
+    "legacy": "旧型号",
+    "list": "清单",
+    "management": "管理",
+    "mdd": "MDD",
+    "mdr": "MDR",
+    "missing": "缺失",
+    "model": "型号",
+    "nonconformance": "不符合",
+    "number": "编号",
+    "object": "物体",
+    "operation": "操作",
+    "output": "输出",
+    "pcb": "PCB",
+    "pin": "锁定",
+    "pinned": "锁定",
+    "prefix": "前缀",
+    "process": "过程",
+    "product": "产品",
+    "record": "记录",
+    "reference": "引用",
+    "references": "引用",
+    "report": "报告",
+    "requirement": "需求",
+    "requirements": "需求",
+    "residue": "残留",
+    "risk": "风险",
+    "sample": "样品",
+    "sensor": "传感器",
+    "software": "软件",
+    "summative": "总结性",
+    "table": "表",
+    "temperature": "温度",
+    "test": "测试",
+    "traceability": "追溯",
+    "traced": "追溯",
+    "transfer": "转移",
+    "unresolved": "未解决",
+    "unsigned": "未签署",
+    "usability": "可用性",
+    "verification": "验证",
+    "version": "版本",
+    "without": "缺少",
+    "wrong": "错误",
+    "not": "未",
+    "from": "来自",
+    "between": "之间",
+    "and": "与",
+    "specific": "专项",
+    "scope": "范围",
+    "applied": "应用",
+    "outside": "超出",
+    "specified": "规定",
+    "range": "范围",
+    "residual": "残余",
+    "clinical": "临床",
+    "evaluation": "评价",
+    "label": "标签",
+    "packaging": "包装",
+    "part": "部件",
+    "title": "标题",
+    "block": "栏",
+    "current": "当前",
+    "currency": "现行性",
+    "gap": "缺口",
+}
+
+
+def chinese_finding_type_title(row: dict) -> str:
+    finding_type = str(row.get("finding_type") or "").strip()
+    if not finding_type:
+        claim = str(row.get("claim") or "")
+        return f"单条问题：{claim[:48]}" if claim else "单条问题：未命名问题"
+    normalized = re.sub(r"[_\s-]+", "_", finding_type.lower())
+    if normalized in FINDING_TYPE_PHRASE_CN:
+        return f"单条问题：{FINDING_TYPE_PHRASE_CN[normalized]}"
+    tokens = [token for token in re.split(r"[_\s-]+", finding_type) if token]
+    translated = []
+    for token in tokens:
+        lower = token.lower()
+        translated.append(FINDING_TYPE_TERM_CN.get(lower, token.upper() if re.fullmatch(r"[a-z]{2,}\d*", lower) else token))
+    return f"单条问题：{''.join(translated)}"
+
+
+def chinese_single_finding_claim(row: dict) -> str:
+    title = chinese_finding_type_title(row).replace("单条问题：", "", 1)
+    fid = finding_id(row) or "该 finding"
+    agent = chinese_agent_name(row.get("agent"))
+    severity = str(row.get("severity") or "未定级")
+    return (
+        f"中文概述：{fid} 由 {agent} 识别，组级问题为“{title}”，严重等级为 {severity}。"
+        "该条未与其他问题组合并；原文件证据保留在下方用于追溯。"
+    )
+
+
+AGENT_DISPLAY_CN = {
+    "Project Scout Agent": "项目画像 Agent",
+    "Orchestrator": "编排 Agent",
+    "Candidate Discovery Agent": "候选发现 Agent",
+    "Regulatory Agent": "法规 Agent",
+    "Hardware Agent": "硬件 Agent",
+    "Software Agent": "软件 Agent",
+    "Risk Traceability Agent": "风险追溯 Agent",
+    "V&V Agent": "验证确认 Agent",
+    "DMR/SOP Agent": "DMR/SOP Agent",
+    "Evidence Gate Agent": "证据门控 Agent",
+    "Challenge Agent": "质询 Agent",
+    "Context Recovery Agent": "上下文恢复 Agent",
+    "Dedup/Grouping Agent": "去重分组 Agent",
+    "Report Agent": "报告 Agent",
+}
+
+
+CHALLENGE_STATUS_CN = {
+    "keep": "确认保留",
+    "revise": "修订后保留",
+    "drop": "已剔除",
+    "dismiss": "已排除",
+    "confirm": "确认问题",
+    "human_review": "人工复核",
+    "needs_more_context": "待补证",
+}
+
+
+MERGE_DECISION_CN = {
+    "single_finding": "单条问题",
+    "manual_correction": "人工修正",
+    "merge_exact_or_near_duplicate": "合并重复或近似重复问题",
+    "ask_dedup_grouping_agent": "由去重分组 Agent 判断",
+    "same_evidence_location": "同一证据位置合并",
+}
+
+
+def has_cjk(text: object) -> bool:
+    return bool(re.search(r"[\u4e00-\u9fff]", str(text or "")))
+
+
+def chinese_agent_name(value: object) -> str:
+    text = str(value or "原审查 Agent").strip()
+    return AGENT_DISPLAY_CN.get(text, text.replace(" Agent", " Agent"))
+
+
+def chinese_challenge_status(value: object) -> str:
+    text = str(value or "").strip()
+    return CHALLENGE_STATUS_CN.get(text, text or "未标记")
+
+
+def chinese_merge_decision(value: object) -> str:
+    text = str(value or "").strip()
+    return MERGE_DECISION_CN.get(text, text if has_cjk(text) else "未合并")
+
+
+def html_generated_text_cn(value: object, fallback: str = "") -> str:
+    text = str(value or "").strip()
+    if not text:
+        return fallback
+    return text if has_cjk(text) else fallback
+
+
+def chinese_original_finding_statement(row: dict) -> str:
+    title = chinese_finding_type_title(row).replace("单条问题：", "", 1)
+    fid = finding_id(row) or "该 finding"
+    agent = chinese_agent_name(row.get("agent"))
+    severity = str(row.get("severity") or "未定级")
+    status = chinese_challenge_status(row.get("challenge_status"))
+    return f"{fid}：{agent}识别到“{title}”（严重等级 {severity}，复审状态：{status}）。"
+
+
+def chinese_original_finding_rationale(row: dict) -> str:
+    evidence_count = len(row.get("evidence_refs", []) or [])
+    if evidence_count:
+        return f"判断依据：该判断关联 {evidence_count} 条原文件证据；请以下方证据摘录和路径为准进行人工复核。"
+    return "判断依据：该判断来自审查 Agent 输出；当前条目未附带可展示的原文件证据，建议人工补证后复核。"
+
+
+def group_title_for_html(group: dict) -> str:
+    title = str(group.get("group_title") or "").strip()
+    if title and has_cjk(title):
+        return title
+    rows = group.get("original_findings") or []
+    if rows:
+        return chinese_finding_type_title(rows[0])[:80]
+    group_id = str(group.get("group_id") or "未命名")
+    return f"问题组：{group_id}"
+
+
+def group_claim_for_html(group: dict) -> str:
+    claim = str(group.get("group_claim") or "").strip()
+    if claim and has_cjk(claim):
+        return claim
+    rows = group.get("original_findings") or []
+    if len(rows) == 1:
+        return chinese_single_finding_claim(rows[0])
+    agents = sorted({chinese_agent_name(row.get("agent")) for row in rows if isinstance(row, dict)})
+    return (
+        f"中文概述：该问题组包含 {len(rows)} 条相关 finding，涉及"
+        f"{'、'.join(agents) if agents else '多个审查 Agent'}；请按组级标题和下方原文件证据进行人工复核。"
+    )
+
+
+def group_rationale_for_html(group: dict) -> str:
+    rationale = str(group.get("group_rationale") or "").strip()
+    if rationale and has_cjk(rationale):
+        return rationale
+    rows = group.get("original_findings") or []
+    evidence_count = sum(len(row.get("evidence_refs", []) or []) for row in rows if isinstance(row, dict))
+    return f"组级理由：该组基于 {len(rows)} 条原始 finding 和 {evidence_count} 条原文件证据归并；英文 Agent 原始输出不作为页面正文展示。"
+
+
+def review_data_for_html(groups: list[dict]) -> dict:
+    return {
+        "groups": [
+            {
+                "group_id": str(group.get("group_id") or ""),
+                "group_title": group_title_for_html(group),
+                "group_severity": str(group.get("group_severity") or ""),
+                "member_finding_ids": list(group.get("member_finding_ids") or []),
+            }
+            for group in groups
+        ]
+    }
+
+
+def default_group_for_finding(row: dict, group_id: str) -> dict:
+    fid = finding_id(row)
+    rationale = str(row.get("rationale") or row.get("challenge_reason") or "")
+    return {
+        "group_id": group_id,
+        "group_title": chinese_finding_type_title(row)[:80],
+        "group_claim": chinese_single_finding_claim(row),
+        "group_severity": str(row.get("severity") or "P2"),
+        "group_rationale": f"原始判断依据：{rationale}" if rationale else "",
+        "root_cause": "",
+        "impact": "",
+        "recommended_action": "",
+        "merge_decision": "single_finding",
+        "member_finding_ids": [fid],
+        "primary_finding_id": fid,
+    }
+
+
+def normalize_group_severity(value: object, member_rows: list[dict]) -> str:
+    severity = str(value or "").strip().upper()
+    if severity in SEVERITY_ORDER:
+        return severity
+    member_severities = [str(row.get("severity") or "P2").upper() for row in member_rows]
+    return min(member_severities or ["P2"], key=lambda item: SEVERITY_ORDER.get(item, 9))
+
+
+def normalize_dedup_grouping_output(raw: dict, rows: list[dict]) -> dict:
+    source_rows = non_dropped_findings(rows)
+    by_id = {finding_id(row): row for row in source_rows if finding_id(row)}
+    used: set[str] = set()
+    seen_group_ids: set[str] = set()
+    groups = []
+    for idx, group in enumerate(raw.get("groups", []), start=1):
+        if not isinstance(group, dict):
+            continue
+        member_ids = [fid for fid in dict.fromkeys(str(fid) for fid in group.get("member_finding_ids", [])) if fid in by_id]
+        if not member_ids:
+            continue
+        member_rows = [by_id[fid] for fid in member_ids]
+        primary = str(group.get("primary_finding_id") or member_ids[0])
+        if primary not in member_ids:
+            primary = member_ids[0]
+        group_id = str(group.get("group_id") or f"GRP-{idx:04d}")
+        if group_id in seen_group_ids:
+            group_id = f"GRP-{len(seen_group_ids) + 1:04d}"
+        seen_group_ids.add(group_id)
+        normalized = {
+            "group_id": group_id,
+            "group_title": str(group.get("group_title") or by_id[primary].get("finding_type") or by_id[primary].get("claim") or primary),
+            "group_claim": str(group.get("group_claim") or by_id[primary].get("claim") or ""),
+            "group_severity": normalize_group_severity(group.get("group_severity"), member_rows),
+            "group_rationale": str(group.get("group_rationale") or ""),
+            "root_cause": str(group.get("root_cause") or ""),
+            "impact": str(group.get("impact") or ""),
+            "recommended_action": str(group.get("recommended_action") or ""),
+            "merge_decision": str(group.get("merge_decision") or ("merge_related" if len(member_ids) > 1 else "single_finding")),
+            "member_finding_ids": member_ids,
+            "primary_finding_id": primary,
+            "original_findings": member_rows,
+        }
+        used.update(member_ids)
+        groups.append(normalized)
+
+    next_index = len(groups) + 1
+    for row in source_rows:
+        fid = finding_id(row)
+        if not fid or fid in used:
+            continue
+        group_id = f"GRP-{next_index:04d}"
+        while group_id in seen_group_ids:
+            next_index += 1
+            group_id = f"GRP-{next_index:04d}"
+        seen_group_ids.add(group_id)
+        group = default_group_for_finding(row, group_id)
+        group["original_findings"] = [row]
+        groups.append(group)
+        used.add(fid)
+        next_index += 1
+
+    merged_original_count = sum(len(group["member_finding_ids"]) for group in groups)
+    summary = {
+        "agent": raw.get("agent", "Dedup/Grouping Agent"),
+        "source_finding_count": len(source_rows),
+        "group_count": len(groups),
+        "merged_original_finding_count": merged_original_count,
+        "multi_finding_group_count": sum(1 for group in groups if len(group["member_finding_ids"]) > 1),
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+    }
+    return {"summary": summary, "groups": groups, "raw_agent_output": raw}
+
+
+def recompute_grouped_summary(grouped: dict) -> dict:
+    groups = grouped.get("groups") if isinstance(grouped.get("groups"), list) else []
+    summary = dict(grouped.get("summary") if isinstance(grouped.get("summary"), dict) else {})
+    summary["group_count"] = len(groups)
+    summary["merged_original_finding_count"] = sum(len(group.get("member_finding_ids", [])) for group in groups)
+    summary["multi_finding_group_count"] = sum(1 for group in groups if len(group.get("member_finding_ids", [])) > 1)
+    summary["manual_correction_count"] = sum(1 for group in groups if group.get("manual_correction"))
+    summary["generated_at"] = datetime.now().isoformat(timespec="seconds")
+    grouped["summary"] = summary
+    return grouped
+
+
+def apply_report_corrections(grouped: dict, corrections_config: dict | None = None) -> dict:
+    corrections = []
+    if isinstance(corrections_config, dict):
+        corrections = corrections_config.get("corrections") if isinstance(corrections_config.get("corrections"), list) else []
+    if not corrections:
+        return recompute_grouped_summary(grouped)
+
+    result = copy.deepcopy(grouped)
+    groups = result.get("groups") if isinstance(result.get("groups"), list) else []
+    findings_by_id: dict[str, dict] = {}
+    for group in groups:
+        for row in group.get("original_findings", []):
+            fid = finding_id(row)
+            if fid:
+                findings_by_id[fid] = row
+
+    correction_groups = []
+    for correction in corrections:
+        if not isinstance(correction, dict):
+            continue
+        target_ids = [str(fid) for fid in correction.get("match_finding_ids", []) if str(fid)]
+        matched_rows = [findings_by_id[fid] for fid in target_ids if fid in findings_by_id]
+        matched_ids = [finding_id(row) for row in matched_rows if finding_id(row)]
+        if not matched_ids:
+            continue
+        correction_groups.append(
+            {
+                "group_id": str(correction.get("correction_id") or f"MANUAL-{len(correction_groups) + 1:04d}"),
+                "group_title": str(correction.get("group_title") or "人工修正问题组"),
+                "group_claim": str(correction.get("group_claim") or ""),
+                "group_severity": str(correction.get("group_severity") or "P2"),
+                "group_rationale": str(correction.get("group_rationale") or ""),
+                "root_cause": str(correction.get("root_cause") or ""),
+                "impact": str(correction.get("impact") or ""),
+                "recommended_action": str(correction.get("recommended_action") or ""),
+                "merge_decision": str(correction.get("merge_decision") or "manual_correction"),
+                "member_finding_ids": matched_ids,
+                "primary_finding_id": matched_ids[0],
+                "original_findings": matched_rows,
+                "manual_correction": True,
+                "manual_correction_note": str(correction.get("manual_correction_note") or ""),
+                "manual_evidence_refs": correction.get("manual_evidence_refs")
+                if isinstance(correction.get("manual_evidence_refs"), list)
+                else [],
+            }
+        )
+
+    if not correction_groups:
+        return recompute_grouped_summary(result)
+
+    corrected_ids = {fid for group in correction_groups for fid in group.get("member_finding_ids", [])}
+    corrected_group_ids = {group.get("group_id") for group in correction_groups}
+    remaining_groups = []
+    for group in groups:
+        if group.get("group_id") in corrected_group_ids:
+            continue
+        member_ids = [str(fid) for fid in group.get("member_finding_ids", []) if str(fid) not in corrected_ids]
+        original_findings = [row for row in group.get("original_findings", []) if finding_id(row) not in corrected_ids]
+        if not member_ids:
+            continue
+        group = copy.deepcopy(group)
+        group["member_finding_ids"] = member_ids
+        group["original_findings"] = original_findings
+        if group.get("primary_finding_id") in corrected_ids:
+            group["primary_finding_id"] = member_ids[0]
+        remaining_groups.append(group)
+
+    result["groups"] = correction_groups + remaining_groups
+    return recompute_grouped_summary(result)
+
+
+def compact_findings_for_dedup(findings: list[dict]) -> list[dict]:
+    compact = []
+    for row in findings:
+        compact.append(
+            {
+                "finding_id": finding_id(row),
+                "agent": row.get("agent", ""),
+                "finding_type": row.get("finding_type", ""),
+                "severity": row.get("severity", ""),
+                "challenge_status": row.get("challenge_status", ""),
+                "claim": row.get("claim", ""),
+                "rationale": row.get("rationale", ""),
+                "challenge_reason": row.get("challenge_reason", ""),
+                "context_recovery_reason": row.get("context_recovery_reason", ""),
+                "evidence_locations": [
+                    {
+                        "rel_path": rel_path,
+                        "line": line,
+                    }
+                    for rel_path, line in evidence_location_signature(row)
+                ],
+            }
+        )
+    return compact
+
+
+def chunked(items: list[Any], size: int) -> Iterable[list[Any]]:
+    for idx in range(0, len(items), size):
+        yield items[idx : idx + size]
+
+
+def call_dedup_grouping_llm(findings: list[dict], candidate_groups: list[dict], output_root: Path) -> dict:
+    config = load_agent_config("dedup_grouping")
+    client, model = make_client()
+    batch_size = max(1, int(os.getenv("DEDUP_GROUP_BATCH_SIZE", "3")))
+    candidate_batches = list(chunked(candidate_groups, batch_size))
+    total_batches = len(candidate_batches)
+    merged_groups = []
+    summaries = []
+    by_id = {finding_id(row): row for row in findings if finding_id(row)}
+    for batch_no, batch_candidates in enumerate(candidate_batches, start=1):
+        member_ids = {
+            str(fid)
+            for candidate in batch_candidates
+            for fid in candidate.get("member_finding_ids", [])
+            if str(fid) in by_id
+        }
+        batch_findings = [by_id[fid] for fid in sorted(member_ids)]
+        print(
+            f"[dedup] batch {batch_no}/{total_batches} start: "
+            f"candidates={len(batch_candidates)} findings={len(batch_findings)}",
+            flush=True,
+        )
+        parsed = call_dedup_grouping_llm_batch(
+            client,
+            model,
+            config,
+            batch_findings,
+            batch_candidates,
+            output_root,
+            batch_no,
+        )
+        print(
+            f"[dedup] batch {batch_no}/{total_batches} done: "
+            f"groups={len(parsed.get('groups', []))}",
+            flush=True,
+        )
+        summaries.append(str(parsed.get("summary") or f"batch {batch_no} completed"))
+        merged_groups.extend(parsed.get("groups", []))
+    return {
+        "agent": config.get("display_name", "Dedup/Grouping Agent"),
+        "summary": " | ".join(summaries),
+        "groups": merged_groups,
+    }
+
+
+def call_dedup_grouping_llm_batch(
+    client: OpenAI,
+    model: str,
+    config: dict,
+    findings: list[dict],
+    candidate_groups: list[dict],
+    output_root: Path,
+    batch_no: int,
+) -> dict:
+    payload = {
+        "agent_name": config.get("display_name", "Dedup/Grouping Agent"),
+        "goal": config.get("goal", ""),
+        "rules": [
+            "Return strict JSON only.",
+            "Only decide the supplied candidate_groups; do not create groups for all findings.",
+            "For each candidate_group, either return one merged group or omit it if the members should stay separate.",
+            "Group findings by same root issue, not merely same broad domain.",
+            "Merge exact duplicate or near-duplicate findings into one issue group.",
+            "Keep related but materially different issues separate by omitting that candidate_group.",
+            "Assign one group-level severity after considering all member findings.",
+            "Use only member_finding_ids present in the candidate_groups.",
+            "Keep group text concise; single-finding groups will be generated by code later.",
+            "Except original evidence text, file paths, finding IDs, regulations/standards, and product model names, all agent-generated fields must be Simplified Chinese.",
+            "summary, group_title, group_claim, group_rationale, root_cause, impact, and recommended_action must be written in Simplified Chinese.",
+        ],
+        "expected_json_schema": {
+            "agent": "Dedup/Grouping Agent",
+            "summary": "简短中文摘要",
+            "groups": [
+                {
+                    "group_id": "GRP-0001",
+                    "group_title": "简洁中文问题组标题",
+                    "group_claim": "一条简洁的中文组级问题陈述",
+                    "group_severity": "P0/P1/P2/P3",
+                    "group_rationale": "中文说明为什么这些 finding 属于同一问题组",
+                    "root_cause": "中文根因摘要",
+                    "impact": "中文影响摘要",
+                    "recommended_action": "中文整改建议",
+                    "merge_decision": "merge_exact_duplicate/merge_related",
+                    "member_finding_ids": ["LLM-0001"],
+                    "primary_finding_id": "LLM-0001",
+                }
+            ],
+        },
+        "candidate_groups": candidate_groups,
+        "findings": compact_findings_for_dedup(findings),
+    }
+    messages = [
+        {
+            "role": "system",
+            "content": config.get("system_prompt", "Return strict JSON for finding grouping."),
+        },
+        {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
+    ]
+    response = complete_with_fallback(client, model, messages, max_tokens=3000)
+    content = response.choices[0].message.content or "{}"
+    raw_path = output_root / "11_llm_raw" / f"dedup_grouping_agent_batch_{batch_no:02d}.json"
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    raw_path.write_text(content, encoding="utf-8")
+    try:
+        return parse_json_object(content)
+    except json.JSONDecodeError:
+        try:
+            relaxed = parse_dedup_grouping_json_relaxed(content)
+            (output_root / "11_llm_raw" / f"dedup_grouping_agent_batch_{batch_no:02d}_relaxed.json").write_text(
+                json.dumps(relaxed, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+            return relaxed
+        except json.JSONDecodeError:
+            pass
+        repaired_content = repair_dedup_grouping_json_with_llm(client, model, content)
+        repair_path = output_root / "11_llm_raw" / f"dedup_grouping_agent_batch_{batch_no:02d}_repaired.json"
+        repair_path.write_text(repaired_content, encoding="utf-8")
+        try:
+            return parse_json_object(repaired_content)
+        except json.JSONDecodeError:
+            try:
+                repaired_relaxed = parse_dedup_grouping_json_relaxed(repaired_content)
+                repair_path.write_text(
+                    json.dumps(repaired_relaxed, ensure_ascii=False, indent=2),
+                    encoding="utf-8",
+                )
+                return repaired_relaxed
+            except json.JSONDecodeError:
+                print(
+                    f"[dedup] batch {batch_no} parse failed after repair; keeping its candidates separate",
+                    flush=True,
+                )
+                return {
+                    "agent": config.get("display_name", "Dedup/Grouping Agent"),
+                    "summary": f"batch {batch_no} parse failed; candidates kept separate by fallback",
+                    "groups": [],
+                }
+
+
+def repair_dedup_grouping_json_with_llm(client: OpenAI, model: str, broken_text: str) -> str:
+    repair_messages = [
+        {
+            "role": "system",
+            "content": "You repair malformed JSON. Return strict JSON only. Preserve the top-level groups array. Keep generated explanatory fields in Simplified Chinese.",
+        },
+        {
+            "role": "user",
+            "content": json.dumps(
+                {
+                    "task": "Repair this Dedup/Grouping Agent output into strict JSON. Do not convert groups into findings. Do not add new groups. 除原文证据、路径、finding_id、法规/标准编号和产品型号外，说明性字段必须保持或改为简体中文。",
+                    "required_schema": {
+                        "agent": "Dedup/Grouping Agent",
+                        "summary": "中文字符串",
+                        "groups": [
+                            {
+                                "group_id": "GRP-0001",
+                                "group_title": "中文字符串",
+                                "group_claim": "中文字符串",
+                                "group_severity": "P0/P1/P2/P3",
+                                "group_rationale": "中文字符串",
+                                "root_cause": "中文字符串",
+                                "impact": "中文字符串",
+                                "recommended_action": "中文字符串",
+                                "merge_decision": "merge_exact_duplicate/merge_related",
+                                "member_finding_ids": ["LLM-0001"],
+                                "primary_finding_id": "LLM-0001",
+                            }
+                        ],
+                    },
+                    "broken_text": broken_text[:20000],
+                },
+                ensure_ascii=False,
+            ),
+        },
+    ]
+    response = complete_with_fallback(client, model, repair_messages, max_tokens=6000)
+    content = response.choices[0].message.content or "{}"
+    return content
+
+
+def write_grouped_findings_html(output_root: Path, grouped: dict) -> Path:
+    summary = grouped["summary"]
+    groups = grouped["groups"]
+    severity_counts = Counter(group.get("group_severity", "unknown") for group in groups)
+    cards = []
+    for group in groups:
+        group_id_html = html.escape(str(group.get("group_id") or ""))
+        group_title_html = html.escape(group_title_for_html(group))
+        group_claim_html = html.escape(group_claim_for_html(group))
+        group_rationale_html = html.escape(group_rationale_for_html(group))
+        root_cause_html = html.escape(html_generated_text_cn(group.get("root_cause"), "待人工补充"))
+        impact_html = html.escape(html_generated_text_cn(group.get("impact"), "待人工补充"))
+        recommended_action_html = html.escape(html_generated_text_cn(group.get("recommended_action"), "待人工补充"))
+        merge_decision_html = html.escape(chinese_merge_decision(group.get("merge_decision")))
+        review_panel = (
+            f"<div class=\"review-panel\" data-group-id=\"{group_id_html}\">"
+            "<label>人工审阅"
+            "<select class=\"review-select\">"
+            "<option value=\"unreviewed\">未审阅</option>"
+            "<option value=\"confirmed\">确认问题</option>"
+            "<option value=\"false_positive\">误报</option>"
+            "<option value=\"needs_evidence\">待补证</option>"
+            "<option value=\"deferred\">暂缓</option>"
+            "</select>"
+            "</label>"
+            "<textarea class=\"review-note\" rows=\"2\" placeholder=\"人工备注\"></textarea>"
+            "<span class=\"review-status\">自动保存</span>"
+            "</div>"
+        )
+        manual_evidence_items = []
+        for ref in group.get("manual_evidence_refs", []):
+            if not isinstance(ref, dict):
+                continue
+            manual_evidence_items.append(
+                "<li>"
+                f"<strong>{html.escape(str(ref.get('label') or '修正证据'))}</strong>"
+                f"<code>{html.escape(str(ref.get('rel_path') or ''))}:{html.escape(str(ref.get('line') or ref.get('line_no') or ''))}</code>"
+                f"<span>{html.escape(str(ref.get('source_text') or ref.get('actual_text') or ''))}</span>"
+                "</li>"
+            )
+        manual_evidence_html = (
+            "<div class=\"manual-evidence\">"
+            "<h3>人工修正原文证据</h3>"
+            f"<ul>{''.join(manual_evidence_items)}</ul>"
+            "</div>"
+            if manual_evidence_items
+            else ""
+        )
+        member_items = []
+        for row in group.get("original_findings", []):
+            evidence_items = []
+            for ref in row.get("evidence_refs", [])[:5]:
+                evidence_items.append(
+                    "<li>"
+                    f"<code>{html.escape(str(ref.get('rel_path') or ''))}:{html.escape(str(ref.get('line') or ''))}</code>"
+                    f"<span>{html.escape(str(ref.get('actual_text') or ref.get('source_text') or ''))}</span>"
+                    "</li>"
+                )
+            statement = chinese_original_finding_statement(row)
+            rationale = chinese_original_finding_rationale(row)
+            member_items.append(
+                "<details class=\"member\">"
+                f"<summary><code>{html.escape(finding_id(row))}</code> {html.escape(chinese_agent_name(row.get('agent')))} "
+                f"<b>{html.escape(str(row.get('severity') or ''))}</b> "
+                f"<span>{html.escape(chinese_challenge_status(row.get('challenge_status')))}</span></summary>"
+                f"<p><strong>问题陈述：</strong>{html.escape(statement)}</p>"
+                f"<p class=\"muted\"><strong>判断依据：</strong>{html.escape(rationale)}</p>"
+                f"<ul class=\"evidence\">{''.join(evidence_items)}</ul>"
+                "</details>"
+            )
+        cards.append(
+            "<section class=\"group-card\">"
+            f"<div class=\"group-head\"><span class=\"severity\">{html.escape(str(group.get('group_severity') or ''))}</span>"
+            f"<h2>{group_title_html}</h2></div>"
+            f"{review_panel}"
+            f"<p class=\"claim\">{group_claim_html}</p>"
+            "<dl>"
+            f"<dt>合并判断</dt><dd>{merge_decision_html}</dd>"
+            f"<dt>组级理由</dt><dd>{group_rationale_html}</dd>"
+            f"<dt>根因</dt><dd>{root_cause_html}</dd>"
+            f"<dt>影响</dt><dd>{impact_html}</dd>"
+            f"<dt>建议</dt><dd>{recommended_action_html}</dd>"
+            f"<dt>原始 Finding</dt><dd>{html.escape(', '.join(group.get('member_finding_ids', [])))}</dd>"
+            "</dl>"
+            f"{manual_evidence_html}"
+            f"<div class=\"members\">{''.join(member_items)}</div>"
+            "</section>"
+        )
+    data_json = json.dumps(review_data_for_html(groups), ensure_ascii=False).replace("</", "<\\/")
+    review_script = """
+  <script>
+    (function () {
+      const storageKey = "pt9l_grouped_findings_review_v9";
+      const reportData = JSON.parse(document.getElementById("grouped-data").textContent);
+      const panels = Array.from(document.querySelectorAll(".review-panel"));
+      const byId = new Map((reportData.groups || []).map(group => [group.group_id, group]));
+      const summaryEl = document.getElementById("review-summary");
+
+      function loadDecisions() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey) || "{}");
+        } catch (_error) {
+          return {};
+        }
+      }
+
+      function saveDecisions(decisions) {
+        localStorage.setItem(storageKey, JSON.stringify(decisions));
+      }
+
+      function buildDecision(panel) {
+        const groupId = panel.dataset.groupId;
+        const group = byId.get(groupId) || {};
+        return {
+          group_id: groupId,
+          decision: panel.querySelector(".review-select").value,
+          note: panel.querySelector(".review-note").value,
+          group_title: group.group_title || "",
+          group_severity: group.group_severity || "",
+          member_finding_ids: group.member_finding_ids || [],
+          updated_at: new Date().toISOString()
+        };
+      }
+
+      function applyDecision(panel, decision) {
+        if (!decision) return;
+        panel.querySelector(".review-select").value = decision.decision || "unreviewed";
+        panel.querySelector(".review-note").value = decision.note || "";
+      }
+
+      function markSaved(panel) {
+        const status = panel.querySelector(".review-status");
+        status.textContent = "已保存";
+        window.setTimeout(() => { status.textContent = "自动保存"; }, 1200);
+      }
+
+      function updateReviewSummary() {
+        if (!summaryEl) return;
+        const decisions = loadDecisions();
+        const counts = {
+          reviewed: 0,
+          confirmed: 0,
+          false_positive: 0,
+          needs_evidence: 0,
+          deferred: 0
+        };
+        panels.forEach(panel => {
+          const current = decisions[panel.dataset.groupId] || {};
+          const decision = current.decision || panel.querySelector(".review-select").value || "unreviewed";
+          if (decision !== "unreviewed") counts.reviewed += 1;
+          if (Object.prototype.hasOwnProperty.call(counts, decision)) counts[decision] += 1;
+        });
+        summaryEl.textContent = `审阅进度：已审阅 ${counts.reviewed}/${panels.length}，确认问题 ${counts.confirmed}，误报 ${counts.false_positive}，待补证 ${counts.needs_evidence}，暂缓 ${counts.deferred}`;
+      }
+
+      const decisions = loadDecisions();
+      panels.forEach(panel => {
+        const groupId = panel.dataset.groupId;
+        applyDecision(panel, decisions[groupId]);
+        panel.addEventListener("change", () => {
+          const next = loadDecisions();
+          next[groupId] = buildDecision(panel);
+          saveDecisions(next);
+          markSaved(panel);
+          updateReviewSummary();
+        });
+        panel.addEventListener("input", () => {
+          const next = loadDecisions();
+          next[groupId] = buildDecision(panel);
+          saveDecisions(next);
+          markSaved(panel);
+          updateReviewSummary();
+        });
+      });
+      updateReviewSummary();
+
+      document.getElementById("export-review").addEventListener("click", () => {
+        const payload = {
+          exported_at: new Date().toISOString(),
+          storage_key: storageKey,
+          report_title: document.title,
+          decisions: loadDecisions()
+        };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "human-review-decisions.json";
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+      document.getElementById("import-review-button").addEventListener("click", () => {
+        document.getElementById("import-review").click();
+      });
+
+      document.getElementById("import-review").addEventListener("change", event => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            const parsed = JSON.parse(String(reader.result || "{}"));
+            const imported = parsed.decisions || parsed;
+            if (!imported || typeof imported !== "object" || Array.isArray(imported)) {
+              throw new Error("invalid decisions payload");
+            }
+            saveDecisions(imported);
+            panels.forEach(panel => applyDecision(panel, imported[panel.dataset.groupId]));
+            updateReviewSummary();
+          } catch (_error) {
+            window.alert("导入失败：JSON 格式无法解析");
+          }
+          event.target.value = "";
+        };
+        reader.readAsText(file, "utf-8");
+      });
+
+      document.getElementById("clear-review").addEventListener("click", () => {
+        if (!window.confirm("确认清空本页人工审阅状态？")) return;
+        localStorage.removeItem(storageKey);
+        panels.forEach(panel => {
+          panel.querySelector(".review-select").value = "unreviewed";
+          panel.querySelector(".review-note").value = "";
+        });
+        updateReviewSummary();
+      });
+    })();
+  </script>
+"""
+    html_text = f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PT9L 分组后问题审阅</title>
+  <style>
+    body {{ margin: 0; font-family: "Microsoft YaHei", Arial, sans-serif; background: #f6f7fb; color: #20242c; }}
+    header {{ padding: 28px 40px; background: #172033; color: white; }}
+    h1 {{ margin: 0 0 8px; font-size: 28px; }}
+    main {{ max-width: 1180px; margin: 0 auto; padding: 28px; }}
+    .stats {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }}
+    .stat {{ background: white; border: 1px solid #dde2ee; border-radius: 8px; padding: 16px; }}
+    .stat b {{ display: block; font-size: 24px; margin-bottom: 4px; }}
+    .group-card {{ background: white; border: 1px solid #dde2ee; border-radius: 8px; padding: 20px; margin-bottom: 18px; box-shadow: 0 8px 22px rgba(23,32,51,.06); }}
+    .group-head {{ display: flex; gap: 12px; align-items: center; }}
+    .group-head h2 {{ margin: 0; font-size: 20px; }}
+    .severity {{ min-width: 44px; text-align: center; padding: 6px 8px; background: #293b5f; color: white; border-radius: 6px; font-weight: 700; }}
+    .claim {{ font-size: 16px; line-height: 1.7; border-left: 4px solid #5470c6; padding-left: 12px; }}
+    .review-toolbar {{ display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 18px 0 22px; }}
+    .review-summary {{ flex: 1 1 100%; padding: 10px 12px; background: #eef4ff; color: #263d66; border: 1px solid #d7e3ff; border-radius: 8px; font-weight: 700; }}
+    .review-toolbar button {{ border: 1px solid #c9d2e3; background: white; border-radius: 6px; padding: 9px 12px; cursor: pointer; }}
+    .review-panel {{ display: grid; grid-template-columns: minmax(180px, 240px) 1fr auto; gap: 10px; align-items: center; margin: 14px 0; padding: 12px; background: #f8fafc; border: 1px solid #e3e8f2; border-radius: 8px; }}
+    .review-panel label {{ font-weight: 700; color: #394150; }}
+    .review-select {{ margin-left: 8px; padding: 7px 8px; border: 1px solid #cbd5e1; border-radius: 6px; background: white; }}
+    .review-note {{ width: 100%; resize: vertical; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; font-family: inherit; }}
+    .review-status {{ color: #667085; font-size: 13px; }}
+    dl {{ display: grid; grid-template-columns: 96px 1fr; gap: 8px 14px; }}
+    dt {{ color: #667085; font-weight: 700; }}
+    dd {{ margin: 0; line-height: 1.65; }}
+    .member {{ border-top: 1px solid #edf0f6; padding: 10px 0; }}
+    .member summary {{ cursor: pointer; }}
+    .manual-evidence {{ margin: 16px 0; padding: 14px 16px; background: #fff8e6; border: 1px solid #f1d692; border-radius: 8px; }}
+    .manual-evidence h3 {{ margin: 0 0 10px; font-size: 16px; }}
+    .manual-evidence ul {{ margin: 0; padding-left: 20px; }}
+    .manual-evidence li {{ margin: 10px 0; line-height: 1.55; }}
+    .manual-evidence strong {{ display: inline-block; min-width: 160px; color: #7a4b00; }}
+    .manual-evidence code {{ margin: 0 8px; }}
+    code {{ background: #eef2f8; padding: 2px 5px; border-radius: 4px; }}
+    .muted {{ color: #697386; }}
+    .evidence {{ padding-left: 20px; }}
+    .evidence li {{ margin: 8px 0; line-height: 1.5; }}
+    .evidence span {{ margin-left: 8px; color: #465061; }}
+    @media (max-width: 760px) {{
+      .review-panel {{ grid-template-columns: 1fr; }}
+      main {{ padding: 16px; }}
+    }}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PT9L 分组后问题审阅</h1>
+    <div>按问题组展示，组内保留原始 finding、来源 Agent、证据位置和复审信息。</div>
+  </header>
+  <main>
+    <div class="stats">
+      <div class="stat"><b>{summary['group_count']}</b>问题组</div>
+      <div class="stat"><b>{summary['source_finding_count']}</b>原始 finding</div>
+      <div class="stat"><b>{summary['multi_finding_group_count']}</b>多 finding 组</div>
+      <div class="stat"><b>{', '.join(f'{k}:{v}' for k, v in sorted(severity_counts.items()))}</b>严重等级</div>
+    </div>
+    <div class="review-toolbar">
+      <div id="review-summary" class="review-summary">审阅进度：已审阅 0/0，确认问题 0，误报 0，待补证 0，暂缓 0</div>
+      <button id="export-review" type="button">导出审阅结果 JSON</button>
+      <button id="import-review-button" type="button">导入审阅结果 JSON</button>
+      <button id="clear-review" type="button">清空本页审阅状态</button>
+      <input id="import-review" type="file" accept="application/json,.json" hidden>
+    </div>
+    {''.join(cards)}
+  </main>
+  <script id="grouped-data" type="application/json">{data_json}</script>
+{review_script}
+</body>
+</html>
+"""
+    path = output_root / "08_reports" / "grouped-findings-review.html"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(html_text, encoding="utf-8")
+    return path
+
+
+def run_dedup_grouping_pipeline(output_root: Path, findings: list[dict]) -> dict:
+    ensure_dirs(output_root)
+    source_findings = non_dropped_findings(findings)
+    candidates = build_dedup_candidate_groups(source_findings)
+    write_json(output_root / "15_dedup_grouping" / "grouping_candidates.json", {"candidate_groups": candidates})
+    if source_findings:
+        raw = call_dedup_grouping_llm(source_findings, candidates, output_root)
+    else:
+        raw = {
+            "agent": "Dedup/Grouping Agent",
+            "summary": "没有可分组的 finding。",
+            "groups": [],
+        }
+    grouped = normalize_dedup_grouping_output(raw, source_findings)
+    grouped = apply_report_corrections(grouped, load_report_corrections())
+    write_json(output_root / "15_dedup_grouping" / "grouping_results.json", grouped)
+    write_jsonl(output_root / "07_findings" / "grouped_findings.jsonl", grouped["groups"])
+    write_grouped_findings_html(output_root, grouped)
+    return grouped
+
+
+def dedup_grouping_node(state: FullAuditState) -> FullAuditState:
+    output_root = Path(state["output_root"])
+    findings = state.get("all_findings") or state.get("semantic_findings", [])
+    grouped = run_dedup_grouping_pipeline(output_root, findings)
+    return {
+        **state,
+        "grouped_findings": grouped["groups"],
+        "dedup_grouping_summary": grouped["summary"],
+        "dedup_grouping_output": grouped,
+    }
+
+
+def run_offline_dedup_report(output_root: Path) -> dict:
+    findings = read_jsonl(output_root / "07_findings" / "semantic_findings_llm_challenged.jsonl")
+    if not findings:
+        raise FileNotFoundError(
+            f"未找到可分组的 finding：{output_root / '07_findings' / 'semantic_findings_llm_challenged.jsonl'}"
+        )
+    grouped = run_dedup_grouping_pipeline(output_root, findings)
+    return grouped["summary"]
+
+
 def report_node(state: FullAuditState) -> FullAuditState:
     output_root = Path(state["output_root"])
     manifest = state["manifest"]
@@ -2700,6 +3966,7 @@ def report_node(state: FullAuditState) -> FullAuditState:
     evidence = Counter(row.get("evidence_status", "unknown") for row in all_findings)
     challenge = Counter(row.get("challenge_status", "unknown") for row in semantic)
     context_recovery_summary = state.get("context_recovery_summary", {})
+    dedup_grouping_summary = state.get("dedup_grouping_summary", {})
     result_counts = build_result_count_summary(semantic, all_findings)
     challenge_reason_quality_flags = sum(1 for row in semantic if row.get("challenge_reason_quality_flag"))
 
@@ -2733,6 +4000,11 @@ def report_node(state: FullAuditState) -> FullAuditState:
         "context_recovery_confirm": context_recovery_summary.get("by_final_status", {}).get("confirm", 0),
         "context_recovery_dismiss": context_recovery_summary.get("by_final_status", {}).get("dismiss", 0),
         "context_recovery_human_review": context_recovery_summary.get("by_final_status", {}).get("human_review", 0),
+        "dedup_source_finding_count": dedup_grouping_summary.get("source_finding_count", 0),
+        "dedup_group_count": dedup_grouping_summary.get("group_count", 0),
+        "dedup_multi_finding_group_count": dedup_grouping_summary.get("multi_finding_group_count", 0),
+        "dedup_manual_correction_count": dedup_grouping_summary.get("manual_correction_count", 0),
+        "grouped_review_report": str(output_root / "08_reports" / "grouped-findings-review.html"),
         "current_confirmed_error_total": result_counts["current_confirmed_error_total"],
         "challenge_reason_quality_flags": challenge_reason_quality_flags,
         "evidence_verified": evidence.get("verified", 0),
@@ -2774,13 +4046,16 @@ def report_node(state: FullAuditState) -> FullAuditState:
         f"- LLM semantic findings: {summary['llm_semantic_findings']}",
         f"- Challenge keep / revise / needs_more_context / human_review / drop: {summary['semantic_keep']} / {summary['semantic_revise']} / {summary['semantic_needs_more_context']} / {summary['semantic_human_review']} / {summary['semantic_dropped']}",
         f"- Context Recovery total / confirm / dismiss / human_review: {summary['context_recovery_total']} / {summary['context_recovery_confirm']} / {summary['context_recovery_dismiss']} / {summary['context_recovery_human_review']}",
+        f"- Dedup/Grouping issue groups: {summary['dedup_group_count']}",
+        f"- Dedup/Grouping source findings / multi-finding groups / manual corrections: {summary['dedup_source_finding_count']} / {summary['dedup_multi_finding_group_count']} / {summary['dedup_manual_correction_count']}",
+        f"- Grouped review report: `{esc(summary['grouped_review_report'])}`",
         f"- Merged finding rows: {summary['merged_findings_rows']}",
         f"- Current confirmed error total: {summary['current_confirmed_error_total']} (semantic keep/revise)",
         f"- Evidence verified: {summary['evidence_verified']}",
         "",
         "## LangGraph Nodes",
         "",
-        "`bootstrap -> scout_agent -> orchestrator(dynamic dispatch loop) -> evidence_gate -> challenge_agent -> context_recovery -> report`",
+        "`bootstrap -> scout_agent -> orchestrator(dynamic dispatch loop) -> evidence_gate -> challenge_agent -> context_recovery -> dedup_grouping -> report`",
         "",
         "## Severity Counts",
         "",
@@ -2868,6 +4143,7 @@ def build_graph():
     graph.add_node("evidence_gate", evidence_gate_node)
     graph.add_node("challenge_agent", challenge_node)
     graph.add_node("context_recovery", context_recovery_node)
+    graph.add_node("dedup_grouping", dedup_grouping_node)
     graph.add_node("report", report_node)
 
     graph.add_edge(START, "bootstrap")
@@ -2876,7 +4152,8 @@ def build_graph():
     graph.add_edge("orchestrator", "evidence_gate")
     graph.add_edge("evidence_gate", "challenge_agent")
     graph.add_edge("challenge_agent", "context_recovery")
-    graph.add_edge("context_recovery", "report")
+    graph.add_edge("context_recovery", "dedup_grouping")
+    graph.add_edge("dedup_grouping", "report")
     graph.add_edge("report", END)
     return graph.compile()
 
@@ -2927,7 +4204,8 @@ def load_context_recovery_resume_state(input_root: Path, output_root: Path) -> F
 def run_context_recovery_resume(input_root: Path, output_root: Path) -> dict:
     state = load_context_recovery_resume_state(input_root, output_root)
     recovered_state = context_recovery_node(state)
-    final_state = report_node(recovered_state)
+    grouped_state = dedup_grouping_node(recovered_state)
+    final_state = report_node(grouped_state)
     return final_state["summary"]
 
 
@@ -2940,8 +4218,15 @@ def main() -> None:
         action="store_true",
         help="Resume from existing challenged findings and raw Context Recovery files, then generate reports.",
     )
+    parser.add_argument(
+        "--offline-dedup-report",
+        action="store_true",
+        help="Group existing challenged findings into issue groups without rerunning the full audit.",
+    )
     args = parser.parse_args()
-    if args.resume_context_recovery:
+    if args.offline_dedup_report:
+        summary = run_offline_dedup_report(Path(args.output))
+    elif args.resume_context_recovery:
         summary = run_context_recovery_resume(Path(args.input), Path(args.output))
     else:
         summary = run(Path(args.input), Path(args.output))

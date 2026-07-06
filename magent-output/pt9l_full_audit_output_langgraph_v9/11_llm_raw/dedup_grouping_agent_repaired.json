@@ -1,0 +1,94 @@
+{
+  "agent": "Dedup/Grouping Agent",
+  "summary": "97 findings consolidated into 34 issue groups. The most critical cluster is the complete absence of Bluetooth hazard analysis in the ISO 14971 risk chain (P0). Other P1 groups cover: legacy product model contamination in active risk and design documents; IFT/PT9L dual-prefix risk management file set without reconciliation; unsigned approval blocks across all risk management documents; biocompatibility testing on PT5 samples with no equivalence bridging; missing design transfer record; drawing number PT9L-F01 collision; BP3L software diagrams in active PT9L folders; PT9C clinical/usability evidence substituted for PT9L; risk management report version mismatch in verification closure chain; and PT3SBT/PT2L label review in active T1 folder. P2 groups address BOM integrity conflicts, document number collisions, blood-pressure residue in thermometer verification documents, DFMEA isolation from ISO 14971 chain, and several traceability gaps. P3 groups cover lower-risk document control observations.",
+  "review_notes": [
+    "Restored truncated broken_text into a complete JSON object.",
+    "The input was cut off mid-string inside GRP-0005's recommended_action field; the field was closed at the last complete sentence to avoid fabricating evidence.",
+    "The top-level key 'groups' does not appear in required_schema; it has been retained as-is since the instruction prohibits adding or expanding content.",
+    "Fields group_id, group_title, group_claim, group_severity, group_rationale, root_cause, impact, recommended_action, merge_decision, member_finding_ids, and primary_finding_id are preserved exactly as provided."
+  ],
+  "findings": [
+    {
+      "finding_type": "grp_0001_bluetooth_hazard_absent",
+      "severity": "P1",
+      "claim": "No Bluetooth-specific hazard, hazardous situation, harm, risk control measure, or verification record exists anywhere in the PT9L ISO 14971 risk assessment chain, despite the project profile confirming PT9L transmits temperature data via Bluetooth.",
+      "rationale": "LLM-0067 is the primary finding establishing complete absence from the ISO 14971 chain. LLM-0056 confirms no Bluetooth verification plan or validation record exists. LLM-0069 confirms software-level hazard tables also lack Bluetooth entries. LLM-0038 confirms no Bluetooth software requirements, design, or test evidence exists.",
+      "evidence_ids": [
+        "LLM-0067",
+        "LLM-0056",
+        "LLM-0069",
+        "LLM-0038"
+      ],
+      "challenge_questions": [
+        "Is there any Bluetooth hazard entry in any version of the risk assessment report not captured in the current DHF corpus?",
+        "Does any supplemental software hazard analysis document exist outside the retrieved file set that addresses Bluetooth?"
+      ]
+    },
+    {
+      "finding_type": "grp_0002_f0013_document_number_collision",
+      "severity": "P1",
+      "claim": "Document F0013, filed in the PT2L historical folder, internally carries document number PT9L-FXJH01 V1.0 and product model PT9L, creating a document-number collision with the legitimate active PT9L Risk Management Plan.",
+      "rationale": "Six findings (LLM-0001, LLM-0011, LLM-0029, LLM-0049, LLM-0063, LLM-0091) all describe the same root defect in F0013. The highest confirmed severity is P1, driven by the document-number uniqueness violation affecting the active PT9L risk management traceability chain.",
+      "evidence_ids": [
+        "LLM-0001",
+        "LLM-0011",
+        "LLM-0029",
+        "LLM-0049",
+        "LLM-0063",
+        "LLM-0091"
+      ],
+      "challenge_questions": [
+        "Is F0013 already marked obsolete in the document control registry, making the collision inactive?",
+        "Does a formal supersession notice exist linking F0013 to a correctly numbered PT2L document?"
+      ]
+    },
+    {
+      "finding_type": "grp_0003_ift_pt9l_dual_prefix",
+      "severity": "P1",
+      "claim": "The active PT9L risk management file set contains two parallel document-number prefix systems (IFT and PT9L) with no master document list or cross-reference explaining which set is the controlled DHF baseline.",
+      "rationale": "LLM-0028, LLM-0048, LLM-0062, LLM-0072, and LLM-0092 all address the IFT-prefix vs PT9L-prefix ambiguity. LLM-0092 is the most comprehensive. All share the same root cause and require the same corrective action.",
+      "evidence_ids": [
+        "LLM-0028",
+        "LLM-0048",
+        "LLM-0062",
+        "LLM-0072",
+        "LLM-0092"
+      ],
+      "challenge_questions": [
+        "Does a document control change order exist that formally supersedes the IFT-prefixed set with the PT9L-prefixed set?",
+        "Is there a DHF master document list outside the retrieved corpus that designates one prefix set as authoritative?"
+      ]
+    },
+    {
+      "finding_type": "grp_0004_unsigned_approval_blocks",
+      "severity": "P1",
+      "claim": "Every risk management document in the PT9L DHF shows an approval block with no name, signature, or date populated, rendering none of the risk management documents demonstrably approved under a controlled document system.",
+      "rationale": "LLM-0047 (P1) is confirmed with direct textual evidence across five historical documents. LLM-0061 extends the claim to active documents. LLM-0093 was revised to P2 due to conversion artifact concerns. Group severity is P1 based on LLM-0047.",
+      "evidence_ids": [
+        "LLM-0047",
+        "LLM-0061",
+        "LLM-0093"
+      ],
+      "challenge_questions": [
+        "Are approval signatures captured in a parallel OA or paper-based system that is formally linked to these documents?",
+        "Does the document control SOP permit approval to be recorded outside the document body?"
+      ]
+    },
+    {
+      "finding_type": "grp_0005_biocompatibility_pt5_no_bridging",
+      "severity": "P1",
+      "claim": "All biocompatibility test reports in the PT9L DHF (F0104–F0108) were conducted on PT5 product samples with no material equivalence assessment or bridging study linking PT5 data to PT9L.",
+      "rationale": "LLM-0064 (P1) and LLM-0078 (P1) are the primary findings. LLM-0053 and LLM-0095 were revised to P2 but address the same root issue. ISO 10993-1:2018 requires biocompatibility evaluation on the actual device or a documented equivalent, and no bridging record exists.",
+      "evidence_ids": [
+        "LLM-0053",
+        "LLM-0064",
+        "LLM-0078",
+        "LLM-0095"
+      ],
+      "challenge_questions": [
+        "Does a material equivalence memo exist in a folder outside the retrieved DHF corpus?",
+        "Are PT5 and PT9L confirmed to share identical patient-contact materials, suppliers, and manufacturing processes through any existing design history record?"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 ﻿from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 from pathlib import Path
 
@@ -527,6 +528,16 @@ def test_routing_yaml_is_orchestrator_policy_not_direct_router():
     assert set(policy["decision_values"]) == {"continue", "stop", "human_review"}
 
 
+def test_routing_policy_keeps_dedup_and_report_as_post_processing_nodes():
+    policy = audit.load_routing_config()["orchestrator_policy"]
+    post_processing = policy["post_processing_nodes"]
+
+    assert post_processing["dedup_grouping"]["node_name"] == "dedup_grouping"
+    assert post_processing["report"]["node_name"] == "report"
+    assert "not assigned dynamically" in post_processing["dedup_grouping"]["dispatch_rule"]
+    assert "not assigned dynamically" in post_processing["report"]["dispatch_rule"]
+
+
 def test_dynamic_orchestrator_runs_only_assigned_agents_and_records_agent_runs(tmp_path, monkeypatch):
     calls: list[str] = []
 
@@ -749,3 +760,580 @@ def test_m_agent_has_no_legacy_fixed_routing_residue():
                 offenders.append(f"{path.relative_to(root)} contains {pattern}")
 
     assert offenders == []
+
+
+def test_dedup_candidate_groups_cluster_same_evidence_findings():
+    rows = [
+        {
+            "finding_id": "LLM-0001",
+            "agent": "DMR/SOP Agent",
+            "finding_type": "drawing_number_collision",
+            "severity": "P1",
+            "challenge_status": "keep",
+            "claim": "图纸编号 PT9L-F01 被分配给外箱和产品外观图。",
+            "evidence_refs": [{"rel_path": "dmr.md", "line": 10, "source_text": "PT9L-F01"}],
+        },
+        {
+            "finding_id": "LLM-0002",
+            "agent": "DMR/SOP Agent",
+            "finding_type": "drawing_number_collision_pt9l_f01",
+            "severity": "P2",
+            "challenge_status": "revise",
+            "claim": "图号 PT9L-F01 同时对应外箱以及产品外观图。",
+            "evidence_refs": [{"rel_path": "dmr.md", "line": 10, "source_text": "PT9L-F01"}],
+        },
+        {
+            "finding_id": "LLM-0003",
+            "agent": "Regulatory Agent",
+            "finding_type": "mdd_reference",
+            "severity": "P3",
+            "challenge_status": "keep",
+            "claim": "操作指南引用 MDD 而非 MDR。",
+            "evidence_refs": [{"rel_path": "guide.md", "line": 20, "source_text": "MDD"}],
+        },
+    ]
+
+    candidates = audit.build_dedup_candidate_groups(rows)
+
+    assert any(set(group["member_finding_ids"]) == {"LLM-0001", "LLM-0002"} for group in candidates)
+    matching = [group for group in candidates if set(group["member_finding_ids"]) == {"LLM-0001", "LLM-0002"}][0]
+    assert matching["candidate_reason"] == "same_evidence_location"
+    assert matching["recommended_action"] == "merge_exact_or_near_duplicate"
+
+
+def test_normalize_dedup_grouping_output_keeps_original_findings_under_group():
+    rows = [
+        {"finding_id": "LLM-0001", "severity": "P1", "challenge_status": "keep", "claim": "A", "evidence_refs": []},
+        {"finding_id": "LLM-0002", "severity": "P2", "challenge_status": "revise", "claim": "B", "evidence_refs": []},
+    ]
+    llm_output = {
+        "agent": "Dedup/Grouping Agent",
+        "summary": "merged",
+        "groups": [
+            {
+                "group_id": "GRP-0001",
+                "group_title": "PT9L-F01 图号重复",
+                "group_claim": "PT9L-F01 被两个物理项目复用。",
+                "group_severity": "P1",
+                "group_rationale": "两条 finding 指向同一证据和同一图号。",
+                "root_cause": "图号控制未区分外箱和产品外观图。",
+                "impact": "DMR 文件控制歧义。",
+                "recommended_action": "统一图号或补充受控说明。",
+                "merge_decision": "merge_exact_duplicate",
+                "member_finding_ids": ["LLM-0001", "LLM-0002"],
+                "primary_finding_id": "LLM-0001",
+            }
+        ],
+    }
+
+    grouped = audit.normalize_dedup_grouping_output(llm_output, rows)
+
+    assert grouped["groups"][0]["group_severity"] == "P1"
+    assert grouped["groups"][0]["member_finding_ids"] == ["LLM-0001", "LLM-0002"]
+    assert [row["finding_id"] for row in grouped["groups"][0]["original_findings"]] == ["LLM-0001", "LLM-0002"]
+    assert grouped["summary"]["group_count"] == 1
+    assert grouped["summary"]["merged_original_finding_count"] == 2
+
+
+def test_offline_dedup_report_writes_grouped_json_and_html(tmp_path, monkeypatch):
+    output_root = tmp_path / "audit-output"
+    source_rows = [
+        {
+            "finding_id": "LLM-0001",
+            "agent": "DMR/SOP Agent",
+            "finding_type": "drawing_number_collision",
+            "severity": "P1",
+            "challenge_status": "keep",
+            "claim": "图纸编号 PT9L-F01 被分配给外箱和产品外观图。",
+            "rationale": "same drawing number",
+            "evidence_refs": [{"rel_path": "dmr.md", "line": 10, "source_text": "PT9L-F01"}],
+        },
+        {
+            "finding_id": "LLM-0002",
+            "agent": "DMR/SOP Agent",
+            "finding_type": "drawing_number_collision_pt9l_f01",
+            "severity": "P2",
+            "challenge_status": "revise",
+            "claim": "图号 PT9L-F01 同时对应外箱以及产品外观图。",
+            "rationale": "same drawing number",
+            "evidence_refs": [{"rel_path": "dmr.md", "line": 10, "source_text": "PT9L-F01"}],
+        },
+    ]
+    audit.write_jsonl(output_root / "07_findings" / "semantic_findings_llm_challenged.jsonl", source_rows)
+
+    def fake_dedup_llm(findings, candidate_groups, output_root):
+        return {
+            "agent": "Dedup/Grouping Agent",
+            "summary": "merged",
+            "groups": [
+                {
+                    "group_id": "GRP-0001",
+                    "group_title": "PT9L-F01 图号重复",
+                    "group_claim": "PT9L-F01 被两个物理项目复用。",
+                    "group_severity": "P1",
+                    "group_rationale": "两条 finding 指向同一证据和同一图号。",
+                    "root_cause": "图号控制未区分外箱和产品外观图。",
+                    "impact": "DMR 文件控制歧义。",
+                    "recommended_action": "统一图号或补充受控说明。",
+                    "merge_decision": "merge_exact_duplicate",
+                    "member_finding_ids": ["LLM-0001", "LLM-0002"],
+                    "primary_finding_id": "LLM-0001",
+                }
+            ],
+        }
+
+    monkeypatch.setattr(audit, "call_dedup_grouping_llm", fake_dedup_llm, raising=False)
+    monkeypatch.setattr(audit, "load_report_corrections", lambda: {"corrections": []})
+
+    summary = audit.run_offline_dedup_report(output_root)
+
+    assert summary["group_count"] == 1
+    assert summary["source_finding_count"] == 2
+    assert (output_root / "15_dedup_grouping" / "grouping_candidates.json").exists()
+    assert (output_root / "15_dedup_grouping" / "grouping_results.json").exists()
+    grouped_rows = audit.read_jsonl(output_root / "07_findings" / "grouped_findings.jsonl")
+    assert grouped_rows[0]["group_id"] == "GRP-0001"
+    html = (output_root / "08_reports" / "grouped-findings-review.html").read_text(encoding="utf-8")
+    assert "PT9L-F01 图号重复" in html
+    assert json.loads((output_root / "15_dedup_grouping" / "grouping_results.json").read_text(encoding="utf-8"))["summary"]["group_count"] == 1
+
+
+def test_dedup_grouping_node_writes_grouped_outputs_for_main_flow(tmp_path, monkeypatch):
+    state = {
+        "output_root": str(tmp_path),
+        "semantic_findings": [
+            {
+                "finding_id": "LLM-0001",
+                "agent": "DMR/SOP Agent",
+                "finding_type": "drawing_number_collision",
+                "severity": "P1",
+                "challenge_status": "keep",
+                "claim": "图号 PT9L-F01 被重复使用。",
+                "evidence_refs": [{"rel_path": "dmr.md", "line": 10, "source_text": "PT9L-F01"}],
+            },
+            {
+                "finding_id": "LLM-0002",
+                "agent": "DMR/SOP Agent",
+                "finding_type": "drawing_number_collision",
+                "severity": "P2",
+                "challenge_status": "revise",
+                "claim": "PT9L-F01 同时对应两个对象。",
+                "evidence_refs": [{"rel_path": "dmr.md", "line": 10, "source_text": "PT9L-F01"}],
+            },
+        ],
+        "all_findings": [],
+    }
+
+    def fake_dedup_llm(findings, candidate_groups, output_root):
+        assert [row["finding_id"] for row in findings] == ["LLM-0001", "LLM-0002"]
+        assert candidate_groups
+        return {
+            "agent": "Dedup/Grouping Agent",
+            "summary": "主流程分组完成",
+            "groups": [
+                {
+                    "group_id": "GRP-0001",
+                    "group_title": "PT9L-F01 图号重复",
+                    "group_claim": "PT9L-F01 图号在 DMR 中被重复使用。",
+                    "group_severity": "P1",
+                    "group_rationale": "两条 finding 指向同一图号和同一证据位置。",
+                    "root_cause": "图号控制不足。",
+                    "impact": "DMR 追溯存在歧义。",
+                    "recommended_action": "修正图号或补充受控说明。",
+                    "merge_decision": "merge_exact_duplicate",
+                    "member_finding_ids": ["LLM-0001", "LLM-0002"],
+                    "primary_finding_id": "LLM-0001",
+                }
+            ],
+        }
+
+    monkeypatch.setattr(audit, "call_dedup_grouping_llm", fake_dedup_llm, raising=False)
+    monkeypatch.setattr(audit, "load_report_corrections", lambda: {"corrections": []})
+
+    updated = audit.dedup_grouping_node(state)
+
+    assert updated["dedup_grouping_summary"]["group_count"] == 1
+    assert updated["grouped_findings"][0]["member_finding_ids"] == ["LLM-0001", "LLM-0002"]
+    assert (tmp_path / "15_dedup_grouping" / "grouping_candidates.json").exists()
+    assert (tmp_path / "15_dedup_grouping" / "grouping_results.json").exists()
+    assert (tmp_path / "07_findings" / "grouped_findings.jsonl").exists()
+    assert (tmp_path / "08_reports" / "grouped-findings-review.html").exists()
+
+
+def test_report_summary_includes_grouped_finding_counts(tmp_path):
+    state = {
+        "output_root": str(tmp_path),
+        "manifest": [{"excluded_from_primary_scope": False}],
+        "page_index": [],
+        "params": [],
+        "relation_nodes": [],
+        "relation_edges": [],
+        "semantic_findings": [
+            {"finding_id": "LLM-0001", "severity": "P1", "challenge_status": "keep", "evidence_refs": []}
+        ],
+        "all_findings": [
+            {"finding_id": "LLM-0001", "severity": "P1", "challenge_status": "keep", "evidence_status": "verified"}
+        ],
+        "dedup_grouping_summary": {
+            "source_finding_count": 1,
+            "group_count": 1,
+            "multi_finding_group_count": 0,
+            "manual_correction_count": 0,
+        },
+        "context_recovery_summary": {"by_final_status": {}},
+    }
+
+    updated = audit.report_node(state)
+    summary = updated["summary"]
+    report = (tmp_path / "08_reports" / "PT9L_full_audit_report_langgraph.md").read_text(encoding="utf-8")
+
+    assert summary["dedup_group_count"] == 1
+    assert summary["dedup_source_finding_count"] == 1
+    assert summary["dedup_multi_finding_group_count"] == 0
+    assert "Dedup/Grouping issue groups: 1" in report
+    assert "context_recovery -> dedup_grouping -> report" in report
+
+
+def test_build_graph_routes_context_recovery_through_dedup_grouping(monkeypatch):
+    calls = {"nodes": [], "edges": []}
+
+    class FakeGraph:
+        def __init__(self, _state_type):
+            pass
+
+        def add_node(self, name, _fn):
+            calls["nodes"].append(name)
+
+        def add_edge(self, left, right):
+            calls["edges"].append((left, right))
+
+        def compile(self):
+            return calls
+
+    monkeypatch.setattr(audit, "StateGraph", FakeGraph)
+
+    graph = audit.build_graph()
+
+    assert "dedup_grouping" in graph["nodes"]
+    assert ("context_recovery", "dedup_grouping") in graph["edges"]
+    assert ("dedup_grouping", "report") in graph["edges"]
+    assert ("context_recovery", "report") not in graph["edges"]
+
+
+def test_dedup_grouping_config_requires_chinese_generated_text():
+    config = audit.load_agent_config("dedup_grouping")
+
+    assert "中文" in config["system_prompt"]
+    assert "原文" in config["system_prompt"]
+
+
+def test_project_scout_config_requires_authoritative_feature_confirmation():
+    config = audit.load_agent_config("project_scout")
+
+    assert "权威功能边界" in config["system_prompt"]
+    assert "风险文件" in config["system_prompt"]
+    assert "交叉确认" in config["system_prompt"]
+
+
+def test_dedup_grouping_llm_prints_batch_progress(tmp_path, monkeypatch, capsys):
+    findings = [
+        {"finding_id": "LLM-0001", "challenge_status": "keep", "claim": "A"},
+        {"finding_id": "LLM-0002", "challenge_status": "keep", "claim": "B"},
+    ]
+    candidates = [
+        {"candidate_group_id": "DGC-0001", "member_finding_ids": ["LLM-0001"]},
+        {"candidate_group_id": "DGC-0002", "member_finding_ids": ["LLM-0002"]},
+    ]
+    calls = []
+
+    monkeypatch.setenv("DEDUP_GROUP_BATCH_SIZE", "1")
+    monkeypatch.setattr(audit, "make_client", lambda: (object(), "test-model"))
+
+    def fake_batch(_client, _model, _config, _findings, _candidates, _output_root, batch_no):
+        calls.append(batch_no)
+        return {"summary": f"batch {batch_no} ok", "groups": []}
+
+    monkeypatch.setattr(audit, "call_dedup_grouping_llm_batch", fake_batch)
+
+    audit.call_dedup_grouping_llm(findings, candidates, tmp_path)
+
+    output = capsys.readouterr().out
+    assert calls == [1, 2]
+    assert "[dedup] batch 1/2 start" in output
+    assert "[dedup] batch 1/2 done" in output
+    assert "[dedup] batch 2/2 start" in output
+    assert "[dedup] batch 2/2 done" in output
+
+
+def test_parse_dedup_grouping_json_relaxed_handles_unescaped_inner_quotes():
+    broken = """```json
+{
+  "agent": "Dedup/Grouping Agent",
+  "summary": "测试摘要",
+  "groups": [
+    {
+      "group_id": "GRP-0001",
+      "group_title": "审批字段空白",
+      "group_claim": "审批块显示"Approved by (Technical Director) Date:"字段无填写内容，无法验证正式审批。",
+      "group_severity": "P1",
+      "group_rationale": "三个 finding 均指向同一审批字段空白问题。",
+      "root_cause": "文件控制审批捕获缺失。",
+      "impact": "风险管理文件受控状态不可验证。",
+      "recommended_action": "调取原始受控文件核查签署记录。",
+      "merge_decision": "merge_related",
+      "member_finding_ids": ["LLM-0047", "LLM-0061", "LLM-0093"],
+      "primary_finding_id": "LLM-0047"
+    }
+  ]
+}
+```"""
+
+    parsed = audit.parse_dedup_grouping_json_relaxed(broken)
+
+    assert parsed["summary"] == "测试摘要"
+    assert parsed["groups"][0]["group_title"] == "审批字段空白"
+    assert "Approved by (Technical Director) Date:" in parsed["groups"][0]["group_claim"]
+    assert parsed["groups"][0]["member_finding_ids"] == ["LLM-0047", "LLM-0061", "LLM-0093"]
+
+
+def test_default_group_for_single_finding_uses_chinese_review_text():
+    group = audit.default_group_for_finding(
+        {
+            "finding_id": "LLM-0002",
+            "finding_type": "legacy_model_reference_in_active_risk_assessment",
+            "severity": "P1",
+            "claim": "The active Risk Assessment Report references PT3SBT instead of PT9L.",
+            "rationale": "Legacy model text remains in the active report.",
+        },
+        "GRP-0001",
+    )
+
+    assert "单条问题" in group["group_title"]
+    assert "中文概述" in group["group_claim"]
+    assert "The active Risk Assessment Report" not in group["group_claim"]
+    assert "原始判断依据" in group["group_rationale"]
+
+
+def test_apply_report_corrections_groups_false_premise_and_preserves_source_text():
+    grouped = {
+        "summary": {"group_count": 2, "source_finding_count": 2, "multi_finding_group_count": 0},
+        "groups": [
+            {
+                "group_id": "GRP-0001",
+                "group_title": "蓝牙功能缺少专项危害分析与验证关闭证据",
+                "group_severity": "P1",
+                "member_finding_ids": ["LLM-0056"],
+                "original_findings": [{"finding_id": "LLM-0056", "claim": "Bluetooth gap"}],
+            },
+            {
+                "group_id": "GRP-0002",
+                "group_title": "单条问题：蓝牙危害缺失FROM风险评估",
+                "group_severity": "P0",
+                "member_finding_ids": ["LLM-0067"],
+                "original_findings": [{"finding_id": "LLM-0067", "claim": "Bluetooth hazard absent"}],
+            },
+        ],
+    }
+    corrections = {
+        "corrections": [
+            {
+                "correction_id": "MANUAL-BT-001",
+                "match_finding_ids": ["LLM-0056", "LLM-0067"],
+                "group_title": "人工修正：PT9L无蓝牙功能前提下的风险文件范围冲突",
+                "group_claim": "原结论把PT9L具备蓝牙功能作为前提，但设计输入和验证文件显示蓝牙项目不适用。",
+                "group_severity": "P1",
+                "group_rationale": "人工复核确认原蓝牙功能缺口前提不足。",
+                "root_cause": "Project Scout 将风险报告中的蓝牙句子误读为项目真实功能。",
+                "impact": "原蓝牙专项验证缺失结论应修正为风险文件范围冲突。",
+                "recommended_action": "修订风险文件中的蓝牙/PT3SBT残留，并避免将未交叉确认的功能写入项目画像。",
+                "merge_decision": "manual_correction_false_premise",
+                "manual_evidence_refs": [
+                    {
+                        "label": "设计输入蓝牙不适用",
+                        "rel_path": "04 设计输入E0 23.11/设计输入汇总表.md",
+                        "line": 201,
+                        "source_text": "| 蓝牙 | 蓝牙组织BQB认证 |  | 国际 | □是 ■否 |  |",
+                    }
+                ],
+            }
+        ]
+    }
+
+    corrected = audit.apply_report_corrections(grouped, corrections)
+
+    assert corrected["summary"]["group_count"] == 1
+    assert corrected["summary"]["manual_correction_count"] == 1
+    assert corrected["groups"][0]["group_title"].startswith("人工修正")
+    assert corrected["groups"][0]["member_finding_ids"] == ["LLM-0056", "LLM-0067"]
+    assert corrected["groups"][0]["manual_evidence_refs"][0]["source_text"].startswith("| 蓝牙 |")
+    assert [row["finding_id"] for row in corrected["groups"][0]["original_findings"]] == ["LLM-0056", "LLM-0067"]
+
+
+def test_grouped_findings_html_shows_manual_correction_source_text(tmp_path):
+    grouped = {
+        "summary": {
+            "group_count": 1,
+            "source_finding_count": 1,
+            "multi_finding_group_count": 1,
+            "manual_correction_count": 1,
+        },
+        "groups": [
+            {
+                "group_id": "MANUAL-BT-001",
+                "group_title": "人工修正：PT9L无蓝牙功能前提下的风险文件范围冲突",
+                "group_claim": "原结论把PT9L具备蓝牙功能作为前提。",
+                "group_severity": "P1",
+                "group_rationale": "人工复核确认原前提不足。",
+                "root_cause": "风险文件残留。",
+                "impact": "结论需修正。",
+                "recommended_action": "修订风险文件。",
+                "merge_decision": "manual_correction_false_premise",
+                "member_finding_ids": ["LLM-0056"],
+                "original_findings": [{"finding_id": "LLM-0056", "claim": "Bluetooth gap", "evidence_refs": []}],
+                "manual_evidence_refs": [
+                    {
+                        "label": "设计输入蓝牙不适用",
+                        "rel_path": "04 设计输入E0 23.11/设计输入汇总表.md",
+                        "line": 201,
+                        "source_text": "| 蓝牙 | 蓝牙组织BQB认证 |  | 国际 | □是 ■否 |  |",
+                    }
+                ],
+            }
+        ],
+    }
+
+    path = audit.write_grouped_findings_html(tmp_path, grouped)
+
+    html = path.read_text(encoding="utf-8")
+    assert "人工修正原文证据" in html
+    assert "设计输入蓝牙不适用" in html
+    assert "| 蓝牙 | 蓝牙组织BQB认证 |" in html
+
+
+def test_grouped_findings_html_has_persistent_human_review_controls(tmp_path):
+    grouped = {
+        "summary": {"group_count": 1, "source_finding_count": 1, "multi_finding_group_count": 0},
+        "groups": [
+            {
+                "group_id": "GRP-0001",
+                "group_title": "单条问题：旧型号引用",
+                "group_claim": "中文概述：旧型号引用残留。",
+                "group_severity": "P1",
+                "group_rationale": "",
+                "root_cause": "",
+                "impact": "",
+                "recommended_action": "",
+                "merge_decision": "single_finding",
+                "member_finding_ids": ["LLM-0002"],
+                "original_findings": [{"finding_id": "LLM-0002", "claim": "legacy model residue", "evidence_refs": []}],
+            }
+        ],
+    }
+
+    path = audit.write_grouped_findings_html(tmp_path, grouped)
+
+    html = path.read_text(encoding="utf-8")
+    assert "人工审阅" in html
+    assert "review-select" in html
+    assert "确认问题" in html
+    assert "误报" in html
+    assert "待补证" in html
+    assert "localStorage" in html
+    assert "审阅进度" in html
+    assert "review-summary" in html
+    assert "updateReviewSummary" in html
+    assert "导出审阅结果 JSON" in html
+    assert "导入审阅结果 JSON" in html
+    assert "导入失败：JSON 格式无法解析" in html
+    assert "data-group-id=\"GRP-0001\"" in html
+
+
+def test_grouped_findings_html_keeps_agent_generated_text_in_chinese(tmp_path):
+    grouped = {
+        "summary": {"group_count": 1, "source_finding_count": 1, "multi_finding_group_count": 0},
+        "groups": [
+            {
+                "group_id": "GRP-0001",
+                "group_title": "legacy model reference in risk report",
+                "group_claim": "The active risk report references the wrong model.",
+                "group_severity": "P1",
+                "group_rationale": "The rationale written by the agent should not be visible in English.",
+                "root_cause": "template residue",
+                "impact": "document control risk",
+                "recommended_action": "revise the report",
+                "merge_decision": "single_finding",
+                "member_finding_ids": ["LLM-0002"],
+                "original_findings": [
+                    {
+                        "finding_id": "LLM-0002",
+                        "agent": "Risk Traceability Agent",
+                        "finding_type": "legacy_model_reference_in_active_risk_assessment",
+                        "severity": "P1",
+                        "challenge_status": "keep",
+                        "claim": "The active Risk Assessment Report references PT3SBT instead of PT9L.",
+                        "rationale": "Legacy model text remains in the active report.",
+                        "evidence_refs": [
+                            {
+                                "rel_path": "03 风险分析/Risk Assessment.md",
+                                "line": 93,
+                                "actual_text": "The original source file says PT3SBT can transmit by Bluetooth.",
+                            }
+                        ],
+                    }
+                ],
+            }
+        ],
+    }
+
+    path = audit.write_grouped_findings_html(tmp_path, grouped)
+
+    html = path.read_text(encoding="utf-8")
+    assert "问题陈述" in html
+    assert "判断依据" in html
+    assert "旧型号引用" in html
+    assert "风险追溯 Agent" in html
+    assert "The original source file says PT3SBT can transmit by Bluetooth." in html
+    assert "The active Risk Assessment Report references PT3SBT instead of PT9L." not in html
+    assert "Legacy model text remains in the active report." not in html
+    assert "The rationale written by the agent should not be visible in English." not in html
+    assert "template residue" not in html
+    assert "document control risk" not in html
+    assert "revise the report" not in html
+
+
+def test_report_writer_skill_captures_report_quality_rules():
+    skill_path = MODULE_PATH.parents[1] / ".codex" / "skills" / "dhf-dmr-report-writer" / "SKILL.md"
+    text = skill_path.read_text(encoding="utf-8")
+
+    assert "[TODO" not in text
+    assert "简体中文" in text
+    assert "问题组" in text
+    assert "原始 finding" in text
+    assert "原文证据" in text
+    assert "人工修正" in text
+    assert "不可只凭单一上游假设" in text
+    assert "localStorage" in text
+    assert "导出/导入" in text
+    assert "人工审阅" in text
+    assert "Agent 原始英文输出不作为页面正文展示" in text
+    assert "中文显示边界" in text
+    assert "允许原样保留" in text
+    assert "原文件证据摘录" in text
+    assert "禁止在 HTML 正文展示" in text
+    assert "问题陈述" in text
+    assert "判断依据" in text
+
+
+def test_report_agent_config_references_report_writer_skill():
+    config = audit.load_agent_config("report")
+
+    assert config["display_name"] == "Report Agent"
+    assert config["skill"]["name"] == "dhf-dmr-report-writer"
+    assert ".codex/skills/dhf-dmr-report-writer/SKILL.md" in config["skill"]["path"]
+    assert "issue_group_first" in config["report_rules"]
+    assert "show_original_source_text" in config["report_rules"]
+    assert "simplified_chinese_generated_text" in config["report_rules"]
+    assert "human_review_controls_per_group" in config["report_rules"]
+    assert "persistent_review_state" in config["report_rules"]
+    assert "review_json_import_export" in config["report_rules"]
+    assert "agent_generated_text_chinese_only" in config["report_rules"]

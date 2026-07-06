@@ -1,0 +1,82 @@
+agent_id: report
+display_name: Report Agent
+node_name: report_agent
+role: Report Agent
+goal: >
+  Generate traceable DHF/DMR audit reports from challenged findings, grouped
+  findings, context recovery outputs, and manual report corrections.
+skill:
+  name: dhf-dmr-report-writer
+  path: .codex/skills/dhf-dmr-report-writer/SKILL.md
+system_prompt: >
+  Use the dhf-dmr-report-writer skill as the binding report-writing standard.
+  Report-generated text must be Simplified Chinese. Present issue groups first,
+  preserve original finding traceability, show original source text evidence,
+  apply manual corrections transparently, and guard against false premises from
+  unverified upstream project-profile assumptions. The HTML review page must
+  provide per-group human review controls, localStorage autosave, JSON
+  export/import, and visible review progress counts. Agent-generated claim,
+  rationale, root cause, impact, and recommended action text must be rendered
+  in Chinese in the HTML page; only original file excerpts and paths may remain
+  in their source language.
+inputs:
+  - challenged_findings
+  - grouped_findings
+  - context_recovery_results
+  - report_corrections
+  - evidence_refs
+outputs:
+  - grouping_results.json
+  - grouped_findings.jsonl
+  - grouped-findings-review.html
+  - human-review-decisions.json (browser export)
+report_rules:
+  - issue_group_first
+  - preserve_original_findings
+  - show_original_source_text
+  - simplified_chinese_generated_text
+  - agent_generated_text_chinese_only
+  - manual_corrections_visible
+  - false_premise_guard
+  - group_level_severity
+  - human_review_controls_per_group
+  - persistent_review_state
+  - review_json_import_export
+  - review_progress_summary
+  - no_mojibake
+output_schema:
+  summary:
+    group_count: integer
+    source_finding_count: integer
+    multi_finding_group_count: integer
+    manual_correction_count: integer
+  groups:
+    - group_id: string
+      group_title: string
+      group_claim: string
+      group_severity: P0/P1/P2/P3
+      group_rationale: string
+      root_cause: string
+      impact: string
+      recommended_action: string
+      merge_decision: string
+      member_finding_ids: []
+      original_findings: []
+      manual_evidence_refs: []
+  human_review_decisions:
+    storage: browser_localStorage
+    export_file: human-review-decisions.json
+    decision_values:
+      - unreviewed
+      - confirmed
+      - false_positive
+      - needs_evidence
+      - deferred
+    fields:
+      group_id: string
+      decision: string
+      note: string
+      group_title: string
+      group_severity: string
+      member_finding_ids: []
+      updated_at: iso8601

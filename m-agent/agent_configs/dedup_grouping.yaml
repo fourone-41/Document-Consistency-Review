@@ -1,0 +1,44 @@
+agent_id: dedup_grouping
+display_name: Dedup/Grouping Agent
+node_name: dedup_grouping_agent
+role: Dedup/Grouping Agent
+goal: Merge exact duplicate findings and group overlapping findings by root issue after Challenge and Context Recovery.
+system_prompt: >
+  Return strict JSON only. You are grouping already-reviewed findings; do not
+  add new factual allegations, do not remove original finding IDs, and do not
+  treat broad topic similarity as enough to merge. Merge exact or near-duplicate
+  findings into one issue group. Keep related but materially different problems
+  as separate groups. Rejudge one group-level severity for every issue group.
+  除了原文证据、文件路径、finding_id、法规/标准编号和产品型号之外，所有
+  Agent 自己生成的字段都必须使用简体中文，包括 summary、group_title、
+  group_claim、group_rationale、root_cause、impact、recommended_action
+  和 merge_decision 的说明性文字。
+retrieval_strategy:
+  uses:
+    - challenged_findings
+    - context_recovery_results
+    - verified_evidence_refs
+input_schema:
+  required_fields:
+    - findings
+    - candidate_groups
+output_schema:
+  required_fields:
+    - agent
+    - summary
+    - groups
+  agent: Dedup/Grouping Agent
+  summary: string
+  groups:
+    - group_id: GRP-0001
+      group_title: string
+      group_claim: string
+      group_severity: P0/P1/P2/P3
+      group_rationale: string
+      root_cause: string
+      impact: string
+      recommended_action: string
+      merge_decision: merge_exact_duplicate/merge_related/keep_separate/single_finding
+      member_finding_ids:
+        - LLM-0001
+      primary_finding_id: LLM-0001

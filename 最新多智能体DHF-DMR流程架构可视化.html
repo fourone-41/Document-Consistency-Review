@@ -363,6 +363,20 @@
             <text x="590" y="908" text-anchor="middle" class="small">结构化缺口，补证后回到 Orchestrator 重新派发</text>
           </g>
 
+          <g class="node">
+            <rect x="872" y="684" width="250" height="104"></rect>
+            <text x="997" y="722" text-anchor="middle" font-weight="700">Dedup/Grouping Agent</text>
+            <text x="997" y="750" text-anchor="middle" class="small">合并重复 finding</text>
+            <text x="997" y="774" text-anchor="middle" class="small">形成问题组和组级严重度</text>
+          </g>
+
+          <g class="report">
+            <rect x="872" y="832" width="250" height="96" rx="8"></rect>
+            <text x="997" y="868" text-anchor="middle" font-weight="700">Report Agent</text>
+            <text x="997" y="896" text-anchor="middle" class="small">中文审阅报告</text>
+            <text x="997" y="918" text-anchor="middle" class="small">原文证据 / 人工勾选 / 导出</text>
+          </g>
+
           <path class="arrow violet" d="M590 132 L590 214"></path>
           <text x="610" y="178" class="label-text">项目画像进入调度中心</text>
 
@@ -383,6 +397,12 @@
 
           <path class="arrow red" d="M590 784 L590 846"></path>
           <text x="612" y="822" class="label-text">needs_more_context</text>
+
+          <path class="arrow blue" d="M826 736 L872 736"></path>
+          <text x="850" y="720" text-anchor="middle" class="label-text">确认后进入分组</text>
+
+          <path class="arrow teal" d="M997 788 L997 832"></path>
+          <text x="1018" y="814" class="label-text">问题组</text>
 
           <path class="arrow red" d="M400 888 C142 856,118 424,414 348"></path>
           <text x="154" y="680" class="label-text">补证结果回到 Orchestrator</text>
@@ -517,4 +537,3 @@
   </main>
 </body>
 </html>
-
