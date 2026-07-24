@@ -1,0 +1,72 @@
+{
+  "package_id": "knowledge_graph_audit_pipeline",
+  "name": "Knowledge Graph Audit Pipeline Skills",
+  "description": "Reusable skills for schema discovery, node/relation extraction, Neo4j graph construction, canonical merge, conflict audit, and report visualization.",
+  "version": "0.1.0",
+  "skills": [
+    {
+      "skill_id": "kg_audit_end_to_end_orchestrator",
+      "name": "KG 全链路总编排",
+      "path": "00_end_to_end_orchestrator/SKILL.md",
+      "capabilities": ["planning", "orchestration", "workflow_control"],
+      "inputs": ["document_corpus", "schema", "llm_config"],
+      "outputs": ["audit_package", "graph_import", "reports"]
+    },
+    {
+      "skill_id": "kg_schema_discovery",
+      "name": "Schema 发现与补全",
+      "path": "01_schema_discovery/SKILL.md",
+      "capabilities": ["schema_discovery", "gap_analysis", "clustering"],
+      "inputs": ["documents", "current_schema", "rule_scan", "llm_outputs"],
+      "outputs": ["gap_report", "schema_candidates"]
+    },
+    {
+      "skill_id": "kg_node_relation_extraction",
+      "name": "全量节点关系抽取",
+      "path": "02_extraction/SKILL.md",
+      "capabilities": ["information_extraction", "relation_extraction", "evidence_binding"],
+      "inputs": ["documents", "schema", "profiles"],
+      "outputs": ["extraction_json", "raw_responses", "extraction_manifest"]
+    },
+    {
+      "skill_id": "kg_extraction_quality_recovery",
+      "name": "抽取质量恢复",
+      "path": "03_extraction_quality_recovery/SKILL.md",
+      "capabilities": ["quality_control", "retry", "json_repair", "coverage_analysis"],
+      "inputs": ["extractions", "raw_errors", "source_documents"],
+      "outputs": ["recovery_manifest", "coverage_summary", "recovered_extractions"]
+    },
+    {
+      "skill_id": "kg_neo4j_graph_import",
+      "name": "Neo4j 图谱导入",
+      "path": "04_graph_import/SKILL.md",
+      "capabilities": ["graph_import", "cypher_generation", "neo4j"],
+      "inputs": ["extraction_json", "schema", "neo4j_config"],
+      "outputs": ["import_cypher", "graph_stats"]
+    },
+    {
+      "skill_id": "kg_canonical_node_merge",
+      "name": "确定同一节点聚合",
+      "path": "05_canonical_merge/SKILL.md",
+      "capabilities": ["entity_resolution", "canonicalization", "deduplication"],
+      "inputs": ["neo4j_graph", "node_properties", "matching_rules"],
+      "outputs": ["canonical_links", "merge_review_report"]
+    },
+    {
+      "skill_id": "kg_conflict_and_risk_audit",
+      "name": "矛盾与风险关系审查",
+      "path": "06_conflict_audit/SKILL.md",
+      "capabilities": ["conflict_detection", "risk_traceability", "consistency_audit"],
+      "inputs": ["neo4j_graph", "canonical_links", "audit_rules"],
+      "outputs": ["conflict_report", "risk_traceability_report", "audit_summary"]
+    },
+    {
+      "skill_id": "kg_report_visualization",
+      "name": "报告与可视化",
+      "path": "07_report_visualization/SKILL.md",
+      "capabilities": ["report_generation", "visualization", "evidence_review"],
+      "inputs": ["findings", "audit_reports", "graph_query_results"],
+      "outputs": ["html_dashboard", "markdown_report", "json_data"]
+    }
+  ]
+}
