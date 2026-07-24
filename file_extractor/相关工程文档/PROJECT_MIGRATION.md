@@ -326,7 +326,7 @@ EXCLUDE_FOLDERS = {"历史记录"}
 ### 8.1 环境变量（.env）
 
 ```
-GPT55_API_KEY=***REDACTED-API-KEY***
+GPT55_API_KEY=通过公司安全渠道获取
 GPT55_API_URL=https://ai-gateway.ailab.jiuan.com/v1
 GPT55_MODEL=claude-sonnet-4-6
 DATA_DIR=./data
